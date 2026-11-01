@@ -10,6 +10,7 @@ import { STAGES } from "./stages";
 import { Header } from "./components/Header";
 import { StageStepper } from "./components/StageStepper";
 import { Footer } from "./components/Footer";
+import { ReportScreen } from "./screens/ReportScreen";
 import "./App.css";
 
 interface AppProps {
@@ -17,6 +18,9 @@ interface AppProps {
 }
 
 export function App({ session }: AppProps) {
+  const showReport =
+    session.currentStage === "report" && Boolean(session.finalReport);
+
   return (
     <div className="app">
       <a className="ll-skip-link" href="#main">
@@ -26,10 +30,13 @@ export function App({ session }: AppProps) {
       <StageStepper stages={STAGES} currentStage={session.currentStage} />
       <main id="main" className="app__main" tabIndex={-1}>
         <div className="ll-container">
-          {/* Workspace: the Report screen lands here in the next step. */}
-          <div className="app__placeholder">
-            <p>Shell ready — the practice report lands here next.</p>
-          </div>
+          {showReport ? (
+            <ReportScreen session={session} />
+          ) : (
+            <div className="app__placeholder">
+              <p>This stage of the practice isn't built yet.</p>
+            </div>
+          )}
         </div>
       </main>
       <Footer />
