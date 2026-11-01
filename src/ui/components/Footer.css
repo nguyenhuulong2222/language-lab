@@ -1,0 +1,12 @@
+.footer {
+  flex: 0 0 auto;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding-block: var(--space-4);
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

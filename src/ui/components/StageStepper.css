@@ -1,0 +1,128 @@
+.stepper {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding-block: var(--space-4);
+  --marker-size: 2rem;
+}
+
+/* ---- Condensed (mobile) ---- */
+.stepper__condensed {
+  margin: 0 0 var(--space-2);
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}
+
+.stepper__condensed-count {
+  font-family: var(--font-mono);
+  color: var(--ink);
+}
+
+.stepper__condensed-label {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.stepper__bar {
+  height: 0.5rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.stepper__bar-fill {
+  height: 100%;
+  background: var(--status-positive);
+  border-radius: var(--radius-pill);
+}
+
+/* ---- Full stepper (desktop) ---- */
+.stepper__list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: flex-start;
+}
+
+.stepper__step {
+  display: flex;
+  align-items: flex-start;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.stepper__connector {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 2px;
+  margin-top: calc(var(--marker-size) / 2 - 1px);
+  background: var(--border);
+}
+
+.stepper__step:first-child .stepper__connector--lead,
+.stepper__step:last-child .stepper__connector--trail {
+  display: none;
+}
+
+.stepper__node {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.stepper__marker {
+  width: var(--marker-size);
+  height: var(--marker-size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--ink-2);
+}
+
+.stepper__step--complete .stepper__marker {
+  background: var(--status-positive);
+  border-color: var(--status-positive);
+  color: var(--surface);
+}
+
+.stepper__step--current .stepper__marker {
+  background: var(--status-attention);
+  border-color: var(--status-attention);
+  color: var(--surface);
+}
+
+.stepper__marker-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  display: block;
+}
+
+.stepper__step-label {
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  color: var(--ink-2);
+  text-align: center;
+}
+
+.stepper__step--complete .stepper__step-label,
+.stepper__step--current .stepper__step-label {
+  color: var(--ink);
+}
+
+@media (min-width: 48rem) {
+  .stepper__condensed,
+  .stepper__bar {
+    display: none;
+  }
+  .stepper__list {
+    display: flex;
+  }
+}
