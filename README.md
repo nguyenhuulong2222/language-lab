@@ -38,12 +38,12 @@ practice feedback, not an official assessment.
 
 ## Tech Stack
 
-| Layer | Tool |
-|---|---|
-| Frontend | Vite + React + TypeScript |
-| Hosting | Cloudflare Pages |
-| API / logic | Cloudflare Worker |
-| Tests | Vitest + fast-check |
+| Layer | Tool | Version |
+|---|---|---|
+| Frontend | Vite + React + TypeScript | Vite 6.4.5, React 19.1.0, TS 5.8.3 |
+| Hosting | Cloudflare Pages | — |
+| API / logic | Cloudflare Worker | wrangler.toml in `worker/` |
+| Tests | Vitest + fast-check | Vitest 4.1.12, fast-check 3.23.2 |
 
 ---
 
@@ -61,7 +61,7 @@ practice feedback, not an official assessment.
 # 1. Install dependencies
 npm install
 
-# 2. Copy environment template (never commit .dev.vars)
+# 2. Copy environment template (never commit .dev.vars or .env.local)
 cp .env.example .env.local
 
 # 3. Start the Vite dev server
@@ -74,18 +74,27 @@ The app runs at `http://localhost:5173` by default.
 
 ```bash
 # Single pass (CI-friendly)
-npm run test -- --run
+npm test
 
 # Watch mode
-npm run test
+npm run test:watch
+```
+
+### Typecheck
+
+```bash
+npm run typecheck
 ```
 
 ### Worker Development
 
 ```bash
-# Start the local Worker (via Wrangler)
-npx wrangler dev worker/index.ts
+# Start the local Worker (via Wrangler, installed separately)
+# See: https://developers.cloudflare.com/workers/wrangler/install-and-update/
+npx wrangler dev
 ```
+
+Run this from the `worker/` directory, or point wrangler at `worker/wrangler.toml`.
 
 ---
 

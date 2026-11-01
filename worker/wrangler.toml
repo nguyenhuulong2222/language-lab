@@ -1,0 +1,10 @@
+name = "language-lab-worker"
+main = "index.ts"
+compatibility_date = "2025-01-01"
+
+# Secrets and environment variables are set in the Cloudflare dashboard
+# or via `wrangler secret put`. Never add secret values to this file.
+
+[dev]
+port = 8787
+local_protocol = "http"

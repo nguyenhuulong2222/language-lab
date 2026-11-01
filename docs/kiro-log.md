@@ -5,6 +5,51 @@ made during the development of Language Lab. Most recent entries are at the top.
 
 ---
 
+## 2024-11-01 — Tooling Initialization
+
+**Packages added:**
+
+| Package | Version | Role |
+|---|---|---|
+| vite | 6.4.5 | Frontend build and dev server |
+| @vitejs/plugin-react | 4.5.2 | React JSX transform for Vite |
+| react / react-dom | 19.1.0 | UI framework |
+| @types/react / @types/react-dom | 19.1.6 | React TypeScript types |
+| typescript | 5.8.3 | Type checker |
+| vitest | 4.1.12 | Test runner (Vitest 4, not 3, to clear CVEs in tinypool) |
+| @fast-check/vitest | 0.5.0 | fast-check integration for Vitest |
+| fast-check | 3.23.2 | Property-based testing |
+| @cloudflare/workers-types | 5.20261101.1 | TypeScript types for Worker globals |
+
+**Decision: Vitest 4.1.12 instead of 3.x**
+Vitest 3.2.7 had unpatched CVEs in `tinypool` (GHSA-5gmw-xhrv-c9v3, GHSA-85c8-ppgw-ccpr,
+critical) and `@vitest/mocker`. The fix required Vitest 4.x. Vitest 4 was released October
+2025 and is stable. Breaking changes (pool config, Browser Mode API) don't affect this
+project at this stage.
+
+**Decision: `vitest/config` for `defineConfig` in `vite.config.ts`**
+Importing `defineConfig` from `vitest/config` rather than `vite` is the idiomatic approach
+for Vitest 4, giving TypeScript full knowledge of the `test` property without needing a
+triple-slash reference directive.
+
+**Decision: `@cloudflare/workers-types` in `tsconfig.node.json`**
+The Worker source uses `Request`, `Response`, `URL`, and `ExportedHandler` which are
+Cloudflare-specific globals. Adding workers-types to the node tsconfig scope keeps the app
+tsconfig clean (browser globals only) and the worker tsconfig correct.
+
+**tsconfig split: `tsconfig.app.json` + `tsconfig.node.json`**
+Standard Vite pattern. App tsconfig covers `src/` with DOM libs and `react-jsx`.
+Node tsconfig covers `vite.config.ts` and `worker/` with Workers types.
+
+**Test coverage added:**
+`src/contracts/__tests__/session-mock.test.ts` — 12 tests across 2 suites:
+- 11 runtime checks of mock/session.json against contract rules
+- 1 property-based test using fast-check via `@fast-check/vitest`
+
+All checks pass: `npm test` → 12/12, `npm run typecheck` → clean, `npm run build` → clean.
+
+---
+
 ## 2024-11-01 — Initial Project Setup
 
 **Decision: Vite + React + TypeScript**
