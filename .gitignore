@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.output/
+
+# Vite / TypeScript
+*.tsbuildinfo
+vite.config.ts.timestamp-*
+
+# Environment and secrets — never commit these
+.env
+.env.*
+!.env.example
+.dev.vars
+
+# Local audio recordings (device-local only, never committed)
+local-recordings/
+*.local-recording
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Wrangler
+.wrangler/
+
+# Logs
+*.log
+npm-debug.log*

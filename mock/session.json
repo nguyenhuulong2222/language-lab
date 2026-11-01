@@ -1,0 +1,204 @@
+{
+  "_note": "Fictional practice profile — no real person. All names, dates, and details are invented for practice purposes only.",
+  "sessionId": "mock-session-001",
+  "fictionalProfileId": "fictional-profile-aurora-vance",
+  "isFictional": true,
+  "filingDate": "2024-03-15",
+  "testVersion": "2008",
+  "startedAt": "2024-03-20T10:00:00Z",
+  "endedAt": "2024-03-20T10:42:00Z",
+  "currentStage": "report",
+  "turns": [
+    {
+      "turnId": "turn-001",
+      "stage": "intro",
+      "prompt": "Welcome to Language Lab. You will practice the naturalization interview today. This is a fictional practice scenario. Are you ready to begin?",
+      "responseText": "Yes, I am ready.",
+      "completedAt": "2024-03-20T10:01:30Z"
+    },
+    {
+      "turnId": "turn-002",
+      "stage": "n400_interview",
+      "prompt": "What is your current address?",
+      "responseText": "I live at 42 Maple Street, Springfield.",
+      "completedAt": "2024-03-20T10:05:00Z"
+    },
+    {
+      "turnId": "turn-003",
+      "stage": "n400_interview",
+      "prompt": "How long have you been a permanent resident?",
+      "responseText": "I have been a permanent resident for six years.",
+      "completedAt": "2024-03-20T10:06:30Z"
+    },
+    {
+      "turnId": "turn-004",
+      "stage": "n400_interview",
+      "prompt": "Have you ever failed to file a federal income tax return?",
+      "responseText": "No, I have always filed my taxes.",
+      "completedAt": "2024-03-20T10:08:00Z"
+    },
+    {
+      "turnId": "turn-005",
+      "stage": "reading",
+      "prompt": "Please read the following sentence aloud: 'Congress passes laws in the United States.'",
+      "responseText": "Congress passes laws in the United States.",
+      "completedAt": "2024-03-20T10:15:00Z"
+    },
+    {
+      "turnId": "turn-006",
+      "stage": "writing",
+      "prompt": "Please write the following sentence: 'The President lives in the White House.'",
+      "responseText": "The President lives in the White House.",
+      "completedAt": "2024-03-20T10:20:00Z"
+    },
+    {
+      "turnId": "turn-007",
+      "stage": "civics",
+      "prompt": "What is the supreme law of the land?",
+      "responseText": "The Constitution.",
+      "completedAt": "2024-03-20T10:25:00Z"
+    },
+    {
+      "turnId": "turn-008",
+      "stage": "civics",
+      "prompt": "What do we call the first ten amendments to the Constitution?",
+      "responseText": "The Bill of Rights.",
+      "completedAt": "2024-03-20T10:26:30Z"
+    },
+    {
+      "turnId": "turn-009",
+      "stage": "civics",
+      "prompt": "How many amendments does the Constitution have?",
+      "responseText": "Twenty-seven.",
+      "completedAt": "2024-03-20T10:28:00Z"
+    },
+    {
+      "turnId": "turn-010",
+      "stage": "civics",
+      "prompt": "What is the economic system in the United States?",
+      "responseText": "Capitalist economy.",
+      "completedAt": "2024-03-20T10:29:30Z"
+    },
+    {
+      "turnId": "turn-011",
+      "stage": "civics",
+      "prompt": "What is the name of the President of the United States now?",
+      "responseText": "I am not sure.",
+      "completedAt": "2024-03-20T10:31:00Z"
+    },
+    {
+      "turnId": "turn-012",
+      "stage": "civics",
+      "prompt": "What ocean is on the East Coast of the United States?",
+      "responseText": "The Atlantic Ocean.",
+      "completedAt": "2024-03-20T10:32:30Z"
+    }
+  ],
+  "scoringResults": {
+    "turn-002": {
+      "stage": "n400_interview",
+      "feedback": "understood"
+    },
+    "turn-003": {
+      "stage": "n400_interview",
+      "feedback": "understood"
+    },
+    "turn-004": {
+      "stage": "n400_interview",
+      "feedback": "needs_practice"
+    },
+    "turn-005": {
+      "stage": "reading",
+      "attempts": 1,
+      "result": "correct"
+    },
+    "turn-006": {
+      "stage": "writing",
+      "attempts": 2,
+      "result": "correct"
+    },
+    "turn-007": {
+      "stage": "civics",
+      "scoringSource": "answer_key",
+      "result": "correct"
+    },
+    "turn-008": {
+      "stage": "civics",
+      "scoringSource": "answer_key",
+      "result": "correct"
+    },
+    "turn-009": {
+      "stage": "civics",
+      "scoringSource": "answer_key",
+      "result": "correct"
+    },
+    "turn-010": {
+      "stage": "civics",
+      "scoringSource": "answer_key",
+      "result": "correct"
+    },
+    "turn-011": {
+      "stage": "civics",
+      "scoringSource": "answer_key",
+      "result": "incorrect"
+    },
+    "turn-012": {
+      "stage": "civics",
+      "scoringSource": "answer_key",
+      "result": "correct"
+    }
+  },
+  "finalReport": {
+    "practiceResult": "practice_passed",
+    "disclaimer": "This is a practice tool only. It is not affiliated with USCIS or any government agency. Results do not predict or reflect any official immigration decision. This is not legal advice.",
+    "stageSummaries": [
+      {
+        "stage": "intro",
+        "turnsTotal": 1,
+        "turnsScored": 0,
+        "summary": "Orientation completed.",
+        "reviewItems": []
+      },
+      {
+        "stage": "n400_interview",
+        "turnsTotal": 3,
+        "turnsScored": 3,
+        "summary": "Two of three N-400 responses were understood clearly. One response needs more practice for clarity.",
+        "reviewItems": [
+          "Practicing responses to tax-filing questions with clear, direct answers."
+        ]
+      },
+      {
+        "stage": "reading",
+        "turnsTotal": 1,
+        "turnsScored": 1,
+        "summary": "Reading sentence completed correctly on the first attempt.",
+        "reviewItems": []
+      },
+      {
+        "stage": "writing",
+        "turnsTotal": 1,
+        "turnsScored": 1,
+        "summary": "Writing sentence completed correctly, took two attempts.",
+        "reviewItems": [
+          "Practice writing sentences with proper capitalization on the first attempt."
+        ]
+      },
+      {
+        "stage": "civics",
+        "turnsTotal": 6,
+        "turnsScored": 6,
+        "summary": "5 of 6 civics questions answered correctly. Passed the civics portion of this practice session.",
+        "reviewItems": [
+          "Review the name of the current President of the United States."
+        ]
+      }
+    ],
+    "overallReviewItems": [
+      "Review the name of the current President of the United States.",
+      "Practice clear, direct responses to N-400 questions about taxes.",
+      "Practice writing sentences with proper capitalization from the start."
+    ],
+    "generatedAt": "2024-03-20T10:42:00Z"
+  }
+}

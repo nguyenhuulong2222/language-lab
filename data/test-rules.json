@@ -1,0 +1,63 @@
+{
+  "_note": "All values sourced from uscis.gov. Any value that could not be confirmed from an official uscis.gov source is set to null with needsVerification: true. No values are guessed. Category weights are not included.",
+  "2008": {
+    "_description": "2008 Civics Test. Applies to Form N-400 filed before October 20, 2025.",
+    "questionPoolSize": {
+      "value": 100,
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version"
+    },
+    "questionsAsked": {
+      "value": 10,
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version"
+    },
+    "passingScore": {
+      "value": 6,
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version"
+    },
+    "earlyStopOnCorrect": {
+      "value": 6,
+      "needsVerification": true,
+      "_note": "Mentioned on the 'Study for the Test' page (uscis.gov) as stopping when 6 are answered correctly, but the primary civics Q&A page states 'up to 10 questions'. Verify against USCIS policy manual before relying on this for scoring logic.",
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test"
+    },
+    "earlyStopOnIncorrect": {
+      "value": 5,
+      "needsVerification": true,
+      "_note": "Mentioned on the 'Study for the Test' page (uscis.gov) as failing if 5 of 10 answered incorrectly, but the primary civics Q&A page states 'up to 10 questions'. Verify against USCIS policy manual before relying on this for scoring logic.",
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test"
+    }
+  },
+  "2025": {
+    "_description": "2025 Civics Test. Applies to Form N-400 filed on or after October 20, 2025.",
+    "questionPoolSize": {
+      "value": 128,
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test"
+    },
+    "questionsAsked": {
+      "value": 20,
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test"
+    },
+    "passingScore": {
+      "value": 12,
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test"
+    },
+    "earlyStopOnCorrect": {
+      "value": 12,
+      "needsVerification": false,
+      "_note": "USCIS officers stop asking when the applicant answers 12 questions correctly.",
+      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test"
+    },
+    "earlyStopOnIncorrect": {
+      "value": 9,
+      "needsVerification": false,
+      "_note": "USCIS officers stop asking when the applicant answers 9 questions incorrectly.",
+      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test"
+    }
+  }
+}
