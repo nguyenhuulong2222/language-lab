@@ -100,8 +100,8 @@ the bundle light; body and mono use system stacks with robust fallbacks. Load wi
 | `--fs-body` | 1.125rem (18px) | Body text — minimum for prose |
 | `--fs-meta` | 1rem (16px) | Labels, meta, status — minimum visible size |
 
-Line-height: `--lh-tight` 1.2 (headings), `--lh-snug` 1.35, `--lh-body` 1.7 (body, generous),
-`--lh-loose` 1.8 (lead). Line length: `--measure` 68ch for prose, `--measure-narrow` 42ch for
+Line-height: `--lh-tight` 1.2 (headings), `--lh-snug` 1.35, `--lh-large` 1.4 (large text such
+as the lead), `--lh-body` 1.7 (body, generous), `--lh-loose` 1.8. Line length: `--measure` 68ch for prose, `--measure-narrow` 42ch for
 forms/inputs. No visible text falls below 16px.
 
 ## Spacing, radius, elevation

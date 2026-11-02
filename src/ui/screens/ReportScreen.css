@@ -15,7 +15,7 @@
 
 .report__lead {
   font-size: var(--fs-lg);
-  line-height: var(--lh-loose);
+  line-height: var(--lh-large);
   color: var(--ink-2);
 }
 
