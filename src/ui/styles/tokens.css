@@ -1,0 +1,105 @@
+/**
+ * Language Lab — Design tokens
+ * Source of truth: .kiro/steering/design-system.md
+ * All color pairs verified against WCAG AA/AAA (see design-system.md).
+ */
+
+:root {
+  /* ---- Color: light mode (parchment booth) ---- */
+  --bg: #f4eee1;
+  --surface: #fbf7ee;
+  --surface-2: #efe7d6;
+  --ink: #2a2118;
+  --ink-2: #574635;
+  --teal: #2c6a66;
+  --amber: #9a5a1a;
+  --border: #c9bc9f;
+
+  /* Semantic status (reference primitives so theme overrides cascade) */
+  --status-positive: var(--teal);
+  --status-attention: var(--amber);
+
+  /* ---- Typography ---- */
+  /* Bitter: slab serif for headings (lab-manual character). One web font, two weights. */
+  --font-display: "Bitter", "Roboto Slab", "Rockwell", Georgia, serif;
+  /* System humanist sans for body — no download. */
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  /* System monospace for labels / tape readouts. */
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+  /* Type scale (root 16px). --fs-body is the 18px floor. */
+  --fs-display: 2.5rem; /* 40px */
+  --fs-h1: 2rem; /* 32px */
+  --fs-h2: 1.625rem; /* 26px */
+  --fs-h3: 1.375rem; /* 22px */
+  --fs-h4: 1.125rem; /* 18px */
+  --fs-lg: 1.25rem; /* 20px */
+  --fs-body: 1.125rem; /* 18px — minimum for prose */
+  --fs-meta: 1rem; /* 16px — minimum visible size */
+
+  --lh-tight: 1.2;
+  --lh-snug: 1.35;
+  --lh-large: 1.4;
+  --lh-body: 1.7;
+  --lh-loose: 1.8;
+
+  --measure: 68ch;
+  --measure-narrow: 42ch;
+
+  /* ---- Spacing ---- */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.5rem; /* 24px */
+  --space-6: 2rem; /* 32px */
+  --space-7: 3rem; /* 48px */
+  --space-8: 4rem; /* 64px */
+  --space-9: 6rem; /* 96px */
+
+  /* ---- Radius ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  /* ---- Elevation (warm-tinted, restrained) ---- */
+  --shadow-sm: 0 1px 2px rgba(42, 33, 24, 0.06);
+  --shadow-md: 0 2px 8px rgba(42, 33, 24, 0.08);
+
+  /* ---- Interaction ---- */
+  --tap-min: 44px;
+  --focus-width: 3px;
+  --focus-offset: 2px;
+
+  /* ---- Layout ---- */
+  --shell-max: 44rem;
+  --gutter: clamp(1rem, 5vw, 2.5rem);
+}
+
+/* Dark mode (espresso booth): explicit choice wins */
+:root[data-theme="dark"] {
+  --bg: #1f1813;
+  --surface: #271f19;
+  --surface-2: #2e251e;
+  --ink: #f0e8d9;
+  --ink-2: #c4b49c;
+  --teal: #62a89f;
+  --amber: #d98a36;
+  --border: #4a3d2f;
+}
+
+/* Dark mode: follow OS when no explicit theme is set */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1f1813;
+    --surface: #271f19;
+    --surface-2: #2e251e;
+    --ink: #f0e8d9;
+    --ink-2: #c4b49c;
+    --teal: #62a89f;
+    --amber: #d98a36;
+    --border: #4a3d2f;
+  }
+}

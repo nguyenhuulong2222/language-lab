@@ -1,0 +1,27 @@
+.disclaimer--inline {
+  margin: 0;
+  font-size: var(--fs-meta);
+  line-height: var(--lh-snug);
+  color: var(--ink-2);
+}
+
+.disclaimer--prominent {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--status-attention);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+}
+
+.disclaimer__title {
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.disclaimer__text {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink);
+  max-width: var(--measure);
+}

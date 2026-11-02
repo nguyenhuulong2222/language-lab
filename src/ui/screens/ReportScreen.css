@@ -1,0 +1,157 @@
+.report {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.report__empty {
+  color: var(--ink-2);
+}
+
+/* Tape-counter overline: mono, uppercase reel-to-reel take label above the H1.
+   The take counter and separator are decorative; the page label is announced. */
+.report__overline {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: var(--space-3);
+}
+
+.report__take {
+  color: var(--teal);
+}
+
+.report__overline-sep {
+  margin-inline: var(--space-2);
+  color: var(--border);
+}
+
+.report__title {
+  font-size: var(--fs-display);
+  letter-spacing: -0.01em;
+}
+
+.report__lead {
+  font-size: var(--fs-lg);
+  line-height: var(--lh-large);
+  color: var(--ink-2);
+}
+
+.report__profile {
+  margin-top: var(--space-1);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.report__profile-label {
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}
+
+.report__profile-name {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.report__profile-meta {
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}
+
+.report__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.report__section-title {
+  font-size: var(--fs-h2);
+}
+
+.report__section-intro {
+  font-size: var(--fs-lg);
+  color: var(--ink-2);
+}
+
+.report__stages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.stage-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.stage-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.stage-card__title {
+  font-size: var(--fs-h3);
+}
+
+.stage-card__summary {
+  color: var(--ink);
+}
+
+.stage-card__review,
+.report__review-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.stage-card__review-item,
+.report__review-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.stage-card__review-icon,
+.report__review-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: 0 0 auto;
+  margin-top: 0.3rem;
+  color: var(--status-attention);
+}
+
+.report__generated {
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}
+
+@media (min-width: 40rem) {
+  .stage-card {
+    padding: var(--space-5);
+  }
+}
