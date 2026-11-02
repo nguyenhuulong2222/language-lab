@@ -44,13 +44,13 @@ export function ReportScreen({ session }: ReportScreenProps) {
             ? "You completed this practice session well. Use the notes below to keep sharp before your next round."
             : "That's what practice is for. The notes below show where to focus before you try again."}
         </p>
-        <div className="report__context">
+        <div className="report__profile">
+          <p className="report__profile-label">Practice profile (fictional)</p>
           <p className="report__profile-name">{profileName}</p>
-          <p className="report__profile-label">fictional practice profile</p>
+          <p className="report__profile-meta">
+            {session.testVersion} civics test · filed {formatDate(session.filingDate)}
+          </p>
         </div>
-        <p className="report__meta">
-          {session.testVersion} civics test, filed {formatDate(session.filingDate)}
-        </p>
       </header>
 
       <section
