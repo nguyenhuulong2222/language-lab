@@ -73,7 +73,7 @@
   --focus-offset: 2px;
 
   /* ---- Layout ---- */
-  --shell-max: 64rem;
+  --shell-max: 44rem;
   --gutter: clamp(1rem, 5vw, 2.5rem);
 }
 

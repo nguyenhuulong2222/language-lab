@@ -1,4 +1,7 @@
 .app {
+  width: 100%;
+  max-width: var(--shell-max);
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;

@@ -107,7 +107,9 @@ forms/inputs. No visible text falls below 16px.
 ## Spacing, radius, elevation
 
 Spacing scale (`--space-*`): 0.25 / 0.5 / 0.75 / 1 / 1.5 / 2 / 3 / 4 / 6 rem
-(4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 px). Page gutters use a responsive clamp.
+(4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 px). Page gutters use a responsive clamp
+(`--gutter`). `--shell-max` 44rem is the single centered column shared by the header,
+stepper, main, and footer.
 
 Radius: `--radius-sm` 4px, `--radius-md` 8px, `--radius-lg` 14px, `--radius-pill` 999px.
 Cards use `--radius-md`; pill status chips use `--radius-pill`.
@@ -117,8 +119,10 @@ Elevation is restrained and warm-tinted (not the generic neutral grey shadow):
 
 ## App shell layout
 
-Header + stage stepper + main workspace + footer. One centered column with a responsive
-max width; the shell never stretches edge-to-edge on large screens.
+Header, stage stepper, main workspace, and footer all live inside one centered content
+column (`--shell-max` 44rem), so they share a single aligned width and the shell never
+stretches edge-to-edge on large screens. The active stage fills the column (≈75ch line
+length, under the 80ch readability limit); the page background fills the side margins.
 
 ```
 Desktop

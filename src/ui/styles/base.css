@@ -64,10 +64,11 @@ button {
 }
 
 /* Shared utilities */
+/* `.app` is the single centered content column (--shell-max); .ll-container
+   only adds the responsive gutter, so header, stepper, main, and footer all
+   share one aligned, centered width. */
 .ll-container {
   width: 100%;
-  max-width: var(--shell-max);
-  margin-inline: auto;
   padding-inline: var(--gutter);
 }
 
