@@ -32,10 +32,20 @@ export function ReportScreen({ session }: ReportScreenProps) {
 
   const passed = report.practiceResult === "practice_passed";
   const profileName = formatProfileName(session.fictionalProfileId);
+  const take = String(stageIndex(session.currentStage) + 1).padStart(2, "0");
 
   return (
     <article className="report">
       <header className="report__header">
+        <p className="report__overline">
+          <span className="report__take" aria-hidden="true">
+            TAKE {take}
+          </span>
+          <span className="report__overline-sep" aria-hidden="true">
+            ·
+          </span>
+          <span className="report__overline-label">Practice report</span>
+        </p>
         <h1 className="report__title">
           {passed ? "You’re on track" : "A few things to review"}
         </h1>

@@ -29,7 +29,8 @@ rather than used as the decorative primary.
 - **Encouraging, never punitive.** The interview is high-stakes for users. Feedback never
   says pass/fail and never uses harsh red. Status is conveyed by icon + label, never color
   alone. Calm teal = on track; warm amber = review this.
-- **One memorable thing.** The reel/tape progress motif is the single characterful element;
+- **One memorable thing.** The reel/tape motif — the stage stepper's progress and the
+  tape-counter overline above each stage heading — is the characterful element;
   everything around it is quiet and disciplined.
 - **Motion answers action.** Non-user-triggered motion is rare. Any reel/tape animation
   respects `prefers-reduced-motion`.
@@ -164,6 +165,10 @@ Mobile
 - **Main workspace.** The single active stage panel, driven by `InterviewSession` /
   `mock/session.json`. Same shell, content swaps per stage. The fixture is in the report
   stage, so the Report screen is the first to render real data.
+- **Tape counter.** Each stage screen opens with a mono, uppercase overline above its H1,
+  styled like a reel-to-reel take counter (e.g. `TAKE 06 · PRACTICE REPORT`), where the
+  number is the zero-padded stage position. The counter and separator are decorative
+  (`aria-hidden`); the page label is announced to screen readers. No texture or animation.
 - **Footer.** The standing disclaimer (not affiliated / not legal advice), always visible.
 
 ## Status & feedback semantics
