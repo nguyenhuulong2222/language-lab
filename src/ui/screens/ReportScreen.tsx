@@ -37,12 +37,12 @@ export function ReportScreen({ session }: ReportScreenProps) {
     <article className="report">
       <header className="report__header">
         <h1 className="report__title">
-          {passed ? "You're on track" : "A few things to review"}
+          {passed ? "You’re on track" : "A few things to review"}
         </h1>
         <p className="report__lead">
           {passed
             ? "You completed this practice session well. Use the notes below to keep sharp before your next round."
-            : "That's what practice is for. The notes below show where to focus before you try again."}
+            : "That’s what practice is for. The notes below show where to focus before you try again."}
         </p>
         <div className="report__profile">
           <p className="report__profile-label">Practice profile (fictional)</p>

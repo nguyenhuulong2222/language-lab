@@ -34,7 +34,7 @@ export function App({ session }: AppProps) {
             <ReportScreen session={session} />
           ) : (
             <div className="app__placeholder">
-              <p>This stage of the practice isn't built yet.</p>
+              <p>This stage of the practice isn’t built yet.</p>
             </div>
           )}
         </div>
