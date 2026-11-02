@@ -59,9 +59,12 @@
   background: var(--border);
 }
 
+/* Keep the end connectors as spacers (so every node centers in its equal-width
+   segment and all gaps are equal) but hide their line — the tape runs only
+   between the first and last circles. */
 .stepper__step:first-child .stepper__connector--lead,
 .stepper__step:last-child .stepper__connector--trail {
-  display: none;
+  visibility: hidden;
 }
 
 .stepper__node {
