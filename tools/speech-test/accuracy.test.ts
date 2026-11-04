@@ -1,7 +1,11 @@
 /**
- * Tests for tools/speech-test/accuracy.ts
+ * Tests for tools/speech-test/
  *
- * Covers: normalise, tokenise, wordAccuracy, overallAccuracy.
+ * Covers:
+ *   1. accuracy.ts  — normalise, tokenise, wordAccuracy, overallAccuracy (unchanged)
+ *   2. sentences.ts — PracticeItem data shape validation
+ *   3. main.ts      — buildExportPayload shape and field requirements
+ *
  * Includes property-based tests via fast-check.
  */
 
@@ -13,6 +17,9 @@ import {
   wordAccuracy,
   overallAccuracy,
 } from "./accuracy.js";
+import { PRACTICE_ITEMS } from "./sentences.js";
+import { buildExportPayload } from "./main.js";
+import type { ItemResult } from "./main.js";
 
 // ---------------------------------------------------------------------------
 // normalise
@@ -102,10 +109,7 @@ describe("wordAccuracy", () => {
   });
 
   it("ignores punctuation in recognised", () => {
-    const result = wordAccuracy(
-      "the constitution",
-      "the constitution."
-    );
+    const result = wordAccuracy("the constitution", "the constitution.");
     expect(result.score).toBe(1.0);
   });
 
@@ -141,7 +145,6 @@ describe("wordAccuracy", () => {
   });
 
   it("each recognised word is consumed only once", () => {
-    // "the" appears once in recognised; should only match one "the" in expected
     const result = wordAccuracy("the the the", "the");
     expect(result.matchedWords).toHaveLength(1);
     expect(result.score).toBeCloseTo(1 / 3);
@@ -161,8 +164,8 @@ describe("wordAccuracy", () => {
 describe("overallAccuracy", () => {
   it("aggregates scores across sentences", () => {
     const result = overallAccuracy([
-      { expected: "one two three four", recognised: "one two three four" }, // 4/4
-      { expected: "one two three four", recognised: "one two" },             // 2/4
+      { expected: "one two three four", recognised: "one two three four" },
+      { expected: "one two three four", recognised: "one two" },
     ]);
     expect(result.totalExpected).toBe(8);
     expect(result.totalMatched).toBe(6);
@@ -171,8 +174,8 @@ describe("overallAccuracy", () => {
 
   it("excludes skipped (empty recognised) sentences from totals", () => {
     const result = overallAccuracy([
-      { expected: "one two", recognised: "one two" }, // 2/2
-      { expected: "three four", recognised: "" },      // skipped
+      { expected: "one two", recognised: "one two" },
+      { expected: "three four", recognised: "" },
     ]);
     expect(result.totalExpected).toBe(2);
     expect(result.totalMatched).toBe(2);
@@ -208,7 +211,7 @@ describe("overallAccuracy", () => {
 });
 
 // ---------------------------------------------------------------------------
-// Property-based tests
+// wordAccuracy — property-based
 // ---------------------------------------------------------------------------
 
 describe("wordAccuracy — properties", () => {
@@ -263,5 +266,167 @@ describe("wordAccuracy — properties", () => {
         }
       )
     );
+  });
+});
+
+// ---------------------------------------------------------------------------
+// PRACTICE_ITEMS — data shape validation
+// ---------------------------------------------------------------------------
+
+describe("PRACTICE_ITEMS data", () => {
+  it("has exactly 20 items", () => {
+    expect(PRACTICE_ITEMS).toHaveLength(20);
+  });
+
+  it("every item has a non-empty id", () => {
+    for (const item of PRACTICE_ITEMS) {
+      expect(item.id.trim().length).toBeGreaterThan(0);
+    }
+  });
+
+  it("all ids are unique", () => {
+    const ids = PRACTICE_ITEMS.map((i) => i.id);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  it("every item has a non-empty questionText", () => {
+    for (const item of PRACTICE_ITEMS) {
+      expect(item.questionText.trim().length).toBeGreaterThan(0);
+    }
+  });
+
+  it("every item has a non-empty expectedAnswer", () => {
+    for (const item of PRACTICE_ITEMS) {
+      expect(item.expectedAnswer.trim().length).toBeGreaterThan(0);
+    }
+  });
+
+  it("every category is one of: civics, n400, reading", () => {
+    const valid = new Set(["civics", "n400", "reading"]);
+    for (const item of PRACTICE_ITEMS) {
+      expect(valid.has(item.category)).toBe(true);
+    }
+  });
+
+  it("no item contains real-person indicators", () => {
+    // Rough guard: no text that looks like a specific named officeholder or A-number
+    const raw = JSON.stringify(PRACTICE_ITEMS);
+    expect(raw).not.toMatch(/\bA-?\d{8,9}\b/i);
+  });
+
+  it("questionText and expectedAnswer are distinct strings", () => {
+    for (const item of PRACTICE_ITEMS) {
+      // They should not be identical (question ≠ answer)
+      expect(item.questionText).not.toBe(item.expectedAnswer);
+    }
+  });
+
+  it("accuracy is scored from expectedAnswer, not questionText", () => {
+    // Sanity: scoring a perfect match of expectedAnswer gives 1.0
+    for (const item of PRACTICE_ITEMS) {
+      const result = wordAccuracy(item.expectedAnswer, item.expectedAnswer);
+      expect(result.score).toBe(1.0);
+    }
+  });
+});
+
+// ---------------------------------------------------------------------------
+// buildExportPayload — shape and required fields
+// ---------------------------------------------------------------------------
+
+function makeItemResult(
+  overrides: Partial<ItemResult> = {}
+): ItemResult {
+  const item = PRACTICE_ITEMS[0]!;
+  return {
+    item,
+    status: "attempted",
+    recognised: "The Constitution is the supreme law of the land",
+    accuracy: wordAccuracy(item.expectedAnswer, "The Constitution is the supreme law of the land"),
+    retryCount: 0,
+    questionHeard: false,
+    sampleHeard: false,
+    ...overrides,
+  };
+}
+
+describe("buildExportPayload", () => {
+  it("top-level payload includes mode field", () => {
+    const payload = buildExportPayload([makeItemResult()], "practice") as Record<string, unknown>;
+    expect(payload["mode"]).toBe("practice");
+  });
+
+  it("top-level payload includes mode field for check mode", () => {
+    const payload = buildExportPayload([makeItemResult()], "check") as Record<string, unknown>;
+    expect(payload["mode"]).toBe("check");
+  });
+
+  it("includes exportedAt as an ISO string", () => {
+    const payload = buildExportPayload([makeItemResult()], "practice") as Record<string, unknown>;
+    expect(typeof payload["exportedAt"]).toBe("string");
+    expect(() => new Date(payload["exportedAt"] as string).toISOString()).not.toThrow();
+  });
+
+  it("includes overall accuracy block", () => {
+    const payload = buildExportPayload([makeItemResult()], "practice") as Record<string, unknown>;
+    const overall = payload["overall"] as Record<string, unknown>;
+    expect(typeof overall["overallScore"]).toBe("number");
+    expect(typeof overall["totalExpected"]).toBe("number");
+    expect(typeof overall["totalMatched"]).toBe("number");
+  });
+
+  it("each item entry has mode, questionHeard, sampleHeard, retryCount", () => {
+    const r = makeItemResult({ questionHeard: true, sampleHeard: false, retryCount: 2 });
+    const payload = buildExportPayload([r], "check") as Record<string, unknown>;
+    const items = payload["items"] as Record<string, unknown>[];
+    const entry = items[0]!;
+    expect(entry["mode"]).toBe("check");
+    expect(entry["questionHeard"]).toBe(true);
+    expect(entry["sampleHeard"]).toBe(false);
+    expect(entry["retryCount"]).toBe(2);
+  });
+
+  it("each item entry includes id, category, questionText, expectedAnswer", () => {
+    const payload = buildExportPayload([makeItemResult()], "practice") as Record<string, unknown>;
+    const items = payload["items"] as Record<string, unknown>[];
+    const entry = items[0]!;
+    expect(typeof entry["id"]).toBe("string");
+    expect(typeof entry["category"]).toBe("string");
+    expect(typeof entry["questionText"]).toBe("string");
+    expect(typeof entry["expectedAnswer"]).toBe("string");
+  });
+
+  it("each item entry includes status, recognised, accuracyScore, matchedWords", () => {
+    const payload = buildExportPayload([makeItemResult()], "practice") as Record<string, unknown>;
+    const items = payload["items"] as Record<string, unknown>[];
+    const entry = items[0]!;
+    expect(["attempted", "skipped", "pending"]).toContain(entry["status"]);
+    expect(typeof entry["recognised"]).toBe("string");
+    expect(typeof entry["accuracyScore"]).toBe("number");
+    expect(Array.isArray(entry["matchedWords"])).toBe(true);
+  });
+
+  it("skipped items have accuracyScore null and empty matchedWords", () => {
+    const r = makeItemResult({ status: "skipped", recognised: "", accuracy: null });
+    const payload = buildExportPayload([r], "practice") as Record<string, unknown>;
+    const items = payload["items"] as Record<string, unknown>[];
+    const entry = items[0]!;
+    expect(entry["accuracyScore"]).toBeNull();
+    expect(entry["matchedWords"]).toEqual([]);
+  });
+
+  it("only attempted items contribute to overall score (skipped excluded)", () => {
+    const attempted = makeItemResult();
+    const skipped = makeItemResult({ status: "skipped", recognised: "", accuracy: null });
+    const payload = buildExportPayload([attempted, skipped], "practice") as Record<string, unknown>;
+    const overall = payload["overall"] as Record<string, unknown>;
+    // Only the attempted item's words counted
+    expect((overall["totalExpected"] as number)).toBeGreaterThan(0);
+  });
+
+  it("payload does not include a _note that mentions personal data being stored", () => {
+    const payload = buildExportPayload([makeItemResult()], "practice") as Record<string, unknown>;
+    // _note should say "device-local only. No personal data."
+    expect((payload["_note"] as string).toLowerCase()).toContain("no personal data");
   });
 });

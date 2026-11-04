@@ -5,6 +5,58 @@ made during the development of Language Lab. Most recent entries are at the top.
 
 ---
 
+## 2024-11-01 — Speech Test: Q&A format, TTS, bilingual UI, practice/check modes
+
+**Scope:** `tools/speech-test/` only. No changes to `src/`.
+
+**What changed:**
+
+`sentences.ts` — `PracticeSentence` replaced by `PracticeItem` with `questionText` and
+`expectedAnswer`. 20 items across civics, n400, and reading categories.
+
+`main.ts` — Full rewrite:
+- Mode selector (practice / check) before starting.
+- Per-item flow: show question → hear question (TTS) → show/hear model answer (TTS, practice
+  mode) or hidden answer (check mode) → speak → result.
+- `SpeechSynthesis` with `lang: "en-US"`, `rate: 0.8`. TTS starts only after user tap
+  (required on iOS). Recognition is blocked while TTS is playing.
+- Vietnamese UI labels: "Nghe câu hỏi", "Nghe câu mẫu", "Bắt đầu nói", "Nói lại",
+  "Bỏ qua", "Nghe lại". Labels are fixed strings, not machine-translated.
+- `ItemResult` tracks `questionHeard`, `sampleHeard`, `retryCount`.
+- `buildExportPayload` extracted as a pure exported function for testability.
+- Export JSON includes top-level `mode` and per-item `mode`, `questionHeard`,
+  `sampleHeard`, `retryCount`.
+- Accuracy is scored only against `expectedAnswer`, never `questionText`.
+- `document.addEventListener` guarded with `typeof document !== "undefined"` so
+  `main.ts` can be imported in Vitest (Node environment) without errors.
+
+`index.html` — Rebuilt with mode-select screen, question card, sample-answer section,
+full-width speak button, bilingual labels throughout.
+
+`accuracy.test.ts` — Extended from 32 to 51 tests:
+- All original accuracy tests kept unchanged.
+- New: `PRACTICE_ITEMS` data shape (20 items, unique IDs, non-empty fields, valid categories,
+  accuracy sourced from `expectedAnswer`).
+- New: `buildExportPayload` shape (mode, questionHeard, sampleHeard, retryCount, overall,
+  skipped items, _note content).
+
+**Decision: Vietnamese labels are fixed strings**
+Per steering rules, no machine translation of any content in this project. The Vietnamese
+labels ("Nghe câu hỏi" etc.) are written as fixed UI strings, not generated. They must not
+be changed by automated translation.
+
+**Decision: block recognition while TTS is playing**
+iOS Safari aborts recognition if audio plays concurrently. The `isSpeaking` guard
+prevents `startRecognition()` from firing until TTS ends, making the flow reliable on iPhone.
+
+**Decision: `buildExportPayload` as a pure exported function**
+The function takes `results` and `mode` as arguments and returns a plain object — no DOM,
+no side effects. This makes it directly importable and testable in Vitest without mocking.
+
+**Test results:** 71/71 passing. `npm run typecheck` clean. `npm run build` clean.
+
+---
+
 ## 2024-11-01 — Speech Recognition Test Tool (engine/speech-test branch)
 
 **What was added:** `tools/speech-test/` — a standalone, mobile-friendly Vite page

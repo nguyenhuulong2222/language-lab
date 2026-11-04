@@ -12,17 +12,17 @@
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
       :root {
-        --bg:        #1a1a2e;
-        --surface:   #16213e;
-        --card:      #0f3460;
-        --accent:    #e94560;
-        --accent2:   #f5a623;
-        --text:      #e0e0e0;
-        --muted:     #8a8fa8;
-        --ok:        #4caf50;
-        --warn:      #ff9800;
-        --radius:    10px;
-        --font:      system-ui, -apple-system, sans-serif;
+        --bg:       #1a1a2e;
+        --surface:  #16213e;
+        --card:     #0f3460;
+        --accent:   #e94560;
+        --accent2:  #f5a623;
+        --text:     #e0e0e0;
+        --muted:    #8a8fa8;
+        --ok:       #4caf50;
+        --warn:     #ff9800;
+        --radius:   10px;
+        --font:     system-ui, -apple-system, sans-serif;
       }
 
       html, body {
@@ -33,8 +33,6 @@
         line-height: 1.6;
         min-height: 100vh;
       }
-
-      a { color: var(--accent2); }
 
       /* ------------------------------------------------------------------ */
       /* Layout                                                               */
@@ -52,11 +50,7 @@
         margin-bottom: 1.5rem;
       }
 
-      header h1 {
-        font-size: 1.25rem;
-        font-weight: 700;
-        letter-spacing: .04em;
-      }
+      header h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: .04em; }
 
       header .lab-tag {
         font-size: .75rem;
@@ -96,8 +90,10 @@
         margin-bottom: 1.25rem;
       }
 
-      .badge--ok    { background: rgba(76,175,80,.15); color: var(--ok); border: 1px solid var(--ok); }
-      .badge--error { background: rgba(233,69,96,.15); color: var(--accent); border: 1px solid var(--accent); }
+      .badge--ok    { background: rgba(76,175,80,.15);  color: var(--ok);     border: 1px solid var(--ok); }
+      .badge--error { background: rgba(233,69,96,.15);  color: var(--accent); border: 1px solid var(--accent); }
+      .badge--mode  { background: rgba(245,166,35,.12); color: var(--accent2);border: 1px solid var(--accent2);
+                      display: inline-block; font-size: .75rem; padding: .2rem .6rem; border-radius: 4px; }
 
       /* ------------------------------------------------------------------ */
       /* Buttons                                                              */
@@ -105,6 +101,7 @@
       .btn {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         gap: .4rem;
         padding: .65rem 1.25rem;
         border: none;
@@ -115,16 +112,48 @@
         transition: opacity .15s, transform .1s;
         user-select: none;
         -webkit-tap-highlight-color: transparent;
+        text-align: center;
       }
 
-      .btn:active { transform: scale(.97); }
+      .btn:active   { transform: scale(.97); }
       .btn:disabled { opacity: .4; cursor: not-allowed; transform: none; }
 
       .btn--primary   { background: var(--accent);  color: #fff; }
       .btn--secondary { background: var(--card);    color: var(--text); }
-      .btn--record    { background: var(--ok);      color: #fff; font-size: 1.05rem; padding: .8rem 1.5rem; }
-      .btn--record[aria-pressed="true"] { background: var(--accent); animation: pulse 1s infinite; }
+      .btn--tts       { background: var(--surface); color: var(--accent2);
+                        border: 1px solid var(--accent2); font-size: .9rem; }
+      .btn--speak     { background: var(--ok); color: #fff;
+                        font-size: 1.05rem; padding: .85rem 1.5rem; width: 100%; }
+      .btn--speak[aria-pressed="true"] { background: var(--accent); animation: pulse 1s infinite; }
       .btn--export    { background: var(--accent2); color: #1a1a2e; }
+
+      .btn--mode-card {
+        display: block;
+        width: 100%;
+        background: var(--card);
+        color: var(--text);
+        border: 2px solid transparent;
+        border-radius: var(--radius);
+        padding: 1.1rem 1rem;
+        text-align: left;
+        margin-bottom: .75rem;
+        font-size: 1rem;
+      }
+
+      .btn--mode-card:hover { border-color: var(--accent2); }
+
+      .btn--mode-card .mode-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        display: block;
+        margin-bottom: .2rem;
+      }
+
+      .btn--mode-card .mode-desc {
+        font-size: .825rem;
+        color: var(--muted);
+        font-weight: 400;
+      }
 
       @keyframes pulse {
         0%, 100% { opacity: 1; }
@@ -139,23 +168,11 @@
       }
 
       /* ------------------------------------------------------------------ */
-      /* Progress bar                                                         */
+      /* Progress                                                             */
       /* ------------------------------------------------------------------ */
-      .progress-wrap { margin-bottom: 1rem; }
-
-      .progress-text {
-        font-size: .8rem;
-        color: var(--muted);
-        margin-bottom: .35rem;
-      }
-
-      .progress-bar {
-        height: 6px;
-        background: var(--surface);
-        border-radius: 3px;
-        overflow: hidden;
-      }
-
+      .progress-wrap   { margin-bottom: 1rem; }
+      .progress-text   { font-size: .8rem; color: var(--muted); margin-bottom: .35rem; }
+      .progress-bar    { height: 6px; background: var(--surface); border-radius: 3px; overflow: hidden; }
       .progress-bar-fill {
         height: 100%;
         background: var(--accent);
@@ -165,7 +182,7 @@
       }
 
       /* ------------------------------------------------------------------ */
-      /* Sentence card                                                        */
+      /* Cards                                                                */
       /* ------------------------------------------------------------------ */
       .card {
         background: var(--card);
@@ -179,20 +196,56 @@
         text-transform: uppercase;
         letter-spacing: .1em;
         color: var(--muted);
+        margin-bottom: .3rem;
+      }
+
+      .question-text {
+        font-size: 1.3rem;
+        font-weight: 700;
+        line-height: 1.4;
+        color: #fff;
+        margin-bottom: .75rem;
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* Sample answer                                                        */
+      /* ------------------------------------------------------------------ */
+      .sample-section {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: .9rem 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .sample-label {
+        font-size: .7rem;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        color: var(--muted);
         margin-bottom: .4rem;
       }
 
-      .expected-text {
-        font-size: 1.25rem;
+      .sample-answer-text {
+        font-size: 1.1rem;
         font-weight: 600;
+        color: var(--ok);
         line-height: 1.4;
-        color: #fff;
+        margin-bottom: .6rem;
+      }
+
+      .sample-answer-text--hidden {
+        color: var(--muted);
+        font-style: italic;
+        font-weight: 400;
+        font-size: .9rem;
       }
 
       /* ------------------------------------------------------------------ */
-      /* Recognised output                                                    */
+      /* Result section                                                       */
       /* ------------------------------------------------------------------ */
-      .output-section { margin-bottom: 1rem; }
+      .result-section {
+        margin-bottom: 1rem;
+      }
 
       .output-label {
         font-size: .75rem;
@@ -208,11 +261,11 @@
         background: rgba(245,166,35,.07);
         border-radius: var(--radius);
         padding: .6rem .9rem;
+        margin-bottom: .4rem;
       }
 
       .accuracy-text {
         font-size: .9rem;
-        margin-top: .4rem;
         color: var(--text);
       }
 
@@ -223,7 +276,7 @@
       }
 
       /* ------------------------------------------------------------------ */
-      /* Error message                                                        */
+      /* Error                                                                */
       /* ------------------------------------------------------------------ */
       .error-message {
         background: rgba(233,69,96,.15);
@@ -260,7 +313,7 @@
 
       .history-item {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: .5rem;
         font-size: .8rem;
         padding: .4rem .6rem;
@@ -288,17 +341,8 @@
         line-height: 1;
       }
 
-      .score-hero .score-label {
-        font-size: .85rem;
-        color: var(--muted);
-        margin-top: .4rem;
-      }
-
-      .score-hero .score-detail {
-        font-size: .8rem;
-        color: var(--muted);
-        margin-top: .25rem;
-      }
+      .score-hero .score-label  { font-size: .85rem; color: var(--muted); margin-top: .4rem; }
+      .score-hero .score-detail { font-size: .8rem;  color: var(--muted); margin-top: .25rem; }
 
       .results-list {
         list-style: none;
@@ -321,19 +365,11 @@
       .result-icon  { flex-shrink: 0; font-size: 1.1rem; }
       .result-body  { flex: 1; min-width: 0; }
 
-      .result-expected {
-        font-size: .85rem;
-        font-weight: 600;
-        color: var(--text);
-      }
-
-      .result-recognised {
-        font-size: .8rem;
-        color: var(--muted);
-        margin-top: .15rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+      .result-question    { font-size: .8rem; color: var(--muted); }
+      .result-expected    { font-size: .85rem; font-weight: 600; color: var(--text); margin-top: .1rem; }
+      .result-recognised  {
+        font-size: .8rem; color: var(--muted); margin-top: .15rem;
+        white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
       }
 
       .result-acc {
@@ -344,7 +380,7 @@
       }
 
       /* ------------------------------------------------------------------ */
-      /* Disclaimer footer                                                    */
+      /* Disclaimer                                                           */
       /* ------------------------------------------------------------------ */
       .disclaimer {
         margin-top: 2rem;
@@ -365,7 +401,7 @@
       </header>
 
       <!-- ================================================================ -->
-      <!-- PRE-FLIGHT SCREEN                                                 -->
+      <!-- PRE-FLIGHT                                                         -->
       <!-- ================================================================ -->
       <div id="pre-flight">
 
@@ -383,26 +419,50 @@
         <div class="notice">
           <strong>What this tool is</strong>
           This is an internal developer tool for testing the Web Speech API with
-          English practice sentences. It is not affiliated with USCIS or any
-          government agency. Results stay on your device. No data is sent to
-          Language Lab servers.
+          English practice Q&amp;A items. It is not affiliated with USCIS or any
+          government agency. Results stay on your device only.
+          This is not legal advice.
         </div>
 
         <div class="notice">
           <strong>Fictional content only</strong>
-          All 20 sentences are fictional practice examples.
-          This tool is not a guide to what you should say on a real application.
-          It is not legal advice.
+          All 20 items are fictional practice examples. They are not a guide
+          to what you should say on a real application.
         </div>
 
         <div class="btn-row">
-          <button id="start-btn" class="btn btn--primary">Start test →</button>
+          <button id="start-btn" class="btn btn--primary">Start →</button>
         </div>
 
       </div>
 
       <!-- ================================================================ -->
-      <!-- MAIN SCREEN                                                        -->
+      <!-- MODE SELECT                                                        -->
+      <!-- ================================================================ -->
+      <div id="mode-select" hidden>
+
+        <p style="margin-bottom:1rem;font-size:.95rem;">Choose a mode:</p>
+
+        <button id="mode-practice-btn" class="btn btn--mode-card">
+          <span class="mode-title">📖 Practice</span>
+          <span class="mode-desc">
+            The model answer is shown before you speak.
+            Use this to learn the expected phrasing.
+          </span>
+        </button>
+
+        <button id="mode-check-btn" class="btn btn--mode-card">
+          <span class="mode-title">🧪 Check</span>
+          <span class="mode-desc">
+            The model answer is hidden until after you speak.
+            Use this to test real recall.
+          </span>
+        </button>
+
+      </div>
+
+      <!-- ================================================================ -->
+      <!-- MAIN                                                               -->
       <!-- ================================================================ -->
       <div id="main" hidden>
 
@@ -413,23 +473,37 @@
           </div>
         </div>
 
-        <!-- Sentence card -->
+        <!-- Mode badge -->
+        <span id="mode-badge" class="badge--mode" style="margin-bottom:.75rem;display:inline-block;"></span>
+
+        <!-- Question card -->
         <div class="card">
           <div id="category-label" class="category-label"></div>
-          <div id="expected-text" class="expected-text"></div>
+          <div id="question-text" class="question-text"></div>
+          <button id="hear-question-btn" class="btn btn--tts">
+            🔊 Nghe câu hỏi / Hear question
+          </button>
         </div>
 
-        <p id="attempt-count" class="attempt-count"></p>
+        <!-- Sample answer -->
+        <div id="sample-section" class="sample-section">
+          <div class="sample-label">Câu mẫu / Model answer</div>
+          <div id="sample-answer-text" class="sample-answer-text"></div>
+          <button id="hear-sample-btn" class="btn btn--tts">
+            🔊 Nghe câu mẫu / Hear sample answer
+          </button>
+        </div>
 
-        <!-- Recognised output -->
-        <div id="recognised-wrap" class="output-section" hidden>
-          <div class="output-label">Recognised</div>
+        <!-- Speak button (full width) -->
+        <button id="speak-btn" class="btn btn--speak" aria-pressed="false">
+          🎤 Bắt đầu nói / Start speaking
+        </button>
+
+        <!-- Result -->
+        <div id="result-section" class="result-section" hidden>
+          <div class="output-label">Bạn đã nói / You said</div>
           <div id="recognised-output" class="recognised-text"></div>
-        </div>
-
-        <!-- Accuracy -->
-        <div id="accuracy-wrap" class="output-section" hidden>
-          <div class="output-label">Accuracy</div>
+          <div class="output-label" style="margin-top:.6rem;">Độ chính xác / Accuracy</div>
           <div id="sentence-accuracy" class="accuracy-text"></div>
         </div>
 
@@ -438,32 +512,29 @@
 
         <!-- Controls -->
         <div class="btn-row">
-          <button id="record-btn" class="btn btn--record" aria-pressed="false">
-            🎤 Speak
-          </button>
-          <button id="retry-btn" class="btn btn--secondary" disabled>
-            ↺ Retry
+          <button id="replay-btn" class="btn btn--secondary" disabled>
+            🔁 Nghe lại / Replay
           </button>
           <button id="skip-btn" class="btn btn--secondary">
-            ⏭ Skip
+            ⏭ Bỏ qua / Skip
           </button>
           <button id="next-btn" class="btn btn--primary" disabled>
-            Next →
+            Tiếp / Next →
           </button>
         </div>
 
         <!-- History -->
         <details>
-          <summary>Previous sentences</summary>
+          <summary>Các câu trước / Previous items</summary>
           <ul id="history-list" class="history-list">
-            <li class="history-empty">No completed sentences yet.</li>
+            <li class="history-empty">No completed items yet.</li>
           </ul>
         </details>
 
       </div>
 
       <!-- ================================================================ -->
-      <!-- DONE SCREEN                                                        -->
+      <!-- DONE                                                               -->
       <!-- ================================================================ -->
       <div id="done" hidden>
 
@@ -474,8 +545,12 @@
         </div>
 
         <div class="btn-row">
-          <button id="export-btn" class="btn btn--export">⬇ Export results (JSON)</button>
-          <button id="restart-btn" class="btn btn--secondary">↺ Start over</button>
+          <button id="export-btn" class="btn btn--export">
+            ⬇ Xuất kết quả / Export results (JSON)
+          </button>
+          <button id="restart-btn" class="btn btn--secondary">
+            ↺ Làm lại / Start over
+          </button>
         </div>
 
         <ul id="results-breakdown" class="results-list"></ul>
@@ -483,8 +558,9 @@
       </div>
 
       <footer class="disclaimer">
-        Language Lab speech test tool · Independent practice · Not affiliated with USCIS
-        or any government agency · Not legal advice · Results stay on this device only.
+        Language Lab speech test tool · Independent practice ·
+        Not affiliated with USCIS or any government agency ·
+        Not legal advice · Results stay on this device only.
       </footer>
 
     </div>
