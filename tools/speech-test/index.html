@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a1a2e" />
+    <title>Speech Recognition Test — Language Lab</title>
+    <style>
+      /* ------------------------------------------------------------------ */
+      /* Reset & base                                                         */
+      /* ------------------------------------------------------------------ */
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --bg:        #1a1a2e;
+        --surface:   #16213e;
+        --card:      #0f3460;
+        --accent:    #e94560;
+        --accent2:   #f5a623;
+        --text:      #e0e0e0;
+        --muted:     #8a8fa8;
+        --ok:        #4caf50;
+        --warn:      #ff9800;
+        --radius:    10px;
+        --font:      system-ui, -apple-system, sans-serif;
+      }
+
+      html, body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font);
+        font-size: 16px;
+        line-height: 1.6;
+        min-height: 100vh;
+      }
+
+      a { color: var(--accent2); }
+
+      /* ------------------------------------------------------------------ */
+      /* Layout                                                               */
+      /* ------------------------------------------------------------------ */
+      .page {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 1.25rem 1rem 3rem;
+      }
+
+      header {
+        display: flex;
+        align-items: baseline;
+        gap: .5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      header h1 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: .04em;
+      }
+
+      header .lab-tag {
+        font-size: .75rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: .08em;
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* Notices                                                              */
+      /* ------------------------------------------------------------------ */
+      .notice {
+        border-left: 3px solid var(--accent2);
+        background: rgba(245,166,35,.08);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        padding: .75rem 1rem;
+        margin-bottom: 1rem;
+        font-size: .875rem;
+      }
+
+      .notice--warn {
+        border-color: var(--warn);
+        background: rgba(255,152,0,.08);
+      }
+
+      .notice strong { display: block; margin-bottom: .25rem; }
+
+      /* ------------------------------------------------------------------ */
+      /* Badges                                                               */
+      /* ------------------------------------------------------------------ */
+      .badge {
+        display: block;
+        padding: .6rem .9rem;
+        border-radius: var(--radius);
+        font-size: .875rem;
+        font-weight: 600;
+        margin-bottom: 1.25rem;
+      }
+
+      .badge--ok    { background: rgba(76,175,80,.15); color: var(--ok); border: 1px solid var(--ok); }
+      .badge--error { background: rgba(233,69,96,.15); color: var(--accent); border: 1px solid var(--accent); }
+
+      /* ------------------------------------------------------------------ */
+      /* Buttons                                                              */
+      /* ------------------------------------------------------------------ */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: .4rem;
+        padding: .65rem 1.25rem;
+        border: none;
+        border-radius: var(--radius);
+        font-size: .95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: opacity .15s, transform .1s;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .btn:active { transform: scale(.97); }
+      .btn:disabled { opacity: .4; cursor: not-allowed; transform: none; }
+
+      .btn--primary   { background: var(--accent);  color: #fff; }
+      .btn--secondary { background: var(--card);    color: var(--text); }
+      .btn--record    { background: var(--ok);      color: #fff; font-size: 1.05rem; padding: .8rem 1.5rem; }
+      .btn--record[aria-pressed="true"] { background: var(--accent); animation: pulse 1s infinite; }
+      .btn--export    { background: var(--accent2); color: #1a1a2e; }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50%       { opacity: .7; }
+      }
+
+      .btn-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .6rem;
+        margin-top: 1rem;
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* Progress bar                                                         */
+      /* ------------------------------------------------------------------ */
+      .progress-wrap { margin-bottom: 1rem; }
+
+      .progress-text {
+        font-size: .8rem;
+        color: var(--muted);
+        margin-bottom: .35rem;
+      }
+
+      .progress-bar {
+        height: 6px;
+        background: var(--surface);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+
+      .progress-bar-fill {
+        height: 100%;
+        background: var(--accent);
+        border-radius: 3px;
+        transition: width .3s ease;
+        width: 0%;
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* Sentence card                                                        */
+      /* ------------------------------------------------------------------ */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 1.25rem 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .category-label {
+        font-size: .7rem;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        color: var(--muted);
+        margin-bottom: .4rem;
+      }
+
+      .expected-text {
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.4;
+        color: #fff;
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* Recognised output                                                    */
+      /* ------------------------------------------------------------------ */
+      .output-section { margin-bottom: 1rem; }
+
+      .output-label {
+        font-size: .75rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        margin-bottom: .3rem;
+      }
+
+      .recognised-text {
+        font-size: 1rem;
+        color: var(--accent2);
+        background: rgba(245,166,35,.07);
+        border-radius: var(--radius);
+        padding: .6rem .9rem;
+      }
+
+      .accuracy-text {
+        font-size: .9rem;
+        margin-top: .4rem;
+        color: var(--text);
+      }
+
+      .attempt-count {
+        font-size: .75rem;
+        color: var(--muted);
+        margin-bottom: .5rem;
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* Error message                                                        */
+      /* ------------------------------------------------------------------ */
+      .error-message {
+        background: rgba(233,69,96,.15);
+        border: 1px solid var(--accent);
+        border-radius: var(--radius);
+        padding: .6rem .9rem;
+        font-size: .875rem;
+        color: var(--accent);
+        margin-top: .75rem;
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* History                                                              */
+      /* ------------------------------------------------------------------ */
+      details { margin-top: 1.5rem; }
+
+      details summary {
+        font-size: .85rem;
+        color: var(--muted);
+        cursor: pointer;
+        user-select: none;
+        padding: .4rem 0;
+      }
+
+      .history-list {
+        list-style: none;
+        margin-top: .6rem;
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+      }
+
+      .history-empty { font-size: .85rem; color: var(--muted); }
+
+      .history-item {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        font-size: .8rem;
+        padding: .4rem .6rem;
+        border-radius: 6px;
+        background: var(--surface);
+      }
+
+      .history-item--skipped { opacity: .55; }
+      .history-icon { flex-shrink: 0; }
+      .history-text { flex: 1; color: var(--text); }
+      .history-acc  { flex-shrink: 0; color: var(--muted); }
+
+      /* ------------------------------------------------------------------ */
+      /* Done screen                                                          */
+      /* ------------------------------------------------------------------ */
+      .score-hero {
+        text-align: center;
+        padding: 1.5rem 0 1rem;
+      }
+
+      .score-hero .score-number {
+        font-size: 4rem;
+        font-weight: 800;
+        color: var(--accent);
+        line-height: 1;
+      }
+
+      .score-hero .score-label {
+        font-size: .85rem;
+        color: var(--muted);
+        margin-top: .4rem;
+      }
+
+      .score-hero .score-detail {
+        font-size: .8rem;
+        color: var(--muted);
+        margin-top: .25rem;
+      }
+
+      .results-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin: 1rem 0;
+      }
+
+      .result-item {
+        display: flex;
+        align-items: flex-start;
+        gap: .6rem;
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: .7rem .9rem;
+      }
+
+      .result-item--skipped { opacity: .55; }
+      .result-icon  { flex-shrink: 0; font-size: 1.1rem; }
+      .result-body  { flex: 1; min-width: 0; }
+
+      .result-expected {
+        font-size: .85rem;
+        font-weight: 600;
+        color: var(--text);
+      }
+
+      .result-recognised {
+        font-size: .8rem;
+        color: var(--muted);
+        margin-top: .15rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .result-acc {
+        flex-shrink: 0;
+        font-size: .8rem;
+        font-weight: 600;
+        color: var(--accent2);
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* Disclaimer footer                                                    */
+      /* ------------------------------------------------------------------ */
+      .disclaimer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255,255,255,.07);
+        font-size: .75rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+
+      <header>
+        <h1>🎙 Speech Test</h1>
+        <span class="lab-tag">Language Lab dev tool</span>
+      </header>
+
+      <!-- ================================================================ -->
+      <!-- PRE-FLIGHT SCREEN                                                 -->
+      <!-- ================================================================ -->
+      <div id="pre-flight">
+
+        <div id="support-badge" class="badge">Checking browser support…</div>
+
+        <div class="notice notice--warn">
+          <strong>⚠ Privacy notice — read before starting</strong>
+          Your browser's speech recognition may send audio to a cloud service
+          (Google, Microsoft, or Apple depending on your browser and OS).
+          <strong>Do not say real names, addresses, immigration case details,
+          or any other personal information during this test.</strong>
+          Use only the practice sentences shown on screen.
+        </div>
+
+        <div class="notice">
+          <strong>What this tool is</strong>
+          This is an internal developer tool for testing the Web Speech API with
+          English practice sentences. It is not affiliated with USCIS or any
+          government agency. Results stay on your device. No data is sent to
+          Language Lab servers.
+        </div>
+
+        <div class="notice">
+          <strong>Fictional content only</strong>
+          All 20 sentences are fictional practice examples.
+          This tool is not a guide to what you should say on a real application.
+          It is not legal advice.
+        </div>
+
+        <div class="btn-row">
+          <button id="start-btn" class="btn btn--primary">Start test →</button>
+        </div>
+
+      </div>
+
+      <!-- ================================================================ -->
+      <!-- MAIN SCREEN                                                        -->
+      <!-- ================================================================ -->
+      <div id="main" hidden>
+
+        <div class="progress-wrap">
+          <div id="progress-text" class="progress-text"></div>
+          <div class="progress-bar">
+            <div id="progress-bar-fill" class="progress-bar-fill"></div>
+          </div>
+        </div>
+
+        <!-- Sentence card -->
+        <div class="card">
+          <div id="category-label" class="category-label"></div>
+          <div id="expected-text" class="expected-text"></div>
+        </div>
+
+        <p id="attempt-count" class="attempt-count"></p>
+
+        <!-- Recognised output -->
+        <div id="recognised-wrap" class="output-section" hidden>
+          <div class="output-label">Recognised</div>
+          <div id="recognised-output" class="recognised-text"></div>
+        </div>
+
+        <!-- Accuracy -->
+        <div id="accuracy-wrap" class="output-section" hidden>
+          <div class="output-label">Accuracy</div>
+          <div id="sentence-accuracy" class="accuracy-text"></div>
+        </div>
+
+        <!-- Error -->
+        <div id="error-message" class="error-message" hidden></div>
+
+        <!-- Controls -->
+        <div class="btn-row">
+          <button id="record-btn" class="btn btn--record" aria-pressed="false">
+            🎤 Speak
+          </button>
+          <button id="retry-btn" class="btn btn--secondary" disabled>
+            ↺ Retry
+          </button>
+          <button id="skip-btn" class="btn btn--secondary">
+            ⏭ Skip
+          </button>
+          <button id="next-btn" class="btn btn--primary" disabled>
+            Next →
+          </button>
+        </div>
+
+        <!-- History -->
+        <details>
+          <summary>Previous sentences</summary>
+          <ul id="history-list" class="history-list">
+            <li class="history-empty">No completed sentences yet.</li>
+          </ul>
+        </details>
+
+      </div>
+
+      <!-- ================================================================ -->
+      <!-- DONE SCREEN                                                        -->
+      <!-- ================================================================ -->
+      <div id="done" hidden>
+
+        <div class="score-hero">
+          <div id="overall-score" class="score-number">—</div>
+          <div class="score-label">Overall word accuracy</div>
+          <div id="overall-detail" class="score-detail"></div>
+        </div>
+
+        <div class="btn-row">
+          <button id="export-btn" class="btn btn--export">⬇ Export results (JSON)</button>
+          <button id="restart-btn" class="btn btn--secondary">↺ Start over</button>
+        </div>
+
+        <ul id="results-breakdown" class="results-list"></ul>
+
+      </div>
+
+      <footer class="disclaimer">
+        Language Lab speech test tool · Independent practice · Not affiliated with USCIS
+        or any government agency · Not legal advice · Results stay on this device only.
+      </footer>
+
+    </div>
+
+    <script type="module" src="/tools/speech-test/main.ts"></script>
+  </body>
+</html>

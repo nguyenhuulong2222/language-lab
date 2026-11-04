@@ -8,7 +8,8 @@
     "build": "tsc -p tsconfig.app.json --noEmit && vite build",
     "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.node.json --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "speech-test": "vite --config vite.speech-test.config.ts"
   },
   "dependencies": {
     "react": "19.1.0",
@@ -17,6 +18,7 @@
   "devDependencies": {
     "@types/react": "19.1.6",
     "@types/react-dom": "19.1.6",
+    "@types/dom-speech-recognition": "0.0.12",
     "@cloudflare/workers-types": "5.20261101.1",
     "@fast-check/vitest": "0.5.0",
     "@vitejs/plugin-react": "4.5.2",

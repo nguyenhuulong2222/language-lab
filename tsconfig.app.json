@@ -16,6 +16,9 @@
     /* React */
     "jsx": "react-jsx",
 
+    /* Extra ambient types */
+    "types": ["@types/dom-speech-recognition"],
+
     /* Strict */
     "strict": true,
     "noUnusedLocals": true,
@@ -23,5 +26,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src", "tools"]
 }

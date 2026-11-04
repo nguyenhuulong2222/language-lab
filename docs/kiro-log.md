@@ -5,6 +5,55 @@ made during the development of Language Lab. Most recent entries are at the top.
 
 ---
 
+## 2024-11-01 — Speech Recognition Test Tool (engine/speech-test branch)
+
+**What was added:** `tools/speech-test/` — a standalone, mobile-friendly Vite page
+for testing the browser Web Speech API with 20 fictional English practice sentences.
+
+**Files created:**
+
+| File | Purpose |
+|---|---|
+| `tools/speech-test/accuracy.ts` | Pure word-accuracy functions: `normalise`, `tokenise`, `wordAccuracy`, `overallAccuracy` |
+| `tools/speech-test/sentences.ts` | 20 fictional practice sentences (civics, N-400 biographical, reading) |
+| `tools/speech-test/main.ts` | Vanilla TS app: Web Speech API, state machine, DOM rendering, JSON export |
+| `tools/speech-test/index.html` | Self-contained HTML/CSS — mobile-first, no external assets |
+| `tools/speech-test/accuracy.test.ts` | 32 tests (unit + 4 property-based via fast-check) |
+| `vite.speech-test.config.ts` | Dedicated Vite config: serves on port 5174, binds `0.0.0.0` for phone testing |
+
+**Content safety compliance:**
+- All 20 sentences are fictional, generic, not personal-detail suggestions.
+- Pre-flight screen warns about cloud audio transmission before any recording starts.
+- Explicit instruction: do not say real names, addresses, or immigration details.
+- Results export is device-local only (Blob → download, no server call).
+- Disclaimer on every screen.
+
+**Decision: vanilla TypeScript, no React**
+The tool is a dev utility, not a product surface. React adds ~60 kB and a compile step
+for what is essentially a five-screen state machine. Plain DOM manipulation is fine here
+and keeps the tool truly standalone.
+
+**Decision: `host: "0.0.0.0"` in speech-test Vite config**
+Mobile testing requires serving on the LAN. The main `vite.config.ts` stays on localhost
+(safer default). The speech-test config explicitly opts in to LAN binding.
+
+**Decision: `@types/dom-speech-recognition`**
+The Web Speech API (`SpeechRecognition`, `SpeechRecognitionEvent`, `SpeechRecognitionErrorEvent`)
+is not in the standard TypeScript DOM lib. This community package provides the missing types.
+Added to `tsconfig.app.json` types array; worker tsconfig is unaffected.
+
+**Decision: tools/ in tsconfig.app.json (not tsconfig.node.json)**
+`tools/speech-test/main.ts` uses `window`, `document`, and DOM event types.
+It belongs in the DOM-aware tsconfig. Pure files (accuracy.ts, sentences.ts) happen to
+be included there too, which is harmless — they don't reference any DOM globals.
+
+**Test results:** 52/52 passing (12 contract tests + 32 accuracy tests).
+`npm run typecheck` clean. `npm run build` clean.
+
+**To run on a phone:** `npm run speech-test` → open `http://192.168.84.30:5174/tools/speech-test/index.html`
+
+---
+
 ## 2024-11-01 — Tooling Initialization
 
 **Packages added:**
