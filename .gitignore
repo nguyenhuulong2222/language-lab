@@ -15,6 +15,12 @@ vite.config.ts.timestamp-*
 !.env.example
 .dev.vars
 
+# Local tool-specific .env files (e.g. tools/speech-test/.env)
+tools/**/.env
+
+# Generated audio files (run tools/speech-test/generate-audio.mjs to produce)
+tools/speech-test/audio/
+
 # Local audio recordings (device-local only, never committed)
 local-recordings/
 *.local-recording

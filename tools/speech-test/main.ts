@@ -4,6 +4,10 @@
  * Standalone page. No imports from src/engine or src/ui.
  * Tests browser Web Speech API with 20 fictional English practice Q&A items.
  *
+ * Audio playback preference order:
+ *   1. Pre-generated MP3 from tools/speech-test/audio/ (gpt-4o-mini-tts, coral voice)
+ *   2. Browser SpeechSynthesis fallback if MP3 fails to load
+ *
  * Modes:
  *   practice — question shown, sample answer available before speaking
  *   check    — question shown, sample answer hidden until after speaking
@@ -53,8 +57,10 @@ interface AppState {
   currentIndex: number;
   currentStep: ItemStep;
   results: ItemResult[];
-  isSpeaking: boolean;    // TTS active
+  isSpeaking: boolean;    // TTS active (MP3 or SpeechSynthesis)
   isRecording: boolean;   // STT active
+  /** "mp3" when the last audio came from a pre-generated file; "synthesis" for fallback. */
+  lastAudioSource: "mp3" | "synthesis" | null;
   errorMessage: string | null;
 }
 
@@ -101,6 +107,7 @@ const state: AppState = {
   results: makeResults(PRACTICE_ITEMS),
   isSpeaking: false,
   isRecording: false,
+  lastAudioSource: null,
   errorMessage: null,
 };
 
@@ -135,44 +142,122 @@ function scoreIcon(score: number): string {
 }
 
 // ---------------------------------------------------------------------------
-// TTS — SpeechSynthesis
+// Audio — MP3 (pre-generated) with SpeechSynthesis fallback
 // ---------------------------------------------------------------------------
 
 /**
- * Speak text via SpeechSynthesis (en-US, rate 0.8).
- * Must only be called from a user gesture handler (required on iOS).
- * Calls onEnd when utterance finishes or errors.
+ * Derive the URL for a pre-generated MP3 file.
+ * Files live at tools/speech-test/audio/{id}-{slot}.mp3
+ * and are served by Vite at /tools/speech-test/audio/{id}-{slot}.mp3.
  */
-function speak(text: string, onEnd: () => void): void {
-  if (!hasSpeechSynthesis()) {
-    onEnd();
-    return;
+function audioUrl(itemId: string, slot: "question" | "answer"): string {
+  return `/tools/speech-test/audio/${itemId}-${slot}.mp3`;
+}
+
+let currentAudioEl: HTMLAudioElement | null = null;
+
+/**
+ * Stop any currently playing audio (MP3 or nothing — SpeechSynthesis has its own cancel).
+ */
+function stopCurrentAudio(): void {
+  if (currentAudioEl) {
+    currentAudioEl.pause();
+    currentAudioEl.src = "";
+    currentAudioEl = null;
   }
+  if (hasSpeechSynthesis()) {
+    window.speechSynthesis.cancel();
+  }
+}
 
-  window.speechSynthesis.cancel(); // stop any current utterance
+/**
+ * Play the pre-generated MP3 for the given URL.
+ * Returns a promise that resolves when playback ends.
+ * Rejects if the file cannot be loaded (404, network error, etc.).
+ */
+function playMp3(url: string): Promise<void> {
+  return new Promise((resolve, reject) => {
+    stopCurrentAudio();
+    const audio = new Audio(url);
+    currentAudioEl = audio;
 
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = "en-US";
-  utterance.rate = 0.8;
+    audio.addEventListener("ended", () => {
+      currentAudioEl = null;
+      resolve();
+    });
+    audio.addEventListener("error", () => {
+      currentAudioEl = null;
+      reject(new Error(`Could not load audio: ${url}`));
+    });
 
-  // Prefer an en-US voice if available
-  const voices = window.speechSynthesis.getVoices();
-  const enUs = voices.find(
-    (v) => v.lang === "en-US" && !v.localService === false
-  ) ?? voices.find((v) => v.lang.startsWith("en"));
-  if (enUs) utterance.voice = enUs;
+    audio.play().catch((err: unknown) => {
+      currentAudioEl = null;
+      reject(err);
+    });
+  });
+}
 
-  utterance.onend = () => {
-    state.isSpeaking = false;
-    onEnd();
-  };
-  utterance.onerror = () => {
-    state.isSpeaking = false;
-    onEnd();
-  };
+/**
+ * Speak via SpeechSynthesis (en-US, rate 0.8) as a fallback.
+ * Must be called from a user gesture handler (required on iOS).
+ */
+function speakSynthesis(text: string): Promise<void> {
+  return new Promise((resolve) => {
+    if (!hasSpeechSynthesis()) {
+      resolve();
+      return;
+    }
+    window.speechSynthesis.cancel();
 
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "en-US";
+    utterance.rate = 0.8;
+
+    const voices = window.speechSynthesis.getVoices();
+    const enUs =
+      voices.find((v) => v.lang === "en-US") ??
+      voices.find((v) => v.lang.startsWith("en"));
+    if (enUs) utterance.voice = enUs;
+
+    utterance.onend = () => resolve();
+    utterance.onerror = () => resolve();
+
+    window.speechSynthesis.speak(utterance);
+  });
+}
+
+/**
+ * Play audio for an item slot.
+ * Tries MP3 first; falls back to SpeechSynthesis if the file cannot load.
+ * Updates state.lastAudioSource and calls onEnd when done.
+ * Must be called from a user gesture.
+ */
+function playAudio(
+  itemId: string,
+  slot: "question" | "answer",
+  text: string,
+  onEnd: () => void
+): void {
   state.isSpeaking = true;
-  window.speechSynthesis.speak(utterance);
+  state.lastAudioSource = null;
+  renderMain();
+
+  const url = audioUrl(itemId, slot);
+
+  playMp3(url)
+    .then(() => {
+      state.isSpeaking = false;
+      state.lastAudioSource = "mp3";
+      onEnd();
+    })
+    .catch(() => {
+      // MP3 unavailable — fall back to SpeechSynthesis
+      state.lastAudioSource = "synthesis";
+      speakSynthesis(text).then(() => {
+        state.isSpeaking = false;
+        onEnd();
+      });
+    });
 }
 
 // ---------------------------------------------------------------------------
@@ -283,11 +368,10 @@ function renderPreFlight(): void {
   showOnly("#pre-flight");
 
   const recognitionOk = getSpeechRecognitionCtor() !== null;
-  const synthesisOk = hasSpeechSynthesis();
 
   const badge = qs<HTMLElement>("#support-badge");
   if (recognitionOk) {
-    badge.textContent = `✓ Speech recognition available${synthesisOk ? " · Text-to-speech available" : " · Text-to-speech unavailable (audio buttons will be silent)"}`;
+    badge.textContent = "✓ Speech recognition available in this browser.";
     badge.className = "badge badge--ok";
   } else {
     badge.textContent =
@@ -359,6 +443,21 @@ function renderMain(): void {
     sampleText.className = "sample-answer-text";
     hearSampleBtn.disabled = state.isSpeaking || state.isRecording;
     setVisible(sampleSection, true);
+  }
+
+  // ---- Audio source notice ----
+  const audioNoticeEl = qs<HTMLElement>("#audio-source-notice");
+  if (state.lastAudioSource === "mp3") {
+    audioNoticeEl.textContent = "Giọng đọc do AI tạo / AI-generated voice";
+    audioNoticeEl.className = "audio-notice audio-notice--ai";
+    setVisible(audioNoticeEl, true);
+  } else if (state.lastAudioSource === "synthesis") {
+    audioNoticeEl.textContent =
+      "⚠ MP3 file not found — using browser voice as fallback";
+    audioNoticeEl.className = "audio-notice audio-notice--fallback";
+    setVisible(audioNoticeEl, true);
+  } else {
+    setVisible(audioNoticeEl, false);
   }
 
   // ---- Speak button ----
@@ -561,7 +660,7 @@ function handleSelectMode(mode: TestMode): void {
 function handleHearQuestion(): void {
   const current = state.results[state.currentIndex]!;
   current.questionHeard = true;
-  speak(current.item.questionText, () => {
+  playAudio(current.item.id, "question", current.item.questionText, () => {
     renderMain();
   });
   renderMain(); // update button disabled state immediately
@@ -574,7 +673,7 @@ function handleHearSample(): void {
   if (state.currentStep === "show-question") {
     state.currentStep = "show-answer";
   }
-  speak(current.item.expectedAnswer, () => {
+  playAudio(current.item.id, "answer", current.item.expectedAnswer, () => {
     renderMain();
   });
   renderMain();
@@ -614,6 +713,7 @@ function advanceOrFinish(): void {
     state.currentIndex += 1;
     state.currentStep = "show-question";
     state.errorMessage = null;
+    state.lastAudioSource = null;
     renderMain();
   } else {
     state.phase = "done";
@@ -635,9 +735,10 @@ function handleRestart(): void {
   state.currentStep = "show-question";
   state.isRecording = false;
   state.isSpeaking = false;
+  state.lastAudioSource = null;
   state.errorMessage = null;
   state.results = makeResults(PRACTICE_ITEMS);
-  window.speechSynthesis?.cancel();
+  stopCurrentAudio();
   renderPreFlight();
 }
 

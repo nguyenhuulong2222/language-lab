@@ -5,6 +5,63 @@ made during the development of Language Lab. Most recent entries are at the top.
 
 ---
 
+## 2024-11-01 — Speech Test: pre-generated MP3 audio via gpt-4o-mini-tts
+
+**Scope:** `tools/speech-test/` only. No changes to `src/`.
+
+**What was added:**
+
+`tools/speech-test/generate-audio.mjs` — local one-time Node script:
+- Reads `OPENAI_API_KEY` from `tools/speech-test/.env` (gitignored, never in browser code).
+- Calls the OpenAI TTS API (`gpt-4o-mini-tts`, voice `coral`).
+- Instruction: `"Speak clear American English slowly and naturally, like a patient interviewer."`
+- Generates `{id}-question.mp3` and `{id}-answer.mp3` for all 20 items (40 files total).
+- Saves to `tools/speech-test/audio/` (gitignored).
+- Skips files that already exist; 500 ms delay between requests to respect rate limits.
+- Exits with code 1 if any file fails (safe to re-run).
+- Practice items are inlined in the script (no TypeScript import) with a sync note pointing
+  to `sentences.ts`.
+
+`main.ts` changes:
+- `speak()` replaced by `playAudio(itemId, slot, text, onEnd)`.
+- `playMp3(url)` tries `new Audio(url).play()` — rejects on load error (404, etc.).
+- On rejection, falls back to `speakSynthesis(text)` (same SpeechSynthesis logic as before).
+- `state.lastAudioSource` tracks `"mp3" | "synthesis" | null`.
+- `renderMain()` updates `#audio-source-notice`:
+  - MP3 path: `"Giọng đọc do AI tạo / AI-generated voice"` (green).
+  - Fallback path: `"⚠ MP3 file not found — using browser voice as fallback"` (amber).
+  - Hidden when no audio has played yet on this item.
+- `stopCurrentAudio()` cancels both the `<audio>` element and SpeechSynthesis.
+- Recognition guard (`state.isSpeaking`) unchanged — blocks mic while audio plays.
+
+`.gitignore` additions:
+- `tools/**/.env` — catches any local tool `.env` file.
+- `tools/speech-test/audio/` — generated MP3s are not committed.
+
+**Decision: inline items in generate-audio.mjs**
+The script is a plain `.mjs` file with no build step. Importing TypeScript at runtime would
+require `ts-node` or `tsx`. Inlining the 20 items avoids that dependency. A comment in the
+script notes it must stay in sync with `sentences.ts`.
+
+**Decision: `new Audio()` for MP3 playback (not fetch + AudioContext)**
+`HTMLAudioElement` is the simplest cross-browser path. It respects autoplay policies the
+same way `SpeechSynthesis` does — both require a user gesture — so no new gesture
+requirement is introduced. The element is created per-play and discarded after use.
+
+**Decision: fallback notice uses amber, not an error color**
+The fallback is functional, not broken. Amber communicates "degraded but working" without
+alarming the tester. The MP3 path uses green to confirm the AI voice is active.
+
+**To generate audio files:**
+```
+node tools/speech-test/generate-audio.mjs
+```
+(see detailed instructions below)
+
+**Test results:** 71/71 passing (unchanged). `npm run typecheck` clean. `npm run build` clean.
+
+---
+
 ## 2024-11-01 — Speech Test: Q&A format, TTS, bilingual UI, practice/check modes
 
 **Scope:** `tools/speech-test/` only. No changes to `src/`.

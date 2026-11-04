@@ -276,6 +276,20 @@
       }
 
       /* ------------------------------------------------------------------ */
+      /* Audio source notice                                                 */
+      /* ------------------------------------------------------------------ */
+      .audio-notice {
+        font-size: .75rem;
+        border-radius: 4px;
+        padding: .25rem .6rem;
+        margin-top: .5rem;
+        display: inline-block;
+      }
+
+      .audio-notice--ai       { color: var(--ok);     background: rgba(76,175,80,.1); }
+      .audio-notice--fallback { color: var(--warn);   background: rgba(255,152,0,.1); }
+
+      /* ------------------------------------------------------------------ */
       /* Error                                                                */
       /* ------------------------------------------------------------------ */
       .error-message {
@@ -493,6 +507,9 @@
             🔊 Nghe câu mẫu / Hear sample answer
           </button>
         </div>
+
+        <!-- Audio source notice -->
+        <div id="audio-source-notice" class="audio-notice" hidden></div>
 
         <!-- Speak button (full width) -->
         <button id="speak-btn" class="btn btn--speak" aria-pressed="false">
