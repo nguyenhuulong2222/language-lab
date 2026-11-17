@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts", "worker/**/*.ts"]
+  "include": ["vite.config.ts", "vite.speech-test.config.ts", "worker/**/*.ts"]
 }

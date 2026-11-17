@@ -5,6 +5,164 @@ made during the development of Language Lab. Most recent entries are at the top.
 
 ---
 
+## 2024-11-01 — Speech Test: pre-generated MP3 audio via gpt-4o-mini-tts
+
+**Scope:** `tools/speech-test/` only. No changes to `src/`.
+
+**What was added:**
+
+`tools/speech-test/generate-audio.mjs` — local one-time Node script:
+- Reads `OPENAI_API_KEY` from `tools/speech-test/.env` (gitignored, never in browser code).
+- Calls the OpenAI TTS API (`gpt-4o-mini-tts`, voice `coral`).
+- Instruction: `"Speak clear American English slowly and naturally, like a patient interviewer."`
+- Generates `{id}-question.mp3` and `{id}-answer.mp3` for all 20 items (40 files total).
+- Saves to `tools/speech-test/audio/` (gitignored).
+- Skips files that already exist; 500 ms delay between requests to respect rate limits.
+- Exits with code 1 if any file fails (safe to re-run).
+- Practice items are inlined in the script (no TypeScript import) with a sync note pointing
+  to `sentences.ts`.
+
+`main.ts` changes:
+- `speak()` replaced by `playAudio(itemId, slot, text, onEnd)`.
+- `playMp3(url)` tries `new Audio(url).play()` — rejects on load error (404, etc.).
+- On rejection, falls back to `speakSynthesis(text)` (same SpeechSynthesis logic as before).
+- `state.lastAudioSource` tracks `"mp3" | "synthesis" | null`.
+- `renderMain()` updates `#audio-source-notice`:
+  - MP3 path: `"Giọng đọc do AI tạo / AI-generated voice"` (green).
+  - Fallback path: `"⚠ MP3 file not found — using browser voice as fallback"` (amber).
+  - Hidden when no audio has played yet on this item.
+- `stopCurrentAudio()` cancels both the `<audio>` element and SpeechSynthesis.
+- Recognition guard (`state.isSpeaking`) unchanged — blocks mic while audio plays.
+
+`.gitignore` additions:
+- `tools/**/.env` — catches any local tool `.env` file.
+- `tools/speech-test/audio/` — generated MP3s are not committed.
+
+**Decision: inline items in generate-audio.mjs**
+The script is a plain `.mjs` file with no build step. Importing TypeScript at runtime would
+require `ts-node` or `tsx`. Inlining the 20 items avoids that dependency. A comment in the
+script notes it must stay in sync with `sentences.ts`.
+
+**Decision: `new Audio()` for MP3 playback (not fetch + AudioContext)**
+`HTMLAudioElement` is the simplest cross-browser path. It respects autoplay policies the
+same way `SpeechSynthesis` does — both require a user gesture — so no new gesture
+requirement is introduced. The element is created per-play and discarded after use.
+
+**Decision: fallback notice uses amber, not an error color**
+The fallback is functional, not broken. Amber communicates "degraded but working" without
+alarming the tester. The MP3 path uses green to confirm the AI voice is active.
+
+**To generate audio files:**
+```
+node tools/speech-test/generate-audio.mjs
+```
+(see detailed instructions below)
+
+**Test results:** 71/71 passing (unchanged). `npm run typecheck` clean. `npm run build` clean.
+
+---
+
+## 2024-11-01 — Speech Test: Q&A format, TTS, bilingual UI, practice/check modes
+
+**Scope:** `tools/speech-test/` only. No changes to `src/`.
+
+**What changed:**
+
+`sentences.ts` — `PracticeSentence` replaced by `PracticeItem` with `questionText` and
+`expectedAnswer`. 20 items across civics, n400, and reading categories.
+
+`main.ts` — Full rewrite:
+- Mode selector (practice / check) before starting.
+- Per-item flow: show question → hear question (TTS) → show/hear model answer (TTS, practice
+  mode) or hidden answer (check mode) → speak → result.
+- `SpeechSynthesis` with `lang: "en-US"`, `rate: 0.8`. TTS starts only after user tap
+  (required on iOS). Recognition is blocked while TTS is playing.
+- Vietnamese UI labels: "Nghe câu hỏi", "Nghe câu mẫu", "Bắt đầu nói", "Nói lại",
+  "Bỏ qua", "Nghe lại". Labels are fixed strings, not machine-translated.
+- `ItemResult` tracks `questionHeard`, `sampleHeard`, `retryCount`.
+- `buildExportPayload` extracted as a pure exported function for testability.
+- Export JSON includes top-level `mode` and per-item `mode`, `questionHeard`,
+  `sampleHeard`, `retryCount`.
+- Accuracy is scored only against `expectedAnswer`, never `questionText`.
+- `document.addEventListener` guarded with `typeof document !== "undefined"` so
+  `main.ts` can be imported in Vitest (Node environment) without errors.
+
+`index.html` — Rebuilt with mode-select screen, question card, sample-answer section,
+full-width speak button, bilingual labels throughout.
+
+`accuracy.test.ts` — Extended from 32 to 51 tests:
+- All original accuracy tests kept unchanged.
+- New: `PRACTICE_ITEMS` data shape (20 items, unique IDs, non-empty fields, valid categories,
+  accuracy sourced from `expectedAnswer`).
+- New: `buildExportPayload` shape (mode, questionHeard, sampleHeard, retryCount, overall,
+  skipped items, _note content).
+
+**Decision: Vietnamese labels are fixed strings**
+Per steering rules, no machine translation of any content in this project. The Vietnamese
+labels ("Nghe câu hỏi" etc.) are written as fixed UI strings, not generated. They must not
+be changed by automated translation.
+
+**Decision: block recognition while TTS is playing**
+iOS Safari aborts recognition if audio plays concurrently. The `isSpeaking` guard
+prevents `startRecognition()` from firing until TTS ends, making the flow reliable on iPhone.
+
+**Decision: `buildExportPayload` as a pure exported function**
+The function takes `results` and `mode` as arguments and returns a plain object — no DOM,
+no side effects. This makes it directly importable and testable in Vitest without mocking.
+
+**Test results:** 71/71 passing. `npm run typecheck` clean. `npm run build` clean.
+
+---
+
+## 2024-11-01 — Speech Recognition Test Tool (engine/speech-test branch)
+
+**What was added:** `tools/speech-test/` — a standalone, mobile-friendly Vite page
+for testing the browser Web Speech API with 20 fictional English practice sentences.
+
+**Files created:**
+
+| File | Purpose |
+|---|---|
+| `tools/speech-test/accuracy.ts` | Pure word-accuracy functions: `normalise`, `tokenise`, `wordAccuracy`, `overallAccuracy` |
+| `tools/speech-test/sentences.ts` | 20 fictional practice sentences (civics, N-400 biographical, reading) |
+| `tools/speech-test/main.ts` | Vanilla TS app: Web Speech API, state machine, DOM rendering, JSON export |
+| `tools/speech-test/index.html` | Self-contained HTML/CSS — mobile-first, no external assets |
+| `tools/speech-test/accuracy.test.ts` | 32 tests (unit + 4 property-based via fast-check) |
+| `vite.speech-test.config.ts` | Dedicated Vite config: serves on port 5174, binds `0.0.0.0` for phone testing |
+
+**Content safety compliance:**
+- All 20 sentences are fictional, generic, not personal-detail suggestions.
+- Pre-flight screen warns about cloud audio transmission before any recording starts.
+- Explicit instruction: do not say real names, addresses, or immigration details.
+- Results export is device-local only (Blob → download, no server call).
+- Disclaimer on every screen.
+
+**Decision: vanilla TypeScript, no React**
+The tool is a dev utility, not a product surface. React adds ~60 kB and a compile step
+for what is essentially a five-screen state machine. Plain DOM manipulation is fine here
+and keeps the tool truly standalone.
+
+**Decision: `host: "0.0.0.0"` in speech-test Vite config**
+Mobile testing requires serving on the LAN. The main `vite.config.ts` stays on localhost
+(safer default). The speech-test config explicitly opts in to LAN binding.
+
+**Decision: `@types/dom-speech-recognition`**
+The Web Speech API (`SpeechRecognition`, `SpeechRecognitionEvent`, `SpeechRecognitionErrorEvent`)
+is not in the standard TypeScript DOM lib. This community package provides the missing types.
+Added to `tsconfig.app.json` types array; worker tsconfig is unaffected.
+
+**Decision: tools/ in tsconfig.app.json (not tsconfig.node.json)**
+`tools/speech-test/main.ts` uses `window`, `document`, and DOM event types.
+It belongs in the DOM-aware tsconfig. Pure files (accuracy.ts, sentences.ts) happen to
+be included there too, which is harmless — they don't reference any DOM globals.
+
+**Test results:** 52/52 passing (12 contract tests + 32 accuracy tests).
+`npm run typecheck` clean. `npm run build` clean.
+
+**To run on a phone:** `npm run speech-test` → open `http://192.168.84.30:5174/tools/speech-test/index.html`
+
+---
+
 ## 2024-11-01 — Tooling Initialization
 
 **Packages added:**
