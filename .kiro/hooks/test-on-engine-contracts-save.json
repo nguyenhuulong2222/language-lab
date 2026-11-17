@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Test on engine/contracts save",
+      "trigger": "PostFileSave",
+      "description": "Run npm test whenever the agent saves a file under src/engine/ or src/contracts/",
+      "matcher": "src/(engine|contracts)/",
+      "action": {
+        "type": "command",
+        "command": "cd /Volumes/Crucial1TB/language-lab && npm test",
+        "timeout": 120
+      }
+    }
+  ]
+}
