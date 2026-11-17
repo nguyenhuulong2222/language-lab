@@ -22,5 +22,6 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 5174,
     open: "/tools/speech-test/index.html",
+    allowedHosts: [".trycloudflare.com"],
   },
 });
