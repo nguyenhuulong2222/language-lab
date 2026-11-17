@@ -5,6 +5,79 @@ made during the development of Language Lab. Most recent entries are at the top.
 
 ---
 
+## 2024-11-01 — Kiro hooks, custom agents, design file attribution, data verification
+
+### Part A: Kiro setup
+
+**Hooks created** (`.kiro/hooks/`):
+
+| File | Trigger | Matcher | Action |
+|---|---|---|---|
+| `test-on-engine-contracts-save.json` | PostFileSave | `src/(engine\|contracts)/` | `npm test` |
+| `typecheck-on-ts-save.json` | PostFileSave | `\.(ts\|tsx)$` | `npm run typecheck` |
+| `block-sensitive-paths.json` | PreToolUse | file/edit tools | blocks access to `.env`, `.dev.vars`, `language-lab-private/` |
+
+The sensitive-path PreToolUse hook inspects all string parameters in the tool call and exits
+2 (block) if any parameter contains `.env`, `.dev.vars`, or `language-lab-private`. This
+prevents accidental reads or edits of local secrets in any tool that touches files.
+
+**Custom agents created** (`.kiro/agents/`):
+
+`content-reviewer.md` — Read-only. Verifies civics and legal content against uscis.gov.
+Reports UNVERIFIED for any claim not confirmable on uscis.gov. Checks all six rules from
+content-safety.md. Cannot edit files. Cannot decide civics answers from its own knowledge.
+
+`ui-reviewer.md` — Read-only. Checks mobile layout, text size, contrast, and accessibility
+against `design-system.md`. Reports passes, issues (with file + line), and optional
+suggestions. Cannot edit files or add design tokens.
+
+Both agents reference the relevant steering files in their `resources:` front-matter.
+
+**`frontend-design.md` attribution** — Replaced the `license: Complete terms in LICENSE.txt`
+front-matter field (which pointed to a non-existent file) with a proper HTML comment block
+at the top of the content section, citing the Anthropic Skills GitHub source URL and
+confirming MIT license. The `license:` key was removed from front-matter to avoid a
+dangling reference.
+
+### Part B: test-rules.json verification — approved and applied
+
+Verified live against uscis.gov on 2024-11-01. Changes applied after approval.
+
+**2008 earlyStopOnCorrect / earlyStopOnIncorrect** — set `needsVerification: false`.
+Source: "Officers will stop asking questions when an alien answers 6 questions correctly
+or 5 questions incorrectly." — https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test
+
+**English test rules added** (`englishTest.reading` / `englishTest.writing`):
+- Reading: "For the reading test, you must read out loud 1 of 3 sentences correctly
+  to demonstrate an ability to read in English."
+- Writing: "For the writing test, you must write 1 out of 3 sentences correctly
+  to demonstrate an ability to write in English."
+- Source: same Study for the Test page.
+
+**65/20 special consideration added** with mixed verification status:
+- Confirmed from uscis.gov: eligibilityAgeMinimum (65), eligibilityResidencyYearsMinimum
+  (20), questionBank (20), questionsAsked (10), languageChoicePermitted (true).
+- Not confirmed (value: null, needsVerification: true): passingScore, earlyStopOnCorrect,
+  earlyStopOnIncorrect — the Study page does not restate these for the 65/20 track.
+
+**Rules loader created** (`src/engine/test-rules-loader.ts`):
+- `loadTestRules()` validates required fields; throws in production if any required
+  field has `needsVerification: true`; warns in development.
+- `loadCivicsRules(version)` and `loadEnglishRules()` are convenience exports.
+- `findUnverifiedRequiredFields()` is exported for testing.
+- 65/20 unverified fields are intentionally excluded from the required list so their
+  null values don't block loading.
+
+**Tests added** (`src/engine/__tests__/test-rules-loader.test.ts`): 36 tests across
+5 suites. All assertions read from the JSON file via the loader — no hard-coded expected
+values except to confirm the loader's own logic.
+
+**Result:** 107/107 tests passing. Typecheck clean.
+
+---
+
+---
+
 ## 2024-11-01 — Speech Test: pre-generated MP3 audio via gpt-4o-mini-tts
 
 **Scope:** `tools/speech-test/` only. No changes to `src/`.
