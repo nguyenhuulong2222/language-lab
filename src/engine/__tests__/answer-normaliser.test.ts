@@ -767,11 +767,12 @@ describe("digits and words are the same number", () => {
     expect(countMatchingPhrases("27 or twenty-seven", ["27", "twenty seven"])).toBe(1);
   });
 
-  it("does not match year readings, which are two numbers", () => {
-    // "nineteen twenty" is read as 19 and 20, not as 1920. Documented limit.
+  it("reads a year as two number groups only when the answer is a year", () => {
     expect(matchTokens("nineteen twenty")).toEqual(["19", "20"]);
-    expect(containsPhrase("nineteen twenty", "1920")).toBe(false);
+    expect(containsPhrase("nineteen twenty", "1920")).toBe(true);
     expect(containsPhrase("1920", "1920")).toBe(true);
+    // Not a year answer: the groups stay two numbers.
+    expect(containsPhrase("nineteen twenty", "20")).toBe(false);
   });
 });
 

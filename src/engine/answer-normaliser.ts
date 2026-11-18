@@ -19,8 +19,15 @@
  *   "two").
  * - Overlapping matches never count twice.
  *
- * Not covered: year readings such as "nineteen twenty" for 1920. They are read as two
- * separate numbers (19 and 20).
+ * - Years: when an accepted answer contains a 4-digit year (1000-2099), the response's two-group
+ *   readings are joined into a year: "nineteen twenty" = 1920, "seventeen seventy-six" = 1776,
+ *   "twenty oh one" = 2001. ("two thousand one" is already read as 2001.) Other answers are
+ *   unaffected.
+ * - Dates: an ordinal right after a month is the same as the cardinal ("July fourth" = "July 4"),
+ *   and "<ordinal> of <month>" is "<month> <cardinal>".
+ * - A leading "because" or "because of" in an accepted answer is optional, as articles are.
+ * - Alternative names that belong to one marker group count as ONE answer (see `groups`).
+ * - A bare number is accepted for an answer only when the answer is listed in `numberAlone`.
  */
 
 /** Curly and look-alike apostrophes that must map to a straight apostrophe. */
@@ -292,18 +299,97 @@ function continuesNumber(haystack: string[], span: Span): boolean {
   return false;
 }
 
+/** Months, for the date rules. */
+const MONTHS: ReadonlySet<string> = new Set([
+  "january", "february", "march", "april", "may", "june", "july",
+  "august", "september", "october", "november", "december",
+]);
+
+const ORDINAL_NUMERAL = /^([0-9]+)(?:st|nd|rd|th)$/;
+
+/** Date rules: "july 4th" -> "july 4"; "4th of july" -> "july 4". */
+function normaliseDates(tokens: readonly string[]): string[] {
+  const out: string[] = [];
+  for (let i = 0; i < tokens.length; i++) {
+    const token = tokens[i]!;
+    const ordinal = ORDINAL_NUMERAL.exec(token);
+    if (ordinal && tokens[i + 1] === "of" && MONTHS.has(tokens[i + 2] ?? "")) {
+      out.push(tokens[i + 2]!, ordinal[1]!);
+      i += 2;
+      continue;
+    }
+    if (ordinal && i > 0 && MONTHS.has(tokens[i - 1]!)) {
+      out.push(ordinal[1]!);
+      continue;
+    }
+    out.push(token);
+  }
+  return out;
+}
+
+const YEAR_TOKEN = /^(?:1[0-9]{3}|20[0-9]{2})$/;
+
+/** Join two-group year readings: [19, 20] -> 1920, [20, "oh", 1] -> 2001. */
+function mergeYears(tokens: readonly string[]): string[] {
+  const out: string[] = [];
+  for (let i = 0; i < tokens.length; i++) {
+    const a = tokens[i]!;
+    const b = tokens[i + 1];
+    if (/^(?:1[0-9]|20)$/.test(a) && b !== undefined) {
+      if (/^[1-9][0-9]$/.test(b)) {
+        out.push(a + b);
+        i += 1;
+        continue;
+      }
+      const c = tokens[i + 2];
+      if (b === "oh" && c !== undefined && /^[1-9]$/.test(c)) {
+        out.push(a + "0" + c);
+        i += 2;
+        continue;
+      }
+    }
+    out.push(a);
+  }
+  return out;
+}
+
+/** Tokens as the matcher compares them: numerals, date rules, and optionally year joining. */
+function prepare(text: string, yearAware: boolean): string[] {
+  const tokens = normaliseDates(matchTokens(text));
+  return yearAware ? mergeYears(tokens) : tokens;
+}
+
 /**
  * The shorter forms of an accepted answer that also count.
- * - Without a leading "the", "a" or "an".
+ * - Without a leading "because of" or "because", and without a leading "the", "a" or "an".
  * - A number with a unit ("6 years") is also matched by the number alone ("6").
+ * - With `numberAlone`: an answer that holds exactly one number is also matched by that
+ *   number alone ("14th amendment" -> "14th" and "14").
  */
-function alternativeForms(phrase: string[]): string[][] {
-  const forms: string[][] = [phrase];
-  if (phrase.length > 1 && OPTIONAL_LEADING_ARTICLES.has(phrase[0]!)) {
-    forms.push(phrase.slice(1));
+function alternativeForms(phrase: string[], numberAlone: boolean): string[][] {
+  const bases: string[][] = [phrase];
+  if (phrase[0] === "because" && phrase[1] === "of" && phrase.length > 2) {
+    bases.push(phrase.slice(2));
+  } else if (phrase[0] === "because" && phrase.length > 1) {
+    bases.push(phrase.slice(1));
   }
-  if (phrase.length === 2 && /^[0-9]+$/.test(phrase[0]!) && UNIT_WORDS.has(phrase[1]!)) {
-    forms.push([phrase[0]!]);
+  const forms: string[][] = [];
+  for (const base of bases) {
+    forms.push(base);
+    if (base.length > 1 && OPTIONAL_LEADING_ARTICLES.has(base[0]!)) forms.push(base.slice(1));
+  }
+  for (const form of [...forms]) {
+    if (form.length === 2 && /^[0-9]+$/.test(form[0]!) && UNIT_WORDS.has(form[1]!)) {
+      forms.push([form[0]!]);
+    }
+  }
+  if (numberAlone) {
+    const numeric = phrase.filter((t) => /^[0-9]+(?:st|nd|rd|th)?$/.test(t));
+    if (numeric.length === 1) {
+      forms.push([numeric[0]!]);
+      const ord = ORDINAL_NUMERAL.exec(numeric[0]!);
+      if (ord) forms.push([ord[1]!]);
+    }
   }
   return forms;
 }
@@ -312,9 +398,9 @@ function alternativeForms(phrase: string[]): string[][] {
  * Every place a phrase can match in the response, as token spans. Both inputs are already
  * converted. Spans that continue a number are dropped.
  */
-function findSpans(haystack: string[], phrase: string[]): Span[] {
+function findSpans(haystack: string[], phrase: string[], numberAlone = false): Span[] {
   const spans = new Map<string, Span>();
-  for (const form of alternativeForms(phrase)) {
+  for (const form of alternativeForms(phrase, numberAlone)) {
     for (const start of findSpanStarts(haystack, form)) {
       const span = { start, length: form.length };
       if (!continuesNumber(haystack, span)) {
@@ -335,9 +421,10 @@ function findSpans(haystack: string[], phrase: string[]): Span[] {
  * phrase returns true.
  */
 export function containsPhrase(haystack: string, phrase: string): boolean {
-  const phraseTokens = matchTokens(phrase);
+  const yearAware = matchTokens(phrase).some((t) => YEAR_TOKEN.test(t));
+  const phraseTokens = prepare(phrase, yearAware);
   if (phraseTokens.length === 0) return true;
-  return findSpans(matchTokens(haystack), phraseTokens).length > 0;
+  return findSpans(prepare(haystack, yearAware), phraseTokens).length > 0;
 }
 
 /**
@@ -355,20 +442,59 @@ export function containsPhrase(haystack: string, phrase: string): boolean {
  * non-overlapping spans, found by exact search with pruning. Inputs are small, and the
  * result is deterministic.
  */
+export interface MatchOptions {
+  /**
+   * Groups of accepted answers that are alternative names for ONE answer. Members are strings
+   * from `acceptedAnswers`. A group counts at most once, however many members the response has.
+   */
+  groups?: readonly (readonly string[])[];
+  /** Accepted answers for which the bare number alone is also accepted. */
+  numberAlone?: readonly string[];
+}
+
 export function countMatchingPhrases(
   response: string,
-  acceptedAnswers: readonly string[]
+  acceptedAnswers: readonly string[],
+  options: MatchOptions = {}
 ): number {
-  const responseTokens = matchTokens(response);
+  const yearAware = acceptedAnswers.some((a) => matchTokens(a).some((t) => YEAR_TOKEN.test(t)));
+  const responseTokens = prepare(response, yearAware);
 
-  const distinct = new Map<string, string[]>();
+  const tokensOf = (answer: string): string[] => prepare(answer, yearAware);
+  const bareNumber = new Set((options.numberAlone ?? []).map((a) => tokensOf(a).join(" ")));
+
+  // Units: a group of alternative names, or one accepted answer. Keyed by their phrases so
+  // that duplicates collapse.
+  const grouped = new Set<string>();
+  const units = new Map<string, string[][]>();
+  const addUnit = (members: readonly string[]): void => {
+    const phrases = new Map<string, string[]>();
+    for (const member of members) {
+      const tokens = tokensOf(member);
+      if (tokens.length > 0) phrases.set(tokens.join(" "), tokens);
+    }
+    if (phrases.size === 0) return;
+    const key = [...phrases.keys()].sort().join("|");
+    units.set(key, [...phrases.values()]);
+  };
+  for (const group of options.groups ?? []) {
+    for (const member of group) grouped.add(member);
+    addUnit(group);
+  }
   for (const answer of acceptedAnswers) {
-    const tokens = matchTokens(answer);
-    if (tokens.length > 0) distinct.set(tokens.join(" "), tokens);
+    if (!grouped.has(answer)) addUnit([answer]);
   }
 
-  const candidates = [...distinct.values()]
-    .map((tokens) => findSpans(responseTokens, tokens))
+  const candidates = [...units.values()]
+    .map((phrases) => {
+      const spans = new Map<string, Span>();
+      for (const tokens of phrases) {
+        for (const span of findSpans(responseTokens, tokens, bareNumber.has(tokens.join(" ")))) {
+          spans.set(`${span.start}:${span.length}`, span);
+        }
+      }
+      return [...spans.values()];
+    })
     .filter((spans) => spans.length > 0);
 
   const used: boolean[] = new Array<boolean>(responseTokens.length).fill(false);
