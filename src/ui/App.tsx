@@ -7,6 +7,7 @@
  */
 import type { InterviewSession } from "../contracts";
 import { STAGES } from "./stages";
+import { useT } from "../i18n/react";
 import { Header } from "./components/Header";
 import { StageStepper } from "./components/StageStepper";
 import { Footer } from "./components/Footer";
@@ -18,13 +19,14 @@ interface AppProps {
 }
 
 export function App({ session }: AppProps) {
+  const t = useT();
   const showReport =
     session.currentStage === "report" && Boolean(session.finalReport);
 
   return (
     <div className="app">
       <a className="ll-skip-link" href="#main">
-        Skip to main content
+        {t("app.skipToMain")}
       </a>
       <Header />
       <StageStepper stages={STAGES} currentStage={session.currentStage} />
@@ -34,7 +36,7 @@ export function App({ session }: AppProps) {
             <ReportScreen session={session} />
           ) : (
             <div className="app__placeholder">
-              <p>This stage of the practice isn’t built yet.</p>
+              <p>{t("app.stageNotBuilt")}</p>
             </div>
           )}
         </div>

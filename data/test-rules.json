@@ -1,63 +1,169 @@
 {
   "_note": "All values sourced from uscis.gov. Any value that could not be confirmed from an official uscis.gov source is set to null with needsVerification: true. No values are guessed. Category weights are not included.",
+  "_sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+
+  "civicsTestVersionSelection": {
+    "_description": "Which civics test an applicant takes, chosen by the date Form N-400 was filed. Filed before the boundary date: 2008 test. Filed on or after the boundary date: 2025 test.",
+    "boundaryDate": {
+      "value": "2025-10-20",
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": "Aliens who file Form N-400 to apply for naturalization before Oct. 20, 2025, will take the 2008 naturalization civics test. Aliens who file Form N-400 to apply for naturalization on or after Oct. 20, 2025, will take the 2025 naturalization civics test."
+    }
+  },
+
+  "englishTest": {
+    "_description": "English reading and writing portion of the naturalization test. Applies to all applicants regardless of civics test version.",
+    "reading": {
+      "sentencesPresented": {
+        "value": 3,
+        "needsVerification": false,
+        "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+        "sourceQuote": "For the reading test, you must read out loud 1 of 3 sentences correctly to demonstrate an ability to read in English."
+      },
+      "sentencesToPassCount": {
+        "value": 1,
+        "needsVerification": false,
+        "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+        "sourceQuote": "For the reading test, you must read out loud 1 of 3 sentences correctly to demonstrate an ability to read in English."
+      }
+    },
+    "writing": {
+      "sentencesPresented": {
+        "value": 3,
+        "needsVerification": false,
+        "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+        "sourceQuote": "For the writing test, you must write 1 out of 3 sentences correctly to demonstrate an ability to write in English."
+      },
+      "sentencesToPassCount": {
+        "value": 1,
+        "needsVerification": false,
+        "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+        "sourceQuote": "For the writing test, you must write 1 out of 3 sentences correctly to demonstrate an ability to write in English."
+      }
+    }
+  },
+
   "2008": {
     "_description": "2008 Civics Test. Applies to Form N-400 filed before October 20, 2025.",
     "questionPoolSize": {
       "value": 100,
       "needsVerification": false,
-      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version"
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": "The USCIS officer will ask you up to 10 questions from the list of 100 civics test questions."
     },
     "questionsAsked": {
       "value": 10,
       "needsVerification": false,
-      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version"
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": "The USCIS officer will ask you up to 10 questions from the list of 100 civics test questions."
     },
     "passingScore": {
       "value": 6,
       "needsVerification": false,
-      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version"
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": "You must answer 6 questions correctly to pass the 2008 naturalization civics test."
     },
     "earlyStopOnCorrect": {
       "value": 6,
-      "needsVerification": true,
-      "_note": "Mentioned on the 'Study for the Test' page (uscis.gov) as stopping when 6 are answered correctly, but the primary civics Q&A page states 'up to 10 questions'. Verify against USCIS policy manual before relying on this for scoring logic.",
-      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test"
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": "Officers will stop asking questions when an alien answers 6 questions correctly or 5 questions incorrectly."
     },
     "earlyStopOnIncorrect": {
       "value": 5,
-      "needsVerification": true,
-      "_note": "Mentioned on the 'Study for the Test' page (uscis.gov) as failing if 5 of 10 answered incorrectly, but the primary civics Q&A page states 'up to 10 questions'. Verify against USCIS policy manual before relying on this for scoring logic.",
-      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test"
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": "Officers will stop asking questions when an alien answers 6 questions correctly or 5 questions incorrectly."
     }
   },
+
   "2025": {
     "_description": "2025 Civics Test. Applies to Form N-400 filed on or after October 20, 2025.",
     "questionPoolSize": {
       "value": 128,
       "needsVerification": false,
-      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test"
+      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test",
+      "sourceQuote": "The 2025 Naturalization Civics Test is an oral test consisting of 20 questions from the list of 128 civics test questions."
     },
     "questionsAsked": {
       "value": 20,
       "needsVerification": false,
-      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test"
+      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test",
+      "sourceQuote": "The 2025 Naturalization Civics Test is an oral test consisting of 20 questions from the list of 128 civics test questions."
     },
     "passingScore": {
       "value": 12,
       "needsVerification": false,
-      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test"
+      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test",
+      "sourceQuote": "You must answer 12 questions correctly to pass the 2025 Naturalization Civics Test."
     },
     "earlyStopOnCorrect": {
       "value": 12,
       "needsVerification": false,
-      "_note": "USCIS officers stop asking when the applicant answers 12 questions correctly.",
-      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test"
+      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test",
+      "sourceQuote": "Officers will stop asking questions when an alien answers 12 questions correctly, or 9 questions incorrectly."
     },
     "earlyStopOnIncorrect": {
       "value": 9,
       "needsVerification": false,
-      "_note": "USCIS officers stop asking when the applicant answers 9 questions incorrectly.",
-      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test"
+      "sourceUrl": "https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test",
+      "sourceQuote": "Officers will stop asking questions when an alien answers 12 questions correctly, or 9 questions incorrectly."
+    }
+  },
+
+  "65_20_specialConsideration": {
+    "_description": "65/20 Special Consideration: for applicants aged 65+ who have been a lawful permanent resident for 20+ years. They take a 10-question test drawn from a 20-question bank (starred questions only) in either the 2008 or 2025 set, and may take the test in their language of choice.",
+    "eligibilityAgeMinimum": {
+      "value": 65,
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": "If you are 65 years old or older and have been living in the United States as a lawful permanent resident of the United States for 20 or more years, USCIS will continue to administer a test with 10 questions from a specially selected bank of 20 test questions from either the 2008 or 2025 Naturalization Civics Test."
+    },
+    "eligibilityResidencyYearsMinimum": {
+      "value": 20,
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": "If you are 65 years old or older and have been living in the United States as a lawful permanent resident of the United States for 20 or more years, USCIS will continue to administer a test with 10 questions from a specially selected bank of 20 test questions from either the 2008 or 2025 Naturalization Civics Test."
+    },
+    "questionBank": {
+      "value": 20,
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": "USCIS will continue to administer a test with 10 questions from a specially selected bank of 20 test questions from either the 2008 or 2025 Naturalization Civics Test."
+    },
+    "questionsAsked": {
+      "value": 10,
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": "USCIS will continue to administer a test with 10 questions from a specially selected bank of 20 test questions from either the 2008 or 2025 Naturalization Civics Test."
+    },
+    "passingScore": {
+      "value": null,
+      "needsVerification": true,
+      "_note": "The Study for the Test page does not restate a passing score for the 65/20 format. The standard 2008 format requires 6 of 10; it is likely the same threshold, but this cannot be confirmed from an explicit uscis.gov sentence for the 65/20 track specifically.",
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": null
+    },
+    "earlyStopOnCorrect": {
+      "value": null,
+      "needsVerification": true,
+      "_note": "No explicit early-stop rule stated for the 65/20 format on the Study for the Test page.",
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": null
+    },
+    "earlyStopOnIncorrect": {
+      "value": null,
+      "needsVerification": true,
+      "_note": "No explicit early-stop rule stated for the 65/20 format on the Study for the Test page.",
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": null
+    },
+    "languageChoicePermitted": {
+      "value": true,
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": "You may also take the naturalization test in the language of your choice."
     }
   }
 }

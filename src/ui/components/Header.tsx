@@ -3,13 +3,12 @@
  * "About & disclaimer" disclosure. The standing disclaimer is always one
  * tap/keypress away.
  */
-import {
-  Disclaimer,
-  DISCLAIMER_FULL,
-} from "./Disclaimer";
+import { Disclaimer } from "./Disclaimer";
+import { useT } from "../../i18n/react";
 import "./Header.css";
 
 export function Header() {
+  const t = useT();
   return (
     <header className="header">
       <div className="ll-container header__inner">
@@ -30,12 +29,12 @@ export function Header() {
             />
             <circle cx="12" cy="12" r="3.4" fill="currentColor" />
           </svg>
-          <span className="header__brand-name">Language Lab</span>
+          <span className="header__brand-name">{t("app.name")}</span>
         </div>
 
         <details className="header__about">
           <summary className="header__about-summary">
-            <span className="header__about-label">About &amp; disclaimer</span>
+            <span className="header__about-label">{t("header.about")}</span>
             <svg
               className="header__about-chevron"
               viewBox="0 0 24 24"
@@ -53,7 +52,7 @@ export function Header() {
             </svg>
           </summary>
           <div className="header__about-panel">
-            <Disclaimer text={DISCLAIMER_FULL} />
+            <Disclaimer text={t("disclaimer.full")} />
           </div>
         </details>
       </div>

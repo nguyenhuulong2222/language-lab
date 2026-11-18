@@ -1,0 +1,43 @@
+.tq {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.tq__block {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.tq__label {
+  margin: 0;
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}
+
+.tq__question {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  max-width: var(--measure);
+}
+
+.tq__question:not(:lang(en)) {
+  font-family: var(--font-body);
+}
+
+.tq__answers {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  max-width: var(--measure);
+}
+
+.tq__note {
+  margin: 0;
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+  border-left: 3px solid var(--border);
+  padding-left: var(--space-3);
+}

@@ -1,0 +1,172 @@
+{
+  "_note": "Fictional practice profile — no real person. All names, dates, and details are invented for practice purposes only. Valid FAILING fixture: static civics questions only, the civics stage stops on the 5th incorrect answer (2008 rules) with 2 correct. Reading and writing pass on sentence 1.",
+  "sessionId": "mock-session-002",
+  "fictionalProfileId": "fictional-profile-juniper-hale",
+  "isFictional": true,
+  "filingDate": "2024-05-02",
+  "testVersion": "2008",
+  "startedAt": "2024-05-02T14:00:00Z",
+  "endedAt": "2024-05-02T14:38:00Z",
+  "currentStage": "report",
+  "turns": [
+    {
+      "turnId": "turn-001",
+      "stage": "intro",
+      "prompt": "Welcome to Language Lab. You will practice the naturalization interview today. This is a fictional practice scenario. Are you ready to begin?",
+      "responseText": "Yes, I am ready.",
+      "completedAt": "2024-05-02T14:01:00Z"
+    },
+    {
+      "turnId": "turn-002",
+      "stage": "n400_interview",
+      "prompt": "Do you support the Constitution of the United States?",
+      "responseText": "Yes, I do.",
+      "completedAt": "2024-05-02T14:04:00Z"
+    },
+    {
+      "turnId": "turn-003",
+      "stage": "n400_interview",
+      "prompt": "Are you willing to take the oath of allegiance?",
+      "responseText": "Yes, I am.",
+      "completedAt": "2024-05-02T14:05:30Z"
+    },
+    {
+      "turnId": "turn-004",
+      "stage": "reading",
+      "prompt": "Please read the following sentence aloud: 'Citizens have the right to vote.'",
+      "responseText": "Citizens have the right to vote.",
+      "completedAt": "2024-05-02T14:10:00Z"
+    },
+    {
+      "turnId": "turn-005",
+      "stage": "writing",
+      "prompt": "Please write the following sentence: 'Congress passes laws in the United States.'",
+      "responseText": "Congress passes laws in the United States.",
+      "completedAt": "2024-05-02T14:14:00Z"
+    },
+    {
+      "turnId": "turn-006",
+      "stage": "civics",
+      "questionId": "2008-001",
+      "prompt": "What is the supreme law of the land?",
+      "responseText": "The Constitution.",
+      "completedAt": "2024-05-02T14:18:00Z"
+    },
+    {
+      "turnId": "turn-007",
+      "stage": "civics",
+      "questionId": "2008-005",
+      "prompt": "What do we call the first ten amendments to the Constitution?",
+      "responseText": "The Declaration of Independence.",
+      "completedAt": "2024-05-02T14:19:30Z"
+    },
+    {
+      "turnId": "turn-008",
+      "stage": "civics",
+      "questionId": "2008-007",
+      "prompt": "How many amendments does the Constitution have?",
+      "responseText": "Twelve.",
+      "completedAt": "2024-05-02T14:21:00Z"
+    },
+    {
+      "turnId": "turn-009",
+      "stage": "civics",
+      "questionId": "2008-011",
+      "prompt": "What is the economic system in the United States?",
+      "responseText": "A market economy.",
+      "completedAt": "2024-05-02T14:22:30Z"
+    },
+    {
+      "turnId": "turn-010",
+      "stage": "civics",
+      "questionId": "2008-015",
+      "prompt": "Who is in charge of the executive branch?",
+      "responseText": "The Senate.",
+      "completedAt": "2024-05-02T14:24:00Z"
+    },
+    {
+      "turnId": "turn-011",
+      "stage": "civics",
+      "questionId": "2008-018",
+      "prompt": "How many U.S. Senators are there?",
+      "responseText": "Fifty.",
+      "completedAt": "2024-05-02T14:25:30Z"
+    },
+    {
+      "turnId": "turn-012",
+      "stage": "civics",
+      "questionId": "2008-019",
+      "prompt": "We elect a U.S. Senator for how many years?",
+      "responseText": "Two years.",
+      "completedAt": "2024-05-02T14:27:00Z"
+    }
+  ],
+  "scoringResults": {
+    "turn-002": { "stage": "n400_interview", "feedback": "understood" },
+    "turn-003": { "stage": "n400_interview", "feedback": "understood" },
+    "turn-004": { "stage": "reading", "attempts": 1, "result": "correct" },
+    "turn-005": { "stage": "writing", "attempts": 1, "result": "correct" },
+    "turn-006": { "stage": "civics", "scoringSource": "answer_key", "result": "correct" },
+    "turn-007": { "stage": "civics", "scoringSource": "answer_key", "result": "incorrect" },
+    "turn-008": { "stage": "civics", "scoringSource": "answer_key", "result": "incorrect" },
+    "turn-009": { "stage": "civics", "scoringSource": "answer_key", "result": "correct" },
+    "turn-010": { "stage": "civics", "scoringSource": "answer_key", "result": "incorrect" },
+    "turn-011": { "stage": "civics", "scoringSource": "answer_key", "result": "incorrect" },
+    "turn-012": { "stage": "civics", "scoringSource": "answer_key", "result": "incorrect" }
+  },
+  "finalReport": {
+    "practiceResult": "needs_more_practice",
+    "disclaimer": "This is a practice tool only. It is not affiliated with USCIS or any government agency. Results do not predict or reflect any official immigration decision. This is not legal advice.",
+    "stageSummaries": [
+      {
+        "stage": "intro",
+        "turnsTotal": 1,
+        "turnsScored": 0,
+        "summary": "Orientation completed.",
+        "reviewItems": []
+      },
+      {
+        "stage": "n400_interview",
+        "turnsTotal": 2,
+        "turnsScored": 2,
+        "summary": "Both N-400 responses were understood clearly.",
+        "reviewItems": []
+      },
+      {
+        "stage": "reading",
+        "turnsTotal": 1,
+        "turnsScored": 1,
+        "summary": "The first reading sentence was read correctly.",
+        "reviewItems": []
+      },
+      {
+        "stage": "writing",
+        "turnsTotal": 1,
+        "turnsScored": 1,
+        "summary": "The first writing sentence was written correctly.",
+        "reviewItems": []
+      },
+      {
+        "stage": "civics",
+        "turnsTotal": 7,
+        "turnsScored": 7,
+        "summary": "2 of 7 civics questions answered correctly. The practice test stopped after the fifth incorrect answer.",
+        "reviewItems": [
+          "What do we call the first ten amendments to the Constitution?",
+          "How many amendments does the Constitution have?",
+          "Who is in charge of the executive branch?",
+          "How many U.S. Senators are there?",
+          "We elect a U.S. Senator for how many years?"
+        ]
+      }
+    ],
+    "overallReviewItems": [
+      "What do we call the first ten amendments to the Constitution?",
+      "How many amendments does the Constitution have?",
+      "Who is in charge of the executive branch?",
+      "How many U.S. Senators are there?",
+      "We elect a U.S. Senator for how many years?"
+    ],
+    "generatedAt": "2024-05-02T14:38:00Z"
+  }
+}

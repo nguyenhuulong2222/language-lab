@@ -1,0 +1,1012 @@
+{
+  "_note": "Built from data/sources/uscis-2008-civics-100.html (official USCIS 2008 list, web page) by tools/answer-key/build-answer-key.mjs. Numbering was cross-checked against data/sources/uscis-2008-civics-100-rev0119.txt. NEEDS HUMAN REVIEW: see docs/answer-key-review.md. Accepted answers are stored normalised (lowercase, no punctuation, hyphens as spaces). A leading the/a/an is optional when matching, so it is stored as written. Dynamic questions (answers change with elections, appointments or where the user lives) have no stored answers.",
+  "_generatedBy": "tools/answer-key/build-answer-key.mjs",
+  "_reviewSheet": "docs/answer-key-review.md",
+  "_sources": [{"file":"data/sources/uscis-2008-civics-100.html","sha256":"e8e1015202e503da648db3e3c75056de9903fbf96ea8ecac1a76a133eacc1f42"},{"file":"data/sources/uscis-2008-civics-100-rev0119.txt","sha256":"f89f731acbc2c401b638d33880271a70b507e2d8222658ebb90e2d9ece3c9ac2"}],
+  "needsHumanReview": true,
+  "entries": [
+    {
+      "id": "2008-001",
+      "testVersion": "2008",
+      "questionText": "What is the supreme law of the land?",
+      "acceptedAnswers": ["the constitution"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 1"
+    },
+    {
+      "id": "2008-002",
+      "testVersion": "2008",
+      "questionText": "What does the Constitution do?",
+      "acceptedAnswers": ["sets up the government", "defines the government", "protects basic rights of americans"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 2"
+    },
+    {
+      "id": "2008-003",
+      "testVersion": "2008",
+      "questionText": "The idea of self-government is in the first three words of the Constitution. What are these words?",
+      "acceptedAnswers": ["we the people"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 3"
+    },
+    {
+      "id": "2008-004",
+      "testVersion": "2008",
+      "questionText": "What is an amendment?",
+      "acceptedAnswers": ["a change", "a change to the constitution", "an addition", "an addition to the constitution"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 4"
+    },
+    {
+      "id": "2008-005",
+      "testVersion": "2008",
+      "questionText": "What do we call the first ten amendments to the Constitution?",
+      "acceptedAnswers": ["the bill of rights"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 5"
+    },
+    {
+      "id": "2008-006",
+      "testVersion": "2008",
+      "questionText": "What is one right or freedom from the First Amendment?",
+      "acceptedAnswers": ["speech", "religion", "assembly", "press", "petition the government"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 6"
+    },
+    {
+      "id": "2008-007",
+      "testVersion": "2008",
+      "questionText": "How many amendments does the Constitution have?",
+      "acceptedAnswers": ["twenty seven", "27"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 7"
+    },
+    {
+      "id": "2008-008",
+      "testVersion": "2008",
+      "questionText": "What did the Declaration of Independence do?",
+      "acceptedAnswers": ["announced our independence", "announced our independence from great britain", "declared our independence", "declared our independence from great britain", "said that the united states is free", "said that the united states is free from great britain"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 8"
+    },
+    {
+      "id": "2008-009",
+      "testVersion": "2008",
+      "questionText": "What are two rights in the Declaration of Independence?",
+      "acceptedAnswers": ["life", "liberty", "pursuit of happiness"],
+      "requiredAnswerCount": 2,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 9"
+    },
+    {
+      "id": "2008-010",
+      "testVersion": "2008",
+      "questionText": "What is freedom of religion?",
+      "acceptedAnswers": ["you can practice any religion or not practice a religion"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 10"
+    },
+    {
+      "id": "2008-011",
+      "testVersion": "2008",
+      "questionText": "What is the economic system in the United States?",
+      "acceptedAnswers": ["capitalist economy", "market economy"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 11"
+    },
+    {
+      "id": "2008-012",
+      "testVersion": "2008",
+      "questionText": "What is the “rule of law”?",
+      "acceptedAnswers": ["everyone must follow the law", "leaders must obey the law", "government must obey the law", "no one is above the law"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 12"
+    },
+    {
+      "id": "2008-013",
+      "testVersion": "2008",
+      "questionText": "Name one branch or part of the government.",
+      "acceptedAnswers": ["congress", "legislative", "president", "executive", "the courts", "judicial"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 13"
+    },
+    {
+      "id": "2008-014",
+      "testVersion": "2008",
+      "questionText": "What stops one branch of government from becoming too powerful?",
+      "acceptedAnswers": ["checks and balances", "separation of powers"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 14"
+    },
+    {
+      "id": "2008-015",
+      "testVersion": "2008",
+      "questionText": "Who is in charge of the executive branch?",
+      "acceptedAnswers": ["the president"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 15"
+    },
+    {
+      "id": "2008-016",
+      "testVersion": "2008",
+      "questionText": "Who makes federal laws?",
+      "acceptedAnswers": ["congress", "senate and house", "senate and house of representatives", "legislature", "us or national legislature"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 16"
+    },
+    {
+      "id": "2008-017",
+      "testVersion": "2008",
+      "questionText": "What are the two parts of the U.S. Congress?",
+      "acceptedAnswers": ["the senate and house", "the senate and house of representatives"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 17"
+    },
+    {
+      "id": "2008-018",
+      "testVersion": "2008",
+      "questionText": "How many U.S. Senators are there?",
+      "acceptedAnswers": ["one hundred", "100"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 18"
+    },
+    {
+      "id": "2008-019",
+      "testVersion": "2008",
+      "questionText": "We elect a U.S. Senator for how many years?",
+      "acceptedAnswers": ["six", "6"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 19"
+    },
+    {
+      "id": "2008-020",
+      "testVersion": "2008",
+      "questionText": "Who is one of your state’s U.S. Senators now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 20 (USCIS text: answers will vary)"
+    },
+    {
+      "id": "2008-021",
+      "testVersion": "2008",
+      "questionText": "The House of Representatives has how many voting members?",
+      "acceptedAnswers": ["four hundred thirty five", "435"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 21"
+    },
+    {
+      "id": "2008-022",
+      "testVersion": "2008",
+      "questionText": "We elect a U.S. Representative for how many years?",
+      "acceptedAnswers": ["two", "2"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 22"
+    },
+    {
+      "id": "2008-023",
+      "testVersion": "2008",
+      "questionText": "Name your U.S. Representative.",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 23 (USCIS text: answers will vary)"
+    },
+    {
+      "id": "2008-024",
+      "testVersion": "2008",
+      "questionText": "Who does a U.S. Senator represent?",
+      "acceptedAnswers": ["all people of the state"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 24"
+    },
+    {
+      "id": "2008-025",
+      "testVersion": "2008",
+      "questionText": "Why do some states have more Representatives than other states?",
+      "acceptedAnswers": ["the state's population", "because of the state's population", "they have more people", "because they have more people", "some states have more people", "because some states have more people"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 25"
+    },
+    {
+      "id": "2008-026",
+      "testVersion": "2008",
+      "questionText": "We elect a President for how many years?",
+      "acceptedAnswers": ["four", "4"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 26"
+    },
+    {
+      "id": "2008-027",
+      "testVersion": "2008",
+      "questionText": "In what month do we vote for President?",
+      "acceptedAnswers": ["november"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 27"
+    },
+    {
+      "id": "2008-028",
+      "testVersion": "2008",
+      "questionText": "What is the name of the President of the United States now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 28 (USCIS text refers to the test updates page)"
+    },
+    {
+      "id": "2008-029",
+      "testVersion": "2008",
+      "questionText": "What is the name of the Vice President of the United States now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 29 (USCIS text refers to the test updates page)"
+    },
+    {
+      "id": "2008-030",
+      "testVersion": "2008",
+      "questionText": "If the President can no longer serve, who becomes President?",
+      "acceptedAnswers": ["the vice president"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 30"
+    },
+    {
+      "id": "2008-031",
+      "testVersion": "2008",
+      "questionText": "If both the President and the Vice President can no longer serve, who becomes President?",
+      "acceptedAnswers": ["the speaker of the house"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 31"
+    },
+    {
+      "id": "2008-032",
+      "testVersion": "2008",
+      "questionText": "Who is the Commander in Chief of the military?",
+      "acceptedAnswers": ["the president"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 32"
+    },
+    {
+      "id": "2008-033",
+      "testVersion": "2008",
+      "questionText": "Who signs bills to become laws?",
+      "acceptedAnswers": ["the president"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 33"
+    },
+    {
+      "id": "2008-034",
+      "testVersion": "2008",
+      "questionText": "Who vetoes bills?",
+      "acceptedAnswers": ["the president"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 34"
+    },
+    {
+      "id": "2008-035",
+      "testVersion": "2008",
+      "questionText": "What does the President’s Cabinet do?",
+      "acceptedAnswers": ["advises the president"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 35"
+    },
+    {
+      "id": "2008-036",
+      "testVersion": "2008",
+      "questionText": "What are two Cabinet-level positions?",
+      "acceptedAnswers": ["secretary of agriculture", "secretary of commerce", "secretary of defense", "secretary of education", "secretary of energy", "secretary of health and human services", "secretary of homeland security", "secretary of housing and urban development", "secretary of the interior", "secretary of labor", "secretary of state", "secretary of transportation", "secretary of the treasury", "secretary of veterans affairs", "attorney general", "vice president"],
+      "requiredAnswerCount": 2,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 36"
+    },
+    {
+      "id": "2008-037",
+      "testVersion": "2008",
+      "questionText": "What does the judicial branch do?",
+      "acceptedAnswers": ["reviews laws", "explains laws", "resolves disputes", "resolves disputes disagreements", "decides if a law goes against the constitution"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 37"
+    },
+    {
+      "id": "2008-038",
+      "testVersion": "2008",
+      "questionText": "What is the highest court in the United States?",
+      "acceptedAnswers": ["the supreme court"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 38"
+    },
+    {
+      "id": "2008-039",
+      "testVersion": "2008",
+      "questionText": "How many justices are on the Supreme Court?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 39 (USCIS text refers to the test updates page)"
+    },
+    {
+      "id": "2008-040",
+      "testVersion": "2008",
+      "questionText": "Who is the Chief Justice of the United States now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 40 (USCIS text refers to the test updates page)"
+    },
+    {
+      "id": "2008-041",
+      "testVersion": "2008",
+      "questionText": "Under our Constitution, some powers belong to the federal government. What is one power of the federal government?",
+      "acceptedAnswers": ["to print money", "to declare war", "to create an army", "to make treaties"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 41"
+    },
+    {
+      "id": "2008-042",
+      "testVersion": "2008",
+      "questionText": "Under our Constitution, some powers belong to the states. What is one power of the states?",
+      "acceptedAnswers": ["provide schooling and education", "provide protection", "provide protection police", "provide safety", "provide safety fire departments", "give a driver's license", "approve zoning and land use"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 42"
+    },
+    {
+      "id": "2008-043",
+      "testVersion": "2008",
+      "questionText": "Who is the Governor of your state now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 43 (USCIS text: answers will vary)"
+    },
+    {
+      "id": "2008-044",
+      "testVersion": "2008",
+      "questionText": "What is the capital of your state?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 44 (USCIS text: answers will vary)"
+    },
+    {
+      "id": "2008-045",
+      "testVersion": "2008",
+      "questionText": "What are the two major political parties in the United States?",
+      "acceptedAnswers": ["democratic and republican"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 45"
+    },
+    {
+      "id": "2008-046",
+      "testVersion": "2008",
+      "questionText": "What is the political party of the President now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 46 (USCIS text refers to the test updates page)"
+    },
+    {
+      "id": "2008-047",
+      "testVersion": "2008",
+      "questionText": "What is the name of the Speaker of the House of Representatives now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 47 (USCIS text refers to the test updates page)"
+    },
+    {
+      "id": "2008-048",
+      "testVersion": "2008",
+      "questionText": "There are four amendments to the Constitution about who can vote. Describe one of them.",
+      "acceptedAnswers": ["citizens eighteen and older", "citizens eighteen and older can vote", "citizens 18 and older", "citizens 18 and older can vote", "you don't have to pay to vote", "you don't have to pay a poll tax to vote", "any citizen can vote", "any citizen can vote women and men can vote", "a male citizen of any race", "a male citizen of any race can vote"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 48"
+    },
+    {
+      "id": "2008-049",
+      "testVersion": "2008",
+      "questionText": "What is one responsibility that is only for United States citizens?",
+      "acceptedAnswers": ["serve on a jury", "vote in a federal election"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 49"
+    },
+    {
+      "id": "2008-050",
+      "testVersion": "2008",
+      "questionText": "Name one right only for United States citizens.",
+      "acceptedAnswers": ["vote in a federal election", "run for federal office"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 50"
+    },
+    {
+      "id": "2008-051",
+      "testVersion": "2008",
+      "questionText": "What are two rights of everyone living in the United States?",
+      "acceptedAnswers": ["freedom of expression", "freedom of speech", "freedom of assembly", "freedom to petition the government", "freedom of religion", "the right to bear arms"],
+      "requiredAnswerCount": 2,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 51"
+    },
+    {
+      "id": "2008-052",
+      "testVersion": "2008",
+      "questionText": "What do we show loyalty to when we say the Pledge of Allegiance?",
+      "acceptedAnswers": ["the united states", "the flag"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 52"
+    },
+    {
+      "id": "2008-053",
+      "testVersion": "2008",
+      "questionText": "What is one promise you make when you become a United States citizen?",
+      "acceptedAnswers": ["give up loyalty to other countries", "defend the constitution and laws of the united states", "obey the laws of the united states", "serve in the us military", "serve in the us military if needed", "serve the nation", "serve the nation if needed", "serve do important work for the nation", "serve do important work for the nation if needed", "be loyal to the united states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 53"
+    },
+    {
+      "id": "2008-054",
+      "testVersion": "2008",
+      "questionText": "How old do citizens have to be to vote for President?",
+      "acceptedAnswers": ["eighteen and older", "18 and older"],
+      "numberAlone": ["eighteen and older", "18 and older"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 54"
+    },
+    {
+      "id": "2008-055",
+      "testVersion": "2008",
+      "questionText": "What are two ways that Americans can participate in their democracy?",
+      "acceptedAnswers": ["vote", "join a political party", "help with a campaign", "join a civic group", "join a community group", "give an elected official your opinion on an issue", "call senators and representatives", "publicly support or oppose an issue or policy", "run for office", "write to a newspaper"],
+      "requiredAnswerCount": 2,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 55"
+    },
+    {
+      "id": "2008-056",
+      "testVersion": "2008",
+      "questionText": "When is the last day you can send in federal income tax forms?",
+      "acceptedAnswers": ["april 15"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 56"
+    },
+    {
+      "id": "2008-057",
+      "testVersion": "2008",
+      "questionText": "When must all men register for the Selective Service?",
+      "acceptedAnswers": ["at age eighteen", "at age 18", "between eighteen and twenty six", "between eighteen and 26", "between 18 and twenty six", "between 18 and 26"],
+      "numberAlone": ["at age eighteen", "at age 18"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 57"
+    },
+    {
+      "id": "2008-058",
+      "testVersion": "2008",
+      "questionText": "What is one reason colonists came to America?",
+      "acceptedAnswers": ["freedom", "political liberty", "religious freedom", "economic opportunity", "practice their religion", "escape persecution"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 58"
+    },
+    {
+      "id": "2008-059",
+      "testVersion": "2008",
+      "questionText": "Who lived in America before the Europeans arrived?",
+      "acceptedAnswers": ["american indians", "native americans"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 59"
+    },
+    {
+      "id": "2008-060",
+      "testVersion": "2008",
+      "questionText": "What group of people was taken to America and sold as slaves?",
+      "acceptedAnswers": ["africans", "people from africa"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 60"
+    },
+    {
+      "id": "2008-061",
+      "testVersion": "2008",
+      "questionText": "Why did the colonists fight the British?",
+      "acceptedAnswers": ["because of high taxes", "because of taxation without representation", "because the british army stayed in their houses", "quartering", "because they didn't have self government"],
+      "answerGroups": [["because of high taxes", "because of taxation without representation"], ["because the british army stayed in their houses", "quartering"]],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 61"
+    },
+    {
+      "id": "2008-062",
+      "testVersion": "2008",
+      "questionText": "Who wrote the Declaration of Independence?",
+      "acceptedAnswers": ["jefferson", "thomas jefferson"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 62"
+    },
+    {
+      "id": "2008-063",
+      "testVersion": "2008",
+      "questionText": "When was the Declaration of Independence adopted?",
+      "acceptedAnswers": ["july 4 1776"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 63"
+    },
+    {
+      "id": "2008-064",
+      "testVersion": "2008",
+      "questionText": "There were 13 original states. Name three.",
+      "acceptedAnswers": ["new hampshire", "massachusetts", "rhode island", "connecticut", "new york", "new jersey", "pennsylvania", "delaware", "maryland", "virginia", "north carolina", "south carolina", "georgia"],
+      "requiredAnswerCount": 3,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 64"
+    },
+    {
+      "id": "2008-065",
+      "testVersion": "2008",
+      "questionText": "What happened at the Constitutional Convention?",
+      "acceptedAnswers": ["the constitution was written", "the founding fathers wrote the constitution"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 65"
+    },
+    {
+      "id": "2008-066",
+      "testVersion": "2008",
+      "questionText": "When was the Constitution written?",
+      "acceptedAnswers": ["1787"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 66"
+    },
+    {
+      "id": "2008-067",
+      "testVersion": "2008",
+      "questionText": "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.",
+      "acceptedAnswers": ["madison", "james madison", "hamilton", "alexander hamilton", "jay", "john jay", "publius"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 67"
+    },
+    {
+      "id": "2008-068",
+      "testVersion": "2008",
+      "questionText": "What is one thing Benjamin Franklin is famous for?",
+      "acceptedAnswers": ["us diplomat", "oldest member of the constitutional convention", "first postmaster general of the united states", "writer of poor richard's almanac", "started the first free libraries"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 68"
+    },
+    {
+      "id": "2008-069",
+      "testVersion": "2008",
+      "questionText": "Who is the “Father of Our Country”?",
+      "acceptedAnswers": ["washington", "george washington"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 69"
+    },
+    {
+      "id": "2008-070",
+      "testVersion": "2008",
+      "questionText": "Who was the first President?",
+      "acceptedAnswers": ["washington", "george washington"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 70"
+    },
+    {
+      "id": "2008-071",
+      "testVersion": "2008",
+      "questionText": "What territory did the United States buy from France in 1803?",
+      "acceptedAnswers": ["the louisiana territory", "louisiana"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 71"
+    },
+    {
+      "id": "2008-072",
+      "testVersion": "2008",
+      "questionText": "Name one war fought by the United States in the 1800s.",
+      "acceptedAnswers": ["war of 1812", "mexican american war", "civil war", "spanish american war"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 72"
+    },
+    {
+      "id": "2008-073",
+      "testVersion": "2008",
+      "questionText": "Name the U.S. war between the North and the South.",
+      "acceptedAnswers": ["the civil war", "the war between the states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 73"
+    },
+    {
+      "id": "2008-074",
+      "testVersion": "2008",
+      "questionText": "Name one problem that led to the Civil War.",
+      "acceptedAnswers": ["slavery", "economic reasons", "states rights"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 74"
+    },
+    {
+      "id": "2008-075",
+      "testVersion": "2008",
+      "questionText": "What was one important thing that Abraham Lincoln did?",
+      "acceptedAnswers": ["freed the slaves", "freed the slaves emancipation proclamation", "saved the union", "saved or preserved the union", "led the united states during the civil war"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 75"
+    },
+    {
+      "id": "2008-076",
+      "testVersion": "2008",
+      "questionText": "What did the Emancipation Proclamation do?",
+      "acceptedAnswers": ["freed the slaves", "freed slaves in the confederacy", "freed slaves in the confederate states", "freed slaves in most southern states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 76"
+    },
+    {
+      "id": "2008-077",
+      "testVersion": "2008",
+      "questionText": "What did Susan B. Anthony do?",
+      "acceptedAnswers": ["fought for women's rights", "fought for civil rights"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 77"
+    },
+    {
+      "id": "2008-078",
+      "testVersion": "2008",
+      "questionText": "Name one war fought by the United States in the 1900s.",
+      "acceptedAnswers": ["world war i", "world war ii", "korean war", "vietnam war", "gulf war", "persian gulf war"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 78"
+    },
+    {
+      "id": "2008-079",
+      "testVersion": "2008",
+      "questionText": "Who was President during World War I?",
+      "acceptedAnswers": ["wilson", "woodrow wilson"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 79"
+    },
+    {
+      "id": "2008-080",
+      "testVersion": "2008",
+      "questionText": "Who was President during the Great Depression and World War II?",
+      "acceptedAnswers": ["roosevelt", "franklin roosevelt"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 80"
+    },
+    {
+      "id": "2008-081",
+      "testVersion": "2008",
+      "questionText": "Who did the United States fight in World War II?",
+      "acceptedAnswers": ["japan germany and italy"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 81"
+    },
+    {
+      "id": "2008-082",
+      "testVersion": "2008",
+      "questionText": "Before he was President, Eisenhower was a general. What war was he in?",
+      "acceptedAnswers": ["world war ii"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 82"
+    },
+    {
+      "id": "2008-083",
+      "testVersion": "2008",
+      "questionText": "During the Cold War, what was the main concern of the United States?",
+      "acceptedAnswers": ["communism"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 83"
+    },
+    {
+      "id": "2008-084",
+      "testVersion": "2008",
+      "questionText": "What movement tried to end racial discrimination?",
+      "acceptedAnswers": ["civil rights", "civil rights movement"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 84"
+    },
+    {
+      "id": "2008-085",
+      "testVersion": "2008",
+      "questionText": "What did Martin Luther King, Jr. do?",
+      "acceptedAnswers": ["fought for civil rights", "worked for equality for all americans"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 85"
+    },
+    {
+      "id": "2008-086",
+      "testVersion": "2008",
+      "questionText": "What major event happened on September 11, 2001, in the United States?",
+      "acceptedAnswers": ["terrorists attacked the united states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 86"
+    },
+    {
+      "id": "2008-087",
+      "testVersion": "2008",
+      "questionText": "Name one American Indian tribe in the United States.",
+      "acceptedAnswers": ["cherokee", "navajo", "sioux", "chippewa", "choctaw", "pueblo", "apache", "iroquois", "creek", "blackfeet", "seminole", "cheyenne", "arawak", "shawnee", "mohegan", "huron", "oneida", "lakota", "crow", "teton", "hopi", "inuit"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 87"
+    },
+    {
+      "id": "2008-088",
+      "testVersion": "2008",
+      "questionText": "Name one of the two longest rivers in the United States.",
+      "acceptedAnswers": ["missouri", "missouri river", "mississippi", "mississippi river"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 88"
+    },
+    {
+      "id": "2008-089",
+      "testVersion": "2008",
+      "questionText": "What ocean is on the West Coast of the United States?",
+      "acceptedAnswers": ["pacific", "pacific ocean"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 89"
+    },
+    {
+      "id": "2008-090",
+      "testVersion": "2008",
+      "questionText": "What ocean is on the East Coast of the United States?",
+      "acceptedAnswers": ["atlantic", "atlantic ocean"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 90"
+    },
+    {
+      "id": "2008-091",
+      "testVersion": "2008",
+      "questionText": "Name one U.S. territory.",
+      "acceptedAnswers": ["puerto rico", "us virgin islands", "american samoa", "northern mariana islands", "guam"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 91"
+    },
+    {
+      "id": "2008-092",
+      "testVersion": "2008",
+      "questionText": "Name one state that borders Canada.",
+      "acceptedAnswers": ["maine", "new hampshire", "vermont", "new york", "pennsylvania", "ohio", "michigan", "minnesota", "north dakota", "montana", "idaho", "washington", "alaska"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 92"
+    },
+    {
+      "id": "2008-093",
+      "testVersion": "2008",
+      "questionText": "Name one state that borders Mexico.",
+      "acceptedAnswers": ["california", "arizona", "new mexico", "texas"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 93"
+    },
+    {
+      "id": "2008-094",
+      "testVersion": "2008",
+      "questionText": "What is the capital of the United States?",
+      "acceptedAnswers": ["washington dc"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 94"
+    },
+    {
+      "id": "2008-095",
+      "testVersion": "2008",
+      "questionText": "Where is the Statue of Liberty?",
+      "acceptedAnswers": ["new york", "new york harbor", "liberty island", "new jersey", "near new york city", "on the hudson", "on the hudson river"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 95"
+    },
+    {
+      "id": "2008-096",
+      "testVersion": "2008",
+      "questionText": "Why does the flag have 13 stripes?",
+      "acceptedAnswers": ["because there were 13 original colonies", "because the stripes represent the original colonies"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 96"
+    },
+    {
+      "id": "2008-097",
+      "testVersion": "2008",
+      "questionText": "Why does the flag have 50 stars?",
+      "acceptedAnswers": ["because there is one star for each state", "because each star represents a state", "because there are 50 states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 97"
+    },
+    {
+      "id": "2008-098",
+      "testVersion": "2008",
+      "questionText": "What is the name of the national anthem?",
+      "acceptedAnswers": ["the star spangled banner"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 98"
+    },
+    {
+      "id": "2008-099",
+      "testVersion": "2008",
+      "questionText": "When do we celebrate Independence Day?",
+      "acceptedAnswers": ["july 4"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 99"
+    },
+    {
+      "id": "2008-100",
+      "testVersion": "2008",
+      "questionText": "Name two national U.S. holidays.",
+      "acceptedAnswers": ["new year's day", "martin luther king jr day", "presidents day", "memorial day", "juneteenth", "independence day", "labor day", "columbus day", "veterans day", "thanksgiving", "christmas"],
+      "requiredAnswerCount": 2,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov web page saved as uscis-2008-civics-100.html, question 100"
+    }
+  ]
+}

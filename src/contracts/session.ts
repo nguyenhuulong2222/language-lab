@@ -60,6 +60,13 @@ export interface Turn {
    */
   localRecordingId?: string;
 
+  /**
+   * The id of the answer key entry this turn asks (for example "2008-001").
+   * Required when stage is "civics": the grading engine throws a clear error for a
+   * civics turn without it. Leave undefined on all other stages.
+   */
+  questionId?: string;
+
   /** ISO 8601 timestamp of when this turn was completed. */
   completedAt: string;
 }
@@ -71,10 +78,15 @@ export interface Turn {
 /**
  * Scoring result for a civics question turn.
  * Determined solely by the answer key — AI must never produce this score.
+ *
+ * "unscored" means the answer key cannot score this question: its answer changes
+ * with elections, appointments, or where the user lives, or its id is not in the
+ * key. An unscored turn counts as neither correct nor incorrect and never
+ * triggers early stop.
  */
 export interface CivicsScoringResult {
   scoringSource: "answer_key";
-  result: "correct" | "incorrect";
+  result: "correct" | "incorrect" | "unscored";
 }
 
 /**

@@ -14,6 +14,8 @@ import type { SessionStage } from "../../contracts";
 import type { StageMeta } from "../stages";
 import { stageIndex } from "../stages";
 import { CheckIcon } from "./icons";
+import { useT } from "../../i18n/react";
+import type { MessageKey } from "../../i18n";
 import "./StageStepper.css";
 
 interface StageStepperProps {
@@ -23,13 +25,14 @@ interface StageStepperProps {
 
 type StepStatus = "complete" | "current" | "upcoming";
 
-const STATUS_WORD: Record<StepStatus, string> = {
-  complete: "completed",
-  current: "current step",
-  upcoming: "upcoming",
+const STATUS_WORD: Record<StepStatus, MessageKey> = {
+  complete: "stepper.status.complete",
+  current: "stepper.status.current",
+  upcoming: "stepper.status.upcoming",
 };
 
 export function StageStepper({ stages, currentStage }: StageStepperProps) {
+  const t = useT();
   const currentIndex = stageIndex(currentStage);
 
   const steps = stages.map((s, i): { meta: StageMeta; status: StepStatus } => {
@@ -41,18 +44,18 @@ export function StageStepper({ stages, currentStage }: StageStepperProps) {
   const progressPct = ((currentIndex + 1) / stages.length) * 100;
 
   return (
-    <nav className="stepper" aria-label="Interview stages">
+    <nav className="stepper" aria-label={t("stepper.label")}>
       <div className="ll-container">
         {/* Condensed view (mobile) */}
         <p className="stepper__condensed">
           <span className="stepper__condensed-count">
-            Stage {currentIndex + 1} of {stages.length}
+            {t("stepper.count", { current: currentIndex + 1, total: stages.length })}
           </span>
           <span className="stepper__condensed-sep" aria-hidden="true">
             ·
           </span>
           <span className="stepper__condensed-label">
-            {stages[currentIndex].label}
+            {t(stages[currentIndex].labelKey)}
           </span>
         </p>
         <div
@@ -86,8 +89,8 @@ export function StageStepper({ stages, currentStage }: StageStepperProps) {
                     i + 1
                   )}
                 </span>
-                <span className="stepper__step-label">{meta.short}</span>
-                <span className="ll-sr-only">{STATUS_WORD[status]}</span>
+                <span className="stepper__step-label">{t(meta.shortKey)}</span>
+                <span className="ll-sr-only">{t(STATUS_WORD[status])}</span>
               </span>
               <span
                 className="stepper__connector stepper__connector--trail"

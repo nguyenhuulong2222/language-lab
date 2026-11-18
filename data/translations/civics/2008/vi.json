@@ -1,0 +1,855 @@
+{
+  "language": "vi",
+  "testVersion": "2008",
+  "needsHumanReview": true,
+  "note": "Display text for reference only. Not used for scoring. Status 'source' means the text was taken from the N400 project's data without an LLM-suggested flag; Language Lab has not reviewed it.",
+  "provenance": {
+    "repository": "N400 (read-only source)",
+    "commit": "942c5d667397464205cddfc2cdce88adaabed8b3",
+    "contentVersion": "e54df6b",
+    "tier": "official",
+    "endonym": "Tiếng Việt"
+  },
+  "entries": {
+    "2008-001": {
+      "question": "Luật cao nhất của quốc gia là gì?",
+      "answers": [
+        "Hiến Pháp"
+      ],
+      "status": "source"
+    },
+    "2008-002": {
+      "question": "Hiến Pháp có mục đích gì?",
+      "answers": [
+        "thiết lập chánh phủ",
+        "mô tả tổ chức chánh phủ",
+        "bảo vệ các quyền căn bản của người dân Hoa Kỳ"
+      ],
+      "status": "source"
+    },
+    "2008-003": {
+      "question": "Ý tưởng tự quản trị nằm trong ba chữ đầu tiên của Hiến Pháp. Các chữ này là những chữ nào?",
+      "answers": [
+        "Chúng tôi người dân (We the People)"
+      ],
+      "status": "source"
+    },
+    "2008-004": {
+      "question": "Tu chính án là gì?",
+      "answers": [
+        "một sự thay đổi (trong Hiến Pháp)",
+        "một sự thêm (vào Hiến Pháp)"
+      ],
+      "status": "source"
+    },
+    "2008-005": {
+      "question": "Ta gọi mười tu chính đầu tiên vào Hiến Pháp là gì?",
+      "answers": [
+        "Luật Dân Quyền"
+      ],
+      "status": "source"
+    },
+    "2008-006": {
+      "question": "Kể ra Một quyền hoặc một tự do trong Tu Chính Án Đầu Tiên (First Amendment)?",
+      "answers": [
+        "tự do ngôn luận",
+        "tự do tôn giáo",
+        "tự do hội họp",
+        "tự do báo chí",
+        "tự do thỉnh nguyện chánh phủ"
+      ],
+      "status": "source"
+    },
+    "2008-007": {
+      "question": "Hiến Pháp có bao nhiêu tu chính án?",
+      "answers": [
+        "hai mươi bảy (27)"
+      ],
+      "status": "source"
+    },
+    "2008-008": {
+      "question": "Bản Tuyên Ngôn Độc Lập có ý nghĩa gì?",
+      "answers": [
+        "thông báo nền độc lập của chúng ta (khỏi Anh Quốc)",
+        "tuyên cáo nền độc lập của chúng ta (khỏi Anh Quốc)",
+        "cho biết Hoa Kỳ đã tự do (khỏi Anh Quốc)"
+      ],
+      "status": "source"
+    },
+    "2008-009": {
+      "question": "Kể ra Hai quyền trong bản Bản Tuyên Ngôn Độc Lập?",
+      "answers": [
+        "quyền sống",
+        "quyền tự do",
+        "quyền theo đuổi hạnh phúc"
+      ],
+      "status": "source"
+    },
+    "2008-010": {
+      "question": "Tự do tôn giáo là gì?",
+      "answers": [
+        "Bạn có thể theo bất cứ tôn giáo nào, hoặc không theo tôn giáo nào."
+      ],
+      "status": "source"
+    },
+    "2008-011": {
+      "question": "Hệ thống kinh tế của Hoa Kỳ gọi là gì?",
+      "answers": [
+        "kinh tế tư bản",
+        "kinh tế thị trường"
+      ],
+      "status": "source"
+    },
+    "2008-012": {
+      "question": "\"Thượng tôn luật pháp\" là gì?",
+      "answers": [
+        "Mọi người đều phải tuân theo luật pháp.",
+        "Cả các người lãnh đạo đều phải tuân theo luật pháp.",
+        "Nhà cầm quyền phải tuân theo luật pháp.",
+        "Không ai được ở trên pháp luật cả."
+      ],
+      "status": "source"
+    },
+    "2008-013": {
+      "question": "Cho biết một ngành hay phần của công quyền.",
+      "answers": [
+        "Quốc Hội",
+        "lập pháp",
+        "Tổng Thống",
+        "hành pháp",
+        "các tòa án",
+        "tư pháp"
+      ],
+      "status": "source"
+    },
+    "2008-014": {
+      "question": "Cách nào ngăn cản một ngành công quyền trở thành quá mạnh?",
+      "answers": [
+        "kiểm soát lẫn nhau",
+        "phân quyền"
+      ],
+      "status": "source"
+    },
+    "2008-015": {
+      "question": "Ai phụ trách hành pháp?",
+      "answers": [
+        "Tổng Thống"
+      ],
+      "status": "source"
+    },
+    "2008-016": {
+      "question": "Ai làm luật liên bang?",
+      "answers": [
+        "Quốc Hội",
+        "Thượng và Hạ Nghị Viện",
+        "Ngành Lập Pháp (của Liên Bang hay Quốc Gia)"
+      ],
+      "status": "source"
+    },
+    "2008-017": {
+      "question": "Hai phần của Quốc Hội Hoa Kỳ là gì?",
+      "answers": [
+        "Thượng và Hạ Nghị Viện"
+      ],
+      "status": "source"
+    },
+    "2008-018": {
+      "question": "Có bao nhiêu Thượng Nghị Sĩ Liên Bang?",
+      "answers": [
+        "một trăm (100)"
+      ],
+      "status": "source"
+    },
+    "2008-019": {
+      "question": "Chúng ta bầu Thượng Nghị Sĩ cho bao nhiêu năm?",
+      "answers": [
+        "sáu (6)"
+      ],
+      "status": "source"
+    },
+    "2008-020": {
+      "question": "Ai là một trong những Thượng Nghị Sĩ Liên Bang của bạn?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-021": {
+      "question": "Hạ-Nghị-Viện có bao nhiêu dân biểu?",
+      "answers": [
+        "bốn trăm ba mươi lăm (435)"
+      ],
+      "status": "source"
+    },
+    "2008-022": {
+      "question": "Chúng ta bầu dân biểu cho mấy năm?",
+      "answers": [
+        "hai năm (2)"
+      ],
+      "status": "source"
+    },
+    "2008-023": {
+      "question": "Cho biết tên dân biểu của bạn.",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-024": {
+      "question": "Thượng-nghị-sĩ đại diện ai?",
+      "answers": [
+        "Tất cả người dân trong tiểu bang"
+      ],
+      "status": "source"
+    },
+    "2008-025": {
+      "question": "Tại sao có những tiểu bang có nhiều đại biểu hơn các tiểu bang khác?",
+      "answers": [
+        "(Vì) dân số tiểu bang đó",
+        "(Vì) tiểu bang đó đông dân hơn",
+        "(Vì) một số tiểu bang đông dân hơn tiểu bang khác"
+      ],
+      "status": "source"
+    },
+    "2008-026": {
+      "question": "Nhiệm kỳ Tổng Thống là mấy năm?",
+      "answers": [
+        "Bốn (4) năm"
+      ],
+      "status": "source"
+    },
+    "2008-027": {
+      "question": "Bầu Tổng Thống vào tháng nào?",
+      "answers": [
+        "Tháng Mười Một"
+      ],
+      "status": "source"
+    },
+    "2008-028": {
+      "question": "Hiện nay tên Tổng Thống Hoa Kỳ là gì?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-029": {
+      "question": "Hiện nay tên Phó Tổng Thống Hoa Kỳ là gì?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-030": {
+      "question": "Nếu Tổng Thống không còn làm việc được nữa, ai sẽ thay thế làm Tổng Thống?",
+      "answers": [
+        "Phó Tổng Thống"
+      ],
+      "status": "source"
+    },
+    "2008-031": {
+      "question": "Nếu cả Tổng Thống và Phó Tổng Thống không còn làm việc được nữa, ai sẽ thay thế?",
+      "answers": [
+        "Chủ Tịch Hạ Nghị Viện"
+      ],
+      "status": "source"
+    },
+    "2008-032": {
+      "question": "Ai là Tổng Tư Lệnh quân đội?",
+      "answers": [
+        "Tổng Thống"
+      ],
+      "status": "source"
+    },
+    "2008-033": {
+      "question": "Ai sẽ ký dự thảo luật thành luật?",
+      "answers": [
+        "Tổng Thống"
+      ],
+      "status": "source"
+    },
+    "2008-034": {
+      "question": "Ai có quyền phủ quyết các dự luật?",
+      "answers": [
+        "Tổng Thống"
+      ],
+      "status": "source"
+    },
+    "2008-035": {
+      "question": "Nội các của Tổng Thống làm gì?",
+      "answers": [
+        "Cố vấn cho Tổng Thống"
+      ],
+      "status": "source"
+    },
+    "2008-036": {
+      "question": "Kể ra Hai chức vụ trong hàng nội các.",
+      "answers": [
+        "Bộ Trưởng Canh Nông",
+        "Bộ Trưởng Thương Mại",
+        "Bộ Trưởng Quốc Phòng",
+        "Bộ Trưởng Giáo Dục",
+        "Bộ Trưởng Năng Lượng",
+        "Bộ Trưởng Y Tế và Phục Vụ Nhân Sinh",
+        "Bộ Trưởng Nội An",
+        "Bộ Trưởng Gia Cư và Phát Triển Đô Thị",
+        "Bộ Trưởng Nội Vụ",
+        "Bộ Trưởng Lao Động",
+        "Bộ Trưởng Ngoại Giao",
+        "Bộ Trưởng Giao Thông",
+        "Bộ Trưởng Ngân Khố hay Tài Chính",
+        "Bộ Trưởng Cựu Chiến Binh",
+        "Bộ Trưởng Tư Pháp",
+        "Phó Tổng Thống"
+      ],
+      "status": "source"
+    },
+    "2008-037": {
+      "question": "Ngành tư pháp làm gì?",
+      "answers": [
+        "duyệt lại luật lệ",
+        "cắt nghĩa luật lệ",
+        "giải quyết tranh cãi (bất hòa)",
+        "quyết định xem luật có đi ngược lại hiến pháp không"
+      ],
+      "status": "source"
+    },
+    "2008-038": {
+      "question": "Tòa án cao nhất ở Hoa Kỳ là gì?",
+      "answers": [
+        "Tối Cao Pháp Viện"
+      ],
+      "status": "source"
+    },
+    "2008-039": {
+      "question": "Có bao nhiêu thẩm phán ở Tối Cao Pháp Viện?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-040": {
+      "question": "Ai đang là Chủ Tịch Tối Cao Pháp Viện?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-041": {
+      "question": "Theo Hiến Pháp, chánh phủ liên bang có một số quyền. Một trong các quyền của chánh phủ liên bang là?",
+      "answers": [
+        "in tiền",
+        "tuyên chiến",
+        "lập quân đội",
+        "ký các hòa ước"
+      ],
+      "status": "source"
+    },
+    "2008-042": {
+      "question": "Theo Hiến Pháp, các tiểu bang có một số quyền. Một trong những quyền này là gì?",
+      "answers": [
+        "cung cấp trường học và giáo dục",
+        "bảo vệ dân chúng (cảnh sát)",
+        "bảo vệ an toàn (các sở cứu hỏa)",
+        "cấp bằng lái xe",
+        "chia vùng và chấp thuận cách xử dụng đất đai"
+      ],
+      "status": "source"
+    },
+    "2008-043": {
+      "question": "Thống Đốc tiểu bang của bạn tên gì?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-044": {
+      "question": "Thủ phủ của tiểu bang bạn tên gì?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-045": {
+      "question": "Hai đảng chính của Hoa Kỳ là gì?",
+      "answers": [
+        "Dân Chủ và Cộng Hòa"
+      ],
+      "status": "source"
+    },
+    "2008-046": {
+      "question": "Đảng của Tổng Thống hiện tại là đảng nào?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-047": {
+      "question": "Chủ Tịch Hạ Viện hiện thời tên gì?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-048": {
+      "question": "Có bốn tu chính án Hiến Pháp về việc ai có quyền bầu cử. Kể ra Một trong các thứ đó.",
+      "answers": [
+        "Công dân mười tám (18) tuổi và hơn (được đi bầu).",
+        "Không phải trả (thuế bầu cử) để được bầu.",
+        "Bất cứ công dân nào cũng được bầu (phụ nữ và nam giới đều được bầu).",
+        "Nam giới của bất cứ chủng tộc nào (cũng đều được bầu)."
+      ],
+      "status": "source"
+    },
+    "2008-049": {
+      "question": "Một trong các bổn phận chỉ dành riêng cho công dân Hoa Kỳ là gì?",
+      "answers": [
+        "phục vụ trong bồi thẩm đoàn",
+        "đi bầu trong bầu cử liên bang"
+      ],
+      "status": "source"
+    },
+    "2008-050": {
+      "question": "Cho biết một quyền của riêng công dân Hoa Kỳ.",
+      "answers": [
+        "tham gia bầu cử cấp liên bang",
+        "ứng cử chức vụ liên bang"
+      ],
+      "status": "source"
+    },
+    "2008-051": {
+      "question": "Cho biết hai quyền của mỗi người sống ở Hoa Kỳ?",
+      "answers": [
+        "tự do phát biểu ý kiến",
+        "tự do ngôn luận",
+        "tự do hội họp",
+        "tự do thỉnh nguyện chính quyền",
+        "tự do tín ngưỡng",
+        "quyền mang vũ khí tự vệ"
+      ],
+      "status": "source"
+    },
+    "2008-052": {
+      "question": "Khi nói Lời Tuyên Thệ Trung Thành (Pledge of Allegiance), chúng ta chứng tỏ sự trung thành với cái gì?",
+      "answers": [
+        "Hoa Kỳ",
+        "Lá cờ"
+      ],
+      "status": "source"
+    },
+    "2008-053": {
+      "question": "Khi trở thành công dân Hoa Kỳ, một trong những lời hứa của bạn là gì?",
+      "answers": [
+        "từ bỏ sự trung thành với các quốc gia khác",
+        "bảo vệ Hiến Pháp và luật lệ Hoa Kỳ",
+        "tuân hành luật lệ của Hoa Kỳ",
+        "phục vụ trong quân đội Hoa Kỳ (nếu cần)",
+        "phục vụ (công việc quan trọng cho) Hoa Kỳ (nếu cần)",
+        "trung thành với quốc gia Hoa Kỳ"
+      ],
+      "status": "source"
+    },
+    "2008-054": {
+      "question": "Công dân phải bao nhiêu tuổi mới được bầu Tổng Thống?",
+      "answers": [
+        "Mười Tám (18) và hơn"
+      ],
+      "status": "source"
+    },
+    "2008-055": {
+      "question": "Có hai cách công dân Hoa Kỳ có thể tham dự vào nền dân chủ là các cách nào?",
+      "answers": [
+        "bầu cử",
+        "tham gia một đảng phái chính trị",
+        "tham dự vào một cuộc vận động tranh cử",
+        "tham dự vào một nhóm hoạt động công dân",
+        "tham dự vào một nhóm hoạt động cộng đồng",
+        "phát biểu ý kiến về một vấn đề với một vị dân cử",
+        "gọi điện thoại cho nghị sĩ và dân biểu",
+        "công khai ủng hộ hoặc phản đối một vấn đề hay chính sách nào đó",
+        "tranh cử",
+        "góp ý kiến trên một tờ báo"
+      ],
+      "status": "source"
+    },
+    "2008-056": {
+      "question": "Ngày cuối cùng có thể nạp mẫu khai thuế cho liên bang là?",
+      "answers": [
+        "15 Tháng Tư"
+      ],
+      "status": "source"
+    },
+    "2008-057": {
+      "question": "Khi nào tất cả nam giới phải ghi tên cho Sở Quân Vụ (Selective Service)?",
+      "answers": [
+        "ở tuổi mười tám (18)",
+        "ở giữa tuổi mười tám (18) và hai mươi sáu (26)"
+      ],
+      "status": "source"
+    },
+    "2008-058": {
+      "question": "Một trong những lý do khiến người di dân thời thuộc địa tới Mỹ Châu là gì?",
+      "answers": [
+        "tự do",
+        "tự do chính trị",
+        "tự do tôn giáo",
+        "cơ hội kinh tế",
+        "hành xử tôn giáo của mình",
+        "tránh sự áp bức"
+      ],
+      "status": "source"
+    },
+    "2008-059": {
+      "question": "Những ai sống tại Mỹ trước khi người Âu Châu tới?",
+      "answers": [
+        "người da đỏ Mỹ Châu",
+        "thổ dân Mỹ Châu"
+      ],
+      "status": "source"
+    },
+    "2008-060": {
+      "question": "Nhóm người nào được mang tới Mỹ Châu và bán làm nô lệ?",
+      "answers": [
+        "người Phi Châu",
+        "người từ Phi Châu"
+      ],
+      "status": "source"
+    },
+    "2008-061": {
+      "question": "Tại sao những người di dân thời thuộc địa chống lại người Anh?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-062": {
+      "question": "Ai viết Bản Tuyên Ngôn Độc Lập?",
+      "answers": [
+        "(Thomas) Jefferson"
+      ],
+      "status": "source"
+    },
+    "2008-063": {
+      "question": "Bản Tuyên Ngôn Độc Lập được chấp nhận lúc nào?",
+      "answers": [
+        "4 Tháng Bẩy 1776"
+      ],
+      "status": "source"
+    },
+    "2008-064": {
+      "question": "Có 13 tiểu bang nguyên thủy. Cho biết ba tiểu bang.",
+      "answers": [
+        "New Hampshire",
+        "Massachusetts",
+        "Rhode Island",
+        "Connecticut",
+        "New York",
+        "New Jersey",
+        "Pennsylvania",
+        "Delaware",
+        "Maryland",
+        "Virginia",
+        "North Carolina",
+        "South Carolina",
+        "Georgia"
+      ],
+      "status": "source"
+    },
+    "2008-065": {
+      "question": "Việc gì xảy ra tại Đại Hội Lập Hiến (Constitutional Convention)?",
+      "answers": [
+        "Soạn thảo Hiến Pháp.",
+        "Các nhà lập quốc soạn thảo Hiến Pháp."
+      ],
+      "status": "source"
+    },
+    "2008-066": {
+      "question": "Hiến Pháp được soạn thảo khi nào?",
+      "answers": [
+        "1787"
+      ],
+      "status": "source"
+    },
+    "2008-067": {
+      "question": "Các bài tham luận gọi là Federalist Papers có mục đích hỗ trợ việc thông qua Hiến Pháp Hoa Kỳ. Kể tên một trong những người viết tham luận.",
+      "answers": [
+        "(James) Madison",
+        "(Alexander) Hamilton",
+        "(John) Jay",
+        "Publius"
+      ],
+      "status": "source"
+    },
+    "2008-068": {
+      "question": "Một việc gì làm Benjamin Franklin nổi tiếng?",
+      "answers": [
+        "nhà ngoại giao Hoa Kỳ",
+        "thành viên già nhất của Đại Hội Lập Hiến",
+        "Tổng Giám Đốc Bưu Điện đầu tiên của Hoa Kỳ",
+        "người viết cuốn lịch \"Poor Richard's Almanac\"",
+        "khởi công xây các thư viện miễn phí đầu tiên của Hoa Kỳ"
+      ],
+      "status": "source"
+    },
+    "2008-069": {
+      "question": "Ai được gọi là cha đẻ của nước Mỹ?",
+      "answers": [
+        "(George) Washington"
+      ],
+      "status": "source"
+    },
+    "2008-070": {
+      "question": "Ai là Tổng Thống đầu tiên?",
+      "answers": [
+        "(George) Washington"
+      ],
+      "status": "source"
+    },
+    "2008-071": {
+      "question": "Hoa Kỳ mua lãnh thổ nào của Pháp vào năm 1803?",
+      "answers": [
+        "Lãnh Thổ Louisiana",
+        "Louisiana"
+      ],
+      "status": "source"
+    },
+    "2008-072": {
+      "question": "Nói tên một trong những cuộc chiến Hoa Kỳ tham dự thời 1800.",
+      "answers": [
+        "Chiến tranh 1812",
+        "Chiến tranh Hoa Kỳ-Mễ-Tây-Cơ (Mexico)",
+        "Nội chiến",
+        "Chiến tranh Hoa Kỳ-Tây-Ban-Nha"
+      ],
+      "status": "source"
+    },
+    "2008-073": {
+      "question": "Tên gọi của cuộc chiến trên đất Hoa Kỳ giữa miền Bắc và miền Nam là gì.",
+      "answers": [
+        "Nội chiến",
+        "Chiến tranh giữa các Tiểu Bang"
+      ],
+      "status": "source"
+    },
+    "2008-074": {
+      "question": "Cho biết một vấn đề đưa tới cuộc nội chiến.",
+      "answers": [
+        "vấn đề nô lệ",
+        "các vấn đề kinh tế",
+        "quyền của các tiểu bang"
+      ],
+      "status": "source"
+    },
+    "2008-075": {
+      "question": "Một điều quan trọng mà Abraham Lincoln làm là gì?",
+      "answers": [
+        "giải phóng nô lệ (Tuyên Ngôn Giải Phóng)",
+        "giữ gìn (hoặc bảo tồn) đoàn kết Quốc Gia",
+        "lãnh đạo Hoa Kỳ trong Cuộc Nội Chiến"
+      ],
+      "status": "source"
+    },
+    "2008-076": {
+      "question": "Tuyên Ngôn Giải Phóng làm gì?",
+      "answers": [
+        "giải phóng nô lệ",
+        "giải phóng nô lệ thuộc tập hợp (nhóm) các tiểu bang ly khai miền Nam",
+        "giải phóng nô lệ ở các tiểu bang miền Nam",
+        "giải phóng nô lệ ở đa số các tiểu bang miền Nam"
+      ],
+      "status": "source"
+    },
+    "2008-077": {
+      "question": "Bà Susan B. Anthony làm gì?",
+      "answers": [
+        "tranh đấu cho quyền phụ nữ",
+        "tranh đấu cho dân quyền"
+      ],
+      "status": "source"
+    },
+    "2008-078": {
+      "question": "Cho biết một cuộc chiến mà Hoa Kỳ tham dự vào thập niên 1900.",
+      "answers": [
+        "Thế Chiến Thứ Nhất",
+        "Thế Chiến Thứ Hai",
+        "Chiến Tranh Cao Ly (Triều Tiên)",
+        "Chiến Tranh Việt Nam",
+        "Chiến tranh Vùng Vịnh (Ba Tư)"
+      ],
+      "status": "source"
+    },
+    "2008-079": {
+      "question": "Ai là Tổng Thống trong Thế Chiến Thứ Nhất?",
+      "answers": [
+        "(Woodrow) Wilson"
+      ],
+      "status": "source"
+    },
+    "2008-080": {
+      "question": "Ai là Tổng Thống trong thời kỳ Khủng Hoảng Kinh Tế và Thế Chiến Thứ Hai?",
+      "answers": [
+        "(Franklin) Roosevelt"
+      ],
+      "status": "source"
+    },
+    "2008-081": {
+      "question": "Trong Thế Chiến Thứ Hai, Hoa Kỳ chiến đấu chống các nước nào?",
+      "answers": [
+        "Nhật Bản, Đức và Ý"
+      ],
+      "status": "source"
+    },
+    "2008-082": {
+      "question": "Trước khi trở thành Tổng Thống, Eisenhower là tướng lãnh. Ông ta đánh trận nào?",
+      "answers": [
+        "Thế Chiến Thứ Hai"
+      ],
+      "status": "source"
+    },
+    "2008-083": {
+      "question": "Trong thời kỳ Chiến Tranh Lạnh, quan tâm chính của Hoa Kỳ là gì?",
+      "answers": [
+        "Chủ Nghĩa Cộng Sản"
+      ],
+      "status": "source"
+    },
+    "2008-084": {
+      "question": "Phong trào nào tìm cách chấm dứt sự phân biệt chủng tộc?",
+      "answers": [
+        "(phong trào) dân quyền"
+      ],
+      "status": "source"
+    },
+    "2008-085": {
+      "question": "Martin Luther King, Jr. đã làm gì?",
+      "answers": [
+        "tranh đấu cho dân quyền",
+        "hoạt động nhằm mang lại bình đẳng cho mọi người Mỹ"
+      ],
+      "status": "source"
+    },
+    "2008-086": {
+      "question": "Biến cố lớn lao nào xảy ra vào ngày 11 tháng 9 năm 2001 tại Hoa Kỳ?",
+      "answers": [
+        "Bọn khủng bố tấn công Hoa Kỳ."
+      ],
+      "status": "source"
+    },
+    "2008-087": {
+      "question": "Kể tên một bộ lạc da đỏ tại Mỹ.",
+      "answers": [
+        "Cherokee",
+        "Navajo",
+        "Sioux",
+        "Chippewa",
+        "Choctaw",
+        "Pueblo",
+        "Apache",
+        "Iroquois",
+        "Creek",
+        "Blackfeet",
+        "Seminole",
+        "Cheyenne",
+        "Arawak",
+        "Shawnee",
+        "Mohegan",
+        "Huron",
+        "Oneida",
+        "Lakota",
+        "Crow",
+        "Teton",
+        "Hopi",
+        "Inuit"
+      ],
+      "status": "source"
+    },
+    "2008-088": {
+      "question": "Cho biết một trong hai con sông dài nhất ở Hoa Kỳ.",
+      "answers": [
+        "(Sông) Missouri",
+        "(Sông) Mississippi"
+      ],
+      "status": "source"
+    },
+    "2008-089": {
+      "question": "Biển nào ở bờ biển phía Tây Hoa Kỳ?",
+      "answers": [
+        "Thái-Bình-Dương"
+      ],
+      "status": "source"
+    },
+    "2008-090": {
+      "question": "Biển nào ở bờ biển phía Đông Hoa Kỳ?",
+      "answers": [
+        "Đại-Tây-Dương"
+      ],
+      "status": "source"
+    },
+    "2008-091": {
+      "question": "Cho biết một lãnh thổ hải ngoại của Hoa Kỳ.",
+      "answers": [
+        "Puerto Rico",
+        "Quần Đảo Virgin",
+        "Đảo Samoa",
+        "Quần Đảo Bắc Mariana",
+        "Đảo Guam"
+      ],
+      "status": "source"
+    },
+    "2008-092": {
+      "question": "Cho biết một trong những tiểu bang ráp ranh Gia-Nã-Đại.",
+      "answers": [
+        "Maine",
+        "New Hampshire",
+        "Vermont",
+        "New York",
+        "Pennsylvania",
+        "Ohio",
+        "Michigan",
+        "Minnesota",
+        "North Dakota",
+        "Montana",
+        "Idaho",
+        "Washington",
+        "Alaska"
+      ],
+      "status": "source"
+    },
+    "2008-093": {
+      "question": "Cho biết một trong những tiểu bang ráp ranh Mễ-Tây-Cơ.",
+      "answers": [
+        "California",
+        "Arizona",
+        "New Mexico",
+        "Texas"
+      ],
+      "status": "source"
+    },
+    "2008-094": {
+      "question": "Thủ đô của Hoa Kỳ tên gì?",
+      "answers": [
+        "Washington, D.C."
+      ],
+      "status": "source"
+    },
+    "2008-095": {
+      "question": "Tượng Nữ Thần Tự Do ở đâu?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-096": {
+      "question": "Tại sao lá cờ Hoa Kỳ có 13 lằn gạch?",
+      "answers": [
+        "bởi vì đã có 13 thuộc địa nguyên thủy",
+        "bởi vì các lằn này tượng trưng cho 13 thuộc địa nguyên thủy"
+      ],
+      "status": "source"
+    },
+    "2008-097": {
+      "question": "Tại sao lá cờ Hoa Kỳ có 50 ngôi sao?",
+      "answers": [
+        "bởi vì mỗi tiểu bang có một ngôi sao",
+        "bởi vì mỗi ngôi sao tượng trưng cho một tiểu bang",
+        "bởi vì có 50 tiểu bang"
+      ],
+      "status": "source"
+    },
+    "2008-098": {
+      "question": "Tựa của bài quốc ca Hoa Kỳ là gì?",
+      "answers": [
+        "The Star-Spangled Banner"
+      ],
+      "status": "source"
+    },
+    "2008-099": {
+      "question": "Ngày nào là ngày Lễ Độc Lập?",
+      "answers": [
+        "4 Tháng Bẩy"
+      ],
+      "status": "source"
+    },
+    "2008-100": {
+      "question": "Cho biết hai ngày lễ quốc gia của Hoa Kỳ.",
+      "answers": null,
+      "status": "source"
+    }
+  },
+  "missing": {}
+}

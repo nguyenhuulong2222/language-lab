@@ -1,0 +1,1295 @@
+{
+  "_note": "Built from data/sources/uscis-2025-civics-128.txt, converted from uscis-2025-civics-128.pdf (official USCIS 128 Civics Questions and Answers, 2025 version, M-1778 09/25), by tools/answer-key/build-answer-key.mjs. NEEDS HUMAN REVIEW: see docs/answer-key-review.md. Accepted answers are stored normalised (lowercase, no punctuation, hyphens as spaces). A leading the/a/an is optional when matching, so it is stored as written. Dynamic questions (answers change with elections, appointments or where the user lives) have no stored answers.",
+  "_generatedBy": "tools/answer-key/build-answer-key.mjs",
+  "_reviewSheet": "docs/answer-key-review.md",
+  "_sources": [{"file":"data/sources/uscis-2025-civics-128.txt","sha256":"aaefc002514d9189b022ef9deacf8da4bc67f7159bada824578c43057d2c1dad"},{"file":"data/sources/uscis-2025-civics-128.pdf","sha256":"f280608c0fb6dc1eba344b4746a7ba52d02fe411fba30cedd4371819f0abe11c"}],
+  "needsHumanReview": true,
+  "entries": [
+    {
+      "id": "2025-001",
+      "testVersion": "2025",
+      "questionText": "What is the form of government of the United States?",
+      "acceptedAnswers": ["republic", "constitution based federal republic", "representative democracy"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 1"
+    },
+    {
+      "id": "2025-002",
+      "testVersion": "2025",
+      "questionText": "What is the supreme law of the land?",
+      "acceptedAnswers": ["constitution", "us constitution"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 2"
+    },
+    {
+      "id": "2025-003",
+      "testVersion": "2025",
+      "questionText": "Name one thing the U.S. Constitution does.",
+      "acceptedAnswers": ["forms the government", "defines powers of government", "defines the parts of government", "protects the rights of the people"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 3"
+    },
+    {
+      "id": "2025-004",
+      "testVersion": "2025",
+      "questionText": "The U.S. Constitution starts with the words “We the People.” What does “We the People” mean?",
+      "acceptedAnswers": ["self government", "popular sovereignty", "consent of the governed", "people should govern themselves", "social contract", "example of social contract"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 4"
+    },
+    {
+      "id": "2025-005",
+      "testVersion": "2025",
+      "questionText": "How are changes made to the U.S. Constitution?",
+      "acceptedAnswers": ["amendments", "the amendment process"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 5"
+    },
+    {
+      "id": "2025-006",
+      "testVersion": "2025",
+      "questionText": "What does the Bill of Rights protect?",
+      "acceptedAnswers": ["rights of americans", "the basic rights of americans", "rights of people living in the united states", "the basic rights of people living in the united states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 6"
+    },
+    {
+      "id": "2025-007",
+      "testVersion": "2025",
+      "questionText": "How many amendments does the U.S. Constitution have?",
+      "acceptedAnswers": ["twenty seven", "27"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 7"
+    },
+    {
+      "id": "2025-008",
+      "testVersion": "2025",
+      "questionText": "Why is the Declaration of Independence important?",
+      "acceptedAnswers": ["it says america is free from british control", "it says all people are created equal", "it identifies inherent rights", "it identifies individual freedoms"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 8"
+    },
+    {
+      "id": "2025-009",
+      "testVersion": "2025",
+      "questionText": "What founding document said the American colonies were free from Britain?",
+      "acceptedAnswers": ["declaration of independence"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 9"
+    },
+    {
+      "id": "2025-010",
+      "testVersion": "2025",
+      "questionText": "Name two important ideas from the Declaration of Independence and the U.S. Constitution.",
+      "acceptedAnswers": ["equality", "liberty", "social contract", "natural rights", "limited government", "self government"],
+      "requiredAnswerCount": 2,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 10"
+    },
+    {
+      "id": "2025-011",
+      "testVersion": "2025",
+      "questionText": "The words “Life, Liberty, and the pursuit of Happiness” are in what founding document?",
+      "acceptedAnswers": ["declaration of independence"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 11"
+    },
+    {
+      "id": "2025-012",
+      "testVersion": "2025",
+      "questionText": "What is the economic system of the United States?",
+      "acceptedAnswers": ["capitalism", "free market economy"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 12"
+    },
+    {
+      "id": "2025-013",
+      "testVersion": "2025",
+      "questionText": "What is the rule of law?",
+      "acceptedAnswers": ["everyone must follow the law", "leaders must obey the law", "government must obey the law", "no one is above the law"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 13"
+    },
+    {
+      "id": "2025-014",
+      "testVersion": "2025",
+      "questionText": "Many documents influenced the U.S. Constitution. Name one.",
+      "acceptedAnswers": ["declaration of independence", "articles of confederation", "federalist papers", "anti federalist papers", "virginia declaration of rights", "fundamental orders of connecticut", "mayflower compact", "iroquois great law of peace"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 14"
+    },
+    {
+      "id": "2025-015",
+      "testVersion": "2025",
+      "questionText": "There are three branches of government. Why?",
+      "acceptedAnswers": ["so one part does not become too powerful", "checks and balances", "separation of powers"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 15"
+    },
+    {
+      "id": "2025-016",
+      "testVersion": "2025",
+      "questionText": "Name the three branches of government.",
+      "acceptedAnswers": ["legislative executive and judicial", "congress president and the courts"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 16"
+    },
+    {
+      "id": "2025-017",
+      "testVersion": "2025",
+      "questionText": "The President of the United States is in charge of which branch of government?",
+      "acceptedAnswers": ["executive branch"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 17"
+    },
+    {
+      "id": "2025-018",
+      "testVersion": "2025",
+      "questionText": "What part of the federal government writes laws?",
+      "acceptedAnswers": ["congress", "us congress", "legislature", "us or national legislature", "legislative branch"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 18"
+    },
+    {
+      "id": "2025-019",
+      "testVersion": "2025",
+      "questionText": "What are the two parts of the U.S. Congress?",
+      "acceptedAnswers": ["senate and house", "senate and house of representatives"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 19"
+    },
+    {
+      "id": "2025-020",
+      "testVersion": "2025",
+      "questionText": "Name one power of the U.S. Congress.",
+      "acceptedAnswers": ["writes laws", "declares war", "makes the federal budget"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 20"
+    },
+    {
+      "id": "2025-021",
+      "testVersion": "2025",
+      "questionText": "How many U.S. senators are there?",
+      "acceptedAnswers": ["one hundred", "100"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 21"
+    },
+    {
+      "id": "2025-022",
+      "testVersion": "2025",
+      "questionText": "How long is a term for a U.S. senator?",
+      "acceptedAnswers": ["six years", "6 years"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 22"
+    },
+    {
+      "id": "2025-023",
+      "testVersion": "2025",
+      "questionText": "Who is one of your state’s U.S. senators now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 23 (USCIS text: answers will vary)"
+    },
+    {
+      "id": "2025-024",
+      "testVersion": "2025",
+      "questionText": "How many voting members are in the House of Representatives?",
+      "acceptedAnswers": ["four hundred thirty five", "435"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 24"
+    },
+    {
+      "id": "2025-025",
+      "testVersion": "2025",
+      "questionText": "How long is a term for a member of the House of Representatives?",
+      "acceptedAnswers": ["two years", "2 years"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 25"
+    },
+    {
+      "id": "2025-026",
+      "testVersion": "2025",
+      "questionText": "Why do U.S. representatives serve shorter terms than U.S. senators?",
+      "acceptedAnswers": ["to more closely follow public opinion"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 26"
+    },
+    {
+      "id": "2025-027",
+      "testVersion": "2025",
+      "questionText": "How many senators does each state have?",
+      "acceptedAnswers": ["two", "2"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 27"
+    },
+    {
+      "id": "2025-028",
+      "testVersion": "2025",
+      "questionText": "Why does each state have two senators?",
+      "acceptedAnswers": ["equal representation", "equal representation for small states", "the great compromise", "the great compromise connecticut compromise"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 28"
+    },
+    {
+      "id": "2025-029",
+      "testVersion": "2025",
+      "questionText": "Name your U.S. representative.",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 29 (USCIS text: answers will vary)"
+    },
+    {
+      "id": "2025-030",
+      "testVersion": "2025",
+      "questionText": "What is the name of the Speaker of the House of Representatives now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 30 (USCIS text refers to the test updates page)"
+    },
+    {
+      "id": "2025-031",
+      "testVersion": "2025",
+      "questionText": "Who does a U.S. senator represent?",
+      "acceptedAnswers": ["citizens of their state", "people of their state"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 31"
+    },
+    {
+      "id": "2025-032",
+      "testVersion": "2025",
+      "questionText": "Who elects U.S. senators?",
+      "acceptedAnswers": ["citizens from their state"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 32"
+    },
+    {
+      "id": "2025-033",
+      "testVersion": "2025",
+      "questionText": "Who does a member of the House of Representatives represent?",
+      "acceptedAnswers": ["citizens in their district", "citizens in their congressional district", "people from their district", "people from their congressional district", "people in their district"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 33"
+    },
+    {
+      "id": "2025-034",
+      "testVersion": "2025",
+      "questionText": "Who elects members of the House of Representatives?",
+      "acceptedAnswers": ["citizens from their district", "citizens from their congressional district"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 34"
+    },
+    {
+      "id": "2025-035",
+      "testVersion": "2025",
+      "questionText": "Some states have more representatives than other states. Why?",
+      "acceptedAnswers": ["the state's population", "because of the state's population", "they have more people", "because they have more people", "some states have more people", "because some states have more people"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 35"
+    },
+    {
+      "id": "2025-036",
+      "testVersion": "2025",
+      "questionText": "The President of the United States is elected for how many years?",
+      "acceptedAnswers": ["four years", "4 years"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 36"
+    },
+    {
+      "id": "2025-037",
+      "testVersion": "2025",
+      "questionText": "The President of the United States can serve only two terms. Why?",
+      "acceptedAnswers": ["the 22nd amendment", "because of the 22nd amendment", "to keep the president from becoming too powerful"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 37"
+    },
+    {
+      "id": "2025-038",
+      "testVersion": "2025",
+      "questionText": "What is the name of the President of the United States now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 38 (USCIS text refers to the test updates page)"
+    },
+    {
+      "id": "2025-039",
+      "testVersion": "2025",
+      "questionText": "What is the name of the Vice President of the United States now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 39 (USCIS text refers to the test updates page)"
+    },
+    {
+      "id": "2025-040",
+      "testVersion": "2025",
+      "questionText": "If the president can no longer serve, who becomes president?",
+      "acceptedAnswers": ["the vice president", "the vice president of the united states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 40"
+    },
+    {
+      "id": "2025-041",
+      "testVersion": "2025",
+      "questionText": "Name one power of the president.",
+      "acceptedAnswers": ["signs bills into law", "vetoes bills", "enforces laws", "commander in chief", "commander in chief of the military", "chief diplomat", "appoints federal judges"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 41"
+    },
+    {
+      "id": "2025-042",
+      "testVersion": "2025",
+      "questionText": "Who is Commander in Chief of the U.S. military?",
+      "acceptedAnswers": ["the president", "the president of the united states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 42"
+    },
+    {
+      "id": "2025-043",
+      "testVersion": "2025",
+      "questionText": "Who signs bills to become laws?",
+      "acceptedAnswers": ["the president", "the president of the united states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 43"
+    },
+    {
+      "id": "2025-044",
+      "testVersion": "2025",
+      "questionText": "Who vetoes bills?",
+      "acceptedAnswers": ["the president", "the president of the united states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 44"
+    },
+    {
+      "id": "2025-045",
+      "testVersion": "2025",
+      "questionText": "Who appoints federal judges?",
+      "acceptedAnswers": ["the president", "the president of the united states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 45"
+    },
+    {
+      "id": "2025-046",
+      "testVersion": "2025",
+      "questionText": "The executive branch has many parts. Name one.",
+      "acceptedAnswers": ["president", "president of the united states", "cabinet", "federal departments and agencies"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 46"
+    },
+    {
+      "id": "2025-047",
+      "testVersion": "2025",
+      "questionText": "What does the President’s Cabinet do?",
+      "acceptedAnswers": ["advises the president", "advises the president of the united states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 47"
+    },
+    {
+      "id": "2025-048",
+      "testVersion": "2025",
+      "questionText": "What are two Cabinet-level positions?",
+      "acceptedAnswers": ["attorney general", "secretary of agriculture", "secretary of commerce", "secretary of education", "secretary of energy", "secretary of health and human services", "secretary of homeland security", "secretary of housing and urban development", "secretary of the interior", "secretary of labor", "secretary of state", "secretary of transportation", "secretary of the treasury", "secretary of veterans affairs", "secretary of war", "secretary of defense", "vice president", "administrator of the environmental protection agency", "administrator of the small business administration", "director of the central intelligence agency", "director of the office of management and budget", "director of national intelligence", "united states trade representative"],
+      "answerGroups": [["secretary of war", "secretary of defense"]],
+      "requiredAnswerCount": 2,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 48"
+    },
+    {
+      "id": "2025-049",
+      "testVersion": "2025",
+      "questionText": "Why is the Electoral College important?",
+      "acceptedAnswers": ["it decides who is elected president", "it provides a compromise between the popular election of the president and congressional selection"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 49"
+    },
+    {
+      "id": "2025-050",
+      "testVersion": "2025",
+      "questionText": "What is one part of the judicial branch?",
+      "acceptedAnswers": ["supreme court", "federal courts"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 50"
+    },
+    {
+      "id": "2025-051",
+      "testVersion": "2025",
+      "questionText": "What does the judicial branch do?",
+      "acceptedAnswers": ["reviews laws", "explains laws", "resolves disputes about the law", "resolves disputes disagreements about the law", "decides if a law goes against the constitution", "decides if a law goes against the us constitution"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 51"
+    },
+    {
+      "id": "2025-052",
+      "testVersion": "2025",
+      "questionText": "What is the highest court in the United States?",
+      "acceptedAnswers": ["supreme court"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 52"
+    },
+    {
+      "id": "2025-053",
+      "testVersion": "2025",
+      "questionText": "How many seats are on the Supreme Court?",
+      "acceptedAnswers": ["nine", "9"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 53"
+    },
+    {
+      "id": "2025-054",
+      "testVersion": "2025",
+      "questionText": "How many Supreme Court justices are usually needed to decide a case?",
+      "acceptedAnswers": ["five", "5"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 54"
+    },
+    {
+      "id": "2025-055",
+      "testVersion": "2025",
+      "questionText": "How long do Supreme Court justices serve?",
+      "acceptedAnswers": ["life", "for life", "lifetime appointment", "retirement", "until retirement"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 55"
+    },
+    {
+      "id": "2025-056",
+      "testVersion": "2025",
+      "questionText": "Supreme Court justices serve for life. Why?",
+      "acceptedAnswers": ["to be independent", "to be independent of politics", "to limit outside influence", "to limit outside political influence"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 56"
+    },
+    {
+      "id": "2025-057",
+      "testVersion": "2025",
+      "questionText": "Who is the Chief Justice of the United States now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 57 (USCIS text refers to the test updates page)"
+    },
+    {
+      "id": "2025-058",
+      "testVersion": "2025",
+      "questionText": "Name one power that is only for the federal government.",
+      "acceptedAnswers": ["print paper money", "mint coins", "declare war", "create an army", "make treaties", "set foreign policy"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 58"
+    },
+    {
+      "id": "2025-059",
+      "testVersion": "2025",
+      "questionText": "Name one power that is only for the states.",
+      "acceptedAnswers": ["provide schooling and education", "provide protection", "provide protection police", "provide safety", "provide safety fire departments", "give a driver's license", "approve zoning and land use"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 59"
+    },
+    {
+      "id": "2025-060",
+      "testVersion": "2025",
+      "questionText": "What is the purpose of the 10th Amendment?",
+      "acceptedAnswers": ["powers not given to the federal government belong to the states or to the people", "it states that the powers not given to the federal government belong to the states or to the people"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 60"
+    },
+    {
+      "id": "2025-061",
+      "testVersion": "2025",
+      "questionText": "Who is the governor of your state now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 61 (USCIS text: answers will vary)"
+    },
+    {
+      "id": "2025-062",
+      "testVersion": "2025",
+      "questionText": "What is the capital of your state?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 62 (USCIS text: answers will vary)"
+    },
+    {
+      "id": "2025-063",
+      "testVersion": "2025",
+      "questionText": "There are four amendments to the U.S. Constitution about who can vote. Describe one of them.",
+      "acceptedAnswers": ["citizens eighteen and older", "citizens eighteen and older can vote", "citizens 18 and older", "citizens 18 and older can vote", "you don't have to pay to vote", "you don't have to pay a poll tax to vote", "any citizen can vote", "any citizen can vote women and men can vote", "a male citizen of any race", "a male citizen of any race can vote"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 63"
+    },
+    {
+      "id": "2025-064",
+      "testVersion": "2025",
+      "questionText": "Who can vote in federal elections, run for federal office, and serve on a jury in the United States?",
+      "acceptedAnswers": ["citizens", "citizens of the united states", "us citizens"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 64"
+    },
+    {
+      "id": "2025-065",
+      "testVersion": "2025",
+      "questionText": "What are three rights of everyone living in the United States?",
+      "acceptedAnswers": ["freedom of expression", "freedom of speech", "freedom of assembly", "freedom to petition the government", "freedom of religion", "the right to bear arms"],
+      "requiredAnswerCount": 3,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 65"
+    },
+    {
+      "id": "2025-066",
+      "testVersion": "2025",
+      "questionText": "What do we show loyalty to when we say the Pledge of Allegiance?",
+      "acceptedAnswers": ["the united states", "the flag"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 66"
+    },
+    {
+      "id": "2025-067",
+      "testVersion": "2025",
+      "questionText": "Name two promises that new citizens make in the Oath of Allegiance.",
+      "acceptedAnswers": ["give up loyalty to other countries", "defend the constitution", "defend the us constitution", "obey the laws of the united states", "serve in the military", "serve the nation", "help the nation", "do important work for the nation", "be loyal to the united states"],
+      "answerGroups": [["serve the nation", "help the nation", "do important work for the nation"]],
+      "requiredAnswerCount": 2,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 67"
+    },
+    {
+      "id": "2025-068",
+      "testVersion": "2025",
+      "questionText": "How can people become United States citizens?",
+      "acceptedAnswers": ["be born in the united states under the conditions set by the 14th amendment", "naturalize", "derive citizenship", "derive citizenship under conditions set by congress"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 68"
+    },
+    {
+      "id": "2025-069",
+      "testVersion": "2025",
+      "questionText": "What are two examples of civic participation in the United States?",
+      "acceptedAnswers": ["vote", "run for office", "join a political party", "help with a campaign", "join a civic group", "join a community group", "give an elected official your opinion", "contact elected officials", "support or oppose an issue or policy", "write to a newspaper"],
+      "requiredAnswerCount": 2,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 69"
+    },
+    {
+      "id": "2025-070",
+      "testVersion": "2025",
+      "questionText": "What is one way Americans can serve their country?",
+      "acceptedAnswers": ["vote", "pay taxes", "obey the law", "serve in the military", "run for office", "work for local state or federal government"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 70"
+    },
+    {
+      "id": "2025-071",
+      "testVersion": "2025",
+      "questionText": "Why is it important to pay federal taxes?",
+      "acceptedAnswers": ["required by law", "all people pay to fund the federal government", "required by the constitution", "required by the constitution 16th amendment", "required by the us constitution", "required by the us constitution 16th amendment", "civic duty"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 71"
+    },
+    {
+      "id": "2025-072",
+      "testVersion": "2025",
+      "questionText": "It is important for all men age 18 through 25 to register for the Selective Service. Name one reason why.",
+      "acceptedAnswers": ["required by law", "civic duty", "makes the draft fair if needed"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 72"
+    },
+    {
+      "id": "2025-073",
+      "testVersion": "2025",
+      "questionText": "The colonists came to America for many reasons. Name one.",
+      "acceptedAnswers": ["freedom", "political liberty", "religious freedom", "economic opportunity", "escape persecution"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 73"
+    },
+    {
+      "id": "2025-074",
+      "testVersion": "2025",
+      "questionText": "Who lived in America before the Europeans arrived?",
+      "acceptedAnswers": ["american indians", "native americans"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 74"
+    },
+    {
+      "id": "2025-075",
+      "testVersion": "2025",
+      "questionText": "What group of people was taken and sold as slaves?",
+      "acceptedAnswers": ["africans", "people from africa"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 75"
+    },
+    {
+      "id": "2025-076",
+      "testVersion": "2025",
+      "questionText": "What war did the Americans fight to win independence from Britain?",
+      "acceptedAnswers": ["american revolution", "the revolutionary war", "the american revolutionary war", "war for independence", "war for american independence"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 76"
+    },
+    {
+      "id": "2025-077",
+      "testVersion": "2025",
+      "questionText": "Name one reason why the Americans declared independence from Britain.",
+      "acceptedAnswers": ["high taxes", "taxation without representation", "british soldiers stayed in americans houses", "quartering", "they did not have self government", "boston massacre", "boston tea party", "tea act", "stamp act", "sugar act", "townshend acts", "intolerable acts", "coercive acts"],
+      "answerGroups": [["british soldiers stayed in americans houses", "quartering"], ["boston tea party", "tea act"], ["intolerable acts", "coercive acts"]],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 77"
+    },
+    {
+      "id": "2025-078",
+      "testVersion": "2025",
+      "questionText": "Who wrote the Declaration of Independence?",
+      "acceptedAnswers": ["jefferson", "thomas jefferson"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 78"
+    },
+    {
+      "id": "2025-079",
+      "testVersion": "2025",
+      "questionText": "When was the Declaration of Independence adopted?",
+      "acceptedAnswers": ["july 4 1776"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 79"
+    },
+    {
+      "id": "2025-080",
+      "testVersion": "2025",
+      "questionText": "The American Revolution had many important events. Name one.",
+      "acceptedAnswers": ["bunker hill", "battle of bunker hill", "declaration of independence", "washington crossing the delaware", "washington crossing the delaware battle of trenton", "saratoga", "battle of saratoga", "valley forge", "valley forge encampment", "yorktown", "yorktown british surrender at yorktown", "battle of yorktown", "battle of yorktown british surrender at yorktown"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 80"
+    },
+    {
+      "id": "2025-081",
+      "testVersion": "2025",
+      "questionText": "There were 13 original states. Name five.",
+      "acceptedAnswers": ["new hampshire", "massachusetts", "rhode island", "connecticut", "new york", "new jersey", "pennsylvania", "delaware", "maryland", "virginia", "north carolina", "south carolina", "georgia"],
+      "requiredAnswerCount": 5,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 81"
+    },
+    {
+      "id": "2025-082",
+      "testVersion": "2025",
+      "questionText": "What founding document was written in 1787?",
+      "acceptedAnswers": ["constitution", "us constitution"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 82"
+    },
+    {
+      "id": "2025-083",
+      "testVersion": "2025",
+      "questionText": "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.",
+      "acceptedAnswers": ["madison", "james madison", "hamilton", "alexander hamilton", "jay", "john jay", "publius"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 83"
+    },
+    {
+      "id": "2025-084",
+      "testVersion": "2025",
+      "questionText": "Why were the Federalist Papers important?",
+      "acceptedAnswers": ["they helped people understand the constitution", "they helped people understand the us constitution", "they supported passing the constitution", "they supported passing the us constitution"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 84"
+    },
+    {
+      "id": "2025-085",
+      "testVersion": "2025",
+      "questionText": "Benjamin Franklin is famous for many things. Name one.",
+      "acceptedAnswers": ["founded the first free public libraries", "first postmaster general of the united states", "helped write the declaration of independence", "inventor", "us diplomat"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 85"
+    },
+    {
+      "id": "2025-086",
+      "testVersion": "2025",
+      "questionText": "George Washington is famous for many things. Name one.",
+      "acceptedAnswers": ["father of our country", "first president of the united states", "general of the continental army", "president of the constitutional convention"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 86"
+    },
+    {
+      "id": "2025-087",
+      "testVersion": "2025",
+      "questionText": "Thomas Jefferson is famous for many things. Name one.",
+      "acceptedAnswers": ["writer of the declaration of independence", "third president of the united states", "doubled the size of the united states", "doubled the size of the united states louisiana purchase", "first secretary of state", "founded the university of virginia", "writer of the virginia statute on religious freedom"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 87"
+    },
+    {
+      "id": "2025-088",
+      "testVersion": "2025",
+      "questionText": "James Madison is famous for many things. Name one.",
+      "acceptedAnswers": ["father of the constitution", "fourth president of the united states", "president during the war of 1812", "one of the writers of the federalist papers"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 88"
+    },
+    {
+      "id": "2025-089",
+      "testVersion": "2025",
+      "questionText": "Alexander Hamilton is famous for many things. Name one.",
+      "acceptedAnswers": ["first secretary of the treasury", "one of the writers of the federalist papers", "helped establish the first bank of the united states", "aide to general george washington", "member of the continental congress"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 89"
+    },
+    {
+      "id": "2025-090",
+      "testVersion": "2025",
+      "questionText": "What territory did the United States buy from France in 1803?",
+      "acceptedAnswers": ["louisiana territory", "louisiana"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 90"
+    },
+    {
+      "id": "2025-091",
+      "testVersion": "2025",
+      "questionText": "Name one war fought by the United States in the 1800s.",
+      "acceptedAnswers": ["war of 1812", "mexican american war", "civil war", "spanish american war"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 91"
+    },
+    {
+      "id": "2025-092",
+      "testVersion": "2025",
+      "questionText": "Name the U.S. war between the North and the South.",
+      "acceptedAnswers": ["the civil war"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 92"
+    },
+    {
+      "id": "2025-093",
+      "testVersion": "2025",
+      "questionText": "The Civil War had many important events. Name one.",
+      "acceptedAnswers": ["fort sumter", "battle of fort sumter", "emancipation proclamation", "vicksburg", "battle of vicksburg", "gettysburg", "battle of gettysburg", "sherman's march", "appomattox", "surrender at appomattox", "antietam", "battle of antietam", "sharpsburg", "battle of sharpsburg", "lincoln was assassinated"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 93"
+    },
+    {
+      "id": "2025-094",
+      "testVersion": "2025",
+      "questionText": "Abraham Lincoln is famous for many things. Name one.",
+      "acceptedAnswers": ["freed the slaves", "freed the slaves emancipation proclamation", "saved the union", "saved or preserved the union", "led the united states during the civil war", "16th president of the united states", "delivered the gettysburg address"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 94"
+    },
+    {
+      "id": "2025-095",
+      "testVersion": "2025",
+      "questionText": "What did the Emancipation Proclamation do?",
+      "acceptedAnswers": ["freed the slaves", "freed slaves in the confederacy", "freed slaves in the confederate states", "freed slaves in most southern states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 95"
+    },
+    {
+      "id": "2025-096",
+      "testVersion": "2025",
+      "questionText": "What U.S. war ended slavery?",
+      "acceptedAnswers": ["the civil war"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 96"
+    },
+    {
+      "id": "2025-097",
+      "testVersion": "2025",
+      "questionText": "What amendment says all persons born or naturalized in the United States, and subject to the jurisdiction thereof, are U.S. citizens?",
+      "acceptedAnswers": ["14th amendment"],
+      "numberAlone": ["14th amendment"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 97"
+    },
+    {
+      "id": "2025-098",
+      "testVersion": "2025",
+      "questionText": "When did all men get the right to vote?",
+      "acceptedAnswers": ["after the civil war", "during reconstruction", "15th amendment", "with the 15th amendment", "1870"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 98"
+    },
+    {
+      "id": "2025-099",
+      "testVersion": "2025",
+      "questionText": "Name one leader of the women’s rights movement in the 1800s.",
+      "acceptedAnswers": ["susan b anthony", "elizabeth cady stanton", "sojourner truth", "harriet tubman", "lucretia mott", "lucy stone"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 99"
+    },
+    {
+      "id": "2025-100",
+      "testVersion": "2025",
+      "questionText": "Name one war fought by the United States in the 1900s.",
+      "acceptedAnswers": ["world war i", "world war ii", "korean war", "vietnam war", "gulf war", "persian gulf war"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 100"
+    },
+    {
+      "id": "2025-101",
+      "testVersion": "2025",
+      "questionText": "Why did the United States enter World War I?",
+      "acceptedAnswers": ["because germany attacked us ships", "because germany attacked us civilian ships", "to support the allied powers", "to support the allied powers england france italy and russia", "to oppose the central powers", "to oppose the central powers germany austria hungary the ottoman empire and bulgaria"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 101"
+    },
+    {
+      "id": "2025-102",
+      "testVersion": "2025",
+      "questionText": "When did all women get the right to vote?",
+      "acceptedAnswers": ["1920", "after world war i", "19th amendment", "with the 19th amendment"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 102"
+    },
+    {
+      "id": "2025-103",
+      "testVersion": "2025",
+      "questionText": "What was the Great Depression?",
+      "acceptedAnswers": ["longest economic recession in modern history"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 103"
+    },
+    {
+      "id": "2025-104",
+      "testVersion": "2025",
+      "questionText": "When did the Great Depression start?",
+      "acceptedAnswers": ["the great crash", "the great crash 1929", "stock market crash of 1929"],
+      "numberAlone": ["the great crash", "the great crash 1929", "stock market crash of 1929"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 104"
+    },
+    {
+      "id": "2025-105",
+      "testVersion": "2025",
+      "questionText": "Who was president during the Great Depression and World War II?",
+      "acceptedAnswers": ["roosevelt", "franklin roosevelt"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 105"
+    },
+    {
+      "id": "2025-106",
+      "testVersion": "2025",
+      "questionText": "Why did the United States enter World War II?",
+      "acceptedAnswers": ["pearl harbor", "bombing of pearl harbor", "japanese attacked pearl harbor", "to support the allied powers", "to support the allied powers england france and russia", "to oppose the axis powers", "to oppose the axis powers germany italy and japan"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 106"
+    },
+    {
+      "id": "2025-107",
+      "testVersion": "2025",
+      "questionText": "Dwight Eisenhower is famous for many things. Name one.",
+      "acceptedAnswers": ["general during world war ii", "president at the end of the korean war", "president at the end of during the korean war", "34th president of the united states", "signed the federal aid highway act of 1956", "signed the federal aid highway act of 1956 created the interstate system"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 107"
+    },
+    {
+      "id": "2025-108",
+      "testVersion": "2025",
+      "questionText": "Who was the United States’ main rival during the Cold War?",
+      "acceptedAnswers": ["soviet union", "ussr", "russia"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 108"
+    },
+    {
+      "id": "2025-109",
+      "testVersion": "2025",
+      "questionText": "During the Cold War, what was one main concern of the United States?",
+      "acceptedAnswers": ["communism", "nuclear war"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 109"
+    },
+    {
+      "id": "2025-110",
+      "testVersion": "2025",
+      "questionText": "Why did the United States enter the Korean War?",
+      "acceptedAnswers": ["to stop the spread of communism"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 110"
+    },
+    {
+      "id": "2025-111",
+      "testVersion": "2025",
+      "questionText": "Why did the United States enter the Vietnam War?",
+      "acceptedAnswers": ["to stop the spread of communism"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 111"
+    },
+    {
+      "id": "2025-112",
+      "testVersion": "2025",
+      "questionText": "What did the civil rights movement do?",
+      "acceptedAnswers": ["fought to end racial discrimination"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 112"
+    },
+    {
+      "id": "2025-113",
+      "testVersion": "2025",
+      "questionText": "Martin Luther King, Jr. is famous for many things. Name one.",
+      "acceptedAnswers": ["fought for civil rights", "worked for equality for all americans", "worked to ensure that people would not be judged by the color of their skin but by the content of their character"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 113"
+    },
+    {
+      "id": "2025-114",
+      "testVersion": "2025",
+      "questionText": "Why did the United States enter the Persian Gulf War?",
+      "acceptedAnswers": ["to force the iraqi military from kuwait"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 114"
+    },
+    {
+      "id": "2025-115",
+      "testVersion": "2025",
+      "questionText": "What major event happened on September 11, 2001 in the United States?",
+      "acceptedAnswers": ["terrorists attacked the united states", "terrorists took over two planes and crashed them into the world trade center in new york city", "terrorists took over a plane and crashed into the pentagon in arlington virginia", "terrorists took over a plane originally aimed at washington dc and crashed in a field in pennsylvania"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 115"
+    },
+    {
+      "id": "2025-116",
+      "testVersion": "2025",
+      "questionText": "Name one U.S. military conflict after the September 11, 2001 attacks.",
+      "acceptedAnswers": ["war on terror", "global war on terror", "war in afghanistan", "war in iraq"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 116"
+    },
+    {
+      "id": "2025-117",
+      "testVersion": "2025",
+      "questionText": "Name one American Indian tribe in the United States.",
+      "acceptedAnswers": ["apache", "blackfeet", "cayuga", "cherokee", "cheyenne", "chippewa", "choctaw", "creek", "crow", "hopi", "huron", "inupiat", "lakota", "mohawk", "mohegan", "navajo", "oneida", "onondaga", "pueblo", "seminole", "seneca", "shawnee", "sioux", "teton", "tuscarora"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 117"
+    },
+    {
+      "id": "2025-118",
+      "testVersion": "2025",
+      "questionText": "Name one example of an American innovation.",
+      "acceptedAnswers": ["light bulb", "automobile", "cars", "internal combustion engine", "skyscrapers", "airplane", "assembly line", "landing on the moon", "integrated circuit", "ic"],
+      "answerGroups": [["automobile", "cars", "internal combustion engine"], ["integrated circuit", "ic"]],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 118"
+    },
+    {
+      "id": "2025-119",
+      "testVersion": "2025",
+      "questionText": "What is the capital of the United States?",
+      "acceptedAnswers": ["washington dc"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 119"
+    },
+    {
+      "id": "2025-120",
+      "testVersion": "2025",
+      "questionText": "Where is the Statue of Liberty?",
+      "acceptedAnswers": ["new york", "new york harbor", "liberty island", "new jersey", "near new york city", "on the hudson", "on the hudson river"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 120"
+    },
+    {
+      "id": "2025-121",
+      "testVersion": "2025",
+      "questionText": "Why does the flag have 13 stripes?",
+      "acceptedAnswers": ["13 original colonies", "because there were 13 original colonies", "represent the original colonies", "because the stripes represent the original colonies"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 121"
+    },
+    {
+      "id": "2025-122",
+      "testVersion": "2025",
+      "questionText": "Why does the flag have 50 stars?",
+      "acceptedAnswers": ["one star for each state", "because there is one star for each state", "each star represents a state", "because each star represents a state", "50 states", "because there are 50 states"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 122"
+    },
+    {
+      "id": "2025-123",
+      "testVersion": "2025",
+      "questionText": "What is the name of the national anthem?",
+      "acceptedAnswers": ["the star spangled banner"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 123"
+    },
+    {
+      "id": "2025-124",
+      "testVersion": "2025",
+      "questionText": "The Nation’s first motto was “E Pluribus Unum.” What does that mean?",
+      "acceptedAnswers": ["out of many one", "we all become one"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 124"
+    },
+    {
+      "id": "2025-125",
+      "testVersion": "2025",
+      "questionText": "What is Independence Day?",
+      "acceptedAnswers": ["a holiday to celebrate us independence", "a holiday to celebrate us independence from britain", "the country's birthday"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 125"
+    },
+    {
+      "id": "2025-126",
+      "testVersion": "2025",
+      "questionText": "Name three national U.S. holidays.",
+      "acceptedAnswers": ["new year's day", "martin luther king jr day", "presidents day", "memorial day", "juneteenth", "independence day", "labor day", "columbus day", "veterans day", "thanksgiving day", "christmas day"],
+      "requiredAnswerCount": 3,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 126"
+    },
+    {
+      "id": "2025-127",
+      "testVersion": "2025",
+      "questionText": "What is Memorial Day?",
+      "acceptedAnswers": ["a holiday to honor soldiers who died in military service"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 127"
+    },
+    {
+      "id": "2025-128",
+      "testVersion": "2025",
+      "questionText": "What is Veterans Day?",
+      "acceptedAnswers": ["a holiday to honor people in the military", "a holiday to honor people in the us military", "a holiday to honor people who have served", "a holiday to honor people who have served in the us military"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf",
+      "sourceDocument": "128 Civics Questions and Answers (2025 version), M-1778 (09/25), uscis-2025-civics-128.pdf, question 128"
+    }
+  ]
+}

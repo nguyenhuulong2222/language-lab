@@ -2,10 +2,17 @@
 inclusion: always
 name: frontend-design
 description: Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.
-license: Complete terms in LICENSE.txt
 ---
 
 <!-- Source: https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md -->
+<!--
+  Origin:  Anthropic Skills — Frontend Design
+  URL:     https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md
+  License: MIT License — Copyright (c) Anthropic
+           Full terms: https://github.com/anthropics/skills/blob/main/LICENSE
+  Note:    This file is included as a Kiro steering document. Content is used
+           as agent guidance only and is not distributed in the product build.
+-->
 
 # Frontend Design
 
