@@ -50,8 +50,12 @@ Every voice step handles: microphone denied, browser without speech recognition,
 and other errors. Typed input always works and is always visible.
 
 ### BS-08 Spoken prompts
-One small interface (`PromptSpeaker`). Today it uses the browser's speech synthesis and the screen
-says it is a device voice. Pre-generated MP3 files can replace it later without a screen change.
+One small interface (`PromptSpeaker`). Prompts are played from pre-generated OpenAI TTS clips in
+`public/audio/` (made by `tools/audio/generate-audio.mjs`, listed in `public/audio/manifest.json`).
+The app never calls a TTS service. A missing clip, a clip whose text changed, or a clip that fails
+to load falls back to the browser's speech synthesis. The screen says "AI-generated voice" for a
+clip and "Device voice" only for the fallback. Playback starts inside the tap (iPhone Safari), and
+a second tap stops it. Reading sentences are not played before the attempt.
 
 ### BS-09 Text and language
 All user-facing text comes from `src/i18n/locales/en.json`. Translations stay hidden (decision D in

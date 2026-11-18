@@ -545,3 +545,15 @@ Spec in `.kiro/specs/booth-screens/`; decisions in `docs/decisions-log.md`, sect
 - **Production behaviour, checked on a real bundle:** `vite build --ssr` of `practice-flow.ts`, run in Node, returned `locked` for both answer keys with the message "marked needsHumanReview: true", while the rules, boundary date and content loaded. `needsHumanReview` and the loader's check are unchanged.
 - **Dev server:** started on a scratch port; the page, `main.tsx`, the screens and the data files all returned 200.
 - **Not done:** pre-generated audio, the Worker coach and any AI, N-400 scoring, a test with a real browser or microphone (none was available).
+
+## 2026-11-17: pre-generated AI voice for spoken prompts (branch ui/booth-screens)
+
+The device voice is replaced by OpenAI TTS clips made ahead of time and served as static files. The app never calls a TTS service.
+
+- **Generator:** `tools/audio/generate-audio.mjs` (model `gpt-4o-mini-tts`, voice coral, the same instruction as the speech-test script; the key comes from the local gitignored key file in `tools/speech-test` and is never printed). Clips: question text of every entry in both answer keys, every N-400 question, every profile's sample answer, every writing sentence. Reading sentences get no audio. Output `public/audio/<group>/<id>.mp3` and `public/audio/manifest.json` (id, file, hash of the spoken text, group, bytes). Re-runs skip clips whose text hash, voice settings and file are unchanged. `--dry-run`, `--only=<groups>`, `--skip-dynamic`, `--prune`. It was not run against the API.
+- **Shared module:** `src/engine/audio-clips.ts` (clip list, ids, hash, manifest checks) is used by the generator, the player and the tests.
+- **Player:** `createMp3PromptSpeaker` in `src/ui/voice/prompt-speaker.ts`. It uses a clip only when the manifest lists it and the hash matches the text about to be spoken. Missing clip, changed text, load error or refused playback falls back to the device voice. One audio element is created at the first tap and reused; `play()` is called synchronously in the click handler (iPhone Safari). A second tap stops, the next tap plays from the start. The label says "AI-generated voice" for a clip and "Device voice" only on fallback. The manifest is bundled with the app, so the choice is known at tap time.
+- **Interface change:** `PromptSpeaker.speak` now takes `{ text, clipId }`, there is `voiceFor(prompt)`, and the old `kind` property is gone.
+- **Screens:** civics questions, N-400 questions, N-400 sample answers ("Play sample answer") and writing sentences play clips. The reading screen no longer has a play button.
+- **Tests:** a test fails if a manifest entry's hash no longer matches the current text (or the id or file name changed, or the MP3 is missing, or an MP3 is not listed). All tests pass with an empty `public/audio/`.
+- **Housekeeping:** `.gitignore` keeps `tools/speech-test/audio/` and the speech-test key file ignored and has a note that `public/audio/` is committed. README disclosure updated.

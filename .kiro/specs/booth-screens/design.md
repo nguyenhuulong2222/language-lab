@@ -35,6 +35,12 @@ The user picks "before" or "on or after" the boundary date. `representativeFilin
 day before the boundary, or the boundary itself. `selectTestVersion` then picks the test, so the
 engine, not the screen, decides 2008 or 2025.
 
+## Spoken prompts
+`createMp3PromptSpeaker` looks the prompt up in the manifest (id and hash of the text), plays the
+file through one reused audio element started synchronously in the click handler, and falls back
+to `createDeviceVoiceSpeaker` when there is no clip or it fails. `src/engine/audio-clips.ts` holds
+the clip list, ids, hash and manifest checks shared with the generator and the tests.
+
 ## Voice
 `SpeechListener.listen()` resolves to one of: `transcript`, `denied`, `unsupported`, `nothing-heard`,
 `no-microphone`, `error`. The pure mapping from browser error codes is in `recognition-outcome.ts`.
