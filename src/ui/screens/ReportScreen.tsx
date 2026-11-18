@@ -13,6 +13,7 @@ import { Disclaimer } from "../components/Disclaimer";
 import { StatusBadge } from "../components/StatusBadge";
 import { ReviewIcon } from "../components/icons";
 import { STAGES, stageIndex } from "../stages";
+import { useT } from "../../i18n/react";
 import { formatProfileName, formatDate, formatDateTime } from "../format";
 import "./ReportScreen.css";
 
@@ -21,12 +22,11 @@ interface ReportScreenProps {
 }
 
 export function ReportScreen({ session }: ReportScreenProps) {
+  const t = useT();
   const report = session.finalReport;
   if (!report) {
     return (
-      <p className="report__empty">
-        Your practice report will appear here once the session is complete.
-      </p>
+      <p className="report__empty">{t("report.empty")}</p>
     );
   }
 
@@ -39,26 +39,27 @@ export function ReportScreen({ session }: ReportScreenProps) {
       <header className="report__header">
         <p className="report__overline">
           <span className="report__take" aria-hidden="true">
-            TAKE {take}
+            {t("report.take")} {take}
           </span>
           <span className="report__overline-sep" aria-hidden="true">
             ·
           </span>
-          <span className="report__overline-label">Practice report</span>
+          <span className="report__overline-label">{t("report.overline")}</span>
         </p>
         <h1 className="report__title">
-          {passed ? "You’re on track" : "A few things to review"}
+          {passed ? t("report.title.onTrack") : t("report.title.review")}
         </h1>
         <p className="report__lead">
-          {passed
-            ? "You completed this practice session well. Use the notes below to keep sharp before your next round."
-            : "That’s what practice is for. The notes below show where to focus before you try again."}
+          {passed ? t("report.lead.onTrack") : t("report.lead.review")}
         </p>
         <div className="report__profile">
-          <p className="report__profile-label">Practice profile (fictional)</p>
+          <p className="report__profile-label">{t("report.profile.label")}</p>
           <p className="report__profile-name">{profileName}</p>
           <p className="report__profile-meta">
-            {session.testVersion} civics test · filed {formatDate(session.filingDate)}
+            {t("report.profile.meta", {
+              version: session.testVersion,
+              date: formatDate(session.filingDate),
+            })}
           </p>
         </div>
       </header>
@@ -68,7 +69,7 @@ export function ReportScreen({ session }: ReportScreenProps) {
         aria-labelledby="report-stages-heading"
       >
         <h2 className="report__section-title" id="report-stages-heading">
-          How each part went
+          {t("report.stages.heading")}
         </h2>
         <ol className="report__stages">
           {report.stageSummaries.map((summary) => (
@@ -83,11 +84,9 @@ export function ReportScreen({ session }: ReportScreenProps) {
           aria-labelledby="report-review-heading"
         >
           <h2 className="report__section-title" id="report-review-heading">
-            Things to review
+            {t("report.review.heading")}
           </h2>
-          <p className="report__section-intro">
-            Focus on these before your next practice.
-          </p>
+          <p className="report__section-intro">{t("report.review.intro")}</p>
           <ul className="report__review-list">
             {report.overallReviewItems.map((item, index) => (
               <li key={index} className="report__review-item">
@@ -106,22 +105,23 @@ export function ReportScreen({ session }: ReportScreenProps) {
       />
 
       <p className="report__generated">
-        Report generated {formatDateTime(report.generatedAt)}
+        {t("report.generated", { datetime: formatDateTime(report.generatedAt) })}
       </p>
     </article>
   );
 }
 
 function StageSummaryCard({ summary }: { summary: StageSummary }) {
+  const t = useT();
   const meta = STAGES[stageIndex(summary.stage)];
   const hasReview = summary.reviewItems.length > 0;
   return (
     <li className="stage-card">
       <div className="stage-card__head">
-        <h3 className="stage-card__title">{meta.label}</h3>
+        <h3 className="stage-card__title">{t(meta.labelKey)}</h3>
         <StatusBadge
           variant={hasReview ? "attention" : "positive"}
-          label={hasReview ? "Worth reviewing" : "On track"}
+          label={hasReview ? t("badge.review") : t("badge.onTrack")}
         />
       </div>
       <p className="stage-card__summary">{summary.summary}</p>

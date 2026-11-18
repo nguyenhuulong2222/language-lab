@@ -1,0 +1,51 @@
+{
+  "app.name": "Language Lab",
+  "app.skipToMain": "Skip to main content",
+  "app.stageNotBuilt": "This stage of the practice isn’t built yet.",
+
+  "header.about": "About & disclaimer",
+
+  "disclaimer.short": "Not affiliated with USCIS or any government agency. Not legal advice.",
+  "disclaimer.full": "Language Lab is an independent practice tool. It is not affiliated with, endorsed by, or connected to USCIS, DHS, or any U.S. government agency. Practice results do not predict or reflect any official immigration decision. Nothing here is legal advice. Consult a qualified immigration attorney for guidance on your actual case.",
+  "disclaimer.title": "Please read this",
+
+  "stepper.label": "Interview stages",
+  "stepper.count": "Stage {current} of {total}",
+  "stepper.status.complete": "completed",
+  "stepper.status.current": "current step",
+  "stepper.status.upcoming": "upcoming",
+
+  "stage.intro.label": "Welcome",
+  "stage.intro.short": "Intro",
+  "stage.n400_interview.label": "N-400 conversation",
+  "stage.n400_interview.short": "N-400",
+  "stage.reading.label": "Reading",
+  "stage.reading.short": "Reading",
+  "stage.writing.label": "Writing",
+  "stage.writing.short": "Writing",
+  "stage.civics.label": "Civics",
+  "stage.civics.short": "Civics",
+  "stage.report.label": "Practice report",
+  "stage.report.short": "Report",
+
+  "badge.onTrack": "On track",
+  "badge.review": "Worth reviewing",
+
+  "report.empty": "Your practice report will appear here once the session is complete.",
+  "report.take": "TAKE",
+  "report.overline": "Practice report",
+  "report.title.onTrack": "You’re on track",
+  "report.title.review": "A few things to review",
+  "report.lead.onTrack": "You completed this practice session well. Use the notes below to keep sharp before your next round.",
+  "report.lead.review": "That’s what practice is for. The notes below show where to focus before you try again.",
+  "report.profile.label": "Practice profile (fictional)",
+  "report.profile.meta": "{version} civics test · filed {date}",
+  "report.stages.heading": "How each part went",
+  "report.review.heading": "Things to review",
+  "report.review.intro": "Focus on these before your next practice.",
+  "report.generated": "Report generated {datetime}",
+
+  "translation.notice": "Translation for reference; the English version is official.",
+  "translation.missing": "No translation yet. Showing English.",
+  "translation.english": "English"
+}

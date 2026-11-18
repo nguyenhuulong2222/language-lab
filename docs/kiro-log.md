@@ -513,3 +513,12 @@ scoring logic. The 2025 values are confirmed directly on the 2025 test page.
 - 2008: https://www.uscis.gov/civics-questions-and-answers-2008-version
 - 2025: https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test
 - Which test version applies by filing date: https://www.uscis.gov/citizenship/learn-about-citizenship/the-naturalization-interview-and-test
+
+## 2026-11-01: second review round (autonomous)
+
+Full decisions, with how to reverse each one, are in `docs/decisions-log.md`.
+
+- Matcher: spoken years (`nineteen twenty` = 1920) only when an accepted answer is a year, month-ordinal dates, optional leading "because", answer groups that count once, and a per-answer `numberAlone` marker. No general bare-number rule.
+- Answer files: new optional fields `answerGroups` and `numberAlone`. Markers for 2025-067/077/118 and 2008-061 added. Both files still `needsHumanReview: true`; no word was added that the USCIS source does not contain.
+- Display layer: all UI text moved to `src/i18n/locales/en.json`, with a test that fails on literal text in `src/ui`. Civics question and answer translations are display-only files in `data/translations/civics/`, imported from the N400 repository (read only), unflagged entries only. A question with no translation shows English and "No translation yet".
+- The display types (`CivicsDisplay` and friends) live in `src/i18n/civics-translations.ts`, not in `src/contracts/`. If they should be shared contracts, that is a request for the contract owner.

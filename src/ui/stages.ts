@@ -3,22 +3,23 @@
  * The order matches the SessionStage flow defined in src/contracts/session.ts.
  */
 import type { SessionStage } from "../contracts";
+import type { MessageKey } from "../i18n";
 
 export interface StageMeta {
   stage: SessionStage;
-  /** Full, human-readable label (used in headings and the mobile stepper). */
-  label: string;
-  /** Compact label for the desktop stepper. */
-  short: string;
+  /** Message key of the full label (used in headings and the mobile stepper). */
+  labelKey: MessageKey;
+  /** Message key of the compact label for the desktop stepper. */
+  shortKey: MessageKey;
 }
 
 export const STAGES: readonly StageMeta[] = [
-  { stage: "intro", label: "Welcome", short: "Intro" },
-  { stage: "n400_interview", label: "N-400 conversation", short: "N-400" },
-  { stage: "reading", label: "Reading", short: "Reading" },
-  { stage: "writing", label: "Writing", short: "Writing" },
-  { stage: "civics", label: "Civics", short: "Civics" },
-  { stage: "report", label: "Practice report", short: "Report" },
+  { stage: "intro", labelKey: "stage.intro.label", shortKey: "stage.intro.short" },
+  { stage: "n400_interview", labelKey: "stage.n400_interview.label", shortKey: "stage.n400_interview.short" },
+  { stage: "reading", labelKey: "stage.reading.label", shortKey: "stage.reading.short" },
+  { stage: "writing", labelKey: "stage.writing.label", shortKey: "stage.writing.short" },
+  { stage: "civics", labelKey: "stage.civics.label", shortKey: "stage.civics.short" },
+  { stage: "report", labelKey: "stage.report.label", shortKey: "stage.report.short" },
 ] as const;
 
 export const STAGE_ORDER: readonly SessionStage[] = STAGES.map((s) => s.stage);
