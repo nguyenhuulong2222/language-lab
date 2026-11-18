@@ -3,7 +3,7 @@
  * session lives in one in-memory reducer (src/engine/practice-flow.ts). Nothing is stored, and
  * nothing is sent anywhere. Reloading the page starts again.
  */
-import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
+import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import type { InterviewSession } from "../contracts";
 import { createScriptedN400Coach } from "../engine/n400-coach";
 import {
@@ -44,7 +44,11 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
     () => (["2008", "2025"] as const).some((v) => engine.env.answerKey(v).status === "locked"),
     [engine]
   );
-  const restart = useCallback(() => dispatch({ type: "restart" }), []);
+  const [restarts, setRestarts] = useState(0);
+  const restart = useCallback(() => {
+    setRestarts((n) => n + 1);
+    dispatch({ type: "restart" });
+  }, []);
 
   return (
     <Shell currentStage={state.phase}>
@@ -54,6 +58,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
         dispatch={dispatch}
         coach={coach}
         civicsLockedInBuild={civicsLockedInBuild}
+        afterRestart={restarts > 0}
         now={now}
         seed={seed}
         restart={restart}
@@ -68,13 +73,25 @@ interface ScreenProps {
   dispatch: (action: PracticeAction) => void;
   coach: ReturnType<typeof createScriptedN400Coach>;
   civicsLockedInBuild: boolean;
+  /** The intro is shown again after a restart (moves focus to its heading). */
+  afterRestart?: boolean;
   now: () => string;
   seed: () => number;
   restart: () => void;
 }
 
 /** The active screen for the current phase. Exported so each phase can be rendered in tests. */
-export function Screen({ engine, state, dispatch, coach, civicsLockedInBuild, now, seed, restart }: ScreenProps) {
+export function Screen({
+  engine,
+  state,
+  dispatch,
+  coach,
+  civicsLockedInBuild,
+  afterRestart = false,
+  now,
+  seed,
+  restart,
+}: ScreenProps) {
   const { env } = engine;
 
   switch (state.phase) {
@@ -84,6 +101,7 @@ export function Screen({ engine, state, dispatch, coach, civicsLockedInBuild, no
           profiles={env.content.profiles}
           boundaryDate={env.boundaryDate}
           civicsLocked={civicsLockedInBuild}
+          focusOnFirstRender={afterRestart}
           onStart={(profileId, filedOn) => dispatch({ type: "start", profileId, filedOn, seed: seed(), at: now() })}
         />
       );

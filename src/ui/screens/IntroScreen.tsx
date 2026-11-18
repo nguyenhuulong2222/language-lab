@@ -19,9 +19,17 @@ interface IntroScreenProps {
   /** True when this build cannot score civics (answer key not yet reviewed). */
   civicsLocked: boolean;
   onStart: (profileId: string, filedOn: FiledChoice) => void;
+  /** True when the intro appears again after "start over": focus then moves to its heading. */
+  focusOnFirstRender?: boolean;
 }
 
-export function IntroScreen({ profiles, boundaryDate, civicsLocked, onStart }: IntroScreenProps) {
+export function IntroScreen({
+  profiles,
+  boundaryDate,
+  civicsLocked,
+  onStart,
+  focusOnFirstRender = false,
+}: IntroScreenProps) {
   const t = useT();
   const [profileId, setProfileId] = useState<string | null>(null);
   const [filedOn, setFiledOn] = useState<FiledChoice | null>(null);
@@ -30,7 +38,7 @@ export function IntroScreen({ profiles, boundaryDate, civicsLocked, onStart }: I
 
   return (
     <div className="screen">
-      <TakeHeader stage="intro" title={t("intro.title")} lead={t("intro.lead")} focusOnFirstRender={false} />
+      <TakeHeader stage="intro" title={t("intro.title")} lead={t("intro.lead")} focusOnFirstRender={focusOnFirstRender} />
 
       <Disclaimer variant="prominent" id="intro-disclaimer" text={t("disclaimer.full")} />
       <ul className="notice-list">

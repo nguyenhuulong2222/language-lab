@@ -26,14 +26,23 @@ interface TakeHeaderProps {
 export function TakeHeader({ stage, title, lead, focusKey = "screen", focusOnFirstRender = true }: TakeHeaderProps) {
   const t = useT();
   const heading = useRef<HTMLHeadingElement>(null);
-  const first = useRef(true);
+  const mounted = useRef(false);
   const index = stageIndex(stage);
   const take = String(index + 1).padStart(2, "0");
 
+  // Reset when the component goes away. Strict Mode's extra unmount/mount in development then
+  // still counts as the first render.
+  useEffect(
+    () => () => {
+      mounted.current = false;
+    },
+    []
+  );
+
   useEffect(() => {
-    const wasFirst = first.current;
-    first.current = false;
-    if (focusKey === null || (wasFirst && !focusOnFirstRender)) return;
+    const isFirstRender = !mounted.current;
+    mounted.current = true;
+    if (focusKey === null || (isFirstRender && !focusOnFirstRender)) return;
     heading.current?.focus();
   }, [focusKey, focusOnFirstRender]);
 

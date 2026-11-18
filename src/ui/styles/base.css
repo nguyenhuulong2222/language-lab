@@ -58,6 +58,12 @@ button {
   border-radius: var(--radius-sm);
 }
 
+/* Headings and the main area take focus from code, not from the user: no ring on them */
+[tabindex="-1"]:focus,
+[tabindex="-1"]:focus-visible {
+  outline: none;
+}
+
 ::selection {
   background: var(--amber);
   color: var(--surface);

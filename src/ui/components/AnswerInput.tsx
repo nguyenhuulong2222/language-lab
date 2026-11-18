@@ -42,6 +42,7 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
     voice && !listener.supported ? "voice.unsupported" : null
   );
   const heard = useRef<string | null>(null);
+  const box = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => () => listener.stop(), [listener]);
 
@@ -63,6 +64,7 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
   const submit = () => {
     if (text.trim() === "") {
       setMessage("voice.needText");
+      box.current?.focus();
       return;
     }
     send(text.trim());
@@ -73,7 +75,8 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
   };
 
   const canListen = voice && listener.supported;
-  const needsAttention = message !== null && message !== "voice.listening" && message !== "voice.heard";
+  const needsAttention =
+    message !== null && message !== "voice.listening" && message !== "voice.heard" && message !== "voice.unsupported";
 
   return (
     <div className="field">
@@ -82,6 +85,7 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
       </label>
       <textarea
         id={inputId}
+        ref={box}
         className="field__input"
         value={text}
         rows={3}
@@ -89,7 +93,10 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
         autoComplete="off"
         spellCheck={false}
         aria-describedby={statusId}
-        onChange={(event) => setText(event.target.value)}
+        onChange={(event) => {
+          setText(event.target.value);
+          setMessage((current) => (current === "voice.needText" ? null : current));
+        }}
       />
       <p id={statusId} className={needsAttention ? "status status--attention" : "status"} role="status" aria-live="polite">
         {needsAttention && <ReviewIcon className="icon-inline icon-inline--attention" />}

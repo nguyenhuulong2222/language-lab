@@ -25,13 +25,17 @@ export function SpeakButton({ text }: { text: string }) {
       .finally(() => setPlaying(false));
   };
 
+  const stop = () => {
+    speaker.cancel();
+    setPlaying(false);
+  };
+
   return (
     <div className="speak">
       <button
         type="button"
         className="btn btn--secondary"
-        aria-pressed={playing}
-        onClick={playing ? () => speaker.cancel() : play}
+        onClick={playing ? stop : play}
       >
         {playing ? t("audio.stop") : t("audio.play")}
       </button>
