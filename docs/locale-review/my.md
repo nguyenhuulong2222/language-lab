@@ -44,6 +44,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | နိုင်ငံသားဗဟုသုတ အဖြေမှန်များသည် လူတစ်ဦး၏ စစ်ဆေးမှုကို စောင့်နေဆဲဖြစ်သဖြင့် ဤဗားရှင်းသည် ၎င်းကို အမှတ်မပေးပါ၊ အစီရင်ခံစာလည်း မပြုလုပ်ပါ။ |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | နိုင်ငံသားဗဟုသုတမေးခွန်းများကို ဖြေပါ။ အဖြေမှန်များနှင့် တိုက်စစ်သည်။ |
 | `partReport.unscored.missing` | A question that is not in the answer key | အဖြေမှန်စာရင်းတွင် မပါသော မေးခွန်း |
+| `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | အဖြေမှန်များကို လူတစ်ဦးက စစ်ဆေးပြီးသည်အထိ ဤဗားရှင်းတွင် “အရင်လေ့လာရန်” ကို ပိတ်ထားသည်။ |
 
 ## 3. All other lines
 
@@ -245,6 +246,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | ထပ်ကြိုးစားရန် |
 | `partReport.badge.good` | This part went well | ဤအပိုင်း ကောင်းမွန်ခဲ့သည် |
 | `lang.menu.title` | Choose a language | ဘာသာစကား ရွေးပါ |
+| `home.study.title` | Study first | အရင်လေ့လာရန် |
+| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | နိုင်ငံသားဗဟုသုတမေးခွန်းများကို ပုံများနှင့် တရားဝင်အဖြေများနှင့်အတူ ကြည့်ပါ။ အမှတ်မပေးပါ။ |
+| `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | နိုင်ငံသားဗဟုသုတမေးခွန်းများကို တစ်ခုချင်း ကြည့်ပါ။ တစ်ခုစီတွင် တရားဝင်အဖြေများ ပြသည်။ အမှတ်မပေးပါ၊ ဘာမျှ မသိမ်းပါ။ |
+| `study.version.legend` | Which civics test do you want to study? | နိုင်ငံသားဗဟုသုတစာမေးပွဲ ဘယ်ဟာကို လေ့လာချင်ပါသလဲ။ |
+| `study.version.2008` | 2008 civics test | ၂၀၀၈ ခုနှစ် နိုင်ငံသားဗဟုသုတစာမေးပွဲ |
+| `study.version.2025` | 2025 civics test | ၂၀၂၅ ခုနှစ် နိုင်ငံသားဗဟုသုတစာမေးပွဲ |
+| `study.prev` | Previous question | ယခင်မေးခွန်း |
+| `study.change` | Choose another test | အခြားစာမေးပွဲကို ရွေးပါ |
+| `footer.credits` | Picture credits | ပုံများ၏ ရင်းမြစ် |
+| `credits.title` | Picture credits | ပုံများ၏ ရင်းမြစ် |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | နိုင်ငံသားဗဟုသုတလေ့ကျင့်မှုရှိ ပုံများသည် အမေရိကန်ဖက်ဒရယ်အစိုးရ၏ တရားဝင်ရင်းမြစ်များမှ လာသည်။ ပုံတစ်ပုံစီကို ၎င်း၏ကိုယ်ပိုင်မှတ်တမ်းတွင် အခွင့်အရေးများကို ရှင်းလင်းစွာ ဖော်ပြထားသောကြောင့်သာ အသုံးပြုသည်။ ၎င်းသည် မည်သည့်အဖွဲ့အစည်းကမျှ Language Lab ကို ထောက်ခံသည်ဟု မဆိုလိုပါ။ |
+| `credits.back` | Back to the practice | လေ့ကျင့်မှုသို့ ပြန်သွားရန် |
 
 ## Lines marked ⚠ (meaning differs a little)
 

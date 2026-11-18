@@ -226,5 +226,18 @@
   "common.retry": "Subukang muli",
   "partReport.badge.good": "Maayos ang bahaging ito",
   "aiNotice.text": "Ang pagsasalin na ito ay ginawa ng AI at maaaring may mga pagkakamali. Ang bersyong Ingles ang may bisa.",
-  "lang.menu.title": "Pumili ng wika"
+  "lang.menu.title": "Pumili ng wika",
+  "home.study.title": "Mag-aral muna",
+  "home.study.text": "Tingnan ang mga tanong sa civics na may mga larawan at opisyal na sagot. Walang iniiskor.",
+  "study.lead": "Tingnan ang mga tanong sa civics nang isa-isa. Ipinapakita ng bawat isa ang mga opisyal na sagot. Walang iniiskor o sine-save.",
+  "study.version.legend": "Aling civics test ang gusto ninyong pag-aralan?",
+  "study.version.2008": "Civics test ng 2008",
+  "study.version.2025": "Civics test ng 2025",
+  "study.prev": "Nakaraang tanong",
+  "study.change": "Pumili ng ibang test",
+  "study.locked": "Naka-off ang Mag-aral muna sa bersyong ito hanggang masuri ng isang tao ang answer key.",
+  "footer.credits": "Mga kredito ng larawan",
+  "credits.title": "Mga kredito ng larawan",
+  "credits.lead": "Ang mga larawan sa pagsasanay sa civics ay galing sa mga opisyal na pinagmulan ng pederal na gobyerno ng U.S. Ginagamit ang bawat isa dahil malinaw na nakasaad sa sarili nitong tala ang mga karapatan nito. Hindi ito nangangahulugang inendorso ng anumang ahensya ang Language Lab.",
+  "credits.back": "Bumalik sa pagsasanay"
 }

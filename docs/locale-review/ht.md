@@ -44,6 +44,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Kle repons edikasyon sivik la ap tann yon moun revize l toujou, se konsa vèsyon sa a pa bay nòt pou edikasyon sivik e li pa fè rapò. |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Reponn kesyon edikasyon sivik. Yo tcheke ak kle repons yo. |
 | `partReport.unscored.missing` | A question that is not in the answer key | Yon kesyon ki pa nan kle repons yo |
+| `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Etidye anvan an fèmen nan vèsyon sa a jiskaske yon moun revize kle repons yo. |
 
 ## 3. All other lines
 
@@ -245,3 +246,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | Eseye ankò |
 | `partReport.badge.good` | This part went well | Pati sa a te byen pase |
 | `lang.menu.title` | Choose a language | Chwazi yon lang |
+| `home.study.title` | Study first | Etidye anvan |
+| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Gade kesyon edikasyon sivik yo ak imaj ak repons ofisyèl yo. Pa gen nòt ki bay. |
+| `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Gade kesyon edikasyon sivik yo youn apre lòt. Chak kesyon montre repons ofisyèl yo. Anyen pa jwenn nòt ni pa sove. |
+| `study.version.legend` | Which civics test do you want to study? | Ki tès edikasyon sivik ou vle etidye? |
+| `study.version.2008` | 2008 civics test | Tès edikasyon sivik 2008 |
+| `study.version.2025` | 2025 civics test | Tès edikasyon sivik 2025 |
+| `study.prev` | Previous question | Kesyon anvan an |
+| `study.change` | Choose another test | Chwazi yon lòt tès |
+| `footer.credits` | Picture credits | Kredi imaj yo |
+| `credits.title` | Picture credits | Kredi imaj yo |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Imaj ki nan pratik edikasyon sivik la soti nan sous ofisyèl gouvènman federal Etazini. Chak imaj itilize paske pwòp dosye li di klèman dwa li yo. Sa pa vle di okenn ajans apwouve Language Lab. |
+| `credits.back` | Back to the practice | Tounen nan pratik la |

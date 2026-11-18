@@ -44,6 +44,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | नागरिक शास्त्र की उत्तर-कुंजी अभी किसी व्यक्ति की समीक्षा की प्रतीक्षा में है, इसलिए यह संस्करण नागरिक शास्त्र का स्कोर नहीं देता और रिपोर्ट नहीं बनाता। |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | नागरिक शास्त्र के प्रश्नों के उत्तर दें। उत्तर-कुंजी से मिलान किया जाता है। |
 | `partReport.unscored.missing` | A question that is not in the answer key | ऐसा प्रश्न जो उत्तर-कुंजी में नहीं है |
+| `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | जब तक कोई व्यक्ति उत्तर-कुंजी की समीक्षा नहीं कर लेता, इस संस्करण में “पहले पढ़ें” बंद है। |
 
 ## 3. All other lines
 
@@ -245,3 +246,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | फिर से कोशिश करें |
 | `partReport.badge.good` | This part went well | यह भाग अच्छा रहा |
 | `lang.menu.title` | Choose a language | भाषा चुनें |
+| `home.study.title` | Study first | पहले पढ़ें |
+| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | तस्वीरों और आधिकारिक उत्तरों के साथ नागरिक शास्त्र के प्रश्न देखें। कोई स्कोर नहीं दिया जाता। |
+| `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | नागरिक शास्त्र के प्रश्न एक-एक करके देखें। हर प्रश्न के साथ आधिकारिक उत्तर दिखते हैं। कुछ भी स्कोर या सहेजा नहीं जाता। |
+| `study.version.legend` | Which civics test do you want to study? | आप नागरिक शास्त्र की कौन-सी परीक्षा पढ़ना चाहते हैं? |
+| `study.version.2008` | 2008 civics test | 2008 की नागरिक शास्त्र परीक्षा |
+| `study.version.2025` | 2025 civics test | 2025 की नागरिक शास्त्र परीक्षा |
+| `study.prev` | Previous question | पिछला प्रश्न |
+| `study.change` | Choose another test | दूसरी परीक्षा चुनें |
+| `footer.credits` | Picture credits | तस्वीरों का श्रेय |
+| `credits.title` | Picture credits | तस्वीरों का श्रेय |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | नागरिक शास्त्र अभ्यास की तस्वीरें अमेरिकी संघीय सरकार के आधिकारिक स्रोतों से ली गई हैं। हर तस्वीर इसलिए इस्तेमाल की गई है क्योंकि उसके अपने रिकॉर्ड में उसके अधिकार साफ़ लिखे हैं। इसका यह मतलब नहीं कि कोई एजेंसी Language Lab का समर्थन करती है। |
+| `credits.back` | Back to the practice | अभ्यास पर वापस जाएँ |

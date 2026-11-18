@@ -18,6 +18,8 @@ interface HomeScreenProps {
   /** True when this build cannot score civics (answer key not yet reviewed). */
   civicsLocked: boolean;
   onChoose: (mode: PracticeMode) => void;
+  /** Open "Study first" (questions with pictures and official answers, not scored). */
+  onStudy?: () => void;
   /** The home screen is shown again after "back to home": focus then moves to its heading. */
   focusOnFirstRender?: boolean;
 }
@@ -29,7 +31,7 @@ const PARTS: ReadonlyArray<{ mode: Exclude<PracticeMode, "full">; title: Message
   { mode: "civics", title: "home.part.civics.title", text: "home.part.civics.text" },
 ];
 
-export function HomeScreen({ civicsLocked, onChoose, focusOnFirstRender = false }: HomeScreenProps) {
+export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender = false }: HomeScreenProps) {
   const t = useT();
   return (
     <div className="screen">
@@ -56,6 +58,12 @@ export function HomeScreen({ civicsLocked, onChoose, focusOnFirstRender = false 
             </button>
           ))}
         </div>
+        {onStudy !== undefined && (
+          <button type="button" className="option-card" onClick={onStudy}>
+            <span className="option-card__title">{t("home.study.title")}</span>
+            <span className="option-card__text">{t("home.study.text")}</span>
+          </button>
+        )}
         {civicsLocked && (
           <p className="status status--attention">
             <ReviewIcon className="icon-inline icon-inline--attention" /> {t("intro.locked")}

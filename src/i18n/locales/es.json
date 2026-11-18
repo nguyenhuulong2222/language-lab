@@ -226,5 +226,18 @@
   "common.retry": "Intentar de nuevo",
   "partReport.badge.good": "Esta parte salió bien",
   "aiNotice.text": "Esta traducción la hizo una IA y puede tener errores. La versión en inglés es la que tiene autoridad.",
-  "lang.menu.title": "Elija un idioma"
+  "lang.menu.title": "Elija un idioma",
+  "home.study.title": "Estudiar primero",
+  "home.study.text": "Revise las preguntas de educación cívica con imágenes y las respuestas oficiales. No se califica nada.",
+  "study.lead": "Revise las preguntas de educación cívica una por una. Cada una muestra las respuestas oficiales. No se califica ni se guarda nada.",
+  "study.version.legend": "¿Qué examen de educación cívica quiere estudiar?",
+  "study.version.2008": "Examen de educación cívica de 2008",
+  "study.version.2025": "Examen de educación cívica de 2025",
+  "study.prev": "Pregunta anterior",
+  "study.change": "Elegir otro examen",
+  "study.locked": "Estudiar primero está desactivado en esta versión hasta que una persona revise las respuestas correctas.",
+  "footer.credits": "Créditos de las imágenes",
+  "credits.title": "Créditos de las imágenes",
+  "credits.lead": "Las imágenes de la práctica de educación cívica provienen de fuentes oficiales del gobierno federal de EE. UU. Cada una se usa solo porque su propio registro indica sus derechos. Esto no significa que ninguna agencia respalde Language Lab.",
+  "credits.back": "Volver a la práctica"
 }

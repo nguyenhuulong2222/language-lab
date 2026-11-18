@@ -44,6 +44,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 公民常識的標準答案仍在等待人工審核，所以這個版本不會為公民常識計分，也不會產生報告。 |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | 回答公民常識問題。會與標準答案核對。 |
 | `partReport.unscored.missing` | A question that is not in the answer key | 一道不在標準答案中的題目 |
+| `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | 在有人審核過答案表之前，這個版本已關閉「先學習」。 |
 
 ## 3. All other lines
 
@@ -245,3 +246,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | 再試一次 |
 | `partReport.badge.good` | This part went well | 這個部分表現良好 |
 | `lang.menu.title` | Choose a language | 選擇語言 |
+| `home.study.title` | Study first | 先學習 |
+| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | 瀏覽公民常識題目，附有圖片和官方答案。不計分。 |
+| `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | 一次看一道公民常識題目。每題都會顯示官方答案。不計分，也不儲存任何內容。 |
+| `study.version.legend` | Which civics test do you want to study? | 您想學習哪一種公民常識測驗？ |
+| `study.version.2008` | 2008 civics test | 2008 年公民常識測驗 |
+| `study.version.2025` | 2025 civics test | 2025 年公民常識測驗 |
+| `study.prev` | Previous question | 上一題 |
+| `study.change` | Choose another test | 選擇其他測驗 |
+| `footer.credits` | Picture credits | 圖片來源 |
+| `credits.title` | Picture credits | 圖片來源 |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | 公民常識練習中的圖片來自美國聯邦政府的官方來源。每張圖片都只因其本身的紀錄清楚載明權利而使用。這並不表示任何機關認可 Language Lab。 |
+| `credits.back` | Back to the practice | 回到練習 |

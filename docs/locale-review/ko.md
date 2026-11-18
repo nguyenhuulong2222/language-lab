@@ -44,6 +44,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 시민 상식 정답표가 아직 사람의 검토를 기다리고 있어서, 이 버전은 시민 상식을 채점하거나 보고서를 만들지 않습니다. |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | 시민 상식 질문에 답합니다. 정답표와 대조합니다. |
 | `partReport.unscored.missing` | A question that is not in the answer key | 정답표에 없는 질문 |
+| `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | 누군가 정답표를 검토하기 전까지 이 버전에서는 먼저 공부하기가 꺼져 있습니다. |
 
 ## 3. All other lines
 
@@ -245,3 +246,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | 다시 시도 |
 | `partReport.badge.good` | This part went well | 이 부분은 잘했어요 |
 | `lang.menu.title` | Choose a language | 언어를 선택하세요 |
+| `home.study.title` | Study first | 먼저 공부하기 |
+| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | 그림과 공식 답이 있는 시민 상식 질문을 살펴보세요. 채점하지 않습니다. |
+| `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | 시민 상식 질문을 한 번에 하나씩 살펴보세요. 질문마다 공식 답이 나옵니다. 채점하거나 저장하지 않습니다. |
+| `study.version.legend` | Which civics test do you want to study? | 어떤 시민 상식 시험을 공부하시겠어요? |
+| `study.version.2008` | 2008 civics test | 2008년 시민 상식 시험 |
+| `study.version.2025` | 2025 civics test | 2025년 시민 상식 시험 |
+| `study.prev` | Previous question | 이전 질문 |
+| `study.change` | Choose another test | 다른 시험 선택 |
+| `footer.credits` | Picture credits | 사진 출처 |
+| `credits.title` | Picture credits | 사진 출처 |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | 시민 상식 연습의 사진은 미국 연방 정부의 공식 출처에서 가져왔습니다. 각 사진은 해당 기록에 권리가 분명히 적혀 있어서만 사용됩니다. 이것이 어떤 기관이 Language Lab을 보증한다는 뜻은 아닙니다. |
+| `credits.back` | Back to the practice | 연습으로 돌아가기 |

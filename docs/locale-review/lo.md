@@ -44,6 +44,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | ຄໍາເຉີຍວິຊາພົນລະເມືອງຍັງລໍຖ້າໃຫ້ມີຄົນກວດສອບ, ດັ່ງນັ້ນເວີຊັນນີ້ຈຶ່ງບໍ່ໃຫ້ຄະແນນສ່ວນນີ້ ແລະ ບໍ່ສ້າງບົດລາຍງານ. |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | ຕອບຄໍາຖາມວິຊາພົນລະເມືອງ. ກວດກັບຄໍາເຉີຍ. |
 | `partReport.unscored.missing` | A question that is not in the answer key | ຄໍາຖາມທີ່ບໍ່ມີໃນຄໍາເຉີຍ |
+| `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | ສຶກສາກ່ອນຖືກປິດໃນເວີຊັນນີ້ ຈົນກວ່າຈະມີຄົນກວດຄໍາເຉີຍແລ້ວ. |
 
 ## 3. All other lines
 
@@ -245,3 +246,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | ລອງອີກຄັ້ງ |
 | `partReport.badge.good` | This part went well | ສ່ວນນີ້ເຮັດໄດ້ດີ |
 | `lang.menu.title` | Choose a language | ເລືອກພາສາ |
+| `home.study.title` | Study first | ສຶກສາກ່ອນ |
+| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | ເບິ່ງຄໍາຖາມວິຊາພົນລະເມືອງພ້ອມຮູບພາບ ແລະ ຄໍາຕອບທາງການ. ບໍ່ມີການໃຫ້ຄະແນນ. |
+| `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | ເບິ່ງຄໍາຖາມວິຊາພົນລະເມືອງເທື່ອລະຂໍ້. ແຕ່ລະຂໍ້ສະແດງຄໍາຕອບທາງການ. ບໍ່ມີການໃຫ້ຄະແນນ ແລະ ບໍ່ບັນທຶກຫຍັງ. |
+| `study.version.legend` | Which civics test do you want to study? | ທ່ານຢາກສຶກສາບົດສອບວິຊາພົນລະເມືອງຊຸດໃດ? |
+| `study.version.2008` | 2008 civics test | ບົດສອບວິຊາພົນລະເມືອງ ປີ 2008 |
+| `study.version.2025` | 2025 civics test | ບົດສອບວິຊາພົນລະເມືອງ ປີ 2025 |
+| `study.prev` | Previous question | ຄໍາຖາມກ່ອນໜ້າ |
+| `study.change` | Choose another test | ເລືອກບົດສອບຊຸດອື່ນ |
+| `footer.credits` | Picture credits | ເຄຣດິດຮູບພາບ |
+| `credits.title` | Picture credits | ເຄຣດິດຮູບພາບ |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | ຮູບພາບໃນການຝຶກວິຊາພົນລະເມືອງມາຈາກແຫຼ່ງທາງການຂອງລັດຖະບານກາງສະຫະລັດ. ແຕ່ລະຮູບໃຊ້ໄດ້ ເພາະບັນທຶກຂອງຮູບນັ້ນບອກສິດໄວ້ຢ່າງຊັດເຈນ. ນີ້ບໍ່ໄດ້ໝາຍຄວາມວ່າມີອົງການໃດຮັບຮອງ Language Lab. |
+| `credits.back` | Back to the practice | ກັບໄປຫາການຝຶກ |

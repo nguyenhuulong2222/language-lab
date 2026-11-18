@@ -44,6 +44,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Las respuestas correctas de educación cívica todavía esperan la revisión de una persona, así que esta versión no califica esa parte ni genera un informe. |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Responda preguntas de educación cívica. Se comparan con las respuestas correctas. |
 | `partReport.unscored.missing` | A question that is not in the answer key | Una pregunta que no está en las respuestas correctas |
+| `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Estudiar primero está desactivado en esta versión hasta que una persona revise las respuestas correctas. |
 
 ## 3. All other lines
 
@@ -245,3 +246,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | Intentar de nuevo |
 | `partReport.badge.good` | This part went well | Esta parte salió bien |
 | `lang.menu.title` | Choose a language | Elija un idioma |
+| `home.study.title` | Study first | Estudiar primero |
+| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Revise las preguntas de educación cívica con imágenes y las respuestas oficiales. No se califica nada. |
+| `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Revise las preguntas de educación cívica una por una. Cada una muestra las respuestas oficiales. No se califica ni se guarda nada. |
+| `study.version.legend` | Which civics test do you want to study? | ¿Qué examen de educación cívica quiere estudiar? |
+| `study.version.2008` | 2008 civics test | Examen de educación cívica de 2008 |
+| `study.version.2025` | 2025 civics test | Examen de educación cívica de 2025 |
+| `study.prev` | Previous question | Pregunta anterior |
+| `study.change` | Choose another test | Elegir otro examen |
+| `footer.credits` | Picture credits | Créditos de las imágenes |
+| `credits.title` | Picture credits | Créditos de las imágenes |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Las imágenes de la práctica de educación cívica provienen de fuentes oficiales del gobierno federal de EE. UU. Cada una se usa solo porque su propio registro indica sus derechos. Esto no significa que ninguna agencia respalde Language Lab. |
+| `credits.back` | Back to the practice | Volver a la práctica |

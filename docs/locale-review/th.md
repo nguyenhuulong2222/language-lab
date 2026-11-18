@@ -44,6 +44,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | เฉลยความรู้พลเมืองยังรอให้มีผู้ตรวจสอบ เวอร์ชันนี้จึงไม่ให้คะแนนส่วนนี้และไม่สร้างรายงาน |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | ตอบคำถามความรู้พลเมือง ตรวจกับเฉลย |
 | `partReport.unscored.missing` | A question that is not in the answer key | คำถามที่ไม่มีอยู่ในเฉลย |
+| `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | ฟีเจอร์ศึกษาก่อนถูกปิดในเวอร์ชันนี้ จนกว่าจะมีคนตรวจสอบเฉลยแล้ว |
 
 ## 3. All other lines
 
@@ -245,3 +246,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | ลองอีกครั้ง |
 | `partReport.badge.good` | This part went well | ส่วนนี้ทำได้ดี |
 | `lang.menu.title` | Choose a language | เลือกภาษา |
+| `home.study.title` | Study first | ศึกษาก่อน |
+| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | ดูคำถามความรู้พลเมืองพร้อมรูปภาพและคำตอบอย่างเป็นทางการ ไม่มีการให้คะแนน |
+| `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | ดูคำถามความรู้พลเมืองทีละข้อ แต่ละข้อแสดงคำตอบอย่างเป็นทางการ ไม่มีการให้คะแนนและไม่บันทึกอะไร |
+| `study.version.legend` | Which civics test do you want to study? | คุณต้องการศึกษาข้อสอบความรู้พลเมืองชุดไหน |
+| `study.version.2008` | 2008 civics test | ข้อสอบความรู้พลเมือง ปี 2008 |
+| `study.version.2025` | 2025 civics test | ข้อสอบความรู้พลเมือง ปี 2025 |
+| `study.prev` | Previous question | คำถามก่อนหน้า |
+| `study.change` | Choose another test | เลือกข้อสอบชุดอื่น |
+| `footer.credits` | Picture credits | เครดิตรูปภาพ |
+| `credits.title` | Picture credits | เครดิตรูปภาพ |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | รูปภาพในการฝึกความรู้พลเมืองมาจากแหล่งทางการของรัฐบาลกลางสหรัฐฯ แต่ละรูปใช้ได้เพราะบันทึกของรูปนั้นระบุสิทธิ์ไว้อย่างชัดเจน ไม่ได้หมายความว่ามีหน่วยงานใดรับรอง Language Lab |
+| `credits.back` | Back to the practice | กลับไปที่การฝึก |

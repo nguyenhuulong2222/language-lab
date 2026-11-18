@@ -219,5 +219,18 @@
   "common.retry": "Try again",
   "partReport.badge.good": "This part went well",
   "aiNotice.text": "This translation was made by AI and may contain mistakes. The English version is the authoritative one.",
-  "lang.menu.title": "Choose a language"
+  "lang.menu.title": "Choose a language",
+  "home.study.title": "Study first",
+  "home.study.text": "Look through the civics questions with pictures and the official answers. Nothing is scored.",
+  "study.lead": "Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved.",
+  "study.version.legend": "Which civics test do you want to study?",
+  "study.version.2008": "2008 civics test",
+  "study.version.2025": "2025 civics test",
+  "study.prev": "Previous question",
+  "study.change": "Choose another test",
+  "study.locked": "Study first is switched off in this build until a person has reviewed the answer key.",
+  "footer.credits": "Picture credits",
+  "credits.title": "Picture credits",
+  "credits.lead": "The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab.",
+  "credits.back": "Back to the practice"
 }

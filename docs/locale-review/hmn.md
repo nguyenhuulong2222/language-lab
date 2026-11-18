@@ -44,6 +44,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Cov lus teb raug txog pej xeem tseem tos ib tug neeg tshuaj xyuas, yog li daim no tsis muab qhab nia rau qhov no thiab tsis tsim daim ntawv qhia. |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Teb cov lus nug txog pej xeem. Piv nrog cov lus teb raug. |
 | `partReport.unscored.missing` | A question that is not in the answer key | Ib lo lus nug uas tsis muaj hauv cov lus teb raug |
+| `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Kawm ua ntej raug kaw hauv daim no kom txog thaum muaj neeg tshuaj xyuas cov lus teb raug. |
 
 ## 3. All other lines
 
@@ -245,6 +246,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | Sim dua |
 | `partReport.badge.good` | This part went well | Ntu no ua tau zoo |
 | `lang.menu.title` | Choose a language | Xaiv ib hom lus |
+| `home.study.title` | Study first | Kawm ua ntej |
+| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Saib cov lus nug txog pej xeem nrog cov duab thiab cov lus teb raug cai. Tsis muaj qhab nia. |
+| `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Saib cov lus nug txog pej xeem ib qho zuj zus. Txhua qhov qhia cov lus teb raug cai. Tsis muab qhab nia thiab tsis khaws dab tsi. |
+| `study.version.legend` | Which civics test do you want to study? | Koj xav kawm qhov kev xeem txog pej xeem twg? |
+| `study.version.2008` | 2008 civics test | Kev xeem txog pej xeem xyoo 2008 |
+| `study.version.2025` | 2025 civics test | Kev xeem txog pej xeem xyoo 2025 |
+| `study.prev` | Previous question | Lus nug dhau los |
+| `study.change` | Choose another test | Xaiv lwm qhov kev xeem |
+| `footer.credits` | Picture credits | Cov duab los ntawm |
+| `credits.title` | Picture credits | Cov duab los ntawm |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Cov duab hauv kev xyaum txog pej xeem los ntawm cov chaw raug cai ntawm tsoomfwv teb chaws Meskas. Txhua daim duab siv tau vim nws tus kheej cov ntaub ntawv qhia meej txog nws txoj cai. Qhov no tsis txhais hais tias muaj lub koom haum twg pom zoo rau Language Lab. |
+| `credits.back` | Back to the practice | Rov qab mus xyaum |
 
 ## Lines marked ⚠ (meaning differs a little)
 

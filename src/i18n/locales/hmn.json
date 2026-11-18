@@ -226,5 +226,18 @@
   "common.retry": "Sim dua",
   "partReport.badge.good": "Ntu no ua tau zoo",
   "aiNotice.text": "Qhov kev txhais lus no AI ua thiab tej zaum yuav muaj qhov yuam kev. Daim ntawv Askiv yog daim raug cai.",
-  "lang.menu.title": "Xaiv ib hom lus"
+  "lang.menu.title": "Xaiv ib hom lus",
+  "home.study.title": "Kawm ua ntej",
+  "home.study.text": "Saib cov lus nug txog pej xeem nrog cov duab thiab cov lus teb raug cai. Tsis muaj qhab nia.",
+  "study.lead": "Saib cov lus nug txog pej xeem ib qho zuj zus. Txhua qhov qhia cov lus teb raug cai. Tsis muab qhab nia thiab tsis khaws dab tsi.",
+  "study.version.legend": "Koj xav kawm qhov kev xeem txog pej xeem twg?",
+  "study.version.2008": "Kev xeem txog pej xeem xyoo 2008",
+  "study.version.2025": "Kev xeem txog pej xeem xyoo 2025",
+  "study.prev": "Lus nug dhau los",
+  "study.change": "Xaiv lwm qhov kev xeem",
+  "study.locked": "Kawm ua ntej raug kaw hauv daim no kom txog thaum muaj neeg tshuaj xyuas cov lus teb raug.",
+  "footer.credits": "Cov duab los ntawm",
+  "credits.title": "Cov duab los ntawm",
+  "credits.lead": "Cov duab hauv kev xyaum txog pej xeem los ntawm cov chaw raug cai ntawm tsoomfwv teb chaws Meskas. Txhua daim duab siv tau vim nws tus kheej cov ntaub ntawv qhia meej txog nws txoj cai. Qhov no tsis txhais hais tias muaj lub koom haum twg pom zoo rau Language Lab.",
+  "credits.back": "Rov qab mus xyaum"
 }

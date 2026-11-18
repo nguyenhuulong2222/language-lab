@@ -2,7 +2,7 @@
  * The page frame: skip link, header, stage stepper, main workspace and footer, in one centred
  * column. Used by the practice flow and by the report-only App.
  */
-import type { ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import type { SessionStage } from "../../contracts";
 import { useT } from "../../i18n/react";
 import { SessionStepsContext } from "../session-steps";
@@ -11,6 +11,7 @@ import { AiNotice } from "./AiNotice";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { StageStepper } from "./StageStepper";
+import { CreditsScreen } from "../screens/CreditsScreen";
 import "../App.css";
 
 interface ShellProps {
@@ -24,6 +25,8 @@ interface ShellProps {
 
 export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
   const t = useT();
+  const [creditsOpen, setCreditsOpen] = useState(false);
+  const creditsButton = useRef<HTMLElement | null>(null);
   const stepper =
     steps !== undefined && currentStage !== undefined ? (
       <StageStepper stages={metaForSteps(steps)} currentStage={currentStage} />
@@ -37,9 +40,28 @@ export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
       <AiNotice />
       {stepper}
       <main id="main" className="app__main" tabIndex={-1}>
-        <div className="ll-container">{children}</div>
+        {/* The practice stays mounted (hidden) while the credits are open, so no answers are lost. */}
+        <div className="ll-container" hidden={creditsOpen}>
+          {children}
+        </div>
+        {creditsOpen && (
+          <div className="ll-container">
+            <CreditsScreen
+              onClose={() => {
+                setCreditsOpen(false);
+                setTimeout(() => creditsButton.current?.focus(), 0);
+              }}
+            />
+          </div>
+        )}
       </main>
-      <Footer />
+      <Footer
+        creditsOpen={creditsOpen}
+        onCredits={() => {
+          creditsButton.current = document.activeElement as HTMLElement | null;
+          setCreditsOpen((open) => !open);
+        }}
+      />
     </div>
   );
   return steps === undefined ? content : <SessionStepsContext.Provider value={steps}>{content}</SessionStepsContext.Provider>;

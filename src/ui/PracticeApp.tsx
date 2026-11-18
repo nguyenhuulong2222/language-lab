@@ -26,6 +26,7 @@ import { HomeScreen } from "./screens/HomeScreen";
 import { IntroScreen } from "./screens/IntroScreen";
 import { N400Screen } from "./screens/N400Screen";
 import { PartReportScreen } from "./screens/PartReportScreen";
+import { StudyScreen } from "./screens/StudyScreen";
 import { ReportScreen } from "./screens/ReportScreen";
 
 interface PracticeAppProps {
@@ -52,6 +53,8 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
     [engine]
   );
   const [restarts, setRestarts] = useState(0);
+  // "Study first" is a view of its own: no session, no scoring, nothing recorded.
+  const [studying, setStudying] = useState(false);
   const restart = useCallback(() => {
     setRestarts((n) => n + 1);
     dispatch({ type: "restart" });
@@ -59,6 +62,15 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
 
   const steps = state.mode === null ? undefined : sessionSteps(state.mode);
 
+  if (studying && state.phase === "home") {
+    return (
+      <HelpSessionProvider>
+        <Shell onHome={() => setStudying(false)}>
+          <StudyScreen answerKey={(v) => engine.env.answerKey(v)} onHome={() => setStudying(false)} />
+        </Shell>
+      </HelpSessionProvider>
+    );
+  }
   return (
     <HelpSessionProvider>
     <Shell
@@ -73,6 +85,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
         coach={coach}
         civicsLockedInBuild={civicsLockedInBuild}
         afterRestart={restarts > 0}
+        onStudy={() => setStudying(true)}
         now={now}
         seed={seed}
         restart={restart}
@@ -90,6 +103,8 @@ interface ScreenProps {
   civicsLockedInBuild: boolean;
   /** The screen is shown again after a restart (moves focus to its heading). */
   afterRestart?: boolean;
+  /** Open "Study first" from the home screen. */
+  onStudy?: () => void;
   now: () => string;
   seed: () => number;
   restart: () => void;
@@ -103,6 +118,7 @@ export function Screen({
   coach,
   civicsLockedInBuild,
   afterRestart = false,
+  onStudy,
   now,
   seed,
   restart,
@@ -115,6 +131,7 @@ export function Screen({
         <HomeScreen
           civicsLocked={civicsLockedInBuild}
           focusOnFirstRender={afterRestart}
+          {...(onStudy === undefined ? {} : { onStudy })}
           onChoose={(mode) => dispatch({ type: "choose", mode, seed: seed(), at: now() })}
         />
       );

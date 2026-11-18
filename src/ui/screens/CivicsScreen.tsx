@@ -7,6 +7,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { CivicsProgress, InputMode } from "../../engine/practice-flow";
 import { civicsClipId } from "../../engine/audio-clips";
+import { pictureForQuestion, type PictureEntry } from "../../engine/question-images";
 import { officialAnswerLines } from "../../engine/official-answer-text";
 import type { CivicsTestVersion } from "../../engine/version-selector";
 import { useT } from "../../i18n/react";
@@ -14,6 +15,7 @@ import { AnswerInput } from "../components/AnswerInput";
 import { Disclaimer } from "../components/Disclaimer";
 import { CheckIcon, ReviewIcon } from "../components/icons";
 import { EnglishNotice } from "../components/EnglishNotice";
+import { QuestionPicture } from "../components/QuestionPicture";
 import { ScreenHelp } from "../components/ScreenHelp";
 import { SpeakButton } from "../components/SpeakButton";
 import { TakeHeader } from "../components/TakeHeader";
@@ -27,6 +29,8 @@ interface CivicsScreenProps {
   onRestart: () => void;
   /** Start in the feedback view (used to render that state). */
   showFeedbackInitially?: boolean;
+  /** The picture of a question (tests replace it). Used only in the feedback view, after grading. */
+  pictureFor?: (questionId: string) => PictureEntry | null;
 }
 
 export function CivicsScreen({
@@ -36,6 +40,7 @@ export function CivicsScreen({
   onContinue,
   onRestart,
   showFeedbackInitially = false,
+  pictureFor = pictureForQuestion,
 }: CivicsScreenProps) {
   const t = useT();
   const [feedback, setFeedback] = useState(showFeedbackInitially);
@@ -69,6 +74,8 @@ export function CivicsScreen({
     const Icon = correct ? CheckIcon : ReviewIcon;
     const lines = officialAnswerLines(version, entry.id);
     const stopped = progress.result.stopReason;
+    // The picture comes only here, after the answer is graded: it could give the answer away.
+    const picture = pictureFor(entry.id);
     return (
       <div className="screen">
         <TakeHeader stage="civics" title={t("civics.title")} focusKey={null} />
@@ -93,6 +100,7 @@ export function CivicsScreen({
                 <p className="note">{t("civics.officialNote")}</p>
               </>
             )}
+            {picture !== null && <QuestionPicture picture={picture} />}
             {entry.requiredAnswerCount > 1 && (
               <p className="note">{t("civics.needs", { count: entry.requiredAnswerCount })}</p>
             )}

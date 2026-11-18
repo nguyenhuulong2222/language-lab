@@ -226,5 +226,18 @@
   "common.retry": "Eseye ankò",
   "partReport.badge.good": "Pati sa a te byen pase",
   "aiNotice.text": "Se yon AI ki fè tradiksyon sa a e li ka gen erè ladan l. Vèsyon angle a se sa ki gen otorite.",
-  "lang.menu.title": "Chwazi yon lang"
+  "lang.menu.title": "Chwazi yon lang",
+  "home.study.title": "Etidye anvan",
+  "home.study.text": "Gade kesyon edikasyon sivik yo ak imaj ak repons ofisyèl yo. Pa gen nòt ki bay.",
+  "study.lead": "Gade kesyon edikasyon sivik yo youn apre lòt. Chak kesyon montre repons ofisyèl yo. Anyen pa jwenn nòt ni pa sove.",
+  "study.version.legend": "Ki tès edikasyon sivik ou vle etidye?",
+  "study.version.2008": "Tès edikasyon sivik 2008",
+  "study.version.2025": "Tès edikasyon sivik 2025",
+  "study.prev": "Kesyon anvan an",
+  "study.change": "Chwazi yon lòt tès",
+  "study.locked": "Etidye anvan an fèmen nan vèsyon sa a jiskaske yon moun revize kle repons yo.",
+  "footer.credits": "Kredi imaj yo",
+  "credits.title": "Kredi imaj yo",
+  "credits.lead": "Imaj ki nan pratik edikasyon sivik la soti nan sous ofisyèl gouvènman federal Etazini. Chak imaj itilize paske pwòp dosye li di klèman dwa li yo. Sa pa vle di okenn ajans apwouve Language Lab.",
+  "credits.back": "Tounen nan pratik la"
 }

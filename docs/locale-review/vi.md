@@ -44,6 +44,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Bộ đáp án civics vẫn đang chờ người xem xét, nên bản này không chấm điểm civics và không tạo báo cáo. |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Trả lời các câu hỏi civics. Được đối chiếu với bộ đáp án. |
 | `partReport.unscored.missing` | A question that is not in the answer key | Một câu hỏi không có trong bộ đáp án |
+| `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Phần Học trước đang tắt trong bản này cho đến khi có người xem xét bộ đáp án. |
 
 ## 3. All other lines
 
@@ -245,3 +246,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | Thử lại |
 | `partReport.badge.good` | This part went well | Phần này diễn ra tốt đẹp |
 | `lang.menu.title` | Choose a language | Chọn ngôn ngữ |
+| `home.study.title` | Study first | Học trước |
+| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Xem các câu hỏi civics kèm hình ảnh và đáp án chính thức. Không chấm điểm. |
+| `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Xem từng câu hỏi civics một. Mỗi câu hiện đáp án chính thức. Không chấm điểm và không lưu gì. |
+| `study.version.legend` | Which civics test do you want to study? | Bạn muốn học bài kiểm tra civics nào? |
+| `study.version.2008` | 2008 civics test | Bài kiểm tra civics 2008 |
+| `study.version.2025` | 2025 civics test | Bài kiểm tra civics 2025 |
+| `study.prev` | Previous question | Câu hỏi trước |
+| `study.change` | Choose another test | Chọn bài kiểm tra khác |
+| `footer.credits` | Picture credits | Nguồn hình ảnh |
+| `credits.title` | Picture credits | Nguồn hình ảnh |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Các hình ảnh trong phần luyện tập civics đến từ các nguồn chính thức của chính phủ liên bang Hoa Kỳ. Mỗi hình chỉ được dùng vì chính hồ sơ của nó nêu rõ quyền sử dụng. Điều này không có nghĩa là cơ quan nào bảo trợ Language Lab. |
+| `credits.back` | Back to the practice | Quay lại phần luyện tập |

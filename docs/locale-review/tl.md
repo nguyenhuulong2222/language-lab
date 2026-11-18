@@ -44,6 +44,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Naghihintay pa ng pagsusuri ng isang tao ang answer key ng civics, kaya hindi ini-iskor ng bersyong ito ang civics at hindi gumagawa ng ulat. |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Sagutin ang mga tanong sa civics. Sinusuri laban sa answer key. |
 | `partReport.unscored.missing` | A question that is not in the answer key | Isang tanong na wala sa answer key |
+| `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Naka-off ang Mag-aral muna sa bersyong ito hanggang masuri ng isang tao ang answer key. |
 
 ## 3. All other lines
 
@@ -245,6 +246,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | Subukang muli |
 | `partReport.badge.good` | This part went well | Maayos ang bahaging ito |
 | `lang.menu.title` | Choose a language | Pumili ng wika |
+| `home.study.title` | Study first | Mag-aral muna |
+| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Tingnan ang mga tanong sa civics na may mga larawan at opisyal na sagot. Walang iniiskor. |
+| `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Tingnan ang mga tanong sa civics nang isa-isa. Ipinapakita ng bawat isa ang mga opisyal na sagot. Walang iniiskor o sine-save. |
+| `study.version.legend` | Which civics test do you want to study? | Aling civics test ang gusto ninyong pag-aralan? |
+| `study.version.2008` | 2008 civics test | Civics test ng 2008 |
+| `study.version.2025` | 2025 civics test | Civics test ng 2025 |
+| `study.prev` | Previous question | Nakaraang tanong |
+| `study.change` | Choose another test | Pumili ng ibang test |
+| `footer.credits` | Picture credits | Mga kredito ng larawan |
+| `credits.title` | Picture credits | Mga kredito ng larawan |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Ang mga larawan sa pagsasanay sa civics ay galing sa mga opisyal na pinagmulan ng pederal na gobyerno ng U.S. Ginagamit ang bawat isa dahil malinaw na nakasaad sa sarili nitong tala ang mga karapatan nito. Hindi ito nangangahulugang inendorso ng anumang ahensya ang Language Lab. |
+| `credits.back` | Back to the practice | Bumalik sa pagsasanay |
 
 ## Lines marked ⚠ (meaning differs a little)
 

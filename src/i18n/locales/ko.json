@@ -226,5 +226,18 @@
   "common.retry": "다시 시도",
   "partReport.badge.good": "이 부분은 잘했어요",
   "aiNotice.text": "이 번역은 AI가 만들었으며 오류가 있을 수 있습니다. 영어 버전이 공식 버전입니다.",
-  "lang.menu.title": "언어를 선택하세요"
+  "lang.menu.title": "언어를 선택하세요",
+  "home.study.title": "먼저 공부하기",
+  "home.study.text": "그림과 공식 답이 있는 시민 상식 질문을 살펴보세요. 채점하지 않습니다.",
+  "study.lead": "시민 상식 질문을 한 번에 하나씩 살펴보세요. 질문마다 공식 답이 나옵니다. 채점하거나 저장하지 않습니다.",
+  "study.version.legend": "어떤 시민 상식 시험을 공부하시겠어요?",
+  "study.version.2008": "2008년 시민 상식 시험",
+  "study.version.2025": "2025년 시민 상식 시험",
+  "study.prev": "이전 질문",
+  "study.change": "다른 시험 선택",
+  "study.locked": "누군가 정답표를 검토하기 전까지 이 버전에서는 먼저 공부하기가 꺼져 있습니다.",
+  "footer.credits": "사진 출처",
+  "credits.title": "사진 출처",
+  "credits.lead": "시민 상식 연습의 사진은 미국 연방 정부의 공식 출처에서 가져왔습니다. 각 사진은 해당 기록에 권리가 분명히 적혀 있어서만 사용됩니다. 이것이 어떤 기관이 Language Lab을 보증한다는 뜻은 아닙니다.",
+  "credits.back": "연습으로 돌아가기"
 }

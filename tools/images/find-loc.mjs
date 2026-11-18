@@ -11,11 +11,19 @@
  *
  * Developer tool: it only reads from loc.gov (slowly, to respect its rate limits) and writes nothing.
  */
+import { acceptableRights } from "../../src/engine/question-images.ts";
+export { acceptableRights };
 const UA = "LanguageLabResearch/1.0 (practice tool; research for public-domain pictures)";
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 export async function getJson(url, tries = 5) {
   for (let i = 0; i < tries; i++) {
-    const res = await fetch(url, { headers: { "User-Agent": UA } });
+    let res;
+    try {
+      res = await fetch(url, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(45000) });
+    } catch {
+      await sleep(3000);
+      continue;
+    }
     if (res.status === 429 || res.status >= 500) {
       await sleep(5000 * (i + 1));
       continue;
@@ -25,12 +33,6 @@ export async function getJson(url, tries = 5) {
     return res.json();
   }
   throw new Error(`gave up on ${url}`);
-}
-/** True for the rights statements we accept. Everything else is rejected. */
-export function acceptableRights(text) {
-  if (typeof text !== "string") return false;
-  if (/not evaluated|copyright|rights holder|permission|reproduction restrict|may be restricted|all rights reserved/i.test(text.replace(/Copyright and Other Restrictions/gi, ""))) return false;
-  return /no know?n? (copyright )?restrictions? on publication|public domain|u\.s\. government (work|publication)/i.test(text);
 }
 const args = process.argv.slice(2);
 const query = args.find((a) => !a.startsWith("--"));
