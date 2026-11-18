@@ -258,3 +258,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | Kredi imaj yo |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Imaj ki nan pratik edikasyon sivik la soti nan sous ofisyèl gouvènman federal Etazini. Chak imaj itilize paske pwòp dosye li di klèman dwa li yo. Sa pa vle di okenn ajans apwouve Language Lab. |
 | `credits.back` | Back to the practice | Tounen nan pratik la |
+| `credits.newTab` | The links open the source pages in a new tab. | Lyen yo ouvri paj sous yo nan yon nouvo onglè. |

@@ -258,6 +258,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | ပုံများ၏ ရင်းမြစ် |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | နိုင်ငံသားဗဟုသုတလေ့ကျင့်မှုရှိ ပုံများသည် အမေရိကန်ဖက်ဒရယ်အစိုးရ၏ တရားဝင်ရင်းမြစ်များမှ လာသည်။ ပုံတစ်ပုံစီကို ၎င်း၏ကိုယ်ပိုင်မှတ်တမ်းတွင် အခွင့်အရေးများကို ရှင်းလင်းစွာ ဖော်ပြထားသောကြောင့်သာ အသုံးပြုသည်။ ၎င်းသည် မည်သည့်အဖွဲ့အစည်းကမျှ Language Lab ကို ထောက်ခံသည်ဟု မဆိုလိုပါ။ |
 | `credits.back` | Back to the practice | လေ့ကျင့်မှုသို့ ပြန်သွားရန် |
+| `credits.newTab` | The links open the source pages in a new tab. | လင့်ခ်များသည် ရင်းမြစ်စာမျက်နှာများကို တက်ဘ်အသစ်တွင် ဖွင့်သည်။ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

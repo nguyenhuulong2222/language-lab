@@ -258,3 +258,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | ເຄຣດິດຮູບພາບ |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | ຮູບພາບໃນການຝຶກວິຊາພົນລະເມືອງມາຈາກແຫຼ່ງທາງການຂອງລັດຖະບານກາງສະຫະລັດ. ແຕ່ລະຮູບໃຊ້ໄດ້ ເພາະບັນທຶກຂອງຮູບນັ້ນບອກສິດໄວ້ຢ່າງຊັດເຈນ. ນີ້ບໍ່ໄດ້ໝາຍຄວາມວ່າມີອົງການໃດຮັບຮອງ Language Lab. |
 | `credits.back` | Back to the practice | ກັບໄປຫາການຝຶກ |
+| `credits.newTab` | The links open the source pages in a new tab. | ລິ້ງຈະເປີດໜ້າຕົ້ນທາງໃນແຖບໃໝ່. |

@@ -49,6 +49,12 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender
           <span className="option-card__title">{t("home.full.title")}</span>
           <span className="option-card__text">{t("home.full.text")}</span>
         </button>
+        {onStudy !== undefined && (
+          <button type="button" className="option-card" onClick={onStudy}>
+            <span className="option-card__title">{t("home.study.title")}</span>
+            <span className="option-card__text">{t("home.study.text")}</span>
+          </button>
+        )}
         <h3 className="panel__title">{t("home.parts.title")}</h3>
         <div className="option-grid">
           {PARTS.map((part) => (
@@ -58,12 +64,6 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender
             </button>
           ))}
         </div>
-        {onStudy !== undefined && (
-          <button type="button" className="option-card" onClick={onStudy}>
-            <span className="option-card__title">{t("home.study.title")}</span>
-            <span className="option-card__text">{t("home.study.text")}</span>
-          </button>
-        )}
         {civicsLocked && (
           <p className="status status--attention">
             <ReviewIcon className="icon-inline icon-inline--attention" /> {t("intro.locked")}

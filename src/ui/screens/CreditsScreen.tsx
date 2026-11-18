@@ -13,6 +13,7 @@ export function CreditsScreen({ onClose, manifest = PICTURE_MANIFEST }: { onClos
   return (
     <div className="screen">
       <TakeHeader stage="home" title={t("credits.title")} lead={t("credits.lead")} />
+      <p className="note">{t("credits.newTab")}</p>
       <ul className="credit-list" lang="en">
         {manifest.images.map((p) => (
           <li key={p.id} className="credit-list__item">
@@ -21,7 +22,7 @@ export function CreditsScreen({ onClose, manifest = PICTURE_MANIFEST }: { onClos
               {p.creator}, {p.date}
             </p>
             <p className="note">
-              <a href={p.sourcePageUrl} rel="noreferrer">
+              <a href={p.sourcePageUrl} target="_blank" rel="noopener noreferrer">
                 {p.sourcePageUrl}
               </a>
             </p>

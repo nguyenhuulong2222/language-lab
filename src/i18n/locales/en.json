@@ -232,5 +232,6 @@
   "footer.credits": "Picture credits",
   "credits.title": "Picture credits",
   "credits.lead": "The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab.",
-  "credits.back": "Back to the practice"
+  "credits.back": "Back to the practice",
+  "credits.newTab": "The links open the source pages in a new tab."
 }

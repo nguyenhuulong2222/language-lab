@@ -60,13 +60,18 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
     dispatch({ type: "restart" });
   }, []);
 
+  // Leaving Study first lands on the home heading (focus), as after a restart.
+  const exitStudy = () => {
+    setStudying(false);
+    setRestarts((n) => n + 1);
+  };
   const steps = state.mode === null ? undefined : sessionSteps(state.mode);
 
   if (studying && state.phase === "home") {
     return (
       <HelpSessionProvider>
-        <Shell onHome={() => setStudying(false)}>
-          <StudyScreen answerKey={(v) => engine.env.answerKey(v)} onHome={() => setStudying(false)} />
+        <Shell onHome={exitStudy}>
+          <StudyScreen answerKey={(v) => engine.env.answerKey(v)} onHome={exitStudy} />
         </Shell>
       </HelpSessionProvider>
     );

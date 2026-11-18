@@ -2,7 +2,7 @@
  * The page frame: skip link, header, stage stepper, main workspace and footer, in one centred
  * column. Used by the practice flow and by the report-only App.
  */
-import { useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { SessionStage } from "../../contracts";
 import { useT } from "../../i18n/react";
 import { SessionStepsContext } from "../session-steps";
@@ -11,6 +11,7 @@ import { AiNotice } from "./AiNotice";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { StageStepper } from "./StageStepper";
+import { useSpeaker } from "../voice/VoiceProvider";
 import { CreditsScreen } from "../screens/CreditsScreen";
 import "../App.css";
 
@@ -27,6 +28,11 @@ export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
   const t = useT();
   const [creditsOpen, setCreditsOpen] = useState(false);
   const creditsButton = useRef<HTMLElement | null>(null);
+  const speaker = useSpeaker();
+  // The practice stays mounted but hidden while credits are open: stop any audio that is playing.
+  useEffect(() => {
+    if (creditsOpen) speaker.cancel();
+  }, [creditsOpen, speaker]);
   const stepper =
     steps !== undefined && currentStage !== undefined ? (
       <StageStepper stages={metaForSteps(steps)} currentStage={currentStage} />
@@ -36,7 +42,16 @@ export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
       <a className="ll-skip-link" href="#main">
         {t("app.skipToMain")}
       </a>
-      <Header {...(onHome === undefined ? {} : { onHome })} />
+      <Header
+        {...(onHome === undefined
+          ? {}
+          : {
+              onHome: () => {
+                setCreditsOpen(false);
+                onHome();
+              },
+            })}
+      />
       <AiNotice />
       {stepper}
       <main id="main" className="app__main" tabIndex={-1}>

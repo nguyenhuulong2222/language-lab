@@ -258,3 +258,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | Авторство картинок |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Картинки в практике по обществоведению взяты из официальных источников федерального правительства США. Каждая используется только потому, что в её собственной записи ясно указаны права. Это не значит, что какое-либо ведомство одобряет Language Lab. |
 | `credits.back` | Back to the practice | Вернуться к практике |
+| `credits.newTab` | The links open the source pages in a new tab. | Ссылки открывают страницы-источники в новой вкладке. |

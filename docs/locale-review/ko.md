@@ -258,3 +258,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | 사진 출처 |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | 시민 상식 연습의 사진은 미국 연방 정부의 공식 출처에서 가져왔습니다. 각 사진은 해당 기록에 권리가 분명히 적혀 있어서만 사용됩니다. 이것이 어떤 기관이 Language Lab을 보증한다는 뜻은 아닙니다. |
 | `credits.back` | Back to the practice | 연습으로 돌아가기 |
+| `credits.newTab` | The links open the source pages in a new tab. | 링크는 출처 페이지를 새 탭에서 엽니다. |

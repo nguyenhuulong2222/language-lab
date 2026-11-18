@@ -3,5 +3,40 @@
   "wanted": "Photograph of Susan B. Anthony",
   "pageUrl": "https://www.si.edu/object/npg_NPG.77.255",
   "reason": "download or conversion failed: HTTP 404"
+ },
+ {
+  "wanted": "Statue of Liberty photograph",
+  "pageUrl": "https://www.loc.gov/item/2002715404/",
+  "reason": "download or conversion failed: HTTP 429 (blocked)"
+ },
+ {
+  "wanted": "United States Capitol photograph",
+  "pageUrl": "https://www.loc.gov/item/2005684916/",
+  "reason": "loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again"
+ },
+ {
+  "wanted": "Supreme Court building photograph",
+  "pageUrl": "https://www.loc.gov/item/2002722643/",
+  "reason": "loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again"
+ },
+ {
+  "wanted": "Washington Monument photograph",
+  "pageUrl": "https://www.loc.gov/item/2007680368/",
+  "reason": "loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again"
+ },
+ {
+  "wanted": "American flag photograph",
+  "pageUrl": "https://www.loc.gov/item/2016865574/",
+  "reason": "loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again"
+ },
+ {
+  "wanted": "The Star Spangled Banner sheet music",
+  "pageUrl": "https://www.loc.gov/item/2012649666/",
+  "reason": "loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again"
+ },
+ {
+  "wanted": "Signing of the Constitution poster",
+  "pageUrl": "https://www.loc.gov/item/2018756662/",
+  "reason": "loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again"
  }
 ]

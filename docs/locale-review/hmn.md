@@ -258,6 +258,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | Cov duab los ntawm |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Cov duab hauv kev xyaum txog pej xeem los ntawm cov chaw raug cai ntawm tsoomfwv teb chaws Meskas. Txhua daim duab siv tau vim nws tus kheej cov ntaub ntawv qhia meej txog nws txoj cai. Qhov no tsis txhais hais tias muaj lub koom haum twg pom zoo rau Language Lab. |
 | `credits.back` | Back to the practice | Rov qab mus xyaum |
+| `credits.newTab` | The links open the source pages in a new tab. | Cov txuas qhib nplooj ntawv qhov chaw hauv ib lub tab tshiab. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

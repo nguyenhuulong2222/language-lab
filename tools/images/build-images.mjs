@@ -38,16 +38,21 @@ const write = (f, text) => {
   fs.writeFileSync(path.join(ROOT, f), text);
 };
 
+let blocked = false; // loc.gov answered 429: stop asking, so the block is not extended
 async function fetchRetry(url, asBuffer) {
   for (let i = 0; i < 6; i++) {
     try {
       const res = await fetch(url, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(120000) });
-      if (res.status === 429 || res.status >= 500) throw new Error(`HTTP ${res.status}`);
+      if (res.status === 429) {
+        blocked = true;
+        throw Object.assign(new Error("HTTP 429 (blocked)"), { fatal: true });
+      }
+      if (res.status >= 500) throw new Error(`HTTP ${res.status}`);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       await sleep(1000);
       return asBuffer ? Buffer.from(await res.arrayBuffer()) : await res.json();
     } catch (e) {
-      if (i === 5) throw e;
+      if (i === 5 || e.fatal) throw e;
       await sleep(4000 * (i + 1));
     }
   }
@@ -104,9 +109,13 @@ if (!process.argv.includes("--docs")) {
       todo.push({ wanted: pick.wanted ?? pick.id, pageUrl, reason });
     };
     const have = built.get(pick.id);
-    if (have !== undefined && have.sourcePageUrl === pageUrl && fs.existsSync(path.join(OUT, have.file)) && have.alt === pick.alt) {
+    if (have !== undefined && have.sourcePageUrl === pageUrl && fs.existsSync(path.join(OUT, have.file)) && have.alt === pick.alt && (isSi ? have.rights === `${siRecords.get(pick.record)?.objectRights?.label}: ${siRecords.get(pick.record)?.objectRights?.content}` : true)) {
       images.push(have);
       console.log(`keep ${pick.id}`);
+      continue;
+    }
+    if (!isSi && blocked) {
+      fail("loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again");
       continue;
     }
     try {
@@ -117,9 +126,10 @@ if (!process.argv.includes("--docs")) {
           fail("no Smithsonian record snapshot in data/images/si-records.json");
           continue;
         }
-        const rights = `Smithsonian Open Access record states usage access "${rec.mediaAccess}" (Creative Commons Zero, public domain dedication)`;
-        if (rec.mediaAccess !== "CC0" || !acceptableRights(rights)) {
-          fail(`rights statement is not CC0: "${rec.mediaAccess}"`);
+        // The record's own "Restrictions & Rights" field, as it is; the media usage access must say CC0 too.
+        const rights = `${rec.objectRights.label}: ${rec.objectRights.content}`;
+        if (rec.mediaAccess !== "CC0" || rec.objectRights.content !== "CC0" || !acceptableRights(rights)) {
+          fail(`rights statement is not CC0: "${rights}", media "${rec.mediaAccess}"`);
           continue;
         }
         const fileUrl = `${rec.mediaUrl}&max=1600`;

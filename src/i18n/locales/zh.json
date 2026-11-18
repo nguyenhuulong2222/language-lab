@@ -239,5 +239,6 @@
   "footer.credits": "圖片來源",
   "credits.title": "圖片來源",
   "credits.lead": "公民常識練習中的圖片來自美國聯邦政府的官方來源。每張圖片都只因其本身的紀錄清楚載明權利而使用。這並不表示任何機關認可 Language Lab。",
-  "credits.back": "回到練習"
+  "credits.back": "回到練習",
+  "credits.newTab": "連結會在新分頁開啟來源頁面。"
 }

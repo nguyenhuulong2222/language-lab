@@ -24,12 +24,16 @@ export async function getJson(url, tries = 5) {
       await sleep(3000);
       continue;
     }
-    if (res.status === 429 || res.status >= 500) {
+    if (res.status === 429) {
+      console.error(`BLOCKED by loc.gov (HTTP 429). Stopping so the block is not extended: ${url}`);
+      process.exit(2);
+    }
+    if (res.status >= 500) {
       await sleep(5000 * (i + 1));
       continue;
     }
     if (!res.ok) throw new Error(`${res.status} ${url}`);
-    await sleep(1200);
+    await sleep(2500);
     return res.json();
   }
   throw new Error(`gave up on ${url}`);

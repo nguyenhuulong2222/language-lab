@@ -258,6 +258,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | Mga kredito ng larawan |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Ang mga larawan sa pagsasanay sa civics ay galing sa mga opisyal na pinagmulan ng pederal na gobyerno ng U.S. Ginagamit ang bawat isa dahil malinaw na nakasaad sa sarili nitong tala ang mga karapatan nito. Hindi ito nangangahulugang inendorso ng anumang ahensya ang Language Lab. |
 | `credits.back` | Back to the practice | Bumalik sa pagsasanay |
+| `credits.newTab` | The links open the source pages in a new tab. | Binubuksan ng mga link ang mga pahina ng pinagmulan sa bagong tab. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

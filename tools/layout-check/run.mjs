@@ -237,6 +237,16 @@ async function checkConfiguration(cdp, size, lang) {
   await click(L("header.about"));
   await record("home");
 
+  // Study first and the picture credits
+  await click(L("home.study.title"));
+  await record("study-choose");
+  await click(L("study.version.2008"));
+  await record("study-question");
+  await click(L("report.home"));
+  await click(L("footer.credits"));
+  await record("credits");
+  await click(L("credits.back"));
+
   // Full interview
   await click(L("home.full.title"));
   await record("setup");

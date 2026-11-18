@@ -258,3 +258,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | तस्वीरों का श्रेय |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | नागरिक शास्त्र अभ्यास की तस्वीरें अमेरिकी संघीय सरकार के आधिकारिक स्रोतों से ली गई हैं। हर तस्वीर इसलिए इस्तेमाल की गई है क्योंकि उसके अपने रिकॉर्ड में उसके अधिकार साफ़ लिखे हैं। इसका यह मतलब नहीं कि कोई एजेंसी Language Lab का समर्थन करती है। |
 | `credits.back` | Back to the practice | अभ्यास पर वापस जाएँ |
+| `credits.newTab` | The links open the source pages in a new tab. | लिंक स्रोत पेज को नए टैब में खोलते हैं। |

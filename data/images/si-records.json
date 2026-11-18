@@ -1,5 +1,5 @@
 {
- "_note": "Snapshot of the Smithsonian Open Access API records of the pictures used (the si.edu object pages refuse scripted requests). mediaAccess is the record's own usage statement.",
+ "_note": "Snapshot of the Smithsonian Open Access API records of the pictures used (the si.edu object pages refuse scripted requests). objectRights is the record's own 'Restrictions & Rights' field, copied as is; mediaAccess is the media's usage access.",
  "records": [
   {
    "recordId": "npg_NPG.65.59",
@@ -13,7 +13,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-NPG_65_59",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution; transfer from the National Gallery of Art; gift of the A.W. Mellon Educational and Charitable Trust, 1942",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.65.59"
   },
   {
    "recordId": "npg_NPG.65.50",
@@ -27,7 +34,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-NPG_65_50",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution; transfer from the National Gallery of Art; gift of the A.W. Mellon Educational and Charitable Trust, 1942",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.65.50"
   },
   {
    "recordId": "npg_NPG.81.47",
@@ -41,7 +55,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-NPG_81_47_inex",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution; gift of Marvin Sadik",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.81.47"
   },
   {
    "recordId": "npg_NPG.94.134",
@@ -55,7 +76,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-NPG_94_134Jefferson-000002",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.94.134"
   },
   {
    "recordId": "npg_NPG.80.129",
@@ -69,7 +97,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-8000288B_3",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.80.129"
   },
   {
    "recordId": "npg_NPG.77.219",
@@ -83,7 +118,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-NPG_77_219Franklin-000002",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.77.219"
   },
   {
    "recordId": "npg_NPG.68.50",
@@ -97,7 +139,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-NPG_68_50Madison_d1",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.68.50"
   },
   {
    "recordId": "npg_NPG.77.328",
@@ -111,7 +160,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-NPG_77_328Hamilton-000002",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.77.328"
   },
   {
    "recordId": "npg_NPG.78.253",
@@ -125,7 +181,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-NPG_78_253Stanton-000001",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.78.253"
   },
   {
    "recordId": "npg_NPG.77.255",
@@ -139,7 +202,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-NPG_77_255Anthony-000001",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.77.255"
   },
   {
    "recordId": "npg_NPG.65.42",
@@ -153,7 +223,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-NPG_65_42Wilson-000001",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution; transfer from the Smithsonian American Art Museum; gift of the City of New York through the National Art Committee, 1923",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.65.42"
   },
   {
    "recordId": "npg_NPG.66.68",
@@ -167,7 +244,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-NPG_66_68",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution; transfer from the Smithsonian American Art Museum; gift of Willard Hubbell, 1964",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.66.68"
   },
   {
    "recordId": "npg_NPG.94.45",
@@ -181,7 +265,14 @@
    "mediaAccess": "CC0",
    "mediaUrl": "https://ids.si.edu/ids/deliveryService?id=NPG-NPG_94_45Eisenhower-000002",
    "retrievedOn": "2026-11-18",
-   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0)."
+   "note": "Fields copied from the Smithsonian Open Access API record (api.si.edu/openaccess/api/v1.0).",
+   "objectRights": {
+    "label": "Restrictions & Rights",
+    "content": "CC0"
+   },
+   "creditLine": "National Portrait Gallery, Smithsonian Institution; gift of Elsie M. Warnecke",
+   "metadataAccess": "CC0",
+   "apiUrl": "https://api.si.edu/openaccess/api/v1.0/content/edanmdm:npg_NPG.94.45"
   }
  ]
 }

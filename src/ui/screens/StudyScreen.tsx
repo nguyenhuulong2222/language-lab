@@ -7,7 +7,7 @@
  * answer key is still locked (production build, waiting for a person to review it) the screen
  * says so instead of showing answers.
  */
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { civicsClipId } from "../../engine/audio-clips";
 import type { CivicsAnswerEntry } from "../../engine/civics-answer-key";
 import type { AnswerKeyResult } from "../../engine/practice-flow";
@@ -15,7 +15,6 @@ import { officialAnswerLines } from "../../engine/official-answer-text";
 import { pictureForQuestion, type PictureEntry } from "../../engine/question-images";
 import type { CivicsTestVersion } from "../../engine/version-selector";
 import { useT } from "../../i18n/react";
-import { Disclaimer } from "../components/Disclaimer";
 import { EnglishNotice } from "../components/EnglishNotice";
 import { QuestionPicture } from "../components/QuestionPicture";
 import { SpeakButton } from "../components/SpeakButton";
@@ -42,6 +41,12 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
   const t = useT();
   const [version, setVersion] = useState<CivicsTestVersion | null>(initialVersion ?? null);
   const [index, setIndex] = useState(0);
+  const prompt = useRef<HTMLParagraphElement>(null);
+  const studying = version !== null;
+  // Each new question takes focus, so a screen reader reads it (the heading is always "Study first").
+  useEffect(() => {
+    if (studying) prompt.current?.focus();
+  }, [studying, version, index]);
 
   const loaded = version === null ? null : answerKey(version);
   if (version !== null && loaded !== null && loaded.status === "locked") {
@@ -51,6 +56,9 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
         <div className="screen__body">
           <p>{t("study.locked")}</p>
           <div className="btn-row">
+            <button type="button" className="btn btn--secondary" onClick={() => setVersion(null)}>
+              {t("study.change")}
+            </button>
             <button type="button" className="btn" onClick={onHome}>
               {t("report.home")}
             </button>
@@ -99,12 +107,14 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
 
   return (
     <div className="screen">
-      <TakeHeader stage="home" title={t("home.study.title")} focusKey={`${version}-${entry.id}`} />
+      <TakeHeader stage="home" title={t("home.study.title")} focusKey={null} />
       <EnglishNotice />
       <div className="screen__body">
-        <p className="progress-line">{t("civics.count", { current: index + 1, total: questions.length })}</p>
+        <p className="progress-line" role="status">
+          {t("civics.count", { current: index + 1, total: questions.length })}
+        </p>
         {picture !== null && <QuestionPicture picture={picture} />}
-        <p className="prompt" lang="en">
+        <p className="prompt" lang="en" ref={prompt} tabIndex={-1}>
           {entry.questionText}
         </p>
         <SpeakButton key={entry.id} text={entry.questionText} clipId={civicsClipId(entry.id)} />
@@ -120,7 +130,6 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
             <p className="note">{t("civics.officialNote")}</p>
           </section>
         )}
-        <Disclaimer messageKey="disclaimer.short" />
         <div className="btn-row">
           <button type="button" className="btn btn--secondary" disabled={index === 0} onClick={() => setIndex(index - 1)}>
             {t("study.prev")}

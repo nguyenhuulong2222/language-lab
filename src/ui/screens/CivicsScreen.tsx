@@ -100,10 +100,10 @@ export function CivicsScreen({
                 <p className="note">{t("civics.officialNote")}</p>
               </>
             )}
-            {picture !== null && <QuestionPicture picture={picture} />}
             {entry.requiredAnswerCount > 1 && (
               <p className="note">{t("civics.needs", { count: entry.requiredAnswerCount })}</p>
             )}
+            {picture !== null && <QuestionPicture picture={picture} />}
             <Disclaimer messageKey="disclaimer.short" />
           </section>
           {progress.done && (

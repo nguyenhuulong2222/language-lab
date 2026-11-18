@@ -95,16 +95,6 @@
    "wanted": "Portrait of Alexander Hamilton"
   },
   {
-   "id": "elizabeth-cady-stanton-sarony",
-   "source": "si",
-   "record": "npg_NPG.78.253",
-   "alt": "Photograph of Elizabeth Cady Stanton, about 1870",
-   "questions": [
-    "2025-099"
-   ],
-   "wanted": "Photograph of Elizabeth Cady Stanton"
-  },
-  {
    "id": "susan-b-anthony-marceau",
    "source": "si",
    "record": "npg_NPG.77.255",
@@ -145,6 +135,85 @@
     "2025-107"
    ],
    "wanted": "Photograph of Dwight D. Eisenhower"
+  },
+  {
+   "id": "statue-of-liberty-1885",
+   "locItem": "2002715404",
+   "alt": "Photograph of the Statue of Liberty, 1885",
+   "questions": [
+    "2008-095",
+    "2025-120"
+   ],
+   "wanted": "Statue of Liberty photograph"
+  },
+  {
+   "id": "us-capitol-1875",
+   "locItem": "2005684916",
+   "alt": "Photograph of the United States Capitol building, 1875 to 1890",
+   "questions": [
+    "2008-016",
+    "2008-017",
+    "2025-018",
+    "2025-019",
+    "2025-020"
+   ],
+   "wanted": "United States Capitol photograph"
+  },
+  {
+   "id": "supreme-court-1931",
+   "locItem": "2002722643",
+   "alt": "Photograph of the new United States Supreme Court building, 1931",
+   "questions": [
+    "2008-038",
+    "2025-050",
+    "2025-052"
+   ],
+   "wanted": "Supreme Court building photograph"
+  },
+  {
+   "id": "washington-monument-1889",
+   "locItem": "2007680368",
+   "alt": "Photograph of the Washington Monument, 1889 to 1893",
+   "questions": [
+    "2008-094",
+    "2025-119"
+   ],
+   "wanted": "Washington Monument photograph"
+  },
+  {
+   "id": "american-flag-1914",
+   "locItem": "2016865574",
+   "alt": "Photograph of a huge American flag, 1914",
+   "questions": [
+    "2008-052",
+    "2008-096",
+    "2025-066",
+    "2025-121"
+   ],
+   "wanted": "American flag photograph"
+  },
+  {
+   "id": "star-spangled-banner-music",
+   "locItem": "2012649666",
+   "alt": "Printed sheet of The Star Spangled Banner, words by Francis S. Key",
+   "questions": [
+    "2008-098",
+    "2025-123"
+   ],
+   "wanted": "The Star Spangled Banner sheet music"
+  },
+  {
+   "id": "constitution-signing-poster",
+   "locItem": "2018756662",
+   "alt": "Poster showing the signing of the Constitution of the United States, about 1937",
+   "questions": [
+    "2008-001",
+    "2008-065",
+    "2008-066",
+    "2025-002",
+    "2025-082"
+   ],
+   "wanted": "Signing of the Constitution poster"
   }
  ]
 }

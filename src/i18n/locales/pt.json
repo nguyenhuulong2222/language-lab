@@ -239,5 +239,6 @@
   "footer.credits": "Créditos das imagens",
   "credits.title": "Créditos das imagens",
   "credits.lead": "As imagens da prática de educação cívica vêm de fontes oficiais do governo federal dos EUA. Cada uma é usada apenas porque o seu próprio registro informa os direitos. Isso não significa que nenhum órgão aprove o Language Lab.",
-  "credits.back": "Voltar à prática"
+  "credits.back": "Voltar à prática",
+  "credits.newTab": "Os links abrem as páginas de origem em uma nova aba."
 }
