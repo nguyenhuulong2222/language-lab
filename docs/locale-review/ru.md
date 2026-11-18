@@ -29,7 +29,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `translation.notice` | Translation for reference; the English version is official. | Перевод только для справки; официальной является английская версия. | Translation for reference only; the English version is the official one. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | Этот отчёт только об одной части. Он показывает, как прошла эта часть на практике, а не как вы выступили бы на настоящем тесте, и не даёт общего результата практики. | This report is about one part only. It shows how this part went in practice, and not how you would perform on the real test, and it does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | Собеседование по форме N-400 — только практика, оно не оценивается. | The interview on the N-400 form is practice only; it is not assessed. |
-| `aiNotice.text` ⚠ | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Этот перевод сделан ИИ и может содержать ошибки. Английская версия является основной. | This translation was made by AI and may contain errors. The English version is the main one. |
+| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Этот перевод сделан ИИ и может содержать ошибки. Официальной является английская версия. | This translation was made by AI and may contain errors. The English version is the official one. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -245,7 +245,3 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | Попробовать снова |
 | `partReport.badge.good` | This part went well | Эта часть прошла хорошо |
 | `lang.menu.title` | Choose a language | Выберите язык |
-
-## Lines marked ⚠ (meaning differs a little)
-
-- `aiNotice.text`: "authoritative" is rendered as "main" (основная): close, slightly weaker.

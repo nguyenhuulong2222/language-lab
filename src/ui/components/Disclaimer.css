@@ -39,3 +39,7 @@
 .disclaimer__text--english .english-line {
   margin-top: 0;
 }
+
+.disclaimer--inline {
+  max-width: var(--measure);
+}

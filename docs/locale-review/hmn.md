@@ -52,7 +52,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | Hla mus rau cov ntsiab lus tseem ceeb |
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Qhov kev xyaum no tseem tsis tau npaj tiav. |
-| `header.about` | About & disclaimer | Txog peb thiab ceeb toom |
+| `header.about` ⚠ | About & disclaimer | Txog peb thiab ceeb toom |
 | `stepper.label` | Interview stages | Cov theem ntawm kev xam phaj |
 | `stepper.count` | Stage {current} of {total} | Theem {current} ntawm {total} |
 | `stepper.status.complete` | completed | ua tiav lawm |
@@ -103,8 +103,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.word.missing` | missing | tsis muaj |
 | `compare.word.extra` | extra | ntau dhau |
 | `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | Cov lus uas muaj ntug dotted tsis muaj hauv koj cov lus teb. Cov lus uas muaj kab hla yog ntau dhau. |
-| `intro.profile.legend` | Choose a practice profile | Xaiv ib tus qauv xyaum |
-| `intro.profile.help` | Every profile is invented. | Txhua tus qauv yog tsim los. |
+| `intro.profile.legend` ⚠ | Choose a practice profile | Xaiv ib tus qauv xyaum |
+| `intro.profile.help` ⚠ | Every profile is invented. | Txhua tus qauv yog tsim los. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Xyaum zoo li N-400 tau xa mus… |
 | `intro.filed.before` | Before {date} | Ua ntej {date} |
 | `intro.filed.onOrAfter` | On or after {date} | Rau hnub {date} lossis tom qab |
@@ -122,7 +122,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.done.lead` | These are the words you gave. They are not scored. | Cov no yog cov lus koj hais. Tsis muaj qhab nia. |
 | `n400.done.next` | Go to reading | Mus nyeem ntawv |
 | `n400.number` | Question {current} | Lus nug {current} |
-| `common.fictional` | Fictional practice profile | Tus qauv xyaum tsim los |
+| `common.fictional` ⚠ | Fictional practice profile | Tus qauv xyaum tsim los |
 | `reading.title` | Reading | Nyeem ntawv |
 | `reading.lead` | Read the sentence out loud. You can type it if you prefer. | Nyeem kab lus tawm suab. Koj ntaus nws tau yog koj nyiam. |
 | `reading.count` | Sentence {current} of {total} | Kab lus {current} ntawm {total} |
@@ -252,3 +252,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 - `intro.privacy`: "fictional profile" is rendered as "made-up model" (tus qauv tsim los). The word qauv (pattern, model) may not be the natural word for a profile. Needs a Hmong reader.
 - `n400.sample.note`: Same word (qauv) for the made-up profile.
 - `help.setup.2`: Same word (qauv) for the profiles.
+- `intro.profile.legend`: Same word (qauv) for "profile".
+- `intro.profile.help`: Same word (qauv) for "profile".
+- `common.fictional`: Same word (qauv) for "profile".
+- `header.about`: "Txog peb thiab ceeb toom" reads as "About us and warning", not "About & disclaimer". Needs a Hmong reader.

@@ -142,7 +142,7 @@ export function buildIndex(data: ReviewData): string {
   }
   L.push("", "### Confidence", "");
   L.push(
-    "Lowest: Hmong (hmn), Lao (lo), Burmese (my), Haitian Creole (ht). Medium: Thai (th), Filipino (tl), Hindi (hi). Higher: Spanish, Portuguese, Russian, Korean, Chinese, Vietnamese. These are my own estimates from vocabulary range and how much stiff phrasing I found, not measured.",
+    "Least confident: Hmong (hmn), Lao (lo), Burmese (my), Haitian Creole (ht). Then Thai (th), Filipino (tl), Hindi (hi). I have no confidence figure for the rest: the back-translation pass found real meaning errors in Russian and Filipino too. This is my own estimate from vocabulary range and the amount of stiff phrasing I found, not a measurement.\n\nBurmese: the font stack is for Unicode Burmese. Phones that still use Zawgyi-encoded text may show garbled letters; this has not been tested.",
     ""
   );
   L.push("## Vietnamese wording pass (step 5)", "");

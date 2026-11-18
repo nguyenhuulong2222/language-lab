@@ -150,6 +150,8 @@ Spec: `.kiro/specs/booth-screens/`. Each line: what, why, how to reverse.
 
 ## F. Home, instructions, comfort settings, Vietnamese (2026-11-17, branch ui/booth-screens)
 
+> **Partly superseded by section G.** The Vietnamese-only parts of this section (draft hidden in production, the build plugin, the `needsHumanReview` flag, "no AI translation of disclaimers", the single language button, `docs/vi-locale-review.md`) no longer apply. Now: 14 AI-translated languages with a label, English next to the disclaimer, a language menu, and `docs/locale-review.md`.
+
 Spec: `.kiro/specs/booth-screens/`. What, why, how to reverse.
 
 - **Single part = report for that part, no overall result.** The contract cannot express it (`FinalReport.practiceResult` is required, and `InterviewSession` needs a profile, a date and a version), so `src/engine/part-report.ts` has a local `PartReport` and the change is requested in `docs/contract-requests.md` as **CR-006** (pending, contract not edited). Reverse: move the type into the contract.

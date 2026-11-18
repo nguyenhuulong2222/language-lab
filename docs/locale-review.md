@@ -72,25 +72,26 @@ I translated the disclaimer, privacy and legal lines (16 keys, 13 languages) bac
 - lo `aiNotice.text`: "authoritative" was written as "has power" (ມີອໍານາດ). Changed to "used as the main one".
 - hmn `aiNotice.text`: "authoritative" was written as "has power" (muaj hwjchim). Changed to "official", as in translation.notice.
 - my `aiNotice.text`: "authoritative" was written as "has power" (အာဏာရှိ). Changed to "official".
+- ru, lo, th, ko, hi, pt `aiNotice.text`: "Authoritative" was rendered as "main", "standard", "authentic" or "the one that counts". All six now say "official", as translation.notice does.
 
 ### Still differs a little
 
-- ru `aiNotice.text`: "authoritative" is rendered as "main" (основная): close, slightly weaker.
-- lo `aiNotice.text`: "authoritative" is rendered as "used as the main one": close, slightly weaker.
 - hmn `aiNotice.text`: "authoritative" is rendered as "official" (raug cai): close, slightly weaker.
 - hmn `intro.privacy`: "fictional profile" is rendered as "made-up model" (tus qauv tsim los). The word qauv (pattern, model) may not be the natural word for a profile. Needs a Hmong reader.
 - hmn `n400.sample.note`: Same word (qauv) for the made-up profile.
 - hmn `help.setup.2`: Same word (qauv) for the profiles.
+- hmn `intro.profile.legend`: Same word (qauv) for "profile".
+- hmn `intro.profile.help`: Same word (qauv) for "profile".
+- hmn `common.fictional`: Same word (qauv) for "profile".
+- hmn `header.about`: "Txog peb thiab ceeb toom" reads as "About us and warning", not "About & disclaimer". Needs a Hmong reader.
 - my `aiNotice.text`: "authoritative" is rendered as "official": close, slightly weaker.
-- th `aiNotice.text`: "authoritative" is rendered as "taken as the principal one": close, slightly weaker.
-- ko `aiNotice.text`: "authoritative" is rendered as "the standard" (기준): close, slightly weaker.
 - tl `aiNotice.text`: "authoritative" is rendered as "valid" (may bisa): close, slightly weaker.
-- hi `aiNotice.text`: "authoritative" is rendered as "authentic" (प्रामाणिक): close, slightly different.
-- pt `aiNotice.text`: "authoritative" is rendered as "the one that counts" (a que vale): informal, close in meaning.
 
 ### Confidence
 
-Lowest: Hmong (hmn), Lao (lo), Burmese (my), Haitian Creole (ht). Medium: Thai (th), Filipino (tl), Hindi (hi). Higher: Spanish, Portuguese, Russian, Korean, Chinese, Vietnamese. These are my own estimates from vocabulary range and how much stiff phrasing I found, not measured.
+Least confident: Hmong (hmn), Lao (lo), Burmese (my), Haitian Creole (ht). Then Thai (th), Filipino (tl), Hindi (hi). I have no confidence figure for the rest: the back-translation pass found real meaning errors in Russian and Filipino too. This is my own estimate from vocabulary range and the amount of stiff phrasing I found, not a measurement.
+
+Burmese: the font stack is for Unicode Burmese. Phones that still use Zawgyi-encoded text may show garbled letters; this has not been tested.
 
 ## Vietnamese wording pass (step 5)
 

@@ -53,7 +53,7 @@
    "translation.notice": "Translation for reference only; the English version is the official one.",
    "partReport.scope": "This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result.",
    "report.n400Note": "The N-400 interview is practice only and is not scored.",
-   "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the one that counts."
+   "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the official one."
   },
   "ru": {
    "disclaimer.title": "Please read",
@@ -71,7 +71,7 @@
    "translation.notice": "Translation for reference only; the English version is the official one.",
    "partReport.scope": "This report is about one part only. It shows how this part went in practice, and not how you would perform on the real test, and it does not give an overall practice result.",
    "report.n400Note": "The interview on the N-400 form is practice only; it is not assessed.",
-   "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the main one."
+   "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the official one."
   },
   "zh": {
    "disclaimer.title": "Please read first",
@@ -107,7 +107,7 @@
    "translation.notice": "The translation is for reference; the English version is the official version.",
    "partReport.scope": "This report is about one part. It only shows how this part went in practice, not how it would be on the real test, and it also does not provide an overall practice result.",
    "report.n400Note": "The N-400 interview is only practice and is not graded.",
-   "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the standard."
+   "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the official version."
   },
   "tl": {
    "disclaimer.title": "Please read this",
@@ -143,7 +143,7 @@
    "translation.notice": "The translation is for reference only; the English version is the official one.",
    "partReport.scope": "This report is of one part only. It shows how this part went in practice, not how your performance would have been in the real test, and it does not give an overall practice result.",
    "report.n400Note": "The N-400 interview is only practice and no score is given for it.",
-   "aiNotice.text": "This translation was made by AI and may contain mistakes. The English version is the authentic one."
+   "aiNotice.text": "This translation was made by AI and may contain mistakes. The English version is the official one."
   },
   "ht": {
    "disclaimer.title": "Please read this",
@@ -179,7 +179,7 @@
    "translation.notice": "This translation is for reference only. The English version is the official version.",
    "partReport.scope": "This report is of only one part. It shows how this part went in practice, not how you would do on the real test, and it does not give an overall practice result.",
    "report.n400Note": "The N-400 interview is only practice and is not given a score.",
-   "aiNotice.text": "This translation was done by AI and may contain errors. The English version is the version taken as principal."
+   "aiNotice.text": "This translation was done by AI and may contain errors. The English version is the official version."
   },
   "lo": {
    "disclaimer.title": "Please read this",
@@ -197,7 +197,7 @@
    "translation.notice": "This translation is for reference only; the English version is the official version.",
    "partReport.scope": "This report is for only one part. It shows how this part was in practice, not how you would do the real test, and does not give an overall practice result.",
    "report.n400Note": "The interview about N-400 is only practice and has no scoring.",
-   "aiNotice.text": "This translation was done by AI and may have errors. The English version is the version used as the main one."
+   "aiNotice.text": "This translation was done by AI and may have errors. The English version is the official version."
   },
   "hmn": {
    "disclaimer.title": "Please read this",
@@ -255,35 +255,21 @@
   }
  },
  "differs": {
-  "ru": {
-   "aiNotice.text": "\"authoritative\" is rendered as \"main\" (основная): close, slightly weaker."
-  },
-  "lo": {
-   "aiNotice.text": "\"authoritative\" is rendered as \"used as the main one\": close, slightly weaker."
-  },
   "hmn": {
    "aiNotice.text": "\"authoritative\" is rendered as \"official\" (raug cai): close, slightly weaker.",
    "intro.privacy": "\"fictional profile\" is rendered as \"made-up model\" (tus qauv tsim los). The word qauv (pattern, model) may not be the natural word for a profile. Needs a Hmong reader.",
    "n400.sample.note": "Same word (qauv) for the made-up profile.",
-   "help.setup.2": "Same word (qauv) for the profiles."
+   "help.setup.2": "Same word (qauv) for the profiles.",
+   "intro.profile.legend": "Same word (qauv) for \"profile\".",
+   "intro.profile.help": "Same word (qauv) for \"profile\".",
+   "common.fictional": "Same word (qauv) for \"profile\".",
+   "header.about": "\"Txog peb thiab ceeb toom\" reads as \"About us and warning\", not \"About & disclaimer\". Needs a Hmong reader."
   },
   "my": {
    "aiNotice.text": "\"authoritative\" is rendered as \"official\": close, slightly weaker."
   },
-  "th": {
-   "aiNotice.text": "\"authoritative\" is rendered as \"taken as the principal one\": close, slightly weaker."
-  },
-  "ko": {
-   "aiNotice.text": "\"authoritative\" is rendered as \"the standard\" (기준): close, slightly weaker."
-  },
   "tl": {
    "aiNotice.text": "\"authoritative\" is rendered as \"valid\" (may bisa): close, slightly weaker."
-  },
-  "hi": {
-   "aiNotice.text": "\"authoritative\" is rendered as \"authentic\" (प्रामाणिक): close, slightly different."
-  },
-  "pt": {
-   "aiNotice.text": "\"authoritative\" is rendered as \"the one that counts\" (a que vale): informal, close in meaning."
   }
  },
  "fixed": [
@@ -316,6 +302,11 @@
    "language": "my",
    "key": "aiNotice.text",
    "what": "\"authoritative\" was written as \"has power\" (အာဏာရှိ). Changed to \"official\"."
+  },
+  {
+   "language": "ru, lo, th, ko, hi, pt",
+   "key": "aiNotice.text",
+   "what": "\"Authoritative\" was rendered as \"main\", \"standard\", \"authentic\" or \"the one that counts\". All six now say \"official\", as translation.notice does."
   }
  ]
 }

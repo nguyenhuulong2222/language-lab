@@ -29,7 +29,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `translation.notice` | Translation for reference; the English version is official. | คำแปลนี้ใช้อ้างอิงเท่านั้น ฉบับภาษาอังกฤษเป็นฉบับทางการ | This translation is for reference only. The English version is the official version. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | รายงานนี้เป็นของเพียงหนึ่งส่วน แสดงว่าส่วนนี้เป็นอย่างไรในการฝึก ไม่ใช่ว่าคุณจะทำการทดสอบจริงได้อย่างไร และไม่ให้ผลการฝึกโดยรวม | This report is of only one part. It shows how this part went in practice, not how you would do on the real test, and it does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | การสัมภาษณ์เรื่อง N-400 เป็นเพียงการฝึกและไม่มีการให้คะแนน | The N-400 interview is only practice and is not given a score. |
-| `aiNotice.text` ⚠ | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | คำแปลนี้ทำโดย AI และอาจมีข้อผิดพลาด ฉบับภาษาอังกฤษเป็นฉบับที่ถือเป็นหลัก | This translation was done by AI and may contain errors. The English version is the version taken as principal. |
+| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | คำแปลนี้ทำโดย AI และอาจมีข้อผิดพลาด ฉบับภาษาอังกฤษเป็นฉบับทางการ | This translation was done by AI and may contain errors. The English version is the official version. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -245,7 +245,3 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | ลองอีกครั้ง |
 | `partReport.badge.good` | This part went well | ส่วนนี้ทำได้ดี |
 | `lang.menu.title` | Choose a language | เลือกภาษา |
-
-## Lines marked ⚠ (meaning differs a little)
-
-- `aiNotice.text`: "authoritative" is rendered as "taken as the principal one": close, slightly weaker.

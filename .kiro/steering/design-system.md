@@ -178,7 +178,7 @@ Mobile
 - **Home.** The first screen offers "Full practice interview" (one filled teal option card) and
   four single parts (outlined option cards), above the standing disclaimers. No eyebrow label
   on home: the header already carries the brand.
-- **Header buttons.** Language (the other interface language, written in its own language),
+- **Header buttons.** Language (opens a menu of the 14 interface languages, each written in its own language, English first; the button shows the current one),
   Home (only inside a session; it asks before discarding answers), Settings and About. Panels open
   below the header in the page flow. Escape closes a panel and returns focus to its button.
 - **Stepper and take counter** show only the steps of the chosen session; "TAKE 01" is the

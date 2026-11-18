@@ -29,7 +29,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `translation.notice` | Translation for reference; the English version is official. | ຄໍາແປນີ້ໃຊ້ອ້າງອີງເທົ່ານັ້ນ; ສະບັບພາສາອັງກິດເປັນສະບັບທາງການ. | This translation is for reference only; the English version is the official version. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | ບົດລາຍງານນີ້ແມ່ນສໍາລັບພຽງໜຶ່ງສ່ວນ. ມັນສະແດງວ່າສ່ວນນີ້ເປັນແນວໃດໃນການຝຶກ, ບໍ່ແມ່ນວ່າທ່ານຈະເຮັດແບບທົດສອບຈິງໄດ້ແນວໃດ, ແລະ ບໍ່ໃຫ້ຜົນການຝຶກໂດຍລວມ. | This report is for only one part. It shows how this part was in practice, not how you would do the real test, and does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | ການສໍາພາດກ່ຽວກັບ N-400 ເປັນພຽງການຝຶກ ແລະ ບໍ່ມີການໃຫ້ຄະແນນ. | The interview about N-400 is only practice and has no scoring. |
-| `aiNotice.text` ⚠ | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | ການແປນີ້ເຮັດໂດຍ AI ແລະ ອາດມີຂໍ້ຜິດພາດ. ສະບັບພາສາອັງກິດເປັນສະບັບທີ່ໃຊ້ເປັນຫຼັກ. | This translation was done by AI and may have errors. The English version is the version used as the main one. |
+| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | ການແປນີ້ເຮັດໂດຍ AI ແລະ ອາດມີຂໍ້ຜິດພາດ. ສະບັບພາສາອັງກິດເປັນສະບັບທາງການ. | This translation was done by AI and may have errors. The English version is the official version. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -245,7 +245,3 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | ລອງອີກຄັ້ງ |
 | `partReport.badge.good` | This part went well | ສ່ວນນີ້ເຮັດໄດ້ດີ |
 | `lang.menu.title` | Choose a language | ເລືອກພາສາ |
-
-## Lines marked ⚠ (meaning differs a little)
-
-- `aiNotice.text`: "authoritative" is rendered as "used as the main one": close, slightly weaker.

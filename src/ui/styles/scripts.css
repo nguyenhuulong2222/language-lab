@@ -29,6 +29,10 @@ html[lang="ko"] { --font-body: var(--font-ko); --font-display: var(--font-ko); }
 [lang|="zh"] { font-family: var(--font-zh); }
 [lang="ko"] { font-family: var(--font-ko); }
 
+/* English text inside another language (the AI notice, the English disclaimer lines) uses the Latin stack. */
+[lang="en"] { font-family: var(--font-latin); }
+:root { --font-latin: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
 /* Scripts with tall marks above and below the line need more line height and no letter spacing. */
 html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"]) {
   --lh-body: 1.9;

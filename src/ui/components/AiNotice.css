@@ -11,6 +11,7 @@
 }
 .ai-notice__text {
   margin: 0;
+  max-width: var(--measure);
   font-size: var(--fs-meta);
   line-height: var(--lh-snug);
   color: var(--ink);

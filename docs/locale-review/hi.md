@@ -29,7 +29,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `translation.notice` | Translation for reference; the English version is official. | अनुवाद केवल संदर्भ के लिए है; अंग्रेज़ी संस्करण ही आधिकारिक है। | The translation is for reference only; the English version is the official one. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | यह रिपोर्ट केवल एक भाग की है। यह दिखाती है कि अभ्यास में यह भाग कैसा रहा, यह नहीं कि असली टेस्ट में आपका प्रदर्शन कैसा होता, और यह कुल अभ्यास परिणाम नहीं देती। | This report is of one part only. It shows how this part went in practice, not how your performance would have been in the real test, and it does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | N-400 इंटरव्यू केवल अभ्यास है और इसका स्कोर नहीं दिया जाता। | The N-400 interview is only practice and no score is given for it. |
-| `aiNotice.text` ⚠ | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | यह अनुवाद AI ने बनाया है और इसमें गलतियाँ हो सकती हैं। अंग्रेज़ी संस्करण ही प्रामाणिक है। | This translation was made by AI and may contain mistakes. The English version is the authentic one. |
+| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | यह अनुवाद AI ने बनाया है और इसमें गलतियाँ हो सकती हैं। अंग्रेज़ी संस्करण ही आधिकारिक है। | This translation was made by AI and may contain mistakes. The English version is the official one. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -245,7 +245,3 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | फिर से कोशिश करें |
 | `partReport.badge.good` | This part went well | यह भाग अच्छा रहा |
 | `lang.menu.title` | Choose a language | भाषा चुनें |
-
-## Lines marked ⚠ (meaning differs a little)
-
-- `aiNotice.text`: "authoritative" is rendered as "authentic" (प्रामाणिक): close, slightly different.

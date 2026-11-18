@@ -106,7 +106,7 @@ describe("the back-translation file", () => {
     for (const key of backTranslations.keys) expect(en[key], key).toBeDefined();
     for (const [code, notes] of Object.entries(backTranslations.differs)) {
       expect(OTHER).toContain(code);
-      for (const key of Object.keys(notes)) expect(backTranslations.keys).toContain(key);
+      for (const key of Object.keys(notes)) expect(en[key], key).toBeDefined();
     }
   });
 });

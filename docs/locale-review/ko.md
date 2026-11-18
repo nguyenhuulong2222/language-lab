@@ -29,7 +29,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `translation.notice` | Translation for reference; the English version is official. | 번역은 참고용이며, 영어 버전이 공식 버전입니다. | The translation is for reference; the English version is the official version. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | 이 보고서는 한 부분에 대한 것입니다. 이 부분이 연습에서 어땠는지를 보여 줄 뿐 실제 시험에서 어떨지를 보여 주는 것이 아니며, 전체 연습 결과도 제공하지 않습니다. | This report is about one part. It only shows how this part went in practice, not how it would be on the real test, and it also does not provide an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | N-400 인터뷰는 연습일 뿐이며 채점되지 않습니다. | The N-400 interview is only practice and is not graded. |
-| `aiNotice.text` ⚠ | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | 이 번역은 AI가 만들었으며 오류가 있을 수 있습니다. 영어 버전이 기준입니다. | This translation was made by AI and may contain errors. The English version is the standard. |
+| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | 이 번역은 AI가 만들었으며 오류가 있을 수 있습니다. 영어 버전이 공식 버전입니다. | This translation was made by AI and may contain errors. The English version is the official version. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -245,7 +245,3 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | 다시 시도 |
 | `partReport.badge.good` | This part went well | 이 부분은 잘했어요 |
 | `lang.menu.title` | Choose a language | 언어를 선택하세요 |
-
-## Lines marked ⚠ (meaning differs a little)
-
-- `aiNotice.text`: "authoritative" is rendered as "the standard" (기준): close, slightly weaker.

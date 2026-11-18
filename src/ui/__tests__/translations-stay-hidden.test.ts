@@ -16,7 +16,13 @@ const app = import.meta.glob("../App.tsx", { query: "?raw", import: "default", e
   string
 >;
 
-const files = { ...screens, ...app };
+const practiceApp = import.meta.glob("../PracticeApp.tsx", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
+const components = import.meta.glob(["../components/*.{ts,tsx}", "!../components/TranslatedQuestion.tsx"], {
+  query: "?raw",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+const files = { ...screens, ...app, ...practiceApp, ...components };
 
 const FORBIDDEN = /TranslatedQuestion|loadCivicsDisplay|civics-translations/;
 

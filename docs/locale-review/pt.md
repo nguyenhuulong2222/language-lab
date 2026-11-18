@@ -29,7 +29,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `translation.notice` | Translation for reference; the English version is official. | Tradução apenas para referência; a versão em inglês é a oficial. | Translation for reference only; the English version is the official one. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | Este relatório é de uma parte só. Ele mostra como esta parte foi na prática, não como você se sairia no teste real, e não dá um resultado geral de prática. | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | A entrevista sobre o N-400 é apenas prática e não é pontuada. | The N-400 interview is practice only and is not scored. |
-| `aiNotice.text` ⚠ | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Esta tradução foi feita por IA e pode conter erros. A versão em inglês é a que vale. | This translation was made by AI and may contain errors. The English version is the one that counts. |
+| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Esta tradução foi feita por IA e pode conter erros. A versão em inglês é a oficial. | This translation was made by AI and may contain errors. The English version is the official one. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -245,7 +245,3 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `common.retry` | Try again | Tentar de novo |
 | `partReport.badge.good` | This part went well | Esta parte foi bem |
 | `lang.menu.title` | Choose a language | Escolha um idioma |
-
-## Lines marked ⚠ (meaning differs a little)
-
-- `aiNotice.text`: "authoritative" is rendered as "the one that counts" (a que vale): informal, close in meaning.

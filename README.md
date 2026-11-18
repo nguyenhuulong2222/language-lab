@@ -16,8 +16,8 @@ Styled as a 1970s language lab booth — individual study, focused repetition, n
 Language Lab lets you rehearse the naturalization interview using entirely fictional practice
 profiles. You work through:
 
-- **N-400 conversation practice** — biographical questions, with English speaking assessed
-  during the conversation
+- **N-400 conversation practice** — biographical questions as in the interview. Not scored; the real
+  interview is held in English
 - **Reading** — English reading portion practice
 - **Writing** — English writing portion practice
 - **Civics** — 2008 or 2025 test questions, scored against the official answer key
