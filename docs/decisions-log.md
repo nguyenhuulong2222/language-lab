@@ -201,3 +201,24 @@ every disclaimer, the label on every screen, and the back-translation pass of th
 
 **What this replaced.** The previous gate (a draft locale hidden in production while
 `needsHumanReview` is true, with a build plugin that removed its text from the bundle) is removed.
+## H. Language menu, review sheets, pictures (2026-11-18, branch ui/booth-screens)
+**Interface languages (steps 3 to 6 of the AI-translation work).**
+- **Menu, not radios.** The header language control is a button that opens a list of buttons, one per language by its own name, English first, with `aria-current` and a check icon on the current one. Radios were rejected because arrow keys on radios change the selection, which would switch the language as the user moves.
+- **Chinese is Traditional** (`zh-Hant`, 中文（繁體）) because USCIS's Chinese materials and the N-400 data are Traditional. Simplified is not offered. Filipino uses `fil`.
+- **Fonts.** System font stacks per script in `src/ui/styles/scripts.css`, no web fonts. Checked on macOS Chrome (headless, screenshots) only. Not checked: iPhone, Android, Windows. A Burmese phone that still uses Zawgyi text may show garbled letters.
+- **Dates.** Gregorian calendar and Latin digits in every language; English month names where the browser has no data (Hmong, Haitian Creole).
+- **Home heading.** All languages use "Welcome to Language Lab" (the English still says "Welcome to the booth"). I applied the Vietnamese decision to the others and suggest changing English too.
+- **Bundle.** All 14 locales are imported eagerly (about 183 kB gzip for the whole app). Lazy loading was not done.
+- **Back-translation.** I back-translated the 16 legal and disclaimer keys in 13 languages. This is a weak check (the same AI wrote and read them). It found six real problems (Russian "unless" reversed, "passed the test" wording in Russian, "succeeded" in Filipino, "has power" for "authoritative" in Lao, Hmong and Burmese); all fixed. The content reviewer later asked for "official" in six more; done.
+- **Review fixes.** English text inside another language uses a Latin font; no empty English line in English; arrow-key edge case; list border contrast; heading replaced by a label; `aiNotice.text` says "official" in every language.
+- **Not done on reviewer advice (owner decision):** an English line next to `voice.privacy` and other privacy lines (rule 3(b) names only the disclaimer); a live-region announcement after a language change.
+- **Layout check** runs per language (`--lang=th`); a single run over all 28 configurations hung once, cause unknown. Each language alone passes at normal and extra-large text.
+**Pictures for civics questions (BS-20, BS-21).**
+- **Source.** Only loc.gov so far, only items whose own record says "No known restrictions on publication" (or public domain, U.S. government work, CC0). `acceptableRights()` refuses "Rights status not evaluated", "Publication may be restricted", a named rights holder, a credit-line requirement. Items with no rights text in the record are skipped. Wikimedia Commons and other non-federal sites are not used.
+- **Rate limit.** loc.gov blocked me (HTTP 429) after parallel searches; the search was slowed to one request at a time. Pictures I wanted and could not fetch are in `docs/image-todo.md`, with no other source substituted.
+- **Pictures appear only after grading and in Study first.** The feedback panel shows the picture after the official answers. The question view has no picture; tests render it with a picture available for every question, and a source test fails if any other component renders `QuestionPicture` or an `<img>`.
+- **Study first** is a separate view (no engine mode, no session, nothing recorded). It follows the answer-key lock: when the key is locked (production build, `needsHumanReview`) Study first shows a notice instead of answers, so the lock cannot be bypassed. Questions whose answers change are left out, as in practice.
+- **Pairings** are in `data/images/picks.json` (my choices) and generated into `question-images.json` (`needsHumanReview`). A picture that shows a building or a document is paired with the question about it; I did not pair a picture where it could suggest the answer to a "who/what" question wrongly. The owner should check `docs/image-review.md`.
+- **Captions** are the source's own title, verbatim. Alt text is mine and describes what the title says.
+- **Credits** screen is opened from a footer button; the practice stays mounted (hidden) so no answers are lost.
+**How to reverse.** Delete `data/images/*`, `public/images/`, the picture components and the home option. Nothing in the engine or contracts changed.
