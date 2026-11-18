@@ -5,6 +5,67 @@ made during the development of Language Lab. Most recent entries are at the top.
 
 ---
 
+## 2026-11-01 — Grading T-07: full civics answer keys (branch engine/grading)
+
+Not pushed. Both key files keep `needsHumanReview: true`; `docs/answer-key-review.md` is the sheet for the
+person who approves them.
+
+| Step | Commit | What |
+|---|---|---|
+| Matching rules | `30d6385` | Leading "the", "a", "an" is optional in an accepted answer. A number does not match when the response continues it ("one hundred and one", "twenty two" for `two`). |
+| Boundary date | `580b3f6` | `civicsTestVersionSelection.boundaryDate` added to `data/test-rules.json` with the exact uscis.gov sentences and URL. `version-selector.ts` reads it through the rules loader; no date literal is left in the engine. The loader refuses it in production while unverified. 65/20 untouched (diff is +10 lines). |
+| Sources | `09eec53` | `data/sources/`: the 2025 PDF and its converted text, the 2008 web page, the older 2008 text (numbering cross-check), and a README with SHA-256 and provenance. |
+| 2008 key | `7f2ea5e` | 100 entries. `tools/answer-key/build-answer-key.mjs` plus data tests. |
+| 2025 key | `9d19e8a` | 128 entries from the official PDF text. `sourceDocument` names `uscis-2025-civics-128.pdf`. |
+| Review sheet | `d79d249` | `docs/answer-key-review.md`, batches of 20, with flags for every interpretation. |
+
+Result: typecheck clean, 389 tests passing (repeated runs, no flakiness).
+
+### Source checks
+
+- The supplied PDF has the same SHA-256 as a fresh download from the official URL.
+- `pdftotext -layout` run independently on the PDF matches the supplied `.txt` line for line (596 non-empty lines each).
+- 2025: 128 questions, numbered 1 to 128, none missing or repeated. 2008: 100 questions, numbered 1 to 100, none missing or repeated.
+- The "117" from the quick check: pdftotext starts each page with a form-feed character, so the 11 questions that
+  open a page (9, 28, 39, 48, 53, 69, 80, 86, 93, 108, 117) do not match a plain `^ *N\.` search. 117 + 11 = 128.
+- 2008 web page vs the older rev. 01/19 text: only question 87's note placement and Juneteenth on question 100 differ.
+
+### Interpretation and fixes found while building
+
+- **Bug caught by audit.** The first wording rule gave question 63 ("There are four amendments... Describe one of
+  them.") `requiredAnswerCount` 4. The rule now reads only the asking sentence ("Name two", "What are three").
+  A data test pins the multi-answer questions: 2008 = 9, 36, 51, 55, 64, 100; 2025 = 10, 48, 65, 67, 69, 81, 126.
+- **2008 page layout.** Question 87's tribe list and note sit outside the numbered list; question 95's "Also
+  acceptable..." note is a separate paragraph after its list. Both were attached to the question they follow, which
+  the older text confirms. Flagged LAYOUT.
+- **Optional parentheses**, **spelled-out number plus numeral in parentheses**, **slash alternatives** (2025 question 93),
+  and the **bracketed "Also acceptable" note** (question 120 / 95) were expanded as described in the sheet.
+- **Dropped:** the tribes note (2025 question 117), the 2008 tribe note (question 87), and redundant longer variants for
+  multi-answer questions (2025 questions 48, 67, 69, 126).
+- Parenthetical lists of alternatives (2025 questions 67, 77, 101, 106, 118; 2008 question 61) are stored only as one
+  optional phrase, not as separate alternatives. Example: `serve the nation` and `serve help do important work for the
+  nation`, but not `help the nation`.
+- **Not added on purpose.** Spoken forms the source does not list: `six` for "Six (6) years", `thirteen` where the source
+  says `13`, `fourteenth` for `14th`, `Secretary of Defense` where the 2025 list says "Secretary of War (Defense)"
+  (stored: `secretary of war`). The DIGITS and SENTENCE flags mark the questions most affected.
+- **Dynamic** (USCIS text says answers will vary or points to the test updates page): 2008 questions 20, 23, 28, 29, 39,
+  40, 43, 44, 46, 47; 2025 questions 23, 29, 30, 38, 39, 57, 61, 62. They store no answers.
+- **Number rule is symmetric.** The decision named numbers that continue after the answer. The same false match exists
+  before it ("twenty two" for `two`), so the rule covers both sides. A response that says both forms in a row
+  ("one hundred 100") is rejected by it.
+
+### Decisions still open
+
+- Whether to add spoken variants the source does not list (see "Not added on purpose"). Each would be data the source
+  does not contain, so it needs a person's decision.
+- Approval of both key files (`needsHumanReview`). Until then the loader throws in production.
+
+### Not done
+
+T-08 (report builder) and T-09 (integration test) are not started.
+
+---
+
 ## 2026-11-01 — Grading engine, tasks T-01 to T-06 (branch engine/grading)
 
 Spec: `.kiro/specs/grading/` (requirements, design, tasks), commit `9d47dd1`. All issues O1–O8

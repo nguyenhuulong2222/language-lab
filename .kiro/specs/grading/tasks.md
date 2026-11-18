@@ -3,12 +3,12 @@
 Order follows dependencies. After each task: `npm run typecheck` and `npm test` must pass,
 then commit. Property-based tests are named `property: ...` so they are easy to find.
 
-**Status:** T-01 to T-06 implemented and committed. T-07 to T-09 not started.
+**Status:** T-01 to T-07 implemented and committed. T-07's files still need human review
+(`needsHumanReview: true`). T-08 and T-09 not started.
 
-**Open points before T-07** (details in `docs/kiro-log.md`):
-the 2025 PDF cannot be read with the available tools, and the only readable official
-128-question text is labelled "2020 version"; how to treat optional words such as "the" in
-accepted answers needs a rule.
+**Points settled before T-07** (details in `docs/kiro-log.md`): the 2025 source is the official
+PDF and its converted text; a leading "the", "a" or "an" is optional when matching; numbers that
+continue ("one hundred and one") do not match; the boundary date lives in `data/test-rules.json`.
 
 ## T-01 — Contract change, fixtures, contract requests
 
@@ -88,15 +88,20 @@ Property tests: passed exactly when enough correct answers fall inside the first
 `sentencesPresented` items; attempts never exceed `sentencesPresented`; no score after the
 stop.
 
-## T-07 — Populate answer key files (not started; waits for approval)
+## T-07 — Populate answer key files (done; waits for human review)
 
-Files: `data/civics-answers/2008.json`, `2025.json`.
+Files: `data/civics-answers/2008.json` (100 questions), `data/civics-answers/2025.json` (128
+questions), `data/sources/` (official sources), `tools/answer-key/build-answer-key.mjs`,
+`docs/answer-key-review.md`, `src/engine/__tests__/civics-answer-data.test.ts`.
 
-Sources: official USCIS lists only. Try the 2025 PDF first; if it cannot be fetched, use the
-uscis.gov HTML list and record that in `sourceDocument`. Every entry records `sourceUrl` and
-`sourceDocument`. Dynamic means the USCIS text says answers will vary or points to the
-test-updates page. Optional words stored as both variants; numerals listed explicitly. Files
-stay `needsHumanReview: true`. Run the `content-reviewer` agent afterwards.
+Sources: official USCIS lists only. 2025 from the official PDF and its converted text; 2008 from
+the official web page, numbering cross-checked against the older official text. Every entry records
+`sourceUrl` and `sourceDocument` (the 2025 entries name `uscis-2025-civics-128.pdf`). Dynamic means
+the USCIS text says answers will vary or points to the test-updates page. Optional words stored as
+both variants; numerals listed explicitly. Files stay `needsHumanReview: true`.
+
+Still to do by a person: review `docs/answer-key-review.md` and approve each file. Running the
+`content-reviewer` agent on the sheet is optional.
 
 ## T-08 — Report builder (not started)
 

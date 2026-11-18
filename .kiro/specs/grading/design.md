@@ -1,6 +1,7 @@
 # Grading — Design
 
-Status: revision 3, reflects decisions O1–O8.
+Status: revision 4. Reflects decisions O1–O8 and the pre-T-07 decisions (optional leading article,
+numbers that continue, boundary date in the rules file, official 2025 PDF as the 2025 source).
 
 ## Module layout
 
@@ -57,6 +58,15 @@ The output only contains `a-z 0-9 '` and single spaces, so `normalise` is idempo
 `containsPhrase(haystack, phrase)`: tokens of the phrase must appear as a contiguous run in
 the tokens of the haystack. An empty phrase returns `true`.
 
+Both `containsPhrase` and `countMatchingPhrases` find spans through one function, `findSpans`:
+
+- A phrase that starts with "the", "a" or "an" and has more than one word also matches without
+  that first word. Both forms are tried; the exact search picks whichever fits.
+- A span is dropped when it continues a number (`continuesNumber`). If the span ends in a number
+  token ("one", "hundred", "27") and the next token, skipping one "and", is also a number token, the
+  number continues. If the span starts with a number token and the token before it, skipping one
+  "and", is a number token, the number began earlier. `isNumberToken` is exported.
+
 `countMatchingPhrases(response, acceptedAnswers)`:
 
 1. Normalise and de-duplicate the accepted answers; drop empty ones.
@@ -68,9 +78,12 @@ the tokens of the haystack. An empty phrase returns `true`.
 
 ## Version selection (`version-selector.ts`)
 
-`CIVICS_2025_BOUNDARY_DATE = "2025-10-20"`. `selectTestVersion` validates the format and the
-calendar date, then compares strings. `assertVersionConsistency` throws when the declared
-version differs.
+The boundary date is not written in this module. It is read from `data/test-rules.json`
+(`civicsTestVersionSelection.boundaryDate`, with the exact uscis.gov sentence and URL) through
+`loadCivicsBoundaryDate()` in the rules loader, and the loader refuses it in production while it is
+unverified. `selectTestVersion(filingDate, boundaryDate = loadCivicsBoundaryDate())` validates
+both dates, then compares strings. `assertVersionConsistency` throws when the declared version
+differs. The optional `boundaryDate` argument exists so tests can show the selector reads it.
 
 ## Answer key (`civics-answer-key.ts`)
 
@@ -135,6 +148,28 @@ reading items -> runEnglishStage  -> EnglishStageResult
 writing items -> runEnglishStage  -> EnglishStageResult
 three results -> buildFinalReport -> FinalReport
 ```
+
+## Answer key build (`tools/answer-key/build-answer-key.mjs`)
+
+A script, not a runtime module. `node tools/answer-key/build-answer-key.mjs` is a dry run;
+`--write=2008`, `--write=2025` and `--write=review` write the key files and the review sheet.
+
+- Parsing is strict. It fails on a line it does not recognise, a missing or repeated question
+  number, a wrong total, or answers that nest inside each other for a multi-answer question.
+- 2025: parses the converted text (question lines, `•` answer lines, wrapped lines, page footers).
+  2008: parses the numbered lists of the saved web page, with two explicit layout fixes (question
+  87 and question 95). The older text with explicit numbers is the numbering cross-check.
+- Each source answer line becomes accepted answers: parentheses give both variants; a spelled-out
+  number followed by its numeral in parentheses gives both forms; slash alternatives are split;
+  a bracketed "Also acceptable are..." note adds answers; other notes are dropped.
+- Dynamic: a source answer line says answers will vary or points to the test updates page.
+- `requiredAnswerCount` comes from the asking sentence only ("Name two", "What are three").
+- Every interpretation is recorded as a flag on the question and listed in
+  `docs/answer-key-review.md`. Files are written with `needsHumanReview: true`.
+- It imports the engine's own `normalise`, so stored answers are in exactly the loader's form.
+
+The data tests in `src/engine/__tests__/civics-answer-data.test.ts` read the official sources a
+second time with their own simple parsing and do not use this script.
 
 ## Excluded
 

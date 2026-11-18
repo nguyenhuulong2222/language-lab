@@ -21,7 +21,9 @@ resolved-issues table at the end).
 ### REQ-01 — Test version selection from filing date
 
 The engine MUST select `"2008"` when `filingDate < "2025-10-20"` and `"2025"` when
-`filingDate >= "2025-10-20"`, by comparing YYYY-MM-DD strings. No time zones, no time of day.
+`filingDate >= "2025-10-20"`, by comparing YYYY-MM-DD strings. No time zones, no time of day. The boundary date is read from
+`data/test-rules.json` (`civicsTestVersionSelection.boundaryDate`, with the exact uscis.gov sentence
+and URL), not written in code.
 Malformed or impossible dates (for example `2025-02-30`) MUST throw. If the result differs
 from `InterviewSession.testVersion`, the engine MUST throw.
 
@@ -48,6 +50,16 @@ trim apostrophes from the ends of words; collapse whitespace.
 
 A phrase matches only as a contiguous, ordered run of whole tokens. "constitution" does not
 match inside "constitutional". "I think it is the Constitution" matches "the constitution".
+
+Two more matching rules (decided before T-07):
+
+- **Optional leading article.** A leading "the", "a" or "an" in an accepted answer is optional
+  when matching: `the constitution` also matches the response "constitution". It is stored as
+  written in the source.
+- **Numbers stand alone.** An accepted answer that starts or ends with a number (a number word
+  or a numeral) does not match when the response continues the number. "one hundred and one" and
+  "one hundred one" do not match `one hundred`; "twenty two" does not match `two`. One "and"
+  between number words is skipped when looking at the neighbouring word.
 
 Answer data rules (REQ-11): numeral variants ("27", "twenty seven") are listed explicitly in
 `acceptedAnswers`; optional words in USCIS text ("(Thomas) Jefferson") are stored as both
@@ -102,7 +114,8 @@ The engine MUST produce a `FinalReport` per `src/contracts/session.ts`.
 ### REQ-08 — No hard-coded thresholds
 
 Passing scores, questions asked, early-stop values and sentence counts MUST come from the
-rules loader. The only literal in engine code is the filing-date boundary constant.
+rules loader. The filing-date boundary also comes from the rules (`civicsTestVersionSelection.boundaryDate`), so
+no threshold or date literal remains in engine code.
 
 ### REQ-09 — 65/20 is out of scope
 
@@ -140,6 +153,20 @@ static entries only.
 failing fixture. Both use fictional profiles, only static civics questions, a `questionId` on
 every civics turn, and civics turns that stop exactly where the 2008 rules say (resolves O4).
 
+### REQ-14 — Answer key sources and build (T-07)
+
+- 2025 key: built from `data/sources/uscis-2025-civics-128.txt`, converted from the official PDF
+  `data/sources/uscis-2025-civics-128.pdf` (M-1778, 09/25). The 2020-version text is not used.
+  Every entry's `sourceDocument` names the PDF file and the question number.
+- 2008 key: built from the official web page `data/sources/uscis-2008-civics-100.html`. Its
+  numbering is cross-checked against the older official text with explicit numbers.
+- Exactly 100 questions numbered 1 to 100 (2008) and exactly 128 numbered 1 to 128 (2025).
+  A missing or repeated number, or an unrecognised line in the source, stops the build.
+- Both files are produced by `tools/answer-key/build-answer-key.mjs`, which records every place
+  where the source text had to be interpreted. The result is `docs/answer-key-review.md`.
+- Both files keep `needsHumanReview: true` until the project owner approves them.
+- 65/20 stays out of scope. `data/test-rules.json` has no 65/20 change.
+
 ## Correctness properties
 
 | ID | Property |
@@ -154,6 +181,8 @@ every civics turn, and civics turns that stop exactly where the 2008 rules say (
 | P8 | A dynamic question is always `"unscored"`, whatever the response text. |
 | P9 | A static question is `"correct"` exactly when the response holds at least `requiredAnswerCount` distinct accepted answers. |
 | P10 | The matched-phrase count never exceeds the number of distinct accepted answers or the number of response tokens; overlapping answers never double-count. |
+| P11 | An accepted answer with a leading article matches with or without the article in the response; the article alone never satisfies it. |
+| P12 | A number answer never matches when the response continues the number (after it, or before it, with or without one "and"), and still matches among ordinary words. |
 
 ## Resolved issues
 
