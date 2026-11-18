@@ -30,7 +30,7 @@ export function PartReportScreen({ report, onHome }: { report: PartReport; onHom
       <TakeHeader stage="report" title={t(TITLE[report.part])} lead={t("partReport.scope")} />
       <div className="screen__body">
         <PartBody report={report} />
-        <Disclaimer variant="prominent" id="part-report-disclaimer" text={t("disclaimer.report")} />
+        <Disclaimer variant="prominent" id="part-report-disclaimer" messageKey="disclaimer.report" />
         <p className="progress-line">{t("report.generated", { datetime: formatDateTime(report.generatedAt, language) })}</p>
         <div className="btn-row">
           <button type="button" className="btn" onClick={onHome}>

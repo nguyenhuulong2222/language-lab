@@ -105,7 +105,7 @@ export function ReportScreen({ session }: ReportScreenProps) {
         id="report-disclaimer"
       />
       {/* The report carries its disclaimer in English (contract field); say it in the chosen language too. */}
-      {language !== "en" && <Disclaimer text={t("disclaimer.report")} />}
+      {language !== "en" && <Disclaimer messageKey="disclaimer.report" />}
 
       <p className="report__generated">
         {t("report.generated", { datetime: formatDateTime(report.generatedAt, language) })}

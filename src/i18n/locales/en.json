@@ -217,5 +217,7 @@
   "header.homeConfirm.yes": "Yes, go home",
   "header.homeConfirm.no": "Stay here",
   "common.retry": "Try again",
-  "partReport.badge.good": "This part went well"
+  "partReport.badge.good": "This part went well",
+  "aiNotice.text": "This translation was made by AI and may contain mistakes. The English version is the authoritative one.",
+  "lang.menu.title": "Choose a language"
 }

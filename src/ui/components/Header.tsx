@@ -10,7 +10,7 @@
 import { useId, useRef, useState, type KeyboardEvent } from "react";
 import { Disclaimer } from "./Disclaimer";
 import { SettingsPanel } from "./SettingsPanel";
-import { availableUiLanguages, isProductionBuild } from "../../i18n";
+import { AVAILABLE_UI_LANGUAGES } from "../../i18n";
 import { useLanguage, useT } from "../../i18n/react";
 import { useSettings } from "../settings";
 import "./Header.css";
@@ -21,8 +21,9 @@ export function Header({ onHome }: { onHome?: () => void }) {
   const t = useT();
   const language = useLanguage();
   const { setLanguage } = useSettings();
-  // The other interface language, when there is one to offer (a draft is hidden in production).
-  const otherLanguage = availableUiLanguages(isProductionBuild()).find((l) => l.code !== language);
+  // Interim until the language menu: English from any other language, otherwise the first other one.
+  const otherLanguage =
+    language === "en" ? AVAILABLE_UI_LANGUAGES.find((l) => l.code !== "en") : AVAILABLE_UI_LANGUAGES.find((l) => l.code === "en");
   const [panel, setPanel] = useState<PanelName | null>(null);
   const ids = { settings: useId(), about: useId(), home: useId() };
   const buttons = useRef<Record<PanelName, HTMLButtonElement | null>>({ settings: null, about: null, home: null });
@@ -56,7 +57,12 @@ export function Header({ onHome }: { onHome?: () => void }) {
         </div>
         <div className="header__actions">
           {otherLanguage !== undefined && (
-            <button type="button" className="header__button header__lang" onClick={() => setLanguage(otherLanguage.code)}>
+            <button
+              type="button"
+              className="header__button header__lang"
+              title={t("lang.menu.title")}
+              onClick={() => setLanguage(otherLanguage.code)}
+            >
               <span className="ll-sr-only">{t("lang.label")}: </span>
               <span lang={otherLanguage.code}>{otherLanguage.endonym}</span>
             </button>
@@ -99,7 +105,7 @@ export function Header({ onHome }: { onHome?: () => void }) {
         <SettingsPanel onClose={close} />
       </div>
       <div id={ids.about} className="ll-container header__panel" hidden={panel !== "about"}>
-        <Disclaimer text={t("disclaimer.full")} />
+        <Disclaimer messageKey="disclaimer.full" />
       </div>
       {onHome !== undefined && (
         <div id={ids.home} className="ll-container header__panel" hidden={panel !== "home"}>

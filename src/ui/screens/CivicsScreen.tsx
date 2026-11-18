@@ -96,7 +96,7 @@ export function CivicsScreen({
             {entry.requiredAnswerCount > 1 && (
               <p className="note">{t("civics.needs", { count: entry.requiredAnswerCount })}</p>
             )}
-            <Disclaimer text={t("disclaimer.short")} />
+            <Disclaimer messageKey="disclaimer.short" />
           </section>
           {progress.done && (
             <p className="status">

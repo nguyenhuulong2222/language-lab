@@ -5,13 +5,22 @@
  * English is the default and the fallback: a language without a file, or a key missing from
  * a language's file, shows the English text. Nothing here translates anything.
  *
- * A locale file can be a draft (_meta.needsHumanReview). Drafts work in development and are
- * hidden from the language switcher in a production build (availableUiLanguages).
+ * Every non-English locale is an AI-written draft until a reviewer is recorded in its _meta. A
+ * locale is offered when it passes the automated checks (localePassesChecks); the screens show the
+ * AI label while no reviewer is recorded (isLocaleReviewed).
  *
  * Pure module: no React, no DOM, no fetch.
  */
 import en from "./locales/en.json";
-import { DEFAULT_LANGUAGE, isLanguageCode, LANGUAGES, type LanguageCode, type LanguageInfo } from "./languages.js";
+import { checkLocale, checkMeta, isReviewed, type LocaleMeta } from "./locale-checks.js";
+import {
+  DEFAULT_LANGUAGE,
+  isLanguageCode,
+  LANGUAGE_CODES,
+  LANGUAGES,
+  type LanguageCode,
+  type LanguageInfo,
+} from "./languages.js";
 
 export type Messages = typeof en;
 export type MessageKey = keyof Messages;
@@ -20,14 +29,10 @@ export type Translate = (key: MessageKey, params?: MessageParams) => string;
 export type Catalogs = Partial<Record<LanguageCode, Partial<Messages>>>;
 
 /**
- * What a locale file says about itself, under the "_meta" key (not a message). A locale with
- * needsHumanReview: true is a draft: it is available in development and hidden in a production
- * build until a person has reviewed it and set the flag to false.
+ * What a locale file says about itself, under the "_meta" key (not a message): where its text
+ * came from and who reviewed it (see locale-checks.ts).
  */
-export interface LocaleMeta {
-  needsHumanReview: boolean;
-  note?: string;
-}
+export type { LocaleMeta };
 export type LocaleStatus = Partial<Record<LanguageCode, LocaleMeta>>;
 
 type RawLocale = Partial<Messages> & { _meta?: LocaleMeta };
@@ -54,31 +59,42 @@ const LOADED = loadLocales();
 export const CATALOGS: Catalogs = LOADED.catalogs;
 export const LOCALE_STATUS: LocaleStatus = LOADED.status;
 
-/** The languages the interface can be switched to. The other display languages are for civics text only. */
-export const UI_LANGUAGE_CODES: readonly LanguageCode[] = ["en", "vi"];
-
-/** True in a production build (the Vite flag). */
-export function isProductionBuild(): boolean {
-  return typeof import.meta !== "undefined" && (import.meta as { env?: { PROD?: boolean } }).env?.PROD === true;
-}
+/** The languages the interface can be switched to: all 14, English first. A locale must still pass the checks. */
+export const UI_LANGUAGE_CODES: readonly LanguageCode[] = LANGUAGE_CODES;
 
 /**
- * The interface languages to offer. English always. Another language only if its catalogue
- * exists, and, in production, only when a person has reviewed it (needsHumanReview is false).
- * A locale with no status counts as unreviewed.
+ * True when a locale file is valid and passes every automated check against English
+ * (locale-checks.ts). English always passes. This is the gate: a locale that fails is not offered.
  */
+export function localePassesChecks(
+  code: LanguageCode,
+  catalogs: Catalogs = CATALOGS,
+  status: LocaleStatus = LOCALE_STATUS
+): boolean {
+  if (code === DEFAULT_LANGUAGE) return true;
+  const messages = catalogs[code];
+  if (messages === undefined) return false;
+  if (checkMeta(status[code]).length > 0) return false;
+  return checkLocale(en as Record<string, string>, messages as Record<string, string>).length === 0;
+}
+
+/** The interface languages to offer, English first, then the others in the order of languages.ts. */
 export function availableUiLanguages(
-  production: boolean,
   catalogs: Catalogs = CATALOGS,
   status: LocaleStatus = LOCALE_STATUS
 ): LanguageInfo[] {
-  return LANGUAGES.filter((language) => {
-    if (!UI_LANGUAGE_CODES.includes(language.code)) return false;
-    if (language.code === DEFAULT_LANGUAGE) return true;
-    if (catalogs[language.code] === undefined) return false;
-    const needsReview = status[language.code]?.needsHumanReview ?? true;
-    return !(production && needsReview);
-  });
+  return LANGUAGES.filter((language) => localePassesChecks(language.code, catalogs, status));
+}
+
+/** The languages offered in this build, worked out once (the locale files do not change while the app runs). */
+export const AVAILABLE_UI_LANGUAGES: readonly LanguageInfo[] = availableUiLanguages();
+
+/**
+ * True when the interface text of a language has been reviewed by a named person (so the screen
+ * does not carry the AI label). English is the source and needs no label.
+ */
+export function isLocaleReviewed(code: LanguageCode, status: LocaleStatus = LOCALE_STATUS): boolean {
+  return code === DEFAULT_LANGUAGE || isReviewed(status[code]);
 }
 
 /** Replace {name} placeholders. A placeholder with no value is left as written. */
@@ -104,3 +120,4 @@ export const tEn: Translate = createTranslator("en");
 
 export { en as ENGLISH_MESSAGES };
 export * from "./languages.js";
+export * from "./locale-checks.js";

@@ -49,7 +49,7 @@ export function SentenceFeedback({ target, attempt, minWordAccuracy, kind }: Sen
       <p lang="en">{attempt.transcript === "" ? "…" : attempt.transcript}</p>
       <SentenceDiff diff={comparison.diff} />
       <p className="note">{t("compare.setting", { percent: percent(minWordAccuracy) })}</p>
-      <Disclaimer text={t("disclaimer.short")} />
+      <Disclaimer messageKey="disclaimer.short" />
     </section>
   );
 }

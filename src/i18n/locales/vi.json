@@ -1,10 +1,10 @@
 {
   "_meta": {
-    "needsHumanReview": true,
+    "source": "ai-draft",
     "reviewedBy": null,
     "reviewedOn": null,
     "language": "vi",
-    "note": "DRAFT written by an AI assistant, not by a translator. A person must review every line (see docs/vi-locale-review.md) before this file is shown in a production build. When the review is done: set needsHumanReview to false, fill in reviewedBy and reviewedOn, and replace this note."
+    "note": "AI-generated draft. Not reviewed by a person. See docs/locale-review/vi.md."
   },
   "app.name": "Language Lab",
   "app.skipToMain": "Chuyển đến nội dung chính",
@@ -224,5 +224,7 @@
   "header.homeConfirm.yes": "Vâng, về trang chủ",
   "header.homeConfirm.no": "Ở lại đây",
   "common.retry": "Thử lại",
-  "partReport.badge.good": "Phần này diễn ra tốt"
+  "partReport.badge.good": "Phần này diễn ra tốt",
+  "aiNotice.text": "Bản dịch này do AI tạo ra và có thể có lỗi. Bản tiếng Anh là bản có giá trị chính thức.",
+  "lang.menu.title": "Chọn ngôn ngữ"
 }

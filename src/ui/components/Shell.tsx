@@ -7,6 +7,7 @@ import type { SessionStage } from "../../contracts";
 import { useT } from "../../i18n/react";
 import { SessionStepsContext } from "../session-steps";
 import { metaForSteps } from "../stages";
+import { AiNotice } from "./AiNotice";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { StageStepper } from "./StageStepper";
@@ -33,6 +34,7 @@ export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
         {t("app.skipToMain")}
       </a>
       <Header {...(onHome === undefined ? {} : { onHome })} />
+      <AiNotice />
       {stepper}
       <main id="main" className="app__main" tabIndex={-1}>
         <div className="ll-container">{children}</div>

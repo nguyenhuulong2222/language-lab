@@ -7,6 +7,7 @@ import type { PracticeMode } from "../../engine/practice-flow";
 import type { MessageKey } from "../../i18n";
 import { useT } from "../../i18n/react";
 import { Disclaimer } from "../components/Disclaimer";
+import { Bilingual } from "../components/EnglishLine";
 import { EnglishNotice } from "../components/EnglishNotice";
 import { ReviewIcon } from "../components/icons";
 import { HowItWorks } from "../components/HowItWorks";
@@ -62,11 +63,17 @@ export function HomeScreen({ civicsLocked, onChoose, focusOnFirstRender = false 
         )}
       </section>
 
-      <Disclaimer variant="prominent" id="home-disclaimer" text={t("disclaimer.full")} />
+      <Disclaimer variant="prominent" id="home-disclaimer" messageKey="disclaimer.full" />
       <ul className="notice-list">
-        <li>{t("intro.notice.practice")}</li>
-        <li>{t("intro.notice.legal")}</li>
-        <li>{t("intro.notice.government")}</li>
+        <li>
+          <Bilingual messageKey="intro.notice.practice" />
+        </li>
+        <li>
+          <Bilingual messageKey="intro.notice.legal" />
+        </li>
+        <li>
+          <Bilingual messageKey="intro.notice.government" />
+        </li>
       </ul>
       <p className="note">{t("voice.privacy")}</p>
     </div>

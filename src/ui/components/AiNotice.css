@@ -1,0 +1,20 @@
+.ai-notice {
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  border-left: 4px solid var(--amber);
+}
+.ai-notice__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-block: var(--space-3);
+}
+.ai-notice__text {
+  margin: 0;
+  font-size: var(--fs-meta);
+  line-height: var(--lh-snug);
+  color: var(--ink);
+}
+.ai-notice__text--english {
+  color: var(--ink-2);
+}

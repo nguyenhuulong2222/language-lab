@@ -5,7 +5,7 @@
  * page is reloaded.
  */
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { availableUiLanguages, isProductionBuild, type LanguageCode } from "../i18n";
+import { AVAILABLE_UI_LANGUAGES, type LanguageCode } from "../i18n";
 
 export type TextSize = "normal" | "large" | "extra-large";
 
@@ -21,7 +21,7 @@ export interface Settings {
 export interface SettingsValue extends Settings {
   setTextSize: (size: TextSize) => void;
   setSlowPlayback: (slow: boolean) => void;
-  /** Switch the interface language. A language that is not offered (a draft in production) is ignored. */
+  /** Switch the interface language. A language that is not offered (it fails the checks) is ignored. */
   setLanguage: (language: LanguageCode) => void;
 }
 
@@ -39,7 +39,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
   const [slowPlayback, setSlowPlayback] = useState(DEFAULTS.slowPlayback);
   const [language, setLanguageState] = useState<LanguageCode>(DEFAULTS.language);
   const setLanguage = (next: LanguageCode) => {
-    if (availableUiLanguages(isProductionBuild()).some((l) => l.code === next)) setLanguageState(next);
+    if (AVAILABLE_UI_LANGUAGES.some((l) => l.code === next)) setLanguageState(next);
   };
 
   // The page root scales every rem size (type, spacing, tap targets) with the chosen size.

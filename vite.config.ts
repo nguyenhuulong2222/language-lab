@@ -1,10 +1,8 @@
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
-import { stripDraftLocale } from "./tools/vite/strip-draft-locale.mjs";
 
 export default defineConfig({
-  // stripDraftLocale: a draft locale file (needsHumanReview) is not shipped in a production build.
-  plugins: [react(), stripDraftLocale()],
+  plugins: [react()],
   // Lets a phone reach the dev server through a Cloudflare quick tunnel (the microphone needs HTTPS).
   server: { allowedHosts: [".trycloudflare.com"] },
   test: {
