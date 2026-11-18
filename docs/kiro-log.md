@@ -514,7 +514,7 @@ scoring logic. The 2025 values are confirmed directly on the 2025 test page.
 - 2025: https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test
 - Which test version applies by filing date: https://www.uscis.gov/citizenship/learn-about-citizenship/the-naturalization-interview-and-test
 
-## 2026-11-01: second review round (autonomous)
+## 2026-11-17: second review round (autonomous)
 
 Full decisions, with how to reverse each one, are in `docs/decisions-log.md`.
 

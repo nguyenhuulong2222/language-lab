@@ -6,9 +6,9 @@ documents; Language Lab is an independent project and is not affiliated with USC
 
 | File | Official source | Role |
 |---|---|---|
-| `uscis-2025-civics-128.pdf` | https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf (M-1778, 09/25) | Official 2025 list. Supplied by the project owner; SHA-256 is identical to a fresh download from the URL on 2026-11-01. |
+| `uscis-2025-civics-128.pdf` | https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf (M-1778, 09/25) | Official 2025 list. Supplied by the project owner; SHA-256 is identical to a fresh download from the URL on 2026-11-17. |
 | `uscis-2025-civics-128.txt` | Converted from the PDF above | Parsed to build `2025.json`. An independent `pdftotext -layout` conversion matches it line for line (596 non-empty lines each). |
-| `uscis-2008-civics-100.html` | https://www.uscis.gov/civics-questions-and-answers-2008-version | Official 2008 list, the current web page. Saved on 2026-11-01. Parsed to build `2008.json`. |
+| `uscis-2008-civics-100.html` | https://www.uscis.gov/civics-questions-and-answers-2008-version | Official 2008 list, the current web page. Saved on 2026-11-17. Parsed to build `2008.json`. |
 | `uscis-2008-civics-100-rev0119.txt` | https://www.uscis.gov/sites/default/files/document/questions-and-answers/100q.txt ("rev. 01/19") | Older official text of the 100 questions with explicit question numbers. Used only to cross-check the numbering of the web page. Not used for answers. |
 
 SHA-256:

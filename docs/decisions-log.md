@@ -1,4 +1,4 @@
-# Decisions log (autonomous round, 2026-11-01)
+# Decisions log (autonomous round, 2026-11-17)
 
 Each entry: what question came up, what was chosen, why, and how to reverse it.
 Entries marked **LEAST SURE** are the ones most worth a second look.
