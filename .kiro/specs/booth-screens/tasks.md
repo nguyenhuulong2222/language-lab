@@ -2,7 +2,7 @@
 
 One commit per task. After each: `npm run typecheck` and `npm test` pass.
 
-**Status:** B-01 to B-22 done; B-23 to B-30 in progress.
+**Status:** B-01 to B-30 done, except that B-25 saved 11 of the 40 pictures aimed for (see `docs/image-todo.md`).
 
 ## B-01 Practice content and sources (done)
 USCIS reading and writing vocabulary saved in `data/sources/` (URL, SHA-256), `data/practice/`
@@ -79,20 +79,22 @@ normal and extra-large text; README disclosure.
 
 ## B-22 Reviews and docs (done)
 `ui-reviewer` and `content-reviewer`, fixes, `tasks.md`, `kiro-log.md`.
-## B-23 Spec for pictures
+## B-23 Spec for pictures (done)
 BS-20 and BS-21 in requirements, design and tasks.
-## B-24 Picture tools and checks
+## B-24 Picture tools and checks (done)
 `find-loc.mjs`, `build-images.mjs`, `question-images.ts`, manifest and mapping schema with tests.
-## B-25 Pictures
-Find, download, convert and record up to 40 pictures from loc.gov items with an accepted rights
-statement; `docs/image-todo.md` for any that fail.
-## B-26 Mapping
+## B-25 Pictures (partly done)
+Find, download, convert and record up to 40 pictures. Done: 11 Smithsonian Open Access (CC0) pictures.
+Not done: Library of Congress pictures (loc.gov blocked this computer with HTTP 429 and the Smithsonian
+API quota ran out); they are in `docs/image-todo.md` and `data/images/picks.json`. Re-run
+`node --no-warnings tools/images/build-images.mjs` later.
+## B-26 Mapping (done)
 `question-images.json` (needsHumanReview), `docs/image-review.md`, mapping tests.
-## B-27 Pictures in feedback
+## B-27 Pictures in feedback (done)
 `QuestionPicture`; shown only after grading; tests that the question view never renders one.
-## B-28 Study first
+## B-28 Study first (done)
 Home option, `StudyScreen`, version choice, one question at a time with audio and official answers.
-## B-29 Credits and README
+## B-29 Credits and README (done)
 Credits screen from the footer, `docs/image-credits.md`, README disclosure.
-## B-30 Reviews and docs
+## B-30 Reviews and docs (done)
 `ui-reviewer` and `content-reviewer`, fixes, `tasks.md`, `decisions-log.md`, `kiro-log.md`.
