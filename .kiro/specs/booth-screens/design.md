@@ -84,7 +84,24 @@ sets a data attribute on the page root that changes the root font size, so every
 The tap target token is `3rem` (48px). `PromptSpeaker.speak` takes `slow`, applied as `playbackRate`
 on the clip (and as a lower rate for the device voice). `SpeakButton` adds "Play again".
 
-## Languages (BS-17)
-`src/i18n/locales/en.json` is the source. `vi.json` is a draft with the same keys and placeholders.
-`createTranslator` falls back to English for any missing key. `LOCALE_REVIEW` metadata marks which
-locales still need human review; `availableLanguages(production)` hides them in production.
+## Languages (BS-17, BS-18)
+`src/i18n/locales/<code>.json` for each of the 14 languages; `en.json` is the source. A locale's
+`_meta` is split off into `LOCALE_STATUS`. `src/i18n/locale-checks.ts` holds the pure checks (keys,
+placeholders, numbers, fixed names, empty, identical to English). The tests run them on every locale,
+and `availableUiLanguages()` runs them again at runtime, so a locale that fails is never offered. There
+is no production-only gate and no build plugin: a language is offered when it passes.
+
+The AI label is a banner in `Shell` (every screen) shown when the language is not English and the
+locale has no recorded reviewer (`isLocaleReviewed`). It says the same thing in the chosen language
+and in English. `Disclaimer` takes a message key and, in a non-English language, shows the English
+text under the translation.
+
+The header has one language button (globe icon and the current language's own name) that opens a
+panel with a radio group of all languages by their own names, English first. Choosing one switches
+the interface, closes the panel and returns focus to the button. `LanguageInfo` carries `htmlLang`
+and `dir`; `AppProviders` sets them on `<html>`. Per-script font stacks and line heights are CSS
+rules on `:lang()` in `base.css`. Dates use `Intl` with the Gregorian calendar and Latin digits, and
+fall back to English month names only where the browser has no data for the language.
+
+Review sheets: `src/i18n/review-sheet.ts` builds one sheet per language and the index; back-translations
+of the legal lines are data in `src/i18n/review/back-translations.json`.

@@ -107,15 +107,43 @@ recorded clips (`playbackRate`, no new audio). A "Play again" button wherever au
 live in memory for the session only. At 390px with extra large text: no clipped text, no horizontal
 scroll, touch targets at least 48px.
 
-### BS-17 Vietnamese interface
-A language switcher (English, Tiếng Việt). Only the interface text changes. Civics questions,
-accepted answers, reading and writing sentences and N-400 questions stay in English, and a line on
-screen says the real interview is in English. `src/i18n/locales/vi.json` is a draft marked
-`needsHumanReview`: in a production build the Vietnamese option is hidden while that flag is true;
-the dev server shows it. `docs/vi-locale-review.md` lists every line for review, disclaimers and
-legal wording first. A test fails if `vi.json` and `en.json` differ in keys or placeholders.
-Layouts are checked in both languages.
+### BS-17 Interface languages (replaces the Vietnamese-only version)
+The interface can be switched between the 14 languages of `src/i18n/languages.ts` (en, vi, es, zh,
+tl, ko, hi, ht, th, lo, hmn, my, pt, ru). Only the interface text changes. Civics questions,
+accepted answers, reading and writing sentences, N-400 questions and sample answers stay English
+only, and translations of civics questions stay hidden from every screen. A line on screen says the
+real interview is held in English.
+
+The policy is in `.kiro/steering/content-safety.md` rule 3. A language other than English may ship
+when all three hold:
+- **(a) Label.** Every screen shows a clear label that the translation is AI-generated, may contain
+  errors, and that English is the authoritative version. It is shown in the chosen language and in
+  English. A language loses the label only when a named human reviewer and a review date are
+  recorded in its `_meta` (`reviewedBy`, `reviewedOn`).
+- **(b) Disclaimer in English too.** Wherever a disclaimer is shown in a non-English language, its
+  English text is shown with it.
+- **(c) Checks.** The locale passes the automated checks: same keys and `{placeholders}` as
+  `en.json`, every number kept, fixed names unchanged (Language Lab, USCIS, N-400, DHS, uscis.gov,
+  A-number), no empty string, nothing left identical to English except an allow-list. The checks run
+  as tests and again in the app: a locale that fails them is not offered.
+
+Each locale file has `_meta`: `source` ("ai-draft" or "human-reviewed"), `reviewedBy`, `reviewedOn`,
+`note`. All 13 non-English files start as `ai-draft` with no reviewer.
+
+### BS-18 Language picker and scripts
+A language menu in the header lists every language by its own name, English first, usable by
+keyboard and screen reader, with large touch targets. `lang` and `dir` are set on the document
+(`zh` is Traditional Chinese, `zh-Hant`). Thai, Lao, Burmese, Hindi, Chinese and Korean use system
+font stacks per script, with no font files to download, and a taller line height where the script
+needs it.
+
+### BS-19 Review sheets
+`docs/locale-review.md` explains the status of every language and lists the lines whose meaning
+changed in a back-translation of the disclaimers and legal wording. One generated sheet per language
+(`docs/locale-review/<code>.md`: key, English, translation, disclaimers first) lets a reviewer check
+every line. A test keeps the sheets in sync with the locale files. The README says interface
+translations are AI-generated unless marked reviewed.
 
 ## Out of scope
 AI follow-up questions and feedback, N-400 scoring, pre-generated audio, the 65/20 exemption,
-translated civics content, saving progress.
+translated civics content (it stays hidden), saving progress.
