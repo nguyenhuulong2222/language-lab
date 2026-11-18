@@ -1,0 +1,76 @@
+{
+  "_note": "STUB (grading T-04): 7 representative questions only. The full 128-question key is built in T-07. SOURCE CAVEAT: the official 2025 PDF could not be read with the available tools. These entries are transcribed from the official uscis.gov text file '128 Civics Questions and Answers (2020 version)', which is the only readable official 128-question list. USCIS says the 2025 test is based on the 2020 test, but question wording, numbering and answers must be checked against the 2025 PDF before this file is approved. Accepted answers are stored already normalised; numeral variants are listed explicitly; optional words are stored as both variants.",
+  "needsHumanReview": true,
+  "entries": [
+    {
+      "id": "2025-002",
+      "testVersion": "2025",
+      "questionText": "What is the supreme law of the land?",
+      "acceptedAnswers": ["us constitution", "constitution"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/M_1778TXT.txt",
+      "sourceDocument": "128 Civics Questions and Answers (2020 version), M-1778TXT (02/21), question 2. Stand-in for the 2025 PDF; verify before approval."
+    },
+    {
+      "id": "2025-007",
+      "testVersion": "2025",
+      "questionText": "How many amendments does the U.S. Constitution have?",
+      "acceptedAnswers": ["twenty seven", "27"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/M_1778TXT.txt",
+      "sourceDocument": "128 Civics Questions and Answers (2020 version), M-1778TXT (02/21), question 7. Stand-in for the 2025 PDF; verify before approval."
+    },
+    {
+      "id": "2025-010",
+      "testVersion": "2025",
+      "questionText": "Name two important ideas from the Declaration of Independence and the U.S. Constitution.",
+      "acceptedAnswers": ["equality", "liberty", "social contract", "natural rights", "limited government", "self government"],
+      "requiredAnswerCount": 2,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/M_1778TXT.txt",
+      "sourceDocument": "128 Civics Questions and Answers (2020 version), M-1778TXT (02/21), question 10. Stand-in for the 2025 PDF; verify before approval."
+    },
+    {
+      "id": "2025-012",
+      "testVersion": "2025",
+      "questionText": "What is the economic system of the United States?",
+      "acceptedAnswers": ["capitalism", "free market economy"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/M_1778TXT.txt",
+      "sourceDocument": "128 Civics Questions and Answers (2020 version), M-1778TXT (02/21), question 12. Stand-in for the 2025 PDF; verify before approval."
+    },
+    {
+      "id": "2025-021",
+      "testVersion": "2025",
+      "questionText": "How many U.S. senators are there?",
+      "acceptedAnswers": ["one hundred", "100"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/M_1778TXT.txt",
+      "sourceDocument": "128 Civics Questions and Answers (2020 version), M-1778TXT (02/21), question 21. Stand-in for the 2025 PDF; verify before approval."
+    },
+    {
+      "id": "2025-023",
+      "testVersion": "2025",
+      "questionText": "Who is one of your state's U.S. senators now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/M_1778TXT.txt",
+      "sourceDocument": "128 Civics Questions and Answers (2020 version), M-1778TXT (02/21), question 23 (USCIS text: answers will vary). Stand-in for the 2025 PDF; verify before approval."
+    },
+    {
+      "id": "2025-038",
+      "testVersion": "2025",
+      "questionText": "What is the name of the President of the United States now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/sites/default/files/document/questions-and-answers/M_1778TXT.txt",
+      "sourceDocument": "128 Civics Questions and Answers (2020 version), M-1778TXT (02/21), question 38 (USCIS text refers to the test updates page). Stand-in for the 2025 PDF; verify before approval."
+    }
+  ]
+}

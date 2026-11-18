@@ -1,0 +1,116 @@
+{
+  "_note": "STUB (grading T-04): 11 representative questions only. The full 100-question key is built in T-07. Transcribed from the official USCIS list; question numbers follow the order of that list. Accepted answers are stored already normalised (lowercase, no punctuation, hyphens as spaces); numeral variants are listed explicitly; optional words are stored as both variants. Dynamic questions (answers change with elections, appointments or where the user lives) carry no accepted answers.",
+  "needsHumanReview": true,
+  "entries": [
+    {
+      "id": "2008-001",
+      "testVersion": "2008",
+      "questionText": "What is the supreme law of the land?",
+      "acceptedAnswers": ["the constitution"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov HTML list, question 1"
+    },
+    {
+      "id": "2008-005",
+      "testVersion": "2008",
+      "questionText": "What do we call the first ten amendments to the Constitution?",
+      "acceptedAnswers": ["the bill of rights"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov HTML list, question 5"
+    },
+    {
+      "id": "2008-006",
+      "testVersion": "2008",
+      "questionText": "What is one right or freedom from the First Amendment?",
+      "acceptedAnswers": ["speech", "religion", "assembly", "press", "petition the government"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov HTML list, question 6"
+    },
+    {
+      "id": "2008-007",
+      "testVersion": "2008",
+      "questionText": "How many amendments does the Constitution have?",
+      "acceptedAnswers": ["twenty seven", "27"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov HTML list, question 7"
+    },
+    {
+      "id": "2008-009",
+      "testVersion": "2008",
+      "questionText": "What are two rights in the Declaration of Independence?",
+      "acceptedAnswers": ["life", "liberty", "pursuit of happiness"],
+      "requiredAnswerCount": 2,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov HTML list, question 9"
+    },
+    {
+      "id": "2008-011",
+      "testVersion": "2008",
+      "questionText": "What is the economic system in the United States?",
+      "acceptedAnswers": ["capitalist economy", "market economy"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov HTML list, question 11"
+    },
+    {
+      "id": "2008-015",
+      "testVersion": "2008",
+      "questionText": "Who is in charge of the executive branch?",
+      "acceptedAnswers": ["the president"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov HTML list, question 15"
+    },
+    {
+      "id": "2008-018",
+      "testVersion": "2008",
+      "questionText": "How many U.S. Senators are there?",
+      "acceptedAnswers": ["one hundred", "100"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov HTML list, question 18"
+    },
+    {
+      "id": "2008-019",
+      "testVersion": "2008",
+      "questionText": "We elect a U.S. Senator for how many years?",
+      "acceptedAnswers": ["six", "6"],
+      "requiredAnswerCount": 1,
+      "answerType": "static",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov HTML list, question 19"
+    },
+    {
+      "id": "2008-020",
+      "testVersion": "2008",
+      "questionText": "Who is one of your state's U.S. Senators now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov HTML list, question 20 (USCIS text: answers will vary)"
+    },
+    {
+      "id": "2008-028",
+      "testVersion": "2008",
+      "questionText": "What is the name of the President of the United States now?",
+      "acceptedAnswers": [],
+      "requiredAnswerCount": 1,
+      "answerType": "dynamic",
+      "sourceUrl": "https://www.uscis.gov/civics-questions-and-answers-2008-version",
+      "sourceDocument": "Civics Questions and Answers (2008 version), uscis.gov HTML list, question 28 (USCIS text refers to the test updates page)"
+    }
+  ]
+}
