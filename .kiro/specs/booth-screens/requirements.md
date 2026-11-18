@@ -144,6 +144,35 @@ changed in a back-translation of the disclaimers and legal wording. One generate
 every line. A test keeps the sheets in sync with the locale files. The README says interface
 translations are AI-generated unless marked reviewed.
 
+### BS-20 Pictures for civics questions
+Some civics questions have a picture (the Constitution, the Statue of Liberty, a portrait, a landmark).
+- **Sources and rights.** Only pictures from official U.S. federal sources whose own record states the
+  rights clearly (public domain, U.S. government work, CC0, or "no known restrictions on publication").
+  A picture with a missing or unclear statement, or a named third-party owner, is not used. Never used:
+  agency seals or logos, the USCIS logo, pictures of people now in office, stock photos, non-federal sites.
+- **Record.** `data/images/manifest.json` has, for every picture: id, file, title, creator, date, source
+  page URL, file URL, the rights statement word for word, download date, SHA-256, alt text and a caption
+  taken from the source's own title or description. `docs/image-credits.md` is generated from it and a
+  credits screen, linked from the footer, shows it.
+- **Files.** WebP copies in `public/images/civics/`, longest side 1200px, under about 150 kB each, under
+  15 MB in total. The full-size originals are not committed.
+- **Mapping.** `data/images/question-images.json` maps question ids (both test versions) to a picture id.
+  One picture can serve several questions; a question without a good picture has none. The file is
+  marked `needsHumanReview`; `docs/image-review.md` (generated) lists every pairing for the owner.
+  A test fails for a mapped id or picture that does not exist, a manifest entry without a file, or an
+  empty rights statement.
+- **When a picture is shown.** Never before or during an answer, because a picture can give the answer
+  away. Only (a) in the feedback panel after the answer is graded, with the official answers and the
+  caption, and (b) in "Study first".
+- **If a download fails** or a site blocks it, no other source is substituted. The wanted picture, its
+  page URL and the reason go in `docs/image-todo.md`.
+- The README says the pictures are public-domain or openly licensed works from U.S. federal sources,
+  listed in `docs/image-credits.md`, and that using them does not mean any agency endorses Language Lab.
+### BS-21 Study first
+A mode on the home screen: the user picks the test version (2008 or 2025) and browses its questions one
+at a time with the picture (if any), the question, the audio and the official accepted answers. No
+scoring, no answers recorded, no report. Dynamic questions (answers that change with office holders)
+show the same notice as elsewhere, not an answer from this app.
 ## Out of scope
 AI follow-up questions and feedback, N-400 scoring, pre-generated audio, the 65/20 exemption,
 translated civics content (it stays hidden), saving progress.

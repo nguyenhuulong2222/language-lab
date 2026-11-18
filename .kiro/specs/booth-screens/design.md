@@ -97,11 +97,22 @@ and in English. `Disclaimer` takes a message key and, in a non-English language,
 text under the translation.
 
 The header has one language button (globe icon and the current language's own name) that opens a
-panel with a radio group of all languages by their own names, English first. Choosing one switches
+panel with a list of buttons (not radios: arrow keys would switch the language) for all languages by their own names, English first. Choosing one switches
 the interface, closes the panel and returns focus to the button. `LanguageInfo` carries `htmlLang`
 and `dir`; `AppProviders` sets them on `<html>`. Per-script font stacks and line heights are CSS
-rules on `:lang()` in `base.css`. Dates use `Intl` with the Gregorian calendar and Latin digits, and
+rules on `[lang]` in `src/ui/styles/scripts.css`. Dates use `Intl` with the Gregorian calendar and Latin digits, and
 fall back to English month names only where the browser has no data for the language.
 
-Review sheets: `src/i18n/review-sheet.ts` builds one sheet per language and the index; back-translations
+Review sheets: `src/i18n/review/build-sheets.ts` builds one sheet per language and the index (`tools/i18n/build-locale-review.mjs` writes them); back-translations
 of the legal lines are data in `src/i18n/review/back-translations.json`.
+## Pictures (BS-20, BS-21)
+`tools/images/find-loc.mjs` searches loc.gov and keeps only items whose own record has an accepted
+rights statement. `tools/images/build-images.mjs` reads `data/images/picks.json` (picture id, loc.gov
+item id, chosen file, alt text), downloads the file, writes the WebP copy and the manifest entry (rights
+text copied word for word from the item record, SHA-256 of the original download) and generates
+`docs/image-credits.md` and `docs/image-review.md`. The originals go to a temp folder, not the repo.
+`src/engine/question-images.ts` loads the manifest and the mapping and has the checks (pure, tested).
+UI: `QuestionPicture` (figure with alt text and caption) is rendered only by the feedback panel
+(`result` state) and by `StudyScreen`; the question view has no import of it, and a test renders the
+question view and fails if an `<img>` or a picture id appears. `StudyScreen` is a new practice mode
+that goes through `sessionSteps` with no scoring. `CreditsScreen` is reached from a footer button.
