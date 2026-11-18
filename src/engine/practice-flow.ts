@@ -128,6 +128,8 @@ export interface EnglishProgress {
   position: number;
   total: number;
   lastAttempt: SentenceAttempt | null;
+  /** The sentence the last attempt was for. */
+  lastSentence: PracticeSentence | null;
 }
 
 export interface CivicsProgress {
@@ -293,6 +295,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
     });
     const done = result.passed || attempts.length >= ids.length;
     const currentId = done ? undefined : ids[attempts.length];
+    const lastAttemptSentenceId = attempts[attempts.length - 1]?.sentenceId;
     return {
       kind,
       result,
@@ -301,6 +304,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
       position: Math.min(attempts.length + 1, Math.max(ids.length, 1)),
       total: ids.length,
       lastAttempt: attempts[attempts.length - 1] ?? null,
+      lastSentence: lastAttemptSentenceId === undefined ? null : (byId.get(lastAttemptSentenceId) ?? null),
     };
   }
 
