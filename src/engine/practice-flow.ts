@@ -30,6 +30,13 @@ import { runEnglishStage, type EnglishStageKind, type EnglishStageResult } from 
 import type { N400Answer } from "./n400-coach.js";
 import { loadPracticeConfig, type PracticeConfig } from "./practice-config.js";
 import { loadPracticeContent, type PracticeContent, type PracticeSentence } from "./practice-content.js";
+import {
+  buildCivicsPartReport,
+  buildEnglishPartReport,
+  buildN400PartReport,
+  type PartReport,
+  type PracticePart,
+} from "./part-report.js";
 import { buildFinalReport } from "./report-builder.js";
 import { compareSentence } from "./sentence-compare.js";
 import {
@@ -47,10 +54,45 @@ import { assertValidIsoDate, selectTestVersion, type CivicsTestVersion } from ".
 
 export type FiledChoice = "before" | "on_or_after";
 export type InputMode = "voice" | "typed";
-export type PracticePhase = Extract<
-  SessionStage,
-  "intro" | "n400_interview" | "reading" | "writing" | "civics" | "report"
->;
+/**
+ * What the user chose on the home screen: the full practice interview, or one part.
+ * Only the full interview ends with an overall practice result.
+ */
+export type PracticeMode = "full" | "n400" | "reading" | "writing" | "civics";
+
+/** "home" is before a mode is chosen; "intro" is the setup screen (only some modes have one). */
+export type PracticePhase =
+  | "home"
+  | Extract<SessionStage, "intro" | "n400_interview" | "reading" | "writing" | "civics" | "report">;
+
+/** What a mode needs the user to choose before it can start. */
+export function modeNeeds(mode: PracticeMode): { profile: boolean; filing: boolean } {
+  switch (mode) {
+    case "full":
+      return { profile: true, filing: true };
+    case "n400":
+      return { profile: true, filing: false };
+    case "civics":
+      return { profile: false, filing: true };
+    case "reading":
+    case "writing":
+      return { profile: false, filing: false };
+  }
+}
+
+/** The practice parts of a mode, in order. */
+export function modeParts(mode: PracticeMode): PracticePart[] {
+  return mode === "full" ? ["n400_interview", "reading", "writing", "civics"] : [mode === "n400" ? "n400_interview" : mode];
+}
+
+/**
+ * The steps of a session, in order: the setup step only when the mode needs a choice, then the
+ * parts, then the report. The stepper and the take counter show exactly these.
+ */
+export function sessionSteps(mode: PracticeMode): SessionStage[] {
+  const needs = modeNeeds(mode);
+  return [...(needs.profile || needs.filing ? (["intro"] as const) : []), ...modeParts(mode), "report"];
+}
 
 export type AnswerKeyResult =
   | { status: "ready"; key: ReadonlyMap<string, CivicsAnswerEntry> }
@@ -65,12 +107,13 @@ export interface PracticeEnv {
   answerKey(version: CivicsTestVersion): AnswerKeyResult;
 }
 
+/** The user's choices. A field is null when the chosen mode does not need it. */
 export interface PracticeSetup {
-  profileId: string;
-  filedOn: FiledChoice;
+  profileId: string | null;
+  filedOn: FiledChoice | null;
   /** A fictional filing date derived from the choice and the boundary date. */
-  filingDate: string;
-  version: CivicsTestVersion;
+  filingDate: string | null;
+  version: CivicsTestVersion | null;
 }
 
 export interface SentenceAttempt {
@@ -92,6 +135,7 @@ export interface CivicsAttempt {
 
 export interface PracticeState {
   phase: PracticePhase;
+  mode: PracticeMode | null;
   setup: PracticeSetup | null;
   startedAt: string | null;
   n400Answers: N400Answer[];
@@ -105,13 +149,17 @@ export interface PracticeState {
   /** The key was refused (production, needsHumanReview). Civics cannot run. */
   civicsLocked: boolean;
   civicsLockReason: string | null;
+  /** The overall report of a full practice interview. */
   report: FinalReport | null;
+  /** The report of a single practised part (no overall practice result). */
+  partReport: PartReport | null;
 }
 
 export type PracticeAction =
-  | { type: "start"; profileId: string; filedOn: FiledChoice; seed: number; at: string }
+  | { type: "choose"; mode: PracticeMode; seed: number; at: string }
+  | { type: "start"; profileId?: string; filedOn?: FiledChoice; seed: number; at: string }
   | { type: "answerN400"; questionId: string; questionText: string; transcript: string; at: string }
-  | { type: "finishN400" }
+  | { type: "finishN400"; at: string }
   | { type: "submitReading"; transcript: string; input: InputMode; at: string }
   | { type: "submitWriting"; transcript: string; input: InputMode; at: string }
   | { type: "submitCivics"; response: string; input: InputMode; at: string }
@@ -257,7 +305,8 @@ export function createDefaultPracticeEnv(): PracticeEnv {
 
 export function createInitialPracticeState(): PracticeState {
   return {
-    phase: "intro",
+    phase: "home",
+    mode: null,
     setup: null,
     startedAt: null,
     n400Answers: [],
@@ -271,6 +320,7 @@ export function createInitialPracticeState(): PracticeState {
     civicsLocked: false,
     civicsLockReason: null,
     report: null,
+    partReport: null,
   };
 }
 
@@ -280,6 +330,7 @@ export interface PracticeEngine {
   reduce(state: PracticeState, action: PracticeAction): PracticeState;
   englishProgress(state: PracticeState, kind: EnglishStageKind): EnglishProgress;
   civicsProgress(state: PracticeState): CivicsProgress;
+  /** The session of a full practice interview. Null for a single part (see partReport). */
   buildSession(state: PracticeState): InterviewSession | null;
 }
 
@@ -313,7 +364,8 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
   }
 
   function civicsKey(state: PracticeState): AnswerKeyResult | null {
-    return state.setup ? env.answerKey(state.setup.version) : null;
+    const version = state.setup?.version;
+    return version ? env.answerKey(version) : null;
   }
 
   function civicsTurns(state: PracticeState, key: ReadonlyMap<string, CivicsAnswerEntry>): Turn[] {
@@ -329,7 +381,8 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
 
   function civicsProgress(state: PracticeState): CivicsProgress {
     const loaded = civicsKey(state);
-    if (loaded === null || loaded.status === "locked") {
+    const version = state.setup?.version;
+    if (loaded === null || loaded.status === "locked" || !version) {
       return {
         locked: state.civicsLocked || loaded?.status === "locked",
         lockReason: loaded?.status === "locked" ? loaded.reason : state.civicsLockReason,
@@ -343,7 +396,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
       };
     }
     const key = loaded.key;
-    const rules = env.civicsRules(state.setup!.version);
+    const rules = env.civicsRules(version);
     const result = runCivicsStage({ turns: civicsTurns(state, key), answerKey: key, rules });
     const limit = Math.min(rules.questionsAsked.value, state.civicsIds.length);
     const done = result.stopReason !== "none" || state.civics.length >= limit;
@@ -364,7 +417,10 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
   }
 
   function buildSession(state: PracticeState): InterviewSession | null {
-    if (state.setup === null || state.startedAt === null) return null;
+    if (state.mode !== "full") return null;
+    const setup = state.setup;
+    if (setup === null || setup.profileId === null || setup.filingDate === null || setup.version === null) return null;
+    if (state.startedAt === null) return null;
     const turns: Turn[] = [];
     const scoringResults: Record<string, ScoringResult> = {};
 
@@ -395,12 +451,12 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
 
     const session: InterviewSession = {
       sessionId: `practice-${state.startedAt}`,
-      fictionalProfileId: state.setup.profileId,
+      fictionalProfileId: setup.profileId,
       isFictional: true,
-      filingDate: state.setup.filingDate,
-      testVersion: state.setup.version,
+      filingDate: setup.filingDate,
+      testVersion: setup.version,
       startedAt: state.startedAt,
-      currentStage: state.phase,
+      currentStage: state.phase === "home" ? "intro" : state.phase,
       turns,
       scoringResults,
     };
@@ -408,35 +464,128 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
     return session;
   }
 
+  // -------------------------------------------------------------------------
+  // Reducer
+  // -------------------------------------------------------------------------
+
+  /** Set up a session once the mode has what it needs, and go to its first part. */
+  function begin(
+    mode: PracticeMode,
+    choice: { profileId: string | null; filedOn: FiledChoice | null },
+    seed: number,
+    at: string
+  ): PracticeState {
+    const needs = modeNeeds(mode);
+    const parts = modeParts(mode);
+    const filingDate = needs.filing && choice.filedOn ? representativeFilingDate(choice.filedOn, env.boundaryDate) : null;
+    const version = filingDate ? selectTestVersion(filingDate, env.boundaryDate) : null;
+
+    let civicsIds: string[] = [];
+    let civicsLocked = false;
+    let civicsLockReason: string | null = null;
+    if (parts.includes("civics") && version) {
+      const loaded = env.answerKey(version);
+      if (loaded.status === "ready") {
+        civicsIds = seededShuffle(listPracticeQuestions(loaded.key), seed + 3)
+          .slice(0, env.civicsRules(version).questionsAsked.value)
+          .map((e) => e.id);
+      } else {
+        civicsLocked = true;
+        civicsLockReason = loaded.reason;
+      }
+    }
+
+    return {
+      ...createInitialPracticeState(),
+      phase: parts[0]!,
+      mode,
+      setup: { profileId: needs.profile ? choice.profileId : null, filedOn: needs.filing ? choice.filedOn : null, filingDate, version },
+      startedAt: at,
+      readingIds: parts.includes("reading")
+        ? takeSentences(env.content.readingSentences, env.englishRules.reading.sentencesPresented.value, seed + 1)
+        : [],
+      writingIds: parts.includes("writing")
+        ? takeSentences(env.content.writingSentences, env.englishRules.writing.sentencesPresented.value, seed + 2)
+        : [],
+      civicsIds,
+      civicsLocked,
+      civicsLockReason,
+    };
+  }
+
+  /** The report phase for a single part, or the next part of the full interview. */
+  function afterPart(state: PracticeState, next: PracticePhase, at: string): PracticeState {
+    if (state.mode === "full") return { ...state, phase: next };
+    return { ...state, phase: "report", partReport: partReportFor(state, at) };
+  }
+
+  function partReportFor(state: PracticeState, at: string): PartReport | null {
+    const now = new Date(at);
+    switch (state.mode) {
+      case "n400":
+        return buildN400PartReport(state.n400Answers, now);
+      case "reading":
+      case "writing": {
+        const kind = state.mode;
+        const progress = englishProgress(state, kind);
+        const byId = kind === "reading" ? readingById : writingById;
+        const attempts = kind === "reading" ? state.reading : state.writing;
+        return buildEnglishPartReport({
+          part: kind,
+          result: progress.result,
+          rules: env.englishRules,
+          now,
+          items: attempts.map((a) => ({
+            sentence: byId.get(a.sentenceId)?.text ?? a.sentenceId,
+            transcript: a.transcript,
+            accuracy: a.accuracy,
+            isCorrect: a.isCorrect,
+          })),
+        });
+      }
+      case "civics": {
+        const loaded = civicsKey(state);
+        const progress = civicsProgress(state);
+        if (loaded?.status !== "ready" || progress.result === null || state.setup?.version == null) return null;
+        return buildCivicsPartReport({
+          version: state.setup.version,
+          result: progress.result,
+          answerKey: loaded.key,
+          rules: env.civicsRules(state.setup.version),
+          now,
+        });
+      }
+      default:
+        return null;
+    }
+  }
+
   function reduce(state: PracticeState, action: PracticeAction): PracticeState {
     switch (action.type) {
       case "restart":
         return createInitialPracticeState();
 
+      case "choose": {
+        if (state.phase !== "home") return state;
+        const needs = modeNeeds(action.mode);
+        if (needs.profile || needs.filing) {
+          // Wait for the setup screen.
+          return { ...createInitialPracticeState(), phase: "intro", mode: action.mode, startedAt: action.at };
+        }
+        return begin(action.mode, { profileId: null, filedOn: null }, action.seed, action.at);
+      }
+
       case "start": {
-        if (state.phase !== "intro") return state;
-        if (!env.content.profiles.some((p) => p.id === action.profileId)) return state;
-        const filingDate = representativeFilingDate(action.filedOn, env.boundaryDate);
-        const version = selectTestVersion(filingDate, env.boundaryDate);
-        const english = env.englishRules;
-        const loaded = env.answerKey(version);
-        const civicsIds =
-          loaded.status === "ready"
-            ? seededShuffle(listPracticeQuestions(loaded.key), action.seed + 3)
-                .slice(0, env.civicsRules(version).questionsAsked.value)
-                .map((e) => e.id)
-            : [];
-        return {
-          ...createInitialPracticeState(),
-          phase: "n400_interview",
-          setup: { profileId: action.profileId, filedOn: action.filedOn, filingDate, version },
-          startedAt: action.at,
-          readingIds: takeSentences(env.content.readingSentences, english.reading.sentencesPresented.value, action.seed + 1),
-          writingIds: takeSentences(env.content.writingSentences, english.writing.sentencesPresented.value, action.seed + 2),
-          civicsIds,
-          civicsLocked: loaded.status === "locked",
-          civicsLockReason: loaded.status === "locked" ? loaded.reason : null,
-        };
+        if (state.phase !== "intro" || state.mode === null) return state;
+        const needs = modeNeeds(state.mode);
+        if (needs.profile && !env.content.profiles.some((p) => p.id === action.profileId)) return state;
+        if (needs.filing && action.filedOn === undefined) return state;
+        return begin(
+          state.mode,
+          { profileId: action.profileId ?? null, filedOn: action.filedOn ?? null },
+          action.seed,
+          action.at
+        );
       }
 
       case "answerN400":
@@ -451,7 +600,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
         };
 
       case "finishN400":
-        return state.phase === "n400_interview" ? { ...state, phase: "reading" } : state;
+        return state.phase === "n400_interview" ? afterPart(state, "reading", action.at) : state;
 
       case "submitReading":
       case "submitWriting": {
@@ -491,15 +640,16 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
       }
 
       case "continue": {
-        if (state.setup === null) return state;
-        if (state.phase === "reading" && englishProgress(state, "reading").done) return { ...state, phase: "writing" };
-        if (state.phase === "writing" && englishProgress(state, "writing").done) return { ...state, phase: "civics" };
+        if (state.setup === null || state.mode === null) return state;
+        if (state.phase === "reading" && englishProgress(state, "reading").done) return afterPart(state, "writing", action.at);
+        if (state.phase === "writing" && englishProgress(state, "writing").done) return afterPart(state, "civics", action.at);
         if (state.phase === "civics") {
           const progress = civicsProgress(state);
           const loaded = civicsKey(state);
           if (progress.locked || !progress.done || progress.result === null || loaded?.status !== "ready") return state;
+          if (state.mode !== "full") return afterPart(state, "report", action.at);
           const session = buildSession(state);
-          if (session === null) return state;
+          if (session === null || state.setup.version === null) return state;
           const report = buildFinalReport({
             session,
             civicsResult: progress.result,

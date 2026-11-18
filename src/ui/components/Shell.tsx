@@ -5,25 +5,40 @@
 import type { ReactNode } from "react";
 import type { SessionStage } from "../../contracts";
 import { useT } from "../../i18n/react";
-import { STAGES } from "../stages";
+import { SessionStepsContext } from "../session-steps";
+import { metaForSteps } from "../stages";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { StageStepper } from "./StageStepper";
 import "../App.css";
 
-export function Shell({ currentStage, children }: { currentStage: SessionStage; children: ReactNode }) {
+interface ShellProps {
+  /** The steps of the session, in order. Undefined (the home screen): no stepper. */
+  steps?: readonly SessionStage[];
+  currentStage?: SessionStage;
+  /** Go back to the home screen (shown in the header once a session has started). */
+  onHome?: () => void;
+  children: ReactNode;
+}
+
+export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
   const t = useT();
-  return (
+  const stepper =
+    steps !== undefined && currentStage !== undefined ? (
+      <StageStepper stages={metaForSteps(steps)} currentStage={currentStage} />
+    ) : null;
+  const content = (
     <div className="app">
       <a className="ll-skip-link" href="#main">
         {t("app.skipToMain")}
       </a>
-      <Header />
-      <StageStepper stages={STAGES} currentStage={currentStage} />
+      <Header {...(onHome === undefined ? {} : { onHome })} />
+      {stepper}
       <main id="main" className="app__main" tabIndex={-1}>
         <div className="ll-container">{children}</div>
       </main>
       <Footer />
     </div>
   );
+  return steps === undefined ? content : <SessionStepsContext.Provider value={steps}>{content}</SessionStepsContext.Provider>;
 }

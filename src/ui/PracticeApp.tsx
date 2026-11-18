@@ -1,7 +1,9 @@
 /**
- * The practice flow: intro, N-400 interview, reading, writing, civics, report. The whole
- * session lives in one in-memory reducer (src/engine/practice-flow.ts). Nothing is stored, and
- * nothing is sent anywhere. Reloading the page starts again.
+ * The practice flow. Home: the full practice interview, or one part. Then, only when the part
+ * needs it, a setup screen; then the part or parts; then a report (an overall report for the
+ * full interview, a report for that part only for a single part). The whole session lives in
+ * one in-memory reducer (src/engine/practice-flow.ts). Nothing is stored, and nothing is sent
+ * anywhere. Reloading the page starts again.
  */
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import type { InterviewSession } from "../contracts";
@@ -9,6 +11,8 @@ import { createScriptedN400Coach } from "../engine/n400-coach";
 import {
   createDefaultPracticeEnv,
   createPracticeEngine,
+  modeNeeds,
+  sessionSteps,
   type PracticeAction,
   type PracticeEngine,
   type PracticeState,
@@ -17,8 +21,10 @@ import { useT } from "../i18n/react";
 import { Shell } from "./components/Shell";
 import { CivicsScreen } from "./screens/CivicsScreen";
 import { EnglishScreen } from "./screens/EnglishScreen";
+import { HomeScreen } from "./screens/HomeScreen";
 import { IntroScreen } from "./screens/IntroScreen";
 import { N400Screen } from "./screens/N400Screen";
+import { PartReportScreen } from "./screens/PartReportScreen";
 import { ReportScreen } from "./screens/ReportScreen";
 
 interface PracticeAppProps {
@@ -50,8 +56,14 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
     dispatch({ type: "restart" });
   }, []);
 
+  const steps = state.mode === null ? undefined : sessionSteps(state.mode);
+
   return (
-    <Shell currentStage={state.phase}>
+    <Shell
+      {...(steps === undefined ? {} : { steps })}
+      {...(state.phase === "home" ? {} : { currentStage: state.phase })}
+      {...(state.phase === "home" ? {} : { onHome: restart })}
+    >
       <Screen
         engine={engine}
         state={state}
@@ -73,7 +85,7 @@ interface ScreenProps {
   dispatch: (action: PracticeAction) => void;
   coach: ReturnType<typeof createScriptedN400Coach>;
   civicsLockedInBuild: boolean;
-  /** The intro is shown again after a restart (moves focus to its heading). */
+  /** The screen is shown again after a restart (moves focus to its heading). */
   afterRestart?: boolean;
   now: () => string;
   seed: () => number;
@@ -95,14 +107,23 @@ export function Screen({
   const { env } = engine;
 
   switch (state.phase) {
+    case "home":
+      return (
+        <HomeScreen
+          civicsLocked={civicsLockedInBuild}
+          focusOnFirstRender={afterRestart}
+          onChoose={(mode) => dispatch({ type: "choose", mode, seed: seed(), at: now() })}
+        />
+      );
+
     case "intro":
       return (
         <IntroScreen
           profiles={env.content.profiles}
           boundaryDate={env.boundaryDate}
-          civicsLocked={civicsLockedInBuild}
-          focusOnFirstRender={afterRestart}
-          onStart={(profileId, filedOn) => dispatch({ type: "start", profileId, filedOn, seed: seed(), at: now() })}
+          needs={modeNeeds(state.mode ?? "full")}
+          focusOnFirstRender
+          onStart={(choice) => dispatch({ type: "start", ...choice, seed: seed(), at: now() })}
         />
       );
 
@@ -118,7 +139,8 @@ export function Screen({
           onAnswer={(prompt, transcript) =>
             dispatch({ type: "answerN400", questionId: prompt.id, questionText: prompt.text, transcript, at: now() })
           }
-          onFinish={() => dispatch({ type: "finishN400" })}
+          nextIsReport={state.mode !== "full"}
+          onFinish={() => dispatch({ type: "finishN400", at: now() })}
         />
       );
     }
@@ -131,6 +153,7 @@ export function Screen({
           key={kind}
           progress={engine.englishProgress(state, kind)}
           minWordAccuracy={env.config.sentenceMatch[kind].minWordAccuracy}
+          nextIsReport={state.mode !== "full"}
           onSubmit={(transcript, input) =>
             dispatch({ type: kind === "reading" ? "submitReading" : "submitWriting", transcript, input, at: now() })
           }
@@ -151,6 +174,7 @@ export function Screen({
       );
 
     case "report": {
+      if (state.partReport !== null) return <PartReportPage report={state.partReport} restart={restart} />;
       const session = engine.buildSession(state);
       if (session === null) return null;
       return <ReportPage session={session} restart={restart} />;
@@ -158,7 +182,11 @@ export function Screen({
   }
 }
 
-/** The report with the N-400 note and a restart button. Focus starts on the report heading. */
+function PartReportPage({ report, restart }: { report: NonNullable<PracticeState["partReport"]>; restart: () => void }) {
+  return <PartReportScreen report={report} onHome={restart} />;
+}
+
+/** The full report with the N-400 note and a way back. Focus starts on the report heading. */
 function ReportPage({ session, restart }: { session: InterviewSession; restart: () => void }) {
   const t = useT();
   const container = useRef<HTMLDivElement>(null);

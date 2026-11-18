@@ -28,3 +28,8 @@ export function stageIndex(stage: SessionStage): number {
   const i = STAGE_ORDER.indexOf(stage);
   return i === -1 ? 0 : i;
 }
+
+/** The stage metadata for a list of steps, in that order (the stepper of one session). */
+export function metaForSteps(steps: readonly SessionStage[]): StageMeta[] {
+  return steps.map((step) => STAGES[stageIndex(step)]!);
+}

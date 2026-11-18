@@ -7,7 +7,7 @@ import { Disclaimer } from "./Disclaimer";
 import { useT } from "../../i18n/react";
 import "./Header.css";
 
-export function Header() {
+export function Header({ onHome }: { onHome?: () => void }) {
   const t = useT();
   return (
     <header className="header">
@@ -32,6 +32,12 @@ export function Header() {
           <span className="header__brand-name">{t("app.name")}</span>
         </div>
 
+        <div className="header__actions">
+        {onHome !== undefined && (
+          <button type="button" className="header__button" onClick={onHome}>
+            {t("header.home")}
+          </button>
+        )}
         <details className="header__about">
           <summary className="header__about-summary">
             <span className="header__about-label">{t("header.about")}</span>
@@ -55,6 +61,7 @@ export function Header() {
             <Disclaimer text={t("disclaimer.full")} />
           </div>
         </details>
+        </div>
       </div>
     </header>
   );

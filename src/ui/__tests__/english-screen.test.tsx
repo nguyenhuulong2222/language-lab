@@ -27,8 +27,9 @@ const speaker: PromptSpeaker = {
 const listener: SpeechListener = { supported: true, listen: () => Promise.resolve({ kind: "nothing-heard" }), stop: () => {} };
 
 function atReading(): PracticeState {
-  const s = engine.reduce(engine.initial(), { type: "start", profileId: profile, filedOn: "before", seed: 7, at: AT });
-  return engine.reduce(s, { type: "finishN400" });
+  const chosen = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 7, at: AT });
+  const s = engine.reduce(chosen, { type: "start", profileId: profile, filedOn: "before", seed: 7, at: AT });
+  return engine.reduce(s, { type: "finishN400", at: AT });
 }
 
 function render(state: PracticeState, kind: "reading" | "writing", opts: { feedback?: boolean; voice?: boolean } = {}) {

@@ -35,8 +35,9 @@ const lockedEngine = createPracticeEngine({ ...base, answerKey: () => ({ status:
 const profile = base.content.profiles[0]!.id;
 
 function toCivics(e: typeof engine, filedOn: "before" | "on_or_after" = "before"): PracticeState {
-  let s = e.reduce(e.initial(), { type: "start", profileId: profile, filedOn, seed: 5, at: AT });
-  s = e.reduce(s, { type: "finishN400" });
+  let s = e.reduce(e.initial(), { type: "choose", mode: "full", seed: 5, at: AT });
+  s = e.reduce(s, { type: "start", profileId: profile, filedOn, seed: 5, at: AT });
+  s = e.reduce(s, { type: "finishN400", at: AT });
   for (const kind of ["reading", "writing"] as const) {
     for (;;) {
       const p = e.englishProgress(s, kind);
@@ -132,17 +133,19 @@ describe("civics screen", () => {
 });
 
 describe("the app, phase by phase", () => {
-  it("starts at the intro", () => {
+  it("starts at the home screen, with no stepper yet", () => {
     const html = renderToString(<PracticeApp engine={engine} />);
     expect(html).toContain("Welcome to the booth");
-    expect(html).toContain("Choose a practice profile");
-    expect(html).toContain("Interview stages");
+    expect(html).toContain("Full practice interview");
+    expect(html).not.toContain("Interview stages");
+    expect(html).not.toContain("Choose a practice profile");
   });
 
   it("shows each phase for a started session", () => {
-    let s = engine.reduce(engine.initial(), { type: "start", profileId: profile, filedOn: "on_or_after", seed: 5, at: AT });
+    let s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 5, at: AT });
+    s = engine.reduce(s, { type: "start", profileId: profile, filedOn: "on_or_after", seed: 5, at: AT });
     expect(renderScreen(engine, s)).toContain("N-400 interview");
-    s = engine.reduce(s, { type: "finishN400" });
+    s = engine.reduce(s, { type: "finishN400", at: AT });
     expect(renderScreen(engine, s)).toContain("Read the sentence out loud");
     s = toCivics(engine, "on_or_after");
     expect(renderScreen(engine, s)).toContain("Answer out loud or type");

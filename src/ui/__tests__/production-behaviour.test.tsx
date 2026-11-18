@@ -42,14 +42,15 @@ describe("production build with unreviewed answer keys", () => {
   it("interview, reading and writing run; civics is locked; no report is built", () => {
     const engine = createPracticeEngine(productionEnv());
     const at = "2026-11-17T10:00:00.000Z";
-    let s = engine.reduce(engine.initial(), {
+    let s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 3, at });
+    s = engine.reduce(s, {
       type: "start",
       profileId: engine.env.content.profiles[0]!.id,
       filedOn: "on_or_after",
       seed: 3,
       at,
     });
-    s = engine.reduce(s, { type: "finishN400" });
+    s = engine.reduce(s, { type: "finishN400", at });
     for (const kind of ["reading", "writing"] as const) {
       for (;;) {
         const p = engine.englishProgress(s, kind);

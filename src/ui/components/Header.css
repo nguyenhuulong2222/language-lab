@@ -4,6 +4,7 @@
 }
 
 .header__inner {
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -92,4 +93,24 @@
 .header__about-panel .disclaimer--inline {
   color: var(--ink);
   font-size: var(--fs-meta);
+}
+
+.header__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+.header__button {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  padding-inline: var(--space-3);
+  border: 1px solid var(--ink-2);
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  cursor: pointer;
 }

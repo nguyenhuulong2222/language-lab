@@ -20,6 +20,8 @@ interface EnglishScreenProps {
   minWordAccuracy: number;
   onSubmit: (transcript: string, input: InputMode) => void;
   onContinue: () => void;
+  /** After this stage comes the report (a single-part session), not another part. */
+  nextIsReport?: boolean;
   /** Start in the feedback view (used to render that state). */
   showFeedbackInitially?: boolean;
 }
@@ -29,6 +31,7 @@ export function EnglishScreen({
   minWordAccuracy,
   onSubmit,
   onContinue,
+  nextIsReport = false,
   showFeedbackInitially = false,
 }: EnglishScreenProps) {
   const t = useT();
@@ -67,9 +70,11 @@ export function EnglishScreen({
               }}
             >
               {progress.done
-                ? reading
-                  ? t("reading.toWriting")
-                  : t("writing.toCivics")
+                ? nextIsReport
+                  ? t("report.see")
+                  : reading
+                    ? t("reading.toWriting")
+                    : t("writing.toCivics")
                 : reading
                   ? t("reading.next")
                   : t("writing.next")}

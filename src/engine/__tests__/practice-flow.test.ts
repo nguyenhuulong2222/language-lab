@@ -53,7 +53,8 @@ function readyKey(version: CivicsTestVersion): ReadonlyMap<string, CivicsAnswerE
 }
 
 function started(filedOn: "before" | "on_or_after", seed = 1, e = engine): PracticeState {
-  return e.reduce(e.initial(), { type: "start", profileId: PROFILE, filedOn, seed, at: AT });
+  const chosen = e.reduce(e.initial(), { type: "choose", mode: "full", seed, at: AT });
+  return e.reduce(chosen, { type: "start", profileId: PROFILE, filedOn, seed, at: AT });
 }
 
 type Plan = { reading: boolean[]; writing: boolean[]; civics: boolean[] };
@@ -63,7 +64,7 @@ function play(e: typeof engine, state: PracticeState, plan: Plan): PracticeState
   let s = state;
   const step = (a: PracticeAction) => (s = e.reduce(s, a));
   step({ type: "answerN400", questionId: "n400-001", questionText: "Q?", transcript: "my answer", at: AT });
-  step({ type: "finishN400" });
+  step({ type: "finishN400", at: AT });
 
   for (const kind of ["reading", "writing"] as const) {
     const flags = kind === "reading" ? plan.reading : plan.writing;
@@ -132,7 +133,8 @@ describe("filing date and version", () => {
   });
 
   it("start ignores an unknown profile and starts only from the intro", () => {
-    const s = engine.reduce(engine.initial(), { type: "start", profileId: "real-person", filedOn: "before", seed: 1, at: AT });
+    const chosen = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 1, at: AT });
+    const s = engine.reduce(chosen, { type: "start", profileId: "real-person", filedOn: "before", seed: 1, at: AT });
     expect(s.phase).toBe("intro");
     const running = started("before");
     expect(engine.reduce(running, { type: "start", profileId: PROFILE, filedOn: "on_or_after", seed: 2, at: AT })).toBe(running);
@@ -245,7 +247,7 @@ describe.each([
 
   it("the report appears only after civics is done", () => {
     let s = started(filedOn);
-    s = engine.reduce(s, { type: "finishN400" });
+    s = engine.reduce(s, { type: "finishN400", at: AT });
     expect(s.report).toBeNull();
     expect(engine.reduce(s, { type: "continue", at: AT }).phase).toBe("reading");
   });
@@ -306,7 +308,7 @@ describe("guards", () => {
   });
 
   it("cannot continue before a stage is done", () => {
-    let s = engine.reduce(started("before"), { type: "finishN400" });
+    let s = engine.reduce(started("before"), { type: "finishN400", at: AT });
     expect(s.phase).toBe("reading");
     expect(engine.reduce(s, { type: "continue", at: AT })).toBe(s);
     s = engine.reduce(s, { type: "submitReading", transcript: "zzz", input: "typed", at: AT });
@@ -316,7 +318,7 @@ describe("guards", () => {
   it("the reducer does not change the state it is given", () => {
     const s = started("before");
     const before = JSON.stringify(s);
-    engine.reduce(s, { type: "finishN400" });
+    engine.reduce(s, { type: "finishN400", at: AT });
     engine.reduce(s, { type: "answerN400", questionId: "q", questionText: "Q", transcript: "x", at: AT });
     expect(JSON.stringify(s)).toBe(before);
   });
@@ -327,7 +329,7 @@ describe("guards", () => {
   });
 
   it("an empty transcript counts as a wrong answer, not an error", () => {
-    let s = engine.reduce(started("before"), { type: "finishN400" });
+    let s = engine.reduce(started("before"), { type: "finishN400", at: AT });
     s = engine.reduce(s, { type: "submitReading", transcript: "", input: "voice", at: AT });
     expect(s.reading[0]?.isCorrect).toBe(false);
     expect(s.reading[0]?.accuracy).toBe(0);
@@ -348,7 +350,7 @@ describe("when the answer key is refused", () => {
     let s = started("on_or_after", 1, lockedEngine);
     expect(s.civicsLocked).toBe(true);
     expect(s.civicsIds).toEqual([]);
-    s = lockedEngine.reduce(s, { type: "finishN400" });
+    s = lockedEngine.reduce(s, { type: "finishN400", at: AT });
     for (const kind of ["reading", "writing"] as const) {
       for (;;) {
         const p = lockedEngine.englishProgress(s, kind);

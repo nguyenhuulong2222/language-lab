@@ -22,11 +22,13 @@ interface N400ScreenProps {
   total?: number;
   onAnswer: (prompt: N400Prompt, transcript: string) => void;
   onFinish: () => void;
+  /** After the interview comes the report (a single-part session), not reading. */
+  nextIsReport?: boolean;
 }
 
 type PromptState = { status: "loading" } | { status: "failed" } | { status: "done" } | { status: "ready"; prompt: N400Prompt };
 
-export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish }: N400ScreenProps) {
+export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish, nextIsReport }: N400ScreenProps) {
   const [state, setState] = useState<PromptState>({ status: "loading" });
 
   useEffect(() => {
@@ -41,7 +43,17 @@ export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish 
     };
   }, [coach, profile, answers]);
 
-  return <N400View state={state} profile={profile} answers={answers} total={total} onAnswer={onAnswer} onFinish={onFinish} />;
+  return (
+    <N400View
+      state={state}
+      profile={profile}
+      answers={answers}
+      total={total}
+      onAnswer={onAnswer}
+      onFinish={onFinish}
+      {...(nextIsReport === undefined ? {} : { nextIsReport })}
+    />
+  );
 }
 
 interface N400ViewProps extends Omit<N400ScreenProps, "coach"> {
@@ -49,7 +61,7 @@ interface N400ViewProps extends Omit<N400ScreenProps, "coach"> {
 }
 
 /** The screen without its data loading, so every state can be rendered and tested. */
-export function N400View({ state, profile, answers, total, onAnswer, onFinish }: N400ViewProps) {
+export function N400View({ state, profile, answers, total, onAnswer, onFinish, nextIsReport = false }: N400ViewProps) {
   const t = useT();
   const name = profile.displayName;
 
@@ -69,7 +81,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish }:
           </ol>
           <div className="btn-row">
             <button type="button" className="btn" onClick={onFinish}>
-              {t("n400.done.next")}
+              {nextIsReport ? t("report.see") : t("n400.done.next")}
             </button>
           </div>
         </div>

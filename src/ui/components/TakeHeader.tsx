@@ -6,11 +6,13 @@
 import { useEffect, useRef } from "react";
 import type { SessionStage } from "../../contracts";
 import { useT } from "../../i18n/react";
+import { useSessionSteps } from "../session-steps";
 import { STAGES, stageIndex } from "../stages";
 import "./Screen.css";
 
 interface TakeHeaderProps {
-  stage: SessionStage;
+  /** The stage, or "home" for the home screen (no take counter). */
+  stage: SessionStage | "home";
   title: string;
   lead?: string;
   /**
@@ -27,8 +29,10 @@ export function TakeHeader({ stage, title, lead, focusKey = "screen", focusOnFir
   const t = useT();
   const heading = useRef<HTMLHeadingElement>(null);
   const mounted = useRef(false);
-  const index = stageIndex(stage);
-  const take = String(index + 1).padStart(2, "0");
+  const steps = useSessionSteps();
+  const found = stage === "home" ? 0 : steps.indexOf(stage);
+  const position = found === -1 && stage !== "home" ? stageIndex(stage) : found;
+  const take = String(position + 1).padStart(2, "0");
 
   // Reset when the component goes away. Strict Mode's extra unmount/mount in development then
   // still counts as the first render.
@@ -49,13 +53,19 @@ export function TakeHeader({ stage, title, lead, focusKey = "screen", focusOnFir
   return (
     <header className="take">
       <p className="take__overline">
-        <span className="take__number" aria-hidden="true">
-          {t("report.take")} {take}
-        </span>
-        <span className="take__sep" aria-hidden="true">
-          ·
-        </span>
-        <span>{t(STAGES[index]!.labelKey)}</span>
+        {stage === "home" ? (
+          <span>{t("home.overline")}</span>
+        ) : (
+          <>
+            <span className="take__number" aria-hidden="true">
+              {t("report.take")} {take}
+            </span>
+            <span className="take__sep" aria-hidden="true">
+              ·
+            </span>
+            <span>{t(STAGES[stageIndex(stage)]!.labelKey)}</span>
+          </>
+        )}
       </p>
       <h1 className="take__title" ref={heading} tabIndex={-1}>
         {title}

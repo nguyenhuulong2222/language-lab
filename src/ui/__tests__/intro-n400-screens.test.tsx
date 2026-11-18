@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { renderToString } from "react-dom/server";
+import { HomeScreen } from "../screens/HomeScreen";
 import { IntroScreen } from "../screens/IntroScreen";
 import { N400View } from "../screens/N400Screen";
 import { loadPracticeContent } from "../../engine/practice-content";
@@ -9,50 +10,87 @@ const content = loadPracticeContent();
 const profile = content.profiles[0]!;
 const question = content.n400Questions[0]!;
 
-describe("IntroScreen", () => {
-  const html = renderToString(
-    <IntroScreen profiles={content.profiles} boundaryDate={loadCivicsBoundaryDate()} civicsLocked={false} onStart={() => {}} />
-  );
+describe("HomeScreen", () => {
+  const html = renderToString(<HomeScreen civicsLocked={false} onChoose={() => {}} />);
 
-  it("offers every fictional profile as a labelled radio, marked fictional", () => {
-    for (const p of content.profiles) expect(html).toContain(p.displayName);
-    expect((html.match(/type="radio"/g) ?? []).length).toBe(content.profiles.length + 2);
-    expect(html).toContain("Fictional practice profile");
-    expect(html).toContain("Choose a practice profile");
+  it("offers the full interview and each single part", () => {
+    expect(html).toContain("Full practice interview");
+    expect(html).toContain("Practice one part");
+    for (const part of ["N-400 interview", "Reading", "Writing", "Civics"]) expect(html).toContain(part);
   });
 
-  it("asks about the filing date with the boundary date from the rules, not a typed date", () => {
-    expect(html).toContain("Practice as if the N-400 was filed");
-    expect(html).toContain("check uscis.gov to see which test applies to you");
-    expect(html).toContain("Before October 20, 2025");
-    expect(html).toContain("On or after October 20, 2025");
-    expect(html).not.toContain('type="date"');
-    expect(html).not.toContain('type="text"');
+  it("explains how it works in three steps", () => {
+    expect(html).toContain("How it works");
+    expect(html).toContain("Listen");
+    expect(html).toContain("Speak or type");
+    expect(html).toContain("See the result");
+    expect(html).toContain("Typing always works.");
   });
 
-  it("shows the disclaimers and the do-not-share note", () => {
+  it("shows the disclaimers and says how voice is processed", () => {
+    expect(html).toContain("Please read this");
     expect(html).toContain("This is a practice tool only.");
     expect(html).toContain("It is not legal advice.");
     expect(html).toContain("not a government service");
-    expect(html).toContain("Do not say your real name, address, date of birth or A-number");
-    expect(html).toContain("Please read this");
-  });
-
-  it("says how voice input is processed", () => {
     expect(html).toContain("does not record or send your voice");
   });
 
-  it("starts disabled until both choices are made", () => {
-    expect(html).toMatch(/<button[^>]*disabled[^>]*>Start practice/);
-    expect(html).toContain("Choose a profile and a filing date to start.");
+  it("asks for nothing on the home screen", () => {
+    expect(html).not.toContain("<textarea");
+    expect(html).not.toContain('type="radio"');
+    expect(html).not.toContain('type="text"');
   });
 
   it("explains a build that cannot score civics", () => {
-    const locked = renderToString(
-      <IntroScreen profiles={content.profiles} boundaryDate="2025-10-20" civicsLocked onStart={() => {}} />
-    );
+    const locked = renderToString(<HomeScreen civicsLocked onChoose={() => {}} />);
     expect(locked).toContain("Civics scoring is switched off in this build");
     expect(html).not.toContain("Civics scoring is switched off");
+  });
+});
+
+describe("IntroScreen (setup)", () => {
+  const boundary = loadCivicsBoundaryDate();
+  const render = (needs: { profile: boolean; filing: boolean }) =>
+    renderToString(<IntroScreen profiles={content.profiles} boundaryDate={boundary} needs={needs} onStart={() => {}} />);
+
+  it("a full interview asks for a profile and the filing choice", () => {
+    const html = render({ profile: true, filing: true });
+    for (const p of content.profiles) expect(html).toContain(p.displayName);
+    expect((html.match(/type="radio"/g) ?? []).length).toBe(content.profiles.length + 2);
+    expect(html).toContain("Choose a practice profile");
+    expect(html).toContain("Practice as if the N-400 was filed");
+    expect(html).toContain("Before October 20, 2025");
+    expect(html).toContain("On or after October 20, 2025");
+    expect(html).toContain("check uscis.gov to see which test applies to you");
+    expect(html).toContain("Fictional practice profile");
+  });
+
+  it("the N-400 part asks only for a profile", () => {
+    const html = render({ profile: true, filing: false });
+    expect(html).toContain("Choose a practice profile");
+    expect(html).not.toContain("Practice as if the N-400 was filed");
+    expect(html).toContain("Do not say your real name, address, date of birth or A-number");
+  });
+
+  it("the civics part asks only for the filing choice", () => {
+    const html = render({ profile: false, filing: true });
+    expect(html).not.toContain("Choose a practice profile");
+    expect(html).toContain("Practice as if the N-400 was filed");
+    expect(html).not.toContain("A-number");
+    expect((html.match(/type="radio"/g) ?? []).length).toBe(2);
+  });
+
+  it("never offers a date or free text field", () => {
+    const html = render({ profile: true, filing: true });
+    expect(html).not.toContain('type="date"');
+    expect(html).not.toContain('type="text"');
+    expect(html).not.toContain("<textarea");
+  });
+
+  it("starts disabled until the needed choices are made", () => {
+    const html = render({ profile: true, filing: true });
+    expect(html).toMatch(/<button[^>]*disabled[^>]*>Start practice/);
+    expect(html).toContain("Make your choice above to start.");
   });
 });
 
