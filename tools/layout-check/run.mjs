@@ -9,7 +9,7 @@
  *
  *   node tools/layout-check/run.mjs                       all configurations
  *   node tools/layout-check/run.mjs --size=extra-large    one text size (normal, large, extra-large)
- *   node tools/layout-check/run.mjs --lang=vi             one interface language (en, vi)
+ *   node tools/layout-check/run.mjs --lang=vi             one interface language (any of the 14 codes)
  *   node tools/layout-check/run.mjs --shots               also save a screenshot of every screen
  *
  * Needs Google Chrome (set CHROME_PATH if it is not in the default macOS place) and starts its
@@ -21,6 +21,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { LANGUAGES } from "../../src/i18n/languages.ts";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const APP_PORT = 5198;
@@ -34,12 +35,12 @@ const HEIGHT = 844;
 const args = process.argv.slice(2);
 const argValue = (name) => args.find((a) => a.startsWith(`--${name}=`))?.slice(name.length + 3);
 const sizes = argValue("size") ? [argValue("size")] : ["normal", "extra-large"];
-const langs = argValue("lang") ? [argValue("lang")] : ["en", "vi"];
+const langs = argValue("lang") ? argValue("lang").split(",") : LANGUAGES.map((l) => l.code);
 const wantShots = args.includes("--shots");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const locales = Object.fromEntries(
-  ["en", "vi"].map((code) => {
+  LANGUAGES.map((l) => l.code).map((code) => {
     const file = path.join(ROOT, `src/i18n/locales/${code}.json`);
     return [code, fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : {}];
   })
@@ -219,8 +220,11 @@ async function checkConfiguration(cdp, size, lang) {
 
   // Language first (the button in the header), then the settings, so every screen is checked with both.
   if (lang !== "en") {
+    const info = LANGUAGES.find((l) => l.code === lang);
     await cdp.evaluate("document.querySelector('.header__lang').click()");
-    await waitFor(async () => (await cdp.evaluate("document.documentElement.lang")) === lang, `the page language ${lang}`);
+    await waitFor(() => cdp.evaluate(`!!document.querySelector('.language-menu__option[lang="${info.htmlLang}"]')`), "the language menu");
+    await cdp.evaluate(`document.querySelector('.language-menu__option[lang="${info.htmlLang}"]').click()`);
+    await waitFor(async () => (await cdp.evaluate("document.documentElement.lang")) === info.htmlLang, `the page language ${lang}`);
     await sleep(150);
   }
   await click(L("header.settings"));
@@ -237,7 +241,11 @@ async function checkConfiguration(cdp, size, lang) {
   await click(L("home.full.title"));
   await record("setup");
   await choose("Aurora Vance");
-  const boundary = new Intl.DateTimeFormat(lang === "vi" ? "vi-VN" : "en-US", { dateStyle: "long", timeZone: "UTC" }).format(new Date("2025-10-20"));
+  // Format the date in the browser itself: its ICU data is the one the app uses (Node's can differ).
+  const wantedDate = LANGUAGES.find((l) => l.code === lang).dateLocale;
+  const boundary = await cdp.evaluate(
+    `new Intl.DateTimeFormat((Intl.DateTimeFormat.supportedLocalesOf([${js(wantedDate)}]).length ? ${js(wantedDate)} : "en-US") + "-u-ca-gregory-nu-latn", { dateStyle: "long", timeZone: "UTC" }).format(new Date("2025-10-20"))`
+  );
   await choose(L("intro.filed.onOrAfter").replace("{date}", boundary));
   await click(L("intro.start"));
 

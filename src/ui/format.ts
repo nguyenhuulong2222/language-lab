@@ -1,3 +1,5 @@
+import { isLanguageCode, languageInfo } from "../i18n/languages";
+
 /**
  * Formatting helpers for the practice session UI.
  * Plain, readable output for ESL learners.
@@ -16,9 +18,16 @@ export function formatProfileName(profileId: string): string {
     .join(" ");
 }
 
-/** The date format locale of an interface language. */
-function dateLocale(language: string): string {
-  return language === "vi" ? "vi-VN" : "en-US";
+/**
+ * The date format locale of an interface language: its own locale with the Gregorian calendar
+ * and Latin digits (Thai defaults to the Buddhist calendar, Burmese to Burmese digits, and the
+ * year on a practice date should read as 2025). Where the browser has no data for the language
+ * (typically Hmong), month names are English.
+ */
+export function dateLocale(language: string): string {
+  const wanted = languageInfo(isLanguageCode(language) ? language : "en").dateLocale;
+  const supported = Intl.DateTimeFormat.supportedLocalesOf([wanted]).length > 0;
+  return `${supported ? wanted : "en-US"}-u-ca-gregory-nu-latn`;
 }
 
 const dateFormats = new Map<string, Intl.DateTimeFormat>();

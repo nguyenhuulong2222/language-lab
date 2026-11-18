@@ -23,15 +23,15 @@ describe("the header", () => {
     expect(html).toContain("Home");
     expect(html).toContain("Settings");
     expect(html).toContain("About &amp; disclaimer");
-    // Home (with a session), Settings and About each open a panel.
-    expect((html.match(/aria-expanded="false"/g) ?? []).length).toBe(3);
-    expect((html.match(/aria-controls=/g) ?? []).length).toBe(3);
+    // Language, Home (with a session), Settings and About each open a panel.
+    expect((html.match(/aria-expanded="false"/g) ?? []).length).toBe(4);
+    expect((html.match(/aria-controls=/g) ?? []).length).toBe(4);
   });
 
   it("has no Home button before a session", () => {
     const before = renderToString(<Header />);
     expect(before).not.toContain(">Home<");
-    expect((before.match(/aria-expanded=/g) ?? []).length).toBe(2);
+    expect((before.match(/aria-expanded=/g) ?? []).length).toBe(3);
   });
 
   it("asks before Home throws away the answers, in a closed panel", () => {

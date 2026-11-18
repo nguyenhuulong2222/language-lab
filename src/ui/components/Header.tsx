@@ -1,6 +1,6 @@
 /**
- * App header: the brand mark with a restrained reel glyph, and buttons for the other
- * interface language (when one is offered), going home (once a session has started), the
+ * App header: the brand mark with a restrained reel glyph, and a button that opens the
+ * language menu, going home (once a session has started), the
  * comfort settings, and "About & disclaimer". The panels open below the header, in the page
  * flow, so they never run off a narrow screen.
  *
@@ -9,24 +9,23 @@
  */
 import { useId, useRef, useState, type KeyboardEvent } from "react";
 import { Disclaimer } from "./Disclaimer";
+import { LanguageMenu } from "./LanguageMenu";
+import { GlobeIcon } from "./icons";
 import { SettingsPanel } from "./SettingsPanel";
-import { AVAILABLE_UI_LANGUAGES } from "../../i18n";
+import { languageInfo } from "../../i18n/languages";
 import { useLanguage, useT } from "../../i18n/react";
 import { useSettings } from "../settings";
 import "./Header.css";
 
-type PanelName = "settings" | "about" | "home";
+type PanelName = "language" | "settings" | "about" | "home";
 
 export function Header({ onHome }: { onHome?: () => void }) {
   const t = useT();
   const language = useLanguage();
   const { setLanguage } = useSettings();
-  // Interim until the language menu: English from any other language, otherwise the first other one.
-  const otherLanguage =
-    language === "en" ? AVAILABLE_UI_LANGUAGES.find((l) => l.code !== "en") : AVAILABLE_UI_LANGUAGES.find((l) => l.code === "en");
   const [panel, setPanel] = useState<PanelName | null>(null);
-  const ids = { settings: useId(), about: useId(), home: useId() };
-  const buttons = useRef<Record<PanelName, HTMLButtonElement | null>>({ settings: null, about: null, home: null });
+  const ids = { language: useId(), settings: useId(), about: useId(), home: useId() };
+  const buttons = useRef<Record<PanelName, HTMLButtonElement | null>>({ language: null, settings: null, about: null, home: null });
 
   const toggle = (which: PanelName) => setPanel((current) => (current === which ? null : which));
   /** Close the open panel and put focus back on the button that opened it. */
@@ -56,17 +55,18 @@ export function Header({ onHome }: { onHome?: () => void }) {
           <span className="header__brand-name">{t("app.name")}</span>
         </div>
         <div className="header__actions">
-          {otherLanguage !== undefined && (
-            <button
-              type="button"
-              className="header__button header__lang"
-              title={t("lang.menu.title")}
-              onClick={() => setLanguage(otherLanguage.code)}
-            >
-              <span className="ll-sr-only">{t("lang.label")}: </span>
-              <span lang={otherLanguage.code}>{otherLanguage.endonym}</span>
-            </button>
-          )}
+          <button
+            type="button"
+            ref={bind("language")}
+            className="header__button header__lang"
+            aria-expanded={panel === "language"}
+            aria-controls={ids.language}
+            onClick={() => toggle("language")}
+          >
+            <GlobeIcon className="header__globe" />
+            <span className="ll-sr-only">{t("lang.label")}: </span>
+            <span lang={languageInfo(language).htmlLang}>{languageInfo(language).endonym}</span>
+          </button>
           {onHome !== undefined && (
             <button
               type="button"
@@ -100,6 +100,15 @@ export function Header({ onHome }: { onHome?: () => void }) {
             {t("header.about")}
           </button>
         </div>
+      </div>
+      <div id={ids.language} className="ll-container header__panel" hidden={panel !== "language"}>
+        <LanguageMenu
+          open={panel === "language"}
+          onChoose={(code) => {
+            setLanguage(code);
+            close();
+          }}
+        />
       </div>
       <div id={ids.settings} className="ll-container header__panel" hidden={panel !== "settings"}>
         <SettingsPanel onClose={close} />

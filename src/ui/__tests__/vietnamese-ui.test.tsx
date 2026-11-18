@@ -172,14 +172,14 @@ describe("practice screens in Vietnamese", () => {
 });
 
 describe("the header language button", () => {
-  it("offers Vietnamese in English, labelled with its own name", () => {
+  it("shows the current language by its own name, and the menu lists Vietnamese", () => {
     const html = renderToString(<Header />);
     expect(html).toContain("header__lang");
+    expect(html).toContain("English");
     expect(html).toContain('lang="vi"');
     expect(html).toContain("Tiếng Việt");
   });
-
-  it("offers English in Vietnamese", () => {
+  it("in Vietnamese shows Vietnamese on the button and still lists English", () => {
     const html = renderToString(
       <I18nProvider language="vi">
         <Header />
@@ -191,7 +191,6 @@ describe("the header language button", () => {
     expect(html).toContain("Ngôn ngữ");
   });
 });
-
 describe("dates follow the language", () => {
   it("English and Vietnamese forms", () => {
     expect(formatDate("2025-10-20")).toBe("October 20, 2025");

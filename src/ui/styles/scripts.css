@@ -1,0 +1,42 @@
+/*
+ * Fonts for the non-Latin scripts. No web fonts: each script uses the fonts that ship with
+ * iOS, macOS, Android and Windows, listed in that order, so nothing large is downloaded.
+ * The Latin heading font (Bitter) has no glyphs for these scripts, so headings use the same
+ * stack as the body text in these languages.
+ */
+:root {
+  --font-th: "Thonburi", "Sukhumvit Set", "Noto Sans Thai", "Leelawadee UI", "Tahoma", system-ui, sans-serif;
+  --font-lo: "Lao Sangam MN", "Lao MN", "Noto Sans Lao", "Leelawadee UI", "DokChampa", system-ui, sans-serif;
+  --font-my: "Myanmar Sangam MN", "Myanmar MN", "Noto Sans Myanmar", "Myanmar Text", "Padauk", system-ui, sans-serif;
+  --font-hi: "Kohinoor Devanagari", "Devanagari Sangam MN", "Noto Sans Devanagari", "Nirmala UI", system-ui, sans-serif;
+  --font-zh: "PingFang TC", "Heiti TC", "Noto Sans CJK TC", "Microsoft JhengHei", system-ui, sans-serif;
+  --font-ko: "Apple SD Gothic Neo", "Noto Sans CJK KR", "Malgun Gothic", system-ui, sans-serif;
+}
+
+/* The whole page, when the interface is in that language. */
+html[lang="th"] { --font-body: var(--font-th); --font-display: var(--font-th); }
+html[lang="lo"] { --font-body: var(--font-lo); --font-display: var(--font-lo); }
+html[lang="my"] { --font-body: var(--font-my); --font-display: var(--font-my); }
+html[lang="hi"] { --font-body: var(--font-hi); --font-display: var(--font-hi); }
+html[lang|="zh"] { --font-body: var(--font-zh); --font-display: var(--font-zh); }
+html[lang="ko"] { --font-body: var(--font-ko); --font-display: var(--font-ko); }
+
+/* A passage in that language inside another one (the language menu names each language in its own script). */
+[lang="th"] { font-family: var(--font-th); }
+[lang="lo"] { font-family: var(--font-lo); }
+[lang="my"] { font-family: var(--font-my); }
+[lang="hi"] { font-family: var(--font-hi); }
+[lang|="zh"] { font-family: var(--font-zh); }
+[lang="ko"] { font-family: var(--font-ko); }
+
+/* Scripts with tall marks above and below the line need more line height and no letter spacing. */
+html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"]) {
+  --lh-body: 1.9;
+  --lh-snug: 1.6;
+  --lh-tight: 1.5;
+  --lh-loose: 2;
+  --lh-large: 1.7;
+}
+html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"]) * {
+  letter-spacing: normal;
+}
