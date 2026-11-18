@@ -66,7 +66,10 @@ function resultFor(
   // Dynamic answers change over time; their accepted answers are never read.
   if (entry.answerType === "dynamic") return "unscored";
 
-  const matched = countMatchingPhrases(responseText, entry.acceptedAnswers);
+  const matched = countMatchingPhrases(responseText, entry.acceptedAnswers, {
+    groups: entry.answerGroups ?? [],
+    numberAlone: entry.numberAlone ?? [],
+  });
   return matched >= entry.requiredAnswerCount ? "correct" : "incorrect";
 }
 

@@ -33,6 +33,14 @@ export interface CivicsAnswerEntry {
   questionText: string;
   /** Already normalised. Empty for dynamic questions. */
   acceptedAnswers: string[];
+  /**
+   * Alternative names that count as ONE answer ("Secretary of War" and "Secretary of
+   * Defense"). Members are strings from acceptedAnswers; a member is in at most one group.
+   * Optional in the type so test fixtures stay short; the loader always fills it.
+   */
+  answerGroups?: string[][];
+  /** Accepted answers for which the bare number alone is also accepted. Filled by the loader. */
+  numberAlone?: string[];
   /** How many distinct accepted answers a response needs. */
   requiredAnswerCount: number;
   answerType: AnswerType;
@@ -81,6 +89,22 @@ function isUscisHttpsUrl(value: string): boolean {
 // Parsing and validation
 // ---------------------------------------------------------------------------
 
+/** An optional array of string arrays. Absent means none. */
+function parseStringLists(
+  value: unknown,
+  name: string,
+  fail: (message: string) => never
+): string[][] {
+  if (value === undefined) return [];
+  if (
+    !Array.isArray(value) ||
+    !value.every((list) => Array.isArray(list) && list.every((x) => typeof x === "string"))
+  ) {
+    return fail(`${name} must be an array of arrays of strings.`);
+  }
+  return value as string[][];
+}
+
 function parseEntry(
   item: unknown,
   version: CivicsTestVersion,
@@ -122,6 +146,33 @@ function parseEntry(
 
   const answers = acceptedAnswers as string[];
 
+  const answerGroups = parseStringLists(item["answerGroups"], "answerGroups", fail);
+  const numberAloneLists = parseStringLists(
+    item["numberAlone"] === undefined ? undefined : [item["numberAlone"]],
+    "numberAlone",
+    fail
+  );
+  const numberAlone = numberAloneLists[0] ?? [];
+  const inAnswers = new Set(answers);
+  const seenMembers = new Set<string>();
+  for (const group of answerGroups) {
+    if (group.length < 2) return fail("an answerGroups group needs at least two answers.");
+    for (const member of group) {
+      if (!inAnswers.has(member)) {
+        return fail(`answerGroups member ${JSON.stringify(member)} is not one of acceptedAnswers.`);
+      }
+      if (seenMembers.has(member)) {
+        return fail(`answerGroups member ${JSON.stringify(member)} is in more than one group.`);
+      }
+      seenMembers.add(member);
+    }
+  }
+  for (const member of numberAlone) {
+    if (!inAnswers.has(member)) {
+      return fail(`numberAlone member ${JSON.stringify(member)} is not one of acceptedAnswers.`);
+    }
+  }
+
   if (answerType === "dynamic") {
     if (answers.length > 0) {
       return fail("a dynamic question must have no acceptedAnswers (never store answers that change).");
@@ -147,6 +198,8 @@ function parseEntry(
     testVersion: version,
     questionText,
     acceptedAnswers: answers,
+    answerGroups,
+    numberAlone,
     requiredAnswerCount,
     answerType,
     sourceUrl,

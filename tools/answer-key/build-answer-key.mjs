@@ -91,6 +91,8 @@ const FLAGS = {
   OPT: "Words in parentheses are optional in the source. Stored both with and without them.",
   ALTNAME:
     "A parenthetical on this source line was marked by the project owner as an alternative name, not optional words (see tools/answer-key/answer-markers.json). Each name is stored as its own answer.",
+  NUMALONE:
+    "The bare number is accepted as the answer for this source line (decision recorded in tools/answer-key/answer-markers.json). Stored in numberAlone.",
   NUM: "A spelled-out number is followed by its numeral in parentheses. Stored as the words and as the numeral.",
   SLASH: "Alternatives written with a slash in the source were split into separate answers.",
   ALTS: "A parenthetical lists alternatives separated by commas. It is stored only as one optional phrase, not as separate alternatives.",
@@ -385,6 +387,7 @@ function expandLine(raw, { allowBrackets = true, markers = [] } = {}) {
   const flags = new Set();
   const notes = [];
   const extras = [];
+  let alternative = false;
   let text = collapse(raw);
 
   if (allowBrackets) {
@@ -426,13 +429,16 @@ function expandLine(raw, { allowBrackets = true, markers = [] } = {}) {
         `Marker for ${marker.question} ("${marker.replaces} ${marker.group}") matched ${found.length} times in: ${raw}`
       );
     }
-    const items = marker.group
-      .slice(1, -1)
-      .split(",")
-      .map((item) => item.trim())
-      .filter(Boolean);
+    const items =
+      marker.items ??
+      marker.group
+        .slice(1, -1)
+        .split(",")
+        .map((item) => item.trim())
+        .filter(Boolean);
     text = text.replace(pattern, () => hold([marker.replaces, ...items]));
     flags.add("ALTNAME");
+    alternative = true;
     notes.push(
       `alternative name (owner decision): "${collapse(raw)}" is stored as ${[marker.replaces, ...items]
         .map((item) => `"${collapse(raw).replace(new RegExp(`${escapeRegExp(marker.replaces)}\\s*${escapeRegExp(marker.group)}`), item)}"`)
@@ -459,7 +465,7 @@ function expandLine(raw, { allowBrackets = true, markers = [] } = {}) {
   }
 
   let normalised = unique(variants.map(normalise).filter((v) => v.length > 0));
-  const own = { variants: normalised, flags, notes };
+  const own = { variants: normalised, flags, notes, alternative };
   const extraResults = extras.map((item) => expandLine(item, { allowBrackets: false }));
   return { ...own, extras: extraResults };
 }
@@ -482,7 +488,10 @@ function buildEntry(version, config, q, markers = []) {
   const flags = new Set();
   const notes = [];
   const id = `${version}-${pad3(q.number)}`;
-  const questionMarkers = markers.filter((m) => m.question === id);
+  const questionMarkers = markers.filter((m) => m.question === id && m.parentheses === "alternative");
+  const questionNumberAlone = markers.filter((m) => m.question === id && m.numberAlone === true);
+  const answerGroupSources = []; // variants of each line with an alternative marker (one answer)
+  const numberAloneSources = []; // variants of each line marked numberAlone
 
   if (q.answers.length === 0) throw new Error(`${id}: question has no answer lines`);
   if (q.wrapped) flags.add("WRAP");
@@ -506,6 +515,8 @@ function buildEntry(version, config, q, markers = []) {
   else if (/\b(two|three|four|five)\b/i.test(q.questionText)) flags.add("COUNTWORD");
 
   let accepted = [];
+  let answerGroups = [];
+  let numberAlone = [];
   const sourceLines = q.answers.map((a) => a.display);
   let requiredAnswerCount = 1;
 
@@ -523,6 +534,14 @@ function buildEntry(version, config, q, markers = []) {
       const lineGroups = [expanded, ...expanded.extras];
       for (const extra of expanded.extras) for (const f of extra.flags) flags.add(f);
       for (const g of lineGroups) groups.push(g.variants);
+      if (expanded.alternative) answerGroupSources.push(unique(lineGroups.flatMap((g) => g.variants)));
+      const aloneMarkers = questionNumberAlone.filter((m) => collapse(m.line) === collapse(answer.text));
+      for (const m of aloneMarkers) m.used = true;
+      if (aloneMarkers.length > 0) {
+        flags.add("NUMALONE");
+        numberAloneSources.push(unique(lineGroups.flatMap((g) => g.variants)));
+        notes.push(`bare number accepted (owner decision): ${collapse(answer.text)}`);
+      }
       if (expanded.variants.some((v) => /\d/.test(v)) && !expanded.flags.has("NUM")) flags.add("DIGITS");
       else if (expanded.extras.some((e) => e.variants.some((v) => /\d/.test(v)))) flags.add("DIGITS");
     }
@@ -545,6 +564,11 @@ function buildEntry(version, config, q, markers = []) {
     const deduped = unique(kept);
     if (deduped.length < kept.length) flags.add("DUP");
     accepted = deduped;
+    // Only stored answers can be members. A group needs two or more.
+    answerGroups = answerGroupSources
+      .map((vs) => vs.filter((v) => accepted.includes(v)))
+      .filter((vs) => vs.length >= 2);
+    numberAlone = unique(numberAloneSources.flat().filter((v) => accepted.includes(v)));
 
     if (accepted.length === 0) throw new Error(`${id}: no accepted answers after parsing`);
     if (requiredAnswerCount > accepted.length) {
@@ -569,6 +593,8 @@ function buildEntry(version, config, q, markers = []) {
       testVersion: version,
       questionText: q.questionText,
       acceptedAnswers: accepted,
+      ...(answerGroups.length > 0 ? { answerGroups } : {}),
+      ...(numberAlone.length > 0 ? { numberAlone } : {}),
       requiredAnswerCount,
       answerType: isDynamic ? "dynamic" : "static",
       sourceUrl: config.sourceUrl,
@@ -588,19 +614,31 @@ function buildEntry(version, config, q, markers = []) {
 function loadMarkers() {
   const raw = JSON.parse(fs.readFileSync(MARKERS_FILE, "utf8"));
   if (!Array.isArray(raw.markers)) throw new Error("answer-markers.json: 'markers' must be an array");
-  return raw.markers.map((m, i) => {
+  const alternatives = raw.markers.map((m, i) => {
     const where = `answer-markers.json, marker ${i + 1}`;
     for (const key of ["question", "line", "group", "parentheses", "replaces", "decision"]) {
       if (typeof m[key] !== "string" || m[key].trim() === "") throw new Error(`${where}: '${key}' must be a non-empty string`);
     }
     if (m.parentheses !== "alternative") throw new Error(`${where}: 'parentheses' must be "alternative"`);
     if (!/^\(.+\)$/.test(m.group)) throw new Error(`${where}: 'group' must be one parenthetical like "(Defense)"`);
-    if (!m.line.includes(`${m.replaces} ${m.group}`) && !new RegExp(`${escapeRegExp(m.replaces)}\\s*${escapeRegExp(m.group)}`).test(m.line)) {
+    if (!new RegExp(`${escapeRegExp(m.replaces)}\\s*${escapeRegExp(m.group)}`).test(m.line)) {
       throw new Error(`${where}: 'replaces' must sit directly before 'group' in 'line'`);
+    }
+    if (m.items !== undefined && !(Array.isArray(m.items) && m.items.length > 0 && m.items.every((x) => typeof x === "string" && x.trim() !== ""))) {
+      throw new Error(`${where}: 'items' must be a non-empty array of strings`);
     }
     if (!/^(2008|2025)-\d{3}$/.test(m.question)) throw new Error(`${where}: 'question' must look like 2025-048`);
     return { ...m, used: false };
   });
+  const numberAlone = (raw.numberAlone ?? []).map((m, i) => {
+    const where = `answer-markers.json, numberAlone ${i + 1}`;
+    for (const key of ["question", "line", "decision"]) {
+      if (typeof m[key] !== "string" || m[key].trim() === "") throw new Error(`${where}: '${key}' must be a non-empty string`);
+    }
+    if (!/^(2008|2025)-\d{3}$/.test(m.question)) throw new Error(`${where}: 'question' must look like 2025-097`);
+    return { question: m.question, line: m.line, decision: m.decision, numberAlone: true, used: false };
+  });
+  return [...alternatives, ...numberAlone];
 }
 
 function nestingProblems(entry) {
@@ -661,6 +699,8 @@ function entryJson(e) {
     `      "testVersion": ${q(j.testVersion)},`,
     `      "questionText": ${q(j.questionText)},`,
     `      "acceptedAnswers": [${j.acceptedAnswers.map(q).join(", ")}],`,
+    ...(j.answerGroups ? [`      "answerGroups": [${j.answerGroups.map((g) => `[${g.map(q).join(", ")}]`).join(", ")}],`] : []),
+    ...(j.numberAlone ? [`      "numberAlone": [${j.numberAlone.map(q).join(", ")}],`] : []),
     `      "requiredAnswerCount": ${j.requiredAnswerCount},`,
     `      "answerType": ${q(j.answerType)},`,
     `      "sourceUrl": ${q(j.sourceUrl)},`,
@@ -710,7 +750,9 @@ function reviewTable(entries) {
   ];
   for (const e of entries) {
     const answers = e.acceptedAnswers.length
-      ? e.acceptedAnswers.map((a) => `\`${a}\``).join("<br>") + (e.requiredAnswerCount > 1 ? `<br>(needs ${e.requiredAnswerCount})` : "")
+      ? e.acceptedAnswers.map((a) => `\`${a}\``).join("<br>") + (e.requiredAnswerCount > 1 ? `<br>(needs ${e.requiredAnswerCount})` : "") +
+        (e.json.answerGroups ? e.json.answerGroups.map((g) => `<br>(count as one: ${g.map((a) => `\`${a}\``).join(" / ")})`).join("") : "") +
+        (e.json.numberAlone ? `<br>(bare number accepted: ${e.json.numberAlone.map((a) => `\`${a}\``).join(", ")})` : "")
       : "(none stored)";
     const source = e.sourceLines.map(cell).join("<br>") + (e.notes.length ? "<br>" + e.notes.map((n) => `<em>${cell(n)}</em>`).join("<br>") : "");
     rows.push(

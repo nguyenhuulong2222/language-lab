@@ -45,7 +45,12 @@ function isCorrect(
 ): boolean {
   const entry = key.get(id);
   if (!entry || entry.answerType === "dynamic") return false;
-  return countMatchingPhrases(response, entry.acceptedAnswers) >= entry.requiredAnswerCount;
+  return (
+    countMatchingPhrases(response, entry.acceptedAnswers, {
+      groups: entry.answerGroups ?? [],
+      numberAlone: entry.numberAlone ?? [],
+    }) >= entry.requiredAnswerCount
+  );
 }
 
 function expectedIds(count: number, version: string): string[] {
@@ -451,6 +456,7 @@ describe("per-answer markers for parentheses (tools/answer-key/answer-markers.js
     group: string;
     parentheses: string;
     replaces: string;
+    items?: string[];
     decision: string;
   }
   const markers = markersFile.markers as Marker[];
@@ -471,12 +477,13 @@ describe("per-answer markers for parentheses (tools/answer-key/answer-markers.js
       const entry = entryFor(marker);
       const names = [
         marker.replaces,
-        ...marker.group.slice(1, -1).split(",").map((s) => s.trim()).filter(Boolean),
+        ...(marker.items ?? marker.group.slice(1, -1).split(",").map((s) => s.trim()).filter(Boolean)),
       ];
       const pattern = new RegExp(`${escape(marker.replaces)}\\s*${escape(marker.group)}`);
       for (const name of names) {
         expect(entry.acceptedAnswers, `${marker.question}: ${name}`).toContain(
-          normalise(marker.line.replace(pattern, name))
+          // Other parentheses on the line stay optional; the redundancy rule keeps the shortest form.
+          normalise(marker.line.replace(pattern, name).replace(/\([^)]*\)/g, ""))
         );
       }
     }
