@@ -8,6 +8,7 @@ import { useState } from "react";
 import type { FiledChoice } from "../../engine/practice-flow";
 import type { PracticeProfile } from "../../engine/practice-content";
 import { useT } from "../../i18n/react";
+import { ScreenHelp } from "../components/ScreenHelp";
 import { TakeHeader } from "../components/TakeHeader";
 import { formatDate } from "../format";
 import "../components/Screen.css";
@@ -41,6 +42,8 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, focusOnFir
   return (
     <div className="screen">
       <TakeHeader stage="intro" title={t("setup.title")} lead={t("setup.lead")} focusOnFirstRender={focusOnFirstRender} />
+
+      <ScreenHelp screen="setup" />
 
       <div className="screen__body">
         {needs.profile && (

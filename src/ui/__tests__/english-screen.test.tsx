@@ -67,7 +67,7 @@ describe("reading screen", () => {
   it("without voice support still offers typing and says why", () => {
     const html = render(atReading(), "reading", { voice: false });
     expect(html).toContain("<textarea");
-    expect(html).not.toContain("Say it");
+    expect(html).not.toContain(">Say it<");
     expect(html).toContain("cannot listen");
   });
 

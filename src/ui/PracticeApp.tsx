@@ -18,6 +18,7 @@ import {
   type PracticeState,
 } from "../engine/practice-flow";
 import { useT } from "../i18n/react";
+import { HelpSessionProvider } from "./help-session";
 import { Shell } from "./components/Shell";
 import { CivicsScreen } from "./screens/CivicsScreen";
 import { EnglishScreen } from "./screens/EnglishScreen";
@@ -59,6 +60,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
   const steps = state.mode === null ? undefined : sessionSteps(state.mode);
 
   return (
+    <HelpSessionProvider>
     <Shell
       {...(steps === undefined ? {} : { steps })}
       {...(state.phase === "home" ? {} : { currentStage: state.phase })}
@@ -76,6 +78,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
         restart={restart}
       />
     </Shell>
+    </HelpSessionProvider>
   );
 }
 

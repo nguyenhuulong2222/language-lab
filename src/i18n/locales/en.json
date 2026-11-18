@@ -185,5 +185,20 @@
   "partReport.unscored.text": "These questions could not be scored, so they are not counted as right or wrong.",
   "partReport.unscored.missing": "A question that is not in the answer key",
   "report.see": "See my report",
-  "header.home": "Home"
+  "header.home": "Home",
+  "help.button": "How this works",
+  "help.setup.1": "Tap one choice in each group on this screen.",
+  "help.setup.2": "Profiles are made up. Do not type your real name or any details about you.",
+  "help.setup.3": "Press “{start}” when you are ready.",
+  "help.listen": "Press “{play}” to hear it. Press the same button again to stop.",
+  "help.sample": "Read the sample answer, or play it. It belongs to the made-up person. It is only an example.",
+  "help.read": "Read the sentence on the screen out loud.",
+  "help.mic": "Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish.",
+  "help.type": "You can always type instead. Tap the box and type. Typing always works.",
+  "help.typeOnly": "Tap the box and type what you hear.",
+  "help.send": "Check the words in the box. You can change them. Then press “{send}”.",
+  "help.skip": "Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet.",
+  "help.notScored": "Nothing in this part is scored.",
+  "help.result.reading": "Then you see which words matched.",
+  "help.result.civics": "Then you see Correct or Not yet, and the official answers."
 }
