@@ -46,7 +46,7 @@ export function ReportScreen({ session }: ReportScreenProps) {
           </span>
           <span className="report__overline-label">{t("report.overline")}</span>
         </p>
-        <h1 className="report__title">
+        <h1 className="report__title" tabIndex={-1}>
           {passed ? t("report.title.onTrack") : t("report.title.review")}
         </h1>
         <p className="report__lead">

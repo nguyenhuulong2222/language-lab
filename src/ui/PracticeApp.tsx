@@ -3,7 +3,8 @@
  * session lives in one in-memory reducer (src/engine/practice-flow.ts). Nothing is stored, and
  * nothing is sent anywhere. Reloading the page starts again.
  */
-import { useCallback, useMemo, useReducer } from "react";
+import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
+import type { InterviewSession } from "../contracts";
 import { createScriptedN400Coach } from "../engine/n400-coach";
 import {
   createDefaultPracticeEnv,
@@ -74,7 +75,6 @@ interface ScreenProps {
 
 /** The active screen for the current phase. Exported so each phase can be rendered in tests. */
 export function Screen({ engine, state, dispatch, coach, civicsLockedInBuild, now, seed, restart }: ScreenProps) {
-  const t = useT();
   const { env } = engine;
 
   switch (state.phase) {
@@ -135,17 +135,27 @@ export function Screen({ engine, state, dispatch, coach, civicsLockedInBuild, no
     case "report": {
       const session = engine.buildSession(state);
       if (session === null) return null;
-      return (
-        <div className="screen">
-          <ReportScreen session={session} />
-          <p className="note">{t("report.n400Note")}</p>
-          <div className="btn-row">
-            <button type="button" className="btn" onClick={restart}>
-              {t("report.again")}
-            </button>
-          </div>
-        </div>
-      );
+      return <ReportPage session={session} restart={restart} />;
     }
   }
+}
+
+/** The report with the N-400 note and a restart button. Focus starts on the report heading. */
+function ReportPage({ session, restart }: { session: InterviewSession; restart: () => void }) {
+  const t = useT();
+  const container = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    container.current?.querySelector<HTMLElement>("h1")?.focus();
+  }, []);
+  return (
+    <div className="screen" ref={container}>
+      <ReportScreen session={session} />
+      <p className="note">{t("report.n400Note")}</p>
+      <div className="btn-row">
+        <button type="button" className="btn" onClick={restart}>
+          {t("report.again")}
+        </button>
+      </div>
+    </div>
+  );
 }

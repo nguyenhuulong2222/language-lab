@@ -22,7 +22,8 @@ describe("IntroScreen", () => {
   });
 
   it("asks about the filing date with the boundary date from the rules, not a typed date", () => {
-    expect(html).toContain("When was the N-400 filed?");
+    expect(html).toContain("Practice as if the N-400 was filed");
+    expect(html).toContain("check uscis.gov to see which test applies to you");
     expect(html).toContain("Before October 20, 2025");
     expect(html).toContain("On or after October 20, 2025");
     expect(html).not.toContain('type="date"');

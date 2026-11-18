@@ -2,9 +2,8 @@
  * src/engine/practice-config.ts
  *
  * Practice settings that are NOT USCIS rules (data/practice/practice-config.json).
- * USCIS does not publish how close a spoken or typed sentence must be to count as correct.
- * The closeness used here is a Language Lab choice, and the screens say so. No component
- * holds this number.
+ * How close a spoken or typed sentence must be to count as correct here is a Language Lab
+ * choice, and the screens say so. No component holds this number.
  *
  * Pure module: no DOM, no network.
  */

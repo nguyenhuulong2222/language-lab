@@ -8,6 +8,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import type { InputMode } from "../../engine/practice-flow";
 import type { VoiceOutcome } from "../../engine/recognition-outcome";
 import { useT } from "../../i18n/react";
+import { ReviewIcon } from "./icons";
 import type { MessageKey } from "../../i18n";
 import { useListener } from "../voice/VoiceProvider";
 
@@ -59,6 +60,14 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
     });
   };
 
+  const submit = () => {
+    if (text.trim() === "") {
+      setMessage("voice.needText");
+      return;
+    }
+    send(text.trim());
+  };
+
   const send = (value: string) => {
     onSubmit(value, heard.current !== null && heard.current === value ? "voice" : "typed");
   };
@@ -83,6 +92,8 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
         onChange={(event) => setText(event.target.value)}
       />
       <p id={statusId} className={needsAttention ? "status status--attention" : "status"} role="status" aria-live="polite">
+        {needsAttention && <ReviewIcon className="icon-inline icon-inline--attention" />}
+        {needsAttention && " "}
         {message === null ? "" : t(message)}
       </p>
       <div className="btn-row">
@@ -95,7 +106,7 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
             {listening ? t("voice.stop") : t("voice.say")}
           </button>
         )}
-        <button type="button" className="btn" disabled={text.trim() === ""} onClick={() => send(text.trim())}>
+        <button type="button" className="btn" onClick={submit}>
           {submitLabel}
         </button>
         {allowSkip && (

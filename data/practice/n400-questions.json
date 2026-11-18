@@ -56,11 +56,11 @@
     {
       "id": "n400-006",
       "topic": "taxes",
-      "text": "Have you filed your income taxes every year?",
+      "text": "How do you usually prepare your income taxes?",
       "sampleAnswers": {
-        "fictional-profile-aurora-vance": "Yes. I have filed my taxes every year.",
-        "fictional-profile-juniper-hale": "Yes. I file my taxes every year with my accountant.",
-        "fictional-profile-rowan-pike": "Yes. I have filed my taxes every year."
+        "fictional-profile-aurora-vance": "I prepare them myself with a tax program.",
+        "fictional-profile-juniper-hale": "My accountant prepares them and I check them.",
+        "fictional-profile-rowan-pike": "A community tax helper prepares them for me."
       }
     },
     {

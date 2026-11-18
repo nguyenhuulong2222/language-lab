@@ -3,6 +3,8 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+  // Lets a phone reach the dev server through a Cloudflare quick tunnel (the microphone needs HTTPS).
+  server: { allowedHosts: [".trycloudflare.com"] },
   test: {
     globals: false,
     environment: "node",

@@ -19,13 +19,21 @@ export function SpeakButton({ text }: { text: string }) {
 
   const play = () => {
     setPlaying(true);
-    void speaker.speak(text).then(() => setPlaying(false));
+    speaker
+      .speak(text)
+      .catch(() => {})
+      .finally(() => setPlaying(false));
   };
 
   return (
     <div className="speak">
-      <button type="button" className="btn btn--secondary" onClick={play} disabled={playing}>
-        {playing ? t("audio.playing") : t("audio.play")}
+      <button
+        type="button"
+        className="btn btn--secondary"
+        aria-pressed={playing}
+        onClick={playing ? () => speaker.cancel() : play}
+      >
+        {playing ? t("audio.stop") : t("audio.play")}
       </button>
       {speaker.kind === "device-voice" && <p className="note">{t("audio.deviceVoice")}</p>}
     </div>

@@ -162,7 +162,7 @@ describe("the app, phase by phase", () => {
     expect(html).toContain("You’re on track");
     expect(html).toContain("This is a practice tool only.");
     expect(html).toContain("The N-400 interview is practice only and is not scored.");
-    expect(html).toContain("Practise again");
+    expect(html).toContain("Practice again");
     expect(html).toContain("Practice profile (fictional)");
   });
 

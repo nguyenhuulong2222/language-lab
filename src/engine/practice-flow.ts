@@ -189,7 +189,7 @@ export function representativeFilingDate(choice: FiledChoice, boundaryDate: stri
   return choice === "before" ? previousDay(boundaryDate) : boundaryDate;
 }
 
-/** Static questions only (CR-003): dynamic answers change and are never practised. */
+/** Static questions only (CR-003): dynamic answers change and are never practiced. */
 export function listPracticeQuestions(key: ReadonlyMap<string, CivicsAnswerEntry>): CivicsAnswerEntry[] {
   return [...key.values()].filter((entry) => entry.answerType === "static");
 }

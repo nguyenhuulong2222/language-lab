@@ -1,6 +1,6 @@
 {
   "needsHumanReview": true,
-  "note": "Language Lab practice settings. They are NOT USCIS rules. USCIS does not publish how close a spoken or typed sentence must be. The closeness needed is a practice choice made by this project, shown as such on screen. minWordAccuracy is the share of words that must match (0 to 1, longest common run of words divided by the longer sentence).",
+  "note": "Language Lab practice settings. They are NOT USCIS rules. The closeness needed is a practice choice made by this project and shown as such on screen. minWordAccuracy is the share of words that must match (0 to 1: longest common run of words divided by the longer sentence).",
   "sentenceMatch": {
     "reading": {
       "minWordAccuracy": 0.8

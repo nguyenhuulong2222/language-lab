@@ -52,6 +52,11 @@ describe("AnswerInput", () => {
     expect(html).not.toContain("cannot listen");
   });
 
+  it("keeps the send button usable: an empty send explains itself instead of being disabled", () => {
+    const html = input(true, workingListener);
+    expect(html).not.toMatch(/<button[^>]*disabled[^>]*>Send/);
+  });
+
   it("offers Skip only when asked", () => {
     expect(input(true, workingListener)).not.toContain("Skip this one");
     expect(input(true, workingListener, { allowSkip: true })).toContain("Skip this one");
@@ -123,6 +128,7 @@ describe("SpeakButton", () => {
     );
     expect(html).toContain("Play aloud");
     expect(html).toContain("Device voice");
+    expect(html).not.toMatch(/<button[^>]*disabled/);
   });
 
   it("says when the browser cannot read aloud", () => {

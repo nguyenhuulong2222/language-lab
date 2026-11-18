@@ -37,4 +37,4 @@ the 2025 key and is not stored here.
 0e31a58adffd3cf04456fa381353dc1ce3494ae780a1ee8a5f0375404fd0be30  uscis-reading-vocab.txt
 5bf1428c9d6a8373249fce41968ee9d5c13621488f9e1a56a5437ef9d1677261  uscis-writing-vocab.txt
 ```
-USCIS publishes these lists, not fixed test sentences. The practice sentences in `data/practice/` are written by this project and use only words from these lists.
+The practice sentences in `data/practice/` were written by this project, not taken from USCIS. They use only words from these lists.

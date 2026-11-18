@@ -42,11 +42,11 @@ export function EnglishScreen({
   if (feedback && attempt !== null && target !== null) {
     return (
       <div className="screen">
-        <TakeHeader stage={stage} title={reading ? t("reading.title") : t("writing.title")} />
+        <TakeHeader stage={stage} title={reading ? t("reading.title") : t("writing.title")} focusKey={null} />
         <div className="screen__body">
           <SentenceFeedback target={target.text} attempt={attempt} minWordAccuracy={minWordAccuracy} kind={stage} />
           {progress.done && (
-            <p className="status" role="status">
+            <p className="status">
               {progress.result.passed
                 ? reading
                   ? t("reading.done.passed")
@@ -86,6 +86,7 @@ export function EnglishScreen({
         stage={stage}
         title={reading ? t("reading.title") : t("writing.title")}
         lead={reading ? t("reading.lead") : t("writing.lead")}
+        focusKey={`sentence-${progress.position}`}
       />
       <div className="screen__body">
         <p className="progress-line">

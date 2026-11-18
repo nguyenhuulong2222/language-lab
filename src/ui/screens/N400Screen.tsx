@@ -55,7 +55,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish }:
   if (state.status === "done") {
     return (
       <div className="screen">
-        <TakeHeader stage="n400_interview" title={t("n400.done.title")} lead={t("n400.done.lead")} />
+        <TakeHeader stage="n400_interview" title={t("n400.done.title")} lead={t("n400.done.lead")} focusKey="done" />
         <div className="screen__body">
           <ol className="answer-list">
             {answers.map((answer) => (
@@ -79,7 +79,12 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish }:
   const current = answers.length + 1;
   return (
     <div className="screen">
-      <TakeHeader stage="n400_interview" title={t("n400.title")} lead={t("n400.lead", { name })} />
+      <TakeHeader
+        stage="n400_interview"
+        title={t("n400.title")}
+        lead={t("n400.lead", { name })}
+        focusKey={`question-${answers.length}`}
+      />
       <div className="screen__body">
         <p className="progress-line">
           {total === undefined ? t("n400.number", { current }) : t("n400.count", { current, total })}

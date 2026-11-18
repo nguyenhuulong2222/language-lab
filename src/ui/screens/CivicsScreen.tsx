@@ -4,12 +4,13 @@
  * stage ends exactly where the engine ends it. When the answer key is refused (production
  * build, answer key still waiting for review), the screen explains that instead of scoring.
  */
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { CivicsProgress, InputMode } from "../../engine/practice-flow";
 import { officialAnswerLines } from "../../engine/official-answer-text";
 import type { CivicsTestVersion } from "../../engine/version-selector";
 import { useT } from "../../i18n/react";
 import { AnswerInput } from "../components/AnswerInput";
+import { Disclaimer } from "../components/Disclaimer";
 import { CheckIcon, ReviewIcon } from "../components/icons";
 import { SpeakButton } from "../components/SpeakButton";
 import { TakeHeader } from "../components/TakeHeader";
@@ -35,6 +36,13 @@ export function CivicsScreen({
 }: CivicsScreenProps) {
   const t = useT();
   const [feedback, setFeedback] = useState(showFeedbackInitially);
+  const resultHeading = useRef<HTMLHeadingElement>(null);
+  const showingFeedback = feedback && progress.last !== null && progress.result !== null;
+
+  // The result appears after a button press: move focus to it so it is read first.
+  useEffect(() => {
+    if (showingFeedback) resultHeading.current?.focus();
+  }, [showingFeedback]);
 
   if (progress.locked) {
     return (
@@ -60,14 +68,15 @@ export function CivicsScreen({
     const stopped = progress.result.stopReason;
     return (
       <div className="screen">
-        <TakeHeader stage="civics" title={t("civics.title")} />
+        <TakeHeader stage="civics" title={t("civics.title")} focusKey={null} />
         <div className="screen__body">
           <p className="prompt" lang="en">
             {entry.questionText}
           </p>
-          <section className="panel" aria-live="polite">
-            <h2 className="panel__title">
-              <Icon className="icon-inline" /> {correct ? t("civics.correct") : t("civics.notYet")}
+          <section className="panel">
+            <h2 className="panel__title" ref={resultHeading} tabIndex={-1}>
+              <Icon className={correct ? "icon-inline" : "icon-inline icon-inline--attention"} />{" "}
+              {correct ? t("civics.correct") : t("civics.notYet")}
             </h2>
             <p>{t("civics.youSaid", { text: progress.lastResponse === "" ? "…" : (progress.lastResponse ?? "") })}</p>
             {lines !== null && (
@@ -84,9 +93,10 @@ export function CivicsScreen({
             {entry.requiredAnswerCount > 1 && (
               <p className="note">{t("civics.needs", { count: entry.requiredAnswerCount })}</p>
             )}
+            <Disclaimer text={t("disclaimer.short")} />
           </section>
           {progress.done && (
-            <p className="status" role="status">
+            <p className="status">
               {stopped === "correct_threshold"
                 ? t("civics.stopped.correct")
                 : stopped === "incorrect_threshold"
@@ -118,7 +128,12 @@ export function CivicsScreen({
   const question = progress.current;
   return (
     <div className="screen">
-      <TakeHeader stage="civics" title={t("civics.title")} lead={t("civics.lead")} />
+      <TakeHeader
+        stage="civics"
+        title={t("civics.title")}
+        lead={t("civics.lead")}
+        focusKey={`question-${progress.position}`}
+      />
       <div className="screen__body">
         <p className="progress-line">{t("civics.count", { current: progress.position, total: progress.total })}</p>
         {question !== null && (

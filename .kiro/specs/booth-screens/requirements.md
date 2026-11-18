@@ -68,8 +68,8 @@ writing work; the civics step explains that civics scoring is switched off until
 the answer key, and no report is built. `npm run dev` works fully.
 
 ### BS-12 Practice threshold is not a USCIS rule
-USCIS publishes vocabulary lists, not fixed sentences, and does not publish how close a spoken or
-typed sentence must be. The closeness needed (`minWordAccuracy` for reading and for writing) is a
+How close a spoken or typed sentence must be to count as correct here is not a USCIS rule. The
+closeness needed (`minWordAccuracy` for reading and for writing) is a
 Language Lab practice setting in `data/practice/practice-config.json`. It is never written in a
 component. The UI says it is a practice setting, not a USCIS rule.
 

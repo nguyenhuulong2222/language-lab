@@ -14,6 +14,7 @@ export function SentenceDiff({ diff }: { diff: readonly DiffWord[] }) {
       <p className="diff" lang="en">
         {diff.map((item, index) => (
           <span key={index} className={`diff__word diff__word--${item.status}`}>
+            {index > 0 && " "}
             {item.status !== "match" && (
               <span className="ll-sr-only">
                 {item.status === "missing" ? t("compare.word.missing") : t("compare.word.extra")}:{" "}

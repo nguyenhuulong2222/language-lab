@@ -27,7 +27,8 @@
 .btn--secondary {
   background: var(--surface);
   color: var(--ink);
-  border-color: var(--border);
+  /* A control's edge needs 3:1 against the page: use ink-2, not the decorative border. */
+  border-color: var(--ink-2);
 }
 .btn--secondary:disabled {
   background: var(--surface-2);
@@ -59,7 +60,7 @@
   width: 100%;
   min-height: 6rem;
   padding: var(--space-3);
-  border: 2px solid var(--border);
+  border: 2px solid var(--ink-2);
   border-radius: var(--radius-md);
   background: var(--surface);
   color: var(--ink);
@@ -153,4 +154,11 @@ fieldset.choices {
   color: var(--ink);
   border-left: 3px solid var(--amber);
   padding-left: var(--space-3);
+}
+
+/* The whole card shows focus; do not ring the small radio inside it as well. */
+@supports selector(:has(*)) {
+  .choice__input:focus-visible {
+    outline: none;
+  }
 }

@@ -2,7 +2,7 @@
   "needsHumanReview": true,
   "isFictional": true,
   "kind": "writing",
-  "note": "Language Lab practice sentences, written for this project. They are not USCIS test sentences: USCIS publishes vocabulary lists, not fixed sentences. Every word comes from the official list in vocabulary.json.",
+  "note": "Language Lab practice sentences, written for this project. They are not USCIS test sentences. Every word comes from the official list in vocabulary.json.",
   "sentences": [
     {
       "id": "write-001",

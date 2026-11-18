@@ -30,10 +30,10 @@ export function IntroScreen({ profiles, boundaryDate, civicsLocked, onStart }: I
 
   return (
     <div className="screen">
-      <TakeHeader stage="intro" title={t("intro.title")} lead={t("intro.lead")} />
+      <TakeHeader stage="intro" title={t("intro.title")} lead={t("intro.lead")} focusOnFirstRender={false} />
 
       <Disclaimer variant="prominent" id="intro-disclaimer" text={t("disclaimer.full")} />
-      <ul className="answer-list">
+      <ul className="notice-list">
         <li>{t("intro.notice.practice")}</li>
         <li>{t("intro.notice.legal")}</li>
         <li>{t("intro.notice.government")}</li>
