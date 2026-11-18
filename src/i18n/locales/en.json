@@ -139,5 +139,7 @@
   "report.n400Note": "The N-400 interview is practice only and is not scored.",
   "common.startOver": "Start over",
   "voice.needText": "Type or say your answer first, or choose Skip.",
-  "audio.stop": "Stop playing"
+  "audio.stop": "Stop playing",
+  "audio.aiVoice": "AI-generated voice. The audio was made ahead of time.",
+  "audio.playSample": "Play sample answer"
 }

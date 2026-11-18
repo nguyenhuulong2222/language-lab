@@ -17,7 +17,12 @@ import { createBrowserSpeechListener, UNSUPPORTED_LISTENER } from "../voice/spee
 import { compareSentence } from "../../engine/sentence-compare";
 
 const workingListener: SpeechListener = { supported: true, listen: () => Promise.resolve({ kind: "nothing-heard" }), stop: () => {} };
-const deviceSpeaker: PromptSpeaker = { kind: "device-voice", available: true, speak: () => Promise.resolve(), cancel: () => {} };
+const deviceSpeaker: PromptSpeaker = {
+  available: true,
+  voiceFor: () => "device-voice",
+  speak: () => Promise.resolve(),
+  cancel: () => {},
+};
 
 describe("AnswerInput", () => {
   const input = (voice: boolean, listener: SpeechListener, extra = {}) =>

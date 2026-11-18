@@ -1,9 +1,10 @@
 /**
  * Reading and writing share one screen. Reading: the sentence is shown and the user reads it
- * aloud (typed fallback). Writing: the sentence is played aloud and the user types it. After
+ * aloud (typed fallback); it is not played to them first. Writing: the sentence is played aloud and the user types it. After
  * each answer the comparison is shown; the stage ends where runEnglishStage ends it.
  */
 import { useState } from "react";
+import { writingClipId } from "../../engine/audio-clips";
 import type { EnglishProgress, InputMode } from "../../engine/practice-flow";
 import { useT } from "../../i18n/react";
 import { AnswerInput } from "../components/AnswerInput";
@@ -102,13 +103,12 @@ export function EnglishScreen({
                 <p className="prompt" lang="en">
                   {sentence.text}
                 </p>
-                <SpeakButton text={sentence.text} />
               </>
             ) : (
               <>
                 <p className="progress-line">{t("writing.sentence")}</p>
-                <SpeakButton text={sentence.text} />
-                {speaker.available ? (
+                <SpeakButton text={sentence.text} clipId={writingClipId(sentence.id)} />
+                {speaker.voiceFor({ text: sentence.text, clipId: writingClipId(sentence.id) }) !== null ? (
                   <p className="note">{t("writing.hidden")}</p>
                 ) : (
                   <>

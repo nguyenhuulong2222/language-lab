@@ -6,6 +6,7 @@
  */
 import { useEffect, useRef, useState } from "react";
 import type { CivicsProgress, InputMode } from "../../engine/practice-flow";
+import { civicsClipId } from "../../engine/audio-clips";
 import { officialAnswerLines } from "../../engine/official-answer-text";
 import type { CivicsTestVersion } from "../../engine/version-selector";
 import { useT } from "../../i18n/react";
@@ -141,7 +142,7 @@ export function CivicsScreen({
             <p className="prompt" lang="en">
               {question.questionText}
             </p>
-            <SpeakButton text={question.questionText} />
+            <SpeakButton text={question.questionText} clipId={civicsClipId(question.id)} />
             {question.requiredAnswerCount > 1 && (
               <p className="note">{t("civics.needs", { count: question.requiredAnswerCount })}</p>
             )}

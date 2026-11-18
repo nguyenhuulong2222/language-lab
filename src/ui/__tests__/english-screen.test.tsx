@@ -18,7 +18,12 @@ const profile = env.content.profiles[0]!.id;
 const readingAccuracy = env.config.sentenceMatch.reading.minWordAccuracy;
 const writingAccuracy = env.config.sentenceMatch.writing.minWordAccuracy;
 
-const speaker: PromptSpeaker = { kind: "device-voice", available: true, speak: () => Promise.resolve(), cancel: () => {} };
+const speaker: PromptSpeaker = {
+  available: true,
+  voiceFor: () => "device-voice",
+  speak: () => Promise.resolve(),
+  cancel: () => {},
+};
 const listener: SpeechListener = { supported: true, listen: () => Promise.resolve({ kind: "nothing-heard" }), stop: () => {} };
 
 function atReading(): PracticeState {
@@ -50,6 +55,8 @@ describe("reading screen", () => {
     expect(html).toContain("Say it");
     expect(html).toContain("<textarea");
     expect(html).toContain("Skip this one");
+    // The sentence is not played before the attempt.
+    expect(html).not.toContain("Play aloud");
     expect(html).toContain(`at least ${Math.round(readingAccuracy * 100)}% of the words must match`);
     expect(html).toContain("not a USCIS rule");
     expect(html).toContain("official USCIS reading and writing vocabulary lists");

@@ -1,9 +1,17 @@
 /**
- * Gives screens the speaker and the listener. Real browser versions by default; a test or a
- * later MP3-based speaker passes its own.
+ * Gives screens the speaker and the listener. Real browser versions by default: pre-generated
+ * MP3 clips (from the manifest that ships with the app) with the device voice as the fallback.
+ * A test passes its own.
  */
 import { createContext, useContext, useMemo, type ReactNode } from "react";
-import { createDeviceVoiceSpeaker, SILENT_SPEAKER, type PromptSpeaker } from "./prompt-speaker";
+import { parseManifest } from "../../engine/audio-clips";
+import MANIFEST from "../../../public/audio/manifest.json" with { type: "json" };
+import {
+  createDeviceVoiceSpeaker,
+  createMp3PromptSpeaker,
+  SILENT_SPEAKER,
+  type PromptSpeaker,
+} from "./prompt-speaker";
 import { createBrowserSpeechListener, UNSUPPORTED_LISTENER, type SpeechListener } from "./speech-listener";
 
 interface VoiceValue {
@@ -13,6 +21,13 @@ interface VoiceValue {
 
 /** Without a provider (server rendering, tests) nothing speaks and nothing listens. */
 const VoiceContext = createContext<VoiceValue>({ speaker: SILENT_SPEAKER, listener: UNSUPPORTED_LISTENER });
+
+export function createDefaultSpeaker(): PromptSpeaker {
+  return createMp3PromptSpeaker({
+    manifest: parseManifest(MANIFEST),
+    fallback: createDeviceVoiceSpeaker(),
+  });
+}
 
 export function VoiceProvider({
   speaker,
@@ -25,7 +40,7 @@ export function VoiceProvider({
 }) {
   const value = useMemo<VoiceValue>(
     () => ({
-      speaker: speaker ?? createDeviceVoiceSpeaker(),
+      speaker: speaker ?? createDefaultSpeaker(),
       listener: listener ?? createBrowserSpeechListener(),
     }),
     [speaker, listener]

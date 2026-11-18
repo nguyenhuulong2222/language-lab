@@ -5,6 +5,7 @@
  * be passed in its place without a change here.
  */
 import { useEffect, useState } from "react";
+import { n400QuestionClipId, sampleAnswerClipId } from "../../engine/audio-clips";
 import type { N400Answer, N400Coach, N400Prompt } from "../../engine/n400-coach";
 import type { PracticeProfile } from "../../engine/practice-content";
 import { useT } from "../../i18n/react";
@@ -96,11 +97,16 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish }:
             <p className="prompt" lang="en">
               {state.prompt.text}
             </p>
-            <SpeakButton text={state.prompt.text} />
+            <SpeakButton text={state.prompt.text} clipId={n400QuestionClipId(state.prompt.id)} />
             {state.prompt.sampleAnswer !== null && (
               <section className="panel panel--well">
                 <h2 className="panel__title">{t("n400.sample.label", { name })}</h2>
                 <p lang="en">{state.prompt.sampleAnswer}</p>
+                <SpeakButton
+                  text={state.prompt.sampleAnswer}
+                  clipId={sampleAnswerClipId(state.prompt.id, profile.id)}
+                  labelKey="audio.playSample"
+                />
                 <p className="note">{t("n400.sample.note")}</p>
               </section>
             )}
