@@ -1,0 +1,25 @@
+{
+  "needsHumanReview": true,
+  "isFictional": true,
+  "note": "Fictional practice profile. Every person here is invented. No real data.",
+  "profiles": [
+    {
+      "id": "fictional-profile-aurora-vance",
+      "displayName": "Aurora Vance",
+      "isFictional": true,
+      "note": "Fictional practice profile"
+    },
+    {
+      "id": "fictional-profile-juniper-hale",
+      "displayName": "Juniper Hale",
+      "isFictional": true,
+      "note": "Fictional practice profile"
+    },
+    {
+      "id": "fictional-profile-rowan-pike",
+      "displayName": "Rowan Pike",
+      "isFictional": true,
+      "note": "Fictional practice profile"
+    }
+  ]
+}

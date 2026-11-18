@@ -2,7 +2,7 @@
 
 One commit per task. After each: `npm run typecheck` and `npm test` pass.
 
-**Status:** not started.
+**Status:** B-01 done.
 
 ## B-01 Practice content and sources
 USCIS reading and writing vocabulary saved in `data/sources/` (URL, SHA-256), `data/practice/`

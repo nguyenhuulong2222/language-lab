@@ -1,0 +1,193 @@
+{
+  "needsHumanReview": true,
+  "note": "Transcribed by hand from the two official USCIS PDFs saved in data/sources/ (both rev. 08/08). A person should compare it with the PDFs. Entries with a slash are alternatives (do/does). Every sentence in reading-sentences.json and writing-sentences.json may use only words from its own list; a test checks that.",
+  "reading": {
+    "title": "Reading Vocabulary for the Naturalization Test",
+    "revision": "rev. 08/08",
+    "sourceUrl": "https://www.uscis.gov/sites/default/files/document/guides/reading_vocab.pdf",
+    "sourceFile": "data/sources/uscis-reading-vocab.pdf",
+    "sha256": "56be9761b36d44afdbf6efeb825330232bd089d55eb1cf2865d00999a98db04a",
+    "categories": {
+      "people": [
+        "Abraham Lincoln",
+        "George Washington"
+      ],
+      "civics": [
+        "American flag",
+        "Bill of Rights",
+        "capital",
+        "citizen",
+        "city",
+        "Congress",
+        "country",
+        "Father of Our Country",
+        "government",
+        "President",
+        "right",
+        "Senators",
+        "state/states",
+        "White House"
+      ],
+      "places": [
+        "America",
+        "United States",
+        "U.S."
+      ],
+      "holidays": [
+        "Presidents’ Day",
+        "Memorial Day",
+        "Flag Day",
+        "Independence Day",
+        "Labor Day",
+        "Columbus Day",
+        "Thanksgiving"
+      ],
+      "questionWords": [
+        "How",
+        "What",
+        "When",
+        "Where",
+        "Who",
+        "Why"
+      ],
+      "verbs": [
+        "can",
+        "come",
+        "do/does",
+        "elects",
+        "have/has",
+        "is/are/was/be",
+        "lives/lived",
+        "meet",
+        "name",
+        "pay",
+        "vote",
+        "want"
+      ],
+      "otherFunction": [
+        "a",
+        "for",
+        "here",
+        "in",
+        "of",
+        "on",
+        "the",
+        "to",
+        "we"
+      ],
+      "otherContent": [
+        "colors",
+        "dollar bill",
+        "first",
+        "largest",
+        "many",
+        "most",
+        "north",
+        "one",
+        "people",
+        "second",
+        "south"
+      ]
+    }
+  },
+  "writing": {
+    "title": "Writing Vocabulary for the Naturalization Test",
+    "revision": "rev. 08/08",
+    "sourceUrl": "https://www.uscis.gov/sites/default/files/document/guides/writing_vocab.pdf",
+    "sourceFile": "data/sources/uscis-writing-vocab.pdf",
+    "sha256": "217244ecfb9ed6c5d79f9c281f9c1f6e4290ea358ced85192522b6218431bc08",
+    "categories": {
+      "people": [
+        "Adams",
+        "Lincoln",
+        "Washington"
+      ],
+      "civics": [
+        "American Indians",
+        "capital",
+        "citizens",
+        "Civil War",
+        "Congress",
+        "Father of Our Country",
+        "flag",
+        "free",
+        "freedom of speech",
+        "President",
+        "right",
+        "Senators",
+        "state/states",
+        "White House"
+      ],
+      "places": [
+        "Alaska",
+        "California",
+        "Canada",
+        "Delaware",
+        "Mexico",
+        "New York City",
+        "United States",
+        "Washington",
+        "Washington, D.C."
+      ],
+      "months": [
+        "February",
+        "May",
+        "June",
+        "July",
+        "September",
+        "October",
+        "November"
+      ],
+      "holidays": [
+        "Presidents’ Day",
+        "Memorial Day",
+        "Flag Day",
+        "Independence Day",
+        "Labor Day",
+        "Columbus Day",
+        "Thanksgiving"
+      ],
+      "verbs": [
+        "can",
+        "come",
+        "elect",
+        "have/has",
+        "is/was/be",
+        "lives/lived",
+        "meets",
+        "pay",
+        "vote",
+        "want"
+      ],
+      "otherFunction": [
+        "and",
+        "during",
+        "for",
+        "here",
+        "in",
+        "of",
+        "on",
+        "the",
+        "to",
+        "we"
+      ],
+      "otherContent": [
+        "blue",
+        "dollar bill",
+        "fifty/50",
+        "first",
+        "largest",
+        "most",
+        "north",
+        "one",
+        "one hundred/100",
+        "people",
+        "red",
+        "second",
+        "south",
+        "taxes",
+        "white"
+      ]
+    }
+  }
+}
