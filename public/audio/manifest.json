@@ -1,0 +1,1 @@
+{ "version": 1, "tts": { "model": "gpt-4o-mini-tts", "voice": "coral", "instruction": "Speak clear American English slowly and naturally, like a patient interviewer." }, "clips": {} }
