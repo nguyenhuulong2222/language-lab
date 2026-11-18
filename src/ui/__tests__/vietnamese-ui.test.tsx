@@ -59,7 +59,7 @@ describe("home in Vietnamese", () => {
   );
 
   it("is in Vietnamese", () => {
-    expect(html).toContain("Chào mừng đến buồng luyện tập");
+    expect(html).toContain("Chào mừng đến Language Lab");
     expect(html).toContain("Buổi phỏng vấn luyện tập đầy đủ");
     expect(html).toContain("Cách hoạt động");
     expect(html).not.toContain("Full practice interview");

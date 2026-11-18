@@ -110,3 +110,15 @@ describe("the back-translation file", () => {
     }
   });
 });
+
+describe("Vietnamese wording (step 5)", () => {
+  const vi = CATALOGS.vi as Record<string, string>;
+  it("names the product in the home heading and never says \"buồng\"", () => {
+    expect(vi["home.title"]).toBe("Chào mừng đến Language Lab");
+    for (const [key, text] of Object.entries(vi)) expect(text, key).not.toMatch(/buồng/i);
+    expect(vi["home.lead"]).toContain("phòng luyện tập");
+  });
+  it("does not use pass/fail wording for \"not yet\"", () => {
+    expect(vi["compare.notYet"]).not.toMatch(/đạt/);
+  });
+});
