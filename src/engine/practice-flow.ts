@@ -142,6 +142,8 @@ export interface CivicsProgress {
   total: number;
   /** The result of the latest answer, with the question it belongs to. */
   last: { entry: CivicsAnswerEntry; result: "correct" | "incorrect" | "unscored" } | null;
+  /** What the user said or typed for the latest answer. */
+  lastResponse: string | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -219,14 +221,16 @@ function sentenceAttemptTurns(
 // ---------------------------------------------------------------------------
 
 /** Keys are loaded once per version. A refused key is remembered as locked, not retried. */
-export function createAnswerKeyLoader(): (version: CivicsTestVersion) => AnswerKeyResult {
+export function createAnswerKeyLoader(
+  load: (version: CivicsTestVersion) => ReadonlyMap<string, CivicsAnswerEntry> = (version) => loadAnswerKey(version)
+): (version: CivicsTestVersion) => AnswerKeyResult {
   const cache = new Map<CivicsTestVersion, AnswerKeyResult>();
   return (version) => {
     const cached = cache.get(version);
     if (cached) return cached;
     let result: AnswerKeyResult;
     try {
-      result = { status: "ready", key: loadAnswerKey(version) };
+      result = { status: "ready", key: load(version) };
     } catch (error) {
       result = { status: "locked", reason: error instanceof Error ? error.message : String(error) };
     }
@@ -335,6 +339,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
         position: 0,
         total: 0,
         last: null,
+        lastResponse: null,
       };
     }
     const key = loaded.key;
@@ -354,6 +359,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
       position: Math.min(state.civics.length + 1, Math.max(limit, 1)),
       total: limit,
       last: lastScore && lastEntry ? { entry: lastEntry, result: lastScore.scoring.result } : null,
+      lastResponse: state.civics[state.civics.length - 1]?.response ?? null,
     };
   }
 
