@@ -55,9 +55,7 @@ describe("Report screen (SSR against session.json)", () => {
 
   it("renders the overall review list", () => {
     expect(html).toContain("Things to review");
-    expect(html).toContain(
-      "Review the name of the current President of the United States."
-    );
+    expect(html).toContain("How many amendments does the Constitution have?");
   });
 
   it("renders the prominent and footer disclaimers", () => {

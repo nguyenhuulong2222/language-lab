@@ -1,5 +1,5 @@
 {
-  "_note": "Fictional practice profile — no real person. All names, dates, and details are invented for practice purposes only.",
+  "_note": "Fictional practice profile — no real person. All names, dates, and details are invented for practice purposes only. Valid PASSING fixture: static civics questions only, the civics stage stops on the 6th correct answer (2008 rules), reading passes on sentence 1, writing passes on sentence 2.",
   "sessionId": "mock-session-001",
   "fictionalProfileId": "fictional-profile-aurora-vance",
   "isFictional": true,
@@ -48,105 +48,87 @@
       "turnId": "turn-006",
       "stage": "writing",
       "prompt": "Please write the following sentence: 'The President lives in the White House.'",
-      "responseText": "The President lives in the White House.",
-      "completedAt": "2024-03-20T10:20:00Z"
+      "responseText": "the President lives in the white house.",
+      "completedAt": "2024-03-20T10:19:00Z"
     },
     {
       "turnId": "turn-007",
+      "stage": "writing",
+      "prompt": "Please write the following sentence: 'Citizens have the right to vote.'",
+      "responseText": "Citizens have the right to vote.",
+      "completedAt": "2024-03-20T10:20:30Z"
+    },
+    {
+      "turnId": "turn-008",
       "stage": "civics",
+      "questionId": "2008-001",
       "prompt": "What is the supreme law of the land?",
       "responseText": "The Constitution.",
       "completedAt": "2024-03-20T10:25:00Z"
     },
     {
-      "turnId": "turn-008",
+      "turnId": "turn-009",
       "stage": "civics",
+      "questionId": "2008-005",
       "prompt": "What do we call the first ten amendments to the Constitution?",
       "responseText": "The Bill of Rights.",
       "completedAt": "2024-03-20T10:26:30Z"
     },
     {
-      "turnId": "turn-009",
-      "stage": "civics",
-      "prompt": "How many amendments does the Constitution have?",
-      "responseText": "Twenty-seven.",
-      "completedAt": "2024-03-20T10:28:00Z"
-    },
-    {
       "turnId": "turn-010",
       "stage": "civics",
-      "prompt": "What is the economic system in the United States?",
-      "responseText": "Capitalist economy.",
-      "completedAt": "2024-03-20T10:29:30Z"
+      "questionId": "2008-007",
+      "prompt": "How many amendments does the Constitution have?",
+      "responseText": "I am not sure.",
+      "completedAt": "2024-03-20T10:28:00Z"
     },
     {
       "turnId": "turn-011",
       "stage": "civics",
-      "prompt": "What is the name of the President of the United States now?",
-      "responseText": "I am not sure.",
-      "completedAt": "2024-03-20T10:31:00Z"
+      "questionId": "2008-011",
+      "prompt": "What is the economic system in the United States?",
+      "responseText": "I think it is a capitalist economy.",
+      "completedAt": "2024-03-20T10:29:30Z"
     },
     {
       "turnId": "turn-012",
       "stage": "civics",
-      "prompt": "What ocean is on the East Coast of the United States?",
-      "responseText": "The Atlantic Ocean.",
+      "questionId": "2008-015",
+      "prompt": "Who is in charge of the executive branch?",
+      "responseText": "The President.",
+      "completedAt": "2024-03-20T10:31:00Z"
+    },
+    {
+      "turnId": "turn-013",
+      "stage": "civics",
+      "questionId": "2008-018",
+      "prompt": "How many U.S. Senators are there?",
+      "responseText": "One hundred.",
       "completedAt": "2024-03-20T10:32:30Z"
+    },
+    {
+      "turnId": "turn-014",
+      "stage": "civics",
+      "questionId": "2008-019",
+      "prompt": "We elect a U.S. Senator for how many years?",
+      "responseText": "Six years.",
+      "completedAt": "2024-03-20T10:34:00Z"
     }
   ],
   "scoringResults": {
-    "turn-002": {
-      "stage": "n400_interview",
-      "feedback": "understood"
-    },
-    "turn-003": {
-      "stage": "n400_interview",
-      "feedback": "understood"
-    },
-    "turn-004": {
-      "stage": "n400_interview",
-      "feedback": "needs_practice"
-    },
-    "turn-005": {
-      "stage": "reading",
-      "attempts": 1,
-      "result": "correct"
-    },
-    "turn-006": {
-      "stage": "writing",
-      "attempts": 2,
-      "result": "correct"
-    },
-    "turn-007": {
-      "stage": "civics",
-      "scoringSource": "answer_key",
-      "result": "correct"
-    },
-    "turn-008": {
-      "stage": "civics",
-      "scoringSource": "answer_key",
-      "result": "correct"
-    },
-    "turn-009": {
-      "stage": "civics",
-      "scoringSource": "answer_key",
-      "result": "correct"
-    },
-    "turn-010": {
-      "stage": "civics",
-      "scoringSource": "answer_key",
-      "result": "correct"
-    },
-    "turn-011": {
-      "stage": "civics",
-      "scoringSource": "answer_key",
-      "result": "incorrect"
-    },
-    "turn-012": {
-      "stage": "civics",
-      "scoringSource": "answer_key",
-      "result": "correct"
-    }
+    "turn-002": { "stage": "n400_interview", "feedback": "understood" },
+    "turn-003": { "stage": "n400_interview", "feedback": "understood" },
+    "turn-004": { "stage": "n400_interview", "feedback": "needs_practice" },
+    "turn-005": { "stage": "reading", "attempts": 1, "result": "correct" },
+    "turn-006": { "stage": "writing", "attempts": 1, "result": "incorrect" },
+    "turn-007": { "stage": "writing", "attempts": 2, "result": "correct" },
+    "turn-008": { "stage": "civics", "scoringSource": "answer_key", "result": "correct" },
+    "turn-009": { "stage": "civics", "scoringSource": "answer_key", "result": "correct" },
+    "turn-010": { "stage": "civics", "scoringSource": "answer_key", "result": "incorrect" },
+    "turn-011": { "stage": "civics", "scoringSource": "answer_key", "result": "correct" },
+    "turn-012": { "stage": "civics", "scoringSource": "answer_key", "result": "correct" },
+    "turn-013": { "stage": "civics", "scoringSource": "answer_key", "result": "correct" },
+    "turn-014": { "stage": "civics", "scoringSource": "answer_key", "result": "correct" }
   },
   "finalReport": {
     "practiceResult": "practice_passed",
@@ -172,32 +154,32 @@
         "stage": "reading",
         "turnsTotal": 1,
         "turnsScored": 1,
-        "summary": "Reading sentence completed correctly on the first attempt.",
+        "summary": "The first reading sentence was read correctly.",
         "reviewItems": []
       },
       {
         "stage": "writing",
-        "turnsTotal": 1,
-        "turnsScored": 1,
-        "summary": "Writing sentence completed correctly, took two attempts.",
+        "turnsTotal": 2,
+        "turnsScored": 2,
+        "summary": "The second writing sentence was written correctly.",
         "reviewItems": [
-          "Practice writing sentences with proper capitalization on the first attempt."
+          "Practice writing sentences with proper capitalization on the first try."
         ]
       },
       {
         "stage": "civics",
-        "turnsTotal": 6,
-        "turnsScored": 6,
-        "summary": "5 of 6 civics questions answered correctly. Passed the civics portion of this practice session.",
+        "turnsTotal": 7,
+        "turnsScored": 7,
+        "summary": "6 of 7 civics questions answered correctly. The practice test stopped once the passing score was reached.",
         "reviewItems": [
-          "Review the name of the current President of the United States."
+          "How many amendments does the Constitution have?"
         ]
       }
     ],
     "overallReviewItems": [
-      "Review the name of the current President of the United States.",
-      "Practice clear, direct responses to N-400 questions about taxes.",
-      "Practice writing sentences with proper capitalization from the start."
+      "How many amendments does the Constitution have?",
+      "Practicing responses to tax-filing questions with clear, direct answers.",
+      "Practice writing sentences with proper capitalization on the first try."
     ],
     "generatedAt": "2024-03-20T10:42:00Z"
   }

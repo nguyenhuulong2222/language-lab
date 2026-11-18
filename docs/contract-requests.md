@@ -10,7 +10,7 @@ Status is `pending` until the change is merged.
 ## CR-001 — Add `"unscored"` to `CivicsScoringResult.result`
 
 **Requested by:** grading spec
-**Status:** pending
+**Status:** implemented in `src/contracts/session.ts` (grading T-01)
 **Type:** additive
 
 ```typescript
@@ -40,7 +40,8 @@ early stop. It does use one question slot.
 ## CR-002 — `Turn.questionId` is required at runtime for civics turns
 
 **Requested by:** grading spec
-**Status:** pending
+**Status:** doc comment added in `src/contracts/session.ts` (grading T-01); the runtime check
+and its test arrive with the civics grader (T-05)
 **Type:** behavioural. The type stays `questionId?: string`.
 
 ### Why
@@ -72,7 +73,7 @@ loader exposes `listStaticEntries()` for this.
 ## CR-004 — Fixtures rebuilt
 
 **Requested by:** grading spec (decision O4)
-**Status:** pending
+**Status:** implemented (grading T-01)
 **Type:** fixture change, no type change
 
 ### `mock/session.json` (rebuilt, passing fixture)
