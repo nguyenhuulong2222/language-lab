@@ -7,10 +7,3 @@ Pictures I wanted but could not use. No other source was substituted. Fetch thes
 | Wanted | Page | Why it was not saved |
 |---|---|---|
 | Photograph of Susan B. Anthony | <https://www.si.edu/object/npg_NPG.77.255> | download or conversion failed: HTTP 404 |
-| Statue of Liberty photograph | <https://www.loc.gov/item/2002715404/> | download or conversion failed: HTTP 429 (blocked) |
-| United States Capitol photograph | <https://www.loc.gov/item/2005684916/> | loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again |
-| Supreme Court building photograph | <https://www.loc.gov/item/2002722643/> | loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again |
-| Washington Monument photograph | <https://www.loc.gov/item/2007680368/> | loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again |
-| American flag photograph | <https://www.loc.gov/item/2016865574/> | loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again |
-| The Star Spangled Banner sheet music | <https://www.loc.gov/item/2012649666/> | loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again |
-| Signing of the Constitution poster | <https://www.loc.gov/item/2018756662/> | loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again |

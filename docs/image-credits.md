@@ -6,7 +6,7 @@ The pictures in civics practice are works from official U.S. federal sources. Ea
 
 Using these pictures does not mean the Library of Congress, any other agency or any person in them endorses Language Lab. Language Lab is not affiliated with USCIS or any government agency.
 
-11 pictures.
+18 pictures.
 
 ## George Washington
 
@@ -117,3 +117,73 @@ Using these pictures does not mean the Library of Congress, any other agency or 
 - **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-NPG_94_45Eisenhower-000002&max=1600> on 2026-11-18 (SHA-256 of the download: `7fa92ad5b905255d026bff69abf16bc6e954ccb22f50b42a6567aff5ff6930cd`)
 - **Rights statement (copied from the source record):** "Restrictions & Rights: CC0"
 - **Used for questions:** 2008-082, 2025-107
+
+## Statue of "Liberty Enlightening the World"
+
+- **Picture id:** `statue-of-liberty-1885` (file `statue-of-liberty-1885.webp`)
+- **Creator:** Unknown
+- **Date:** 1885 July.
+- **Source page:** <https://www.loc.gov/item/2002715404/>
+- **File downloaded from:** <https://tile.loc.gov/storage-services/master/pnp/cph/3b30000/3b33000/3b33100/3b33151u.tif> on 2026-11-18 (SHA-256 of the download: `b92c63e2be45930772584e58787d2d39f6afcb59c82294a63f9bd634c87d54f3`)
+- **Rights statement (copied from the source record):** "No known restrictions on publication."
+- **Used for questions:** 2008-095, 2025-120
+
+## United States Capitol
+
+- **Picture id:** `us-capitol-1875` (file `us-capitol-1875.webp`)
+- **Creator:** Unknown
+- **Date:** [between ca. 1875 and 1890?]
+- **Source page:** <https://www.loc.gov/item/2005684916/>
+- **File downloaded from:** <https://tile.loc.gov/storage-services/service/pnp/stereo/1s00000/1s04000/1s04700/1s04769v.jpg> on 2026-11-18 (SHA-256 of the download: `bd2c640f6e2ad63135c9de14eae61625708f35e409b3e7454f26478bfcd91ffc`)
+- **Rights statement (copied from the source record):** "No known restrictions on publication."
+- **Used for questions:** 2008-016, 2008-017, 2025-018, 2025-019, 2025-020
+
+## The new United States Supreme Court / Schell Lewis ; Wurts Bros. Photo, N.Y.C.
+
+- **Picture id:** `supreme-court-1931` (file `supreme-court-1931.webp`)
+- **Creator:** Schell, Lewis, artist
+- **Date:** 1931.
+- **Source page:** <https://www.loc.gov/item/2002722643/>
+- **File downloaded from:** <https://tile.loc.gov/storage-services/service/pnp/cph/3c30000/3c32000/3c32300/3c32384v.jpg> on 2026-11-18 (SHA-256 of the download: `c81bdef304cf07cea1be664c4067e924f16e3433eef656d3d3815bf1dbc3dad5`)
+- **Rights statement (copied from the source record):** "No known restrictions on publication."
+- **Used for questions:** 2008-038, 2025-050, 2025-052
+
+## Washington Monument
+
+- **Picture id:** `washington-monument-1889` (file `washington-monument-1889.webp`)
+- **Creator:** Unknown
+- **Date:** [between 1889 and 1893]
+- **Source page:** <https://www.loc.gov/item/2007680368/>
+- **File downloaded from:** <https://tile.loc.gov/storage-services/service/pnp/cph/3g10000/3g13000/3g13400/3g13416v.jpg> on 2026-11-18 (SHA-256 of the download: `fb25493d46471cd81766dcd0384adc7edb78c73822e2e690aa7e7a635e2bfbd5`)
+- **Rights statement (copied from the source record):** "No known restrictions on publication."
+- **Used for questions:** 2008-094, 2025-119
+
+## FLAGS. HUGE AMERICAN FLAG
+
+- **Picture id:** `american-flag-1914` (file `american-flag-1914.webp`)
+- **Creator:** Harris & Ewing, photographer
+- **Date:** 1914.
+- **Source page:** <https://www.loc.gov/item/2016865574/>
+- **File downloaded from:** <https://tile.loc.gov/storage-services/service/pnp/hec/04200/04267v.jpg> on 2026-11-18 (SHA-256 of the download: `ea71ecd6a0928c5733a07e7b0fdff1889f92f900156761cd0b10983907919d3a`)
+- **Rights statement (copied from the source record):** "No known restrictions on publication. For more information, see Harris & Ewing Photographs - Rights and Restrictions Information https://www.loc.gov/rr/print/res/140_harr.html"
+- **Used for questions:** 2008-052, 2008-096, 2025-066, 2025-121
+
+## The star spangled banner / written by Francis S. Key, Esq. of Georgetown, (D.C.) in 1814.
+
+- **Picture id:** `star-spangled-banner-music` (file `star-spangled-banner-music.webp`)
+- **Creator:** Key, Francis Scott, 1779-1843.
+- **Date:** [between 1814 and 1864]
+- **Source page:** <https://www.loc.gov/item/2012649666/>
+- **File downloaded from:** <https://tile.loc.gov/storage-services/service/pnp/pga/08800/08894v.jpg> on 2026-11-18 (SHA-256 of the download: `04d634850ed8415ccba9185111bbe519db5a29259dbb91f2bc03c8b0edfcca0a`)
+- **Rights statement (copied from the source record):** "No known restrictions on publication."
+- **Used for questions:** 2008-098, 2025-123
+
+## The Constitution of the United States "the signing"
+
+- **Picture id:** `constitution-signing-poster` (file `constitution-signing-poster.webp`)
+- **Creator:** Unknown
+- **Date:** [ca. 1937]
+- **Source page:** <https://www.loc.gov/item/2018756662/>
+- **File downloaded from:** <https://tile.loc.gov/storage-services/service/pnp/ppmsca/58800/58837v.jpg> on 2026-11-18 (SHA-256 of the download: `7f8484abb9b37bad0e6db06a37985afa2a5a180d330413d64c514a471a9670dc`)
+- **Rights statement (copied from the source record):** "No known restrictions on publication. For information see: "Popular Graphic Arts," https://hdl.loc.gov/loc.pnp/res.248.pga"
+- **Used for questions:** 2008-001, 2008-065, 2008-066, 2025-002, 2025-082
