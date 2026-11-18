@@ -8,7 +8,7 @@
       "group": "(Defense)",
       "parentheses": "alternative",
       "replaces": "War",
-      "decision": "Project owner, 2026-11-01: the parenthetical is an alternative name, not optional words. Accept both 'Secretary of War' and 'Secretary of Defense'."
+      "decision": "Project owner, 2026-11-17: the parenthetical is an alternative name, not optional words. Accept both 'Secretary of War' and 'Secretary of Defense'."
     },
     {
       "question": "2025-067",
@@ -16,7 +16,7 @@
       "group": "(help, do important work for)",
       "parentheses": "alternative",
       "replaces": "Serve",
-      "decision": "Project owner, 2026-11-01: the parenthetical lists alternative verbs for 'Serve'. '(U.S.)' and '(if needed)' stay optional."
+      "decision": "Project owner, 2026-11-17: the parenthetical lists alternative verbs for 'Serve'. '(U.S.)' and '(if needed)' stay optional."
     },
     {
       "question": "2025-077",
@@ -24,7 +24,7 @@
       "group": "(Tea Act)",
       "parentheses": "alternative",
       "replaces": "Boston Tea Party",
-      "decision": "Project owner, 2026-11-01: 'Tea Act' is an alternative name."
+      "decision": "Project owner, 2026-11-17: 'Tea Act' is an alternative name."
     },
     {
       "question": "2025-077",
@@ -32,7 +32,7 @@
       "group": "(Coercive)",
       "parentheses": "alternative",
       "replaces": "Intolerable",
-      "decision": "Project owner, 2026-11-01: 'Coercive Acts' is an alternative name."
+      "decision": "Project owner, 2026-11-17: 'Coercive Acts' is an alternative name."
     },
     {
       "question": "2025-077",
@@ -43,7 +43,7 @@
       "items": [
         "quartering"
       ],
-      "decision": "Project owner, 2026-11-01: 'quartering' is accepted as an alternative. 'boarding' alone is NOT accepted."
+      "decision": "Project owner, 2026-11-17: 'quartering' is accepted as an alternative. 'boarding' alone is NOT accepted."
     },
     {
       "question": "2025-118",
@@ -51,7 +51,7 @@
       "group": "(cars, internal combustion engine)",
       "parentheses": "alternative",
       "replaces": "Automobile",
-      "decision": "Project owner, 2026-11-01: alternative names."
+      "decision": "Project owner, 2026-11-17: alternative names."
     },
     {
       "question": "2025-118",
@@ -59,7 +59,7 @@
       "group": "(IC)",
       "parentheses": "alternative",
       "replaces": "Integrated circuit",
-      "decision": "Project owner, 2026-11-01: 'IC' is an alternative name, matched as a whole word only."
+      "decision": "Project owner, 2026-11-17: 'IC' is an alternative name, matched as a whole word only."
     },
     {
       "question": "2008-061",
@@ -67,7 +67,7 @@
       "group": "(taxation without representation)",
       "parentheses": "alternative",
       "replaces": "high taxes",
-      "decision": "Project owner, 2026-11-01: alternative name."
+      "decision": "Project owner, 2026-11-17: alternative name."
     },
     {
       "question": "2008-061",
@@ -78,7 +78,7 @@
       "items": [
         "quartering"
       ],
-      "decision": "Project owner, 2026-11-01: 'quartering' is accepted as an alternative. 'boarding' alone is NOT accepted."
+      "decision": "Project owner, 2026-11-17: 'quartering' is accepted as an alternative. 'boarding' alone is NOT accepted."
     }
   ],
   "_items": "Optional 'items': use these names instead of splitting the group on commas. Used where the owner accepts only some of the listed names ('boarding' alone is NOT accepted, only 'quartering').  All names of one marker are ONE answer: the matcher counts them once (answerGroups in the data files).",
@@ -87,27 +87,27 @@
     {
       "question": "2025-097",
       "line": "14th Amendment",
-      "decision": "Agent decision under the owner's rule (2026-11-01): 'What amendment ...': the number names the amendment."
+      "decision": "Agent decision under the owner's rule (2026-11-17): 'What amendment ...': the number names the amendment."
     },
     {
       "question": "2008-054",
       "line": "eighteen (18) and older",
-      "decision": "Agent decision under the owner's rule (2026-11-01): 'How old ...': the age answers the question."
+      "decision": "Agent decision under the owner's rule (2026-11-17): 'How old ...': the age answers the question."
     },
     {
       "question": "2008-057",
       "line": "at age eighteen (18)",
-      "decision": "Agent decision under the owner's rule (2026-11-01): 'When must men register': an age answers it. The 'between ... and ...' lines have two numbers and are not marked."
+      "decision": "Agent decision under the owner's rule (2026-11-17): 'When must men register': an age answers it. The 'between ... and ...' lines have two numbers and are not marked."
     },
     {
       "question": "2025-104",
       "line": "The Great Crash (1929)",
-      "decision": "Agent decision under the owner's rule (2026-11-01): 'When did it start': the year answers it."
+      "decision": "Agent decision under the owner's rule (2026-11-17): 'When did it start': the year answers it."
     },
     {
       "question": "2025-104",
       "line": "Stock market crash of 1929",
-      "decision": "Agent decision under the owner's rule (2026-11-01): 'When did it start': the year answers it."
+      "decision": "Agent decision under the owner's rule (2026-11-17): 'When did it start': the year answers it."
     }
   ]
 }
