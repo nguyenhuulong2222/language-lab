@@ -925,4 +925,8 @@ function main() {
   if (writes.size === 0) console.log("\nDry run. Nothing written. Use --write=2008, --write=2025 or --write=review.");
 }
 
-main();
+
+// Shared with tools/translations/import-n400.mjs (which only reads the parsed source questions).
+export { parseTxt2025, parseHtml2008, VERSIONS, SOURCE_DIR, DYNAMIC_RE };
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();

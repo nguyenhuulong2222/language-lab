@@ -1,0 +1,796 @@
+{
+  "language": "pt",
+  "testVersion": "2008",
+  "needsHumanReview": true,
+  "note": "Display text for reference only. Not used for scoring. Status 'source' means the text was taken from the N400 project's data without an LLM-suggested flag; Language Lab has not reviewed it.",
+  "provenance": {
+    "repository": "N400 (read-only source)",
+    "commit": "942c5d667397464205cddfc2cdce88adaabed8b3",
+    "contentVersion": "e54df6b",
+    "tier": "community",
+    "endonym": "Português"
+  },
+  "entries": {
+    "2008-001": {
+      "question": "Qual é a lei suprema da America?",
+      "answers": [
+        "a Constituição"
+      ],
+      "status": "source"
+    },
+    "2008-002": {
+      "question": "O que faz a Constituição?",
+      "answers": [
+        "cria o governo",
+        "define o governo",
+        "protege os direitos fundamentais dos americanos"
+      ],
+      "status": "source"
+    },
+    "2008-003": {
+      "question": "A ideia da ‘governo próprio’ está nas primeiras três palavras da Constituição. Quais são essas palavras?",
+      "answers": [
+        "Nós o Povo"
+      ],
+      "status": "source"
+    },
+    "2008-004": {
+      "question": "O que é uma emenda?",
+      "answers": [
+        "uma alteração (à Constituição)",
+        "uma adição (à Constituição)"
+      ],
+      "status": "source"
+    },
+    "2008-005": {
+      "question": "Como chamamos as dez primeiras emendas à Constituição?",
+      "answers": [
+        "a Declaração de Direitos"
+      ],
+      "status": "source"
+    },
+    "2008-006": {
+      "question": "Cite um dos direitos ou liberdades garantidos na primeira emenda*?",
+      "answers": [
+        "linguagem",
+        "religião",
+        "assembleia",
+        "imprensa",
+        "petição Governamental"
+      ],
+      "status": "source"
+    },
+    "2008-007": {
+      "question": "Quantas alterações ou emendas há na Constituição?",
+      "answers": [
+        "27"
+      ],
+      "status": "source"
+    },
+    "2008-008": {
+      "question": "O Que fez a Declaração de Independência?",
+      "answers": [
+        "anunciou nossa independência",
+        "declarou nossa independência",
+        "disse que os Estados Unidos é livre"
+      ],
+      "status": "source"
+    },
+    "2008-009": {
+      "question": "Quais são dois direitos garantidos na Declaração de Independência?",
+      "answers": [
+        "vida",
+        "liberdade",
+        "procurar a felicidade"
+      ],
+      "status": "source"
+    },
+    "2008-010": {
+      "question": "O que é a liberdade de religião?",
+      "answers": [
+        "Você pode praticar qualquer religião, ou não praticar uma religião."
+      ],
+      "status": "source"
+    },
+    "2008-011": {
+      "question": "Qual é o sistema económico nos Estados Unidos? *",
+      "answers": [
+        "economia capitalista",
+        "economia de mercado"
+      ],
+      "status": "source"
+    },
+    "2008-012": {
+      "question": "O que é o \"Estado de Direito\"?",
+      "answers": [
+        "Todos têm de obedecer a lei.",
+        "Os líderes têm de obedecer à lei.",
+        "O governo tem de obedecer à lei.",
+        "Ninguém está acima da lei."
+      ],
+      "status": "source"
+    },
+    "2008-013": {
+      "question": "Nomeie um departamento do governo .*",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-014": {
+      "question": "O que impede que um departamento do governo se torne muito poderoso?",
+      "answers": [
+        "prestações de contas",
+        "separação de poderes"
+      ],
+      "status": "source"
+    },
+    "2008-015": {
+      "question": "Quem é o chefe do Departamento Executivo?",
+      "answers": [
+        "o Presidente"
+      ],
+      "status": "source"
+    },
+    "2008-016": {
+      "question": "Quem faz as leis federais?",
+      "answers": [
+        "Congresso",
+        "Senado e Câmara de Representantes",
+        "(E.U. ou nacionais) legislatura"
+      ],
+      "status": "source"
+    },
+    "2008-017": {
+      "question": "Quais são as duas partes do Congresso E.U. *?",
+      "answers": [
+        "Senado e Câmara dos Representantes"
+      ],
+      "status": "source"
+    },
+    "2008-018": {
+      "question": "Quantas senadores há?",
+      "answers": [
+        "cem (100)"
+      ],
+      "status": "source"
+    },
+    "2008-019": {
+      "question": "Qual o tempo de mandato dos Senadores?",
+      "answers": [
+        "seis (6) anos"
+      ],
+      "status": "source"
+    },
+    "2008-020": {
+      "question": "Nomeie um senador de seu estado *.",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-021": {
+      "question": "A Câmara de Representantes tem quantos representantes?",
+      "answers": [
+        "quatrocentos e trinta e cinco (435)"
+      ],
+      "status": "source"
+    },
+    "2008-022": {
+      "question": "Qual e o tempo de mandato do representante?",
+      "answers": [
+        "dois (2)"
+      ],
+      "status": "source"
+    },
+    "2008-023": {
+      "question": "Nomeie seu Representante.",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-024": {
+      "question": "Quem o senador representa?",
+      "answers": [
+        "todas as pessoas do estado"
+      ],
+      "status": "source"
+    },
+    "2008-025": {
+      "question": "Por que alguns estados têm mais representantes do que outros?",
+      "answers": [
+        "(por causa da) população do estado",
+        "(porque) tem mais pessoas",
+        "(porque) alguns estados têm mais pessoas"
+      ],
+      "status": "source"
+    },
+    "2008-026": {
+      "question": "Qual e o tempo de mandato do presidente?",
+      "answers": [
+        "quatro (4)"
+      ],
+      "status": "source"
+    },
+    "2008-027": {
+      "question": "Em que mês se vota para a eleiçoes Presidenciais? *",
+      "answers": [
+        "novembro"
+      ],
+      "status": "source"
+    },
+    "2008-028": {
+      "question": "Qual é o nome do Presidente do Estados Unidos agora? *",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-029": {
+      "question": "Qual é o nome do Vice Presidente dos Estados Unidos atual?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-030": {
+      "question": "Se o presidente não puder continuar a servir, quem se torna Presidente?",
+      "answers": [
+        "o Vice Presidente"
+      ],
+      "status": "source"
+    },
+    "2008-031": {
+      "question": "Se o Presidente e o Vice Presidente não puder continuar a servir, quem se torna Presidente?",
+      "answers": [
+        "o presidente da Câmara"
+      ],
+      "status": "source"
+    },
+    "2008-032": {
+      "question": "Quem é o Comandante-em-Chefe militar?",
+      "answers": [
+        "o Presidente"
+      ],
+      "status": "source"
+    },
+    "2008-033": {
+      "question": "Quem assina propostas de lei?",
+      "answers": [
+        "o Presidente"
+      ],
+      "status": "source"
+    },
+    "2008-034": {
+      "question": "Quem faz vetos?",
+      "answers": [
+        "o Presidente"
+      ],
+      "status": "source"
+    },
+    "2008-035": {
+      "question": "O que faz o Gabinete da Presidência?",
+      "answers": [
+        "aconselha o Presidente"
+      ],
+      "status": "source"
+    },
+    "2008-036": {
+      "question": "Nomeie duas posições de nível de Gabinete?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-037": {
+      "question": "O que faz o departamento judicial?",
+      "answers": [
+        "revisa as leis",
+        "explica as leis",
+        "resolve litígios",
+        "decide se uma lei vai contra a Constituição"
+      ],
+      "status": "source"
+    },
+    "2008-038": {
+      "question": "Qual é o mais alto grau do Tribunal nos Estados Unidos?",
+      "answers": [
+        "o Tribunal Supremo"
+      ],
+      "status": "source"
+    },
+    "2008-039": {
+      "question": "Quantas justiças têm o Tribunal Supremo? nove (9) Visite -uscis.gov/citizenship/testupdates para achar esta resposta.",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-040": {
+      "question": "Quem é o Chefe de Justiça atual dos Estados Unidos?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-041": {
+      "question": "Sob a nossa Constituição, alguns poderes pertencem ao governo federal. Cite um dos poderes do governo federal?",
+      "answers": [
+        "imprimir dinheiro",
+        "declarar guerra",
+        "criar um exército",
+        "fazer tratados"
+      ],
+      "status": "source"
+    },
+    "2008-042": {
+      "question": "Sob a nossa Constituição, alguns poderes pertencem aos estados. Cite um dos poderes dos estados?",
+      "answers": [
+        "proporcionar escolas e educação",
+        "proporcionar proteção",
+        "proporcionar segurança",
+        "dar uma carteira de motorista",
+        "aprovar zoneamento e uso da terra"
+      ],
+      "status": "source"
+    },
+    "2008-043": {
+      "question": "Quem é o governador do seu estado?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-044": {
+      "question": "Qual é a capital do seu estado? *",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-045": {
+      "question": "Quais são os dois maiores partidos políticos nos Estados Unidos? *",
+      "answers": [
+        "Democrático e Republicano"
+      ],
+      "status": "source"
+    },
+    "2008-046": {
+      "question": "Qual é o partido político do presidente atual?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-047": {
+      "question": "Qual é o nome do presidente atual da Câmara de Representantes?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-048": {
+      "question": "Há quatro emendas à Constituição acerca quem pode votar. Descreva uma delas.",
+      "answers": [
+        "Cidadãos de dezoito (18) anos e mais velhos (podem votar).",
+        "Você não tem que pagar (um imposto de votação) para votar.",
+        "Qualquer cidadão pode votar.",
+        "Uma cidadão do sexo masculino de qualquer raça (pode votar)."
+      ],
+      "status": "source"
+    },
+    "2008-049": {
+      "question": "Cite uma responsabilidade que é só para as cidadãos dos Estados Unidos? *",
+      "answers": [
+        "servir num júri",
+        "votar numa eleicao federal"
+      ],
+      "status": "source"
+    },
+    "2008-050": {
+      "question": "Cite um direito reservado apenas para cidadãos dos Estados Unidos?",
+      "answers": [
+        "candidatar-se a um emprego federal",
+        "votar numa eleicao federal"
+      ],
+      "status": "source"
+    },
+    "2008-051": {
+      "question": "Cite dois direitos de todos os que vivem nos Estados Unidos?",
+      "answers": [
+        "liberdade de falar",
+        "liberdade de linguagem",
+        "liberdade de assembleia",
+        "liberdade de petição ao governo",
+        "liberdade de religião",
+        "o direito de portar armas"
+      ],
+      "status": "source"
+    },
+    "2008-052": {
+      "question": "A que demostramos lealdade quando recitamos ‘The Pledge of Allegiance (A Promessa de Fidelidade)?’",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-053": {
+      "question": "os Estados Unidos",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-054": {
+      "question": "Quantos anos os cidadãos devem ter para votar para o Presidente? *",
+      "answers": [
+        "dezoito (18) o mais"
+      ],
+      "status": "source"
+    },
+    "2008-055": {
+      "question": "Cite duas maneiras pelas quais os americanos podem participar na sua democracia?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-056": {
+      "question": "Qual é o último dia em que você pode enviar/declarar impostos federais? *",
+      "answers": [
+        "15 de Abril"
+      ],
+      "status": "source"
+    },
+    "2008-057": {
+      "question": "Quando é que todos os homens devem registrar-se para o Serviço Militar Selectivo?",
+      "answers": [
+        "a idade dezoito (18)",
+        "entre dezoito (18) e vinte e seis (26)"
+      ],
+      "status": "source"
+    },
+    "2008-058": {
+      "question": "Qual é um motivo pelo qual os colonizadores vieram a América?",
+      "answers": [
+        "liberdade",
+        "liberdade política",
+        "liberdade religiosa",
+        "oportunidade económica",
+        "praticar sua religião",
+        "escapar perseguição"
+      ],
+      "status": "source"
+    },
+    "2008-059": {
+      "question": "Quem viveu na América antes da chegada os europeus?",
+      "answers": [
+        "americanos nativos",
+        "índios americanos"
+      ],
+      "status": "source"
+    },
+    "2008-060": {
+      "question": "Qual grupo de pessoas foi levada para a América e vendidos como escravos?",
+      "answers": [
+        "Africanos",
+        "pessoas da África"
+      ],
+      "status": "source"
+    },
+    "2008-061": {
+      "question": "Por que é que as colonizadores lutaram contra os britânicos?",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-062": {
+      "question": "Quem escreveu a Declaração de Independência?",
+      "answers": [
+        "(Thomas) Jefferson"
+      ],
+      "status": "source"
+    },
+    "2008-063": {
+      "question": "Quando foi adoptada a Declaração de Independência?",
+      "answers": [
+        "4 de julho de 1776"
+      ],
+      "status": "source"
+    },
+    "2008-064": {
+      "question": "Eram 13 os estados originais. Nomeie três.",
+      "answers": [
+        "New Hampshire",
+        "Massachusetts",
+        "Rhode Island",
+        "Connecticut",
+        "Nova York",
+        "New Jersey",
+        "Pensilvânia",
+        "Delaware",
+        "Maryland",
+        "Virginia",
+        "Carolina do Norte",
+        "Carolina do Sul",
+        "Geórgia"
+      ],
+      "status": "source"
+    },
+    "2008-065": {
+      "question": "Que aconteceu na Convenção Constitucional?",
+      "answers": [
+        "A Constituição foi escrita.",
+        "Os Pais Fundadores escreveram a Constituição."
+      ],
+      "status": "source"
+    },
+    "2008-066": {
+      "question": "Quando foi escrita a Constituição?",
+      "answers": [
+        "1787"
+      ],
+      "status": "source"
+    },
+    "2008-067": {
+      "question": "Os artigos Federalistas fundamentaram a passagem da Constituição Americana. Nomeie um dos escritores.",
+      "answers": [
+        "(James) Madison",
+        "(Alexandre) Hamilton",
+        "(John) Jay",
+        "Publius"
+      ],
+      "status": "source"
+    },
+    "2008-068": {
+      "question": "Cite uma coisa pela qual Benjamin Franklin é famoso?",
+      "answers": [
+        "diplomata E.U.",
+        "o membro mais antigo da Convenção Constitucional",
+        "primeiro Postmaster General dos Estados Unidos",
+        "escritor de \"Poor Richard's Almanac\"",
+        "começou as primeiras bibliotecas grátis"
+      ],
+      "status": "source"
+    },
+    "2008-069": {
+      "question": "Quem é o \"Pai de nosso país\"?",
+      "answers": [
+        "(George) Washington"
+      ],
+      "status": "source"
+    },
+    "2008-070": {
+      "question": "Quem foi o primeiro Presidente dos Estados Unidos? *",
+      "answers": [
+        "(George) Washington"
+      ],
+      "status": "source"
+    },
+    "2008-071": {
+      "question": "Qual território os Estados Unidos comprou da França, em 1803?",
+      "answers": [
+        "Territorio Louisiana",
+        "Louisiana"
+      ],
+      "status": "source"
+    },
+    "2008-072": {
+      "question": "Nomeie uma guerra travada pelos Estados Unidos no 1800.",
+      "answers": [
+        "Guerra de 1812",
+        "Guerra mexicano-americana",
+        "Guerra Civil",
+        "Guerra espanhola-americana"
+      ],
+      "status": "source"
+    },
+    "2008-073": {
+      "question": "Nomeie a guerra estado-unidense entre o norte eu sul.",
+      "answers": [
+        "a Guerra Civil",
+        "a Guerra entre os Estados"
+      ],
+      "status": "source"
+    },
+    "2008-074": {
+      "question": "Nomeie um problema que levou à guerra civil.",
+      "answers": [
+        "escravidão",
+        "razões económicas",
+        "direitos dos Estados"
+      ],
+      "status": "source"
+    },
+    "2008-075": {
+      "question": "Cite uma coisa importante que Abraham Lincoln fez? *",
+      "answers": [
+        "libertou os escravos",
+        "salvou (ou preservou) a União.",
+        "liderou os Estados Unidos durante a Guerra Civil"
+      ],
+      "status": "source"
+    },
+    "2008-076": {
+      "question": "O que fez a Emancipação Proclamação?",
+      "answers": [
+        "libertou os escravos",
+        "libertou os escravos no Confederado",
+        "libertou os escravos nos estados Confederado",
+        "libertou os escravos, na maioria dos estados do sul"
+      ],
+      "status": "source"
+    },
+    "2008-077": {
+      "question": "O que Susan B. Anthony fez?",
+      "answers": [
+        "lutou pelos direitos das mulheres",
+        "lutou pelos direitos civis"
+      ],
+      "status": "source"
+    },
+    "2008-078": {
+      "question": "Nomeie uma guerra travada pelos Estados Unidos no 1900.*",
+      "answers": [
+        "I Guerra Mundial",
+        "a II Guerra Mundial",
+        "Guerra da coréia",
+        "guerra do vietnã",
+        "Guerra do Golfo"
+      ],
+      "status": "source"
+    },
+    "2008-079": {
+      "question": "Quem foi Presidente durante a Primeira Guerra Mundial?",
+      "answers": [
+        "(Woodrow) Wilson"
+      ],
+      "status": "source"
+    },
+    "2008-080": {
+      "question": "Quem foi Presidente durante a Grande Depressão e a II Guerra Mundial?",
+      "answers": [
+        "(Franklin) Roosevelt"
+      ],
+      "status": "source"
+    },
+    "2008-081": {
+      "question": "Contra quem os Estados Unidos lutou na II Guerra Mundial?",
+      "answers": [
+        "Japão, Alemanha e Itália"
+      ],
+      "status": "source"
+    },
+    "2008-082": {
+      "question": "Antes de ser presidente, Eisenhower foi um general. Em qual guerra ele lutou?",
+      "answers": [
+        "a II Guerra Mundial"
+      ],
+      "status": "source"
+    },
+    "2008-083": {
+      "question": "Durante a Guerra Fria, qual foi a preocupação principal dos Estados Unidos?",
+      "answers": [
+        "comunismo"
+      ],
+      "status": "source"
+    },
+    "2008-084": {
+      "question": "Qual movimento tentou trazer o fim da discriminação racial?",
+      "answers": [
+        "(movimento de) direitos civis"
+      ],
+      "status": "source"
+    },
+    "2008-085": {
+      "question": "O que fez Martin Luther King? *",
+      "answers": [
+        "lutou por direitos civis",
+        "trabalhou para a igualdade de todos os americanos"
+      ],
+      "status": "source"
+    },
+    "2008-086": {
+      "question": "Que grande evento aconteceu em 11 de setembro de 2001, nos Estados Unidos?",
+      "answers": [
+        "Os terroristas atacaram os Estados Unidos."
+      ],
+      "status": "source"
+    },
+    "2008-087": {
+      "question": "Nomeie uma tribo indígena americana nos E.U.",
+      "answers": [
+        "Cherokee",
+        "Navajo",
+        "Sioux",
+        "Chippewa",
+        "choctaw",
+        "Pueblo",
+        "Apache",
+        "Iroquois",
+        "Creek",
+        "Blackfeet",
+        "Seminole",
+        "Cheyenne",
+        "Aruaques",
+        "Shawnee",
+        "Mohegan",
+        "Huron",
+        "Oneida",
+        "Lakota",
+        "Crow",
+        "Teton",
+        "Hopi",
+        "Inuit"
+      ],
+      "status": "source"
+    },
+    "2008-088": {
+      "question": "Nomeie um dos dois rios mais longos dos E.U.",
+      "answers": [
+        "(rio) Missouri",
+        "(rio) Mississippi"
+      ],
+      "status": "source"
+    },
+    "2008-089": {
+      "question": "Qual oceano banha o lado da Costa Oeste dos E.U.?",
+      "answers": [
+        "(Oceano) Pacífico"
+      ],
+      "status": "source"
+    },
+    "2008-090": {
+      "question": "Qual oceano banha o lado da Costa Este dos E.U.?",
+      "answers": [
+        "(Oceano) Atlântico"
+      ],
+      "status": "source"
+    },
+    "2008-091": {
+      "question": "Nomei um território estado-unidense.",
+      "answers": [
+        "Porto Rico",
+        "Ilhas Virgens E.U.",
+        "Samoa Americana",
+        "Ilhas Marianas do Norte",
+        "Guam"
+      ],
+      "status": "source"
+    },
+    "2008-092": {
+      "question": "Nomeie um estado que fica na fronteira do Canadá.",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-093": {
+      "question": "Nomeie um estado que fica na fronteira México.",
+      "answers": [
+        "Califórnia",
+        "Arizona",
+        "Novo México",
+        "Texas"
+      ],
+      "status": "source"
+    },
+    "2008-094": {
+      "question": "Qual é a capital dos Estados Unidos? *",
+      "answers": [
+        "Washington, DC"
+      ],
+      "status": "source"
+    },
+    "2008-095": {
+      "question": "Onde está localizada a Estátua da Liberdade? *",
+      "answers": null,
+      "status": "source"
+    },
+    "2008-096": {
+      "question": "Por que a bandeira tem 13 listras?",
+      "answers": [
+        "porque haviam 13 colónias originais",
+        "porque as listras representam as colónias originais"
+      ],
+      "status": "source"
+    },
+    "2008-097": {
+      "question": "Por que a bandeira tem 50 estrelas? *",
+      "answers": [
+        "porque há uma estrela para cada estado",
+        "porque cada estrela representa um estado",
+        "porque há 50 estados"
+      ],
+      "status": "source"
+    },
+    "2008-098": {
+      "question": "Qual é o nome do hino nacional?",
+      "answers": [
+        "The Star-Spangled Banner"
+      ],
+      "status": "source"
+    },
+    "2008-099": {
+      "question": "Quando celebramos o Dia da Independência *?",
+      "answers": [
+        "4 de julho"
+      ],
+      "status": "source"
+    },
+    "2008-100": {
+      "question": "Nomeie dois feriados nacionais dos E.U.",
+      "answers": null,
+      "status": "source"
+    }
+  },
+  "missing": {}
+}
