@@ -532,3 +532,16 @@ Full decisions, with how to reverse each one, are in `docs/decisions-log.md`.
 - **T-08, report builder.** `src/engine/report-builder.ts`. Reading and writing results are checked for the right stage. The civics and English "passed" flags are checked again against the rules' pass counts. Unscored questions are named in the civics summary and returned by `listUnscoredQuestions`; the contract has no field for them, so no contract change was made.
 - **T-09, integration test.** `src/engine/__tests__/grading-integration.test.ts`, 41 tests: both fixtures, synthetic fictional sessions for both rule sets (passing and not passing), boundary dates, mismatched version, dynamic question, missing `questionId`.
 - `needsHumanReview` is still true in both answer key files.
+
+## 2026-11-17: booth screens, the complete practice flow (branch ui/booth-screens)
+
+Spec in `.kiro/specs/booth-screens/`; decisions in `docs/decisions-log.md`, section E.
+
+- **Ownership:** `.kiro/steering/structure.md` now says one person owns `src/engine/`, `worker/` and `src/ui/`. `src/contracts/` still needs a `docs/contract-requests.md` entry first. No contract change was needed.
+- **Engine (pure, tested):** `practice-config`, `practice-content` (loaders and checks), `sentence-compare` (word diff, accuracy, property tests), `recognition-outcome`, `n400-coach` (interface plus scripted coach), `practice-flow` (reducer for the whole session, seeded selection, stage progress, session and report, answer key lock), `official-answer-text`.
+- **Content:** USCIS reading and writing vocabulary PDFs saved in `data/sources/` with URL and SHA-256; `data/practice/` holds profiles, N-400 script, sentences, vocabulary and the practice config, all `needsHumanReview`.
+- **Screens:** intro, N-400 interview, reading, writing, civics, report, in one shell. Voice input with typed fallback and a message for every outcome (denied, unsupported, nothing heard, no microphone, error). Spoken prompts through `PromptSpeaker` (device voice).
+- **Reviews:** `ui-reviewer` and `content-reviewer` ran, and `ui-reviewer` ran a second time. Fixed: focus management on every transition, live regions, control border contrast, a stuck play button, a disabled send button, an unverified claim about USCIS, British spellings, a developer instruction in user text, uniform tax answers, missing result-surface disclaimers.
+- **Production behaviour, checked on a real bundle:** `vite build --ssr` of `practice-flow.ts`, run in Node, returned `locked` for both answer keys with the message "marked needsHumanReview: true", while the rules, boundary date and content loaded. `needsHumanReview` and the loader's check are unchanged.
+- **Dev server:** started on a scratch port; the page, `main.tsx`, the screens and the data files all returned 200.
+- **Not done:** pre-generated audio, the Worker coach and any AI, N-400 scoring, a test with a real browser or microphone (none was available).

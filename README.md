@@ -70,6 +70,13 @@ npm run dev
 
 The app runs at `http://localhost:5173` by default.
 
+### Try the practice flow on a phone
+The microphone only works on HTTPS or localhost, so a phone needs a tunnel. Start the dev
+server with `--host`, then run `cloudflared tunnel --url http://localhost:5173`. It prints an
+`https://....trycloudflare.com` address; open that on the phone. Typing always works, with or
+without the microphone. A production build switches civics scoring off while the answer key
+files say `needsHumanReview: true`; the dev server runs everything.
+
 ### Run Tests
 
 ```bash
