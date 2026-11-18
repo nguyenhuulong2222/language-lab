@@ -1,1 +1,33 @@
-{ "needsHumanReview": true, "questions": {} }
+{
+ "_note": "Question id -> picture id. Generated from data/images/picks.json by tools/images/build-images.mjs. Check every pairing in docs/image-review.md.",
+ "needsHumanReview": true,
+ "questions": {
+  "2008-069": "george-washington-peale",
+  "2008-070": "george-washington-peale",
+  "2025-086": "george-washington-peale",
+  "2008-075": "abraham-lincoln-healy",
+  "2025-094": "abraham-lincoln-healy",
+  "2008-076": "emancipation-proclamation-print",
+  "2025-095": "emancipation-proclamation-print",
+  "2008-062": "thomas-jefferson-edwin",
+  "2025-078": "thomas-jefferson-edwin",
+  "2025-087": "thomas-jefferson-edwin",
+  "2008-008": "declaration-of-independence-engraving",
+  "2008-009": "declaration-of-independence-engraving",
+  "2008-063": "declaration-of-independence-engraving",
+  "2025-008": "declaration-of-independence-engraving",
+  "2025-009": "declaration-of-independence-engraving",
+  "2025-011": "declaration-of-independence-engraving",
+  "2025-079": "declaration-of-independence-engraving",
+  "2008-068": "benjamin-franklin-chevillet",
+  "2025-085": "benjamin-franklin-chevillet",
+  "2025-088": "james-madison-harding",
+  "2025-089": "alexander-hamilton-field",
+  "2025-099": "elizabeth-cady-stanton-sarony",
+  "2008-079": "woodrow-wilson-tarbell",
+  "2008-080": "franklin-d-roosevelt-hubbell",
+  "2025-105": "franklin-d-roosevelt-hubbell",
+  "2008-082": "dwight-d-eisenhower-warnecke",
+  "2025-107": "dwight-d-eisenhower-warnecke"
+ }
+}

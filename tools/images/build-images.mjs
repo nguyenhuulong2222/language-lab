@@ -77,9 +77,12 @@ function chooseFile(record) {
 }
 
 function toWebp(input, output) {
-  for (const quality of [82, 74, 66, 58, 50, 42]) {
-    execFileSync("magick", [input + "[0]", "-auto-orient", "-resize", "1200x1200>", "-strip", "-quality", String(quality), "-define", "webp:method=6", output]);
-    if (fs.statSync(output).size <= 145_000) return quality;
+  // Fine engravings need a lower quality or a smaller size to stay under about 150 kB.
+  for (const side of [1200, 1050, 900, 780]) {
+    for (const quality of [82, 74, 66, 58, 50, 42]) {
+      execFileSync("magick", [input + "[0]", "-auto-orient", "-resize", `${side}x${side}>`, "-strip", "-quality", String(quality), "-define", "webp:method=6", output]);
+      if (fs.statSync(output).size <= 145_000) return quality;
+    }
   }
   return -1;
 }
@@ -92,8 +95,10 @@ if (!process.argv.includes("--docs")) {
   fs.mkdirSync(TMP, { recursive: true });
   const built = new Map(manifest.images.map((p) => [p.id, p]));
   const images = [];
+  const siRecords = new Map(read("data/images/si-records.json", { records: [] }).records.map((r) => [r.recordId, r]));
   for (const pick of picks) {
-    const pageUrl = `https://www.loc.gov/item/${pick.locItem}/`;
+    const isSi = pick.source === "si";
+    const pageUrl = isSi ? `https://www.si.edu/object/${pick.record}` : `https://www.loc.gov/item/${pick.locItem}/`;
     const fail = (reason) => {
       console.log(`SKIP ${pick.id}: ${reason}`);
       todo.push({ wanted: pick.wanted ?? pick.id, pageUrl, reason });
@@ -105,6 +110,51 @@ if (!process.argv.includes("--docs")) {
       continue;
     }
     try {
+      if (isSi) {
+        // Smithsonian Open Access: the rights statement is the record's own usage access ("CC0").
+        const rec = siRecords.get(pick.record);
+        if (rec === undefined) {
+          fail("no Smithsonian record snapshot in data/images/si-records.json");
+          continue;
+        }
+        const rights = `Smithsonian Open Access record states usage access "${rec.mediaAccess}" (Creative Commons Zero, public domain dedication)`;
+        if (rec.mediaAccess !== "CC0" || !acceptableRights(rights)) {
+          fail(`rights statement is not CC0: "${rec.mediaAccess}"`);
+          continue;
+        }
+        const fileUrl = `${rec.mediaUrl}&max=1600`;
+        const data = await fetchRetry(fileUrl, true);
+        const sha256 = crypto.createHash("sha256").update(data).digest("hex");
+        const original = path.join(TMP, `${pick.id}.jpg`);
+        fs.writeFileSync(original, data);
+        const target = path.join(OUT, `${pick.id}.webp`);
+        const quality = toWebp(original, target);
+        if (quality < 0) {
+          fs.rmSync(target, { force: true });
+          fail("could not get the WebP under 150 kB");
+          continue;
+        }
+        const [w, h] = execFileSync("magick", ["identify", "-format", "%w %h", target]).toString().split(" ").map(Number);
+        images.push({
+          id: pick.id,
+          file: `${pick.id}.webp`,
+          title: rec.title,
+          creator: rec.creator,
+          date: rec.date,
+          sourcePageUrl: pageUrl,
+          fileUrl,
+          rights,
+          downloadedOn: new Date().toISOString().slice(0, 10),
+          sha256,
+          alt: pick.alt,
+          caption: rec.title,
+          width: w,
+          height: h,
+          bytes: fs.statSync(target).size,
+        });
+        console.log(`ok   ${pick.id} ${w}x${h} ${fs.statSync(target).size} bytes (q${quality}) [Smithsonian]`);
+        continue;
+      }
       const record = await fetchRetry(`${pageUrl}?fo=json`);
       const item = record.item;
       const rights = item.rights_advisory ?? item.rights_information ?? "";

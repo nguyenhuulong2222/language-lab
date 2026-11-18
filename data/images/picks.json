@@ -1,1 +1,150 @@
-{"picks":[]}
+{
+ "_note": "Pictures to build: tools/images/build-images.mjs reads this file. source si = Smithsonian Open Access record in si-records.json; otherwise locItem = loc.gov item id. questions = question ids the picture is shown with (after grading, and in Study first).",
+ "picks": [
+  {
+   "id": "george-washington-peale",
+   "source": "si",
+   "record": "npg_NPG.65.59",
+   "alt": "Painted portrait of George Washington in a dark coat, 1795",
+   "questions": [
+    "2008-069",
+    "2008-070",
+    "2025-086"
+   ],
+   "wanted": "Portrait of George Washington"
+  },
+  {
+   "id": "abraham-lincoln-healy",
+   "source": "si",
+   "record": "npg_NPG.65.50",
+   "alt": "Painted portrait of Abraham Lincoln seated, hand at his chin, 1887",
+   "questions": [
+    "2008-075",
+    "2025-094"
+   ],
+   "wanted": "Portrait of Abraham Lincoln"
+  },
+  {
+   "id": "emancipation-proclamation-print",
+   "source": "si",
+   "record": "npg_NPG.81.47",
+   "alt": "Printed Emancipation Proclamation with a small portrait of Abraham Lincoln, 1864",
+   "questions": [
+    "2008-076",
+    "2025-095"
+   ],
+   "wanted": "Emancipation Proclamation print"
+  },
+  {
+   "id": "thomas-jefferson-edwin",
+   "source": "si",
+   "record": "npg_NPG.94.134",
+   "alt": "Engraved portrait of Thomas Jefferson, about 1800",
+   "questions": [
+    "2008-062",
+    "2025-078",
+    "2025-087"
+   ],
+   "wanted": "Portrait of Thomas Jefferson"
+  },
+  {
+   "id": "declaration-of-independence-engraving",
+   "source": "si",
+   "record": "npg_NPG.80.129",
+   "alt": "Engraved copy of the Declaration of Independence with portraits and seals of the states around the text, 1818",
+   "questions": [
+    "2008-008",
+    "2008-009",
+    "2008-063",
+    "2025-008",
+    "2025-009",
+    "2025-011",
+    "2025-079"
+   ],
+   "wanted": "Declaration of Independence engraving"
+  },
+  {
+   "id": "benjamin-franklin-chevillet",
+   "source": "si",
+   "record": "npg_NPG.77.219",
+   "alt": "Engraved portrait of Benjamin Franklin in an oval frame",
+   "questions": [
+    "2008-068",
+    "2025-085"
+   ],
+   "wanted": "Portrait of Benjamin Franklin"
+  },
+  {
+   "id": "james-madison-harding",
+   "source": "si",
+   "record": "npg_NPG.68.50",
+   "alt": "Painted portrait of James Madison in old age, about 1829",
+   "questions": [
+    "2025-088"
+   ],
+   "wanted": "Portrait of James Madison"
+  },
+  {
+   "id": "alexander-hamilton-field",
+   "source": "si",
+   "record": "npg_NPG.77.328",
+   "alt": "Engraved portrait of Alexander Hamilton, 1806",
+   "questions": [
+    "2025-089"
+   ],
+   "wanted": "Portrait of Alexander Hamilton"
+  },
+  {
+   "id": "elizabeth-cady-stanton-sarony",
+   "source": "si",
+   "record": "npg_NPG.78.253",
+   "alt": "Photograph of Elizabeth Cady Stanton, about 1870",
+   "questions": [
+    "2025-099"
+   ],
+   "wanted": "Photograph of Elizabeth Cady Stanton"
+  },
+  {
+   "id": "susan-b-anthony-marceau",
+   "source": "si",
+   "record": "npg_NPG.77.255",
+   "alt": "Photograph of Susan B. Anthony, 1898",
+   "questions": [
+    "2008-077"
+   ],
+   "wanted": "Photograph of Susan B. Anthony"
+  },
+  {
+   "id": "woodrow-wilson-tarbell",
+   "source": "si",
+   "record": "npg_NPG.65.42",
+   "alt": "Painted portrait of Woodrow Wilson, 1920 to 1921",
+   "questions": [
+    "2008-079"
+   ],
+   "wanted": "Portrait of Woodrow Wilson"
+  },
+  {
+   "id": "franklin-d-roosevelt-hubbell",
+   "source": "si",
+   "record": "npg_NPG.66.68",
+   "alt": "Painted portrait of Franklin D. Roosevelt at his desk, 1935",
+   "questions": [
+    "2008-080",
+    "2025-105"
+   ],
+   "wanted": "Portrait of Franklin D. Roosevelt"
+  },
+  {
+   "id": "dwight-d-eisenhower-warnecke",
+   "source": "si",
+   "record": "npg_NPG.94.45",
+   "alt": "Color photograph of Dwight D. Eisenhower in uniform in front of a flag, 1945",
+   "questions": [
+    "2008-082",
+    "2025-107"
+   ],
+   "wanted": "Photograph of Dwight D. Eisenhower"
+  }
+ ]
+}

@@ -6,4 +6,124 @@ The pictures in civics practice are works from official U.S. federal sources. Ea
 
 Using these pictures does not mean the Library of Congress, any other agency or any person in them endorses Language Lab. Language Lab is not affiliated with USCIS or any government agency.
 
-0 pictures.
+12 pictures.
+
+## George Washington
+
+- **Picture id:** `george-washington-peale` (file `george-washington-peale.webp`)
+- **Creator:** Rembrandt Peale, 22 Feb 1778 - 3 Oct 1860
+- **Date:** 1795
+- **Source page:** <https://www.si.edu/object/npg_NPG.65.59>
+- **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-NPG_65_59&max=1600> on 2026-11-18 (SHA-256 of the download: `185c0681ada1082898c537cfa32c4791801391bd9bf6f2146a65b584b9dde48b`)
+- **Rights statement:** "Smithsonian Open Access record states usage access "CC0" (Creative Commons Zero, public domain dedication)"
+- **Used for questions:** 2008-069, 2008-070, 2025-086
+
+## Abraham Lincoln
+
+- **Picture id:** `abraham-lincoln-healy` (file `abraham-lincoln-healy.webp`)
+- **Creator:** George Peter Alexander Healy, 15 Jul 1813 - 24 Jun 1894
+- **Date:** 1887
+- **Source page:** <https://www.si.edu/object/npg_NPG.65.50>
+- **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-NPG_65_50&max=1600> on 2026-11-18 (SHA-256 of the download: `fe31cce72d9806af97bf7dd2dda87461f7a24b2feb77250c50b5118bd8518dba`)
+- **Rights statement:** "Smithsonian Open Access record states usage access "CC0" (Creative Commons Zero, public domain dedication)"
+- **Used for questions:** 2008-075, 2025-094
+
+## Emancipation Proclamation
+
+- **Picture id:** `emancipation-proclamation-print` (file `emancipation-proclamation-print.webp`)
+- **Creator:** Albert Kidder, active 1863 - c. 1869
+- **Date:** 1864
+- **Source page:** <https://www.si.edu/object/npg_NPG.81.47>
+- **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-NPG_81_47_inex&max=1600> on 2026-11-18 (SHA-256 of the download: `6d6c1ada5c2792ec00729bd3e79a8f488d1779ec69ea44382c4f42a25471dd74`)
+- **Rights statement:** "Smithsonian Open Access record states usage access "CC0" (Creative Commons Zero, public domain dedication)"
+- **Used for questions:** 2008-076, 2025-095
+
+## Thomas Jefferson
+
+- **Picture id:** `thomas-jefferson-edwin` (file `thomas-jefferson-edwin.webp`)
+- **Creator:** David Edwin, 1776 - 1841
+- **Date:** c. 1800
+- **Source page:** <https://www.si.edu/object/npg_NPG.94.134>
+- **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-NPG_94_134Jefferson-000002&max=1600> on 2026-11-18 (SHA-256 of the download: `e458ee2defcd23a1e8099a25d56022e81aba44ccc2335a48226cb11f29204546`)
+- **Rights statement:** "Smithsonian Open Access record states usage access "CC0" (Creative Commons Zero, public domain dedication)"
+- **Used for questions:** 2008-062, 2025-078, 2025-087
+
+## Declaration of Independence
+
+- **Picture id:** `declaration-of-independence-engraving` (file `declaration-of-independence-engraving.webp`)
+- **Creator:** James Barton Longacre, 11 Aug 1794 - 1 Jan 1869
+- **Date:** 1818
+- **Source page:** <https://www.si.edu/object/npg_NPG.80.129>
+- **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-8000288B_3&max=1600> on 2026-11-18 (SHA-256 of the download: `9276a2da4e75c87b55539852b290781ce18520952a87091db9b10110dbbc34fd`)
+- **Rights statement:** "Smithsonian Open Access record states usage access "CC0" (Creative Commons Zero, public domain dedication)"
+- **Used for questions:** 2008-008, 2008-009, 2008-063, 2025-008, 2025-009, 2025-011, 2025-079
+
+## Benjamin Franklin
+
+- **Picture id:** `benjamin-franklin-chevillet` (file `benjamin-franklin-chevillet.webp`)
+- **Creator:** Justus Chevillet, 1729 - 1802
+- **Date:** c. 1778-84
+- **Source page:** <https://www.si.edu/object/npg_NPG.77.219>
+- **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-NPG_77_219Franklin-000002&max=1600> on 2026-11-18 (SHA-256 of the download: `26c2fcb73033fa47df875927a58dee8a0a3b693d086f080afcc8d7962805897c`)
+- **Rights statement:** "Smithsonian Open Access record states usage access "CC0" (Creative Commons Zero, public domain dedication)"
+- **Used for questions:** 2008-068, 2025-085
+
+## James Madison
+
+- **Picture id:** `james-madison-harding` (file `james-madison-harding.webp`)
+- **Creator:** Chester Harding, 1 Sep 1792 - 10 Apr 1866
+- **Date:** c. 1829-30
+- **Source page:** <https://www.si.edu/object/npg_NPG.68.50>
+- **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-NPG_68_50Madison_d1&max=1600> on 2026-11-18 (SHA-256 of the download: `9244388dd60414a56298d0464aa34d5b625de3c716c8199ad8663b17ca395d78`)
+- **Rights statement:** "Smithsonian Open Access record states usage access "CC0" (Creative Commons Zero, public domain dedication)"
+- **Used for questions:** 2025-088
+
+## Alexander Hamilton
+
+- **Picture id:** `alexander-hamilton-field` (file `alexander-hamilton-field.webp`)
+- **Creator:** Robert Field, 1769? - 1819
+- **Date:** 1806
+- **Source page:** <https://www.si.edu/object/npg_NPG.77.328>
+- **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-NPG_77_328Hamilton-000002&max=1600> on 2026-11-18 (SHA-256 of the download: `d3a159ef336e1081713542ba3b8935f8f48131b95b139ca404a3ff7f34b4ddf1`)
+- **Rights statement:** "Smithsonian Open Access record states usage access "CC0" (Creative Commons Zero, public domain dedication)"
+- **Used for questions:** 2025-089
+
+## Elizabeth Cady Stanton
+
+- **Picture id:** `elizabeth-cady-stanton-sarony` (file `elizabeth-cady-stanton-sarony.webp`)
+- **Creator:** Napoleon Sarony, 9 Mar 1821 - 9 Nov 1896
+- **Date:** c. 1870
+- **Source page:** <https://www.si.edu/object/npg_NPG.78.253>
+- **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-NPG_78_253Stanton-000001&max=1600> on 2026-11-18 (SHA-256 of the download: `81ee754e4bfc2efbc74555cbe98b2dec190f214f9cb4428c8ee048f76d96ec8e`)
+- **Rights statement:** "Smithsonian Open Access record states usage access "CC0" (Creative Commons Zero, public domain dedication)"
+- **Used for questions:** 2025-099
+
+## Woodrow Wilson
+
+- **Picture id:** `woodrow-wilson-tarbell` (file `woodrow-wilson-tarbell.webp`)
+- **Creator:** Edmund Charles Tarbell, 26 Apr 1862 - 1 Aug 1938
+- **Date:** 1920-21
+- **Source page:** <https://www.si.edu/object/npg_NPG.65.42>
+- **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-NPG_65_42Wilson-000001&max=1600> on 2026-11-18 (SHA-256 of the download: `3b8a59757881c87d631f478445174fb0542992872edfee196ed30477d3c37963`)
+- **Rights statement:** "Smithsonian Open Access record states usage access "CC0" (Creative Commons Zero, public domain dedication)"
+- **Used for questions:** 2008-079
+
+## Franklin D. Roosevelt
+
+- **Picture id:** `franklin-d-roosevelt-hubbell` (file `franklin-d-roosevelt-hubbell.webp`)
+- **Creator:** Henry Salem Hubbell, 25 Dec 1870 - 9 Jan 1949
+- **Date:** 1935
+- **Source page:** <https://www.si.edu/object/npg_NPG.66.68>
+- **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-NPG_66_68&max=1600> on 2026-11-18 (SHA-256 of the download: `07f6bfb47cdec02ab60de7fd2b9258c8c3efec4f123fdce47e07a72bbc7d1778`)
+- **Rights statement:** "Smithsonian Open Access record states usage access "CC0" (Creative Commons Zero, public domain dedication)"
+- **Used for questions:** 2008-080, 2025-105
+
+## Dwight D. Eisenhower
+
+- **Picture id:** `dwight-d-eisenhower-warnecke` (file `dwight-d-eisenhower-warnecke.webp`)
+- **Creator:** Harry Warnecke, 1900 - 1984; Robert F. Cranston, 26 Jul 1897 - 1978
+- **Date:** 1945
+- **Source page:** <https://www.si.edu/object/npg_NPG.94.45>
+- **File downloaded from:** <https://ids.si.edu/ids/deliveryService?id=NPG-NPG_94_45Eisenhower-000002&max=1600> on 2026-11-18 (SHA-256 of the download: `7fa92ad5b905255d026bff69abf16bc6e954ccb22f50b42a6567aff5ff6930cd`)
+- **Rights statement:** "Smithsonian Open Access record states usage access "CC0" (Creative Commons Zero, public domain dedication)"
+- **Used for questions:** 2008-082, 2025-107

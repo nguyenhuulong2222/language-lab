@@ -4,4 +4,6 @@
 
 Pictures I wanted but could not use. No other source was substituted. Fetch these by hand, check the rights statement on the page, and add them to `data/images/picks.json`.
 
-None.
+| Wanted | Page | Why it was not saved |
+|---|---|---|
+| Photograph of Susan B. Anthony | <https://www.si.edu/object/npg_NPG.77.255> | download or conversion failed: HTTP 404 |
