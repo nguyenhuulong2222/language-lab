@@ -3,8 +3,8 @@
 Order follows dependencies. After each task: `npm run typecheck` and `npm test` must pass,
 then commit. Property-based tests are named `property: ...` so they are easy to find.
 
-**Status:** T-01 to T-07 implemented and committed. T-07's files still need human review
-(`needsHumanReview: true`). T-08 and T-09 not started.
+**Status:** T-01 to T-09 implemented and committed. The answer key files still need human review
+(`needsHumanReview: true`); the owner removes that flag, not the engine.
 
 **Points settled before T-07** (details in `docs/kiro-log.md`): the 2025 source is the official
 PDF and its converted text; a leading "the", "a" or "an" is optional when matching; numbers that
@@ -105,18 +105,31 @@ Still to do by a person: review `docs/answer-key-review.md` and approve each fil
 
 Changes made at the T-07 review (2026-11-17): a per-answer marker for parentheses (2025 question 48
 now accepts "Secretary of War" and "Secretary of Defense"), and the number rules in the matcher
-(digits = words, ordinals, bare number for number-plus-unit answers). Parentheses in 2025 questions
-67, 77, 101, 106, 118 and 2008 question 61 are waiting for the owner's decision and are unchanged.
+(digits = words, ordinals, bare number for number-plus-unit answers).
 
-## T-08 — Report builder (not started)
+Decided by the owner afterwards (2026-11-17, `tools/answer-key/answer-markers.json`, details in
+`docs/decisions-log.md`): the parentheses in 2025 questions 67, 77 and 118 and in 2008 question 61 are
+alternative names (marker), and the alternatives of one marker count as one answer (`answerGroups`).
+2025 questions 101 and 106 were left as they were: their parentheses stay optional words. No question
+is waiting for a decision on parentheses. Also added then: spoken years, month-ordinal dates, optional
+"because", and per-answer bare numbers (`numberAlone`: 2025-097, 2025-104, 2008-054, 2008-057).
 
-File: `src/engine/report-builder.ts`. Tests cover practiceResult for each failing stage, the
-disclaimer, summaries and counts, review items, timestamp, plus P1 and P7 properties.
+## T-08 — Report builder (done)
 
-## T-09 — Integration test (not started)
+File: `src/engine/report-builder.ts`, tests `src/engine/__tests__/report-builder.test.ts`.
+`buildFinalReport({ session, civicsResult, readingResult, writingResult, answerKey, rules?, now? })`.
+Thresholds come from the rules file only. `practice_passed` needs all three stages passed, checked again
+against the rules' passing scores. Unscored civics questions are never review items and are not counted
+wrong; they are named in the civics summary and returned by `listUnscoredQuestions`. Property tests: P1,
+P7, all-three-stages rule, unscored never wrong, determinism, review items without repeats.
 
-File: `src/engine/__tests__/grading-integration.test.ts`. Grades both fixtures end to end and
-checks the boundary dates, mismatched version, dynamic turn and missing `questionId` cases.
+## T-09 — Integration test (done)
+
+File: `src/engine/__tests__/grading-integration.test.ts`. Runs the full pipeline (version selector,
+rules, real answer keys, civics and English graders, report builder) on both fixtures and on synthetic
+fictional sessions for the 2008 and 2025 rules, passing and not passing. It also covers the boundary
+dates 2025-10-19 and 2025-10-20, a mismatched declared version, a dynamic question and a civics turn
+without `questionId`. Every count is read from the rules.
 
 ## Summary
 
