@@ -147,7 +147,7 @@ See [`docs/kiro-log.md`](docs/kiro-log.md) for architecture decisions.
 
 - All practice uses **fictional profiles**. No real personal data is collected or required.
 - Civics answers are scored from the answer key only. AI never decides civics scores.
-- No machine translation of civics or legal content.
+- Civics questions, answers and practice sentences are English only and are never machine-translated. The interface can be switched to other languages; those translations are AI-generated unless marked as reviewed (see the disclosure section).
 - No government seals or implied official endorsement.
 
 See [`.kiro/steering/content-safety.md`](.kiro/steering/content-safety.md) for the full rules.

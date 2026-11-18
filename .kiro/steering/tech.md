@@ -19,8 +19,9 @@ inclusion: always
   environment variables (production). Never commit secrets.
 - **No server-side audio storage.** Audio recordings stay on the user's device.
   `localRecordingId` in session types is a device-local reference only.
-- **No machine translation of civics or legal content.** Any Vietnamese (or other language)
-  UI text must come from human-reviewed translation files.
+- **Civics content stays English only.** Questions, answers, and reading, writing and N-400
+  practice text are never machine-translated. Interface text may be AI-translated only under
+  content-safety rule 3 (AI label, disclaimer also in English, automated checks).
 - **Civics scoring is deterministic.** Scores come from `data/test-rules.json` and the
   answer key in `data/`. AI must never decide whether a civics answer is correct.
 

@@ -71,7 +71,7 @@ Scoring and the answer key stay English and unchanged.
 - Answers are paired only when the N400 English answers equal the USCIS answer lines one to one (and, for 2025, the inherited 2008 answers are also the same). Otherwise only the question is shown translated.
 - English display text (`data/translations/civics/{2008,2025}/en.json`) is taken line by line from the USCIS source files.
 - All translation files carry `needsHumanReview: true`, `status: "source"` on each entry, and provenance. "Reviewed" is nobody's claim yet.
-- UI words (headings, buttons, feedback) are not translated: N400's `uiText` has different wording for a different product, and translating them myself would be machine translation. Non-English UI falls back to English. Only `en` locale text exists.
+- UI words (headings, buttons, feedback) were not translated at that time: N400's `uiText` has different wording for a different product. **Superseded by section G below** (AI-translated interface languages, with safeguards).
 - Dates and numbers in the UI keep the `en-US` format for now.
 - `tools/speech-test` (a developer tool with hard-coded Vietnamese test sentences) is not part of the product UI and is not moved to locale files.
 - Each translated question is always shown with the English version and the line "translation for reference; the English version is official". A question with no translation in the chosen language shows English with the note "no translation yet". Nothing is translated to fill a gap.
@@ -165,3 +165,37 @@ Spec: `.kiro/specs/booth-screens/`. What, why, how to reverse.
 - **Terms:** "hồ sơ giả định" for fictional profile (not "bịa ra", which suggests deceit next to the truthfulness message); "phê duyệt hay bảo trợ" for "endorsed"; "tham khảo ý kiến" for "consult". All listed in the Terms table of `docs/vi-locale-review.md` for the reviewer.
 - **Layout check is a developer tool** (`npm run layout-check`, headless Chrome at 390px, English and Vietnamese, normal and extra large text, 15 screens each). It is not part of `npm test`.
 - **Start button uses `aria-disabled`** (focusable, hint readable) instead of `disabled`.
+
+## G. Policy change: AI-translated interface languages (2026-11-17, owner decision)
+
+**What.** `content-safety.md` rule 3 changed. Before: any non-English text only from human-reviewed
+files in `data/translations/`, and no AI translation of civics questions, legal notices, disclaimers
+or instructional content. Now:
+
+- The **interface** (`src/i18n/locales/`) may ship in AI-translated languages when (a) the screen
+  shows a clear label that the translation is AI-generated, may contain errors, and that English
+  is the authoritative version; (b) the disclaimer is always shown together with its English text
+  in every non-English language; and (c) the automated checks pass (same keys and placeholders,
+  numbers kept, fixed names kept, no empty strings, no untranslated leftovers).
+- A language **loses the label** only when a named human reviewer and a review date are recorded
+  in its `_meta` (`reviewedBy`, `reviewedOn`).
+- **Unchanged and still English only:** civics questions, accepted answers, reading and writing
+  sentences, N-400 questions and sample answers. Translations of civics questions stay hidden
+  (`translations-stay-hidden` still passes).
+
+**Why.** The owner wants applicants to use the tool in their own language now, with honest
+labelling, instead of waiting for human translators. The label and the English disclaimer keep
+the English text as the reference, and the checks catch mechanical damage (a lost placeholder, a
+changed number, a dropped name). They cannot catch a wrong meaning: that is what the review sheets
+and the reviewer are for.
+
+**Risk the owner accepted.** An AI translation can be fluent and wrong, and the checks cannot see
+that. A reader who trusts a wrong disclaimer line is the harm to watch. The English text next to
+every disclaimer, the label on every screen, and the back-translation pass of the legal lines
+(`docs/locale-review.md`) are the mitigations.
+
+**How to reverse.** Revert this section and the `content-safety.md` change, and make
+`availableUiLanguages()` return English only.
+
+**What this replaced.** The previous gate (a draft locale hidden in production while
+`needsHumanReview` is true, with a build plugin that removed its text from the bundle) is removed.
