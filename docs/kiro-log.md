@@ -5,7 +5,7 @@ made during the development of Language Lab. Most recent entries are at the top.
 
 ---
 
-## 2026-11-01 — T-07 review changes: parenthesis markers and number matching (branch engine/grading)
+## 2026-11-17 — T-07 review changes: parenthesis markers and number matching (branch engine/grading)
 
 Not pushed. Both key files still carry `needsHumanReview: true`. `data/test-rules.json` was not touched.
 
@@ -57,7 +57,7 @@ review conversation. A decision is one marker per parenthetical group, or none t
 
 ---
 
-## 2026-11-01 — Grading T-07: full civics answer keys (branch engine/grading)
+## 2026-11-17 — Grading T-07: full civics answer keys (branch engine/grading)
 
 Not pushed. Both key files keep `needsHumanReview: true`; `docs/answer-key-review.md` is the sheet for the
 person who approves them.
@@ -118,7 +118,7 @@ T-08 (report builder) and T-09 (integration test) are not started.
 
 ---
 
-## 2026-11-01 — Grading engine, tasks T-01 to T-06 (branch engine/grading)
+## 2026-11-17 — Grading engine, tasks T-01 to T-06 (branch engine/grading)
 
 Spec: `.kiro/specs/grading/` (requirements, design, tasks), commit `9d47dd1`. All issues O1–O8
 from the revision 2 analysis are resolved in the spec. Nothing is pushed.
@@ -182,7 +182,7 @@ plus the existing UI and speech-test tests.
 
 T-07 (full answer keys), T-08 (report builder) and T-09 (integration test) are not started.
 
-## 2024-11-01 — Kiro hooks, custom agents, design file attribution, data verification
+## 2026-11-16 — Kiro hooks, custom agents, design file attribution, data verification
 
 ### Part A: Kiro setup
 
@@ -255,7 +255,7 @@ values except to confirm the loader's own logic.
 
 ---
 
-## 2024-11-01 — Speech Test: pre-generated MP3 audio via gpt-4o-mini-tts
+## 2026-11-04 — Speech Test: pre-generated MP3 audio via gpt-4o-mini-tts
 
 **Scope:** `tools/speech-test/` only. No changes to `src/`.
 
@@ -312,7 +312,7 @@ node tools/speech-test/generate-audio.mjs
 
 ---
 
-## 2024-11-01 — Speech Test: Q&A format, TTS, bilingual UI, practice/check modes
+## 2026-11-04 — Speech Test: Q&A format, TTS, bilingual UI, practice/check modes
 
 **Scope:** `tools/speech-test/` only. No changes to `src/`.
 
@@ -364,7 +364,7 @@ no side effects. This makes it directly importable and testable in Vitest withou
 
 ---
 
-## 2024-11-01 — Speech Recognition Test Tool (engine/speech-test branch)
+## 2026-11-04 — Speech Recognition Test Tool (engine/speech-test branch)
 
 **What was added:** `tools/speech-test/` — a standalone, mobile-friendly Vite page
 for testing the browser Web Speech API with 20 fictional English practice sentences.
@@ -413,7 +413,7 @@ be included there too, which is harmless — they don't reference any DOM global
 
 ---
 
-## 2024-11-01 — Tooling Initialization
+## 2026-11-01 — Tooling Initialization
 
 **Packages added:**
 
@@ -458,7 +458,7 @@ All checks pass: `npm test` → 12/12, `npm run typecheck` → clean, `npm run b
 
 ---
 
-## 2024-11-01 — Initial Project Setup
+## 2026-11-01 — Initial Project Setup
 
 **Decision: Vite + React + TypeScript**
 Standard choice for a modern, fast-iterating frontend. Vite's native ESM aligns well with
