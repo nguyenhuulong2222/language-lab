@@ -700,6 +700,19 @@ function reviewSheet(results, comparison) {
     ""
   );
 
+  out.push("## What literal matching means for reviewers", "");
+  out.push(
+    "A response is correct when it contains enough of the stored answers as whole words. Answers are the ones the source lists; nothing was added from outside it. So:",
+    "",
+    "- A spoken form the source does not list is not accepted. Examples: `six` for \"Six (6) years\" (stored: `six years`, `6 years`), `thirteen` where the source says `13`, `fourteenth` for `14th`. Questions with digits and no spelled-out form carry the **DIGITS** flag.",
+    "- Sentence answers (**SENTENCE** flag) must be said almost in full, in the source's wording.",
+    "- Answers that list several items in one line (for example question 16 in 2025, \"Legislative, executive, and judicial\") are stored as one phrase and must be said in that order.",
+    "- A number does not match when the response continues it (\"one hundred and one\" for `one hundred`), or when it starts in the middle of a larger number (\"twenty two\" for `two`).",
+    "- Leading `the`, `a`, `an` in a stored answer is optional.",
+    "- Dynamic questions have no stored answers and are never scored. They must not be offered as practice questions.",
+    ""
+  );
+
   out.push("## Flag codes", "");
   for (const [code, text] of Object.entries(FLAGS)) out.push(`- **${code}**: ${text}`);
   out.push("");
