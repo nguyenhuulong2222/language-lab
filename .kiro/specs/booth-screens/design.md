@@ -1,0 +1,62 @@
+# Booth screens — Design
+
+## Layers
+```
+data/practice/*.json           profiles, N-400 script, sentences, vocabulary, practice config
+src/engine/                    pure logic, unit and property tests
+  practice-config.ts           loads the practice thresholds
+  sentence-compare.ts          word-level comparison of a transcript with a sentence
+  practice-content.ts          loads and validates the practice data
+  n400-coach.ts                N400Coach interface + scripted implementation
+  recognition-outcome.ts       maps speech recognition results and errors to outcomes
+  practice-flow.ts             state reducer: setup, turns, stage results, session, report
+src/ui/                        React only
+  voice/                       SpeechListener (browser adapter), PromptSpeaker (device voice)
+  components/                  Shell, TakeHeader, AnswerInput, SpeakButton, SentenceDiff
+  screens/                     IntroScreen, N400Screen, ReadingScreen, WritingScreen, CivicsScreen,
+                               ReportScreen (existing)
+  PracticeApp.tsx              holds the reducer in memory and shows the active screen
+```
+`App.tsx` stays as the report-only shell used by the existing render test.
+
+## State
+`practice-flow.ts` exports `practiceReducer(state, action)`, where state holds the setup (profile,
+filing choice, derived filing date and version), the selected question and sentence ids, and the
+recorded attempts. Everything else is derived by calling the engine:
+- Reading and writing results: `runEnglishStage` over the attempts.
+- Civics result: `runCivicsStage` over the civics turns, with the real answer key.
+- Session: `buildSession(state)` returns an `InterviewSession` with turns and scoring results.
+- Report: `buildFinalReport` once the civics stage has ended.
+A stage is finished when the engine says it passed or stopped, or the question limit is reached.
+The reducer takes a `seed` so selection is deterministic in tests.
+
+## Filing date
+The user picks "before" or "on or after" the boundary date. `representativeFilingDate` returns the
+day before the boundary, or the boundary itself. `selectTestVersion` then picks the test, so the
+engine, not the screen, decides 2008 or 2025.
+
+## Voice
+`SpeechListener.listen()` resolves to one of: `transcript`, `denied`, `unsupported`, `nothing-heard`,
+`no-microphone`, `error`. The pure mapping from browser error codes is in `recognition-outcome.ts`.
+`AnswerInput` always shows a text field and a "Say it" button. The result is announced in an
+`aria-live` region. Browsers such as Chrome may send audio to the browser maker's recognition
+service; the intro says so. The app itself makes no network call and stores no audio.
+
+## Sentence comparison
+Tokens come from the engine's own matcher tokeniser (case, punctuation and number words ignored).
+Accuracy is the longest common subsequence of words divided by the longer of the two sentences.
+`isCorrect` is `accuracy >= minWordAccuracy` from the practice config. The diff shows matched,
+missing and extra words with a text label as well as colour.
+
+## Production lock
+`tryLoadAnswerKey(version)` returns the key, or a `locked` result when the loader refuses it. The
+civics screen shows the locked explanation and no report is built.
+
+## Contract
+No change to `src/contracts/`. The N-400 turns use the existing `Turn` type and are not scored.
+The report builder has no field for N-400 or for unscored questions beyond the summary text; that
+is unchanged (see CR-005 and the T-08 notes).
+
+## Visual
+Each screen opens with a tape-counter overline (`TAKE 03 · READING`) above the H1, as in the report.
+Teal marks on-track, amber marks "review this". One reel motif only (the stepper). No new motion.
