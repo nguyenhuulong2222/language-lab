@@ -66,3 +66,25 @@ is unchanged (see CR-005 and the T-08 notes).
 ## Visual
 Each screen opens with a tape-counter overline (`TAKE 03 · READING`) above the H1, as in the report.
 Teal marks on-track, amber marks "review this". One reel motif only (the stepper). No new motion.
+
+## Sections (BS-14)
+`PracticeState` gets a `mode` (`full`, `n400`, `reading`, `writing`, `civics`) and the phase `home`.
+`sessionSteps(mode)` lists the steps of a session (for the stepper and the take counter). The setup
+fields (profile, filing choice, filing date, version) are null until the mode needs them. A single
+part ends with a `PartReport` (`src/engine/part-report.ts`): the disclaimer, one stage summary,
+review items and a timestamp, and no practice result. The full interview still uses `buildFinalReport`.
+
+## Instructions (BS-15)
+`HowItWorks` (home) and `ScreenHelp` (each practice screen). `ScreenHelp` keeps its open state
+locally and records in a session-memory set which screens were already shown.
+
+## Comfort settings (BS-16)
+`SettingsProvider` (React state, no storage) holds text size, slow playback and language. Text size
+sets a data attribute on the page root that changes the root font size, so every `rem` size follows.
+The tap target token is `3rem` (48px). `PromptSpeaker.speak` takes `slow`, applied as `playbackRate`
+on the clip (and as a lower rate for the device voice). `SpeakButton` adds "Play again".
+
+## Languages (BS-17)
+`src/i18n/locales/en.json` is the source. `vi.json` is a draft with the same keys and placeholders.
+`createTranslator` falls back to English for any missing key. `LOCALE_REVIEW` metadata marks which
+locales still need human review; `availableLanguages(production)` hides them in production.

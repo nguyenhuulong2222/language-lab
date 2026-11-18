@@ -5,12 +5,17 @@ Visual direction: `.kiro/steering/design-system.md` (Reel-to-Reel booth) and `fr
 Content rules: `.kiro/steering/content-safety.md`.
 
 ## Flow
-Intro → N-400 interview → Reading → Writing → Civics → Report. Session state lives in memory only
+Home → (setup, only when the chosen part needs it) → the chosen part or parts → Report.
+Full practice interview: Setup → N-400 interview → Reading → Writing → Civics → Report.
+Practise one part: N-400, Reading, Writing or Civics, then a report for that part. Session state lives in memory only
 (no localStorage, no cookies, no network). Reloading the page starts again.
 
 ## Requirements
 
-### BS-01 Intro
+### BS-01 Intro (setup)
+The setup screen asks only for what the chosen part needs: a fictional profile (N-400, full interview)
+and the filing choice (civics, full interview). Reading and writing need neither and start at once.
+The prominent disclaimers and the voice note move to the home screen so every session sees them.
 - The user chooses one of the fictional practice profiles. The app never asks for real data.
 - The user chooses whether the N-400 was filed before, or on or after, the boundary date. The date
   is read from `data/test-rules.json`. The engine picks the 2008 or 2025 civics test from it.
@@ -82,6 +87,35 @@ Sentences use only words from the official USCIS reading and writing vocabulary 
 uscis.gov and saved in `data/sources/` with URL and SHA-256. The sentence file is marked
 `needsHumanReview`. A test fails if a sentence uses a word outside its list.
 
+### BS-14 Home and section choice
+The first screen offers "Full practice interview" and "Practise one part" (N-400, Reading, Writing,
+Civics), and a three-step "How it works" (listen, speak or type, see the result). The stepper shows
+only the steps of the chosen session. A single-part session ends with a report for that part only,
+with no overall practice result. The contract has no partial report (`FinalReport.practiceResult` is
+required), so the part report is a local type in `src/engine/` and the change to the contract is
+requested in `docs/contract-requests.md` (CR-006). `src/contracts/` is not edited.
+
+### BS-15 Instructions
+Every practice screen has a "How this works" button with short steps in plain words for people new
+to smartphones: what the microphone button does, that typing always works, what "Skip" does. The
+steps open by themselves the first time a screen is shown in a session and can be opened again at
+any time.
+
+### BS-16 Comfort settings
+In the header on every screen: text size (normal, large, extra large), and slower playback for the
+recorded clips (`playbackRate`, no new audio). A "Play again" button wherever audio plays. Settings
+live in memory for the session only. At 390px with extra large text: no clipped text, no horizontal
+scroll, touch targets at least 48px.
+
+### BS-17 Vietnamese interface
+A language switcher (English, Tiếng Việt). Only the interface text changes. Civics questions,
+accepted answers, reading and writing sentences and N-400 questions stay in English, and a line on
+screen says the real interview is in English. `src/i18n/locales/vi.json` is a draft marked
+`needsHumanReview`: in a production build the Vietnamese option is hidden while that flag is true;
+the dev server shows it. `docs/vi-locale-review.md` lists every line for review, disclaimers and
+legal wording first. A test fails if `vi.json` and `en.json` differ in keys or placeholders.
+Layouts are checked in both languages.
+
 ## Out of scope
 AI follow-up questions and feedback, N-400 scoring, pre-generated audio, the 65/20 exemption,
-translated screens, saving progress.
+translated civics content, saving progress.
