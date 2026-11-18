@@ -139,6 +139,18 @@ See [`.kiro/steering/content-safety.md`](.kiro/steering/content-safety.md) for t
 
 ---
 
+## Pre-existing work and third-party material
+
+- **Civics translations.** The files in `data/translations/civics/` were imported from the owner's earlier project, formN400.org (repository N400, commit `942c5d6`), which was created before this hackathon. Text that project marked as machine-suggested (`_suggested`) was not imported. Every translation file is marked `needsHumanReview`, and the translations are display-only: scoring never uses them. The English display files in the same folder come from the USCIS documents below.
+- **USCIS source documents.** `data/sources/` holds public U.S. government material (the 2025 civics question PDF and the saved 2008 web page), kept as the source for the answer keys. See `data/sources/README.md` for URLs and checksums. This does not mean Language Lab is affiliated with USCIS.
+- **Frontend design guidance.** `.kiro/steering/frontend-design.md` is the "frontend-design" skill from Anthropic's skills repository (https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md, MIT License). It is agent guidance only and is not part of the product build.
+- **AI-generated audio and AI services.** Sample audio for the speech test tool is generated with OpenAI text-to-speech (`gpt-4o-mini-tts`), so it is an AI-generated voice. The generated files are not committed. Interview follow-up questions will use the Claude API (not built yet).
+- **Everything else** was written during the hackathon with Kiro.
+
+These notes do not change the statements above: Language Lab is not a government service, is not affiliated with USCIS, and does not give legal advice.
+
+---
+
 ## License
 
 [MIT](LICENSE)
