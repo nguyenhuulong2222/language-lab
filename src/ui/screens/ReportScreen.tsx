@@ -13,7 +13,7 @@ import { Disclaimer } from "../components/Disclaimer";
 import { StatusBadge } from "../components/StatusBadge";
 import { ReviewIcon } from "../components/icons";
 import { STAGES, stageIndex } from "../stages";
-import { useT } from "../../i18n/react";
+import { useLanguage, useT } from "../../i18n/react";
 import { formatProfileName, formatDate, formatDateTime } from "../format";
 import "./ReportScreen.css";
 
@@ -23,6 +23,7 @@ interface ReportScreenProps {
 
 export function ReportScreen({ session }: ReportScreenProps) {
   const t = useT();
+  const language = useLanguage();
   const report = session.finalReport;
   if (!report) {
     return (
@@ -58,7 +59,7 @@ export function ReportScreen({ session }: ReportScreenProps) {
           <p className="report__profile-meta">
             {t("report.profile.meta", {
               version: session.testVersion,
-              date: formatDate(session.filingDate),
+              date: formatDate(session.filingDate, language),
             })}
           </p>
         </div>
@@ -103,9 +104,11 @@ export function ReportScreen({ session }: ReportScreenProps) {
         text={report.disclaimer}
         id="report-disclaimer"
       />
+      {/* The report carries its disclaimer in English (contract field); say it in the chosen language too. */}
+      {language !== "en" && <Disclaimer text={t("disclaimer.report")} />}
 
       <p className="report__generated">
-        {t("report.generated", { datetime: formatDateTime(report.generatedAt) })}
+        {t("report.generated", { datetime: formatDateTime(report.generatedAt, language) })}
       </p>
     </article>
   );

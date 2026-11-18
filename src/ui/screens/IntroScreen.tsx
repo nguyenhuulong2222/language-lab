@@ -7,7 +7,7 @@
 import { useState } from "react";
 import type { FiledChoice } from "../../engine/practice-flow";
 import type { PracticeProfile } from "../../engine/practice-content";
-import { useT } from "../../i18n/react";
+import { useLanguage, useT } from "../../i18n/react";
 import { ScreenHelp } from "../components/ScreenHelp";
 import { TakeHeader } from "../components/TakeHeader";
 import { formatDate } from "../format";
@@ -26,9 +26,10 @@ interface IntroScreenProps {
 
 export function IntroScreen({ profiles, boundaryDate, needs, onStart, focusOnFirstRender = true }: IntroScreenProps) {
   const t = useT();
+  const language = useLanguage();
   const [profileId, setProfileId] = useState<string | null>(null);
   const [filedOn, setFiledOn] = useState<FiledChoice | null>(null);
-  const date = formatDate(boundaryDate);
+  const date = formatDate(boundaryDate, language);
   const ready = (!needs.profile || profileId !== null) && (!needs.filing || filedOn !== null);
 
   const start = () => {

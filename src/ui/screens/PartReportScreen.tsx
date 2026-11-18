@@ -5,7 +5,7 @@
  */
 import type { PartReport, PracticePart } from "../../engine/part-report";
 import type { MessageKey } from "../../i18n";
-import { useT } from "../../i18n/react";
+import { useLanguage, useT } from "../../i18n/react";
 import { Disclaimer } from "../components/Disclaimer";
 import { CheckIcon, ReviewIcon } from "../components/icons";
 import { StatusBadge } from "../components/StatusBadge";
@@ -24,13 +24,14 @@ const TITLE: Record<PracticePart, MessageKey> = {
 
 export function PartReportScreen({ report, onHome }: { report: PartReport; onHome: () => void }) {
   const t = useT();
+  const language = useLanguage();
   return (
     <div className="screen">
       <TakeHeader stage="report" title={t(TITLE[report.part])} lead={t("partReport.scope")} />
       <div className="screen__body">
         <PartBody report={report} />
         <Disclaimer variant="prominent" id="part-report-disclaimer" text={t("disclaimer.report")} />
-        <p className="progress-line">{t("report.generated", { datetime: formatDateTime(report.generatedAt) })}</p>
+        <p className="progress-line">{t("report.generated", { datetime: formatDateTime(report.generatedAt, language) })}</p>
         <div className="btn-row">
           <button type="button" className="btn" onClick={onHome}>
             {t("report.home")}

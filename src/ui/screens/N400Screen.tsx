@@ -10,6 +10,7 @@ import type { N400Answer, N400Coach, N400Prompt } from "../../engine/n400-coach"
 import type { PracticeProfile } from "../../engine/practice-content";
 import { useT } from "../../i18n/react";
 import { AnswerInput } from "../components/AnswerInput";
+import { EnglishNotice } from "../components/EnglishNotice";
 import { ScreenHelp } from "../components/ScreenHelp";
 import { SpeakButton } from "../components/SpeakButton";
 import { TakeHeader } from "../components/TakeHeader";
@@ -100,6 +101,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
         focusKey={`question-${answers.length}`}
       />
       <ScreenHelp screen="n400" />
+      <EnglishNotice />
       <div className="screen__body">
         <p className="progress-line">
           {total === undefined ? t("n400.number", { current }) : t("n400.count", { current, total })}

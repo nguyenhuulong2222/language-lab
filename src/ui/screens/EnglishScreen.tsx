@@ -9,6 +9,7 @@ import type { EnglishProgress, InputMode } from "../../engine/practice-flow";
 import { useT } from "../../i18n/react";
 import { AnswerInput } from "../components/AnswerInput";
 import { SentenceFeedback } from "../components/SentenceFeedback";
+import { EnglishNotice } from "../components/EnglishNotice";
 import { ScreenHelp } from "../components/ScreenHelp";
 import { SpeakButton } from "../components/SpeakButton";
 import { TakeHeader } from "../components/TakeHeader";
@@ -96,6 +97,7 @@ export function EnglishScreen({
         focusKey={`sentence-${progress.position}`}
       />
       <ScreenHelp screen={stage} />
+      <EnglishNotice />
       <div className="screen__body">
         <p className="progress-line">
           {reading

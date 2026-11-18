@@ -211,5 +211,7 @@
   "settings.slow.help": "This only changes the speed. It is the same recording.",
   "settings.memory": "These settings last until you close or reload this page.",
   "settings.close": "Close settings",
-  "audio.again": "Play again"
+  "audio.again": "Play again",
+  "lang.label": "Language",
+  "lang.interviewEnglish": "The real interview is in English. The questions and sentences on these screens stay in English so you can practice them."
 }

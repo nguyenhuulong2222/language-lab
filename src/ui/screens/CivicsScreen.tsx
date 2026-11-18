@@ -13,6 +13,7 @@ import { useT } from "../../i18n/react";
 import { AnswerInput } from "../components/AnswerInput";
 import { Disclaimer } from "../components/Disclaimer";
 import { CheckIcon, ReviewIcon } from "../components/icons";
+import { EnglishNotice } from "../components/EnglishNotice";
 import { ScreenHelp } from "../components/ScreenHelp";
 import { SpeakButton } from "../components/SpeakButton";
 import { TakeHeader } from "../components/TakeHeader";
@@ -137,6 +138,7 @@ export function CivicsScreen({
         focusKey={`question-${progress.position}`}
       />
       <ScreenHelp screen="civics" />
+      <EnglishNotice />
       <div className="screen__body">
         <p className="progress-line">{t("civics.count", { current: progress.position, total: progress.total })}</p>
         {question !== null && (

@@ -7,6 +7,7 @@ import type { PracticeMode } from "../../engine/practice-flow";
 import type { MessageKey } from "../../i18n";
 import { useT } from "../../i18n/react";
 import { Disclaimer } from "../components/Disclaimer";
+import { EnglishNotice } from "../components/EnglishNotice";
 import { HowItWorks } from "../components/HowItWorks";
 import { TakeHeader } from "../components/TakeHeader";
 import "../components/Screen.css";
@@ -31,6 +32,8 @@ export function HomeScreen({ civicsLocked, onChoose, focusOnFirstRender = false 
   return (
     <div className="screen">
       <TakeHeader stage="home" title={t("home.title")} lead={t("home.lead")} focusOnFirstRender={focusOnFirstRender} />
+
+      <EnglishNotice always />
 
       <HowItWorks />
 

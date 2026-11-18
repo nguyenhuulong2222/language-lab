@@ -3,19 +3,16 @@ import { createRoot } from "react-dom/client";
 import "./ui/styles/tokens.css";
 import "./ui/styles/base.css";
 import "./ui/styles/controls.css";
+import { AppProviders } from "./ui/AppProviders";
 import { PracticeApp } from "./ui/PracticeApp";
-import { SettingsProvider } from "./ui/settings";
-import { VoiceProvider } from "./ui/voice/VoiceProvider";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Root element #root not found.");
 
 createRoot(container).render(
   <StrictMode>
-    <SettingsProvider>
-      <VoiceProvider>
-        <PracticeApp />
-      </VoiceProvider>
-    </SettingsProvider>
+    <AppProviders>
+      <PracticeApp />
+    </AppProviders>
   </StrictMode>
 );

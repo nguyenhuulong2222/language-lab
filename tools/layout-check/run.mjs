@@ -217,9 +217,13 @@ async function checkConfiguration(cdp, size, lang) {
   await waitFor(async () => (await cdp.evaluate("document.readyState")) === "complete" && (await cdp.evaluate("!!document.querySelector('h1')")), "the page");
   await cdp.evaluate(PAGE_HELPERS);
 
-  // Settings first, so every screen is checked with them.
+  // Language first (the button in the header), then the settings, so every screen is checked with both.
+  if (lang !== "en") {
+    await cdp.evaluate("document.querySelector('.header__lang').click()");
+    await waitFor(async () => (await cdp.evaluate("document.documentElement.lang")) === lang, `the page language ${lang}`);
+    await sleep(150);
+  }
   await click(L("header.settings"));
-  if (lang !== "en") await choose(locales[lang]["settings.language.vi"] ?? "Tiếng Việt");
   await choose(L(size === "normal" ? "settings.textSize.normal" : size === "large" ? "settings.textSize.large" : "settings.textSize.extraLarge"));
   await sleep(150);
   await record("settings-open");
@@ -233,7 +237,8 @@ async function checkConfiguration(cdp, size, lang) {
   await click(L("home.full.title"));
   await record("setup");
   await choose("Aurora Vance");
-  await choose(L("intro.filed.onOrAfter").replace("{date}", "October 20, 2025"));
+  const boundary = new Intl.DateTimeFormat(lang === "vi" ? "vi-VN" : "en-US", { dateStyle: "long", timeZone: "UTC" }).format(new Date("2025-10-20"));
+  await choose(L("intro.filed.onOrAfter").replace("{date}", boundary));
   await click(L("intro.start"));
 
   await waitFor(() => lab(`has(${js(L("n400.save"))})`), "the N-400 question");

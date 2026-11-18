@@ -7,11 +7,17 @@
 import { useId, useState } from "react";
 import { Disclaimer } from "./Disclaimer";
 import { SettingsPanel } from "./SettingsPanel";
-import { useT } from "../../i18n/react";
+import { availableUiLanguages, isProductionBuild } from "../../i18n";
+import { useLanguage, useT } from "../../i18n/react";
+import { useSettings } from "../settings";
 import "./Header.css";
 
 export function Header({ onHome }: { onHome?: () => void }) {
   const t = useT();
+  const language = useLanguage();
+  const { setLanguage } = useSettings();
+  // The other interface language, when there is one to offer (a draft is hidden in production).
+  const otherLanguage = availableUiLanguages(isProductionBuild()).find((l) => l.code !== language);
   const [panel, setPanel] = useState<"settings" | "about" | null>(null);
   const settingsId = useId();
   const aboutId = useId();
@@ -28,6 +34,12 @@ export function Header({ onHome }: { onHome?: () => void }) {
           <span className="header__brand-name">{t("app.name")}</span>
         </div>
         <div className="header__actions">
+          {otherLanguage !== undefined && (
+            <button type="button" className="header__button header__lang" onClick={() => setLanguage(otherLanguage.code)}>
+              <span className="ll-sr-only">{t("lang.label")}: </span>
+              <span lang={otherLanguage.code}>{otherLanguage.endonym}</span>
+            </button>
+          )}
           {onHome !== undefined && (
             <button type="button" className="header__button" onClick={onHome}>
               {t("header.home")}

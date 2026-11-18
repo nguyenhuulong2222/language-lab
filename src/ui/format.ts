@@ -16,23 +16,32 @@ export function formatProfileName(profileId: string): string {
     .join(" ");
 }
 
-const longDate = new Intl.DateTimeFormat("en-US", {
-  dateStyle: "long",
-  timeZone: "UTC",
-});
+/** The date format locale of an interface language. */
+function dateLocale(language: string): string {
+  return language === "vi" ? "vi-VN" : "en-US";
+}
 
-const longDateTime = new Intl.DateTimeFormat("en-US", {
-  dateStyle: "long",
-  timeStyle: "short",
-  timeZone: "UTC",
-});
+const dateFormats = new Map<string, Intl.DateTimeFormat>();
+function dateFormat(language: string, withTime: boolean): Intl.DateTimeFormat {
+  const key = `${language}:${withTime}`;
+  let format = dateFormats.get(key);
+  if (format === undefined) {
+    format = new Intl.DateTimeFormat(dateLocale(language), {
+      dateStyle: "long",
+      ...(withTime ? { timeStyle: "short" as const } : {}),
+      timeZone: "UTC",
+    });
+    dateFormats.set(key, format);
+  }
+  return format;
+}
 
-/** Format an ISO date (e.g. "2024-03-15") -> "March 15, 2024". */
-export function formatDate(iso: string): string {
-  return longDate.format(new Date(iso));
+/** Format an ISO date (e.g. "2024-03-15") -> "March 15, 2024" (English) or "15 tháng 3, 2024" (Vietnamese). */
+export function formatDate(iso: string, language = "en"): string {
+  return dateFormat(language, false).format(new Date(iso));
 }
 
 /** Format an ISO datetime (e.g. "2024-03-20T10:42:00Z") -> "March 20, 2024 at 10:42 AM". */
-export function formatDateTime(iso: string): string {
-  return longDateTime.format(new Date(iso));
+export function formatDateTime(iso: string, language = "en"): string {
+  return dateFormat(language, true).format(new Date(iso));
 }
