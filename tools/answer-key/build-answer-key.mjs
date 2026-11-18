@@ -66,6 +66,7 @@ const VERSIONS = {
 };
 
 const REVIEW_SHEET = path.join(ROOT, "docs/answer-key-review.md");
+const MARKERS_FILE = path.join(ROOT, "tools/answer-key/answer-markers.json");
 const BATCH_SIZE = 20;
 const MAX_VARIANTS_PER_LINE = 16;
 
@@ -88,6 +89,8 @@ const FLAGS = {
   COUNTWORD:
     "The question mentions a count (two, three, four, five) but asks for one answer, so requiredAnswerCount is 1. The answer is stored as written.",
   OPT: "Words in parentheses are optional in the source. Stored both with and without them.",
+  ALTNAME:
+    "A parenthetical on this source line was marked by the project owner as an alternative name, not optional words (see tools/answer-key/answer-markers.json). Each name is stored as its own answer.",
   NUM: "A spelled-out number is followed by its numeral in parentheses. Stored as the words and as the numeral.",
   SLASH: "Alternatives written with a slash in the source were split into separate answers.",
   ALTS: "A parenthetical lists alternatives separated by commas. It is stored only as one optional phrase, not as separate alternatives.",
@@ -110,6 +113,7 @@ const FLAGS = {
 // ---------------------------------------------------------------------------
 
 const collapse = (s) => s.replace(/\s+/g, " ").trim();
+const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const pad3 = (n) => String(n).padStart(3, "0");
 const unique = (items) => [...new Set(items)];
 const sha256 = (file) => crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");
@@ -377,7 +381,7 @@ function checkNumbering(questions, expected) {
  *   A/B                                 -> A and B
  *   (optional words)                    -> with and without
  */
-function expandLine(raw, { allowBrackets = true } = {}) {
+function expandLine(raw, { allowBrackets = true, markers = [] } = {}) {
   const flags = new Set();
   const notes = [];
   const extras = [];
@@ -412,6 +416,30 @@ function expandLine(raw, { allowBrackets = true } = {}) {
     flags.add("SLASH");
     return hold([a, b]);
   });
+  // Owner decisions for single parenthetical groups: "alternative" instead of "optional".
+  // Done before the general rule below, so only the marked group changes.
+  for (const marker of markers) {
+    const pattern = new RegExp(`${escapeRegExp(marker.replaces)}\\s*${escapeRegExp(marker.group)}`, "g");
+    const found = text.match(pattern) ?? [];
+    if (found.length !== 1) {
+      throw new Error(
+        `Marker for ${marker.question} ("${marker.replaces} ${marker.group}") matched ${found.length} times in: ${raw}`
+      );
+    }
+    const items = marker.group
+      .slice(1, -1)
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean);
+    text = text.replace(pattern, () => hold([marker.replaces, ...items]));
+    flags.add("ALTNAME");
+    notes.push(
+      `alternative name (owner decision): "${collapse(raw)}" is stored as ${[marker.replaces, ...items]
+        .map((item) => `"${collapse(raw).replace(new RegExp(`${escapeRegExp(marker.replaces)}\\s*${escapeRegExp(marker.group)}`), item)}"`)
+        .join(" and ")}`
+    );
+  }
+
   text = text.replace(/\(([^()]*)\)/g, (_, inner) => {
     flags.add("OPT");
     if (inner.includes(",")) flags.add("ALTS");
@@ -450,10 +478,11 @@ function requiredCountFor(questionText) {
   return match ? COUNT_WORDS[match[1].toLowerCase()] : 1;
 }
 
-function buildEntry(version, config, q) {
+function buildEntry(version, config, q, markers = []) {
   const flags = new Set();
   const notes = [];
   const id = `${version}-${pad3(q.number)}`;
+  const questionMarkers = markers.filter((m) => m.question === id);
 
   if (q.answers.length === 0) throw new Error(`${id}: question has no answer lines`);
   if (q.wrapped) flags.add("WRAP");
@@ -486,7 +515,9 @@ function buildEntry(version, config, q) {
     requiredAnswerCount = count;
     const groups = []; // variants per source line, for the redundancy rule
     for (const answer of q.answers) {
-      const expanded = expandLine(answer.text);
+      const lineMarkers = questionMarkers.filter((m) => collapse(m.line) === collapse(answer.text));
+      for (const m of lineMarkers) m.used = true;
+      const expanded = expandLine(answer.text, { markers: lineMarkers });
       for (const f of expanded.flags) flags.add(f);
       notes.push(...expanded.notes);
       const lineGroups = [expanded, ...expanded.extras];
@@ -553,6 +584,25 @@ function buildEntry(version, config, q) {
 }
 
 /** Answers of one question that contain each other, for questions that need several answers. */
+/** Read and validate the owner's per-answer markers. */
+function loadMarkers() {
+  const raw = JSON.parse(fs.readFileSync(MARKERS_FILE, "utf8"));
+  if (!Array.isArray(raw.markers)) throw new Error("answer-markers.json: 'markers' must be an array");
+  return raw.markers.map((m, i) => {
+    const where = `answer-markers.json, marker ${i + 1}`;
+    for (const key of ["question", "line", "group", "parentheses", "replaces", "decision"]) {
+      if (typeof m[key] !== "string" || m[key].trim() === "") throw new Error(`${where}: '${key}' must be a non-empty string`);
+    }
+    if (m.parentheses !== "alternative") throw new Error(`${where}: 'parentheses' must be "alternative"`);
+    if (!/^\(.+\)$/.test(m.group)) throw new Error(`${where}: 'group' must be one parenthetical like "(Defense)"`);
+    if (!m.line.includes(`${m.replaces} ${m.group}`) && !new RegExp(`${escapeRegExp(m.replaces)}\\s*${escapeRegExp(m.group)}`).test(m.line)) {
+      throw new Error(`${where}: 'replaces' must sit directly before 'group' in 'line'`);
+    }
+    if (!/^(2008|2025)-\d{3}$/.test(m.question)) throw new Error(`${where}: 'question' must look like 2025-048`);
+    return { ...m, used: false };
+  });
+}
+
 function nestingProblems(entry) {
   if (entry.requiredAnswerCount <= 1) return [];
   const found = [];
@@ -759,6 +809,7 @@ function main() {
   const allProblems = [];
   const results = [];
   let comparison = [];
+  const markers = loadMarkers();
 
   for (const version of ["2008", "2025"]) {
     const config = VERSIONS[version];
@@ -780,13 +831,17 @@ function main() {
     const entries = [];
     for (const q of parsed.questions) {
       try {
-        entries.push(buildEntry(version, config, q));
+        entries.push(buildEntry(version, config, q, markers));
       } catch (error) {
         allProblems.push(`${version}: ${error.message}`);
       }
     }
     for (const e of entries) for (const p of nestingProblems(e)) allProblems.push(`${version}: ${p}`);
     results.push({ version, config, numbering, entries });
+  }
+
+  for (const m of markers) {
+    if (!m.used) allProblems.push(`marker for ${m.question} ("${m.line}") matched no source answer line`);
   }
 
   // Report

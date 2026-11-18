@@ -1,0 +1,14 @@
+{
+  "_note": "Per-answer decisions for parentheses in the USCIS source text. The general rule is unchanged: words in parentheses are OPTIONAL and are stored both with and without them. A marker below changes the rule for ONE parenthetical group on ONE source answer line, and only because the project owner decided it. Do not add a marker on your own judgement.",
+  "_howItWorks": "parentheses \"alternative\": the text inside the group is a different name for the words in 'replaces', which sit directly before the group in the source line. Items inside the group are split on commas and each one replaces those words. 'Secretary of War (Defense)' with replaces 'War' is stored as 'secretary of war' and 'secretary of defense'.",
+  "markers": [
+    {
+      "question": "2025-048",
+      "line": "Secretary of War (Defense)",
+      "group": "(Defense)",
+      "parentheses": "alternative",
+      "replaces": "War",
+      "decision": "Project owner, 2026-11-01: the parenthetical is an alternative name, not optional words. Accept both 'Secretary of War' and 'Secretary of Defense'."
+    }
+  ]
+}

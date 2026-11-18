@@ -12,9 +12,10 @@
  */
 
 import { describe, it, expect, vi } from "vitest";
-import { countMatchingPhrases, tokenise } from "../answer-normaliser.js";
+import { countMatchingPhrases, normalise, tokenise } from "../answer-normaliser.js";
 import { loadAnswerKey, type CivicsAnswerEntry } from "../civics-answer-key.js";
 import source2008 from "../../../data/sources/uscis-2008-civics-100-rev0119.txt?raw";
+import markersFile from "../../../tools/answer-key/answer-markers.json";
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -436,5 +437,78 @@ describe("2025 answer key against the official source", async () => {
       expect(isCorrect(key, "2025-038", "anything at all")).toBe(false);
       expect(isCorrect(key, "2025-023", "anything at all")).toBe(false);
     });
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Per-answer markers for parentheses
+// ---------------------------------------------------------------------------
+
+describe("per-answer markers for parentheses (tools/answer-key/answer-markers.json)", () => {
+  interface Marker {
+    question: string;
+    line: string;
+    group: string;
+    parentheses: string;
+    replaces: string;
+    decision: string;
+  }
+  const markers = markersFile.markers as Marker[];
+  const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const entryFor = (marker: Marker) =>
+    loadQuietly(marker.question.slice(0, 4) as "2008" | "2025").get(marker.question)!;
+
+  it("has at least the 2025 question 48 marker, each with the owner's decision on record", () => {
+    expect(markers.some((m) => m.question === "2025-048")).toBe(true);
+    for (const marker of markers) {
+      expect(marker.parentheses).toBe("alternative");
+      expect(marker.decision.trim().length).toBeGreaterThan(0);
+    }
+  });
+
+  it("stores every name of a marked alternative as its own accepted answer", () => {
+    for (const marker of markers) {
+      const entry = entryFor(marker);
+      const names = [
+        marker.replaces,
+        ...marker.group.slice(1, -1).split(",").map((s) => s.trim()).filter(Boolean),
+      ];
+      const pattern = new RegExp(`${escape(marker.replaces)}\\s*${escape(marker.group)}`);
+      for (const name of names) {
+        expect(entry.acceptedAnswers, `${marker.question}: ${name}`).toContain(
+          normalise(marker.line.replace(pattern, name))
+        );
+      }
+    }
+  });
+
+  it("does not also store the marked group as optional extra words", () => {
+    for (const marker of markers) {
+      const asOptional = normalise(marker.line.replace(marker.group, marker.group.slice(1, -1)));
+      expect(entryFor(marker).acceptedAnswers).not.toContain(asOptional);
+    }
+  });
+
+  it("leaves the general rule alone: other parentheses stay optional and are stored both ways", () => {
+    const key2025 = loadQuietly("2025");
+    expect(key2025.get("2025-040")!.acceptedAnswers).toEqual(
+      expect.arrayContaining(["the vice president", "the vice president of the united states"])
+    );
+    expect(key2025.get("2025-042")!.acceptedAnswers).toEqual(
+      expect.arrayContaining(["the president", "the president of the united states"])
+    );
+    expect(loadQuietly("2008").get("2008-017")!.acceptedAnswers).toEqual(
+      expect.arrayContaining(["the senate and house", "the senate and house of representatives"])
+    );
+  });
+
+  it("question 48 accepts both 'Secretary of War' and 'Secretary of Defense'", () => {
+    const key2025 = loadQuietly("2025");
+    expect(isCorrect(key2025, "2025-048", "Secretary of War and Attorney General")).toBe(true);
+    expect(isCorrect(key2025, "2025-048", "Secretary of Defense and Attorney General")).toBe(true);
+    expect(isCorrect(key2025, "2025-048", "the Secretary of Defense and the Vice-President")).toBe(true);
+    // It still needs two different answers, and the bare word is not an answer.
+    expect(isCorrect(key2025, "2025-048", "Secretary of Defense")).toBe(false);
+    expect(isCorrect(key2025, "2025-048", "Defense and Attorney General")).toBe(false);
   });
 });
