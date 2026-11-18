@@ -102,3 +102,24 @@ Fictional profile `fictional-profile-juniper-hale`. Civics stops on the 5th inco
   the current President of the United States." The grading work changed that one assertion to
   the new review text so the suite stays green. Please check it matches your intent.
 - The second fixture can drive the "A few things to review" variant of the report screen.
+
+## CR-005 — UI text now comes from `src/i18n/locales/en.json`
+**Requested by:** second review round, part C (display layer)
+**Status:** implemented in commit `c9c3445`
+**Type:** UI change, no contract type change
+
+Commit `c9c3445` changed `src/ui/App.tsx`, the components `Disclaimer`, `Footer`, `Header` and
+`StageStepper`, `src/ui/screens/ReportScreen.tsx` and `src/ui/stages.ts`. They no longer hold
+text. They read it from `src/i18n/locales/en.json` through `useT()`. `stages.ts` now stores
+message keys (`labelKey`, `shortKey`) instead of labels. English output is unchanged. A test,
+`src/ui/__tests__/no-hardcoded-text.test.ts`, now fails on literal user-facing text between
+tags and in `aria-label`, `title`, `alt`, `placeholder` and `label` attributes in `src/ui`.
+
+### How to add a string for a new screen
+1. Add the key and English text to `src/i18n/locales/en.json` (for example `"civics.title": "Civics practice"`). Use `{name}` for values.
+2. In the component, `import { useT } from "../../i18n/react";` and call `const t = useT();`.
+3. Render `{t("civics.title")}`, or `{t("stepper.count", { current: 2, total: 6 })}` with values. Use `t(...)` for attributes too (`aria-label={t("...")}`).
+4. Keep text that comes from session data (report summaries, the report disclaimer) in the data, not in en.json.
+5. Run the tests: the literal-text test and the "every key in en.json is used" test must pass. Other languages need a human-reviewed `src/i18n/locales/<code>.json`; until then they fall back to English.
+
+Translated civics questions are not shown on any screen. See decision D in `docs/decisions-log.md`.
