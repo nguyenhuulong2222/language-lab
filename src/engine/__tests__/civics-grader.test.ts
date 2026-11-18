@@ -14,6 +14,7 @@ import {
   runCivicsStage,
   type CivicsStageResult,
 } from "../civics-grader.js";
+import { isNumberToken } from "../answer-normaliser.js";
 import { loadAnswerKey, type CivicsAnswerEntry } from "../civics-answer-key.js";
 import { loadCivicsRules, type CivicsTestRules } from "../test-rules-loader.js";
 
@@ -516,7 +517,11 @@ describe("runCivicsStage properties", () => {
   });
 
   it("property: a static question is correct exactly when the response holds enough distinct accepted answers", () => {
-    const words = fc.uniqueArray(fc.stringMatching(/^[a-z]{3,8}$/), { minLength: 1, maxLength: 6 });
+    // Plain words only: number words next to each other are covered by the normaliser tests.
+    const words = fc.uniqueArray(
+      fc.stringMatching(/^[a-z]{3,8}$/).filter((w) => !isNumberToken(w)),
+      { minLength: 1, maxLength: 6 }
+    );
     const scenario = words.chain((accepted) =>
       fc.record({
         accepted: fc.constant(accepted),

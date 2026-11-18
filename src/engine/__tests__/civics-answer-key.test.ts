@@ -16,7 +16,7 @@ import {
   findNestingViolations,
   type CivicsAnswerEntry,
 } from "../civics-answer-key.js";
-import { countMatchingPhrases, normalise } from "../answer-normaliser.js";
+import { countMatchingPhrases, isNumberToken, normalise } from "../answer-normaliser.js";
 import RAW_2008 from "../../../data/civics-answers/2008.json" with { type: "json" };
 import RAW_2025 from "../../../data/civics-answers/2025.json" with { type: "json" };
 
@@ -344,7 +344,11 @@ describe("answer key properties", () => {
   });
 
   it("property: a response made of the required number of accepted answers always satisfies the entry", () => {
-    const filler = fc.array(fc.stringMatching(/^[a-z]{1,6}$/), { maxLength: 4 });
+    // Plain filler words: a number word next to a number answer would (correctly) not match.
+    const filler = fc.array(
+      fc.stringMatching(/^[a-z]{1,6}$/).filter((w) => !isNumberToken(w)),
+      { maxLength: 4 }
+    );
     fc.assert(
       fc.property(fc.constantFrom(...staticEntries), filler, filler, ({ entry }, before, after) => {
         const chosen = entry.acceptedAnswers.slice(0, entry.requiredAnswerCount);

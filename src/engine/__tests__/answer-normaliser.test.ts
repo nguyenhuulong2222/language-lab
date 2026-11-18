@@ -13,6 +13,7 @@ import {
   tokenise,
   containsPhrase,
   countMatchingPhrases,
+  isNumberToken,
 } from "../answer-normaliser.js";
 
 // ---------------------------------------------------------------------------
@@ -247,8 +248,10 @@ describe("containsPhrase properties", () => {
   });
 
   it("property: a response always contains itself and the words around it do not hide it", () => {
+    // Plain words only: number words next to a number answer are covered separately.
+    const plain = word.filter((w) => !isNumberToken(w));
     fc.assert(
-      fc.property(word, word, word, (before, core, after) => {
+      fc.property(plain, plain, plain, (before, core, after) => {
         return (
           containsPhrase(core, core) &&
           containsPhrase(`${before} ${core} ${after}`, core)
@@ -300,7 +303,10 @@ describe("countMatchingPhrases properties", () => {
   });
 
   it("property: matches an exhaustive search over every way to place the answers", () => {
-    /** Oracle: try every combination of span choices, no pruning. */
+    /**
+     * Oracle: try every combination of span choices, no pruning. The alphabet includes the
+     * article "a", so a leading "a" is optional here too. It has no number words.
+     */
     const exhaustive = (text: string, answers: string[]): number => {
       const hay = tokenise(text);
       const phrases = [...new Set(answers.map(normalise))]
@@ -308,16 +314,22 @@ describe("countMatchingPhrases properties", () => {
         .map((p) => p.split(" "));
       const used = new Array<boolean>(hay.length).fill(false);
 
+      const formsOf = (phrase: string[]): string[][] =>
+        phrase.length > 1 && ["the", "a", "an"].includes(phrase[0]!)
+          ? [phrase, phrase.slice(1)]
+          : [phrase];
+
       const go = (i: number): number => {
         if (i === phrases.length) return 0;
         let best = go(i + 1);
-        const p = phrases[i]!;
-        for (let s = 0; s + p.length <= hay.length; s++) {
-          const fits = p.every((tok, k) => hay[s + k] === tok && !used[s + k]);
-          if (!fits) continue;
-          for (let k = 0; k < p.length; k++) used[s + k] = true;
-          best = Math.max(best, 1 + go(i + 1));
-          for (let k = 0; k < p.length; k++) used[s + k] = false;
+        for (const form of formsOf(phrases[i]!)) {
+          for (let s = 0; s + form.length <= hay.length; s++) {
+            const fits = form.every((tok, k) => hay[s + k] === tok && !used[s + k]);
+            if (!fits) continue;
+            for (let k = 0; k < form.length; k++) used[s + k] = true;
+            best = Math.max(best, 1 + go(i + 1));
+            for (let k = 0; k < form.length; k++) used[s + k] = false;
+          }
         }
         return best;
       };
@@ -337,6 +349,239 @@ describe("countMatchingPhrases properties", () => {
       fc.property(response, fc.array(phrase, { maxLength: 5 }), (text, answers) => {
         return countMatchingPhrases(text, answers) === countMatchingPhrases(text, answers);
       })
+    );
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Optional leading article ("the", "a", "an")
+// ---------------------------------------------------------------------------
+
+describe("optional leading article in an accepted answer", () => {
+  it("matches with the article", () => {
+    expect(containsPhrase("it is the constitution", "the constitution")).toBe(true);
+  });
+
+  it("matches without the article", () => {
+    expect(containsPhrase("constitution", "the constitution")).toBe(true);
+    expect(containsPhrase("I think the answer is constitution", "the constitution")).toBe(true);
+  });
+
+  it("works for 'a' and 'an' as well", () => {
+    expect(containsPhrase("change", "a change")).toBe(true);
+    expect(containsPhrase("a change", "a change")).toBe(true);
+    expect(containsPhrase("addition", "an addition")).toBe(true);
+    expect(containsPhrase("an addition to it", "an addition")).toBe(true);
+  });
+
+  it("still needs the rest of the answer", () => {
+    expect(containsPhrase("the", "the constitution")).toBe(false);
+    expect(containsPhrase("the flag", "the constitution")).toBe(false);
+    expect(containsPhrase("a holiday", "a change")).toBe(false);
+  });
+
+  it("is not optional in the middle of an answer", () => {
+    expect(containsPhrase("bill rights", "bill of the rights")).toBe(false);
+    expect(containsPhrase("secretary state", "secretary of the state")).toBe(false);
+  });
+
+  it("is not optional when it is the whole answer", () => {
+    expect(containsPhrase("cat", "the")).toBe(false);
+    expect(containsPhrase("the cat", "the")).toBe(true);
+  });
+
+  it("still matches whole words only", () => {
+    expect(containsPhrase("constitutional", "the constitution")).toBe(false);
+    expect(containsPhrase("unconstitution", "the constitution")).toBe(false);
+  });
+
+  it("works for a multi-word answer", () => {
+    expect(containsPhrase("bill of rights", "the bill of rights")).toBe(true);
+    expect(containsPhrase("it is the bill of rights", "the bill of rights")).toBe(true);
+  });
+
+  it("an accepted answer written without an article also matches a response that adds one", () => {
+    expect(containsPhrase("the constitution", "constitution")).toBe(true);
+  });
+
+  it("does not count one span twice when both forms are accepted", () => {
+    expect(countMatchingPhrases("president", ["the president", "president"])).toBe(1);
+    expect(countMatchingPhrases("the president", ["the president", "president"])).toBe(1);
+  });
+
+  it("counts different answers that each use an optional article", () => {
+    expect(countMatchingPhrases("army and navy", ["the army", "the navy"])).toBe(2);
+    expect(countMatchingPhrases("the army", ["the army", "the navy"])).toBe(1);
+  });
+});
+
+describe("optional leading article properties", () => {
+  const plainWord = word.filter((w) => !isNumberToken(w) && !["the", "a", "an"].includes(w));
+  const article = fc.constantFrom("the", "a", "an");
+
+  it("property: an answer with a leading article matches with or without the article in the response", () => {
+    fc.assert(
+      fc.property(article, plainWord, plainWord, (art, core, extra) => {
+        const answer = `${art} ${core}`;
+        return (
+          containsPhrase(`${art} ${core}`, answer) &&
+          containsPhrase(core, answer) &&
+          containsPhrase(`${extra} ${core} ${extra}`, answer)
+        );
+      }),
+      { numRuns: 300 }
+    );
+  });
+
+  it("property: the article alone never satisfies an answer", () => {
+    fc.assert(
+      fc.property(article, plainWord, (art, core) => !containsPhrase(art, `${art} ${core}`)),
+      { numRuns: 300 }
+    );
+  });
+
+  it("property: an optional article never raises the count above the distinct answers", () => {
+    fc.assert(
+      fc.property(article, plainWord, plainWord, (art, a, b) => {
+        const answers = [`${art} ${a}`, a, `${art} ${b}`, b];
+        const count = countMatchingPhrases(`${a} ${art} ${b}`, answers);
+        return count <= new Set(answers.map(normalise)).size && count <= 2;
+      }),
+      { numRuns: 300 }
+    );
+  });
+});
+
+// ---------------------------------------------------------------------------
+// Numbers must stand alone
+// ---------------------------------------------------------------------------
+
+describe("isNumberToken", () => {
+  it("recognises number words and numerals", () => {
+    for (const token of ["one", "six", "twenty", "ninety", "hundred", "thousand", "27", "100", "1787"]) {
+      expect(isNumberToken(token), token).toBe(true);
+    }
+  });
+
+  it("rejects other words", () => {
+    for (const token of ["senators", "and", "first", "27th", "sixty-six", "", "ones"]) {
+      expect(isNumberToken(token), token).toBe(false);
+    }
+  });
+});
+
+describe("numbers that continue do not match", () => {
+  it("rejects 'one hundred and one' and 'one hundred one' for 'one hundred'", () => {
+    expect(containsPhrase("one hundred and one", "one hundred")).toBe(false);
+    expect(containsPhrase("one hundred one", "one hundred")).toBe(false);
+    expect(containsPhrase("There are one hundred and one senators", "one hundred")).toBe(false);
+  });
+
+  it("rejects a numeral or number word after the answer, with or without 'and'", () => {
+    expect(containsPhrase("one hundred 1", "one hundred")).toBe(false);
+    expect(containsPhrase("one hundred and 1", "one hundred")).toBe(false);
+    expect(containsPhrase("one hundred twenty", "one hundred")).toBe(false);
+    expect(containsPhrase("100 and 1", "100")).toBe(false);
+    expect(containsPhrase("100 1", "100")).toBe(false);
+  });
+
+  it("rejects a number that began earlier in the response", () => {
+    expect(containsPhrase("twenty two", "two")).toBe(false);
+    expect(containsPhrase("twenty two years", "two years")).toBe(false);
+    expect(containsPhrase("twenty six", "six")).toBe(false);
+    expect(containsPhrase("one hundred and twenty seven", "twenty seven")).toBe(false);
+  });
+
+  it("still matches a number on its own or among ordinary words", () => {
+    expect(containsPhrase("one hundred", "one hundred")).toBe(true);
+    expect(containsPhrase("there are one hundred senators", "one hundred")).toBe(true);
+    expect(containsPhrase("one hundred, I think", "one hundred")).toBe(true);
+    expect(containsPhrase("twenty seven amendments", "twenty seven")).toBe(true);
+    expect(containsPhrase("it is 27", "27")).toBe(true);
+    expect(containsPhrase("six years", "six years")).toBe(true);
+    expect(containsPhrase("I think two years", "two years")).toBe(true);
+  });
+
+  it("still matches when 'and' is followed by something that is not a number", () => {
+    expect(containsPhrase("one hundred and the senate", "one hundred")).toBe(true);
+    expect(containsPhrase("six and seven", "six")).toBe(false);
+    expect(containsPhrase("six and liberty", "six")).toBe(true);
+  });
+
+  it("still matches when the next number is far away", () => {
+    expect(containsPhrase("one hundred senators and two houses", "one hundred")).toBe(true);
+  });
+
+  it("stays a whole-word match for numerals", () => {
+    expect(containsPhrase("127", "27")).toBe(false);
+    expect(containsPhrase("270", "27")).toBe(false);
+  });
+
+  it("applies when counting answers", () => {
+    expect(countMatchingPhrases("one hundred and one", ["one hundred", "100"])).toBe(0);
+    expect(countMatchingPhrases("one hundred", ["one hundred", "100"])).toBe(1);
+    expect(countMatchingPhrases("twenty seven", ["twenty seven", "27"])).toBe(1);
+  });
+
+  it("does not affect answers that do not start or end with a number", () => {
+    expect(containsPhrase("the 22nd amendment and 12 more", "the 22nd amendment")).toBe(true);
+    expect(containsPhrase("1 constitution 2", "constitution")).toBe(true);
+  });
+});
+
+describe("number continuation properties", () => {
+  const numberAnswers = [
+    "one hundred", "twenty seven", "six", "two years", "six years", "four hundred thirty five",
+    "nine", "100", "27", "435",
+  ];
+  const continuations = ["one", "two", "seven", "twenty", "hundred", "thousand", "1", "27", "100"];
+  const nonNumberWords = ["senators", "years", "amendments", "please", "liberty", "the", "of", "okay"];
+  const pick = <T>(items: readonly T[]) => fc.constantFrom(...items);
+
+  it("property: a number answer never matches when the response continues the number", () => {
+    fc.assert(
+      fc.property(pick(numberAnswers), pick(continuations), fc.boolean(), (answer, next, withAnd) => {
+        const tokens = [answer, ...(withAnd ? ["and"] : []), next];
+        const response = tokens.join(" ");
+        // The answer must only be rejected when it ends in a number; "two years" ends in a word.
+        const endsInNumber = isNumberToken(answer.split(" ").at(-1)!);
+        return endsInNumber ? !containsPhrase(response, answer) : containsPhrase(response, answer);
+      }),
+      { numRuns: 500 }
+    );
+  });
+
+  it("property: a number answer never matches when the response has an earlier number part", () => {
+    fc.assert(
+      fc.property(pick(numberAnswers), pick(continuations), fc.boolean(), (answer, before, withAnd) => {
+        const response = [before, ...(withAnd ? ["and"] : []), answer].join(" ");
+        const startsWithNumber = isNumberToken(answer.split(" ")[0]!);
+        return startsWithNumber ? !containsPhrase(response, answer) : containsPhrase(response, answer);
+      }),
+      { numRuns: 500 }
+    );
+  });
+
+  it("property: a number answer still matches when ordinary words surround it", () => {
+    fc.assert(
+      fc.property(
+        pick(numberAnswers),
+        fc.array(pick(nonNumberWords), { maxLength: 3 }),
+        fc.array(pick(nonNumberWords), { maxLength: 3 }),
+        (answer, before, after) => containsPhrase([...before, answer, ...after].join(" "), answer)
+      ),
+      { numRuns: 500 }
+    );
+  });
+
+  it("property: a continued number never adds to the count", () => {
+    fc.assert(
+      fc.property(pick(numberAnswers), pick(continuations), (answer, next) => {
+        const endsInNumber = isNumberToken(answer.split(" ").at(-1)!);
+        const count = countMatchingPhrases(`${answer} ${next}`, [answer]);
+        return endsInNumber ? count === 0 : count === 1;
+      }),
+      { numRuns: 300 }
     );
   });
 });
