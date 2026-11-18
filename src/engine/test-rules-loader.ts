@@ -38,6 +38,11 @@ export interface CivicsTestRules {
   earlyStopOnIncorrect: RuleValue<number>;
 }
 
+export interface CivicsVersionSelectionRules {
+  /** YYYY-MM-DD. Filed before it: 2008 test. Filed on or after it: 2025 test. */
+  boundaryDate: RuleValue<string>;
+}
+
 export interface EnglishComponentRules {
   sentencesPresented: RuleValue<number>;
   sentencesToPassCount: RuleValue<number>;
@@ -60,6 +65,7 @@ export interface SpecialConsiderationRules {
 }
 
 export interface TestRules {
+  civicsTestVersionSelection: CivicsVersionSelectionRules;
   englishTest: EnglishTestRules;
   "2008": CivicsTestRules;
   "2025": CivicsTestRules;
@@ -76,6 +82,7 @@ export interface TestRules {
  * Uses dot-notation into the JSON structure.
  */
 const REQUIRED_VERIFIED_PATHS = [
+  "civicsTestVersionSelection.boundaryDate",
   "englishTest.reading.sentencesToPassCount",
   "englishTest.writing.sentencesToPassCount",
   "2008.questionsAsked",
@@ -164,4 +171,12 @@ export function loadCivicsRules(version: "2008" | "2025"): CivicsTestRules {
 /** Convenience: load rules and return the English test rules. */
 export function loadEnglishRules(): EnglishTestRules {
   return loadTestRules().englishTest;
+}
+
+/**
+ * Convenience: the first N-400 filing date (YYYY-MM-DD) that uses the 2025 civics test.
+ * Dates before it use the 2008 test.
+ */
+export function loadCivicsBoundaryDate(): string {
+  return loadTestRules().civicsTestVersionSelection.boundaryDate.value;
 }

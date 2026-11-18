@@ -17,6 +17,7 @@ import {
   loadTestRules,
   loadCivicsRules,
   loadEnglishRules,
+  loadCivicsBoundaryDate,
   findUnverifiedRequiredFields,
 } from "../test-rules-loader.js";
 import RAW_RULES from "../../../data/test-rules.json" with { type: "json" };
@@ -306,5 +307,45 @@ describe("test-rules.json structural completeness", () => {
     expect(sc.questionBank.sourceQuote).toBeTruthy();
     expect(sc.passingScore.sourceQuote).toBeNull();
     expect(sc.earlyStopOnCorrect.sourceQuote).toBeNull();
+  });
+});
+
+// ---------------------------------------------------------------------------
+// 6. Civics test version boundary date
+// ---------------------------------------------------------------------------
+
+describe("civicsTestVersionSelection.boundaryDate", () => {
+  const field = loadTestRules().civicsTestVersionSelection.boundaryDate;
+
+  it("is the published date, October 20, 2025", () => {
+    expect(field.value).toBe("2025-10-20");
+    expect(loadCivicsBoundaryDate()).toBe(field.value);
+  });
+
+  it("is a real YYYY-MM-DD date", () => {
+    expect(field.value).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(new Date(`${field.value}T00:00:00Z`).toISOString().slice(0, 10)).toBe(field.value);
+  });
+
+  it("is verified and cites uscis.gov", () => {
+    expect(field.needsVerification).toBe(false);
+    expect(new URL(field.sourceUrl).hostname).toMatch(/(^|\.)uscis\.gov$/);
+  });
+
+  it("keeps the exact uscis.gov sentences for both sides of the boundary", () => {
+    expect(field.sourceQuote).toContain(
+      "Aliens who file Form N-400 to apply for naturalization before Oct. 20, 2025, will take the 2008 naturalization civics test."
+    );
+    expect(field.sourceQuote).toContain(
+      "Aliens who file Form N-400 to apply for naturalization on or after Oct. 20, 2025, will take the 2025 naturalization civics test."
+    );
+  });
+
+  it("is a required field: the production guard refuses it while unverified", () => {
+    const mutated = clone(RAW_RULES) as AnyRecord;
+    setPath(mutated, "civicsTestVersionSelection.boundaryDate.needsVerification", true);
+    expect(findUnverifiedRequiredFields(mutated)).toContain(
+      "civicsTestVersionSelection.boundaryDate"
+    );
   });
 });

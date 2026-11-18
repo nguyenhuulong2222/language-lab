@@ -8,11 +8,14 @@
 import { describe, it, expect } from "vitest";
 import * as fc from "fast-check";
 import {
-  CIVICS_2025_BOUNDARY_DATE,
   selectTestVersion,
   assertVersionConsistency,
   assertValidIsoDate,
 } from "../version-selector.js";
+import { loadCivicsBoundaryDate } from "../test-rules-loader.js";
+
+/** The boundary date as the selector sees it: read from data/test-rules.json. */
+const CIVICS_2025_BOUNDARY_DATE = loadCivicsBoundaryDate();
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -36,8 +39,22 @@ describe("selectTestVersion", () => {
   });
 
   it("maps the boundary date to 2025", () => {
+    // Pins the rules file to the date USCIS published (October 20, 2025).
     expect(CIVICS_2025_BOUNDARY_DATE).toBe("2025-10-20");
     expect(selectTestVersion("2025-10-20")).toBe("2025");
+  });
+
+  it("reads the boundary from the rules: another boundary moves the cut-over", () => {
+    expect(selectTestVersion("2025-10-20", "2025-10-21")).toBe("2008");
+    expect(selectTestVersion("2025-10-21", "2025-10-21")).toBe("2025");
+    expect(selectTestVersion("2025-10-19", "2025-10-19")).toBe("2025");
+    expect(() => assertVersionConsistency("2025-10-20", "2008", "2025-10-21")).not.toThrow();
+    expect(() => assertVersionConsistency("2025-10-20", "2025", "2025-10-21")).toThrow(/mismatch/i);
+  });
+
+  it("throws when the boundary date from the rules is not a real date", () => {
+    expect(() => selectTestVersion("2025-10-20", "20251020")).toThrow(/boundary date/);
+    expect(() => selectTestVersion("2025-10-20", "2025-02-30")).toThrow(/boundary date/);
   });
 
   it("maps the day after the boundary to 2025", () => {

@@ -2,6 +2,16 @@
   "_note": "All values sourced from uscis.gov. Any value that could not be confirmed from an official uscis.gov source is set to null with needsVerification: true. No values are guessed. Category weights are not included.",
   "_sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
 
+  "civicsTestVersionSelection": {
+    "_description": "Which civics test an applicant takes, chosen by the date Form N-400 was filed. Filed before the boundary date: 2008 test. Filed on or after the boundary date: 2025 test.",
+    "boundaryDate": {
+      "value": "2025-10-20",
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "sourceQuote": "Aliens who file Form N-400 to apply for naturalization before Oct. 20, 2025, will take the 2008 naturalization civics test. Aliens who file Form N-400 to apply for naturalization on or after Oct. 20, 2025, will take the 2025 naturalization civics test."
+    }
+  },
+
   "englishTest": {
     "_description": "English reading and writing portion of the naturalization test. Applies to all applicants regardless of civics test version.",
     "reading": {
