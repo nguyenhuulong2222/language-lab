@@ -14,6 +14,8 @@
   --teal: #2c6a66;
   --amber: #9a5a1a;
   --border: #c9bc9f;
+  /* Text on a teal or amber button: surface in light mode (5.1:1 or better) */
+  --on-accent: #fbf7ee;
 
   /* Semantic status (reference primitives so theme overrides cascade) */
   --status-positive: var(--teal);
@@ -88,6 +90,7 @@
   --teal: #62a89f;
   --amber: #d98a36;
   --border: #4a3d2f;
+  --on-accent: #1f1813;
 }
 
 /* Dark mode: follow OS when no explicit theme is set */
@@ -101,5 +104,6 @@
     --teal: #62a89f;
     --amber: #d98a36;
     --border: #4a3d2f;
+    --on-accent: #1f1813;
   }
 }

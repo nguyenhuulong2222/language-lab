@@ -67,6 +67,8 @@ Dark mode (espresso booth, amber glow):
 | `--status-positive` | `--teal` | Understood / correct / practice_passed | — |
 | `--status-attention` | `--amber` | Needs practice / incorrect / needs_more_practice | — |
 
+`--on-accent` is the text colour on teal and amber buttons: `#FBF7EE` in light mode, `#1F1813` in dark mode.
+
 Button-on-amber pairs: light `#FBF7EE` on `#9A5A1A` = 5.10:1 (AA); dark `#1F1813` on
 `#D98A36` = 6.37:1 (AA). Amber is an accent only, never body text.
 

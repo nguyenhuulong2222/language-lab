@@ -2,19 +2,15 @@
   "app.name": "Language Lab",
   "app.skipToMain": "Skip to main content",
   "app.stageNotBuilt": "This stage of the practice isn’t built yet.",
-
   "header.about": "About & disclaimer",
-
   "disclaimer.short": "Not affiliated with USCIS or any government agency. Not legal advice.",
   "disclaimer.full": "Language Lab is an independent practice tool. It is not affiliated with, endorsed by, or connected to USCIS, DHS, or any U.S. government agency. Practice results do not predict or reflect any official immigration decision. Nothing here is legal advice. Consult a qualified immigration attorney for guidance on your actual case.",
   "disclaimer.title": "Please read this",
-
   "stepper.label": "Interview stages",
   "stepper.count": "Stage {current} of {total}",
   "stepper.status.complete": "completed",
   "stepper.status.current": "current step",
   "stepper.status.upcoming": "upcoming",
-
   "stage.intro.label": "Welcome",
   "stage.intro.short": "Intro",
   "stage.n400_interview.label": "N-400 conversation",
@@ -27,10 +23,8 @@
   "stage.civics.short": "Civics",
   "stage.report.label": "Practice report",
   "stage.report.short": "Report",
-
   "badge.onTrack": "On track",
   "badge.review": "Worth reviewing",
-
   "report.empty": "Your practice report will appear here once the session is complete.",
   "report.take": "TAKE",
   "report.overline": "Practice report",
@@ -44,8 +38,24 @@
   "report.review.heading": "Things to review",
   "report.review.intro": "Focus on these before your next practice.",
   "report.generated": "Report generated {datetime}",
-
   "translation.notice": "Translation for reference; the English version is official.",
   "translation.missing": "No translation yet. Showing English.",
-  "translation.english": "English"
+  "translation.english": "English",
+  "voice.say": "Say it",
+  "voice.stop": "Stop listening",
+  "voice.listening": "Listening. Say your answer now.",
+  "voice.heard": "We heard you. Check the words, change them if you like, then send.",
+  "voice.denied": "The microphone is blocked. Allow microphone access in your browser settings, or type your answer.",
+  "voice.unsupported": "This browser cannot listen to your voice. Type your answer instead.",
+  "voice.nothingHeard": "We did not hear anything. Try again, or type your answer.",
+  "voice.noMicrophone": "No microphone was found. Type your answer instead.",
+  "voice.error": "Listening did not work this time. Try again, or type your answer.",
+  "voice.skip": "Skip this one",
+  "audio.play": "Play aloud",
+  "audio.playing": "Playing…",
+  "audio.deviceVoice": "Device voice: the voice installed on your phone or computer.",
+  "audio.unavailable": "This browser cannot read aloud. Read the text on the screen.",
+  "compare.word.missing": "missing",
+  "compare.word.extra": "extra",
+  "compare.legend": "Dashed words are missing from your answer. Crossed-out words were extra."
 }
