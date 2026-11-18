@@ -96,7 +96,6 @@ export function EnglishScreen({
         lead={reading ? t("reading.lead") : t("writing.lead")}
         focusKey={`sentence-${progress.position}`}
       />
-      <ScreenHelp screen={stage} />
       <EnglishNotice />
       <div className="screen__body">
         <p className="progress-line">
@@ -129,6 +128,7 @@ export function EnglishScreen({
                 )}
               </>
             )}
+            <ScreenHelp screen={stage} />
             <AnswerInput
               label={reading ? t("reading.yourAnswer") : t("writing.yourAnswer")}
               submitLabel={reading ? t("reading.submit") : t("writing.submit")}

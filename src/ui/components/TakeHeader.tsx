@@ -52,21 +52,17 @@ export function TakeHeader({ stage, title, lead, focusKey = "screen", focusOnFir
 
   return (
     <header className="take">
-      <p className="take__overline">
-        {stage === "home" ? (
-          <span>{t("home.overline")}</span>
-        ) : (
-          <>
-            <span className="take__number" aria-hidden="true">
-              {t("report.take")} {take}
-            </span>
-            <span className="take__sep" aria-hidden="true">
-              ·
-            </span>
-            <span>{t(STAGES[stageIndex(stage)]!.labelKey)}</span>
-          </>
-        )}
-      </p>
+      {stage !== "home" && (
+        <p className="take__overline">
+          <span className="take__number" aria-hidden="true">
+            {t("report.take")} {take}
+          </span>
+          <span className="take__sep" aria-hidden="true">
+            ·
+          </span>
+          <span>{t(STAGES[stageIndex(stage)]!.labelKey)}</span>
+        </p>
+      )}
       <h1 className="take__title" ref={heading} tabIndex={-1}>
         {title}
       </h1>

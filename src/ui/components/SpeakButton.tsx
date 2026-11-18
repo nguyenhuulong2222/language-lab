@@ -6,7 +6,7 @@
  *
  * Playback starts inside the click handler (iPhone Safari needs a tap).
  */
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { MessageKey } from "../../i18n";
 import { useT } from "../../i18n/react";
 import { useSettings } from "../settings";
@@ -28,6 +28,8 @@ export function SpeakButton({ text, clipId, labelKey = "audio.play" }: SpeakButt
   const [playing, setPlaying] = useState(false);
   const [played, setPlayed] = useState(false);
   const [fellBack, setFellBack] = useState(false);
+  // Each play gets a number, so a clip that was cut off by "Play again" cannot reset the button of the new one.
+  const run = useRef(0);
 
   useEffect(() => () => speaker.cancel(), [speaker]);
 
@@ -38,16 +40,20 @@ export function SpeakButton({ text, clipId, labelKey = "audio.play" }: SpeakButt
   const voice = fellBack ? "device-voice" : planned;
 
   const play = () => {
+    const mine = ++run.current;
     setFellBack(false);
     setPlaying(true);
     setPlayed(true);
     speaker
       .speak(prompt, { onFallback: () => setFellBack(true), slow: slowPlayback })
       .catch(() => {})
-      .finally(() => setPlaying(false));
+      .finally(() => {
+        if (run.current === mine) setPlaying(false);
+      });
   };
 
   const stop = () => {
+    run.current++;
     speaker.cancel();
     setPlaying(false);
   };

@@ -77,7 +77,7 @@ describe("home in Vietnamese", () => {
 
   it("says it too in English, since the real interview is in English", () => {
     const en = renderToString(<HomeScreen civicsLocked={false} onChoose={() => {}} />);
-    expect(en).toContain("The real interview is in English.");
+    expect(en).toContain("The real interview is held in English unless USCIS allows an exception for you.");
   });
 });
 
@@ -113,7 +113,7 @@ describe("practice screens in Vietnamese", () => {
     const s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 3, at: AT });
     const html = inVietnamese(s);
     expect(html).toContain("Chọn một hồ sơ luyện tập");
-    expect(html).toContain("Hồ sơ luyện tập hư cấu");
+    expect(html).toContain("Hồ sơ luyện tập giả định");
     for (const p of base.content.profiles) expect(html).toContain(p.displayName);
     expect(html).toContain("Trước ngày 20 tháng 10, 2025");
     expect(html).toContain("Vào hoặc sau ngày 20 tháng 10, 2025");

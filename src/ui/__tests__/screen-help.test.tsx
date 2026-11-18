@@ -84,3 +84,25 @@ describe("HowItWorks", () => {
     expect(html).toContain("See the result");
   });
 });
+
+describe("where the help sits on a question screen", () => {
+  it("comes after the question and before the answer box, so the question stays near the top", async () => {
+    const { renderToString: render } = await import("react-dom/server");
+    const { EnglishScreen } = await import("../screens/EnglishScreen");
+    const { createDefaultPracticeEnv, createPracticeEngine } = await import("../../engine/practice-flow");
+    const env = { ...createDefaultPracticeEnv(), answerKey: () => ({ status: "locked" as const, reason: "test" }) };
+    const engine = createPracticeEngine(env);
+    const AT = "2026-11-17T10:00:00.000Z";
+    const state = engine.reduce(engine.initial(), { type: "choose", mode: "reading", seed: 5, at: AT });
+    const html = render(
+      <HelpSessionProvider>
+        <EnglishScreen progress={engine.englishProgress(state, "reading")} minWordAccuracy={0.8} onSubmit={() => {}} onContinue={() => {}} />
+      </HelpSessionProvider>
+    );
+    const sentence = engine.englishProgress(state, "reading").current!.text.replace(/&/g, "&amp;");
+    const at = (text: string) => html.indexOf(text);
+    expect(at(sentence)).toBeGreaterThan(0);
+    expect(at("How this works")).toBeGreaterThan(at(sentence));
+    expect(at("<textarea")).toBeGreaterThan(at("How this works"));
+  });
+});

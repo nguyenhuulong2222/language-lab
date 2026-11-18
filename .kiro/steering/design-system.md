@@ -173,6 +173,20 @@ Mobile
   (`aria-hidden`); the page label is announced to screen readers. No texture or animation.
 - **Footer.** The standing disclaimer (not affiliated / not legal advice), always visible.
 
+## Home, help and settings
+
+- **Home.** The first screen offers "Full practice interview" (one filled teal option card) and
+  four single parts (outlined option cards), above the standing disclaimers. No eyebrow label
+  on home: the header already carries the brand.
+- **Header buttons.** Language (the other interface language, written in its own language),
+  Home (only inside a session; it asks before discarding answers), Settings and About. Panels open
+  below the header in the page flow. Escape closes a panel and returns focus to its button.
+- **Stepper and take counter** show only the steps of the chosen session; "TAKE 01" is the
+  position within that session.
+- **"How this works"** sits after the question and before the answer box on question screens, so
+  the question stays near the top. It opens by itself the first time a screen is shown in a
+  session.
+
 ## Status & feedback semantics
 
 The report uses `practice_passed` / `needs_more_practice` (never pass/fail). Outcomes and

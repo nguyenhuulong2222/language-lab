@@ -140,9 +140,8 @@
   "audio.stop": "Stop playing",
   "audio.aiVoice": "AI-generated voice. The audio was made ahead of time.",
   "audio.playSample": "Play sample answer",
-  "home.overline": "Language Lab",
   "home.title": "Welcome to the booth",
-  "home.lead": "Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you never share real details.",
+  "home.lead": "Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details.",
   "home.how.title": "How it works",
   "home.how.1.title": "Listen",
   "home.how.1.text": "Tap Play aloud to hear a question or a sentence.",
@@ -166,7 +165,7 @@
   "setup.lead": "Choose what this practice needs. Nothing real is asked.",
   "report.home": "Back to home",
   "disclaimer.report": "This is a practice tool only. It is not affiliated with USCIS or any government agency. Results do not predict or reflect any official immigration decision. This is not legal advice.",
-  "partReport.scope": "This report is for one part only. It does not give an overall practice result.",
+  "partReport.scope": "This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result.",
   "partReport.title.n400_interview": "N-400 interview practice",
   "partReport.title.reading": "Reading practice",
   "partReport.title.writing": "Writing practice",
@@ -213,5 +212,10 @@
   "settings.close": "Close settings",
   "audio.again": "Play again",
   "lang.label": "Language",
-  "lang.interviewEnglish": "The real interview is in English. The questions and sentences on these screens stay in English so you can practice them."
+  "lang.interviewEnglish": "The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them.",
+  "header.homeConfirm": "Go back to home? Your answers in this practice will be lost.",
+  "header.homeConfirm.yes": "Yes, go home",
+  "header.homeConfirm.no": "Stay here",
+  "common.retry": "Try again",
+  "partReport.badge.good": "This part went well"
 }

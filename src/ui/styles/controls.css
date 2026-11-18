@@ -18,7 +18,8 @@
   text-align: center;
   cursor: pointer;
 }
-.btn:disabled {
+.btn:disabled,
+.btn[aria-disabled="true"] {
   cursor: not-allowed;
   background: var(--surface-2);
   border-color: var(--border);
@@ -30,7 +31,8 @@
   /* A control's edge needs 3:1 against the page: use ink-2, not the decorative border. */
   border-color: var(--ink-2);
 }
-.btn--secondary:disabled {
+.btn--secondary:disabled,
+.btn--secondary[aria-disabled="true"] {
   background: var(--surface-2);
 }
 /* Amber is reserved for the active (listening) state */

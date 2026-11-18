@@ -69,7 +69,7 @@ function PartBody({ report }: { report: PartReport }) {
         <section className="panel">
           <StatusBadge
             variant={report.passed ? "positive" : "attention"}
-            label={report.passed ? t("badge.onTrack") : t("badge.review")}
+            label={report.passed ? t("partReport.badge.good") : t("badge.review")}
           />
           <p>
             {scored === 0
@@ -116,7 +116,7 @@ function PartBody({ report }: { report: PartReport }) {
       <section className="panel">
         <StatusBadge
           variant={report.passed ? "positive" : "attention"}
-          label={report.passed ? t("badge.onTrack") : t("badge.review")}
+          label={report.passed ? t("partReport.badge.good") : t("badge.review")}
         />
         <p>
           {report.attempts === 0

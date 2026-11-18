@@ -23,12 +23,28 @@ describe("the header", () => {
     expect(html).toContain("Home");
     expect(html).toContain("Settings");
     expect(html).toContain("About &amp; disclaimer");
-    expect((html.match(/aria-expanded="false"/g) ?? []).length).toBe(2);
-    expect((html.match(/aria-controls=/g) ?? []).length).toBe(2);
+    // Home (with a session), Settings and About each open a panel.
+    expect((html.match(/aria-expanded="false"/g) ?? []).length).toBe(3);
+    expect((html.match(/aria-controls=/g) ?? []).length).toBe(3);
   });
 
   it("has no Home button before a session", () => {
-    expect(renderToString(<Header />)).not.toContain(">Home<");
+    const before = renderToString(<Header />);
+    expect(before).not.toContain(">Home<");
+    expect((before.match(/aria-expanded=/g) ?? []).length).toBe(2);
+  });
+
+  it("asks before Home throws away the answers, in a closed panel", () => {
+    expect(html).toContain("Your answers in this practice will be lost.");
+    expect(html).toContain("Yes, go home");
+    expect(html).toContain("Stay here");
+    expect(html).toMatch(/header__panel"[^>]*hidden/);
+  });
+
+  it("the settings panel has no heading, so the page heading stays first", () => {
+    const settings = renderToString(<SettingsProvider><SettingsPanel onClose={() => {}} /></SettingsProvider>);
+    expect(settings).not.toMatch(/<h[1-6]/);
+    expect(settings).toContain('role="group"');
   });
 
   it("holds the comfort settings in a closed panel", () => {

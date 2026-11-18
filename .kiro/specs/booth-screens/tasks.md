@@ -2,7 +2,7 @@
 
 One commit per task. After each: `npm run typecheck` and `npm test` pass.
 
-**Status:** B-01 to B-10 done; B-11 to B-15 in progress. Not done: pre-generated audio, the Worker coach, N-400 scoring, a test in a real browser with a microphone.
+**Status:** B-01 to B-15 done. Not done: the Worker coach, N-400 scoring, a test with a real microphone, human review of `vi.json` (owner), CR-006 (a shared partial-report type) is pending.
 
 ## B-01 Practice content and sources (done)
 USCIS reading and writing vocabulary saved in `data/sources/` (URL, SHA-256), `data/practice/`
@@ -37,20 +37,20 @@ Run the `ui-reviewer` and `content-reviewer` agents, fix findings.
 ## B-10 Docs and final checks (done)
 `docs/kiro-log.md`, decisions, production behaviour notes, typecheck, test, build.
 
-## B-11 Home and section choice
+## B-11 Home and section choice (done)
 Engine: modes, `sessionSteps`, `PartReport`, flow changes, CR-006. UI: home screen, setup per part,
 stepper per session, part report screen. Unit and property tests.
 
-## B-12 Instructions
+## B-12 Instructions (done)
 `HowItWorks`, `ScreenHelp`, help text in `en.json`.
 
-## B-13 Comfort settings
+## B-13 Comfort settings (done)
 Settings provider and panel in the header, text size, slower playback, Play again, 48px targets,
 layout checks at 390px.
 
-## B-14 Vietnamese interface
+## B-14 Vietnamese interface (done)
 Language switcher, `vi.json` (draft, `needsHumanReview`), production gate, `docs/vi-locale-review.md`,
 key and placeholder parity test, layout checks in both languages.
 
-## B-15 Reviews and docs
+## B-15 Reviews and docs (done)
 `ui-reviewer` and `content-reviewer`, fixes, decisions-log and kiro-log.

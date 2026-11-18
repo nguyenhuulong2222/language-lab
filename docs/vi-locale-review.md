@@ -10,10 +10,16 @@ fails when it differs from what the script builds.
 `needsHumanReview: true` in its `_meta` entry. While that flag is true:
 
 - the Vietnamese option is available in the development server (`npm run dev`);
-- the Vietnamese option is **hidden in a production build** (`npm run build`, the deployed site).
+- the Vietnamese option is **hidden in a production build** (`npm run build`, the deployed site),
+  and the Vietnamese text is **not in the production files at all** (the build replaces the draft
+  with its `_meta` only, see `tools/vite/strip-draft-locale.mjs`).
 
-After you have reviewed every line below, change `needsHumanReview` to `false` in
-`src/i18n/locales/vi.json` and regenerate this sheet. Nothing else needs to change.
+Cloudflare preview deployments are production builds, so they do not show Vietnamese either.
+Review it in `npm run dev` (or `npm run dev -- --host` on a phone).
+
+After you have reviewed every line below, in `src/i18n/locales/vi.json` set `needsHumanReview`
+to `false`, fill in `reviewedBy` and `reviewedOn`, and replace the draft note. A test fails if the
+flag is cleared without a reviewer and a date. Then regenerate this sheet.
 
 What stays in English on purpose: civics questions and answers, reading and writing sentences,
 N-400 questions and sample answers, and the sentences the engine builds for the full report
@@ -30,7 +36,7 @@ Every line keeps the same `{placeholders}` as the English line (a test checks th
 | on track | đang đi đúng hướng | Encouraging, not a pass or fail word. |
 | Not yet | Chưa đúng | Used instead of "wrong". Keep it gentle. |
 | practice passing score | số điểm đậu của bài luyện tập | "Đậu" is the everyday word for passing a test. |
-| fictional profile | hồ sơ hư cấu | A made-up person. Alternative: "hồ sơ giả định". |
+| fictional profile | hồ sơ giả định | A made-up person. Chosen over "hồ sơ hư cấu" and avoids "bịa ra" (made up in the sense of invented to deceive), which sits badly next to the truthfulness message. |
 | A-number | số A (A-number) | Kept in English in brackets so the user can match it to the form. |
 | TAKE (tape counter) | TAKE | A decorative label of the booth design; deliberately not translated. |
 | USCIS, DHS, N-400, uscis.gov | (unchanged) | Names and forms are not translated. |
@@ -45,18 +51,18 @@ not affiliated with USCIS, and that nothing real should be typed.
 |---|---|---|
 | `disclaimer.title` | Please read this | Xin hãy đọc phần này |
 | `disclaimer.short` | Not affiliated with USCIS or any government agency. Not legal advice. | Không liên kết với USCIS hay bất kỳ cơ quan chính phủ nào. Không phải tư vấn pháp lý. |
-| `disclaimer.full` | Language Lab is an independent practice tool. It is not affiliated with, endorsed by, or connected to USCIS, DHS, or any U.S. government agency. Practice results do not predict or reflect any official immigration decision. Nothing here is legal advice. Consult a qualified immigration attorney for guidance on your actual case. | Language Lab là một công cụ luyện tập độc lập. Công cụ này không liên kết với, không được chứng thực bởi và không có quan hệ với USCIS, DHS hay bất kỳ cơ quan chính phủ Hoa Kỳ nào. Kết quả luyện tập không dự đoán hay phản ánh bất kỳ quyết định di trú chính thức nào. Nội dung ở đây không phải là tư vấn pháp lý. Hãy hỏi một luật sư di trú có chuyên môn về trường hợp thực tế của bạn. |
+| `disclaimer.full` | Language Lab is an independent practice tool. It is not affiliated with, endorsed by, or connected to USCIS, DHS, or any U.S. government agency. Practice results do not predict or reflect any official immigration decision. Nothing here is legal advice. Consult a qualified immigration attorney for guidance on your actual case. | Language Lab là một công cụ luyện tập độc lập. Công cụ này không liên kết với, không được phê duyệt hay bảo trợ bởi, và không có quan hệ với USCIS, DHS hay bất kỳ cơ quan chính phủ Hoa Kỳ nào. Kết quả luyện tập không dự đoán hay phản ánh bất kỳ quyết định di trú chính thức nào. Nội dung ở đây không phải là tư vấn pháp lý. Hãy tham khảo ý kiến của một luật sư di trú có đủ trình độ chuyên môn về trường hợp thực tế của bạn. |
 | `disclaimer.report` | This is a practice tool only. It is not affiliated with USCIS or any government agency. Results do not predict or reflect any official immigration decision. This is not legal advice. | Đây chỉ là công cụ luyện tập. Công cụ này không liên kết với USCIS hay bất kỳ cơ quan chính phủ nào. Kết quả không dự đoán hay phản ánh bất kỳ quyết định di trú chính thức nào. Đây không phải là tư vấn pháp lý. |
 | `intro.notice.practice` | This is a practice tool only. | Đây chỉ là công cụ luyện tập. |
 | `intro.notice.legal` | It is not legal advice. | Đây không phải là tư vấn pháp lý. |
 | `intro.notice.government` | It is not a government service and is not affiliated with USCIS. | Đây không phải là dịch vụ của chính phủ và không liên kết với USCIS. |
-| `intro.privacy` | Do not say your real name, address, date of birth or A-number. Practice as the fictional profile you choose. | Đừng nói tên thật, địa chỉ, ngày sinh hay số A (A-number) của bạn. Hãy luyện tập theo hồ sơ hư cấu mà bạn chọn. |
+| `intro.privacy` | Do not say your real name, address, date of birth or A-number. Practice as the fictional profile you choose. | Đừng nói tên thật, địa chỉ, ngày sinh hay số A (A-number) của bạn. Hãy luyện tập theo hồ sơ giả định mà bạn chọn. |
 | `voice.privacy` | Voice uses your browser’s speech recognition. Depending on your browser, your voice may be processed by the browser’s maker. Language Lab does not record or send your voice, and nothing is saved when you close this page. | Giọng nói dùng tính năng nhận dạng giọng nói của trình duyệt. Tùy trình duyệt, giọng của bạn có thể được xử lý bởi hãng làm ra trình duyệt. Language Lab không ghi âm hay gửi giọng nói của bạn, và không lưu gì khi bạn đóng trang này. |
-| `n400.sample.note` | This is only the made-up profile’s answer. In a real interview you answer truthfully about your own life. | Đây chỉ là câu trả lời của nhân vật bịa ra. Trong buổi phỏng vấn thật, bạn trả lời trung thực về cuộc sống của chính mình. |
-| `help.setup.2` | Profiles are made up. Do not type your real name or any details about you. | Các hồ sơ đều là bịa ra. Đừng gõ tên thật hay bất kỳ thông tin nào về bạn. |
-| `lang.interviewEnglish` | The real interview is in English. The questions and sentences on these screens stay in English so you can practice them. | Buổi phỏng vấn thật được thực hiện bằng tiếng Anh. Các câu hỏi và câu văn trên những màn hình này vẫn bằng tiếng Anh để bạn luyện tập. |
+| `n400.sample.note` | This is only the made-up profile’s answer. In a real interview you answer truthfully about your own life. | Đây chỉ là câu trả lời của nhân vật giả định. Trong buổi phỏng vấn thật, bạn trả lời trung thực về cuộc sống của chính mình. |
+| `help.setup.2` | Profiles are made up. Do not type your real name or any details about you. | Các hồ sơ đều là giả định. Đừng gõ tên thật hay bất kỳ thông tin nào về bạn. |
+| `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | Buổi phỏng vấn thật được thực hiện bằng tiếng Anh, trừ khi USCIS cho phép một ngoại lệ đối với bạn. Các câu hỏi và câu văn trên những màn hình này vẫn bằng tiếng Anh để bạn luyện tập. |
 | `translation.notice` | Translation for reference; the English version is official. | Bản dịch chỉ để tham khảo; bản tiếng Anh là bản chính thức. |
-| `partReport.scope` | This report is for one part only. It does not give an overall practice result. | Báo cáo này chỉ cho một phần. Báo cáo không đưa ra kết quả luyện tập tổng thể. |
+| `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | Báo cáo này chỉ cho một phần. Báo cáo cho biết phần này diễn ra thế nào khi luyện tập, không cho biết bạn sẽ làm bài thật ra sao, và không đưa ra kết quả luyện tập tổng thể. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | Phỏng vấn N-400 chỉ để luyện tập và không chấm điểm. |
 
 ## 2. Statements about USCIS rules and official lists (16 lines)
@@ -80,7 +86,7 @@ not affiliated with USCIS, and that nothing real should be typed.
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Những câu hỏi này không chấm điểm được, nên không tính là đúng hay sai. |
 | `report.profile.meta` | {version} civics test · filed {date} | Bài kiểm tra civics {version} · nộp đơn ngày {date} |
 
-## 3. All other interface text (184 lines)
+## 3. All other interface text (188 lines)
 
 | Key | English | Vietnamese |
 |---|---|---|
@@ -114,7 +120,7 @@ not affiliated with USCIS, and that nothing real should be typed.
 | `report.title.review` | A few things to review | Có vài điều cần xem lại |
 | `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | Bạn đã hoàn thành buổi luyện tập này tốt. Hãy dùng các ghi chú bên dưới để giữ phong độ cho lần sau. |
 | `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Luyện tập là để làm việc đó. Các ghi chú bên dưới cho biết nên tập trung vào đâu trước khi thử lại. |
-| `report.profile.label` | Practice profile (fictional) | Hồ sơ luyện tập (hư cấu) |
+| `report.profile.label` | Practice profile (fictional) | Hồ sơ luyện tập (giả định) |
 | `report.stages.heading` | How each part went | Từng phần diễn ra thế nào |
 | `report.review.heading` | Things to review | Những điều cần xem lại |
 | `report.review.intro` | Focus on these before your next practice. | Hãy tập trung vào những điều này trước lần luyện tập tiếp theo. |
@@ -138,13 +144,13 @@ not affiliated with USCIS, and that nothing real should be typed.
 | `compare.word.extra` | extra | thừa |
 | `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | Từ có viền đứt là từ bị thiếu trong câu trả lời của bạn. Từ bị gạch ngang là từ thừa. |
 | `intro.profile.legend` | Choose a practice profile | Chọn một hồ sơ luyện tập |
-| `intro.profile.help` | Every profile is invented. | Mọi hồ sơ đều là bịa ra. |
+| `intro.profile.help` | Every profile is invented. | Mọi hồ sơ đều là giả định, không phải người thật. |
 | `intro.start` | Start practice | Bắt đầu luyện tập |
 | `intro.startHint` | Make your choice above to start. | Hãy chọn ở trên để bắt đầu. |
 | `n400.title` | N-400 interview | Phỏng vấn N-400 |
 | `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | Một lượt hỏi nhẹ nhàng về những câu mà viên chức thường hỏi về hồ sơ. Hãy trả lời với tư cách {name}. Phần này không chấm điểm. |
 | `n400.count` | Question {current} of {total} | Câu hỏi {current} trên {total} |
-| `n400.sample.label` | Sample answer for {name} (fictional) | Câu trả lời mẫu cho {name} (hư cấu) |
+| `n400.sample.label` | Sample answer for {name} (fictional) | Câu trả lời mẫu cho {name} (giả định) |
 | `n400.yourAnswer` | Your answer, as {name} | Câu trả lời của bạn, với tư cách {name} |
 | `n400.save` | Save answer and continue | Lưu câu trả lời và tiếp tục |
 | `n400.loading` | Getting the next question… | Đang lấy câu hỏi tiếp theo… |
@@ -153,7 +159,7 @@ not affiliated with USCIS, and that nothing real should be typed.
 | `n400.done.lead` | These are the words you gave. They are not scored. | Đây là những lời bạn đã nói. Phần này không chấm điểm. |
 | `n400.done.next` | Go to reading | Sang phần đọc |
 | `n400.number` | Question {current} | Câu hỏi {current} |
-| `common.fictional` | Fictional practice profile | Hồ sơ luyện tập hư cấu |
+| `common.fictional` | Fictional practice profile | Hồ sơ luyện tập giả định |
 | `reading.title` | Reading | Đọc |
 | `reading.lead` | Read the sentence out loud. You can type it if you prefer. | Hãy đọc to câu trên màn hình. Nếu thích, bạn có thể gõ lại câu đó. |
 | `reading.count` | Sentence {current} of {total} | Câu {current} trên {total} |
@@ -199,9 +205,8 @@ not affiliated with USCIS, and that nothing real should be typed.
 | `audio.stop` | Stop playing | Dừng phát |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Giọng do AI tạo. Âm thanh được làm sẵn từ trước. |
 | `audio.playSample` | Play sample answer | Nghe câu trả lời mẫu |
-| `home.overline` | Language Lab | Language Lab |
 | `home.title` | Welcome to the booth | Chào mừng đến buồng luyện tập |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you never share real details. | Hãy luyện cho buổi phỏng vấn nhập tịch trong một buồng yên tĩnh. Bạn trả lời với tư cách một nhân vật bịa ra, nên bạn không bao giờ phải nói thông tin thật. |
+| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | Hãy luyện cho buổi phỏng vấn nhập tịch trong một buồng yên tĩnh. Bạn trả lời với tư cách một nhân vật giả định, nên bạn không cần nói thông tin thật. |
 | `home.how.title` | How it works | Cách hoạt động |
 | `home.how.1.title` | Listen | Nghe |
 | `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | Bấm Nghe đọc để nghe một câu hỏi hoặc một câu. |
@@ -246,7 +251,7 @@ not affiliated with USCIS, and that nothing real should be typed.
 | `help.setup.1` | Tap one choice in each group on this screen. | Chạm vào một lựa chọn trong mỗi nhóm trên màn hình này. |
 | `help.setup.3` | Press “{start}” when you are ready. | Bấm “{start}” khi bạn sẵn sàng. |
 | `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | Bấm “{play}” để nghe. Bấm lại nút đó để dừng. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | Hãy đọc câu trả lời mẫu, hoặc nghe nó. Câu này là của nhân vật bịa ra. Đó chỉ là một ví dụ. |
+| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | Hãy đọc câu trả lời mẫu, hoặc nghe nó. Câu này là của nhân vật giả định. Đó chỉ là một ví dụ. |
 | `help.read` | Read the sentence on the screen out loud. | Hãy đọc to câu trên màn hình. |
 | `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | Bấm “{say}” rồi nói. Nếu điện thoại hỏi có cho dùng micrô không, hãy bấm Cho phép. Bấm “{stop}” khi bạn nói xong. |
 | `help.type` | You can always type instead. Tap the box and type. Typing always works. | Bạn luôn có thể gõ thay vì nói. Chạm vào ô và gõ. Gõ luôn dùng được. |
@@ -268,3 +273,8 @@ not affiliated with USCIS, and that nothing real should be typed.
 | `settings.close` | Close settings | Đóng cài đặt |
 | `audio.again` | Play again | Nghe lại |
 | `lang.label` | Language | Ngôn ngữ |
+| `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Về trang chủ? Các câu trả lời của bạn trong buổi luyện tập này sẽ mất. |
+| `header.homeConfirm.yes` | Yes, go home | Vâng, về trang chủ |
+| `header.homeConfirm.no` | Stay here | Ở lại đây |
+| `common.retry` | Try again | Thử lại |
+| `partReport.badge.good` | This part went well | Phần này diễn ra tốt |

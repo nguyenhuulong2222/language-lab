@@ -8,6 +8,7 @@ import type { MessageKey } from "../../i18n";
 import { useT } from "../../i18n/react";
 import { Disclaimer } from "../components/Disclaimer";
 import { EnglishNotice } from "../components/EnglishNotice";
+import { ReviewIcon } from "../components/icons";
 import { HowItWorks } from "../components/HowItWorks";
 import { TakeHeader } from "../components/TakeHeader";
 import "../components/Screen.css";
@@ -54,7 +55,11 @@ export function HomeScreen({ civicsLocked, onChoose, focusOnFirstRender = false 
             </button>
           ))}
         </div>
-        {civicsLocked && <p className="status status--attention">{t("intro.locked")}</p>}
+        {civicsLocked && (
+          <p className="status status--attention">
+            <ReviewIcon className="icon-inline icon-inline--attention" /> {t("intro.locked")}
+          </p>
+        )}
       </section>
 
       <Disclaimer variant="prominent" id="home-disclaimer" text={t("disclaimer.full")} />

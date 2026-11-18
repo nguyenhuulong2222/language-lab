@@ -89,7 +89,9 @@ describe("IntroScreen (setup)", () => {
 
   it("starts disabled until the needed choices are made", () => {
     const html = render({ profile: true, filing: true });
-    expect(html).toMatch(/<button[^>]*disabled[^>]*>Start practice/);
+    // aria-disabled, not disabled: the button stays focusable and its hint can be read.
+    expect(html).toMatch(/<button[^>]*aria-disabled="true"[^>]*>Start practice/);
+    expect(html).not.toMatch(/<button[^>]*\sdisabled[^>]*>Start practice/);
     expect(html).toContain("Make your choice above to start.");
   });
 });

@@ -137,7 +137,6 @@ export function CivicsScreen({
         lead={t("civics.lead")}
         focusKey={`question-${progress.position}`}
       />
-      <ScreenHelp screen="civics" />
       <EnglishNotice />
       <div className="screen__body">
         <p className="progress-line">{t("civics.count", { current: progress.position, total: progress.total })}</p>
@@ -150,6 +149,7 @@ export function CivicsScreen({
             {question.requiredAnswerCount > 1 && (
               <p className="note">{t("civics.needs", { count: question.requiredAnswerCount })}</p>
             )}
+            <ScreenHelp screen="civics" />
             <AnswerInput
               label={t("civics.yourAnswer")}
               submitLabel={t("civics.submit")}

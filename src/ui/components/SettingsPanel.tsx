@@ -16,8 +16,8 @@ export function SettingsPanel({ onClose }: { onClose: () => void }) {
   const t = useT();
   const { textSize, setTextSize, slowPlayback, setSlowPlayback } = useSettings();
   return (
-    <div className="settings">
-      <h2 className="panel__title">{t("settings.title")}</h2>
+    <div className="settings" role="group" aria-label={t("settings.title")}>
+      <p className="panel__title">{t("settings.title")}</p>
 
       <fieldset className="choices">
         <legend className="choices__legend settings__legend">{t("settings.textSize.legend")}</legend>

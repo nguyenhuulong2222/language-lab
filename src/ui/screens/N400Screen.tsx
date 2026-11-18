@@ -11,6 +11,7 @@ import type { PracticeProfile } from "../../engine/practice-content";
 import { useT } from "../../i18n/react";
 import { AnswerInput } from "../components/AnswerInput";
 import { EnglishNotice } from "../components/EnglishNotice";
+import { ReviewIcon } from "../components/icons";
 import { ScreenHelp } from "../components/ScreenHelp";
 import { SpeakButton } from "../components/SpeakButton";
 import { TakeHeader } from "../components/TakeHeader";
@@ -26,12 +27,15 @@ interface N400ScreenProps {
   onFinish: () => void;
   /** After the interview comes the report (a single-part session), not reading. */
   nextIsReport?: boolean;
+  /** Try loading the question again after a failure. */
+  onRetry?: () => void;
 }
 
 type PromptState = { status: "loading" } | { status: "failed" } | { status: "done" } | { status: "ready"; prompt: N400Prompt };
 
 export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish, nextIsReport }: N400ScreenProps) {
   const [state, setState] = useState<PromptState>({ status: "loading" });
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
     let current = true;
@@ -43,7 +47,7 @@ export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish,
     return () => {
       current = false;
     };
-  }, [coach, profile, answers]);
+  }, [coach, profile, answers, attempt]);
 
   return (
     <N400View
@@ -53,6 +57,7 @@ export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish,
       total={total}
       onAnswer={onAnswer}
       onFinish={onFinish}
+      onRetry={() => setAttempt((n) => n + 1)}
       {...(nextIsReport === undefined ? {} : { nextIsReport })}
     />
   );
@@ -63,7 +68,7 @@ interface N400ViewProps extends Omit<N400ScreenProps, "coach"> {
 }
 
 /** The screen without its data loading, so every state can be rendered and tested. */
-export function N400View({ state, profile, answers, total, onAnswer, onFinish, nextIsReport = false }: N400ViewProps) {
+export function N400View({ state, profile, answers, total, onAnswer, onFinish, nextIsReport = false, onRetry }: N400ViewProps) {
   const t = useT();
   const name = profile.displayName;
 
@@ -100,14 +105,26 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
         lead={t("n400.lead", { name })}
         focusKey={`question-${answers.length}`}
       />
-      <ScreenHelp screen="n400" />
       <EnglishNotice />
       <div className="screen__body">
         <p className="progress-line">
           {total === undefined ? t("n400.number", { current }) : t("n400.count", { current, total })}
         </p>
         {state.status === "loading" && <p role="status">{t("n400.loading")}</p>}
-        {state.status === "failed" && <p className="status status--attention">{t("n400.failed")}</p>}
+        {state.status === "failed" && (
+          <div className="screen__body">
+            <p className="status status--attention">
+              <ReviewIcon className="icon-inline icon-inline--attention" /> {t("n400.failed")}
+            </p>
+            {onRetry !== undefined && (
+              <div className="btn-row">
+                <button type="button" className="btn" onClick={onRetry}>
+                  {t("common.retry")}
+                </button>
+              </div>
+            )}
+          </div>
+        )}
         {state.status === "ready" && (
           <div key={state.prompt.id} className="screen__body">
             <p className="prompt" lang="en">
@@ -126,6 +143,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
                 <p className="note">{t("n400.sample.note")}</p>
               </section>
             )}
+            <ScreenHelp screen="n400" />
             <AnswerInput
               label={t("n400.yourAnswer", { name })}
               submitLabel={t("n400.save")}

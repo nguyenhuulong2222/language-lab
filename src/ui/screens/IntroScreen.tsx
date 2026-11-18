@@ -96,7 +96,7 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, focusOnFir
         )}
 
         <div className="btn-row">
-          <button type="button" className="btn" disabled={!ready} aria-describedby="intro-start-hint" onClick={start}>
+          <button type="button" className="btn" aria-disabled={!ready} aria-describedby="intro-start-hint" onClick={start}>
             {t("intro.start")}
           </button>
         </div>

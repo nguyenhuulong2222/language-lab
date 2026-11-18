@@ -46,7 +46,7 @@ describe("vi.json and en.json", () => {
     }
     // Names and decorative labels may stay the same; everything else must be translated.
     expect(sameAsEnglish.sort()).toEqual(
-      ["app.name", "home.overline", "report.take", "stage.n400_interview.short", "stage.civics.short"].filter((k) =>
+      ["app.name", "report.take", "stage.n400_interview.short", "stage.civics.short"].filter((k) =>
         sameAsEnglish.includes(k)
       ).sort()
     );
@@ -62,8 +62,24 @@ describe("vi.json and en.json", () => {
 
   it("is marked as a draft with a note, in _meta (not as a message)", () => {
     expect(typeof _meta.needsHumanReview).toBe("boolean");
-    expect(_meta.note ?? "").toMatch(/AI assistant/);
     expect("_meta" in en).toBe(false);
+    if (_meta.needsHumanReview) expect(_meta.note ?? "").toMatch(/AI assistant/);
+  });
+
+  it("can only be cleared by naming who reviewed it and when", () => {
+    const meta = _meta as { needsHumanReview: boolean; reviewedBy: string | null; reviewedOn: string | null; note?: string };
+    if (meta.needsHumanReview) {
+      expect(meta.reviewedBy).toBeNull();
+      expect(meta.reviewedOn).toBeNull();
+    } else {
+      expect(typeof meta.reviewedBy === "string" && meta.reviewedBy.trim().length > 0, "reviewedBy").toBe(true);
+      expect(meta.reviewedOn ?? "", "reviewedOn").toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(meta.note ?? "", "the draft note must be replaced").not.toMatch(/DRAFT/);
+    }
+  });
+
+  it("does not call a made-up profile \"bịa ra\" (it sits next to the truthfulness message)", () => {
+    expect(Object.values(viMessages).join("\n")).not.toContain("bịa");
   });
 
   it("holds no civics question or answer: the interface text only", () => {
