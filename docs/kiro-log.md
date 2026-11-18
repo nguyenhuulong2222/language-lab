@@ -5,6 +5,70 @@ made during the development of Language Lab. Most recent entries are at the top.
 
 ---
 
+## 2026-11-01 — Grading engine, tasks T-01 to T-06 (branch engine/grading)
+
+Spec: `.kiro/specs/grading/` (requirements, design, tasks), commit `9d47dd1`. All issues O1–O8
+from the revision 2 analysis are resolved in the spec. Nothing is pushed.
+
+| Task | Commit | What |
+|---|---|---|
+| T-01 | `e29f8e6` | `"unscored"` added to `CivicsScoringResult`; `Turn.questionId` documented; `mock/session.json` rebuilt as a passing fixture; `mock/session-needs-practice.json` added; fixture tests cover both |
+| T-02 | `b5bcddb` | `answer-normaliser.ts`: normalise, tokenise, containsPhrase, countMatchingPhrases |
+| T-03 | `1fe5f9d` | `version-selector.ts`: filing date to 2008 or 2025, boundary 2025-10-20 |
+| T-04 | `250d2f5` | `civics-answer-key.ts` loader and stub answer files (11 questions for 2008, 7 for 2025) |
+| T-05 | `b48d01d` | `civics-grader.ts`: scoring, `questionId` check, early stop |
+| T-06 | `6dfb519` | `english-grader.ts`: reading and writing pass rule |
+
+Result: typecheck clean, 322 tests passing, 8 test files in `src/engine` and `src/contracts`
+plus the existing UI and speech-test tests.
+
+### Decisions made while implementing
+
+- **Matching.** Normalisation maps curly apostrophes to straight ones and hyphens to spaces,
+  and removes other punctuation. Phrases match as whole-word, contiguous token runs.
+  `countMatchingPhrases` finds the largest set of distinct accepted answers that fit
+  non-overlapping spans, by exact search. A test compares it with a brute-force oracle.
+- **Stage pass rule.** `passed` is true only when the correct-answer threshold was reached and
+  `correctCount >= passingScore`. A stage that runs out of turns or hits the question limit
+  without a threshold is not passed. Unscored turns use a question slot.
+- **Answer key loader.** `parseAnswerKey` validates structure and the uscis.gov https
+  `sourceUrl`. While a file has `needsHumanReview: true`, loading it throws in production and
+  warns otherwise. The `production` option makes this testable. A test keeps both files marked
+  `needsHumanReview: true` until the project owner approves them.
+- **English grader.** `attempts` is the number of sentences presented so far. The caller passes
+  `isCorrect`; deciding correctness is left to a later spec.
+- **Boundary date.** `CIVICS_2025_BOUNDARY_DATE` is a constant in `version-selector.ts`, as the
+  approved design said. It is not in `data/test-rules.json`, so it is the one date literal in
+  the engine. Moving it into the rules file with a `sourceQuote` is a small follow-up if wanted.
+- **UI test.** One assertion in `src/ui/__tests__/report-render.test.tsx` named the old dynamic
+  review item and was updated to the new fixture text. Recorded as CR-004 in
+  `docs/contract-requests.md`.
+
+### Findings to resolve before T-07
+
+1. **The 2025 PDF cannot be read.** The fetch tool rejects `application/pdf`. The only readable
+   official 128-question list is `M_1778TXT.txt` on uscis.gov, titled "128 Civics Questions and
+   Answers (2020 version)". USCIS says the 2025 test is based on the 2020 test, but I could not
+   confirm the lists match. The 2025 stub entries use that file as a stand-in; each
+   `sourceDocument` says so. Options: you paste or convert the 2025 PDF to text, or you accept
+   the 2020 text as the base and a person diffs it against the PDF.
+2. **Optional words.** The data rule stores parenthesised words as both variants, but USCIS
+   lists "the Constitution" with no parentheses, so a response of just "Constitution" scores
+   incorrect. A rule is needed for articles such as "the".
+3. **Text encoding.** `M_1778TXT.txt` shows curly quotes and apostrophes as "�". Normalisation
+   handles real curly apostrophes, but every transcribed answer needs a human check.
+4. **Longer answers.** Because containment is allowed, "one hundred and one" contains "one
+   hundred" and scores correct. This follows from the approved whole-phrase rule and is a known
+   limit.
+5. **65/20 passing score (not acted on).** A uscis.gov search snippet of the 2025 PDF reads "at
+   least 6 out of 10 questions (or 60%)", and the 2020 text gives the same rule in its 65/20
+   paragraph. That may settle the 65/20 `passingScore`, but I could not read the PDF context,
+   so `data/test-rules.json` is unchanged.
+
+### Not done
+
+T-07 (full answer keys), T-08 (report builder) and T-09 (integration test) are not started.
+
 ## 2024-11-01 — Kiro hooks, custom agents, design file attribution, data verification
 
 ### Part A: Kiro setup

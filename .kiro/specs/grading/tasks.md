@@ -3,6 +3,13 @@
 Order follows dependencies. After each task: `npm run typecheck` and `npm test` must pass,
 then commit. Property-based tests are named `property: ...` so they are easy to find.
 
+**Status:** T-01 to T-06 implemented and committed. T-07 to T-09 not started.
+
+**Open points before T-07** (details in `docs/kiro-log.md`):
+the 2025 PDF cannot be read with the available tools, and the only readable official
+128-question text is labelled "2020 version"; how to treat optional words such as "the" in
+accepted answers needs a rule.
+
 ## T-01 — Contract change, fixtures, contract requests
 
 Files: `src/contracts/session.ts`, `mock/session.json` (rebuilt), `mock/session-needs-practice.json`
