@@ -200,5 +200,16 @@
   "help.skip": "Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet.",
   "help.notScored": "Nothing in this part is scored.",
   "help.result.reading": "Then you see which words matched.",
-  "help.result.civics": "Then you see Correct or Not yet, and the official answers."
+  "help.result.civics": "Then you see Correct or Not yet, and the official answers.",
+  "header.settings": "Settings",
+  "settings.title": "Comfort settings",
+  "settings.textSize.legend": "Text size",
+  "settings.textSize.normal": "Normal",
+  "settings.textSize.large": "Large",
+  "settings.textSize.extraLarge": "Extra large",
+  "settings.slow.label": "Play recorded voices more slowly",
+  "settings.slow.help": "This only changes the speed. It is the same recording.",
+  "settings.memory": "These settings last until you close or reload this page.",
+  "settings.close": "Close settings",
+  "audio.again": "Play again"
 }

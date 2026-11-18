@@ -22,9 +22,17 @@ export interface SpokenPrompt {
   clipId?: string;
 }
 
+/** How fast a recorded clip plays when "slower playback" is on. The same recording, no new audio. */
+export const SLOW_PLAYBACK_RATE = 0.7;
+/** The device voice's rate: normal, and slower. */
+const DEVICE_RATE = 0.9;
+const DEVICE_RATE_SLOW = 0.65;
+
 export interface SpeakHandlers {
   /** Called when a clip could not be played and the device voice takes over. */
   onFallback?: () => void;
+  /** Play more slowly (comfort setting). */
+  slow?: boolean;
 }
 
 export interface PromptSpeaker {
@@ -56,12 +64,12 @@ export function createDeviceVoiceSpeaker(
   return {
     available: true,
     voiceFor: () => "device-voice",
-    speak({ text }) {
+    speak({ text }, handlers) {
       return new Promise<void>((resolve) => {
         synthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = "en-US";
-        utterance.rate = 0.9;
+        utterance.rate = handlers?.slow ? DEVICE_RATE_SLOW : DEVICE_RATE;
         utterance.onend = () => resolve();
         utterance.onerror = () => resolve();
         synthesis.speak(utterance);
@@ -81,6 +89,9 @@ export function createDeviceVoiceSpeaker(
 export interface AudioLike {
   src: string;
   currentTime: number;
+  playbackRate: number;
+  /** Keep the voice pitch when the speed changes (where the browser supports it). */
+  preservesPitch?: boolean;
   play(): Promise<void> | void;
   pause(): void;
   addEventListener(type: "ended" | "error", listener: () => void): void;
@@ -165,6 +176,8 @@ export function createMp3PromptSpeaker(options: Mp3SpeakerOptions): PromptSpeake
         // Start now, inside the tap: Safari refuses to start audio later.
         element.src = baseUrl + file;
         element.currentTime = 0;
+        element.playbackRate = handlers?.slow ? SLOW_PLAYBACK_RATE : 1;
+        element.preservesPitch = true;
         const started = element.play();
         if (started !== undefined && typeof started.catch === "function") started.catch(onError);
       });

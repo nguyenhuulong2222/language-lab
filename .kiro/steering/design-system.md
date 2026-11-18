@@ -188,7 +188,8 @@ current President" — not "Wrong").
 ## Accessibility floor
 
 - Body text ≥ 18px; generous line-height; AA minimum, AAA for body where feasible (both themes).
-- Minimum tap target 44px (`--tap-min`); all interactive controls meet it.
+- Minimum tap target 48px (`--tap-min`, `3rem`, so it grows with the text size); all interactive controls meet it.
+- Comfort settings in the header: text size (normal 100%, large 112.5%, extra large 125% of the root size) and slower playback of recorded voices. They live in memory for the session only.
 - Visible keyboard focus: a 3px teal focus ring with offset on every focusable element.
 - Full keyboard navigation; the stepper and report are operable without a pointer.
 - Status and progress never rely on color alone (icon + label always present).

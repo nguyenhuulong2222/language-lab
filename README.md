@@ -77,6 +77,14 @@ server with `--host`, then run `cloudflared tunnel --url http://localhost:5173`.
 without the microphone. A production build switches civics scoring off while the answer key
 files say `needsHumanReview: true`; the dev server runs everything.
 
+### Check the layout at phone width
+`npm run layout-check` opens the real app in headless Google Chrome at 390px, clicks through the
+home screen, the full interview and one single part, and checks every screen for sideways scroll,
+clipped text, elements off the screen and touch targets under 48px. It does this for normal and
+extra large text and for each interface language. Options: `--size=extra-large`, `--lang=en`,
+`--shots` (screenshots go to the system temp folder). It needs Chrome (`CHROME_PATH` if it is
+not in the default macOS place). It is not part of `npm test` because it needs a real browser.
+
 ### Run Tests
 
 ```bash

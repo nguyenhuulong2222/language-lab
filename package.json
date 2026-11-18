@@ -9,7 +9,8 @@
     "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.node.json --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "speech-test": "vite --config vite.speech-test.config.ts"
+    "speech-test": "vite --config vite.speech-test.config.ts",
+    "layout-check": "node tools/layout-check/run.mjs"
   },
   "dependencies": {
     "react": "19.1.0",

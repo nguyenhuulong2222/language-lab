@@ -13,6 +13,17 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
+/* Comfort setting: every rem size (type, spacing, tap targets) follows the root size */
+html[data-text-size="large"] {
+  font-size: 112.5%;
+}
+html[data-text-size="extra-large"] {
+  font-size: 125%;
+}
+/* Long words and numbers wrap instead of running off a narrow screen */
+body {
+  overflow-wrap: break-word;
+}
 
 body {
   margin: 0;

@@ -32,67 +32,7 @@
 }
 
 .header__brand-name {
-  white-space: nowrap;
-}
-
-.header__about {
-  position: relative;
-}
-
-.header__about-summary {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  min-height: var(--tap-min);
-  padding-inline: var(--space-3);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  background: var(--bg);
-  color: var(--ink-2);
-  font-size: var(--fs-meta);
-  font-weight: 600;
-  cursor: pointer;
-  user-select: none;
-  list-style: none;
-  white-space: nowrap;
-}
-
-.header__about-summary::-webkit-details-marker {
-  display: none;
-}
-
-.header__about-summary:hover {
-  color: var(--ink);
-  border-color: var(--teal);
-}
-
-.header__about-chevron {
-  width: 1rem;
-  height: 1rem;
-  flex: 0 0 auto;
-  transition: transform 0.2s ease;
-}
-
-.header__about[open] .header__about-chevron {
-  transform: rotate(180deg);
-}
-
-.header__about-panel {
-  position: absolute;
-  right: 0;
-  top: calc(100% + var(--space-2));
-  width: min(22rem, calc(100vw - 2 * var(--gutter)));
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  padding: var(--space-4);
-  z-index: 20;
-}
-
-.header__about-panel .disclaimer--inline {
-  color: var(--ink);
-  font-size: var(--fs-meta);
+  overflow-wrap: anywhere;
 }
 
 .header__actions {
@@ -104,6 +44,7 @@
 .header__button {
   display: inline-flex;
   align-items: center;
+  text-align: left;
   min-height: var(--tap-min);
   padding-inline: var(--space-3);
   border: 1px solid var(--ink-2);
@@ -113,4 +54,20 @@
   font-size: var(--fs-meta);
   font-weight: 600;
   cursor: pointer;
+}
+.header__panel {
+  padding-block: var(--space-4);
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.header__panel[hidden] {
+  display: none;
+}
+.header__panel .disclaimer--inline {
+  color: var(--ink);
+  font-size: var(--fs-meta);
+}
+.header__button[aria-expanded="true"] {
+  border-color: var(--teal);
+  background: var(--surface-2);
 }

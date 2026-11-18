@@ -9,13 +9,15 @@ import { emptyManifest, hashText, type AudioManifest } from "../../engine/audio-
 import { loadPracticeContent } from "../../engine/practice-content";
 import { SpeakButton } from "../components/SpeakButton";
 import { N400View } from "../screens/N400Screen";
-import { createMp3PromptSpeaker, type AudioLike, type PromptSpeaker, type SpokenPrompt } from "../voice/prompt-speaker";
+import { createMp3PromptSpeaker, SLOW_PLAYBACK_RATE, type AudioLike, type PromptSpeaker, type SpokenPrompt } from "../voice/prompt-speaker";
 import { VoiceProvider } from "../voice/VoiceProvider";
 import { UNSUPPORTED_LISTENER } from "../voice/speech-listener";
 
 class FakeAudio implements AudioLike {
   src = "";
   currentTime = 0;
+  playbackRate = 1;
+  preservesPitch: boolean | undefined;
   plays: string[] = [];
   pauses = 0;
   failPlay = false;
@@ -152,6 +154,21 @@ describe("playing a clip", () => {
     speaker.cancel();
     await first;
     expect(fallback.spoken).toEqual([]);
+  });
+});
+
+describe("slower playback", () => {
+  it("changes only the speed of the same clip", () => {
+    const { speaker, audio } = setup();
+    void speaker.speak(prompt, { slow: true });
+    const element = audio as FakeAudio;
+    expect(element.plays).toEqual(["/audio/civics/2008-001.mp3"]);
+    expect(element.playbackRate).toBe(SLOW_PLAYBACK_RATE);
+    expect(SLOW_PLAYBACK_RATE).toBeLessThan(1);
+    expect(element.preservesPitch).toBe(true);
+    void speaker.speak(prompt);
+    expect(element.plays).toEqual(["/audio/civics/2008-001.mp3", "/audio/civics/2008-001.mp3"]);
+    expect(element.playbackRate).toBe(1);
   });
 });
 

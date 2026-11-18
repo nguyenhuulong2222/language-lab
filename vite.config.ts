@@ -7,6 +7,8 @@ export default defineConfig({
   server: { allowedHosts: [".trycloudflare.com"] },
   test: {
     globals: false,
+    // CSS files are empty in tests, except when a test reads one as raw text (?raw).
+    css: { include: [/\?raw/] },
     environment: "node",
     include: [
       "src/**/*.test.ts",
