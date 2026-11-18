@@ -103,7 +103,7 @@ const FLAGS = {
     "For a question that needs more than one answer, a longer variant that contains a shorter variant of the same answer was not stored. It could never match unless the shorter one matched too.",
   DUP: "Two source lines became the same answer after normalising. Stored once.",
   DIGITS:
-    "An accepted answer contains digits and the source gives no spelled-out version. None was added, so the spoken words do not match.",
+    "An accepted answer contains digits. The matcher treats digits and spelled-out numbers as the same (13 = thirteen, 14th = fourteenth), so nothing was added to the data. A year read as two numbers (\"nineteen twenty\" for 1920) is not matched.",
   SENTENCE:
     "Every accepted answer is a sentence of five or more words. A response must contain the whole sentence.",
 };
@@ -754,7 +754,9 @@ function reviewSheet(results, comparison) {
   out.push(
     "A response is correct when it contains enough of the stored answers as whole words. Answers are the ones the source lists; nothing was added from outside it. So:",
     "",
-    "- A spoken form the source does not list is not accepted. Examples: `six` for \"Six (6) years\" (stored: `six years`, `6 years`), `thirteen` where the source says `13`, `fourteenth` for `14th`. Questions with digits and no spelled-out form carry the **DIGITS** flag.",
+    "- Numbers are matched by value, by the matcher, not by extra data: `13` = `thirteen`, `27` = `twenty-seven`, `14th` = `fourteenth`. For an answer that is a number with a unit (`six years`), the number alone (`six`, `6`) is also accepted. Questions with digits carry the **DIGITS** flag.",
+    "- A year read as two numbers is not matched: \"nineteen twenty\" does not match `1920` (it is read as 19 and 20). The ordinal alone does not match an ordinal with a noun: `fourteenth` does not match `14th amendment`; `thirteen` does not match `13 original colonies`.",
+    "- Any other spoken form the source does not list is not accepted, unless the project owner marked a parenthetical as an alternative name (**ALTNAME**), for example `Secretary of Defense` for 2025 question 48.",
     "- Sentence answers (**SENTENCE** flag) must be said almost in full, in the source's wording.",
     "- Answers that list several items in one line (for example question 16 in 2025, \"Legislative, executive, and judicial\") are stored as one phrase and must be said in that order.",
     "- A number does not match when the response continues it (\"one hundred and one\" for `one hundred`), or when it starts in the middle of a larger number (\"twenty two\" for `two`).",

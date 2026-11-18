@@ -512,3 +512,57 @@ describe("per-answer markers for parentheses (tools/answer-key/answer-markers.js
     expect(isCorrect(key2025, "2025-048", "Defense and Attorney General")).toBe(false);
   });
 });
+
+// ---------------------------------------------------------------------------
+// Number rules on the real answer keys
+// ---------------------------------------------------------------------------
+
+describe("number rules on real answers", () => {
+  const key2008 = loadQuietly("2008");
+  const key2025 = loadQuietly("2025");
+
+  it("digits and words are the same number", () => {
+    expect(isCorrect(key2025, "2025-121", "because there were thirteen original colonies")).toBe(true);
+    expect(isCorrect(key2025, "2025-121", "13 original colonies")).toBe(true);
+    expect(isCorrect(key2025, "2025-122", "fifty states")).toBe(true);
+    expect(isCorrect(key2025, "2025-122", "because there are 50 states")).toBe(true);
+    expect(isCorrect(key2025, "2025-024", "four hundred thirty-five")).toBe(true);
+    expect(isCorrect(key2025, "2025-007", "twenty-seven")).toBe(true);
+    expect(isCorrect(key2025, "2025-007", "27")).toBe(true);
+  });
+
+  it("ordinals: 14th = fourteenth, 22nd = twenty-second", () => {
+    expect(isCorrect(key2025, "2025-097", "the fourteenth amendment")).toBe(true);
+    expect(isCorrect(key2025, "2025-097", "14th amendment")).toBe(true);
+    expect(isCorrect(key2025, "2025-097", "the thirteenth amendment")).toBe(false);
+    expect(isCorrect(key2025, "2025-037", "because of the twenty-second amendment")).toBe(true);
+    expect(isCorrect(key2025, "2025-037", "the 22nd amendment")).toBe(true);
+    expect(isCorrect(key2025, "2025-107", "thirty-fourth president of the United States")).toBe(true);
+    expect(isCorrect(key2025, "2025-060", "the tenth amendment")).toBe(false); // answer is a sentence, not the number
+  });
+
+  it("a number with a unit: the number alone is enough", () => {
+    expect(isCorrect(key2025, "2025-022", "six")).toBe(true);
+    expect(isCorrect(key2025, "2025-022", "6")).toBe(true);
+    expect(isCorrect(key2025, "2025-022", "six years")).toBe(true);
+    expect(isCorrect(key2025, "2025-022", "seven")).toBe(false);
+    expect(isCorrect(key2025, "2025-025", "two")).toBe(true);
+    expect(isCorrect(key2025, "2025-036", "four")).toBe(true);
+    expect(isCorrect(key2025, "2025-036", "four years")).toBe(true);
+    expect(isCorrect(key2025, "2025-036", "five")).toBe(false);
+  });
+
+  it("a number that continues does not match", () => {
+    expect(isCorrect(key2025, "2025-021", "one hundred and one")).toBe(false);
+    expect(isCorrect(key2025, "2025-021", "one hundred one")).toBe(false);
+    expect(isCorrect(key2008, "2008-018", "one hundred and one")).toBe(false);
+    expect(isCorrect(key2025, "2025-025", "twenty two")).toBe(false);
+    expect(isCorrect(key2025, "2025-022", "twenty six")).toBe(false);
+    expect(isCorrect(key2025, "2025-027", "twenty two")).toBe(false);
+  });
+
+  it("a number with a noun that is not a unit still needs the noun", () => {
+    expect(isCorrect(key2025, "2025-121", "thirteen")).toBe(false);
+    expect(isCorrect(key2025, "2025-122", "fifty")).toBe(false);
+  });
+});
