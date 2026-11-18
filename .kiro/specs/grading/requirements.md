@@ -61,6 +61,22 @@ Two more matching rules (decided before T-07):
   "one hundred one" do not match `one hundred`; "twenty two" does not match `two`. One "and"
   between number words is skipped when looking at the neighbouring word.
 
+Three more rules (decided at the T-07 review). All three are matcher rules, not answer data:
+
+- **Digits and words are the same number.** `13` = "thirteen", `27` = "twenty-seven",
+  `14th` = "fourteenth", `22nd` = "twenty-second". Both the response and the accepted answer are
+  turned into numerals before they are compared. "one hundred one" is read as 101 and does not match
+  `one hundred`. Year readings such as "nineteen twenty" are read as two numbers (19, 20) and do not
+  match `1920`.
+- **A number with a unit is also matched by the number alone.** For an accepted answer that is a
+  number followed by one unit word (year, month, week, day, singular or plural), the bare number is
+  accepted: "six" and "6" match `six years`. Other nouns are not units: "thirteen" does not match
+  `13 original colonies`.
+- **Parentheses are optional words unless the owner marks them as an alternative name.** The general
+  rule is unchanged. A per-answer marker in `tools/answer-key/answer-markers.json` makes one
+  parenthetical group on one source line an alternative name. "Secretary of War (Defense)" is stored
+  as `secretary of war` and `secretary of defense`. A marker is only added on the owner's decision.
+
 Answer data rules (REQ-11): numeral variants ("27", "twenty seven") are listed explicitly in
 `acceptedAnswers`; optional words in USCIS text ("(Thomas) Jefferson") are stored as both
 variants ("thomas jefferson", "jefferson").
@@ -165,6 +181,8 @@ every civics turn, and civics turns that stop exactly where the 2008 rules say (
 - Both files are produced by `tools/answer-key/build-answer-key.mjs`, which records every place
   where the source text had to be interpreted. The result is `docs/answer-key-review.md`.
 - Both files keep `needsHumanReview: true` until the project owner approves them.
+- Per-answer markers (`tools/answer-key/answer-markers.json`) record the owner's decisions for single
+  parenthetical groups. The build fails if a marker matches no source line or more than one place.
 - 65/20 stays out of scope. `data/test-rules.json` has no 65/20 change.
 
 ## Correctness properties
@@ -183,6 +201,11 @@ every civics turn, and civics turns that stop exactly where the 2008 rules say (
 | P10 | The matched-phrase count never exceeds the number of distinct accepted answers or the number of response tokens; overlapping answers never double-count. |
 | P11 | An accepted answer with a leading article matches with or without the article in the response; the article alone never satisfies it. |
 | P12 | A number answer never matches when the response continues the number (after it, or before it, with or without one "and"), and still matches among ordinary words. |
+| P13 | A number written as words and as a numeral match each other, both ways, for every number from 0 to 999999. |
+| P14 | An ordinal in words and its numeral ("twenty-second", `22nd`) match each other, both ways, for every ordinal from 1 to 9999. A cardinal never matches an ordinal of the same number. |
+| P15 | Different numbers never match, in any mix of words and numerals. |
+| P16 | An answer that is a number with a unit is matched by the number alone, in words or digits; a different number alone never matches it; one number written two ways counts as one answer. |
+| P17 | Two numbers in a row, with or without "and" and in any mix of words and numerals, match neither number. |
 
 ## Resolved issues
 

@@ -5,6 +5,58 @@ made during the development of Language Lab. Most recent entries are at the top.
 
 ---
 
+## 2026-11-01 — T-07 review changes: parenthesis markers and number matching (branch engine/grading)
+
+Not pushed. Both key files still carry `needsHumanReview: true`. `data/test-rules.json` was not touched.
+
+| Commit | What |
+|---|---|
+| `fbe7fe6` | Per-answer markers for parentheses. 2025 question 48 now accepts "Secretary of War" and "Secretary of Defense". |
+| `67e8155` | Number rules in the matcher: digits = words, ordinals, bare number for "number + unit" answers. |
+
+Result: typecheck clean, 436 tests passing (three repeat runs, no flakiness).
+
+### 1. Per-answer marker for parentheses
+
+- The general rule is unchanged: words in parentheses are optional and stored both ways.
+- `tools/answer-key/answer-markers.json` lists owner decisions for single parenthetical groups. Each marker names the
+  question, the exact source line, the group, `parentheses: "alternative"`, the words it `replaces`, and the decision.
+  Items in the group are split on commas and each one replaces the `replaces` words.
+- The build fails if a marker matches no source line or matches more than one place. The review sheet marks these
+  questions with the new **ALTNAME** flag.
+- Effect on the data: exactly one entry changed, `2025-048` (added `secretary of defense`). 127 other 2025 entries and the
+  whole 2008 file are byte-for-byte unchanged.
+- Consequence to decide on: the two names are two accepted answers, so "Secretary of War and Secretary of Defense"
+  (the same office) counts as two answers for question 48.
+
+### 2. Parentheses waiting for the owner's decision (nothing changed)
+
+2025 questions 67, 77, 101, 106, 118 and 2008 question 61. The source text and a proposal for each were given in the
+review conversation. A decision is one marker per parenthetical group, or none to keep the optional rule.
+
+### 3. Number rules (matcher only, no data change)
+
+- Digits and words are the same number, for cardinals and ordinals: `13` = thirteen, `27` = twenty-seven,
+  `14th` = fourteenth, `22nd` = twenty-second. Both sides are converted to numerals before comparing.
+- An accepted answer that is exactly "number + unit" (year, month, week, day) is also matched by the number alone: "six"
+  and "6" match `six years`.
+- Kept: "one hundred one" and "one hundred and one" do not match `one hundred`; "twenty two" does not match `two`. These
+  now fall out of the conversion ("one hundred one" is the number 101) plus the earlier continuation rule for separate
+  numbers.
+- Tests: unit tests for each rule, 11 new property tests (P13 to P17), each with a number-to-words writer written
+  separately inside the test file, and data tests on the real keys.
+
+### Limits of the number rules
+
+- A year read as two numbers does not match: "nineteen twenty" is 19 and 20, not 1920. Answers that contain a four-digit
+  year: 2008 questions 63 (`July 4, 1776`), 66 (`1787`), 72 (`War of 1812`); 2025 questions 79 (`July 4, 1776`),
+  88 and 91 (`War of 1812`), 98 (`1870`), 102 (`1920`), 104 (`1929`), 107 (`1956`).
+- Only "number + unit" gets the bare-number rule. "thirteen" alone does not match `13 original colonies`, "fifty" alone
+  does not match `50 states`, and "fourteenth" alone does not match `14th Amendment`.
+- "second" is always read as the ordinal 2nd, so the time unit "second" is not distinguished.
+
+---
+
 ## 2026-11-01 — Grading T-07: full civics answer keys (branch engine/grading)
 
 Not pushed. Both key files keep `needsHumanReview: true`; `docs/answer-key-review.md` is the sheet for the

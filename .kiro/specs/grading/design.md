@@ -67,6 +67,18 @@ Both `containsPhrase` and `countMatchingPhrases` find spans through one function
   number continues. If the span starts with a number token and the token before it, skipping one
   "and", is a number token, the number began earlier. `isNumberToken` is exported.
 
+Numbers are compared by value. Before any matching, `matchTokens(text)` turns number words into
+numerals: a small state machine reads cardinals ("four hundred thirty five" -> `435`) and ordinals
+("twenty second" -> `22nd`, with the right ending) and splits words that are not one number ("one
+two" -> `1`, `2`). "and" is never absorbed. `continuesNumber` and the span search run on these
+converted tokens, so the rules compose: "twenty two" is the single number 22, which cannot match
+`2`. The accepted answers are converted the same way, and two accepted answers that are the same
+after conversion ("twenty seven", `27`) count as one distinct answer.
+
+`alternativeForms` lists the extra forms of an accepted answer: without a leading article, and, for
+exactly "number + unit word" (year, month, week, day), the number alone. `isNumberLikeToken` is
+exported so tests can build filler words that cannot join a number.
+
 `countMatchingPhrases(response, acceptedAnswers)`:
 
 1. Normalise and de-duplicate the accepted answers; drop empty ones.
@@ -166,6 +178,11 @@ A script, not a runtime module. `node tools/answer-key/build-answer-key.mjs` is 
 - `requiredAnswerCount` comes from the asking sentence only ("Name two", "What are three").
 - Every interpretation is recorded as a flag on the question and listed in
   `docs/answer-key-review.md`. Files are written with `needsHumanReview: true`.
+- Owner decisions on single parenthetical groups live in `tools/answer-key/answer-markers.json`
+  (`parentheses: "alternative"`, `replaces`). The group's comma-separated items each replace the
+  `replaces` words, and the line without the group is kept. The general rule (parentheses are
+  optional) is unchanged. A marker that matches no line, or more than one place, stops the build.
+  The review sheet shows the **ALTNAME** flag on those questions.
 - It imports the engine's own `normalise`, so stored answers are in exactly the loader's form.
 
 The data tests in `src/engine/__tests__/civics-answer-data.test.ts` read the official sources a

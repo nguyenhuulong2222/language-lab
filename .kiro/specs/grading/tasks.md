@@ -103,6 +103,11 @@ both variants; numerals listed explicitly. Files stay `needsHumanReview: true`.
 Still to do by a person: review `docs/answer-key-review.md` and approve each file. Running the
 `content-reviewer` agent on the sheet is optional.
 
+Changes made at the T-07 review (2026-11-01): a per-answer marker for parentheses (2025 question 48
+now accepts "Secretary of War" and "Secretary of Defense"), and the number rules in the matcher
+(digits = words, ordinals, bare number for number-plus-unit answers). Parentheses in 2025 questions
+67, 77, 101, 106, 118 and 2008 question 61 are waiting for the owner's decision and are unchanged.
+
 ## T-08 — Report builder (not started)
 
 File: `src/engine/report-builder.ts`. Tests cover practiceResult for each failing stage, the
