@@ -1,0 +1,54 @@
+{
+ "2008": {
+  "questions": 100,
+  "entries": 100,
+  "textdiff": [
+   [
+    "2008-087",
+    "",
+    "Name one American Indian tribe in the United States."
+   ]
+  ],
+  "missing": [],
+  "extra": [
+   [
+    "2008-095",
+    "key answer uses words not in the official text",
+    "new jersey  [new: jersey]"
+   ],
+   [
+    "2008-095",
+    "key answer uses words not in the official text",
+    "near new york city  [new: near city]"
+   ],
+   [
+    "2008-095",
+    "key answer uses words not in the official text",
+    "on the hudson  [new: on hudson]"
+   ],
+   [
+    "2008-095",
+    "key answer uses words not in the official text",
+    "on the hudson river  [new: on hudson river]"
+   ]
+  ]
+ },
+ "2025": {
+  "questions": 128,
+  "entries": 128,
+  "textdiff": [],
+  "missing": [
+   [
+    "2025-117",
+    "official answer not in key",
+    "Tuscarora For a complete list of tribes, please visit bia.gov."
+   ],
+   [
+    "2025-120",
+    "official answer not in key",
+    "Liberty Island [Also acceptable are New Jersey, near New York City, and on the Hudson (River).]"
+   ]
+  ],
+  "extra": []
+ }
+}
