@@ -13,6 +13,7 @@ import type { SentenceAttempt } from "../../engine/practice-flow";
 import type { MessageKey } from "../../i18n";
 import { useT } from "../../i18n/react";
 import { Disclaimer } from "./Disclaimer";
+import { useTWithEnglish } from "./with-english";
 import { CheckIcon, ReviewIcon } from "./icons";
 import "./Screen.css";
 
@@ -49,6 +50,7 @@ function lineFor(note: MatchNote, typed: boolean, stillCounts: boolean): { key: 
 
 export function SentenceFeedback({ target, attempt, matchOptions, kind }: SentenceFeedbackProps) {
   const t = useT();
+  const tEnglish = useTWithEnglish();
   const comparison = compareSentence(target, attempt.transcript, matchOptions);
   const typed = kind === "writing" || attempt.input === "typed";
   const Icon = attempt.isCorrect ? CheckIcon : ReviewIcon;
@@ -73,11 +75,11 @@ export function SentenceFeedback({ target, attempt, matchOptions, kind }: Senten
             <li>{t("compare.why.allWords")}</li>
           )}
           {noteLines.map((line, index) => (
-            <li key={index}>{t(line.key, line.params)}</li>
+            <li key={index}>{tEnglish(line.key, line.params)}</li>
           ))}
         </ul>
       )}
-      <p className="note">{typed ? t("compare.honest.typed") : t("compare.honest.heard")}</p>
+      {!(empty && typed) && <p className="note">{typed ? t("compare.honest.typed") : t("compare.honest.heard")}</p>}
       <p className="progress-line">{t("compare.wanted")}</p>
       <p lang="en">{target}</p>
       <p className="progress-line">{typed ? t("compare.typed") : t("compare.heard")}</p>

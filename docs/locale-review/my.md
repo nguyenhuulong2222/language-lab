@@ -145,7 +145,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.typed` | What you typed | သင်ရိုက်ထည့်ခဲ့သည်များ |
 | `compare.wanted` | The sentence | စာကြောင်း |
 | `compare.counts` | This counts. | ၎င်းကို ရေတွက်သည်။ |
-| `compare.notYet` | Not yet. | မရောက်သေးပါ။ |
+| `compare.notYet` ⚠ | Not yet. | မရောက်သေးပါ။ |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | ဤဘရောက်ဇာသည် အသံထွက်ဖတ်မပြနိုင်သဖြင့် စာကြောင်းကို ဤနေရာတွင် ပြထားသည်။ ၎င်းကို ရိုက်ထည့်ပါ။ |
 | `writing.hidden` | The sentence stays hidden until you answer. | သင်မဖြေမချင်း စာကြောင်းကို ဖျောက်ထားမည်။ |
 | `civics.title` | Civics | နိုင်ငံသားဗဟုသုတ |
@@ -285,3 +285,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 ## Lines marked ⚠ (meaning differs a little)
 
 - `aiNotice.text`: "authoritative" is rendered as "official": close, slightly weaker.
+- `compare.notYet`: "Not yet" is rendered literally as "has not arrived yet". Low confidence.

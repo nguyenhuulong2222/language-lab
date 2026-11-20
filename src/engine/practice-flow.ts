@@ -26,7 +26,7 @@ import type {
   Turn,
 } from "../contracts/session.js";
 import { loadAnswerKey, type CivicsAnswerEntry } from "./civics-answer-key.js";
-import { runCivicsStage, type CivicsStageResult } from "./civics-grader.js";
+import { matchedAnswerCount, runCivicsStage, type CivicsStageResult } from "./civics-grader.js";
 import { runEnglishStage, type EnglishStageKind, type EnglishStageResult } from "./english-grader.js";
 import type { N400Answer } from "./n400-coach.js";
 import { loadPracticeConfig, matchOptionsFor, type PracticeConfig } from "./practice-config.js";
@@ -138,7 +138,10 @@ export interface SentenceAttempt {
 
 export interface CivicsAttempt {
   questionId: string;
+  /** What the user said or typed. For speech: the alternative the recogniser gave that matches the answer key best. */
   response: string;
+  /** How many different alternatives were scored against the answer key (1 when typed). */
+  alternativesScored: number;
   input: InputMode;
   at: string;
 }
@@ -174,7 +177,7 @@ export type PracticeAction =
   | { type: "submitWriting"; transcript: string; alternatives?: readonly string[]; input: InputMode; at: string }
   /** Try the sentence again: the last attempt of this part is replaced by the next one. */
   | { type: "retryEnglish" }
-  | { type: "submitCivics"; response: string; input: InputMode; at: string }
+  | { type: "submitCivics"; response: string; alternatives?: readonly string[]; input: InputMode; at: string }
   | { type: "continue"; at: string }
   | { type: "restart" };
 
@@ -204,6 +207,8 @@ export interface CivicsProgress {
   last: { entry: CivicsAnswerEntry; result: "correct" | "incorrect" | "unscored" } | null;
   /** What the user said or typed for the latest answer. */
   lastResponse: string | null;
+  /** How the latest answer was given. */
+  lastInput: InputMode | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -412,6 +417,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
         total: 0,
         last: null,
         lastResponse: null,
+        lastInput: null,
       };
     }
     const key = loaded.key;
@@ -432,6 +438,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
       total: limit,
       last: lastScore && lastEntry ? { entry: lastEntry, result: lastScore.scoring.result } : null,
       lastResponse: state.civics[state.civics.length - 1]?.response ?? null,
+      lastInput: state.civics[state.civics.length - 1]?.input ?? null,
     };
   }
 
@@ -661,11 +668,26 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
         if (state.phase !== "civics") return state;
         const progress = civicsProgress(state);
         if (progress.locked || progress.done || progress.current === null) return state;
+        // Spoken answers: every alternative the recogniser gave is checked against the answer key
+        // (the same count that scores the answer) and the one that matches best is used.
+        const candidates = [action.response, ...(action.alternatives ?? [])].filter((c, i, all) => all.indexOf(c) === i);
+        const entry = progress.current;
+        let response = action.response;
+        if (entry.answerType === "static" && candidates.length > 1) {
+          let bestCount = -1;
+          for (const candidate of candidates) {
+            const count = matchedAnswerCount(entry, candidate);
+            if (count > bestCount) {
+              bestCount = count;
+              response = candidate;
+            }
+          }
+        }
         return {
           ...state,
           civics: [
             ...state.civics,
-            { questionId: progress.current.id, response: action.response, input: action.input, at: action.at },
+            { questionId: entry.id, response, alternativesScored: candidates.length, input: action.input, at: action.at },
           ],
         };
       }

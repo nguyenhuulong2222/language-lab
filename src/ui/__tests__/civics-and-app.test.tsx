@@ -176,3 +176,31 @@ describe("the app, phase by phase", () => {
     expect(html).not.toContain("Practice report");
   });
 });
+describe("civics answers by voice use the best alternative (answer key only)", () => {
+  it("picks the alternative that matches the answer key and scores it", () => {
+    let s = toCivics(engine);
+    const q = engine.civicsProgress(s).current!;
+    const right = q.acceptedAnswers.slice(0, q.requiredAnswerCount).join(" and ");
+    s = engine.reduce(s, { type: "submitCivics", response: "zzz qqq", alternatives: ["yyy", right], input: "voice", at: AT });
+    expect(s.civics[0]).toMatchObject({ response: right, alternativesScored: 3, input: "voice" });
+    const progress = engine.civicsProgress(s);
+    expect(progress.last?.result).toBe("correct");
+    expect(progress.lastInput).toBe("voice");
+  });
+  it("keeps the main text when no alternative matches, and does not score typed text by alternatives", () => {
+    let s = toCivics(engine);
+    s = engine.reduce(s, { type: "submitCivics", response: "zzz qqq", alternatives: ["yyy"], input: "voice", at: AT });
+    expect(s.civics[0]!.response).toBe("zzz qqq");
+    expect(engine.civicsProgress(s).last?.result).toBe("incorrect");
+    s = engine.reduce(s, { type: "submitCivics", response: "zzz", input: "typed", at: AT });
+    expect(s.civics[1]).toMatchObject({ alternativesScored: 1 });
+  });
+  it("the feedback says the result rests on the words the device heard", () => {
+    let s = toCivics(engine);
+    s = engine.reduce(s, { type: "submitCivics", response: "zzz", input: "voice", at: AT });
+    const html = renderToString(
+      <CivicsScreen progress={engine.civicsProgress(s)} version="2008" onSubmit={() => {}} onContinue={() => {}} onRestart={() => {}} showFeedbackInitially />
+    );
+    expect(html).toContain("This result is based on the words your device heard.");
+  });
+});

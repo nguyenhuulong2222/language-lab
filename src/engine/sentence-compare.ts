@@ -16,7 +16,7 @@
  *  - Words come from the matcher tokeniser: case, punctuation and hyphens are ignored and a number
  *    in words equals the numeral ("fifty" = "50").
  *  - A plural or possessive ending (-s, -es, 's) does not make a different word. Two different words
- *    are never equated (see stemWord and its tests).
+ *    are never equated (see sameInflection and its tests).
  *  - Short words (the "Other (Function)" words of the official lists, from the config) may be missing
  *    or extra.
  *  - Every content word of the sentence must be present, in order. A missing or substituted content
@@ -89,22 +89,33 @@ const DEFAULT_OPTIONS: MatchOptions = {
   spellingTolerance: false,
 };
 
-/**
- * The word without a plural or possessive ending: "elects" -> "elect", "states" -> "state",
- * "taxes" -> "tax", "cities" -> "city", "President's" -> "president". Words of 3 letters or fewer, numbers,
- * words ending in "ss", "us" or "is", and the words in `neverStem` are left alone, so "was", "has", "this",
- * "news" and "Texas" are not shortened.
- */
-export function stemWord(word: string, neverStem: ReadonlySet<string> = new Set()): string {
-  let w = word.toLowerCase();
-  if (w.endsWith("'s") || w.endsWith("’s")) w = w.slice(0, -2);
-  else if (w.endsWith("s'") || w.endsWith("s’")) w = w.slice(0, -1);
-  if (neverStem.has(w) || w.length <= 3 || /\d/.test(w)) return w;
-  if (/(ss|us|is)$/.test(w)) return w;
-  if (w.endsWith("ies") && w.length > 4) return `${w.slice(0, -3)}y`;
-  if (/(s|x|z|ch|sh|o)es$/.test(w) && w.length - 2 >= 2) return w.slice(0, -2);
-  if (w.endsWith("s")) return w.slice(0, -1);
+/** A word without a possessive ending: "President's" -> "president", "presidents'" -> "presidents". */
+function withoutPossessive(word: string): string {
+  const w = word.toLowerCase();
+  if (w.endsWith("'s") || w.endsWith("’s")) return w.slice(0, -2);
+  if (w.endsWith("s'") || w.endsWith("s’")) return w.slice(0, -1);
   return w;
+}
+
+/**
+ * True when two words are the same word apart from a plural or possessive ending: "elect" and
+ * "elects", "tax" and "taxes", "city" and "cities", "state" and "States", "President's" and
+ * "presidents". It compares the two words directly (one is the other plus "s", "es" or "ies" for "y"),
+ * so it never shortens a word on its own and cannot turn two different words into one. Words of 2
+ * letters or fewer, numbers, a plural that would end in "ss", and the words in `neverStem` (names and
+ * words that already end in s, such as "news") are only equal when they are identical.
+ */
+export function sameInflection(a: string, b: string, neverStem: ReadonlySet<string> = new Set()): boolean {
+  const x = withoutPossessive(a);
+  const y = withoutPossessive(b);
+  if (x === y) return true;
+  if (/\d/.test(x) || /\d/.test(y)) return false;
+  const [short, long] = x.length <= y.length ? [x, y] : [y, x];
+  if (short.length < 3 || neverStem.has(short) || neverStem.has(long)) return false;
+  if (long === `${short}s`) return !long.endsWith("ss");
+  if (long === `${short}es`) return /(s|x|z|ch|sh|o)$/.test(short);
+  if (short.endsWith("y") && long === `${short.slice(0, -1)}ies`) return short.length > 3;
+  return false;
 }
 
 /** True when the two words differ by one inserted, missing, changed or swapped neighbouring letter. */
@@ -126,40 +137,38 @@ function oneLetterApart(a: string, b: string): boolean {
 interface Token {
   /** As said or written (lower case). */
   raw: string;
-  stem: string;
 }
 
-function tokensOf(text: string, options: MatchOptions): Token[] {
-  return matchTokens(text).map((raw) => ({ raw, stem: stemWord(raw, options.neverStem) }));
+function tokensOf(text: string): Token[] {
+  return matchTokens(text).map((raw) => ({ raw }));
 }
 
 /** Same word (after plural and possessive endings), or, when allowed, a one-letter spelling error. */
 function sameWord(target: Token, said: Token, options: MatchOptions): "same" | "variant" | "spelling" | null {
   if (target.raw === said.raw) return "same";
-  if (target.stem === said.stem) return "variant";
+  if (sameInflection(target.raw, said.raw, options.neverStem)) return "variant";
   if (
     options.spellingTolerance &&
-    target.stem.length >= 5 &&
-    said.stem.length >= 5 &&
-    target.stem[0] === said.stem[0] &&
-    !(options.knownWords?.has(said.raw) || options.knownWords?.has(said.stem)) &&
-    oneLetterApart(target.stem, said.stem)
+    target.raw.length >= 5 &&
+    said.raw.length >= 5 &&
+    target.raw[0] === said.raw[0] &&
+    !options.knownWords?.has(said.raw) &&
+    oneLetterApart(target.raw, said.raw)
   ) {
     return "spelling";
   }
   return null;
 }
 
-const isShort = (token: Token, options: MatchOptions): boolean =>
-  options.functionWords.has(token.raw) || options.functionWords.has(token.stem);
+const isShort = (token: Token, options: MatchOptions): boolean => options.functionWords.has(token.raw);
 
 export function compareSentence(
   target: string,
   attempt: string,
   options: MatchOptions = DEFAULT_OPTIONS
 ): SentenceComparison {
-  const a = tokensOf(target, options);
-  const b = tokensOf(attempt, options);
+  const a = tokensOf(target);
+  const b = tokensOf(attempt);
   const eq = (i: number, j: number) => sameWord(a[i]!, b[j]!, options) !== null;
 
   // Longest common run of words in order (gaps allowed).

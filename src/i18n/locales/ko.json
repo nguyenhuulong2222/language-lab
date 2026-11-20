@@ -114,7 +114,7 @@
   "compare.wanted": "문장",
   "compare.counts": "인정됩니다.",
   "compare.notYet": "아직이에요.",
-  "compare.setting": "USCIS 채점 지침을 바탕으로 한 Language Lab의 연습 설정이며 USCIS의 규정이 아닙니다. 문장의 중요한 단어가 모두 순서대로 있어야 합니다. “the” 같은 짧은 단어는 빠져도 됩니다. 쉬는 시간과 발음은 채점하지 않습니다.",
+  "compare.setting": "USCIS 채점 지침을 바탕으로 한 Language Lab의 연습 설정이며 USCIS의 규정이 아닙니다. 문장의 중요한 단어가 모두 순서대로 있어야 합니다. “the” 같은 짧은 단어는 빠져도 됩니다. 멈춤과 발음은 채점하지 않습니다.",
   "compare.vocab": "문장에는 USCIS 공식 읽기·쓰기 어휘 목록에 있는 단어만 사용됩니다.",
   "writing.fallback": "이 브라우저는 소리 내어 읽어 줄 수 없어서 문장을 여기에 표시합니다. 입력해 보세요.",
   "writing.hidden": "답하기 전까지 문장은 숨겨져 있습니다.",

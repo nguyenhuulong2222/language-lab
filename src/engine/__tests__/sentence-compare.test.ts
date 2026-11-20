@@ -5,7 +5,7 @@
  */
 import { describe, it, expect } from "vitest";
 import * as fc from "fast-check";
-import { compareSentence, stemWord, type MatchOptions } from "../sentence-compare";
+import { compareSentence, sameInflection, type MatchOptions } from "../sentence-compare";
 import { matchTokens } from "../answer-normaliser";
 import { loadPracticeConfig, matchOptionsFor } from "../practice-config";
 import { loadPracticeContent, vocabularyWords } from "../practice-content";
@@ -116,46 +116,45 @@ describe("plural and possessive endings", () => {
     expect(ok("Who was Lincoln?", "who is lincoln")).toBe(false);
     expect(ok("Congress meets in Washington.", "congress met in washington")).toBe(false);
   });
-  it("stemWord leaves short words, names and the neverStem words alone", () => {
-    for (const w of ["was", "has", "his", "this", "is", "us", "yes", "news", "texas", "congress", "bus", "series", "always"]) {
-      expect(stemWord(w, never), w).toBe(w);
+  it("sameInflection equates a word with its plural and possessive forms", () => {
+    for (const [a, b] of [["elect", "elects"], ["tax", "taxes"], ["city", "cities"], ["state", "states"], ["house", "houses"], ["shoe", "shoes"], ["watch", "watches"], ["president", "President’s"], ["president", "presidents"], ["right", "rights"]]) {
+      expect(sameInflection(a!, b!, never), `${a} ${b}`).toBe(true);
+      expect(sameInflection(b!, a!, never), `${b} ${a}`).toBe(true);
     }
-    expect(stemWord("elects", never)).toBe("elect");
-    expect(stemWord("taxes", never)).toBe("tax");
-    expect(stemWord("cities", never)).toBe("city");
-    expect(stemWord("states", never)).toBe("state");
-    expect(stemWord("President’s", never)).toBe("president");
-    expect(stemWord("27", never)).toBe("27");
   });
-  it("property: a stem is the word, or the word without an ending", () => {
+  it("sameInflection never equates two different words", () => {
+    for (const [a, b] of [["was", "wa"], ["has", "ha"], ["his", "hi"], ["news", "new"], ["pass", "pas"], ["glass", "glas"], ["bus", "bu"], ["is", "i"], ["us", "u"], ["lives", "lived"], ["have", "has"], ["vote", "voted"], ["texas", "texa"], ["27", "27s"], ["elect", "elected"], ["meet", "met"], ["do", "does"]]) {
+      expect(sameInflection(a!, b!, never), `${a} ${b}`).toBe(false);
+    }
+  });
+  it("property: a word and itself plus s are the same word, and no other suffix is", () => {
     fc.assert(
-      fc.property(fc.stringMatching(/^[a-z]{1,12}$/), (w) => {
-        const s = stemWord(w, never);
-        return s === w || (w.startsWith(s) && w.length - s.length <= 2) || (w.endsWith("ies") && s === `${w.slice(0, -3)}y`);
+      fc.property(fc.stringMatching(/^[a-z]{3,10}$/).filter((w) => !w.endsWith("s") && !never.has(w)), fc.constantFrom("d", "ed", "ing", "x", "r", "ly"), (w, suffix) => {
+        return sameInflection(w, `${w}s`, never) && !sameInflection(w, `${w}${suffix}`, never) && sameInflection(`${w}s`, w, never);
       })
     );
   });
   it("never equates two different words of the official vocabularies", () => {
-    // Group every vocabulary word and practice-sentence word by stem. Each group must be one word and its
-    // plural/possessive forms only: the group members differ by -s, -es, 's, or -ies/-y. This list is the
-    // whole set of groups that exist today; a new equation shows up here.
+    // Every pair of words from the vocabulary lists and the practice sentences that sameInflection calls
+    // the same word. This is the whole set that exists today; a new equation shows up here.
     const words = new Set<string>();
     for (const w of known) words.add(w);
     for (const s of [...content.readingSentences, ...content.writingSentences]) for (const w of matchTokens(s.text)) words.add(w);
-    const groups = new Map<string, string[]>();
-    for (const w of words) {
-      const stem = stemWord(w, never);
-      groups.set(stem, [...(groups.get(stem) ?? []), w]);
-    }
-    const shared = [...groups.entries()].filter(([, list]) => list.length > 1).map(([stem, list]) => `${stem}: ${list.sort().join(" ")}`).sort();
-    for (const [stem, list] of groups) {
-      for (const w of list) {
-        const rest = w.replace(/'s$/, "");
-        const okForm = rest === stem || rest === `${stem}s` || rest === `${stem}es` || (stem.endsWith("y") && rest === `${stem.slice(0, -1)}ies`);
-        expect(okForm, `${w} -> ${stem}`).toBe(true);
+    const list = [...words].sort();
+    const equated: string[] = [];
+    for (const a of list) {
+      for (const b of list) {
+        if (a < b && sameInflection(a, b, never)) {
+          // The longer word must be the shorter plus s, es, or ies for y: nothing else is allowed.
+          const [short, long] = a.length <= b.length ? [a, b] : [b, a];
+          const rest = long.replace(/'s$/, "");
+          const okForm = rest === `${short}s` || rest === `${short}es` || (short.endsWith("y") && rest === `${short.slice(0, -1)}ies`) || rest === short;
+          expect(okForm, `${a} ${b}`).toBe(true);
+          equated.push(`${a} ~ ${b}`);
+        }
       }
     }
-    expect(shared).toMatchSnapshot();
+    expect(equated).toMatchSnapshot();
   });
 });
 
@@ -172,14 +171,14 @@ describe("spelling errors (writing only)", () => {
   });
   it("two wrong letters, or a short word, do not count", () => {
     expect(ok("Citizens can vote.", "cizens can vote", writing)).toBe(false);
-    expect(ok("We pay taxes.", "we pay texes", writing)).toBe(false);
+    expect(ok("We pay taxes.", "we pay tecss", writing)).toBe(false);
   });
   it("a typed word that is itself a different word of the vocabulary never counts as a misspelling", () => {
     const list = [...known].filter((w) => w.length >= 5 && /^[a-z]+$/.test(w));
     let checked = 0;
     for (const a of list) {
       for (const b of list) {
-        if (a === b || stemWord(a, never) === stemWord(b, never)) continue;
+        if (a === b || sameInflection(a, b, never)) continue;
         if (!compareSentence(a, b, { ...writing, knownWords: new Set() }).isCorrect) continue;
         // These two are one letter apart. With the vocabulary known, the typed word is not accepted.
         expect(compareSentence(a, b, writing).isCorrect, `${a} / ${b}`).toBe(false);

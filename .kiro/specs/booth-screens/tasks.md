@@ -2,7 +2,7 @@
 
 One commit per task. After each: `npm run typecheck` and `npm test` pass.
 
-**Status:** B-31 to B-36 in progress. B-01 to B-30 done, except that B-25 saved 11 of the 40 pictures aimed for (see `docs/image-todo.md`).
+**Status:** B-01 to B-36 done, except that B-25 saved 11 of the 40 pictures aimed for (see `docs/image-todo.md`).
 
 ## B-01 Practice content and sources (done)
 USCIS reading and writing vocabulary saved in `data/sources/` (URL, SHA-256), `data/practice/`
@@ -98,17 +98,17 @@ Home option, `StudyScreen`, version choice, one question at a time with audio an
 Credits screen from the footer, `docs/image-credits.md`, README disclosure.
 ## B-30 Reviews and docs (done)
 `ui-reviewer` and `content-reviewer`, fixes, `tasks.md`, `decisions-log.md`, `kiro-log.md`.
-## B-31 Spec for fair scoring and listen-and-compare
+## B-31 Spec for fair scoring and listen-and-compare (done)
 BS-22 to BS-25 in requirements and design; USCIS Policy Manual passage saved in `data/sources/`.
-## B-32 Alternatives
+## B-32 Alternatives (done)
 `maxAlternatives` 5, every alternative scored, best one used and shown as "What we heard".
-## B-33 Scoring guidelines
+## B-33 Scoring guidelines (done)
 `practice-config.json` (function words, extra content words, spelling), new `compareSentence`, stems.
-## B-34 Listen and compare
+## B-34 Listen and compare (done)
 Self-review recorder, "Record and compare", "Hear your recording", "Hear the sample", "Try again",
 reading sample clips, privacy text.
-## B-35 Honest feedback
+## B-35 Honest feedback (done)
 Plain near-miss lines, the "based on the words the device heard" line, no crossed-out display.
-## B-36 Tests, reviews and docs
+## B-36 Tests, reviews and docs (done)
 Tests for each rule, all 14 locales, `ui-reviewer`, `content-reviewer`, layout check, `tasks.md`,
 `decisions-log.md`, `kiro-log.md`, list of what to test on a real iPhone.

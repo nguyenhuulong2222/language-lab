@@ -44,7 +44,7 @@ the 2025 key and is not stored here.
 | `uscis-policy-manual-vol12-parte-ch2-reading-writing.txt` | Extracted from the page above | The "Reading Test" and "Writing Test" passages only, with line breaks added and nothing else changed. The spec quotes it. |
 ```
 2aa57c88ab539dcb0a0f3417ae49865d1992e502b5aeea969a5125fb190ec2fd  uscis-policy-manual-vol12-parte-ch2.html
-5c1cecd7c36cdfc82a629a82476c9ab52cd1dc2ab03586db1bf1350fcc4c9b64  uscis-policy-manual-vol12-parte-ch2-reading-writing.txt
+faa3c1e092e28cb2c9991aa7dc63f8315b825ec80b9965184dacdebebb10832b  uscis-policy-manual-vol12-parte-ch2-reading-writing.txt
 ```
 The manual does not define "content word" or "short word". Language Lab uses the "Other (Function)" columns of the two official vocabulary lists above for "short words" (see `data/practice/practice-config.json`).
 

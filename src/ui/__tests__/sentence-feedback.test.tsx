@@ -17,6 +17,8 @@ function attemptFor(target: string, transcript: string, kind: "reading" | "writi
   const c = compareSentence(target, transcript, options(kind));
   return { sentenceId: "x", transcript, alternativesScored: 1, usedAlternative: 0, input, accuracy: c.accuracy, isCorrect: c.isCorrect, at: "2026-11-18T00:00:00Z" };
 }
+/** The visible text of some HTML: tags removed, the few entities React writes turned back. */
+const plain = (html: string) => html.replace(/<[^>]+>/g, "").replace(/&#x27;/g, "'").replace(/&amp;/g, "&");
 const render = (target: string, transcript: string, kind: "reading" | "writing" = "reading", input: "voice" | "typed" = "voice", language: "en" | "vi" = "en") =>
   renderToString(
     <I18nProvider language={language}>
@@ -28,42 +30,42 @@ describe("plain lines for near misses", () => {
   it("the iPhone case: You said “elect”. The sentence says “elects”. This still counts.", () => {
     const html = render("Who elects the President?", "who elect the president");
     expect(html).toContain("This counts.");
-    expect(html).toContain("You said “elect”. The sentence says “elects”. This still counts.");
+    expect(plain(html)).toContain("You said “elect”. The sentence says “elects”. This still counts.");
     expect(html).not.toContain("Not yet.");
   });
   it("a typed attempt says “You wrote”", () => {
     const html = render("Citizens can vote.", "citizen can vote", "writing", "typed");
-    expect(html).toContain("You wrote “citizen”. The sentence says “citizens”. This still counts.");
+    expect(plain(html)).toContain("You wrote “citizen”. The sentence says “citizens”. This still counts.");
   });
   it("a misspelling in writing still counts and asks to check the spelling", () => {
     const html = render("Citizens can vote.", "citzens can vote", "writing", "typed");
     expect(html).toContain("This counts.");
-    expect(html).toContain("You wrote “citzens”. The sentence has “citizens”. This still counts. Check the spelling.");
+    expect(plain(html)).toContain("You wrote “citzens”. The sentence has “citizens”. This still counts. Check the spelling.");
   });
   it("a different word does not count, and says which", () => {
     const html = render("Who was George Washington?", "who was george lincoln");
     expect(html).toContain("Not yet.");
-    expect(html).toContain("You said “lincoln”. The sentence says “washington”. That is a different word, so this does not count yet.");
+    expect(plain(html)).toContain("You said “lincoln”. The sentence says “washington”. That is a different word, so this does not count yet.");
   });
   it("a missing content word does not count", () => {
     const html = render("We pay taxes.", "we taxes");
     expect(html).toContain("Not yet.");
-    expect(html).toContain("A word is missing: “pay”. This does not count yet.");
+    expect(plain(html)).toContain("A word is missing: “pay”. This does not count yet.");
   });
   it("a left-out short word still counts and the line says so", () => {
     const html = render("What is the capital of the United States?", "what is capital of united states");
     expect(html).toContain("This counts.");
-    expect(html).toContain("The short word “the” was left out. This still counts.");
+    expect(plain(html)).toContain("The short word “the” was left out. This still counts.");
     expect(html).toContain("Every important word of the sentence was there, in order.");
   });
   it("an added short word and one extra content word still count", () => {
-    expect(render("We pay taxes.", "we pay the taxes")).toContain("You added the short word “the”. This still counts.");
-    expect(render("We pay taxes.", "we really pay taxes")).toContain("You added “really”, which is not in the sentence. This still counts.");
+    expect(plain(render("We pay taxes.", "we pay the taxes"))).toContain("You added the short word “the”. This still counts.");
+    expect(plain(render("We pay taxes.", "we really pay taxes"))).toContain("You added “really”, which is not in the sentence. This still counts.");
   });
   it("too many extra words do not count", () => {
     const html = render("We pay taxes.", "we really truly pay taxes");
     expect(html).toContain("Not yet.");
-    expect(html).toContain("You added “really”, which is not in the sentence. This does not count yet.");
+    expect(plain(html)).toContain("You added “really”, which is not in the sentence. This does not count yet.");
   });
   it("a perfect attempt says every important word was there", () => {
     const html = render("We pay taxes.", "we pay taxes");
@@ -74,6 +76,15 @@ describe("plain lines for near misses", () => {
     const html = render("We pay taxes.", "");
     expect(html).toContain("Not yet.");
     expect(html).toContain("We did not hear anything");
+  });
+});
+
+describe("English words inside translated lines", () => {
+  it("are marked lang=en so a screen reader says them in English", () => {
+    const html = render("Who elects the President?", "who elect the president", "reading", "voice", "vi");
+    expect(html).toContain('<span lang="en">elect</span>');
+    expect(html).toContain('<span lang="en">elects</span>');
+    expect(plain(html)).toContain("“elect”");
   });
 });
 
@@ -88,6 +99,10 @@ describe("the honest line", () => {
     expect(render("We pay taxes.", "we pay", "reading", "typed")).toContain("This result is based on the words you typed.");
     expect(render("We pay taxes.", "we pay taxes", "writing", "typed")).toContain("This result is based on the words you typed.");
     expect(render("We pay taxes.", "we pay", "reading", "typed")).not.toContain("your device heard");
+  });
+  it("is left out when a typed answer was empty (a skip): there are no typed words to base it on", () => {
+    expect(render("We pay taxes.", "", "reading", "typed")).not.toContain("This result is based on");
+    expect(render("We pay taxes.", "", "reading", "voice")).toContain("This result is based on the words your device heard");
   });
   it("exists in every language", () => {
     expect(render("We pay taxes.", "we taxes", "reading", "voice", "vi")).toContain("Kết quả này dựa trên những từ thiết bị của bạn nghe được");

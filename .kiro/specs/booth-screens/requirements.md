@@ -188,21 +188,28 @@ Policy Manual, Vol. 12, Part E, Ch. 2, saved in `data/sources/`; SHA-256 in its 
   errors; Omitted short words that do not interfere with meaning; or Numbers spelled out or written as
   digits." Failing: "A different sentence or words; An abbreviation for a dictated word; Nothing or only
   one or two isolated words; or A sentence that is completely illegible."
-Language Lab applies this as closely as a text comparison can, for reading and writing alike:
-- An attempt counts when every content word of the sentence is present, in order.
-- A short word (the "Other (Function)" words of the official vocabulary lists, kept in
-  `practice-config.json`) may be missing or added.
-- A plural or possessive ending (-s, -es, 's) does not make a different word; two different words are
-  never equated.
-- A missing or substituted content word does not count. One extra content word is allowed (the
-  guidelines do not list an inserted word as a failure, and a speech recogniser may add one); more do not.
-- Writing only: a single wrong, missing or swapped letter in a word of 5 letters or more counts as a
-  spelling error (guideline: spelling errors do not fail), unless the typed word is itself a different word
+- Ordinary usage (introduction of section D): "Ordinary usage means comprehensible and pertinent communication
+  through simple vocabulary and grammar, which may include noticeable errors in pronouncing, constructing,
+  spelling, and understanding completely certain words, phrases, and sentences."
+Language Lab applies this as closely as a text comparison can, for reading and writing alike. The first
+four points follow the guidelines; the rest are Language Lab choices that the guidelines do not state:
+- An attempt counts when every content word of the sentence is present. A missing or substituted content
+  word does not count (guideline).
+- A short word may be missing (guideline). The short words are the "Other (Function)" words of the official
+  vocabulary lists, kept in `practice-config.json` (the manual does not define short words).
+- Numbers in words and digits are the same (existing matcher; guideline for writing).
+- Pauses, pronunciation and whether an officer understands are not scored: a text comparison cannot judge them.
+- *Choice:* the content words must be in order. A short word may also be added.
+- *Choice:* a plural or possessive ending (-s, -es, 's) does not make a different word; two different words
+  are never equated.
+- *Choice:* one extra content word is allowed (an inserted word is not listed as a failure, and a speech
+  recogniser can add one); more do not count.
+- *Choice, writing only:* a single wrong, missing or swapped letter in a word of 5 letters or more counts as
+  a spelling error (guideline: spelling errors do not fail), unless the typed word is itself a different word
   of the official vocabulary. The screen says to check the spelling.
-- Numbers in words and digits are the same (existing matcher).
-What the guidelines say and a text comparison cannot judge (pauses, pronunciation, whether the officer
-understands) is not scored; the screen says so. All settings are in `data/practice/practice-config.json`
-and shown as a Language Lab practice setting based on the USCIS guidelines, not as a USCIS rule.
+All settings are in `data/practice/practice-config.json` and shown as a Language Lab practice setting based
+on the USCIS guidelines, not as a USCIS rule. Footnote 10 of the manual: an abbreviation for a dictated word
+"may be accepted if the officer has approved the abbreviation"; Language Lab does not accept abbreviations.
 ### BS-23 Use every alternative the recogniser gives
 Speech recognition is asked for 5 alternatives. Every alternative is scored against the expected
 sentence and the best one is used and shown as "What we heard". If the user edits the text box, only the

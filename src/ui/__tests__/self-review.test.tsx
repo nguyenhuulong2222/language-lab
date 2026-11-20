@@ -134,6 +134,51 @@ describe("the recorder", () => {
   });
 });
 
+describe("stop while the browser asks for the microphone", () => {
+  /** A browser whose microphone arrives only when `allow()` is called. */
+  function slowBrowser() {
+    const { host, state } = fakeBrowser();
+    let allow: () => void = () => {};
+    const open = host.getUserMedia!;
+    host.getUserMedia = (c) => new Promise((resolve) => (allow = () => resolve(open(c))));
+    return { host, state, allow: () => allow() };
+  }
+  it("the recorder: stop cancels the pending start and the microphone is released when it arrives", async () => {
+    const { host, state, allow } = slowBrowser();
+    const recorder = createSelfReviewRecorder(host);
+    const pending = recorder.start();
+    expect(await recorder.stop()).toEqual({ kind: "nothing" });
+    allow();
+    expect((await pending).kind).toBe("error");
+    expect(state.tracksOpen).toBe(0);
+    expect(state.timers).toHaveLength(0);
+    expect(state.liveUrls.size).toBe(0);
+  });
+  it("the controller: Stop while starting goes back to idle with no message and no live microphone", async () => {
+    const { host, state, allow } = slowBrowser();
+    const controller = createSelfReviewController(createSelfReviewRecorder(host), () => ({ play: () => Promise.resolve(), pause: () => {}, onended: null }), () => {});
+    controller.setSentence("read-001");
+    controller.start();
+    expect(controller.view().phase).toBe("starting");
+    controller.stop();
+    expect(controller.view()).toMatchObject({ phase: "idle", problem: null });
+    allow();
+    await new Promise((r) => setTimeout(r, 0));
+    expect(controller.view()).toMatchObject({ phase: "idle", problem: null });
+    expect(state.tracksOpen).toBe(0);
+  });
+  it("the controller says Recording only once the microphone is open", async () => {
+    const { host, allow } = slowBrowser();
+    const controller = createSelfReviewController(createSelfReviewRecorder(host), () => ({ play: () => Promise.resolve(), pause: () => {}, onended: null }), () => {});
+    controller.setSentence("read-001");
+    controller.start();
+    expect(controller.view().phase).toBe("starting");
+    allow();
+    await vi.waitFor(() => expect(controller.view().phase).toBe("recording"));
+    controller.dispose();
+  });
+});
+
 describe("one sentence at a time", () => {
   const player = (): MinePlayer => ({ play: () => Promise.resolve(), pause: () => {}, onended: null });
   it("no recording is kept after moving on to the next sentence", async () => {
@@ -267,8 +312,11 @@ describe("the screen part", () => {
     expect(html).toContain("stays on this device");
     expect(html).toContain("not scored");
   });
-  it("while recording: stop is offered, still no sample", () => {
+  it("while starting or recording: stop is offered, still no sample", () => {
+    expect(render(review({ phase: "starting" }), false)).toContain("Stop recording");
+    expect(render(review({ phase: "starting" }), false)).not.toContain("Recording. Read the sentence now");
     const html = render(review({ phase: "recording" }), false);
+    expect(html).toContain("Recording. Read the sentence now");
     expect(html).toContain("Stop recording");
     expect(html).not.toContain("Hear the sample");
   });

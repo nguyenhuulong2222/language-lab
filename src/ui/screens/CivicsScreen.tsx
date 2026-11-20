@@ -19,12 +19,13 @@ import { QuestionPicture } from "../components/QuestionPicture";
 import { ScreenHelp } from "../components/ScreenHelp";
 import { SpeakButton } from "../components/SpeakButton";
 import { TakeHeader } from "../components/TakeHeader";
+import { useTWithEnglish } from "../components/with-english";
 import "../components/Screen.css";
 
 interface CivicsScreenProps {
   progress: CivicsProgress;
   version: CivicsTestVersion;
-  onSubmit: (response: string, input: InputMode) => void;
+  onSubmit: (response: string, input: InputMode, alternatives?: readonly string[]) => void;
   onContinue: () => void;
   onRestart: () => void;
   /** Start in the feedback view (used to render that state). */
@@ -43,6 +44,7 @@ export function CivicsScreen({
   pictureFor = pictureForQuestion,
 }: CivicsScreenProps) {
   const t = useT();
+  const tEnglish = useTWithEnglish();
   const [feedback, setFeedback] = useState(showFeedbackInitially);
   const resultHeading = useRef<HTMLHeadingElement>(null);
   const showingFeedback = feedback && progress.last !== null && progress.result !== null;
@@ -88,7 +90,10 @@ export function CivicsScreen({
               <Icon className={correct ? "icon-inline" : "icon-inline icon-inline--attention"} />{" "}
               {correct ? t("civics.correct") : t("civics.notYet")}
             </h2>
-            <p>{t("civics.youSaid", { text: progress.lastResponse === "" ? "…" : (progress.lastResponse ?? "") })}</p>
+            <p>{tEnglish("civics.youSaid", { text: progress.lastResponse === "" ? "…" : (progress.lastResponse ?? "") })}</p>
+            {progress.lastResponse !== "" && (
+              <p className="note">{progress.lastInput === "voice" ? t("compare.honest.heard") : t("compare.honest.typed")}</p>
+            )}
             {lines !== null && (
               <>
                 <h3 className="panel__title">{t("civics.official")}</h3>
@@ -163,9 +168,9 @@ export function CivicsScreen({
               submitLabel={t("civics.submit")}
               voice
               allowSkip
-              onSubmit={(text, input) => {
+              onSubmit={(text, input, alternatives) => {
                 setFeedback(true);
-                onSubmit(text, input);
+                onSubmit(text, input, alternatives);
               }}
             />
           </div>

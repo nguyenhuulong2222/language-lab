@@ -117,10 +117,10 @@ UI: `QuestionPicture` (figure with alt text and caption) is rendered only by the
 question view and fails if an `<img>` or a picture id appears. `StudyScreen` is a new practice mode
 that goes through `sessionSteps` with no scoring. `CreditsScreen` is reached from a footer button.
 ## Scoring, alternatives and listen-and-compare (BS-22 to BS-25)
-**Comparison** (`src/engine/sentence-compare.ts`). Tokens come from the existing matcher tokeniser. Each
-token has a stem (`-s`, `-es`, `'s` removed, with a list of words that are never stemmed, such as "news",
-"this", "was"). Two tokens match when their stems are equal (or, writing only, when they differ by one
-letter, see BS-22). The words are aligned in order (longest common subsequence). The result lists missing
+**Comparison** (`src/engine/sentence-compare.ts`). Tokens come from the existing matcher tokeniser. Two tokens
+match when they are equal, when `sameInflection` says they differ only by a plural or possessive ending (one
+word is the other plus s, es, or ies for y; nothing is ever shortened, words of 2 letters or fewer and the
+config's `neverStem` words only match themselves), or, writing only, when they differ by one letter (see BS-22). The words are aligned in order (longest common subsequence). The result lists missing
 and extra words, split into content words and short words, plus the near misses (a different spelling of
 the same word) for the feedback lines. `isCorrect` is: no content word of the sentence missing, and at most
 `extraContentWordsAllowed` extra content words. `accuracy` stays as the share of content words matched, for
@@ -153,3 +153,9 @@ finished recording). Recognition (`SpeechRecognition`) and recording are separat
 together.
 **Feedback.** `SentenceFeedback` shows: the result line (counts / not yet), what we heard (best
 alternative), a plain line per near miss or missing word, the honest line, and the practice-setting note.
+**Later changes while building.** `retryEnglish` (reducer action) removes the last attempt of the part, so "Try
+again" asks the same sentence again. Civics: `submitCivics` takes the same `alternatives` and picks the one
+with the most accepted answers by `matchedAnswerCount` (answer key only). The listen-and-compare state machine
+is `self-review-controller.ts` (phases idle, starting, recording, recorded; Stop while starting cancels a
+pending microphone request); `use-self-review.ts` is the React wrapper. "Say it" and "Record and compare"
+stop each other. English words inside translated feedback lines are marked `lang="en"` (`with-english.tsx`).

@@ -263,13 +263,18 @@
    "intro.profile.legend": "Same word (qauv) for \"profile\".",
    "intro.profile.help": "Same word (qauv) for \"profile\".",
    "common.fictional": "Same word (qauv) for \"profile\".",
-   "header.about": "\"Txog peb thiab ceeb toom\" reads as \"About us and warning\", not \"About & disclaimer\". Needs a Hmong reader."
+   "header.about": "\"Txog peb thiab ceeb toom\" reads as \"About us and warning\", not \"About & disclaimer\". Needs a Hmong reader.",
+   "compare.setting": "\"in order\" is rendered \"raws li kev txiav\" (\"according to cutting\"), which looks wrong, and \"may be missing\" is awkward. Needs a Hmong reader."
   },
   "my": {
-   "aiNotice.text": "\"authoritative\" is rendered as \"official\": close, slightly weaker."
+   "aiNotice.text": "\"authoritative\" is rendered as \"official\": close, slightly weaker.",
+   "compare.notYet": "\"Not yet\" is rendered literally as \"has not arrived yet\". Low confidence."
   },
   "tl": {
    "aiNotice.text": "\"authoritative\" is rendered as \"valid\" (may bisa): close, slightly weaker."
+  },
+  "ko": {
+   "compare.counts": "\"This counts\" is rendered \"is accepted\" (인정됩니다), a little stronger than \"counts\"."
   }
  },
  "fixed": [

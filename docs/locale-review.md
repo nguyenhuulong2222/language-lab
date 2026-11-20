@@ -84,8 +84,11 @@ I translated the disclaimer, privacy and legal lines (16 keys, 13 languages) bac
 - hmn `intro.profile.help`: Same word (qauv) for "profile".
 - hmn `common.fictional`: Same word (qauv) for "profile".
 - hmn `header.about`: "Txog peb thiab ceeb toom" reads as "About us and warning", not "About & disclaimer". Needs a Hmong reader.
+- hmn `compare.setting`: "in order" is rendered "raws li kev txiav" ("according to cutting"), which looks wrong, and "may be missing" is awkward. Needs a Hmong reader.
 - my `aiNotice.text`: "authoritative" is rendered as "official": close, slightly weaker.
+- my `compare.notYet`: "Not yet" is rendered literally as "has not arrived yet". Low confidence.
 - tl `aiNotice.text`: "authoritative" is rendered as "valid" (may bisa): close, slightly weaker.
+- ko `compare.counts`: "This counts" is rendered "is accepted" (인정됩니다), a little stronger than "counts".
 
 ### Confidence
 

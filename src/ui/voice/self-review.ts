@@ -179,6 +179,11 @@ export function createSelfReviewRecorder(host: RecorderHost = browserHost()): Se
       }
     },
     stop() {
+      if (recorder === null) {
+        // Nothing is recording yet: if the browser is still asking for the microphone, cancel that.
+        generation++;
+        return Promise.resolve({ kind: "nothing" });
+      }
       return finish();
     },
     discard,

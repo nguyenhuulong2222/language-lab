@@ -57,6 +57,18 @@ export interface CivicsStageResult {
 // Scoring one turn
 // ---------------------------------------------------------------------------
 
+/**
+ * How many distinct accepted answers of a static question the text contains. The same count
+ * that scores a turn, so choosing between the recogniser's alternatives uses the answer key
+ * and nothing else (AI never decides a civics score).
+ */
+export function matchedAnswerCount(entry: CivicsAnswerEntry, responseText: string): number {
+  return countMatchingPhrases(responseText, entry.acceptedAnswers, {
+    groups: entry.answerGroups ?? [],
+    numberAlone: entry.numberAlone ?? [],
+  });
+}
+
 function resultFor(
   entry: CivicsAnswerEntry | undefined,
   responseText: string
@@ -66,10 +78,7 @@ function resultFor(
   // Dynamic answers change over time; their accepted answers are never read.
   if (entry.answerType === "dynamic") return "unscored";
 
-  const matched = countMatchingPhrases(responseText, entry.acceptedAnswers, {
-    groups: entry.answerGroups ?? [],
-    numberAlone: entry.numberAlone ?? [],
-  });
+  const matched = matchedAnswerCount(entry, responseText);
   return matched >= entry.requiredAnswerCount ? "correct" : "incorrect";
 }
 

@@ -22,6 +22,8 @@ interface AnswerInputProps {
   allowSkip?: boolean;
   /** `alternatives` are the other ways the recogniser heard the speech, only when the text was not edited. */
   onSubmit: (text: string, input: InputMode, alternatives?: readonly string[]) => void;
+  /** Called when "Say it" starts, so another microphone user (the self-review recording) can stop. */
+  onListenStart?: () => void;
 }
 
 const MESSAGE: Record<Exclude<VoiceOutcome["kind"], "transcript">, MessageKey> = {
@@ -32,7 +34,7 @@ const MESSAGE: Record<Exclude<VoiceOutcome["kind"], "transcript">, MessageKey> =
   error: "voice.error",
 };
 
-export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSubmit }: AnswerInputProps) {
+export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSubmit, onListenStart }: AnswerInputProps) {
   const t = useT();
   const listener = useListener();
   const inputId = useId();
@@ -49,6 +51,7 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
   useEffect(() => () => listener.stop(), [listener]);
 
   const listen = () => {
+    onListenStart?.();
     setMessage("voice.listening");
     setListening(true);
     void listener.listen().then((outcome) => {

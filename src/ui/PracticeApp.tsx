@@ -199,7 +199,9 @@ export function Screen({
         <CivicsScreen
           progress={engine.civicsProgress(state)}
           version={state.setup?.version ?? "2008"}
-          onSubmit={(response, input) => dispatch({ type: "submitCivics", response, input, at: now() })}
+          onSubmit={(response, input, alternatives) =>
+            dispatch({ type: "submitCivics", response, ...(alternatives === undefined ? {} : { alternatives }), input, at: now() })
+          }
           onContinue={() => dispatch({ type: "continue", at: now() })}
           onRestart={restart}
         />

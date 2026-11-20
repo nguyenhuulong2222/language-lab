@@ -45,6 +45,8 @@ export function EnglishScreen({
   const t = useT();
   const speaker = useSpeaker();
   const [feedback, setFeedback] = useState(showFeedbackInitially);
+  // Counts the retries, so the heading takes focus again when the same sentence is asked again.
+  const [retries, setRetries] = useState(0);
   const reading = progress.kind === "reading";
   const stage = progress.kind;
 
@@ -67,6 +69,7 @@ export function EnglishScreen({
               attempted
               onTryAgain={() => {
                 onRetry?.();
+                setRetries((n) => n + 1);
                 setFeedback(false);
               }}
             />
@@ -78,6 +81,7 @@ export function EnglishScreen({
                 className="btn btn--secondary"
                 onClick={() => {
                   onRetry();
+                  setRetries((n) => n + 1);
                   setFeedback(false);
                 }}
               >
@@ -128,7 +132,7 @@ export function EnglishScreen({
         stage={stage}
         title={reading ? t("reading.title") : t("writing.title")}
         lead={reading ? t("reading.lead") : t("writing.lead")}
-        focusKey={`sentence-${progress.position}`}
+        focusKey={`sentence-${progress.position}-${retries}`}
       />
       <EnglishNotice />
       <div className="screen__body">
@@ -168,6 +172,9 @@ export function EnglishScreen({
               label={reading ? t("reading.yourAnswer") : t("writing.yourAnswer")}
               submitLabel={reading ? t("reading.submit") : t("writing.submit")}
               voice={reading}
+              onListenStart={() => {
+                if (review.phase === "starting" || review.phase === "recording") review.stop();
+              }}
               allowSkip
               onSubmit={(text, input, alternatives) => {
                 setFeedback(true);

@@ -1,7 +1,10 @@
-USCIS Policy Manual, Volume 12 (Citizenship and Naturalization), Part E (English and Civics Testing), Chapter 2 (English and Civics Testing), section D, "Reading Test" and "Writing Test".
+USCIS Policy Manual, Volume 12 (Citizenship and Naturalization), Part E (English and Civics Testing), Chapter 2 (English and Civics Testing), section D, "English Portion of the Test" (introduction), "Reading Test" and "Writing Test", and footnote 10.
 Source: https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2
 Fetched 2026-11-18. The text below is copied from the page (HTML tags removed, line breaks added, nothing else changed).
 The full page as fetched is uscis-policy-manual-vol12-parte-ch2.html.
+
+D. English Portion of the Test (introduction)
+An alien applying for naturalization must only demonstrate an ability to read, write, speak, and understand words in ordinary usage. [6] Ordinary usage means comprehensible and pertinent communication through simple vocabulary and grammar, which may include noticeable errors in pronouncing, constructing, spelling, and understanding completely certain words, phrases, and sentences. An alien may ask for words to be repeated or rephrased and may make some errors in pronunciation, spelling, and grammar and still meet the English requirement for naturalization. An officer should repeat and rephrase questions until the officer is satisfied that the alien either fully understands the question or is unable to understand English. [7]
 
 2. Reading Test To sufficiently demonstrate the ability to read in English, aliens must read one sentence out of three sentences. The reading test is administered by the officer using standardized reading test forms. Once the alien reads one of the three sentences correctly, the officer stops the reading test.
 
@@ -14,3 +17,5 @@ Failing the Reading Test An alien fails the reading test if he or she does not s
 Passing the Writing Test The alien passes the writing test if the alien is able to convey the meaning of one of the three sentences to the officer. The alien’s writing sample may have the following: Some grammatical, spelling, or capitalization errors;​ Omitted short words that do not interfere with meaning; or​ Numbers spelled out or written as digits.
 
 Failing the Writing Test An alien fails the writing test if he or she makes errors to a degree that the alien does not convey the meaning of the sentence and the officer is not able to understand the sentence. An alien fails the writing test if he or she writes the following: A different sentence or words; ​ An abbreviation for a dictated word; [10] ​ Nothing or only one or two isolated words; or ​ A sentence that is completely illegible.
+
+Footnote 10 (to "An abbreviation for a dictated word"): An abbreviation for a dictated word may be accepted if the officer has approved the abbreviation.

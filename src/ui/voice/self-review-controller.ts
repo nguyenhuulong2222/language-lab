@@ -8,7 +8,8 @@
 import type { MessageKey } from "../../i18n";
 import type { RecordStop, SelfReviewRecorder } from "./self-review";
 
-export type SelfReviewPhase = "idle" | "recording" | "recorded";
+/** starting: the browser is asking for the microphone; the learner can still cancel. */
+export type SelfReviewPhase = "idle" | "starting" | "recording" | "recorded";
 
 export interface SelfReviewView {
   supported: boolean;
@@ -63,7 +64,7 @@ export function createSelfReviewController(
     problem = null;
   };
   const keep = (mine: number, result: RecordStop) => {
-    if (run !== mine) return;
+    if (run !== mine || phase !== "recording") return;
     if (result.kind === "recorded") {
       url = result.url;
       problem = null;
@@ -91,12 +92,17 @@ export function createSelfReviewController(
       stopPlaying();
       url = null;
       problem = null;
-      phase = "recording";
+      phase = "starting";
       onChange();
       void recorder
         .start((result) => keep(mine, result))
         .then((outcome) => {
-          if (run !== mine || outcome.kind === "recording") return;
+          if (run !== mine) return;
+          if (outcome.kind === "recording") {
+            phase = "recording";
+            onChange();
+            return;
+          }
           phase = "idle";
           problem =
             outcome.kind === "denied" ? "selfReview.denied" : outcome.kind === "unsupported" ? "selfReview.unsupported" : "selfReview.error";
@@ -104,6 +110,15 @@ export function createSelfReviewController(
         });
     },
     stop() {
+      if (phase === "starting") {
+        // Cancelled before the microphone was open: no recording, no message.
+        run++;
+        void recorder.stop();
+        phase = "idle";
+        onChange();
+        return;
+      }
+      if (phase !== "recording") return;
       const mine = run;
       void recorder.stop().then((result) => keep(mine, result));
     },

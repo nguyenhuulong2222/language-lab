@@ -2,12 +2,11 @@
 
 exports[`plural and possessive endings > never equates two different words of the official vocabularies 1`] = `
 [
-  "citizen: citizen citizens",
-  "do: do does",
-  "elect: elect elects",
-  "meet: meet meets",
-  "president: president presidents",
-  "right: right rights",
-  "state: state states",
+  "citizen ~ citizens",
+  "elect ~ elects",
+  "meet ~ meets",
+  "president ~ presidents",
+  "right ~ rights",
+  "state ~ states",
 ]
 `;
