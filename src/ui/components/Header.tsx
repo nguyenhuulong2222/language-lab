@@ -9,6 +9,7 @@
  */
 import { useEffect, useId, useRef, useState, type FocusEvent, type KeyboardEvent } from "react";
 import { Disclaimer } from "./Disclaimer";
+import { LegalText } from "./LegalText";
 import { LanguageMenu } from "./LanguageMenu";
 import { GlobeIcon } from "./icons";
 import { SettingsPanel } from "./SettingsPanel";
@@ -145,6 +146,9 @@ export function Header({ onHome }: { onHome?: () => void }) {
         hidden={panel !== "about"}
       >
         <Disclaimer messageKey="disclaimer.full" />
+        <p className="note">
+          <LegalText messageKey="coach.privacy" />
+        </p>
       </div>
       {onHome !== undefined && (
         <div

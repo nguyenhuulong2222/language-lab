@@ -1,0 +1,92 @@
+/* AI coach switch and feedback step. Tokens only (design-system.md). On = teal, never colour alone:
+   the switch also says "On" or "Off" and has aria-checked. */
+.coach {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.coach__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+.coach__label {
+  font-weight: 600;
+  font-size: var(--fs-body);
+}
+.coach__switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--tap-min);
+  min-width: var(--tap-min);
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--ink-2);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  cursor: pointer;
+}
+.coach__switch:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.coach__track {
+  position: relative;
+  width: 2.5rem;
+  height: 1.375rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  border: 2px solid var(--ink-2);
+}
+.coach__thumb {
+  position: absolute;
+  top: 0.125rem;
+  left: 0.125rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-radius: 50%;
+  background: var(--ink-2);
+}
+.coach__switch--on {
+  border-color: var(--teal);
+}
+.coach__switch--on .coach__track {
+  border-color: var(--teal);
+  background: var(--teal);
+}
+.coach__switch--on .coach__thumb {
+  left: auto;
+  right: 0.125rem;
+  background: var(--on-accent);
+}
+@media (forced-colors: active) {
+  .coach__switch--on .coach__thumb {
+    background: CanvasText;
+  }
+}
+.coach__notice {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-3);
+}
+.coach__disclaimers {
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}
+.coach__line {
+  margin: 0;
+}
+.coach__ai-label {
+  display: inline-block;
+  margin-left: var(--space-1);
+  padding: 0 var(--space-2);
+  border: 1px solid var(--ink-2);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}

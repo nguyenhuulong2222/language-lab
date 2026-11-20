@@ -41,6 +41,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | 在這次練習中，閱讀、書寫和公民常識都各自達到 Language Lab 使用的分數。請用下面的筆記繼續練習。 | In this practice, reading, writing and civics each reached the score Language Lab uses. Please use the notes below to keep practicing. |
 | `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | 這正是練習的目的。下面的筆記會告訴您，再試一次之前該把重點放在哪裡。 | This is exactly the purpose of practice. The notes below tell you where to focus before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | 書寫：USCIS 表示，拼寫、大寫和標點符號的錯誤不會讓您的書寫測驗不及格，除非句子已經無法理解。在這裡，小的拼寫錯誤仍然算數，較長的單字可以有較多錯誤。不檢查大寫和標點符號。 | Writing: USCIS says spelling, capitalization and punctuation errors will not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words may have more errors. Capitalization and punctuation are not checked. |
+| `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to make feedback. Your voice is never sent, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. Language Lab checks for some numbers, but it cannot catch every personal detail. The AI coach is off again when you start a new practice. | AI 教練開啟時，您在這個部分輸入或說出的每個回答的文字，會經由 Language Lab 的伺服器以文字形式傳送給 AI 公司 Anthropic，以產生回饋。您的聲音絕不會被傳送，只傳送文字。請以虛構人物的身分回答。不要說出真實姓名、地址、出生日期、A-number 或案件細節。Language Lab 會檢查某些號碼，但無法攔截所有個人資料。開始新的練習時，AI 教練會再次關閉。 | When the AI coach is on, the text of each answer you type or say in this part is sent as text through Language Lab's server to the AI company Anthropic to produce feedback. Your voice is never sent, only the text. Please answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot block all personal data. When you start a new practice, the AI coach is turned off again. |
+| `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to make feedback; no audio is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. | AI 教練：除非您在 N-400 部分開啟，否則為關閉。開啟時，每個 N-400 回答的文字會經由 Language Lab 的伺服器傳送給 Anthropic 以產生回饋；不會傳送任何音訊。Anthropic 隱私權政策：anthropic.com/legal/privacy。 | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent through Language Lab's server to Anthropic to produce feedback; no audio is sent. Anthropic privacy policy: anthropic.com/legal/privacy. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -116,6 +118,30 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.label` | Sample answer for {name} (fictional) | {name} 的範例答案（虛構） |
 | `n400.yourAnswer` | Your answer, as {name} | 您以 {name} 身分的答案 |
 | `n400.save` | Save answer and continue | 儲存答案並繼續 |
+| `coach.switch.label` | AI coach (optional) | AI 教練（可選） |
+| `coach.switch.on` | On | 開啟 |
+| `coach.switch.off` | Off | 關閉 |
+| `coach.switch.help` | After each answer, get a short AI tip about your English. Off unless you turn it on. | 每次回答後，取得一則關於您英語的簡短 AI 建議。除非您開啟，否則為關閉。 |
+| `coach.notice.title` | Before you turn on the AI coach | 開啟 AI 教練之前 |
+| `coach.notice.confirm` | Turn on the AI coach | 開啟 AI 教練 |
+| `coach.notice.cancel` | Cancel | 取消 |
+| `coach.label` | AI-generated feedback | AI 產生的回饋 |
+| `coach.followUp.label` | An officer might also ask: | 移民官也可能會問： |
+| `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | 如果願意，可以大聲練習回答。這個問題不會被記錄。 |
+| `coach.tip.label` | Tip about your English: | 關於您英語的建議： |
+| `coach.feedback.understood` | Clear answer | 回答清楚 |
+| `coach.feedback.needs_practice` | Worth practicing again | 值得再練習一次 |
+| `coach.feedback.unclear` | Try saying it more clearly | 試著說得更清楚 |
+| `coach.checking` | Getting AI feedback… | 正在取得 AI 回饋… |
+| `coach.unavailable` | AI feedback is not available right now. You can keep practicing. | 目前無法提供 AI 回饋。您可以繼續練習。 |
+| `coach.offNow` | The AI coach is off for the rest of this practice. | 這次練習剩下的部分，AI 教練已關閉。 |
+| `coach.screened` | This answer was not sent to the AI coach because it seems to contain {kind}. Answer as the fictional person, without real personal details. | 這個回答沒有傳送給 AI 教練，因為它似乎包含{kind}。請以虛構人物的身分回答，不要包含真實的個人資料。 |
+| `coach.kind.aNumber` | an A-number | A-number |
+| `coach.kind.ssn` | a Social Security number | 社會安全號碼 |
+| `coach.kind.phone` | a phone number | 電話號碼 |
+| `coach.kind.email` | an e-mail address | 電子郵件地址 |
+| `coach.kind.dateOfBirth` | a full date, such as a date of birth | 完整的日期，例如出生日期 |
+| `coach.next` | Next question | 下一個問題 |
 | `n400.loading` | Getting the next question… | 正在取得下一題… |
 | `n400.failed` | The next question could not be loaded. Start over to try again. | 無法載入下一題。請重新開始再試一次。 |
 | `n400.done.title` | Your answers | 您的答案 |

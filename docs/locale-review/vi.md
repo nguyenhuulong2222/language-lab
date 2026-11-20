@@ -41,6 +41,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Trong buổi luyện tập này, phần đọc, viết và công dân đều đạt mức điểm mà Language Lab dùng. Hãy dùng các ghi chú bên dưới để tiếp tục luyện tập. | In this practice session, reading, writing and civics all reached the score level that Language Lab uses. Use the notes below to keep practicing. |
 | `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Đó chính là mục đích của việc luyện tập. Các ghi chú bên dưới cho biết nên tập trung vào đâu trước khi thử lại. | That is exactly the purpose of practicing. The notes below show where to focus before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Phần viết: USCIS nói rằng lỗi chính tả, viết hoa và dấu câu không làm bạn trượt bài viết, trừ khi câu không còn hiểu được. Ở đây, lỗi chính tả nhỏ vẫn được tính, và từ dài hơn có thể có nhiều lỗi hơn. Chữ hoa và dấu câu không được kiểm tra. | Writing: USCIS says spelling, capitalization and punctuation mistakes do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling mistakes still count, and longer words may have more mistakes. Capital letters and punctuation are not checked. |
+| `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to make feedback. Your voice is never sent, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. Language Lab checks for some numbers, but it cannot catch every personal detail. The AI coach is off again when you start a new practice. | Khi huấn luyện viên AI được bật, các từ trong mỗi câu trả lời bạn gõ hoặc nói ở phần này được gửi dưới dạng chữ đến Anthropic, một công ty AI, qua máy chủ của Language Lab, để tạo nhận xét. Giọng nói của bạn không bao giờ được gửi, chỉ có các từ. Hãy trả lời như người hư cấu. Đừng nói tên thật, địa chỉ, ngày sinh, số A-number hay chi tiết hồ sơ. Language Lab có kiểm tra một số con số, nhưng không thể phát hiện mọi thông tin cá nhân. Huấn luyện viên AI sẽ tắt lại khi bạn bắt đầu một buổi luyện tập mới. | When the AI coach is turned on, the words in each answer you type or say in this part are sent as text to Anthropic, an AI company, via Language Lab's server, to create feedback. Your voice is never sent, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number numbers or case details. Language Lab checks some numbers, but cannot detect all personal information. The AI coach turns off again when you start a new practice session. |
+| `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to make feedback; no audio is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. | Huấn luyện viên AI: tắt, trừ khi bạn bật nó trong phần N-400. Khi được bật, chữ của mỗi câu trả lời N-400 được gửi đến Anthropic qua máy chủ của Language Lab để tạo nhận xét; không gửi âm thanh. Chính sách quyền riêng tư của Anthropic: anthropic.com/legal/privacy. | AI coach: off, unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic via Language Lab's server to create feedback; no audio is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -116,6 +118,30 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.label` | Sample answer for {name} (fictional) | Câu trả lời mẫu cho {name} (giả định) |
 | `n400.yourAnswer` | Your answer, as {name} | Câu trả lời của bạn, với tư cách {name} |
 | `n400.save` | Save answer and continue | Lưu câu trả lời và tiếp tục |
+| `coach.switch.label` | AI coach (optional) | Huấn luyện viên AI (không bắt buộc) |
+| `coach.switch.on` | On | Bật |
+| `coach.switch.off` | Off | Tắt |
+| `coach.switch.help` | After each answer, get a short AI tip about your English. Off unless you turn it on. | Sau mỗi câu trả lời, nhận một mẹo ngắn từ AI về tiếng Anh của bạn. Mặc định là tắt, trừ khi bạn bật lên. |
+| `coach.notice.title` | Before you turn on the AI coach | Trước khi bạn bật huấn luyện viên AI |
+| `coach.notice.confirm` | Turn on the AI coach | Bật huấn luyện viên AI |
+| `coach.notice.cancel` | Cancel | Hủy |
+| `coach.label` | AI-generated feedback | Nhận xét do AI tạo ra |
+| `coach.followUp.label` | An officer might also ask: | Viên chức cũng có thể hỏi: |
+| `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Nếu muốn, hãy tập trả lời thành tiếng. Câu hỏi này không được ghi lại. |
+| `coach.tip.label` | Tip about your English: | Mẹo về tiếng Anh của bạn: |
+| `coach.feedback.understood` | Clear answer | Câu trả lời rõ ràng |
+| `coach.feedback.needs_practice` | Worth practicing again | Nên luyện tập lại |
+| `coach.feedback.unclear` | Try saying it more clearly | Hãy thử nói rõ hơn |
+| `coach.checking` | Getting AI feedback… | Đang lấy nhận xét từ AI… |
+| `coach.unavailable` | AI feedback is not available right now. You can keep practicing. | Hiện không có nhận xét từ AI. Bạn có thể tiếp tục luyện tập. |
+| `coach.offNow` | The AI coach is off for the rest of this practice. | Huấn luyện viên AI đã tắt cho phần còn lại của buổi luyện tập này. |
+| `coach.screened` | This answer was not sent to the AI coach because it seems to contain {kind}. Answer as the fictional person, without real personal details. | Câu trả lời này không được gửi đến huấn luyện viên AI vì có vẻ chứa {kind}. Hãy trả lời như người hư cấu, không có thông tin cá nhân thật. |
+| `coach.kind.aNumber` | an A-number | số A-number |
+| `coach.kind.ssn` | a Social Security number | số An sinh Xã hội |
+| `coach.kind.phone` | a phone number | số điện thoại |
+| `coach.kind.email` | an e-mail address | địa chỉ e-mail |
+| `coach.kind.dateOfBirth` | a full date, such as a date of birth | một ngày tháng năm đầy đủ, như ngày sinh |
+| `coach.next` | Next question | Câu hỏi tiếp theo |
 | `n400.loading` | Getting the next question… | Đang lấy câu hỏi tiếp theo… |
 | `n400.failed` | The next question could not be loaded. Start over to try again. | Không tải được câu hỏi tiếp theo. Hãy bắt đầu lại để thử lần nữa. |
 | `n400.done.title` | Your answers | Các câu trả lời của bạn |

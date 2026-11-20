@@ -41,6 +41,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Nan pratik sa a, lekti, ekriti ak sivik chak rive nan nòt Language Lab itilize a. Sèvi ak nòt ki anba yo pou kontinye pratike. | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. |
 | `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Se pou sa pratik la ye. Nòt ki anba yo montre sou ki kote pou konsantre anvan ou eseye ankò. | That is what practice is for. The notes below show where to focus before you try again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Ekriti: USCIS di erè òtograf, lèt majiskil ak ponktiyasyon pa fè w echwe tès ekriti a, sòf si yo pa ka konprann fraz la ankò. Isit la, ti erè òtograf toujou konte, epi mo ki pi long yo ka genyen plis. Yo pa tcheke lèt majiskil ak ponktiyasyon. | Writing: USCIS says spelling, capital letter and punctuation errors do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked. |
+| `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to make feedback. Your voice is never sent, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. Language Lab checks for some numbers, but it cannot catch every personal detail. The AI coach is off again when you start a new practice. | Lè antrenè AI a limen, mo chak repons ou tape oswa ou di nan pati sa a voye kòm tèks bay Anthropic, yon konpayi AI, atravè sèvè Language Lab, pou fè kòmantè. Yo pa janm voye vwa ou, se mo yo sèlman. Reponn tankou moun imajinè a. Pa di non reyèl, adrès, dat nesans, A-number oswa detay dosye. Language Lab tcheke kèk nimewo, men li pa ka kenbe chak detay pèsonèl. Antrenè AI a etenn ankò lè ou kòmanse yon nouvo pratik. | When the AI trainer is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to make comments. Your voice is never sent, only the words. Answer like the imaginary person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers, but it cannot catch every personal detail. The AI trainer is off again when you start a new practice. |
+| `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to make feedback; no audio is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. | Antrenè AI: etenn sòf si ou limen l nan pati N-400 a. Lè li limen, yo voye tèks chak repons N-400 bay Anthropic atravè sèvè Language Lab pou fè kòmantè; yo pa voye okenn odyo. Politik vi prive Anthropic: anthropic.com/legal/privacy. | AI trainer: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to make comments; no audio is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -116,6 +118,30 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.label` | Sample answer for {name} (fictional) | Egzanp repons pou {name} (fiktif) |
 | `n400.yourAnswer` | Your answer, as {name} | Repons ou, kòm {name} |
 | `n400.save` | Save answer and continue | Sove repons lan epi kontinye |
+| `coach.switch.label` | AI coach (optional) | Antrenè AI (si ou vle) |
+| `coach.switch.on` | On | Limen |
+| `coach.switch.off` | Off | Etenn |
+| `coach.switch.help` | After each answer, get a short AI tip about your English. Off unless you turn it on. | Apre chak repons, resevwa yon ti konsèy AI sou angle ou. Li etenn sòf si ou limen l. |
+| `coach.notice.title` | Before you turn on the AI coach | Anvan ou limen antrenè AI a |
+| `coach.notice.confirm` | Turn on the AI coach | Limen antrenè AI a |
+| `coach.notice.cancel` | Cancel | Anile |
+| `coach.label` | AI-generated feedback | Kòmantè AI fè |
+| `coach.followUp.label` | An officer might also ask: | Yon ofisye ka mande tou: |
+| `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Si ou vle, pratike yon repons byen fò. Yo pa anrejistre kesyon sa a. |
+| `coach.tip.label` | Tip about your English: | Konsèy sou angle ou: |
+| `coach.feedback.understood` | Clear answer | Repons klè |
+| `coach.feedback.needs_practice` | Worth practicing again | Li vo pratike ankò |
+| `coach.feedback.unclear` | Try saying it more clearly | Eseye di l pi klè |
+| `coach.checking` | Getting AI feedback… | N ap jwenn kòmantè AI… |
+| `coach.unavailable` | AI feedback is not available right now. You can keep practicing. | Kòmantè AI pa disponib kounye a. Ou ka kontinye pratike. |
+| `coach.offNow` | The AI coach is off for the rest of this practice. | Antrenè AI a etenn pou rès pratik sa a. |
+| `coach.screened` | This answer was not sent to the AI coach because it seems to contain {kind}. Answer as the fictional person, without real personal details. | Yo pa t voye repons sa a bay antrenè AI a paske li sanble gen {kind}. Reponn tankou moun imajinè a, san detay pèsonèl reyèl. |
+| `coach.kind.aNumber` | an A-number | yon A-number |
+| `coach.kind.ssn` | a Social Security number | yon nimewo Sekirite Sosyal |
+| `coach.kind.phone` | a phone number | yon nimewo telefòn |
+| `coach.kind.email` | an e-mail address | yon adrès imel |
+| `coach.kind.dateOfBirth` | a full date, such as a date of birth | yon dat konplè, tankou yon dat nesans |
+| `coach.next` | Next question | Pwochen kesyon |
 | `n400.loading` | Getting the next question… | N ap chache pwochen kesyon an… |
 | `n400.failed` | The next question could not be loaded. Start over to try again. | Nou pa t ka chaje pwochen kesyon an. Rekòmanse pou eseye ankò. |
 | `n400.done.title` | Your answers | Repons ou yo |

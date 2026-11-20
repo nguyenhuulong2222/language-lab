@@ -41,6 +41,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | ဤလေ့ကျင့်မှုတွင် ဖတ်ခြင်း၊ ရေးခြင်းနှင့် နိုင်ငံသားပညာ အပိုင်းတိုင်းသည် Language Lab အသုံးပြုသော အမှတ်သို့ ရောက်ပါသည်။ ဆက်လက်လေ့ကျင့်ရန် အောက်ပါမှတ်စုများကို အသုံးပြုပါ။ | In this practice, every part of reading, writing and civics reaches the score Language Lab uses. Use the notes below to continue practicing. |
 | `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | လေ့ကျင့်ခြင်းသည် ယင်းအတွက်ဖြစ်သည်။ ထပ်မံကြိုးစားမည့်အချိန်မတိုင်မီ မည်သည့်အချက်ကို အာရုံစိုက်ရမည်ကို အောက်ပါမှတ်စုများက ပြသသည်။ | Practice is for that. The notes below show which point to focus on before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | ရေးခြင်း- USCIS က စာလုံးပေါင်း၊ စာလုံးကြီးနှင့် သတ်ပုံအမှားများသည် ဝါကျကို နားမလည်နိုင်တော့သည့်အခါမှလွဲ၍ ရေးခြင်းစာမေးပွဲကို မကျစေဟု ဆိုပါသည်။ ဤနေရာတွင် စာလုံးပေါင်းအမှားငယ်များကို ဆက်လက်ရေတွက်ပြီး စကားလုံးရှည်များတွင် ပိုများနိုင်ပါသည်။ စာလုံးကြီးနှင့် သတ်ပုံကို မစစ်ဆေးပါ။ | Writing: USCIS says spelling, capital letter and punctuation mistakes do not make you fail the writing exam except when the sentence can no longer be understood. Here, small spelling mistakes are still counted, and long words can have more. Capital letters and punctuation are not checked. |
+| `coach.notice.text` ⚠ | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to make feedback. Your voice is never sent, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. Language Lab checks for some numbers, but it cannot catch every personal detail. The AI coach is off again when you start a new practice. | AI နည်းပြ ဖွင့်ထားသောအခါ ဤအပိုင်းတွင် သင်ရိုက်သော သို့မဟုတ် ပြောသော အဖြေတစ်ခုစီ၏ စကားလုံးများကို တုံ့ပြန်ချက်ပြုလုပ်ရန် Language Lab ၏ ဆာဗာမှတစ်ဆင့် AI ကုမ္ပဏီ Anthropic ထံ စာသားအဖြစ် ပို့ပါသည်။ သင့်အသံကို ဘယ်တော့မှ မပို့ပါ၊ စကားလုံးများသာ ပို့ပါသည်။ စိတ်ကူးယဉ်လူအဖြစ် ဖြေပါ။ အမည်အစစ်၊ လိပ်စာ၊ မွေးနေ့၊ A-number သို့မဟုတ် အမှုအသေးစိတ်များကို မပြောပါနှင့်။ Language Lab သည် နံပါတ်အချို့ကို စစ်ဆေးသော်လည်း ကိုယ်ရေးအချက်အလက် အားလုံးကို မဖမ်းမိနိုင်ပါ။ လေ့ကျင့်မှုအသစ် စတင်သောအခါ AI နည်းပြ ပြန်ပိတ်ပါသည်။ | When the AI coach is on, the words of each answer you type or say in this part are sent as text to the AI company Anthropic through Language Lab's server to make a response. Your voice is never sent; only words are sent. Answer as an imaginary person. Do not say a real name, address, birthday, A-number or case details. Language Lab checks some numbers but cannot catch all personal information. When a new practice starts, the AI coach closes again. |
+| `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to make feedback; no audio is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. | AI နည်းပြ- N-400 အပိုင်းတွင် သင်မဖွင့်မချင်း ပိတ်ထားပါသည်။ ဖွင့်ထားသောအခါ N-400 အဖြေတစ်ခုစီ၏ စာသားကို တုံ့ပြန်ချက်ပြုလုပ်ရန် Language Lab ၏ ဆာဗာမှတစ်ဆင့် Anthropic ထံ ပို့ပါသည်၊ အသံမပို့ပါ။ Anthropic ၏ ကိုယ်ရေးလုံခြုံမှုမူဝါဒ- anthropic.com/legal/privacy။ | AI coach: closed unless you open it in the N-400 part. When open, the text of each N-400 answer is sent to Anthropic through Language Lab's server to make a response; no sound is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -116,6 +118,30 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.label` | Sample answer for {name} (fictional) | {name} အတွက် နမူနာအဖြေ (စိတ်ကူးယဉ်) |
 | `n400.yourAnswer` | Your answer, as {name} | {name} အဖြစ် သင်၏အဖြေ |
 | `n400.save` | Save answer and continue | အဖြေသိမ်း၍ ဆက်သွားရန် |
+| `coach.switch.label` | AI coach (optional) | AI နည်းပြ (ရွေးချယ်နိုင်) |
+| `coach.switch.on` | On | ဖွင့် |
+| `coach.switch.off` | Off | ပိတ် |
+| `coach.switch.help` | After each answer, get a short AI tip about your English. Off unless you turn it on. | အဖြေတစ်ခုစီပြီးတိုင်း သင့်အင်္ဂလိပ်စာအကြောင်း AI ထံမှ အကြံပြုချက်တိုတစ်ခု ရယူပါ။ သင်မဖွင့်မချင်း ပိတ်ထားပါသည်။ |
+| `coach.notice.title` | Before you turn on the AI coach | AI နည်းပြကို မဖွင့်မီ |
+| `coach.notice.confirm` | Turn on the AI coach | AI နည်းပြကို ဖွင့်ပါ |
+| `coach.notice.cancel` | Cancel | မလုပ်တော့ပါ |
+| `coach.label` | AI-generated feedback | AI ဖန်တီးထားသော တုံ့ပြန်ချက် |
+| `coach.followUp.label` | An officer might also ask: | အရာရှိက ဤသို့လည်း မေးနိုင်သည်- |
+| `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | လိုချင်လျှင် အဖြေကို အသံထွက်၍ လေ့ကျင့်ပါ။ ဤမေးခွန်းကို မှတ်တမ်းမတင်ပါ။ |
+| `coach.tip.label` | Tip about your English: | သင့်အင်္ဂလိပ်စာအကြောင်း အကြံပြုချက်- |
+| `coach.feedback.understood` | Clear answer | ရှင်းလင်းသော အဖြေ |
+| `coach.feedback.needs_practice` | Worth practicing again | ထပ်လေ့ကျင့်သင့်သည် |
+| `coach.feedback.unclear` | Try saying it more clearly | ပိုရှင်းအောင် ပြောကြည့်ပါ |
+| `coach.checking` | Getting AI feedback… | AI တုံ့ပြန်ချက် ရယူနေသည်… |
+| `coach.unavailable` | AI feedback is not available right now. You can keep practicing. | ယခု AI တုံ့ပြန်ချက် မရနိုင်ပါ။ ဆက်လေ့ကျင့်နိုင်ပါသည်။ |
+| `coach.offNow` | The AI coach is off for the rest of this practice. | ဤလေ့ကျင့်မှု၏ ကျန်အပိုင်းအတွက် AI နည်းပြ ပိတ်ထားပါသည်။ |
+| `coach.screened` | This answer was not sent to the AI coach because it seems to contain {kind}. Answer as the fictional person, without real personal details. | ဤအဖြေတွင် {kind} ပါဝင်ပုံရသောကြောင့် AI နည်းပြထံ မပို့ခဲ့ပါ။ ကိုယ်ရေးအချက်အလက်အစစ် မပါဘဲ စိတ်ကူးယဉ်လူအဖြစ် ဖြေပါ။ |
+| `coach.kind.aNumber` | an A-number | A-number |
+| `coach.kind.ssn` | a Social Security number | လူမှုဖူလုံရေးနံပါတ် |
+| `coach.kind.phone` | a phone number | ဖုန်းနံပါတ် |
+| `coach.kind.email` | an e-mail address | အီးမေးလ်လိပ်စာ |
+| `coach.kind.dateOfBirth` | a full date, such as a date of birth | မွေးနေ့ကဲ့သို့ ရက်စွဲအပြည့်အစုံ |
+| `coach.next` | Next question | နောက်မေးခွန်း |
 | `n400.loading` | Getting the next question… | နောက်မေးခွန်းကို ရယူနေသည်… |
 | `n400.failed` | The next question could not be loaded. Start over to try again. | နောက်မေးခွန်းကို မဖွင့်နိုင်ပါ။ ထပ်ကြိုးစားရန် အစမှ ပြန်စပါ။ |
 | `n400.done.title` | Your answers | သင်၏အဖြေများ |
@@ -298,3 +324,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 - `aiNotice.text`: "authoritative" is rendered as "official": close, slightly weaker.
 - `compare.notYet`: "Not yet" is rendered literally as "has not arrived yet". Low confidence.
 - `voice.consent.text`: "voice recording system" for "voice recognition" (အသံမှတ်သားစနစ်): recording and recognition are not the same thing. Needs a Burmese reader.
+- `coach.notice.text`: "fictional" is "imaginary" (စိတ်ကူးယဉ်). Needs a Burmese reader.

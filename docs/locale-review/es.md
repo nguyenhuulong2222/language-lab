@@ -41,6 +41,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | En esta práctica, la lectura, la escritura y la educación cívica alcanzaron cada una el puntaje que usa Language Lab. Use las notas de abajo para seguir practicando. | In this practice, reading, writing and civics each reached the score that Language Lab uses. Use the notes below to keep practicing. |
 | `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Para eso sirve la práctica. Las notas de abajo muestran en qué enfocarse antes de intentarlo de nuevo. | That is what practice is for. The notes below show what to focus on before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Escritura: USCIS dice que los errores de ortografía, mayúsculas y puntuación no hacen fallar la prueba de escritura, a menos que ya no se pueda entender la oración. Aquí, los pequeños errores de ortografía siguen contando, y las palabras más largas pueden tener más. No se revisan las mayúsculas ni la puntuación. | Writing: USCIS says that spelling, capital letter and punctuation errors do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked. |
+| `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to make feedback. Your voice is never sent, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. Language Lab checks for some numbers, but it cannot catch every personal detail. The AI coach is off again when you start a new practice. | Cuando el entrenador de IA está activado, las palabras de cada respuesta que usted escribe o dice en esta parte se envían como texto a Anthropic, una empresa de IA, a través del servidor de Language Lab, para dar comentarios. Su voz nunca se envía, solo las palabras. Responda como la persona ficticia. No diga nombres reales, direcciones, fechas de nacimiento, números A-number ni detalles de casos. Language Lab revisa algunos números, pero no puede detectar todos los datos personales. El entrenador de IA vuelve a estar desactivado cuando empieza una práctica nueva. | When the AI trainer is on, the words of each answer you write or say in this part are sent as text to Anthropic, an AI company, through the Language Lab server, to give comments. Your voice is never sent, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number numbers or case details. Language Lab checks some numbers, but cannot detect all personal data. The AI trainer is off again when you start a new practice. |
+| `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to make feedback; no audio is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. | Entrenador de IA: desactivado a menos que usted lo active en la parte del N-400. Cuando está activado, el texto de cada respuesta del N-400 se envía a Anthropic a través del servidor de Language Lab para dar comentarios; no se envía audio. Política de privacidad de Anthropic: anthropic.com/legal/privacy. | AI trainer: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through the Language Lab server to give comments; no audio is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -116,6 +118,30 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.label` | Sample answer for {name} (fictional) | Respuesta de ejemplo para {name} (ficticio) |
 | `n400.yourAnswer` | Your answer, as {name} | Su respuesta, como {name} |
 | `n400.save` | Save answer and continue | Guardar respuesta y continuar |
+| `coach.switch.label` | AI coach (optional) | Entrenador de IA (opcional) |
+| `coach.switch.on` | On | Activado |
+| `coach.switch.off` | Off | Desactivado |
+| `coach.switch.help` | After each answer, get a short AI tip about your English. Off unless you turn it on. | Después de cada respuesta, reciba un consejo breve de IA sobre su inglés. Está desactivado a menos que usted lo active. |
+| `coach.notice.title` | Before you turn on the AI coach | Antes de activar el entrenador de IA |
+| `coach.notice.confirm` | Turn on the AI coach | Activar el entrenador de IA |
+| `coach.notice.cancel` | Cancel | Cancelar |
+| `coach.label` | AI-generated feedback | Comentarios generados por IA |
+| `coach.followUp.label` | An officer might also ask: | Un oficial también podría preguntar: |
+| `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Si quiere, practique una respuesta en voz alta. Esta pregunta no se guarda. |
+| `coach.tip.label` | Tip about your English: | Consejo sobre su inglés: |
+| `coach.feedback.understood` | Clear answer | Respuesta clara |
+| `coach.feedback.needs_practice` | Worth practicing again | Vale la pena practicar otra vez |
+| `coach.feedback.unclear` | Try saying it more clearly | Intente decirlo con más claridad |
+| `coach.checking` | Getting AI feedback… | Obteniendo comentarios de IA… |
+| `coach.unavailable` | AI feedback is not available right now. You can keep practicing. | Los comentarios de IA no están disponibles ahora. Puede seguir practicando. |
+| `coach.offNow` | The AI coach is off for the rest of this practice. | El entrenador de IA está desactivado por el resto de esta práctica. |
+| `coach.screened` | This answer was not sent to the AI coach because it seems to contain {kind}. Answer as the fictional person, without real personal details. | Esta respuesta no se envió al entrenador de IA porque parece contener {kind}. Responda como la persona ficticia, sin datos personales reales. |
+| `coach.kind.aNumber` | an A-number | un número A-number |
+| `coach.kind.ssn` | a Social Security number | un número de Seguro Social |
+| `coach.kind.phone` | a phone number | un número de teléfono |
+| `coach.kind.email` | an e-mail address | una dirección de correo electrónico |
+| `coach.kind.dateOfBirth` | a full date, such as a date of birth | una fecha completa, como una fecha de nacimiento |
+| `coach.next` | Next question | Siguiente pregunta |
 | `n400.loading` | Getting the next question… | Buscando la siguiente pregunta… |
 | `n400.failed` | The next question could not be loaded. Start over to try again. | No se pudo cargar la siguiente pregunta. Empiece de nuevo para intentarlo otra vez. |
 | `n400.done.title` | Your answers | Sus respuestas |

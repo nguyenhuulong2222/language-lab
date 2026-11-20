@@ -41,6 +41,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | इस अभ्यास में पढ़ना, लिखना और नागरिक शास्त्र, तीनों उस स्कोर तक पहुँचे जो Language Lab इस्तेमाल करता है। अभ्यास जारी रखने के लिए नीचे दिए नोट्स देखें। | In this practice, reading, writing and civics, all three, reached the score that Language Lab uses. See the notes below to continue practicing. |
 | `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | अभ्यास इसी के लिए होता है। नीचे दिए नोट्स बताते हैं कि दोबारा कोशिश करने से पहले किन बातों पर ध्यान देना है। | That is what practice is for. The notes below tell you what to focus on before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | लिखना: USCIS के अनुसार वर्तनी, बड़े अक्षर और विराम चिह्न की गलतियों से लेखन परीक्षा में आप असफल नहीं होते, जब तक वाक्य समझ में आना बंद न हो जाए। यहाँ वर्तनी की छोटी गलतियाँ भी मान ली जाती हैं, और लंबे शब्दों में ज़्यादा गलतियाँ चल सकती हैं। बड़े अक्षर और विराम चिह्न नहीं जाँचे जाते। | Writing: according to USCIS, mistakes in spelling, capital letters and punctuation do not make you fail the writing test, unless the sentence stops being understandable. Here, small spelling mistakes are also accepted, and longer words can have more mistakes. Capital letters and punctuation are not checked. |
+| `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to make feedback. Your voice is never sent, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. Language Lab checks for some numbers, but it cannot catch every personal detail. The AI coach is off again when you start a new practice. | AI कोच चालू होने पर, इस भाग में आप जो भी उत्तर टाइप करते हैं या बोलते हैं, उसके शब्द प्रतिक्रिया बनाने के लिए Language Lab के सर्वर के ज़रिए AI कंपनी Anthropic को टेक्स्ट के रूप में भेजे जाते हैं। आपकी आवाज़ कभी नहीं भेजी जाती, सिर्फ़ शब्द। काल्पनिक व्यक्ति के रूप में उत्तर दें। असली नाम, पते, जन्म तिथि, A-number या केस का विवरण न बताएँ। Language Lab कुछ नंबरों की जाँच करता है, लेकिन हर निजी जानकारी नहीं पकड़ सकता। नया अभ्यास शुरू करने पर AI कोच फिर से बंद हो जाता है। | When the AI coach is on, the words of whatever answer you type or speak in this part are sent as text through Language Lab's server to the AI company Anthropic to create a response. Your voice is never sent, only words. Answer as the fictional person. Do not give real names, addresses, date of birth, A-number or case details. Language Lab checks some numbers, but cannot catch every piece of personal information. When you start a new practice, the AI coach turns off again. |
+| `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to make feedback; no audio is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. | AI कोच: जब तक आप इसे N-400 भाग में चालू न करें, बंद रहता है। चालू होने पर, हर N-400 उत्तर का टेक्स्ट प्रतिक्रिया बनाने के लिए Language Lab के सर्वर के ज़रिए Anthropic को भेजा जाता है; कोई ऑडियो नहीं भेजा जाता। Anthropic की गोपनीयता नीति: anthropic.com/legal/privacy। | AI coach: stays off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent through Language Lab's server to Anthropic to create a response; no audio is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -116,6 +118,30 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.label` | Sample answer for {name} (fictional) | {name} के लिए नमूना उत्तर (काल्पनिक) |
 | `n400.yourAnswer` | Your answer, as {name} | {name} के रूप में आपका उत्तर |
 | `n400.save` | Save answer and continue | उत्तर सहेजें और आगे बढ़ें |
+| `coach.switch.label` | AI coach (optional) | AI कोच (वैकल्पिक) |
+| `coach.switch.on` | On | चालू |
+| `coach.switch.off` | Off | बंद |
+| `coach.switch.help` | After each answer, get a short AI tip about your English. Off unless you turn it on. | हर उत्तर के बाद, अपनी अंग्रेज़ी के बारे में AI से एक छोटा सुझाव पाएँ। जब तक आप इसे चालू न करें, यह बंद रहता है। |
+| `coach.notice.title` | Before you turn on the AI coach | AI कोच चालू करने से पहले |
+| `coach.notice.confirm` | Turn on the AI coach | AI कोच चालू करें |
+| `coach.notice.cancel` | Cancel | रद्द करें |
+| `coach.label` | AI-generated feedback | AI द्वारा बनाई गई प्रतिक्रिया |
+| `coach.followUp.label` | An officer might also ask: | अधिकारी यह भी पूछ सकते हैं: |
+| `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | चाहें तो ज़ोर से उत्तर का अभ्यास करें। यह प्रश्न रिकॉर्ड नहीं होता। |
+| `coach.tip.label` | Tip about your English: | आपकी अंग्रेज़ी के बारे में सुझाव: |
+| `coach.feedback.understood` | Clear answer | साफ़ उत्तर |
+| `coach.feedback.needs_practice` | Worth practicing again | फिर से अभ्यास करने लायक |
+| `coach.feedback.unclear` | Try saying it more clearly | इसे और साफ़ बोलने की कोशिश करें |
+| `coach.checking` | Getting AI feedback… | AI प्रतिक्रिया ली जा रही है… |
+| `coach.unavailable` | AI feedback is not available right now. You can keep practicing. | अभी AI प्रतिक्रिया उपलब्ध नहीं है। आप अभ्यास जारी रख सकते हैं। |
+| `coach.offNow` | The AI coach is off for the rest of this practice. | इस अभ्यास के बाकी हिस्से के लिए AI कोच बंद है। |
+| `coach.screened` | This answer was not sent to the AI coach because it seems to contain {kind}. Answer as the fictional person, without real personal details. | यह उत्तर AI कोच को नहीं भेजा गया क्योंकि इसमें {kind} लगता है। असली निजी जानकारी के बिना, काल्पनिक व्यक्ति के रूप में उत्तर दें। |
+| `coach.kind.aNumber` | an A-number | A-number |
+| `coach.kind.ssn` | a Social Security number | सोशल सिक्योरिटी नंबर |
+| `coach.kind.phone` | a phone number | फ़ोन नंबर |
+| `coach.kind.email` | an e-mail address | ई-मेल पता |
+| `coach.kind.dateOfBirth` | a full date, such as a date of birth | पूरी तारीख, जैसे जन्म तिथि |
+| `coach.next` | Next question | अगला प्रश्न |
 | `n400.loading` | Getting the next question… | अगला प्रश्न लाया जा रहा है… |
 | `n400.failed` | The next question could not be loaded. Start over to try again. | अगला प्रश्न लोड नहीं हो सका। फिर से कोशिश करने के लिए शुरू से आरंभ करें। |
 | `n400.done.title` | Your answers | आपके उत्तर |

@@ -41,6 +41,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.lead.onTrack` ⚠ | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | ในการฝึกครั้งนี้ การอ่าน การเขียน และหน้าที่พลเมือง ต่างถึงคะแนนที่ Language Lab ใช้ ใช้บันทึกด้านล่างเพื่อฝึกต่อไป | In this practice, reading, writing and civic duties each reached the score Language Lab uses. Use the notes below to keep practicing. |
 | `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | การฝึกมีไว้เพื่อสิ่งนี้ บันทึกด้านล่างแสดงว่าควรเน้นตรงไหนก่อนลองอีกครั้ง | Practice is for this. The notes below show where to focus before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | การเขียน: USCIS ระบุว่าการสะกดผิด ตัวพิมพ์ใหญ่ และเครื่องหมายวรรคตอน ไม่ทำให้สอบเขียนไม่ผ่าน เว้นแต่ประโยคจะอ่านไม่เข้าใจแล้ว ที่นี่ การสะกดผิดเล็กน้อยยังนับ และคำที่ยาวกว่าผิดได้มากกว่า ไม่ตรวจตัวพิมพ์ใหญ่และเครื่องหมายวรรคตอน | Writing: USCIS states that misspelling, capital letters and punctuation do not make you fail the writing test, unless the sentence can no longer be understood. Here, small misspellings still count, and longer words may have more mistakes. Capital letters and punctuation are not checked. |
+| `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to make feedback. Your voice is never sent, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. Language Lab checks for some numbers, but it cannot catch every personal detail. The AI coach is off again when you start a new practice. | เมื่อเปิดโค้ช AI คำในแต่ละคำตอบที่คุณพิมพ์หรือพูดในส่วนนี้จะถูกส่งเป็นข้อความไปยัง Anthropic ซึ่งเป็นบริษัท AI ผ่านเซิร์ฟเวอร์ของ Language Lab เพื่อสร้างคำติชม เสียงของคุณจะไม่ถูกส่งเลย ส่งเฉพาะคำ ตอบในฐานะบุคคลสมมติ อย่าบอกชื่อจริง ที่อยู่ วันเกิด A-number หรือรายละเอียดคดี Language Lab ตรวจตัวเลขบางอย่าง แต่จับข้อมูลส่วนตัวไม่ได้ทั้งหมด โค้ช AI จะปิดอีกครั้งเมื่อคุณเริ่มการฝึกใหม่ | When the AI coach is on, the words in each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server to create feedback. Your voice is never sent, only words. Answer as the fictional person. Do not give a real name, address, birthday, A-number or case details. Language Lab checks some numbers but cannot catch all personal information. The AI coach turns off again when you start a new practice. |
+| `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to make feedback; no audio is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. | โค้ช AI: ปิดอยู่จนกว่าคุณจะเปิดในส่วน N-400 เมื่อเปิด ข้อความของแต่ละคำตอบ N-400 จะถูกส่งไปยัง Anthropic ผ่านเซิร์ฟเวอร์ของ Language Lab เพื่อสร้างคำติชม ไม่มีการส่งเสียง นโยบายความเป็นส่วนตัวของ Anthropic: anthropic.com/legal/privacy | AI coach: off until you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to create feedback. No sound is sent. Anthropic's privacy policy: anthropic.com/legal/privacy |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -116,6 +118,30 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.label` | Sample answer for {name} (fictional) | ตัวอย่างคำตอบของ {name} (สมมติ) |
 | `n400.yourAnswer` | Your answer, as {name} | คำตอบของคุณในฐานะ {name} |
 | `n400.save` | Save answer and continue | บันทึกคำตอบและไปต่อ |
+| `coach.switch.label` | AI coach (optional) | โค้ช AI (ไม่บังคับ) |
+| `coach.switch.on` | On | เปิด |
+| `coach.switch.off` | Off | ปิด |
+| `coach.switch.help` | After each answer, get a short AI tip about your English. Off unless you turn it on. | หลังแต่ละคำตอบ รับคำแนะนำสั้น ๆ จาก AI เกี่ยวกับภาษาอังกฤษของคุณ ปิดอยู่จนกว่าคุณจะเปิด |
+| `coach.notice.title` | Before you turn on the AI coach | ก่อนเปิดโค้ช AI |
+| `coach.notice.confirm` | Turn on the AI coach | เปิดโค้ช AI |
+| `coach.notice.cancel` | Cancel | ยกเลิก |
+| `coach.label` | AI-generated feedback | คำติชมที่สร้างโดย AI |
+| `coach.followUp.label` | An officer might also ask: | เจ้าหน้าที่อาจถามเพิ่มว่า: |
+| `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | ถ้าต้องการ ลองฝึกตอบออกเสียง คำถามนี้ไม่ถูกบันทึก |
+| `coach.tip.label` | Tip about your English: | คำแนะนำเรื่องภาษาอังกฤษของคุณ: |
+| `coach.feedback.understood` | Clear answer | คำตอบชัดเจน |
+| `coach.feedback.needs_practice` | Worth practicing again | ควรฝึกอีกครั้ง |
+| `coach.feedback.unclear` | Try saying it more clearly | ลองพูดให้ชัดขึ้น |
+| `coach.checking` | Getting AI feedback… | กำลังรับคำติชมจาก AI… |
+| `coach.unavailable` | AI feedback is not available right now. You can keep practicing. | ตอนนี้ยังไม่มีคำติชมจาก AI คุณฝึกต่อได้ |
+| `coach.offNow` | The AI coach is off for the rest of this practice. | โค้ช AI ปิดไปตลอดการฝึกครั้งนี้ |
+| `coach.screened` | This answer was not sent to the AI coach because it seems to contain {kind}. Answer as the fictional person, without real personal details. | คำตอบนี้ไม่ได้ถูกส่งไปยังโค้ช AI เพราะดูเหมือนมี{kind} ตอบในฐานะบุคคลสมมติ โดยไม่มีข้อมูลส่วนตัวจริง |
+| `coach.kind.aNumber` | an A-number | A-number |
+| `coach.kind.ssn` | a Social Security number | หมายเลขประกันสังคม |
+| `coach.kind.phone` | a phone number | หมายเลขโทรศัพท์ |
+| `coach.kind.email` | an e-mail address | ที่อยู่อีเมล |
+| `coach.kind.dateOfBirth` | a full date, such as a date of birth | วันที่แบบเต็ม เช่น วันเกิด |
+| `coach.next` | Next question | คำถามถัดไป |
 | `n400.loading` | Getting the next question… | กำลังโหลดคำถามถัดไป… |
 | `n400.failed` | The next question could not be loaded. Start over to try again. | โหลดคำถามถัดไปไม่ได้ เริ่มใหม่เพื่อลองอีกครั้ง |
 | `n400.done.title` | Your answers | คำตอบของคุณ |

@@ -41,6 +41,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Hauv qhov kev xyaum no, kev nyeem, kev sau thiab kev kawm txog pej xeem txhua ntu tau txog cov qhab nia uas Language Lab siv. Siv cov ntawv sau hauv qab no los xyaum ntxiv. | In this practice, reading, writing and learning about citizens each reached the score Language Lab uses. Use the notes below to practice more. |
 | `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Kev xyaum yog rau qhov no. Cov ntawv sau hauv qab no qhia tias yuav tsum tsom rau qhov twg ua ntej koj rov sim dua. | Practice is for this. The notes below show where to focus before you try again. |
 | `compare.setting.writing` ⚠ | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Kev sau: USCIS hais tias kev sau ntawv yuam kev, cov tsiaj ntawv loj thiab cov cim nres tsis ua rau koj poob qhov kev xeem sau, tshwj tsis yog thaum kab lus nkag siab tsis tau lawm. Ntawm no, kev sau yuam kev me me tseem suav, thiab cov lo lus ntev dua yuam kev tau ntau dua. Tsis kuaj cov tsiaj ntawv loj thiab cov cim nres. | Writing: USCIS says that writing mistakes, capital letters and stopping marks do not make you fail the writing test, except when the sentence can no longer be understood. Here, small writing mistakes still count, and longer words can have more mistakes. Capital letters and stopping marks are not checked. |
+| `coach.notice.text` ⚠ | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to make feedback. Your voice is never sent, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. Language Lab checks for some numbers, but it cannot catch every personal detail. The AI coach is off again when you start a new practice. | Thaum AI tus kws qhia qhib, cov lus hauv txhua lo lus teb uas koj ntaus lossis hais hauv ntu no raug xa ua ntawv mus rau Anthropic, ib lub tuam txhab AI, hla Language Lab lub server, kom ua tau lus tawm tswv yim. Koj lub suab yeej tsis raug xa, tsuas yog cov lus xwb. Teb ua tus neeg tsis muaj tiag. Tsis txhob hais lub npe tiag, chaw nyob, hnub yug, A-number lossis cov ntsiab lus ntawm rooj plaub. Language Lab kuaj qee tus lej, tab sis nws ntes tsis tau txhua yam ntaub ntawv tus kheej. AI tus kws qhia rov kaw thaum koj pib ib qho kev xyaum tshiab. | When the AI teacher is open, the words in every answer that you type or say in this part are sent as writing to Anthropic, an AI company, across Language Lab's server, so it can make comments. Your voice is never sent, only the words. Answer as the person who is not real. Do not say a real name, place you live, birthday, A-number or details of a case. Language Lab checks some numbers, but it cannot catch every kind of personal information. The AI teacher closes again when you start a new practice. |
+| `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to make feedback; no audio is sent. Anthropic's privacy policy: anthropic.com/legal/privacy. | AI tus kws qhia: kaw tshwj tsis yog koj qhib nws hauv ntu N-400. Thaum qhib, cov ntawv ntawm txhua lo lus teb N-400 raug xa mus rau Anthropic hla Language Lab lub server kom ua tau lus tawm tswv yim; tsis xa suab. Anthropic txoj cai ceev ntiag tug: anthropic.com/legal/privacy. | AI teacher: closed unless you open it in the N-400 part. When open, the writing of every N-400 answer is sent to Anthropic across Language Lab's server so it can make comments; no sound is sent. Anthropic's privacy rule: anthropic.com/legal/privacy. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -116,6 +118,30 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.label` | Sample answer for {name} (fictional) | Piv txwv lus teb rau {name} (tsim los) |
 | `n400.yourAnswer` | Your answer, as {name} | Koj cov lus teb, ua {name} |
 | `n400.save` | Save answer and continue | Khaws cov lus teb thiab mus ntxiv |
+| `coach.switch.label` | AI coach (optional) | AI tus kws qhia (yog koj xav tau) |
+| `coach.switch.on` | On | Qhib |
+| `coach.switch.off` | Off | Kaw |
+| `coach.switch.help` | After each answer, get a short AI tip about your English. Off unless you turn it on. | Tom qab txhua lo lus teb, tau ib qho lus qhia luv luv los ntawm AI txog koj cov lus Askiv. Kaw tshwj tsis yog koj qhib nws. |
+| `coach.notice.title` | Before you turn on the AI coach | Ua ntej koj qhib AI tus kws qhia |
+| `coach.notice.confirm` | Turn on the AI coach | Qhib AI tus kws qhia |
+| `coach.notice.cancel` | Cancel | Tso tseg |
+| `coach.label` | AI-generated feedback | Lus tawm tswv yim uas AI ua |
+| `coach.followUp.label` | An officer might also ask: | Tus neeg ua haujlwm kuj yuav nug: |
+| `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Yog koj xav, xyaum teb nrov nrov. Lo lus nug no tsis raug kaw cia. |
+| `coach.tip.label` | Tip about your English: | Lus qhia txog koj cov lus Askiv: |
+| `coach.feedback.understood` | Clear answer | Lo lus teb meej |
+| `coach.feedback.needs_practice` | Worth practicing again | Tsim nyog xyaum dua |
+| `coach.feedback.unclear` | Try saying it more clearly | Sim hais kom meej dua |
+| `coach.checking` | Getting AI feedback… | Tab tom tau lus tawm tswv yim los ntawm AI… |
+| `coach.unavailable` | AI feedback is not available right now. You can keep practicing. | Tam sim no tsis muaj lus tawm tswv yim los ntawm AI. Koj tuaj yeem xyaum ntxiv. |
+| `coach.offNow` | The AI coach is off for the rest of this practice. | AI tus kws qhia kaw rau tag nrho qhov kev xyaum no. |
+| `coach.screened` | This answer was not sent to the AI coach because it seems to contain {kind}. Answer as the fictional person, without real personal details. | Lo lus teb no tsis raug xa mus rau AI tus kws qhia vim nws zoo li muaj {kind}. Teb ua tus neeg tsis muaj tiag, tsis muaj ntaub ntawv tus kheej tiag. |
+| `coach.kind.aNumber` | an A-number | ib tus A-number |
+| `coach.kind.ssn` | a Social Security number | ib tus lej Social Security |
+| `coach.kind.phone` | a phone number | ib tus lej xov tooj |
+| `coach.kind.email` | an e-mail address | ib qho chaw nyob e-mail |
+| `coach.kind.dateOfBirth` | a full date, such as a date of birth | ib hnub tim puv, xws li hnub yug |
+| `coach.next` | Next question | Lo lus nug tom ntej |
 | `n400.loading` | Getting the next question… | Tab tom nrhiav lus nug tom ntej… |
 | `n400.failed` | The next question could not be loaded. Start over to try again. | Nqa lus nug tom ntej tsis tau. Pib dua kom sim dua. |
 | `n400.done.title` | Your answers | Koj cov lus teb |
@@ -306,3 +332,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 - `compare.setting`: "in order" now "ib lo tom qab ib lo" (one word after another) and "may be missing" "poob tau" (may fall out). Still needs a Hmong reader.
 - `voice.consent.text`: "Say" is the plain verb for speaking, and "language" (lus) stands in for "words". Needs a Hmong reader.
 - `compare.setting.writing`: "punctuation" is rendered as "stopping marks" (cov cim nres) and "spelling" as "writing". Needs a Hmong reader.
+- `coach.notice.text`: "fictional" is "not real" and "on/off" is "open/closed" (qhib, kaw). Needs a Hmong reader.
