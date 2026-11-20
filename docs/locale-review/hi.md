@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | जब तक कोई व्यक्ति उत्तर-कुंजी की समीक्षा नहीं कर लेता, इस संस्करण में नागरिक शास्त्र की स्कोरिंग बंद है। आप इंटरव्यू, पढ़ने और लिखने का अभ्यास फिर भी कर सकते हैं। | Until a person reviews the answer key, civics scoring is off in this version. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | नागरिक शास्त्र की उत्तर-कुंजी अभी किसी व्यक्ति की समीक्षा की प्रतीक्षा में है, इसलिए यह संस्करण नागरिक शास्त्र का स्कोर नहीं देता और रिपोर्ट नहीं बनाता। | The civics answer key is still waiting for a person's review, so this version does not give a civics score and does not make a report. |
 | `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | जब आप “बोलें” दबाते हैं, तो आपके ब्राउज़र की आवाज़ पहचान सुविधा आपकी आवाज़ को शब्दों में बदलने के लिए ब्राउज़र बनाने वाली कंपनी, जैसे Google या Apple, को भेज सकती है। Language Lab आपकी आवाज़ न भेजता है, न सहेजता है। आप इसके बजाय अपना उत्तर टाइप कर सकते हैं। | When you press “Speak”, your browser's voice recognition feature may send your voice to the company that makes the browser, such as Google or Apple, to turn it into words. Language Lab neither sends nor saves your voice. You can type your answer instead. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | अभ्यास पूरा: हर भाग अभ्यास स्कोर तक पहुँचा | Practice complete: every part reached the practice score |
+| `report.title.review` | A few things to review | दोहराने के लिए कुछ बातें | A few things to revise |
+| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | इस अभ्यास में पढ़ना, लिखना और नागरिक शास्त्र, तीनों उस स्कोर तक पहुँचे जो Language Lab इस्तेमाल करता है। अभ्यास जारी रखने के लिए नीचे दिए नोट्स देखें। | In this practice, reading, writing and civics, all three, reached the score that Language Lab uses. See the notes below to continue practicing. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | अभ्यास इसी के लिए होता है। नीचे दिए नोट्स बताते हैं कि दोबारा कोशिश करने से पहले किन बातों पर ध्यान देना है। | That is what practice is for. The notes below tell you what to focus on before trying again. |
+| `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | लिखना: USCIS के अनुसार वर्तनी, बड़े अक्षर और विराम चिह्न की गलतियों से लेखन परीक्षा में आप असफल नहीं होते, जब तक वाक्य समझ में आना बंद न हो जाए। यहाँ वर्तनी की छोटी गलतियाँ भी मान ली जाती हैं, और लंबे शब्दों में ज़्यादा गलतियाँ चल सकती हैं। बड़े अक्षर और विराम चिह्न नहीं जाँचे जाते। | Writing: according to USCIS, mistakes in spelling, capital letters and punctuation do not make you fail the writing test, unless the sentence stops being understandable. Here, small spelling mistakes are also accepted, and longer words can have more mistakes. Capital letters and punctuation are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Civics |
 | `stage.report.label` | Practice report | अभ्यास रिपोर्ट |
 | `stage.report.short` | Report | रिपोर्ट |
-| `badge.onTrack` | On track | सही राह पर |
+| `badge.onTrack` | Practice score reached | अभ्यास स्कोर पूरा |
 | `badge.review` | Worth reviewing | दोहराने लायक |
 | `report.empty` | Your practice report will appear here once the session is complete. | सत्र पूरा होने पर आपकी अभ्यास रिपोर्ट यहाँ दिखाई देगी। |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | अभ्यास रिपोर्ट |
-| `report.title.onTrack` | You’re on track | आप सही राह पर हैं |
-| `report.title.review` | A few things to review | दोहराने के लिए कुछ बातें |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | आपने यह अभ्यास सत्र अच्छे से पूरा किया। अगले दौर से पहले अभ्यास बनाए रखने के लिए नीचे दिए नोट्स का उपयोग करें। |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | अभ्यास इसी के लिए होता है। नीचे दिए नोट्स बताते हैं कि दोबारा कोशिश करने से पहले किन बातों पर ध्यान देना है। |
 | `report.profile.label` | Practice profile (fictional) | अभ्यास प्रोफ़ाइल (काल्पनिक) |
 | `report.profile.meta` | {version} civics test · filed {date} | {version} का नागरिक शास्त्र टेस्ट · आवेदन की तारीख {date} |
 | `report.stages.heading` | How each part went | हर भाग कैसा रहा |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | हाँ, होम पर जाएँ |
 | `header.homeConfirm.no` | Stay here | यहीं रहें |
 | `common.retry` | Try again | फिर से कोशिश करें |
-| `partReport.badge.good` | This part went well | यह भाग अच्छा रहा |
+| `partReport.badge.good` | This part reached the practice score | यह भाग अभ्यास स्कोर तक पहुँचा |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | वाक्य स्क्रीन पर दिखाया गया था (सहायता वाला प्रयास)। |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | अनुवाद की समीक्षा किसी व्यक्ति द्वारा किए जाने तक अस्वीकरण और कानूनी पाठ केवल अंग्रेज़ी में दिखाए जाते हैं। |
 | `lang.menu.title` | Choose a language | भाषा चुनें |

@@ -4,6 +4,9 @@
 
 Styled as a 1970s language lab booth — individual study, focused repetition, no pressure.
 
+Live: <https://language-lab-ade.pages.dev> (the production build: civics, Study first and the full
+interview are switched off there until the answer keys have been reviewed by a person).
+
 > **This is an independent practice tool. It is not affiliated with, endorsed by, or
 > connected to USCIS, DHS, or any U.S. government agency. Practice results do not predict
 > or reflect any official immigration decision. Nothing here is legal advice. Consult a
@@ -20,7 +23,9 @@ profiles. You work through:
   interview is held in English
 - **Reading** — English reading portion practice
 - **Writing** — English writing portion practice
-- **Civics** — 2008 or 2025 test questions, scored against the official answer key
+- **Civics** — 2008 or 2025 test questions, scored against an answer key that Language Lab built
+  from the USCIS question lists. The key has not yet been reviewed by a person, so civics is switched
+  off in the production build
 
 At the end you receive a practice report. The report tells you what to review. It is
 practice feedback, not an official assessment.
@@ -51,7 +56,7 @@ practice feedback, not an official assessment.
 
 ### Prerequisites
 
-- Node.js 20+
+- Node.js 22.18+ (the app builds on Node 20, but the tools in `tools/` import TypeScript files directly, which needs 22.18 or later)
 - npm 10+
 - [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) for Worker development
 
@@ -164,7 +169,7 @@ See [`.kiro/steering/content-safety.md`](.kiro/steering/content-safety.md) for t
 - **Frontend design guidance.** `.kiro/steering/frontend-design.md` is the "frontend-design" skill from Anthropic's skills repository (https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md, MIT License). It is agent guidance only and is not part of the product build.
 - **AI-generated audio and AI services.** All spoken prompts in the practice flow (civics questions, N-400 questions and sample answers, writing dictation sentences, reading sample sentences) are AI-generated with OpenAI text-to-speech (`gpt-4o-mini-tts`, voice coral). They are generated ahead of time by `tools/audio/generate-audio.mjs` and committed as static MP3 files in `public/audio/`; the app never calls a speech service while it runs. The screen says "AI-generated voice" when a clip plays. If a clip is missing or fails to load, the browser's own voice is used and the screen says "Device voice". The audio of the speech test tool is made the same way and is not committed. Interview follow-up questions will use the Claude API (not built yet).
 - **AI-generated interface translations.** The interface is offered in 14 languages (English, Vietnamese, Spanish, Traditional Chinese, Filipino, Korean, Hindi, Haitian Creole, Thai, Lao, White Hmong, Burmese, Portuguese, Russian). Everything except English was translated by AI and has **not** been reviewed by a native speaker. Each screen in those languages says so, disclaimers and legal text are shown **in English only** (legal text is never machine translated; a short translated line says so), and English is the authoritative version. A language loses the label only when a named human reviewer is recorded in its locale file (`src/i18n/locales/<code>.json`, `_meta`). Automated checks (same keys, placeholders, numbers and fixed terms) run in the tests and before a language is offered, but they cannot judge meaning. In the production build, White Hmong, Lao, Burmese and Haitian Creole are hidden from the language menu until a reviewer is recorded (more languages are in review); they stay available in development. Review sheets for a native reader are in [`docs/locale-review.md`](docs/locale-review.md). Civics questions, answers, reading and writing sentences and N-400 questions are never translated this way.
-- **Pictures for civics questions.** The pictures shown after a civics answer is graded, and in "Study first", are public-domain or openly licensed works from official U.S. federal sources (so far the Smithsonian Institution's Open Access collection, National Portrait Gallery items marked CC0; Library of Congress pictures are planned). A picture is used only when its own record states its rights ("No known restrictions on publication", public domain, U.S. government work or CC0). The rights text is copied from the source record as it was on the download date. Each picture, its creator, its source page and its rights statement word for word are listed in [`docs/image-credits.md`](docs/image-credits.md) and in the app (footer, "Picture credits"). Pictures that could not be fetched are in [`docs/image-todo.md`](docs/image-todo.md). Using these pictures does not mean the Smithsonian, the Library of Congress or any other agency endorses Language Lab. The pairing of pictures and questions is marked `needsHumanReview` (see [`docs/image-review.md`](docs/image-review.md)).
+- **Pictures for civics questions.** The pictures shown after a civics answer is graded, and in "Study first", are public-domain or openly licensed works from official U.S. federal sources (the Smithsonian Institution's Open Access collection, National Portrait Gallery items marked CC0, and the Library of Congress, items marked "No known restrictions on publication"). A picture is used only when its own record states its rights ("No known restrictions on publication", public domain, U.S. government work or CC0). The rights text is copied from the source record as it was on the download date. Each picture, its creator, its source page and its rights statement word for word are listed in [`docs/image-credits.md`](docs/image-credits.md) and in the app (footer, "Picture credits"). Pictures that could not be fetched are in [`docs/image-todo.md`](docs/image-todo.md). Using these pictures does not mean the Smithsonian, the Library of Congress or any other agency endorses Language Lab. The pairing of pictures and questions is marked `needsHumanReview` (see [`docs/image-review.md`](docs/image-review.md)).
 - **Everything else** was written during the hackathon with Kiro.
 
 These notes do not change the statements above: Language Lab is not a government service, is not affiliated with USCIS, and does not give legal advice.

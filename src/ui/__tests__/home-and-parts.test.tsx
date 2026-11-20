@@ -141,13 +141,13 @@ describe("single-part sessions in the app", () => {
     expect(html).toContain("Reading practice");
     expect(html).toContain("This report is for one part only.");
     expect(html).toContain("it gives no overall practice result");
-    expect(html).toContain("This part went well");
-    expect(html).not.toContain("On track");
+    expect(html).toContain("This part reached the practice score");
+    expect(html).not.toContain("Practice score reached");
     expect(html).toContain("It shows how this part went in practice, not how you would do on the real test");
     expect(html).toContain("Please read this");
     expect(html).toContain("This is a practice tool only.");
     expect(html).toContain("Back to home");
-    expect(html).not.toContain("You’re on track");
+    expect(html).not.toContain("Practice complete: each part reached the practice score");
     expect(html).not.toContain("A few things to review");
     expect(html).not.toContain("practice_passed");
     expect(html).not.toContain("needs_more_practice");

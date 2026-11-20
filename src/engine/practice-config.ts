@@ -14,8 +14,13 @@ import type { MatchOptions } from "./sentence-compare.js";
 export interface SentenceMatchConfig {
   /** Extra content words that do not stop an attempt from counting (0 or more). */
   extraContentWordsAllowed: number;
-  /** Accept a one-letter spelling error in a word of 5 letters or more (writing). */
+  /** Accept spelling slips within `spellingSlips` (writing). */
   spellingTolerance: boolean;
+}
+/** From a word length on, how many letters may be wrong, missing, extra or swapped. */
+export interface SpellingSlip {
+  fromLetters: number;
+  maxEdits: number;
 }
 export interface PracticeConfig {
   sentenceMatch: {
@@ -23,6 +28,8 @@ export interface PracticeConfig {
     functionWords: string[];
     /** Words that are never shortened by the plural and possessive rule. */
     neverStem: string[];
+    /** Spelling slip limits by word length, shortest first (writing). */
+    spellingSlips: SpellingSlip[];
     reading: SentenceMatchConfig;
     writing: SentenceMatchConfig;
   };
@@ -47,6 +54,24 @@ function parseMatch(value: unknown, where: string): SentenceMatchConfig {
   if (typeof spelling !== "boolean") throw new Error(`practice-config: ${where}.spellingTolerance must be true or false.`);
   return { extraContentWordsAllowed: extra, spellingTolerance: spelling };
 }
+function parseSlips(value: unknown): SpellingSlip[] {
+  const where = "practice-config: sentenceMatch.spellingSlips";
+  if (!Array.isArray(value) || value.length === 0) throw new Error(`${where} must be a non-empty array.`);
+  let previous = 0;
+  return value.map((entry, index) => {
+    if (!isRecord(entry)) throw new Error(`${where}[${index}] must be an object.`);
+    const from = entry["fromLetters"];
+    const max = entry["maxEdits"];
+    if (typeof from !== "number" || !Number.isInteger(from) || from < 3 || from <= previous) {
+      throw new Error(`${where}[${index}].fromLetters must be a whole number of 3 or more, larger than the one before.`);
+    }
+    if (typeof max !== "number" || !Number.isInteger(max) || max < 1 || max > 3) {
+      throw new Error(`${where}[${index}].maxEdits must be a whole number from 1 to 3.`);
+    }
+    previous = from;
+    return { fromLetters: from, maxEdits: max };
+  });
+}
 export function parsePracticeConfig(raw: unknown): PracticeConfig {
   if (!isRecord(raw)) throw new Error("practice-config: file must be a JSON object.");
   if (typeof raw["needsHumanReview"] !== "boolean") {
@@ -58,6 +83,7 @@ export function parsePracticeConfig(raw: unknown): PracticeConfig {
     sentenceMatch: {
       functionWords: words(match["functionWords"], "sentenceMatch.functionWords"),
       neverStem: words(match["neverStem"], "sentenceMatch.neverStem"),
+      spellingSlips: parseSlips(match["spellingSlips"]),
       reading: parseMatch(match["reading"], "sentenceMatch.reading"),
       writing: parseMatch(match["writing"], "sentenceMatch.writing"),
     },
@@ -78,6 +104,7 @@ export function matchOptionsFor(
     neverStem: new Set(m.neverStem),
     extraContentWordsAllowed: m[kind].extraContentWordsAllowed,
     spellingTolerance: m[kind].spellingTolerance,
+    spellingSlips: m.spellingSlips,
     ...(knownWords === undefined ? {} : { knownWords }),
   };
 }

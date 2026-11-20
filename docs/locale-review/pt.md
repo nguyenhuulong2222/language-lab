@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | A pontuação de educação cívica está desativada nesta versão até que uma pessoa revise as respostas corretas. Você ainda pode praticar a entrevista, a leitura e a escrita. | Civics scoring is deactivated in this version until a person reviews the correct answers. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | As respostas corretas de educação cívica ainda aguardam a revisão de uma pessoa, então esta versão não pontua essa parte nem gera um relatório. | The correct civics answers still await a person's review, so this version does not score that part or generate a report. |
 | `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Quando você toca em “Falar”, o reconhecimento de voz do seu navegador pode enviar sua voz à empresa que fez o navegador, como Google ou Apple, para transformá-la em palavras. O Language Lab não envia nem guarda a sua voz. Você pode digitar a resposta no lugar. | When you tap “Speak”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or store your voice. You can type the answer instead. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | Prática concluída: cada parte atingiu a pontuação de prática | Practice finished: each part reached the practice score |
+| `report.title.review` | A few things to review | Algumas coisas para revisar | Some things to review |
+| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Nesta prática, leitura, escrita e educação cívica atingiram a pontuação que o Language Lab usa. Use as anotações abaixo para continuar praticando. | In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | É para isso que serve a prática. As anotações abaixo mostram em que se concentrar antes de tentar de novo. | That is what practice is for. The notes below show what to focus on before trying again. |
+| `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Escrita: o USCIS diz que erros de ortografia, letras maiúsculas e pontuação não reprovam no teste de escrita, a menos que a frase não possa mais ser entendida. Aqui, pequenos erros de ortografia ainda contam, e palavras mais longas podem ter mais. Letras maiúsculas e pontuação não são verificadas. | Writing: USCIS says that spelling, capital letter and punctuation errors do not fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Civismo |
 | `stage.report.label` | Practice report | Relatório de prática |
 | `stage.report.short` | Report | Relatório |
-| `badge.onTrack` | On track | No caminho certo |
+| `badge.onTrack` | Practice score reached | Pontuação de prática atingida |
 | `badge.review` | Worth reviewing | Vale revisar |
 | `report.empty` | Your practice report will appear here once the session is complete. | O seu relatório de prática aparecerá aqui quando a sessão terminar. |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Relatório de prática |
-| `report.title.onTrack` | You’re on track | Você está no caminho certo |
-| `report.title.review` | A few things to review | Algumas coisas para revisar |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | Você concluiu bem esta sessão de prática. Use as anotações abaixo para se manter em forma antes da próxima rodada. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | É para isso que serve a prática. As anotações abaixo mostram em que se concentrar antes de tentar de novo. |
 | `report.profile.label` | Practice profile (fictional) | Perfil de prática (fictício) |
 | `report.profile.meta` | {version} civics test · filed {date} | Teste de educação cívica {version} · pedido apresentado em {date} |
 | `report.stages.heading` | How each part went | Como foi cada parte |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | Sim, voltar ao início |
 | `header.homeConfirm.no` | Stay here | Ficar aqui |
 | `common.retry` | Try again | Tentar de novo |
-| `partReport.badge.good` | This part went well | Esta parte foi bem |
+| `partReport.badge.good` | This part reached the practice score | Esta parte atingiu a pontuação de prática |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | A frase foi mostrada na tela (tentativa com ajuda). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Os avisos e o texto jurídico aparecem só em inglês até que uma pessoa revise a tradução. |
 | `lang.menu.title` | Choose a language | Escolha um idioma |

@@ -22,7 +22,12 @@
     "civics.officialNote",
     "intro.locked",
     "civics.locked.text",
-    "voice.consent.text"
+    "voice.consent.text",
+    "report.title.onTrack",
+    "report.title.review",
+    "report.lead.onTrack",
+    "report.lead.review",
+    "compare.setting.writing"
   ],
   "backTranslations": {
     "es": {
@@ -47,7 +52,12 @@
       "civics.officialNote": "Any of these counts. The list comes from the USCIS list of answers and is still waiting for a person's review.",
       "intro.locked": "Civics scoring is turned off in this version until a person reviews the correct answers. You can still practice the interview, reading and writing.",
       "civics.locked.text": "The correct civics answers are still waiting for a person's review, so this version does not score that part or generate a report.",
-      "voice.consent.text": "When you press “Say it”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead."
+      "voice.consent.text": "When you press “Say it”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead.",
+      "report.title.onTrack": "Practice finished: each part reached the practice score",
+      "report.title.review": "A few things to go over",
+      "report.lead.onTrack": "In this practice, reading, writing and civics each reached the score that Language Lab uses. Use the notes below to keep practicing.",
+      "report.lead.review": "That is what practice is for. The notes below show what to focus on before trying again.",
+      "compare.setting.writing": "Writing: USCIS says that spelling, capital letter and punctuation errors do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked."
     },
     "pt": {
       "disclaimer.title": "Please read this",
@@ -71,7 +81,12 @@
       "civics.officialNote": "Any one of these counts. The list comes from the USCIS answer list and still awaits a person's review.",
       "intro.locked": "Civics scoring is deactivated in this version until a person reviews the correct answers. You can still practice the interview, reading and writing.",
       "civics.locked.text": "The correct civics answers still await a person's review, so this version does not score that part or generate a report.",
-      "voice.consent.text": "When you tap “Speak”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or store your voice. You can type the answer instead."
+      "voice.consent.text": "When you tap “Speak”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or store your voice. You can type the answer instead.",
+      "report.title.onTrack": "Practice finished: each part reached the practice score",
+      "report.title.review": "Some things to review",
+      "report.lead.onTrack": "In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to keep practicing.",
+      "report.lead.review": "That is what practice is for. The notes below show what to focus on before trying again.",
+      "compare.setting.writing": "Writing: USCIS says that spelling, capital letter and punctuation errors do not fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked."
     },
     "ru": {
       "disclaimer.title": "Please read",
@@ -95,7 +110,12 @@
       "civics.officialNote": "Any one of them is counted. The list is taken from the USCIS list of answers and is still waiting to be checked by a person.",
       "intro.locked": "Grading in civics is disabled in this version until a person checks the key with the correct answers. You can still train the interview, reading and writing.",
       "civics.locked.text": "The key with the correct civics answers is still waiting for a person to check it, so this version does not grade this part and does not create a report.",
-      "voice.consent.text": "When you press “Say”, the speech recognition function in your browser may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type the answer instead."
+      "voice.consent.text": "When you press “Say”, the speech recognition function in your browser may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type the answer instead.",
+      "report.title.onTrack": "Practice finished: each part reached the practice score",
+      "report.title.review": "There is something to review",
+      "report.lead.onTrack": "In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to keep practicing.",
+      "report.lead.review": "That is what practice is for. The notes below show what to focus on before trying again.",
+      "compare.setting.writing": "Writing: according to USCIS, errors in spelling, capital letters and punctuation do not lead to failing the written test if the sentence can still be understood. Here, small spelling errors are counted as correct, and in long words there may be more of them. Capital letters and punctuation are not checked."
     },
     "zh": {
       "disclaimer.title": "Please read first",
@@ -119,7 +139,12 @@
       "civics.officialNote": "Any one of these counts. This list is taken from USCIS's answer list and is still waiting for human review.",
       "intro.locked": "Until someone reviews the standard answers, the civics scoring function of this version is turned off. You can still practice the interview, reading and writing.",
       "civics.locked.text": "The standard answers for civics are still waiting for human review, so this version will not score civics and will not produce a report.",
-      "voice.consent.text": "When you press “Say it”, the browser's speech recognition function may send your voice to the browser's developer (such as Google or Apple) to convert it to text. Language Lab will not send or save your voice. You can also type your answer instead."
+      "voice.consent.text": "When you press “Say it”, the browser's speech recognition function may send your voice to the browser's developer (such as Google or Apple) to convert it to text. Language Lab will not send or save your voice. You can also type your answer instead.",
+      "report.title.onTrack": "Practice complete: every part reached the practice score",
+      "report.title.review": "There are a few things you can review",
+      "report.lead.onTrack": "In this practice, reading, writing and civics each reached the score Language Lab uses. Please use the notes below to keep practicing.",
+      "report.lead.review": "This is exactly the purpose of practice. The notes below tell you where to focus before trying again.",
+      "compare.setting.writing": "Writing: USCIS says spelling, capitalization and punctuation errors will not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words may have more errors. Capitalization and punctuation are not checked."
     },
     "ko": {
       "disclaimer.title": "Please be sure to read",
@@ -143,7 +168,12 @@
       "civics.officialNote": "Any one of these is accepted. This list was taken from the USCIS answer list and is still waiting for a person's review.",
       "intro.locked": "Until a person reviews the answer table, civics scoring is turned off in this version. You can still practice the interview, reading and writing.",
       "civics.locked.text": "The civics answer table is still waiting for a person's review, so this version does not score civics or create a report.",
-      "voice.consent.text": "When you press “Speak”, the browser's voice recognition may send your voice to the browser maker such as Google or Apple to convert it into text. Language Lab does not send or save your voice. You can type your answer instead."
+      "voice.consent.text": "When you press “Speak”, the browser's voice recognition may send your voice to the browser maker such as Google or Apple to convert it into text. Language Lab does not send or save your voice. You can type your answer instead.",
+      "report.title.onTrack": "Practice complete: every part reached the practice score",
+      "report.title.review": "There are a few things to look at again",
+      "report.lead.onTrack": "In this practice, reading, writing and civics each reached the score Language Lab uses. Look at the notes below and keep practicing.",
+      "report.lead.review": "This is when practice is needed. The notes below tell you where to focus before trying again.",
+      "compare.setting.writing": "Writing: according to USCIS, spelling, capitalization and punctuation errors are not a reason to fail the writing test unless the sentence can no longer be understood. Here, small spelling mistakes are accepted, and longer words allow more. Capitalization and punctuation are not checked."
     },
     "tl": {
       "disclaimer.title": "Please read this",
@@ -167,7 +197,12 @@
       "civics.officialNote": "Any of these will be counted. The list was taken from the USCIS answer list and is still waiting for review by a person.",
       "intro.locked": "Civics scoring is off in this version until a person has reviewed the answer key. You can still practice the interview, reading, and writing.",
       "civics.locked.text": "The civics answer key is still waiting for review by a person, so this version does not score civics and does not make a report.",
-      "voice.consent.text": "When you press “Say”, your browser's speech recognition may send your voice to the maker of the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can just type your answer."
+      "voice.consent.text": "When you press “Say”, your browser's speech recognition may send your voice to the maker of the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can just type your answer.",
+      "report.title.onTrack": "Practice is done: each part reached the score in practice",
+      "report.title.review": "There are some things to go back to",
+      "report.lead.onTrack": "In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to continue practicing.",
+      "report.lead.review": "That is the use of practice. The notes below show where to focus before trying again.",
+      "compare.setting.writing": "Writing: USCIS says that mistakes in spelling, capital letters and punctuation do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling mistakes are still counted, and more are allowed in longer words. Capital letters and punctuation are not checked."
     },
     "hi": {
       "disclaimer.title": "Please read this",
@@ -191,7 +226,12 @@
       "civics.officialNote": "Any one of these answers is valid. This list has been taken from USCIS's answer list and is still waiting for a person's review.",
       "intro.locked": "Until a person reviews the answer key, civics scoring is off in this version. You can still practice the interview, reading and writing.",
       "civics.locked.text": "The civics answer key is still waiting for a person's review, so this version does not give a civics score and does not make a report.",
-      "voice.consent.text": "When you press “Speak”, your browser's voice recognition feature may send your voice to the company that makes the browser, such as Google or Apple, to turn it into words. Language Lab neither sends nor saves your voice. You can type your answer instead."
+      "voice.consent.text": "When you press “Speak”, your browser's voice recognition feature may send your voice to the company that makes the browser, such as Google or Apple, to turn it into words. Language Lab neither sends nor saves your voice. You can type your answer instead.",
+      "report.title.onTrack": "Practice complete: every part reached the practice score",
+      "report.title.review": "A few things to revise",
+      "report.lead.onTrack": "In this practice, reading, writing and civics, all three, reached the score that Language Lab uses. See the notes below to continue practicing.",
+      "report.lead.review": "That is what practice is for. The notes below tell you what to focus on before trying again.",
+      "compare.setting.writing": "Writing: according to USCIS, mistakes in spelling, capital letters and punctuation do not make you fail the writing test, unless the sentence stops being understandable. Here, small spelling mistakes are also accepted, and longer words can have more mistakes. Capital letters and punctuation are not checked."
     },
     "ht": {
       "disclaimer.title": "Please read this",
@@ -215,7 +255,12 @@
       "civics.officialNote": "Any one of these counts. The list comes from the USCIS list of answers and a person is still to review it.",
       "intro.locked": "The civics score is closed in this version until a person reviews the answer key. You can still practice the interview, reading and writing.",
       "civics.locked.text": "The civics answer key is still waiting for a person to review it, so this version does not give a score for civics and does not make a report.",
-      "voice.consent.text": "When you press “Say it”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead."
+      "voice.consent.text": "When you press “Say it”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead.",
+      "report.title.onTrack": "The practice is finished: each part reached the practice score",
+      "report.title.review": "Some things to review",
+      "report.lead.onTrack": "In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing.",
+      "report.lead.review": "That is what practice is for. The notes below show where to focus before you try again.",
+      "compare.setting.writing": "Writing: USCIS says spelling, capital letter and punctuation errors do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked."
     },
     "th": {
       "disclaimer.title": "Please read this message",
@@ -239,7 +284,12 @@
       "civics.officialNote": "Any one of these answers counts as correct. This list is taken from USCIS's answer list and is still waiting for someone to review it.",
       "intro.locked": "Civics scoring is turned off in this version until someone reviews the answer key. You can still practice the interview, reading and writing.",
       "civics.locked.text": "The civics answer key is still waiting for someone to review it. This version therefore does not score this part and does not create a report.",
-      "voice.consent.text": "When you press “Speak”, the browser's speech recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead."
+      "voice.consent.text": "When you press “Speak”, the browser's speech recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead.",
+      "report.title.onTrack": "Practice finished: every part reached the practice score",
+      "report.title.review": "There are some things worth reviewing",
+      "report.lead.onTrack": "In this practice, reading, writing and civic duties each reached the score Language Lab uses. Use the notes below to keep practicing.",
+      "report.lead.review": "Practice is for this. The notes below show where to focus before trying again.",
+      "compare.setting.writing": "Writing: USCIS states that misspelling, capital letters and punctuation do not make you fail the writing test, unless the sentence can no longer be understood. Here, small misspellings still count, and longer words may have more mistakes. Capital letters and punctuation are not checked."
     },
     "lo": {
       "disclaimer.title": "Please read this",
@@ -263,7 +313,12 @@
       "civics.officialNote": "Any one of these answers counts as correct. This list is taken from the USCIS answer list and is still waiting for someone to check it.",
       "intro.locked": "Civics scoring is turned off in this version until someone checks the answer key. You can still practice interviews, reading and writing.",
       "civics.locked.text": "The civics answer key is still waiting for someone to check it, so this version does not score this part and does not create a report.",
-      "voice.consent.text": "When you press “Speak”, the browser's voice recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead."
+      "voice.consent.text": "When you press “Speak”, the browser's voice recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead.",
+      "report.title.onTrack": "Practice finished: every part reached the practice score",
+      "report.title.review": "There are some things that should be reviewed",
+      "report.lead.onTrack": "In this practice, reading, writing and citizenship each reached the score Language Lab uses. Use the notes below to keep practicing.",
+      "report.lead.review": "Practice is for this. The notes below show where to focus before trying again.",
+      "compare.setting.writing": "Writing: USCIS says misspelling, capital letters and punctuation marks do not make you fail the writing test unless the sentence can no longer be understood. Here, small misspellings still count, and longer words may have more mistakes. Capital letters and punctuation are not checked."
     },
     "hmn": {
       "disclaimer.title": "Please read this",
@@ -287,7 +342,12 @@
       "civics.officialNote": "Any one of these counts. This list is taken from USCIS's list of answers and is still waiting for a person to check it.",
       "intro.locked": "Civics scoring is closed in this version until a person checks the correct answers. You can still practice the interview, reading and writing.",
       "civics.locked.text": "The correct civics answers are still waiting for a person to check them, so this version does not give scores for this and does not make a report.",
-      "voice.consent.text": "When you press “Say”, your browser's voice recognition may send your voice to the company that makes the browser, such as Google or Apple, to turn it into language. Language Lab does not send or keep your voice. You can type your answer instead."
+      "voice.consent.text": "When you press “Say”, your browser's voice recognition may send your voice to the company that makes the browser, such as Google or Apple, to turn it into language. Language Lab does not send or keep your voice. You can type your answer instead.",
+      "report.title.onTrack": "Practice finished: every part reached the practice score",
+      "report.title.review": "There are a few things you should look at again",
+      "report.lead.onTrack": "In this practice, reading, writing and learning about citizens each reached the score Language Lab uses. Use the notes below to practice more.",
+      "report.lead.review": "Practice is for this. The notes below show where to focus before you try again.",
+      "compare.setting.writing": "Writing: USCIS says that writing mistakes, capital letters and stopping marks do not make you fail the writing test, except when the sentence can no longer be understood. Here, small writing mistakes still count, and longer words can have more mistakes. Capital letters and stopping marks are not checked."
     },
     "my": {
       "disclaimer.title": "Please read this point",
@@ -311,7 +371,12 @@
       "civics.officialNote": "Any one of these is counted. The list is taken from the USCIS answer list and is still waiting for a person's check.",
       "intro.locked": "Until a person checks the correct answers, civics scoring is turned off in this version. You can still practice the interview, reading and writing.",
       "civics.locked.text": "The civics correct answers are still waiting for a person's check, so this version does not score it and does not make a report.",
-      "voice.consent.text": "When you press “Speak”, your browser's voice recording system may send your voice to the company that makes the browser, such as Google or Apple, to turn it into text. Language Lab does not send or save your voice. You can type your answer instead."
+      "voice.consent.text": "When you press “Speak”, your browser's voice recording system may send your voice to the company that makes the browser, such as Google or Apple, to turn it into text. Language Lab does not send or save your voice. You can type your answer instead.",
+      "report.title.onTrack": "Practice is finished: every part reaches the practice score",
+      "report.title.review": "A few points to look at again",
+      "report.lead.onTrack": "In this practice, every part of reading, writing and civics reaches the score Language Lab uses. Use the notes below to continue practicing.",
+      "report.lead.review": "Practice is for that. The notes below show which point to focus on before trying again.",
+      "compare.setting.writing": "Writing: USCIS says spelling, capital letter and punctuation mistakes do not make you fail the writing exam except when the sentence can no longer be understood. Here, small spelling mistakes are still counted, and long words can have more. Capital letters and punctuation are not checked."
     },
     "vi": {
       "disclaimer.title": "Please read this section",
@@ -335,7 +400,12 @@
       "civics.officialNote": "Only one of these answers is needed to count. The list is taken from USCIS's answer table and is still waiting for a person to review it.",
       "intro.locked": "Civics scoring is turned off in this build until someone reviews the answer set. You can still practice the interview, reading and writing.",
       "civics.locked.text": "The civics answer set is still waiting for a person to review it, so this build does not score civics and does not create a report.",
-      "voice.consent.text": "When you press “Speak”, the browser's voice recognition feature may send your voice to the browser's maker, such as Google or Apple, to convert it to text. Language Lab does not send or save your voice. You can type your answer instead."
+      "voice.consent.text": "When you press “Speak”, the browser's voice recognition feature may send your voice to the browser's maker, such as Google or Apple, to convert it to text. Language Lab does not send or save your voice. You can type your answer instead.",
+      "report.title.onTrack": "Finished practicing: each part reached the practice score",
+      "report.title.review": "There are a few things to look at again",
+      "report.lead.onTrack": "In this practice session, reading, writing and civics all reached the score level that Language Lab uses. Use the notes below to keep practicing.",
+      "report.lead.review": "That is exactly the purpose of practicing. The notes below show where to focus before trying again.",
+      "compare.setting.writing": "Writing: USCIS says spelling, capitalization and punctuation mistakes do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling mistakes still count, and longer words may have more mistakes. Capital letters and punctuation are not checked."
     }
   },
   "differs": {
@@ -349,7 +419,8 @@
       "common.fictional": "Same word (qauv) for \"profile\".",
       "header.about": "\"Txog peb thiab ceeb toom\" reads as \"About us and warning\", not \"About & disclaimer\". Needs a Hmong reader.",
       "compare.setting": "\"in order\" now \"ib lo tom qab ib lo\" (one word after another) and \"may be missing\" \"poob tau\" (may fall out). Still needs a Hmong reader.",
-      "voice.consent.text": "\"Say\" is the plain verb for speaking, and \"language\" (lus) stands in for \"words\". Needs a Hmong reader."
+      "voice.consent.text": "\"Say\" is the plain verb for speaking, and \"language\" (lus) stands in for \"words\". Needs a Hmong reader.",
+      "compare.setting.writing": "\"punctuation\" is rendered as \"stopping marks\" (cov cim nres) and \"spelling\" as \"writing\". Needs a Hmong reader."
     },
     "my": {
       "aiNotice.text": "\"authoritative\" is rendered as \"official\": close, slightly weaker.",
@@ -364,10 +435,14 @@
       "intro.locked": "\"Answer key\" is rendered \"answer table\" (정답표); fine in context."
     },
     "th": {
-      "civics.officialNote": "\"Any one of these answers counts\" is rendered \"counts as correct\" (นับว่าถูก), slightly stronger."
+      "civics.officialNote": "\"Any one of these answers counts\" is rendered \"counts as correct\" (นับว่าถูก), slightly stronger.",
+      "report.lead.onTrack": "\"civics\" is rendered as \"civic duties\" (หน้าที่พลเมือง), as elsewhere in the Thai file."
     },
     "lo": {
       "civics.officialNote": "Same: \"counts as correct\" (ນັບວ່າຖືກ)."
+    },
+    "ru": {
+      "compare.setting.writing": "\"counted as correct\" (засчитываются) is a little stronger than \"still count\". Close enough; a Russian reader should confirm."
     }
   },
   "fixed": [

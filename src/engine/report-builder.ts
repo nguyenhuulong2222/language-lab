@@ -113,15 +113,15 @@ function civicsSummary(
       `${result.correctCount} of ${scored} civics ${plural(scored, "question", "questions")} answered correctly.`
     );
     if (passed) {
-      parts.push("The practice test stopped once the passing score was reached.");
+      parts.push("The practice test stopped once the practice passing score was reached.");
     } else if (result.stopReason === "incorrect_threshold") {
       parts.push(
         `The practice test stopped after ${rules.earlyStopOnIncorrect.value} incorrect answers, ` +
-          `before the passing score of ${rules.passingScore.value} was reached.`
+          `before the practice passing score of ${rules.passingScore.value} was reached.`
       );
     } else {
       parts.push(
-        `The passing score is ${rules.passingScore.value} correct answers, and it was not reached.`
+        `The practice passing score is ${rules.passingScore.value} correct answers, and it was not reached.`
       );
     }
   }

@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Việc chấm điểm civics đang tắt trong bản này cho đến khi có người xem xét bộ đáp án. Bạn vẫn có thể luyện phỏng vấn, đọc và viết. | Civics scoring is turned off in this build until someone reviews the answer set. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Bộ đáp án civics vẫn đang chờ người xem xét, nên bản này không chấm điểm civics và không tạo báo cáo. | The civics answer set is still waiting for a person to review it, so this build does not score civics and does not create a report. |
 | `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Khi bạn nhấn “Nói”, tính năng nhận dạng giọng nói của trình duyệt có thể gửi giọng của bạn đến nhà sản xuất trình duyệt, như Google hoặc Apple, để chuyển thành chữ. Language Lab không gửi hay lưu giọng nói của bạn. Bạn có thể gõ câu trả lời thay vào đó. | When you press “Speak”, the browser's voice recognition feature may send your voice to the browser's maker, such as Google or Apple, to convert it to text. Language Lab does not send or save your voice. You can type your answer instead. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | Đã luyện tập xong: mỗi phần đều đạt điểm luyện tập | Finished practicing: each part reached the practice score |
+| `report.title.review` | A few things to review | Có vài điều cần xem lại | There are a few things to look at again |
+| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Trong buổi luyện tập này, phần đọc, viết và công dân đều đạt mức điểm mà Language Lab dùng. Hãy dùng các ghi chú bên dưới để tiếp tục luyện tập. | In this practice session, reading, writing and civics all reached the score level that Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Đó chính là mục đích của việc luyện tập. Các ghi chú bên dưới cho biết nên tập trung vào đâu trước khi thử lại. | That is exactly the purpose of practicing. The notes below show where to focus before trying again. |
+| `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Phần viết: USCIS nói rằng lỗi chính tả, viết hoa và dấu câu không làm bạn trượt bài viết, trừ khi câu không còn hiểu được. Ở đây, lỗi chính tả nhỏ vẫn được tính, và từ dài hơn có thể có nhiều lỗi hơn. Chữ hoa và dấu câu không được kiểm tra. | Writing: USCIS says spelling, capitalization and punctuation mistakes do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling mistakes still count, and longer words may have more mistakes. Capital letters and punctuation are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Civics |
 | `stage.report.label` | Practice report | Báo cáo luyện tập |
 | `stage.report.short` | Report | Báo cáo |
-| `badge.onTrack` | On track | Đang đi đúng hướng |
+| `badge.onTrack` | Practice score reached | Đã đạt điểm luyện tập |
 | `badge.review` | Worth reviewing | Nên xem lại |
 | `report.empty` | Your practice report will appear here once the session is complete. | Báo cáo luyện tập của bạn sẽ hiện ở đây khi buổi luyện tập hoàn tất. |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Báo cáo luyện tập |
-| `report.title.onTrack` | You’re on track | Bạn đang đi đúng hướng |
-| `report.title.review` | A few things to review | Có vài điều cần xem lại |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | Bạn đã hoàn thành tốt buổi luyện tập này. Hãy dùng các ghi chú bên dưới để giữ phong độ cho lần sau. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Đó chính là mục đích của việc luyện tập. Các ghi chú bên dưới cho biết nên tập trung vào đâu trước khi thử lại. |
 | `report.profile.label` | Practice profile (fictional) | Hồ sơ luyện tập (giả định) |
 | `report.profile.meta` | {version} civics test · filed {date} | Bài kiểm tra civics {version} · nộp đơn ngày {date} |
 | `report.stages.heading` | How each part went | Từng phần diễn ra thế nào |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | Vâng, về trang chủ |
 | `header.homeConfirm.no` | Stay here | Ở lại đây |
 | `common.retry` | Try again | Thử lại |
-| `partReport.badge.good` | This part went well | Phần này diễn ra tốt đẹp |
+| `partReport.badge.good` | This part reached the practice score | Phần này đã đạt điểm luyện tập |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Câu đã được hiện trên màn hình (lần thử có hỗ trợ). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Phần tuyên bố miễn trừ và văn bản pháp lý chỉ hiển thị bằng tiếng Anh cho đến khi có người kiểm tra bản dịch. |
 | `lang.menu.title` | Choose a language | Chọn ngôn ngữ |

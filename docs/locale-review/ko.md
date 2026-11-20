@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` ⚠ | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | 사람이 정답표를 검토하기 전까지 이 버전에서는 시민 상식 채점이 꺼져 있습니다. 인터뷰, 읽기, 쓰기는 계속 연습할 수 있습니다. | Until a person reviews the answer table, civics scoring is turned off in this version. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 시민 상식 정답표가 아직 사람의 검토를 기다리고 있어서, 이 버전은 시민 상식을 채점하거나 보고서를 만들지 않습니다. | The civics answer table is still waiting for a person's review, so this version does not score civics or create a report. |
 | `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | “말하기”를 누르면 브라우저의 음성 인식 기능이 음성을 글자로 바꾸기 위해 Google이나 Apple 같은 브라우저 제작사에 음성을 보낼 수 있습니다. Language Lab은 음성을 보내거나 저장하지 않습니다. 대신 답을 직접 입력할 수도 있습니다. | When you press “Speak”, the browser's voice recognition may send your voice to the browser maker such as Google or Apple to convert it into text. Language Lab does not send or save your voice. You can type your answer instead. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | 연습 완료: 모든 부분이 연습 점수에 도달했어요 | Practice complete: every part reached the practice score |
+| `report.title.review` | A few things to review | 다시 살펴볼 것이 몇 가지 있어요 | There are a few things to look at again |
+| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | 이번 연습에서 읽기, 쓰기, 시민 상식이 각각 Language Lab이 사용하는 점수에 도달했습니다. 아래 메모를 보고 계속 연습하세요. | In this practice, reading, writing and civics each reached the score Language Lab uses. Look at the notes below and keep practicing. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | 연습은 이럴 때 필요한 것입니다. 아래 메모는 다시 도전하기 전에 어디에 집중하면 좋을지 알려 줍니다. | This is when practice is needed. The notes below tell you where to focus before trying again. |
+| `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | 쓰기: USCIS에 따르면 철자, 대문자, 문장 부호 오류는 문장을 더 이상 이해할 수 없는 경우가 아니면 쓰기 시험 불합격 사유가 되지 않습니다. 여기서는 작은 철자 실수도 인정되며, 긴 단어일수록 더 많이 허용됩니다. 대문자와 문장 부호는 확인하지 않습니다. | Writing: according to USCIS, spelling, capitalization and punctuation errors are not a reason to fail the writing test unless the sentence can no longer be understood. Here, small spelling mistakes are accepted, and longer words allow more. Capitalization and punctuation are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Civics |
 | `stage.report.label` | Practice report | 연습 보고서 |
 | `stage.report.short` | Report | 보고서 |
-| `badge.onTrack` | On track | 잘하고 있어요 |
+| `badge.onTrack` | Practice score reached | 연습 점수 도달 |
 | `badge.review` | Worth reviewing | 다시 볼 만해요 |
 | `report.empty` | Your practice report will appear here once the session is complete. | 세션이 끝나면 연습 보고서가 여기에 나타납니다. |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | 연습 보고서 |
-| `report.title.onTrack` | You’re on track | 잘하고 있습니다 |
-| `report.title.review` | A few things to review | 다시 살펴볼 것이 몇 가지 있어요 |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | 이번 연습 세션을 잘 마치셨습니다. 아래 메모를 활용해 다음 연습 전까지 감각을 유지하세요. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | 연습은 이럴 때 필요한 것입니다. 아래 메모는 다시 도전하기 전에 어디에 집중하면 좋을지 알려 줍니다. |
 | `report.profile.label` | Practice profile (fictional) | 연습 프로필(가상) |
 | `report.profile.meta` | {version} civics test · filed {date} | {version}년 시민 상식 시험 · 신청 날짜 {date} |
 | `report.stages.heading` | How each part went | 각 부분의 결과 |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | 예, 홈으로 |
 | `header.homeConfirm.no` | Stay here | 여기 있기 |
 | `common.retry` | Try again | 다시 시도 |
-| `partReport.badge.good` | This part went well | 이 부분은 잘했어요 |
+| `partReport.badge.good` | This part reached the practice score | 이 부분은 연습 점수에 도달했어요 |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | 문장이 화면에 표시되었습니다(도움을 받은 시도). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | 번역을 사람이 검토하기 전까지 면책 고지와 법률 문구는 영어로만 표시됩니다. |
 | `lang.menu.title` | Choose a language | 언어를 선택하세요 |

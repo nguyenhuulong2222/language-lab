@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Nòt edikasyon sivik la fèmen nan vèsyon sa a jiskaske yon moun revize kle repons yo. Ou ka toujou pratike entèvyou a, lekti ak ekriti. | The civics score is closed in this version until a person reviews the answer key. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Kle repons edikasyon sivik la ap tann yon moun revize l toujou, se konsa vèsyon sa a pa bay nòt pou edikasyon sivik e li pa fè rapò. | The civics answer key is still waiting for a person to review it, so this version does not give a score for civics and does not make a report. |
 | `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Lè w peze “Di li”, rekonesans vwa navigatè w la ka voye vwa w bay konpayi ki fè navigatè a, tankou Google oswa Apple, pou transfòme l an mo. Language Lab pa voye ni konsève vwa w. Ou ka tape repons ou olye de sa. | When you press “Say it”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | Pratik la fini: chak pati rive nan nòt pratik la | The practice is finished: each part reached the practice score |
+| `report.title.review` | A few things to review | Kèk bagay pou revize | Some things to review |
+| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Nan pratik sa a, lekti, ekriti ak sivik chak rive nan nòt Language Lab itilize a. Sèvi ak nòt ki anba yo pou kontinye pratike. | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Se pou sa pratik la ye. Nòt ki anba yo montre sou ki kote pou konsantre anvan ou eseye ankò. | That is what practice is for. The notes below show where to focus before you try again. |
+| `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Ekriti: USCIS di erè òtograf, lèt majiskil ak ponktiyasyon pa fè w echwe tès ekriti a, sòf si yo pa ka konprann fraz la ankò. Isit la, ti erè òtograf toujou konte, epi mo ki pi long yo ka genyen plis. Yo pa tcheke lèt majiskil ak ponktiyasyon. | Writing: USCIS says spelling, capital letter and punctuation errors do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Sivik |
 | `stage.report.label` | Practice report | Rapò pratik |
 | `stage.report.short` | Report | Rapò |
-| `badge.onTrack` | On track | Sou bon wout |
+| `badge.onTrack` | Practice score reached | Nòt pratik la rive |
 | `badge.review` | Worth reviewing | Mande revize |
 | `report.empty` | Your practice report will appear here once the session is complete. | Rapò pratik ou a ap parèt isit la lè sesyon an fini. |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Rapò pratik |
-| `report.title.onTrack` | You’re on track | Ou sou bon wout |
-| `report.title.review` | A few things to review | Kèk bagay pou revize |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | Ou fini sesyon pratik sa a byen. Sèvi ak nòt ki anba yo pou kenbe nivo ou anvan pwochen tou a. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Se pou sa pratik la ye. Nòt ki anba yo montre sou ki kote pou konsantre anvan ou eseye ankò. |
 | `report.profile.label` | Practice profile (fictional) | Pwofil pratik (fiktif) |
 | `report.profile.meta` | {version} civics test · filed {date} | Tès edikasyon sivik {version} · depoze nan dat {date} |
 | `report.stages.heading` | How each part went | Kijan chak pati te pase |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | Wi, tounen nan akèy |
 | `header.homeConfirm.no` | Stay here | Rete isit la |
 | `common.retry` | Try again | Eseye ankò |
-| `partReport.badge.good` | This part went well | Pati sa a te byen pase |
+| `partReport.badge.good` | This part reached the practice score | Pati sa a rive nan nòt pratik la |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Yo te montre fraz la sou ekran an (tantativ ak èd). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Avètisman yo ak tèks legal yo parèt an Anglè sèlman jiskaske yon moun revize tradiksyon an. |
 | `lang.menu.title` | Choose a language | Chwazi yon lang |

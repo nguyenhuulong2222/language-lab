@@ -12,7 +12,7 @@
       "Words must be in order (the manual does not mention order).",
       "A plural or possessive ending (-s, -es, 's) is the same word.",
       "One extra content word is allowed (an inserted word is not listed as a failure, and a recogniser can add one).",
-      "Writing only: a one-letter spelling error in a word of 5+ letters counts, unless the typed word is itself a different word of the official vocabulary."
+      "Writing only: a spelling slip counts as the word when the word is still clear: the first letter is right, the typed word is not itself another word of the official vocabulary, and the number of wrong, missing, extra or swapped letters is at most the limit for the word's length in sentenceMatch.spellingSlips (1 from 4 letters, 2 from 8 letters). Shorter words must be exact. Capital letters and punctuation are never checked. The manual says spelling, capitalization and punctuation errors do not fail unless they interfere with the meaning; these limits are how Language Lab approximates 'the meaning is still clear' from text."
     ],
     "notScored": "Pauses, pronunciation and whether an officer would understand cannot be judged from text."
   },
@@ -46,6 +46,16 @@
       "always",
       "perhaps",
       "across"
+    ],
+    "spellingSlips": [
+      {
+        "fromLetters": 4,
+        "maxEdits": 1
+      },
+      {
+        "fromLetters": 8,
+        "maxEdits": 2
+      }
     ],
     "reading": {
       "extraContentWordsAllowed": 1,

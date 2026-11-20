@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | လူတစ်ဦးက အဖြေမှန်များကို စစ်ဆေးသည်အထိ ဤဗားရှင်းတွင် နိုင်ငံသားဗဟုသုတအမှတ်ပေးခြင်းကို ပိတ်ထားသည်။ အင်တာဗျူး၊ ဖတ်ခြင်းနှင့် ရေးခြင်းကို ဆက်လက်လေ့ကျင့်နိုင်သည်။ | Until a person checks the correct answers, civics scoring is turned off in this version. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | နိုင်ငံသားဗဟုသုတ အဖြေမှန်များသည် လူတစ်ဦး၏ စစ်ဆေးမှုကို စောင့်နေဆဲဖြစ်သဖြင့် ဤဗားရှင်းသည် ၎င်းကို အမှတ်မပေးပါ၊ အစီရင်ခံစာလည်း မပြုလုပ်ပါ။ | The civics correct answers are still waiting for a person's check, so this version does not score it and does not make a report. |
 | `voice.consent.text` ⚠ | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | “ပြောမည်” ကို နှိပ်သောအခါ သင့်ဘရောက်ဇာ၏ အသံမှတ်သားစနစ်က သင့်အသံကို စာသားအဖြစ်ပြောင်းရန် Google သို့မဟုတ် Apple ကဲ့သို့ ဘရောက်ဇာ ပြုလုပ်သူကုမ္ပဏီထံ ပို့နိုင်ပါသည်။ Language Lab သည် သင့်အသံကို မပို့ပါ၊ မသိမ်းပါ။ ယင်းအစား အဖြေကို ရိုက်ထည့်နိုင်ပါသည်။ | When you press “Speak”, your browser's voice recording system may send your voice to the company that makes the browser, such as Google or Apple, to turn it into text. Language Lab does not send or save your voice. You can type your answer instead. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | လေ့ကျင့်မှု ပြီးပါပြီ- အပိုင်းတိုင်း လေ့ကျင့်ရေးအမှတ်သို့ ရောက်ပါသည် | Practice is finished: every part reaches the practice score |
+| `report.title.review` | A few things to review | ပြန်လည်ကြည့်ရန် အချက်အနည်းငယ် | A few points to look at again |
+| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | ဤလေ့ကျင့်မှုတွင် ဖတ်ခြင်း၊ ရေးခြင်းနှင့် နိုင်ငံသားပညာ အပိုင်းတိုင်းသည် Language Lab အသုံးပြုသော အမှတ်သို့ ရောက်ပါသည်။ ဆက်လက်လေ့ကျင့်ရန် အောက်ပါမှတ်စုများကို အသုံးပြုပါ။ | In this practice, every part of reading, writing and civics reaches the score Language Lab uses. Use the notes below to continue practicing. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | လေ့ကျင့်ခြင်းသည် ယင်းအတွက်ဖြစ်သည်။ ထပ်မံကြိုးစားမည့်အချိန်မတိုင်မီ မည်သည့်အချက်ကို အာရုံစိုက်ရမည်ကို အောက်ပါမှတ်စုများက ပြသသည်။ | Practice is for that. The notes below show which point to focus on before trying again. |
+| `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | ရေးခြင်း- USCIS က စာလုံးပေါင်း၊ စာလုံးကြီးနှင့် သတ်ပုံအမှားများသည် ဝါကျကို နားမလည်နိုင်တော့သည့်အခါမှလွဲ၍ ရေးခြင်းစာမေးပွဲကို မကျစေဟု ဆိုပါသည်။ ဤနေရာတွင် စာလုံးပေါင်းအမှားငယ်များကို ဆက်လက်ရေတွက်ပြီး စကားလုံးရှည်များတွင် ပိုများနိုင်ပါသည်။ စာလုံးကြီးနှင့် သတ်ပုံကို မစစ်ဆေးပါ။ | Writing: USCIS says spelling, capital letter and punctuation mistakes do not make you fail the writing exam except when the sentence can no longer be understood. Here, small spelling mistakes are still counted, and long words can have more. Capital letters and punctuation are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Civics |
 | `stage.report.label` | Practice report | လေ့ကျင့်မှုအစီရင်ခံစာ |
 | `stage.report.short` | Report | အစီရင်ခံစာ |
-| `badge.onTrack` | On track | လမ်းမှန်ပေါ်ရှိသည် |
+| `badge.onTrack` | Practice score reached | လေ့ကျင့်ရေးအမှတ် ရောက်ပြီ |
 | `badge.review` | Worth reviewing | ပြန်လည်ကြည့်သင့်သည် |
 | `report.empty` | Your practice report will appear here once the session is complete. | စက်ရှင်ပြီးသောအခါ သင်၏ လေ့ကျင့်မှုအစီရင်ခံစာကို ဤနေရာတွင် မြင်ရပါမည်။ |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | လေ့ကျင့်မှုအစီရင်ခံစာ |
-| `report.title.onTrack` | You’re on track | သင် လမ်းမှန်ပေါ်ရှိသည် |
-| `report.title.review` | A few things to review | ပြန်လည်ကြည့်ရန် အချက်အနည်းငယ် |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | ဤလေ့ကျင့်မှုစက်ရှင်ကို သင် ကောင်းစွာ ပြီးမြောက်ခဲ့သည်။ နောက်တစ်ကြိမ်မတိုင်မီ အသင့်ဖြစ်နေစေရန် အောက်ပါမှတ်စုများကို အသုံးပြုပါ။ |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | လေ့ကျင့်ခြင်းသည် ယင်းအတွက်ဖြစ်သည်။ ထပ်မံကြိုးစားမည့်အချိန်မတိုင်မီ မည်သည့်အချက်ကို အာရုံစိုက်ရမည်ကို အောက်ပါမှတ်စုများက ပြသသည်။ |
 | `report.profile.label` | Practice profile (fictional) | လေ့ကျင့်ရေးပရိုဖိုင် (စိတ်ကူးယဉ်) |
 | `report.profile.meta` | {version} civics test · filed {date} | {version} နိုင်ငံသားဗဟုသုတစာမေးပွဲ · လျှောက်လွှာတင်သည့်ရက် {date} |
 | `report.stages.heading` | How each part went | အပိုင်းတစ်ခုစီ မည်သို့ရှိခဲ့သနည်း |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | ဟုတ်ကဲ့၊ ပင်မသို့ သွားမည် |
 | `header.homeConfirm.no` | Stay here | ဤနေရာတွင် ဆက်နေမည် |
 | `common.retry` | Try again | ထပ်ကြိုးစားရန် |
-| `partReport.badge.good` | This part went well | ဤအပိုင်း ကောင်းမွန်ခဲ့သည် |
+| `partReport.badge.good` | This part reached the practice score | ဤအပိုင်းသည် လေ့ကျင့်ရေးအမှတ်သို့ ရောက်ပါသည် |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | ဝါကျကို မျက်နှာပြင်ပေါ်တွင် ပြခဲ့သည် (အကူအညီရထားသော ကြိုးစားမှု)။ |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | ဘာသာပြန်ကို လူတစ်ဦးက စစ်ဆေးပြီးသည်အထိ ငြင်းဆိုချက်များနှင့် ဥပဒေဆိုင်ရာစာသားများကို အင်္ဂလိပ်လိုသာ ပြထားပါသည်။ |
 | `lang.menu.title` | Choose a language | ဘာသာစကား ရွေးပါ |

@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | La calificación de educación cívica está desactivada en esta versión hasta que una persona revise las respuestas correctas. Aun así puede practicar la entrevista, la lectura y la escritura. | Civics scoring is turned off in this version until a person reviews the correct answers. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Las respuestas correctas de educación cívica todavía esperan la revisión de una persona, así que esta versión no califica esa parte ni genera un informe. | The correct civics answers are still waiting for a person's review, so this version does not score that part or generate a report. |
 | `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Cuando presiona “Decirlo”, el reconocimiento de voz de su navegador puede enviar su voz a la empresa que hizo el navegador, como Google o Apple, para convertirla en palabras. Language Lab no envía ni guarda su voz. En su lugar, puede escribir su respuesta. | When you press “Say it”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | Práctica terminada: cada parte alcanzó el puntaje de práctica | Practice finished: each part reached the practice score |
+| `report.title.review` | A few things to review | Algunas cosas para repasar | A few things to go over |
+| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | En esta práctica, la lectura, la escritura y la educación cívica alcanzaron cada una el puntaje que usa Language Lab. Use las notas de abajo para seguir practicando. | In this practice, reading, writing and civics each reached the score that Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Para eso sirve la práctica. Las notas de abajo muestran en qué enfocarse antes de intentarlo de nuevo. | That is what practice is for. The notes below show what to focus on before trying again. |
+| `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Escritura: USCIS dice que los errores de ortografía, mayúsculas y puntuación no hacen fallar la prueba de escritura, a menos que ya no se pueda entender la oración. Aquí, los pequeños errores de ortografía siguen contando, y las palabras más largas pueden tener más. No se revisan las mayúsculas ni la puntuación. | Writing: USCIS says that spelling, capital letter and punctuation errors do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Civismo |
 | `stage.report.label` | Practice report | Informe de práctica |
 | `stage.report.short` | Report | Informe |
-| `badge.onTrack` | On track | Va por buen camino |
+| `badge.onTrack` | Practice score reached | Puntaje de práctica alcanzado |
 | `badge.review` | Worth reviewing | Conviene repasar |
 | `report.empty` | Your practice report will appear here once the session is complete. | Su informe de práctica aparecerá aquí cuando termine la sesión. |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Informe de práctica |
-| `report.title.onTrack` | You’re on track | Va por buen camino |
-| `report.title.review` | A few things to review | Algunas cosas para repasar |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | Completó bien esta sesión de práctica. Use las notas de abajo para mantenerse en forma antes de la próxima vez. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Para eso sirve la práctica. Las notas de abajo muestran en qué enfocarse antes de intentarlo de nuevo. |
 | `report.profile.label` | Practice profile (fictional) | Perfil de práctica (ficticio) |
 | `report.profile.meta` | {version} civics test · filed {date} | Examen de educación cívica {version} · solicitud presentada el {date} |
 | `report.stages.heading` | How each part went | Cómo le fue en cada parte |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | Sí, volver al inicio |
 | `header.homeConfirm.no` | Stay here | Quedarme aquí |
 | `common.retry` | Try again | Intentar de nuevo |
-| `partReport.badge.good` | This part went well | Esta parte salió bien |
+| `partReport.badge.good` | This part reached the practice score | Esta parte alcanzó el puntaje de práctica |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | La oración se mostró en la pantalla (intento con ayuda). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Los avisos y el texto legal se muestran solo en inglés hasta que una persona revise la traducción. |
 | `lang.menu.title` | Choose a language | Elija un idioma |

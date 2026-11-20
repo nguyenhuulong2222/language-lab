@@ -169,9 +169,22 @@ describe("spelling errors (writing only)", () => {
   it("is off for reading: a recogniser does not misspell", () => {
     expect(ok("Citizens can vote.", "citzens can vote", reading)).toBe(false);
   });
-  it("two wrong letters, or a short word, do not count", () => {
-    expect(ok("Citizens can vote.", "cizens can vote", writing)).toBe(false);
-    expect(ok("We pay taxes.", "we pay tecss", writing)).toBe(false);
+  it("the limit grows with the word: 1 letter from 4 letters, 2 from 8 letters (practice-config.json)", () => {
+    expect(writing.spellingSlips).toEqual([
+      { fromLetters: 4, maxEdits: 1 },
+      { fromLetters: 8, maxEdits: 2 },
+    ]);
+    // The audit case: USCIS does not fail spelling errors when the meaning is clear.
+    expect(ok("Citizens can vote.", "citzns can vot", writing)).toBe(true);
+    expect(ok("Citizens can vote.", "cizens can vote", writing)).toBe(true); // 8 letters, 2 missing
+    expect(ok("We pay taxes.", "we pay taxs", writing)).toBe(true); // 5 letters, 1 missing
+  });
+  it("more slips than the limit, or any slip in a word of 3 letters or fewer, do not count", () => {
+    expect(ok("Citizens can vote.", "ctzns can vote", writing)).toBe(false); // 3 in 8 letters
+    expect(ok("We pay taxes.", "we pay tecss", writing)).toBe(false); // 3 in 5 letters
+    expect(ok("We pay taxes.", "we pai taxes", writing)).toBe(false); // 3 letters: exact only
+    expect(ok("Citizens can vote.", "citizens can vte", writing)).toBe(true); // 4 letters, 1 missing
+    expect(ok("Citizens can vote.", "citizens can vt", writing)).toBe(false); // 2 in 4 letters
   });
   it("a typed word that is itself a different word of the vocabulary never counts as a misspelling", () => {
     const list = [...known].filter((w) => w.length >= 5 && /^[a-z]+$/.test(w));
@@ -185,7 +198,8 @@ describe("spelling errors (writing only)", () => {
         checked++;
       }
     }
-    expect(checked).toBeGreaterThanOrEqual(0);
+    // The check must have met real pairs, or it proves nothing.
+    expect(checked).toBeGreaterThan(0);
   });
   it("the vocabulary check is what stops a real word from being read as a misspelling", () => {
     const bare = { ...writing, knownWords: new Set<string>() };

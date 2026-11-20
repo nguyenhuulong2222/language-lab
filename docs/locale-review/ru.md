@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Оценка по обществоведению в этой версии отключена, пока человек не проверит ключ с правильными ответами. Собеседование, чтение и письмо вы всё равно можете тренировать. | Grading in civics is disabled in this version until a person checks the key with the correct answers. You can still train the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Ключ с правильными ответами по обществоведению ещё ждёт проверки человеком, поэтому эта версия не оценивает эту часть и не создаёт отчёт. | The key with the correct civics answers is still waiting for a person to check it, so this version does not grade this part and does not create a report. |
 | `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Когда вы нажимаете «Сказать», функция распознавания речи в вашем браузере может отправить ваш голос компании, которая сделала браузер, например Google или Apple, чтобы превратить его в слова. Language Lab не отправляет и не сохраняет ваш голос. Вместо этого вы можете напечатать ответ. | When you press “Say”, the speech recognition function in your browser may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type the answer instead. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | Практика завершена: каждая часть достигла практического балла | Practice finished: each part reached the practice score |
+| `report.title.review` | A few things to review | Есть что повторить | There is something to review |
+| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | В этой практике чтение, письмо и обществоведение достигли балла, который использует Language Lab. Используйте заметки ниже, чтобы продолжать практиковаться. | In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Для этого и нужна практика. Заметки ниже показывают, на чём сосредоточиться, прежде чем попробовать снова. | That is what practice is for. The notes below show what to focus on before trying again. |
+| `compare.setting.writing` ⚠ | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Письмо: по словам USCIS, ошибки в написании, заглавных буквах и пунктуации не приводят к провалу письменного теста, если предложение всё ещё можно понять. Здесь небольшие ошибки в написании засчитываются, а в длинных словах их может быть больше. Заглавные буквы и пунктуация не проверяются. | Writing: according to USCIS, errors in spelling, capital letters and punctuation do not lead to failing the written test if the sentence can still be understood. Here, small spelling errors are counted as correct, and in long words there may be more of them. Capital letters and punctuation are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Civics |
 | `stage.report.label` | Practice report | Отчёт о практике |
 | `stage.report.short` | Report | Отчёт |
-| `badge.onTrack` | On track | На верном пути |
+| `badge.onTrack` | Practice score reached | Практический балл достигнут |
 | `badge.review` | Worth reviewing | Стоит повторить |
 | `report.empty` | Your practice report will appear here once the session is complete. | Ваш отчёт о практике появится здесь, когда сеанс закончится. |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Отчёт о практике |
-| `report.title.onTrack` | You’re on track | Вы на верном пути |
-| `report.title.review` | A few things to review | Есть что повторить |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | Вы хорошо справились с этим сеансом практики. Используйте заметки ниже, чтобы не терять форму до следующего раза. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Для этого и нужна практика. Заметки ниже показывают, на чём сосредоточиться, прежде чем попробовать снова. |
 | `report.profile.label` | Practice profile (fictional) | Учебный профиль (вымышленный) |
 | `report.profile.meta` | {version} civics test · filed {date} | Тест по обществоведению {version} · заявление подано {date} |
 | `report.stages.heading` | How each part went | Как прошла каждая часть |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | Да, на главную |
 | `header.homeConfirm.no` | Stay here | Остаться здесь |
 | `common.retry` | Try again | Попробовать снова |
-| `partReport.badge.good` | This part went well | Эта часть прошла хорошо |
+| `partReport.badge.good` | This part reached the practice score | Эта часть достигла практического балла |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Предложение было показано на экране (попытка с подсказкой). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Отказ от ответственности и юридические тексты показываются только по-английски, пока перевод не проверит человек. |
 | `lang.menu.title` | Choose a language | Выберите язык |
@@ -289,3 +290,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Вы добавили короткое слово «{said}». Это по-прежнему засчитывается. |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Этот результат основан на словах, которые услышало ваше устройство. Если оно услышало неверно, попробуйте снова или введите ответ. |
 | `compare.honest.typed` | This result is based on the words you typed. | Этот результат основан на словах, которые вы ввели. |
+
+## Lines marked ⚠ (meaning differs a little)
+
+- `compare.setting.writing`: "counted as correct" (засчитываются) is a little stronger than "still count". Close enough; a Russian reader should confirm.

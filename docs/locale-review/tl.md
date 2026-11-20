@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Naka-off ang pag-iskor ng civics sa bersyong ito hanggang masuri ng isang tao ang answer key. Maaari pa rin kayong magsanay sa panayam, pagbasa, at pagsulat. | Civics scoring is off in this version until a person has reviewed the answer key. You can still practice the interview, reading, and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Naghihintay pa ng pagsusuri ng isang tao ang answer key ng civics, kaya hindi ini-iskor ng bersyong ito ang civics at hindi gumagawa ng ulat. | The civics answer key is still waiting for review by a person, so this version does not score civics and does not make a report. |
 | `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Kapag pinindot mo ang “Sabihin”, maaaring ipadala ng speech recognition ng iyong browser ang boses mo sa gumawa ng browser, tulad ng Google o Apple, para gawing salita. Hindi ipinapadala o sine-save ng Language Lab ang boses mo. Maaari mong i-type na lang ang sagot mo. | When you press “Say”, your browser's speech recognition may send your voice to the maker of the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can just type your answer. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | Tapos na ang pagsasanay: naabot ng bawat bahagi ang iskor sa pagsasanay | Practice is done: each part reached the score in practice |
+| `report.title.review` | A few things to review | May ilang bagay na dapat balikan | There are some things to go back to |
+| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Sa pagsasanay na ito, naabot ng pagbasa, pagsulat at sibika ang iskor na ginagamit ng Language Lab. Gamitin ang mga tala sa ibaba para magpatuloy sa pagsasanay. | In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to continue practicing. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Iyan ang silbi ng pagsasanay. Ipinapakita ng mga tala sa ibaba kung saan magtutuon bago subukang muli. | That is the use of practice. The notes below show where to focus before trying again. |
+| `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Pagsulat: Sinasabi ng USCIS na ang mga mali sa baybay, malaking titik at bantas ay hindi nagpapabagsak sa pagsusulit sa pagsulat, maliban kung hindi na maintindihan ang pangungusap. Dito, binibilang pa rin ang maliliit na mali sa baybay, at mas marami ang puwede sa mas mahahabang salita. Hindi sinusuri ang malaking titik at bantas. | Writing: USCIS says that mistakes in spelling, capital letters and punctuation do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling mistakes are still counted, and more are allowed in longer words. Capital letters and punctuation are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Civics |
 | `stage.report.label` | Practice report | Ulat ng pagsasanay |
 | `stage.report.short` | Report | Ulat |
-| `badge.onTrack` | On track | Nasa tamang landas |
+| `badge.onTrack` | Practice score reached | Naabot ang iskor sa pagsasanay |
 | `badge.review` | Worth reviewing | Dapat balikan |
 | `report.empty` | Your practice report will appear here once the session is complete. | Lalabas dito ang ulat ng inyong pagsasanay kapag tapos na ang sesyon. |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Ulat ng pagsasanay |
-| `report.title.onTrack` | You’re on track | Nasa tamang landas kayo |
-| `report.title.review` | A few things to review | May ilang bagay na dapat balikan |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | Maayos ninyong natapos ang sesyon ng pagsasanay na ito. Gamitin ang mga tala sa ibaba para manatiling handa bago ang susunod na round. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Iyan ang silbi ng pagsasanay. Ipinapakita ng mga tala sa ibaba kung saan magtutuon bago subukang muli. |
 | `report.profile.label` | Practice profile (fictional) | Profile sa pagsasanay (kathang-isip) |
 | `report.profile.meta` | {version} civics test · filed {date} | Civics test ng {version} · isinumite noong {date} |
 | `report.stages.heading` | How each part went | Kung paano nagtagumpay ang bawat bahagi |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | Oo, bumalik sa simula |
 | `header.homeConfirm.no` | Stay here | Manatili rito |
 | `common.retry` | Try again | Subukang muli |
-| `partReport.badge.good` | This part went well | Maayos ang bahaging ito |
+| `partReport.badge.good` | This part reached the practice score | Naabot ng bahaging ito ang iskor sa pagsasanay |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Ipinakita ang pangungusap sa screen (pagsubok na may tulong). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Ang mga paunawa at legal na teksto ay nasa Ingles lamang hanggang may taong makasuri ng salin. |
 | `lang.menu.title` | Choose a language | Pumili ng wika |

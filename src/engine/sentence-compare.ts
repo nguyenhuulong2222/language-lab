@@ -21,8 +21,10 @@
  *    or extra.
  *  - Every content word of the sentence must be present, in order. A missing or substituted content
  *    word does not count. A few extra content words (config) are allowed.
- *  - Writing only: a one-letter spelling error in a word of 5+ letters counts as that word, unless the
- *    typed word is itself a different word of the official vocabulary.
+ *  - Writing only: a spelling slip counts as that word when the first letter is right, the typed word is
+ *    not itself a different word of the official vocabulary, and the letters that differ (wrong, missing,
+ *    extra or two swapped) are within the limit for the word's length (`spellingSlips`, from the config).
+ *    Capital letters and punctuation are never compared.
  * Nothing here is a threshold: every setting comes in through `MatchOptions` (data/practice/practice-config.json).
  * Pauses, pronunciation and whether an officer would understand cannot be judged from text.
  *
@@ -37,8 +39,10 @@ export interface MatchOptions {
   neverStem: ReadonlySet<string>;
   /** Extra content words that do not stop an attempt from counting. */
   extraContentWordsAllowed: number;
-  /** Accept a one-letter spelling error (writing). */
+  /** Accept spelling slips within `spellingSlips` (writing). */
   spellingTolerance: boolean;
+  /** From a word length on, how many letters may differ. Shortest first. Default: one letter from 5 letters. */
+  spellingSlips?: ReadonlyArray<{ fromLetters: number; maxEdits: number }>;
   /** Words of the official vocabulary: a typed word that is one of them is never read as a misspelling. */
   knownWords?: ReadonlySet<string>;
 }
@@ -118,22 +122,38 @@ export function sameInflection(a: string, b: string, neverStem: ReadonlySet<stri
   return false;
 }
 
-/** True when the two words differ by one inserted, missing, changed or swapped neighbouring letter. */
-function oneLetterApart(a: string, b: string): boolean {
-  if (a === b) return false;
-  if (Math.abs(a.length - b.length) > 1) return false;
-  if (a.length === b.length) {
-    const diffs: number[] = [];
-    for (let i = 0; i < a.length && diffs.length <= 2; i++) if (a[i] !== b[i]) diffs.push(i);
-    if (diffs.length === 1) return true;
-    return diffs.length === 2 && diffs[1] === diffs[0]! + 1 && a[diffs[0]!] === b[diffs[1]!] && a[diffs[1]!] === b[diffs[0]!];
+/**
+ * Letters that differ between two words: changed, inserted, missing, or two neighbouring letters
+ * swapped (optimal string alignment distance). Stops early once `limit` is passed.
+ */
+function lettersApart(a: string, b: string, limit: number): number {
+  if (Math.abs(a.length - b.length) > limit) return limit + 1;
+  const d: number[][] = Array.from({ length: a.length + 1 }, (_, i) => {
+    const row = new Array<number>(b.length + 1).fill(0);
+    row[0] = i;
+    return row;
+  });
+  for (let j = 0; j <= b.length; j++) d[0]![j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    let best = Infinity;
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      let v = Math.min(d[i - 1]![j]! + 1, d[i]![j - 1]! + 1, d[i - 1]![j - 1]! + cost);
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) v = Math.min(v, d[i - 2]![j - 2]! + 1);
+      d[i]![j] = v;
+      best = Math.min(best, v);
+    }
+    if (best > limit) return limit + 1;
   }
-  const [short, long] = a.length < b.length ? [a, b] : [b, a];
-  let i = 0;
-  while (i < short.length && short[i] === long[i]) i++;
-  return short.slice(i) === long.slice(i + 1);
+  return d[a.length]![b.length]!;
 }
-
+const DEFAULT_SLIPS = [{ fromLetters: 5, maxEdits: 1 }] as const;
+/** How many letters may differ in a word of this length (0: it must be exact). */
+function slipsAllowed(length: number, slips: ReadonlyArray<{ fromLetters: number; maxEdits: number }>): number {
+  let allowed = 0;
+  for (const slip of slips) if (length >= slip.fromLetters) allowed = slip.maxEdits;
+  return allowed;
+}
 interface Token {
   /** As said or written (lower case). */
   raw: string;
@@ -147,15 +167,9 @@ function tokensOf(text: string): Token[] {
 function sameWord(target: Token, said: Token, options: MatchOptions): "same" | "variant" | "spelling" | null {
   if (target.raw === said.raw) return "same";
   if (sameInflection(target.raw, said.raw, options.neverStem)) return "variant";
-  if (
-    options.spellingTolerance &&
-    target.raw.length >= 5 &&
-    said.raw.length >= 5 &&
-    target.raw[0] === said.raw[0] &&
-    !options.knownWords?.has(said.raw) &&
-    oneLetterApart(target.raw, said.raw)
-  ) {
-    return "spelling";
+  if (options.spellingTolerance && said.raw.length >= 3 && target.raw[0] === said.raw[0] && !/\d/.test(said.raw + target.raw)) {
+    const allowed = slipsAllowed(target.raw.length, options.spellingSlips ?? DEFAULT_SLIPS);
+    if (allowed > 0 && !options.knownWords?.has(said.raw) && lettersApart(target.raw, said.raw, allowed) <= allowed) return "spelling";
   }
   return null;
 }

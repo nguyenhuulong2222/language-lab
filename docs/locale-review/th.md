@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | การให้คะแนนความรู้พลเมืองถูกปิดในเวอร์ชันนี้ จนกว่าจะมีผู้ตรวจสอบเฉลย คุณยังฝึกการสัมภาษณ์ การอ่าน และการเขียนได้ | Civics scoring is turned off in this version until someone reviews the answer key. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | เฉลยความรู้พลเมืองยังรอให้มีผู้ตรวจสอบ เวอร์ชันนี้จึงไม่ให้คะแนนส่วนนี้และไม่สร้างรายงาน | The civics answer key is still waiting for someone to review it. This version therefore does not score this part and does not create a report. |
 | `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | เมื่อคุณกด “พูด” ระบบรู้จำเสียงพูดของเบราว์เซอร์อาจส่งเสียงของคุณไปยังบริษัทผู้สร้างเบราว์เซอร์ เช่น Google หรือ Apple เพื่อแปลงเป็นข้อความ Language Lab ไม่ส่งหรือเก็บเสียงของคุณ คุณพิมพ์คำตอบแทนได้ | When you press “Speak”, the browser's speech recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | ฝึกเสร็จแล้ว: ทุกส่วนถึงคะแนนฝึก | Practice finished: every part reached the practice score |
+| `report.title.review` | A few things to review | มีบางเรื่องที่ควรทบทวน | There are some things worth reviewing |
+| `report.lead.onTrack` ⚠ | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | ในการฝึกครั้งนี้ การอ่าน การเขียน และหน้าที่พลเมือง ต่างถึงคะแนนที่ Language Lab ใช้ ใช้บันทึกด้านล่างเพื่อฝึกต่อไป | In this practice, reading, writing and civic duties each reached the score Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | การฝึกมีไว้เพื่อสิ่งนี้ บันทึกด้านล่างแสดงว่าควรเน้นตรงไหนก่อนลองอีกครั้ง | Practice is for this. The notes below show where to focus before trying again. |
+| `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | การเขียน: USCIS ระบุว่าการสะกดผิด ตัวพิมพ์ใหญ่ และเครื่องหมายวรรคตอน ไม่ทำให้สอบเขียนไม่ผ่าน เว้นแต่ประโยคจะอ่านไม่เข้าใจแล้ว ที่นี่ การสะกดผิดเล็กน้อยยังนับ และคำที่ยาวกว่าผิดได้มากกว่า ไม่ตรวจตัวพิมพ์ใหญ่และเครื่องหมายวรรคตอน | Writing: USCIS states that misspelling, capital letters and punctuation do not make you fail the writing test, unless the sentence can no longer be understood. Here, small misspellings still count, and longer words may have more mistakes. Capital letters and punctuation are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Civics |
 | `stage.report.label` | Practice report | รายงานการฝึก |
 | `stage.report.short` | Report | รายงาน |
-| `badge.onTrack` | On track | มาถูกทางแล้ว |
+| `badge.onTrack` | Practice score reached | ถึงคะแนนฝึกแล้ว |
 | `badge.review` | Worth reviewing | ควรทบทวน |
 | `report.empty` | Your practice report will appear here once the session is complete. | รายงานการฝึกของคุณจะแสดงที่นี่เมื่อจบรอบการฝึก |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | รายงานการฝึก |
-| `report.title.onTrack` | You’re on track | คุณมาถูกทางแล้ว |
-| `report.title.review` | A few things to review | มีบางเรื่องที่ควรทบทวน |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | คุณฝึกรอบนี้ได้ดี ใช้บันทึกด้านล่างเพื่อรักษาความพร้อมก่อนรอบต่อไป |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | การฝึกมีไว้เพื่อสิ่งนี้ บันทึกด้านล่างแสดงว่าควรเน้นตรงไหนก่อนลองอีกครั้ง |
 | `report.profile.label` | Practice profile (fictional) | โปรไฟล์ฝึก (สมมติ) |
 | `report.profile.meta` | {version} civics test · filed {date} | แบบทดสอบความรู้พลเมืองปี {version} · ยื่นคำร้องเมื่อ {date} |
 | `report.stages.heading` | How each part went | แต่ละส่วนเป็นอย่างไรบ้าง |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | ใช่ กลับหน้าแรก |
 | `header.homeConfirm.no` | Stay here | อยู่ที่นี่ต่อ |
 | `common.retry` | Try again | ลองอีกครั้ง |
-| `partReport.badge.good` | This part went well | ส่วนนี้ทำได้ดี |
+| `partReport.badge.good` | This part reached the practice score | ส่วนนี้ถึงคะแนนฝึกแล้ว |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | ประโยคถูกแสดงบนหน้าจอ (การลองที่มีตัวช่วย) |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | ข้อความปฏิเสธความรับผิดชอบและข้อความทางกฎหมายจะแสดงเป็นภาษาอังกฤษเท่านั้น จนกว่าจะมีคนตรวจคำแปล |
 | `lang.menu.title` | Choose a language | เลือกภาษา |
@@ -293,3 +294,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 ## Lines marked ⚠ (meaning differs a little)
 
 - `civics.officialNote`: "Any one of these answers counts" is rendered "counts as correct" (นับว่าถูก), slightly stronger.
+- `report.lead.onTrack`: "civics" is rendered as "civic duties" (หน้าที่พลเมือง), as elsewhere in the Thai file.

@@ -162,7 +162,7 @@ describe("the app, phase by phase", () => {
     s = engine.reduce(s, { type: "continue", at: AT });
     expect(s.phase).toBe("report");
     const html = renderScreen(engine, s);
-    expect(html).toContain("You’re on track");
+    expect(html).toContain("Practice complete: each part reached the practice score");
     expect(html).toContain("This is a practice tool only.");
     expect(html).toContain("The N-400 interview is practice only and is not scored.");
     expect(html).toContain("Practice again");

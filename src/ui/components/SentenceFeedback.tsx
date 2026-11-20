@@ -91,6 +91,11 @@ export function SentenceFeedback({ target, attempt, matchOptions, kind }: Senten
       <p lang="en">{empty ? "…" : attempt.transcript}</p>
       {attempt.assisted && <p className="note">{t("partReport.assisted")}</p>}
       <p className="note"><LegalText messageKey="compare.setting" /></p>
+      {kind === "writing" && (
+        <p className="note">
+          <LegalText messageKey="compare.setting.writing" />
+        </p>
+      )}
       <Disclaimer messageKey="disclaimer.short" />
     </section>
   );

@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | 在有人審核標準答案之前，這個版本的公民常識計分功能是關閉的。您仍然可以練習面談、閱讀和書寫。 | Until someone reviews the standard answers, the civics scoring function of this version is turned off. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 公民常識的標準答案仍在等待人工審核，所以這個版本不會為公民常識計分，也不會產生報告。 | The standard answers for civics are still waiting for human review, so this version will not score civics and will not produce a report. |
 | `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | 当您按下“说出来”时，浏览器的语音识别功能可能会把您的声音发送给浏览器的开发公司（例如 Google 或 Apple），以便转成文字。Language Lab 不会发送或保存您的声音。您也可以改为输入答案。 | When you press “Say it”, the browser's speech recognition function may send your voice to the browser's developer (such as Google or Apple) to convert it to text. Language Lab will not send or save your voice. You can also type your answer instead. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | 練習完成：每個部分都達到練習分數 | Practice complete: every part reached the practice score |
+| `report.title.review` | A few things to review | 有幾件事可以複習 | There are a few things you can review |
+| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | 在這次練習中，閱讀、書寫和公民常識都各自達到 Language Lab 使用的分數。請用下面的筆記繼續練習。 | In this practice, reading, writing and civics each reached the score Language Lab uses. Please use the notes below to keep practicing. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | 這正是練習的目的。下面的筆記會告訴您，再試一次之前該把重點放在哪裡。 | This is exactly the purpose of practice. The notes below tell you where to focus before trying again. |
+| `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | 書寫：USCIS 表示，拼寫、大寫和標點符號的錯誤不會讓您的書寫測驗不及格，除非句子已經無法理解。在這裡，小的拼寫錯誤仍然算數，較長的單字可以有較多錯誤。不檢查大寫和標點符號。 | Writing: USCIS says spelling, capitalization and punctuation errors will not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words may have more errors. Capitalization and punctuation are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Civics |
 | `stage.report.label` | Practice report | 練習報告 |
 | `stage.report.short` | Report | 報告 |
-| `badge.onTrack` | On track | 進度良好 |
+| `badge.onTrack` | Practice score reached | 已達練習分數 |
 | `badge.review` | Worth reviewing | 值得複習 |
 | `report.empty` | Your practice report will appear here once the session is complete. | 練習結束後，您的練習報告會顯示在這裡。 |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | 練習報告 |
-| `report.title.onTrack` | You’re on track | 您進度良好 |
-| `report.title.review` | A few things to review | 有幾件事可以複習 |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | 您這次練習完成得很好。請參考下面的筆記，在下一輪之前保持狀態。 |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | 這正是練習的目的。下面的筆記會告訴您，再試一次之前該把重點放在哪裡。 |
 | `report.profile.label` | Practice profile (fictional) | 練習檔案（虛構） |
 | `report.profile.meta` | {version} civics test · filed {date} | {version} 年公民常識測驗 · 申請於 {date} 提出 |
 | `report.stages.heading` | How each part went | 各部分的表現 |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | 是，回到首頁 |
 | `header.homeConfirm.no` | Stay here | 留在這裡 |
 | `common.retry` | Try again | 再試一次 |
-| `partReport.badge.good` | This part went well | 這個部分表現良好 |
+| `partReport.badge.good` | This part reached the practice score | 這個部分已達練習分數 |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | 句子已顯示在螢幕上（有輔助的嘗試）。 |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | 在有人审核翻译之前，免责声明和法律文字只显示英文。 |
 | `lang.menu.title` | Choose a language | 選擇語言 |

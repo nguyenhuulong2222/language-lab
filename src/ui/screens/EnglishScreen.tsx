@@ -205,6 +205,11 @@ export function EnglishScreen({
               }}
             />
             <p className="note"><LegalText messageKey="compare.setting" /></p>
+            {!reading && (
+              <p className="note">
+                <LegalText messageKey="compare.setting.writing" />
+              </p>
+            )}
             <p className="note">{t("compare.vocab")}</p>
           </div>
         )}

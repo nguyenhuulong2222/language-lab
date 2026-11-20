@@ -31,8 +31,8 @@ describe("Report screen (SSR against session.json)", () => {
     expect(html).toContain("Practice report");
   });
 
-  it("renders the encouraging headline with a curly apostrophe", () => {
-    expect(html).toContain("You’re on track");
+  it("renders a headline that names the practice and predicts nothing", () => {
+    expect(html).toContain("Practice complete: each part reached the practice score");
   });
 
   it("renders the fictional profile card", () => {
@@ -49,7 +49,7 @@ describe("Report screen (SSR against session.json)", () => {
     expect(html).toContain("Reading");
     expect(html).toContain("Writing");
     expect(html).toContain("Civics");
-    expect(html).toContain("On track");
+    expect(html).toContain("Practice score reached");
     expect(html).toContain("Worth reviewing");
   });
 
@@ -69,5 +69,14 @@ describe("Report screen (SSR against session.json)", () => {
     expect(html).toContain("March 20, 2024 at 10:42 AM");
     expect(html).toContain('aria-current="step"');
     expect(html).toContain("Interview stages");
+  });
+});
+describe("report wording does not read as a prediction (audit CON-04)", () => {
+  it("no English report or badge line says on track, pass or likely", async () => {
+    const en = (await import("../../i18n/locales/en.json")).default as Record<string, string>;
+    for (const key of ["report.title.onTrack", "report.lead.onTrack", "badge.onTrack", "partReport.badge.good"]) {
+      expect(en[key], key).toMatch(/practice/i);
+      expect(en[key], key).not.toMatch(/on track|you will|likely|ready for/i);
+    }
   });
 });

@@ -30,6 +30,7 @@ export const LEGAL_KEYS: readonly string[] = [
   "partReport.scope",
   "report.n400Note",
   "compare.setting",
+  "compare.setting.writing",
   "credits.lead",
   "civics.officialNote",
   "civics.locked.text",

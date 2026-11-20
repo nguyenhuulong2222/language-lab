@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | ການໃຫ້ຄະແນນວິຊາພົນລະເມືອງຖືກປິດໃນເວີຊັນນີ້ຈົນກວ່າຈະມີຄົນກວດຄໍາເຉີຍ. ທ່ານຍັງຝຶກການສໍາພາດ, ການອ່ານ ແລະ ການຂຽນໄດ້. | Civics scoring is turned off in this version until someone checks the answer key. You can still practice interviews, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | ຄໍາເຉີຍວິຊາພົນລະເມືອງຍັງລໍຖ້າໃຫ້ມີຄົນກວດສອບ, ດັ່ງນັ້ນເວີຊັນນີ້ຈຶ່ງບໍ່ໃຫ້ຄະແນນສ່ວນນີ້ ແລະ ບໍ່ສ້າງບົດລາຍງານ. | The civics answer key is still waiting for someone to check it, so this version does not score this part and does not create a report. |
 | `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | ເມື່ອທ່ານກົດ “ເວົ້າ” ລະບົບຮັບຮູ້ສຽງຂອງບຣາວເຊີອາດສົ່ງສຽງຂອງທ່ານໄປຫາບໍລິສັດທີ່ສ້າງບຣາວເຊີ ເຊັ່ນ Google ຫຼື Apple ເພື່ອປ່ຽນເປັນຂໍ້ຄວາມ. Language Lab ບໍ່ສົ່ງ ແລະ ບໍ່ເກັບສຽງຂອງທ່ານ. ທ່ານສາມາດພິມຄຳຕອບແທນໄດ້. | When you press “Speak”, the browser's voice recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | ຝຶກສຳເລັດ: ທຸກພາກເຖິງຄະແນນຝຶກ | Practice finished: every part reached the practice score |
+| `report.title.review` | A few things to review | ມີບາງຢ່າງທີ່ຄວນທົບທວນ | There are some things that should be reviewed |
+| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | ໃນການຝຶກນີ້ ການອ່ານ, ການຂຽນ ແລະ ພົນລະເມືອງ ແຕ່ລະພາກເຖິງຄະແນນທີ່ Language Lab ໃຊ້. ໃຊ້ບັນທຶກຂ້າງລຸ່ມເພື່ອຝຶກຕໍ່. | In this practice, reading, writing and citizenship each reached the score Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | ການຝຶກມີໄວ້ເພື່ອສິ່ງນີ້. ບັນທຶກຂ້າງລຸ່ມສະແດງວ່າຄວນເນັ້ນບ່ອນໃດກ່ອນລອງອີກຄັ້ງ. | Practice is for this. The notes below show where to focus before trying again. |
+| `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | ການຂຽນ: USCIS ບອກວ່າການສະກົດຜິດ, ຕົວພິມໃຫຍ່ ແລະ ເຄື່ອງໝາຍວັກຕອນ ບໍ່ເຮັດໃຫ້ສອບຂຽນບໍ່ຜ່ານ ເວັ້ນເສຍແຕ່ປະໂຫຍກຈະອ່ານບໍ່ເຂົ້າໃຈແລ້ວ. ຢູ່ນີ້ ການສະກົດຜິດເລັກນ້ອຍຍັງນັບ ແລະ ຄຳທີ່ຍາວກວ່າຜິດໄດ້ຫຼາຍກວ່າ. ບໍ່ກວດຕົວພິມໃຫຍ່ ແລະ ເຄື່ອງໝາຍວັກຕອນ. | Writing: USCIS says misspelling, capital letters and punctuation marks do not make you fail the writing test unless the sentence can no longer be understood. Here, small misspellings still count, and longer words may have more mistakes. Capital letters and punctuation are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Civics |
 | `stage.report.label` | Practice report | ບົດລາຍງານການຝຶກ |
 | `stage.report.short` | Report | ລາຍງານ |
-| `badge.onTrack` | On track | ມາຖືກທາງແລ້ວ |
+| `badge.onTrack` | Practice score reached | ເຖິງຄະແນນຝຶກແລ້ວ |
 | `badge.review` | Worth reviewing | ຄວນທົບທວນ |
 | `report.empty` | Your practice report will appear here once the session is complete. | ບົດລາຍງານການຝຶກຂອງທ່ານຈະສະແດງຢູ່ນີ້ເມື່ອຈົບຮອບການຝຶກ. |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | ບົດລາຍງານການຝຶກ |
-| `report.title.onTrack` | You’re on track | ທ່ານມາຖືກທາງແລ້ວ |
-| `report.title.review` | A few things to review | ມີບາງຢ່າງທີ່ຄວນທົບທວນ |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | ທ່ານຝຶກຮອບນີ້ໄດ້ດີ. ໃຊ້ບັນທຶກຂ້າງລຸ່ມເພື່ອຮັກສາຄວາມພ້ອມກ່ອນຮອບຕໍ່ໄປ. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | ການຝຶກມີໄວ້ເພື່ອສິ່ງນີ້. ບັນທຶກຂ້າງລຸ່ມສະແດງວ່າຄວນເນັ້ນບ່ອນໃດກ່ອນລອງອີກຄັ້ງ. |
 | `report.profile.label` | Practice profile (fictional) | ໂປຣໄຟລ໌ຝຶກ (ສົມມຸດ) |
 | `report.profile.meta` | {version} civics test · filed {date} | ແບບທົດສອບວິຊາພົນລະເມືອງປີ {version} · ຍື່ນຄໍາຮ້ອງວັນທີ {date} |
 | `report.stages.heading` | How each part went | ແຕ່ລະສ່ວນເປັນແນວໃດ |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | ແມ່ນ, ກັບໄປໜ້າຫຼັກ |
 | `header.homeConfirm.no` | Stay here | ຢູ່ທີ່ນີ້ຕໍ່ |
 | `common.retry` | Try again | ລອງອີກຄັ້ງ |
-| `partReport.badge.good` | This part went well | ສ່ວນນີ້ເຮັດໄດ້ດີ |
+| `partReport.badge.good` | This part reached the practice score | ພາກນີ້ເຖິງຄະແນນຝຶກແລ້ວ |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | ປະໂຫຍກຖືກສະແດງຢູ່ໜ້າຈໍ (ການພະຍາຍາມທີ່ມີຕົວຊ່ວຍ). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | ຂໍ້ຄວາມປະຕິເສດຄວາມຮັບຜິດຊອບ ແລະ ຂໍ້ຄວາມທາງກົດໝາຍ ຈະສະແດງເປັນພາສາອັງກິດເທົ່ານັ້ນ ຈົນກວ່າຈະມີຄົນກວດການແປ. |
 | `lang.menu.title` | Choose a language | ເລືອກພາສາ |

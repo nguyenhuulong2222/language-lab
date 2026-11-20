@@ -40,7 +40,8 @@ describe("practice config", () => {
 
   it("rejects values outside the range and wrong shapes", () => {
     const stage = { extraContentWordsAllowed: 1, spellingTolerance: false };
-    const base = { needsHumanReview: true, sentenceMatch: { functionWords: ["the"], neverStem: ["news"], reading: stage, writing: stage } };
+    const slips = [{ fromLetters: 4, maxEdits: 1 }];
+    const base = { needsHumanReview: true, sentenceMatch: { functionWords: ["the"], neverStem: ["news"], spellingSlips: slips, reading: stage, writing: stage } };
     expect(() => parsePracticeConfig(base)).not.toThrow();
     for (const bad of [-1, 1.5, 4, Number.NaN, "1"]) {
       expect(() =>
@@ -49,6 +50,9 @@ describe("practice config", () => {
     }
     expect(() => parsePracticeConfig({ ...base, sentenceMatch: { ...base.sentenceMatch, functionWords: ["The"] } })).toThrow();
     expect(() => parsePracticeConfig({ ...base, sentenceMatch: { ...base.sentenceMatch, writing: { ...stage, spellingTolerance: "yes" } } })).toThrow();
+    for (const bad of [[], [{ fromLetters: 2, maxEdits: 1 }], [{ fromLetters: 4, maxEdits: 0 }], [{ fromLetters: 8, maxEdits: 1 }, { fromLetters: 4, maxEdits: 2 }], "x"]) {
+      expect(() => parsePracticeConfig({ ...base, sentenceMatch: { ...base.sentenceMatch, spellingSlips: bad } }), JSON.stringify(bad)).toThrow();
+    }
     expect(() => parsePracticeConfig(null)).toThrow();
     expect(() => parsePracticeConfig({ ...base, needsHumanReview: "yes" })).toThrow();
   });

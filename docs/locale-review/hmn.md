@@ -36,6 +36,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Kev muab qhab nia txog pej xeem raug kaw hauv daim no kom txog thaum ib tug neeg tshuaj xyuas cov lus teb raug. Koj tseem xyaum tau kev xam phaj, nyeem thiab sau. | Civics scoring is closed in this version until a person checks the correct answers. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Cov lus teb raug txog pej xeem tseem tos ib tug neeg tshuaj xyuas, yog li daim no tsis muab qhab nia rau qhov no thiab tsis tsim daim ntawv qhia. | The correct civics answers are still waiting for a person to check them, so this version does not give scores for this and does not make a report. |
 | `voice.consent.text` ⚠ | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Thaum koj nias “Hais”, koj lub browser txoj kev paub lub suab tuaj yeem xa koj lub suab mus rau lub tuam txhab uas ua browser, xws li Google lossis Apple, kom hloov mus ua lus. Language Lab tsis xa lossis khaws koj lub suab. Koj tuaj yeem ntaus koj cov lus teb hloov chaw. | When you press “Say”, your browser's voice recognition may send your voice to the company that makes the browser, such as Google or Apple, to turn it into language. Language Lab does not send or keep your voice. You can type your answer instead. |
+| `report.title.onTrack` | Practice complete: each part reached the practice score | Xyaum tiav lawm: txhua ntu tau txog cov qhab nia xyaum | Practice finished: every part reached the practice score |
+| `report.title.review` | A few things to review | Muaj ob peb yam yuav tsum rov saib | There are a few things you should look at again |
+| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Hauv qhov kev xyaum no, kev nyeem, kev sau thiab kev kawm txog pej xeem txhua ntu tau txog cov qhab nia uas Language Lab siv. Siv cov ntawv sau hauv qab no los xyaum ntxiv. | In this practice, reading, writing and learning about citizens each reached the score Language Lab uses. Use the notes below to practice more. |
+| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Kev xyaum yog rau qhov no. Cov ntawv sau hauv qab no qhia tias yuav tsum tsom rau qhov twg ua ntej koj rov sim dua. | Practice is for this. The notes below show where to focus before you try again. |
+| `compare.setting.writing` ⚠ | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Kev sau: USCIS hais tias kev sau ntawv yuam kev, cov tsiaj ntawv loj thiab cov cim nres tsis ua rau koj poob qhov kev xeem sau, tshwj tsis yog thaum kab lus nkag siab tsis tau lawm. Ntawm no, kev sau yuam kev me me tseem suav, thiab cov lo lus ntev dua yuam kev tau ntau dua. Tsis kuaj cov tsiaj ntawv loj thiab cov cim nres. | Writing: USCIS says that writing mistakes, capital letters and stopping marks do not make you fail the writing test, except when the sentence can no longer be understood. Here, small writing mistakes still count, and longer words can have more mistakes. Capital letters and stopping marks are not checked. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -72,15 +77,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.civics.short` | Civics | Civics |
 | `stage.report.label` | Practice report | Daim ntawv qhia txog kev xyaum |
 | `stage.report.short` | Report | Daim ntawv qhia |
-| `badge.onTrack` | On track | Mus zoo lawm |
+| `badge.onTrack` | Practice score reached | Tau txog qhab nia xyaum |
 | `badge.review` | Worth reviewing | Yuav tsum rov saib |
 | `report.empty` | Your practice report will appear here once the session is complete. | Daim ntawv qhia txog kev xyaum ntawm koj yuav tshwm ntawm no thaum kev xyaum xaus. |
 | `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Daim ntawv qhia txog kev xyaum |
-| `report.title.onTrack` | You’re on track | Koj mus zoo lawm |
-| `report.title.review` | A few things to review | Muaj ob peb yam yuav tsum rov saib |
-| `report.lead.onTrack` | You completed this practice session well. Use the notes below to keep sharp before your next round. | Koj ua tiav qhov kev xyaum no zoo. Siv cov ntawv sau hauv qab no los khaws koj lub zog ua ntej zaum tom ntej. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Kev xyaum yog rau qhov no. Cov ntawv sau hauv qab no qhia tias yuav tsum tsom rau qhov twg ua ntej koj rov sim dua. |
 | `report.profile.label` | Practice profile (fictional) | Tus qauv xyaum (tsim los) |
 | `report.profile.meta` | {version} civics test · filed {date} | Kev xeem txog pej xeem xyoo {version} · xa daim ntawv thov rau hnub {date} |
 | `report.stages.heading` | How each part went | Txhua ntu ua li cas |
@@ -247,7 +248,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Yes, go home | Yog, rov qab mus tsev |
 | `header.homeConfirm.no` | Stay here | Nyob ntawm no |
 | `common.retry` | Try again | Sim dua |
-| `partReport.badge.good` | This part went well | Ntu no ua tau zoo |
+| `partReport.badge.good` | This part reached the practice score | Ntu no tau txog qhab nia xyaum |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Kab lus tau qhia rau ntawm lub vijtsam (kev sim muaj kev pab). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Cov lus tsis lees paub thiab cov ntawv raws cai yuav tshwm ua lus Askiv xwb mus txog thaum muaj neeg tshuaj xyuas kev txhais lus. |
 | `lang.menu.title` | Choose a language | Xaiv ib hom lus |
@@ -302,3 +303,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 - `header.about`: "Txog peb thiab ceeb toom" reads as "About us and warning", not "About & disclaimer". Needs a Hmong reader.
 - `compare.setting`: "in order" now "ib lo tom qab ib lo" (one word after another) and "may be missing" "poob tau" (may fall out). Still needs a Hmong reader.
 - `voice.consent.text`: "Say" is the plain verb for speaking, and "language" (lus) stands in for "words". Needs a Hmong reader.
+- `compare.setting.writing`: "punctuation" is rendered as "stopping marks" (cov cim nres) and "spelling" as "writing". Needs a Hmong reader.
