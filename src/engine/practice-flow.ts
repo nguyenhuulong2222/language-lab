@@ -8,7 +8,8 @@
  * - The test version comes from the filing choice through selectTestVersion (the rules file
  *   holds the boundary date). The screens never decide 2008 or 2025.
  * - Reading and writing: runEnglishStage. Whether one sentence counts as correct uses
- *   `minWordAccuracy` from the practice config (a Language Lab setting, not a USCIS rule).
+ *   the rule in sentence-compare.ts with the settings of the practice config (a Language Lab
+ *   practice setting based on the USCIS scoring guidelines, not a USCIS rule).
  * - Civics: runCivicsStage with the real answer key, static questions only (CR-003). The stage
  *   ends exactly where the engine ends it.
  * - The answer key loader refuses unreviewed keys in production. That refusal is not hidden or
@@ -28,8 +29,13 @@ import { loadAnswerKey, type CivicsAnswerEntry } from "./civics-answer-key.js";
 import { runCivicsStage, type CivicsStageResult } from "./civics-grader.js";
 import { runEnglishStage, type EnglishStageKind, type EnglishStageResult } from "./english-grader.js";
 import type { N400Answer } from "./n400-coach.js";
-import { loadPracticeConfig, type PracticeConfig } from "./practice-config.js";
-import { loadPracticeContent, type PracticeContent, type PracticeSentence } from "./practice-content.js";
+import { loadPracticeConfig, matchOptionsFor, type PracticeConfig } from "./practice-config.js";
+import {
+  loadPracticeContent,
+  vocabularyWords,
+  type PracticeContent,
+  type PracticeSentence,
+} from "./practice-content.js";
 import {
   buildCivicsPartReport,
   buildEnglishPartReport,
@@ -38,7 +44,7 @@ import {
   type PracticePart,
 } from "./part-report.js";
 import { buildFinalReport } from "./report-builder.js";
-import { compareSentence, pickBestAlternative } from "./sentence-compare.js";
+import { compareSentence, pickBestAlternative, type MatchOptions } from "./sentence-compare.js";
 import {
   loadCivicsBoundaryDate,
   loadCivicsRules,
@@ -334,6 +340,8 @@ export interface PracticeEngine {
   reduce(state: PracticeState, action: PracticeAction): PracticeState;
   englishProgress(state: PracticeState, kind: EnglishStageKind): EnglishProgress;
   civicsProgress(state: PracticeState): CivicsProgress;
+  /** The settings that score a reading or writing attempt (from the practice config). */
+  matchOptions(kind: EnglishStageKind): MatchOptions;
   /** The session of a full practice interview. Null for a single part (see partReport). */
   buildSession(state: PracticeState): InterviewSession | null;
 }
@@ -341,6 +349,11 @@ export interface PracticeEngine {
 export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
   const readingById = new Map(env.content.readingSentences.map((s) => [s.id, s]));
   const writingById = new Map(env.content.writingSentences.map((s) => [s.id, s]));
+  const vocabularyAll = new Set([
+    ...vocabularyWords(env.content.vocabulary.reading),
+    ...vocabularyWords(env.content.vocabulary.writing),
+  ]);
+  const matchOptions = (kind: EnglishStageKind): MatchOptions => matchOptionsFor(env.config, kind, vocabularyAll);
 
   function englishProgress(state: PracticeState, kind: EnglishStageKind): EnglishProgress {
     const attempts = kind === "reading" ? state.reading : state.writing;
@@ -613,11 +626,11 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
         const progress = englishProgress(state, kind);
         if (progress.done || progress.current === null) return state;
         const target = progress.current.text;
-        const minWordAccuracy = env.config.sentenceMatch[kind].minWordAccuracy;
+        const options = matchOptions(kind);
         // Spoken attempts: every alternative the recogniser gave is scored, the best one is used.
         // Typed text (or text the user edited) arrives without alternatives and is scored as it is.
         const candidates = [action.transcript, ...(action.alternatives ?? [])].filter((c, i, all) => all.indexOf(c) === i);
-        const best = pickBestAlternative(candidates, (text) => compareSentence(target, text, minWordAccuracy));
+        const best = pickBestAlternative(candidates, (text) => compareSentence(target, text, options));
         const comparison = best.comparison;
         const attempt: SentenceAttempt = {
           sentenceId: progress.current.id,
@@ -679,6 +692,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
     initial: createInitialPracticeState,
     reduce,
     englishProgress,
+    matchOptions,
     civicsProgress,
     buildSession,
   };

@@ -37,7 +37,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | Qhov no txiav txim seb koj xyaum kev xeem txog pej xeem xyoo 2008 lossis xyoo 2025. Qhov no yog kev xaiv rau kev xyaum xwb. Rau koj rooj plaub, mus saib uscis.gov kom paub tias kev xeem twg siv rau koj. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Kev muab qhab nia txog pej xeem raug kaw hauv daim no kom txog thaum ib tug neeg tshuaj xyuas cov lus teb raug. Koj tseem xyaum tau kev xam phaj, nyeem thiab sau. |
-| `compare.setting` | Practice setting: at least {percent}% of the words must match. This is a Language Lab setting, not a USCIS rule. | Kev teeb tsa xyaum: yam tsawg kawg {percent}% ntawm cov lus yuav tsum phim. Qhov no yog Language Lab txoj kev teeb tsa, tsis yog USCIS txoj cai. |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Qhov no yog Language Lab txoj kev teeb tsa xyaum raws li USCIS cov lus qhia txog kev muab qhab nia, tsis yog USCIS txoj cai: txhua lo lus tseem ceeb ntawm kab lus yuav tsum muaj, raws li kev txiav. Cov lus luv xws li “the” tsis muaj tau. Kev nres thiab kev hais lus tsis muab qhab nia. |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | Cov kab lus siv cov lus los ntawm USCIS cov npe lus nyeem thiab sau uas raug cai xwb. |
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Ib qho twg ntawm cov no suav. Cov npe no coj los ntawm USCIS cov npe lus teb thiab tseem tos ib tug neeg tshuaj xyuas. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Koj tau txog qhab nia dhau ntawm kev xyaum, yog li qhov kev xeem nres ntawm no. |
@@ -147,8 +147,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.heard` | What we heard | Qhov peb hnov |
 | `compare.typed` | What you typed | Qhov koj ntaus |
 | `compare.wanted` | The sentence | Kab lus |
-| `compare.close` | Good: {percent}% of the words matched. | Zoo: {percent}% ntawm cov lus phim. |
-| `compare.notYet` | Not yet: {percent}% of the words matched. | Tsis tau: {percent}% ntawm cov lus phim. |
+| `compare.counts` | This counts. | Qhov no suav. |
+| `compare.notYet` | Not yet. | Tsis tau. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Lub browser no nyeem tsis tau tawm suab, yog li kab lus qhia ntawm no. Ntaus nws. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Kab lus zais kom txog thaum koj teb. |
 | `civics.title` | Civics | Kev kawm txog pej xeem |

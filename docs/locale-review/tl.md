@@ -37,7 +37,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | Dito napagpapasyahan kung civics test ng 2008 o ng 2025 ang inyong pagsasanayan. Pagpili lang ito para sa pagsasanay. Para sa sarili ninyong kaso, tingnan ang uscis.gov para malaman kung aling test ang para sa inyo. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Naka-off ang pag-iskor ng civics sa bersyong ito hanggang masuri ng isang tao ang answer key. Maaari pa rin kayong magsanay sa panayam, pagbasa, at pagsulat. |
-| `compare.setting` | Practice setting: at least {percent}% of the words must match. This is a Language Lab setting, not a USCIS rule. | Setting ng pagsasanay: kailangang tumugma ang hindi bababa sa {percent}% ng mga salita. Setting ito ng Language Lab, hindi patakaran ng USCIS. |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Setting ng pagsasanay ng Language Lab batay sa mga alituntunin sa pag-iskor ng USCIS, hindi patakaran ng USCIS: kailangang naroon ang bawat mahalagang salita ng pangungusap, ayon sa pagkakasunod-sunod. Maaaring may kulang na maiikling salita tulad ng “the”. Hindi iniiskor ang mga paghinto at pagbigkas. |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | Mga salita lamang mula sa opisyal na listahan ng bokabularyo ng USCIS sa pagbasa at pagsulat ang ginagamit sa mga pangungusap. |
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Mabibilang ang alinman sa mga ito. Kinuha ang listahan sa listahan ng sagot ng USCIS at naghihintay pa ng pagsusuri ng isang tao. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Naabot ninyo ang puntos na pasado sa pagsasanay, kaya huminto rito ang test. |
@@ -147,8 +147,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.heard` | What we heard | Ang narinig namin |
 | `compare.typed` | What you typed | Ang in-type ninyo |
 | `compare.wanted` | The sentence | Ang pangungusap |
-| `compare.close` | Good: {percent}% of the words matched. | Mabuti: {percent}% ng mga salita ang tumugma. |
-| `compare.notYet` | Not yet: {percent}% of the words matched. | Hindi pa: {percent}% ng mga salita ang tumugma. |
+| `compare.counts` | This counts. | Bilang ito. |
+| `compare.notYet` | Not yet. | Hindi pa. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Hindi kayang magbasa nang malakas ng browser na ito, kaya ipinapakita rito ang pangungusap. I-type ito. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Nakatago ang pangungusap hanggang sumagot kayo. |
 | `civics.title` | Civics | Sibika (Civics) |

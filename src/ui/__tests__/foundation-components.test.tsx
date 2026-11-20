@@ -146,7 +146,7 @@ describe("SpeakButton", () => {
 
 describe("SentenceDiff", () => {
   it("labels missing and extra words in text, not only by style", () => {
-    const html = renderToString(<SentenceDiff diff={compareSentence("we pay taxes", "we really taxes", 0.8).diff} />);
+    const html = renderToString(<SentenceDiff diff={compareSentence("we pay taxes", "we really taxes").diff} />);
     expect(html).toContain("missing");
     expect(html).toContain("extra");
     expect(html).toContain("Dashed words are missing");

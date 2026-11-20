@@ -177,7 +177,7 @@ export function Screen({
         <EnglishScreen
           key={kind}
           progress={engine.englishProgress(state, kind)}
-          minWordAccuracy={env.config.sentenceMatch[kind].minWordAccuracy}
+          matchOptions={engine.matchOptions(kind)}
           nextIsReport={state.mode !== "full"}
           onSubmit={(transcript, input, alternatives) =>
             dispatch({

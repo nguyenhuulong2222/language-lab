@@ -37,7 +37,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | ການເລືອກນີ້ກໍານົດວ່າທ່ານຈະຝຶກແບບທົດສອບວິຊາພົນລະເມືອງປີ 2008 ຫຼື ປີ 2025. ມັນເປັນພຽງການເລືອກເພື່ອຝຶກ. ສໍາລັບກໍລະນີຂອງທ່ານເອງ, ກະລຸນາກວດເບິ່ງທີ່ uscis.gov ວ່າແບບທົດສອບໃດໃຊ້ກັບທ່ານ. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | ການໃຫ້ຄະແນນວິຊາພົນລະເມືອງຖືກປິດໃນເວີຊັນນີ້ຈົນກວ່າຈະມີຄົນກວດຄໍາເຉີຍ. ທ່ານຍັງຝຶກການສໍາພາດ, ການອ່ານ ແລະ ການຂຽນໄດ້. |
-| `compare.setting` | Practice setting: at least {percent}% of the words must match. This is a Language Lab setting, not a USCIS rule. | ການຕັ້ງຄ່າການຝຶກ: ຕ້ອງມີຄໍາຕົງກັນຢ່າງໜ້ອຍ {percent}%. ນີ້ເປັນການຕັ້ງຄ່າຂອງ Language Lab, ບໍ່ແມ່ນກົດຂອງ USCIS. |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | ນີ້ແມ່ນການຕັ້ງຄ່າການຝຶກຂອງ Language Lab ອີງຕາມແນວທາງການໃຫ້ຄະແນນຂອງ USCIS, ບໍ່ແມ່ນກົດຂອງ USCIS: ຕ້ອງມີຄໍາສໍາຄັນທຸກຄໍາຂອງປະໂຫຍກຕາມລໍາດັບ. ຄໍາສັ້ນໆ ເຊັ່ນ “the” ຂາດໄດ້. ການຢຸດພັກ ແລະ ການອອກສຽງບໍ່ໄດ້ຖືກໃຫ້ຄະແນນ. |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | ປະໂຫຍກໃຊ້ສະເພາະຄໍາຈາກລາຍການຄໍາສັບການອ່ານ ແລະ ການຂຽນທາງການຂອງ USCIS. |
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | ຄໍາຕອບໃດໜຶ່ງເຫຼົ່ານີ້ນັບວ່າຖືກ. ລາຍການນີ້ເອົາມາຈາກລາຍການຄໍາຕອບຂອງ USCIS ແລະ ຍັງລໍຖ້າໃຫ້ມີຄົນກວດສອບ. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | ທ່ານໄດ້ຄະແນນຜ່ານຂອງການຝຶກແລ້ວ, ແບບທົດສອບຈຶ່ງຢຸດຢູ່ນີ້. |
@@ -147,8 +147,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.heard` | What we heard | ສິ່ງທີ່ພວກເຮົາໄດ້ຍິນ |
 | `compare.typed` | What you typed | ສິ່ງທີ່ທ່ານພິມ |
 | `compare.wanted` | The sentence | ປະໂຫຍກ |
-| `compare.close` | Good: {percent}% of the words matched. | ດີ: ຄໍາຕົງກັນ {percent}%. |
-| `compare.notYet` | Not yet: {percent}% of the words matched. | ຍັງບໍ່ເຖິງ: ຄໍາຕົງກັນ {percent}%. |
+| `compare.counts` | This counts. | ນັບໄດ້. |
+| `compare.notYet` | Not yet. | ຍັງບໍ່ເຖິງ. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | ບຣາວເຊີນີ້ອ່ານອອກສຽງບໍ່ໄດ້, ດັ່ງນັ້ນຈຶ່ງສະແດງປະໂຫຍກຢູ່ນີ້. ກະລຸນາພິມຕາມ. |
 | `writing.hidden` | The sentence stays hidden until you answer. | ປະໂຫຍກຈະຖືກເຊື່ອງໄວ້ຈົນກວ່າທ່ານຈະຕອບ. |
 | `civics.title` | Civics | ວິຊາພົນລະເມືອງ |

@@ -96,7 +96,7 @@ describe("where the help sits on a question screen", () => {
     const state = engine.reduce(engine.initial(), { type: "choose", mode: "reading", seed: 5, at: AT });
     const html = render(
       <HelpSessionProvider>
-        <EnglishScreen progress={engine.englishProgress(state, "reading")} minWordAccuracy={0.8} onSubmit={() => {}} onContinue={() => {}} />
+        <EnglishScreen progress={engine.englishProgress(state, "reading")} matchOptions={engine.matchOptions("reading")} onSubmit={() => {}} onContinue={() => {}} />
       </HelpSessionProvider>
     );
     const sentence = engine.englishProgress(state, "reading").current!.text.replace(/&/g, "&amp;");

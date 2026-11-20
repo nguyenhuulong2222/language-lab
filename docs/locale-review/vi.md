@@ -37,7 +37,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | Lựa chọn này quyết định bạn luyện bài kiểm tra civics năm 2008 hay năm 2025. Đây chỉ là lựa chọn để luyện tập. Với trường hợp của riêng bạn, hãy xem uscis.gov để biết bài kiểm tra nào áp dụng cho bạn. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Việc chấm điểm civics đang tắt trong bản này cho đến khi có người xem xét bộ đáp án. Bạn vẫn có thể luyện phỏng vấn, đọc và viết. |
-| `compare.setting` | Practice setting: at least {percent}% of the words must match. This is a Language Lab setting, not a USCIS rule. | Mức luyện tập: ít nhất {percent}% số từ phải khớp. Đây là mức do Language Lab đặt ra, không phải quy định của USCIS. |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Đây là mức luyện tập của Language Lab dựa trên hướng dẫn chấm điểm của USCIS, không phải quy định của USCIS: mọi từ quan trọng của câu phải có, đúng thứ tự. Có thể thiếu những từ ngắn như “the”. Quãng nghỉ và cách phát âm không được chấm. |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | Các câu chỉ dùng những từ có trong danh sách từ vựng đọc và viết chính thức của USCIS. |
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Chỉ cần một trong các đáp án này là được tính. Danh sách lấy từ bảng đáp án của USCIS và vẫn đang chờ người xem xét. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Bạn đã đạt số điểm đậu của bài luyện tập, nên bài kiểm tra dừng ở đây. |
@@ -147,8 +147,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.heard` | What we heard | Những gì chúng tôi nghe được |
 | `compare.typed` | What you typed | Những gì bạn đã gõ |
 | `compare.wanted` | The sentence | Câu mẫu |
-| `compare.close` | Good: {percent}% of the words matched. | Tốt: {percent}% số từ khớp. |
-| `compare.notYet` | Not yet: {percent}% of the words matched. | Chưa đủ: {percent}% số từ khớp. |
+| `compare.counts` | This counts. | Câu này được tính. |
+| `compare.notYet` | Not yet. | Chưa được. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Trình duyệt này không đọc to được, nên câu hiện ngay tại đây. Hãy gõ lại câu đó. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Câu sẽ ẩn cho đến khi bạn trả lời. |
 | `civics.title` | Civics | Kiến thức công dân (civics) |

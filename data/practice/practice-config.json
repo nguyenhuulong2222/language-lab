@@ -1,12 +1,26 @@
 {
   "needsHumanReview": true,
-  "note": "Language Lab practice settings. They are NOT USCIS rules. The closeness needed is a practice choice made by this project and shown as such on screen. minWordAccuracy is the share of words that must match (0 to 1: longest common run of words divided by the longer sentence).",
+  "note": "Language Lab practice settings based on the USCIS scoring guidelines for the reading and writing portions. They are NOT USCIS rules: a text comparison cannot judge pauses, pronunciation or whether an officer understands. See scoringBasis for the source and what each setting stands for.",
+  "scoringBasis": {
+    "source": "USCIS Policy Manual, Volume 12, Part E, Chapter 2 (English and Civics Testing), Reading Test and Writing Test",
+    "url": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2",
+    "savedAs": "data/sources/uscis-policy-manual-vol12-parte-ch2-reading-writing.txt",
+    "sha256": "5c1cecd7c36cdfc82a629a82476c9ab52cd1dc2ab03586db1bf1350fcc4c9b64",
+    "rule": "An attempt counts when every content word of the sentence is present, in order. Short words may be missing or added. A plural or possessive ending is not a different word. A missing or substituted content word does not count. (Guideline: the applicant must read all content words but may omit short words; omitting or substituting a content word fails.)",
+    "functionWordsNote": "The manual does not define short words. These are the 'Other (Function)' words of the two official USCIS vocabulary lists in data/sources/ (reading: a, for, here, in, of, on, the, to, we; writing: and, during, for, here, in, of, on, the, to, we).",
+    "extraContentWordsNote": "The guidelines do not list an inserted word as a failure, and a speech recogniser can add one, so one extra content word is allowed. More do not count.",
+    "spellingNote": "Writing guideline: spelling, capitalization and punctuation errors do not fail unless they interfere with the meaning. A one-letter spelling error in a word of 5 letters or more is accepted (writing only), unless the typed word is itself a different word of the official vocabulary."
+  },
   "sentenceMatch": {
+    "functionWords": ["a", "and", "during", "for", "here", "in", "of", "on", "the", "to", "we"],
+    "neverStem": ["news", "series", "species", "texas", "arkansas", "kansas", "illinois", "christmas", "atlas", "canvas", "chaos", "bias", "always", "perhaps", "across"],
     "reading": {
-      "minWordAccuracy": 0.8
+      "extraContentWordsAllowed": 1,
+      "spellingTolerance": false
     },
     "writing": {
-      "minWordAccuracy": 0.9
+      "extraContentWordsAllowed": 1,
+      "spellingTolerance": true
     }
   }
 }

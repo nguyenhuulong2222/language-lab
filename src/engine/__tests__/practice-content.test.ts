@@ -3,6 +3,7 @@ import * as fc from "fast-check";
 import sourcesReadme from "../../../data/sources/README.md?raw";
 import readingText from "../../../data/sources/uscis-reading-vocab.txt?raw";
 import writingText from "../../../data/sources/uscis-writing-vocab.txt?raw";
+import policyText from "../../../data/sources/uscis-policy-manual-vol12-parte-ch2-reading-writing.txt?raw";
 import configRaw from "../../../data/practice/practice-config.json?raw";
 import profilesRaw from "../../../data/practice/profiles.json?raw";
 import n400Raw from "../../../data/practice/n400-questions.json?raw";
@@ -23,12 +24,13 @@ import { loadEnglishRules } from "../test-rules-loader";
 const content = loadPracticeContent();
 
 describe("practice config", () => {
-  it("loads and holds a share between 0 and 1 for each stage", () => {
+  it("loads the scoring settings for each stage", () => {
     const config = loadPracticeConfig();
     for (const kind of ["reading", "writing"] as const) {
-      expect(config.sentenceMatch[kind].minWordAccuracy).toBeGreaterThan(0);
-      expect(config.sentenceMatch[kind].minWordAccuracy).toBeLessThanOrEqual(1);
+      expect(Number.isInteger(config.sentenceMatch[kind].extraContentWordsAllowed)).toBe(true);
+      expect(typeof config.sentenceMatch[kind].spellingTolerance).toBe("boolean");
     }
+    expect(config.sentenceMatch.functionWords.length).toBeGreaterThan(0);
   });
 
   it("says in the file that it is not a USCIS rule", () => {
@@ -37,13 +39,16 @@ describe("practice config", () => {
   });
 
   it("rejects values outside the range and wrong shapes", () => {
-    const base = { needsHumanReview: true, sentenceMatch: { reading: { minWordAccuracy: 0.8 }, writing: { minWordAccuracy: 0.9 } } };
+    const stage = { extraContentWordsAllowed: 1, spellingTolerance: false };
+    const base = { needsHumanReview: true, sentenceMatch: { functionWords: ["the"], neverStem: ["news"], reading: stage, writing: stage } };
     expect(() => parsePracticeConfig(base)).not.toThrow();
-    for (const bad of [0, -0.1, 1.1, Number.NaN, "0.8"]) {
+    for (const bad of [-1, 1.5, 4, Number.NaN, "1"]) {
       expect(() =>
-        parsePracticeConfig({ ...base, sentenceMatch: { ...base.sentenceMatch, reading: { minWordAccuracy: bad } } })
+        parsePracticeConfig({ ...base, sentenceMatch: { ...base.sentenceMatch, reading: { ...stage, extraContentWordsAllowed: bad } } })
       ).toThrow();
     }
+    expect(() => parsePracticeConfig({ ...base, sentenceMatch: { ...base.sentenceMatch, functionWords: ["The"] } })).toThrow();
+    expect(() => parsePracticeConfig({ ...base, sentenceMatch: { ...base.sentenceMatch, writing: { ...stage, spellingTolerance: "yes" } } })).toThrow();
     expect(() => parsePracticeConfig(null)).toThrow();
     expect(() => parsePracticeConfig({ ...base, needsHumanReview: "yes" })).toThrow();
   });
@@ -153,5 +158,32 @@ describe("profiles and the N-400 script", () => {
       const raw = JSON.parse(text) as { needsHumanReview?: boolean };
       expect(raw.needsHumanReview, name).toBe(true);
     }
+  });
+});
+
+describe("the scoring guidelines source", () => {
+  const basis = (JSON.parse(configRaw) as { scoringBasis: { url: string; savedAs: string; sha256: string } }).scoringBasis;
+  it("is saved in data/sources with its URL and SHA-256, and the config names both", async () => {
+    expect(basis.url).toBe("https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2");
+    expect(sourcesReadme).toContain(basis.url);
+    expect(sourcesReadme).toContain(`${basis.sha256}  uscis-policy-manual-vol12-parte-ch2-reading-writing.txt`);
+    const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(policyText));
+    const hex = [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
+    expect(hex).toBe(basis.sha256);
+  });
+  it("holds the sentences the spec and the rule rely on", () => {
+    for (const quote of [
+      "the alien must read all content words but may omit short words or make pronunciation or intonation errors that do not interfere with the meaning",
+      "Omits a content word or substitutes another word for a content word",
+      "Omitted short words that do not interfere with meaning",
+      "does not fail the writing test because of spelling, capitalization, or punctuation errors",
+    ]) {
+      expect(policyText).toContain(quote);
+    }
+  });
+  it("the function words in the config are the Other (Function) words of the two official lists", () => {
+    const fn = new Set<string>();
+    for (const kind of ["reading", "writing"] as const) for (const w of content.vocabulary[kind].categories["otherFunction"] ?? []) fn.add(w.toLowerCase());
+    expect(new Set(loadPracticeConfig().sentenceMatch.functionWords)).toEqual(fn);
   });
 });

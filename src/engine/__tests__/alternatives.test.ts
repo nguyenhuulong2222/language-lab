@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 import * as fc from "fast-check";
 import { outcomeFromResults, MAX_KEPT_ALTERNATIVES } from "../recognition-outcome";
 import { compareSentence, pickBestAlternative } from "../sentence-compare";
+import { loadPracticeConfig, matchOptionsFor } from "../practice-config";
 import { createBrowserSpeechListener, MAX_ALTERNATIVES } from "../../ui/voice/speech-listener";
 
 describe("outcomeFromResults", () => {
@@ -78,7 +79,8 @@ describe("the browser listener", () => {
 
 describe("the best alternative", () => {
   const target = "Who elects the President?";
-  const compare = (text: string) => compareSentence(target, text, 0.8);
+  const options = matchOptionsFor(loadPracticeConfig(), "reading");
+  const compare = (text: string) => compareSentence(target, text, options);
   it("picks the alternative that matches, not the first", () => {
     const best = pickBestAlternative(["who elected a president", "who elects the president"], compare);
     expect(best.index).toBe(1);
@@ -89,8 +91,8 @@ describe("the best alternative", () => {
     const best = pickBestAlternative(["who elects the president", "Who elects the President"], compare);
     expect(best.index).toBe(0);
   });
-  it("prefers fewer extra words when two alternatives score the same", () => {
-    const best = pickBestAlternative(["who elects the president please now", "who elects the president please"], compare);
+  it("prefers the one with fewer extra words when two score the same", () => {
+    const best = pickBestAlternative(["who elects the president please now", "who elects the president now"], compare);
     expect(best.index).toBe(1);
   });
   it("with no candidates it scores the empty text", () => {

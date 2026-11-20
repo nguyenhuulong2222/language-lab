@@ -37,7 +37,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | Isto decide se você pratica o teste de educação cívica de 2008 ou o de 2025. É só uma escolha para praticar. Para o seu próprio caso, veja em uscis.gov qual teste se aplica a você. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | A pontuação de educação cívica está desativada nesta versão até que uma pessoa revise as respostas corretas. Você ainda pode praticar a entrevista, a leitura e a escrita. |
-| `compare.setting` | Practice setting: at least {percent}% of the words must match. This is a Language Lab setting, not a USCIS rule. | Ajuste de prática: pelo menos {percent}% das palavras devem coincidir. Este é um ajuste do Language Lab, não uma regra do USCIS. |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Um ajuste de prática do Language Lab baseado nas diretrizes de pontuação do USCIS, não uma regra do USCIS: todas as palavras importantes da frase devem estar presentes, em ordem. Palavras curtas como “the” podem faltar. Pausas e pronúncia não são pontuadas. |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | As frases usam apenas palavras das listas oficiais de vocabulário de leitura e escrita do USCIS. |
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Qualquer uma destas vale. A lista vem da lista de respostas do USCIS e ainda aguarda a revisão de uma pessoa. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Você alcançou a pontuação de aprovação da prática, então o teste parou aqui. |
@@ -147,8 +147,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.heard` | What we heard | O que ouvimos |
 | `compare.typed` | What you typed | O que você digitou |
 | `compare.wanted` | The sentence | A frase |
-| `compare.close` | Good: {percent}% of the words matched. | Bom: {percent}% das palavras coincidiram. |
-| `compare.notYet` | Not yet: {percent}% of the words matched. | Ainda não: {percent}% das palavras coincidiram. |
+| `compare.counts` | This counts. | Isto conta. |
+| `compare.notYet` | Not yet. | Ainda não. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Este navegador não consegue ler em voz alta, então a frase aparece aqui. Digite-a. |
 | `writing.hidden` | The sentence stays hidden until you answer. | A frase fica oculta até você responder. |
 | `civics.title` | Civics | Educação cívica |

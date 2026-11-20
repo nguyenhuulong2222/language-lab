@@ -37,7 +37,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | ဤရွေးချယ်မှုက သင် 2008 နှင့် 2025 နိုင်ငံသားဗဟုသုတစာမေးပွဲအနက် မည်သည့်စာမေးပွဲကို လေ့ကျင့်မည်ကို ဆုံးဖြတ်သည်။ ၎င်းသည် လေ့ကျင့်ရန်ရွေးချယ်မှုသာဖြစ်သည်။ သင့်ကိုယ်ပိုင်အမှုအတွက် မည်သည့်စာမေးပွဲ သက်ဆိုင်သည်ကို uscis.gov တွင် စစ်ကြည့်ပါ။ |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | လူတစ်ဦးက အဖြေမှန်များကို စစ်ဆေးသည်အထိ ဤဗားရှင်းတွင် နိုင်ငံသားဗဟုသုတအမှတ်ပေးခြင်းကို ပိတ်ထားသည်။ အင်တာဗျူး၊ ဖတ်ခြင်းနှင့် ရေးခြင်းကို ဆက်လက်လေ့ကျင့်နိုင်သည်။ |
-| `compare.setting` | Practice setting: at least {percent}% of the words must match. This is a Language Lab setting, not a USCIS rule. | လေ့ကျင့်ရေးဆက်တင်- စကားလုံး အနည်းဆုံး {percent}% ကိုက်ညီရမည်။ ၎င်းသည် Language Lab ၏ ဆက်တင်ဖြစ်ပြီး USCIS စည်းမျဉ်း မဟုတ်ပါ။ |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | ဤသည်မှာ USCIS ၏ အမှတ်ပေးလမ်းညွှန်ချက်များကို အခြေခံသော Language Lab ၏ လေ့ကျင့်ရေးဆက်တင်ဖြစ်ပြီး USCIS စည်းမျဉ်း မဟုတ်ပါ- စာကြောင်း၏ အရေးကြီးသော စကားလုံးအားလုံး အစဉ်လိုက် ပါရမည်။ “the” ကဲ့သို့ စကားလုံးတိုများ ကျန်နိုင်သည်။ ရပ်နားခြင်းနှင့် အသံထွက်ကို အမှတ်မပေးပါ။ |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | စာကြောင်းများတွင် USCIS ၏ တရားဝင်ဖတ်ခြင်းနှင့် ရေးခြင်းဝေါဟာရစာရင်းမှ စကားလုံးများကိုသာ အသုံးပြုသည်။ |
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | ယင်းတို့အနက် တစ်ခုခုကို ရေတွက်သည်။ စာရင်းကို USCIS အဖြေစာရင်းမှ ယူထားပြီး လူတစ်ဦး၏ စစ်ဆေးမှုကို စောင့်နေဆဲဖြစ်သည်။ |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | သင် လေ့ကျင့်မှု အောင်မှတ်ကို ရောက်သွားသဖြင့် စာမေးပွဲသည် ဤနေရာတွင် ရပ်သွားသည်။ |
@@ -147,8 +147,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.heard` | What we heard | ကျွန်ုပ်တို့ ကြားခဲ့သည်များ |
 | `compare.typed` | What you typed | သင်ရိုက်ထည့်ခဲ့သည်များ |
 | `compare.wanted` | The sentence | စာကြောင်း |
-| `compare.close` | Good: {percent}% of the words matched. | ကောင်းသည်- စကားလုံး {percent}% ကိုက်ညီသည်။ |
-| `compare.notYet` | Not yet: {percent}% of the words matched. | မရောက်သေးပါ- စကားလုံး {percent}% ကိုက်ညီသည်။ |
+| `compare.counts` | This counts. | ၎င်းကို ရေတွက်သည်။ |
+| `compare.notYet` | Not yet. | မရောက်သေးပါ။ |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | ဤဘရောက်ဇာသည် အသံထွက်ဖတ်မပြနိုင်သဖြင့် စာကြောင်းကို ဤနေရာတွင် ပြထားသည်။ ၎င်းကို ရိုက်ထည့်ပါ။ |
 | `writing.hidden` | The sentence stays hidden until you answer. | သင်မဖြေမချင်း စာကြောင်းကို ဖျောက်ထားမည်။ |
 | `civics.title` | Civics | နိုင်ငံသားဗဟုသုတ |

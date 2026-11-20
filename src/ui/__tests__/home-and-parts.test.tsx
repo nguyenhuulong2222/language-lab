@@ -127,7 +127,7 @@ describe("single-part sessions in the app", () => {
     const lastFeedback = renderToString(
       <EnglishScreen
         progress={engine.englishProgress(s, "reading")}
-        minWordAccuracy={0.8}
+        matchOptions={engine.matchOptions("reading")}
         nextIsReport
         showFeedbackInitially
         onSubmit={() => {}}

@@ -37,7 +37,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | От этого зависит, какой тест по обществоведению вы тренируете: 2008 или 2025 года. Это только выбор для практики. Какой тест относится к вашему случаю, узнайте на uscis.gov. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Оценка по обществоведению в этой версии отключена, пока человек не проверит ключ с правильными ответами. Собеседование, чтение и письмо вы всё равно можете тренировать. |
-| `compare.setting` | Practice setting: at least {percent}% of the words must match. This is a Language Lab setting, not a USCIS rule. | Настройка практики: должно совпасть не менее {percent}% слов. Это настройка Language Lab, а не правило USCIS. |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Это настройка практики Language Lab на основе правил оценивания USCIS, а не правило USCIS: каждое важное слово предложения должно быть на месте, по порядку. Короткие слова вроде «the» можно пропустить. Паузы и произношение не оцениваются. |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | В предложениях используются только слова из официальных списков лексики USCIS для чтения и письма. |
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Засчитывается любой из них. Список взят из перечня ответов USCIS и ещё ждёт проверки человеком. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Вы набрали проходной балл практики, поэтому тест остановился здесь. |
@@ -147,8 +147,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.heard` | What we heard | Что мы услышали |
 | `compare.typed` | What you typed | Что вы ввели |
 | `compare.wanted` | The sentence | Предложение |
-| `compare.close` | Good: {percent}% of the words matched. | Хорошо: совпало {percent}% слов. |
-| `compare.notYet` | Not yet: {percent}% of the words matched. | Пока нет: совпало {percent}% слов. |
+| `compare.counts` | This counts. | Это засчитывается. |
+| `compare.notYet` | Not yet. | Пока нет. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Этот браузер не умеет читать вслух, поэтому предложение показано здесь. Введите его. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Предложение скрыто, пока вы не ответите. |
 | `civics.title` | Civics | Обществоведение |

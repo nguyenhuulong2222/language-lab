@@ -37,7 +37,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | इससे तय होता है कि आप 2008 का नागरिक शास्त्र टेस्ट अभ्यास करेंगे या 2025 का। यह केवल अभ्यास के लिए एक चुनाव है। अपने मामले में कौन-सा टेस्ट लागू होता है, यह uscis.gov पर देखें। |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | जब तक कोई व्यक्ति उत्तर-कुंजी की समीक्षा नहीं कर लेता, इस संस्करण में नागरिक शास्त्र की स्कोरिंग बंद है। आप इंटरव्यू, पढ़ने और लिखने का अभ्यास फिर भी कर सकते हैं। |
-| `compare.setting` | Practice setting: at least {percent}% of the words must match. This is a Language Lab setting, not a USCIS rule. | अभ्यास सेटिंग: कम से कम {percent}% शब्द मेल खाने चाहिए। यह Language Lab की सेटिंग है, USCIS का नियम नहीं। |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | यह USCIS के अंक-निर्धारण दिशानिर्देशों पर आधारित Language Lab की अभ्यास सेटिंग है, USCIS का नियम नहीं: वाक्य का हर ज़रूरी शब्द क्रम से होना चाहिए। “the” जैसे छोटे शब्द छूट सकते हैं। रुकने और उच्चारण का स्कोर नहीं दिया जाता। |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | वाक्यों में केवल USCIS की आधिकारिक पढ़ने और लिखने की शब्द-सूचियों के शब्द इस्तेमाल होते हैं। |
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | इनमें से कोई भी उत्तर मान्य है। यह सूची USCIS की उत्तर-सूची से ली गई है और अभी किसी व्यक्ति द्वारा समीक्षा की प्रतीक्षा में है। |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | आप अभ्यास के उत्तीर्ण स्कोर तक पहुँच गए, इसलिए टेस्ट यहीं रुक गया। |
@@ -147,8 +147,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.heard` | What we heard | हमने क्या सुना |
 | `compare.typed` | What you typed | आपने क्या टाइप किया |
 | `compare.wanted` | The sentence | वाक्य |
-| `compare.close` | Good: {percent}% of the words matched. | अच्छा: {percent}% शब्द मेल खाए। |
-| `compare.notYet` | Not yet: {percent}% of the words matched. | अभी नहीं: {percent}% शब्द मेल खाए। |
+| `compare.counts` | This counts. | यह गिना जाएगा। |
+| `compare.notYet` | Not yet. | अभी नहीं। |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | यह ब्राउज़र ज़ोर से पढ़ नहीं सकता, इसलिए वाक्य यहाँ दिखाया गया है। इसे टाइप करें। |
 | `writing.hidden` | The sentence stays hidden until you answer. | जब तक आप उत्तर नहीं देते, वाक्य छिपा रहता है। |
 | `civics.title` | Civics | नागरिक शास्त्र |

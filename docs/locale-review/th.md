@@ -37,7 +37,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | ตัวเลือกนี้กำหนดว่าคุณจะฝึกแบบทดสอบความรู้พลเมืองปี 2008 หรือปี 2025 เป็นเพียงตัวเลือกสำหรับการฝึกเท่านั้น สำหรับกรณีของคุณเอง ให้ตรวจสอบที่ uscis.gov ว่าแบบทดสอบใดใช้กับคุณ |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | การให้คะแนนความรู้พลเมืองถูกปิดในเวอร์ชันนี้ จนกว่าจะมีผู้ตรวจสอบเฉลย คุณยังฝึกการสัมภาษณ์ การอ่าน และการเขียนได้ |
-| `compare.setting` | Practice setting: at least {percent}% of the words must match. This is a Language Lab setting, not a USCIS rule. | การตั้งค่าการฝึก: ต้องมีคำตรงกันอย่างน้อย {percent}% นี่เป็นการตั้งค่าของ Language Lab ไม่ใช่กฎของ USCIS |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | นี่เป็นการตั้งค่าการฝึกของ Language Lab ตามแนวทางการให้คะแนนของ USCIS ไม่ใช่กฎของ USCIS: ต้องมีคำสำคัญทุกคำของประโยคตามลำดับ คำสั้น ๆ เช่น “the” ขาดได้ การหยุดพักและการออกเสียงไม่ถูกให้คะแนน |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | ประโยคใช้เฉพาะคำจากรายการคำศัพท์การอ่านและการเขียนอย่างเป็นทางการของ USCIS |
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | คำตอบใดคำตอบหนึ่งเหล่านี้นับว่าถูก รายการนี้นำมาจากรายการคำตอบของ USCIS และยังรอให้มีผู้ตรวจสอบ |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | คุณถึงคะแนนผ่านของการฝึกแล้ว แบบทดสอบจึงหยุดที่นี่ |
@@ -147,8 +147,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.heard` | What we heard | สิ่งที่เราได้ยิน |
 | `compare.typed` | What you typed | สิ่งที่คุณพิมพ์ |
 | `compare.wanted` | The sentence | ประโยค |
-| `compare.close` | Good: {percent}% of the words matched. | ดี: คำตรงกัน {percent}% |
-| `compare.notYet` | Not yet: {percent}% of the words matched. | ยังไม่ถึง: คำตรงกัน {percent}% |
+| `compare.counts` | This counts. | ถือว่านับได้ |
+| `compare.notYet` | Not yet. | ยังไม่ถึง |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | เบราว์เซอร์นี้อ่านออกเสียงไม่ได้ จึงแสดงประโยคไว้ที่นี่ โปรดพิมพ์ตาม |
 | `writing.hidden` | The sentence stays hidden until you answer. | ประโยคจะถูกซ่อนไว้จนกว่าคุณจะตอบ |
 | `civics.title` | Civics | ความรู้พลเมือง |

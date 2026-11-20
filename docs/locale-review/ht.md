@@ -37,7 +37,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | Sa a deside si ou pratike tès edikasyon sivik 2008 la oswa sa 2025 la. Se sèlman yon chwa pou pratike. Pou pwòp ka ou, gade sou uscis.gov pou konnen ki tès ki aplike pou ou. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Nòt edikasyon sivik la fèmen nan vèsyon sa a jiskaske yon moun revize kle repons yo. Ou ka toujou pratike entèvyou a, lekti ak ekriti. |
-| `compare.setting` | Practice setting: at least {percent}% of the words must match. This is a Language Lab setting, not a USCIS rule. | Paramèt pratik: omwen {percent}% nan mo yo dwe koresponn. Sa a se yon paramèt Language Lab, se pa yon règ USCIS. |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Se yon paramèt pratik Language Lab ki baze sou direktiv USCIS yo pou bay nòt, se pa yon règ USCIS: chak mo enpòtan nan fraz la dwe la, nan lòd. Mo kout tankou “the” ka manke. Poz ak pwononsyasyon pa gen nòt. |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | Fraz yo itilize sèlman mo ki sou lis vokabilè ofisyèl USCIS pou lekti ak ekriti. |
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Nenpòt nan sa yo konte. Lis la soti nan lis repons USCIS la e li ap tann yon moun revize l toujou. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Ou rive nan nòt pou pase pratik la, se konsa tès la sispann isit la. |
@@ -147,8 +147,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.heard` | What we heard | Sa nou tande |
 | `compare.typed` | What you typed | Sa ou tape |
 | `compare.wanted` | The sentence | Fraz la |
-| `compare.close` | Good: {percent}% of the words matched. | Bon: {percent}% nan mo yo koresponn. |
-| `compare.notYet` | Not yet: {percent}% of the words matched. | Poko: {percent}% nan mo yo koresponn. |
+| `compare.counts` | This counts. | Sa konte. |
+| `compare.notYet` | Not yet. | Poko. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Navigatè sa a pa ka li byen fò, se konsa fraz la parèt isit la. Tape l. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Fraz la rete kache jiskaske ou reponn. |
 | `civics.title` | Civics | Edikasyon sivik |

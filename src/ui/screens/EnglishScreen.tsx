@@ -6,6 +6,7 @@
 import { useState } from "react";
 import { writingClipId } from "../../engine/audio-clips";
 import type { EnglishProgress, InputMode } from "../../engine/practice-flow";
+import type { MatchOptions } from "../../engine/sentence-compare";
 import { useT } from "../../i18n/react";
 import { AnswerInput } from "../components/AnswerInput";
 import { SentenceFeedback } from "../components/SentenceFeedback";
@@ -18,8 +19,8 @@ import "../components/Screen.css";
 
 interface EnglishScreenProps {
   progress: EnglishProgress;
-  /** Words that must match, from the practice config. Shown, never decided here. */
-  minWordAccuracy: number;
+  /** How an attempt is scored, from the practice config. Never decided here. */
+  matchOptions: MatchOptions;
   onSubmit: (transcript: string, input: InputMode, alternatives?: readonly string[]) => void;
   onContinue: () => void;
   /** After this stage comes the report (a single-part session), not another part. */
@@ -30,7 +31,7 @@ interface EnglishScreenProps {
 
 export function EnglishScreen({
   progress,
-  minWordAccuracy,
+  matchOptions,
   onSubmit,
   onContinue,
   nextIsReport = false,
@@ -50,7 +51,7 @@ export function EnglishScreen({
       <div className="screen">
         <TakeHeader stage={stage} title={reading ? t("reading.title") : t("writing.title")} focusKey={null} />
         <div className="screen__body">
-          <SentenceFeedback target={target.text} attempt={attempt} minWordAccuracy={minWordAccuracy} kind={stage} />
+          <SentenceFeedback target={target.text} attempt={attempt} matchOptions={matchOptions} kind={stage} />
           {progress.done && (
             <p className="status">
               {progress.result.passed
@@ -139,7 +140,7 @@ export function EnglishScreen({
                 onSubmit(text, input, alternatives);
               }}
             />
-            <p className="note">{t("compare.setting", { percent: Math.round(minWordAccuracy * 100) })}</p>
+            <p className="note">{t("compare.setting")}</p>
             <p className="note">{t("compare.vocab")}</p>
           </div>
         )}

@@ -37,7 +37,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | 這會決定您練習 2008 年還是 2025 年的公民常識測驗。這只是練習用的選擇。至於您自己的案件適用哪一種測驗，請到 uscis.gov 查詢。 |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | 在有人審核標準答案之前，這個版本的公民常識計分功能是關閉的。您仍然可以練習面談、閱讀和書寫。 |
-| `compare.setting` | Practice setting: at least {percent}% of the words must match. This is a Language Lab setting, not a USCIS rule. | 練習設定：至少要有 {percent}% 的字詞相符。這是 Language Lab 的設定，不是 USCIS 的規定。 |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | 這是 Language Lab 依據 USCIS 評分指引設定的練習標準，不是 USCIS 的規定：句子中每個重要的字都必須出現，且順序正確。可以漏掉「the」這類短字。停頓和發音不計分。 |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | 這些句子只使用 USCIS 官方閱讀和書寫詞彙表中的字詞。 |
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | 其中任何一個都算數。這份清單取自 USCIS 的答案清單，仍在等待人工審核。 |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | 您已達到練習的及格分數，所以測驗在這裡停止。 |
@@ -147,8 +147,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.heard` | What we heard | 我們聽到的內容 |
 | `compare.typed` | What you typed | 您輸入的內容 |
 | `compare.wanted` | The sentence | 這個句子 |
-| `compare.close` | Good: {percent}% of the words matched. | 很好：有 {percent}% 的字詞相符。 |
-| `compare.notYet` | Not yet: {percent}% of the words matched. | 還不夠：有 {percent}% 的字詞相符。 |
+| `compare.counts` | This counts. | 這次算數。 |
+| `compare.notYet` | Not yet. | 還不算。 |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | 這個瀏覽器無法朗讀，所以句子顯示在這裡。請把它輸入。 |
 | `writing.hidden` | The sentence stays hidden until you answer. | 在您作答之前，句子會保持隱藏。 |
 | `civics.title` | Civics | 公民常識 |

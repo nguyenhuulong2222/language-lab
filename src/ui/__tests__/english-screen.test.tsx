@@ -15,8 +15,6 @@ const AT = "2026-11-17T10:00:00.000Z";
 const env = { ...createDefaultPracticeEnv(), answerKey: () => ({ status: "locked" as const, reason: "test" }) };
 const engine = createPracticeEngine(env);
 const profile = env.content.profiles[0]!.id;
-const readingAccuracy = env.config.sentenceMatch.reading.minWordAccuracy;
-const writingAccuracy = env.config.sentenceMatch.writing.minWordAccuracy;
 
 const speaker: PromptSpeaker = {
   available: true,
@@ -38,7 +36,7 @@ function render(state: PracticeState, kind: "reading" | "writing", opts: { feedb
     <VoiceProvider speaker={opts.voice === false ? SILENT_SPEAKER : speaker} listener={opts.voice === false ? UNSUPPORTED_LISTENER : listener}>
       <EnglishScreen
         progress={progress}
-        minWordAccuracy={kind === "reading" ? readingAccuracy : writingAccuracy}
+        matchOptions={engine.matchOptions(kind)}
         onSubmit={() => {}}
         onContinue={() => {}}
         showFeedbackInitially={opts.feedback}
@@ -58,7 +56,7 @@ describe("reading screen", () => {
     expect(html).toContain("Skip this one");
     // The sentence is not played before the attempt.
     expect(html).not.toContain("Play aloud");
-    expect(html).toContain(`at least ${Math.round(readingAccuracy * 100)}% of the words must match`);
+    expect(html).toContain("every important word of the sentence must be there, in order");
     expect(html).toContain("not a USCIS rule");
     expect(html).toContain("official USCIS reading and writing vocabulary lists");
     expect(html).toContain("Sentence 1 of");
@@ -76,7 +74,7 @@ describe("reading screen", () => {
     const current = engine.englishProgress(s, "reading").current!;
     s = engine.reduce(s, { type: "submitReading", transcript: current.text, input: "voice", at: AT });
     const html = render(s, "reading", { feedback: true });
-    expect(html).toContain("Good: 100% of the words matched.");
+    expect(html).toContain("This counts.");
     expect(html).toContain("You read a sentence correctly. Reading is done.");
     expect(html).toContain("Go to writing");
   });
@@ -86,7 +84,7 @@ describe("reading screen", () => {
     s = engine.reduce(s, { type: "submitReading", transcript: "zzz", input: "typed", at: AT });
     const progress = engine.englishProgress(s, "reading");
     const html = render(s, "reading", { feedback: true });
-    expect(html).toContain("Not yet: 0% of the words matched.");
+    expect(html).toContain("Not yet.");
     expect(html).toContain("missing");
     expect(progress.done).toBe(false);
     expect(html).toContain("Next sentence");
@@ -126,7 +124,7 @@ describe("writing screen", () => {
     expect(html).not.toContain(sentence.text);
     expect(html).not.toContain("Say it");
     expect(html).toContain("<textarea");
-    expect(html).toContain(`at least ${Math.round(writingAccuracy * 100)}% of the words must match`);
+    expect(html).toContain("every important word of the sentence must be there, in order");
   });
 
   it("without a voice, shows the sentence so the step still works", () => {

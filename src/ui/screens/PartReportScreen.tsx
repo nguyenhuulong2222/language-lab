@@ -13,7 +13,6 @@ import { TakeHeader } from "../components/TakeHeader";
 import { formatDateTime } from "../format";
 import "../components/Screen.css";
 
-const percent = (share: number): number => Math.round(share * 100);
 
 const TITLE: Record<PracticePart, MessageKey> = {
   n400_interview: "partReport.title.n400_interview",
@@ -135,7 +134,7 @@ function PartBody({ report }: { report: PartReport }) {
             <p lang="en">{item.transcript === "" ? "…" : item.transcript}</p>
             <p>
               <Icon className={item.isCorrect ? "icon-inline" : "icon-inline icon-inline--attention"} />{" "}
-              {item.isCorrect ? t("compare.close", { percent: percent(item.accuracy) }) : t("compare.notYet", { percent: percent(item.accuracy) })}
+              {item.isCorrect ? t("compare.counts") : t("compare.notYet")}
             </p>
           </section>
         );
