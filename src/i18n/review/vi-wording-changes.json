@@ -1,0 +1,138 @@
+{
+ "language": "vi",
+ "step": 5,
+ "changes": [
+  {
+   "key": "home.title",
+   "before": "Chào mừng đến buồng luyện tập",
+   "after": "Chào mừng đến Language Lab",
+   "why": "Requested: the heading names the product, not the old booth word."
+  },
+  {
+   "key": "home.lead",
+   "before": "Hãy luyện cho buổi phỏng vấn nhập tịch trong một buồng yên tĩnh. Bạn trả lời với tư cách một nhân vật giả định, nên bạn không cần nói thông tin thật.",
+   "after": "Hãy luyện cho buổi phỏng vấn nhập tịch trong một phòng luyện tập yên tĩnh. Bạn trả lời với tư cách một nhân vật giả định, nên bạn không cần nói thông tin thật.",
+   "why": "Requested: \"buồng\" replaced by \"phòng luyện tập\"."
+  },
+  {
+   "key": "app.stageNotBuilt",
+   "before": "Phần luyện tập này chưa được xây dựng.",
+   "after": "Phần luyện tập này chưa sẵn sàng.",
+   "why": "\"được xây dựng\" is a word-for-word \"is built\"; \"sẵn sàng\" (ready) is what people say."
+  },
+  {
+   "key": "header.about",
+   "before": "Giới thiệu & tuyên bố miễn trừ",
+   "after": "Giới thiệu & miễn trừ trách nhiệm",
+   "why": "\"tuyên bố miễn trừ\" is the formal legal phrase; \"miễn trừ trách nhiệm\" is the usual one on websites."
+  },
+  {
+   "key": "stepper.count",
+   "before": "Bước {current} trên {total}",
+   "after": "Bước {current}/{total}",
+   "why": "\"trên\" is a word-for-word \"of\"; \"2/6\" is how Vietnamese writes it."
+  },
+  {
+   "key": "n400.count",
+   "before": "Câu hỏi {current} trên {total}",
+   "after": "Câu hỏi {current}/{total}",
+   "why": "Same: \"x/y\"."
+  },
+  {
+   "key": "reading.count",
+   "before": "Câu {current} trên {total}",
+   "after": "Câu {current}/{total}",
+   "why": "Same: \"x/y\"."
+  },
+  {
+   "key": "writing.count",
+   "before": "Câu {current} trên {total}",
+   "after": "Câu {current}/{total}",
+   "why": "Same: \"x/y\"."
+  },
+  {
+   "key": "civics.count",
+   "before": "Câu hỏi {current} trên {total}",
+   "after": "Câu hỏi {current}/{total}",
+   "why": "Same: \"x/y\"."
+  },
+  {
+   "key": "report.lead.onTrack",
+   "before": "Bạn đã hoàn thành buổi luyện tập này tốt. Hãy dùng các ghi chú bên dưới để giữ phong độ cho lần sau.",
+   "after": "Bạn đã hoàn thành tốt buổi luyện tập này. Hãy dùng các ghi chú bên dưới để giữ phong độ cho lần sau.",
+   "why": "Word order: \"hoàn thành tốt\" (completed well), not \"hoàn thành ... tốt\"."
+  },
+  {
+   "key": "report.lead.review",
+   "before": "Luyện tập là để làm việc đó. Các ghi chú bên dưới cho biết nên tập trung vào đâu trước khi thử lại.",
+   "after": "Đó chính là mục đích của việc luyện tập. Các ghi chú bên dưới cho biết nên tập trung vào đâu trước khi thử lại.",
+   "why": "\"Luyện tập là để làm việc đó\" was a word-for-word \"That's what practice is for\"."
+  },
+  {
+   "key": "voice.heard",
+   "before": "Chúng tôi đã nghe bạn. Hãy xem lại các từ, sửa nếu muốn, rồi gửi.",
+   "after": "Đã nghe xong. Hãy xem lại các từ, sửa nếu muốn, rồi gửi.",
+   "why": "\"Chúng tôi đã nghe bạn\" sounds like a person speaking; the screen just says it heard."
+  },
+  {
+   "key": "voice.error",
+   "before": "Lần này việc nghe không thành công. Hãy thử lại, hoặc gõ câu trả lời.",
+   "after": "Lần này chưa nghe được. Hãy thử lại, hoặc gõ câu trả lời.",
+   "why": "\"việc nghe không thành công\" was stiff; \"chưa nghe được\" is plain."
+  },
+  {
+   "key": "intro.filed.legend",
+   "before": "Hãy luyện tập như thể đơn N-400 được nộp…",
+   "after": "Hãy luyện tập như thể đơn N-400 đã được nộp…",
+   "why": "Added \"đã\" so it reads as past: the application was already filed."
+  },
+  {
+   "key": "n400.done.lead",
+   "before": "Đây là những lời bạn đã nói. Phần này không chấm điểm.",
+   "after": "Đây là những câu trả lời bạn đã đưa ra. Phần này không chấm điểm.",
+   "why": "\"những lời bạn đã nói\" left out typed answers; now neutral."
+  },
+  {
+   "key": "compare.notYet",
+   "before": "Chưa đạt: {percent}% số từ khớp.",
+   "after": "Chưa đủ: {percent}% số từ khớp.",
+   "why": "\"Chưa đạt\" means \"has not passed\", which is pass/fail wording. \"Chưa đủ\" says only that the match is not enough yet."
+  },
+  {
+   "key": "writing.hidden",
+   "before": "Câu được ẩn cho đến khi bạn trả lời.",
+   "after": "Câu sẽ ẩn cho đến khi bạn trả lời.",
+   "why": "\"được ẩn\" passive; \"sẽ ẩn\" reads naturally."
+  },
+  {
+   "key": "writing.fallback",
+   "before": "Trình duyệt này không đọc to được, nên câu được hiện ở đây. Hãy gõ lại câu đó.",
+   "after": "Trình duyệt này không đọc to được, nên câu hiện ngay tại đây. Hãy gõ lại câu đó.",
+   "why": "\"được hiện ở đây\" passive; \"hiện ngay tại đây\"."
+  },
+  {
+   "key": "partReport.sentences",
+   "before": "{correct} trên {attempts} câu đúng.",
+   "after": "Đúng {correct}/{attempts} câu.",
+   "why": "\"x trên y câu đúng\" was word for word; now \"Đúng x/y câu\"."
+  },
+  {
+   "key": "partReport.civics.summary",
+   "before": "{correct} trên {scored} câu hỏi được trả lời đúng.",
+   "after": "Đã trả lời đúng {correct}/{scored} câu hỏi.",
+   "why": "Same: \"Đã trả lời đúng x/y câu hỏi\"."
+  },
+  {
+   "key": "partReport.badge.good",
+   "before": "Phần này diễn ra tốt",
+   "after": "Phần này diễn ra tốt đẹp",
+   "why": "\"diễn ra tốt\" is thin; \"tốt đẹp\" is the common pair."
+  },
+  {
+   "key": "audio.aiVoice",
+   "before": "Giọng do AI tạo. Âm thanh được làm sẵn từ trước.",
+   "after": "Giọng do AI tạo. Âm thanh đã được tạo sẵn.",
+   "why": "\"làm sẵn từ trước\" says \"ahead of time\" twice."
+  }
+ ]
+}

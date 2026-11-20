@@ -1,0 +1,132 @@
+{
+  "es": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "es",
+      "note": "AI-generated draft (Latin American Spanish, formal \"usted\"). Not reviewed by a person. See docs/locale-review/es.md."
+    },
+    "passesChecks": true
+  },
+  "hi": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "hi",
+      "note": "AI-generated draft (respectful \"आप\"). Not reviewed by a person. See docs/locale-review/hi.md."
+    },
+    "passesChecks": true
+  },
+  "hmn": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "hmn",
+      "note": "AI-generated draft (White Hmong, RPA spelling). Lowest confidence of all languages: written without a native check. Not reviewed by a person. See docs/locale-review/hmn.md."
+    },
+    "passesChecks": true
+  },
+  "ht": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "ht",
+      "note": "AI-generated draft (Haitian Creole, standard orthography). Not reviewed by a person. See docs/locale-review/ht.md."
+    },
+    "passesChecks": true
+  },
+  "ko": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "ko",
+      "note": "AI-generated draft (polite -세요 style). Not reviewed by a person. See docs/locale-review/ko.md."
+    },
+    "passesChecks": true
+  },
+  "lo": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "lo",
+      "note": "AI-generated draft (Lao). Low confidence: written without a native check. Not reviewed by a person. See docs/locale-review/lo.md."
+    },
+    "passesChecks": true
+  },
+  "my": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "my",
+      "note": "AI-generated draft (Burmese, Unicode). Low confidence: written without a native check. Not reviewed by a person. See docs/locale-review/my.md."
+    },
+    "passesChecks": true
+  },
+  "pt": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "pt",
+      "note": "AI-generated draft (Brazilian Portuguese, \"você\"). Not reviewed by a person. See docs/locale-review/pt.md."
+    },
+    "passesChecks": true
+  },
+  "ru": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "ru",
+      "note": "AI-generated draft (formal \"вы\"). Not reviewed by a person. See docs/locale-review/ru.md."
+    },
+    "passesChecks": true
+  },
+  "th": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "th",
+      "note": "AI-generated draft (neutral polite style, Gregorian dates). Not reviewed by a person. See docs/locale-review/th.md."
+    },
+    "passesChecks": true
+  },
+  "tl": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "tl",
+      "note": "AI-generated draft (Filipino/Tagalog, polite \"po\" style where natural). Not reviewed by a person. See docs/locale-review/tl.md."
+    },
+    "passesChecks": true
+  },
+  "vi": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "vi",
+      "note": "AI-generated draft. Not reviewed by a person. See docs/locale-review/vi.md."
+    },
+    "passesChecks": true
+  },
+  "zh": {
+    "meta": {
+      "source": "ai-draft",
+      "reviewedBy": null,
+      "reviewedOn": null,
+      "language": "zh-Hant",
+      "note": "AI-generated draft in Traditional Chinese (the script of USCIS's Chinese materials). Not reviewed by a person. Simplified Chinese is a different file and is not provided. See docs/locale-review/zh.md."
+    },
+    "passesChecks": true
+  }
+}

@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`plural and possessive endings > never equates two different words of the official vocabularies 1`] = `
+[
+  "citizen ~ citizens",
+  "elect ~ elects",
+  "meet ~ meets",
+  "president ~ presidents",
+  "right ~ rights",
+  "state ~ states",
+]
+`;

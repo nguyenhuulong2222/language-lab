@@ -13,6 +13,17 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
+/* Comfort setting: every rem size (type, spacing, tap targets) follows the root size */
+html[data-text-size="large"] {
+  font-size: 112.5%;
+}
+html[data-text-size="extra-large"] {
+  font-size: 125%;
+}
+/* Long words and numbers wrap instead of running off a narrow screen */
+body {
+  overflow-wrap: break-word;
+}
 
 body {
   margin: 0;
@@ -55,7 +66,12 @@ button {
 :focus-visible {
   outline: var(--focus-width) solid var(--teal);
   outline-offset: var(--focus-offset);
-  border-radius: var(--radius-sm);
+}
+
+/* Headings and the main area take focus from code. No ring after a click or a tap; the browser
+   marks them :focus-visible when the user is on the keyboard, and then the ring shows. */
+[tabindex="-1"]:focus:not(:focus-visible) {
+  outline: none;
 }
 
 ::selection {

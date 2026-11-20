@@ -30,6 +30,12 @@ describe("translator", () => {
     expect(interpolate("plain", undefined)).toBe("plain");
   });
 
+  it("uses American spelling for practice and never says USCIS does not publish something", () => {
+    const all = Object.values(ENGLISH_MESSAGES).join("\n");
+    expect(all).not.toMatch(/practise/i);
+    expect(all).not.toMatch(/USCIS does not publish/i);
+  });
+
   it("has no empty message and every placeholder is a simple name", () => {
     for (const [key, text] of Object.entries(ENGLISH_MESSAGES)) {
       expect(text.trim().length, key).toBeGreaterThan(0);

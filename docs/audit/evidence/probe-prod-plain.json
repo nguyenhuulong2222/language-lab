@@ -1,0 +1,114 @@
+{
+ "mode": "plain",
+ "csp": null,
+ "loadMs": 949,
+ "paints": [
+  [
+   "first-paint",
+   820
+  ],
+  [
+   "first-contentful-paint",
+   876
+  ]
+ ],
+ "nav": {
+  "dcl": 846,
+  "load": 846,
+  "transfer": 818
+ },
+ "lcp": 876,
+ "steps": [
+  [
+   "English",
+   true
+  ],
+  [
+   "Study first",
+   true
+  ],
+  [
+   "2008 civics test",
+   true
+  ],
+  [
+   "Back to home",
+   true
+  ],
+  [
+   "Picture credits",
+   true
+  ],
+  [
+   "Back to the practice",
+   true
+  ],
+  [
+   "Reading",
+   true
+  ]
+ ],
+ "totalBytes": 248096,
+ "origins": {
+  "http://localhost:5199": {
+   "n": 4,
+   "bytes": 212844
+  },
+  "https://fonts.googleapis.com": {
+   "n": 1,
+   "bytes": 1064
+  },
+  "https://fonts.gstatic.com": {
+   "n": 1,
+   "bytes": 34188
+  }
+ },
+ "responseHeadersOfDocument": {
+  "Connection": "keep-alive",
+  "Date": "Fri, 20 Nov 2026 10:56:33 GMT",
+  "Keep-Alive": "timeout=5",
+  "cache-control": "public, max-age=0",
+  "content-encoding": "gzip",
+  "content-length": "518",
+  "content-type": "text/html; charset=utf-8"
+ },
+ "requests": [
+  {
+   "url": "/",
+   "type": "Document",
+   "status": 200,
+   "bytes": 740
+  },
+  {
+   "url": "https://fonts.googleapis.com/css2?family=Bitter:wght@400;600&display=swap",
+   "type": "Stylesheet",
+   "status": 200,
+   "bytes": 1064
+  },
+  {
+   "url": "/assets/index-BaGPv1Xe.js",
+   "type": "Script",
+   "status": 200,
+   "bytes": 206883
+  },
+  {
+   "url": "/assets/index-n4Jwjo-5.css",
+   "type": "Stylesheet",
+   "status": 200,
+   "bytes": 4481
+  },
+  {
+   "url": "https://fonts.gstatic.com/s/bitter/v42/rax8HiqOu8IVPmn7f4xpLjpSmw.woff2",
+   "type": "Font",
+   "status": 200,
+   "bytes": 34188
+  },
+  {
+   "url": "/favicon.ico",
+   "type": "Other",
+   "status": 200,
+   "bytes": 740
+  }
+ ],
+ "console": []
+}

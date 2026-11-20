@@ -532,3 +532,72 @@ Full decisions, with how to reverse each one, are in `docs/decisions-log.md`.
 - **T-08, report builder.** `src/engine/report-builder.ts`. Reading and writing results are checked for the right stage. The civics and English "passed" flags are checked again against the rules' pass counts. Unscored questions are named in the civics summary and returned by `listUnscoredQuestions`; the contract has no field for them, so no contract change was made.
 - **T-09, integration test.** `src/engine/__tests__/grading-integration.test.ts`, 41 tests: both fixtures, synthetic fictional sessions for both rule sets (passing and not passing), boundary dates, mismatched version, dynamic question, missing `questionId`.
 - `needsHumanReview` is still true in both answer key files.
+
+## 2026-11-17: booth screens, the complete practice flow (branch ui/booth-screens)
+
+Spec in `.kiro/specs/booth-screens/`; decisions in `docs/decisions-log.md`, section E.
+
+- **Ownership:** `.kiro/steering/structure.md` now says one person owns `src/engine/`, `worker/` and `src/ui/`. `src/contracts/` still needs a `docs/contract-requests.md` entry first. No contract change was needed.
+- **Engine (pure, tested):** `practice-config`, `practice-content` (loaders and checks), `sentence-compare` (word diff, accuracy, property tests), `recognition-outcome`, `n400-coach` (interface plus scripted coach), `practice-flow` (reducer for the whole session, seeded selection, stage progress, session and report, answer key lock), `official-answer-text`.
+- **Content:** USCIS reading and writing vocabulary PDFs saved in `data/sources/` with URL and SHA-256; `data/practice/` holds profiles, N-400 script, sentences, vocabulary and the practice config, all `needsHumanReview`.
+- **Screens:** intro, N-400 interview, reading, writing, civics, report, in one shell. Voice input with typed fallback and a message for every outcome (denied, unsupported, nothing heard, no microphone, error). Spoken prompts through `PromptSpeaker` (device voice).
+- **Reviews:** `ui-reviewer` and `content-reviewer` ran, and `ui-reviewer` ran a second time. Fixed: focus management on every transition, live regions, control border contrast, a stuck play button, a disabled send button, an unverified claim about USCIS, British spellings, a developer instruction in user text, uniform tax answers, missing result-surface disclaimers.
+- **Production behaviour, checked on a real bundle:** `vite build --ssr` of `practice-flow.ts`, run in Node, returned `locked` for both answer keys with the message "marked needsHumanReview: true", while the rules, boundary date and content loaded. `needsHumanReview` and the loader's check are unchanged.
+- **Dev server:** started on a scratch port; the page, `main.tsx`, the screens and the data files all returned 200.
+- **Not done:** pre-generated audio, the Worker coach and any AI, N-400 scoring, a test with a real browser or microphone (none was available).
+
+## 2026-11-17: pre-generated AI voice for spoken prompts (branch ui/booth-screens)
+
+The device voice is replaced by OpenAI TTS clips made ahead of time and served as static files. The app never calls a TTS service.
+
+- **Generator:** `tools/audio/generate-audio.mjs` (model `gpt-4o-mini-tts`, voice coral, the same instruction as the speech-test script; the key comes from the local gitignored key file in `tools/speech-test` and is never printed). Clips: question text of every entry in both answer keys, every N-400 question, every profile's sample answer, every writing sentence. Reading sentences get no audio. Output `public/audio/<group>/<id>.mp3` and `public/audio/manifest.json` (id, file, hash of the spoken text, group, bytes). Re-runs skip clips whose text hash, voice settings and file are unchanged. `--dry-run`, `--only=<groups>`, `--skip-dynamic`, `--prune`. It was not run against the API.
+- **Shared module:** `src/engine/audio-clips.ts` (clip list, ids, hash, manifest checks) is used by the generator, the player and the tests.
+- **Player:** `createMp3PromptSpeaker` in `src/ui/voice/prompt-speaker.ts`. It uses a clip only when the manifest lists it and the hash matches the text about to be spoken. Missing clip, changed text, load error or refused playback falls back to the device voice. One audio element is created at the first tap and reused; `play()` is called synchronously in the click handler (iPhone Safari). A second tap stops, the next tap plays from the start. The label says "AI-generated voice" for a clip and "Device voice" only on fallback. The manifest is bundled with the app, so the choice is known at tap time.
+- **Interface change:** `PromptSpeaker.speak` now takes `{ text, clipId }`, there is `voiceFor(prompt)`, and the old `kind` property is gone.
+- **Screens:** civics questions, N-400 questions, N-400 sample answers ("Play sample answer") and writing sentences play clips. The reading screen no longer has a play button.
+- **Tests:** a test fails if a manifest entry's hash no longer matches the current text (or the id or file name changed, or the MP3 is missing, or an MP3 is not listed). All tests pass with an empty `public/audio/`.
+- **Housekeeping:** `.gitignore` keeps `tools/speech-test/audio/` and the speech-test key file ignored and has a note that `public/audio/` is committed. README disclosure updated.
+
+## 2026-11-17: home, instructions, comfort settings, Vietnamese interface (branch ui/booth-screens)
+
+Spec updated first (`.kiro/specs/booth-screens/`, BS-14 to BS-17, B-11 to B-15); decisions in `docs/decisions-log.md`, section F.
+
+- **Home and parts:** `PracticeMode`, `sessionSteps`, `modeNeeds` in `practice-flow.ts`; `part-report.ts`; `HomeScreen`, per-part setup, stepper per session, `PartReportScreen`. CR-006 written, contract untouched.
+- **Instructions:** `HowItWorks` on home, `ScreenHelp` on every practice screen.
+- **Comfort settings:** text size, slower playback, "Play again", all from the header, memory only. The step was interrupted once; it was finished from the working tree (nothing reverted) and a developer tool, `tools/layout-check`, now checks every screen at 390px in headless Chrome.
+- **Vietnamese:** `vi.json` draft with `_meta`, language button, English notice, dates by language, `docs/vi-locale-review.md` generated by `tools/i18n/build-vi-review.mjs` (a test keeps it in sync), parity and gate tests, production strip plugin. (All three were replaced later: see the AI-translated languages entries and `docs/locale-review.md`.)
+- **Reviews:** `content-reviewer` and `ui-reviewer` ran on the finished work. Fixed: help panel pushed the question off the screen, focus lost when Settings closed (and Escape), disabled Start button, Home without a confirm, no retry after an N-400 load failure, a play-again race, the draft Vietnamese bundled in production, three Vietnamese terms, an absolute "the real interview is in English", a part-report badge that read like a prediction. Left open: items listed in the final report.
+## 2026-11-18: AI-translated interface languages, review sheets, pictures for civics questions (branch ui/booth-screens)
+Spec first (`f0e5ead`, `00fe975`); decisions in `docs/decisions-log.md` sections G and H.
+- **Languages (BS-17 to BS-19):** 14 locale files (13 AI drafts, `_meta` with no reviewer), gate = passes the checks (`locale-checks.ts`), AI label on every screen, English text next to every disclaimer, header language menu, `lang`/`dir`, system font stacks per script, dates in all languages, `locales.test.ts` for every locale, my back-translation of 16 legal keys in 13 languages (six wording problems found and fixed), Vietnamese wording pass (22 lines), generated sheets `docs/locale-review.md` + `docs/locale-review/<code>.md` with a sync test, README disclosure. Layout check passes for 14 languages at normal and extra-large text, one language per run (one run over all 28 hung).
+- **Reviews (languages):** ui-reviewer and content-reviewer ran; fixed an empty English line, English text in a script font, the menu details, "official" in six AI notices, stale decisions-log text, and the hidden-translation test now scans every component.
+- **Pictures (BS-20, BS-21):** `question-images.ts` (data checks, rights check, federal hosts), `tools/images/{find-loc,build-images}.mjs`, `data/images/*`, 11 pictures in `public/images/civics/` (1.0 MB, all Smithsonian Open Access CC0 from the National Portrait Gallery), 27 questions mapped (`needsHumanReview`), generated `docs/image-{credits,review,todo}.md`, `QuestionPicture` after grading, "Study first", credits screen from the footer, 13 new interface keys in all languages. Tests: the question view never renders a picture, only two components render one.
+- **Reviews (pictures):** fixed the rights text (now the record's own field), focus when leaving Study first, links open in a new tab, picture height, pairings (three removed), audio stops when credits open.
+- **Not done:** the Library of Congress pictures (blocked, see `docs/image-todo.md`), the Anthony photograph (image URL returned 404), iPhone and Android checks.
+## 2026-11-18: fair scoring, recogniser alternatives, listen and compare, honest feedback (branch ui/booth-screens)
+Spec first (`88e7d15`, BS-22 to BS-25); decisions in `docs/decisions-log.md`, section I. Trigger: on an iPhone "Who elect the president" against "Who elects the President?" scored 75% and failed.
+- **Step 1:** `maxAlternatives` 5; `outcomeFromResults` keeps every alternative; `pickBestAlternative` scores all and uses the best as "What we heard". Civics uses the same alternatives with the answer-key matcher only.
+- **Step 2:** the USCIS Policy Manual passage (reading, writing, ordinary usage, footnote 10) saved in `data/sources/` with URL and SHA-256. New `compareSentence`: every content word in order, short words free, plural/possessive endings the same word (`sameInflection`, never shortens a word), one extra content word allowed, one-letter spelling slips in writing; no percentage threshold. Settings in `practice-config.json`, labelled as a Language Lab practice setting, with a list of what is the guideline and what is my choice.
+- **Step 3:** listen and compare: `self-review.ts` (MediaRecorder, memory only, no network or storage API, a test enforces it), `self-review-controller.ts` (one sentence at a time, Stop during the microphone prompt cancels), `ListenAndCompare`, reading sample clips (`--only=reading`, 12 clips, 0.5 MB), "Try again" (`retryEnglish`), privacy text in 14 languages, back-translations of `voice.privacy` updated.
+- **Step 4:** `SentenceFeedback` rewritten: counts / not yet, plain lines per difference, the honest line, no crossed-out display (`SentenceDiff` deleted); English words in translated lines marked `lang="en"`.
+- **Step 5:** tests for each rule (sentence-compare, alternatives, self-review, sentence-feedback, english-screen, civics); all 14 locales; reviews: ui-reviewer and content-reviewer found a microphone left open after Stop during the permission prompt, lost focus after Record/Stop/Try again, a plural bug ("houses"), and settings presented as guideline that are my choices; all fixed or listed.
+- **Not done:** device tests (iPhone Safari, Android Chrome), the wording of `reading.done.passed`, native review of the new strings.
+
+## 2026-11-20: audit fix pass, Steps 0 to 10 (branch ui/booth-screens)
+- **Step 0:** the audit report and its evidence committed as they were.
+- **Step 1:** licence scope: non-English civics translations and the N-400 importer removed; English display files rebuilt from `data/sources`; `NOTICE` and README "Licence scope".
+- **Step 2:** legal text English only without a named reviewer (`legal-keys.ts`, `LegalText`); hmn, lo, my, ht hidden from the production menu; Hmong fixes; wider back-translation check.
+- **Step 3:** Bitter self-hosted; `public/_headers` with a strict CSP and security headers; zero violations in the production probe.
+- **Step 4:** segment-based secret-path guard with a recorded test; relative save hooks; microphone, recogniser and audio stop when the practice is hidden; one-time voice notice.
+- **Step 5:** "Show the sentence" in writing (assisted attempts); header focus and panels; error announcements; Study order; `lang="en"`; per-script mono font; layout check at 320 px and on the production build with CSP checks.
+- **Step 6:** report wording names the practice; README corrections and the live URL; spelling slips by word length with the USCIS point on screen.
+- **Step 7:** while civics is locked, home says what this build offers and hides the rest.
+- **Step 8:** only the chosen locale is loaded; answer keys load when a civics part starts; main JS 841 kB to 377 kB; CI workflow.
+- **Step 9:** "Aurora Vance" renamed "Aurora Thistlewood"; 7 sample clips to regenerate (`docs/audio-regenerate.md`).
+- **Step 10:** favicon, Credits link names and Escape, focus ring on code-focused headings, no duplicate report disclaimer, value assertions in weak tests, README "How Kiro was used", `license` and `engines` in `package.json`; reviews by `ui-reviewer` and `content-reviewer` and their fixes; layout check for 14 languages at normal and extra-large text; `docs/audit/open-findings.md`.
+
+## 2026-11-20: answer key review (branch ui/booth-screens)
+- Step 1: the owner's decisions in `answer-markers.json` (alternatives for 2025-107, 2025-126, 2025-028; any-order items for 2008-045, 2008-017, 2025-019, 2025-016; optional "Jr." and "Day"); keys and review sheet rebuilt; tests for each decision with wrong cases.
+- Step 2: sentence answers matched by content words in order; property tests.
+- Step 3: independent source check (0 mismatches, decisions listed); review recorded through `review.json`; loader requires a named reviewer.
+- Step 4: production unlocks civics; verified with `layout-check --prod` (both test versions, Study pictures, no CSP violation); CON-01 closed.

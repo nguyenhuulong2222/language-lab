@@ -8,7 +8,7 @@
       "matcher": "\\.(ts|tsx)$",
       "action": {
         "type": "command",
-        "command": "cd /Volumes/Crucial1TB/language-lab && npm run typecheck",
+        "command": "npm run typecheck",
         "timeout": 60
       }
     }

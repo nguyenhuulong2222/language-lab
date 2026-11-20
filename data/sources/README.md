@@ -22,3 +22,30 @@ f89f731acbc2c401b638d33880271a70b507e2d8222658ebb90e2d9ece3c9ac2  uscis-2008-civ
 
 The 2020-version text (`M_1778TXT.txt`) that the first stub used for 2025 is NOT a source for
 the 2025 key and is not stored here.
+
+## Reading and writing vocabulary (booth screens)
+
+| File | Official source | Role |
+|---|---|---|
+| `uscis-reading-vocab.pdf` | https://www.uscis.gov/sites/default/files/document/guides/reading_vocab.pdf (rev. 08/08), fetched 2026-11-17 | Official reading vocabulary list. |
+| `uscis-writing-vocab.pdf` | https://www.uscis.gov/sites/default/files/document/guides/writing_vocab.pdf (rev. 08/08), fetched 2026-11-17 | Official writing vocabulary list. |
+| `uscis-reading-vocab.txt`, `uscis-writing-vocab.txt` | `pdftotext -layout` of the PDFs above | Text view, used to transcribe `data/practice/vocabulary.json`. |
+
+```
+56be9761b36d44afdbf6efeb825330232bd089d55eb1cf2865d00999a98db04a  uscis-reading-vocab.pdf
+217244ecfb9ed6c5d79f9c281f9c1f6e4290ea358ced85192522b6218431bc08  uscis-writing-vocab.pdf
+0e31a58adffd3cf04456fa381353dc1ce3494ae780a1ee8a5f0375404fd0be30  uscis-reading-vocab.txt
+5bf1428c9d6a8373249fce41968ee9d5c13621488f9e1a56a5437ef9d1677261  uscis-writing-vocab.txt
+```
+## Scoring guidelines for the reading and writing portions
+| File | Official source | Role |
+|---|---|---|
+| `uscis-policy-manual-vol12-parte-ch2.html` | https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2 (USCIS Policy Manual, Vol. 12, Part E, Ch. 2 "English and Civics Testing"), fetched 2026-11-18 | The page as fetched. Section D has the reading and writing guidelines. |
+| `uscis-policy-manual-vol12-parte-ch2-reading-writing.txt` | Extracted from the page above | The "Reading Test" and "Writing Test" passages only, with line breaks added and nothing else changed. The spec quotes it. |
+```
+2aa57c88ab539dcb0a0f3417ae49865d1992e502b5aeea969a5125fb190ec2fd  uscis-policy-manual-vol12-parte-ch2.html
+faa3c1e092e28cb2c9991aa7dc63f8315b825ec80b9965184dacdebebb10832b  uscis-policy-manual-vol12-parte-ch2-reading-writing.txt
+```
+The manual does not define "content word" or "short word". Language Lab uses the "Other (Function)" columns of the two official vocabulary lists above for "short words" (see `data/practice/practice-config.json`).
+
+The practice sentences in `data/practice/` were written by this project, not taken from USCIS. They use only words from these lists.

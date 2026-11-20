@@ -86,7 +86,7 @@ rules need 6, and one civics turn was a dynamic question. The rebuilt fixture:
 - Has 7 civics turns: 6 correct, 1 incorrect. The stage stops on the 6th correct answer.
 - Reading passes on sentence 1. Writing passes on sentence 2, so `attempts` is 2 on the
   second writing turn (attempts means sentences presented).
-- Keeps the profile (`Aurora Vance`), filing date (March 15, 2024) and `generatedAt` that the
+- Keeps the profile (`Aurora Thistlewood`), filing date (March 15, 2024) and `generatedAt` that the
   UI test reads.
 - Review item for civics is now "How many amendments does the Constitution have?".
 
@@ -123,3 +123,25 @@ tags and in `aria-label`, `title`, `alt`, `placeholder` and `label` attributes i
 5. Run the tests: the literal-text test and the "every key in en.json is used" test must pass. Other languages need a human-reviewed `src/i18n/locales/<code>.json`; until then they fall back to English.
 
 Translated civics questions are not shown on any screen. See decision D in `docs/decisions-log.md`.
+
+## CR-006 — A report for one practised part
+**Requested by:** booth screens, home and section choice
+**Status:** pending (not made; `src/contracts/` was not edited)
+**Type:** contract change, backward compatible
+
+The home screen lets a user practise one part (N-400, reading, writing or civics) instead of the
+full interview. The report of one part has no overall practice result, but `FinalReport.practiceResult`
+is required and `buildFinalReport` needs all three graded stages, so a partial report cannot be a
+`FinalReport`. `InterviewSession` also requires a fictional profile, a filing date and a test
+version, which a reading-only session does not have.
+
+**What was done instead:** a local type `PartReport` in `src/engine/part-report.ts` (a discriminated
+union by part: disclaimer, generatedAt, and the counts of that part). The UI shows it with
+`PartReportScreen`. Single-part sessions do not build an `InterviewSession`.
+
+**Suggested contract change, if this should become shared:**
+- Move `PartReport` into `src/contracts/` and export it from the barrel; or
+- make `FinalReport.practiceResult` optional and document that it is absent for a single part.
+The first option leaves every existing report consumer unchanged.
+
+**What the UI needs to do:** nothing today. If the type moves, import it from the contracts.

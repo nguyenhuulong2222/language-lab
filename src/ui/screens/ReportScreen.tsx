@@ -8,12 +8,13 @@
  * Content safety: the report always labels the profile as fictional and shows
  * the FinalReport.disclaimer prominently.
  */
+import { isEnglishOnly } from "../../i18n";
 import type { InterviewSession, StageSummary } from "../../contracts";
 import { Disclaimer } from "../components/Disclaimer";
 import { StatusBadge } from "../components/StatusBadge";
 import { ReviewIcon } from "../components/icons";
 import { STAGES, stageIndex } from "../stages";
-import { useT } from "../../i18n/react";
+import { useLanguage, useT } from "../../i18n/react";
 import { formatProfileName, formatDate, formatDateTime } from "../format";
 import "./ReportScreen.css";
 
@@ -23,6 +24,7 @@ interface ReportScreenProps {
 
 export function ReportScreen({ session }: ReportScreenProps) {
   const t = useT();
+  const language = useLanguage();
   const report = session.finalReport;
   if (!report) {
     return (
@@ -46,7 +48,7 @@ export function ReportScreen({ session }: ReportScreenProps) {
           </span>
           <span className="report__overline-label">{t("report.overline")}</span>
         </p>
-        <h1 className="report__title">
+        <h1 className="report__title" tabIndex={-1}>
           {passed ? t("report.title.onTrack") : t("report.title.review")}
         </h1>
         <p className="report__lead">
@@ -58,7 +60,7 @@ export function ReportScreen({ session }: ReportScreenProps) {
           <p className="report__profile-meta">
             {t("report.profile.meta", {
               version: session.testVersion,
-              date: formatDate(session.filingDate),
+              date: formatDate(session.filingDate, language),
             })}
           </p>
         </div>
@@ -89,7 +91,7 @@ export function ReportScreen({ session }: ReportScreenProps) {
           <p className="report__section-intro">{t("report.review.intro")}</p>
           <ul className="report__review-list">
             {report.overallReviewItems.map((item, index) => (
-              <li key={index} className="report__review-item">
+              <li key={index} className="report__review-item" lang="en">
                 <ReviewIcon className="report__review-icon" />
                 <span className="report__review-text">{item}</span>
               </li>
@@ -103,9 +105,11 @@ export function ReportScreen({ session }: ReportScreenProps) {
         text={report.disclaimer}
         id="report-disclaimer"
       />
+      {/* The report carries its disclaimer in English (contract field); say it in the chosen language too. */}
+      {language !== "en" && !isEnglishOnly(language, "disclaimer.report") && <Disclaimer messageKey="disclaimer.report" />}
 
       <p className="report__generated">
-        {t("report.generated", { datetime: formatDateTime(report.generatedAt) })}
+        {t("report.generated", { datetime: formatDateTime(report.generatedAt, language) })}
       </p>
     </article>
   );
@@ -124,11 +128,11 @@ function StageSummaryCard({ summary }: { summary: StageSummary }) {
           label={hasReview ? t("badge.review") : t("badge.onTrack")}
         />
       </div>
-      <p className="stage-card__summary">{summary.summary}</p>
+      <p className="stage-card__summary" lang="en">{summary.summary}</p>
       {hasReview && (
         <ul className="stage-card__review">
           {summary.reviewItems.map((item, index) => (
-            <li key={index} className="stage-card__review-item">
+            <li key={index} className="stage-card__review-item" lang="en">
               <ReviewIcon className="stage-card__review-icon" />
               <span>{item}</span>
             </li>

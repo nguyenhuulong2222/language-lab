@@ -67,6 +67,8 @@ Dark mode (espresso booth, amber glow):
 | `--status-positive` | `--teal` | Understood / correct / practice_passed | — |
 | `--status-attention` | `--amber` | Needs practice / incorrect / needs_more_practice | — |
 
+`--on-accent` is the text colour on teal and amber buttons: `#FBF7EE` in light mode, `#1F1813` in dark mode.
+
 Button-on-amber pairs: light `#FBF7EE` on `#9A5A1A` = 5.10:1 (AA); dark `#1F1813` on
 `#D98A36` = 6.37:1 (AA). Amber is an accent only, never body text.
 
@@ -171,6 +173,20 @@ Mobile
   (`aria-hidden`); the page label is announced to screen readers. No texture or animation.
 - **Footer.** The standing disclaimer (not affiliated / not legal advice), always visible.
 
+## Home, help and settings
+
+- **Home.** The first screen offers "Full practice interview" (one filled teal option card) and
+  four single parts (outlined option cards), above the standing disclaimers. No eyebrow label
+  on home: the header already carries the brand.
+- **Header buttons.** Language (opens a menu of the 14 interface languages, each written in its own language, English first; the button shows the current one),
+  Home (only inside a session; it asks before discarding answers), Settings and About. Panels open
+  below the header in the page flow. Escape closes a panel and returns focus to its button.
+- **Stepper and take counter** show only the steps of the chosen session; "TAKE 01" is the
+  position within that session.
+- **"How this works"** sits after the question and before the answer box on question screens, so
+  the question stays near the top. It opens by itself the first time a screen is shown in a
+  session.
+
 ## Status & feedback semantics
 
 The report uses `practice_passed` / `needs_more_practice` (never pass/fail). Outcomes and
@@ -186,7 +202,8 @@ current President" — not "Wrong").
 ## Accessibility floor
 
 - Body text ≥ 18px; generous line-height; AA minimum, AAA for body where feasible (both themes).
-- Minimum tap target 44px (`--tap-min`); all interactive controls meet it.
+- Minimum tap target 48px (`--tap-min`, `3rem`, so it grows with the text size); all interactive controls meet it.
+- Comfort settings in the header: text size (normal 100%, large 112.5%, extra large 125% of the root size) and slower playback of recorded voices. They live in memory for the session only.
 - Visible keyboard focus: a 3px teal focus ring with offset on every focusable element.
 - Full keyboard navigation; the stepper and report are operable without a pointer.
 - Status and progress never rely on color alone (icon + label always present).

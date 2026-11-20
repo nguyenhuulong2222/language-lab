@@ -1,6 +1,10 @@
 {
   "name": "language-lab",
   "version": "0.1.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18"
+  },
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,7 +13,10 @@
     "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.node.json --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "speech-test": "vite --config vite.speech-test.config.ts"
+    "speech-test": "vite --config vite.speech-test.config.ts",
+    "layout-check": "node tools/layout-check/run.mjs",
+    "test:hooks": "python3 .kiro/hooks/scripts/test_block_sensitive_paths.py",
+    "check:answer-key": "python3 tools/answer-key/check-against-source.py"
   },
   "dependencies": {
     "react": "19.1.0",

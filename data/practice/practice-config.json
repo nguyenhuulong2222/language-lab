@@ -1,0 +1,69 @@
+{
+  "needsHumanReview": true,
+  "note": "Language Lab practice settings based on the USCIS scoring guidelines for the reading and writing portions. They are NOT USCIS rules: a text comparison cannot judge pauses, pronunciation or whether an officer understands. See scoringBasis for the source and what each setting stands for.",
+  "scoringBasis": {
+    "source": "USCIS Policy Manual, Volume 12, Part E, Chapter 2 (English and Civics Testing), Reading Test and Writing Test",
+    "url": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2",
+    "savedAs": "data/sources/uscis-policy-manual-vol12-parte-ch2-reading-writing.txt",
+    "sha256": "faa3c1e092e28cb2c9991aa7dc63f8315b825ec80b9965184dacdebebb10832b",
+    "fromTheGuidelines": "Read all content words; short words may be omitted; omitting or substituting a content word fails; pronunciation errors that do not interfere with the meaning are fine (reading). Spelling, capitalization and punctuation errors and omitted short words do not fail unless they interfere with the meaning; a different sentence or different words fail (writing).",
+    "languageLabChoices": [
+      "Short words are the 'Other (Function)' words of the two official vocabulary lists (the manual does not define them): a, and, during, for, here, in, of, on, the, to, we. They may be missing or added.",
+      "Words must be in order (the manual does not mention order).",
+      "A plural or possessive ending (-s, -es, 's) is the same word.",
+      "One extra content word is allowed (an inserted word is not listed as a failure, and a recogniser can add one).",
+      "Writing only: a spelling slip counts as the word when the word is still clear: the first letter is right, the typed word is not itself another word of the official vocabulary, and the number of wrong, missing, extra or swapped letters is at most the limit for the word's length in sentenceMatch.spellingSlips (1 from 4 letters, 2 from 8 letters). Shorter words must be exact. Capital letters and punctuation are never checked. The manual says spelling, capitalization and punctuation errors do not fail unless they interfere with the meaning; these limits are how Language Lab approximates 'the meaning is still clear' from text."
+    ],
+    "notScored": "Pauses, pronunciation and whether an officer would understand cannot be judged from text."
+  },
+  "sentenceMatch": {
+    "functionWords": [
+      "a",
+      "and",
+      "during",
+      "for",
+      "here",
+      "in",
+      "of",
+      "on",
+      "the",
+      "to",
+      "we"
+    ],
+    "neverStem": [
+      "news",
+      "series",
+      "species",
+      "texas",
+      "arkansas",
+      "kansas",
+      "illinois",
+      "christmas",
+      "atlas",
+      "canvas",
+      "chaos",
+      "bias",
+      "always",
+      "perhaps",
+      "across"
+    ],
+    "spellingSlips": [
+      {
+        "fromLetters": 4,
+        "maxEdits": 1
+      },
+      {
+        "fromLetters": 8,
+        "maxEdits": 2
+      }
+    ],
+    "reading": {
+      "extraContentWordsAllowed": 1,
+      "spellingTolerance": false
+    },
+    "writing": {
+      "extraContentWordsAllowed": 1,
+      "spellingTolerance": true
+    }
+  }
+}

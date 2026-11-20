@@ -9,7 +9,7 @@ const sources = import.meta.glob("../**/*.tsx", { query: "?raw", import: "defaul
   string
 >;
 
-const files = Object.entries(sources).filter(([file]) => !file.includes("__tests__"));
+const files = Object.entries(sources).filter(([file]) => !file.includes("__tests__") && !/\.test\./.test(file));
 
 /** Text between a closing > and an opening <, with at least one letter and no braces. */
 const JSX_TEXT = />\s*([^<>{}\n][^<>{}]*)\s*</g;

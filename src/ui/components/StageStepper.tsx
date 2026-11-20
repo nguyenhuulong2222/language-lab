@@ -12,7 +12,6 @@
  */
 import type { SessionStage } from "../../contracts";
 import type { StageMeta } from "../stages";
-import { stageIndex } from "../stages";
 import { CheckIcon } from "./icons";
 import { useT } from "../../i18n/react";
 import type { MessageKey } from "../../i18n";
@@ -33,7 +32,10 @@ const STATUS_WORD: Record<StepStatus, MessageKey> = {
 
 export function StageStepper({ stages, currentStage }: StageStepperProps) {
   const t = useT();
-  const currentIndex = stageIndex(currentStage);
+  const currentIndex = Math.max(
+    0,
+    stages.findIndex((s) => s.stage === currentStage)
+  );
 
   const steps = stages.map((s, i): { meta: StageMeta; status: StepStatus } => {
     const status: StepStatus =
@@ -55,7 +57,7 @@ export function StageStepper({ stages, currentStage }: StageStepperProps) {
             ·
           </span>
           <span className="stepper__condensed-label">
-            {t(stages[currentIndex].labelKey)}
+            {t(stages[currentIndex]!.labelKey)}
           </span>
         </p>
         <div

@@ -5,14 +5,13 @@
  *
  * Production guard: while a file has needsHumanReview: true, loading it in production
  * throws, the same way the test rules loader refuses unverified rules. In development it
- * logs a warning.
+ * logs a warning. A file marked needsHumanReview: false must name its reviewer (reviewedBy)
+ * and the review date (reviewedOn, YYYY-MM-DD); without them it is refused in production too.
  *
  * Pure module: no DOM, no fetch, no React.
  */
 
-import RAW_2008 from "../../data/civics-answers/2008.json" with { type: "json" };
-import RAW_2025 from "../../data/civics-answers/2025.json" with { type: "json" };
-import { containsPhrase, normalise } from "./answer-normaliser.js";
+import { containsPhrase, normalise, type AnyOrderLine } from "./answer-normaliser.js";
 import type { CivicsTestVersion } from "./version-selector.js";
 
 // ---------------------------------------------------------------------------
@@ -41,6 +40,16 @@ export interface CivicsAnswerEntry {
   answerGroups?: string[][];
   /** Accepted answers for which the bare number alone is also accepted. Filled by the loader. */
   numberAlone?: string[];
+  /**
+   * Source lines whose listed items may be said in any order (project owner decision, recorded
+   * in tools/answer-key/answer-markers.json). Every item is still required. Filled by the loader.
+   */
+  anyOrder?: AnyOrderLine[];
+  /**
+   * "sentence": every accepted answer is a sentence (the SENTENCE flag of the build script) and is
+   * matched by its content words in order (see SentenceRule in answer-normaliser.ts). Absent: phrases.
+   */
+  matchAs?: "sentence";
   /** How many distinct accepted answers a response needs. */
   requiredAnswerCount: number;
   answerType: AnswerType;
@@ -105,6 +114,21 @@ function parseStringLists(
   return value as string[][];
 }
 
+/** The optional anyOrder field: [{ answers: string[], items: string[][] }]. */
+function parseAnyOrder(value: unknown, fail: (message: string) => never): AnyOrderLine[] {
+  if (value === undefined) return [];
+  if (!Array.isArray(value)) return fail("anyOrder must be an array.");
+  return value.map((line) => {
+    if (!isRecord(line)) return fail("an anyOrder line must be an object.");
+    const answers = parseStringLists([line["answers"]], "anyOrder answers", fail)[0]!;
+    const items = parseStringLists(line["items"], "anyOrder items", fail);
+    if (answers.length === 0) return fail("an anyOrder line needs at least one answer.");
+    if (items.length < 2 || items.some((forms) => forms.length === 0)) {
+      return fail("an anyOrder line needs two or more items, each with at least one form.");
+    }
+    return { answers, items };
+  });
+}
 function parseEntry(
   item: unknown,
   version: CivicsTestVersion,
@@ -153,6 +177,9 @@ function parseEntry(
     fail
   );
   const numberAlone = numberAloneLists[0] ?? [];
+  const anyOrder = parseAnyOrder(item["anyOrder"], fail);
+  const matchAs = item["matchAs"];
+  if (matchAs !== undefined && matchAs !== "sentence") return fail(`matchAs must be "sentence" when present, got ${JSON.stringify(matchAs)}.`);
   const inAnswers = new Set(answers);
   const seenMembers = new Set<string>();
   for (const group of answerGroups) {
@@ -165,6 +192,22 @@ function parseEntry(
         return fail(`answerGroups member ${JSON.stringify(member)} is in more than one group.`);
       }
       seenMembers.add(member);
+    }
+  }
+  for (const line of anyOrder) {
+    for (const member of line.answers) {
+      if (!inAnswers.has(member)) {
+        return fail(`anyOrder answer ${JSON.stringify(member)} is not one of acceptedAnswers.`);
+      }
+      if (seenMembers.has(member)) {
+        return fail(`anyOrder answer ${JSON.stringify(member)} is also in an answer group or another anyOrder line.`);
+      }
+      seenMembers.add(member);
+    }
+    for (const forms of line.items) {
+      for (const form of forms) {
+        if (normalise(form) !== form || form === "") return fail(`anyOrder item ${JSON.stringify(form)} is not stored in normalised form.`);
+      }
     }
   }
   for (const member of numberAlone) {
@@ -200,6 +243,8 @@ function parseEntry(
     acceptedAnswers: answers,
     answerGroups,
     numberAlone,
+    anyOrder,
+    ...(matchAs === "sentence" ? { matchAs } : {}),
     requiredAnswerCount,
     answerType,
     sourceUrl,
@@ -245,17 +290,59 @@ export function parseAnswerKey(
       throw new Error(message);
     }
     console.warn(`[civics-answer-key] ${message}`);
+  } else {
+    const reviewedBy = raw["reviewedBy"];
+    const reviewedOn = raw["reviewedOn"];
+    if (!isNonEmptyString(reviewedBy) || typeof reviewedOn !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(reviewedOn)) {
+      const message =
+        `${where} is marked needsHumanReview: false but does not name a reviewer (reviewedBy) and a review date (reviewedOn, YYYY-MM-DD).`;
+      if (options.production ?? isProductionBuild()) throw new Error(message);
+      console.warn(`[civics-answer-key] ${message}`);
+    }
   }
-
   return entries;
 }
 
-/** Load the answer key for a test version, keyed by question id. */
+// The answer key files are large (about 135 kB together), so they are not in the first download:
+// each is fetched when a civics part or Study first needs it (preloadAnswerKey).
+const RAW_FILES: Record<CivicsTestVersion, () => Promise<unknown>> = {
+  "2008": () => import("../../data/civics-answers/2008.json").then((m) => m.default),
+  "2025": () => import("../../data/civics-answers/2025.json").then((m) => m.default),
+};
+const RAW_LOADED = new Map<CivicsTestVersion, unknown>();
+/** Thrown by loadAnswerKey when the file has not been fetched yet. Not a review lock. */
+export class AnswerKeyNotLoadedError extends Error {
+  constructor(version: CivicsTestVersion) {
+    super(`The ${version} answer key has not been loaded yet (call preloadAnswerKey first).`);
+    this.name = "AnswerKeyNotLoadedError";
+  }
+}
+/** Fetch the answer key file of a version (once). Resolves when loadAnswerKey can be called. */
+export async function preloadAnswerKey(version: CivicsTestVersion): Promise<void> {
+  if (RAW_LOADED.has(version)) return;
+  RAW_LOADED.set(version, await RAW_FILES[version]());
+}
+export function isAnswerKeyLoaded(version: CivicsTestVersion): boolean {
+  return RAW_LOADED.has(version);
+}
+/**
+ * Whether each answer key file is still marked needsHumanReview. A copy of the flag in the data
+ * files, so the app can tell that civics is locked in production without downloading the keys
+ * (a test keeps it equal to the files). It does not replace the check in parseAnswerKey: a file
+ * that is marked for review is refused in production whatever this says.
+ */
+export const ANSWER_KEY_NEEDS_REVIEW: Readonly<Record<CivicsTestVersion, boolean>> = { "2008": false, "2025": false };
+/** True when this build will refuse the answer key of a version (production and not yet reviewed). */
+export function answerKeyLockedInBuild(version: CivicsTestVersion, options: LoadOptions = {}): boolean {
+  return ANSWER_KEY_NEEDS_REVIEW[version] && (options.production ?? isProductionBuild());
+}
+/** Load the answer key for a test version, keyed by question id. The file must have been preloaded. */
 export function loadAnswerKey(
   version: CivicsTestVersion,
   options: LoadOptions = {}
 ): Map<string, CivicsAnswerEntry> {
-  return parseAnswerKey(version === "2008" ? RAW_2008 : RAW_2025, version, options);
+  if (!RAW_LOADED.has(version)) throw new AnswerKeyNotLoadedError(version);
+  return parseAnswerKey(RAW_LOADED.get(version), version, options);
 }
 
 // ---------------------------------------------------------------------------

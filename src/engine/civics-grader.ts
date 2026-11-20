@@ -12,7 +12,9 @@
  */
 
 import type { ScoringResult, Turn } from "../contracts/session.js";
-import { countMatchingPhrases } from "./answer-normaliser.js";
+import { countMatchingPhrases, type SentenceRule } from "./answer-normaliser.js";
+import { loadPracticeConfig } from "./practice-config.js";
+import { sameInflection } from "./sentence-compare.js";
 import type { CivicsAnswerEntry } from "./civics-answer-key.js";
 import type { CivicsTestRules } from "./test-rules-loader.js";
 
@@ -57,6 +59,38 @@ export interface CivicsStageResult {
 // Scoring one turn
 // ---------------------------------------------------------------------------
 
+/**
+ * How many distinct accepted answers of a static question the text contains. The same count
+ * that scores a turn, so choosing between the recogniser's alternatives uses the answer key
+ * and nothing else (AI never decides a civics score).
+ */
+export function matchedAnswerCount(entry: CivicsAnswerEntry, responseText: string): number {
+  return countMatchingPhrases(responseText, entry.acceptedAnswers, {
+    groups: entry.answerGroups ?? [],
+    numberAlone: entry.numberAlone ?? [],
+    anyOrder: entry.anyOrder ?? [],
+    ...(entry.matchAs === "sentence" ? { sentence: civicsSentenceRule() } : {}),
+  });
+}
+
+let sentenceRule: SentenceRule | null = null;
+/**
+ * The reading rule's word lists (data/practice/practice-config.json: the "Other (Function)" words of
+ * the official vocabulary lists, and the words that are never shortened), used for sentence answers.
+ * No answer comes from there; it only says which words are short words.
+ */
+export function civicsSentenceRule(): SentenceRule {
+  if (sentenceRule === null) {
+    const match = loadPracticeConfig().sentenceMatch;
+    const neverStem = new Set(match.neverStem);
+    sentenceRule = {
+      functionWords: new Set(match.functionWords),
+      sameWord: (expected, said) => sameInflection(expected, said, neverStem),
+    };
+  }
+  return sentenceRule;
+}
+
 function resultFor(
   entry: CivicsAnswerEntry | undefined,
   responseText: string
@@ -66,10 +100,7 @@ function resultFor(
   // Dynamic answers change over time; their accepted answers are never read.
   if (entry.answerType === "dynamic") return "unscored";
 
-  const matched = countMatchingPhrases(responseText, entry.acceptedAnswers, {
-    groups: entry.answerGroups ?? [],
-    numberAlone: entry.numberAlone ?? [],
-  });
+  const matched = matchedAnswerCount(entry, responseText);
   return matched >= entry.requiredAnswerCount ? "correct" : "incorrect";
 }
 

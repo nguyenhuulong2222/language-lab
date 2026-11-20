@@ -4,11 +4,11 @@
     {
       "name": "Block sensitive path access",
       "trigger": "PreToolUse",
-      "description": "Block any tool that attempts to read or edit .env, .dev.vars, or files under language-lab-private/",
+      "description": "Guard: block tool calls that name .env files (except .env.example), .dev.vars or language-lab-private/, matched on real path segments. A guard against accidents, not a security boundary; see .kiro/hooks/scripts/block_sensitive_paths.py",
       "matcher": "read_file|read_code|str_replace|fs_write|fs_append|delete_file|execute_bash|smart_relocate",
       "action": {
         "type": "command",
-        "command": "python3 -c \"\nimport json, sys\ndata = json.load(sys.stdin)\ntool = data.get('toolName', '')\nparams = data.get('toolInput', {})\n\n# Collect all string values from the tool parameters to check for sensitive paths\ndef extract_strings(obj):\n    if isinstance(obj, str):\n        yield obj\n    elif isinstance(obj, dict):\n        for v in obj.values():\n            yield from extract_strings(v)\n    elif isinstance(obj, list):\n        for v in obj:\n            yield from extract_strings(v)\n\nblocked_patterns = ['.env', '.dev.vars', 'language-lab-private']\n\nfor s in extract_strings(params):\n    for pat in blocked_patterns:\n        if pat in s:\n            print(f'Blocked: tool={tool} matched sensitive path pattern \\\"{pat}\\\" in parameter: {s}', file=sys.stderr)\n            sys.exit(2)\nsys.exit(0)\n\"",
+        "command": "python3 .kiro/hooks/scripts/block_sensitive_paths.py",
         "timeout": 10
       }
     }

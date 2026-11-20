@@ -79,6 +79,30 @@
         "quartering"
       ],
       "decision": "Project owner, 2026-11-17: 'quartering' is accepted as an alternative. 'boarding' alone is NOT accepted."
+    },
+    {
+      "question": "2025-107",
+      "line": "President at the end of (during) the Korean War",
+      "group": "(during)",
+      "parentheses": "alternative",
+      "replaces": "at the end of",
+      "decision": "Project owner, 2026-11-20 (answer key review): the parenthetical is an alternative for 'at the end of'. Stored as 'president at the end of the korean war' and 'president during the korean war', counted as one answer. 'president at the end of during the korean war' is no longer stored."
+    },
+    {
+      "question": "2025-126",
+      "line": "Presidents Day (Washington’s Birthday)",
+      "group": "(Washington’s Birthday)",
+      "parentheses": "alternative",
+      "replaces": "Presidents Day",
+      "decision": "Project owner, 2026-11-20 (answer key review): alternative name. 'Washington's Birthday' is accepted and counts as one answer with 'Presidents Day'."
+    },
+    {
+      "question": "2025-028",
+      "line": "The Great Compromise (Connecticut Compromise)",
+      "group": "(Connecticut Compromise)",
+      "parentheses": "alternative",
+      "replaces": "The Great Compromise",
+      "decision": "Project owner, 2026-11-20 (answer key review): alternative name. 'Connecticut Compromise' is accepted and counts as one answer with 'The Great Compromise'."
     }
   ],
   "_items": "Optional 'items': use these names instead of splitting the group on commas. Used where the owner accepts only some of the listed names ('boarding' alone is NOT accepted, only 'quartering').  All names of one marker are ONE answer: the matcher counts them once (answerGroups in the data files).",
@@ -108,6 +132,83 @@
       "question": "2025-104",
       "line": "Stock market crash of 1929",
       "decision": "Agent decision under the owner's rule (2026-11-17): 'When did it start': the year answers it."
+    }
+  ],
+  "_optionalWords": "'optionalWords' lists one word of one source line that the project owner decided may be left out. The line is stored with and without the word; both forms count as ONE answer (answerGroups). Nothing is added that is not in the source line.",
+  "optionalWords": [
+    {
+      "question": "2008-100",
+      "line": "Martin Luther King, Jr. Day",
+      "word": "Jr.",
+      "decision": "Project owner, 2026-11-20 (answer key review): 'Jr.' is optional in 'Martin Luther King, Jr. Day'."
+    },
+    {
+      "question": "2025-126",
+      "line": "Martin Luther King, Jr. Day",
+      "word": "Jr.",
+      "decision": "Project owner, 2026-11-20 (answer key review): 'Jr.' is optional in 'Martin Luther King, Jr. Day'."
+    },
+    {
+      "question": "2025-126",
+      "line": "Thanksgiving Day",
+      "word": "Day",
+      "decision": "Project owner, 2026-11-20 (answer key review): 'Day' is optional in 'Thanksgiving Day'."
+    },
+    {
+      "question": "2025-126",
+      "line": "Christmas Day",
+      "word": "Day",
+      "decision": "Project owner, 2026-11-20 (answer key review): 'Day' is optional in 'Christmas Day'."
+    }
+  ],
+  "_anyOrder": "'anyOrder' lists source lines whose items the project owner decided may be said in any order. 'items' are the parts of the line exactly as written in the source, in the source's order. Every item is required; items of different lines (2025-016 has two) are never mixed. The line still counts as ONE answer.",
+  "anyOrder": [
+    {
+      "question": "2008-045",
+      "line": "Democratic and Republican",
+      "items": [
+        "Democratic",
+        "Republican"
+      ],
+      "decision": "Project owner, 2026-11-20 (answer key review): the two parties may be said in any order; both are required."
+    },
+    {
+      "question": "2008-017",
+      "line": "the Senate and House (of Representatives)",
+      "items": [
+        "the Senate",
+        "House (of Representatives)"
+      ],
+      "decision": "Project owner, 2026-11-20 (answer key review): the two parts may be said in any order; both are required."
+    },
+    {
+      "question": "2025-019",
+      "line": "Senate and House (of Representatives)",
+      "items": [
+        "Senate",
+        "House (of Representatives)"
+      ],
+      "decision": "Project owner, 2026-11-20 (answer key review): the two parts may be said in any order; both are required."
+    },
+    {
+      "question": "2025-016",
+      "line": "Legislative, executive, and judicial",
+      "items": [
+        "Legislative",
+        "executive",
+        "judicial"
+      ],
+      "decision": "Project owner, 2026-11-20 (answer key review): the three branches may be said in any order; all three are required. Not mixed with the other line of this question."
+    },
+    {
+      "question": "2025-016",
+      "line": "Congress, president, and the courts",
+      "items": [
+        "Congress",
+        "president",
+        "the courts"
+      ],
+      "decision": "Project owner, 2026-11-20 (answer key review): the three may be said in any order; all three are required. Not mixed with the other line of this question."
     }
   ]
 }

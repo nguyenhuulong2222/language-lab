@@ -1,0 +1,166 @@
+/**
+ * Language Lab — shared controls: buttons, fields, choice cards, panels.
+ * Tokens only. Every control is at least --tap-min tall. Status never relies on colour alone.
+ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap-min);
+  padding: var(--space-2) var(--space-5);
+  border: 2px solid var(--teal);
+  border-radius: var(--radius-md);
+  background: var(--teal);
+  color: var(--on-accent);
+  font-weight: 600;
+  line-height: var(--lh-snug);
+  text-align: center;
+  cursor: pointer;
+}
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  background: var(--surface-2);
+  border-color: var(--border);
+  color: var(--ink-2);
+}
+.btn--secondary {
+  background: var(--surface);
+  color: var(--ink);
+  /* A control's edge needs 3:1 against the page: use ink-2, not the decorative border. */
+  border-color: var(--ink-2);
+}
+.btn--secondary:disabled,
+.btn--secondary[aria-disabled="true"] {
+  background: var(--surface-2);
+}
+/* Amber is reserved for the active (listening) state */
+.btn--active {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--on-accent);
+}
+.btn--block {
+  width: 100%;
+}
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.field__label {
+  font-weight: 600;
+}
+.field__input {
+  width: 100%;
+  min-height: 6rem;
+  padding: var(--space-3);
+  border: 2px solid var(--ink-2);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  line-height: var(--lh-snug);
+  resize: vertical;
+}
+
+fieldset.choices {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.choices__legend {
+  padding: 0;
+  margin-bottom: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+}
+.choice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: var(--tap-min);
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  cursor: pointer;
+}
+.choice:has(input:checked) {
+  border-color: var(--teal);
+  background: var(--surface-2);
+}
+.choice:has(input:focus-visible) {
+  outline: var(--focus-width) solid var(--teal);
+  outline-offset: var(--focus-offset);
+}
+.choice__input {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0;
+  flex: 0 0 auto;
+  accent-color: var(--teal);
+}
+.choice__text {
+  display: flex;
+  flex-direction: column;
+}
+.choice__sub {
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.panel--well {
+  background: var(--surface-2);
+  box-shadow: none;
+}
+.panel__title {
+  font-size: var(--fs-h4);
+}
+.note {
+  margin: 0;
+  padding-left: var(--space-3);
+  border-left: 3px solid var(--border);
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+  max-width: var(--measure);
+}
+.status {
+  min-height: 1.5em;
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}
+.status--attention {
+  color: var(--ink);
+  border-left: 3px solid var(--amber);
+  padding-left: var(--space-3);
+}
+
+/* The whole card shows focus; do not ring the small radio inside it as well. */
+@supports selector(:has(*)) {
+  .choice__input:focus-visible {
+    outline: none;
+  }
+}

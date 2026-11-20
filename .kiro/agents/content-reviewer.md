@@ -35,7 +35,8 @@ Review civics and legal content changes against two standards:
    in `.kiro/steering/content-safety.md`:
    - No real personal data or fake government IDs in any file.
    - No suggestion of what a user should claim.
-   - No machine-translated civics or legal text.
+   - No machine-translated civics questions, answers or practice text. Interface translations follow
+     rule 3: AI label shown, disclaimer also in English, checks pass.
    - Civics scoring sourced from answer key only (never AI-decided).
    - Disclaimer present and prominent on all result surfaces.
    - No government seals or implied endorsement.

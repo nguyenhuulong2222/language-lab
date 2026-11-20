@@ -491,3 +491,26 @@ describe("report properties", () => {
     );
   });
 });
+describe("assisted writing attempts in the summary", () => {
+  const makeReport = (assisted: number | undefined) =>
+    buildFinalReport({
+      session: session("2008"),
+      civicsResult: civics(passingCivics("2008"), "2008"),
+      readingResult: english("reading", [true]),
+      writingResult: english("writing", [false, true]),
+      ...(assisted === undefined ? {} : { writingAssisted: assisted }),
+      answerKey: KEY,
+      now: NOW,
+    });
+  const writing = (r: ReturnType<typeof makeReport>) => r.stageSummaries.find((s) => s.stage === "writing")!.summary;
+  it("says how many attempts were made with the sentence shown", () => {
+    expect(writing(makeReport(1))).toContain("1 of the 2 writing attempts were made with the sentence shown on screen (assisted).");
+  });
+  it("says nothing when there were none, or when the count is not given", () => {
+    expect(writing(makeReport(0))).not.toContain("assisted");
+    expect(writing(makeReport(undefined))).not.toContain("assisted");
+  });
+  it("does not change the result", () => {
+    expect(makeReport(2).practiceResult).toBe(makeReport(0).practiceResult);
+  });
+});

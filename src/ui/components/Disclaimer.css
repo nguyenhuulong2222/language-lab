@@ -25,3 +25,21 @@
   color: var(--ink);
   max-width: var(--measure);
 }
+.english-line {
+  display: block;
+  margin-top: var(--space-2);
+  color: var(--ink-2);
+}
+.english-line__label {
+  font-weight: 600;
+}
+.disclaimer__text--english {
+  margin-top: var(--space-3);
+}
+.disclaimer__text--english .english-line {
+  margin-top: 0;
+}
+
+.disclaimer--inline {
+  max-width: var(--measure);
+}

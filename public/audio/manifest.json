@@ -1,0 +1,1594 @@
+{
+  "version": 1,
+  "tts": {
+    "model": "gpt-4o-mini-tts",
+    "voice": "coral",
+    "instruction": "Speak clear American English slowly and naturally, like a patient interviewer."
+  },
+  "clips": {
+    "civics-2008-001": {
+      "file": "civics/2008-001.mp3",
+      "hash": "13b000f58adcd5",
+      "group": "civics-2008",
+      "bytes": 64128
+    },
+    "civics-2008-002": {
+      "file": "civics/2008-002.mp3",
+      "hash": "0b849a04855e75",
+      "group": "civics-2008",
+      "bytes": 37632
+    },
+    "civics-2008-003": {
+      "file": "civics/2008-003.mp3",
+      "hash": "05abb4490ce514",
+      "group": "civics-2008",
+      "bytes": 122496
+    },
+    "civics-2008-004": {
+      "file": "civics/2008-004.mp3",
+      "hash": "19e42e8d84315f",
+      "group": "civics-2008",
+      "bytes": 44160
+    },
+    "civics-2008-005": {
+      "file": "civics/2008-005.mp3",
+      "hash": "1c5ce57c899c41",
+      "group": "civics-2008",
+      "bytes": 74496
+    },
+    "civics-2008-006": {
+      "file": "civics/2008-006.mp3",
+      "hash": "0a76a534d3007e",
+      "group": "civics-2008",
+      "bytes": 71424
+    },
+    "civics-2008-007": {
+      "file": "civics/2008-007.mp3",
+      "hash": "1d50a17bf832c2",
+      "group": "civics-2008",
+      "bytes": 62592
+    },
+    "civics-2008-008": {
+      "file": "civics/2008-008.mp3",
+      "hash": "0d9a011265f20b",
+      "group": "civics-2008",
+      "bytes": 64896
+    },
+    "civics-2008-009": {
+      "file": "civics/2008-009.mp3",
+      "hash": "0d3748f9ea1545",
+      "group": "civics-2008",
+      "bytes": 56064
+    },
+    "civics-2008-010": {
+      "file": "civics/2008-010.mp3",
+      "hash": "0fb7882e55a02c",
+      "group": "civics-2008",
+      "bytes": 51456
+    },
+    "civics-2008-011": {
+      "file": "civics/2008-011.mp3",
+      "hash": "18723e65c78e98",
+      "group": "civics-2008",
+      "bytes": 62592
+    },
+    "civics-2008-012": {
+      "file": "civics/2008-012.mp3",
+      "hash": "05fdbb72fd309f",
+      "group": "civics-2008",
+      "bytes": 45696
+    },
+    "civics-2008-013": {
+      "file": "civics/2008-013.mp3",
+      "hash": "03105a5fd8078c",
+      "group": "civics-2008",
+      "bytes": 57600
+    },
+    "civics-2008-014": {
+      "file": "civics/2008-014.mp3",
+      "hash": "1b47c6059d33f5",
+      "group": "civics-2008",
+      "bytes": 62592
+    },
+    "civics-2008-015": {
+      "file": "civics/2008-015.mp3",
+      "hash": "08ea7d8ec32b23",
+      "group": "civics-2008",
+      "bytes": 52992
+    },
+    "civics-2008-016": {
+      "file": "civics/2008-016.mp3",
+      "hash": "13f4af16e6bbd4",
+      "group": "civics-2008",
+      "bytes": 55296
+    },
+    "civics-2008-017": {
+      "file": "civics/2008-017.mp3",
+      "hash": "10b1deac60e29c",
+      "group": "civics-2008",
+      "bytes": 70656
+    },
+    "civics-2008-018": {
+      "file": "civics/2008-018.mp3",
+      "hash": "1b706d54500063",
+      "group": "civics-2008",
+      "bytes": 54528
+    },
+    "civics-2008-019": {
+      "file": "civics/2008-019.mp3",
+      "hash": "068310c23e2dc9",
+      "group": "civics-2008",
+      "bytes": 61056
+    },
+    "civics-2008-021": {
+      "file": "civics/2008-021.mp3",
+      "hash": "1df97393c95d5b",
+      "group": "civics-2008",
+      "bytes": 73728
+    },
+    "civics-2008-022": {
+      "file": "civics/2008-022.mp3",
+      "hash": "08d3538c436ce4",
+      "group": "civics-2008",
+      "bytes": 88320
+    },
+    "civics-2008-024": {
+      "file": "civics/2008-024.mp3",
+      "hash": "0a1db70673bead",
+      "group": "civics-2008",
+      "bytes": 41856
+    },
+    "civics-2008-025": {
+      "file": "civics/2008-025.mp3",
+      "hash": "02079b6ee2dfa7",
+      "group": "civics-2008",
+      "bytes": 74496
+    },
+    "civics-2008-026": {
+      "file": "civics/2008-026.mp3",
+      "hash": "1b4dbbb1a3c74c",
+      "group": "civics-2008",
+      "bytes": 58368
+    },
+    "civics-2008-027": {
+      "file": "civics/2008-027.mp3",
+      "hash": "0174be910e3d0b",
+      "group": "civics-2008",
+      "bytes": 55296
+    },
+    "civics-2008-030": {
+      "file": "civics/2008-030.mp3",
+      "hash": "0494eff1c53850",
+      "group": "civics-2008",
+      "bytes": 73728
+    },
+    "civics-2008-031": {
+      "file": "civics/2008-031.mp3",
+      "hash": "046f1024e3c412",
+      "group": "civics-2008",
+      "bytes": 129024
+    },
+    "civics-2008-032": {
+      "file": "civics/2008-032.mp3",
+      "hash": "1a623d2355ee65",
+      "group": "civics-2008",
+      "bytes": 59520
+    },
+    "civics-2008-033": {
+      "file": "civics/2008-033.mp3",
+      "hash": "1a975310aff86a",
+      "group": "civics-2008",
+      "bytes": 44928
+    },
+    "civics-2008-034": {
+      "file": "civics/2008-034.mp3",
+      "hash": "05cbdb65666fea",
+      "group": "civics-2008",
+      "bytes": 44928
+    },
+    "civics-2008-035": {
+      "file": "civics/2008-035.mp3",
+      "hash": "00b3ecc3095bc1",
+      "group": "civics-2008",
+      "bytes": 41856
+    },
+    "civics-2008-036": {
+      "file": "civics/2008-036.mp3",
+      "hash": "02b1f3bad5aa08",
+      "group": "civics-2008",
+      "bytes": 64896
+    },
+    "civics-2008-037": {
+      "file": "civics/2008-037.mp3",
+      "hash": "173abf696a5640",
+      "group": "civics-2008",
+      "bytes": 47232
+    },
+    "civics-2008-038": {
+      "file": "civics/2008-038.mp3",
+      "hash": "1f8fcd3a58a59c",
+      "group": "civics-2008",
+      "bytes": 83328
+    },
+    "civics-2008-041": {
+      "file": "civics/2008-041.mp3",
+      "hash": "099cc35849627f",
+      "group": "civics-2008",
+      "bytes": 131328
+    },
+    "civics-2008-042": {
+      "file": "civics/2008-042.mp3",
+      "hash": "167ca0d9281783",
+      "group": "civics-2008",
+      "bytes": 120960
+    },
+    "civics-2008-045": {
+      "file": "civics/2008-045.mp3",
+      "hash": "0a9306ca4a872e",
+      "group": "civics-2008",
+      "bytes": 76032
+    },
+    "civics-2008-048": {
+      "file": "civics/2008-048.mp3",
+      "hash": "067c1280bddd19",
+      "group": "civics-2008",
+      "bytes": 100224
+    },
+    "civics-2008-049": {
+      "file": "civics/2008-049.mp3",
+      "hash": "1f2501c8977a22",
+      "group": "civics-2008",
+      "bytes": 92928
+    },
+    "civics-2008-050": {
+      "file": "civics/2008-050.mp3",
+      "hash": "0b112041f54645",
+      "group": "civics-2008",
+      "bytes": 67968
+    },
+    "civics-2008-051": {
+      "file": "civics/2008-051.mp3",
+      "hash": "0596dbb9d40209",
+      "group": "civics-2008",
+      "bytes": 81792
+    },
+    "civics-2008-052": {
+      "file": "civics/2008-052.mp3",
+      "hash": "0ef42d45fc2e69",
+      "group": "civics-2008",
+      "bytes": 77568
+    },
+    "civics-2008-053": {
+      "file": "civics/2008-053.mp3",
+      "hash": "04b67ab98fe757",
+      "group": "civics-2008",
+      "bytes": 85632
+    },
+    "civics-2008-054": {
+      "file": "civics/2008-054.mp3",
+      "hash": "0bfba67220a141",
+      "group": "civics-2008",
+      "bytes": 85632
+    },
+    "civics-2008-055": {
+      "file": "civics/2008-055.mp3",
+      "hash": "12db4939aecfbe",
+      "group": "civics-2008",
+      "bytes": 72192
+    },
+    "civics-2008-056": {
+      "file": "civics/2008-056.mp3",
+      "hash": "1d3aff67f14c84",
+      "group": "civics-2008",
+      "bytes": 77568
+    },
+    "civics-2008-057": {
+      "file": "civics/2008-057.mp3",
+      "hash": "193e4fecf9ac94",
+      "group": "civics-2008",
+      "bytes": 76800
+    },
+    "civics-2008-058": {
+      "file": "civics/2008-058.mp3",
+      "hash": "15ce599c7e4486",
+      "group": "civics-2008",
+      "bytes": 69888
+    },
+    "civics-2008-059": {
+      "file": "civics/2008-059.mp3",
+      "hash": "0be1a9d07b91c2",
+      "group": "civics-2008",
+      "bytes": 67968
+    },
+    "civics-2008-060": {
+      "file": "civics/2008-060.mp3",
+      "hash": "184d007d10afd9",
+      "group": "civics-2008",
+      "bytes": 73728
+    },
+    "civics-2008-061": {
+      "file": "civics/2008-061.mp3",
+      "hash": "14a3b867508c33",
+      "group": "civics-2008",
+      "bytes": 55296
+    },
+    "civics-2008-062": {
+      "file": "civics/2008-062.mp3",
+      "hash": "005a40c74b862d",
+      "group": "civics-2008",
+      "bytes": 69120
+    },
+    "civics-2008-063": {
+      "file": "civics/2008-063.mp3",
+      "hash": "0b6f8959853707",
+      "group": "civics-2008",
+      "bytes": 60288
+    },
+    "civics-2008-064": {
+      "file": "civics/2008-064.mp3",
+      "hash": "1530bdf3e17c8d",
+      "group": "civics-2008",
+      "bytes": 76032
+    },
+    "civics-2008-065": {
+      "file": "civics/2008-065.mp3",
+      "hash": "06df734aac4e00",
+      "group": "civics-2008",
+      "bytes": 73728
+    },
+    "civics-2008-066": {
+      "file": "civics/2008-066.mp3",
+      "hash": "020ef565727360",
+      "group": "civics-2008",
+      "bytes": 61056
+    },
+    "civics-2008-067": {
+      "file": "civics/2008-067.mp3",
+      "hash": "0592d6fb7a3b9c",
+      "group": "civics-2008",
+      "bytes": 110592
+    },
+    "civics-2008-068": {
+      "file": "civics/2008-068.mp3",
+      "hash": "1138b48634710d",
+      "group": "civics-2008",
+      "bytes": 72192
+    },
+    "civics-2008-069": {
+      "file": "civics/2008-069.mp3",
+      "hash": "17ec8c508701e9",
+      "group": "civics-2008",
+      "bytes": 49920
+    },
+    "civics-2008-070": {
+      "file": "civics/2008-070.mp3",
+      "hash": "1cd5c1bd57e2dc",
+      "group": "civics-2008",
+      "bytes": 55296
+    },
+    "civics-2008-071": {
+      "file": "civics/2008-071.mp3",
+      "hash": "047edf12ab20be",
+      "group": "civics-2008",
+      "bytes": 88320
+    },
+    "civics-2008-072": {
+      "file": "civics/2008-072.mp3",
+      "hash": "1f12ab4a3edb55",
+      "group": "civics-2008",
+      "bytes": 94464
+    },
+    "civics-2008-073": {
+      "file": "civics/2008-073.mp3",
+      "hash": "1e79d29edafa20",
+      "group": "civics-2008",
+      "bytes": 54528
+    },
+    "civics-2008-074": {
+      "file": "civics/2008-074.mp3",
+      "hash": "053b6b17770913",
+      "group": "civics-2008",
+      "bytes": 58368
+    },
+    "civics-2008-075": {
+      "file": "civics/2008-075.mp3",
+      "hash": "12231e00a6994f",
+      "group": "civics-2008",
+      "bytes": 62592
+    },
+    "civics-2008-076": {
+      "file": "civics/2008-076.mp3",
+      "hash": "1398c0de5cc096",
+      "group": "civics-2008",
+      "bytes": 53760
+    },
+    "civics-2008-077": {
+      "file": "civics/2008-077.mp3",
+      "hash": "130bf849cdfbf4",
+      "group": "civics-2008",
+      "bytes": 52224
+    },
+    "civics-2008-078": {
+      "file": "civics/2008-078.mp3",
+      "hash": "19c263ca3cdc7a",
+      "group": "civics-2008",
+      "bytes": 97920
+    },
+    "civics-2008-079": {
+      "file": "civics/2008-079.mp3",
+      "hash": "16bb050c951643",
+      "group": "civics-2008",
+      "bytes": 77568
+    },
+    "civics-2008-080": {
+      "file": "civics/2008-080.mp3",
+      "hash": "1ac4eb9b9daa77",
+      "group": "civics-2008",
+      "bytes": 89088
+    },
+    "civics-2008-081": {
+      "file": "civics/2008-081.mp3",
+      "hash": "080cd08571aef3",
+      "group": "civics-2008",
+      "bytes": 62592
+    },
+    "civics-2008-082": {
+      "file": "civics/2008-082.mp3",
+      "hash": "1f1de6e79854cb",
+      "group": "civics-2008",
+      "bytes": 94464
+    },
+    "civics-2008-083": {
+      "file": "civics/2008-083.mp3",
+      "hash": "1b23167087cad3",
+      "group": "civics-2008",
+      "bytes": 89088
+    },
+    "civics-2008-084": {
+      "file": "civics/2008-084.mp3",
+      "hash": "0053f41424dce1",
+      "group": "civics-2008",
+      "bytes": 69888
+    },
+    "civics-2008-085": {
+      "file": "civics/2008-085.mp3",
+      "hash": "03ec36d1b35c59",
+      "group": "civics-2008",
+      "bytes": 56064
+    },
+    "civics-2008-086": {
+      "file": "civics/2008-086.mp3",
+      "hash": "12232cbb6fd891",
+      "group": "civics-2008",
+      "bytes": 96000
+    },
+    "civics-2008-087": {
+      "file": "civics/2008-087.mp3",
+      "hash": "09a7e7f67bef9a",
+      "group": "civics-2008",
+      "bytes": 81792
+    },
+    "civics-2008-088": {
+      "file": "civics/2008-088.mp3",
+      "hash": "1ad2ad68a86f0a",
+      "group": "civics-2008",
+      "bytes": 76032
+    },
+    "civics-2008-089": {
+      "file": "civics/2008-089.mp3",
+      "hash": "0f18f6d2685160",
+      "group": "civics-2008",
+      "bytes": 66432
+    },
+    "civics-2008-090": {
+      "file": "civics/2008-090.mp3",
+      "hash": "09f264e8fd6379",
+      "group": "civics-2008",
+      "bytes": 60288
+    },
+    "civics-2008-091": {
+      "file": "civics/2008-091.mp3",
+      "hash": "126d8ee94428e2",
+      "group": "civics-2008",
+      "bytes": 43392
+    },
+    "civics-2008-092": {
+      "file": "civics/2008-092.mp3",
+      "hash": "1000d5f72ce27c",
+      "group": "civics-2008",
+      "bytes": 46464
+    },
+    "civics-2008-093": {
+      "file": "civics/2008-093.mp3",
+      "hash": "0186040125c56e",
+      "group": "civics-2008",
+      "bytes": 59520
+    },
+    "civics-2008-094": {
+      "file": "civics/2008-094.mp3",
+      "hash": "013d44b44194f2",
+      "group": "civics-2008",
+      "bytes": 50688
+    },
+    "civics-2008-095": {
+      "file": "civics/2008-095.mp3",
+      "hash": "0362faee92c4fd",
+      "group": "civics-2008",
+      "bytes": 56064
+    },
+    "civics-2008-096": {
+      "file": "civics/2008-096.mp3",
+      "hash": "0639470e49945c",
+      "group": "civics-2008",
+      "bytes": 61056
+    },
+    "civics-2008-097": {
+      "file": "civics/2008-097.mp3",
+      "hash": "15d1887ec61fd8",
+      "group": "civics-2008",
+      "bytes": 48000
+    },
+    "civics-2008-098": {
+      "file": "civics/2008-098.mp3",
+      "hash": "1a37d2fd8a527e",
+      "group": "civics-2008",
+      "bytes": 61824
+    },
+    "civics-2008-099": {
+      "file": "civics/2008-099.mp3",
+      "hash": "058922582a1c51",
+      "group": "civics-2008",
+      "bytes": 56832
+    },
+    "civics-2008-100": {
+      "file": "civics/2008-100.mp3",
+      "hash": "1c76a47e7a0084",
+      "group": "civics-2008",
+      "bytes": 53760
+    },
+    "civics-2025-001": {
+      "file": "civics/2025-001.mp3",
+      "hash": "11a1c232830fb5",
+      "group": "civics-2025",
+      "bytes": 72960
+    },
+    "civics-2025-002": {
+      "file": "civics/2025-002.mp3",
+      "hash": "13b000f58adcd5",
+      "group": "civics-2025",
+      "bytes": 53760
+    },
+    "civics-2025-003": {
+      "file": "civics/2025-003.mp3",
+      "hash": "10aea4394d9878",
+      "group": "civics-2025",
+      "bytes": 61056
+    },
+    "civics-2025-004": {
+      "file": "civics/2025-004.mp3",
+      "hash": "198dfcda2bfca2",
+      "group": "civics-2025",
+      "bytes": 109824
+    },
+    "civics-2025-005": {
+      "file": "civics/2025-005.mp3",
+      "hash": "1f542770af84db",
+      "group": "civics-2025",
+      "bytes": 76032
+    },
+    "civics-2025-006": {
+      "file": "civics/2025-006.mp3",
+      "hash": "1c37456ad5d66a",
+      "group": "civics-2025",
+      "bytes": 53760
+    },
+    "civics-2025-007": {
+      "file": "civics/2025-007.mp3",
+      "hash": "11057160a240f7",
+      "group": "civics-2025",
+      "bytes": 83328
+    },
+    "civics-2025-008": {
+      "file": "civics/2025-008.mp3",
+      "hash": "0fe5f1c20cde3f",
+      "group": "civics-2025",
+      "bytes": 64128
+    },
+    "civics-2025-009": {
+      "file": "civics/2025-009.mp3",
+      "hash": "0a373f459449f9",
+      "group": "civics-2025",
+      "bytes": 82560
+    },
+    "civics-2025-010": {
+      "file": "civics/2025-010.mp3",
+      "hash": "1367cbf07e619d",
+      "group": "civics-2025",
+      "bytes": 99456
+    },
+    "civics-2025-011": {
+      "file": "civics/2025-011.mp3",
+      "hash": "00f271743ef9cc",
+      "group": "civics-2025",
+      "bytes": 105600
+    },
+    "civics-2025-012": {
+      "file": "civics/2025-012.mp3",
+      "hash": "1fcb63c1722c8a",
+      "group": "civics-2025",
+      "bytes": 62592
+    },
+    "civics-2025-013": {
+      "file": "civics/2025-013.mp3",
+      "hash": "11cce855c5f6a8",
+      "group": "civics-2025",
+      "bytes": 48768
+    },
+    "civics-2025-014": {
+      "file": "civics/2025-014.mp3",
+      "hash": "02f9a3edf68da9",
+      "group": "civics-2025",
+      "bytes": 104064
+    },
+    "civics-2025-015": {
+      "file": "civics/2025-015.mp3",
+      "hash": "0ad0fb0ab07365",
+      "group": "civics-2025",
+      "bytes": 56064
+    },
+    "civics-2025-016": {
+      "file": "civics/2025-016.mp3",
+      "hash": "0bc89a5bb44366",
+      "group": "civics-2025",
+      "bytes": 58368
+    },
+    "civics-2025-017": {
+      "file": "civics/2025-017.mp3",
+      "hash": "131c101cc0dc4e",
+      "group": "civics-2025",
+      "bytes": 97920
+    },
+    "civics-2025-018": {
+      "file": "civics/2025-018.mp3",
+      "hash": "06df7ac8b068b8",
+      "group": "civics-2025",
+      "bytes": 64896
+    },
+    "civics-2025-019": {
+      "file": "civics/2025-019.mp3",
+      "hash": "10b1deac60e29c",
+      "group": "civics-2025",
+      "bytes": 61824
+    },
+    "civics-2025-020": {
+      "file": "civics/2025-020.mp3",
+      "hash": "065cfdb07865de",
+      "group": "civics-2025",
+      "bytes": 56064
+    },
+    "civics-2025-021": {
+      "file": "civics/2025-021.mp3",
+      "hash": "1a1e20d9057595",
+      "group": "civics-2025",
+      "bytes": 62592
+    },
+    "civics-2025-022": {
+      "file": "civics/2025-022.mp3",
+      "hash": "1e3e4745b2dccc",
+      "group": "civics-2025",
+      "bytes": 84864
+    },
+    "civics-2025-024": {
+      "file": "civics/2025-024.mp3",
+      "hash": "1ff1c4e9461b84",
+      "group": "civics-2025",
+      "bytes": 57600
+    },
+    "civics-2025-025": {
+      "file": "civics/2025-025.mp3",
+      "hash": "1f19fa9ffdb773",
+      "group": "civics-2025",
+      "bytes": 81792
+    },
+    "civics-2025-026": {
+      "file": "civics/2025-026.mp3",
+      "hash": "161380f35fb122",
+      "group": "civics-2025",
+      "bytes": 90624
+    },
+    "civics-2025-027": {
+      "file": "civics/2025-027.mp3",
+      "hash": "0ec04d9cb4f052",
+      "group": "civics-2025",
+      "bytes": 61056
+    },
+    "civics-2025-028": {
+      "file": "civics/2025-028.mp3",
+      "hash": "150e5154eb4db6",
+      "group": "civics-2025",
+      "bytes": 56064
+    },
+    "civics-2025-031": {
+      "file": "civics/2025-031.mp3",
+      "hash": "0a18aa18f7e2f7",
+      "group": "civics-2025",
+      "bytes": 61824
+    },
+    "civics-2025-032": {
+      "file": "civics/2025-032.mp3",
+      "hash": "02be11cc807964",
+      "group": "civics-2025",
+      "bytes": 55296
+    },
+    "civics-2025-033": {
+      "file": "civics/2025-033.mp3",
+      "hash": "16352af628d554",
+      "group": "civics-2025",
+      "bytes": 75264
+    },
+    "civics-2025-034": {
+      "file": "civics/2025-034.mp3",
+      "hash": "0e04a478fa2737",
+      "group": "civics-2025",
+      "bytes": 66432
+    },
+    "civics-2025-035": {
+      "file": "civics/2025-035.mp3",
+      "hash": "15b3c5b4cd47ab",
+      "group": "civics-2025",
+      "bytes": 83328
+    },
+    "civics-2025-036": {
+      "file": "civics/2025-036.mp3",
+      "hash": "1afac5312c2064",
+      "group": "civics-2025",
+      "bytes": 81024
+    },
+    "civics-2025-037": {
+      "file": "civics/2025-037.mp3",
+      "hash": "164a3540ce9454",
+      "group": "civics-2025",
+      "bytes": 106368
+    },
+    "civics-2025-040": {
+      "file": "civics/2025-040.mp3",
+      "hash": "1e67a0d0deb4c1",
+      "group": "civics-2025",
+      "bytes": 79488
+    },
+    "civics-2025-041": {
+      "file": "civics/2025-041.mp3",
+      "hash": "03c5bb040616e5",
+      "group": "civics-2025",
+      "bytes": 52992
+    },
+    "civics-2025-042": {
+      "file": "civics/2025-042.mp3",
+      "hash": "17ea87ee37af2e",
+      "group": "civics-2025",
+      "bytes": 67968
+    },
+    "civics-2025-043": {
+      "file": "civics/2025-043.mp3",
+      "hash": "1a975310aff86a",
+      "group": "civics-2025",
+      "bytes": 64128
+    },
+    "civics-2025-044": {
+      "file": "civics/2025-044.mp3",
+      "hash": "05cbdb65666fea",
+      "group": "civics-2025",
+      "bytes": 34560
+    },
+    "civics-2025-045": {
+      "file": "civics/2025-045.mp3",
+      "hash": "1527211f8e1711",
+      "group": "civics-2025",
+      "bytes": 72960
+    },
+    "civics-2025-046": {
+      "file": "civics/2025-046.mp3",
+      "hash": "14cb422438a797",
+      "group": "civics-2025",
+      "bytes": 86400
+    },
+    "civics-2025-047": {
+      "file": "civics/2025-047.mp3",
+      "hash": "00b3ecc3095bc1",
+      "group": "civics-2025",
+      "bytes": 55296
+    },
+    "civics-2025-048": {
+      "file": "civics/2025-048.mp3",
+      "hash": "02b1f3bad5aa08",
+      "group": "civics-2025",
+      "bytes": 49920
+    },
+    "civics-2025-049": {
+      "file": "civics/2025-049.mp3",
+      "hash": "1492848ce744e9",
+      "group": "civics-2025",
+      "bytes": 53760
+    },
+    "civics-2025-050": {
+      "file": "civics/2025-050.mp3",
+      "hash": "01bcd9765c3665",
+      "group": "civics-2025",
+      "bytes": 63360
+    },
+    "civics-2025-051": {
+      "file": "civics/2025-051.mp3",
+      "hash": "173abf696a5640",
+      "group": "civics-2025",
+      "bytes": 43392
+    },
+    "civics-2025-052": {
+      "file": "civics/2025-052.mp3",
+      "hash": "1f8fcd3a58a59c",
+      "group": "civics-2025",
+      "bytes": 53760
+    },
+    "civics-2025-053": {
+      "file": "civics/2025-053.mp3",
+      "hash": "0834070ad8c2bd",
+      "group": "civics-2025",
+      "bytes": 53760
+    },
+    "civics-2025-054": {
+      "file": "civics/2025-054.mp3",
+      "hash": "0a282baf7ff071",
+      "group": "civics-2025",
+      "bytes": 78720
+    },
+    "civics-2025-055": {
+      "file": "civics/2025-055.mp3",
+      "hash": "1e4af10ad22cb7",
+      "group": "civics-2025",
+      "bytes": 52224
+    },
+    "civics-2025-056": {
+      "file": "civics/2025-056.mp3",
+      "hash": "062c5005d0225b",
+      "group": "civics-2025",
+      "bytes": 71424
+    },
+    "civics-2025-058": {
+      "file": "civics/2025-058.mp3",
+      "hash": "144f52881d94c7",
+      "group": "civics-2025",
+      "bytes": 73728
+    },
+    "civics-2025-059": {
+      "file": "civics/2025-059.mp3",
+      "hash": "0511c91525c0a4",
+      "group": "civics-2025",
+      "bytes": 60288
+    },
+    "civics-2025-060": {
+      "file": "civics/2025-060.mp3",
+      "hash": "1a85c1ddd24550",
+      "group": "civics-2025",
+      "bytes": 67968
+    },
+    "civics-2025-063": {
+      "file": "civics/2025-063.mp3",
+      "hash": "0340cf19fdc060",
+      "group": "civics-2025",
+      "bytes": 104832
+    },
+    "civics-2025-064": {
+      "file": "civics/2025-064.mp3",
+      "hash": "07a4ca453e9517",
+      "group": "civics-2025",
+      "bytes": 120960
+    },
+    "civics-2025-065": {
+      "file": "civics/2025-065.mp3",
+      "hash": "0b43f1a5278f5f",
+      "group": "civics-2025",
+      "bytes": 75264
+    },
+    "civics-2025-066": {
+      "file": "civics/2025-066.mp3",
+      "hash": "0ef42d45fc2e69",
+      "group": "civics-2025",
+      "bytes": 78720
+    },
+    "civics-2025-067": {
+      "file": "civics/2025-067.mp3",
+      "hash": "19198aba5081a0",
+      "group": "civics-2025",
+      "bytes": 80256
+    },
+    "civics-2025-068": {
+      "file": "civics/2025-068.mp3",
+      "hash": "14663cd5a8ff13",
+      "group": "civics-2025",
+      "bytes": 61056
+    },
+    "civics-2025-069": {
+      "file": "civics/2025-069.mp3",
+      "hash": "0f72314f2a3786",
+      "group": "civics-2025",
+      "bytes": 72960
+    },
+    "civics-2025-070": {
+      "file": "civics/2025-070.mp3",
+      "hash": "0edc83ead93252",
+      "group": "civics-2025",
+      "bytes": 61824
+    },
+    "civics-2025-071": {
+      "file": "civics/2025-071.mp3",
+      "hash": "050cf54df5b38a",
+      "group": "civics-2025",
+      "bytes": 65664
+    },
+    "civics-2025-072": {
+      "file": "civics/2025-072.mp3",
+      "hash": "05cdc6eeae5ff8",
+      "group": "civics-2025",
+      "bytes": 135168
+    },
+    "civics-2025-073": {
+      "file": "civics/2025-073.mp3",
+      "hash": "127a7473d6eeb4",
+      "group": "civics-2025",
+      "bytes": 89856
+    },
+    "civics-2025-074": {
+      "file": "civics/2025-074.mp3",
+      "hash": "0be1a9d07b91c2",
+      "group": "civics-2025",
+      "bytes": 76032
+    },
+    "civics-2025-075": {
+      "file": "civics/2025-075.mp3",
+      "hash": "1b04fd3d6a9a5e",
+      "group": "civics-2025",
+      "bytes": 72960
+    },
+    "civics-2025-076": {
+      "file": "civics/2025-076.mp3",
+      "hash": "0cfa135c669c8c",
+      "group": "civics-2025",
+      "bytes": 61056
+    },
+    "civics-2025-077": {
+      "file": "civics/2025-077.mp3",
+      "hash": "0c23aeba7fe821",
+      "group": "civics-2025",
+      "bytes": 88320
+    },
+    "civics-2025-078": {
+      "file": "civics/2025-078.mp3",
+      "hash": "005a40c74b862d",
+      "group": "civics-2025",
+      "bytes": 61056
+    },
+    "civics-2025-079": {
+      "file": "civics/2025-079.mp3",
+      "hash": "0b6f8959853707",
+      "group": "civics-2025",
+      "bytes": 72960
+    },
+    "civics-2025-080": {
+      "file": "civics/2025-080.mp3",
+      "hash": "06d232e11f5a49",
+      "group": "civics-2025",
+      "bytes": 81024
+    },
+    "civics-2025-081": {
+      "file": "civics/2025-081.mp3",
+      "hash": "1355d5aa58c2db",
+      "group": "civics-2025",
+      "bytes": 75264
+    },
+    "civics-2025-082": {
+      "file": "civics/2025-082.mp3",
+      "hash": "13db829fd7aec6",
+      "group": "civics-2025",
+      "bytes": 104832
+    },
+    "civics-2025-083": {
+      "file": "civics/2025-083.mp3",
+      "hash": "0592d6fb7a3b9c",
+      "group": "civics-2025",
+      "bytes": 109056
+    },
+    "civics-2025-084": {
+      "file": "civics/2025-084.mp3",
+      "hash": "0fc3ed33e4ab59",
+      "group": "civics-2025",
+      "bytes": 62592
+    },
+    "civics-2025-085": {
+      "file": "civics/2025-085.mp3",
+      "hash": "0b6a9c0037f6a9",
+      "group": "civics-2025",
+      "bytes": 98688
+    },
+    "civics-2025-086": {
+      "file": "civics/2025-086.mp3",
+      "hash": "121bc169c3b346",
+      "group": "civics-2025",
+      "bytes": 81792
+    },
+    "civics-2025-087": {
+      "file": "civics/2025-087.mp3",
+      "hash": "1d9fb8a2df1de3",
+      "group": "civics-2025",
+      "bytes": 81024
+    },
+    "civics-2025-088": {
+      "file": "civics/2025-088.mp3",
+      "hash": "010087c93ba829",
+      "group": "civics-2025",
+      "bytes": 93696
+    },
+    "civics-2025-089": {
+      "file": "civics/2025-089.mp3",
+      "hash": "1881a776f17d08",
+      "group": "civics-2025",
+      "bytes": 96000
+    },
+    "civics-2025-090": {
+      "file": "civics/2025-090.mp3",
+      "hash": "047edf12ab20be",
+      "group": "civics-2025",
+      "bytes": 81792
+    },
+    "civics-2025-091": {
+      "file": "civics/2025-091.mp3",
+      "hash": "1f12ab4a3edb55",
+      "group": "civics-2025",
+      "bytes": 75264
+    },
+    "civics-2025-092": {
+      "file": "civics/2025-092.mp3",
+      "hash": "1e79d29edafa20",
+      "group": "civics-2025",
+      "bytes": 66432
+    },
+    "civics-2025-093": {
+      "file": "civics/2025-093.mp3",
+      "hash": "03c2d797cff5a0",
+      "group": "civics-2025",
+      "bytes": 76032
+    },
+    "civics-2025-094": {
+      "file": "civics/2025-094.mp3",
+      "hash": "0dd4ea20f0e8c4",
+      "group": "civics-2025",
+      "bytes": 83328
+    },
+    "civics-2025-095": {
+      "file": "civics/2025-095.mp3",
+      "hash": "1398c0de5cc096",
+      "group": "civics-2025",
+      "bytes": 61056
+    },
+    "civics-2025-096": {
+      "file": "civics/2025-096.mp3",
+      "hash": "13aa7c2dd567ad",
+      "group": "civics-2025",
+      "bytes": 50688
+    },
+    "civics-2025-097": {
+      "file": "civics/2025-097.mp3",
+      "hash": "15ecb92c70bec8",
+      "group": "civics-2025",
+      "bytes": 136320
+    },
+    "civics-2025-098": {
+      "file": "civics/2025-098.mp3",
+      "hash": "00ba34f2f67fb9",
+      "group": "civics-2025",
+      "bytes": 45696
+    },
+    "civics-2025-099": {
+      "file": "civics/2025-099.mp3",
+      "hash": "028056da59081b",
+      "group": "civics-2025",
+      "bytes": 98688
+    },
+    "civics-2025-100": {
+      "file": "civics/2025-100.mp3",
+      "hash": "19c263ca3cdc7a",
+      "group": "civics-2025",
+      "bytes": 89088
+    },
+    "civics-2025-101": {
+      "file": "civics/2025-101.mp3",
+      "hash": "006f6731d9646f",
+      "group": "civics-2025",
+      "bytes": 58368
+    },
+    "civics-2025-102": {
+      "file": "civics/2025-102.mp3",
+      "hash": "01d6a2a13759d9",
+      "group": "civics-2025",
+      "bytes": 55296
+    },
+    "civics-2025-103": {
+      "file": "civics/2025-103.mp3",
+      "hash": "01ca7cbb7b4066",
+      "group": "civics-2025",
+      "bytes": 48000
+    },
+    "civics-2025-104": {
+      "file": "civics/2025-104.mp3",
+      "hash": "1faf5b6e9b0a5b",
+      "group": "civics-2025",
+      "bytes": 47232
+    },
+    "civics-2025-105": {
+      "file": "civics/2025-105.mp3",
+      "hash": "07ecbdd0578d9c",
+      "group": "civics-2025",
+      "bytes": 86400
+    },
+    "civics-2025-106": {
+      "file": "civics/2025-106.mp3",
+      "hash": "1b603ceadb3ae4",
+      "group": "civics-2025",
+      "bytes": 70656
+    },
+    "civics-2025-107": {
+      "file": "civics/2025-107.mp3",
+      "hash": "11c1560c37ac30",
+      "group": "civics-2025",
+      "bytes": 78720
+    },
+    "civics-2025-108": {
+      "file": "civics/2025-108.mp3",
+      "hash": "00e8cb54bcb0ef",
+      "group": "civics-2025",
+      "bytes": 78720
+    },
+    "civics-2025-109": {
+      "file": "civics/2025-109.mp3",
+      "hash": "0850a9c704d7dc",
+      "group": "civics-2025",
+      "bytes": 91392
+    },
+    "civics-2025-110": {
+      "file": "civics/2025-110.mp3",
+      "hash": "0d366462570a5a",
+      "group": "civics-2025",
+      "bytes": 53760
+    },
+    "civics-2025-111": {
+      "file": "civics/2025-111.mp3",
+      "hash": "0a01b5fe847ff1",
+      "group": "civics-2025",
+      "bytes": 71424
+    },
+    "civics-2025-112": {
+      "file": "civics/2025-112.mp3",
+      "hash": "02798bbf625930",
+      "group": "civics-2025",
+      "bytes": 42624
+    },
+    "civics-2025-113": {
+      "file": "civics/2025-113.mp3",
+      "hash": "06c65dddb3418f",
+      "group": "civics-2025",
+      "bytes": 81792
+    },
+    "civics-2025-114": {
+      "file": "civics/2025-114.mp3",
+      "hash": "15aa689366dbe4",
+      "group": "civics-2025",
+      "bytes": 54528
+    },
+    "civics-2025-115": {
+      "file": "civics/2025-115.mp3",
+      "hash": "1012a68c5ee368",
+      "group": "civics-2025",
+      "bytes": 101760
+    },
+    "civics-2025-116": {
+      "file": "civics/2025-116.mp3",
+      "hash": "1cd82e349d11fe",
+      "group": "civics-2025",
+      "bytes": 112896
+    },
+    "civics-2025-117": {
+      "file": "civics/2025-117.mp3",
+      "hash": "09a7e7f67bef9a",
+      "group": "civics-2025",
+      "bytes": 72960
+    },
+    "civics-2025-118": {
+      "file": "civics/2025-118.mp3",
+      "hash": "031dd3f27ab81e",
+      "group": "civics-2025",
+      "bytes": 71424
+    },
+    "civics-2025-119": {
+      "file": "civics/2025-119.mp3",
+      "hash": "013d44b44194f2",
+      "group": "civics-2025",
+      "bytes": 55296
+    },
+    "civics-2025-120": {
+      "file": "civics/2025-120.mp3",
+      "hash": "0362faee92c4fd",
+      "group": "civics-2025",
+      "bytes": 38400
+    },
+    "civics-2025-121": {
+      "file": "civics/2025-121.mp3",
+      "hash": "0639470e49945c",
+      "group": "civics-2025",
+      "bytes": 78720
+    },
+    "civics-2025-122": {
+      "file": "civics/2025-122.mp3",
+      "hash": "15d1887ec61fd8",
+      "group": "civics-2025",
+      "bytes": 69120
+    },
+    "civics-2025-123": {
+      "file": "civics/2025-123.mp3",
+      "hash": "1a37d2fd8a527e",
+      "group": "civics-2025",
+      "bytes": 62592
+    },
+    "civics-2025-124": {
+      "file": "civics/2025-124.mp3",
+      "hash": "17e0c5cd701ce5",
+      "group": "civics-2025",
+      "bytes": 98688
+    },
+    "civics-2025-125": {
+      "file": "civics/2025-125.mp3",
+      "hash": "1c5f4191cb623a",
+      "group": "civics-2025",
+      "bytes": 38400
+    },
+    "civics-2025-126": {
+      "file": "civics/2025-126.mp3",
+      "hash": "035abbfee62779",
+      "group": "civics-2025",
+      "bytes": 56064
+    },
+    "civics-2025-127": {
+      "file": "civics/2025-127.mp3",
+      "hash": "1ae381971db829",
+      "group": "civics-2025",
+      "bytes": 40320
+    },
+    "civics-2025-128": {
+      "file": "civics/2025-128.mp3",
+      "hash": "1ac84186a95ef3",
+      "group": "civics-2025",
+      "bytes": 43392
+    },
+    "n400-001": {
+      "file": "n400/n400-001.mp3",
+      "hash": "16f2767c8d919b",
+      "group": "n400",
+      "bytes": 54528
+    },
+    "n400-001-sample-aurora-thistlewood": {
+      "file": "n400/n400-001-sample-aurora-thistlewood.mp3",
+      "hash": "1f82316a4b187e",
+      "group": "n400-samples",
+      "bytes": 52992
+    },
+    "n400-001-sample-juniper-hale": {
+      "file": "n400/n400-001-sample-juniper-hale.mp3",
+      "hash": "0c53334b21ad13",
+      "group": "n400-samples",
+      "bytes": 47232
+    },
+    "n400-001-sample-rowan-pike": {
+      "file": "n400/n400-001-sample-rowan-pike.mp3",
+      "hash": "0f04be1972b99e",
+      "group": "n400-samples",
+      "bytes": 55296
+    },
+    "n400-002": {
+      "file": "n400/n400-002.mp3",
+      "hash": "01a66f84d29635",
+      "group": "n400",
+      "bytes": 48000
+    },
+    "n400-002-sample-aurora-thistlewood": {
+      "file": "n400/n400-002-sample-aurora-thistlewood.mp3",
+      "hash": "10ef2e10cdb5c9",
+      "group": "n400-samples",
+      "bytes": 44928
+    },
+    "n400-002-sample-juniper-hale": {
+      "file": "n400/n400-002-sample-juniper-hale.mp3",
+      "hash": "0d28713dcb197d",
+      "group": "n400-samples",
+      "bytes": 34560
+    },
+    "n400-002-sample-rowan-pike": {
+      "file": "n400/n400-002-sample-rowan-pike.mp3",
+      "hash": "0983d4ce0d4856",
+      "group": "n400-samples",
+      "bytes": 59520
+    },
+    "n400-003": {
+      "file": "n400/n400-003.mp3",
+      "hash": "0cfdea62ef729f",
+      "group": "n400",
+      "bytes": 71424
+    },
+    "n400-003-sample-aurora-thistlewood": {
+      "file": "n400/n400-003-sample-aurora-thistlewood.mp3",
+      "hash": "117510e595bf95",
+      "group": "n400-samples",
+      "bytes": 69120
+    },
+    "n400-003-sample-juniper-hale": {
+      "file": "n400/n400-003-sample-juniper-hale.mp3",
+      "hash": "1825eba985492a",
+      "group": "n400-samples",
+      "bytes": 54528
+    },
+    "n400-003-sample-rowan-pike": {
+      "file": "n400/n400-003-sample-rowan-pike.mp3",
+      "hash": "1be0356986dde8",
+      "group": "n400-samples",
+      "bytes": 70656
+    },
+    "n400-004": {
+      "file": "n400/n400-004.mp3",
+      "hash": "1e5711741e7798",
+      "group": "n400",
+      "bytes": 35328
+    },
+    "n400-004-sample-aurora-thistlewood": {
+      "file": "n400/n400-004-sample-aurora-thistlewood.mp3",
+      "hash": "1be0d5e2e111cf",
+      "group": "n400-samples",
+      "bytes": 36864
+    },
+    "n400-004-sample-juniper-hale": {
+      "file": "n400/n400-004-sample-juniper-hale.mp3",
+      "hash": "0e7be92188f57a",
+      "group": "n400-samples",
+      "bytes": 31488
+    },
+    "n400-004-sample-rowan-pike": {
+      "file": "n400/n400-004-sample-rowan-pike.mp3",
+      "hash": "1d46b2b76d51cc",
+      "group": "n400-samples",
+      "bytes": 46464
+    },
+    "n400-005": {
+      "file": "n400/n400-005.mp3",
+      "hash": "0aa3567eb0fbcf",
+      "group": "n400",
+      "bytes": 67968
+    },
+    "n400-005-sample-aurora-thistlewood": {
+      "file": "n400/n400-005-sample-aurora-thistlewood.mp3",
+      "hash": "131540344f4dce",
+      "group": "n400-samples",
+      "bytes": 63360
+    },
+    "n400-005-sample-juniper-hale": {
+      "file": "n400/n400-005-sample-juniper-hale.mp3",
+      "hash": "055efb76bfad8f",
+      "group": "n400-samples",
+      "bytes": 81792
+    },
+    "n400-005-sample-rowan-pike": {
+      "file": "n400/n400-005-sample-rowan-pike.mp3",
+      "hash": "155acd6ac80a31",
+      "group": "n400-samples",
+      "bytes": 67968
+    },
+    "n400-006": {
+      "file": "n400/n400-006.mp3",
+      "hash": "010c8c991ab5c7",
+      "group": "n400",
+      "bytes": 70656
+    },
+    "n400-006-sample-aurora-thistlewood": {
+      "file": "n400/n400-006-sample-aurora-thistlewood.mp3",
+      "hash": "06295df5ee26d9",
+      "group": "n400-samples",
+      "bytes": 58368
+    },
+    "n400-006-sample-juniper-hale": {
+      "file": "n400/n400-006-sample-juniper-hale.mp3",
+      "hash": "08c6c4119beb05",
+      "group": "n400-samples",
+      "bytes": 69888
+    },
+    "n400-006-sample-rowan-pike": {
+      "file": "n400/n400-006-sample-rowan-pike.mp3",
+      "hash": "11f9dfe9cce40c",
+      "group": "n400-samples",
+      "bytes": 72960
+    },
+    "n400-007": {
+      "file": "n400/n400-007.mp3",
+      "hash": "014b42c1a7b9e2",
+      "group": "n400",
+      "bytes": 59520
+    },
+    "n400-007-sample-aurora-thistlewood": {
+      "file": "n400/n400-007-sample-aurora-thistlewood.mp3",
+      "hash": "0a0bd18ede3157",
+      "group": "n400-samples",
+      "bytes": 61056
+    },
+    "n400-007-sample-juniper-hale": {
+      "file": "n400/n400-007-sample-juniper-hale.mp3",
+      "hash": "1634f1ad4416e5",
+      "group": "n400-samples",
+      "bytes": 67968
+    },
+    "n400-007-sample-rowan-pike": {
+      "file": "n400/n400-007-sample-rowan-pike.mp3",
+      "hash": "13772edfc1b3f9",
+      "group": "n400-samples",
+      "bytes": 64896
+    },
+    "read-001": {
+      "file": "reading/read-001.mp3",
+      "hash": "127b0b4624d2ab",
+      "group": "reading",
+      "bytes": 41088
+    },
+    "read-002": {
+      "file": "reading/read-002.mp3",
+      "hash": "0a92cdf96f6491",
+      "group": "reading",
+      "bytes": 36864
+    },
+    "read-003": {
+      "file": "reading/read-003.mp3",
+      "hash": "013d44b44194f2",
+      "group": "reading",
+      "bytes": 44160
+    },
+    "read-004": {
+      "file": "reading/read-004.mp3",
+      "hash": "035653142f4da7",
+      "group": "reading",
+      "bytes": 40320
+    },
+    "read-005": {
+      "file": "reading/read-005.mp3",
+      "hash": "049c7af468251c",
+      "group": "reading",
+      "bytes": 46464
+    },
+    "read-006": {
+      "file": "reading/read-006.mp3",
+      "hash": "045863fdea69bc",
+      "group": "reading",
+      "bytes": 29568
+    },
+    "read-007": {
+      "file": "reading/read-007.mp3",
+      "hash": "09363ad66f1f3d",
+      "group": "reading",
+      "bytes": 46464
+    },
+    "read-008": {
+      "file": "reading/read-008.mp3",
+      "hash": "1230e85d26c079",
+      "group": "reading",
+      "bytes": 58368
+    },
+    "read-009": {
+      "file": "reading/read-009.mp3",
+      "hash": "13f177f6efe097",
+      "group": "reading",
+      "bytes": 41088
+    },
+    "read-010": {
+      "file": "reading/read-010.mp3",
+      "hash": "0273fde8da4763",
+      "group": "reading",
+      "bytes": 41856
+    },
+    "read-011": {
+      "file": "reading/read-011.mp3",
+      "hash": "1bb6fe62232f33",
+      "group": "reading",
+      "bytes": 43392
+    },
+    "read-012": {
+      "file": "reading/read-012.mp3",
+      "hash": "08403c28cde6d8",
+      "group": "reading",
+      "bytes": 45696
+    },
+    "write-001": {
+      "file": "writing/write-001.mp3",
+      "hash": "1dbb06b8395958",
+      "group": "writing",
+      "bytes": 46464
+    },
+    "write-002": {
+      "file": "writing/write-002.mp3",
+      "hash": "1f9060c858e7b5",
+      "group": "writing",
+      "bytes": 45696
+    },
+    "write-003": {
+      "file": "writing/write-003.mp3",
+      "hash": "02d65fd70b5eae",
+      "group": "writing",
+      "bytes": 48000
+    },
+    "write-004": {
+      "file": "writing/write-004.mp3",
+      "hash": "1889cb651dd906",
+      "group": "writing",
+      "bytes": 27264
+    },
+    "write-005": {
+      "file": "writing/write-005.mp3",
+      "hash": "1a8cc2d2dd72d2",
+      "group": "writing",
+      "bytes": 39168
+    },
+    "write-006": {
+      "file": "writing/write-006.mp3",
+      "hash": "0614fa1fd52681",
+      "group": "writing",
+      "bytes": 52992
+    },
+    "write-007": {
+      "file": "writing/write-007.mp3",
+      "hash": "1f25b5295f0975",
+      "group": "writing",
+      "bytes": 56832
+    },
+    "write-008": {
+      "file": "writing/write-008.mp3",
+      "hash": "19a9d9620b490c",
+      "group": "writing",
+      "bytes": 40320
+    },
+    "write-009": {
+      "file": "writing/write-009.mp3",
+      "hash": "18933b16f79c4c",
+      "group": "writing",
+      "bytes": 53760
+    },
+    "write-010": {
+      "file": "writing/write-010.mp3",
+      "hash": "14846218b0f71f",
+      "group": "writing",
+      "bytes": 36864
+    },
+    "write-011": {
+      "file": "writing/write-011.mp3",
+      "hash": "1ddd64ef151c10",
+      "group": "writing",
+      "bytes": 46464
+    },
+    "write-012": {
+      "file": "writing/write-012.mp3",
+      "hash": "02123d9d43f523",
+      "group": "writing",
+      "bytes": 39168
+    },
+    "write-013": {
+      "file": "writing/write-013.mp3",
+      "hash": "1048bbbc75bf5a",
+      "group": "writing",
+      "bytes": 47232
+    },
+    "write-014": {
+      "file": "writing/write-014.mp3",
+      "hash": "1cb0f0927ee081",
+      "group": "writing",
+      "bytes": 40320
+    }
+  }
+}

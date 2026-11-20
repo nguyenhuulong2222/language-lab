@@ -15,8 +15,10 @@
  *   recognise, a missing or repeated question number, or a wrong total stops the build.
  * - Every place where the source text had to be interpreted is recorded as a flag on that
  *   question and listed in the review sheet.
- * - Files it writes always carry needsHumanReview: true. A person approves them, not this
- *   script.
+ * - Files it writes carry needsHumanReview: true, unless tools/answer-key/review.json records a
+ *   named reviewer's approval of exactly these entries (the SHA-256 of the entries must match).
+ *   Any change to the entries after the review puts the flag back to true. A person approves the
+ *   keys, not this script.
  * - It uses the engine's own normaliser (src/engine/answer-normaliser.ts), so stored answers
  *   are in exactly the form the loader and grader expect.
  *
@@ -67,7 +69,10 @@ const VERSIONS = {
 
 const REVIEW_SHEET = path.join(ROOT, "docs/answer-key-review.md");
 const MARKERS_FILE = path.join(ROOT, "tools/answer-key/answer-markers.json");
+const REVIEW_FILE = path.join(ROOT, "tools/answer-key/review.json");
 const BATCH_SIZE = 20;
+/** The short words of the reading rule, which the sentence answers use too (only for the review sheet text). */
+const FUNCTION_WORDS = JSON.parse(fs.readFileSync(path.join(ROOT, "data/practice/practice-config.json"), "utf8")).sentenceMatch.functionWords;
 const MAX_VARIANTS_PER_LINE = 16;
 
 /** A source answer line that makes the whole question dynamic. */
@@ -91,6 +96,10 @@ const FLAGS = {
   OPT: "Words in parentheses are optional in the source. Stored both with and without them.",
   ALTNAME:
     "A parenthetical on this source line was marked by the project owner as an alternative name, not optional words (see tools/answer-key/answer-markers.json). Each name is stored as its own answer.",
+  OPTWORD:
+    "The project owner decided that one word of this source line is optional (see tools/answer-key/answer-markers.json, optionalWords). Stored with and without it; both count as one answer.",
+  ANYORDER:
+    "The project owner decided that the items listed on this source line may be said in any order (see tools/answer-key/answer-markers.json, anyOrder). Every item is still required, and items of different lines are not mixed.",
   NUMALONE:
     "The bare number is accepted as the answer for this source line (decision recorded in tools/answer-key/answer-markers.json). Stored in numberAlone.",
   NUM: "A spelled-out number is followed by its numeral in parentheses. Stored as the words and as the numeral.",
@@ -107,7 +116,7 @@ const FLAGS = {
   DIGITS:
     "An accepted answer contains digits. The matcher treats digits and spelled-out numbers as the same (13 = thirteen, 14th = fourteenth), so nothing was added to the data. A year read as two numbers (\"nineteen twenty\" for 1920) is not matched.",
   SENTENCE:
-    "Every accepted answer is a sentence of five or more words. A response must contain the whole sentence.",
+    "Every accepted answer is a sentence of five or more words. Matched the way the reading rule matches a sentence (matchAs \"sentence\"): every content word in order; short words from the fixed list and -s, -es, 's endings do not matter; a missing or substituted content word fails.",
 };
 
 // ---------------------------------------------------------------------------
@@ -383,11 +392,12 @@ function checkNumbering(questions, expected) {
  *   A/B                                 -> A and B
  *   (optional words)                    -> with and without
  */
-function expandLine(raw, { allowBrackets = true, markers = [] } = {}) {
+function expandLine(raw, { allowBrackets = true, markers = [], optionalWords = [] } = {}) {
   const flags = new Set();
   const notes = [];
   const extras = [];
   let alternative = false;
+  let oneAnswer = false;
   let text = collapse(raw);
 
   if (allowBrackets) {
@@ -419,6 +429,18 @@ function expandLine(raw, { allowBrackets = true, markers = [] } = {}) {
     flags.add("SLASH");
     return hold([a, b]);
   });
+  // Owner decisions: one word of the line is optional ("Jr.", "Day"). The variants are one answer.
+  for (const optional of optionalWords) {
+    const pattern = new RegExp(`(?<![A-Za-z])${escapeRegExp(optional.word)}(?![A-Za-z])`, "g");
+    const found = text.match(pattern) ?? [];
+    if (found.length !== 1) {
+      throw new Error(`Optional word for ${optional.question} ("${optional.word}") matched ${found.length} times in: ${raw}`);
+    }
+    text = text.replace(pattern, () => hold(["", optional.word]));
+    flags.add("OPTWORD");
+    oneAnswer = true;
+    notes.push(`optional word (owner decision): "${optional.word}" in "${collapse(raw)}" may be left out; both forms count as one answer`);
+  }
   // Owner decisions for single parenthetical groups: "alternative" instead of "optional".
   // Done before the general rule below, so only the marked group changes.
   for (const marker of markers) {
@@ -465,7 +487,7 @@ function expandLine(raw, { allowBrackets = true, markers = [] } = {}) {
   }
 
   let normalised = unique(variants.map(normalise).filter((v) => v.length > 0));
-  const own = { variants: normalised, flags, notes, alternative };
+  const own = { variants: normalised, flags, notes, alternative, oneAnswer };
   const extraResults = extras.map((item) => expandLine(item, { allowBrackets: false }));
   return { ...own, extras: extraResults };
 }
@@ -490,6 +512,9 @@ function buildEntry(version, config, q, markers = []) {
   const id = `${version}-${pad3(q.number)}`;
   const questionMarkers = markers.filter((m) => m.question === id && m.parentheses === "alternative");
   const questionNumberAlone = markers.filter((m) => m.question === id && m.numberAlone === true);
+  const questionOptionalWords = markers.filter((m) => m.question === id && m.optionalWord === true);
+  const questionAnyOrder = markers.filter((m) => m.question === id && m.anyOrder === true);
+  const anyOrderLines = []; // { answers: variants of the line, items: variants of each item }
   const answerGroupSources = []; // variants of each line with an alternative marker (one answer)
   const numberAloneSources = []; // variants of each line marked numberAlone
 
@@ -517,6 +542,7 @@ function buildEntry(version, config, q, markers = []) {
   let accepted = [];
   let answerGroups = [];
   let numberAlone = [];
+  let anyOrder = [];
   const sourceLines = q.answers.map((a) => a.display);
   let requiredAnswerCount = 1;
 
@@ -528,13 +554,27 @@ function buildEntry(version, config, q, markers = []) {
     for (const answer of q.answers) {
       const lineMarkers = questionMarkers.filter((m) => collapse(m.line) === collapse(answer.text));
       for (const m of lineMarkers) m.used = true;
-      const expanded = expandLine(answer.text, { markers: lineMarkers });
+      const lineOptional = questionOptionalWords.filter((m) => collapse(m.line) === collapse(answer.text));
+      for (const m of lineOptional) m.used = true;
+      const expanded = expandLine(answer.text, { markers: lineMarkers, optionalWords: lineOptional });
       for (const f of expanded.flags) flags.add(f);
       notes.push(...expanded.notes);
       const lineGroups = [expanded, ...expanded.extras];
       for (const extra of expanded.extras) for (const f of extra.flags) flags.add(f);
       for (const g of lineGroups) groups.push(g.variants);
-      if (expanded.alternative) answerGroupSources.push(unique(lineGroups.flatMap((g) => g.variants)));
+      if (expanded.alternative || expanded.oneAnswer) answerGroupSources.push(unique(lineGroups.flatMap((g) => g.variants)));
+      for (const m of questionAnyOrder.filter((x) => collapse(x.line) === collapse(answer.text))) {
+        m.used = true;
+        const separator = String.raw`\s*(?:,\s*(?:and\s+)?|\s+and\s+)`;
+        const shape = new RegExp(`^\\s*${m.items.map(escapeRegExp).join(separator)}\\s*$`);
+        if (!shape.test(answer.text)) {
+          throw new Error(`${id}: anyOrder items ${JSON.stringify(m.items)} are not the items of the source line "${answer.text}" in order`);
+        }
+        const items = m.items.map((item) => expandLine(item, { allowBrackets: false }).variants);
+        anyOrderLines.push({ answers: unique(lineGroups.flatMap((g) => g.variants)), items });
+        flags.add("ANYORDER");
+        notes.push(`any order (owner decision): ${m.items.map((i) => `"${i}"`).join(", ")} may be said in any order; all are required`);
+      }
       const aloneMarkers = questionNumberAlone.filter((m) => collapse(m.line) === collapse(answer.text));
       for (const m of aloneMarkers) m.used = true;
       if (aloneMarkers.length > 0) {
@@ -569,6 +609,9 @@ function buildEntry(version, config, q, markers = []) {
       .map((vs) => vs.filter((v) => accepted.includes(v)))
       .filter((vs) => vs.length >= 2);
     numberAlone = unique(numberAloneSources.flat().filter((v) => accepted.includes(v)));
+    anyOrder = anyOrderLines.map((line) => ({ answers: line.answers.filter((v) => accepted.includes(v)), items: line.items }));
+    if (anyOrder.some((line) => line.answers.length === 0)) throw new Error(`${id}: an anyOrder line has no stored answer`);
+    if (anyOrder.length > 0 && requiredAnswerCount > 1) throw new Error(`${id}: anyOrder is only supported where one answer is needed`);
 
     if (accepted.length === 0) throw new Error(`${id}: no accepted answers after parsing`);
     if (requiredAnswerCount > accepted.length) {
@@ -595,6 +638,8 @@ function buildEntry(version, config, q, markers = []) {
       acceptedAnswers: accepted,
       ...(answerGroups.length > 0 ? { answerGroups } : {}),
       ...(numberAlone.length > 0 ? { numberAlone } : {}),
+      ...(anyOrder.length > 0 ? { anyOrder } : {}),
+      ...(flags.has("SENTENCE") ? { matchAs: "sentence" } : {}),
       requiredAnswerCount,
       answerType: isDynamic ? "dynamic" : "static",
       sourceUrl: config.sourceUrl,
@@ -638,7 +683,27 @@ function loadMarkers() {
     if (!/^(2008|2025)-\d{3}$/.test(m.question)) throw new Error(`${where}: 'question' must look like 2025-097`);
     return { question: m.question, line: m.line, decision: m.decision, numberAlone: true, used: false };
   });
-  return [...alternatives, ...numberAlone];
+  const optionalWords = (raw.optionalWords ?? []).map((m, i) => {
+    const where = `answer-markers.json, optionalWords ${i + 1}`;
+    for (const key of ["question", "line", "word", "decision"]) {
+      if (typeof m[key] !== "string" || m[key].trim() === "") throw new Error(`${where}: '${key}' must be a non-empty string`);
+    }
+    if (!/^(2008|2025)-\d{3}$/.test(m.question)) throw new Error(`${where}: 'question' must look like 2025-126`);
+    if (!m.line.includes(m.word)) throw new Error(`${where}: 'word' must be a word of 'line'`);
+    return { question: m.question, line: m.line, word: m.word, decision: m.decision, optionalWord: true, used: false };
+  });
+  const anyOrder = (raw.anyOrder ?? []).map((m, i) => {
+    const where = `answer-markers.json, anyOrder ${i + 1}`;
+    for (const key of ["question", "line", "decision"]) {
+      if (typeof m[key] !== "string" || m[key].trim() === "") throw new Error(`${where}: '${key}' must be a non-empty string`);
+    }
+    if (!/^(2008|2025)-\d{3}$/.test(m.question)) throw new Error(`${where}: 'question' must look like 2025-016`);
+    if (!Array.isArray(m.items) || m.items.length < 2 || !m.items.every((x) => typeof x === "string" && m.line.includes(x))) {
+      throw new Error(`${where}: 'items' must be two or more parts of 'line'`);
+    }
+    return { question: m.question, line: m.line, items: m.items, decision: m.decision, anyOrder: true, used: false };
+  });
+  return [...alternatives, ...numberAlone, ...optionalWords, ...anyOrder];
 }
 
 function nestingProblems(entry) {
@@ -701,6 +766,10 @@ function entryJson(e) {
     `      "acceptedAnswers": [${j.acceptedAnswers.map(q).join(", ")}],`,
     ...(j.answerGroups ? [`      "answerGroups": [${j.answerGroups.map((g) => `[${g.map(q).join(", ")}]`).join(", ")}],`] : []),
     ...(j.numberAlone ? [`      "numberAlone": [${j.numberAlone.map(q).join(", ")}],`] : []),
+    ...(j.anyOrder
+      ? [`      "anyOrder": [${j.anyOrder.map((l) => `{ "answers": [${l.answers.map(q).join(", ")}], "items": [${l.items.map((it) => `[${it.map(q).join(", ")}]`).join(", ")}] }`).join(", ")}],`]
+      : []),
+    ...(j.matchAs ? [`      "matchAs": ${q(j.matchAs)},`] : []),
     `      "requiredAnswerCount": ${j.requiredAnswerCount},`,
     `      "answerType": ${q(j.answerType)},`,
     `      "sourceUrl": ${q(j.sourceUrl)},`,
@@ -709,7 +778,29 @@ function entryJson(e) {
   ].join("\n");
 }
 
-function fileJson(version, config, entries) {
+/** The SHA-256 of the entries exactly as they are written, so a review covers one version of them. */
+function entriesHash(entries) {
+  return crypto.createHash("sha256").update(entries.map(entryJson).join(",\n")).digest("hex");
+}
+
+/** The recorded review of a version, if it covers exactly these entries. */
+function reviewFor(version, entries) {
+  if (!fs.existsSync(REVIEW_FILE)) return { review: null, reason: "no review recorded" };
+  const all = JSON.parse(fs.readFileSync(REVIEW_FILE, "utf8")).reviews ?? {};
+  const review = all[version];
+  if (!review) return { review: null, reason: "no review recorded for this version" };
+  for (const key of ["reviewedBy", "reviewedOn", "note", "entriesSha256"]) {
+    if (typeof review[key] !== "string" || review[key].trim() === "") throw new Error(`review.json, ${version}: '${key}' must be a non-empty string`);
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(review.reviewedOn)) throw new Error(`review.json, ${version}: 'reviewedOn' must be YYYY-MM-DD`);
+  const hash = entriesHash(entries);
+  if (review.entriesSha256 !== hash) {
+    return { review: null, reason: `the entries changed after the review (recorded ${review.entriesSha256.slice(0, 12)}, now ${hash.slice(0, 12)})` };
+  }
+  return { review, reason: "" };
+}
+
+function fileJson(version, config, entries, review) {
   const sources = [config.sourceFile, config.documentFile, config.crossCheckFile]
     .filter(Boolean)
     .filter((f, i, all) => all.indexOf(f) === i)
@@ -718,13 +809,21 @@ function fileJson(version, config, entries) {
     version === "2025"
       ? "Built from data/sources/uscis-2025-civics-128.txt, converted from uscis-2025-civics-128.pdf (official USCIS 128 Civics Questions and Answers, 2025 version, M-1778 09/25), by tools/answer-key/build-answer-key.mjs. NEEDS HUMAN REVIEW: see docs/answer-key-review.md. Accepted answers are stored normalised (lowercase, no punctuation, hyphens as spaces). A leading the/a/an is optional when matching, so it is stored as written. Dynamic questions (answers change with elections, appointments or where the user lives) have no stored answers."
       : "Built from data/sources/uscis-2008-civics-100.html (official USCIS 2008 list, web page) by tools/answer-key/build-answer-key.mjs. Numbering was cross-checked against data/sources/uscis-2008-civics-100-rev0119.txt. NEEDS HUMAN REVIEW: see docs/answer-key-review.md. Accepted answers are stored normalised (lowercase, no punctuation, hyphens as spaces). A leading the/a/an is optional when matching, so it is stored as written. Dynamic questions (answers change with elections, appointments or where the user lives) have no stored answers.";
+  const shownNote = review ? note.replace("NEEDS HUMAN REVIEW: see docs/answer-key-review.md.", "Reviewed: see reviewedBy, reviewedOn and reviewNote below, and docs/answer-key-review.md.") : note;
   return [
     "{",
-    `  "_note": ${JSON.stringify(note)},`,
+    `  "_note": ${JSON.stringify(shownNote)},`,
     `  "_generatedBy": "tools/answer-key/build-answer-key.mjs",`,
     `  "_reviewSheet": "docs/answer-key-review.md",`,
     `  "_sources": ${JSON.stringify(sources)},`,
-    `  "needsHumanReview": true,`,
+    `  "needsHumanReview": ${review ? "false" : "true"},`,
+    ...(review
+      ? [
+          `  "reviewedBy": ${JSON.stringify(review.reviewedBy)},`,
+          `  "reviewedOn": ${JSON.stringify(review.reviewedOn)},`,
+          `  "reviewNote": ${JSON.stringify(review.note)},`,
+        ]
+      : []),
     `  "entries": [`,
     entries.map(entryJson).join(",\n"),
     "  ]",
@@ -752,7 +851,8 @@ function reviewTable(entries) {
     const answers = e.acceptedAnswers.length
       ? e.acceptedAnswers.map((a) => `\`${a}\``).join("<br>") + (e.requiredAnswerCount > 1 ? `<br>(needs ${e.requiredAnswerCount})` : "") +
         (e.json.answerGroups ? e.json.answerGroups.map((g) => `<br>(count as one: ${g.map((a) => `\`${a}\``).join(" / ")})`).join("") : "") +
-        (e.json.numberAlone ? `<br>(bare number accepted: ${e.json.numberAlone.map((a) => `\`${a}\``).join(", ")})` : "")
+        (e.json.numberAlone ? `<br>(bare number accepted: ${e.json.numberAlone.map((a) => `\`${a}\``).join(", ")})` : "") +
+        (e.json.anyOrder ? e.json.anyOrder.map((l) => `<br>(any order, all required: ${l.items.map((it) => it.map((a) => `\`${a}\``).join(" / ")).join(" + ")})`).join("") : "")
       : "(none stored)";
     const source = e.sourceLines.map(cell).join("<br>") + (e.notes.length ? "<br>" + e.notes.map((n) => `<em>${cell(n)}</em>`).join("<br>") : "");
     rows.push(
@@ -767,9 +867,20 @@ function reviewSheet(results, comparison) {
   out.push("# Answer key review sheet", "");
   out.push(
     "Generated by `tools/answer-key/build-answer-key.mjs`. Do not edit by hand: change the script or the source files and run it again.",
+    ""
+  );
+  out.push("## Review record", "");
+  for (const r of results) {
+    if (r.review) {
+      out.push(`- **${r.version}**: reviewed by ${r.review.reviewedBy} on ${r.review.reviewedOn}. ${r.review.note} (entries SHA-256 \`${r.review.entriesSha256.slice(0, 16)}\`)`);
+    } else {
+      out.push(`- **${r.version}**: \`needsHumanReview: true\` (${r.reviewReason}).`);
+    }
+  }
+  out.push(
     "",
-    "Both answer key files are marked `needsHumanReview: true`. They stay that way until the project owner approves them.",
-    "Source files are in `data/sources/` (see the README there).",
+    "A key stays reviewed only while its entries are exactly the reviewed ones; a rebuild that changes them sets `needsHumanReview` back to `true`.",
+    "Source files are in `data/sources/` (see the README there). The independent check is `tools/answer-key/check-against-source.py` (result in `docs/answer-key-source-check.md`).",
     ""
   );
 
@@ -799,8 +910,8 @@ function reviewSheet(results, comparison) {
     "- Numbers are matched by value, by the matcher, not by extra data: `13` = `thirteen`, `27` = `twenty-seven`, `14th` = `fourteenth`. For an answer that is a number with a unit (`six years`), the number alone (`six`, `6`) is also accepted. Questions with digits carry the **DIGITS** flag.",
     "- A year read as two numbers is not matched: \"nineteen twenty\" does not match `1920` (it is read as 19 and 20). The ordinal alone does not match an ordinal with a noun: `fourteenth` does not match `14th amendment`; `thirteen` does not match `13 original colonies`.",
     "- Any other spoken form the source does not list is not accepted, unless the project owner marked a parenthetical as an alternative name (**ALTNAME**), for example `Secretary of Defense` for 2025 question 48.",
-    "- Sentence answers (**SENTENCE** flag) must be said almost in full, in the source's wording.",
-    "- Answers that list several items in one line (for example question 16 in 2025, \"Legislative, executive, and judicial\") are stored as one phrase and must be said in that order.",
+    `- Sentence answers (**SENTENCE** flag) are matched like a reading sentence: every content word in the source's order; short words (${FUNCTION_WORDS.map((w) => "`" + w + "`").join(", ")}, from data/practice/practice-config.json) and -s, -es, 's endings do not matter; other words may come between; a missing or substituted content word fails.`,
+    "- Answers that list several items in one line (for example question 16 in 2025, \"Legislative, executive, and judicial\") are stored as one phrase. Where the project owner decided so (**ANYORDER**), the items may be said in any order, but every item of the line is required and items of different lines are not mixed. Elsewhere they must be said in the source's order.",
     "- A number does not match when the response continues it (\"one hundred and one\" for `one hundred`), or when it starts in the middle of a larger number (\"twenty two\" for `two`).",
     "- Leading `the`, `a`, `an` in a stored answer is optional.",
     "- Dynamic questions have no stored answers and are never scored. They must not be offered as practice questions.",
@@ -836,7 +947,7 @@ function reviewSheet(results, comparison) {
       const batch = r.entries.slice(i, i + BATCH_SIZE);
       out.push(`### ${r.version}: questions ${batch[0].number} to ${batch[batch.length - 1].number}`, "");
       out.push(reviewTable(batch), "");
-      out.push("Reviewer: ______________  Date: ____________  Approved: [ ]", "");
+      out.push(r.review ? `Reviewed: ${r.review.reviewedBy}, ${r.review.reviewedOn} (see the review record above).` : "Reviewer: ______________  Date: ____________  Approved: [ ]", "");
     }
   }
   return out.join("\n");
@@ -881,7 +992,8 @@ function main() {
       }
     }
     for (const e of entries) for (const p of nestingProblems(e)) allProblems.push(`${version}: ${p}`);
-    results.push({ version, config, numbering, entries });
+    const { review, reason } = reviewFor(version, entries);
+    results.push({ version, config, numbering, entries, review, reviewReason: reason, hash: entriesHash(entries) });
   }
 
   for (const m of markers) {
@@ -901,6 +1013,8 @@ function main() {
       .filter(([, n]) => n > 0)
       .map(([code, n]) => `${code}=${n}`);
     console.log(`   flags: ${byFlag.join(" ")}`);
+    console.log(`   entries SHA-256: ${r.hash}`);
+    console.log(`   review: ${r.review ? `${r.review.reviewedBy}, ${r.review.reviewedOn}` : `none (${r.reviewReason}); needsHumanReview stays true`}`);
   }
   console.log(`\n2008 web page vs rev. 01/19: ${comparison.length} difference(s)`);
   for (const d of comparison) console.log(`   - ${d}`);
@@ -913,8 +1027,8 @@ function main() {
 
   for (const r of results) {
     if (writes.has(r.version)) {
-      fs.writeFileSync(r.config.output, fileJson(r.version, r.config, r.entries));
-      console.log(`\nwrote ${rel(r.config.output)} (${r.entries.length} entries, needsHumanReview: true)`);
+      fs.writeFileSync(r.config.output, fileJson(r.version, r.config, r.entries, r.review));
+      console.log(`\nwrote ${rel(r.config.output)} (${r.entries.length} entries, needsHumanReview: ${r.review ? "false" : "true"})`);
     }
   }
   if (writes.has("review")) {

@@ -18,8 +18,10 @@ vite.config.ts.timestamp-*
 # Local tool-specific .env files (e.g. tools/speech-test/.env)
 tools/**/.env
 
-# Generated audio files (run tools/speech-test/generate-audio.mjs to produce)
+# Generated audio of the speech-test tool only (run tools/speech-test/generate-audio.mjs)
 tools/speech-test/audio/
+# NOTE: public/audio/ (the practice flow's pre-generated prompts) is committed on purpose:
+# it must deploy with the site. Do not ignore it.
 
 # Local audio recordings (device-local only, never committed)
 local-recordings/

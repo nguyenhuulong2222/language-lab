@@ -1,0 +1,56 @@
+{
+  "needsHumanReview": true,
+  "isFictional": true,
+  "kind": "reading",
+  "note": "Language Lab practice sentences, written for this project. They are not USCIS test sentences. Every word comes from the official list in vocabulary.json.",
+  "sentences": [
+    {
+      "id": "read-001",
+      "text": "Who was George Washington?"
+    },
+    {
+      "id": "read-002",
+      "text": "Who was Abraham Lincoln?"
+    },
+    {
+      "id": "read-003",
+      "text": "What is the capital of the United States?"
+    },
+    {
+      "id": "read-004",
+      "text": "Where is the White House?"
+    },
+    {
+      "id": "read-005",
+      "text": "Who lives in the White House?"
+    },
+    {
+      "id": "read-006",
+      "text": "When do we vote?"
+    },
+    {
+      "id": "read-007",
+      "text": "Who elects the President?"
+    },
+    {
+      "id": "read-008",
+      "text": "What is the largest city?"
+    },
+    {
+      "id": "read-009",
+      "text": "Why do people want to vote?"
+    },
+    {
+      "id": "read-010",
+      "text": "A citizen can vote."
+    },
+    {
+      "id": "read-011",
+      "text": "When is Independence Day?"
+    },
+    {
+      "id": "read-012",
+      "text": "What is the name of the country?"
+    }
+  ]
+}
