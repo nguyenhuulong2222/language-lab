@@ -19,8 +19,8 @@ agency. Nothing here is legal advice.
    publication"). Each picture's creator, source page, file URL, SHA-256 and rights statement are
    in data/images/manifest.json and docs/image-credits.md. They are not covered by the MIT licence.
 
-4. Font. Bitter by Sol Matas (Huerta Tipográfica), SIL Open Font License 1.1. Currently loaded
-   from Google Fonts at run time; see docs/audit for the plan to self-host it.
+4. Font. Bitter by Sol Matas (Huerta Tipográfica), SIL Open Font License 1.1. Served from this
+   site (public/fonts/, licence text in public/fonts/OFL.txt). Nothing is loaded from Google.
 
 5. Generated audio (public/audio/). Spoken prompts made with OpenAI text-to-speech (model
    gpt-4o-mini-tts, voice "coral") from texts in this repository. The app labels them "AI-generated

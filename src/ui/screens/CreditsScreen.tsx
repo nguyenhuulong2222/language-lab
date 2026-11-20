@@ -9,6 +9,8 @@ import { Disclaimer } from "../components/Disclaimer";
 import { TakeHeader } from "../components/TakeHeader";
 import "../components/Screen.css";
 
+/** Proper names, shown in English whatever the interface language. */
+const OFL_NAME = "SIL Open Font License 1.1";
 export function CreditsScreen({ onClose, manifest = PICTURE_MANIFEST }: { onClose: () => void; manifest?: PictureManifest }) {
   const t = useT();
   return (
@@ -31,6 +33,13 @@ export function CreditsScreen({ onClose, manifest = PICTURE_MANIFEST }: { onClos
           </li>
         ))}
       </ul>
+      <p className="note" lang="en">
+        Headings use the Bitter font by Sol Matas (Huerta Tipográfica), under the{" "}
+        <a href="/fonts/OFL.txt" target="_blank" rel="noopener noreferrer">
+          {OFL_NAME}
+        </a>
+        .
+      </p>
       <Disclaimer messageKey="disclaimer.short" />
       <div className="btn-row">
         <button type="button" className="btn" onClick={onClose}>

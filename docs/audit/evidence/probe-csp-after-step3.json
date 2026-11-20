@@ -1,0 +1,106 @@
+{
+ "mode": "csp",
+ "csp": "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'",
+ "loadMs": 128,
+ "paints": [
+  [
+   "first-paint",
+   60
+  ],
+  [
+   "first-contentful-paint",
+   84
+  ]
+ ],
+ "nav": {
+  "dcl": 53,
+  "load": 53,
+  "transfer": 721
+ },
+ "lcp": 84,
+ "steps": [
+  [
+   "English",
+   true
+  ],
+  [
+   "Study first",
+   true
+  ],
+  [
+   "2008 civics test",
+   true
+  ],
+  [
+   "Back to home",
+   true
+  ],
+  [
+   "Picture credits",
+   true
+  ],
+  [
+   "Back to the practice",
+   true
+  ],
+  [
+   "Reading",
+   true
+  ]
+ ],
+ "totalBytes": 249816,
+ "origins": {
+  "http://localhost:5199": {
+   "n": 5,
+   "bytes": 249816
+  }
+ },
+ "responseHeadersOfDocument": {
+  "Connection": "keep-alive",
+  "Date": "Fri, 20 Nov 2026 11:27:05 GMT",
+  "Keep-Alive": "timeout=5",
+  "cache-control": "public, max-age=0",
+  "content-encoding": "gzip",
+  "content-length": "421",
+  "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'",
+  "content-type": "text/html; charset=utf-8"
+ },
+ "requests": [
+  {
+   "url": "/",
+   "type": "Document",
+   "status": 200,
+   "bytes": 894
+  },
+  {
+   "url": "/assets/index-XH90adW0.js",
+   "type": "Script",
+   "status": 200,
+   "bytes": 208297
+  },
+  {
+   "url": "/assets/index-CSIUnBqv.css",
+   "type": "Stylesheet",
+   "status": 200,
+   "bytes": 5124
+  },
+  {
+   "url": "/fonts/bitter-latin.woff2",
+   "type": "Font",
+   "status": 200,
+   "bytes": 34607
+  },
+  {
+   "url": "/favicon.ico",
+   "type": "Other",
+   "status": 200,
+   "bytes": 894
+  }
+ ],
+ "console": [
+  [
+   "log.error",
+   "Executing inline script violates the following Content Security Policy directive 'script-src 'self''. Either the 'unsafe-inline' keyword, a hash ('sha256-ZwqldfsJdNVMda3s8g8jPJXfQBqJpWcMt0bbYCrrSVw='), or a nonce ('nonce-...') is required to enable inline execution. The action has been blocked."
+  ]
+ ]
+}
