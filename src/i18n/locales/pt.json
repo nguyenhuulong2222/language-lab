@@ -89,7 +89,7 @@
   "n400.done.title": "As suas respostas",
   "n400.done.lead": "Estas são as palavras que você disse. Elas não são pontuadas.",
   "n400.done.next": "Ir para a leitura",
-  "voice.privacy": "A voz usa o reconhecimento de fala do seu navegador. Dependendo do navegador, a sua voz pode ser processada pela empresa que o fabrica. O Language Lab não grava nem envia a sua voz, e nada é guardado quando você fecha esta página.",
+  "voice.privacy": "A voz usa o reconhecimento de fala do seu navegador. Dependendo do navegador, a sua voz pode ser processada pela empresa que o fabrica. O Language Lab não envia nem guarda a sua voz. Se você usar “Gravar e comparar”, a gravação fica neste dispositivo, na memória, e é apagada quando você passa para a próxima frase ou fecha esta página.",
   "n400.number": "Pergunta {current}",
   "common.fictional": "Perfil de prática fictício",
   "reading.title": "Leitura",
@@ -240,5 +240,17 @@
   "credits.title": "Créditos das imagens",
   "credits.lead": "As imagens da prática de educação cívica vêm de fontes oficiais do governo federal dos EUA. Cada uma é usada apenas porque o seu próprio registro informa os direitos. Isso não significa que nenhum órgão aprove o Language Lab.",
   "credits.back": "Voltar à prática",
-  "credits.newTab": "Os links abrem as páginas de origem em uma nova aba."
+  "credits.newTab": "Os links abrem as páginas de origem em uma nova aba.",
+  "selfReview.title": "Ouvir e comparar",
+  "selfReview.help": "Grave você mesmo lendo a frase e depois ouça a sua gravação e o exemplo. Isto é para você comparar de ouvido. Não é pontuado.",
+  "selfReview.record": "Gravar e comparar",
+  "selfReview.stop": "Parar a gravação",
+  "selfReview.recording": "Gravando. Leia a frase agora e depois toque em “Parar a gravação”.",
+  "selfReview.hearYours": "Ouvir a minha gravação",
+  "selfReview.hearSample": "Ouvir o exemplo",
+  "selfReview.tryAgain": "Tentar de novo",
+  "selfReview.privacy": "A sua gravação fica neste dispositivo. Ela não é enviada para lugar nenhum nem guardada, e é apagada quando você passa para a próxima frase ou sai desta tela.",
+  "selfReview.unsupported": "Este navegador não consegue gravar a sua voz. Você ainda pode conferir a sua leitura com “Falar” ou digitando.",
+  "selfReview.denied": "O microfone está bloqueado. Permita o acesso ao microfone nas configurações do seu navegador.",
+  "selfReview.error": "A gravação não funcionou desta vez. Tente de novo."
 }

@@ -11,7 +11,8 @@
  *   n400                       every scripted N-400 question
  *   n400-samples               every fictional profile's sample answer
  *   writing                    every writing (dictation) sentence
- * Reading sentences get no audio: they are not played before the attempt.
+ *   reading                    every reading sentence: the sample of listen-and-compare. The screen
+ *                              never plays it before the first attempt.
  *
  * Output:
  *   public/audio/<group folder>/<id>.mp3
@@ -26,7 +27,7 @@
  *   --dry-run         list what would be generated and the character total. No API call, and
  *                     the key file is not even read.
  *   --only=<groups>   comma-separated: civics (both keys), civics-2008, civics-2025, n400,
- *                     n400-samples, writing.
+ *                     n400-samples, writing, reading.
  *   --skip-dynamic    leave out civics questions whose answers change (the app never asks
  *                     them: CR-003).
  *   --prune           delete clips and manifest entries whose source text no longer exists.
@@ -114,6 +115,7 @@ const allClips = buildClipList({
   civics: { 2008: keep(civics2008), 2025: keep(civics2025) },
   n400: readJson("data/practice/n400-questions.json").questions,
   writing: readJson("data/practice/writing-sentences.json").sentences,
+  reading: readJson("data/practice/reading-sentences.json").sentences,
 });
 const clips = onlyGroups ? allClips.filter((clip) => onlyGroups.has(clip.group)) : allClips;
 

@@ -89,7 +89,7 @@
   "n400.done.title": "Repons ou yo",
   "n400.done.lead": "Sa yo se mo ou te di yo. Yo pa jwenn nòt.",
   "n400.done.next": "Ale nan lekti",
-  "voice.privacy": "Vwa a sèvi ak rekonesans vwa navigatè ou a. Selon navigatè a, konpayi ki fè navigatè a ka trete vwa ou. Language Lab pa anrejistre ni voye vwa ou, e anyen pa sove lè ou fèmen paj sa a.",
+  "voice.privacy": "Vwa a sèvi ak rekonesans vwa navigatè ou a. Selon navigatè a, konpayi ki fè navigatè a ka trete vwa ou. Language Lab pa voye ni sove vwa ou. Si ou itilize “Anrejistre epi konpare”, anrejistreman an rete sou aparèy sa a, nan memwa, e yo efase l lè ou pase nan pwochen fraz la oswa lè ou fèmen paj sa a.",
   "n400.number": "Kesyon {current}",
   "common.fictional": "Pwofil pratik fiktif",
   "reading.title": "Lekti",
@@ -240,5 +240,17 @@
   "credits.title": "Kredi imaj yo",
   "credits.lead": "Imaj ki nan pratik edikasyon sivik la soti nan sous ofisyèl gouvènman federal Etazini. Chak imaj itilize paske pwòp dosye li di klèman dwa li yo. Sa pa vle di okenn ajans apwouve Language Lab.",
   "credits.back": "Tounen nan pratik la",
-  "credits.newTab": "Lyen yo ouvri paj sous yo nan yon nouvo onglè."
+  "credits.newTab": "Lyen yo ouvri paj sous yo nan yon nouvo onglè.",
+  "selfReview.title": "Koute epi konpare",
+  "selfReview.help": "Anrejistre tèt ou k ap li fraz la, answit koute anrejistreman ou an ak echantiyon an. Sa a se pou konpare ak zòrèy ou. Pa gen nòt ki bay.",
+  "selfReview.record": "Anrejistre epi konpare",
+  "selfReview.stop": "Sispann anrejistre",
+  "selfReview.recording": "Y ap anrejistre. Li fraz la kounye a, answit peze “Sispann anrejistre”.",
+  "selfReview.hearYours": "Koute anrejistreman ou",
+  "selfReview.hearSample": "Koute echantiyon an",
+  "selfReview.tryAgain": "Eseye ankò",
+  "selfReview.privacy": "Anrejistreman ou a rete sou aparèy sa a. Yo pa voye l okenn kote ni sove l, e yo efase l lè ou pase nan pwochen fraz la oswa lè ou kite ekran sa a.",
+  "selfReview.unsupported": "Navigatè sa a pa kapab anrejistre vwa ou. Ou ka toujou tcheke lekti ou ak “Pale” oswa lè ou tape.",
+  "selfReview.denied": "Mikwofòn nan bloke. Pèmèt aksè nan mikwofòn nan paramèt navigatè ou a.",
+  "selfReview.error": "Anrejistreman an pa mache fwa sa a. Eseye ankò."
 }

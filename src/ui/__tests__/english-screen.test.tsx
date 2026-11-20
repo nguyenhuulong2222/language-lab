@@ -4,6 +4,7 @@ import { EnglishScreen } from "../screens/EnglishScreen";
 import { VoiceProvider } from "../voice/VoiceProvider";
 import { SILENT_SPEAKER, type PromptSpeaker } from "../voice/prompt-speaker";
 import { UNSUPPORTED_LISTENER, type SpeechListener } from "../voice/speech-listener";
+import type { SelfReviewRecorder } from "../voice/self-review";
 import {
   createDefaultPracticeEnv,
   createPracticeEngine,
@@ -16,6 +17,7 @@ const env = { ...createDefaultPracticeEnv(), answerKey: () => ({ status: "locked
 const engine = createPracticeEngine(env);
 const profile = env.content.profiles[0]!.id;
 
+const RECORDER: SelfReviewRecorder = { supported: true, start: () => Promise.resolve({ kind: "recording" }), stop: () => Promise.resolve({ kind: "nothing" }), discard: () => {} };
 const speaker: PromptSpeaker = {
   available: true,
   voiceFor: () => "device-voice",
@@ -30,10 +32,14 @@ function atReading(): PracticeState {
   return engine.reduce(s, { type: "finishN400", at: AT });
 }
 
-function render(state: PracticeState, kind: "reading" | "writing", opts: { feedback?: boolean; voice?: boolean } = {}) {
+function render(state: PracticeState, kind: "reading" | "writing", opts: { feedback?: boolean; voice?: boolean; recorder?: SelfReviewRecorder } = {}) {
   const progress = engine.englishProgress(state, kind);
   return renderToString(
-    <VoiceProvider speaker={opts.voice === false ? SILENT_SPEAKER : speaker} listener={opts.voice === false ? UNSUPPORTED_LISTENER : listener}>
+    <VoiceProvider
+      speaker={opts.voice === false ? SILENT_SPEAKER : speaker}
+      listener={opts.voice === false ? UNSUPPORTED_LISTENER : listener}
+      {...(opts.recorder === undefined ? {} : { recorder: opts.recorder })}
+    >
       <EnglishScreen
         progress={progress}
         matchOptions={engine.matchOptions(kind)}
@@ -141,5 +147,74 @@ describe("writing screen", () => {
     const html = render(s, "writing", { feedback: true });
     expect(html).toContain("What you typed");
     expect(html).toContain("we pay");
+  });
+});
+
+describe("listen and compare on the reading screen", () => {
+  it("before the first attempt it offers Record and compare and never the sample", () => {
+    const html = render(atReading(), "reading", { recorder: RECORDER });
+    expect(html).toContain("Listen and compare");
+    expect(html).toContain("Record and compare");
+    expect(html).toContain("Say it");
+    expect(html).not.toContain("Hear the sample");
+    expect(html).not.toContain("Play aloud");
+    expect(html).toContain("stays on this device");
+  });
+  it("the sample is not offered before the first attempt even when the browser cannot record", () => {
+    const html = render(atReading(), "reading");
+    expect(html).not.toContain("Hear the sample");
+  });
+  it("after a checked attempt it offers the sample and Try again", () => {
+    let s = atReading();
+    s = engine.reduce(s, { type: "submitReading", transcript: "zzz", input: "typed", at: AT });
+    const html = render(s, "reading", { feedback: true, recorder: RECORDER });
+    expect(html).toContain("Hear the sample");
+    expect(html).toContain("Try again");
+  });
+  it("writing has no recording and no sample button", () => {
+    let s = atReading();
+    for (;;) {
+      const p = engine.englishProgress(s, "reading");
+      if (p.done) break;
+      s = engine.reduce(s, { type: "submitReading", transcript: p.current!.text, input: "typed", at: AT });
+    }
+    const html = render(engine.reduce(s, { type: "continue", at: AT }), "writing", { recorder: RECORDER });
+    expect(html).not.toContain(">Record and compare<");
+    expect(html).not.toContain("Hear the sample");
+  });
+});
+describe("try the sentence again", () => {
+  it("replaces the last attempt: the sentence is asked again and only the new attempt counts", () => {
+    let s = atReading();
+    const first = engine.englishProgress(s, "reading").current!;
+    s = engine.reduce(s, { type: "submitReading", transcript: "zzz", input: "typed", at: AT });
+    expect(engine.englishProgress(s, "reading").current?.id).not.toBe(first.id);
+    s = engine.reduce(s, { type: "retryEnglish" });
+    expect(s.reading).toHaveLength(0);
+    expect(engine.englishProgress(s, "reading").current?.id).toBe(first.id);
+    s = engine.reduce(s, { type: "submitReading", transcript: first.text, input: "typed", at: AT });
+    expect(s.reading).toHaveLength(1);
+    expect(s.reading[0]!.isCorrect).toBe(true);
+  });
+  it("does nothing when there is no attempt, or outside reading and writing", () => {
+    const s = atReading();
+    expect(engine.reduce(s, { type: "retryEnglish" })).toBe(s);
+    const home = engine.initial();
+    expect(engine.reduce(home, { type: "retryEnglish" })).toBe(home);
+  });
+  it("a spoken attempt scores every alternative and keeps the best one as what we heard", () => {
+    let s = atReading();
+    const sentence = engine.englishProgress(s, "reading").current!;
+    s = engine.reduce(s, { type: "submitReading", transcript: "zzz qqq", alternatives: ["zzz", sentence.text.toLowerCase()], input: "voice", at: AT });
+    const attempt = s.reading[0]!;
+    expect(attempt.alternativesScored).toBe(3);
+    expect(attempt.usedAlternative).toBe(2);
+    expect(attempt.transcript).toBe(sentence.text.toLowerCase());
+    expect(attempt.isCorrect).toBe(true);
+  });
+  it("typed text is scored as typed: no alternatives", () => {
+    let s = atReading();
+    s = engine.reduce(s, { type: "submitReading", transcript: "zzz", input: "typed", at: AT });
+    expect(s.reading[0]).toMatchObject({ alternativesScored: 1, usedAlternative: 0, isCorrect: false });
   });
 });

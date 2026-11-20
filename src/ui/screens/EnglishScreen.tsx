@@ -9,11 +9,13 @@ import type { EnglishProgress, InputMode } from "../../engine/practice-flow";
 import type { MatchOptions } from "../../engine/sentence-compare";
 import { useT } from "../../i18n/react";
 import { AnswerInput } from "../components/AnswerInput";
+import { ListenAndCompare } from "../components/ListenAndCompare";
 import { SentenceFeedback } from "../components/SentenceFeedback";
 import { EnglishNotice } from "../components/EnglishNotice";
 import { ScreenHelp } from "../components/ScreenHelp";
 import { SpeakButton } from "../components/SpeakButton";
 import { TakeHeader } from "../components/TakeHeader";
+import { useSelfReview } from "../voice/use-self-review";
 import { useSpeaker } from "../voice/VoiceProvider";
 import "../components/Screen.css";
 
@@ -23,6 +25,8 @@ interface EnglishScreenProps {
   matchOptions: MatchOptions;
   onSubmit: (transcript: string, input: InputMode, alternatives?: readonly string[]) => void;
   onContinue: () => void;
+  /** Try the last sentence again: its attempt is replaced by the next one. */
+  onRetry?: () => void;
   /** After this stage comes the report (a single-part session), not another part. */
   nextIsReport?: boolean;
   /** Start in the feedback view (used to render that state). */
@@ -34,6 +38,7 @@ export function EnglishScreen({
   matchOptions,
   onSubmit,
   onContinue,
+  onRetry,
   nextIsReport = false,
   showFeedbackInitially = false,
 }: EnglishScreenProps) {
@@ -45,13 +50,41 @@ export function EnglishScreen({
 
   const attempt = progress.lastAttempt;
   const target = progress.lastSentence;
+  const showingFeedback = feedback && attempt !== null && target !== null;
+  // Listen and compare belongs to reading. The recording is dropped when the sentence changes.
+  const review = useSelfReview(reading ? (showingFeedback ? target.id : (progress.current?.id ?? null)) : null);
 
-  if (feedback && attempt !== null && target !== null) {
+  if (showingFeedback) {
     return (
       <div className="screen">
         <TakeHeader stage={stage} title={reading ? t("reading.title") : t("writing.title")} focusKey={null} />
         <div className="screen__body">
           <SentenceFeedback target={target.text} attempt={attempt} matchOptions={matchOptions} kind={stage} />
+          {reading && (
+            <ListenAndCompare
+              review={review}
+              sentence={target}
+              attempted
+              onTryAgain={() => {
+                onRetry?.();
+                setFeedback(false);
+              }}
+            />
+          )}
+          {!reading && onRetry !== undefined && (
+            <div className="btn-row">
+              <button
+                type="button"
+                className="btn btn--secondary"
+                onClick={() => {
+                  onRetry();
+                  setFeedback(false);
+                }}
+              >
+                {t("selfReview.tryAgain")}
+              </button>
+            </div>
+          )}
           {progress.done && (
             <p className="status">
               {progress.result.passed
@@ -129,6 +162,7 @@ export function EnglishScreen({
                 )}
               </>
             )}
+            {reading && <ListenAndCompare review={review} sentence={sentence} attempted={false} />}
             <ScreenHelp screen={stage} />
             <AnswerInput
               label={reading ? t("reading.yourAnswer") : t("writing.yourAnswer")}

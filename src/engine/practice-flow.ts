@@ -172,6 +172,8 @@ export type PracticeAction =
   | { type: "finishN400"; at: string }
   | { type: "submitReading"; transcript: string; alternatives?: readonly string[]; input: InputMode; at: string }
   | { type: "submitWriting"; transcript: string; alternatives?: readonly string[]; input: InputMode; at: string }
+  /** Try the sentence again: the last attempt of this part is replaced by the next one. */
+  | { type: "retryEnglish" }
   | { type: "submitCivics"; response: string; input: InputMode; at: string }
   | { type: "continue"; at: string }
   | { type: "restart" };
@@ -647,6 +649,14 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
           : { ...state, writing: [...state.writing, attempt] };
       }
 
+      case "retryEnglish": {
+        if (state.phase !== "reading" && state.phase !== "writing") return state;
+        const kind: EnglishStageKind = state.phase;
+        const attempts = kind === "reading" ? state.reading : state.writing;
+        if (attempts.length === 0) return state;
+        const kept = attempts.slice(0, -1);
+        return kind === "reading" ? { ...state, reading: kept } : { ...state, writing: kept };
+      }
       case "submitCivics": {
         if (state.phase !== "civics") return state;
         const progress = civicsProgress(state);

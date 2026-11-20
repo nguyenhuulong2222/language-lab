@@ -22,7 +22,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.notice.legal` | It is not legal advice. | 這不是法律建議。 | This is not legal advice. |
 | `intro.notice.government` | It is not a government service and is not affiliated with USCIS. | 這不是政府服務，也與 USCIS 沒有隸屬關係。 | This is not a government service, and has no affiliation with USCIS either. |
 | `intro.privacy` | Do not say your real name, address, date of birth or A-number. Practice as the fictional profile you choose. | 請不要說出您的真實姓名、地址、出生日期或 A 字號（A-number）。請以您選擇的虛構檔案身分來練習。 | Please do not say your real name, address, date of birth or A-number (A-number). Please practice as the fictional profile you choose. |
-| `voice.privacy` | Voice uses your browser’s speech recognition. Depending on your browser, your voice may be processed by the browser’s maker. Language Lab does not record or send your voice, and nothing is saved when you close this page. | 語音功能使用您瀏覽器的語音辨識。視瀏覽器而定，您的聲音可能由瀏覽器的製造商處理。Language Lab 不會錄下或傳送您的聲音，關閉本頁後也不會儲存任何內容。 | The voice feature uses your browser's speech recognition. Depending on the browser, your voice may be processed by the browser's maker. Language Lab does not record or send your voice, and after this page is closed nothing is stored. |
+| `voice.privacy` | Voice uses your browser’s speech recognition. Depending on your browser, your voice may be processed by the browser’s maker. Language Lab does not send or save your voice. If you use “Record and compare”, the recording stays on this device, in memory, and is deleted when you go to the next sentence or close this page. | 語音功能使用您瀏覽器的語音辨識。視瀏覽器而定，您的聲音可能由瀏覽器的製造商處理。Language Lab 不會傳送或儲存您的聲音。如果您使用「錄音並比較」，錄音只會留在這部裝置的記憶體中，換到下一個句子或關閉本頁時就會刪除。 | The voice feature uses your browser's speech recognition. Depending on the browser, your voice may be processed by the browser's maker. Language Lab does not send or store your voice. If you use "Record and compare", the recording stays only in this device's memory, and is deleted when you move to the next sentence or close this page. |
 | `n400.sample.note` | This is only the made-up profile’s answer. In a real interview you answer truthfully about your own life. | 這只是虛構檔案的答案。在真正的面談中，您要如實回答自己的實際情況。 | This is only the fictional profile's answer. In a real interview, you must answer truthfully about your own situation. |
 | `help.setup.2` | Profiles are made up. Do not type your real name or any details about you. | 檔案都是虛構的。請不要輸入您的真實姓名或任何關於您的資料。 | The profiles are all fictional. Please do not enter your real name or any information about you. |
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | 真正的面談以英文進行，除非 USCIS 允許您例外。這些畫面上的問題和句子仍維持英文，讓您可以練習。 | The real interview is held in English, unless USCIS allows you an exception. The questions and sentences on these screens remain in English so you can practice. |
@@ -259,3 +259,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | 公民常識練習中的圖片來自美國聯邦政府的官方來源。每張圖片都只因其本身的紀錄清楚載明權利而使用。這並不表示任何機關認可 Language Lab。 |
 | `credits.back` | Back to the practice | 回到練習 |
 | `credits.newTab` | The links open the source pages in a new tab. | 連結會在新分頁開啟來源頁面。 |
+| `selfReview.title` | Listen and compare | 聽聽看並比較 |
+| `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | 錄下自己朗讀句子的聲音，然後聽自己的錄音和範例。這是讓您用耳朵比較，不計分。 |
+| `selfReview.record` | Record and compare | 錄音並比較 |
+| `selfReview.stop` | Stop recording | 停止錄音 |
+| `selfReview.recording` | Recording. Read the sentence now, then press “Stop recording”. | 錄音中。請現在朗讀句子，然後按「停止錄音」。 |
+| `selfReview.hearYours` | Hear your recording | 聽自己的錄音 |
+| `selfReview.hearSample` | Hear the sample | 聽範例 |
+| `selfReview.tryAgain` | Try again | 再試一次 |
+| `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | 您的錄音只留在這部裝置上。不會傳送到任何地方，也不會儲存，換到下一個句子或離開這個畫面時就會刪除。 |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | 這個瀏覽器無法錄下您的聲音。您仍可以用「說話」或輸入文字來檢查朗讀。 |
+| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | 麥克風被封鎖了。請在瀏覽器設定中允許使用麥克風。 |
+| `selfReview.error` | Recording did not work this time. Try again. | 這次錄音沒有成功。請再試一次。 |

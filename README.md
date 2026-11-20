@@ -148,6 +148,7 @@ See [`docs/kiro-log.md`](docs/kiro-log.md) for architecture decisions.
 - All practice uses **fictional profiles**. No real personal data is collected or required.
 - Civics answers are scored from the answer key only. AI never decides civics scores.
 - Civics questions, answers and practice sentences are English only and are never machine-translated. The interface can be switched to other languages; those translations are AI-generated unless marked as reviewed (see the disclosure section).
+- Voice: the words you say are recognised by your browser (the browser maker may process the audio). Language Lab never sends or saves your voice. "Record and compare" keeps a recording in memory on your device for the current sentence only and deletes it when you move on.
 - No government seals or implied official endorsement.
 
 See [`.kiro/steering/content-safety.md`](.kiro/steering/content-safety.md) for the full rules.

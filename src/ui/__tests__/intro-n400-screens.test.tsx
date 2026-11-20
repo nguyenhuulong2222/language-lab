@@ -32,7 +32,8 @@ describe("HomeScreen", () => {
     expect(html).toContain("This is a practice tool only.");
     expect(html).toContain("It is not legal advice.");
     expect(html).toContain("not a government service");
-    expect(html).toContain("does not record or send your voice");
+    expect(html).toContain("does not send or save your voice");
+    expect(html).toContain("the recording stays on this device, in memory");
   });
 
   it("asks for nothing on the home screen", () => {

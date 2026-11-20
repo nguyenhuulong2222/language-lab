@@ -2,7 +2,9 @@
  * Voice input through the browser's speech recognition. It never throws: every result,
  * including "no microphone access" and "this browser cannot do it", is a VoiceOutcome.
  *
- * No audio is recorded or stored by Language Lab. Depending on the browser, the recognition
+ * This path records nothing: it only receives the words the browser heard. (The separate "Record and
+ * compare" control, self-review.ts, keeps a recording in memory on the device and never sends it.)
+ * Depending on the browser, the recognition
  * itself may be done by the browser maker's service; the intro screen says so.
  */
 import {

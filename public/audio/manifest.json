@@ -1434,6 +1434,78 @@
       "group": "n400-samples",
       "bytes": 64896
     },
+    "read-001": {
+      "file": "reading/read-001.mp3",
+      "hash": "127b0b4624d2ab",
+      "group": "reading",
+      "bytes": 41088
+    },
+    "read-002": {
+      "file": "reading/read-002.mp3",
+      "hash": "0a92cdf96f6491",
+      "group": "reading",
+      "bytes": 36864
+    },
+    "read-003": {
+      "file": "reading/read-003.mp3",
+      "hash": "013d44b44194f2",
+      "group": "reading",
+      "bytes": 44160
+    },
+    "read-004": {
+      "file": "reading/read-004.mp3",
+      "hash": "035653142f4da7",
+      "group": "reading",
+      "bytes": 40320
+    },
+    "read-005": {
+      "file": "reading/read-005.mp3",
+      "hash": "049c7af468251c",
+      "group": "reading",
+      "bytes": 46464
+    },
+    "read-006": {
+      "file": "reading/read-006.mp3",
+      "hash": "045863fdea69bc",
+      "group": "reading",
+      "bytes": 29568
+    },
+    "read-007": {
+      "file": "reading/read-007.mp3",
+      "hash": "09363ad66f1f3d",
+      "group": "reading",
+      "bytes": 46464
+    },
+    "read-008": {
+      "file": "reading/read-008.mp3",
+      "hash": "1230e85d26c079",
+      "group": "reading",
+      "bytes": 58368
+    },
+    "read-009": {
+      "file": "reading/read-009.mp3",
+      "hash": "13f177f6efe097",
+      "group": "reading",
+      "bytes": 41088
+    },
+    "read-010": {
+      "file": "reading/read-010.mp3",
+      "hash": "0273fde8da4763",
+      "group": "reading",
+      "bytes": 41856
+    },
+    "read-011": {
+      "file": "reading/read-011.mp3",
+      "hash": "1bb6fe62232f33",
+      "group": "reading",
+      "bytes": 43392
+    },
+    "read-012": {
+      "file": "reading/read-012.mp3",
+      "hash": "08403c28cde6d8",
+      "group": "reading",
+      "bytes": 45696
+    },
     "write-001": {
       "file": "writing/write-001.mp3",
       "hash": "1dbb06b8395958",

@@ -13,14 +13,16 @@ import {
   type PromptSpeaker,
 } from "./prompt-speaker";
 import { createBrowserSpeechListener, UNSUPPORTED_LISTENER, type SpeechListener } from "./speech-listener";
+import { createSelfReviewRecorder, UNSUPPORTED_RECORDER, type SelfReviewRecorder } from "./self-review";
 
 interface VoiceValue {
   speaker: PromptSpeaker;
   listener: SpeechListener;
+  recorder: SelfReviewRecorder;
 }
 
 /** Without a provider (server rendering, tests) nothing speaks and nothing listens. */
-const VoiceContext = createContext<VoiceValue>({ speaker: SILENT_SPEAKER, listener: UNSUPPORTED_LISTENER });
+const VoiceContext = createContext<VoiceValue>({ speaker: SILENT_SPEAKER, listener: UNSUPPORTED_LISTENER, recorder: UNSUPPORTED_RECORDER });
 
 export function createDefaultSpeaker(): PromptSpeaker {
   return createMp3PromptSpeaker({
@@ -32,18 +34,21 @@ export function createDefaultSpeaker(): PromptSpeaker {
 export function VoiceProvider({
   speaker,
   listener,
+  recorder,
   children,
 }: {
   speaker?: PromptSpeaker;
   listener?: SpeechListener;
+  recorder?: SelfReviewRecorder;
   children: ReactNode;
 }) {
   const value = useMemo<VoiceValue>(
     () => ({
       speaker: speaker ?? createDefaultSpeaker(),
       listener: listener ?? createBrowserSpeechListener(),
+      recorder: recorder ?? createSelfReviewRecorder(),
     }),
-    [speaker, listener]
+    [speaker, listener, recorder]
   );
   return <VoiceContext.Provider value={value}>{children}</VoiceContext.Provider>;
 }
@@ -54,4 +59,9 @@ export function useSpeaker(): PromptSpeaker {
 
 export function useListener(): SpeechListener {
   return useContext(VoiceContext).listener;
+}
+
+/** The self-review recorder (listen-and-compare). Unsupported without a provider. */
+export function useRecorder(): SelfReviewRecorder {
+  return useContext(VoiceContext).recorder;
 }

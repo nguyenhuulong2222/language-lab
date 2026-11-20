@@ -89,7 +89,7 @@
   "n400.done.title": "내 답변",
   "n400.done.lead": "말씀하신 내용입니다. 채점되지 않습니다.",
   "n400.done.next": "읽기로 이동",
-  "voice.privacy": "음성은 브라우저의 음성 인식을 사용합니다. 브라우저에 따라 음성이 브라우저 제작사에서 처리될 수 있습니다. Language Lab은 음성을 녹음하거나 전송하지 않으며, 이 페이지를 닫으면 아무것도 저장되지 않습니다.",
+  "voice.privacy": "음성은 브라우저의 음성 인식을 사용합니다. 브라우저에 따라 음성이 브라우저 제작사에서 처리될 수 있습니다. Language Lab은 음성을 전송하거나 저장하지 않습니다. “녹음하고 비교하기”를 사용하면 녹음은 이 기기의 메모리에만 남고, 다음 문장으로 넘어가거나 이 페이지를 닫으면 삭제됩니다.",
   "n400.number": "{current}번 질문",
   "common.fictional": "가상 연습 프로필",
   "reading.title": "읽기",
@@ -240,5 +240,17 @@
   "credits.title": "사진 출처",
   "credits.lead": "시민 상식 연습의 사진은 미국 연방 정부의 공식 출처에서 가져왔습니다. 각 사진은 해당 기록에 권리가 분명히 적혀 있어서만 사용됩니다. 이것이 어떤 기관이 Language Lab을 보증한다는 뜻은 아닙니다.",
   "credits.back": "연습으로 돌아가기",
-  "credits.newTab": "링크는 출처 페이지를 새 탭에서 엽니다."
+  "credits.newTab": "링크는 출처 페이지를 새 탭에서 엽니다.",
+  "selfReview.title": "들어 보고 비교하기",
+  "selfReview.help": "문장을 읽는 자신의 목소리를 녹음한 다음, 녹음한 것과 샘플을 들어 보세요. 귀로 직접 비교하는 용도이며 채점하지 않습니다.",
+  "selfReview.record": "녹음하고 비교하기",
+  "selfReview.stop": "녹음 중지",
+  "selfReview.recording": "녹음 중입니다. 지금 문장을 읽고 “녹음 중지”를 누르세요.",
+  "selfReview.hearYours": "내 녹음 듣기",
+  "selfReview.hearSample": "샘플 듣기",
+  "selfReview.tryAgain": "다시 해 보기",
+  "selfReview.privacy": "녹음은 이 기기에만 남습니다. 어디로도 전송되거나 저장되지 않으며, 다음 문장으로 넘어가거나 이 화면을 나가면 삭제됩니다.",
+  "selfReview.unsupported": "이 브라우저는 목소리를 녹음할 수 없습니다. “말하기”나 입력으로 읽기를 확인할 수는 있습니다.",
+  "selfReview.denied": "마이크가 차단되어 있습니다. 브라우저 설정에서 마이크 사용을 허용하세요.",
+  "selfReview.error": "이번에는 녹음이 되지 않았습니다. 다시 해 보세요."
 }

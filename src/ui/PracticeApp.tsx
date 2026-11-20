@@ -189,6 +189,7 @@ export function Screen({
             })
           }
           onContinue={() => dispatch({ type: "continue", at: now() })}
+          onRetry={() => dispatch({ type: "retryEnglish" })}
         />
       );
     }

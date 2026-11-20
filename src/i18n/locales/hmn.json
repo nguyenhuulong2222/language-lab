@@ -89,7 +89,7 @@
   "n400.done.title": "Koj cov lus teb",
   "n400.done.lead": "Cov no yog cov lus koj hais. Tsis muaj qhab nia.",
   "n400.done.next": "Mus nyeem ntawv",
-  "voice.privacy": "Lub suab siv koj lub browser txoj kev paub lus hais. Raws li lub browser, koj lub suab yuav raug ua haujlwm los ntawm lub tuam txhab uas ua lub browser. Language Lab tsis thaij suab lossis xa koj lub suab, thiab tsis muaj dab tsi raug khaws thaum koj kaw nplooj ntawv no.",
+  "voice.privacy": "Lub suab siv koj lub browser txoj kev paub lus hais. Raws li lub browser, koj lub suab yuav raug ua haujlwm los ntawm lub tuam txhab uas ua lub browser. Language Lab tsis xa lossis khaws koj lub suab. Yog koj siv “Thaij suab thiab piv”, cov suab thaij nyob hauv lub cuab yeej lub cim xeeb no, thiab yuav raug rho tawm thaum koj mus rau kab lus tom ntej los yog kaw nplooj ntawv no.",
   "n400.number": "Lus nug {current}",
   "common.fictional": "Tus qauv xyaum tsim los",
   "reading.title": "Nyeem ntawv",
@@ -240,5 +240,17 @@
   "credits.title": "Cov duab los ntawm",
   "credits.lead": "Cov duab hauv kev xyaum txog pej xeem los ntawm cov chaw raug cai ntawm tsoomfwv teb chaws Meskas. Txhua daim duab siv tau vim nws tus kheej cov ntaub ntawv qhia meej txog nws txoj cai. Qhov no tsis txhais hais tias muaj lub koom haum twg pom zoo rau Language Lab.",
   "credits.back": "Rov qab mus xyaum",
-  "credits.newTab": "Cov txuas qhib nplooj ntawv qhov chaw hauv ib lub tab tshiab."
+  "credits.newTab": "Cov txuas qhib nplooj ntawv qhov chaw hauv ib lub tab tshiab.",
+  "selfReview.title": "Mloog thiab piv",
+  "selfReview.help": "Thaij koj tus kheej nyeem kab lus, ces mloog koj cov suab thaij thiab tus qauv. Qhov no yog rau koj piv nrog pob ntseg. Tsis muab qhab nia.",
+  "selfReview.record": "Thaij suab thiab piv",
+  "selfReview.stop": "Nres thaij suab",
+  "selfReview.recording": "Tab tom thaij suab. Nyeem kab lus tam sim no, ces nias “Nres thaij suab”.",
+  "selfReview.hearYours": "Mloog koj cov suab thaij",
+  "selfReview.hearSample": "Mloog tus qauv",
+  "selfReview.tryAgain": "Sim dua",
+  "selfReview.privacy": "Koj cov suab thaij nyob rau ntawm lub cuab yeej no xwb. Tsis xa mus qhov twg los yog khaws cia, thiab yuav raug rho tawm thaum koj mus rau kab lus tom ntej los yog tawm ntawm qhov screen no.",
+  "selfReview.unsupported": "Lub browser no thaij tsis tau koj lub suab. Koj tseem tuaj yeem tshawb koj txoj kev nyeem nrog “Hais lus” los yog ntaus ntawv.",
+  "selfReview.denied": "Lub microphone raug thaiv. Thov tso cai siv microphone hauv koj lub browser qhov chaw teeb tsa.",
+  "selfReview.error": "Zaum no kev thaij suab tsis ua haujlwm. Sim dua."
 }

@@ -19,9 +19,9 @@ export const TTS_SETTINGS = {
   instruction: "Speak clear American English slowly and naturally, like a patient interviewer.",
 } as const;
 
-export type ClipGroup = "civics-2008" | "civics-2025" | "n400" | "n400-samples" | "writing";
+export type ClipGroup = "civics-2008" | "civics-2025" | "n400" | "n400-samples" | "writing" | "reading";
 
-export const CLIP_GROUPS: readonly ClipGroup[] = ["civics-2008", "civics-2025", "n400", "n400-samples", "writing"];
+export const CLIP_GROUPS: readonly ClipGroup[] = ["civics-2008", "civics-2025", "n400", "n400-samples", "writing", "reading"];
 
 export interface Clip {
   /** Stable id, derived from the ids of the source data. */
@@ -88,6 +88,8 @@ export const sampleAnswerClipId = (questionId: string, profileId: string): strin
 
 /** Clip id of a writing (dictation) sentence; the sentence id is already stable ("write-001"). */
 export const writingClipId = (sentenceId: string): string => sentenceId;
+/** Clip id of a reading sentence (sample for listen-and-compare); the sentence id is already stable ("read-001"). */
+export const readingClipId = (sentenceId: string): string => sentenceId;
 
 // ---------------------------------------------------------------------------
 // The list
@@ -100,12 +102,14 @@ export interface ClipSources {
   };
   n400: ReadonlyArray<{ id: string; text: string; sampleAnswers: Readonly<Record<string, string>> }>;
   writing: ReadonlyArray<{ id: string; text: string }>;
+  /** Reading sentences (the sample of listen-and-compare). */
+  reading?: ReadonlyArray<{ id: string; text: string }>;
 }
 
 /**
  * Every clip the app can play: civics question text for both answer keys, the N-400 questions
- * and each profile's sample answer, and the writing sentences. Reading sentences are not here:
- * they are not played before the attempt.
+ * and each profile's sample answer, the writing sentences, and the reading sentences. A reading
+ * clip is the sample of listen-and-compare: the screen never plays it before the first attempt.
  */
 export function buildClipList(sources: ClipSources): Clip[] {
   const clips: Clip[] = [];
@@ -130,6 +134,9 @@ export function buildClipList(sources: ClipSources): Clip[] {
   }
   for (const sentence of sources.writing) {
     clips.push({ id: writingClipId(sentence.id), group: "writing", file: `writing/${sentence.id}.mp3`, text: sentence.text });
+  }
+  for (const sentence of sources.reading ?? []) {
+    clips.push({ id: readingClipId(sentence.id), group: "reading", file: `reading/${sentence.id}.mp3`, text: sentence.text });
   }
   return clips;
 }

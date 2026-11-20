@@ -32,6 +32,7 @@ const sources = {
   },
   n400: content.n400Questions,
   writing: content.writingSentences,
+  reading: content.readingSentences,
 };
 const clips = buildClipList(sources);
 const manifest = parseManifest(manifestRaw);
@@ -50,13 +51,14 @@ const files = Object.keys(import.meta.glob("../../../public/audio/**/*.mp3", { q
 );
 
 describe("the clip list", () => {
-  it("covers every civics question in both keys, every N-400 question and sample answer, every writing sentence", () => {
+  it("covers every civics question in both keys, every N-400 question and sample answer, every writing sentence and every reading sentence", () => {
     const expected =
       sources.civics["2008"].length +
       sources.civics["2025"].length +
       content.n400Questions.length +
       content.n400Questions.length * content.profiles.length +
-      content.writingSentences.length;
+      content.writingSentences.length +
+      content.readingSentences.length;
     expect(clips).toHaveLength(expected);
     expect(clips.filter((c) => c.group === "civics-2008")).toHaveLength(sources.civics["2008"].length);
     expect(clips.filter((c) => c.group === "civics-2025")).toHaveLength(sources.civics["2025"].length);
@@ -65,11 +67,12 @@ describe("the clip list", () => {
     expect(clips.filter((c) => c.group === "writing")).toHaveLength(content.writingSentences.length);
   });
 
-  it("has no clip made for a reading sentence id", () => {
+  it("has one reading clip per reading sentence, in the reading group only", () => {
     const readingIds = new Set(content.readingSentences.map((sentence) => sentence.id));
+    expect(clips.filter((c) => c.group === "reading")).toHaveLength(content.readingSentences.length);
     for (const clip of clips) {
-      expect(readingIds.has(clip.id), clip.id).toBe(false);
-      expect(clip.file.startsWith("reading/"), clip.id).toBe(false);
+      expect(readingIds.has(clip.id), clip.id).toBe(clip.group === "reading");
+      expect(clip.file.startsWith("reading/"), clip.id).toBe(clip.group === "reading");
     }
   });
 
