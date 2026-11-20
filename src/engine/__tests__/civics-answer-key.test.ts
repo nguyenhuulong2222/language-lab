@@ -3,8 +3,8 @@
  *
  * Includes the data tests required by the spec:
  * - no accepted answer is nested inside another for questions that need more than one answer;
- * - the files stay marked needsHumanReview until the project owner approves them;
- * - the loader throws in production while that flag is true.
+ * - a file marked reviewed (needsHumanReview: false) names its reviewer and the review date;
+ * - the loader throws in production while that flag is true, or when a reviewed file names nobody.
  */
 
 import { describe, it, expect, vi, afterEach } from "vitest";
@@ -20,7 +20,7 @@ import { countMatchingPhrases, isNumberToken, normalise } from "../answer-normal
 import RAW_2008 from "../../../data/civics-answers/2008.json" with { type: "json" };
 import RAW_2025 from "../../../data/civics-answers/2025.json" with { type: "json" };
 
-type RawFile = { needsHumanReview: boolean; entries: Array<Record<string, unknown>> };
+type RawFile = { needsHumanReview: boolean; reviewedBy?: string; reviewedOn?: string; entries: Array<Record<string, unknown>> };
 const RAW: Record<"2008" | "2025", RawFile> = {
   "2008": RAW_2008 as unknown as RawFile,
   "2025": RAW_2025 as unknown as RawFile,
@@ -94,10 +94,17 @@ describe.each(VERSIONS)("data/civics-answers/%s.json", (version) => {
     }
   });
 
-  it("stays marked needsHumanReview until the project owner approves it", () => {
-    // When the owner approves this file, set needsHumanReview to false in the JSON and
-    // update this test in the same change.
-    expect(RAW[version].needsHumanReview).toBe(true);
+  it("is either marked for review, or names its reviewer and the review date", () => {
+    const raw = RAW[version];
+    if (raw.needsHumanReview === false) {
+      expect(raw.reviewedBy, "reviewedBy").toMatch(/\S/);
+      expect(raw.reviewedOn, "reviewedOn").toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    } else {
+      expect(raw.needsHumanReview).toBe(true);
+    }
+  });
+  it("is reviewed by the project owner on 2026-11-20 (answer key review)", () => {
+    expect(RAW[version]).toMatchObject({ needsHumanReview: false, reviewedBy: "Long Nguyen (project owner)", reviewedOn: "2026-11-20" });
   });
 
   it("loader behaviour follows the review flag: throws in production while unreviewed", () => {
@@ -133,12 +140,20 @@ describe("needsHumanReview guard", () => {
     expect(warn).toHaveBeenCalledTimes(1);
   });
 
-  it("loads in production without a warning once needsHumanReview is false", () => {
+  it("loads in production without a warning once needsHumanReview is false with a named reviewer", () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
     const raw = copyOf("2008");
     raw.needsHumanReview = false;
+    raw.reviewedBy = "A. Reviewer";
+    raw.reviewedOn = "2026-11-20";
     expect(() => parseAnswerKey(raw, "2008", { production: true })).not.toThrow();
     expect(warn).not.toHaveBeenCalled();
+  });
+  it("refuses in production a file marked reviewed that names no reviewer or no date", () => {
+    for (const change of [{ reviewedBy: undefined }, { reviewedBy: " " }, { reviewedOn: undefined }, { reviewedOn: "20 Nov 2026" }]) {
+      const raw = { ...copyOf("2008"), needsHumanReview: false, reviewedBy: "A. Reviewer", reviewedOn: "2026-11-20", ...change };
+      expect(() => parseAnswerKey(raw, "2008", { production: true }), JSON.stringify(change)).toThrow(/does not name a reviewer/);
+    }
   });
 });
 

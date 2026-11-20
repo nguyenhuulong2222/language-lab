@@ -5,7 +5,8 @@
  *
  * Production guard: while a file has needsHumanReview: true, loading it in production
  * throws, the same way the test rules loader refuses unverified rules. In development it
- * logs a warning.
+ * logs a warning. A file marked needsHumanReview: false must name its reviewer (reviewedBy)
+ * and the review date (reviewedOn, YYYY-MM-DD); without them it is refused in production too.
  *
  * Pure module: no DOM, no fetch, no React.
  */
@@ -289,8 +290,16 @@ export function parseAnswerKey(
       throw new Error(message);
     }
     console.warn(`[civics-answer-key] ${message}`);
+  } else {
+    const reviewedBy = raw["reviewedBy"];
+    const reviewedOn = raw["reviewedOn"];
+    if (!isNonEmptyString(reviewedBy) || typeof reviewedOn !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(reviewedOn)) {
+      const message =
+        `${where} is marked needsHumanReview: false but does not name a reviewer (reviewedBy) and a review date (reviewedOn, YYYY-MM-DD).`;
+      if (options.production ?? isProductionBuild()) throw new Error(message);
+      console.warn(`[civics-answer-key] ${message}`);
+    }
   }
-
   return entries;
 }
 
@@ -322,7 +331,7 @@ export function isAnswerKeyLoaded(version: CivicsTestVersion): boolean {
  * (a test keeps it equal to the files). It does not replace the check in parseAnswerKey: a file
  * that is marked for review is refused in production whatever this says.
  */
-export const ANSWER_KEY_NEEDS_REVIEW: Readonly<Record<CivicsTestVersion, boolean>> = { "2008": true, "2025": true };
+export const ANSWER_KEY_NEEDS_REVIEW: Readonly<Record<CivicsTestVersion, boolean>> = { "2008": false, "2025": false };
 /** True when this build will refuse the answer key of a version (production and not yet reviewed). */
 export function answerKeyLockedInBuild(version: CivicsTestVersion, options: LoadOptions = {}): boolean {
   return ANSWER_KEY_NEEDS_REVIEW[version] && (options.production ?? isProductionBuild());

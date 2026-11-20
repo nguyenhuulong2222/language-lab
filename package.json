@@ -15,7 +15,8 @@
     "test:watch": "vitest",
     "speech-test": "vite --config vite.speech-test.config.ts",
     "layout-check": "node tools/layout-check/run.mjs",
-    "test:hooks": "python3 .kiro/hooks/scripts/test_block_sensitive_paths.py"
+    "test:hooks": "python3 .kiro/hooks/scripts/test_block_sensitive_paths.py",
+    "check:answer-key": "python3 tools/answer-key/check-against-source.py"
   },
   "dependencies": {
     "react": "19.1.0",

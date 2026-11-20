@@ -15,8 +15,10 @@
  *   recognise, a missing or repeated question number, or a wrong total stops the build.
  * - Every place where the source text had to be interpreted is recorded as a flag on that
  *   question and listed in the review sheet.
- * - Files it writes always carry needsHumanReview: true. A person approves them, not this
- *   script.
+ * - Files it writes carry needsHumanReview: true, unless tools/answer-key/review.json records a
+ *   named reviewer's approval of exactly these entries (the SHA-256 of the entries must match).
+ *   Any change to the entries after the review puts the flag back to true. A person approves the
+ *   keys, not this script.
  * - It uses the engine's own normaliser (src/engine/answer-normaliser.ts), so stored answers
  *   are in exactly the form the loader and grader expect.
  *
@@ -67,6 +69,7 @@ const VERSIONS = {
 
 const REVIEW_SHEET = path.join(ROOT, "docs/answer-key-review.md");
 const MARKERS_FILE = path.join(ROOT, "tools/answer-key/answer-markers.json");
+const REVIEW_FILE = path.join(ROOT, "tools/answer-key/review.json");
 const BATCH_SIZE = 20;
 /** The short words of the reading rule, which the sentence answers use too (only for the review sheet text). */
 const FUNCTION_WORDS = JSON.parse(fs.readFileSync(path.join(ROOT, "data/practice/practice-config.json"), "utf8")).sentenceMatch.functionWords;
@@ -775,7 +778,29 @@ function entryJson(e) {
   ].join("\n");
 }
 
-function fileJson(version, config, entries) {
+/** The SHA-256 of the entries exactly as they are written, so a review covers one version of them. */
+function entriesHash(entries) {
+  return crypto.createHash("sha256").update(entries.map(entryJson).join(",\n")).digest("hex");
+}
+
+/** The recorded review of a version, if it covers exactly these entries. */
+function reviewFor(version, entries) {
+  if (!fs.existsSync(REVIEW_FILE)) return { review: null, reason: "no review recorded" };
+  const all = JSON.parse(fs.readFileSync(REVIEW_FILE, "utf8")).reviews ?? {};
+  const review = all[version];
+  if (!review) return { review: null, reason: "no review recorded for this version" };
+  for (const key of ["reviewedBy", "reviewedOn", "note", "entriesSha256"]) {
+    if (typeof review[key] !== "string" || review[key].trim() === "") throw new Error(`review.json, ${version}: '${key}' must be a non-empty string`);
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(review.reviewedOn)) throw new Error(`review.json, ${version}: 'reviewedOn' must be YYYY-MM-DD`);
+  const hash = entriesHash(entries);
+  if (review.entriesSha256 !== hash) {
+    return { review: null, reason: `the entries changed after the review (recorded ${review.entriesSha256.slice(0, 12)}, now ${hash.slice(0, 12)})` };
+  }
+  return { review, reason: "" };
+}
+
+function fileJson(version, config, entries, review) {
   const sources = [config.sourceFile, config.documentFile, config.crossCheckFile]
     .filter(Boolean)
     .filter((f, i, all) => all.indexOf(f) === i)
@@ -784,13 +809,21 @@ function fileJson(version, config, entries) {
     version === "2025"
       ? "Built from data/sources/uscis-2025-civics-128.txt, converted from uscis-2025-civics-128.pdf (official USCIS 128 Civics Questions and Answers, 2025 version, M-1778 09/25), by tools/answer-key/build-answer-key.mjs. NEEDS HUMAN REVIEW: see docs/answer-key-review.md. Accepted answers are stored normalised (lowercase, no punctuation, hyphens as spaces). A leading the/a/an is optional when matching, so it is stored as written. Dynamic questions (answers change with elections, appointments or where the user lives) have no stored answers."
       : "Built from data/sources/uscis-2008-civics-100.html (official USCIS 2008 list, web page) by tools/answer-key/build-answer-key.mjs. Numbering was cross-checked against data/sources/uscis-2008-civics-100-rev0119.txt. NEEDS HUMAN REVIEW: see docs/answer-key-review.md. Accepted answers are stored normalised (lowercase, no punctuation, hyphens as spaces). A leading the/a/an is optional when matching, so it is stored as written. Dynamic questions (answers change with elections, appointments or where the user lives) have no stored answers.";
+  const shownNote = review ? note.replace("NEEDS HUMAN REVIEW: see docs/answer-key-review.md.", "Reviewed: see reviewedBy, reviewedOn and reviewNote below, and docs/answer-key-review.md.") : note;
   return [
     "{",
-    `  "_note": ${JSON.stringify(note)},`,
+    `  "_note": ${JSON.stringify(shownNote)},`,
     `  "_generatedBy": "tools/answer-key/build-answer-key.mjs",`,
     `  "_reviewSheet": "docs/answer-key-review.md",`,
     `  "_sources": ${JSON.stringify(sources)},`,
-    `  "needsHumanReview": true,`,
+    `  "needsHumanReview": ${review ? "false" : "true"},`,
+    ...(review
+      ? [
+          `  "reviewedBy": ${JSON.stringify(review.reviewedBy)},`,
+          `  "reviewedOn": ${JSON.stringify(review.reviewedOn)},`,
+          `  "reviewNote": ${JSON.stringify(review.note)},`,
+        ]
+      : []),
     `  "entries": [`,
     entries.map(entryJson).join(",\n"),
     "  ]",
@@ -834,9 +867,20 @@ function reviewSheet(results, comparison) {
   out.push("# Answer key review sheet", "");
   out.push(
     "Generated by `tools/answer-key/build-answer-key.mjs`. Do not edit by hand: change the script or the source files and run it again.",
+    ""
+  );
+  out.push("## Review record", "");
+  for (const r of results) {
+    if (r.review) {
+      out.push(`- **${r.version}**: reviewed by ${r.review.reviewedBy} on ${r.review.reviewedOn}. ${r.review.note} (entries SHA-256 \`${r.review.entriesSha256.slice(0, 16)}\`)`);
+    } else {
+      out.push(`- **${r.version}**: \`needsHumanReview: true\` (${r.reviewReason}).`);
+    }
+  }
+  out.push(
     "",
-    "Both answer key files are marked `needsHumanReview: true`. They stay that way until the project owner approves them.",
-    "Source files are in `data/sources/` (see the README there).",
+    "A key stays reviewed only while its entries are exactly the reviewed ones; a rebuild that changes them sets `needsHumanReview` back to `true`.",
+    "Source files are in `data/sources/` (see the README there). The independent check is `tools/answer-key/check-against-source.py` (result in `docs/answer-key-source-check.md`).",
     ""
   );
 
@@ -903,7 +947,7 @@ function reviewSheet(results, comparison) {
       const batch = r.entries.slice(i, i + BATCH_SIZE);
       out.push(`### ${r.version}: questions ${batch[0].number} to ${batch[batch.length - 1].number}`, "");
       out.push(reviewTable(batch), "");
-      out.push("Reviewer: ______________  Date: ____________  Approved: [ ]", "");
+      out.push(r.review ? `Reviewed: ${r.review.reviewedBy}, ${r.review.reviewedOn} (see the review record above).` : "Reviewer: ______________  Date: ____________  Approved: [ ]", "");
     }
   }
   return out.join("\n");
@@ -948,7 +992,8 @@ function main() {
       }
     }
     for (const e of entries) for (const p of nestingProblems(e)) allProblems.push(`${version}: ${p}`);
-    results.push({ version, config, numbering, entries });
+    const { review, reason } = reviewFor(version, entries);
+    results.push({ version, config, numbering, entries, review, reviewReason: reason, hash: entriesHash(entries) });
   }
 
   for (const m of markers) {
@@ -968,6 +1013,8 @@ function main() {
       .filter(([, n]) => n > 0)
       .map(([code, n]) => `${code}=${n}`);
     console.log(`   flags: ${byFlag.join(" ")}`);
+    console.log(`   entries SHA-256: ${r.hash}`);
+    console.log(`   review: ${r.review ? `${r.review.reviewedBy}, ${r.review.reviewedOn}` : `none (${r.reviewReason}); needsHumanReview stays true`}`);
   }
   console.log(`\n2008 web page vs rev. 01/19: ${comparison.length} difference(s)`);
   for (const d of comparison) console.log(`   - ${d}`);
@@ -980,8 +1027,8 @@ function main() {
 
   for (const r of results) {
     if (writes.has(r.version)) {
-      fs.writeFileSync(r.config.output, fileJson(r.version, r.config, r.entries));
-      console.log(`\nwrote ${rel(r.config.output)} (${r.entries.length} entries, needsHumanReview: true)`);
+      fs.writeFileSync(r.config.output, fileJson(r.version, r.config, r.entries, r.review));
+      console.log(`\nwrote ${rel(r.config.output)} (${r.entries.length} entries, needsHumanReview: ${r.review ? "false" : "true"})`);
     }
   }
   if (writes.has("review")) {
