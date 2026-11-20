@@ -66,6 +66,7 @@ export function matchedAnswerCount(entry: CivicsAnswerEntry, responseText: strin
   return countMatchingPhrases(responseText, entry.acceptedAnswers, {
     groups: entry.answerGroups ?? [],
     numberAlone: entry.numberAlone ?? [],
+    anyOrder: entry.anyOrder ?? [],
   });
 }
 

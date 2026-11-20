@@ -12,7 +12,8 @@
  */
 
 import { describe, it, expect, vi } from "vitest";
-import { countMatchingPhrases, normalise, tokenise } from "../answer-normaliser.js";
+import { matchedAnswerCount } from "../civics-grader.js";
+import { normalise, tokenise } from "../answer-normaliser.js";
 import { loadAnswerKey, type CivicsAnswerEntry } from "../civics-answer-key.js";
 import source2008 from "../../../data/sources/uscis-2008-civics-100-rev0119.txt?raw";
 import markersFile from "../../../tools/answer-key/answer-markers.json";
@@ -45,12 +46,8 @@ function isCorrect(
 ): boolean {
   const entry = key.get(id);
   if (!entry || entry.answerType === "dynamic") return false;
-  return (
-    countMatchingPhrases(response, entry.acceptedAnswers, {
-      groups: entry.answerGroups ?? [],
-      numberAlone: entry.numberAlone ?? [],
-    }) >= entry.requiredAnswerCount
-  );
+  // The grader's own count, so every matching option in the data (groups, numberAlone, anyOrder) applies.
+  return matchedAnswerCount(entry, response) >= entry.requiredAnswerCount;
 }
 
 function expectedIds(count: number, version: string): string[] {

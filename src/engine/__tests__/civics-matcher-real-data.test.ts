@@ -106,7 +106,8 @@ describe("B1: alternative names count once", () => {
         }
       }
     }
-    expect(groups).toBe(9);
+    // 9 from the 2026-11-17 decisions, 5 from the 2026-11-20 review (2025-028, 2025-107, 2025-126 twice, 2008-100).
+    expect(groups).toBe(14);
   });
 
   it("2025-067: two names of the Serve group do not satisfy 'Name two'", () => {
@@ -274,6 +275,16 @@ describe("loader: answerGroups and numberAlone", () => {
   it("rejects a member in two groups and a group of one", () => {
     expect(() => parse({ answerGroups: [["a b", "c d"], ["c d", "e f"]] })).toThrow(/more than one group/);
     expect(() => parse({ answerGroups: [["a b"]] })).toThrow(/at least two/);
+  });
+  it("accepts an anyOrder line and rejects a bad one", () => {
+    const line = { answers: ["a b"], items: [["a"], ["b"]] };
+    expect(parse({ anyOrder: [line] }).get("2025-001")!.anyOrder).toEqual([line]);
+    expect(parse({}).get("2025-001")!.anyOrder).toEqual([]);
+    expect(() => parse({ anyOrder: [{ answers: ["zzz"], items: [["a"], ["b"]] }] })).toThrow(/not one of acceptedAnswers/);
+    expect(() => parse({ anyOrder: [{ answers: ["a b"], items: [["a"]] }] })).toThrow(/two or more items/);
+    expect(() => parse({ anyOrder: [{ answers: ["a b"], items: [["A"], ["b"]] }] })).toThrow(/normalised/);
+    expect(() => parse({ answerGroups: [["a b", "c d"]], anyOrder: [line] })).toThrow(/also in an answer group/);
+    expect(() => parse({ anyOrder: "x" })).toThrow(/must be an array/);
   });
   it("rejects a numberAlone member that is not an accepted answer, and wrong shapes", () => {
     expect(() => parse({ numberAlone: ["zzz"] })).toThrow(/not one of acceptedAnswers/);

@@ -10,7 +10,7 @@
  * Pure module: no DOM, no fetch, no React.
  */
 
-import { containsPhrase, normalise } from "./answer-normaliser.js";
+import { containsPhrase, normalise, type AnyOrderLine } from "./answer-normaliser.js";
 import type { CivicsTestVersion } from "./version-selector.js";
 
 // ---------------------------------------------------------------------------
@@ -39,6 +39,11 @@ export interface CivicsAnswerEntry {
   answerGroups?: string[][];
   /** Accepted answers for which the bare number alone is also accepted. Filled by the loader. */
   numberAlone?: string[];
+  /**
+   * Source lines whose listed items may be said in any order (project owner decision, recorded
+   * in tools/answer-key/answer-markers.json). Every item is still required. Filled by the loader.
+   */
+  anyOrder?: AnyOrderLine[];
   /** How many distinct accepted answers a response needs. */
   requiredAnswerCount: number;
   answerType: AnswerType;
@@ -103,6 +108,21 @@ function parseStringLists(
   return value as string[][];
 }
 
+/** The optional anyOrder field: [{ answers: string[], items: string[][] }]. */
+function parseAnyOrder(value: unknown, fail: (message: string) => never): AnyOrderLine[] {
+  if (value === undefined) return [];
+  if (!Array.isArray(value)) return fail("anyOrder must be an array.");
+  return value.map((line) => {
+    if (!isRecord(line)) return fail("an anyOrder line must be an object.");
+    const answers = parseStringLists([line["answers"]], "anyOrder answers", fail)[0]!;
+    const items = parseStringLists(line["items"], "anyOrder items", fail);
+    if (answers.length === 0) return fail("an anyOrder line needs at least one answer.");
+    if (items.length < 2 || items.some((forms) => forms.length === 0)) {
+      return fail("an anyOrder line needs two or more items, each with at least one form.");
+    }
+    return { answers, items };
+  });
+}
 function parseEntry(
   item: unknown,
   version: CivicsTestVersion,
@@ -151,6 +171,7 @@ function parseEntry(
     fail
   );
   const numberAlone = numberAloneLists[0] ?? [];
+  const anyOrder = parseAnyOrder(item["anyOrder"], fail);
   const inAnswers = new Set(answers);
   const seenMembers = new Set<string>();
   for (const group of answerGroups) {
@@ -163,6 +184,22 @@ function parseEntry(
         return fail(`answerGroups member ${JSON.stringify(member)} is in more than one group.`);
       }
       seenMembers.add(member);
+    }
+  }
+  for (const line of anyOrder) {
+    for (const member of line.answers) {
+      if (!inAnswers.has(member)) {
+        return fail(`anyOrder answer ${JSON.stringify(member)} is not one of acceptedAnswers.`);
+      }
+      if (seenMembers.has(member)) {
+        return fail(`anyOrder answer ${JSON.stringify(member)} is also in an answer group or another anyOrder line.`);
+      }
+      seenMembers.add(member);
+    }
+    for (const forms of line.items) {
+      for (const form of forms) {
+        if (normalise(form) !== form || form === "") return fail(`anyOrder item ${JSON.stringify(form)} is not stored in normalised form.`);
+      }
     }
   }
   for (const member of numberAlone) {
@@ -198,6 +235,7 @@ function parseEntry(
     acceptedAnswers: answers,
     answerGroups,
     numberAlone,
+    anyOrder,
     requiredAnswerCount,
     answerType,
     sourceUrl,

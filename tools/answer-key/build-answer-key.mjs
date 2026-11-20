@@ -91,6 +91,10 @@ const FLAGS = {
   OPT: "Words in parentheses are optional in the source. Stored both with and without them.",
   ALTNAME:
     "A parenthetical on this source line was marked by the project owner as an alternative name, not optional words (see tools/answer-key/answer-markers.json). Each name is stored as its own answer.",
+  OPTWORD:
+    "The project owner decided that one word of this source line is optional (see tools/answer-key/answer-markers.json, optionalWords). Stored with and without it; both count as one answer.",
+  ANYORDER:
+    "The project owner decided that the items listed on this source line may be said in any order (see tools/answer-key/answer-markers.json, anyOrder). Every item is still required, and items of different lines are not mixed.",
   NUMALONE:
     "The bare number is accepted as the answer for this source line (decision recorded in tools/answer-key/answer-markers.json). Stored in numberAlone.",
   NUM: "A spelled-out number is followed by its numeral in parentheses. Stored as the words and as the numeral.",
@@ -383,11 +387,12 @@ function checkNumbering(questions, expected) {
  *   A/B                                 -> A and B
  *   (optional words)                    -> with and without
  */
-function expandLine(raw, { allowBrackets = true, markers = [] } = {}) {
+function expandLine(raw, { allowBrackets = true, markers = [], optionalWords = [] } = {}) {
   const flags = new Set();
   const notes = [];
   const extras = [];
   let alternative = false;
+  let oneAnswer = false;
   let text = collapse(raw);
 
   if (allowBrackets) {
@@ -419,6 +424,18 @@ function expandLine(raw, { allowBrackets = true, markers = [] } = {}) {
     flags.add("SLASH");
     return hold([a, b]);
   });
+  // Owner decisions: one word of the line is optional ("Jr.", "Day"). The variants are one answer.
+  for (const optional of optionalWords) {
+    const pattern = new RegExp(`(?<![A-Za-z])${escapeRegExp(optional.word)}(?![A-Za-z])`, "g");
+    const found = text.match(pattern) ?? [];
+    if (found.length !== 1) {
+      throw new Error(`Optional word for ${optional.question} ("${optional.word}") matched ${found.length} times in: ${raw}`);
+    }
+    text = text.replace(pattern, () => hold(["", optional.word]));
+    flags.add("OPTWORD");
+    oneAnswer = true;
+    notes.push(`optional word (owner decision): "${optional.word}" in "${collapse(raw)}" may be left out; both forms count as one answer`);
+  }
   // Owner decisions for single parenthetical groups: "alternative" instead of "optional".
   // Done before the general rule below, so only the marked group changes.
   for (const marker of markers) {
@@ -465,7 +482,7 @@ function expandLine(raw, { allowBrackets = true, markers = [] } = {}) {
   }
 
   let normalised = unique(variants.map(normalise).filter((v) => v.length > 0));
-  const own = { variants: normalised, flags, notes, alternative };
+  const own = { variants: normalised, flags, notes, alternative, oneAnswer };
   const extraResults = extras.map((item) => expandLine(item, { allowBrackets: false }));
   return { ...own, extras: extraResults };
 }
@@ -490,6 +507,9 @@ function buildEntry(version, config, q, markers = []) {
   const id = `${version}-${pad3(q.number)}`;
   const questionMarkers = markers.filter((m) => m.question === id && m.parentheses === "alternative");
   const questionNumberAlone = markers.filter((m) => m.question === id && m.numberAlone === true);
+  const questionOptionalWords = markers.filter((m) => m.question === id && m.optionalWord === true);
+  const questionAnyOrder = markers.filter((m) => m.question === id && m.anyOrder === true);
+  const anyOrderLines = []; // { answers: variants of the line, items: variants of each item }
   const answerGroupSources = []; // variants of each line with an alternative marker (one answer)
   const numberAloneSources = []; // variants of each line marked numberAlone
 
@@ -517,6 +537,7 @@ function buildEntry(version, config, q, markers = []) {
   let accepted = [];
   let answerGroups = [];
   let numberAlone = [];
+  let anyOrder = [];
   const sourceLines = q.answers.map((a) => a.display);
   let requiredAnswerCount = 1;
 
@@ -528,13 +549,27 @@ function buildEntry(version, config, q, markers = []) {
     for (const answer of q.answers) {
       const lineMarkers = questionMarkers.filter((m) => collapse(m.line) === collapse(answer.text));
       for (const m of lineMarkers) m.used = true;
-      const expanded = expandLine(answer.text, { markers: lineMarkers });
+      const lineOptional = questionOptionalWords.filter((m) => collapse(m.line) === collapse(answer.text));
+      for (const m of lineOptional) m.used = true;
+      const expanded = expandLine(answer.text, { markers: lineMarkers, optionalWords: lineOptional });
       for (const f of expanded.flags) flags.add(f);
       notes.push(...expanded.notes);
       const lineGroups = [expanded, ...expanded.extras];
       for (const extra of expanded.extras) for (const f of extra.flags) flags.add(f);
       for (const g of lineGroups) groups.push(g.variants);
-      if (expanded.alternative) answerGroupSources.push(unique(lineGroups.flatMap((g) => g.variants)));
+      if (expanded.alternative || expanded.oneAnswer) answerGroupSources.push(unique(lineGroups.flatMap((g) => g.variants)));
+      for (const m of questionAnyOrder.filter((x) => collapse(x.line) === collapse(answer.text))) {
+        m.used = true;
+        const separator = String.raw`\s*(?:,\s*(?:and\s+)?|\s+and\s+)`;
+        const shape = new RegExp(`^\\s*${m.items.map(escapeRegExp).join(separator)}\\s*$`);
+        if (!shape.test(answer.text)) {
+          throw new Error(`${id}: anyOrder items ${JSON.stringify(m.items)} are not the items of the source line "${answer.text}" in order`);
+        }
+        const items = m.items.map((item) => expandLine(item, { allowBrackets: false }).variants);
+        anyOrderLines.push({ answers: unique(lineGroups.flatMap((g) => g.variants)), items });
+        flags.add("ANYORDER");
+        notes.push(`any order (owner decision): ${m.items.map((i) => `"${i}"`).join(", ")} may be said in any order; all are required`);
+      }
       const aloneMarkers = questionNumberAlone.filter((m) => collapse(m.line) === collapse(answer.text));
       for (const m of aloneMarkers) m.used = true;
       if (aloneMarkers.length > 0) {
@@ -569,6 +604,9 @@ function buildEntry(version, config, q, markers = []) {
       .map((vs) => vs.filter((v) => accepted.includes(v)))
       .filter((vs) => vs.length >= 2);
     numberAlone = unique(numberAloneSources.flat().filter((v) => accepted.includes(v)));
+    anyOrder = anyOrderLines.map((line) => ({ answers: line.answers.filter((v) => accepted.includes(v)), items: line.items }));
+    if (anyOrder.some((line) => line.answers.length === 0)) throw new Error(`${id}: an anyOrder line has no stored answer`);
+    if (anyOrder.length > 0 && requiredAnswerCount > 1) throw new Error(`${id}: anyOrder is only supported where one answer is needed`);
 
     if (accepted.length === 0) throw new Error(`${id}: no accepted answers after parsing`);
     if (requiredAnswerCount > accepted.length) {
@@ -595,6 +633,7 @@ function buildEntry(version, config, q, markers = []) {
       acceptedAnswers: accepted,
       ...(answerGroups.length > 0 ? { answerGroups } : {}),
       ...(numberAlone.length > 0 ? { numberAlone } : {}),
+      ...(anyOrder.length > 0 ? { anyOrder } : {}),
       requiredAnswerCount,
       answerType: isDynamic ? "dynamic" : "static",
       sourceUrl: config.sourceUrl,
@@ -638,7 +677,27 @@ function loadMarkers() {
     if (!/^(2008|2025)-\d{3}$/.test(m.question)) throw new Error(`${where}: 'question' must look like 2025-097`);
     return { question: m.question, line: m.line, decision: m.decision, numberAlone: true, used: false };
   });
-  return [...alternatives, ...numberAlone];
+  const optionalWords = (raw.optionalWords ?? []).map((m, i) => {
+    const where = `answer-markers.json, optionalWords ${i + 1}`;
+    for (const key of ["question", "line", "word", "decision"]) {
+      if (typeof m[key] !== "string" || m[key].trim() === "") throw new Error(`${where}: '${key}' must be a non-empty string`);
+    }
+    if (!/^(2008|2025)-\d{3}$/.test(m.question)) throw new Error(`${where}: 'question' must look like 2025-126`);
+    if (!m.line.includes(m.word)) throw new Error(`${where}: 'word' must be a word of 'line'`);
+    return { question: m.question, line: m.line, word: m.word, decision: m.decision, optionalWord: true, used: false };
+  });
+  const anyOrder = (raw.anyOrder ?? []).map((m, i) => {
+    const where = `answer-markers.json, anyOrder ${i + 1}`;
+    for (const key of ["question", "line", "decision"]) {
+      if (typeof m[key] !== "string" || m[key].trim() === "") throw new Error(`${where}: '${key}' must be a non-empty string`);
+    }
+    if (!/^(2008|2025)-\d{3}$/.test(m.question)) throw new Error(`${where}: 'question' must look like 2025-016`);
+    if (!Array.isArray(m.items) || m.items.length < 2 || !m.items.every((x) => typeof x === "string" && m.line.includes(x))) {
+      throw new Error(`${where}: 'items' must be two or more parts of 'line'`);
+    }
+    return { question: m.question, line: m.line, items: m.items, decision: m.decision, anyOrder: true, used: false };
+  });
+  return [...alternatives, ...numberAlone, ...optionalWords, ...anyOrder];
 }
 
 function nestingProblems(entry) {
@@ -701,6 +760,9 @@ function entryJson(e) {
     `      "acceptedAnswers": [${j.acceptedAnswers.map(q).join(", ")}],`,
     ...(j.answerGroups ? [`      "answerGroups": [${j.answerGroups.map((g) => `[${g.map(q).join(", ")}]`).join(", ")}],`] : []),
     ...(j.numberAlone ? [`      "numberAlone": [${j.numberAlone.map(q).join(", ")}],`] : []),
+    ...(j.anyOrder
+      ? [`      "anyOrder": [${j.anyOrder.map((l) => `{ "answers": [${l.answers.map(q).join(", ")}], "items": [${l.items.map((it) => `[${it.map(q).join(", ")}]`).join(", ")}] }`).join(", ")}],`]
+      : []),
     `      "requiredAnswerCount": ${j.requiredAnswerCount},`,
     `      "answerType": ${q(j.answerType)},`,
     `      "sourceUrl": ${q(j.sourceUrl)},`,
@@ -752,7 +814,8 @@ function reviewTable(entries) {
     const answers = e.acceptedAnswers.length
       ? e.acceptedAnswers.map((a) => `\`${a}\``).join("<br>") + (e.requiredAnswerCount > 1 ? `<br>(needs ${e.requiredAnswerCount})` : "") +
         (e.json.answerGroups ? e.json.answerGroups.map((g) => `<br>(count as one: ${g.map((a) => `\`${a}\``).join(" / ")})`).join("") : "") +
-        (e.json.numberAlone ? `<br>(bare number accepted: ${e.json.numberAlone.map((a) => `\`${a}\``).join(", ")})` : "")
+        (e.json.numberAlone ? `<br>(bare number accepted: ${e.json.numberAlone.map((a) => `\`${a}\``).join(", ")})` : "") +
+        (e.json.anyOrder ? e.json.anyOrder.map((l) => `<br>(any order, all required: ${l.items.map((it) => it.map((a) => `\`${a}\``).join(" / ")).join(" + ")})`).join("") : "")
       : "(none stored)";
     const source = e.sourceLines.map(cell).join("<br>") + (e.notes.length ? "<br>" + e.notes.map((n) => `<em>${cell(n)}</em>`).join("<br>") : "");
     rows.push(
@@ -800,7 +863,7 @@ function reviewSheet(results, comparison) {
     "- A year read as two numbers is not matched: \"nineteen twenty\" does not match `1920` (it is read as 19 and 20). The ordinal alone does not match an ordinal with a noun: `fourteenth` does not match `14th amendment`; `thirteen` does not match `13 original colonies`.",
     "- Any other spoken form the source does not list is not accepted, unless the project owner marked a parenthetical as an alternative name (**ALTNAME**), for example `Secretary of Defense` for 2025 question 48.",
     "- Sentence answers (**SENTENCE** flag) must be said almost in full, in the source's wording.",
-    "- Answers that list several items in one line (for example question 16 in 2025, \"Legislative, executive, and judicial\") are stored as one phrase and must be said in that order.",
+    "- Answers that list several items in one line (for example question 16 in 2025, \"Legislative, executive, and judicial\") are stored as one phrase. Where the project owner decided so (**ANYORDER**), the items may be said in any order, but every item of the line is required and items of different lines are not mixed. Elsewhere they must be said in the source's order.",
     "- A number does not match when the response continues it (\"one hundred and one\" for `one hundred`), or when it starts in the middle of a larger number (\"twenty two\" for `two`).",
     "- Leading `the`, `a`, `an` in a stored answer is optional.",
     "- Dynamic questions have no stored answers and are never scored. They must not be offered as practice questions.",

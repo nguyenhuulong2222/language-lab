@@ -28,6 +28,8 @@
  * - A leading "because" or "because of" in an accepted answer is optional, as articles are.
  * - Alternative names that belong to one marker group count as ONE answer (see `groups`).
  * - A bare number is accepted for an answer only when the answer is listed in `numberAlone`.
+ * - A source line that lists items ("Democratic and Republican") may, where the project owner
+ *   decided so, be said with the items in any order; every item is still required (`anyOrder`).
  */
 
 /** Curly and look-alike apostrophes that must map to a straight apostrophe. */
@@ -450,6 +452,48 @@ export interface MatchOptions {
   groups?: readonly (readonly string[])[];
   /** Accepted answers for which the bare number alone is also accepted. */
   numberAlone?: readonly string[];
+  /**
+   * Source lines that list items which may be said in any order ("Senate and House (of
+   * Representatives)"). `answers` are the accepted answers of that line (they count as ONE
+   * answer); the line is also matched when every item is in the response, in any order, each
+   * item by one of its forms. Items of different lines are never mixed.
+   */
+  anyOrder?: readonly AnyOrderLine[];
+}
+
+export interface AnyOrderLine {
+  answers: readonly string[];
+  /** Each item: its accepted forms ("house", "house of representatives"). */
+  items: readonly (readonly string[])[];
+}
+
+/** One way an answer is found in the response: the token spans it uses. */
+type Placement = readonly Span[];
+
+/** Most ways of placing one any-order line that are tried. The data has 2 or 3 short items. */
+const MAX_PLACEMENTS = 256;
+
+function overlaps(a: Span, b: Span): boolean {
+  return a.start < b.start + b.length && b.start < a.start + a.length;
+}
+
+/** Every way to find all items at once, without two items sharing a word. */
+function anyOrderPlacements(itemSpans: readonly (readonly Span[])[]): Placement[] {
+  let partial: Span[][] = [[]];
+  for (const spans of itemSpans) {
+    const next: Span[][] = [];
+    for (const chosen of partial) {
+      for (const span of spans) {
+        if (chosen.some((c) => overlaps(c, span))) continue;
+        next.push([...chosen, span]);
+        if (next.length >= MAX_PLACEMENTS) break;
+      }
+      if (next.length >= MAX_PLACEMENTS) break;
+    }
+    partial = next;
+    if (partial.length === 0) return [];
+  }
+  return partial;
 }
 
 export function countMatchingPhrases(
@@ -463,52 +507,78 @@ export function countMatchingPhrases(
   const tokensOf = (answer: string): string[] => prepare(answer, yearAware);
   const bareNumber = new Set((options.numberAlone ?? []).map((a) => tokensOf(a).join(" ")));
 
-  // Units: a group of alternative names, or one accepted answer. Keyed by their phrases so
-  // that duplicates collapse.
+  // Units: a group of alternative names, one any-order line, or one accepted answer. Keyed by
+  // their phrases so that duplicates collapse.
+  interface Unit {
+    phrases: string[][];
+    itemSets: (readonly (readonly string[])[])[];
+  }
   const grouped = new Set<string>();
-  const units = new Map<string, string[][]>();
-  const addUnit = (members: readonly string[]): void => {
+  const units = new Map<string, Unit>();
+  const addUnit = (members: readonly string[], itemSets: Unit["itemSets"] = []): void => {
     const phrases = new Map<string, string[]>();
     for (const member of members) {
       const tokens = tokensOf(member);
       if (tokens.length > 0) phrases.set(tokens.join(" "), tokens);
     }
-    if (phrases.size === 0) return;
+    if (phrases.size === 0 && itemSets.length === 0) return;
     const key = [...phrases.keys()].sort().join("|");
-    units.set(key, [...phrases.values()]);
+    const existing = units.get(key);
+    if (existing) existing.itemSets.push(...itemSets);
+    else units.set(key, { phrases: [...phrases.values()], itemSets: [...itemSets] });
   };
   for (const group of options.groups ?? []) {
     for (const member of group) grouped.add(member);
     addUnit(group);
   }
+  for (const line of options.anyOrder ?? []) {
+    const members = line.answers.filter((a) => !grouped.has(a));
+    for (const member of members) grouped.add(member);
+    addUnit(members, [line.items]);
+  }
   for (const answer of acceptedAnswers) {
     if (!grouped.has(answer)) addUnit([answer]);
   }
 
-  const candidates = [...units.values()]
-    .map((phrases) => {
-      const spans = new Map<string, Span>();
-      for (const tokens of phrases) {
+  const candidates: Placement[][] = [...units.values()]
+    .map((unit) => {
+      const placements = new Map<string, Placement>();
+      for (const tokens of unit.phrases) {
         for (const span of findSpans(responseTokens, tokens, bareNumber.has(tokens.join(" ")))) {
-          spans.set(`${span.start}:${span.length}`, span);
+          placements.set(`${span.start}:${span.length}`, [span]);
         }
       }
-      return [...spans.values()];
+      for (const items of unit.itemSets) {
+        const itemSpans = items.map((forms) => {
+          const spans = new Map<string, Span>();
+          for (const form of forms) {
+            const tokens = tokensOf(form);
+            if (tokens.length === 0) continue;
+            for (const span of findSpans(responseTokens, tokens)) spans.set(`${span.start}:${span.length}`, span);
+          }
+          return [...spans.values()];
+        });
+        for (const placement of anyOrderPlacements(itemSpans)) {
+          placements.set(placement.map((s) => `${s.start}:${s.length}`).sort().join(","), placement);
+        }
+      }
+      return [...placements.values()];
     })
-    .filter((spans) => spans.length > 0);
+    .filter((placements) => placements.length > 0);
 
   const used: boolean[] = new Array<boolean>(responseTokens.length).fill(false);
   let best = 0;
 
-  const isFree = (span: Span): boolean => {
-    for (let k = span.start; k < span.start + span.length; k++) {
-      if (used[k]) return false;
-    }
-    return true;
-  };
+  const isFree = (placement: Placement): boolean =>
+    placement.every((span) => {
+      for (let k = span.start; k < span.start + span.length; k++) {
+        if (used[k]) return false;
+      }
+      return true;
+    });
 
-  const mark = (span: Span, value: boolean): void => {
-    for (let k = span.start; k < span.start + span.length; k++) used[k] = value;
+  const mark = (placement: Placement, value: boolean): void => {
+    for (const span of placement) for (let k = span.start; k < span.start + span.length; k++) used[k] = value;
   };
 
   const search = (index: number, count: number): void => {
@@ -517,11 +587,11 @@ export function countMatchingPhrases(
     // Even matching every remaining candidate cannot beat the best found so far.
     if (count + (candidates.length - index) <= best) return;
 
-    for (const span of candidates[index]!) {
-      if (isFree(span)) {
-        mark(span, true);
+    for (const placement of candidates[index]!) {
+      if (isFree(placement)) {
+        mark(placement, true);
         search(index + 1, count + 1);
-        mark(span, false);
+        mark(placement, false);
       }
     }
     search(index + 1, count);
