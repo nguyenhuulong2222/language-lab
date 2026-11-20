@@ -116,3 +116,40 @@ UI: `QuestionPicture` (figure with alt text and caption) is rendered only by the
 (`result` state) and by `StudyScreen`; the question view has no import of it, and a test renders the
 question view and fails if an `<img>` or a picture id appears. `StudyScreen` is a new practice mode
 that goes through `sessionSteps` with no scoring. `CreditsScreen` is reached from a footer button.
+## Scoring, alternatives and listen-and-compare (BS-22 to BS-25)
+**Comparison** (`src/engine/sentence-compare.ts`). Tokens come from the existing matcher tokeniser. Each
+token has a stem (`-s`, `-es`, `'s` removed, with a list of words that are never stemmed, such as "news",
+"this", "was"). Two tokens match when their stems are equal (or, writing only, when they differ by one
+letter, see BS-22). The words are aligned in order (longest common subsequence). The result lists missing
+and extra words, split into content words and short words, plus the near misses (a different spelling of
+the same word) for the feedback lines. `isCorrect` is: no content word of the sentence missing, and at most
+`extraContentWordsAllowed` extra content words. `accuracy` stays as the share of content words matched, for
+records only; no percentage is shown. The config (`practice-config.json`) holds `functionWords`,
+`extraContentWordsAllowed` and `spellingTolerance` per portion; the code holds no threshold.
+**Alternatives.** `VoiceOutcome` carries `alternatives` (every alternative of every result; with several
+results, the top alternative of each is joined and each other alternative is substituted in turn).
+`bestAlternative()` scores them all and picks, in order: counts, then more content words matched, then fewer
+extra words, then the recogniser's own order. The reducer receives `transcript` and `alternatives`.
+**What each browser returns.** Not measured on devices (none available here). What is known:
+- *iPhone Safari (iOS 14.5+, WebKit)*: the WebKit source (`WebSpeechRecognizerTask.mm`) fills
+  `alternatives` from the `transcriptions` of Apple's `SFSpeechRecognitionResult`, up to `maxAlternatives`,
+  with the text as `formattedString` (may have capital letters and punctuation) and a confidence that is
+  the best segment confidence. Apple often returns fewer than 5. How many it returns for a short sentence:
+  **needs a device test**.
+- *Android Chrome and desktop Chrome*: Chrome's `webkitSpeechRecognition` returns up to `maxAlternatives`
+  alternatives with a confidence for the first; whether it returns more than one for a short phrase:
+  **needs a device test**. Speech is recognised by a Google service (the intro screen says so).
+- Headless Chrome (used by the layout check) has no speech service, so nothing could be measured here.
+The scoring does not depend on the count: with one alternative it behaves as before.
+**Listen and compare.** `src/ui/voice/self-review.ts` holds a recorder (`createSelfReviewRecorder`) around
+`getUserMedia` and `MediaRecorder`: `start()`, `stop()` (returns an object URL of the in-memory Blob),
+`discard()` (revokes the URL, stops the tracks, drops the chunks). The component `SelfReview` is rendered
+with `key={sentence.id}`, so a new sentence mounts a new one and the old one is discarded on unmount. The
+module imports no network API; a test fails if it ever mentions `fetch`, `XMLHttpRequest`, `sendBeacon`,
+`WebSocket` or `FormData`. "Hear your recording" plays the URL through an `<audio>` element created on
+the click. "Hear the sample" plays the pre-generated clip (group `reading`, same player as the writing
+clips, falling back to the device voice) and is rendered only after a first attempt (a graded check or a
+finished recording). Recognition (`SpeechRecognition`) and recording are separate controls, never run
+together.
+**Feedback.** `SentenceFeedback` shows: the result line (counts / not yet), what we heard (best
+alternative), a plain line per near miss or missing word, the honest line, and the practice-setting note.

@@ -173,6 +173,53 @@ A mode on the home screen: the user picks the test version (2008 or 2025) and br
 at a time with the picture (if any), the question, the audio and the official accepted answers. No
 scoring, no answers recorded, no report. Dynamic questions (answers that change with office holders)
 show the same notice as elsewhere, not an answer from this app.
+### BS-22 Fair scoring of reading and writing
+The practice rule follows the USCIS scoring guidelines for the reading and writing portions (USCIS
+Policy Manual, Vol. 12, Part E, Ch. 2, saved in `data/sources/`; SHA-256 in its README). Quoted:
+- Reading, passing: "In general, the alien must read all content words but may omit short words or make
+  pronunciation or intonation errors that do not interfere with the meaning."
+- Reading, failing: "Omits a content word or substitutes another word for a content word; Pauses for
+  extended periods of time while reading the sentence; or Makes pronunciation or intonation errors to the
+  extent that the alien is not able to convey the meaning of the sentence and the officer is not able to
+  understand the sentence."
+- Writing: "An alien does not fail the writing test because of spelling, capitalization, or punctuation
+  errors, unless the errors interfere with the meaning of the sentence and the officer is unable to
+  understand the sentence." The writing sample may have "Some grammatical, spelling, or capitalization
+  errors; Omitted short words that do not interfere with meaning; or Numbers spelled out or written as
+  digits." Failing: "A different sentence or words; An abbreviation for a dictated word; Nothing or only
+  one or two isolated words; or A sentence that is completely illegible."
+Language Lab applies this as closely as a text comparison can, for reading and writing alike:
+- An attempt counts when every content word of the sentence is present, in order.
+- A short word (the "Other (Function)" words of the official vocabulary lists, kept in
+  `practice-config.json`) may be missing or added.
+- A plural or possessive ending (-s, -es, 's) does not make a different word; two different words are
+  never equated.
+- A missing or substituted content word does not count. One extra content word is allowed (the
+  guidelines do not list an inserted word as a failure, and a speech recogniser may add one); more do not.
+- Writing only: a single wrong, missing or swapped letter in a word of 5 letters or more counts as a
+  spelling error (guideline: spelling errors do not fail), unless the typed word is itself a different word
+  of the official vocabulary. The screen says to check the spelling.
+- Numbers in words and digits are the same (existing matcher).
+What the guidelines say and a text comparison cannot judge (pauses, pronunciation, whether the officer
+understands) is not scored; the screen says so. All settings are in `data/practice/practice-config.json`
+and shown as a Language Lab practice setting based on the USCIS guidelines, not as a USCIS rule.
+### BS-23 Use every alternative the recogniser gives
+Speech recognition is asked for 5 alternatives. Every alternative is scored against the expected
+sentence and the best one is used and shown as "What we heard". If the user edits the text box, only the
+typed text is scored. The spec records what each browser returns (design: "What each browser returns").
+### BS-24 Listen and compare
+After a reading attempt the user can hear a recording of their own voice and the sample, and try again.
+- The recording is made on the device with `MediaRecorder`, kept in memory for the current sentence only,
+  never uploaded, never stored, and discarded when the user moves to the next sentence or leaves.
+- The sample (pre-generated audio for the reading sentences) is never played before the first attempt.
+- Recording and recognition are two separate controls ("Say it" for the check; "Record and compare" for
+  self-review), because they may not be able to share the microphone on iPhone Safari (to be tested on a
+  device). The privacy text says recordings stay on the device.
+### BS-25 Honest feedback
+Under every result one line says the result rests on the words the device heard (or the words typed), and
+that the user can try again or type if it heard wrong. A near miss is a plain line, for example: You said
+"elect". The sentence says "elects". The screen says clearly whether the attempt still counts. The crossed
+out and dashed word display is removed.
 ## Out of scope
 AI follow-up questions and feedback, N-400 scoring, pre-generated audio, the 65/20 exemption,
 translated civics content (it stays hidden), saving progress.
