@@ -150,6 +150,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.notYet` ⚠ | Not yet. | မရောက်သေးပါ။ |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | ဤဘရောက်ဇာသည် အသံထွက်ဖတ်မပြနိုင်သဖြင့် စာကြောင်းကို ဤနေရာတွင် ပြထားသည်။ ၎င်းကို ရိုက်ထည့်ပါ။ |
 | `writing.hidden` | The sentence stays hidden until you answer. | သင်မဖြေမချင်း စာကြောင်းကို ဖျောက်ထားမည်။ |
+| `writing.show` | Show the sentence | ဝါကျကို ပြပါ |
+| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | အသံမကြားရလျှင် ဝါကျကို ပြ၍ ရိုက်ထည့်ပါ။ တူညီသောနည်းဖြင့် စစ်ဆေးပါသည်။ သင့်အစီရင်ခံစာတွင် ဤကြိုးစားမှုကို အကူအညီရထားသည်ဟု မှတ်သားပါမည်။ |
+| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | ဝါကျကို ပြထားပါသည်။ သင့်အစီရင်ခံစာတွင် ဤကြိုးစားမှုကို အကူအညီရထားသည်ဟု မှတ်သားပါမည်။ |
 | `civics.title` | Civics | နိုင်ငံသားဗဟုသုတ |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | အသံထွက်ဖြေပါ သို့မဟုတ် ရိုက်ထည့်ပါ။ အဖြေတိုများ ရသည်၊ သို့သော် အဖြေအပြည့်အစုံ ပြောပါ။ |
 | `civics.count` | Question {current} of {total} | မေးခွန်း {current} / {total} |
@@ -238,12 +241,14 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | သင် ဤစာမျက်နှာကို ပိတ်သည်အထိ သို့မဟုတ် ပြန်ဖွင့်သည်အထိ ဤဆက်တင်များ ရှိနေမည်။ |
 | `settings.close` | Close settings | ဆက်တင်များ ပိတ်ရန် |
 | `audio.again` | Play again | ထပ်နားထောင်ရန် |
+| `audio.failed` | The audio did not play. Try again, or show the sentence. | အသံမထွက်ခဲ့ပါ။ ထပ်ကြိုးစားပါ၊ သို့မဟုတ် ဝါကျကို ပြပါ။ |
 | `lang.label` | Language | ဘာသာစကား |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | ပင်မစာမျက်နှာသို့ ပြန်သွားမလား။ ဤလေ့ကျင့်မှုရှိ သင်၏အဖြေများ ပျောက်သွားမည်။ |
 | `header.homeConfirm.yes` | Yes, go home | ဟုတ်ကဲ့၊ ပင်မသို့ သွားမည် |
 | `header.homeConfirm.no` | Stay here | ဤနေရာတွင် ဆက်နေမည် |
 | `common.retry` | Try again | ထပ်ကြိုးစားရန် |
 | `partReport.badge.good` | This part went well | ဤအပိုင်း ကောင်းမွန်ခဲ့သည် |
+| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | ဝါကျကို မျက်နှာပြင်ပေါ်တွင် ပြခဲ့သည် (အကူအညီရထားသော ကြိုးစားမှု)။ |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | ဘာသာပြန်ကို လူတစ်ဦးက စစ်ဆေးပြီးသည်အထိ ငြင်းဆိုချက်များနှင့် ဥပဒေဆိုင်ရာစာသားများကို အင်္ဂလိပ်လိုသာ ပြထားပါသည်။ |
 | `lang.menu.title` | Choose a language | ဘာသာစကား ရွေးပါ |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | နောက်ထပ်ဘာသာစကားများကို စစ်ဆေးနေဆဲဖြစ်ပါသည်။ လူတစ်ဦးက စစ်ဆေးပြီးနောက် ဤနေရာတွင် ပေါ်လာပါမည်။ |

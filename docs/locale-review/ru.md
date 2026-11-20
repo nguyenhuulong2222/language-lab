@@ -150,6 +150,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.notYet` | Not yet. | Пока нет. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Этот браузер не умеет читать вслух, поэтому предложение показано здесь. Введите его. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Предложение скрыто, пока вы не ответите. |
+| `writing.show` | Show the sentence | Показать предложение |
+| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | Если вы не слышите звук, покажите предложение и напечатайте его. Проверка проходит так же. В отчёте эта попытка будет отмечена как попытка с подсказкой. |
+| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | Предложение показано. В отчёте эта попытка будет отмечена как попытка с подсказкой. |
 | `civics.title` | Civics | Обществоведение |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | Отвечайте вслух или вводите ответ. Короткие ответы подходят, но говорите ответ целиком. |
 | `civics.count` | Question {current} of {total} | Вопрос {current} из {total} |
@@ -238,12 +241,14 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | Эти настройки действуют, пока вы не закроете или не перезагрузите страницу. |
 | `settings.close` | Close settings | Закрыть настройки |
 | `audio.again` | Play again | Прослушать снова |
+| `audio.failed` | The audio did not play. Try again, or show the sentence. | Звук не воспроизвёлся. Попробуйте ещё раз или покажите предложение. |
 | `lang.label` | Language | Язык |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Вернуться на главную? Ваши ответы в этой практике будут потеряны. |
 | `header.homeConfirm.yes` | Yes, go home | Да, на главную |
 | `header.homeConfirm.no` | Stay here | Остаться здесь |
 | `common.retry` | Try again | Попробовать снова |
 | `partReport.badge.good` | This part went well | Эта часть прошла хорошо |
+| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Предложение было показано на экране (попытка с подсказкой). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Отказ от ответственности и юридические тексты показываются только по-английски, пока перевод не проверит человек. |
 | `lang.menu.title` | Choose a language | Выберите язык |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Другие языки проходят проверку. Они появятся здесь, когда их проверит человек. |

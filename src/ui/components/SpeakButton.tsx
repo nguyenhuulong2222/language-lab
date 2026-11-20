@@ -18,9 +18,11 @@ interface SpeakButtonProps {
   clipId?: string;
   /** Message key of the button label. Default: "Play aloud". */
   labelKey?: MessageKey;
+  /** Called when the prompt could not be played at all (after the device voice was tried). */
+  onFailed?: () => void;
 }
 
-export function SpeakButton({ text, clipId, labelKey = "audio.play" }: SpeakButtonProps) {
+export function SpeakButton({ text, clipId, labelKey = "audio.play", onFailed }: SpeakButtonProps) {
   const t = useT();
   const speaker = useSpeaker();
   const { slowPlayback } = useSettings();
@@ -28,6 +30,7 @@ export function SpeakButton({ text, clipId, labelKey = "audio.play" }: SpeakButt
   const [playing, setPlaying] = useState(false);
   const [played, setPlayed] = useState(false);
   const [fellBack, setFellBack] = useState(false);
+  const [failed, setFailed] = useState(false);
   // Each play gets a number, so a clip that was cut off by "Play again" cannot reset the button of the new one.
   const run = useRef(0);
 
@@ -42,10 +45,18 @@ export function SpeakButton({ text, clipId, labelKey = "audio.play" }: SpeakButt
   const play = () => {
     const mine = ++run.current;
     setFellBack(false);
+    setFailed(false);
     setPlaying(true);
     setPlayed(true);
     speaker
-      .speak(prompt, { onFallback: () => setFellBack(true), slow: slowPlayback })
+      .speak(prompt, {
+        onFallback: () => setFellBack(true),
+        slow: slowPlayback,
+        onFailed: () => {
+          setFailed(true);
+          onFailed?.();
+        },
+      })
       .catch(() => {})
       .finally(() => {
         if (run.current === mine) setPlaying(false);
@@ -71,6 +82,10 @@ export function SpeakButton({ text, clipId, labelKey = "audio.play" }: SpeakButt
         )}
       </div>
       <p className="note">{voice === "recording" ? t("audio.aiVoice") : t("audio.deviceVoice")}</p>
+      {/* Always in the page, so a screen reader announces the text when it appears. */}
+      <p className={failed ? "status status--attention" : "ll-sr-only"} role="status">
+        {failed ? t("audio.failed") : ""}
+      </p>
     </div>
   );
 }

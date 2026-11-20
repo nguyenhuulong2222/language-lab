@@ -180,11 +180,12 @@ export function Screen({
           progress={engine.englishProgress(state, kind)}
           matchOptions={engine.matchOptions(kind)}
           nextIsReport={state.mode !== "full"}
-          onSubmit={(transcript, input, alternatives) =>
+          onSubmit={(transcript, input, alternatives, assisted) =>
             dispatch({
               type: kind === "reading" ? "submitReading" : "submitWriting",
               transcript,
               ...(alternatives === undefined ? {} : { alternatives }),
+              ...(kind === "writing" && assisted === true ? { assisted: true } : {}),
               input,
               at: now(),
             })

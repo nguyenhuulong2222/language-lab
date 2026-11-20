@@ -272,3 +272,40 @@ describe("N-400 screen audio", () => {
     expect(html).toContain("Device voice");
   });
 });
+describe("a prompt that cannot be played says so (audit A11Y-01)", () => {
+  it("the silent speaker reports onFailed", async () => {
+    const { SILENT_SPEAKER } = await import("../voice/prompt-speaker");
+    let failed = 0;
+    await SILENT_SPEAKER.speak({ text: "x" }, { onFailed: () => failed++ });
+    expect(failed).toBe(1);
+  });
+  it("the device voice reports onFailed on a real error, not on cancel", async () => {
+    const { createDeviceVoiceSpeaker } = await import("../voice/prompt-speaker");
+    const utterances: Array<{ onerror: ((e: { error: string }) => void) | null; onend: (() => void) | null }> = [];
+    class FakeUtterance {
+      lang = "";
+      rate = 1;
+      onend: (() => void) | null = null;
+      onerror: ((e: { error: string }) => void) | null = null;
+      constructor(public text: string) {
+        utterances.push(this);
+      }
+    }
+    (globalThis as unknown as { SpeechSynthesisUtterance: unknown }).SpeechSynthesisUtterance = FakeUtterance;
+    try {
+      const synthesis = { cancel: () => {}, speak: () => {} } as unknown as SpeechSynthesis;
+      const speaker = createDeviceVoiceSpeaker(synthesis);
+      let failed = 0;
+      const first = speaker.speak({ text: "a" }, { onFailed: () => failed++ });
+      utterances[0]!.onerror!({ error: "canceled" });
+      await first;
+      expect(failed).toBe(0);
+      const second = speaker.speak({ text: "b" }, { onFailed: () => failed++ });
+      utterances[1]!.onerror!({ error: "synthesis-failed" });
+      await second;
+      expect(failed).toBe(1);
+    } finally {
+      delete (globalThis as unknown as { SpeechSynthesisUtterance?: unknown }).SpeechSynthesisUtterance;
+    }
+  });
+});

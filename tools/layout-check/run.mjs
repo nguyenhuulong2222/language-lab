@@ -11,6 +11,14 @@
  *   node tools/layout-check/run.mjs --size=extra-large    one text size (normal, large, extra-large)
  *   node tools/layout-check/run.mjs --lang=vi             one interface language (any of the 14 codes)
  *   node tools/layout-check/run.mjs --shots               also save a screenshot of every screen
+ *   node tools/layout-check/run.mjs --width=320           phone width in CSS px (default 390; 320 is the WCAG reflow width)
+ *   node tools/layout-check/run.mjs --prod                the production build (what Cloudflare serves), with the
+ *                                                         headers of public/_headers, and a check that the page
+ *                                                         raises no Content-Security-Policy violation
+ *
+ * --prod builds to a temporary folder and serves it itself. In the production build civics is locked and
+ * four languages are hidden (src/i18n/languages.ts, IN_REVIEW_LANGUAGES), so those screens and languages are
+ * skipped; every other screen is checked the same way.
  *
  * Needs Google Chrome (set CHROME_PATH if it is not in the default macOS place) and starts its
  * own dev server on port 5198. Screenshots go to the system temp folder, not into the repository.
@@ -21,7 +29,8 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { LANGUAGES } from "../../src/i18n/languages.ts";
+import http from "node:http";
+import { LANGUAGES, IN_REVIEW_LANGUAGES } from "../../src/i18n/languages.ts";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const APP_PORT = 5198;
@@ -29,13 +38,17 @@ const CDP_PORT = 9333;
 const CHROME = process.env.CHROME_PATH ?? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const SHOTS_DIR = path.join(os.tmpdir(), "language-lab-layout");
 const MIN_TARGET = 48;
-const WIDTH = 390;
+const WIDTH = Number((process.argv.slice(2).find((a) => a.startsWith("--width=")) ?? "--width=390").slice(8));
+const PROD = process.argv.includes("--prod");
+const PROD_DIR = path.join(os.tmpdir(), "language-lab-layout-dist");
 const HEIGHT = 844;
 
 const args = process.argv.slice(2);
 const argValue = (name) => args.find((a) => a.startsWith(`--${name}=`))?.slice(name.length + 3);
 const sizes = argValue("size") ? [argValue("size")] : ["normal", "extra-large"];
-const langs = argValue("lang") ? argValue("lang").split(",") : LANGUAGES.map((l) => l.code);
+const langs = (argValue("lang") ? argValue("lang").split(",") : LANGUAGES.map((l) => l.code)).filter(
+  (code) => !(PROD && IN_REVIEW_LANGUAGES.includes(code))
+);
 const wantShots = args.includes("--shots");
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -76,6 +89,43 @@ async function waitFor(check, what, timeout = 30000) {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Production build, served with the headers of public/_headers
+// ---------------------------------------------------------------------------
+/** The headers of the `/*` block of public/_headers. */
+function siteHeaders() {
+  const lines = fs.readFileSync(path.join(ROOT, "public/_headers"), "utf8").split("\n");
+  const headers = {};
+  let inAll = false;
+  for (const line of lines) {
+    if (/^\S/.test(line)) inAll = line.trim() === "/*";
+    else if (inAll && line.includes(":")) {
+      const at = line.indexOf(":");
+      headers[line.slice(0, at).trim().toLowerCase()] = line.slice(at + 1).trim();
+    }
+  }
+  return headers;
+}
+const TYPES = { ".html": "text/html; charset=utf-8", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".mp3": "audio/mpeg", ".webp": "image/webp", ".png": "image/png", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".txt": "text/plain" };
+async function serveProduction() {
+  fs.rmSync(PROD_DIR, { recursive: true, force: true });
+  await new Promise((resolve, reject) => {
+    const build = spawn("npx", ["vite", "build", "--outDir", PROD_DIR, "--emptyOutDir"], { cwd: ROOT, stdio: "ignore" });
+    build.on("exit", (code) => (code === 0 ? resolve() : reject(new Error("The production build failed."))));
+  });
+  const headers = siteHeaders();
+  const server = http.createServer((req, res) => {
+    let pathname = decodeURIComponent(new URL(req.url, "http://x").pathname);
+    if (pathname.endsWith("/")) pathname += "index.html";
+    let file = path.join(PROD_DIR, pathname);
+    if (!file.startsWith(PROD_DIR) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) file = path.join(PROD_DIR, "index.html");
+    res.writeHead(200, { ...headers, "content-type": TYPES[path.extname(file)] ?? "application/octet-stream" });
+    res.end(fs.readFileSync(file));
+  });
+  await new Promise((resolve) => server.listen(APP_PORT, resolve));
+  children.push({ kill: () => server.close() });
+  return headers["content-security-policy"];
+}
 // ---------------------------------------------------------------------------
 // Chrome DevTools protocol, minimal
 // ---------------------------------------------------------------------------
@@ -206,6 +256,7 @@ async function checkConfiguration(cdp, size, lang) {
   };
   const record = async (name) => {
     const m = await lab("measure(" + MIN_TARGET + ")");
+    m.cspViolations = await cdp.evaluate("window.__csp || []");
     results.push({ name, size, lang, ...m });
     if (wantShots) {
       fs.mkdirSync(SHOTS_DIR, { recursive: true });
@@ -214,6 +265,9 @@ async function checkConfiguration(cdp, size, lang) {
     }
   };
 
+  await cdp.send("Page.addScriptToEvaluateOnNewDocument", {
+    source: `window.__csp = []; document.addEventListener("securitypolicyviolation", (e) => window.__csp.push(e.violatedDirective + " " + e.blockedURI));`,
+  });
   await cdp.send("Page.navigate", { url: `http://localhost:${APP_PORT}/` });
   await waitFor(async () => (await cdp.evaluate("document.readyState")) === "complete" && (await cdp.evaluate("!!document.querySelector('h1')")), "the page");
   await cdp.evaluate(PAGE_HELPERS);
@@ -238,19 +292,22 @@ async function checkConfiguration(cdp, size, lang) {
   await record("home");
 
   // Study first and the picture credits
-  await click(L("home.study.title"));
-  await record("study-choose");
-  await click(L("study.version.2008"));
-  await record("study-question");
-  await click(L("report.home"));
+  if (await cdp.evaluate(`window.__lab.has(${js(L("home.study.title"))})`)) {
+    await click(L("home.study.title"));
+    await record("study-choose");
+    await click(L("study.version.2008"));
+    await record("study-question");
+    await click(L("report.home"));
+  }
   await click(L("footer.credits"));
   await record("credits");
   await click(L("credits.back"));
-
+  if (PROD) return await productionParts(cdp, results, { L, lab, js, click, choose, type, record });
   // Full interview
   await click(L("home.full.title"));
   await record("setup");
-  await choose("Aurora Vance");
+  // The first fictional profile (a name is not repeated here, so renaming a profile does not break the check).
+  await cdp.evaluate(`document.querySelector('input[name="profile"]').click()`);
   // Format the date in the browser itself: its ICU data is the one the app uses (Node's can differ).
   const wantedDate = LANGUAGES.find((l) => l.code === lang).dateLocale;
   const boundary = await cdp.evaluate(
@@ -327,13 +384,64 @@ async function checkConfiguration(cdp, size, lang) {
   return results;
 }
 
+/** What the production build offers while civics is locked: the N-400 part, reading and writing, each to its report. */
+async function productionParts(cdp, results, { L, lab, js, click, choose, type, record }) {
+  // N-400 conversation (needs a fictional profile)
+  await click(L("home.part.n400.title"));
+  await record("setup");
+  await cdp.evaluate(`document.querySelector('input[name="profile"]').click()`);
+  await click(L("intro.start"));
+  await waitFor(() => lab(`has(${js(L("n400.save"))})`), "the N-400 question");
+  await record("n400-question");
+  // One part: the summary ends with "See report" (report.see), not "Go to reading".
+  for (let i = 0; i < 12; i++) {
+    await waitFor(() => lab(`has(${js(L("n400.save"))})`).then((q) => q || lab(`has(${js(L("report.see"))})`)), "an N-400 question");
+    if (await cdp.evaluate(`window.__lab.has(${js(L("report.see"))})`)) break;
+    await type("My answer is short.");
+    await click(L("n400.save"));
+    await sleep(150);
+  }
+  await waitFor(() => lab(`has(${js(L("report.see"))})`), "the N-400 summary");
+  await record("n400-done");
+  await click(L("report.see"));
+  await waitFor(() => lab(`has(${js(L("report.home"))})`), "the N-400 report");
+  await record("part-report-n400");
+  await click(L("report.home"));
+  for (const part of ["reading", "writing"]) {
+    await click(L(`home.part.${part}.title`));
+    let first = true;
+    for (;;) {
+      await waitFor(() => lab(`has(${js(L(`${part}.submit`))})`), `a ${part} sentence`);
+      if (first) await record(`${part}-question`);
+      await type("wrong words here");
+      await click(L(`${part}.submit`));
+      if (first) await record(`${part}-feedback`);
+      first = false;
+      if (await cdp.evaluate(`window.__lab.has(${js(L("report.see"))})`)) {
+        await click(L("report.see"));
+        break;
+      }
+      await click(L(`${part}.next`));
+    }
+    await waitFor(() => lab(`has(${js(L("report.home"))})`), `the ${part} report`);
+    await record(`part-report-${part}`);
+    await click(L("report.home"));
+  }
+  return results;
+}
 // ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
 async function main() {
-  run("npx", ["vite", "--port", String(APP_PORT), "--strictPort"], { cwd: ROOT });
-  await waitFor(async () => (await fetch(`http://localhost:${APP_PORT}/`)).ok, "the dev server");
+  if (PROD) {
+    const csp = await serveProduction();
+    if (!csp) throw new Error("public/_headers has no Content-Security-Policy for /*.");
+    console.log(`Production build served from ${PROD_DIR} with the CSP of public/_headers.`);
+  } else {
+    run("npx", ["vite", "--port", String(APP_PORT), "--strictPort"], { cwd: ROOT });
+  }
+  await waitFor(async () => (await fetch(`http://localhost:${APP_PORT}/`)).ok, "the app server");
 
   if (!fs.existsSync(CHROME)) throw new Error(`Chrome not found at ${CHROME}. Set CHROME_PATH.`);
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), "language-lab-chrome-"));
@@ -374,13 +482,14 @@ async function main() {
     }
   }
 
-  console.log(`\nLayout check at ${WIDTH}px: ${all.length} screens\n`);
+  console.log(`\nLayout check at ${WIDTH}px${PROD ? " (production build)" : ""}: ${all.length} screens\n`);
   for (const r of all) {
     const problems = [];
     if (r.horizontalScroll) problems.push(`horizontal scroll (page ${r.scrollWidth}px wide)`);
     for (const x of r.offscreen) problems.push(`off screen: ${x}`);
     for (const x of r.clipped) problems.push(`clipped: ${x}`);
     for (const x of r.smallTargets) problems.push(`small target: ${x}`);
+    for (const x of r.cspViolations ?? []) problems.push(`CSP violation: ${x}`);
     const expectedRoot = { normal: 16, large: 18, "extra-large": 20 }[r.size];
     if (r.rootPx !== expectedRoot) problems.push(`text size not applied: root font is ${r.rootPx}px, expected ${expectedRoot}px`);
     const status = problems.length === 0 ? "ok  " : "FAIL";
@@ -390,6 +499,7 @@ async function main() {
   }
   console.log(`\n${failures === 0 ? "All screens pass." : `${failures} problem(s).`}${wantShots ? `\nScreenshots: ${SHOTS_DIR}` : ""}`);
   cleanup();
+  if (PROD) fs.rmSync(PROD_DIR, { recursive: true, force: true });
   process.exit(failures === 0 ? 0 : 1);
 }
 

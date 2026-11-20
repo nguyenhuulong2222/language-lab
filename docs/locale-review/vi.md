@@ -150,6 +150,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.notYet` | Not yet. | Chưa được. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Trình duyệt này không đọc to được, nên câu hiện ngay tại đây. Hãy gõ lại câu đó. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Câu sẽ ẩn cho đến khi bạn trả lời. |
+| `writing.show` | Show the sentence | Hiện câu |
+| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | Nếu bạn không nghe được âm thanh, hãy hiện câu và gõ lại. Câu được kiểm tra theo cách giống nhau. Báo cáo của bạn ghi lần thử này là có hỗ trợ. |
+| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | Câu đang được hiện. Báo cáo của bạn ghi lần thử này là có hỗ trợ. |
 | `civics.title` | Civics | Kiến thức công dân (civics) |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | Hãy trả lời bằng giọng nói hoặc gõ. Trả lời ngắn cũng được, nhưng hãy nói đủ ý. |
 | `civics.count` | Question {current} of {total} | Câu hỏi {current}/{total} |
@@ -238,12 +241,14 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | Các cài đặt này được giữ cho đến khi bạn đóng hoặc tải lại trang. |
 | `settings.close` | Close settings | Đóng cài đặt |
 | `audio.again` | Play again | Nghe lại |
+| `audio.failed` | The audio did not play. Try again, or show the sentence. | Âm thanh không phát được. Hãy thử lại, hoặc hiện câu. |
 | `lang.label` | Language | Ngôn ngữ |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Về trang chủ? Các câu trả lời của bạn trong buổi luyện tập này sẽ mất. |
 | `header.homeConfirm.yes` | Yes, go home | Vâng, về trang chủ |
 | `header.homeConfirm.no` | Stay here | Ở lại đây |
 | `common.retry` | Try again | Thử lại |
 | `partReport.badge.good` | This part went well | Phần này diễn ra tốt đẹp |
+| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Câu đã được hiện trên màn hình (lần thử có hỗ trợ). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Phần tuyên bố miễn trừ và văn bản pháp lý chỉ hiển thị bằng tiếng Anh cho đến khi có người kiểm tra bản dịch. |
 | `lang.menu.title` | Choose a language | Chọn ngôn ngữ |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Còn thêm các ngôn ngữ đang được kiểm tra. Chúng sẽ xuất hiện ở đây sau khi có người xem lại. |

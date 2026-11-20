@@ -150,6 +150,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.notYet` | Not yet. | 아직이에요. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | 이 브라우저는 소리 내어 읽어 줄 수 없어서 문장을 여기에 표시합니다. 입력해 보세요. |
 | `writing.hidden` | The sentence stays hidden until you answer. | 답하기 전까지 문장은 숨겨져 있습니다. |
+| `writing.show` | Show the sentence | 문장 보기 |
+| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | 소리를 들을 수 없으면 문장을 표시하고 입력하세요. 같은 방식으로 확인됩니다. 보고서에는 이 시도가 도움을 받은 시도로 표시됩니다. |
+| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | 문장이 표시되었습니다. 보고서에는 이 시도가 도움을 받은 시도로 표시됩니다. |
 | `civics.title` | Civics | 시민 상식 |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | 소리 내어 답하거나 입력하세요. 짧은 답도 괜찮지만 답 전체를 말씀하세요. |
 | `civics.count` | Question {current} of {total} | {total}개 질문 중 {current}번 |
@@ -238,12 +241,14 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | 이 설정은 이 페이지를 닫거나 새로 고칠 때까지 유지됩니다. |
 | `settings.close` | Close settings | 설정 닫기 |
 | `audio.again` | Play again | 다시 듣기 |
+| `audio.failed` | The audio did not play. Try again, or show the sentence. | 오디오가 재생되지 않았습니다. 다시 시도하거나 문장을 표시하세요. |
 | `lang.label` | Language | 언어 |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | 홈으로 돌아갈까요? 이번 연습의 답변이 사라집니다. |
 | `header.homeConfirm.yes` | Yes, go home | 예, 홈으로 |
 | `header.homeConfirm.no` | Stay here | 여기 있기 |
 | `common.retry` | Try again | 다시 시도 |
 | `partReport.badge.good` | This part went well | 이 부분은 잘했어요 |
+| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | 문장이 화면에 표시되었습니다(도움을 받은 시도). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | 번역을 사람이 검토하기 전까지 면책 고지와 법률 문구는 영어로만 표시됩니다. |
 | `lang.menu.title` | Choose a language | 언어를 선택하세요 |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | 더 많은 언어가 검토 중입니다. 사람이 확인한 뒤에 여기에 표시됩니다. |

@@ -150,6 +150,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.notYet` | Not yet. | Hindi pa. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Hindi kayang magbasa nang malakas ng browser na ito, kaya ipinapakita rito ang pangungusap. I-type ito. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Nakatago ang pangungusap hanggang sumagot kayo. |
+| `writing.show` | Show the sentence | Ipakita ang pangungusap |
+| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | Kung hindi mo marinig ang audio, ipakita ang pangungusap at i-type ito. Pareho ang paraan ng pagsusuri. Mamarkahan sa ulat mo ang pagsubok na ito bilang may tulong. |
+| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | Ipinapakita ang pangungusap. Mamarkahan sa ulat mo ang pagsubok na ito bilang may tulong. |
 | `civics.title` | Civics | Sibika (Civics) |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | Sumagot nang malakas o mag-type. Puwede ang maikling sagot, pero sabihin ang buong sagot. |
 | `civics.count` | Question {current} of {total} | Tanong {current} sa {total} |
@@ -238,12 +241,14 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | Tatagal ang mga setting na ito hanggang isara o i-reload ninyo ang pahinang ito. |
 | `settings.close` | Close settings | Isara ang mga setting |
 | `audio.again` | Play again | Pakinggan muli |
+| `audio.failed` | The audio did not play. Try again, or show the sentence. | Hindi na-play ang audio. Subukan ulit, o ipakita ang pangungusap. |
 | `lang.label` | Language | Wika |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Babalik sa simula? Mawawala ang mga sagot ninyo sa pagsasanay na ito. |
 | `header.homeConfirm.yes` | Yes, go home | Oo, bumalik sa simula |
 | `header.homeConfirm.no` | Stay here | Manatili rito |
 | `common.retry` | Try again | Subukang muli |
 | `partReport.badge.good` | This part went well | Maayos ang bahaging ito |
+| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Ipinakita ang pangungusap sa screen (pagsubok na may tulong). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Ang mga paunawa at legal na teksto ay nasa Ingles lamang hanggang may taong makasuri ng salin. |
 | `lang.menu.title` | Choose a language | Pumili ng wika |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | May mga karagdagang wika na sinusuri. Lalabas ang mga ito rito pagkatapos itong suriin ng isang tao. |

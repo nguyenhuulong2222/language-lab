@@ -150,6 +150,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.notYet` | Not yet. | 還不算。 |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | 這個瀏覽器無法朗讀，所以句子顯示在這裡。請把它輸入。 |
 | `writing.hidden` | The sentence stays hidden until you answer. | 在您作答之前，句子會保持隱藏。 |
+| `writing.show` | Show the sentence | 顯示句子 |
+| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | 如果您聽不到音訊，可以顯示句子再輸入。檢查方式相同。您的報告會把這次嘗試標示為有輔助。 |
+| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | 句子已顯示。您的報告會把這次嘗試標示為有輔助。 |
 | `civics.title` | Civics | 公民常識 |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | 請大聲回答或輸入答案。簡短的答案就可以，但要把完整的答案說出來。 |
 | `civics.count` | Question {current} of {total} | 第 {current} 題，共 {total} 題 |
@@ -238,12 +241,14 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | 這些設定會保留到您關閉或重新載入本頁為止。 |
 | `settings.close` | Close settings | 關閉設定 |
 | `audio.again` | Play again | 再播放一次 |
+| `audio.failed` | The audio did not play. Try again, or show the sentence. | 音訊沒有播放。請再試一次，或顯示句子。 |
 | `lang.label` | Language | 語言 |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | 要回到首頁嗎？您在這次練習中的答案將會消失。 |
 | `header.homeConfirm.yes` | Yes, go home | 是，回到首頁 |
 | `header.homeConfirm.no` | Stay here | 留在這裡 |
 | `common.retry` | Try again | 再試一次 |
 | `partReport.badge.good` | This part went well | 這個部分表現良好 |
+| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | 句子已顯示在螢幕上（有輔助的嘗試）。 |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | 在有人审核翻译之前，免责声明和法律文字只显示英文。 |
 | `lang.menu.title` | Choose a language | 選擇語言 |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | 还有更多语言正在审核中。有人检查后，它们会出现在这里。 |

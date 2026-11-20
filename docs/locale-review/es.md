@@ -150,6 +150,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.notYet` | Not yet. | Todavía no. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Este navegador no puede leer en voz alta, así que la oración se muestra aquí. Escríbala. |
 | `writing.hidden` | The sentence stays hidden until you answer. | La oración queda oculta hasta que usted responda. |
+| `writing.show` | Show the sentence | Mostrar la oración |
+| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | Si no puede oír el audio, muestre la oración y escríbala. Se revisa de la misma manera. Su informe marca este intento como con ayuda. |
+| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | Se muestra la oración. Su informe marca este intento como con ayuda. |
 | `civics.title` | Civics | Educación cívica |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | Responda en voz alta o escriba. Las respuestas cortas están bien, pero diga la respuesta completa. |
 | `civics.count` | Question {current} of {total} | Pregunta {current} de {total} |
@@ -238,12 +241,14 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | Estos ajustes duran hasta que cierre o vuelva a cargar esta página. |
 | `settings.close` | Close settings | Cerrar ajustes |
 | `audio.again` | Play again | Escuchar otra vez |
+| `audio.failed` | The audio did not play. Try again, or show the sentence. | El audio no se reprodujo. Inténtelo de nuevo o muestre la oración. |
 | `lang.label` | Language | Idioma |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | ¿Volver al inicio? Se perderán sus respuestas de esta práctica. |
 | `header.homeConfirm.yes` | Yes, go home | Sí, volver al inicio |
 | `header.homeConfirm.no` | Stay here | Quedarme aquí |
 | `common.retry` | Try again | Intentar de nuevo |
 | `partReport.badge.good` | This part went well | Esta parte salió bien |
+| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | La oración se mostró en la pantalla (intento con ayuda). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Los avisos y el texto legal se muestran solo en inglés hasta que una persona revise la traducción. |
 | `lang.menu.title` | Choose a language | Elija un idioma |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Hay más idiomas en revisión. Aparecerán aquí cuando una persona los haya revisado. |

@@ -32,6 +32,8 @@ export interface PartSentenceItem {
   /** 0 to 1. */
   accuracy: number;
   isCorrect: boolean;
+  /** Writing only: the sentence was shown on screen during the attempt (an assisted attempt). */
+  assisted: boolean;
 }
 
 interface PartReportBase {

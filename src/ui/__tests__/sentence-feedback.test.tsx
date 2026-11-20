@@ -15,7 +15,7 @@ const options = (kind: "reading" | "writing") => matchOptionsFor(config, kind);
 
 function attemptFor(target: string, transcript: string, kind: "reading" | "writing", input: "voice" | "typed"): SentenceAttempt {
   const c = compareSentence(target, transcript, options(kind));
-  return { sentenceId: "x", transcript, alternativesScored: 1, usedAlternative: 0, input, accuracy: c.accuracy, isCorrect: c.isCorrect, at: "2026-11-18T00:00:00Z" };
+  return { sentenceId: "x", transcript, alternativesScored: 1, usedAlternative: 0, input, accuracy: c.accuracy, isCorrect: c.isCorrect, assisted: false, at: "2026-11-18T00:00:00Z" };
 }
 /** The visible text of some HTML: tags removed, the few entities React writes turned back. */
 const plain = (html: string) => html.replace(/<[^>]+>/g, "").replace(/&#x27;/g, "'").replace(/&amp;/g, "&");

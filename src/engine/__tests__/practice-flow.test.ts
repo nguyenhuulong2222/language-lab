@@ -390,3 +390,33 @@ describe("createAnswerKeyLoader", () => {
     }
   });
 });
+
+describe("assisted writing attempts", () => {
+  function atWriting() {
+    let s = started("before");
+    s = engine.reduce(s, { type: "finishN400", at: AT });
+    for (;;) {
+      const p = engine.englishProgress(s, "reading");
+      if (p.done) break;
+      s = engine.reduce(s, { type: "submitReading", transcript: p.current!.text, input: "typed", at: AT });
+    }
+    return engine.reduce(s, { type: "continue", at: AT });
+  }
+  it("records assisted on the attempt, scores it the same way, and defaults to false", () => {
+    const base = atWriting();
+    const target = engine.englishProgress(base, "writing").current!.text;
+    const plain = engine.reduce(base, { type: "submitWriting", transcript: target, input: "typed", at: AT });
+    const helped = engine.reduce(base, { type: "submitWriting", transcript: target, input: "typed", assisted: true, at: AT });
+    expect(plain.writing[0]!.assisted).toBe(false);
+    expect(helped.writing[0]!.assisted).toBe(true);
+    expect(helped.writing[0]!.isCorrect).toBe(plain.writing[0]!.isCorrect);
+    expect(helped.writing[0]!.accuracy).toBe(plain.writing[0]!.accuracy);
+  });
+  it("reading attempts are never assisted, even if the flag is sent", () => {
+    let s = started("before");
+    s = engine.reduce(s, { type: "finishN400", at: AT });
+    const target = engine.englishProgress(s, "reading").current!.text;
+    s = engine.reduce(s, { type: "submitReading", transcript: target, input: "typed", assisted: true, at: AT } as never);
+    expect(s.reading[0]!.assisted).toBe(false);
+  });
+});

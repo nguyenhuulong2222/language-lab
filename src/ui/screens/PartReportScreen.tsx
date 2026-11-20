@@ -137,6 +137,7 @@ function PartBody({ report }: { report: PartReport }) {
               <Icon className={item.isCorrect ? "icon-inline" : "icon-inline icon-inline--attention"} />{" "}
               {item.isCorrect ? t("compare.counts") : t("compare.notYet")}
             </p>
+            {item.assisted && <p className="note">{t("partReport.assisted")}</p>}
           </section>
         );
       })}

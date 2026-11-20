@@ -21,7 +21,7 @@ type DisclaimerProps = {
 
 export function Disclaimer({ messageKey, text, variant = "inline", id }: DisclaimerProps) {
   const language = useLanguage();
-  const body = messageKey === undefined ? text : <LegalText messageKey={messageKey} />;
+  const body = messageKey === undefined ? <span lang="en">{text}</span> : <LegalText messageKey={messageKey} />;
   const english = messageKey === undefined || language === "en" ? null : <EnglishLine messageKey={messageKey} className="disclaimer__english" />;
 
   if (variant === "prominent") {

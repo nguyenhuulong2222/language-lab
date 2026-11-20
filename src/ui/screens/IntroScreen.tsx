@@ -29,6 +29,7 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, focusOnFir
   const t = useT();
   const language = useLanguage();
   const [profileId, setProfileId] = useState<string | null>(null);
+  const [presses, setPresses] = useState(0);
   const [filedOn, setFiledOn] = useState<FiledChoice | null>(null);
   const date = formatDate(boundaryDate, language);
   const ready = (!needs.profile || profileId !== null) && (!needs.filing || filedOn !== null);
@@ -65,7 +66,7 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, focusOnFir
                     onChange={() => setProfileId(profile.id)}
                   />
                   <span className="choice__text">
-                    <span>{profile.displayName}</span>
+                    <span lang="en">{profile.displayName}</span>
                     <span className="choice__sub">{t("common.fictional")}</span>
                   </span>
                 </label>
@@ -97,11 +98,21 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, focusOnFir
         )}
 
         <div className="btn-row">
-          <button type="button" className="btn" aria-disabled={!ready} aria-describedby="intro-start-hint" onClick={start}>
+          <button
+            type="button"
+            className="btn"
+            aria-disabled={!ready}
+            aria-describedby="intro-start-hint"
+            onClick={() => {
+              if (!ready) setPresses((n) => n + 1);
+              start();
+            }}
+          >
             {t("intro.start")}
           </button>
         </div>
-        <p id="intro-start-hint" className="status">
+        {/* A new element after each press, so a screen reader announces the hint again. */}
+        <p id="intro-start-hint" key={presses} className="status" role={presses > 0 && !ready ? "alert" : undefined}>
           {ready ? "" : t("intro.startHint")}
         </p>
       </div>

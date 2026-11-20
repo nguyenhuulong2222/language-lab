@@ -33,6 +33,8 @@ export interface SpeakHandlers {
   onFallback?: () => void;
   /** Play more slowly (comfort setting). */
   slow?: boolean;
+  /** Called when nothing could be played: no clip, and no device voice, or the device voice failed. */
+  onFailed?: () => void;
 }
 
 export interface PromptSpeaker {
@@ -49,7 +51,10 @@ export interface PromptSpeaker {
 export const SILENT_SPEAKER: PromptSpeaker = {
   available: false,
   voiceFor: () => null,
-  speak: () => Promise.resolve(),
+  speak: (_prompt, handlers) => {
+    handlers?.onFailed?.();
+    return Promise.resolve();
+  },
   cancel: () => {},
 };
 
@@ -71,7 +76,11 @@ export function createDeviceVoiceSpeaker(
         utterance.lang = "en-US";
         utterance.rate = handlers?.slow ? DEVICE_RATE_SLOW : DEVICE_RATE;
         utterance.onend = () => resolve();
-        utterance.onerror = () => resolve();
+        utterance.onerror = (event) => {
+          // "canceled" and "interrupted" come from our own cancel(), not from a failure.
+          if (event.error !== "canceled" && event.error !== "interrupted") handlers?.onFailed?.();
+          resolve();
+        };
         synthesis.speak(utterance);
       });
     },

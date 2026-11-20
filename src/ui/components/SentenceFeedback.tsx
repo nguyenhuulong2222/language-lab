@@ -89,6 +89,7 @@ export function SentenceFeedback({ target, attempt, matchOptions, kind }: Senten
       <p lang="en">{target}</p>
       <p className="progress-line">{typed ? t("compare.typed") : t("compare.heard")}</p>
       <p lang="en">{empty ? "…" : attempt.transcript}</p>
+      {attempt.assisted && <p className="note">{t("partReport.assisted")}</p>}
       <p className="note"><LegalText messageKey="compare.setting" /></p>
       <Disclaimer messageKey="disclaimer.short" />
     </section>

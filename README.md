@@ -82,7 +82,10 @@ files say `needsHumanReview: true`; the dev server runs everything.
 home screen, the full interview and one single part, and checks every screen for sideways scroll,
 clipped text, elements off the screen and touch targets under 48px. It does this for normal and
 extra large text and for each interface language. Options: `--size=extra-large`, `--lang=en`,
-`--shots` (screenshots go to the system temp folder). It needs Chrome (`CHROME_PATH` if it is
+`--shots` (screenshots go to the system temp folder), `--width=320` (the WCAG reflow width) and
+`--prod` (builds the production bundle into a temp folder, serves it with the headers of
+`public/_headers`, and fails on any Content-Security-Policy violation; civics is locked and the
+languages in review are hidden there, so those are skipped). Run one language per call. It needs Chrome (`CHROME_PATH` if it is
 not in the default macOS place). It is not part of `npm test` because it needs a real browser.
 
 ### Run Tests

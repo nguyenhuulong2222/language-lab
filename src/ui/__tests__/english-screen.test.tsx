@@ -133,6 +133,19 @@ describe("writing screen", () => {
     expect(html).toContain("every important word of the sentence must be there, in order");
   });
 
+  it("with a voice, offers a clearly labelled Show the sentence button and explains it", () => {
+    const html = render(atWriting(), "writing");
+    expect(html).toContain("Show the sentence");
+    expect(html).toContain("Your report marks this attempt as assisted.");
+  });
+  it("without a voice, shows the sentence, says it is assisted and offers no button for it", () => {
+    const html = render(atWriting(), "writing", { voice: false });
+    expect(html).toContain("Your report marks this attempt as assisted.");
+    expect(html).not.toContain("Show the sentence");
+  });
+  it("reading never offers Show the sentence", () => {
+    expect(render(atReading(), "reading")).not.toContain("Show the sentence");
+  });
   it("without a voice, shows the sentence so the step still works", () => {
     const s = atWriting();
     const sentence = engine.englishProgress(s, "writing").current!;
@@ -141,6 +154,14 @@ describe("writing screen", () => {
     expect(html).toContain(sentence.text.replace("’", "&#x27;").replace(/,/g, ","));
   });
 
+  it("feedback marks an assisted attempt and says nothing about an unassisted one", () => {
+    let s = atWriting();
+    s = engine.reduce(s, { type: "submitWriting", transcript: "we pay", input: "typed", assisted: true, at: AT });
+    expect(render(s, "writing", { feedback: true })).toContain("The sentence was shown on screen (assisted attempt).");
+    let plain = atWriting();
+    plain = engine.reduce(plain, { type: "submitWriting", transcript: "we pay", input: "typed", at: AT });
+    expect(render(plain, "writing", { feedback: true })).not.toContain("assisted attempt");
+  });
   it("feedback says what was typed", () => {
     let s = atWriting();
     s = engine.reduce(s, { type: "submitWriting", transcript: "we pay", input: "typed", at: AT });

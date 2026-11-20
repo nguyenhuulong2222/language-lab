@@ -137,12 +137,19 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
         autoComplete="off"
         spellCheck={false}
         aria-describedby={statusId}
+        aria-invalid={message === "voice.needText" ? true : undefined}
+        lang="en"
         onChange={(event) => {
           setText(event.target.value);
           setMessage((current) => (current === "voice.needText" ? null : current));
         }}
       />
-      <p id={statusId} className={needsAttention ? "status status--attention" : "status"} role="status" aria-live="polite">
+      <p
+        id={statusId}
+        className={needsAttention ? "status status--attention" : "status"}
+        role={message === "voice.needText" ? "alert" : "status"}
+        aria-live={message === "voice.needText" ? "assertive" : "polite"}
+      >
         {needsAttention && <ReviewIcon className="icon-inline icon-inline--attention" />}
         {needsAttention && " "}
         {message === null ? "" : t(message)}

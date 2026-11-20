@@ -44,3 +44,8 @@ html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"]) {
 html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"]) * {
   letter-spacing: normal;
 }
+/* The mono "tape counter" lines hold translated words. Those scripts have no monospace face, so the
+   platform would choose one: use the script's own body font there. */
+html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"], [lang|="zh"], [lang="ko"]) :is(.take__overline, .progress-line, .stepper__condensed-count, .report__overline) {
+  font-family: var(--font-body);
+}

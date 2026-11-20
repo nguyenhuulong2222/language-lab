@@ -150,6 +150,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.notYet` | Not yet. | ຍັງບໍ່ເຖິງ. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | ບຣາວເຊີນີ້ອ່ານອອກສຽງບໍ່ໄດ້, ດັ່ງນັ້ນຈຶ່ງສະແດງປະໂຫຍກຢູ່ນີ້. ກະລຸນາພິມຕາມ. |
 | `writing.hidden` | The sentence stays hidden until you answer. | ປະໂຫຍກຈະຖືກເຊື່ອງໄວ້ຈົນກວ່າທ່ານຈະຕອບ. |
+| `writing.show` | Show the sentence | ສະແດງປະໂຫຍກ |
+| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | ຖ້າທ່ານບໍ່ໄດ້ຍິນສຽງ, ໃຫ້ສະແດງປະໂຫຍກແລ້ວພິມຕາມ. ກວດແບບດຽວກັນ. ລາຍງານຂອງທ່ານຈະໝາຍການພະຍາຍາມຄັ້ງນີ້ວ່າມີຕົວຊ່ວຍ. |
+| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | ສະແດງປະໂຫຍກແລ້ວ. ລາຍງານຂອງທ່ານຈະໝາຍການພະຍາຍາມຄັ້ງນີ້ວ່າມີຕົວຊ່ວຍ. |
 | `civics.title` | Civics | ວິຊາພົນລະເມືອງ |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | ຕອບອອກສຽງ ຫຼື ພິມກໍໄດ້. ຄໍາຕອບສັ້ນໆ ໃຊ້ໄດ້, ແຕ່ໃຫ້ເວົ້າຄໍາຕອບໃຫ້ຄົບ. |
 | `civics.count` | Question {current} of {total} | ຄໍາຖາມທີ {current} ຈາກ {total} |
@@ -238,12 +241,14 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | ການຕັ້ງຄ່າເຫຼົ່ານີ້ຢູ່ຈົນກວ່າທ່ານຈະປິດ ຫຼື ໂຫຼດໜ້ານີ້ໃໝ່. |
 | `settings.close` | Close settings | ປິດການຕັ້ງຄ່າ |
 | `audio.again` | Play again | ຟັງອີກຄັ້ງ |
+| `audio.failed` | The audio did not play. Try again, or show the sentence. | ສຽງບໍ່ໄດ້ຫຼິ້ນ. ລອງໃໝ່ ຫຼື ສະແດງປະໂຫຍກ. |
 | `lang.label` | Language | ພາສາ |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | ກັບໄປໜ້າຫຼັກບໍ? ຄໍາຕອບຂອງທ່ານໃນການຝຶກນີ້ຈະຫາຍໄປ. |
 | `header.homeConfirm.yes` | Yes, go home | ແມ່ນ, ກັບໄປໜ້າຫຼັກ |
 | `header.homeConfirm.no` | Stay here | ຢູ່ທີ່ນີ້ຕໍ່ |
 | `common.retry` | Try again | ລອງອີກຄັ້ງ |
 | `partReport.badge.good` | This part went well | ສ່ວນນີ້ເຮັດໄດ້ດີ |
+| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | ປະໂຫຍກຖືກສະແດງຢູ່ໜ້າຈໍ (ການພະຍາຍາມທີ່ມີຕົວຊ່ວຍ). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | ຂໍ້ຄວາມປະຕິເສດຄວາມຮັບຜິດຊອບ ແລະ ຂໍ້ຄວາມທາງກົດໝາຍ ຈະສະແດງເປັນພາສາອັງກິດເທົ່ານັ້ນ ຈົນກວ່າຈະມີຄົນກວດການແປ. |
 | `lang.menu.title` | Choose a language | ເລືອກພາສາ |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | ຍັງມີພາສາອື່ນທີ່ກຳລັງກວດຢູ່. ພາສາເຫຼົ່ານັ້ນຈະປາກົດຢູ່ບ່ອນນີ້ຫຼັງຈາກມີຄົນກວດແລ້ວ. |

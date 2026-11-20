@@ -33,7 +33,7 @@ export function CreditsScreen({ onClose, manifest = PICTURE_MANIFEST }: { onClos
           </li>
         ))}
       </ul>
-      <p className="note" lang="en">
+      <p className="note credit-font" lang="en">
         Headings use the Bitter font by Sol Matas (Huerta Tipográfica), under the{" "}
         <a href="/fonts/OFL.txt" target="_blank" rel="noopener noreferrer">
           {OFL_NAME}

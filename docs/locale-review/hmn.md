@@ -150,6 +150,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.notYet` | Not yet. | Tsis tau. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Lub browser no nyeem tsis tau tawm suab, yog li kab lus qhia ntawm no. Ntaus nws. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Kab lus zais kom txog thaum koj teb. |
+| `writing.show` | Show the sentence | Qhia kab lus |
+| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | Yog koj hnov suab tsis tau, qhia kab lus thiab ntaus nws. Kuaj tib yam. Koj daim ntawv qhia yuav cim qhov kev sim no tias muaj kev pab. |
+| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | Kab lus tau qhia lawm. Koj daim ntawv qhia yuav cim qhov kev sim no tias muaj kev pab. |
 | `civics.title` | Civics | Kev kawm txog pej xeem |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | Teb tawm suab lossis ntaus. Cov lus teb luv luv zoo, tiam sis hais tag nrho cov lus teb. |
 | `civics.count` | Question {current} of {total} | Lus nug {current} ntawm {total} |
@@ -238,12 +241,14 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | Cov chaw teeb tsa no nyob kom txog thaum koj kaw lossis rov qhib nplooj ntawv no. |
 | `settings.close` | Close settings | Kaw chaw teeb tsa |
 | `audio.again` | Play again | Mloog dua |
+| `audio.failed` | The audio did not play. Try again, or show the sentence. | Suab tsis tau ua si. Sim dua, los yog qhia kab lus. |
 | `lang.label` | Language | Lus |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Rov qab mus tsev? Koj cov lus teb hauv kev xyaum no yuav ploj. |
 | `header.homeConfirm.yes` | Yes, go home | Yog, rov qab mus tsev |
 | `header.homeConfirm.no` | Stay here | Nyob ntawm no |
 | `common.retry` | Try again | Sim dua |
 | `partReport.badge.good` | This part went well | Ntu no ua tau zoo |
+| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Kab lus tau qhia rau ntawm lub vijtsam (kev sim muaj kev pab). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Cov lus tsis lees paub thiab cov ntawv raws cai yuav tshwm ua lus Askiv xwb mus txog thaum muaj neeg tshuaj xyuas kev txhais lus. |
 | `lang.menu.title` | Choose a language | Xaiv ib hom lus |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Tseem muaj lwm yam lus tab tom tshuaj xyuas. Lawv yuav tshwm ntawm no tom qab muaj neeg tshuaj xyuas lawm. |

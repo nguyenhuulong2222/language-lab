@@ -150,6 +150,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.notYet` | Not yet. | Poko. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Navigatè sa a pa ka li byen fò, se konsa fraz la parèt isit la. Tape l. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Fraz la rete kache jiskaske ou reponn. |
+| `writing.show` | Show the sentence | Montre fraz la |
+| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | Si ou pa ka tande son an, montre fraz la epi tape li. Yo tcheke li menm jan an. Rapò ou a make tantativ sa a kòm tantativ ak èd. |
+| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | Fraz la parèt. Rapò ou a make tantativ sa a kòm tantativ ak èd. |
 | `civics.title` | Civics | Edikasyon sivik |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | Reponn byen fò oswa tape. Repons kout yo bon, men di repons lan tout antye. |
 | `civics.count` | Question {current} of {total} | Kesyon {current} sou {total} |
@@ -238,12 +241,14 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | Paramèt sa yo rete jiskaske ou fèmen oswa rechaje paj sa a. |
 | `settings.close` | Close settings | Fèmen paramèt yo |
 | `audio.again` | Play again | Koute ankò |
+| `audio.failed` | The audio did not play. Try again, or show the sentence. | Son an pa jwe. Eseye ankò, oswa montre fraz la. |
 | `lang.label` | Language | Lang |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Tounen nan akèy? Repons ou yo nan pratik sa a ap pèdi. |
 | `header.homeConfirm.yes` | Yes, go home | Wi, tounen nan akèy |
 | `header.homeConfirm.no` | Stay here | Rete isit la |
 | `common.retry` | Try again | Eseye ankò |
 | `partReport.badge.good` | This part went well | Pati sa a te byen pase |
+| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Yo te montre fraz la sou ekran an (tantativ ak èd). |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Avètisman yo ak tèks legal yo parèt an Anglè sèlman jiskaske yon moun revize tradiksyon an. |
 | `lang.menu.title` | Choose a language | Chwazi yon lang |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Gen plis lang k ap revize. Y ap parèt isit la apre yon moun fin tcheke yo. |

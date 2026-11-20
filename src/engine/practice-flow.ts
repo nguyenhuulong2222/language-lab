@@ -133,6 +133,11 @@ export interface SentenceAttempt {
   input: InputMode;
   accuracy: number;
   isCorrect: boolean;
+  /**
+   * Writing only: the sentence was on screen while the user typed (they chose "Show the sentence",
+   * or the audio failed). The attempt is scored the same way and recorded as assisted. Always false for reading.
+   */
+  assisted: boolean;
   at: string;
 }
 
@@ -174,7 +179,7 @@ export type PracticeAction =
   | { type: "answerN400"; questionId: string; questionText: string; transcript: string; at: string }
   | { type: "finishN400"; at: string }
   | { type: "submitReading"; transcript: string; alternatives?: readonly string[]; input: InputMode; at: string }
-  | { type: "submitWriting"; transcript: string; alternatives?: readonly string[]; input: InputMode; at: string }
+  | { type: "submitWriting"; transcript: string; alternatives?: readonly string[]; input: InputMode; assisted?: boolean; at: string }
   /** Try the sentence again: the last attempt of this part is replaced by the next one. */
   | { type: "retryEnglish" }
   | { type: "submitCivics"; response: string; alternatives?: readonly string[]; input: InputMode; at: string }
@@ -566,6 +571,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
             transcript: a.transcript,
             accuracy: a.accuracy,
             isCorrect: a.isCorrect,
+            assisted: a.assisted,
           })),
         });
       }
@@ -649,6 +655,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
           input: action.input,
           accuracy: comparison.accuracy,
           isCorrect: comparison.isCorrect,
+          assisted: action.type === "submitWriting" && action.assisted === true,
           at: action.at,
         };
         return kind === "reading"
@@ -708,6 +715,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
             civicsResult: progress.result,
             readingResult: englishProgress(state, "reading").result,
             writingResult: englishProgress(state, "writing").result,
+            writingAssisted: state.writing.filter((a) => a.assisted).length,
             answerKey: loaded.key,
             rules: { civics: env.civicsRules(state.setup.version), english: env.englishRules },
             now: new Date(action.at),

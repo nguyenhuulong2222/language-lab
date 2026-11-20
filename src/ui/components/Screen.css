@@ -128,6 +128,7 @@
   padding-top: var(--space-3);
   overflow-wrap: anywhere;
 }
+.credit-font a,
 .credit-list a {
   display: inline-flex;
   align-items: center;

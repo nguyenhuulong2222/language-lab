@@ -5,7 +5,7 @@
  * with `aria-current` and a check icon, not by colour alone. The list may show in several columns;
  * the arrow keys still move in reading order, not by row.
  */
-import { useEffect, useId, useRef, type KeyboardEvent } from "react";
+import { useEffect, useState, useId, useRef, type KeyboardEvent } from "react";
 import { AVAILABLE_UI_LANGUAGES, SOME_LANGUAGES_IN_REVIEW, type LanguageCode } from "../../i18n";
 import { useLanguage, useT } from "../../i18n/react";
 import { languageInfo } from "../../i18n/languages";
@@ -17,12 +17,15 @@ export function LanguageMenu({ open, onChoose }: { open: boolean; onChoose: (cod
   const current = useLanguage();
   const titleId = useId();
   const items = useRef<(HTMLButtonElement | null)[]>([]);
+  // Roving tabindex: one tab stop for the whole menu; the arrow keys move inside it.
+  const [active, setActive] = useState(() => Math.max(AVAILABLE_UI_LANGUAGES.findIndex((l) => l.code === current), 0));
 
   // When the menu opens, focus goes to the current language.
   useEffect(() => {
     if (!open) return;
-    const index = AVAILABLE_UI_LANGUAGES.findIndex((l) => l.code === current);
-    items.current[Math.max(index, 0)]?.focus();
+    const index = Math.max(AVAILABLE_UI_LANGUAGES.findIndex((l) => l.code === current), 0);
+    setActive(index);
+    items.current[index]?.focus();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
@@ -36,6 +39,7 @@ export function LanguageMenu({ open, onChoose }: { open: boolean; onChoose: (cod
     else if (event.key === "End") next = count - 1;
     if (next >= 0) {
       event.preventDefault();
+      setActive(next);
       items.current[next]?.focus();
     }
   };
@@ -56,6 +60,7 @@ export function LanguageMenu({ open, onChoose }: { open: boolean; onChoose: (cod
                   items.current[index] = el;
                 }}
                 className="language-menu__option"
+                tabIndex={index === active ? 0 : -1}
                 lang={languageInfo(language.code).htmlLang}
                 aria-current={isCurrent ? "true" : undefined}
                 onClick={() => onChoose(language.code)}

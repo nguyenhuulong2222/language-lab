@@ -150,6 +150,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.notYet` | Not yet. | अभी नहीं। |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | यह ब्राउज़र ज़ोर से पढ़ नहीं सकता, इसलिए वाक्य यहाँ दिखाया गया है। इसे टाइप करें। |
 | `writing.hidden` | The sentence stays hidden until you answer. | जब तक आप उत्तर नहीं देते, वाक्य छिपा रहता है। |
+| `writing.show` | Show the sentence | वाक्य दिखाएँ |
+| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | अगर आप ऑडियो नहीं सुन पा रहे हैं, तो वाक्य दिखाएँ और उसे टाइप करें। उसकी जाँच उसी तरह होती है। आपकी रिपोर्ट इस प्रयास को सहायता वाला प्रयास चिह्नित करती है। |
+| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | वाक्य दिखाया गया है। आपकी रिपोर्ट इस प्रयास को सहायता वाला प्रयास चिह्नित करती है। |
 | `civics.title` | Civics | नागरिक शास्त्र |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | ज़ोर से उत्तर दें या टाइप करें। छोटे उत्तर ठीक हैं, पर पूरा उत्तर बोलें। |
 | `civics.count` | Question {current} of {total} | प्रश्न {current} / {total} |
@@ -238,12 +241,14 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | ये सेटिंग तब तक रहती हैं जब तक आप यह पेज बंद या रीलोड नहीं करते। |
 | `settings.close` | Close settings | सेटिंग बंद करें |
 | `audio.again` | Play again | फिर से सुनें |
+| `audio.failed` | The audio did not play. Try again, or show the sentence. | ऑडियो नहीं चला। फिर कोशिश करें, या वाक्य दिखाएँ। |
 | `lang.label` | Language | भाषा |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | होम पर वापस जाएँ? इस अभ्यास में आपके उत्तर खो जाएँगे। |
 | `header.homeConfirm.yes` | Yes, go home | हाँ, होम पर जाएँ |
 | `header.homeConfirm.no` | Stay here | यहीं रहें |
 | `common.retry` | Try again | फिर से कोशिश करें |
 | `partReport.badge.good` | This part went well | यह भाग अच्छा रहा |
+| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | वाक्य स्क्रीन पर दिखाया गया था (सहायता वाला प्रयास)। |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | अनुवाद की समीक्षा किसी व्यक्ति द्वारा किए जाने तक अस्वीकरण और कानूनी पाठ केवल अंग्रेज़ी में दिखाए जाते हैं। |
 | `lang.menu.title` | Choose a language | भाषा चुनें |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | और भाषाएँ समीक्षा में हैं। किसी व्यक्ति के जाँच लेने के बाद वे यहाँ दिखाई देंगी। |

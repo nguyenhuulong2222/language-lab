@@ -78,7 +78,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
       <div className="screen">
         <TakeHeader stage="n400_interview" title={t("n400.done.title")} lead={t("n400.done.lead")} focusKey="done" />
         <div className="screen__body">
-          <ol className="answer-list">
+          <ol className="answer-list" lang="en">
             {answers.map((answer) => (
               <li key={answer.questionId}>
                 <strong>{answer.questionText}</strong>
@@ -114,7 +114,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
         {state.status === "loading" && <p role="status">{t("n400.loading")}</p>}
         {state.status === "failed" && (
           <div className="screen__body">
-            <p className="status status--attention">
+            <p className="status status--attention" role="alert">
               <ReviewIcon className="icon-inline icon-inline--attention" /> {t("n400.failed")}
             </p>
             {onRetry !== undefined && (

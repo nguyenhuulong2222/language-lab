@@ -150,6 +150,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.notYet` | Not yet. | ยังไม่ถึง |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | เบราว์เซอร์นี้อ่านออกเสียงไม่ได้ จึงแสดงประโยคไว้ที่นี่ โปรดพิมพ์ตาม |
 | `writing.hidden` | The sentence stays hidden until you answer. | ประโยคจะถูกซ่อนไว้จนกว่าคุณจะตอบ |
+| `writing.show` | Show the sentence | แสดงประโยค |
+| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | ถ้าคุณฟังเสียงไม่ได้ ให้แสดงประโยคแล้วพิมพ์ตาม ระบบตรวจแบบเดียวกัน รายงานของคุณจะระบุว่าการลองครั้งนี้มีตัวช่วย |
+| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | แสดงประโยคแล้ว รายงานของคุณจะระบุว่าการลองครั้งนี้มีตัวช่วย |
 | `civics.title` | Civics | ความรู้พลเมือง |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | ตอบออกเสียงหรือพิมพ์ก็ได้ คำตอบสั้น ๆ ใช้ได้ แต่ให้พูดคำตอบให้ครบ |
 | `civics.count` | Question {current} of {total} | คำถามที่ {current} จาก {total} |
@@ -238,12 +241,14 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | การตั้งค่าเหล่านี้อยู่จนกว่าคุณจะปิดหรือโหลดหน้านี้ใหม่ |
 | `settings.close` | Close settings | ปิดการตั้งค่า |
 | `audio.again` | Play again | ฟังอีกครั้ง |
+| `audio.failed` | The audio did not play. Try again, or show the sentence. | เสียงไม่เล่น ลองอีกครั้ง หรือแสดงประโยค |
 | `lang.label` | Language | ภาษา |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | กลับหน้าแรกไหม คำตอบของคุณในการฝึกนี้จะหายไป |
 | `header.homeConfirm.yes` | Yes, go home | ใช่ กลับหน้าแรก |
 | `header.homeConfirm.no` | Stay here | อยู่ที่นี่ต่อ |
 | `common.retry` | Try again | ลองอีกครั้ง |
 | `partReport.badge.good` | This part went well | ส่วนนี้ทำได้ดี |
+| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | ประโยคถูกแสดงบนหน้าจอ (การลองที่มีตัวช่วย) |
 | `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | ข้อความปฏิเสธความรับผิดชอบและข้อความทางกฎหมายจะแสดงเป็นภาษาอังกฤษเท่านั้น จนกว่าจะมีคนตรวจคำแปล |
 | `lang.menu.title` | Choose a language | เลือกภาษา |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | ยังมีภาษาอื่นที่กำลังรอการตรวจ ภาษาเหล่านั้นจะปรากฏที่นี่หลังจากมีคนตรวจแล้ว |

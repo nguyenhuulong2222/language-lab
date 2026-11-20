@@ -42,6 +42,8 @@ export interface ReportInput {
   civicsResult: CivicsStageResult;
   readingResult: EnglishStageResult;
   writingResult: EnglishStageResult;
+  /** How many writing attempts were made with the sentence shown on screen (assisted). Default 0. */
+  writingAssisted?: number;
   /** Used to name the questions that could not be scored. */
   answerKey: ReadonlyMap<string, CivicsAnswerEntry>;
   /** Defaults to the rules for `session.testVersion`, read from data/test-rules.json. */
@@ -150,7 +152,8 @@ const ENGLISH_WORDS: Record<EnglishStageKind, { done: string; practice: string }
 function englishSummary(
   result: EnglishStageResult,
   rules: EnglishTestRules,
-  passed: boolean
+  passed: boolean,
+  assisted = 0
 ): StageSummary {
   const words = ENGLISH_WORDS[result.kind];
   const presented = result.attempts;
@@ -164,6 +167,9 @@ function englishSummary(
       `${result.correctCount} of ${presented} ${result.kind} ${plural(presented, "sentence", "sentences")} ` +
       `${presented === 1 ? "was" : "were"} ${words.done} correctly. ` +
       `${rules[result.kind].sentencesToPassCount.value} correct ${plural(rules[result.kind].sentencesToPassCount.value, "sentence is", "sentences are")} needed.`;
+  }
+  if (assisted > 0) {
+    summary += ` ${assisted} of the ${presented} writing ${plural(presented, "attempt was", "attempts were")} made with the sentence shown on screen (assisted).`;
   }
   return {
     stage: result.kind,
@@ -199,7 +205,7 @@ export function buildFinalReport(input: ReportInput): FinalReport {
   const unscored = listUnscoredQuestions(civicsResult, answerKey);
   const stageSummaries: StageSummary[] = [
     englishSummary(readingResult, rules.english, readingOk),
-    englishSummary(writingResult, rules.english, writingOk),
+    englishSummary(writingResult, rules.english, writingOk, input.writingAssisted ?? 0),
     civicsSummary(civicsResult, unscored, rules.civics, civicsOk),
   ];
 

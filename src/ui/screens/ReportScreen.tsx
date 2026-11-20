@@ -90,7 +90,7 @@ export function ReportScreen({ session }: ReportScreenProps) {
           <p className="report__section-intro">{t("report.review.intro")}</p>
           <ul className="report__review-list">
             {report.overallReviewItems.map((item, index) => (
-              <li key={index} className="report__review-item">
+              <li key={index} className="report__review-item" lang="en">
                 <ReviewIcon className="report__review-icon" />
                 <span className="report__review-text">{item}</span>
               </li>
@@ -127,11 +127,11 @@ function StageSummaryCard({ summary }: { summary: StageSummary }) {
           label={hasReview ? t("badge.review") : t("badge.onTrack")}
         />
       </div>
-      <p className="stage-card__summary">{summary.summary}</p>
+      <p className="stage-card__summary" lang="en">{summary.summary}</p>
       {hasReview && (
         <ul className="stage-card__review">
           {summary.reviewItems.map((item, index) => (
-            <li key={index} className="stage-card__review-item">
+            <li key={index} className="stage-card__review-item" lang="en">
               <ReviewIcon className="stage-card__review-icon" />
               <span>{item}</span>
             </li>

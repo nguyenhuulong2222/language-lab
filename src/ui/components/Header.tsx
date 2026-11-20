@@ -7,7 +7,7 @@
  * Keyboard: Escape closes the open panel and returns focus to the button that opened it.
  * "Home" asks first, because it discards the answers of this practice.
  */
-import { useId, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useId, useRef, useState, type FocusEvent, type KeyboardEvent } from "react";
 import { Disclaimer } from "./Disclaimer";
 import { LanguageMenu } from "./LanguageMenu";
 import { GlobeIcon } from "./icons";
@@ -27,6 +27,16 @@ export function Header({ onHome }: { onHome?: () => void }) {
   const ids = { language: useId(), settings: useId(), about: useId(), home: useId() };
   const buttons = useRef<Record<PanelName, HTMLButtonElement | null>>({ language: null, settings: null, about: null, home: null });
 
+  const panels = useRef<Record<PanelName, HTMLDivElement | null>>({ language: null, settings: null, about: null, home: null });
+  // Opening a panel moves focus into it (the language menu focuses its own current choice).
+  useEffect(() => {
+    if (panel !== null && panel !== "language") panels.current[panel]?.focus();
+  }, [panel]);
+  // Tabbing out of the header closes the open panel. A click on plain text inside it does not.
+  const onBlur = (event: FocusEvent) => {
+    const next = event.relatedTarget as Node | null;
+    if (panel !== null && next !== null && !event.currentTarget.contains(next)) setPanel(null);
+  };
   const toggle = (which: PanelName) => setPanel((current) => (current === which ? null : which));
   /** Close the open panel and put focus back on the button that opened it. */
   const close = () => {
@@ -45,7 +55,7 @@ export function Header({ onHome }: { onHome?: () => void }) {
   };
 
   return (
-    <header className="header" onKeyDown={onKeyDown}>
+    <header className="header" onKeyDown={onKeyDown} onBlur={onBlur}>
       <div className="ll-container header__inner">
         <div className="header__brand">
           <svg className="header__reel" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -110,17 +120,48 @@ export function Header({ onHome }: { onHome?: () => void }) {
           }}
         />
       </div>
-      <div id={ids.settings} className="ll-container header__panel" hidden={panel !== "settings"}>
+      <div
+        id={ids.settings}
+        ref={(el) => {
+          panels.current.settings = el;
+        }}
+        tabIndex={-1}
+        className="ll-container header__panel"
+        hidden={panel !== "settings"}
+      >
         <SettingsPanel onClose={close} />
       </div>
-      <div id={ids.about} className="ll-container header__panel" hidden={panel !== "about"}>
+      <div
+        id={ids.about}
+        ref={(el) => {
+          panels.current.about = el;
+        }}
+        tabIndex={-1}
+        className="ll-container header__panel"
+        hidden={panel !== "about"}
+      >
         <Disclaimer messageKey="disclaimer.full" />
       </div>
       {onHome !== undefined && (
-        <div id={ids.home} className="ll-container header__panel" hidden={panel !== "home"}>
+        <div
+          id={ids.home}
+          ref={(el) => {
+            panels.current.home = el;
+          }}
+          tabIndex={-1}
+          className="ll-container header__panel"
+          hidden={panel !== "home"}
+        >
           <p>{t("header.homeConfirm")}</p>
           <div className="btn-row">
-            <button type="button" className="btn" onClick={onHome}>
+            <button
+              type="button"
+              className="btn"
+              onClick={() => {
+                setPanel(null);
+                onHome();
+              }}
+            >
               {t("header.homeConfirm.yes")}
             </button>
             <button type="button" className="btn btn--secondary" onClick={close}>

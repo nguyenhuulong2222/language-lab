@@ -24,7 +24,8 @@ interface EnglishScreenProps {
   progress: EnglishProgress;
   /** How an attempt is scored, from the practice config. Never decided here. */
   matchOptions: MatchOptions;
-  onSubmit: (transcript: string, input: InputMode, alternatives?: readonly string[]) => void;
+  /** `assisted` (writing): the sentence was on screen while the user typed. */
+  onSubmit: (transcript: string, input: InputMode, alternatives?: readonly string[], assisted?: boolean) => void;
   onContinue: () => void;
   /** Try the last sentence again: its attempt is replaced by the next one. */
   onRetry?: () => void;
@@ -48,6 +49,8 @@ export function EnglishScreen({
   const [feedback, setFeedback] = useState(showFeedbackInitially);
   // Counts the retries, so the heading takes focus again when the same sentence is asked again.
   const [retries, setRetries] = useState(0);
+  // Writing: the id of the sentence the user chose to see (or that was shown because the audio failed).
+  const [shownFor, setShownFor] = useState<string | null>(null);
   const reading = progress.kind === "reading";
   const stage = progress.kind;
 
@@ -71,6 +74,7 @@ export function EnglishScreen({
               onTryAgain={() => {
                 onRetry?.();
                 setRetries((n) => n + 1);
+                setShownFor(null);
                 setFeedback(false);
               }}
             />
@@ -83,6 +87,7 @@ export function EnglishScreen({
                 onClick={() => {
                   onRetry();
                   setRetries((n) => n + 1);
+                  setShownFor(null);
                   setFeedback(false);
                 }}
               >
@@ -127,6 +132,10 @@ export function EnglishScreen({
   }
 
   const sentence = progress.current;
+  // Writing with no way to play the sentence: it is shown, and the attempt is marked as assisted.
+  const noVoice =
+    !reading && sentence !== null && speaker.voiceFor({ text: sentence.text, clipId: writingClipId(sentence.id) }) === null;
+  const sentenceShown = !reading && sentence !== null && (noVoice || shownFor === sentence.id);
   return (
     <div className="screen">
       <TakeHeader
@@ -154,15 +163,28 @@ export function EnglishScreen({
             ) : (
               <>
                 <p className="progress-line">{t("writing.sentence")}</p>
-                <SpeakButton text={sentence.text} clipId={writingClipId(sentence.id)} />
-                {speaker.voiceFor({ text: sentence.text, clipId: writingClipId(sentence.id) }) !== null ? (
-                  <p className="note">{t("writing.hidden")}</p>
-                ) : (
+                <SpeakButton
+                  text={sentence.text}
+                  clipId={writingClipId(sentence.id)}
+                  onFailed={() => setShownFor(sentence.id)}
+                />
+                {noVoice || shownFor === sentence.id ? (
                   <>
-                    <p className="note">{t("writing.fallback")}</p>
+                    <p className="note">{noVoice ? t("writing.fallback") : t("writing.shown")}</p>
+                    {noVoice && <p className="note">{t("writing.shown")}</p>}
                     <p className="prompt" lang="en">
                       {sentence.text}
                     </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="note">{t("writing.hidden")}</p>
+                    <div className="btn-row">
+                      <button type="button" className="btn btn--secondary" onClick={() => setShownFor(sentence.id)}>
+                        {t("writing.show")}
+                      </button>
+                    </div>
+                    <p className="note">{t("writing.show.help")}</p>
                   </>
                 )}
               </>
@@ -179,7 +201,7 @@ export function EnglishScreen({
               allowSkip
               onSubmit={(text, input, alternatives) => {
                 setFeedback(true);
-                onSubmit(text, input, alternatives);
+                onSubmit(text, input, alternatives, sentenceShown);
               }}
             />
             <p className="note"><LegalText messageKey="compare.setting" /></p>

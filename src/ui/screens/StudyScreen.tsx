@@ -111,14 +111,14 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
       <TakeHeader stage="home" title={t("home.study.title")} focusKey={null} />
       <EnglishNotice />
       <div className="screen__body">
-        <p className="progress-line" role="status">
+        <p className="progress-line">
           {t("civics.count", { current: index + 1, total: questions.length })}
         </p>
-        {picture !== null && <QuestionPicture picture={picture} />}
         <p className="prompt" lang="en" ref={prompt} tabIndex={-1}>
           {entry.questionText}
         </p>
         <SpeakButton key={entry.id} text={entry.questionText} clipId={civicsClipId(entry.id)} />
+        {picture !== null && <QuestionPicture picture={picture} />}
         {entry.requiredAnswerCount > 1 && <p className="note">{t("civics.needs", { count: entry.requiredAnswerCount })}</p>}
         {lines !== null && (
           <section className="panel">
