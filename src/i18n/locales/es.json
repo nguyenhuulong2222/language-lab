@@ -45,8 +45,6 @@
   "report.review.heading": "Cosas para repasar",
   "report.review.intro": "Concéntrese en estas antes de su próxima práctica.",
   "report.generated": "Informe generado el {datetime}",
-  "translation.notice": "Traducción solo de referencia; la versión en inglés es la oficial.",
-  "translation.missing": "Todavía no hay traducción. Se muestra el inglés.",
   "translation.english": "Inglés",
   "voice.say": "Hablar",
   "voice.stop": "Dejar de escuchar",

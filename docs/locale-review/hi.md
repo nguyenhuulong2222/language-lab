@@ -26,7 +26,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.note` | This is only the made-up profile’s answer. In a real interview you answer truthfully about your own life. | यह केवल गढ़े हुए प्रोफ़ाइल का उत्तर है। असली इंटरव्यू में आप अपने जीवन के बारे में सच-सच उत्तर देते हैं। | This is only the answer of a made-up profile. In a real interview you answer truthfully about your life. |
 | `help.setup.2` | Profiles are made up. Do not type your real name or any details about you. | प्रोफ़ाइल गढ़े हुए हैं। अपना असली नाम या अपने बारे में कोई जानकारी टाइप न करें। | The profiles are made up. Do not type your real name or any information about yourself. |
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | असली इंटरव्यू अंग्रेज़ी में होता है, जब तक USCIS आपको छूट न दे। इन स्क्रीन पर प्रश्न और वाक्य अंग्रेज़ी में ही रहते हैं ताकि आप उनका अभ्यास कर सकें। | The real interview is in English, unless USCIS gives you an exemption. The questions and sentences on these screens remain in English so that you can practice them. |
-| `translation.notice` | Translation for reference; the English version is official. | अनुवाद केवल संदर्भ के लिए है; अंग्रेज़ी संस्करण ही आधिकारिक है। | The translation is for reference only; the English version is the official one. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | यह रिपोर्ट केवल एक भाग की है। यह दिखाती है कि अभ्यास में यह भाग कैसा रहा, यह नहीं कि असली टेस्ट में आपका प्रदर्शन कैसा होता, और यह कुल अभ्यास परिणाम नहीं देती। | This report is of one part only. It shows how this part went in practice, not how your performance would have been in the real test, and it does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | N-400 इंटरव्यू केवल अभ्यास है और इसका स्कोर नहीं दिया जाता। | The N-400 interview is only practice and no score is given for it. |
 | `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | यह अनुवाद AI ने बनाया है और इसमें गलतियाँ हो सकती हैं। अंग्रेज़ी संस्करण ही आधिकारिक है। | This translation was made by AI and may contain mistakes. The English version is the official one. |
@@ -86,7 +85,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.heading` | Things to review | दोहराने की बातें |
 | `report.review.intro` | Focus on these before your next practice. | अपने अगले अभ्यास से पहले इन पर ध्यान दें। |
 | `report.generated` | Report generated {datetime} | रिपोर्ट बनाई गई: {datetime} |
-| `translation.missing` | No translation yet. Showing English. | अभी अनुवाद उपलब्ध नहीं है। अंग्रेज़ी दिखाई जा रही है। |
 | `translation.english` | English | अंग्रेज़ी |
 | `voice.say` | Say it | बोलें |
 | `voice.stop` | Stop listening | सुनना बंद करें |

@@ -45,8 +45,6 @@
   "report.review.heading": "Những điều cần xem lại",
   "report.review.intro": "Hãy tập trung vào những điều này trước lần luyện tập tiếp theo.",
   "report.generated": "Báo cáo được tạo lúc {datetime}",
-  "translation.notice": "Bản dịch chỉ để tham khảo; bản tiếng Anh là bản chính thức.",
-  "translation.missing": "Chưa có bản dịch. Đang hiện bản tiếng Anh.",
   "translation.english": "Tiếng Anh",
   "voice.say": "Nói",
   "voice.stop": "Dừng nghe",

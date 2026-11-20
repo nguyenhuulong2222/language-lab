@@ -45,8 +45,6 @@
   "report.review.heading": "ສິ່ງທີ່ຄວນທົບທວນ",
   "report.review.intro": "ກະລຸນາເນັ້ນສິ່ງເຫຼົ່ານີ້ກ່ອນການຝຶກຄັ້ງຕໍ່ໄປ.",
   "report.generated": "ສ້າງບົດລາຍງານເມື່ອ {datetime}",
-  "translation.notice": "ຄໍາແປນີ້ໃຊ້ອ້າງອີງເທົ່ານັ້ນ; ສະບັບພາສາອັງກິດເປັນສະບັບທາງການ.",
-  "translation.missing": "ຍັງບໍ່ມີຄໍາແປ. ສະແດງເປັນພາສາອັງກິດ.",
   "translation.english": "ອັງກິດ",
   "voice.say": "ເວົ້າ",
   "voice.stop": "ຢຸດຟັງ",

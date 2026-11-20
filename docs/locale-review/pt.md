@@ -26,7 +26,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.note` | This is only the made-up profile’s answer. In a real interview you answer truthfully about your own life. | Esta é apenas a resposta do perfil inventado. Em uma entrevista real, você responde com a verdade sobre a sua própria vida. | This is only the invented profile's answer. In a real interview, you answer with the truth about your own life. |
 | `help.setup.2` | Profiles are made up. Do not type your real name or any details about you. | Os perfis são inventados. Não digite o seu nome verdadeiro nem nenhum dado seu. | Profiles are invented. Do not type your true name or any data of yours. |
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | A entrevista real é feita em inglês, a menos que o USCIS permita uma exceção para você. As perguntas e as frases destas telas continuam em inglês para que você possa praticá-las. | The real interview is done in English, unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so that you can practice them. |
-| `translation.notice` | Translation for reference; the English version is official. | Tradução apenas para referência; a versão em inglês é a oficial. | Translation for reference only; the English version is the official one. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | Este relatório é de uma parte só. Ele mostra como esta parte foi na prática, não como você se sairia no teste real, e não dá um resultado geral de prática. | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | A entrevista sobre o N-400 é apenas prática e não é pontuada. | The N-400 interview is practice only and is not scored. |
 | `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Esta tradução foi feita por IA e pode conter erros. A versão em inglês é a oficial. | This translation was made by AI and may contain errors. The English version is the official one. |
@@ -86,7 +85,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.heading` | Things to review | Coisas para revisar |
 | `report.review.intro` | Focus on these before your next practice. | Concentre-se nestas antes da sua próxima prática. |
 | `report.generated` | Report generated {datetime} | Relatório gerado em {datetime} |
-| `translation.missing` | No translation yet. Showing English. | Ainda não há tradução. Mostrando o inglês. |
 | `translation.english` | English | Inglês |
 | `voice.say` | Say it | Falar |
 | `voice.stop` | Stop listening | Parar de ouvir |

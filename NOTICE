@@ -1,0 +1,43 @@
+Language Lab: licence scope
+===========================
+
+The MIT licence in LICENSE covers the source code of this repository and the text written for it
+(documentation, interface text in English, practice sentences, fixtures). It does not cover the
+other material listed below, which keeps its own terms. Language Lab is an independent practice
+tool. It is not affiliated with, endorsed by, or connected to USCIS, DHS, or any U.S. government
+agency. Nothing here is legal advice.
+
+1. Code and project text: MIT (LICENSE). Copyright (c) 2026 nguyenhuulong2222.
+
+2. USCIS documents (data/sources/). Public U.S. government publications, saved unchanged with URL
+   and SHA-256 in data/sources/README.md. The answer keys (data/civics-answers/) and the English
+   display files (data/translations/civics/*/en.json) are derived from them. Their text remains
+   the work of USCIS. Using them does not mean USCIS endorses Language Lab.
+
+3. Pictures (public/images/civics/). Public-domain or openly licensed works from U.S. federal
+   sources (Smithsonian Open Access, CC0; Library of Congress, "No known restrictions on
+   publication"). Each picture's creator, source page, file URL, SHA-256 and rights statement are
+   in data/images/manifest.json and docs/image-credits.md. They are not covered by the MIT licence.
+
+4. Font. Bitter by Sol Matas (Huerta Tipográfica), SIL Open Font License 1.1. Currently loaded
+   from Google Fonts at run time; see docs/audit for the plan to self-host it.
+
+5. Generated audio (public/audio/). Spoken prompts made with OpenAI text-to-speech (model
+   gpt-4o-mini-tts, voice "coral") from texts in this repository. The app labels them "AI-generated
+   voice". They are provided as part of this project; the OpenAI terms of use apply to how the
+   audio was produced.
+
+6. AI-translated interface text (src/i18n/locales/ other than en.json). Written by an AI, not by a
+   translator, not reviewed by a native speaker unless a locale file names a reviewer. Shown with a
+   label and, for disclaimers and legal lines, only in English until reviewed. Provided as is, as
+   drafts, with no warranty of accuracy.
+
+7. Third-party software. React, React DOM and Scheduler (MIT) in the production bundle; build and
+   test tools (MIT, ISC, Apache-2.0, BSD-3-Clause, CC-BY-4.0 for caniuse-lite) are development
+   dependencies only. Licences are in each package under node_modules after installation.
+
+8. formN400.org. This repository contains no text, translation, data or design from formN400.org
+   or the separate N400 project of the same owner, and nothing here grants any right to
+   formN400.org or its content. Earlier versions of this repository's history contained civics
+   translations imported from that project; they were removed from the working tree and are not
+   licensed by this repository's licence.

@@ -25,9 +25,10 @@ answer that implies what the user's real situation should be.
 
 **Stays English, never machine-translated.** Civics questions, accepted answers and official
 answer lines; reading and writing sentences; N-400 questions and their sample answers. These are
-shown in English only, in every interface language. Translations of civics questions
-(`data/translations/civics/`) come from other people's files, are marked `needsHumanReview`, and
-stay hidden: no screen shows them until a person has reviewed them.
+shown in English only, in every interface language. There are no translations of civics questions in
+this repository: `data/translations/civics/` holds only the official English display text, and a test
+fails if any non-English file appears there (they came from a separate project whose content is not
+covered by this repository's licence, see `NOTICE`).
 
 **The interface may ship in AI-translated languages** (`src/i18n/locales/<code>.json`, the 14
 languages of `src/i18n/languages.ts`) when all three hold:

@@ -45,8 +45,6 @@
   "report.review.heading": "สิ่งที่ควรทบทวน",
   "report.review.intro": "โปรดเน้นเรื่องเหล่านี้ก่อนการฝึกครั้งต่อไป",
   "report.generated": "สร้างรายงานเมื่อ {datetime}",
-  "translation.notice": "คำแปลนี้ใช้อ้างอิงเท่านั้น ฉบับภาษาอังกฤษเป็นฉบับทางการ",
-  "translation.missing": "ยังไม่มีคำแปล แสดงเป็นภาษาอังกฤษ",
   "translation.english": "อังกฤษ",
   "voice.say": "พูด",
   "voice.stop": "หยุดฟัง",

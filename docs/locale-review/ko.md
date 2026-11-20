@@ -26,7 +26,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.note` | This is only the made-up profile’s answer. In a real interview you answer truthfully about your own life. | 이것은 지어낸 프로필의 답일 뿐입니다. 실제 인터뷰에서는 본인의 삶에 대해 사실대로 답합니다. | This is only the made-up profile's answer. In a real interview you answer truthfully about your own life. |
 | `help.setup.2` | Profiles are made up. Do not type your real name or any details about you. | 프로필은 지어낸 것입니다. 실제 이름이나 본인에 대한 정보를 입력하지 마세요. | Profiles are made up. Do not enter your real name or information about yourself. |
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | 실제 인터뷰는 USCIS가 예외를 허용하지 않는 한 영어로 진행됩니다. 이 화면의 질문과 문장은 연습할 수 있도록 영어로 유지됩니다. | The real interview is conducted in English unless USCIS permits an exception. The questions and sentences on this screen are kept in English so that you can practice. |
-| `translation.notice` | Translation for reference; the English version is official. | 번역은 참고용이며, 영어 버전이 공식 버전입니다. | The translation is for reference; the English version is the official version. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | 이 보고서는 한 부분에 대한 것입니다. 이 부분이 연습에서 어땠는지를 보여 줄 뿐 실제 시험에서 어떨지를 보여 주는 것이 아니며, 전체 연습 결과도 제공하지 않습니다. | This report is about one part. It only shows how this part went in practice, not how it would be on the real test, and it also does not provide an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | N-400 인터뷰는 연습일 뿐이며 채점되지 않습니다. | The N-400 interview is only practice and is not graded. |
 | `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | 이 번역은 AI가 만들었으며 오류가 있을 수 있습니다. 영어 버전이 공식 버전입니다. | This translation was made by AI and may contain errors. The English version is the official version. |
@@ -86,7 +85,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.heading` | Things to review | 다시 살펴볼 것 |
 | `report.review.intro` | Focus on these before your next practice. | 다음 연습 전에 이 부분에 집중해 보세요. |
 | `report.generated` | Report generated {datetime} | 보고서 생성 시각: {datetime} |
-| `translation.missing` | No translation yet. Showing English. | 아직 번역이 없습니다. 영어를 표시합니다. |
 | `translation.english` | English | 영어 |
 | `voice.say` | Say it | 말하기 |
 | `voice.stop` | Stop listening | 듣기 중지 |

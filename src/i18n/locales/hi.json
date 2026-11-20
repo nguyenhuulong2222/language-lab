@@ -45,8 +45,6 @@
   "report.review.heading": "दोहराने की बातें",
   "report.review.intro": "अपने अगले अभ्यास से पहले इन पर ध्यान दें।",
   "report.generated": "रिपोर्ट बनाई गई: {datetime}",
-  "translation.notice": "अनुवाद केवल संदर्भ के लिए है; अंग्रेज़ी संस्करण ही आधिकारिक है।",
-  "translation.missing": "अभी अनुवाद उपलब्ध नहीं है। अंग्रेज़ी दिखाई जा रही है।",
   "translation.english": "अंग्रेज़ी",
   "voice.say": "बोलें",
   "voice.stop": "सुनना बंद करें",

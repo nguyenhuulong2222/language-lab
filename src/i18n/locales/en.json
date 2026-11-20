@@ -38,8 +38,6 @@
   "report.review.heading": "Things to review",
   "report.review.intro": "Focus on these before your next practice.",
   "report.generated": "Report generated {datetime}",
-  "translation.notice": "Translation for reference; the English version is official.",
-  "translation.missing": "No translation yet. Showing English.",
   "translation.english": "English",
   "voice.say": "Say it",
   "voice.stop": "Stop listening",

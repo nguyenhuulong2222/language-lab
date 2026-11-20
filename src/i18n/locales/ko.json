@@ -45,8 +45,6 @@
   "report.review.heading": "다시 살펴볼 것",
   "report.review.intro": "다음 연습 전에 이 부분에 집중해 보세요.",
   "report.generated": "보고서 생성 시각: {datetime}",
-  "translation.notice": "번역은 참고용이며, 영어 버전이 공식 버전입니다.",
-  "translation.missing": "아직 번역이 없습니다. 영어를 표시합니다.",
   "translation.english": "영어",
   "voice.say": "말하기",
   "voice.stop": "듣기 중지",

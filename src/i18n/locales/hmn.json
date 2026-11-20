@@ -45,8 +45,6 @@
   "report.review.heading": "Cov yam yuav tsum rov saib",
   "report.review.intro": "Tsom rau cov no ua ntej koj xyaum zaum tom ntej.",
   "report.generated": "Tsim daim ntawv qhia rau hnub {datetime}",
-  "translation.notice": "Kev txhais lus no yog rau siv xa mus xwb; daim ntawv Askiv yog daim raug cai.",
-  "translation.missing": "Tseem tsis tau txhais. Qhia Askiv.",
   "translation.english": "Askiv",
   "voice.say": "Hais lus",
   "voice.stop": "Nres mloog",

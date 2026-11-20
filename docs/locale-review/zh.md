@@ -26,7 +26,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.note` | This is only the made-up profile’s answer. In a real interview you answer truthfully about your own life. | 這只是虛構檔案的答案。在真正的面談中，您要如實回答自己的實際情況。 | This is only the fictional profile's answer. In a real interview, you must answer truthfully about your own situation. |
 | `help.setup.2` | Profiles are made up. Do not type your real name or any details about you. | 檔案都是虛構的。請不要輸入您的真實姓名或任何關於您的資料。 | The profiles are all fictional. Please do not enter your real name or any information about you. |
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | 真正的面談以英文進行，除非 USCIS 允許您例外。這些畫面上的問題和句子仍維持英文，讓您可以練習。 | The real interview is held in English, unless USCIS allows you an exception. The questions and sentences on these screens remain in English so you can practice. |
-| `translation.notice` | Translation for reference; the English version is official. | 翻譯僅供參考；以英文版本為準。 | Translation is for reference only; the English version governs. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | 這份報告只針對一個部分。它顯示這個部分在練習中的表現，而不是您在真正測驗中的表現，也不提供整體的練習結果。 | This report is about one part only. It shows how this part performed in practice, not how you would perform in the real test, and it does not provide an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | N-400 面談只是練習，不計分。 | The N-400 interview is only practice and is not scored. |
 | `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | 這個翻譯由 AI 製作，可能有錯誤。以英文版本為準。 | This translation was made by AI and may contain errors. The English version governs. |
@@ -86,7 +85,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.heading` | Things to review | 需要複習的項目 |
 | `report.review.intro` | Focus on these before your next practice. | 下次練習前，請先把重點放在這些項目上。 |
 | `report.generated` | Report generated {datetime} | 報告產生時間：{datetime} |
-| `translation.missing` | No translation yet. Showing English. | 尚無翻譯。目前顯示英文。 |
 | `translation.english` | English | 英文 |
 | `voice.say` | Say it | 說話 |
 | `voice.stop` | Stop listening | 停止聆聽 |

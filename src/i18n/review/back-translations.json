@@ -13,7 +13,6 @@
   "n400.sample.note",
   "help.setup.2",
   "lang.interviewEnglish",
-  "translation.notice",
   "partReport.scope",
   "report.n400Note",
   "aiNotice.text"
@@ -32,7 +31,6 @@
    "n400.sample.note": "This is only the invented profile's answer. In a real interview you answer with the truth about your own life.",
    "help.setup.2": "The profiles are invented. Do not write your real name or any data about yourself.",
    "lang.interviewEnglish": "The real interview is done in English, unless USCIS allows you an exception. The questions and sentences on these screens stay in English so that you can practice them.",
-   "translation.notice": "Translation for reference only; the English version is the official one.",
    "partReport.scope": "This report is for one part only. It shows how you did in this part during practice, not how you would do on the real exam, and it gives no overall practice result.",
    "report.n400Note": "The N-400 interview is practice only and is not graded.",
    "aiNotice.text": "This translation was made by an AI and may have errors. The English version is the one that has authority."
@@ -50,7 +48,6 @@
    "n400.sample.note": "This is only the invented profile's answer. In a real interview, you answer with the truth about your own life.",
    "help.setup.2": "Profiles are invented. Do not type your true name or any data of yours.",
    "lang.interviewEnglish": "The real interview is done in English, unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so that you can practice them.",
-   "translation.notice": "Translation for reference only; the English version is the official one.",
    "partReport.scope": "This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result.",
    "report.n400Note": "The N-400 interview is practice only and is not scored.",
    "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the official one."
@@ -68,7 +65,6 @@
    "n400.sample.note": "This is only the answer of the fictional profile. In a real interview you answer truthfully about your own life.",
    "help.setup.2": "The profiles are fictional. Do not enter your real name or any information about yourself.",
    "lang.interviewEnglish": "The real interview is held in English. An exception is possible only if USCIS permits it for you. The questions and sentences on these screens stay in English so that you can practice them.",
-   "translation.notice": "Translation for reference only; the English version is the official one.",
    "partReport.scope": "This report is about one part only. It shows how this part went in practice, and not how you would perform on the real test, and it does not give an overall practice result.",
    "report.n400Note": "The interview on the N-400 form is practice only; it is not assessed.",
    "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the official one."
@@ -86,7 +82,6 @@
    "n400.sample.note": "This is only the fictional profile's answer. In a real interview, you must answer truthfully about your own situation.",
    "help.setup.2": "The profiles are all fictional. Please do not enter your real name or any information about you.",
    "lang.interviewEnglish": "The real interview is held in English, unless USCIS allows you an exception. The questions and sentences on these screens remain in English so you can practice.",
-   "translation.notice": "Translation is for reference only; the English version governs.",
    "partReport.scope": "This report is about one part only. It shows how this part performed in practice, not how you would perform in the real test, and it does not provide an overall practice result.",
    "report.n400Note": "The N-400 interview is only practice and is not scored.",
    "aiNotice.text": "This translation was made by AI and may contain errors. The English version governs."
@@ -104,7 +99,6 @@
    "n400.sample.note": "This is only the made-up profile's answer. In a real interview you answer truthfully about your own life.",
    "help.setup.2": "Profiles are made up. Do not enter your real name or information about yourself.",
    "lang.interviewEnglish": "The real interview is conducted in English unless USCIS permits an exception. The questions and sentences on this screen are kept in English so that you can practice.",
-   "translation.notice": "The translation is for reference; the English version is the official version.",
    "partReport.scope": "This report is about one part. It only shows how this part went in practice, not how it would be on the real test, and it also does not provide an overall practice result.",
    "report.n400Note": "The N-400 interview is only practice and is not graded.",
    "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the official version."
@@ -122,7 +116,6 @@
    "n400.sample.note": "This is only the answer of the made-up profile. In a real interview, you will answer honestly about your own life.",
    "help.setup.2": "The profiles are made up. Do not type your real name or any detail about you.",
    "lang.interviewEnglish": "The real interview is held in English unless USCIS allows you an exception. The questions and sentences on these screens remain in English so you can practice.",
-   "translation.notice": "Translation for reference only; the English version is the official one.",
    "partReport.scope": "This report is for one part only. It shows what the course of this part was in practice, not what your result would be in the real test, and it gives no overall practice result.",
    "report.n400Note": "The interview about the N-400 is practice only and is not scored.",
    "aiNotice.text": "This translation was made by AI and may have mistakes. The English version is the one that is valid."
@@ -140,7 +133,6 @@
    "n400.sample.note": "This is only the answer of a made-up profile. In a real interview you answer truthfully about your life.",
    "help.setup.2": "The profiles are made up. Do not type your real name or any information about yourself.",
    "lang.interviewEnglish": "The real interview is in English, unless USCIS gives you an exemption. The questions and sentences on these screens remain in English so that you can practice them.",
-   "translation.notice": "The translation is for reference only; the English version is the official one.",
    "partReport.scope": "This report is of one part only. It shows how this part went in practice, not how your performance would have been in the real test, and it does not give an overall practice result.",
    "report.n400Note": "The N-400 interview is only practice and no score is given for it.",
    "aiNotice.text": "This translation was made by AI and may contain mistakes. The English version is the official one."
@@ -158,7 +150,6 @@
    "n400.sample.note": "This is only the answer of the invented profile. In a real interview, you answer with the truth about your own life.",
    "help.setup.2": "The profiles are invented. Do not type your real name or any detail about you.",
    "lang.interviewEnglish": "The real interview takes place in English, unless USCIS gives you an exception. The questions and sentences on these screens stay in English so you can practice them.",
-   "translation.notice": "This translation is for reference only; the English version is official.",
    "partReport.scope": "This report is for one part only. It shows how this part went in the practice, not how you would do in the real test, and it gives no general practice result.",
    "report.n400Note": "The interview about N-400 is practice only and it does not get a grade.",
    "aiNotice.text": "This translation was made by an AI and it may have errors in it. The English version is the one that has authority."
@@ -176,7 +167,6 @@
    "n400.sample.note": "This is only the answer of the hypothetical profile. In a real interview, you must answer according to the truth about your own life.",
    "help.setup.2": "These profiles are hypothetical. Do not type your real name or any information about yourself.",
    "lang.interviewEnglish": "The real interview uses English, unless USCIS grants you an exception. The questions and sentences on these screens remain in English so you can practice.",
-   "translation.notice": "This translation is for reference only. The English version is the official version.",
    "partReport.scope": "This report is of only one part. It shows how this part went in practice, not how you would do on the real test, and it does not give an overall practice result.",
    "report.n400Note": "The N-400 interview is only practice and is not given a score.",
    "aiNotice.text": "This translation was done by AI and may contain errors. The English version is the official version."
@@ -194,7 +184,6 @@
    "n400.sample.note": "This is only the answer of the hypothetical profile. In a real interview, you must answer according to the truth about your own life.",
    "help.setup.2": "These profiles are made up. Do not type your real name or any information about yourself.",
    "lang.interviewEnglish": "The real interview is in English unless USCIS permits an exception for you. The questions and sentences on these screens remain in English so you can practice.",
-   "translation.notice": "This translation is for reference only; the English version is the official version.",
    "partReport.scope": "This report is for only one part. It shows how this part was in practice, not how you would do the real test, and does not give an overall practice result.",
    "report.n400Note": "The interview about N-400 is only practice and has no scoring.",
    "aiNotice.text": "This translation was done by AI and may have errors. The English version is the official version."
@@ -212,7 +201,6 @@
    "n400.sample.note": "This is only the made-up model's answers. In a real interview, you answer the truth about your own life.",
    "help.setup.2": "The models are made up. Do not type your real name or anything about you.",
    "lang.interviewEnglish": "The real interview is in English, unless USCIS allows you an exception. The questions and sentences on these screens are still in English so you can practice.",
-   "translation.notice": "This translation is for reference only; the English document is the official one.",
    "partReport.scope": "This report is for one section only. It tells how this section went in practice, not how you would do in the real exam, and it does not give the total practice result.",
    "report.n400Note": "The interview about N-400 is practice only and gives no score.",
    "aiNotice.text": "This translation was done by AI and may possibly have mistakes. The English document is the official one."
@@ -230,7 +218,6 @@
    "n400.sample.note": "This is only the answer of the created profile. In a real interview you must answer truthfully about your own life.",
    "help.setup.2": "The profiles are created ones. Do not type your real name or any information about yourself.",
    "lang.interviewEnglish": "If USCIS does not give you an exception, the real interview is conducted in English. So that you can practice, the questions and sentences on these pages remain in English.",
-   "translation.notice": "This translation is for reference only; the English version is official.",
    "partReport.scope": "This report is for one part only. It shows how this part was in practice, does not show how you would get results in the real exam, and also gives no general practice result.",
    "report.n400Note": "The N-400 interview is practice only and gives no marks.",
    "aiNotice.text": "This translation was made by AI and may contain mistakes. The English version is the official version."
@@ -248,7 +235,6 @@
    "n400.sample.note": "This is only the answer of the hypothetical character. In a real interview, you answer honestly about your own life.",
    "help.setup.2": "The profiles are all hypothetical. Don't type your real name or any information about you.",
    "lang.interviewEnglish": "The real interview is conducted in English, unless USCIS allows an exception for you. The questions and sentences on these screens remain in English so you can practice.",
-   "translation.notice": "The translation is for reference only; the English version is the official one.",
    "partReport.scope": "This report is for one part only. It tells how this part went during practice, does not tell how you would do on the real test, and does not give an overall practice result.",
    "report.n400Note": "The N-400 interview is for practice only and is not scored.",
    "aiNotice.text": "This translation was made by AI and may have errors. The English version is the one with official validity."

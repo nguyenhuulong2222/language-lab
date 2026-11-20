@@ -45,8 +45,6 @@
   "report.review.heading": "Что стоит повторить",
   "report.review.intro": "Сосредоточьтесь на этом перед следующей практикой.",
   "report.generated": "Отчёт создан {datetime}",
-  "translation.notice": "Перевод только для справки; официальной является английская версия.",
-  "translation.missing": "Перевода пока нет. Показан английский текст.",
   "translation.english": "Английский",
   "voice.say": "Сказать",
   "voice.stop": "Перестать слушать",

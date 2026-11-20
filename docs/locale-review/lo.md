@@ -26,7 +26,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.note` | This is only the made-up profile’s answer. In a real interview you answer truthfully about your own life. | ນີ້ເປັນພຽງຄໍາຕອບຂອງໂປຣໄຟລ໌ສົມມຸດ. ໃນການສໍາພາດຈິງ, ທ່ານຕ້ອງຕອບຕາມຄວາມຈິງກ່ຽວກັບຊີວິດຂອງທ່ານເອງ. | This is only the answer of the hypothetical profile. In a real interview, you must answer according to the truth about your own life. |
 | `help.setup.2` | Profiles are made up. Do not type your real name or any details about you. | ໂປຣໄຟລ໌ເຫຼົ່ານີ້ແມ່ນສົມມຸດຂຶ້ນ. ຢ່າພິມຊື່ຈິງ ຫຼື ຂໍ້ມູນໃດໆກ່ຽວກັບຕົວທ່ານ. | These profiles are made up. Do not type your real name or any information about yourself. |
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | ການສໍາພາດຈິງເປັນພາສາອັງກິດ ເວັ້ນເສຍແຕ່ USCIS ອະນຸຍາດຂໍ້ຍົກເວັ້ນໃຫ້ທ່ານ. ຄໍາຖາມ ແລະ ປະໂຫຍກໃນໜ້າຈໍເຫຼົ່ານີ້ຍັງເປັນພາສາອັງກິດ ເພື່ອໃຫ້ທ່ານຝຶກໄດ້. | The real interview is in English unless USCIS permits an exception for you. The questions and sentences on these screens remain in English so you can practice. |
-| `translation.notice` | Translation for reference; the English version is official. | ຄໍາແປນີ້ໃຊ້ອ້າງອີງເທົ່ານັ້ນ; ສະບັບພາສາອັງກິດເປັນສະບັບທາງການ. | This translation is for reference only; the English version is the official version. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | ບົດລາຍງານນີ້ແມ່ນສໍາລັບພຽງໜຶ່ງສ່ວນ. ມັນສະແດງວ່າສ່ວນນີ້ເປັນແນວໃດໃນການຝຶກ, ບໍ່ແມ່ນວ່າທ່ານຈະເຮັດແບບທົດສອບຈິງໄດ້ແນວໃດ, ແລະ ບໍ່ໃຫ້ຜົນການຝຶກໂດຍລວມ. | This report is for only one part. It shows how this part was in practice, not how you would do the real test, and does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | ການສໍາພາດກ່ຽວກັບ N-400 ເປັນພຽງການຝຶກ ແລະ ບໍ່ມີການໃຫ້ຄະແນນ. | The interview about N-400 is only practice and has no scoring. |
 | `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | ການແປນີ້ເຮັດໂດຍ AI ແລະ ອາດມີຂໍ້ຜິດພາດ. ສະບັບພາສາອັງກິດເປັນສະບັບທາງການ. | This translation was done by AI and may have errors. The English version is the official version. |
@@ -86,7 +85,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.heading` | Things to review | ສິ່ງທີ່ຄວນທົບທວນ |
 | `report.review.intro` | Focus on these before your next practice. | ກະລຸນາເນັ້ນສິ່ງເຫຼົ່ານີ້ກ່ອນການຝຶກຄັ້ງຕໍ່ໄປ. |
 | `report.generated` | Report generated {datetime} | ສ້າງບົດລາຍງານເມື່ອ {datetime} |
-| `translation.missing` | No translation yet. Showing English. | ຍັງບໍ່ມີຄໍາແປ. ສະແດງເປັນພາສາອັງກິດ. |
 | `translation.english` | English | ອັງກິດ |
 | `voice.say` | Say it | ເວົ້າ |
 | `voice.stop` | Stop listening | ຢຸດຟັງ |

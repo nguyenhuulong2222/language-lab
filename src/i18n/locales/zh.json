@@ -45,8 +45,6 @@
   "report.review.heading": "需要複習的項目",
   "report.review.intro": "下次練習前，請先把重點放在這些項目上。",
   "report.generated": "報告產生時間：{datetime}",
-  "translation.notice": "翻譯僅供參考；以英文版本為準。",
-  "translation.missing": "尚無翻譯。目前顯示英文。",
   "translation.english": "英文",
   "voice.say": "說話",
   "voice.stop": "停止聆聽",

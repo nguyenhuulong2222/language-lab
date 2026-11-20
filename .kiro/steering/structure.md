@@ -55,7 +55,7 @@ first, even though the same person makes the change.
 ### `data/`
 - `test-rules.json` — official test parameters (question count, passing score).
 - `civics-answers/` — answer key files, human-reviewed only.
-- `translations/` — human-reviewed non-English UI text.
+- `translations/` — only the official English display text of the civics questions (`civics/<version>/en.json`), built from `sources/`. No non-English file is allowed here (see `NOTICE`); interface translations live in `src/i18n/locales/`.
 - `practice/` — practice content (fictional profiles, N-400 script, reading and writing sentences, vocabulary) and `practice/practice-config.json` (practice settings that are not USCIS rules). Marked `needsHumanReview`.
 - `sources/` — official USCIS documents with URL and checksum.
 

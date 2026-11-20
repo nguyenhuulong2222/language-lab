@@ -157,7 +157,6 @@ See [`.kiro/steering/content-safety.md`](.kiro/steering/content-safety.md) for t
 
 ## Pre-existing work and third-party material
 
-- **Civics translations.** The files in `data/translations/civics/` were imported from the owner's earlier project, formN400.org (repository N400, commit `942c5d6`), which was created before this hackathon. Text that project marked as machine-suggested (`_suggested`) was not imported. Every translation file is marked `needsHumanReview`, and the translations are display-only: scoring never uses them. The English display files in the same folder come from the USCIS documents below.
 - **USCIS source documents.** `data/sources/` holds public U.S. government material (the 2025 civics question PDF and the saved 2008 web page), kept as the source for the answer keys. See `data/sources/README.md` for URLs and checksums. This does not mean Language Lab is affiliated with USCIS.
 - **Frontend design guidance.** `.kiro/steering/frontend-design.md` is the "frontend-design" skill from Anthropic's skills repository (https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md, MIT License). It is agent guidance only and is not part of the product build.
 - **AI-generated audio and AI services.** All spoken prompts in the practice flow (civics questions, N-400 questions and sample answers, writing dictation sentences, reading sample sentences) are AI-generated with OpenAI text-to-speech (`gpt-4o-mini-tts`, voice coral). They are generated ahead of time by `tools/audio/generate-audio.mjs` and committed as static MP3 files in `public/audio/`; the app never calls a speech service while it runs. The screen says "AI-generated voice" when a clip plays. If a clip is missing or fails to load, the browser's own voice is used and the screen says "Device voice". The audio of the speech test tool is made the same way and is not committed. Interview follow-up questions will use the Claude API (not built yet).
@@ -171,4 +170,23 @@ These notes do not change the statements above: Language Lab is not a government
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE), for the code and the text written for this repository. See [`NOTICE`](NOTICE) for the full scope.
+
+### Licence scope
+
+The MIT licence covers **this repository's code and its own text only**. Other material keeps its own terms:
+
+| Material | Terms |
+|---|---|
+| Code, English interface text, practice sentences, fixtures, documentation | MIT (`LICENSE`) |
+| USCIS documents in `data/sources/`, and the answer keys and English display files derived from them | U.S. government publications; the text remains USCIS's. No endorsement is implied |
+| Pictures in `public/images/civics/` | Public domain / CC0 / "no known restrictions" per source record; listed in `docs/image-credits.md`. Not MIT |
+| The Bitter font | SIL Open Font License 1.1 (Bitter by Sol Matas, Huerta Tipográfica). Currently loaded from Google Fonts |
+| Generated audio in `public/audio/` | Made with OpenAI text-to-speech and labelled "AI-generated voice" in the app. Not MIT-licensed recordings of a person |
+| AI-translated interface text (`src/i18n/locales/` except English) | AI drafts, not reviewed by native speakers unless a locale file names a reviewer. Provided as is |
+| Dependencies | Their own licences (runtime: React, React DOM, Scheduler, all MIT) |
+
+**Nothing in this repository grants any right to formN400.org or its content.** Language Lab contains no
+text, translation, data or design from formN400.org or the owner's separate N400 project. An earlier
+version of this repository imported civics translations from that project; they were removed (history
+still contains them, and they are not covered by this licence).

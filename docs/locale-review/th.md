@@ -26,7 +26,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.note` | This is only the made-up profile’s answer. In a real interview you answer truthfully about your own life. | นี่เป็นเพียงคำตอบของโปรไฟล์สมมติ ในการสัมภาษณ์จริง คุณต้องตอบตามความจริงเกี่ยวกับชีวิตของคุณเอง | This is only the answer of the hypothetical profile. In a real interview, you must answer according to the truth about your own life. |
 | `help.setup.2` | Profiles are made up. Do not type your real name or any details about you. | โปรไฟล์เหล่านี้เป็นเรื่องสมมติ อย่าพิมพ์ชื่อจริงหรือข้อมูลใด ๆ เกี่ยวกับตัวคุณ | These profiles are hypothetical. Do not type your real name or any information about yourself. |
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | การสัมภาษณ์จริงใช้ภาษาอังกฤษ เว้นแต่ USCIS อนุญาตข้อยกเว้นให้คุณ คำถามและประโยคในหน้าจอเหล่านี้ยังเป็นภาษาอังกฤษเพื่อให้คุณฝึกได้ | The real interview uses English, unless USCIS grants you an exception. The questions and sentences on these screens remain in English so you can practice. |
-| `translation.notice` | Translation for reference; the English version is official. | คำแปลนี้ใช้อ้างอิงเท่านั้น ฉบับภาษาอังกฤษเป็นฉบับทางการ | This translation is for reference only. The English version is the official version. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | รายงานนี้เป็นของเพียงหนึ่งส่วน แสดงว่าส่วนนี้เป็นอย่างไรในการฝึก ไม่ใช่ว่าคุณจะทำการทดสอบจริงได้อย่างไร และไม่ให้ผลการฝึกโดยรวม | This report is of only one part. It shows how this part went in practice, not how you would do on the real test, and it does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | การสัมภาษณ์เรื่อง N-400 เป็นเพียงการฝึกและไม่มีการให้คะแนน | The N-400 interview is only practice and is not given a score. |
 | `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | คำแปลนี้ทำโดย AI และอาจมีข้อผิดพลาด ฉบับภาษาอังกฤษเป็นฉบับทางการ | This translation was done by AI and may contain errors. The English version is the official version. |
@@ -86,7 +85,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.heading` | Things to review | สิ่งที่ควรทบทวน |
 | `report.review.intro` | Focus on these before your next practice. | โปรดเน้นเรื่องเหล่านี้ก่อนการฝึกครั้งต่อไป |
 | `report.generated` | Report generated {datetime} | สร้างรายงานเมื่อ {datetime} |
-| `translation.missing` | No translation yet. Showing English. | ยังไม่มีคำแปล แสดงเป็นภาษาอังกฤษ |
 | `translation.english` | English | อังกฤษ |
 | `voice.say` | Say it | พูด |
 | `voice.stop` | Stop listening | หยุดฟัง |

@@ -26,7 +26,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.note` | This is only the made-up profile’s answer. In a real interview you answer truthfully about your own life. | Sa a se sèlman repons pwofil envante a. Nan yon vrè entèvyou, ou reponn avèk verite sou pwòp lavi ou. | This is only the answer of the invented profile. In a real interview, you answer with the truth about your own life. |
 | `help.setup.2` | Profiles are made up. Do not type your real name or any details about you. | Pwofil yo envante. Pa tape vrè non ou oswa okenn detay sou ou. | The profiles are invented. Do not type your real name or any detail about you. |
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | Vrè entèvyou a fèt an angle, sof si USCIS ba ou yon eksepsyon. Kesyon ak fraz ki sou ekran sa yo rete an angle pou ou ka pratike yo. | The real interview takes place in English, unless USCIS gives you an exception. The questions and sentences on these screens stay in English so you can practice them. |
-| `translation.notice` | Translation for reference; the English version is official. | Tradiksyon sa a se pou referans sèlman; vèsyon angle a se ofisyèl. | This translation is for reference only; the English version is official. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | Rapò sa a se pou yon sèl pati. Li montre kijan pati sa a te pase nan pratik la, se pa kijan w ta fè nan vrè tès la, e li pa bay yon rezilta pratik jeneral. | This report is for one part only. It shows how this part went in the practice, not how you would do in the real test, and it gives no general practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | Entèvyou sou N-400 la se pratik sèlman e li pa jwenn nòt. | The interview about N-400 is practice only and it does not get a grade. |
 | `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Se yon AI ki fè tradiksyon sa a e li ka gen erè ladan l. Vèsyon angle a se sa ki gen otorite. | This translation was made by an AI and it may have errors in it. The English version is the one that has authority. |
@@ -86,7 +85,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.heading` | Things to review | Bagay pou revize |
 | `report.review.intro` | Focus on these before your next practice. | Konsantre sou sa yo anvan pwochen pratik ou a. |
 | `report.generated` | Report generated {datetime} | Rapò a fèt nan dat {datetime} |
-| `translation.missing` | No translation yet. Showing English. | Poko gen tradiksyon. N ap montre angle a. |
 | `translation.english` | English | Angle |
 | `voice.say` | Say it | Pale |
 | `voice.stop` | Stop listening | Sispann koute |
