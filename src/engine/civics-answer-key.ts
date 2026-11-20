@@ -44,6 +44,11 @@ export interface CivicsAnswerEntry {
    * in tools/answer-key/answer-markers.json). Every item is still required. Filled by the loader.
    */
   anyOrder?: AnyOrderLine[];
+  /**
+   * "sentence": every accepted answer is a sentence (the SENTENCE flag of the build script) and is
+   * matched by its content words in order (see SentenceRule in answer-normaliser.ts). Absent: phrases.
+   */
+  matchAs?: "sentence";
   /** How many distinct accepted answers a response needs. */
   requiredAnswerCount: number;
   answerType: AnswerType;
@@ -172,6 +177,8 @@ function parseEntry(
   );
   const numberAlone = numberAloneLists[0] ?? [];
   const anyOrder = parseAnyOrder(item["anyOrder"], fail);
+  const matchAs = item["matchAs"];
+  if (matchAs !== undefined && matchAs !== "sentence") return fail(`matchAs must be "sentence" when present, got ${JSON.stringify(matchAs)}.`);
   const inAnswers = new Set(answers);
   const seenMembers = new Set<string>();
   for (const group of answerGroups) {
@@ -236,6 +243,7 @@ function parseEntry(
     answerGroups,
     numberAlone,
     anyOrder,
+    ...(matchAs === "sentence" ? { matchAs } : {}),
     requiredAnswerCount,
     answerType,
     sourceUrl,

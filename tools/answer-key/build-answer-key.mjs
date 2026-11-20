@@ -68,6 +68,8 @@ const VERSIONS = {
 const REVIEW_SHEET = path.join(ROOT, "docs/answer-key-review.md");
 const MARKERS_FILE = path.join(ROOT, "tools/answer-key/answer-markers.json");
 const BATCH_SIZE = 20;
+/** The short words of the reading rule, which the sentence answers use too (only for the review sheet text). */
+const FUNCTION_WORDS = JSON.parse(fs.readFileSync(path.join(ROOT, "data/practice/practice-config.json"), "utf8")).sentenceMatch.functionWords;
 const MAX_VARIANTS_PER_LINE = 16;
 
 /** A source answer line that makes the whole question dynamic. */
@@ -111,7 +113,7 @@ const FLAGS = {
   DIGITS:
     "An accepted answer contains digits. The matcher treats digits and spelled-out numbers as the same (13 = thirteen, 14th = fourteenth), so nothing was added to the data. A year read as two numbers (\"nineteen twenty\" for 1920) is not matched.",
   SENTENCE:
-    "Every accepted answer is a sentence of five or more words. A response must contain the whole sentence.",
+    "Every accepted answer is a sentence of five or more words. Matched the way the reading rule matches a sentence (matchAs \"sentence\"): every content word in order; short words from the fixed list and -s, -es, 's endings do not matter; a missing or substituted content word fails.",
 };
 
 // ---------------------------------------------------------------------------
@@ -634,6 +636,7 @@ function buildEntry(version, config, q, markers = []) {
       ...(answerGroups.length > 0 ? { answerGroups } : {}),
       ...(numberAlone.length > 0 ? { numberAlone } : {}),
       ...(anyOrder.length > 0 ? { anyOrder } : {}),
+      ...(flags.has("SENTENCE") ? { matchAs: "sentence" } : {}),
       requiredAnswerCount,
       answerType: isDynamic ? "dynamic" : "static",
       sourceUrl: config.sourceUrl,
@@ -763,6 +766,7 @@ function entryJson(e) {
     ...(j.anyOrder
       ? [`      "anyOrder": [${j.anyOrder.map((l) => `{ "answers": [${l.answers.map(q).join(", ")}], "items": [${l.items.map((it) => `[${it.map(q).join(", ")}]`).join(", ")}] }`).join(", ")}],`]
       : []),
+    ...(j.matchAs ? [`      "matchAs": ${q(j.matchAs)},`] : []),
     `      "requiredAnswerCount": ${j.requiredAnswerCount},`,
     `      "answerType": ${q(j.answerType)},`,
     `      "sourceUrl": ${q(j.sourceUrl)},`,
@@ -862,7 +866,7 @@ function reviewSheet(results, comparison) {
     "- Numbers are matched by value, by the matcher, not by extra data: `13` = `thirteen`, `27` = `twenty-seven`, `14th` = `fourteenth`. For an answer that is a number with a unit (`six years`), the number alone (`six`, `6`) is also accepted. Questions with digits carry the **DIGITS** flag.",
     "- A year read as two numbers is not matched: \"nineteen twenty\" does not match `1920` (it is read as 19 and 20). The ordinal alone does not match an ordinal with a noun: `fourteenth` does not match `14th amendment`; `thirteen` does not match `13 original colonies`.",
     "- Any other spoken form the source does not list is not accepted, unless the project owner marked a parenthetical as an alternative name (**ALTNAME**), for example `Secretary of Defense` for 2025 question 48.",
-    "- Sentence answers (**SENTENCE** flag) must be said almost in full, in the source's wording.",
+    `- Sentence answers (**SENTENCE** flag) are matched like a reading sentence: every content word in the source's order; short words (${FUNCTION_WORDS.map((w) => "`" + w + "`").join(", ")}, from data/practice/practice-config.json) and -s, -es, 's endings do not matter; other words may come between; a missing or substituted content word fails.`,
     "- Answers that list several items in one line (for example question 16 in 2025, \"Legislative, executive, and judicial\") are stored as one phrase. Where the project owner decided so (**ANYORDER**), the items may be said in any order, but every item of the line is required and items of different lines are not mixed. Elsewhere they must be said in the source's order.",
     "- A number does not match when the response continues it (\"one hundred and one\" for `one hundred`), or when it starts in the middle of a larger number (\"twenty two\" for `two`).",
     "- Leading `the`, `a`, `an` in a stored answer is optional.",

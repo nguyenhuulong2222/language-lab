@@ -28,6 +28,8 @@
  * - A leading "because" or "because of" in an accepted answer is optional, as articles are.
  * - Alternative names that belong to one marker group count as ONE answer (see `groups`).
  * - A bare number is accepted for an answer only when the answer is listed in `numberAlone`.
+ * - Sentence answers (`sentence`) are matched by their content words in order, as the reading
+ *   rule matches a sentence; function words and -s, -es, 's endings do not matter.
  * - A source line that lists items ("Democratic and Republican") may, where the project owner
  *   decided so, be said with the items in any order; every item is still required (`anyOrder`).
  */
@@ -459,6 +461,46 @@ export interface MatchOptions {
    * item by one of its forms. Items of different lines are never mixed.
    */
   anyOrder?: readonly AnyOrderLine[];
+  /**
+   * Sentence answers (the SENTENCE questions), matched the way the reading rule matches a
+   * sentence: every content word of the accepted sentence must be in the response, in order;
+   * other words may come between them. Function words (from the fixed list) may be missing or
+   * added, and a plural or possessive ending does not make a different word (`sameWord`).
+   * A missing or substituted content word fails. Absent: the accepted answers are phrases.
+   */
+  sentence?: SentenceRule;
+}
+
+export interface SentenceRule {
+  /** Short words that may be missing or added. Lower case. */
+  functionWords: ReadonlySet<string>;
+  /** True when a word of the response is the same word as a word of the sentence ("state"/"states"). */
+  sameWord: (expected: string, said: string) => boolean;
+}
+
+/**
+ * Where a sentence answer is found in the response: for each start, the first in-order match of
+ * its content words, skipping the response's function words. One span per matched word.
+ */
+function sentencePlacements(responseTokens: readonly string[], sentence: readonly string[], rule: SentenceRule): Placement[] {
+  const placements = new Map<string, Placement>();
+  for (const form of alternativeForms([...sentence], false)) {
+    const content = form.filter((t) => !rule.functionWords.has(t));
+    if (content.length === 0) continue;
+    for (let start = 0; start < responseTokens.length; start++) {
+      if (rule.functionWords.has(responseTokens[start]!) || !rule.sameWord(content[0]!, responseTokens[start]!)) continue;
+      const spans: Span[] = [{ start, length: 1 }];
+      let k = start + 1;
+      for (let c = 1; c < content.length; c++) {
+        while (k < responseTokens.length && (rule.functionWords.has(responseTokens[k]!) || !rule.sameWord(content[c]!, responseTokens[k]!))) k++;
+        if (k === responseTokens.length) break;
+        spans.push({ start: k, length: 1 });
+        k++;
+      }
+      if (spans.length === content.length) placements.set(spans.map((s) => s.start).join(","), spans);
+    }
+  }
+  return [...placements.values()];
 }
 
 export interface AnyOrderLine {
@@ -546,6 +588,11 @@ export function countMatchingPhrases(
       for (const tokens of unit.phrases) {
         for (const span of findSpans(responseTokens, tokens, bareNumber.has(tokens.join(" ")))) {
           placements.set(`${span.start}:${span.length}`, [span]);
+        }
+        if (options.sentence !== undefined) {
+          for (const placement of sentencePlacements(responseTokens, tokens, options.sentence)) {
+            placements.set(placement.map((s) => `${s.start}:${s.length}`).join(","), placement);
+          }
         }
       }
       for (const items of unit.itemSets) {
