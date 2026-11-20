@@ -4,6 +4,7 @@
  * (civics, full interview). The engine turns that into the 2008 or the 2025 test. The screen
  * never asks for real data. Reading and writing have no setup at all.
  */
+import { LegalText } from "../components/LegalText";
 import { useState } from "react";
 import type { FiledChoice } from "../../engine/practice-flow";
 import type { PracticeProfile } from "../../engine/practice-content";
@@ -49,7 +50,7 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, focusOnFir
       <div className="screen__body">
         {needs.profile && (
           <>
-            <p className="note">{t("intro.privacy")}</p>
+            <p className="note"><LegalText messageKey="intro.privacy" /></p>
             <fieldset className="choices">
               <legend className="choices__legend">{t("intro.profile.legend")}</legend>
               <p className="note">{t("intro.profile.help")}</p>
@@ -76,7 +77,7 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, focusOnFir
         {needs.filing && (
           <fieldset className="choices">
             <legend className="choices__legend">{t("intro.filed.legend")}</legend>
-            <p className="note">{t("intro.filed.help")}</p>
+            <p className="note"><LegalText messageKey="intro.filed.help" /></p>
             {(["before", "on_or_after"] as const).map((choice) => (
               <label key={choice} className="choice">
                 <input

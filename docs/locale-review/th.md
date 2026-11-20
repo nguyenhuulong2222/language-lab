@@ -29,18 +29,19 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | รายงานนี้เป็นของเพียงหนึ่งส่วน แสดงว่าส่วนนี้เป็นอย่างไรในการฝึก ไม่ใช่ว่าคุณจะทำการทดสอบจริงได้อย่างไร และไม่ให้ผลการฝึกโดยรวม | This report is of only one part. It shows how this part went in practice, not how you would do on the real test, and it does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | การสัมภาษณ์เรื่อง N-400 เป็นเพียงการฝึกและไม่มีการให้คะแนน | The N-400 interview is only practice and is not given a score. |
 | `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | คำแปลนี้ทำโดย AI และอาจมีข้อผิดพลาด ฉบับภาษาอังกฤษเป็นฉบับทางการ | This translation was done by AI and may contain errors. The English version is the official version. |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | นี่เป็นการตั้งค่าการฝึกของ Language Lab ตามแนวทางการให้คะแนนของ USCIS ไม่ใช่กฎของ USCIS: ต้องมีคำสำคัญทุกคำของประโยคตามลำดับ คำสั้น ๆ เช่น “the” ขาดได้ การหยุดพักและการออกเสียงไม่ถูกให้คะแนน | This is a Language Lab practice setting following USCIS's scoring guidelines, not a USCIS rule: every important word of the sentence must be there in order. Short words such as “the” may be missing. Pausing and pronunciation are not scored. |
+| `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | ตัวเลือกนี้กำหนดว่าคุณจะฝึกแบบทดสอบความรู้พลเมืองปี 2008 หรือปี 2025 เป็นเพียงตัวเลือกสำหรับการฝึกเท่านั้น สำหรับกรณีของคุณเอง ให้ตรวจสอบที่ uscis.gov ว่าแบบทดสอบใดใช้กับคุณ | This option determines whether you will practice the 2008 or the 2025 civics test. It is only an option for practice. For your own case, check at uscis.gov which test applies to you. |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | รูปภาพในการฝึกความรู้พลเมืองมาจากแหล่งทางการของรัฐบาลกลางสหรัฐฯ แต่ละรูปใช้ได้เพราะบันทึกของรูปนั้นระบุสิทธิ์ไว้อย่างชัดเจน ไม่ได้หมายความว่ามีหน่วยงานใดรับรอง Language Lab | The pictures in civics practice come from official sources of the U.S. federal government. Each picture can be used because that picture's record states its rights clearly. It does not mean any agency endorses Language Lab. |
+| `civics.officialNote` ⚠ | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | คำตอบใดคำตอบหนึ่งเหล่านี้นับว่าถูก รายการนี้นำมาจากรายการคำตอบของ USCIS และยังรอให้มีผู้ตรวจสอบ | Any one of these answers counts as correct. This list is taken from USCIS's answer list and is still waiting for someone to review it. |
+| `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | การให้คะแนนความรู้พลเมืองถูกปิดในเวอร์ชันนี้ จนกว่าจะมีผู้ตรวจสอบเฉลย คุณยังฝึกการสัมภาษณ์ การอ่าน และการเขียนได้ | Civics scoring is turned off in this version until someone reviews the answer key. You can still practice the interview, reading and writing. |
+| `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | เฉลยความรู้พลเมืองยังรอให้มีผู้ตรวจสอบ เวอร์ชันนี้จึงไม่ให้คะแนนส่วนนี้และไม่สร้างรายงาน | The civics answer key is still waiting for someone to review it. This version therefore does not score this part and does not create a report. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
 | Key | English | Translation |
 |---|---|---|
-| `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | ตัวเลือกนี้กำหนดว่าคุณจะฝึกแบบทดสอบความรู้พลเมืองปี 2008 หรือปี 2025 เป็นเพียงตัวเลือกสำหรับการฝึกเท่านั้น สำหรับกรณีของคุณเอง ให้ตรวจสอบที่ uscis.gov ว่าแบบทดสอบใดใช้กับคุณ |
-| `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | การให้คะแนนความรู้พลเมืองถูกปิดในเวอร์ชันนี้ จนกว่าจะมีผู้ตรวจสอบเฉลย คุณยังฝึกการสัมภาษณ์ การอ่าน และการเขียนได้ |
-| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | นี่เป็นการตั้งค่าการฝึกของ Language Lab ตามแนวทางการให้คะแนนของ USCIS ไม่ใช่กฎของ USCIS: ต้องมีคำสำคัญทุกคำของประโยคตามลำดับ คำสั้น ๆ เช่น “the” ขาดได้ การหยุดพักและการออกเสียงไม่ถูกให้คะแนน |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | ประโยคใช้เฉพาะคำจากรายการคำศัพท์การอ่านและการเขียนอย่างเป็นทางการของ USCIS |
-| `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | คำตอบใดคำตอบหนึ่งเหล่านี้นับว่าถูก รายการนี้นำมาจากรายการคำตอบของ USCIS และยังรอให้มีผู้ตรวจสอบ |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | คุณถึงคะแนนผ่านของการฝึกแล้ว แบบทดสอบจึงหยุดที่นี่ |
-| `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | เฉลยความรู้พลเมืองยังรอให้มีผู้ตรวจสอบ เวอร์ชันนี้จึงไม่ให้คะแนนส่วนนี้และไม่สร้างรายงาน |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | ตอบคำถามความรู้พลเมือง ตรวจกับเฉลย |
 | `partReport.unscored.missing` | A question that is not in the answer key | คำถามที่ไม่มีอยู่ในเฉลย |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | ฟีเจอร์ศึกษาก่อนถูกปิดในเวอร์ชันนี้ จนกว่าจะมีคนตรวจสอบเฉลยแล้ว |
@@ -240,7 +241,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.no` | Stay here | อยู่ที่นี่ต่อ |
 | `common.retry` | Try again | ลองอีกครั้ง |
 | `partReport.badge.good` | This part went well | ส่วนนี้ทำได้ดี |
+| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | ข้อความปฏิเสธความรับผิดชอบและข้อความทางกฎหมายจะแสดงเป็นภาษาอังกฤษเท่านั้น จนกว่าจะมีคนตรวจคำแปล |
 | `lang.menu.title` | Choose a language | เลือกภาษา |
+| `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | ยังมีภาษาอื่นที่กำลังรอการตรวจ ภาษาเหล่านั้นจะปรากฏที่นี่หลังจากมีคนตรวจแล้ว |
 | `home.study.title` | Study first | ศึกษาก่อน |
 | `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | ดูคำถามความรู้พลเมืองพร้อมรูปภาพและคำตอบอย่างเป็นทางการ ไม่มีการให้คะแนน |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | ดูคำถามความรู้พลเมืองทีละข้อ แต่ละข้อแสดงคำตอบอย่างเป็นทางการ ไม่มีการให้คะแนนและไม่บันทึกอะไร |
@@ -251,7 +254,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `study.change` | Choose another test | เลือกข้อสอบชุดอื่น |
 | `footer.credits` | Picture credits | เครดิตรูปภาพ |
 | `credits.title` | Picture credits | เครดิตรูปภาพ |
-| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | รูปภาพในการฝึกความรู้พลเมืองมาจากแหล่งทางการของรัฐบาลกลางสหรัฐฯ แต่ละรูปใช้ได้เพราะบันทึกของรูปนั้นระบุสิทธิ์ไว้อย่างชัดเจน ไม่ได้หมายความว่ามีหน่วยงานใดรับรอง Language Lab |
 | `credits.back` | Back to the practice | กลับไปที่การฝึก |
 | `credits.newTab` | The links open the source pages in a new tab. | ลิงก์จะเปิดหน้าต้นทางในแท็บใหม่ |
 | `selfReview.title` | Listen and compare | ฟังและเปรียบเทียบ |
@@ -279,3 +281,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | คุณเพิ่มคำสั้น “{said}” แบบนี้ยังนับได้ |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | ผลนี้อิงจากคำที่อุปกรณ์ของคุณได้ยิน ถ้าได้ยินผิด ให้ลองอีกครั้งหรือพิมพ์คำตอบ |
 | `compare.honest.typed` | This result is based on the words you typed. | ผลนี้อิงจากคำที่คุณพิมพ์ |
+
+## Lines marked ⚠ (meaning differs a little)
+
+- `civics.officialNote`: "Any one of these answers counts" is rendered "counts as correct" (นับว่าถูก), slightly stronger.

@@ -29,18 +29,19 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | 這份報告只針對一個部分。它顯示這個部分在練習中的表現，而不是您在真正測驗中的表現，也不提供整體的練習結果。 | This report is about one part only. It shows how this part performed in practice, not how you would perform in the real test, and it does not provide an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | N-400 面談只是練習，不計分。 | The N-400 interview is only practice and is not scored. |
 | `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | 這個翻譯由 AI 製作，可能有錯誤。以英文版本為準。 | This translation was made by AI and may contain errors. The English version governs. |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | 這是 Language Lab 依據 USCIS 評分指引設定的練習標準，不是 USCIS 的規定：句子中每個重要的字都必須出現，且順序正確。可以漏掉「the」這類短字。停頓和發音不計分。 | This is a practice standard set by Language Lab based on USCIS scoring guidelines, not a USCIS regulation: every important word in the sentence must appear, in the correct order. Short words like “the” may be omitted. Pauses and pronunciation are not scored. |
+| `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | 這會決定您練習 2008 年還是 2025 年的公民常識測驗。這只是練習用的選擇。至於您自己的案件適用哪一種測驗，請到 uscis.gov 查詢。 | This decides whether you practice the 2008 or the 2025 civics test. This is only a choice for practice. As for which test applies to your own case, please check at uscis.gov. |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | 公民常識練習中的圖片來自美國聯邦政府的官方來源。每張圖片都只因其本身的紀錄清楚載明權利而使用。這並不表示任何機關認可 Language Lab。 | The pictures in civics practice come from official sources of the U.S. federal government. Each picture is used only because its own record clearly states the rights. This does not mean any agency endorses Language Lab. |
+| `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | 其中任何一個都算數。這份清單取自 USCIS 的答案清單，仍在等待人工審核。 | Any one of these counts. This list is taken from USCIS's answer list and is still waiting for human review. |
+| `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | 在有人審核標準答案之前，這個版本的公民常識計分功能是關閉的。您仍然可以練習面談、閱讀和書寫。 | Until someone reviews the standard answers, the civics scoring function of this version is turned off. You can still practice the interview, reading and writing. |
+| `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 公民常識的標準答案仍在等待人工審核，所以這個版本不會為公民常識計分，也不會產生報告。 | The standard answers for civics are still waiting for human review, so this version will not score civics and will not produce a report. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
 | Key | English | Translation |
 |---|---|---|
-| `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | 這會決定您練習 2008 年還是 2025 年的公民常識測驗。這只是練習用的選擇。至於您自己的案件適用哪一種測驗，請到 uscis.gov 查詢。 |
-| `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | 在有人審核標準答案之前，這個版本的公民常識計分功能是關閉的。您仍然可以練習面談、閱讀和書寫。 |
-| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | 這是 Language Lab 依據 USCIS 評分指引設定的練習標準，不是 USCIS 的規定：句子中每個重要的字都必須出現，且順序正確。可以漏掉「the」這類短字。停頓和發音不計分。 |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | 這些句子只使用 USCIS 官方閱讀和書寫詞彙表中的字詞。 |
-| `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | 其中任何一個都算數。這份清單取自 USCIS 的答案清單，仍在等待人工審核。 |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | 您已達到練習的及格分數，所以測驗在這裡停止。 |
-| `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 公民常識的標準答案仍在等待人工審核，所以這個版本不會為公民常識計分，也不會產生報告。 |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | 回答公民常識問題。會與標準答案核對。 |
 | `partReport.unscored.missing` | A question that is not in the answer key | 一道不在標準答案中的題目 |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | 在有人審核過答案表之前，這個版本已關閉「先學習」。 |
@@ -240,7 +241,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.no` | Stay here | 留在這裡 |
 | `common.retry` | Try again | 再試一次 |
 | `partReport.badge.good` | This part went well | 這個部分表現良好 |
+| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | 在有人审核翻译之前，免责声明和法律文字只显示英文。 |
 | `lang.menu.title` | Choose a language | 選擇語言 |
+| `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | 还有更多语言正在审核中。有人检查后，它们会出现在这里。 |
 | `home.study.title` | Study first | 先學習 |
 | `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | 瀏覽公民常識題目，附有圖片和官方答案。不計分。 |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | 一次看一道公民常識題目。每題都會顯示官方答案。不計分，也不儲存任何內容。 |
@@ -251,7 +254,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `study.change` | Choose another test | 選擇其他測驗 |
 | `footer.credits` | Picture credits | 圖片來源 |
 | `credits.title` | Picture credits | 圖片來源 |
-| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | 公民常識練習中的圖片來自美國聯邦政府的官方來源。每張圖片都只因其本身的紀錄清楚載明權利而使用。這並不表示任何機關認可 Language Lab。 |
 | `credits.back` | Back to the practice | 回到練習 |
 | `credits.newTab` | The links open the source pages in a new tab. | 連結會在新分頁開啟來源頁面。 |
 | `selfReview.title` | Listen and compare | 聽聽看並比較 |

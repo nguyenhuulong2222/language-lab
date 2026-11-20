@@ -29,18 +29,19 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | Daim ntawv qhia no yog rau ib ntu xwb. Nws qhia tias ntu no ua li cas hauv kev xyaum, tsis yog koj yuav ua li cas hauv qhov kev xeem tiag, thiab nws tsis muab qhov txiaj ntsig xyaum tag nrho. | This report is for one section only. It tells how this section went in practice, not how you would do in the real exam, and it does not give the total practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | Kev xam phaj txog N-400 yog kev xyaum xwb thiab tsis muab qhab nia. | The interview about N-400 is practice only and gives no score. |
 | `aiNotice.text` ⚠ | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Qhov kev txhais lus no AI ua thiab tej zaum yuav muaj qhov yuam kev. Daim ntawv Askiv yog daim raug cai. | This translation was done by AI and may possibly have mistakes. The English document is the official one. |
+| `compare.setting` ⚠ | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Qhov no yog Language Lab txoj kev teeb tsa xyaum raws li USCIS cov lus qhia txog kev muab qhab nia, tsis yog USCIS txoj cai: txhua lo lus tseem ceeb ntawm kab lus yuav tsum muaj, ib lo tom qab ib lo. Cov lus luv xws li “the” poob tau. Kev nres thiab kev hais lus tsis muab qhab nia. | This is Language Lab's practice setting based on USCIS's guidance for giving scores, not USCIS's rule: every important word of the sentence must be there, one word after another. Short words such as “the” may fall out. Stopping and speaking are not given scores. |
+| `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | Qhov no txiav txim seb koj xyaum kev xeem txog pej xeem xyoo 2008 lossis xyoo 2025. Qhov no yog kev xaiv rau kev xyaum xwb. Rau koj rooj plaub, mus saib uscis.gov kom paub tias kev xeem twg siv rau koj. | This decides whether you practice the 2008 or the 2025 civics exam. This is a choice for practice only. For your case, go look at uscis.gov to know which exam applies to you. |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Cov duab hauv kev xyaum txog pej xeem los ntawm cov chaw raug cai ntawm tsoomfwv teb chaws Meskas. Txhua daim duab siv tau vim nws tus kheej cov ntaub ntawv qhia meej txog nws txoj cai. Qhov no tsis txhais hais tias muaj lub koom haum twg pom zoo rau Language Lab. | The pictures in the civics practice come from official places of the U.S. government. Every picture can be used because its own record clearly says its rights. This does not mean any organization approves Language Lab. |
+| `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Ib qho twg ntawm cov no suav. Cov npe no coj los ntawm USCIS cov npe lus teb thiab tseem tos ib tug neeg tshuaj xyuas. | Any one of these counts. This list is taken from USCIS's list of answers and is still waiting for a person to check it. |
+| `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Kev muab qhab nia txog pej xeem raug kaw hauv daim no kom txog thaum ib tug neeg tshuaj xyuas cov lus teb raug. Koj tseem xyaum tau kev xam phaj, nyeem thiab sau. | Civics scoring is closed in this version until a person checks the correct answers. You can still practice the interview, reading and writing. |
+| `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Cov lus teb raug txog pej xeem tseem tos ib tug neeg tshuaj xyuas, yog li daim no tsis muab qhab nia rau qhov no thiab tsis tsim daim ntawv qhia. | The correct civics answers are still waiting for a person to check them, so this version does not give scores for this and does not make a report. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
 | Key | English | Translation |
 |---|---|---|
-| `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | Qhov no txiav txim seb koj xyaum kev xeem txog pej xeem xyoo 2008 lossis xyoo 2025. Qhov no yog kev xaiv rau kev xyaum xwb. Rau koj rooj plaub, mus saib uscis.gov kom paub tias kev xeem twg siv rau koj. |
-| `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Kev muab qhab nia txog pej xeem raug kaw hauv daim no kom txog thaum ib tug neeg tshuaj xyuas cov lus teb raug. Koj tseem xyaum tau kev xam phaj, nyeem thiab sau. |
-| `compare.setting` ⚠ | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Qhov no yog Language Lab txoj kev teeb tsa xyaum raws li USCIS cov lus qhia txog kev muab qhab nia, tsis yog USCIS txoj cai: txhua lo lus tseem ceeb ntawm kab lus yuav tsum muaj, raws li kev txiav. Cov lus luv xws li “the” tsis muaj tau. Kev nres thiab kev hais lus tsis muab qhab nia. |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | Cov kab lus siv cov lus los ntawm USCIS cov npe lus nyeem thiab sau uas raug cai xwb. |
-| `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Ib qho twg ntawm cov no suav. Cov npe no coj los ntawm USCIS cov npe lus teb thiab tseem tos ib tug neeg tshuaj xyuas. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Koj tau txog qhab nia dhau ntawm kev xyaum, yog li qhov kev xeem nres ntawm no. |
-| `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Cov lus teb raug txog pej xeem tseem tos ib tug neeg tshuaj xyuas, yog li daim no tsis muab qhab nia rau qhov no thiab tsis tsim daim ntawv qhia. |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Teb cov lus nug txog pej xeem. Piv nrog cov lus teb raug. |
 | `partReport.unscored.missing` | A question that is not in the answer key | Ib lo lus nug uas tsis muaj hauv cov lus teb raug |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Kawm ua ntej raug kaw hauv daim no kom txog thaum muaj neeg tshuaj xyuas cov lus teb raug. |
@@ -52,7 +53,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | Hla mus rau cov ntsiab lus tseem ceeb |
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Qhov kev xyaum no tseem tsis tau npaj tiav. |
-| `header.about` ⚠ | About & disclaimer | Txog peb thiab ceeb toom |
+| `header.about` ⚠ | About & disclaimer | Txog Language Lab thiab daim ntawv tsis lees paub |
 | `stepper.label` | Interview stages | Cov theem ntawm kev xam phaj |
 | `stepper.count` | Stage {current} of {total} | Theem {current} ntawm {total} |
 | `stepper.status.complete` | completed | ua tiav lawm |
@@ -179,7 +180,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.text` | You see how your answer compares, and what to practice next. | Koj yuav pom koj cov lus teb piv li cas, thiab yuav xyaum dab tsi tom ntej. |
 | `home.choose` | What would you like to do? | Koj xav ua dab tsi? |
 | `home.full.title` | Full practice interview | Kev xam phaj xyaum tag nrho |
-| `home.full.text` | All four parts in order, then one report. | Plaub ntu raws li kev txiav, ces ib daim ntawv qhia. |
+| `home.full.text` | All four parts in order, then one report. | Plaub ntu ib ntu tom qab ib ntu, ces ib daim ntawv qhia. |
 | `home.parts.title` | Practice one part | Xyaum ib ntu xwb |
 | `home.part.n400.title` | N-400 interview | Kev xam phaj txog N-400 |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | Teb cov lus nug txog daim ntawv thov. Tsis muab qhab nia. |
@@ -240,7 +241,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.no` | Stay here | Nyob ntawm no |
 | `common.retry` | Try again | Sim dua |
 | `partReport.badge.good` | This part went well | Ntu no ua tau zoo |
+| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Cov lus tsis lees paub thiab cov ntawv raws cai yuav tshwm ua lus Askiv xwb mus txog thaum muaj neeg tshuaj xyuas kev txhais lus. |
 | `lang.menu.title` | Choose a language | Xaiv ib hom lus |
+| `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Tseem muaj lwm yam lus tab tom tshuaj xyuas. Lawv yuav tshwm ntawm no tom qab muaj neeg tshuaj xyuas lawm. |
 | `home.study.title` | Study first | Kawm ua ntej |
 | `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Saib cov lus nug txog pej xeem nrog cov duab thiab cov lus teb raug cai. Tsis muaj qhab nia. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Saib cov lus nug txog pej xeem ib qho zuj zus. Txhua qhov qhia cov lus teb raug cai. Tsis muab qhab nia thiab tsis khaws dab tsi. |
@@ -251,7 +254,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `study.change` | Choose another test | Xaiv lwm qhov kev xeem |
 | `footer.credits` | Picture credits | Cov duab los ntawm |
 | `credits.title` | Picture credits | Cov duab los ntawm |
-| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Cov duab hauv kev xyaum txog pej xeem los ntawm cov chaw raug cai ntawm tsoomfwv teb chaws Meskas. Txhua daim duab siv tau vim nws tus kheej cov ntaub ntawv qhia meej txog nws txoj cai. Qhov no tsis txhais hais tias muaj lub koom haum twg pom zoo rau Language Lab. |
 | `credits.back` | Back to the practice | Rov qab mus xyaum |
 | `credits.newTab` | The links open the source pages in a new tab. | Cov txuas qhib nplooj ntawv qhov chaw hauv ib lub tab tshiab. |
 | `selfReview.title` | Listen and compare | Mloog thiab piv |
@@ -290,4 +292,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 - `intro.profile.help`: Same word (qauv) for "profile".
 - `common.fictional`: Same word (qauv) for "profile".
 - `header.about`: "Txog peb thiab ceeb toom" reads as "About us and warning", not "About & disclaimer". Needs a Hmong reader.
-- `compare.setting`: "in order" is rendered "raws li kev txiav" ("according to cutting"), which looks wrong, and "may be missing" is awkward. Needs a Hmong reader.
+- `compare.setting`: "in order" now "ib lo tom qab ib lo" (one word after another) and "may be missing" "poob tau" (may fall out). Still needs a Hmong reader.

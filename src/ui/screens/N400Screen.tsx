@@ -4,6 +4,7 @@
  * scripted coach reads data/practice/n400-questions.json. A coach that talks to a Worker can
  * be passed in its place without a change here.
  */
+import { LegalText } from "../components/LegalText";
 import { useEffect, useState } from "react";
 import { n400QuestionClipId, sampleAnswerClipId } from "../../engine/audio-clips";
 import type { N400Answer, N400Coach, N400Prompt } from "../../engine/n400-coach";
@@ -140,7 +141,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
                   clipId={sampleAnswerClipId(state.prompt.id, profile.id)}
                   labelKey="audio.playSample"
                 />
-                <p className="note">{t("n400.sample.note")}</p>
+                <p className="note"><LegalText messageKey="n400.sample.note" /></p>
               </section>
             )}
             <ScreenHelp screen="n400" />

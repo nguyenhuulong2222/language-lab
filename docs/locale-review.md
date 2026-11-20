@@ -73,6 +73,7 @@ I translated the disclaimer, privacy and legal lines (16 keys, 13 languages) bac
 - hmn `aiNotice.text`: "authoritative" was written as "has power" (muaj hwjchim). Changed to "official", as in translation.notice.
 - my `aiNotice.text`: "authoritative" was written as "has power" (အာဏာရှိ). Changed to "official".
 - ru, lo, th, ko, hi, pt `aiNotice.text`: "Authoritative" was rendered as "main", "standard", "authentic" or "the one that counts". All six now say "official", as translation.notice does.
+- hmn `header.about, home.full.text, compare.setting`: Named in the audit (CON-02): "About us and warning", "according to cutting" (used twice). Rewritten as "About Language Lab and the disclaimer", "one part after another", "one word after another". Not reviewed by a Hmong speaker.
 
 ### Still differs a little
 
@@ -84,11 +85,14 @@ I translated the disclaimer, privacy and legal lines (16 keys, 13 languages) bac
 - hmn `intro.profile.help`: Same word (qauv) for "profile".
 - hmn `common.fictional`: Same word (qauv) for "profile".
 - hmn `header.about`: "Txog peb thiab ceeb toom" reads as "About us and warning", not "About & disclaimer". Needs a Hmong reader.
-- hmn `compare.setting`: "in order" is rendered "raws li kev txiav" ("according to cutting"), which looks wrong, and "may be missing" is awkward. Needs a Hmong reader.
+- hmn `compare.setting`: "in order" now "ib lo tom qab ib lo" (one word after another) and "may be missing" "poob tau" (may fall out). Still needs a Hmong reader.
 - my `aiNotice.text`: "authoritative" is rendered as "official": close, slightly weaker.
 - my `compare.notYet`: "Not yet" is rendered literally as "has not arrived yet". Low confidence.
 - tl `aiNotice.text`: "authoritative" is rendered as "valid" (may bisa): close, slightly weaker.
 - ko `compare.counts`: "This counts" is rendered "is accepted" (인정됩니다), a little stronger than "counts".
+- ko `intro.locked`: "Answer key" is rendered "answer table" (정답표); fine in context.
+- th `civics.officialNote`: "Any one of these answers counts" is rendered "counts as correct" (นับว่าถูก), slightly stronger.
+- lo `civics.officialNote`: Same: "counts as correct" (ນັບວ່າຖືກ).
 
 ### Confidence
 

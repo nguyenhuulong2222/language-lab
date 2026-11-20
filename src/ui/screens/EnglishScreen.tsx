@@ -3,6 +3,7 @@
  * aloud (typed fallback); it is not played to them first. Writing: the sentence is played aloud and the user types it. After
  * each answer the comparison is shown; the stage ends where runEnglishStage ends it.
  */
+import { LegalText } from "../components/LegalText";
 import { useState } from "react";
 import { writingClipId } from "../../engine/audio-clips";
 import type { EnglishProgress, InputMode } from "../../engine/practice-flow";
@@ -181,7 +182,7 @@ export function EnglishScreen({
                 onSubmit(text, input, alternatives);
               }}
             />
-            <p className="note">{t("compare.setting")}</p>
+            <p className="note"><LegalText messageKey="compare.setting" /></p>
             <p className="note">{t("compare.vocab")}</p>
           </div>
         )}

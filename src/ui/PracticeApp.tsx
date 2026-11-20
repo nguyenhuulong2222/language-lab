@@ -5,6 +5,7 @@
  * one in-memory reducer (src/engine/practice-flow.ts). Nothing is stored, and nothing is sent
  * anywhere. Reloading the page starts again.
  */
+import { LegalText } from "./components/LegalText";
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import type { InterviewSession } from "../contracts";
 import { createScriptedN400Coach } from "../engine/n400-coach";
@@ -230,7 +231,7 @@ function ReportPage({ session, restart }: { session: InterviewSession; restart: 
   return (
     <div className="screen" ref={container}>
       <ReportScreen session={session} />
-      <p className="note">{t("report.n400Note")}</p>
+      <p className="note"><LegalText messageKey="report.n400Note" /></p>
       <div className="btn-row">
         <button type="button" className="btn" onClick={restart}>
           {t("report.again")}

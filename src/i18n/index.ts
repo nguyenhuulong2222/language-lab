@@ -13,8 +13,10 @@
  */
 import en from "./locales/en.json";
 import { checkLocale, checkMeta, isReviewed, type LocaleMeta } from "./locale-checks.js";
+import { isLegalKey } from "./legal-keys.js";
 import {
   DEFAULT_LANGUAGE,
+  IN_REVIEW_LANGUAGES,
   isLanguageCode,
   LANGUAGE_CODES,
   LANGUAGES,
@@ -78,16 +80,27 @@ export function localePassesChecks(
   return checkLocale(en as Record<string, string>, messages as Record<string, string>).length === 0;
 }
 
-/** The interface languages to offer, English first, then the others in the order of languages.ts. */
+/**
+ * The interface languages to offer, English first, then the others in the order of languages.ts.
+ * In a production build the languages of IN_REVIEW_LANGUAGES are left out until a reviewer is recorded.
+ */
 export function availableUiLanguages(
   catalogs: Catalogs = CATALOGS,
-  status: LocaleStatus = LOCALE_STATUS
+  status: LocaleStatus = LOCALE_STATUS,
+  production: boolean = import.meta.env.PROD
 ): LanguageInfo[] {
-  return LANGUAGES.filter((language) => localePassesChecks(language.code, catalogs, status));
+  return LANGUAGES.filter(
+    (language) =>
+      localePassesChecks(language.code, catalogs, status) &&
+      !(production && IN_REVIEW_LANGUAGES.includes(language.code) && !isReviewed(status[language.code]))
+  );
 }
 
 /** The languages offered in this build, worked out once (the locale files do not change while the app runs). */
 export const AVAILABLE_UI_LANGUAGES: readonly LanguageInfo[] = availableUiLanguages();
+
+/** True when this build leaves some language out of the menu because it is still in review. */
+export const SOME_LANGUAGES_IN_REVIEW: boolean = AVAILABLE_UI_LANGUAGES.length < LANGUAGES.length;
 
 /**
  * True when the interface text of a language has been reviewed by a named person (so the screen
@@ -105,14 +118,27 @@ export function interpolate(template: string, params: MessageParams | undefined)
   );
 }
 
-/** A translate function for one language. Falls back to English for anything missing. */
+/**
+ * True when a key is shown in English in this language: it is a disclaimer or legal line (legal-keys.ts)
+ * and the language has no named human reviewer. Legal text is never machine translated.
+ */
+export function isEnglishOnly(code: LanguageCode, key: string, status: LocaleStatus = LOCALE_STATUS): boolean {
+  return code !== DEFAULT_LANGUAGE && isLegalKey(key) && !isLocaleReviewed(code, status);
+}
+
+/**
+ * A translate function for one language. Falls back to English for anything missing, and shows
+ * disclaimers and legal lines in English until the language has a named reviewer.
+ */
 export function createTranslator(
   language: LanguageCode = DEFAULT_LANGUAGE,
-  catalogs: Catalogs = CATALOGS
+  catalogs: Catalogs = CATALOGS,
+  status: LocaleStatus = LOCALE_STATUS
 ): Translate {
   const own = catalogs[language];
   const fallback: Messages = { ...en, ...catalogs.en };
-  return (key, params) => interpolate(own?.[key] ?? fallback[key], params);
+  return (key, params) =>
+    interpolate(isEnglishOnly(language, key, status) ? fallback[key] : (own?.[key] ?? fallback[key]), params);
 }
 
 /** The English text for a key. */
@@ -120,4 +146,5 @@ export const tEn: Translate = createTranslator("en");
 
 export { en as ENGLISH_MESSAGES };
 export * from "./languages.js";
+export * from "./legal-keys.js";
 export * from "./locale-checks.js";

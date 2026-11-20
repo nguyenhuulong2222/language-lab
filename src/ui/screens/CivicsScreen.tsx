@@ -4,6 +4,7 @@
  * stage ends exactly where the engine ends it. When the answer key is refused (production
  * build, answer key still waiting for review), the screen explains that instead of scoring.
  */
+import { LegalText } from "../components/LegalText";
 import { useEffect, useRef, useState } from "react";
 import type { CivicsProgress, InputMode } from "../../engine/practice-flow";
 import { civicsClipId } from "../../engine/audio-clips";
@@ -59,7 +60,7 @@ export function CivicsScreen({
       <div className="screen">
         <TakeHeader stage="civics" title={t("civics.locked.title")} />
         <div className="screen__body">
-          <p>{t("civics.locked.text")}</p>
+          <p><LegalText messageKey="civics.locked.text" /></p>
           <div className="btn-row">
             <button type="button" className="btn" onClick={onRestart}>
               {t("common.startOver")}
@@ -102,7 +103,7 @@ export function CivicsScreen({
                     <li key={index}>{line}</li>
                   ))}
                 </ul>
-                <p className="note">{t("civics.officialNote")}</p>
+                <p className="note"><LegalText messageKey="civics.officialNote" /></p>
               </>
             )}
             {entry.requiredAnswerCount > 1 && (

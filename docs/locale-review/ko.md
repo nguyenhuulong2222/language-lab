@@ -29,18 +29,19 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | 이 보고서는 한 부분에 대한 것입니다. 이 부분이 연습에서 어땠는지를 보여 줄 뿐 실제 시험에서 어떨지를 보여 주는 것이 아니며, 전체 연습 결과도 제공하지 않습니다. | This report is about one part. It only shows how this part went in practice, not how it would be on the real test, and it also does not provide an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | N-400 인터뷰는 연습일 뿐이며 채점되지 않습니다. | The N-400 interview is only practice and is not graded. |
 | `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | 이 번역은 AI가 만들었으며 오류가 있을 수 있습니다. 영어 버전이 공식 버전입니다. | This translation was made by AI and may contain errors. The English version is the official version. |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | USCIS 채점 지침을 바탕으로 한 Language Lab의 연습 설정이며 USCIS의 규정이 아닙니다. 문장의 중요한 단어가 모두 순서대로 있어야 합니다. “the” 같은 짧은 단어는 빠져도 됩니다. 멈춤과 발음은 채점하지 않습니다. | This is a practice setting of Language Lab based on USCIS scoring guidelines, and it is not a USCIS regulation. Every important word of the sentence must be there, in order. Short words like “the” may be left out. Pauses and pronunciation are not scored. |
+| `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | 이 선택에 따라 2008년 시민 상식 시험을 연습할지 2025년 시험을 연습할지 정해집니다. 연습을 위한 선택일 뿐입니다. 본인의 경우에 어떤 시험이 적용되는지는 uscis.gov에서 확인하세요. | Depending on this choice, it is decided whether you practice the 2008 civics test or the 2025 test. It is only a choice for practice. Check uscis.gov to see which test applies in your own case. |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | 시민 상식 연습의 사진은 미국 연방 정부의 공식 출처에서 가져왔습니다. 각 사진은 해당 기록에 권리가 분명히 적혀 있어서만 사용됩니다. 이것이 어떤 기관이 Language Lab을 보증한다는 뜻은 아닙니다. | The photos in civics practice were taken from official sources of the U.S. federal government. Each photo is used only because its record clearly states the rights. This does not mean that any agency endorses Language Lab. |
+| `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | 이 중 어느 것이든 인정됩니다. 이 목록은 USCIS 정답 목록에서 가져왔으며 아직 사람의 검토를 기다리고 있습니다. | Any one of these is accepted. This list was taken from the USCIS answer list and is still waiting for a person's review. |
+| `intro.locked` ⚠ | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | 사람이 정답표를 검토하기 전까지 이 버전에서는 시민 상식 채점이 꺼져 있습니다. 인터뷰, 읽기, 쓰기는 계속 연습할 수 있습니다. | Until a person reviews the answer table, civics scoring is turned off in this version. You can still practice the interview, reading and writing. |
+| `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 시민 상식 정답표가 아직 사람의 검토를 기다리고 있어서, 이 버전은 시민 상식을 채점하거나 보고서를 만들지 않습니다. | The civics answer table is still waiting for a person's review, so this version does not score civics or create a report. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
 | Key | English | Translation |
 |---|---|---|
-| `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | 이 선택에 따라 2008년 시민 상식 시험을 연습할지 2025년 시험을 연습할지 정해집니다. 연습을 위한 선택일 뿐입니다. 본인의 경우에 어떤 시험이 적용되는지는 uscis.gov에서 확인하세요. |
-| `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | 사람이 정답표를 검토하기 전까지 이 버전에서는 시민 상식 채점이 꺼져 있습니다. 인터뷰, 읽기, 쓰기는 계속 연습할 수 있습니다. |
-| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | USCIS 채점 지침을 바탕으로 한 Language Lab의 연습 설정이며 USCIS의 규정이 아닙니다. 문장의 중요한 단어가 모두 순서대로 있어야 합니다. “the” 같은 짧은 단어는 빠져도 됩니다. 멈춤과 발음은 채점하지 않습니다. |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | 문장에는 USCIS 공식 읽기·쓰기 어휘 목록에 있는 단어만 사용됩니다. |
-| `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | 이 중 어느 것이든 인정됩니다. 이 목록은 USCIS 정답 목록에서 가져왔으며 아직 사람의 검토를 기다리고 있습니다. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | 연습 합격 점수에 도달해서 시험이 여기서 멈췄습니다. |
-| `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 시민 상식 정답표가 아직 사람의 검토를 기다리고 있어서, 이 버전은 시민 상식을 채점하거나 보고서를 만들지 않습니다. |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | 시민 상식 질문에 답합니다. 정답표와 대조합니다. |
 | `partReport.unscored.missing` | A question that is not in the answer key | 정답표에 없는 질문 |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | 누군가 정답표를 검토하기 전까지 이 버전에서는 먼저 공부하기가 꺼져 있습니다. |
@@ -240,7 +241,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.no` | Stay here | 여기 있기 |
 | `common.retry` | Try again | 다시 시도 |
 | `partReport.badge.good` | This part went well | 이 부분은 잘했어요 |
+| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | 번역을 사람이 검토하기 전까지 면책 고지와 법률 문구는 영어로만 표시됩니다. |
 | `lang.menu.title` | Choose a language | 언어를 선택하세요 |
+| `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | 더 많은 언어가 검토 중입니다. 사람이 확인한 뒤에 여기에 표시됩니다. |
 | `home.study.title` | Study first | 먼저 공부하기 |
 | `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | 그림과 공식 답이 있는 시민 상식 질문을 살펴보세요. 채점하지 않습니다. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | 시민 상식 질문을 한 번에 하나씩 살펴보세요. 질문마다 공식 답이 나옵니다. 채점하거나 저장하지 않습니다. |
@@ -251,7 +254,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `study.change` | Choose another test | 다른 시험 선택 |
 | `footer.credits` | Picture credits | 사진 출처 |
 | `credits.title` | Picture credits | 사진 출처 |
-| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | 시민 상식 연습의 사진은 미국 연방 정부의 공식 출처에서 가져왔습니다. 각 사진은 해당 기록에 권리가 분명히 적혀 있어서만 사용됩니다. 이것이 어떤 기관이 Language Lab을 보증한다는 뜻은 아닙니다. |
 | `credits.back` | Back to the practice | 연습으로 돌아가기 |
 | `credits.newTab` | The links open the source pages in a new tab. | 링크는 출처 페이지를 새 탭에서 엽니다. |
 | `selfReview.title` | Listen and compare | 들어 보고 비교하기 |
@@ -283,3 +285,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 ## Lines marked ⚠ (meaning differs a little)
 
 - `compare.counts`: "This counts" is rendered "is accepted" (인정됩니다), a little stronger than "counts".
+- `intro.locked`: "Answer key" is rendered "answer table" (정답표); fine in context.

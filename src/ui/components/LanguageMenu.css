@@ -38,3 +38,9 @@
   flex: 0 0 auto;
   color: var(--teal);
 }
+.language-menu__review {
+  margin: var(--space-3) 0 0;
+  max-width: var(--measure);
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}

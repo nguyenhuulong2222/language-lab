@@ -6,7 +6,7 @@
  * the arrow keys still move in reading order, not by row.
  */
 import { useEffect, useId, useRef, type KeyboardEvent } from "react";
-import { AVAILABLE_UI_LANGUAGES, type LanguageCode } from "../../i18n";
+import { AVAILABLE_UI_LANGUAGES, SOME_LANGUAGES_IN_REVIEW, type LanguageCode } from "../../i18n";
 import { useLanguage, useT } from "../../i18n/react";
 import { languageInfo } from "../../i18n/languages";
 import { CheckIcon } from "./icons";
@@ -67,6 +67,7 @@ export function LanguageMenu({ open, onChoose }: { open: boolean; onChoose: (cod
           );
         })}
       </ul>
+      {SOME_LANGUAGES_IN_REVIEW && <p className="language-menu__review">{t("lang.menu.inReview")}</p>}
     </div>
   );
 }

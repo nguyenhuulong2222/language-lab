@@ -3,6 +3,7 @@
  * this part, lists what to review, and carries the practice disclaimer. (The contract has no
  * partial report; see CR-006.)
  */
+import { LegalText } from "../components/LegalText";
 import type { PartReport, PracticePart } from "../../engine/part-report";
 import type { MessageKey } from "../../i18n";
 import { useLanguage, useT } from "../../i18n/react";
@@ -26,7 +27,7 @@ export function PartReportScreen({ report, onHome }: { report: PartReport; onHom
   const language = useLanguage();
   return (
     <div className="screen">
-      <TakeHeader stage="report" title={t(TITLE[report.part])} lead={t("partReport.scope")} />
+      <TakeHeader stage="report" title={t(TITLE[report.part])} lead={<LegalText messageKey="partReport.scope" />} />
       <div className="screen__body">
         <PartBody report={report} />
         <Disclaimer variant="prominent" id="part-report-disclaimer" messageKey="disclaimer.report" />

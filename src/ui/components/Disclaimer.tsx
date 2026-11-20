@@ -7,8 +7,9 @@
  * with its English text. A disclaimer given as a message key (`messageKey`) always carries it.
  */
 import type { MessageKey } from "../../i18n";
-import { useLanguage, useT } from "../../i18n/react";
+import { useLanguage } from "../../i18n/react";
 import { EnglishLine } from "./EnglishLine";
+import { LegalText } from "./LegalText";
 import "./Disclaimer.css";
 
 type DisclaimerVariant = "inline" | "prominent";
@@ -19,16 +20,15 @@ type DisclaimerProps = {
 } & ({ messageKey: MessageKey; text?: never } | { text: string; messageKey?: never });
 
 export function Disclaimer({ messageKey, text, variant = "inline", id }: DisclaimerProps) {
-  const t = useT();
   const language = useLanguage();
-  const body = messageKey === undefined ? text : t(messageKey);
+  const body = messageKey === undefined ? text : <LegalText messageKey={messageKey} />;
   const english = messageKey === undefined || language === "en" ? null : <EnglishLine messageKey={messageKey} className="disclaimer__english" />;
 
   if (variant === "prominent") {
     return (
       <section className="disclaimer disclaimer--prominent" aria-labelledby={id}>
         <h2 className="disclaimer__title" id={id}>
-          {t("disclaimer.title")}
+          <LegalText messageKey="disclaimer.title" />
         </h2>
         <p className="disclaimer__text">{body}</p>
         {english !== null && <p className="disclaimer__text disclaimer__text--english">{english}</p>}

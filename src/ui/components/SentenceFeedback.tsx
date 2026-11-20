@@ -7,6 +7,7 @@
  * still counts. There is no crossed-out or dashed display. The practice rule is Language Lab's own
  * setting, based on the USCIS scoring guidelines, and the text says so.
  */
+import { LegalText } from "./LegalText";
 import { useEffect, useRef } from "react";
 import { compareSentence, type MatchNote, type MatchOptions } from "../../engine/sentence-compare";
 import type { SentenceAttempt } from "../../engine/practice-flow";
@@ -88,7 +89,7 @@ export function SentenceFeedback({ target, attempt, matchOptions, kind }: Senten
       <p lang="en">{target}</p>
       <p className="progress-line">{typed ? t("compare.typed") : t("compare.heard")}</p>
       <p lang="en">{empty ? "…" : attempt.transcript}</p>
-      <p className="note">{t("compare.setting")}</p>
+      <p className="note"><LegalText messageKey="compare.setting" /></p>
       <Disclaimer messageKey="disclaimer.short" />
     </section>
   );

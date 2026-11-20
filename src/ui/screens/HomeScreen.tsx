@@ -3,6 +3,7 @@
  * interview and one part. Nothing is asked here; the setup screen (only for the parts that
  * need it) comes next.
  */
+import { LegalText } from "../components/LegalText";
 import type { PracticeMode } from "../../engine/practice-flow";
 import type { MessageKey } from "../../i18n";
 import { useT } from "../../i18n/react";
@@ -66,7 +67,7 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender
         </div>
         {civicsLocked && (
           <p className="status status--attention">
-            <ReviewIcon className="icon-inline icon-inline--attention" /> {t("intro.locked")}
+            <ReviewIcon className="icon-inline icon-inline--attention" /> <LegalText messageKey="intro.locked" />
           </p>
         )}
       </section>
@@ -83,7 +84,7 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender
           <Bilingual messageKey="intro.notice.government" />
         </li>
       </ul>
-      <p className="note">{t("voice.privacy")}</p>
+      <p className="note"><LegalText messageKey="voice.privacy" /></p>
     </div>
   );
 }

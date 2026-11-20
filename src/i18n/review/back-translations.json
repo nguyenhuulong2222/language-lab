@@ -15,7 +15,13 @@
   "lang.interviewEnglish",
   "partReport.scope",
   "report.n400Note",
-  "aiNotice.text"
+  "aiNotice.text",
+  "compare.setting",
+  "intro.filed.help",
+  "credits.lead",
+  "civics.officialNote",
+  "intro.locked",
+  "civics.locked.text"
  ],
  "backTranslations": {
   "es": {
@@ -33,7 +39,13 @@
    "lang.interviewEnglish": "The real interview is done in English, unless USCIS allows you an exception. The questions and sentences on these screens stay in English so that you can practice them.",
    "partReport.scope": "This report is for one part only. It shows how you did in this part during practice, not how you would do on the real exam, and it gives no overall practice result.",
    "report.n400Note": "The N-400 interview is practice only and is not graded.",
-   "aiNotice.text": "This translation was made by an AI and may have errors. The English version is the one that has authority."
+   "aiNotice.text": "This translation was made by an AI and may have errors. The English version is the one that has authority.",
+   "compare.setting": "A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: all the important words of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored.",
+   "intro.filed.help": "This decides whether you practice the 2008 civics exam or the 2025 one. It is only a choice for practicing. For your own case, consult uscis.gov to find out which exam applies to you.",
+   "credits.lead": "The images of the civics practice come from official sources of the U.S. federal government. Each one is used only because its own record states its rights. This does not mean that any agency endorses Language Lab.",
+   "civics.officialNote": "Any of these counts. The list comes from the USCIS list of answers and is still waiting for a person's review.",
+   "intro.locked": "Civics scoring is turned off in this version until a person reviews the correct answers. You can still practice the interview, reading and writing.",
+   "civics.locked.text": "The correct civics answers are still waiting for a person's review, so this version does not score that part or generate a report."
   },
   "pt": {
    "disclaimer.title": "Please read this",
@@ -50,7 +62,13 @@
    "lang.interviewEnglish": "The real interview is done in English, unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so that you can practice them.",
    "partReport.scope": "This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result.",
    "report.n400Note": "The N-400 interview is practice only and is not scored.",
-   "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the official one."
+   "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the official one.",
+   "compare.setting": "A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: all the important words of the sentence must be present, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored.",
+   "intro.filed.help": "This decides whether you practice the 2008 civics test or the 2025 one. It is just a choice for practicing. For your own case, see at uscis.gov which test applies to you.",
+   "credits.lead": "The images of the civics practice come from official sources of the U.S. federal government. Each one is used only because its own record gives the rights. This does not mean that any agency approves Language Lab.",
+   "civics.officialNote": "Any one of these counts. The list comes from the USCIS answer list and still awaits a person's review.",
+   "intro.locked": "Civics scoring is deactivated in this version until a person reviews the correct answers. You can still practice the interview, reading and writing.",
+   "civics.locked.text": "The correct civics answers still await a person's review, so this version does not score that part or generate a report."
   },
   "ru": {
    "disclaimer.title": "Please read",
@@ -67,7 +85,13 @@
    "lang.interviewEnglish": "The real interview is held in English. An exception is possible only if USCIS permits it for you. The questions and sentences on these screens stay in English so that you can practice them.",
    "partReport.scope": "This report is about one part only. It shows how this part went in practice, and not how you would perform on the real test, and it does not give an overall practice result.",
    "report.n400Note": "The interview on the N-400 form is practice only; it is not assessed.",
-   "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the official one."
+   "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the official one.",
+   "compare.setting": "This is a Language Lab practice setting based on USCIS grading rules, not a USCIS rule: every important word of the sentence must be in place, in order. Short words like “the” can be skipped. Pauses and pronunciation are not graded.",
+   "intro.filed.help": "What you train depends on this: the 2008 or the 2025 civics test. This is only a choice for practice. Which test applies to your case, find out at uscis.gov.",
+   "credits.lead": "The pictures in civics practice are taken from official sources of the U.S. federal government. Each is used only because its own record clearly states the rights. This does not mean that any agency approves Language Lab.",
+   "civics.officialNote": "Any one of them is counted. The list is taken from the USCIS list of answers and is still waiting to be checked by a person.",
+   "intro.locked": "Grading in civics is disabled in this version until a person checks the key with the correct answers. You can still train the interview, reading and writing.",
+   "civics.locked.text": "The key with the correct civics answers is still waiting for a person to check it, so this version does not grade this part and does not create a report."
   },
   "zh": {
    "disclaimer.title": "Please read first",
@@ -84,7 +108,13 @@
    "lang.interviewEnglish": "The real interview is held in English, unless USCIS allows you an exception. The questions and sentences on these screens remain in English so you can practice.",
    "partReport.scope": "This report is about one part only. It shows how this part performed in practice, not how you would perform in the real test, and it does not provide an overall practice result.",
    "report.n400Note": "The N-400 interview is only practice and is not scored.",
-   "aiNotice.text": "This translation was made by AI and may contain errors. The English version governs."
+   "aiNotice.text": "This translation was made by AI and may contain errors. The English version governs.",
+   "compare.setting": "This is a practice standard set by Language Lab based on USCIS scoring guidelines, not a USCIS regulation: every important word in the sentence must appear, in the correct order. Short words like “the” may be omitted. Pauses and pronunciation are not scored.",
+   "intro.filed.help": "This decides whether you practice the 2008 or the 2025 civics test. This is only a choice for practice. As for which test applies to your own case, please check at uscis.gov.",
+   "credits.lead": "The pictures in civics practice come from official sources of the U.S. federal government. Each picture is used only because its own record clearly states the rights. This does not mean any agency endorses Language Lab.",
+   "civics.officialNote": "Any one of these counts. This list is taken from USCIS's answer list and is still waiting for human review.",
+   "intro.locked": "Until someone reviews the standard answers, the civics scoring function of this version is turned off. You can still practice the interview, reading and writing.",
+   "civics.locked.text": "The standard answers for civics are still waiting for human review, so this version will not score civics and will not produce a report."
   },
   "ko": {
    "disclaimer.title": "Please be sure to read",
@@ -101,7 +131,13 @@
    "lang.interviewEnglish": "The real interview is conducted in English unless USCIS permits an exception. The questions and sentences on this screen are kept in English so that you can practice.",
    "partReport.scope": "This report is about one part. It only shows how this part went in practice, not how it would be on the real test, and it also does not provide an overall practice result.",
    "report.n400Note": "The N-400 interview is only practice and is not graded.",
-   "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the official version."
+   "aiNotice.text": "This translation was made by AI and may contain errors. The English version is the official version.",
+   "compare.setting": "This is a practice setting of Language Lab based on USCIS scoring guidelines, and it is not a USCIS regulation. Every important word of the sentence must be there, in order. Short words like “the” may be left out. Pauses and pronunciation are not scored.",
+   "intro.filed.help": "Depending on this choice, it is decided whether you practice the 2008 civics test or the 2025 test. It is only a choice for practice. Check uscis.gov to see which test applies in your own case.",
+   "credits.lead": "The photos in civics practice were taken from official sources of the U.S. federal government. Each photo is used only because its record clearly states the rights. This does not mean that any agency endorses Language Lab.",
+   "civics.officialNote": "Any one of these is accepted. This list was taken from the USCIS answer list and is still waiting for a person's review.",
+   "intro.locked": "Until a person reviews the answer table, civics scoring is turned off in this version. You can still practice the interview, reading and writing.",
+   "civics.locked.text": "The civics answer table is still waiting for a person's review, so this version does not score civics or create a report."
   },
   "tl": {
    "disclaimer.title": "Please read this",
@@ -118,7 +154,13 @@
    "lang.interviewEnglish": "The real interview is held in English unless USCIS allows you an exception. The questions and sentences on these screens remain in English so you can practice.",
    "partReport.scope": "This report is for one part only. It shows what the course of this part was in practice, not what your result would be in the real test, and it gives no overall practice result.",
    "report.n400Note": "The interview about the N-400 is practice only and is not scored.",
-   "aiNotice.text": "This translation was made by AI and may have mistakes. The English version is the one that is valid."
+   "aiNotice.text": "This translation was made by AI and may have mistakes. The English version is the one that is valid.",
+   "compare.setting": "A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS policy: every important word of the sentence must be there, according to the sequence. Some short words like “the” may be lacking. Pauses and pronunciation are not scored.",
+   "intro.filed.help": "This is where it is decided whether the 2008 or the 2025 civics test is what you will practice. It is only a choice for practice. For your own case, look at uscis.gov to know which test is for you.",
+   "credits.lead": "The pictures in civics practice come from official sources of the U.S. federal government. Each one is used because its own record clearly states its rights. This does not mean that any agency endorsed Language Lab.",
+   "civics.officialNote": "Any of these will be counted. The list was taken from the USCIS answer list and is still waiting for review by a person.",
+   "intro.locked": "Civics scoring is off in this version until a person has reviewed the answer key. You can still practice the interview, reading, and writing.",
+   "civics.locked.text": "The civics answer key is still waiting for review by a person, so this version does not score civics and does not make a report."
   },
   "hi": {
    "disclaimer.title": "Please read this",
@@ -135,7 +177,13 @@
    "lang.interviewEnglish": "The real interview is in English, unless USCIS gives you an exemption. The questions and sentences on these screens remain in English so that you can practice them.",
    "partReport.scope": "This report is of one part only. It shows how this part went in practice, not how your performance would have been in the real test, and it does not give an overall practice result.",
    "report.n400Note": "The N-400 interview is only practice and no score is given for it.",
-   "aiNotice.text": "This translation was made by AI and may contain mistakes. The English version is the official one."
+   "aiNotice.text": "This translation was made by AI and may contain mistakes. The English version is the official one.",
+   "compare.setting": "This is Language Lab's practice setting based on USCIS scoring guidelines, not a USCIS rule: every necessary word of the sentence must be there in order. Short words like “the” may be missed. Pauses and pronunciation are not given a score.",
+   "intro.filed.help": "This decides whether you will practice the 2008 civics test or the 2025 one. This is only a choice for practice. See uscis.gov for which test applies in your case.",
+   "credits.lead": "The pictures of the civics practice have been taken from official sources of the U.S. federal government. Each picture has been used because its own record clearly states its rights. This does not mean that any agency supports Language Lab.",
+   "civics.officialNote": "Any one of these answers is valid. This list has been taken from USCIS's answer list and is still waiting for a person's review.",
+   "intro.locked": "Until a person reviews the answer key, civics scoring is off in this version. You can still practice the interview, reading and writing.",
+   "civics.locked.text": "The civics answer key is still waiting for a person's review, so this version does not give a civics score and does not make a report."
   },
   "ht": {
    "disclaimer.title": "Please read this",
@@ -152,7 +200,13 @@
    "lang.interviewEnglish": "The real interview takes place in English, unless USCIS gives you an exception. The questions and sentences on these screens stay in English so you can practice them.",
    "partReport.scope": "This report is for one part only. It shows how this part went in the practice, not how you would do in the real test, and it gives no general practice result.",
    "report.n400Note": "The interview about N-400 is practice only and it does not get a grade.",
-   "aiNotice.text": "This translation was made by an AI and it may have errors in it. The English version is the one that has authority."
+   "aiNotice.text": "This translation was made by an AI and it may have errors in it. The English version is the one that has authority.",
+   "compare.setting": "This is a Language Lab practice setting based on USCIS directions for giving scores, not a USCIS rule: every important word in the sentence must be there, in order. Short words like “the” may be missing. Pauses and pronunciation do not get a score.",
+   "intro.filed.help": "This decides whether you practice the 2008 civics test or the 2025 one. It is only a choice to practice. For your own case, look on uscis.gov to know which test applies to you.",
+   "credits.lead": "The images in the civics practice come from official sources of the U.S. federal government. Each image is used because its own record clearly states its rights. This does not mean any agency approves Language Lab.",
+   "civics.officialNote": "Any one of these counts. The list comes from the USCIS list of answers and a person is still to review it.",
+   "intro.locked": "The civics score is closed in this version until a person reviews the answer key. You can still practice the interview, reading and writing.",
+   "civics.locked.text": "The civics answer key is still waiting for a person to review it, so this version does not give a score for civics and does not make a report."
   },
   "th": {
    "disclaimer.title": "Please read this message",
@@ -169,7 +223,13 @@
    "lang.interviewEnglish": "The real interview uses English, unless USCIS grants you an exception. The questions and sentences on these screens remain in English so you can practice.",
    "partReport.scope": "This report is of only one part. It shows how this part went in practice, not how you would do on the real test, and it does not give an overall practice result.",
    "report.n400Note": "The N-400 interview is only practice and is not given a score.",
-   "aiNotice.text": "This translation was done by AI and may contain errors. The English version is the official version."
+   "aiNotice.text": "This translation was done by AI and may contain errors. The English version is the official version.",
+   "compare.setting": "This is a Language Lab practice setting following USCIS's scoring guidelines, not a USCIS rule: every important word of the sentence must be there in order. Short words such as “the” may be missing. Pausing and pronunciation are not scored.",
+   "intro.filed.help": "This option determines whether you will practice the 2008 or the 2025 civics test. It is only an option for practice. For your own case, check at uscis.gov which test applies to you.",
+   "credits.lead": "The pictures in civics practice come from official sources of the U.S. federal government. Each picture can be used because that picture's record states its rights clearly. It does not mean any agency endorses Language Lab.",
+   "civics.officialNote": "Any one of these answers counts as correct. This list is taken from USCIS's answer list and is still waiting for someone to review it.",
+   "intro.locked": "Civics scoring is turned off in this version until someone reviews the answer key. You can still practice the interview, reading and writing.",
+   "civics.locked.text": "The civics answer key is still waiting for someone to review it. This version therefore does not score this part and does not create a report."
   },
   "lo": {
    "disclaimer.title": "Please read this",
@@ -186,7 +246,13 @@
    "lang.interviewEnglish": "The real interview is in English unless USCIS permits an exception for you. The questions and sentences on these screens remain in English so you can practice.",
    "partReport.scope": "This report is for only one part. It shows how this part was in practice, not how you would do the real test, and does not give an overall practice result.",
    "report.n400Note": "The interview about N-400 is only practice and has no scoring.",
-   "aiNotice.text": "This translation was done by AI and may have errors. The English version is the official version."
+   "aiNotice.text": "This translation was done by AI and may have errors. The English version is the official version.",
+   "compare.setting": "This is a Language Lab practice setting based on USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there in order. Short words such as “the” may be missing. Pausing and pronunciation are not given scores.",
+   "intro.filed.help": "This choice determines whether you will practice the 2008 or the 2025 civics test. It is only a choice for practice. For your own case, please check at uscis.gov which test applies to you.",
+   "credits.lead": "The pictures in civics practice come from official sources of the U.S. federal government. Each picture can be used because that picture's record states its rights clearly. This does not mean any organization endorses Language Lab.",
+   "civics.officialNote": "Any one of these answers counts as correct. This list is taken from the USCIS answer list and is still waiting for someone to check it.",
+   "intro.locked": "Civics scoring is turned off in this version until someone checks the answer key. You can still practice interviews, reading and writing.",
+   "civics.locked.text": "The civics answer key is still waiting for someone to check it, so this version does not score this part and does not create a report."
   },
   "hmn": {
    "disclaimer.title": "Please read this",
@@ -203,7 +269,13 @@
    "lang.interviewEnglish": "The real interview is in English, unless USCIS allows you an exception. The questions and sentences on these screens are still in English so you can practice.",
    "partReport.scope": "This report is for one section only. It tells how this section went in practice, not how you would do in the real exam, and it does not give the total practice result.",
    "report.n400Note": "The interview about N-400 is practice only and gives no score.",
-   "aiNotice.text": "This translation was done by AI and may possibly have mistakes. The English document is the official one."
+   "aiNotice.text": "This translation was done by AI and may possibly have mistakes. The English document is the official one.",
+   "compare.setting": "This is Language Lab's practice setting based on USCIS's guidance for giving scores, not USCIS's rule: every important word of the sentence must be there, one word after another. Short words such as “the” may fall out. Stopping and speaking are not given scores.",
+   "intro.filed.help": "This decides whether you practice the 2008 or the 2025 civics exam. This is a choice for practice only. For your case, go look at uscis.gov to know which exam applies to you.",
+   "credits.lead": "The pictures in the civics practice come from official places of the U.S. government. Every picture can be used because its own record clearly says its rights. This does not mean any organization approves Language Lab.",
+   "civics.officialNote": "Any one of these counts. This list is taken from USCIS's list of answers and is still waiting for a person to check it.",
+   "intro.locked": "Civics scoring is closed in this version until a person checks the correct answers. You can still practice the interview, reading and writing.",
+   "civics.locked.text": "The correct civics answers are still waiting for a person to check them, so this version does not give scores for this and does not make a report."
   },
   "my": {
    "disclaimer.title": "Please read this point",
@@ -220,7 +292,13 @@
    "lang.interviewEnglish": "If USCIS does not give you an exception, the real interview is conducted in English. So that you can practice, the questions and sentences on these pages remain in English.",
    "partReport.scope": "This report is for one part only. It shows how this part was in practice, does not show how you would get results in the real exam, and also gives no general practice result.",
    "report.n400Note": "The N-400 interview is practice only and gives no marks.",
-   "aiNotice.text": "This translation was made by AI and may contain mistakes. The English version is the official version."
+   "aiNotice.text": "This translation was made by AI and may contain mistakes. The English version is the official version.",
+   "compare.setting": "This is Language Lab's practice setting based on the USCIS scoring guidelines, and it is not a USCIS rule: all important words of the sentence must be present in sequence. Short words such as “the” may be left over. Stopping and pronunciation are not scored.",
+   "intro.filed.help": "This choice decides which of the 2008 and 2025 civics exams you practice. It is only a choice for practice. Check at uscis.gov which exam applies to your own case.",
+   "credits.lead": "The pictures in civics practice come from official sources of the U.S. federal government. Each picture is used only because its own record clearly states the rights. This does not mean any organization endorses Language Lab.",
+   "civics.officialNote": "Any one of these is counted. The list is taken from the USCIS answer list and is still waiting for a person's check.",
+   "intro.locked": "Until a person checks the correct answers, civics scoring is turned off in this version. You can still practice the interview, reading and writing.",
+   "civics.locked.text": "The civics correct answers are still waiting for a person's check, so this version does not score it and does not make a report."
   },
   "vi": {
    "disclaimer.title": "Please read this section",
@@ -237,7 +315,13 @@
    "lang.interviewEnglish": "The real interview is conducted in English, unless USCIS allows an exception for you. The questions and sentences on these screens remain in English so you can practice.",
    "partReport.scope": "This report is for one part only. It tells how this part went during practice, does not tell how you would do on the real test, and does not give an overall practice result.",
    "report.n400Note": "The N-400 interview is for practice only and is not scored.",
-   "aiNotice.text": "This translation was made by AI and may have errors. The English version is the one with official validity."
+   "aiNotice.text": "This translation was made by AI and may have errors. The English version is the one with official validity.",
+   "compare.setting": "This is Language Lab's practice level based on USCIS scoring guidance, not a USCIS regulation: every important word of the sentence must be present, in the right order. Short words like “the” may be missing. Pauses and pronunciation are not scored.",
+   "intro.filed.help": "This choice decides whether you practice the 2008 or the 2025 civics test. This is only a choice for practice. For your own case, see uscis.gov to know which test applies to you.",
+   "credits.lead": "The images in the civics practice come from official sources of the U.S. federal government. Each image is used only because its own record clearly states the rights of use. This does not mean any agency sponsors Language Lab.",
+   "civics.officialNote": "Only one of these answers is needed to count. The list is taken from USCIS's answer table and is still waiting for a person to review it.",
+   "intro.locked": "Civics scoring is turned off in this build until someone reviews the answer set. You can still practice the interview, reading and writing.",
+   "civics.locked.text": "The civics answer set is still waiting for a person to review it, so this build does not score civics and does not create a report."
   }
  },
  "differs": {
@@ -250,7 +334,7 @@
    "intro.profile.help": "Same word (qauv) for \"profile\".",
    "common.fictional": "Same word (qauv) for \"profile\".",
    "header.about": "\"Txog peb thiab ceeb toom\" reads as \"About us and warning\", not \"About & disclaimer\". Needs a Hmong reader.",
-   "compare.setting": "\"in order\" is rendered \"raws li kev txiav\" (\"according to cutting\"), which looks wrong, and \"may be missing\" is awkward. Needs a Hmong reader."
+   "compare.setting": "\"in order\" now \"ib lo tom qab ib lo\" (one word after another) and \"may be missing\" \"poob tau\" (may fall out). Still needs a Hmong reader."
   },
   "my": {
    "aiNotice.text": "\"authoritative\" is rendered as \"official\": close, slightly weaker.",
@@ -260,7 +344,14 @@
    "aiNotice.text": "\"authoritative\" is rendered as \"valid\" (may bisa): close, slightly weaker."
   },
   "ko": {
-   "compare.counts": "\"This counts\" is rendered \"is accepted\" (인정됩니다), a little stronger than \"counts\"."
+   "compare.counts": "\"This counts\" is rendered \"is accepted\" (인정됩니다), a little stronger than \"counts\".",
+   "intro.locked": "\"Answer key\" is rendered \"answer table\" (정답표); fine in context."
+  },
+  "th": {
+   "civics.officialNote": "\"Any one of these answers counts\" is rendered \"counts as correct\" (นับว่าถูก), slightly stronger."
+  },
+  "lo": {
+   "civics.officialNote": "Same: \"counts as correct\" (ນັບວ່າຖືກ)."
   }
  },
  "fixed": [
@@ -298,6 +389,11 @@
    "language": "ru, lo, th, ko, hi, pt",
    "key": "aiNotice.text",
    "what": "\"Authoritative\" was rendered as \"main\", \"standard\", \"authentic\" or \"the one that counts\". All six now say \"official\", as translation.notice does."
+  },
+  {
+   "language": "hmn",
+   "key": "header.about, home.full.text, compare.setting",
+   "what": "Named in the audit (CON-02): \"About us and warning\", \"according to cutting\" (used twice). Rewritten as \"About Language Lab and the disclaimer\", \"one part after another\", \"one word after another\". Not reviewed by a Hmong speaker."
   }
  ]
 }

@@ -3,8 +3,9 @@
  * itself the first time the screen is shown in a session, and can be opened any time.
  * Typing is always named as an option, and so is what the microphone button and Skip do.
  */
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useState, type ReactNode } from "react";
 import type { MessageKey } from "../../i18n";
+import { LegalText } from "./LegalText";
 import { useT } from "../../i18n/react";
 import { useHelpSeen } from "../help-session";
 import "./ScreenHelp.css";
@@ -25,10 +26,10 @@ export function ScreenHelp({ screen }: { screen: HelpScreen }) {
   const listen = t("help.listen", { play: t("audio.play") });
   const skip = t("help.skip", { skip: t("voice.skip") });
 
-  let steps: string[];
+  let steps: ReactNode[];
   switch (screen) {
     case "setup":
-      steps = [t("help.setup.1"), t("help.setup.2"), t("help.setup.3", { start: t("intro.start") })];
+      steps = [t("help.setup.1"), <LegalText key="s2" messageKey="help.setup.2" />, t("help.setup.3", { start: t("intro.start") })];
       break;
     case "n400":
       steps = [listen, t("help.sample"), mic, t("help.type"), t("help.send", { send: t("n400.save") }), t("help.notScored")];

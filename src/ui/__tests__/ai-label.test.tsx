@@ -28,6 +28,7 @@ describe("the AI label", () => {
       expect(html, code).toContain("ai-notice");
       expect(html, code).toContain('role="note"');
       expect(html, code).toContain(ENGLISH_MESSAGES["aiNotice.text"]);
+      expect(html, code).not.toContain(ENGLISH_MESSAGES["aiNotice.legalEnglish"]);
       expect(html, code).toContain('lang="en"');
     }
   });
@@ -67,7 +68,8 @@ describe("the disclaimer with its English text", () => {
   it("the prominent variant carries both too", () => {
     const html = inLanguage("es", <Disclaimer variant="prominent" id="d" messageKey="disclaimer.full" />);
     expect(html).toContain(ENGLISH_MESSAGES["disclaimer.full"]);
-    expect(html).toContain("Por favor, lea esto");
+    expect(html).not.toContain("Por favor, lea esto");
+    expect(html).toContain(ENGLISH_MESSAGES["disclaimer.title"]);
   });
 
   it("the footer disclaimer carries the English text in every other language", () => {

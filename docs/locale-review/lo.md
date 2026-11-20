@@ -29,18 +29,19 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | ບົດລາຍງານນີ້ແມ່ນສໍາລັບພຽງໜຶ່ງສ່ວນ. ມັນສະແດງວ່າສ່ວນນີ້ເປັນແນວໃດໃນການຝຶກ, ບໍ່ແມ່ນວ່າທ່ານຈະເຮັດແບບທົດສອບຈິງໄດ້ແນວໃດ, ແລະ ບໍ່ໃຫ້ຜົນການຝຶກໂດຍລວມ. | This report is for only one part. It shows how this part was in practice, not how you would do the real test, and does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | ການສໍາພາດກ່ຽວກັບ N-400 ເປັນພຽງການຝຶກ ແລະ ບໍ່ມີການໃຫ້ຄະແນນ. | The interview about N-400 is only practice and has no scoring. |
 | `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | ການແປນີ້ເຮັດໂດຍ AI ແລະ ອາດມີຂໍ້ຜິດພາດ. ສະບັບພາສາອັງກິດເປັນສະບັບທາງການ. | This translation was done by AI and may have errors. The English version is the official version. |
+| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | ນີ້ແມ່ນການຕັ້ງຄ່າການຝຶກຂອງ Language Lab ອີງຕາມແນວທາງການໃຫ້ຄະແນນຂອງ USCIS, ບໍ່ແມ່ນກົດຂອງ USCIS: ຕ້ອງມີຄໍາສໍາຄັນທຸກຄໍາຂອງປະໂຫຍກຕາມລໍາດັບ. ຄໍາສັ້ນໆ ເຊັ່ນ “the” ຂາດໄດ້. ການຢຸດພັກ ແລະ ການອອກສຽງບໍ່ໄດ້ຖືກໃຫ້ຄະແນນ. | This is a Language Lab practice setting based on USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there in order. Short words such as “the” may be missing. Pausing and pronunciation are not given scores. |
+| `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | ການເລືອກນີ້ກໍານົດວ່າທ່ານຈະຝຶກແບບທົດສອບວິຊາພົນລະເມືອງປີ 2008 ຫຼື ປີ 2025. ມັນເປັນພຽງການເລືອກເພື່ອຝຶກ. ສໍາລັບກໍລະນີຂອງທ່ານເອງ, ກະລຸນາກວດເບິ່ງທີ່ uscis.gov ວ່າແບບທົດສອບໃດໃຊ້ກັບທ່ານ. | This choice determines whether you will practice the 2008 or the 2025 civics test. It is only a choice for practice. For your own case, please check at uscis.gov which test applies to you. |
+| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | ຮູບພາບໃນການຝຶກວິຊາພົນລະເມືອງມາຈາກແຫຼ່ງທາງການຂອງລັດຖະບານກາງສະຫະລັດ. ແຕ່ລະຮູບໃຊ້ໄດ້ ເພາະບັນທຶກຂອງຮູບນັ້ນບອກສິດໄວ້ຢ່າງຊັດເຈນ. ນີ້ບໍ່ໄດ້ໝາຍຄວາມວ່າມີອົງການໃດຮັບຮອງ Language Lab. | The pictures in civics practice come from official sources of the U.S. federal government. Each picture can be used because that picture's record states its rights clearly. This does not mean any organization endorses Language Lab. |
+| `civics.officialNote` ⚠ | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | ຄໍາຕອບໃດໜຶ່ງເຫຼົ່ານີ້ນັບວ່າຖືກ. ລາຍການນີ້ເອົາມາຈາກລາຍການຄໍາຕອບຂອງ USCIS ແລະ ຍັງລໍຖ້າໃຫ້ມີຄົນກວດສອບ. | Any one of these answers counts as correct. This list is taken from the USCIS answer list and is still waiting for someone to check it. |
+| `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | ການໃຫ້ຄະແນນວິຊາພົນລະເມືອງຖືກປິດໃນເວີຊັນນີ້ຈົນກວ່າຈະມີຄົນກວດຄໍາເຉີຍ. ທ່ານຍັງຝຶກການສໍາພາດ, ການອ່ານ ແລະ ການຂຽນໄດ້. | Civics scoring is turned off in this version until someone checks the answer key. You can still practice interviews, reading and writing. |
+| `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | ຄໍາເຉີຍວິຊາພົນລະເມືອງຍັງລໍຖ້າໃຫ້ມີຄົນກວດສອບ, ດັ່ງນັ້ນເວີຊັນນີ້ຈຶ່ງບໍ່ໃຫ້ຄະແນນສ່ວນນີ້ ແລະ ບໍ່ສ້າງບົດລາຍງານ. | The civics answer key is still waiting for someone to check it, so this version does not score this part and does not create a report. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
 | Key | English | Translation |
 |---|---|---|
-| `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | ການເລືອກນີ້ກໍານົດວ່າທ່ານຈະຝຶກແບບທົດສອບວິຊາພົນລະເມືອງປີ 2008 ຫຼື ປີ 2025. ມັນເປັນພຽງການເລືອກເພື່ອຝຶກ. ສໍາລັບກໍລະນີຂອງທ່ານເອງ, ກະລຸນາກວດເບິ່ງທີ່ uscis.gov ວ່າແບບທົດສອບໃດໃຊ້ກັບທ່ານ. |
-| `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | ການໃຫ້ຄະແນນວິຊາພົນລະເມືອງຖືກປິດໃນເວີຊັນນີ້ຈົນກວ່າຈະມີຄົນກວດຄໍາເຉີຍ. ທ່ານຍັງຝຶກການສໍາພາດ, ການອ່ານ ແລະ ການຂຽນໄດ້. |
-| `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | ນີ້ແມ່ນການຕັ້ງຄ່າການຝຶກຂອງ Language Lab ອີງຕາມແນວທາງການໃຫ້ຄະແນນຂອງ USCIS, ບໍ່ແມ່ນກົດຂອງ USCIS: ຕ້ອງມີຄໍາສໍາຄັນທຸກຄໍາຂອງປະໂຫຍກຕາມລໍາດັບ. ຄໍາສັ້ນໆ ເຊັ່ນ “the” ຂາດໄດ້. ການຢຸດພັກ ແລະ ການອອກສຽງບໍ່ໄດ້ຖືກໃຫ້ຄະແນນ. |
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | ປະໂຫຍກໃຊ້ສະເພາະຄໍາຈາກລາຍການຄໍາສັບການອ່ານ ແລະ ການຂຽນທາງການຂອງ USCIS. |
-| `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | ຄໍາຕອບໃດໜຶ່ງເຫຼົ່ານີ້ນັບວ່າຖືກ. ລາຍການນີ້ເອົາມາຈາກລາຍການຄໍາຕອບຂອງ USCIS ແລະ ຍັງລໍຖ້າໃຫ້ມີຄົນກວດສອບ. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | ທ່ານໄດ້ຄະແນນຜ່ານຂອງການຝຶກແລ້ວ, ແບບທົດສອບຈຶ່ງຢຸດຢູ່ນີ້. |
-| `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | ຄໍາເຉີຍວິຊາພົນລະເມືອງຍັງລໍຖ້າໃຫ້ມີຄົນກວດສອບ, ດັ່ງນັ້ນເວີຊັນນີ້ຈຶ່ງບໍ່ໃຫ້ຄະແນນສ່ວນນີ້ ແລະ ບໍ່ສ້າງບົດລາຍງານ. |
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | ຕອບຄໍາຖາມວິຊາພົນລະເມືອງ. ກວດກັບຄໍາເຉີຍ. |
 | `partReport.unscored.missing` | A question that is not in the answer key | ຄໍາຖາມທີ່ບໍ່ມີໃນຄໍາເຉີຍ |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | ສຶກສາກ່ອນຖືກປິດໃນເວີຊັນນີ້ ຈົນກວ່າຈະມີຄົນກວດຄໍາເຉີຍແລ້ວ. |
@@ -240,7 +241,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.no` | Stay here | ຢູ່ທີ່ນີ້ຕໍ່ |
 | `common.retry` | Try again | ລອງອີກຄັ້ງ |
 | `partReport.badge.good` | This part went well | ສ່ວນນີ້ເຮັດໄດ້ດີ |
+| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | ຂໍ້ຄວາມປະຕິເສດຄວາມຮັບຜິດຊອບ ແລະ ຂໍ້ຄວາມທາງກົດໝາຍ ຈະສະແດງເປັນພາສາອັງກິດເທົ່ານັ້ນ ຈົນກວ່າຈະມີຄົນກວດການແປ. |
 | `lang.menu.title` | Choose a language | ເລືອກພາສາ |
+| `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | ຍັງມີພາສາອື່ນທີ່ກຳລັງກວດຢູ່. ພາສາເຫຼົ່ານັ້ນຈະປາກົດຢູ່ບ່ອນນີ້ຫຼັງຈາກມີຄົນກວດແລ້ວ. |
 | `home.study.title` | Study first | ສຶກສາກ່ອນ |
 | `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | ເບິ່ງຄໍາຖາມວິຊາພົນລະເມືອງພ້ອມຮູບພາບ ແລະ ຄໍາຕອບທາງການ. ບໍ່ມີການໃຫ້ຄະແນນ. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | ເບິ່ງຄໍາຖາມວິຊາພົນລະເມືອງເທື່ອລະຂໍ້. ແຕ່ລະຂໍ້ສະແດງຄໍາຕອບທາງການ. ບໍ່ມີການໃຫ້ຄະແນນ ແລະ ບໍ່ບັນທຶກຫຍັງ. |
@@ -251,7 +254,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `study.change` | Choose another test | ເລືອກບົດສອບຊຸດອື່ນ |
 | `footer.credits` | Picture credits | ເຄຣດິດຮູບພາບ |
 | `credits.title` | Picture credits | ເຄຣດິດຮູບພາບ |
-| `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | ຮູບພາບໃນການຝຶກວິຊາພົນລະເມືອງມາຈາກແຫຼ່ງທາງການຂອງລັດຖະບານກາງສະຫະລັດ. ແຕ່ລະຮູບໃຊ້ໄດ້ ເພາະບັນທຶກຂອງຮູບນັ້ນບອກສິດໄວ້ຢ່າງຊັດເຈນ. ນີ້ບໍ່ໄດ້ໝາຍຄວາມວ່າມີອົງການໃດຮັບຮອງ Language Lab. |
 | `credits.back` | Back to the practice | ກັບໄປຫາການຝຶກ |
 | `credits.newTab` | The links open the source pages in a new tab. | ລິ້ງຈະເປີດໜ້າຕົ້ນທາງໃນແຖບໃໝ່. |
 | `selfReview.title` | Listen and compare | ຟັງ ແລະ ປຽບທຽບ |
@@ -279,3 +281,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | ທ່ານເພີ່ມຄໍາສັ້ນ “{said}”. ແບບນີ້ຍັງນັບໄດ້. |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | ຜົນນີ້ອີງໃສ່ຄໍາທີ່ອຸປະກອນຂອງທ່ານໄດ້ຍິນ. ຖ້າມັນໄດ້ຍິນຜິດ, ລອງອີກຄັ້ງ ຫຼື ພິມຄໍາຕອບ. |
 | `compare.honest.typed` | This result is based on the words you typed. | ຜົນນີ້ອີງໃສ່ຄໍາທີ່ທ່ານພິມ. |
+
+## Lines marked ⚠ (meaning differs a little)
+
+- `civics.officialNote`: Same: "counts as correct" (ນັບວ່າຖືກ).

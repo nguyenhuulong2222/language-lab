@@ -8,6 +8,7 @@
  *   checked attempt (the feedback view passes `attempted`).
  * - The recording is kept in memory for this sentence only; the privacy line says so.
  */
+import { LegalText } from "./LegalText";
 import { useEffect, useRef } from "react";
 import { readingClipId } from "../../engine/audio-clips";
 import { useT } from "../../i18n/react";
@@ -102,7 +103,7 @@ export function ListenAndCompare({ review, sentence, attempted, onTryAgain }: Li
           </button>
         </div>
       )}
-      <p className="note">{t("selfReview.privacy")}</p>
+      <p className="note"><LegalText messageKey="selfReview.privacy" /></p>
     </section>
   );
 }

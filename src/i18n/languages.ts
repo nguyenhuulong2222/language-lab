@@ -52,3 +52,10 @@ export function isLanguageCode(value: string): value is LanguageCode {
 export function languageInfo(code: LanguageCode): LanguageInfo {
   return LANGUAGES.find((l) => l.code === code) ?? LANGUAGES[0]!;
 }
+
+/**
+ * Languages whose drafts the audit rated least reliable (hmn, lo, my, ht). They are left out of the
+ * language menu of a production build until a named reviewer is recorded in their locale file, and
+ * stay available in development. The menu says that more languages are in review.
+ */
+export const IN_REVIEW_LANGUAGES: readonly LanguageCode[] = ["hmn", "lo", "my", "ht"];

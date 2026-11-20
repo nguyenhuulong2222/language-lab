@@ -7,6 +7,7 @@
  * answer key is still locked (production build, waiting for a person to review it) the screen
  * says so instead of showing answers.
  */
+import { LegalText } from "../components/LegalText";
 import { useEffect, useRef, useState } from "react";
 import { civicsClipId } from "../../engine/audio-clips";
 import type { CivicsAnswerEntry } from "../../engine/civics-answer-key";
@@ -127,7 +128,7 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
                 <li key={i}>{line}</li>
               ))}
             </ul>
-            <p className="note">{t("civics.officialNote")}</p>
+            <p className="note"><LegalText messageKey="civics.officialNote" /></p>
           </section>
         )}
         <div className="btn-row">

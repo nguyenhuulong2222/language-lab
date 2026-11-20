@@ -3,14 +3,16 @@
  * already English. Used for the disclaimers (content-safety rule 3, point b): in every non-English
  * language the disclaimer is shown together with its English text.
  */
-import { ENGLISH_MESSAGES, type MessageKey } from "../../i18n";
+import { ENGLISH_MESSAGES, isEnglishOnly, type MessageKey } from "../../i18n";
+import { LegalText } from "./LegalText";
 import { useLanguage, useT } from "../../i18n/react";
 import "./Disclaimer.css";
 
 export function EnglishLine({ messageKey, className = "" }: { messageKey: MessageKey; className?: string }) {
   const t = useT();
   const language = useLanguage();
-  if (language === "en") return null;
+  // Already English (a legal line in a language without a reviewer): no second copy.
+  if (language === "en" || isEnglishOnly(language, messageKey)) return null;
   return (
     <span className={`english-line ${className}`.trim()} lang="en">
       <span className="english-line__label">{t("translation.english")}: </span>
@@ -21,10 +23,9 @@ export function EnglishLine({ messageKey, className = "" }: { messageKey: Messag
 
 /** A message in the chosen language, with its English text under it in every other language. */
 export function Bilingual({ messageKey }: { messageKey: MessageKey }) {
-  const t = useT();
   return (
     <>
-      {t(messageKey)}
+      <LegalText messageKey={messageKey} />
       <EnglishLine messageKey={messageKey} />
     </>
   );

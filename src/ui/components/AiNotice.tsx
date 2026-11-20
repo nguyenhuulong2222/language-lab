@@ -19,6 +19,7 @@ export function AiNotice() {
         <p className="ai-notice__text ai-notice__text--english" lang="en">
           {ENGLISH_MESSAGES["aiNotice.text"]}
         </p>
+        <p className="ai-notice__text">{t("aiNotice.legalEnglish")}</p>
       </div>
     </div>
   );

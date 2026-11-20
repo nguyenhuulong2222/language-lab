@@ -66,13 +66,14 @@ describe("home in Vietnamese", () => {
   });
 
   it("says the real interview is in English", () => {
-    expect(html).toContain("Buổi phỏng vấn thật được thực hiện bằng tiếng Anh");
+    expect(html).toContain("The real interview is held in English unless USCIS allows an exception for you.");
   });
 
-  it("keeps the disclaimers, in Vietnamese", () => {
-    expect(html).toContain("Xin hãy đọc phần này");
-    expect(html).toContain("không liên kết với");
-    expect(html).toContain("không phải là tư vấn pháp lý");
+  it("shows the disclaimers in English only, with one short Vietnamese line saying why", () => {
+    expect(html).toContain("Please read this");
+    expect(html).toContain("It is not legal advice.");
+    expect(html).not.toContain("Xin hãy đọc phần này");
+    expect(html).not.toContain("không phải là tư vấn pháp lý");
   });
 
   it("says it too in English, since the real interview is in English", () => {
@@ -89,7 +90,7 @@ describe("practice screens in Vietnamese", () => {
     const html = inVietnamese(s);
     expect(html).toContain("Kiểm tra câu trả lời");
     expect(html).toContain("Cách dùng màn hình này");
-    expect(html).toContain("Buổi phỏng vấn thật được thực hiện bằng tiếng Anh");
+    expect(html).toContain("The real interview is held in English unless USCIS allows an exception for you.");
     expect(html).toContain('lang="en"');
     const escaped = question.questionText.replace(/&/g, "&amp;").replace(/'/g, "&#x27;");
     expect(html).toContain(escaped);
@@ -101,7 +102,7 @@ describe("practice screens in Vietnamese", () => {
       const s = engine.reduce(engine.initial(), { type: "choose", mode, seed: 3, at: AT });
       const html = inVietnamese(s);
       expect(html).toContain(mode === "reading" ? "Kiểm tra bài đọc của tôi" : "Kiểm tra bài viết của tôi");
-      expect(html).toContain("Buổi phỏng vấn thật được thực hiện bằng tiếng Anh");
+      expect(html).toContain("The real interview is held in English unless USCIS allows an exception for you.");
       expect(html).not.toContain("Check my");
     }
     const reading = engine.reduce(engine.initial(), { type: "choose", mode: "reading", seed: 3, at: AT });
@@ -145,7 +146,7 @@ describe("practice screens in Vietnamese", () => {
     expect(html).toContain("Đang lấy câu hỏi tiếp theo");
   });
 
-  it("the full report carries the Vietnamese disclaimer next to the engine's English one", () => {
+  it("the full report carries the engine's English disclaimer, with no Vietnamese copy of it", () => {
     let s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 3, at: AT });
     s = engine.reduce(s, { type: "start", profileId: profile, filedOn: "before", seed: 3, at: AT });
     s = engine.reduce(s, { type: "finishN400", at: AT });
@@ -166,7 +167,7 @@ describe("practice screens in Vietnamese", () => {
     expect(s.phase).toBe("report");
     const html = inVietnamese(s);
     expect(html).toContain("This is a practice tool only.");
-    expect(html).toContain("Đây chỉ là công cụ luyện tập.");
+    expect(html).not.toContain("Đây chỉ là công cụ luyện tập.");
     expect(html).toContain("Có vài điều cần xem lại");
   });
 });
