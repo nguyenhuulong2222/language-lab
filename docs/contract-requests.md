@@ -86,7 +86,7 @@ rules need 6, and one civics turn was a dynamic question. The rebuilt fixture:
 - Has 7 civics turns: 6 correct, 1 incorrect. The stage stops on the 6th correct answer.
 - Reading passes on sentence 1. Writing passes on sentence 2, so `attempts` is 2 on the
   second writing turn (attempts means sentences presented).
-- Keeps the profile (`Aurora Vance`), filing date (March 15, 2024) and `generatedAt` that the
+- Keeps the profile (`Aurora Thistlewood`), filing date (March 15, 2024) and `generatedAt` that the
   UI test reads.
 - Review item for civics is now "How many amendments does the Constitution have?".
 

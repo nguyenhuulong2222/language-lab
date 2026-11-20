@@ -37,7 +37,7 @@ describe("Report screen (SSR against session.json)", () => {
 
   it("renders the fictional profile card", () => {
     expect(html).toContain("Practice profile (fictional)");
-    expect(html).toContain("Aurora Vance");
+    expect(html).toContain("Aurora Thistlewood");
     expect(html).toContain("civics test");
     expect(html).toContain("March 15, 2024");
   });

@@ -6,7 +6,7 @@ import { isLanguageCode, languageInfo } from "../i18n/languages";
  */
 
 /** Derive a display name from a fictional profile id, e.g.
- * "fictional-profile-aurora-vance" -> "Aurora Vance". */
+ * "fictional-profile-aurora-thistlewood" -> "Aurora Thistlewood". */
 export function formatProfileName(profileId: string): string {
   const prefix = "fictional-profile-";
   const core = profileId.startsWith(prefix)

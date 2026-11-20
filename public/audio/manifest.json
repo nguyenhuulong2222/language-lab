@@ -1272,12 +1272,6 @@
       "group": "n400",
       "bytes": 54528
     },
-    "n400-001-sample-aurora-vance": {
-      "file": "n400/n400-001-sample-aurora-vance.mp3",
-      "hash": "0aad90939f555d",
-      "group": "n400-samples",
-      "bytes": 49920
-    },
     "n400-001-sample-juniper-hale": {
       "file": "n400/n400-001-sample-juniper-hale.mp3",
       "hash": "0c53334b21ad13",
@@ -1295,12 +1289,6 @@
       "hash": "01a66f84d29635",
       "group": "n400",
       "bytes": 48000
-    },
-    "n400-002-sample-aurora-vance": {
-      "file": "n400/n400-002-sample-aurora-vance.mp3",
-      "hash": "10ef2e10cdb5c9",
-      "group": "n400-samples",
-      "bytes": 56832
     },
     "n400-002-sample-juniper-hale": {
       "file": "n400/n400-002-sample-juniper-hale.mp3",
@@ -1320,12 +1308,6 @@
       "group": "n400",
       "bytes": 71424
     },
-    "n400-003-sample-aurora-vance": {
-      "file": "n400/n400-003-sample-aurora-vance.mp3",
-      "hash": "117510e595bf95",
-      "group": "n400-samples",
-      "bytes": 69888
-    },
     "n400-003-sample-juniper-hale": {
       "file": "n400/n400-003-sample-juniper-hale.mp3",
       "hash": "1825eba985492a",
@@ -1343,12 +1325,6 @@
       "hash": "1e5711741e7798",
       "group": "n400",
       "bytes": 35328
-    },
-    "n400-004-sample-aurora-vance": {
-      "file": "n400/n400-004-sample-aurora-vance.mp3",
-      "hash": "1be0d5e2e111cf",
-      "group": "n400-samples",
-      "bytes": 36864
     },
     "n400-004-sample-juniper-hale": {
       "file": "n400/n400-004-sample-juniper-hale.mp3",
@@ -1368,12 +1344,6 @@
       "group": "n400",
       "bytes": 67968
     },
-    "n400-005-sample-aurora-vance": {
-      "file": "n400/n400-005-sample-aurora-vance.mp3",
-      "hash": "131540344f4dce",
-      "group": "n400-samples",
-      "bytes": 59520
-    },
     "n400-005-sample-juniper-hale": {
       "file": "n400/n400-005-sample-juniper-hale.mp3",
       "hash": "055efb76bfad8f",
@@ -1392,12 +1362,6 @@
       "group": "n400",
       "bytes": 70656
     },
-    "n400-006-sample-aurora-vance": {
-      "file": "n400/n400-006-sample-aurora-vance.mp3",
-      "hash": "06295df5ee26d9",
-      "group": "n400-samples",
-      "bytes": 67200
-    },
     "n400-006-sample-juniper-hale": {
       "file": "n400/n400-006-sample-juniper-hale.mp3",
       "hash": "08c6c4119beb05",
@@ -1415,12 +1379,6 @@
       "hash": "014b42c1a7b9e2",
       "group": "n400",
       "bytes": 59520
-    },
-    "n400-007-sample-aurora-vance": {
-      "file": "n400/n400-007-sample-aurora-vance.mp3",
-      "hash": "0a0bd18ede3157",
-      "group": "n400-samples",
-      "bytes": 63360
     },
     "n400-007-sample-juniper-hale": {
       "file": "n400/n400-007-sample-juniper-hale.mp3",

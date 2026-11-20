@@ -8,7 +8,7 @@
       "topic": "identity",
       "text": "Can you tell me your full name?",
       "sampleAnswers": {
-        "fictional-profile-aurora-vance": "My name is Aurora Vance.",
+        "fictional-profile-aurora-thistlewood": "My name is Aurora Thistlewood.",
         "fictional-profile-juniper-hale": "My name is Juniper Hale.",
         "fictional-profile-rowan-pike": "My name is Rowan Pike."
       }
@@ -18,7 +18,7 @@
       "topic": "background",
       "text": "Where were you born?",
       "sampleAnswers": {
-        "fictional-profile-aurora-vance": "I was born in Brazil.",
+        "fictional-profile-aurora-thistlewood": "I was born in Brazil.",
         "fictional-profile-juniper-hale": "I was born in Kenya.",
         "fictional-profile-rowan-pike": "I was born in Poland."
       }
@@ -28,7 +28,7 @@
       "topic": "residence",
       "text": "How long have you lived in the United States?",
       "sampleAnswers": {
-        "fictional-profile-aurora-vance": "I have lived in the United States for seven years.",
+        "fictional-profile-aurora-thistlewood": "I have lived in the United States for seven years.",
         "fictional-profile-juniper-hale": "I have lived in the United States for nine years.",
         "fictional-profile-rowan-pike": "I have lived in the United States for six years."
       }
@@ -38,7 +38,7 @@
       "topic": "work",
       "text": "What do you do for work?",
       "sampleAnswers": {
-        "fictional-profile-aurora-vance": "I work as a nurse.",
+        "fictional-profile-aurora-thistlewood": "I work as a nurse.",
         "fictional-profile-juniper-hale": "I am a bus driver.",
         "fictional-profile-rowan-pike": "I teach music."
       }
@@ -48,7 +48,7 @@
       "topic": "travel",
       "text": "Have you traveled outside the United States recently?",
       "sampleAnswers": {
-        "fictional-profile-aurora-vance": "Yes. I visited my family for two weeks last year.",
+        "fictional-profile-aurora-thistlewood": "Yes. I visited my family for two weeks last year.",
         "fictional-profile-juniper-hale": "No. I have not traveled outside the United States.",
         "fictional-profile-rowan-pike": "Yes. I went to a wedding abroad for one week."
       }
@@ -58,7 +58,7 @@
       "topic": "taxes",
       "text": "How do you usually prepare your income taxes?",
       "sampleAnswers": {
-        "fictional-profile-aurora-vance": "I prepare them myself with a tax program.",
+        "fictional-profile-aurora-thistlewood": "I prepare them myself with a tax program.",
         "fictional-profile-juniper-hale": "My accountant prepares them and I check them.",
         "fictional-profile-rowan-pike": "A community tax helper prepares them for me."
       }
@@ -68,7 +68,7 @@
       "topic": "reasons",
       "text": "Why do you want to become a U.S. citizen?",
       "sampleAnswers": {
-        "fictional-profile-aurora-vance": "I want to vote and to help my community.",
+        "fictional-profile-aurora-thistlewood": "I want to vote and to help my community.",
         "fictional-profile-juniper-hale": "I want to be part of the country where I raised my family.",
         "fictional-profile-rowan-pike": "I want to vote and to serve on a jury."
       }
