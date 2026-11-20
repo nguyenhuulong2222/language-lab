@@ -43,6 +43,8 @@ describe("reply check (REQ-C09)", () => {
   it("English only, one question", () => {
     expect(reason({ ...good, tip: "Hãy nói chậm hơn." })).toBe("not_english");
     expect(reason({ ...good, followUp: "你在哪里工作?" })).toBe("not_english");
+    expect(reason({ ...good, tip: "Eres un buen estudiante, habla despacio." })).toBe("not_english");
+    expect(reason({ ...good, followUp: "Où travaillez-vous maintenant?" })).toBe("not_english");
     expect(reason({ ...good, followUp: "Tell me about your job." })).toBe("followup_not_question");
     expect(reason({ ...good, followUp: "Where do you work? And since when?" })).toBe("followup_not_question");
   });

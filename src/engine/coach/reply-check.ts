@@ -49,6 +49,11 @@ export function loadDenyList(): DenyList {
 const FEEDBACK = ["understood", "needs_practice", "unclear"] as const;
 /** Latin letters (with accents), digits, spaces and common punctuation. Anything else is not English. */
 const ENGLISH_CHARS = /^[A-Za-z\u00C0-\u00FF0-9 .,;:!?'’"“”()\-–—/&]+$/;
+/** Common English words: a reply with none of them is not English ("Eres un buen estudiante"). */
+const ENGLISH_WORDS = new Set(
+  "the you your is are was were be to of and in it for with do did does have has had what how where when why who which can could will would should say use try speak speaking word words sentence sentences please my me this that on at about from as more slowly clearly full answer question tell long many often every each work live lived job family time years".split(" ")
+);
+const looksEnglish = (text: string): boolean => (text.toLowerCase().match(/[a-z']+/g) ?? []).some((w) => ENGLISH_WORDS.has(w));
 const URL_LIKE = /(https?:\/\/|www\.|\b[a-z0-9-]+\.(com|org|net|gov|edu|io|us)\b)/i;
 
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -102,7 +107,7 @@ export function checkReply(
   if (f === "" || t === "") return { ok: false, reason: "empty" };
   if (f.length > config.reply.followUpMaxChars) return { ok: false, reason: "followup_length" };
   if (t.length > config.reply.tipMaxChars) return { ok: false, reason: "tip_length" };
-  if (!ENGLISH_CHARS.test(f) || !ENGLISH_CHARS.test(t)) return { ok: false, reason: "not_english" };
+  if (!ENGLISH_CHARS.test(f) || !ENGLISH_CHARS.test(t) || !looksEnglish(f) || !looksEnglish(t)) return { ok: false, reason: "not_english" };
   if (!f.endsWith("?") || (f.match(/\?/g) ?? []).length !== 1) return { ok: false, reason: "followup_not_question" };
   // Names the reply may use are taken out before the name checks.
   const strip = (s: string) => allowedNames.reduce((acc, name) => (name.trim() ? acc.replace(phraseRegex(name), " ") : acc), s);
