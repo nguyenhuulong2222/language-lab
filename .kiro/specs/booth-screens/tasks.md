@@ -121,3 +121,7 @@ reviews. What is still open is in `docs/audit/open-findings.md`.
 Owner actions: review the two answer keys; deploy (merge to `main`); rotate the OpenAI key; regenerate
 the 7 sample clips (`docs/audio-regenerate.md`); native readers for the locale drafts; test on a real
 iPhone and Android phone with a screen reader.
+## B-39 Answer key review (done)
+Owner decisions applied and recorded (`tools/answer-key/answer-markers.json`), sentence answers matched
+by content words, independent source check (0 mismatches), review recorded (`review.json`, both keys
+`needsHumanReview: false`), production unlocks civics, Study first and the full interview.

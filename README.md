@@ -4,8 +4,8 @@
 
 Styled as a 1970s language lab booth — individual study, focused repetition, no pressure.
 
-Live: <https://language-lab-ade.pages.dev> (the production build: civics, Study first and the full
-interview are switched off there until the answer keys have been reviewed by a person).
+Live: <https://language-lab-ade.pages.dev> (the production build; it shows this branch's work only after a
+deploy).
 
 > **This is an independent practice tool. It is not affiliated with, endorsed by, or
 > connected to USCIS, DHS, or any U.S. government agency. Practice results do not predict
@@ -24,8 +24,8 @@ profiles. You work through:
 - **Reading** — English reading portion practice
 - **Writing** — English writing portion practice
 - **Civics** — 2008 or 2025 test questions, scored against an answer key that Language Lab built
-  from the USCIS question lists. The key has not yet been reviewed by a person, so civics is switched
-  off in the production build
+  from the USCIS question lists and that the project owner reviewed on 2026-11-20 (see
+  `docs/answer-key-review.md` and `docs/answer-key-source-check.md`). It is not an official USCIS key
 
 At the end you receive a practice report. The report tells you what to review. It is
 practice feedback, not an official assessment.
@@ -79,8 +79,8 @@ The app runs at `http://localhost:5173` by default.
 The microphone only works on HTTPS or localhost, so a phone needs a tunnel. Start the dev
 server with `--host`, then run `cloudflared tunnel --url http://localhost:5173`. It prints an
 `https://....trycloudflare.com` address; open that on the phone. Typing always works, with or
-without the microphone. A production build switches civics scoring off while the answer key
-files say `needsHumanReview: true`; the dev server runs everything.
+without the microphone. A production build switches civics scoring off if an answer key
+file says `needsHumanReview: true` (or is marked reviewed without naming a reviewer); the dev server runs everything.
 
 ### Check the layout at phone width
 `npm run layout-check` opens the real app in headless Google Chrome at 390px, clicks through the

@@ -8,11 +8,10 @@ an action that this pass was not allowed to take (push, deploy, review data, cha
 
 | Id | Severity | What is left | Why it is still open |
 |---|---|---|---|
-| CON-01 | Blocker | Both civics answer keys are still `needsHumanReview: true`, so civics, Study first and the full interview are off in production. | Owner: a person must review the keys. The flags were not changed, and the production check was not weakened. The dead end is gone (Step 7). |
 | KIRO-01 | Blocker | `origin/main` is far behind this branch; the live site serves an older build (Google Fonts, no `_headers`). | Owner: this pass never pushes or deploys. |
 | SEC-03 | High (rest) | Rotate the OpenAI key if any agent transcript could have captured it; keep keys outside the repository folder. | Owner action. The guard itself is fixed and tested (Step 4). It is a guard against accidents, not a security boundary. |
 | CON-04 | Medium (rest) | The engine's stage summaries (`report-builder.ts`) are English in every interface language. | They are a `FinalReport` contract string; moving them to locale files needs a contract request. The wording now says "practice passing score". |
-| CON-06 | Medium | Content loaders throw unless `needsHumanReview === true`, so reviewed content cannot be marked reviewed without a code change. | Owner decision on the end state (allow `false` once a reviewer is recorded; gate production on it or not). Changing it now would touch the review flags. |
+| CON-06 | Medium | Content loaders (practice content, pictures) throw unless `needsHumanReview === true`, so reviewed practice content cannot be marked reviewed without a code change. (The answer keys now have this path: `review.json` and a named reviewer.) | Owner decision on the end state (allow `false` once a reviewer is recorded; gate production on it or not). Changing it now would touch the review flags. |
 | CON-07 | Medium (rest) | In vi, ru and pt, "legal advice" back-translates as "consultation" or "counseling". | Needs native readers. Those lines are shown in English until a reviewer is recorded, so users do not see the drafts. |
 | COR-01 | Medium | UI tests are server-render only; no DOM environment, no coverage report, no worker test. | New test infrastructure (a DOM library and coverage tool) is more than a fix. Focus and keyboard behaviour is covered only by the Chrome layout check. |
 | COR-04 | Low (rest) | The plural rule's 3-letter limit is still a constant in `sentence-compare.ts`. | The spelling limits moved to `practice-config.json` (Step 6). The plural limit is tied to `sameInflection`'s safety argument; moving it is a refactor. |
@@ -28,6 +27,12 @@ an action that this pass was not allowed to take (push, deploy, review data, cha
 | CON-14 | Low | No reminder next to the N-400 text box not to type real details. | New copy in 14 languages; `intro.privacy` and the fictional profile cover rule 1 today. |
 | DEP-02 | Low | Major upgrades available (Vite 8, Vitest 5, TypeScript 7, plugin-react 6, fast-check 4). | Upgrades are not fixes; `npm audit` reports 0. |
 | KIRO-03 | Low | GitHub repository description and homepage are empty. | Owner: GitHub settings. |
+
+## Closed after the fix pass
+
+| Id | Closed on | How |
+|---|---|---|
+| CON-01 | 2026-11-20 | The project owner reviewed both answer keys (the interpreted questions and the dynamic list, with an AI pre-review). The decisions are in `tools/answer-key/answer-markers.json`; the independent check `tools/answer-key/check-against-source.py` finds 0 mismatches (`docs/answer-key-source-check.md`). Both files now say `needsHumanReview: false` with `reviewedBy` and `reviewedOn`, recorded through `tools/answer-key/review.json`, which is tied to the SHA-256 of the reviewed entries. The production build unlocks civics, Study first and the full interview; verified with `layout-check --prod` for both test versions. |
 
 ## Found by the reviewers in Step 10 and left open
 

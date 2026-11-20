@@ -595,3 +595,9 @@ Spec first (`88e7d15`, BS-22 to BS-25); decisions in `docs/decisions-log.md`, se
 - **Step 8:** only the chosen locale is loaded; answer keys load when a civics part starts; main JS 841 kB to 377 kB; CI workflow.
 - **Step 9:** "Aurora Vance" renamed "Aurora Thistlewood"; 7 sample clips to regenerate (`docs/audio-regenerate.md`).
 - **Step 10:** favicon, Credits link names and Escape, focus ring on code-focused headings, no duplicate report disclaimer, value assertions in weak tests, README "How Kiro was used", `license` and `engines` in `package.json`; reviews by `ui-reviewer` and `content-reviewer` and their fixes; layout check for 14 languages at normal and extra-large text; `docs/audit/open-findings.md`.
+
+## 2026-11-20: answer key review (branch ui/booth-screens)
+- Step 1: the owner's decisions in `answer-markers.json` (alternatives for 2025-107, 2025-126, 2025-028; any-order items for 2008-045, 2008-017, 2025-019, 2025-016; optional "Jr." and "Day"); keys and review sheet rebuilt; tests for each decision with wrong cases.
+- Step 2: sentence answers matched by content words in order; property tests.
+- Step 3: independent source check (0 mismatches, decisions listed); review recorded through `review.json`; loader requires a named reviewer.
+- Step 4: production unlocks civics; verified with `layout-check --prod` (both test versions, Study pictures, no CSP violation); CON-01 closed.

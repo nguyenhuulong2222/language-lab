@@ -12,13 +12,16 @@
  *   node tools/layout-check/run.mjs --lang=vi             one interface language (any of the 14 codes)
  *   node tools/layout-check/run.mjs --shots               also save a screenshot of every screen
  *   node tools/layout-check/run.mjs --width=320           phone width in CSS px (default 390; 320 is the WCAG reflow width)
+ *   node tools/layout-check/run.mjs --filed=before        file before the boundary date, so the full interview
+ *                                                         uses the 2008 test (default: on or after, 2025 test)
  *   node tools/layout-check/run.mjs --prod                the production build (what Cloudflare serves), with the
  *                                                         headers of public/_headers, and a check that the page
  *                                                         raises no Content-Security-Policy violation
  *
- * --prod builds to a temporary folder and serves it itself. In the production build civics is locked and
- * four languages are hidden (src/i18n/languages.ts, IN_REVIEW_LANGUAGES), so those screens and languages are
- * skipped; every other screen is checked the same way.
+ * --prod builds to a temporary folder and serves it itself. Four languages are hidden there
+ * (src/i18n/languages.ts, IN_REVIEW_LANGUAGES), so they are skipped. If the production home screen
+ * offers no full interview (an answer key still marked for review), only the parts it offers are checked.
+ * Every run also checks that Study first shows a picture that has loaded, and that the report is reached.
  *
  * Needs Google Chrome (set CHROME_PATH if it is not in the default macOS place) and starts its
  * own dev server on port 5198. Screenshots go to the system temp folder, not into the repository.
@@ -40,6 +43,7 @@ const SHOTS_DIR = path.join(os.tmpdir(), "language-lab-layout");
 const MIN_TARGET = 48;
 const WIDTH = Number((process.argv.slice(2).find((a) => a.startsWith("--width=")) ?? "--width=390").slice(8));
 const PROD = process.argv.includes("--prod");
+const FILED_BEFORE = process.argv.includes("--filed=before");
 const PROD_DIR = path.join(os.tmpdir(), "language-lab-layout-dist");
 const HEIGHT = 844;
 
@@ -299,12 +303,31 @@ async function checkConfiguration(cdp, size, lang) {
     // The answer key is fetched first: make sure a question is really on screen.
     await waitFor(() => lab(`has(${js(L("civics.next"))})`), "a Study first question");
     await record("study-question");
+    // Study first must show pictures: step through the questions until one is on screen and has loaded.
+    let picture = false;
+    for (let step = 0; step < 40 && !picture; step++) {
+      picture = await cdp.evaluate(`(() => { const img = document.querySelector(".question-picture__image"); return !!img && img.complete && img.naturalWidth > 0; })()`);
+      if (!picture) {
+        await click(L("civics.next"));
+        await sleep(250);
+      }
+    }
+    if (!picture) throw new Error("Study first showed no loaded picture in the first 40 questions");
+    await record("study-picture");
     await click(L("report.home"));
   }
   await click(L("footer.credits"));
   await record("credits");
   await click(L("credits.back"));
-  if (PROD) return await productionParts(cdp, results, { L, lab, js, click, choose, type, record });
+  // Production with reviewed keys: the home screen must offer every card.
+  if (PROD && (await cdp.evaluate(`window.__lab.has(${js(L("home.full.title"))})`))) {
+    for (const key of ["home.study.title", "home.part.civics.title", "home.part.n400.title", "home.part.reading.title", "home.part.writing.title"]) {
+      if (!(await cdp.evaluate(`window.__lab.has(${js(L(key))})`))) throw new Error(`the production home screen has no "${L(key)}" card`);
+    }
+  }
+  if (PROD && !(await cdp.evaluate(`window.__lab.has(${js(L("home.full.title"))})`))) {
+    return await productionParts(cdp, results, { L, lab, js, click, choose, type, record });
+  }
   // Full interview
   await click(L("home.full.title"));
   await record("setup");
@@ -315,7 +338,7 @@ async function checkConfiguration(cdp, size, lang) {
   const boundary = await cdp.evaluate(
     `new Intl.DateTimeFormat((Intl.DateTimeFormat.supportedLocalesOf([${js(wantedDate)}]).length ? ${js(wantedDate)} : "en-US") + "-u-ca-gregory-nu-latn", { dateStyle: "long", timeZone: "UTC" }).format(new Date("2025-10-20"))`
   );
-  await choose(L("intro.filed.onOrAfter").replace("{date}", boundary));
+  await choose(L(FILED_BEFORE ? "intro.filed.before" : "intro.filed.onOrAfter").replace("{date}", boundary));
   await click(L("intro.start"));
 
   await waitFor(() => lab(`has(${js(L("n400.save"))})`), "the N-400 question");
@@ -366,6 +389,9 @@ async function checkConfiguration(cdp, size, lang) {
   }
   await waitFor(() => lab(`has(${js(L("report.again"))})`), "the report");
   await record("report");
+  // The report names the test version the filing choice leads to.
+  const version = FILED_BEFORE ? "2008" : "2025";
+  if (!(await lab("bodyText()")).includes(version)) throw new Error(`the report does not name the ${version} test`);
   await click(L("report.again"));
 
   // One part: reading, to its own report
