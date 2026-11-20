@@ -67,6 +67,12 @@ describe("plain lines for near misses", () => {
     expect(html).toContain("Not yet.");
     expect(plain(html)).toContain("You added “really”, which is not in the sentence. This does not count yet.");
   });
+  it("a miss lists only what explains it, not lines that say this still counts", () => {
+    const html = plain(render("A citizen can vote.", "wrong words here"));
+    expect(html).toContain("Not yet.");
+    expect(html).toContain("does not count yet");
+    expect(html).not.toContain("still counts");
+  });
   it("a perfect attempt says every important word was there", () => {
     const html = render("We pay taxes.", "we pay taxes");
     expect(html).toContain("This counts.");

@@ -60,7 +60,11 @@ export function SentenceFeedback({ target, attempt, matchOptions, kind }: Senten
     heading.current?.focus();
   }, []);
   const empty = attempt.transcript.trim() === "";
-  const noteLines = comparison.notes.map((note) => lineFor(note, typed, attempt.isCorrect));
+  // When it does not count, only the lines that explain why: "this still counts" next to "Not yet" confuses.
+  const shown = attempt.isCorrect
+    ? comparison.notes
+    : comparison.notes.filter((n) => n.kind === "missing-content" || n.kind === "different" || n.kind === "extra-content");
+  const noteLines = shown.map((note) => lineFor(note, typed, attempt.isCorrect));
   return (
     <section className="panel">
       <h2 className="panel__title" ref={heading} tabIndex={-1}>
