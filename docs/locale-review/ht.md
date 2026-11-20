@@ -243,7 +243,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | Paramèt sa yo rete jiskaske ou fèmen oswa rechaje paj sa a. |
 | `settings.close` | Close settings | Fèmen paramèt yo |
 | `audio.again` | Play again | Koute ankò |
-| `audio.failed` | The audio did not play. Try again, or show the sentence. | Son an pa jwe. Eseye ankò, oswa montre fraz la. |
+| `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Son an pa jwe. Eseye ankò, oswa li tèks ki sou ekran an. |
 | `lang.label` | Language | Lang |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Tounen nan akèy? Repons ou yo nan pratik sa a ap pèdi. |
 | `header.homeConfirm.yes` | Yes, go home | Wi, tounen nan akèy |
@@ -266,6 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | Kredi imaj yo |
 | `credits.back` | Back to the practice | Tounen nan pratik la |
 | `credits.newTab` | The links open the source pages in a new tab. | Lyen yo ouvri paj sous yo nan yon nouvo onglè. |
+| `credits.sourceLink` | Source page: {title} | Paj sous: {title} |
 | `selfReview.title` | Listen and compare | Koute epi konpare |
 | `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | Anrejistre tèt ou k ap li fraz la, answit koute anrejistreman ou an ak echantiyon an. Sa a se pou konpare ak zòrèy ou. Pa gen nòt ki bay. |
 | `selfReview.record` | Record and compare | Anrejistre epi konpare |

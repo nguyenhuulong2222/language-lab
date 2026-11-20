@@ -6,7 +6,7 @@
     "url": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2",
     "savedAs": "data/sources/uscis-policy-manual-vol12-parte-ch2-reading-writing.txt",
     "sha256": "faa3c1e092e28cb2c9991aa7dc63f8315b825ec80b9965184dacdebebb10832b",
-    "fromTheGuidelines": "Read all content words; short words may be omitted; omitting or substituting a content word fails; pronunciation errors that do not interfere with the meaning are fine (reading). Spelling, capitalization and omitted short words do not fail unless they interfere with the meaning; a different sentence or different words fail (writing).",
+    "fromTheGuidelines": "Read all content words; short words may be omitted; omitting or substituting a content word fails; pronunciation errors that do not interfere with the meaning are fine (reading). Spelling, capitalization and punctuation errors and omitted short words do not fail unless they interfere with the meaning; a different sentence or different words fail (writing).",
     "languageLabChoices": [
       "Short words are the 'Other (Function)' words of the two official vocabulary lists (the manual does not define them): a, and, during, for, here, in, of, on, the, to, we. They may be missing or added.",
       "Words must be in order (the manual does not mention order).",

@@ -8,6 +8,7 @@
  * Content safety: the report always labels the profile as fictional and shows
  * the FinalReport.disclaimer prominently.
  */
+import { isEnglishOnly } from "../../i18n";
 import type { InterviewSession, StageSummary } from "../../contracts";
 import { Disclaimer } from "../components/Disclaimer";
 import { StatusBadge } from "../components/StatusBadge";
@@ -105,7 +106,7 @@ export function ReportScreen({ session }: ReportScreenProps) {
         id="report-disclaimer"
       />
       {/* The report carries its disclaimer in English (contract field); say it in the chosen language too. */}
-      {language !== "en" && <Disclaimer messageKey="disclaimer.report" />}
+      {language !== "en" && !isEnglishOnly(language, "disclaimer.report") && <Disclaimer messageKey="disclaimer.report" />}
 
       <p className="report__generated">
         {t("report.generated", { datetime: formatDateTime(report.generatedAt, language) })}

@@ -11,6 +11,7 @@ import type { MessageKey } from "../../i18n";
 import { useT } from "../../i18n/react";
 import { useSettings } from "../settings";
 import { useSpeaker } from "../voice/VoiceProvider";
+import { ReviewIcon } from "./icons";
 
 interface SpeakButtonProps {
   text: string;
@@ -84,7 +85,8 @@ export function SpeakButton({ text, clipId, labelKey = "audio.play", onFailed }:
       <p className="note">{voice === "recording" ? t("audio.aiVoice") : t("audio.deviceVoice")}</p>
       {/* Always in the page, so a screen reader announces the text when it appears. */}
       <p className={failed ? "status status--attention" : "ll-sr-only"} role="status">
-        {failed ? t("audio.failed") : ""}
+        {failed && <ReviewIcon className="icon-inline icon-inline--attention" />}
+        {failed ? ` ${t("audio.failed")}` : ""}
       </p>
     </div>
   );

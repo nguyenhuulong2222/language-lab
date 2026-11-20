@@ -33,13 +33,15 @@ describe("public/_headers", () => {
   });
   it("sets cache rules for hashed assets, fonts and the page", () => {
     expect(headers).toMatch(/\/assets\/\*\s+Cache-Control: public, max-age=31536000, immutable/);
-    expect(headers).toMatch(/\/fonts\/\*\s+Cache-Control: public, max-age=31536000, immutable/);
+    // Font files have fixed names (not hashed), so they are cached for a week, not for a year.
+    expect(headers).toMatch(/\/fonts\/\*\s+Cache-Control: public, max-age=604800\n/);
     expect(headers).toMatch(/\/index\.html\s+Cache-Control: no-cache/);
   });
 });
 describe("fonts are self-hosted", () => {
   it("index.html loads nothing from another origin", () => {
     expect(indexHtml).not.toMatch(/(src|href)="https?:/);
+    expect(indexHtml).toContain('<link rel="preload" href="/fonts/bitter-latin.woff2" as="font"');
   });
   it("every font file named in fonts.css exists, with the licence beside them", () => {
     const css = fontsCss;

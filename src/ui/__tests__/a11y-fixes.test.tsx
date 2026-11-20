@@ -5,6 +5,7 @@
 import { describe, expect, it } from "vitest";
 import { renderToString } from "react-dom/server";
 import headerSource from "../components/Header.tsx?raw";
+import answerInputSource from "../components/AnswerInput.tsx?raw";
 import scriptsCss from "../styles/scripts.css?raw";
 import { AnswerInput } from "../components/AnswerInput";
 import { LanguageMenu } from "../components/LanguageMenu";
@@ -63,5 +64,15 @@ describe("A11Y-07: mono lines in scripts without a monospace face", () => {
   it("use the body font of the script", () => {
     expect(scriptsCss).toMatch(/\.take__overline, \.progress-line, \.stepper__condensed-count, \.report__overline\) \{\s*font-family: var\(--font-body\);/);
     for (const code of ["th", "lo", "my", "hi", "ko"]) expect(scriptsCss).toContain(`[lang="${code}"]`);
+  });
+});
+
+describe("the one-time voice notice", () => {
+  it("only Continue records that the notice was seen; Type instead does not", () => {
+    const typeInstead = /const typeInstead = \(\) => \{([\s\S]*?)\n  \};/.exec(answerInputSource)?.[1] ?? "";
+    const continueWithVoice = /const continueWithVoice = \(\) => \{([\s\S]*?)\n  \};/.exec(answerInputSource)?.[1] ?? "";
+    expect(continueWithVoice).toContain("seen.add(VOICE_NOTICE_KEY)");
+    expect(typeInstead).not.toBe("");
+    expect(typeInstead).not.toContain("seen.add");
   });
 });

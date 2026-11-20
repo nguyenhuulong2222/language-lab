@@ -54,6 +54,7 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
   const seen = useHelpSeen();
   const [consentOpen, setConsentOpen] = useState(false);
   const consentButton = useRef<HTMLButtonElement>(null);
+  const voiceButton = useRef<HTMLButtonElement>(null);
   const heard = useRef<string | null>(null);
   const heardAlternatives = useRef<readonly string[]>([]);
   const box = useRef<HTMLTextAreaElement>(null);
@@ -93,9 +94,11 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
     seen.add(VOICE_NOTICE_KEY);
     setConsentOpen(false);
     startListening();
+    // The panel's button disappears: focus goes to the microphone button (now "Stop listening").
+    setTimeout(() => voiceButton.current?.focus(), 0);
   };
+  // Typing instead is not agreement: the notice is shown again before a later "Say it".
   const typeInstead = () => {
-    seen.add(VOICE_NOTICE_KEY);
     setConsentOpen(false);
     box.current?.focus();
   };
@@ -173,6 +176,7 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
         {canListen && (
           <button
             type="button"
+            ref={voiceButton}
             className={listening ? "btn btn--active" : "btn btn--secondary"}
             onClick={listening ? () => listener.stop() : listen}
           >

@@ -243,7 +243,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | Tatagal ang mga setting na ito hanggang isara o i-reload ninyo ang pahinang ito. |
 | `settings.close` | Close settings | Isara ang mga setting |
 | `audio.again` | Play again | Pakinggan muli |
-| `audio.failed` | The audio did not play. Try again, or show the sentence. | Hindi na-play ang audio. Subukan ulit, o ipakita ang pangungusap. |
+| `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Hindi na-play ang audio. Subukan ulit, o basahin ang teksto sa screen. |
 | `lang.label` | Language | Wika |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Babalik sa simula? Mawawala ang mga sagot ninyo sa pagsasanay na ito. |
 | `header.homeConfirm.yes` | Yes, go home | Oo, bumalik sa simula |
@@ -266,6 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | Mga kredito ng larawan |
 | `credits.back` | Back to the practice | Bumalik sa pagsasanay |
 | `credits.newTab` | The links open the source pages in a new tab. | Binubuksan ng mga link ang mga pahina ng pinagmulan sa bagong tab. |
+| `credits.sourceLink` | Source page: {title} | Pinagmulang pahina: {title} |
 | `selfReview.title` | Listen and compare | Making-dinig at ihambing |
 | `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | I-record ang sarili ninyong binabasa ang pangungusap, saka pakinggan ang recording ninyo at ang sample. Para ito sa paghahambing ninyo sa pandinig. Hindi ito iniiskor. |
 | `selfReview.record` | Record and compare | I-record at ihambing |

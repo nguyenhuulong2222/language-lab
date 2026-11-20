@@ -58,7 +58,9 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
       <div className="screen">
         <TakeHeader stage="home" title={t("home.study.title")} />
         <div className="screen__body">
-          <p>{t("study.locked")}</p>
+          <p>
+            <LegalText messageKey="study.locked" />
+          </p>
           <div className="btn-row">
             <button type="button" className="btn btn--secondary" onClick={() => setVersion(null)}>
               {t("study.change")}

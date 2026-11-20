@@ -243,7 +243,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | Cov chaw teeb tsa no nyob kom txog thaum koj kaw lossis rov qhib nplooj ntawv no. |
 | `settings.close` | Close settings | Kaw chaw teeb tsa |
 | `audio.again` | Play again | Mloog dua |
-| `audio.failed` | The audio did not play. Try again, or show the sentence. | Suab tsis tau ua si. Sim dua, los yog qhia kab lus. |
+| `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Suab tsis tau ua si. Sim dua, los yog nyeem cov ntawv ntawm lub vijtsam. |
 | `lang.label` | Language | Lus |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Rov qab mus tsev? Koj cov lus teb hauv kev xyaum no yuav ploj. |
 | `header.homeConfirm.yes` | Yes, go home | Yog, rov qab mus tsev |
@@ -266,6 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | Cov duab los ntawm |
 | `credits.back` | Back to the practice | Rov qab mus xyaum |
 | `credits.newTab` | The links open the source pages in a new tab. | Cov txuas qhib nplooj ntawv qhov chaw hauv ib lub tab tshiab. |
+| `credits.sourceLink` | Source page: {title} | Nplooj ntawv qhov chaw: {title} |
 | `selfReview.title` | Listen and compare | Mloog thiab piv |
 | `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | Thaij koj tus kheej nyeem kab lus, ces mloog koj cov suab thaij thiab tus qauv. Qhov no yog rau koj piv nrog pob ntseg. Tsis muab qhab nia. |
 | `selfReview.record` | Record and compare | Thaij suab thiab piv |

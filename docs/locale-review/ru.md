@@ -243,7 +243,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | Эти настройки действуют, пока вы не закроете или не перезагрузите страницу. |
 | `settings.close` | Close settings | Закрыть настройки |
 | `audio.again` | Play again | Прослушать снова |
-| `audio.failed` | The audio did not play. Try again, or show the sentence. | Звук не воспроизвёлся. Попробуйте ещё раз или покажите предложение. |
+| `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Звук не воспроизвёлся. Попробуйте ещё раз или прочитайте текст на экране. |
 | `lang.label` | Language | Язык |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Вернуться на главную? Ваши ответы в этой практике будут потеряны. |
 | `header.homeConfirm.yes` | Yes, go home | Да, на главную |
@@ -266,6 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | Авторство картинок |
 | `credits.back` | Back to the practice | Вернуться к практике |
 | `credits.newTab` | The links open the source pages in a new tab. | Ссылки открывают страницы-источники в новой вкладке. |
+| `credits.sourceLink` | Source page: {title} | Страница источника: {title} |
 | `selfReview.title` | Listen and compare | Послушать и сравнить |
 | `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | Запишите, как вы читаете предложение, затем послушайте свою запись и образец. Это нужно, чтобы сравнить на слух. Оценки нет. |
 | `selfReview.record` | Record and compare | Записать и сравнить |

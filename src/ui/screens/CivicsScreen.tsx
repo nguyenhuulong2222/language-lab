@@ -115,9 +115,9 @@ export function CivicsScreen({
           {progress.done && (
             <p className="status">
               {stopped === "correct_threshold"
-                ? t("civics.stopped.correct")
+                ? <LegalText messageKey="civics.stopped.correct" />
                 : stopped === "incorrect_threshold"
-                  ? t("civics.stopped.incorrect")
+                  ? <LegalText messageKey="civics.stopped.incorrect" />
                   : t("civics.stopped.none")}{" "}
               {t("civics.tally", {
                 correct: progress.result.correctCount,

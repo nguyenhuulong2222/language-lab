@@ -243,7 +243,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | ການຕັ້ງຄ່າເຫຼົ່ານີ້ຢູ່ຈົນກວ່າທ່ານຈະປິດ ຫຼື ໂຫຼດໜ້ານີ້ໃໝ່. |
 | `settings.close` | Close settings | ປິດການຕັ້ງຄ່າ |
 | `audio.again` | Play again | ຟັງອີກຄັ້ງ |
-| `audio.failed` | The audio did not play. Try again, or show the sentence. | ສຽງບໍ່ໄດ້ຫຼິ້ນ. ລອງໃໝ່ ຫຼື ສະແດງປະໂຫຍກ. |
+| `audio.failed` | The audio did not play. Try again, or read the text on the screen. | ສຽງບໍ່ໄດ້ຫຼິ້ນ. ລອງໃໝ່ ຫຼື ອ່ານຂໍ້ຄວາມຢູ່ໜ້າຈໍ. |
 | `lang.label` | Language | ພາສາ |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | ກັບໄປໜ້າຫຼັກບໍ? ຄໍາຕອບຂອງທ່ານໃນການຝຶກນີ້ຈະຫາຍໄປ. |
 | `header.homeConfirm.yes` | Yes, go home | ແມ່ນ, ກັບໄປໜ້າຫຼັກ |
@@ -266,6 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | ເຄຣດິດຮູບພາບ |
 | `credits.back` | Back to the practice | ກັບໄປຫາການຝຶກ |
 | `credits.newTab` | The links open the source pages in a new tab. | ລິ້ງຈະເປີດໜ້າຕົ້ນທາງໃນແຖບໃໝ່. |
+| `credits.sourceLink` | Source page: {title} | ໜ້າແຫຼ່ງທີ່ມາ: {title} |
 | `selfReview.title` | Listen and compare | ຟັງ ແລະ ປຽບທຽບ |
 | `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | ບັນທຶກສຽງຕົນເອງອ່ານປະໂຫຍກ ແລ້ວຟັງສຽງທີ່ບັນທຶກ ແລະ ຟັງຕົວຢ່າງ. ນີ້ໃຫ້ທ່ານປຽບທຽບດ້ວຍຫູ. ບໍ່ມີການໃຫ້ຄະແນນ. |
 | `selfReview.record` | Record and compare | ບັນທຶກສຽງ ແລະ ປຽບທຽບ |

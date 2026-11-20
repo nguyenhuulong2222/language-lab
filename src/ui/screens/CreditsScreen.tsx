@@ -26,7 +26,7 @@ export function CreditsScreen({ onClose, manifest = PICTURE_MANIFEST }: { onClos
             </p>
             <p className="note">
               <a href={p.sourcePageUrl} target="_blank" rel="noopener noreferrer">
-                {p.sourcePageUrl}
+                {t("credits.sourceLink", { title: p.title })}
               </a>
             </p>
             <p className="note">“{p.rights}”</p>

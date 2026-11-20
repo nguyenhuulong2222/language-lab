@@ -79,9 +79,9 @@ function PartBody({ report }: { report: PartReport }) {
           <p>{t("partReport.civics.needed", { needed: report.passingScore })}</p>
           <p className="note">
             {report.stopReason === "correct_threshold"
-              ? t("civics.stopped.correct")
+              ? <LegalText messageKey="civics.stopped.correct" />
               : report.stopReason === "incorrect_threshold"
-                ? t("civics.stopped.incorrect")
+                ? <LegalText messageKey="civics.stopped.incorrect" />
                 : t("civics.stopped.none")}
           </p>
         </section>

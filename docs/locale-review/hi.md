@@ -243,7 +243,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | ये सेटिंग तब तक रहती हैं जब तक आप यह पेज बंद या रीलोड नहीं करते। |
 | `settings.close` | Close settings | सेटिंग बंद करें |
 | `audio.again` | Play again | फिर से सुनें |
-| `audio.failed` | The audio did not play. Try again, or show the sentence. | ऑडियो नहीं चला। फिर कोशिश करें, या वाक्य दिखाएँ। |
+| `audio.failed` | The audio did not play. Try again, or read the text on the screen. | ऑडियो नहीं चला। फिर कोशिश करें, या स्क्रीन पर लिखा पाठ पढ़ें। |
 | `lang.label` | Language | भाषा |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | होम पर वापस जाएँ? इस अभ्यास में आपके उत्तर खो जाएँगे। |
 | `header.homeConfirm.yes` | Yes, go home | हाँ, होम पर जाएँ |
@@ -266,6 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | तस्वीरों का श्रेय |
 | `credits.back` | Back to the practice | अभ्यास पर वापस जाएँ |
 | `credits.newTab` | The links open the source pages in a new tab. | लिंक स्रोत पेज को नए टैब में खोलते हैं। |
+| `credits.sourceLink` | Source page: {title} | स्रोत पेज: {title} |
 | `selfReview.title` | Listen and compare | सुनें और तुलना करें |
 | `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | वाक्य पढ़ते हुए अपनी रिकॉर्डिंग करें, फिर अपनी रिकॉर्डिंग और नमूना सुनें। यह आपके कान से तुलना करने के लिए है। इसका स्कोर नहीं दिया जाता। |
 | `selfReview.record` | Record and compare | रिकॉर्ड करें और तुलना करें |

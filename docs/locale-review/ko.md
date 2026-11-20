@@ -243,7 +243,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | 이 설정은 이 페이지를 닫거나 새로 고칠 때까지 유지됩니다. |
 | `settings.close` | Close settings | 설정 닫기 |
 | `audio.again` | Play again | 다시 듣기 |
-| `audio.failed` | The audio did not play. Try again, or show the sentence. | 오디오가 재생되지 않았습니다. 다시 시도하거나 문장을 표시하세요. |
+| `audio.failed` | The audio did not play. Try again, or read the text on the screen. | 오디오가 재생되지 않았습니다. 다시 시도하거나 화면의 글을 읽으세요. |
 | `lang.label` | Language | 언어 |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | 홈으로 돌아갈까요? 이번 연습의 답변이 사라집니다. |
 | `header.homeConfirm.yes` | Yes, go home | 예, 홈으로 |
@@ -266,6 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | 사진 출처 |
 | `credits.back` | Back to the practice | 연습으로 돌아가기 |
 | `credits.newTab` | The links open the source pages in a new tab. | 링크는 출처 페이지를 새 탭에서 엽니다. |
+| `credits.sourceLink` | Source page: {title} | 출처 페이지: {title} |
 | `selfReview.title` | Listen and compare | 들어 보고 비교하기 |
 | `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | 문장을 읽는 자신의 목소리를 녹음한 다음, 녹음한 것과 샘플을 들어 보세요. 귀로 직접 비교하는 용도이며 채점하지 않습니다. |
 | `selfReview.record` | Record and compare | 녹음하고 비교하기 |

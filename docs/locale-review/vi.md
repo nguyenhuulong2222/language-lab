@@ -243,7 +243,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | Các cài đặt này được giữ cho đến khi bạn đóng hoặc tải lại trang. |
 | `settings.close` | Close settings | Đóng cài đặt |
 | `audio.again` | Play again | Nghe lại |
-| `audio.failed` | The audio did not play. Try again, or show the sentence. | Âm thanh không phát được. Hãy thử lại, hoặc hiện câu. |
+| `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Âm thanh không phát được. Hãy thử lại, hoặc đọc chữ trên màn hình. |
 | `lang.label` | Language | Ngôn ngữ |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Về trang chủ? Các câu trả lời của bạn trong buổi luyện tập này sẽ mất. |
 | `header.homeConfirm.yes` | Yes, go home | Vâng, về trang chủ |
@@ -266,6 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | Nguồn hình ảnh |
 | `credits.back` | Back to the practice | Quay lại phần luyện tập |
 | `credits.newTab` | The links open the source pages in a new tab. | Các liên kết mở trang nguồn trong một thẻ mới. |
+| `credits.sourceLink` | Source page: {title} | Trang nguồn: {title} |
 | `selfReview.title` | Listen and compare | Nghe và so sánh |
 | `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | Hãy thu âm chính bạn đọc câu, rồi nghe bản thu của bạn và nghe câu mẫu. Phần này để bạn tự so sánh bằng tai. Không chấm điểm. |
 | `selfReview.record` | Record and compare | Thu âm và so sánh |

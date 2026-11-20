@@ -126,6 +126,8 @@ export function Header({ onHome }: { onHome?: () => void }) {
           panels.current.settings = el;
         }}
         tabIndex={-1}
+        role="region"
+        aria-label={t("header.settings")}
         className="ll-container header__panel"
         hidden={panel !== "settings"}
       >
@@ -137,6 +139,8 @@ export function Header({ onHome }: { onHome?: () => void }) {
           panels.current.about = el;
         }}
         tabIndex={-1}
+        role="region"
+        aria-label={t("header.about")}
         className="ll-container header__panel"
         hidden={panel !== "about"}
       >
@@ -149,6 +153,8 @@ export function Header({ onHome }: { onHome?: () => void }) {
             panels.current.home = el;
           }}
           tabIndex={-1}
+          role="region"
+          aria-label={t("header.home")}
           className="ll-container header__panel"
           hidden={panel !== "home"}
         >

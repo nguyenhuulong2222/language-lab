@@ -4,7 +4,7 @@
  * each answer the comparison is shown; the stage ends where runEnglishStage ends it.
  */
 import { LegalText } from "../components/LegalText";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { writingClipId } from "../../engine/audio-clips";
 import type { EnglishProgress, InputMode } from "../../engine/practice-flow";
 import type { MatchOptions } from "../../engine/sentence-compare";
@@ -51,6 +51,15 @@ export function EnglishScreen({
   const [retries, setRetries] = useState(0);
   // Writing: the id of the sentence the user chose to see (or that was shown because the audio failed).
   const [shownFor, setShownFor] = useState<string | null>(null);
+  // Only when the user pressed "Show the sentence": its button disappears, so focus goes to the sentence.
+  // After an audio failure the Play button stays and the status line speaks, so focus is not moved.
+  const [focusShown, setFocusShown] = useState(false);
+  const shownSentence = useRef<HTMLParagraphElement>(null);
+  useEffect(() => {
+    if (!focusShown) return;
+    shownSentence.current?.focus();
+    setFocusShown(false);
+  }, [focusShown]);
   const reading = progress.kind === "reading";
   const stage = progress.kind;
 
@@ -172,7 +181,7 @@ export function EnglishScreen({
                   <>
                     <p className="note">{noVoice ? t("writing.fallback") : t("writing.shown")}</p>
                     {noVoice && <p className="note">{t("writing.shown")}</p>}
-                    <p className="prompt" lang="en">
+                    <p className="prompt" lang="en" ref={shownSentence} tabIndex={-1}>
                       {sentence.text}
                     </p>
                   </>
@@ -180,7 +189,14 @@ export function EnglishScreen({
                   <>
                     <p className="note">{t("writing.hidden")}</p>
                     <div className="btn-row">
-                      <button type="button" className="btn btn--secondary" onClick={() => setShownFor(sentence.id)}>
+                      <button
+                        type="button"
+                        className="btn btn--secondary"
+                        onClick={() => {
+                          setShownFor(sentence.id);
+                          setFocusShown(true);
+                        }}
+                      >
                         {t("writing.show")}
                       </button>
                     </div>
@@ -210,7 +226,9 @@ export function EnglishScreen({
                 <LegalText messageKey="compare.setting.writing" />
               </p>
             )}
-            <p className="note">{t("compare.vocab")}</p>
+            <p className="note">
+              <LegalText messageKey="compare.vocab" />
+            </p>
           </div>
         )}
       </div>

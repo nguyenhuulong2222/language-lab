@@ -243,7 +243,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | การตั้งค่าเหล่านี้อยู่จนกว่าคุณจะปิดหรือโหลดหน้านี้ใหม่ |
 | `settings.close` | Close settings | ปิดการตั้งค่า |
 | `audio.again` | Play again | ฟังอีกครั้ง |
-| `audio.failed` | The audio did not play. Try again, or show the sentence. | เสียงไม่เล่น ลองอีกครั้ง หรือแสดงประโยค |
+| `audio.failed` | The audio did not play. Try again, or read the text on the screen. | เสียงไม่เล่น ลองอีกครั้ง หรืออ่านข้อความบนหน้าจอ |
 | `lang.label` | Language | ภาษา |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | กลับหน้าแรกไหม คำตอบของคุณในการฝึกนี้จะหายไป |
 | `header.homeConfirm.yes` | Yes, go home | ใช่ กลับหน้าแรก |
@@ -266,6 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | เครดิตรูปภาพ |
 | `credits.back` | Back to the practice | กลับไปที่การฝึก |
 | `credits.newTab` | The links open the source pages in a new tab. | ลิงก์จะเปิดหน้าต้นทางในแท็บใหม่ |
+| `credits.sourceLink` | Source page: {title} | หน้าแหล่งที่มา: {title} |
 | `selfReview.title` | Listen and compare | ฟังและเปรียบเทียบ |
 | `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | บันทึกเสียงตัวเองอ่านประโยค แล้วฟังเสียงที่บันทึกและฟังตัวอย่าง นี่ให้คุณเปรียบเทียบด้วยหู ไม่มีการให้คะแนน |
 | `selfReview.record` | Record and compare | บันทึกเสียงและเปรียบเทียบ |

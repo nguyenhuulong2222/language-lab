@@ -112,3 +112,12 @@ Plain near-miss lines, the "based on the words the device heard" line, no crosse
 ## B-36 Tests, reviews and docs (done)
 Tests for each rule, all 14 locales, `ui-reviewer`, `content-reviewer`, layout check, `tasks.md`,
 `decisions-log.md`, `kiro-log.md`, list of what to test on a real iPhone.
+## B-37 Audit fix pass (done)
+Steps 0 to 10 of the fix pass for `docs/audit/2026-11-audit.md`, one commit each: licence scope,
+English-only legal text, self-hosted font and CSP, hooks and microphone, accessibility, report wording
+and spelling rule, locked-civics home, lazy locales and keys with CI, profile rename, low findings and
+reviews. What is still open is in `docs/audit/open-findings.md`.
+## B-38 After the fix pass (not done)
+Owner actions: review the two answer keys; deploy (merge to `main`); rotate the OpenAI key; regenerate
+the 7 sample clips (`docs/audio-regenerate.md`); native readers for the locale drafts; test on a real
+iPhone and Android phone with a screen reader.

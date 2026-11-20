@@ -582,3 +582,16 @@ Spec first (`88e7d15`, BS-22 to BS-25); decisions in `docs/decisions-log.md`, se
 - **Step 4:** `SentenceFeedback` rewritten: counts / not yet, plain lines per difference, the honest line, no crossed-out display (`SentenceDiff` deleted); English words in translated lines marked `lang="en"`.
 - **Step 5:** tests for each rule (sentence-compare, alternatives, self-review, sentence-feedback, english-screen, civics); all 14 locales; reviews: ui-reviewer and content-reviewer found a microphone left open after Stop during the permission prompt, lost focus after Record/Stop/Try again, a plural bug ("houses"), and settings presented as guideline that are my choices; all fixed or listed.
 - **Not done:** device tests (iPhone Safari, Android Chrome), the wording of `reading.done.passed`, native review of the new strings.
+
+## 2026-11-20: audit fix pass, Steps 0 to 10 (branch ui/booth-screens)
+- **Step 0:** the audit report and its evidence committed as they were.
+- **Step 1:** licence scope: non-English civics translations and the N-400 importer removed; English display files rebuilt from `data/sources`; `NOTICE` and README "Licence scope".
+- **Step 2:** legal text English only without a named reviewer (`legal-keys.ts`, `LegalText`); hmn, lo, my, ht hidden from the production menu; Hmong fixes; wider back-translation check.
+- **Step 3:** Bitter self-hosted; `public/_headers` with a strict CSP and security headers; zero violations in the production probe.
+- **Step 4:** segment-based secret-path guard with a recorded test; relative save hooks; microphone, recogniser and audio stop when the practice is hidden; one-time voice notice.
+- **Step 5:** "Show the sentence" in writing (assisted attempts); header focus and panels; error announcements; Study order; `lang="en"`; per-script mono font; layout check at 320 px and on the production build with CSP checks.
+- **Step 6:** report wording names the practice; README corrections and the live URL; spelling slips by word length with the USCIS point on screen.
+- **Step 7:** while civics is locked, home says what this build offers and hides the rest.
+- **Step 8:** only the chosen locale is loaded; answer keys load when a civics part starts; main JS 841 kB to 377 kB; CI workflow.
+- **Step 9:** "Aurora Vance" renamed "Aurora Thistlewood"; 7 sample clips to regenerate (`docs/audio-regenerate.md`).
+- **Step 10:** favicon, Credits link names and Escape, focus ring on code-focused headings, no duplicate report disclaimer, value assertions in weak tests, README "How Kiro was used", `license` and `engines` in `package.json`; reviews by `ui-reviewer` and `content-reviewer` and their fixes; layout check for 14 languages at normal and extra-large text; `docs/audit/open-findings.md`.

@@ -243,7 +243,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | သင် ဤစာမျက်နှာကို ပိတ်သည်အထိ သို့မဟုတ် ပြန်ဖွင့်သည်အထိ ဤဆက်တင်များ ရှိနေမည်။ |
 | `settings.close` | Close settings | ဆက်တင်များ ပိတ်ရန် |
 | `audio.again` | Play again | ထပ်နားထောင်ရန် |
-| `audio.failed` | The audio did not play. Try again, or show the sentence. | အသံမထွက်ခဲ့ပါ။ ထပ်ကြိုးစားပါ၊ သို့မဟုတ် ဝါကျကို ပြပါ။ |
+| `audio.failed` | The audio did not play. Try again, or read the text on the screen. | အသံမထွက်ခဲ့ပါ။ ထပ်ကြိုးစားပါ၊ သို့မဟုတ် မျက်နှာပြင်ပေါ်ရှိ စာကို ဖတ်ပါ။ |
 | `lang.label` | Language | ဘာသာစကား |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | ပင်မစာမျက်နှာသို့ ပြန်သွားမလား။ ဤလေ့ကျင့်မှုရှိ သင်၏အဖြေများ ပျောက်သွားမည်။ |
 | `header.homeConfirm.yes` | Yes, go home | ဟုတ်ကဲ့၊ ပင်မသို့ သွားမည် |
@@ -266,6 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | ပုံများ၏ ရင်းမြစ် |
 | `credits.back` | Back to the practice | လေ့ကျင့်မှုသို့ ပြန်သွားရန် |
 | `credits.newTab` | The links open the source pages in a new tab. | လင့်ခ်များသည် ရင်းမြစ်စာမျက်နှာများကို တက်ဘ်အသစ်တွင် ဖွင့်သည်။ |
+| `credits.sourceLink` | Source page: {title} | မူရင်းစာမျက်နှာ- {title} |
 | `selfReview.title` | Listen and compare | နားထောင်ပြီး နှိုင်းယှဉ်ရန် |
 | `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | စာကြောင်းကို သင်ဖတ်နေသည့်အသံကို ရိုက်ယူပြီး သင့်အသံသွင်းချက်နှင့် နမူနာကို နားထောင်ပါ။ ၎င်းသည် နားဖြင့် နှိုင်းယှဉ်ရန်ဖြစ်သည်။ အမှတ်မပေးပါ။ |
 | `selfReview.record` | Record and compare | အသံသွင်းပြီး နှိုင်းယှဉ်ရန် |

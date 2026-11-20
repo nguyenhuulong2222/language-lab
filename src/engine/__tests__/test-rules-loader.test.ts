@@ -13,6 +13,11 @@
  */
 
 import { describe, it, expect, vi, afterEach } from "vitest";
+/** A source quote is a sentence copied from the USCIS source, not just a non-empty value. */
+function expectQuote(quote: unknown): void {
+  expect(typeof quote).toBe("string");
+  expect((quote as string).trim().length).toBeGreaterThanOrEqual(20);
+}
 import {
   loadTestRules,
   loadCivicsRules,
@@ -86,8 +91,8 @@ describe("2008 civics early-stop rule", () => {
 
   it("both early-stop fields carry a sourceQuote", () => {
     const rules = loadCivicsRules("2008");
-    expect(rules.earlyStopOnCorrect.sourceQuote).toBeTruthy();
-    expect(rules.earlyStopOnIncorrect.sourceQuote).toBeTruthy();
+    expectQuote(rules.earlyStopOnCorrect.sourceQuote);
+    expectQuote(rules.earlyStopOnIncorrect.sourceQuote);
   });
 });
 
@@ -128,8 +133,8 @@ describe("2025 civics early-stop rule", () => {
 
   it("both early-stop fields carry a sourceQuote", () => {
     const rules = loadCivicsRules("2025");
-    expect(rules.earlyStopOnCorrect.sourceQuote).toBeTruthy();
-    expect(rules.earlyStopOnIncorrect.sourceQuote).toBeTruthy();
+    expectQuote(rules.earlyStopOnCorrect.sourceQuote);
+    expectQuote(rules.earlyStopOnIncorrect.sourceQuote);
   });
 });
 
@@ -162,7 +167,7 @@ describe("English reading test rules", () => {
 
   it("carries a sourceQuote", () => {
     const rules = loadEnglishRules();
-    expect(rules.reading.sentencesToPassCount.sourceQuote).toBeTruthy();
+    expectQuote(rules.reading.sentencesToPassCount.sourceQuote);
   });
 });
 
@@ -191,7 +196,7 @@ describe("English writing test rules", () => {
 
   it("carries a sourceQuote", () => {
     const rules = loadEnglishRules();
-    expect(rules.writing.sentencesToPassCount.sourceQuote).toBeTruthy();
+    expectQuote(rules.writing.sentencesToPassCount.sourceQuote);
   });
 
   it("reading and writing have identical pass thresholds", () => {
@@ -259,24 +264,24 @@ describe("loadTestRules production guard", () => {
 // ---------------------------------------------------------------------------
 
 describe("test-rules.json structural completeness", () => {
-  it("has an englishTest section", () => {
+  it("has an englishTest section with reading and writing", () => {
     const rules = loadTestRules();
-    expect(rules.englishTest).toBeDefined();
+    expect(Object.keys(rules.englishTest).filter((k) => !k.startsWith("_")).sort()).toEqual(["reading", "writing"]);
   });
-
-  it("has a 2008 civics section", () => {
-    const rules = loadTestRules();
-    expect(rules["2008"]).toBeDefined();
+  it("has a 2008 civics section with the official numbers", () => {
+    const v = loadTestRules()["2008"];
+    expect([v.questionPoolSize.value, v.questionsAsked.value, v.passingScore.value]).toEqual([100, 10, 6]);
   });
-
-  it("has a 2025 civics section", () => {
-    const rules = loadTestRules();
-    expect(rules["2025"]).toBeDefined();
+  it("has a 2025 civics section with the official numbers", () => {
+    const v = loadTestRules()["2025"];
+    expect([v.questionPoolSize.value, v.questionsAsked.value, v.passingScore.value]).toEqual([128, 20, 12]);
   });
-
-  it("has a 65_20_specialConsideration section", () => {
-    const rules = loadTestRules();
-    expect(rules["65_20_specialConsideration"]).toBeDefined();
+  it("has a 65_20_specialConsideration section with every field", () => {
+    const sc = loadTestRules()["65_20_specialConsideration"];
+    expect(Object.keys(sc).filter((k) => !k.startsWith("_")).sort()).toEqual(
+      ["earlyStopOnCorrect", "earlyStopOnIncorrect", "eligibilityAgeMinimum", "eligibilityResidencyYearsMinimum", "languageChoicePermitted", "passingScore", "questionBank", "questionsAsked"]
+    );
+    expect(sc.eligibilityAgeMinimum.value).toBe(65);
   });
 
   it("every field in the 2008 and 2025 sections has a sourceQuote", () => {
@@ -287,24 +292,21 @@ describe("test-rules.json structural completeness", () => {
         // Skip metadata annotation keys (prefixed with _)
         if (key.startsWith("_")) continue;
         const f = field as { sourceQuote?: unknown };
-        expect(
-          f.sourceQuote,
-          `${version}.${key} is missing a sourceQuote`
-        ).toBeTruthy();
+        expect(typeof f.sourceQuote === "string" && f.sourceQuote.trim().length >= 20, `${version}.${key} is missing a sourceQuote`).toBe(true);
       }
     }
   });
 
   it("every required field in englishTest has a sourceQuote", () => {
     const rules = loadEnglishRules();
-    expect(rules.reading.sentencesToPassCount.sourceQuote).toBeTruthy();
-    expect(rules.writing.sentencesToPassCount.sourceQuote).toBeTruthy();
+    expectQuote(rules.reading.sentencesToPassCount.sourceQuote);
+    expectQuote(rules.writing.sentencesToPassCount.sourceQuote);
   });
 
   it("65/20 confirmed fields have sourceQuote; unverified fields have null sourceQuote", () => {
     const sc = loadTestRules()["65_20_specialConsideration"];
-    expect(sc.eligibilityAgeMinimum.sourceQuote).toBeTruthy();
-    expect(sc.questionBank.sourceQuote).toBeTruthy();
+    expectQuote(sc.eligibilityAgeMinimum.sourceQuote);
+    expectQuote(sc.questionBank.sourceQuote);
     expect(sc.passingScore.sourceQuote).toBeNull();
     expect(sc.earlyStopOnCorrect.sourceQuote).toBeNull();
   });

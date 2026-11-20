@@ -56,7 +56,7 @@ practice feedback, not an official assessment.
 
 ### Prerequisites
 
-- Node.js 22.18+ (the app builds on Node 20, but the tools in `tools/` import TypeScript files directly, which needs 22.18 or later)
+- Node.js 22.18+ (the tools in `tools/` import TypeScript files directly; CI uses 22.18)
 - npm 10+
 - [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) for Worker development
 
@@ -149,6 +149,21 @@ language-lab/
 
 See [`docs/kiro-log.md`](docs/kiro-log.md) for architecture decisions.
 
+### How Kiro was used
+- **Specs** (`.kiro/specs/grading`, `.kiro/specs/booth-screens`): requirements, design and a task list for the
+  grading engine and for the screens. Each task was done and ticked off in order; `tasks.md` records what is left.
+- **Steering** (`.kiro/steering/`): the content-safety rules (fictional profiles only, no machine-translated legal
+  text, civics scored only from the answer key, the disclaimer), the product, structure and tech notes, and the
+  design system. They apply to every agent session.
+- **Hooks** (`.kiro/hooks/`): typecheck on every saved `.ts`/`.tsx` file, the tests on every saved engine or contract
+  file, and a guard that refuses tool calls naming secret files (`npm run test:hooks` tests it; it is a guard
+  against accidents, not a security boundary).
+- **Agents** (`.kiro/agents/`): `content-reviewer` checks civics and legal text against the uscis.gov sources and
+  the content-safety rules; `ui-reviewer` checks layout, text size, contrast and accessibility against the design
+  system. Both are read-only and ran before each release step; their findings are in `docs/decisions-log.md`.
+- **Audit**: `docs/audit/2026-11-audit.md` is a full audit made with Kiro; `docs/audit/open-findings.md` lists what is
+  still open and why.
+
 ---
 
 ## Content Safety
@@ -165,7 +180,7 @@ See [`.kiro/steering/content-safety.md`](.kiro/steering/content-safety.md) for t
 
 ## Pre-existing work and third-party material
 
-- **USCIS source documents.** `data/sources/` holds public U.S. government material (the 2025 civics question PDF and the saved 2008 web page), kept as the source for the answer keys. See `data/sources/README.md` for URLs and checksums. This does not mean Language Lab is affiliated with USCIS.
+- **USCIS source documents.** `data/sources/` holds public U.S. government material (the 2025 civics question PDF, the saved 2008 web page, the official reading and writing vocabulary lists and the Policy Manual chapter on the English test), kept as the source for the answer keys, the practice sentences and the scoring settings. PDF and HTML files are saved unchanged; the `.txt` files are text extracts of them. See `data/sources/README.md` for URLs and checksums. This does not mean Language Lab is affiliated with USCIS.
 - **Frontend design guidance.** `.kiro/steering/frontend-design.md` is the "frontend-design" skill from Anthropic's skills repository (https://github.com/anthropics/skills/blob/main/skills/frontend-design/SKILL.md, MIT License). It is agent guidance only and is not part of the product build.
 - **AI-generated audio and AI services.** All spoken prompts in the practice flow (civics questions, N-400 questions and sample answers, writing dictation sentences, reading sample sentences) are AI-generated with OpenAI text-to-speech (`gpt-4o-mini-tts`, voice coral). They are generated ahead of time by `tools/audio/generate-audio.mjs` and committed as static MP3 files in `public/audio/`; the app never calls a speech service while it runs. The screen says "AI-generated voice" when a clip plays. If a clip is missing or fails to load, the browser's own voice is used and the screen says "Device voice". The audio of the speech test tool is made the same way and is not committed. Interview follow-up questions will use the Claude API (not built yet).
 - **AI-generated interface translations.** The interface is offered in 14 languages (English, Vietnamese, Spanish, Traditional Chinese, Filipino, Korean, Hindi, Haitian Creole, Thai, Lao, White Hmong, Burmese, Portuguese, Russian). Everything except English was translated by AI and has **not** been reviewed by a native speaker. Each screen in those languages says so, disclaimers and legal text are shown **in English only** (legal text is never machine translated; a short translated line says so), and English is the authoritative version. A language loses the label only when a named human reviewer is recorded in its locale file (`src/i18n/locales/<code>.json`, `_meta`). Automated checks (same keys, placeholders, numbers and fixed terms) run in the tests and before a language is offered, but they cannot judge meaning. In the production build, White Hmong, Lao, Burmese and Haitian Creole are hidden from the language menu until a reviewer is recorded (more languages are in review); they stay available in development. Review sheets for a native reader are in [`docs/locale-review.md`](docs/locale-review.md). Civics questions, answers, reading and writing sentences and N-400 questions are never translated this way.

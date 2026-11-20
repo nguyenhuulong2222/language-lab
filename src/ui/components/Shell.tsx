@@ -40,6 +40,17 @@ export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
     return () => document.removeEventListener("visibilitychange", onChange);
   }, []);
   const practiceHidden = creditsOpen || tabHidden;
+  // Escape closes the credits, like the header panels.
+  useEffect(() => {
+    if (!creditsOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setCreditsOpen(false);
+      setTimeout(() => creditsButton.current?.focus(), 0);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [creditsOpen]);
   useEffect(() => {
     if (practiceHidden) speaker.cancel();
   }, [practiceHidden, speaker]);
@@ -82,8 +93,9 @@ export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
       </main>
       <Footer
         creditsOpen={creditsOpen}
-        onCredits={() => {
-          creditsButton.current = document.activeElement as HTMLElement | null;
+        onCredits={(opener) => {
+          // The button itself, not document.activeElement (Safari does not focus a clicked button).
+          creditsButton.current = opener;
           setCreditsOpen((open) => !open);
         }}
       />

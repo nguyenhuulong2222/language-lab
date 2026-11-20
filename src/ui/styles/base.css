@@ -68,9 +68,9 @@ button {
   outline-offset: var(--focus-offset);
 }
 
-/* Headings and the main area take focus from code, not from the user: no ring on them */
-[tabindex="-1"]:focus,
-[tabindex="-1"]:focus-visible {
+/* Headings and the main area take focus from code. No ring after a click or a tap; the browser
+   marks them :focus-visible when the user is on the keyboard, and then the ring shows. */
+[tabindex="-1"]:focus:not(:focus-visible) {
   outline: none;
 }
 

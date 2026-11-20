@@ -34,6 +34,10 @@ export const LEGAL_KEYS: readonly string[] = [
   "credits.lead",
   "civics.officialNote",
   "civics.locked.text",
+  "study.locked",
+  "compare.vocab",
+  "civics.stopped.correct",
+  "civics.stopped.incorrect",
 ];
 
 const SET: ReadonlySet<string> = new Set(LEGAL_KEYS);

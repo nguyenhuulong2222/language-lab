@@ -243,7 +243,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | Estos ajustes duran hasta que cierre o vuelva a cargar esta página. |
 | `settings.close` | Close settings | Cerrar ajustes |
 | `audio.again` | Play again | Escuchar otra vez |
-| `audio.failed` | The audio did not play. Try again, or show the sentence. | El audio no se reprodujo. Inténtelo de nuevo o muestre la oración. |
+| `audio.failed` | The audio did not play. Try again, or read the text on the screen. | El audio no se reprodujo. Inténtelo de nuevo o lea el texto en la pantalla. |
 | `lang.label` | Language | Idioma |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | ¿Volver al inicio? Se perderán sus respuestas de esta práctica. |
 | `header.homeConfirm.yes` | Yes, go home | Sí, volver al inicio |
@@ -266,6 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | Créditos de las imágenes |
 | `credits.back` | Back to the practice | Volver a la práctica |
 | `credits.newTab` | The links open the source pages in a new tab. | Los enlaces abren las páginas de origen en una pestaña nueva. |
+| `credits.sourceLink` | Source page: {title} | Página de origen: {title} |
 | `selfReview.title` | Listen and compare | Escuchar y comparar |
 | `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | Grábese leyendo la oración y luego escuche su grabación y la muestra. Es para que compare de oído. No se califica. |
 | `selfReview.record` | Record and compare | Grabar y comparar |

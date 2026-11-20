@@ -243,7 +243,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.memory` | These settings last until you close or reload this page. | 這些設定會保留到您關閉或重新載入本頁為止。 |
 | `settings.close` | Close settings | 關閉設定 |
 | `audio.again` | Play again | 再播放一次 |
-| `audio.failed` | The audio did not play. Try again, or show the sentence. | 音訊沒有播放。請再試一次，或顯示句子。 |
+| `audio.failed` | The audio did not play. Try again, or read the text on the screen. | 音訊沒有播放。請再試一次，或閱讀螢幕上的文字。 |
 | `lang.label` | Language | 語言 |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | 要回到首頁嗎？您在這次練習中的答案將會消失。 |
 | `header.homeConfirm.yes` | Yes, go home | 是，回到首頁 |
@@ -266,6 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.title` | Picture credits | 圖片來源 |
 | `credits.back` | Back to the practice | 回到練習 |
 | `credits.newTab` | The links open the source pages in a new tab. | 連結會在新分頁開啟來源頁面。 |
+| `credits.sourceLink` | Source page: {title} | 來源頁面：{title} |
 | `selfReview.title` | Listen and compare | 聽聽看並比較 |
 | `selfReview.help` | Record yourself reading the sentence, then listen to your recording and to the sample. This is for you to compare by ear. It is not scored. | 錄下自己朗讀句子的聲音，然後聽自己的錄音和範例。這是讓您用耳朵比較，不計分。 |
 | `selfReview.record` | Record and compare | 錄音並比較 |
