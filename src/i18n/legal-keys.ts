@@ -22,6 +22,7 @@ export const LEGAL_KEYS: readonly string[] = [
   "intro.filed.help",
   "intro.locked",
   "voice.privacy",
+  "voice.consent.text",
   "selfReview.privacy",
   "n400.sample.note",
   "help.setup.2",

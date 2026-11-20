@@ -35,6 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Ib qho twg ntawm cov no suav. Cov npe no coj los ntawm USCIS cov npe lus teb thiab tseem tos ib tug neeg tshuaj xyuas. | Any one of these counts. This list is taken from USCIS's list of answers and is still waiting for a person to check it. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Kev muab qhab nia txog pej xeem raug kaw hauv daim no kom txog thaum ib tug neeg tshuaj xyuas cov lus teb raug. Koj tseem xyaum tau kev xam phaj, nyeem thiab sau. | Civics scoring is closed in this version until a person checks the correct answers. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Cov lus teb raug txog pej xeem tseem tos ib tug neeg tshuaj xyuas, yog li daim no tsis muab qhab nia rau qhov no thiab tsis tsim daim ntawv qhia. | The correct civics answers are still waiting for a person to check them, so this version does not give scores for this and does not make a report. |
+| `voice.consent.text` ⚠ | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Thaum koj nias “Hais”, koj lub browser txoj kev paub lub suab tuaj yeem xa koj lub suab mus rau lub tuam txhab uas ua browser, xws li Google lossis Apple, kom hloov mus ua lus. Language Lab tsis xa lossis khaws koj lub suab. Koj tuaj yeem ntaus koj cov lus teb hloov chaw. | When you press “Say”, your browser's voice recognition may send your voice to the company that makes the browser, such as Google or Apple, to turn it into language. Language Lab does not send or keep your voice. You can type your answer instead. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -118,6 +119,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.done.title` | Your answers | Koj cov lus teb |
 | `n400.done.lead` | These are the words you gave. They are not scored. | Cov no yog cov lus koj hais. Tsis muaj qhab nia. |
 | `n400.done.next` | Go to reading | Mus nyeem ntawv |
+| `voice.consent.continue` | Continue and say it | Mus ntxiv thiab hais |
+| `voice.consent.type` | Type instead | Ntaus hloov chaw |
 | `n400.number` | Question {current} | Lus nug {current} |
 | `common.fictional` ⚠ | Fictional practice profile | Tus qauv xyaum tsim los |
 | `reading.title` | Reading | Nyeem ntawv |
@@ -293,3 +296,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 - `common.fictional`: Same word (qauv) for "profile".
 - `header.about`: "Txog peb thiab ceeb toom" reads as "About us and warning", not "About & disclaimer". Needs a Hmong reader.
 - `compare.setting`: "in order" now "ib lo tom qab ib lo" (one word after another) and "may be missing" "poob tau" (may fall out). Still needs a Hmong reader.
+- `voice.consent.text`: "Say" is the plain verb for speaking, and "language" (lus) stands in for "words". Needs a Hmong reader.

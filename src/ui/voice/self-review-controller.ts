@@ -34,6 +34,8 @@ export interface SelfReviewController {
   start(): void;
   stop(): void;
   toggleMine(): void;
+  /** The practice was hidden (Credits opened, tab in the background): stop the microphone and drop the recording. */
+  suspend(): void;
   /** The screen closed: drop the recording. */
   dispose(): void;
 }
@@ -146,6 +148,11 @@ export function createSelfReviewController(
           onChange();
         }
       });
+    },
+    suspend() {
+      if (phase === "idle" && url === null && playing === null) return;
+      drop();
+      onChange();
     },
     dispose() {
       drop();

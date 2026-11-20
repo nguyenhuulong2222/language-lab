@@ -35,6 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` ⚠ | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | คำตอบใดคำตอบหนึ่งเหล่านี้นับว่าถูก รายการนี้นำมาจากรายการคำตอบของ USCIS และยังรอให้มีผู้ตรวจสอบ | Any one of these answers counts as correct. This list is taken from USCIS's answer list and is still waiting for someone to review it. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | การให้คะแนนความรู้พลเมืองถูกปิดในเวอร์ชันนี้ จนกว่าจะมีผู้ตรวจสอบเฉลย คุณยังฝึกการสัมภาษณ์ การอ่าน และการเขียนได้ | Civics scoring is turned off in this version until someone reviews the answer key. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | เฉลยความรู้พลเมืองยังรอให้มีผู้ตรวจสอบ เวอร์ชันนี้จึงไม่ให้คะแนนส่วนนี้และไม่สร้างรายงาน | The civics answer key is still waiting for someone to review it. This version therefore does not score this part and does not create a report. |
+| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | เมื่อคุณกด “พูด” ระบบรู้จำเสียงพูดของเบราว์เซอร์อาจส่งเสียงของคุณไปยังบริษัทผู้สร้างเบราว์เซอร์ เช่น Google หรือ Apple เพื่อแปลงเป็นข้อความ Language Lab ไม่ส่งหรือเก็บเสียงของคุณ คุณพิมพ์คำตอบแทนได้ | When you press “Speak”, the browser's speech recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -118,6 +119,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.done.title` | Your answers | คำตอบของคุณ |
 | `n400.done.lead` | These are the words you gave. They are not scored. | นี่คือสิ่งที่คุณพูด ไม่มีการให้คะแนน |
 | `n400.done.next` | Go to reading | ไปที่การอ่าน |
+| `voice.consent.continue` | Continue and say it | ดำเนินการต่อและพูด |
+| `voice.consent.type` | Type instead | พิมพ์แทน |
 | `n400.number` | Question {current} | คำถามที่ {current} |
 | `common.fictional` | Fictional practice profile | โปรไฟล์ฝึกสมมติ |
 | `reading.title` | Reading | การอ่าน |

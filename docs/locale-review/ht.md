@@ -35,6 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Nenpòt nan sa yo konte. Lis la soti nan lis repons USCIS la e li ap tann yon moun revize l toujou. | Any one of these counts. The list comes from the USCIS list of answers and a person is still to review it. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Nòt edikasyon sivik la fèmen nan vèsyon sa a jiskaske yon moun revize kle repons yo. Ou ka toujou pratike entèvyou a, lekti ak ekriti. | The civics score is closed in this version until a person reviews the answer key. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Kle repons edikasyon sivik la ap tann yon moun revize l toujou, se konsa vèsyon sa a pa bay nòt pou edikasyon sivik e li pa fè rapò. | The civics answer key is still waiting for a person to review it, so this version does not give a score for civics and does not make a report. |
+| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Lè w peze “Di li”, rekonesans vwa navigatè w la ka voye vwa w bay konpayi ki fè navigatè a, tankou Google oswa Apple, pou transfòme l an mo. Language Lab pa voye ni konsève vwa w. Ou ka tape repons ou olye de sa. | When you press “Say it”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -118,6 +119,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.done.title` | Your answers | Repons ou yo |
 | `n400.done.lead` | These are the words you gave. They are not scored. | Sa yo se mo ou te di yo. Yo pa jwenn nòt. |
 | `n400.done.next` | Go to reading | Ale nan lekti |
+| `voice.consent.continue` | Continue and say it | Kontinye epi pale |
+| `voice.consent.type` | Type instead | Tape olye de sa |
 | `n400.number` | Question {current} | Kesyon {current} |
 | `common.fictional` | Fictional practice profile | Pwofil pratik fiktif |
 | `reading.title` | Reading | Lekti |

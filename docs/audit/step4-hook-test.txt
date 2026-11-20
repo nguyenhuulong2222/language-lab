@@ -1,0 +1,24 @@
+--- must block (exit 2)
+ok   exit 2  read_file tools/speech-test/.env
+ok   exit 2  read_file absolute .env.local
+ok   exit 2  fs_write worker/.dev.vars
+ok   exit 2  str_replace language-lab-private/notes.md
+ok   exit 2  bash cat tools/speech-test/.env
+ok   exit 2  bash grep ... tools/speech-test/.env | cut
+ok   exit 2  bash cat .e*
+ok   exit 2  bash cat .e?v
+ok   exit 2  bash cat .[e]nv
+ok   exit 2  bash cat '.e''nv' (split by quotes)
+ok   exit 2  bash cd dir && cat .env
+ok   exit 2  bash set -a; . ./.env
+ok   exit 2  bash cat < .dev.vars
+ok   exit 2  input that is not JSON is refused
+--- must allow (exit 0)
+ok   exit 0  read_file .env.example
+ok   exit 0  read_file src/environment.ts
+ok   exit 0  read_file src/ui/PracticeApp.tsx
+ok   exit 0  bash npm run typecheck
+ok   exit 0  bash grep -rn envelope src
+ok   exit 0  bash ls -la
+ok   exit 0  bash cat .gitignore
+ALL OK

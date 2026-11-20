@@ -35,6 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Mabibilang ang alinman sa mga ito. Kinuha ang listahan sa listahan ng sagot ng USCIS at naghihintay pa ng pagsusuri ng isang tao. | Any of these will be counted. The list was taken from the USCIS answer list and is still waiting for review by a person. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Naka-off ang pag-iskor ng civics sa bersyong ito hanggang masuri ng isang tao ang answer key. Maaari pa rin kayong magsanay sa panayam, pagbasa, at pagsulat. | Civics scoring is off in this version until a person has reviewed the answer key. You can still practice the interview, reading, and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Naghihintay pa ng pagsusuri ng isang tao ang answer key ng civics, kaya hindi ini-iskor ng bersyong ito ang civics at hindi gumagawa ng ulat. | The civics answer key is still waiting for review by a person, so this version does not score civics and does not make a report. |
+| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Kapag pinindot mo ang “Sabihin”, maaaring ipadala ng speech recognition ng iyong browser ang boses mo sa gumawa ng browser, tulad ng Google o Apple, para gawing salita. Hindi ipinapadala o sine-save ng Language Lab ang boses mo. Maaari mong i-type na lang ang sagot mo. | When you press “Say”, your browser's speech recognition may send your voice to the maker of the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can just type your answer. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -118,6 +119,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.done.title` | Your answers | Ang inyong mga sagot |
 | `n400.done.lead` | These are the words you gave. They are not scored. | Ito ang mga salitang sinabi ninyo. Hindi ito iniiskor. |
 | `n400.done.next` | Go to reading | Pumunta sa pagbasa |
+| `voice.consent.continue` | Continue and say it | Magpatuloy at magsalita |
+| `voice.consent.type` | Type instead | I-type na lang |
 | `n400.number` | Question {current} | Tanong {current} |
 | `common.fictional` | Fictional practice profile | Kathang-isip na profile sa pagsasanay |
 | `reading.title` | Reading | Pagbasa |

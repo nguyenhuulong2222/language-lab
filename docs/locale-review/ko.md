@@ -35,6 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | 이 중 어느 것이든 인정됩니다. 이 목록은 USCIS 정답 목록에서 가져왔으며 아직 사람의 검토를 기다리고 있습니다. | Any one of these is accepted. This list was taken from the USCIS answer list and is still waiting for a person's review. |
 | `intro.locked` ⚠ | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | 사람이 정답표를 검토하기 전까지 이 버전에서는 시민 상식 채점이 꺼져 있습니다. 인터뷰, 읽기, 쓰기는 계속 연습할 수 있습니다. | Until a person reviews the answer table, civics scoring is turned off in this version. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 시민 상식 정답표가 아직 사람의 검토를 기다리고 있어서, 이 버전은 시민 상식을 채점하거나 보고서를 만들지 않습니다. | The civics answer table is still waiting for a person's review, so this version does not score civics or create a report. |
+| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | “말하기”를 누르면 브라우저의 음성 인식 기능이 음성을 글자로 바꾸기 위해 Google이나 Apple 같은 브라우저 제작사에 음성을 보낼 수 있습니다. Language Lab은 음성을 보내거나 저장하지 않습니다. 대신 답을 직접 입력할 수도 있습니다. | When you press “Speak”, the browser's voice recognition may send your voice to the browser maker such as Google or Apple to convert it into text. Language Lab does not send or save your voice. You can type your answer instead. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -118,6 +119,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.done.title` | Your answers | 내 답변 |
 | `n400.done.lead` | These are the words you gave. They are not scored. | 말씀하신 내용입니다. 채점되지 않습니다. |
 | `n400.done.next` | Go to reading | 읽기로 이동 |
+| `voice.consent.continue` | Continue and say it | 계속하고 말하기 |
+| `voice.consent.type` | Type instead | 대신 입력하기 |
 | `n400.number` | Question {current} | {current}번 질문 |
 | `common.fictional` | Fictional practice profile | 가상 연습 프로필 |
 | `reading.title` | Reading | 읽기 |

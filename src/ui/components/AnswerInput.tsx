@@ -10,7 +10,10 @@ import type { VoiceOutcome } from "../../engine/recognition-outcome";
 import { useT } from "../../i18n/react";
 import { ReviewIcon } from "./icons";
 import type { MessageKey } from "../../i18n";
+import { usePracticeHidden } from "../practice-hidden";
 import { useListener } from "../voice/VoiceProvider";
+import { useHelpSeen } from "../help-session";
+import { LegalText } from "./LegalText";
 
 interface AnswerInputProps {
   /** Visible label of the text box. */
@@ -34,23 +37,35 @@ const MESSAGE: Record<Exclude<VoiceOutcome["kind"], "transcript">, MessageKey> =
   error: "voice.error",
 };
 
+/** Key in the session memory (help-session.tsx): the voice notice was shown. */
+const VOICE_NOTICE_KEY = "voice-notice";
 export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSubmit, onListenStart }: AnswerInputProps) {
   const t = useT();
   const listener = useListener();
   const inputId = useId();
   const statusId = useId();
+  const consentId = useId();
   const [text, setText] = useState("");
   const [listening, setListening] = useState(false);
   const [message, setMessage] = useState<MessageKey | null>(
     voice && !listener.supported ? "voice.unsupported" : null
   );
+  // Before the first "Say it" of a session: one notice that the browser may send the audio to its maker.
+  const seen = useHelpSeen();
+  const [consentOpen, setConsentOpen] = useState(false);
+  const consentButton = useRef<HTMLButtonElement>(null);
   const heard = useRef<string | null>(null);
   const heardAlternatives = useRef<readonly string[]>([]);
   const box = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => () => listener.stop(), [listener]);
+  // Credits open or the tab in the background: the microphone must not stay on.
+  const hidden = usePracticeHidden();
+  useEffect(() => {
+    if (hidden) listener.stop();
+  }, [hidden, listener]);
 
-  const listen = () => {
+  const startListening = () => {
     onListenStart?.();
     setMessage("voice.listening");
     setListening(true);
@@ -67,6 +82,26 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
     });
   };
 
+  const listen = () => {
+    if (!seen.has(VOICE_NOTICE_KEY)) {
+      setConsentOpen(true);
+      return;
+    }
+    startListening();
+  };
+  const continueWithVoice = () => {
+    seen.add(VOICE_NOTICE_KEY);
+    setConsentOpen(false);
+    startListening();
+  };
+  const typeInstead = () => {
+    seen.add(VOICE_NOTICE_KEY);
+    setConsentOpen(false);
+    box.current?.focus();
+  };
+  useEffect(() => {
+    if (consentOpen) consentButton.current?.focus();
+  }, [consentOpen]);
   const submit = () => {
     if (text.trim() === "") {
       setMessage("voice.needText");
@@ -112,6 +147,21 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
         {needsAttention && " "}
         {message === null ? "" : t(message)}
       </p>
+      {consentOpen && (
+        <div className="panel" role="group" aria-labelledby={consentId}>
+          <p id={consentId}>
+            <LegalText messageKey="voice.consent.text" />
+          </p>
+          <div className="btn-row">
+            <button type="button" ref={consentButton} className="btn" onClick={continueWithVoice}>
+              {t("voice.consent.continue")}
+            </button>
+            <button type="button" className="btn btn--secondary" onClick={typeInstead}>
+              {t("voice.consent.type")}
+            </button>
+          </div>
+        </div>
+      )}
       <div className="btn-row">
         {canListen && (
           <button

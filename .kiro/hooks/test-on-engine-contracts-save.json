@@ -8,7 +8,7 @@
       "matcher": "src/(engine|contracts)/",
       "action": {
         "type": "command",
-        "command": "cd /Volumes/Crucial1TB/language-lab && npm test",
+        "command": "npm test",
         "timeout": 120
       }
     }

@@ -4,6 +4,7 @@
  */
 import { useEffect, useReducer, useState } from "react";
 import { createSelfReviewController, type MinePlayer, type SelfReviewView } from "./self-review-controller";
+import { usePracticeHidden } from "../practice-hidden";
 import { useRecorder } from "./VoiceProvider";
 
 export interface SelfReviewState extends SelfReviewView {
@@ -32,11 +33,15 @@ function playerFor(url: string): MinePlayer {
 
 export function useSelfReview(sentenceKey: string | null): SelfReviewState {
   const recorder = useRecorder();
+  const hidden = usePracticeHidden();
   const [, refresh] = useReducer((n: number) => n + 1, 0);
   const [controller] = useState(() => createSelfReviewController(recorder, playerFor, refresh));
   useEffect(() => {
     controller.setSentence(sentenceKey);
   }, [controller, sentenceKey]);
+  useEffect(() => {
+    if (hidden) controller.suspend();
+  }, [controller, hidden]);
   useEffect(() => () => controller.dispose(), [controller]);
   return {
     ...controller.view(),

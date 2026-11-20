@@ -35,6 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | 其中任何一個都算數。這份清單取自 USCIS 的答案清單，仍在等待人工審核。 | Any one of these counts. This list is taken from USCIS's answer list and is still waiting for human review. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | 在有人審核標準答案之前，這個版本的公民常識計分功能是關閉的。您仍然可以練習面談、閱讀和書寫。 | Until someone reviews the standard answers, the civics scoring function of this version is turned off. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 公民常識的標準答案仍在等待人工審核，所以這個版本不會為公民常識計分，也不會產生報告。 | The standard answers for civics are still waiting for human review, so this version will not score civics and will not produce a report. |
+| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | 当您按下“说出来”时，浏览器的语音识别功能可能会把您的声音发送给浏览器的开发公司（例如 Google 或 Apple），以便转成文字。Language Lab 不会发送或保存您的声音。您也可以改为输入答案。 | When you press “Say it”, the browser's speech recognition function may send your voice to the browser's developer (such as Google or Apple) to convert it to text. Language Lab will not send or save your voice. You can also type your answer instead. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -118,6 +119,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.done.title` | Your answers | 您的答案 |
 | `n400.done.lead` | These are the words you gave. They are not scored. | 這些是您說出的話。它們不計分。 |
 | `n400.done.next` | Go to reading | 前往閱讀 |
+| `voice.consent.continue` | Continue and say it | 继续并说出来 |
+| `voice.consent.type` | Type instead | 改为输入 |
 | `n400.number` | Question {current} | 第 {current} 題 |
 | `common.fictional` | Fictional practice profile | 虛構的練習檔案 |
 | `reading.title` | Reading | 閱讀 |

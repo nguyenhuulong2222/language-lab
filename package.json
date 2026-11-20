@@ -10,7 +10,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "speech-test": "vite --config vite.speech-test.config.ts",
-    "layout-check": "node tools/layout-check/run.mjs"
+    "layout-check": "node tools/layout-check/run.mjs",
+    "test:hooks": "python3 .kiro/hooks/scripts/test_block_sensitive_paths.py"
   },
   "dependencies": {
     "react": "19.1.0",

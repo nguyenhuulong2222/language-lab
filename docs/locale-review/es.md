@@ -35,6 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Cualquiera de estas cuenta. La lista proviene de la lista de respuestas de USCIS y todavía espera la revisión de una persona. | Any of these counts. The list comes from the USCIS list of answers and is still waiting for a person's review. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | La calificación de educación cívica está desactivada en esta versión hasta que una persona revise las respuestas correctas. Aun así puede practicar la entrevista, la lectura y la escritura. | Civics scoring is turned off in this version until a person reviews the correct answers. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Las respuestas correctas de educación cívica todavía esperan la revisión de una persona, así que esta versión no califica esa parte ni genera un informe. | The correct civics answers are still waiting for a person's review, so this version does not score that part or generate a report. |
+| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Cuando presiona “Decirlo”, el reconocimiento de voz de su navegador puede enviar su voz a la empresa que hizo el navegador, como Google o Apple, para convertirla en palabras. Language Lab no envía ni guarda su voz. En su lugar, puede escribir su respuesta. | When you press “Say it”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -118,6 +119,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.done.title` | Your answers | Sus respuestas |
 | `n400.done.lead` | These are the words you gave. They are not scored. | Estas son las palabras que usted dio. No se califican. |
 | `n400.done.next` | Go to reading | Ir a lectura |
+| `voice.consent.continue` | Continue and say it | Continuar y decirlo |
+| `voice.consent.type` | Type instead | Escribir en su lugar |
 | `n400.number` | Question {current} | Pregunta {current} |
 | `common.fictional` | Fictional practice profile | Perfil de práctica ficticio |
 | `reading.title` | Reading | Lectura |

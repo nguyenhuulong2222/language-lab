@@ -35,6 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` ⚠ | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | ຄໍາຕອບໃດໜຶ່ງເຫຼົ່ານີ້ນັບວ່າຖືກ. ລາຍການນີ້ເອົາມາຈາກລາຍການຄໍາຕອບຂອງ USCIS ແລະ ຍັງລໍຖ້າໃຫ້ມີຄົນກວດສອບ. | Any one of these answers counts as correct. This list is taken from the USCIS answer list and is still waiting for someone to check it. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | ການໃຫ້ຄະແນນວິຊາພົນລະເມືອງຖືກປິດໃນເວີຊັນນີ້ຈົນກວ່າຈະມີຄົນກວດຄໍາເຉີຍ. ທ່ານຍັງຝຶກການສໍາພາດ, ການອ່ານ ແລະ ການຂຽນໄດ້. | Civics scoring is turned off in this version until someone checks the answer key. You can still practice interviews, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | ຄໍາເຉີຍວິຊາພົນລະເມືອງຍັງລໍຖ້າໃຫ້ມີຄົນກວດສອບ, ດັ່ງນັ້ນເວີຊັນນີ້ຈຶ່ງບໍ່ໃຫ້ຄະແນນສ່ວນນີ້ ແລະ ບໍ່ສ້າງບົດລາຍງານ. | The civics answer key is still waiting for someone to check it, so this version does not score this part and does not create a report. |
+| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | ເມື່ອທ່ານກົດ “ເວົ້າ” ລະບົບຮັບຮູ້ສຽງຂອງບຣາວເຊີອາດສົ່ງສຽງຂອງທ່ານໄປຫາບໍລິສັດທີ່ສ້າງບຣາວເຊີ ເຊັ່ນ Google ຫຼື Apple ເພື່ອປ່ຽນເປັນຂໍ້ຄວາມ. Language Lab ບໍ່ສົ່ງ ແລະ ບໍ່ເກັບສຽງຂອງທ່ານ. ທ່ານສາມາດພິມຄຳຕອບແທນໄດ້. | When you press “Speak”, the browser's voice recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -118,6 +119,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.done.title` | Your answers | ຄໍາຕອບຂອງທ່ານ |
 | `n400.done.lead` | These are the words you gave. They are not scored. | ນີ້ແມ່ນຄໍາທີ່ທ່ານເວົ້າ. ບໍ່ມີການໃຫ້ຄະແນນ. |
 | `n400.done.next` | Go to reading | ໄປທີ່ການອ່ານ |
+| `voice.consent.continue` | Continue and say it | ສືບຕໍ່ ແລະ ເວົ້າ |
+| `voice.consent.type` | Type instead | ພິມແທນ |
 | `n400.number` | Question {current} | ຄໍາຖາມທີ {current} |
 | `common.fictional` | Fictional practice profile | ໂປຣໄຟລ໌ຝຶກສົມມຸດ |
 | `reading.title` | Reading | ການອ່ານ |

@@ -70,6 +70,14 @@ function fakeBrowser(opts: { denyWith?: string; emptyRecording?: boolean } = {})
   return { host, state };
 }
 
+/** A browser whose microphone arrives only when `allow()` is called. */
+function slowBrowser() {
+  const { host, state } = fakeBrowser();
+  let allow: () => void = () => {};
+  const open = host.getUserMedia!;
+  host.getUserMedia = (c) => new Promise((resolve) => (allow = () => resolve(open(c))));
+  return { host, state, allow: () => allow() };
+}
 afterEach(() => vi.restoreAllMocks());
 
 describe("the recorder", () => {
@@ -135,14 +143,6 @@ describe("the recorder", () => {
 });
 
 describe("stop while the browser asks for the microphone", () => {
-  /** A browser whose microphone arrives only when `allow()` is called. */
-  function slowBrowser() {
-    const { host, state } = fakeBrowser();
-    let allow: () => void = () => {};
-    const open = host.getUserMedia!;
-    host.getUserMedia = (c) => new Promise((resolve) => (allow = () => resolve(open(c))));
-    return { host, state, allow: () => allow() };
-  }
   it("the recorder: stop cancels the pending start and the microphone is released when it arrives", async () => {
     const { host, state, allow } = slowBrowser();
     const recorder = createSelfReviewRecorder(host);
@@ -179,6 +179,47 @@ describe("stop while the browser asks for the microphone", () => {
   });
 });
 
+describe("the practice is hidden (Credits open, tab in the background)", () => {
+  const player = (): MinePlayer => ({ play: () => Promise.resolve(), pause: () => {}, onended: null });
+  it("suspend while recording closes the microphone and drops the recording", async () => {
+    const { host, state } = fakeBrowser();
+    const controller = createSelfReviewController(createSelfReviewRecorder(host), player, () => {});
+    controller.setSentence("read-001");
+    controller.start();
+    await vi.waitFor(() => expect(controller.view().phase).toBe("recording"));
+    controller.suspend();
+    expect(controller.view()).toMatchObject({ phase: "idle", problem: null });
+    expect(state.tracksOpen).toBe(0);
+    expect(state.liveUrls.size).toBe(0);
+  });
+  it("suspend while the microphone prompt is open leaves nothing running", async () => {
+    const { host, state, allow } = slowBrowser();
+    const controller = createSelfReviewController(createSelfReviewRecorder(host), player, () => {});
+    controller.setSentence("read-001");
+    controller.start();
+    controller.suspend();
+    allow();
+    await new Promise((r) => setTimeout(r, 0));
+    expect(controller.view().phase).toBe("idle");
+    expect(state.tracksOpen).toBe(0);
+  });
+  it("suspend after a finished recording drops it; suspend when idle does nothing", async () => {
+    const { host, state } = fakeBrowser();
+    const changes = vi.fn();
+    const controller = createSelfReviewController(createSelfReviewRecorder(host), player, changes);
+    controller.setSentence("read-001");
+    changes.mockClear();
+    controller.suspend();
+    expect(changes).not.toHaveBeenCalled();
+    controller.start();
+    await vi.waitFor(() => expect(controller.view().phase).toBe("recording"));
+    controller.stop();
+    await vi.waitFor(() => expect(controller.view().phase).toBe("recorded"));
+    controller.suspend();
+    expect(controller.view().phase).toBe("idle");
+    expect(state.liveUrls.size).toBe(0);
+  });
+});
 describe("one sentence at a time", () => {
   const player = (): MinePlayer => ({ play: () => Promise.resolve(), pause: () => {}, onended: null });
   it("no recording is kept after moving on to the next sentence", async () => {

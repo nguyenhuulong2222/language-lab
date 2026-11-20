@@ -35,6 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | ယင်းတို့အနက် တစ်ခုခုကို ရေတွက်သည်။ စာရင်းကို USCIS အဖြေစာရင်းမှ ယူထားပြီး လူတစ်ဦး၏ စစ်ဆေးမှုကို စောင့်နေဆဲဖြစ်သည်။ | Any one of these is counted. The list is taken from the USCIS answer list and is still waiting for a person's check. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | လူတစ်ဦးက အဖြေမှန်များကို စစ်ဆေးသည်အထိ ဤဗားရှင်းတွင် နိုင်ငံသားဗဟုသုတအမှတ်ပေးခြင်းကို ပိတ်ထားသည်။ အင်တာဗျူး၊ ဖတ်ခြင်းနှင့် ရေးခြင်းကို ဆက်လက်လေ့ကျင့်နိုင်သည်။ | Until a person checks the correct answers, civics scoring is turned off in this version. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | နိုင်ငံသားဗဟုသုတ အဖြေမှန်များသည် လူတစ်ဦး၏ စစ်ဆေးမှုကို စောင့်နေဆဲဖြစ်သဖြင့် ဤဗားရှင်းသည် ၎င်းကို အမှတ်မပေးပါ၊ အစီရင်ခံစာလည်း မပြုလုပ်ပါ။ | The civics correct answers are still waiting for a person's check, so this version does not score it and does not make a report. |
+| `voice.consent.text` ⚠ | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | “ပြောမည်” ကို နှိပ်သောအခါ သင့်ဘရောက်ဇာ၏ အသံမှတ်သားစနစ်က သင့်အသံကို စာသားအဖြစ်ပြောင်းရန် Google သို့မဟုတ် Apple ကဲ့သို့ ဘရောက်ဇာ ပြုလုပ်သူကုမ္ပဏီထံ ပို့နိုင်ပါသည်။ Language Lab သည် သင့်အသံကို မပို့ပါ၊ မသိမ်းပါ။ ယင်းအစား အဖြေကို ရိုက်ထည့်နိုင်ပါသည်။ | When you press “Speak”, your browser's voice recording system may send your voice to the company that makes the browser, such as Google or Apple, to turn it into text. Language Lab does not send or save your voice. You can type your answer instead. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -118,6 +119,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.done.title` | Your answers | သင်၏အဖြေများ |
 | `n400.done.lead` | These are the words you gave. They are not scored. | ဤသည်တို့မှာ သင်ပြောခဲ့သော စကားလုံးများဖြစ်သည်။ အမှတ်မပေးပါ။ |
 | `n400.done.next` | Go to reading | ဖတ်ခြင်းသို့ သွားရန် |
+| `voice.consent.continue` | Continue and say it | ဆက်လက်၍ ပြောမည် |
+| `voice.consent.type` | Type instead | ယင်းအစား ရိုက်မည် |
 | `n400.number` | Question {current} | မေးခွန်း {current} |
 | `common.fictional` | Fictional practice profile | စိတ်ကူးယဉ်လေ့ကျင့်ရေးပရိုဖိုင် |
 | `reading.title` | Reading | ဖတ်ခြင်း |
@@ -286,3 +289,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 
 - `aiNotice.text`: "authoritative" is rendered as "official": close, slightly weaker.
 - `compare.notYet`: "Not yet" is rendered literally as "has not arrived yet". Low confidence.
+- `voice.consent.text`: "voice recording system" for "voice recognition" (အသံမှတ်သားစနစ်): recording and recognition are not the same thing. Needs a Burmese reader.

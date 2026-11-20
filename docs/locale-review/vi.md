@@ -35,6 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | Chỉ cần một trong các đáp án này là được tính. Danh sách lấy từ bảng đáp án của USCIS và vẫn đang chờ người xem xét. | Only one of these answers is needed to count. The list is taken from USCIS's answer table and is still waiting for a person to review it. |
 | `intro.locked` | Civics scoring is switched off in this build until a person has reviewed the answer key. You can still practice the interview, reading and writing. | Việc chấm điểm civics đang tắt trong bản này cho đến khi có người xem xét bộ đáp án. Bạn vẫn có thể luyện phỏng vấn, đọc và viết. | Civics scoring is turned off in this build until someone reviews the answer set. You can still practice the interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Bộ đáp án civics vẫn đang chờ người xem xét, nên bản này không chấm điểm civics và không tạo báo cáo. | The civics answer set is still waiting for a person to review it, so this build does not score civics and does not create a report. |
+| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Khi bạn nhấn “Nói”, tính năng nhận dạng giọng nói của trình duyệt có thể gửi giọng của bạn đến nhà sản xuất trình duyệt, như Google hoặc Apple, để chuyển thành chữ. Language Lab không gửi hay lưu giọng nói của bạn. Bạn có thể gõ câu trả lời thay vào đó. | When you press “Speak”, the browser's voice recognition feature may send your voice to the browser's maker, such as Google or Apple, to convert it to text. Language Lab does not send or save your voice. You can type your answer instead. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -118,6 +119,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.done.title` | Your answers | Các câu trả lời của bạn |
 | `n400.done.lead` | These are the words you gave. They are not scored. | Đây là những câu trả lời bạn đã đưa ra. Phần này không chấm điểm. |
 | `n400.done.next` | Go to reading | Sang phần đọc |
+| `voice.consent.continue` | Continue and say it | Tiếp tục và nói |
+| `voice.consent.type` | Type instead | Gõ thay vào đó |
 | `n400.number` | Question {current} | Câu hỏi {current} |
 | `common.fictional` | Fictional practice profile | Hồ sơ luyện tập giả định |
 | `reading.title` | Reading | Đọc |
