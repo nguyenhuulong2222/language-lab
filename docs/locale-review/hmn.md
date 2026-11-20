@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | Mloog nyeem |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Lub suab ntawm lub cuab yeej: lub suab teeb tsa rau hauv koj lub xov tooj lossis lub computer. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Lub browser no nyeem tsis tau tawm suab. Nyeem cov ntawv ntawm lub vijtsam. |
-| `compare.word.missing` | missing | tsis muaj |
-| `compare.word.extra` | extra | ntau dhau |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | Cov lus uas muaj ntug dotted tsis muaj hauv koj cov lus teb. Cov lus uas muaj kab hla yog ntau dhau. |
 | `intro.profile.legend` ⚠ | Choose a practice profile | Xaiv ib tus qauv xyaum |
 | `intro.profile.help` ⚠ | Every profile is invented. | Txhua tus qauv yog tsim los. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Xyaum zoo li N-400 tau xa mus… |
@@ -271,6 +268,19 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Lub browser no thaij tsis tau koj lub suab. Koj tseem tuaj yeem tshawb koj txoj kev nyeem nrog “Hais lus” los yog ntaus ntawv. |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | Lub microphone raug thaiv. Thov tso cai siv microphone hauv koj lub browser qhov chaw teeb tsa. |
 | `selfReview.error` | Recording did not work this time. Try again. | Zaum no kev thaij suab tsis ua haujlwm. Sim dua. |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | Txhua lo lus tseem ceeb ntawm kab lus muaj, raws li kev txiav. |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Koj hais tias “{said}”. Kab lus hais tias “{expected}”. Qhov no tseem suav. |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | Koj sau tias “{said}”. Kab lus hais tias “{expected}”. Qhov no tseem suav. |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Koj hais tias “{said}”. Kab lus hais tias “{expected}”. Qhov ntawd yog lwm lo lus, yog li tseem tsis tau suav. |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Koj sau tias “{said}”. Kab lus hais tias “{expected}”. Qhov ntawd yog lwm lo lus, yog li tseem tsis tau suav. |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | Koj sau tias “{said}”. Kab lus muaj “{expected}”. Qhov no tseem suav. Xyuas kev sau ntawv. |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | Tsis muaj ib lo lus: “{expected}”. Tseem tsis tau suav. |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | Koj ntxiv “{said}”, uas tsis nyob hauv kab lus. Tseem tsis tau suav. |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Koj ntxiv “{said}”, uas tsis nyob hauv kab lus. Qhov no tseem suav. |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | Lo lus luv “{expected}” poob lawm. Qhov no tseem suav. |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Koj ntxiv lo lus luv “{said}”. Qhov no tseem suav. |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Qhov txiaj ntsig no raws li cov lus uas koj lub cuab yeej hnov. Yog nws hnov yuam kev, sim dua los yog ntaus koj cov lus teb. |
+| `compare.honest.typed` | This result is based on the words you typed. | Qhov txiaj ntsig no raws li cov lus uas koj ntaus. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

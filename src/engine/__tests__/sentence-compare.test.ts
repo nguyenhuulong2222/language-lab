@@ -202,7 +202,6 @@ describe("compareSentence basics", () => {
   it("an exact match counts with accuracy 1 and no notes", () => {
     const c = compareSentence("Who was George Washington?", "who was george washington", reading);
     expect(c).toMatchObject({ accuracy: 1, isCorrect: true, notes: [] });
-    expect(c.diff.every((d) => d.status === "match")).toBe(true);
   });
   it("ignores case, punctuation and hyphens", () => {
     expect(ok("Washington, D.C. is the capital.", "WASHINGTON DC is the CAPITAL")).toBe(true);
@@ -240,17 +239,14 @@ describe("compareSentence properties", () => {
       })
     );
   });
-  it("the diff rebuilds both sentences", () => {
+  it("the notes agree with the verdict: it counts exactly when no content word is missing or different", () => {
     fc.assert(
       fc.property(text, text, (a, b) => {
         const c = compareSentence(a, b, reading);
-        const target = c.diff.filter((d) => d.status !== "extra").map((d) => d.word);
-        const attempt = c.diff.filter((d) => d.status !== "missing").map((d) => d.word);
-        return (
-          target.join(" ") === matchTokens(a).join(" ") &&
-          attempt.join(" ") === matchTokens(b).join(" ") &&
-          c.diff.filter((d) => d.status === "match").length === c.matchedWords
-        );
+        const blocking = c.notes.some((n) => n.kind === "missing-content" || n.kind === "different");
+        const extras = c.notes.filter((n) => n.kind === "extra-content").length;
+        const nonEmpty = matchTokens(a).length > 0 && matchTokens(b).length > 0;
+        return c.isCorrect === (nonEmpty && !blocking && extras <= reading.extraContentWordsAllowed);
       })
     );
   });

@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | Pakinggan nang malakas |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Boses ng device: ang boses na naka-install sa inyong telepono o computer. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Hindi kayang magbasa nang malakas ng browser na ito. Basahin ang teksto sa screen. |
-| `compare.word.missing` | missing | kulang |
-| `compare.word.extra` | extra | sobra |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | Ang mga salitang may putol-putol na hangganan ay kulang sa inyong sagot. Ang mga salitang may guhit ay sobra. |
 | `intro.profile.legend` | Choose a practice profile | Pumili ng profile sa pagsasanay |
 | `intro.profile.help` | Every profile is invented. | Gawa-gawa lang ang bawat profile. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Magsanay na parang naisumite ang N-400… |
@@ -271,6 +268,19 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Hindi makapag-record ng boses ninyo ang browser na ito. Maaari pa rin ninyong suriin ang pagbasa ninyo gamit ang “Magsalita” o sa pamamagitan ng pag-type. |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | Naka-block ang mikropono. Payagan ang access sa mikropono sa mga setting ng browser ninyo. |
 | `selfReview.error` | Recording did not work this time. Try again. | Hindi gumana ang pag-record ngayon. Subukan muli. |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | Naroon ang lahat ng mahalagang salita ng pangungusap, ayon sa pagkakasunod-sunod. |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Sinabi ninyo ang “{said}”. Ang sabi ng pangungusap ay “{expected}”. Bilang pa rin ito. |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | Isinulat ninyo ang “{said}”. Ang sabi ng pangungusap ay “{expected}”. Bilang pa rin ito. |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Sinabi ninyo ang “{said}”. Ang sabi ng pangungusap ay “{expected}”. Ibang salita iyon, kaya hindi pa ito bilang. |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Isinulat ninyo ang “{said}”. Ang sabi ng pangungusap ay “{expected}”. Ibang salita iyon, kaya hindi pa ito bilang. |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | Isinulat ninyo ang “{said}”. Ang nasa pangungusap ay “{expected}”. Bilang pa rin ito. Suriin ang baybay. |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | May kulang na salita: “{expected}”. Hindi pa ito bilang. |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | Nagdagdag kayo ng “{said}”, na wala sa pangungusap. Hindi pa ito bilang. |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Nagdagdag kayo ng “{said}”, na wala sa pangungusap. Bilang pa rin ito. |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | Nalaktawan ang maikling salitang “{expected}”. Bilang pa rin ito. |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Nagdagdag kayo ng maikling salitang “{said}”. Bilang pa rin ito. |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Batay ang resultang ito sa mga salitang narinig ng device ninyo. Kung mali ang pagkarinig nito, subukan muli o i-type ang sagot ninyo. |
+| `compare.honest.typed` | This result is based on the words you typed. | Batay ang resultang ito sa mga salitang in-type ninyo. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

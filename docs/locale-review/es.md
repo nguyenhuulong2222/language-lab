@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | Escuchar en voz alta |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Voz del dispositivo: la voz instalada en su teléfono o computadora. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Este navegador no puede leer en voz alta. Lea el texto en la pantalla. |
-| `compare.word.missing` | missing | falta |
-| `compare.word.extra` | extra | sobra |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | Las palabras con borde punteado faltan en su respuesta. Las palabras tachadas sobraban. |
 | `intro.profile.legend` | Choose a practice profile | Elija un perfil de práctica |
 | `intro.profile.help` | Every profile is invented. | Todos los perfiles son inventados. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Practique como si el N-400 se hubiera presentado… |
@@ -271,3 +268,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Este navegador no puede grabar su voz. Aun así puede revisar su lectura con “Hablar” o escribiendo. |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | El micrófono está bloqueado. Permita el acceso al micrófono en la configuración de su navegador. |
 | `selfReview.error` | Recording did not work this time. Try again. | La grabación no funcionó esta vez. Intente de nuevo. |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | Estaban todas las palabras importantes de la oración, en orden. |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Usted dijo “{said}”. La oración dice “{expected}”. Esto sigue contando. |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | Usted escribió “{said}”. La oración dice “{expected}”. Esto sigue contando. |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Usted dijo “{said}”. La oración dice “{expected}”. Es otra palabra, así que todavía no cuenta. |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Usted escribió “{said}”. La oración dice “{expected}”. Es otra palabra, así que todavía no cuenta. |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | Usted escribió “{said}”. La oración tiene “{expected}”. Esto sigue contando. Revise la ortografía. |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | Falta una palabra: “{expected}”. Todavía no cuenta. |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | Usted agregó “{said}”, que no está en la oración. Todavía no cuenta. |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Usted agregó “{said}”, que no está en la oración. Esto sigue contando. |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | Se omitió la palabra corta “{expected}”. Esto sigue contando. |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Usted agregó la palabra corta “{said}”. Esto sigue contando. |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Este resultado se basa en las palabras que escuchó su dispositivo. Si lo escuchó mal, intente de nuevo o escriba su respuesta. |
+| `compare.honest.typed` | This result is based on the words you typed. | Este resultado se basa en las palabras que usted escribió. |

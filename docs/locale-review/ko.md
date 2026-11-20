@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | 소리 내어 듣기 |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | 기기 음성: 휴대폰이나 컴퓨터에 설치된 음성입니다. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | 이 브라우저는 소리 내어 읽어 줄 수 없습니다. 화면의 글을 읽어 주세요. |
-| `compare.word.missing` | missing | 빠짐 |
-| `compare.word.extra` | extra | 불필요 |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | 점선 테두리 단어는 답에서 빠진 단어입니다. 취소선이 있는 단어는 불필요한 단어입니다. |
 | `intro.profile.legend` | Choose a practice profile | 연습 프로필을 선택하세요 |
 | `intro.profile.help` | Every profile is invented. | 모든 프로필은 지어낸 것입니다. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | N-400을 다음 시점에 신청했다고 가정하고 연습하세요… |
@@ -271,3 +268,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | 이 브라우저는 목소리를 녹음할 수 없습니다. “말하기”나 입력으로 읽기를 확인할 수는 있습니다. |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | 마이크가 차단되어 있습니다. 브라우저 설정에서 마이크 사용을 허용하세요. |
 | `selfReview.error` | Recording did not work this time. Try again. | 이번에는 녹음이 되지 않았습니다. 다시 해 보세요. |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | 문장의 중요한 단어가 모두 순서대로 있었습니다. |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | “{said}”(이)라고 말씀하셨습니다. 문장에는 “{expected}”(이)라고 되어 있습니다. 그래도 인정됩니다. |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | “{said}”(이)라고 쓰셨습니다. 문장에는 “{expected}”(이)라고 되어 있습니다. 그래도 인정됩니다. |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | “{said}”(이)라고 말씀하셨습니다. 문장에는 “{expected}”(이)라고 되어 있습니다. 다른 단어라서 아직 인정되지 않습니다. |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | “{said}”(이)라고 쓰셨습니다. 문장에는 “{expected}”(이)라고 되어 있습니다. 다른 단어라서 아직 인정되지 않습니다. |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | “{said}”(이)라고 쓰셨습니다. 문장에는 “{expected}”(이)라고 되어 있습니다. 그래도 인정됩니다. 철자를 확인하세요. |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | 단어가 빠졌습니다: “{expected}”. 아직 인정되지 않습니다. |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | 문장에 없는 “{said}”을(를) 더하셨습니다. 아직 인정되지 않습니다. |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | 문장에 없는 “{said}”을(를) 더하셨습니다. 그래도 인정됩니다. |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | 짧은 단어 “{expected}”이(가) 빠졌습니다. 그래도 인정됩니다. |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | 짧은 단어 “{said}”을(를) 더하셨습니다. 그래도 인정됩니다. |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | 이 결과는 기기가 들은 단어를 바탕으로 합니다. 잘못 들었다면 다시 해 보거나 직접 입력하세요. |
+| `compare.honest.typed` | This result is based on the words you typed. | 이 결과는 입력하신 단어를 바탕으로 합니다. |

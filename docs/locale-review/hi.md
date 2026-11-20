@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | ज़ोर से सुनें |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | डिवाइस की आवाज़: आपके फ़ोन या कंप्यूटर में इंस्टॉल की गई आवाज़। |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | यह ब्राउज़र ज़ोर से पढ़ नहीं सकता। स्क्रीन पर लिखा पाठ पढ़ें। |
-| `compare.word.missing` | missing | छूटा हुआ |
-| `compare.word.extra` | extra | अतिरिक्त |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | बिंदीदार किनारे वाले शब्द आपके उत्तर में छूट गए हैं। कटे हुए शब्द अतिरिक्त थे। |
 | `intro.profile.legend` | Choose a practice profile | एक अभ्यास प्रोफ़ाइल चुनें |
 | `intro.profile.help` | Every profile is invented. | हर प्रोफ़ाइल गढ़ी हुई है। |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | ऐसे अभ्यास करें जैसे N-400 दाखिल किया गया हो… |
@@ -271,3 +268,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | यह ब्राउज़र आपकी आवाज़ रिकॉर्ड नहीं कर सकता। फिर भी आप “बोलें” से या टाइप करके अपना पढ़ना जाँच सकते हैं। |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | माइक्रोफ़ोन ब्लॉक है। अपने ब्राउज़र की सेटिंग में माइक्रोफ़ोन की अनुमति दें। |
 | `selfReview.error` | Recording did not work this time. Try again. | इस बार रिकॉर्डिंग नहीं हो पाई। फिर से कोशिश करें। |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | वाक्य के सभी ज़रूरी शब्द क्रम से मौजूद थे। |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | आपने “{said}” कहा। वाक्य में “{expected}” है। यह फिर भी गिना जाएगा। |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | आपने “{said}” लिखा। वाक्य में “{expected}” है। यह फिर भी गिना जाएगा। |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | आपने “{said}” कहा। वाक्य में “{expected}” है। यह दूसरा शब्द है, इसलिए अभी यह नहीं गिना जाएगा। |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | आपने “{said}” लिखा। वाक्य में “{expected}” है। यह दूसरा शब्द है, इसलिए अभी यह नहीं गिना जाएगा। |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | आपने “{said}” लिखा। वाक्य में “{expected}” है। यह फिर भी गिना जाएगा। वर्तनी जाँच लें। |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | एक शब्द छूट गया है: “{expected}”। अभी यह नहीं गिना जाएगा। |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | आपने “{said}” जोड़ा, जो वाक्य में नहीं है। अभी यह नहीं गिना जाएगा। |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | आपने “{said}” जोड़ा, जो वाक्य में नहीं है। यह फिर भी गिना जाएगा। |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | छोटा शब्द “{expected}” छूट गया। यह फिर भी गिना जाएगा। |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | आपने छोटा शब्द “{said}” जोड़ा। यह फिर भी गिना जाएगा। |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | यह नतीजा उन शब्दों पर आधारित है जो आपके डिवाइस ने सुने। अगर उसने गलत सुना, तो फिर से कोशिश करें या अपना उत्तर टाइप करें। |
+| `compare.honest.typed` | This result is based on the words you typed. | यह नतीजा उन शब्दों पर आधारित है जो आपने टाइप किए। |

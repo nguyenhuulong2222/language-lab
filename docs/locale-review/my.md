@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | အသံထွက်ဖတ်ပြရန် |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | စက်၏အသံ- သင့်ဖုန်း သို့မဟုတ် ကွန်ပျူတာတွင် ထည့်သွင်းထားသော အသံ။ |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | ဤဘရောက်ဇာသည် အသံထွက်ဖတ်မပြနိုင်ပါ။ ဖန်သားပြင်ပေါ်ရှိ စာသားကို ဖတ်ပါ။ |
-| `compare.word.missing` | missing | လိုနေသည် |
-| `compare.word.extra` | extra | ပိုနေသည် |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | အစက်ကွက်ဘောင်ပါသော စကားလုံးများသည် သင့်အဖြေတွင် လိုနေသည်။ မျဉ်းကြောင်းဖြတ်ထားသော စကားလုံးများသည် ပိုနေသည်။ |
 | `intro.profile.legend` | Choose a practice profile | လေ့ကျင့်ရေးပရိုဖိုင်တစ်ခု ရွေးပါ |
 | `intro.profile.help` | Every profile is invented. | ပရိုဖိုင်အားလုံးသည် ဖန်တီးထားခြင်းများ ဖြစ်သည်။ |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | N-400 ကို တင်သွင်းခဲ့သည်ဟု ယူဆ၍ လေ့ကျင့်ပါ… |
@@ -271,6 +268,19 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | ဤဘရောက်ဇာသည် သင့်အသံကို မသွင်းနိုင်ပါ။ “ပြောရန်” ဖြင့် သို့မဟုတ် စာရိုက်၍ သင့်ဖတ်ခြင်းကို စစ်ဆေးနိုင်သေးသည်။ |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | မိုက်ခရိုဖုန်းကို ပိတ်ထားသည်။ သင့်ဘရောက်ဇာဆက်တင်တွင် မိုက်ခရိုဖုန်းအသုံးပြုခွင့်ပေးပါ။ |
 | `selfReview.error` | Recording did not work this time. Try again. | ဤတစ်ကြိမ် အသံသွင်းခြင်း မအောင်မြင်ပါ။ ထပ်စမ်းကြည့်ပါ။ |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | စာကြောင်း၏ အရေးကြီးသော စကားလုံးအားလုံး အစဉ်လိုက် ပါပြီ။ |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | သင်က “{said}” ဟု ပြောခဲ့သည်။ စာကြောင်းတွင် “{expected}” ဖြစ်သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | သင်က “{said}” ဟု ရေးခဲ့သည်။ စာကြောင်းတွင် “{expected}” ဖြစ်သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | သင်က “{said}” ဟု ပြောခဲ့သည်။ စာကြောင်းတွင် “{expected}” ဖြစ်သည်။ ၎င်းသည် အခြားစကားလုံးဖြစ်သောကြောင့် မရေတွက်သေးပါ။ |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | သင်က “{said}” ဟု ရေးခဲ့သည်။ စာကြောင်းတွင် “{expected}” ဖြစ်သည်။ ၎င်းသည် အခြားစကားလုံးဖြစ်သောကြောင့် မရေတွက်သေးပါ။ |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | သင်က “{said}” ဟု ရေးခဲ့သည်။ စာကြောင်းတွင် “{expected}” ဖြစ်သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ စာလုံးပေါင်းကို စစ်ပါ။ |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | စကားလုံးတစ်လုံး ကျန်နေသည်- “{expected}”။ မရေတွက်သေးပါ။ |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | သင်က စာကြောင်းတွင် မပါသော “{said}” ကို ထပ်ထည့်ခဲ့သည်။ မရေတွက်သေးပါ။ |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | သင်က စာကြောင်းတွင် မပါသော “{said}” ကို ထပ်ထည့်ခဲ့သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | စကားလုံးတို “{expected}” ကျန်ခဲ့သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | သင်က စကားလုံးတို “{said}” ကို ထပ်ထည့်ခဲ့သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | ဤရလဒ်သည် သင့်စက်ကြားသော စကားလုံးများအပေါ် အခြေခံသည်။ မှားကြားခဲ့လျှင် ထပ်စမ်းကြည့်ပါ သို့မဟုတ် အဖြေကို ရိုက်ထည့်ပါ။ |
+| `compare.honest.typed` | This result is based on the words you typed. | ဤရလဒ်သည် သင်ရိုက်ထည့်ခဲ့သော စကားလုံးများအပေါ် အခြေခံသည်။ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

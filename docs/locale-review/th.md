@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | ฟังเสียงอ่าน |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | เสียงของอุปกรณ์: เสียงที่ติดตั้งในโทรศัพท์หรือคอมพิวเตอร์ของคุณ |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | เบราว์เซอร์นี้อ่านออกเสียงไม่ได้ โปรดอ่านข้อความบนหน้าจอ |
-| `compare.word.missing` | missing | ขาดไป |
-| `compare.word.extra` | extra | เกินมา |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | คำที่มีกรอบเส้นประคือคำที่ขาดไปจากคำตอบของคุณ คำที่มีเส้นขีดฆ่าคือคำที่เกินมา |
 | `intro.profile.legend` | Choose a practice profile | เลือกโปรไฟล์ฝึก |
 | `intro.profile.help` | Every profile is invented. | ทุกโปรไฟล์เป็นเรื่องสมมติ |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | ฝึกโดยสมมติว่ายื่นแบบ N-400 ไว้… |
@@ -271,3 +268,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | เบราว์เซอร์นี้บันทึกเสียงของคุณไม่ได้ คุณยังตรวจการอ่านด้วยปุ่ม “พูด” หรือด้วยการพิมพ์ได้ |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | ไมโครโฟนถูกบล็อกอยู่ โปรดอนุญาตการใช้ไมโครโฟนในการตั้งค่าเบราว์เซอร์ |
 | `selfReview.error` | Recording did not work this time. Try again. | ครั้งนี้บันทึกเสียงไม่สำเร็จ ลองอีกครั้ง |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | มีคำสำคัญทุกคำของประโยคตามลำดับ |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | คุณพูดว่า “{said}” ประโยคเป็น “{expected}” แบบนี้ยังนับได้ |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | คุณเขียนว่า “{said}” ประโยคเป็น “{expected}” แบบนี้ยังนับได้ |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | คุณพูดว่า “{said}” ประโยคเป็น “{expected}” เป็นคนละคำ จึงยังไม่นับ |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | คุณเขียนว่า “{said}” ประโยคเป็น “{expected}” เป็นคนละคำ จึงยังไม่นับ |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | คุณเขียนว่า “{said}” ประโยคเป็น “{expected}” แบบนี้ยังนับได้ ตรวจการสะกดอีกครั้ง |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | ขาดไปหนึ่งคำ: “{expected}” ยังไม่นับ |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | คุณเพิ่มคำว่า “{said}” ซึ่งไม่มีในประโยค ยังไม่นับ |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | คุณเพิ่มคำว่า “{said}” ซึ่งไม่มีในประโยค แบบนี้ยังนับได้ |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | คำสั้น “{expected}” หายไป แบบนี้ยังนับได้ |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | คุณเพิ่มคำสั้น “{said}” แบบนี้ยังนับได้ |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | ผลนี้อิงจากคำที่อุปกรณ์ของคุณได้ยิน ถ้าได้ยินผิด ให้ลองอีกครั้งหรือพิมพ์คำตอบ |
+| `compare.honest.typed` | This result is based on the words you typed. | ผลนี้อิงจากคำที่คุณพิมพ์ |

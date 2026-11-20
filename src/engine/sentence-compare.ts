@@ -30,13 +30,6 @@
  */
 import { matchTokens } from "./answer-normaliser.js";
 
-export type DiffStatus = "match" | "missing" | "extra";
-export interface DiffWord {
-  word: string;
-  /** match: in both. missing: in the sentence, not said. extra: said, not in the sentence. */
-  status: DiffStatus;
-}
-
 export interface MatchOptions {
   /** Short words: may be missing or extra. Lower case. */
   functionWords: ReadonlySet<string>;
@@ -87,8 +80,6 @@ export interface SentenceComparison {
   isCorrect: boolean;
   /** Plain facts for the feedback lines, in the order of the sentence. */
   notes: MatchNote[];
-  /** The words in order: matches and missing words follow the sentence; extra words sit where they were said. */
-  diff: DiffWord[];
 }
 
 const DEFAULT_OPTIONS: MatchOptions = {
@@ -193,7 +184,6 @@ export function compareSentence(
   }
 
   const notes: MatchNote[] = [];
-  const diff: DiffWord[] = [];
   let missingContent = 0;
   let extraContent = 0;
 
@@ -209,7 +199,6 @@ export function compareSentence(
     const pairedT = new Set(tContent.slice(0, paired));
     const pairedS = new Set(sContent.slice(0, paired));
     for (const i of t) {
-      diff.push({ word: a[i]!.raw, status: "missing" });
       if (isShort(a[i]!, options)) notes.push({ kind: "missing-short", expected: a[i]!.raw });
       else if (pairedT.has(i)) {
         const j = sContent[tContent.indexOf(i)]!;
@@ -221,7 +210,6 @@ export function compareSentence(
       }
     }
     for (const j of s) {
-      diff.push({ word: b[j]!.raw, status: "extra" });
       if (isShort(b[j]!, options)) notes.push({ kind: "extra-short", said: b[j]!.raw });
       else if (!pairedS.has(j)) {
         notes.push({ kind: "extra-content", said: b[j]!.raw });
@@ -234,7 +222,6 @@ export function compareSentence(
   let sj = 0;
   for (const [i, j] of pairs) {
     gap(ti, i, sj, j);
-    diff.push({ word: a[i]!.raw, status: "match" });
     const kind = sameWord(a[i]!, b[j]!, options);
     if (kind === "variant") notes.push({ kind: "variant", said: b[j]!.raw, expected: a[i]!.raw });
     else if (kind === "spelling") notes.push({ kind: "spelling", said: b[j]!.raw, expected: a[i]!.raw });
@@ -261,7 +248,6 @@ export function compareSentence(
     matchedContentWords,
     isCorrect,
     notes,
-    diff,
   };
 }
 

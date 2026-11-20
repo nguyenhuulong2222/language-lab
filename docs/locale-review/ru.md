@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | Прослушать |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Голос устройства: голос, установленный на вашем телефоне или компьютере. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Этот браузер не умеет читать вслух. Прочитайте текст на экране. |
-| `compare.word.missing` | missing | пропущено |
-| `compare.word.extra` | extra | лишнее |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | Слова с пунктирной рамкой пропущены в вашем ответе. Зачёркнутые слова были лишними. |
 | `intro.profile.legend` | Choose a practice profile | Выберите учебный профиль |
 | `intro.profile.help` | Every profile is invented. | Все профили вымышленные. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Тренируйтесь так, как будто форма N-400 подана… |
@@ -271,3 +268,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Этот браузер не может записать ваш голос. Вы всё равно можете проверить чтение кнопкой «Сказать» или набрав текст. |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | Микрофон заблокирован. Разрешите доступ к микрофону в настройках браузера. |
 | `selfReview.error` | Recording did not work this time. Try again. | В этот раз запись не получилась. Попробуйте снова. |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | Все важные слова предложения были на месте, по порядку. |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Вы сказали «{said}». В предложении «{expected}». Это по-прежнему засчитывается. |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | Вы написали «{said}». В предложении «{expected}». Это по-прежнему засчитывается. |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Вы сказали «{said}». В предложении «{expected}». Это другое слово, поэтому пока не засчитывается. |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Вы написали «{said}». В предложении «{expected}». Это другое слово, поэтому пока не засчитывается. |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | Вы написали «{said}». В предложении «{expected}». Это по-прежнему засчитывается. Проверьте написание. |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | Не хватает слова: «{expected}». Пока не засчитывается. |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | Вы добавили «{said}», этого слова нет в предложении. Пока не засчитывается. |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Вы добавили «{said}», этого слова нет в предложении. Это по-прежнему засчитывается. |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | Короткое слово «{expected}» пропущено. Это по-прежнему засчитывается. |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Вы добавили короткое слово «{said}». Это по-прежнему засчитывается. |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Этот результат основан на словах, которые услышало ваше устройство. Если оно услышало неверно, попробуйте снова или введите ответ. |
+| `compare.honest.typed` | This result is based on the words you typed. | Этот результат основан на словах, которые вы ввели. |

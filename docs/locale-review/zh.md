@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | 朗讀 |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | 裝置語音：安裝在您手機或電腦上的語音。 |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | 這個瀏覽器無法朗讀。請閱讀螢幕上的文字。 |
-| `compare.word.missing` | missing | 缺少 |
-| `compare.word.extra` | extra | 多餘 |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | 虛線框的字詞是您的答案中缺少的。有刪除線的字詞是多餘的。 |
 | `intro.profile.legend` | Choose a practice profile | 選擇一個練習檔案 |
 | `intro.profile.help` | Every profile is invented. | 所有檔案都是虛構的。 |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | 請假設 N-400 是在以下時間提出的來練習… |
@@ -271,3 +268,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | 這個瀏覽器無法錄下您的聲音。您仍可以用「說話」或輸入文字來檢查朗讀。 |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | 麥克風被封鎖了。請在瀏覽器設定中允許使用麥克風。 |
 | `selfReview.error` | Recording did not work this time. Try again. | 這次錄音沒有成功。請再試一次。 |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | 句子裡每個重要的字都有，順序也對。 |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | 您說了「{said}」。句子是「{expected}」。這樣仍然算數。 |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | 您寫了「{said}」。句子是「{expected}」。這樣仍然算數。 |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | 您說了「{said}」。句子是「{expected}」。這是不同的字，所以還不算。 |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | 您寫了「{said}」。句子是「{expected}」。這是不同的字，所以還不算。 |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | 您寫了「{said}」。句子裡是「{expected}」。這樣仍然算數。請檢查拼字。 |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | 少了一個字：「{expected}」。還不算。 |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | 您多加了「{said}」，句子裡沒有這個字。還不算。 |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | 您多加了「{said}」，句子裡沒有這個字。這樣仍然算數。 |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | 漏掉了短字「{expected}」。這樣仍然算數。 |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | 您多加了短字「{said}」。這樣仍然算數。 |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | 這個結果是根據您的裝置聽到的字詞。如果它聽錯了，請再試一次或改用輸入。 |
+| `compare.honest.typed` | This result is based on the words you typed. | 這個結果是根據您輸入的字詞。 |

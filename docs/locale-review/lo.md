@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | ຟັງສຽງອ່ານ |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | ສຽງຂອງອຸປະກອນ: ສຽງທີ່ຕິດຕັ້ງໃນໂທລະສັບ ຫຼື ຄອມພິວເຕີຂອງທ່ານ. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | ບຣາວເຊີນີ້ອ່ານອອກສຽງບໍ່ໄດ້. ກະລຸນາອ່ານຂໍ້ຄວາມເທິງໜ້າຈໍ. |
-| `compare.word.missing` | missing | ຂາດໄປ |
-| `compare.word.extra` | extra | ເກີນມາ |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | ຄໍາທີ່ມີກອບເສັ້ນປະແມ່ນຄໍາທີ່ຂາດໄປຈາກຄໍາຕອບຂອງທ່ານ. ຄໍາທີ່ມີເສັ້ນຂີດທັບແມ່ນຄໍາທີ່ເກີນມາ. |
 | `intro.profile.legend` | Choose a practice profile | ເລືອກໂປຣໄຟລ໌ຝຶກ |
 | `intro.profile.help` | Every profile is invented. | ທຸກໂປຣໄຟລ໌ແມ່ນສົມມຸດຂຶ້ນ. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | ຝຶກໂດຍສົມມຸດວ່າໄດ້ຍື່ນ N-400… |
@@ -271,3 +268,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | ບຣາວເຊີນີ້ບັນທຶກສຽງຂອງທ່ານບໍ່ໄດ້. ທ່ານຍັງກວດການອ່ານດ້ວຍປຸ່ມ “ເວົ້າ” ຫຼື ດ້ວຍການພິມໄດ້. |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | ໄມໂຄຣໂຟນຖືກບລັອກຢູ່. ກະລຸນາອະນຸຍາດການໃຊ້ໄມໂຄຣໂຟນໃນການຕັ້ງຄ່າບຣາວເຊີ. |
 | `selfReview.error` | Recording did not work this time. Try again. | ຄັ້ງນີ້ບັນທຶກສຽງບໍ່ສໍາເລັດ. ລອງອີກຄັ້ງ. |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | ມີຄໍາສໍາຄັນທຸກຄໍາຂອງປະໂຫຍກຕາມລໍາດັບ. |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | ທ່ານເວົ້າວ່າ “{said}”. ປະໂຫຍກແມ່ນ “{expected}”. ແບບນີ້ຍັງນັບໄດ້. |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | ທ່ານຂຽນວ່າ “{said}”. ປະໂຫຍກແມ່ນ “{expected}”. ແບບນີ້ຍັງນັບໄດ້. |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | ທ່ານເວົ້າວ່າ “{said}”. ປະໂຫຍກແມ່ນ “{expected}”. ເປັນຄໍາຄົນລະຄໍາ, ສະນັ້ນຍັງບໍ່ນັບ. |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | ທ່ານຂຽນວ່າ “{said}”. ປະໂຫຍກແມ່ນ “{expected}”. ເປັນຄໍາຄົນລະຄໍາ, ສະນັ້ນຍັງບໍ່ນັບ. |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | ທ່ານຂຽນວ່າ “{said}”. ປະໂຫຍກແມ່ນ “{expected}”. ແບບນີ້ຍັງນັບໄດ້. ກວດການສະກົດອີກຄັ້ງ. |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | ຂາດໄປໜຶ່ງຄໍາ: “{expected}”. ຍັງບໍ່ນັບ. |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | ທ່ານເພີ່ມຄໍາວ່າ “{said}” ເຊິ່ງບໍ່ມີໃນປະໂຫຍກ. ຍັງບໍ່ນັບ. |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | ທ່ານເພີ່ມຄໍາວ່າ “{said}” ເຊິ່ງບໍ່ມີໃນປະໂຫຍກ. ແບບນີ້ຍັງນັບໄດ້. |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | ຄໍາສັ້ນ “{expected}” ຫາຍໄປ. ແບບນີ້ຍັງນັບໄດ້. |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | ທ່ານເພີ່ມຄໍາສັ້ນ “{said}”. ແບບນີ້ຍັງນັບໄດ້. |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | ຜົນນີ້ອີງໃສ່ຄໍາທີ່ອຸປະກອນຂອງທ່ານໄດ້ຍິນ. ຖ້າມັນໄດ້ຍິນຜິດ, ລອງອີກຄັ້ງ ຫຼື ພິມຄໍາຕອບ. |
+| `compare.honest.typed` | This result is based on the words you typed. | ຜົນນີ້ອີງໃສ່ຄໍາທີ່ທ່ານພິມ. |

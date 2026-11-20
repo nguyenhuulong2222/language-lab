@@ -6,7 +6,6 @@
 import { describe, it, expect } from "vitest";
 import { renderToString } from "react-dom/server";
 import { AnswerInput } from "../components/AnswerInput";
-import { SentenceDiff } from "../components/SentenceDiff";
 import { SpeakButton } from "../components/SpeakButton";
 import { TakeHeader } from "../components/TakeHeader";
 import { VoiceProvider } from "../voice/VoiceProvider";
@@ -14,7 +13,6 @@ import type { PromptSpeaker } from "../voice/prompt-speaker";
 import type { SpeechListener } from "../voice/speech-listener";
 import { createDeviceVoiceSpeaker, SILENT_SPEAKER } from "../voice/prompt-speaker";
 import { createBrowserSpeechListener, UNSUPPORTED_LISTENER } from "../voice/speech-listener";
-import { compareSentence } from "../../engine/sentence-compare";
 
 const workingListener: SpeechListener = { supported: true, listen: () => Promise.resolve({ kind: "nothing-heard" }), stop: () => {} };
 const deviceSpeaker: PromptSpeaker = {
@@ -141,16 +139,6 @@ describe("SpeakButton", () => {
     const html = renderToString(<SpeakButton text="Hello" />);
     expect(html).not.toContain("Play aloud");
     expect(html).toContain("This browser cannot read aloud");
-  });
-});
-
-describe("SentenceDiff", () => {
-  it("labels missing and extra words in text, not only by style", () => {
-    const html = renderToString(<SentenceDiff diff={compareSentence("we pay taxes", "we really taxes").diff} />);
-    expect(html).toContain("missing");
-    expect(html).toContain("extra");
-    expect(html).toContain("Dashed words are missing");
-    expect(html).toContain("diff__word--missing");
   });
 });
 

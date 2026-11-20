@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | Ouvir em voz alta |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Voz do aparelho: a voz instalada no seu celular ou computador. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Este navegador não consegue ler em voz alta. Leia o texto na tela. |
-| `compare.word.missing` | missing | faltando |
-| `compare.word.extra` | extra | a mais |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | As palavras com borda tracejada estão faltando na sua resposta. As palavras riscadas eram a mais. |
 | `intro.profile.legend` | Choose a practice profile | Escolha um perfil de prática |
 | `intro.profile.help` | Every profile is invented. | Todos os perfis são inventados. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Pratique como se o N-400 tivesse sido apresentado… |
@@ -271,3 +268,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Este navegador não consegue gravar a sua voz. Você ainda pode conferir a sua leitura com “Falar” ou digitando. |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | O microfone está bloqueado. Permita o acesso ao microfone nas configurações do seu navegador. |
 | `selfReview.error` | Recording did not work this time. Try again. | A gravação não funcionou desta vez. Tente de novo. |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | Todas as palavras importantes da frase estavam lá, em ordem. |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Você disse “{said}”. A frase diz “{expected}”. Isto ainda conta. |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | Você escreveu “{said}”. A frase diz “{expected}”. Isto ainda conta. |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Você disse “{said}”. A frase diz “{expected}”. É outra palavra, então isto ainda não conta. |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Você escreveu “{said}”. A frase diz “{expected}”. É outra palavra, então isto ainda não conta. |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | Você escreveu “{said}”. A frase tem “{expected}”. Isto ainda conta. Confira a ortografia. |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | Falta uma palavra: “{expected}”. Isto ainda não conta. |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | Você acrescentou “{said}”, que não está na frase. Isto ainda não conta. |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Você acrescentou “{said}”, que não está na frase. Isto ainda conta. |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | A palavra curta “{expected}” ficou de fora. Isto ainda conta. |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Você acrescentou a palavra curta “{said}”. Isto ainda conta. |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Este resultado se baseia nas palavras que o seu dispositivo ouviu. Se ele ouviu errado, tente de novo ou digite a sua resposta. |
+| `compare.honest.typed` | This result is based on the words you typed. | Este resultado se baseia nas palavras que você digitou. |

@@ -134,3 +134,12 @@
   min-height: var(--tap-min);
   color: var(--teal);
 }
+
+.plain-lines {
+  margin: var(--space-3) 0;
+  padding-left: var(--space-5);
+  max-width: var(--measure);
+}
+.plain-lines li {
+  margin-bottom: var(--space-2);
+}

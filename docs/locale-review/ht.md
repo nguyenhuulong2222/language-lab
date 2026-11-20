@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | Koute byen fò |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Vwa aparèy la: vwa ki enstale sou telefòn oswa òdinatè ou a. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Navigatè sa a pa ka li byen fò. Li tèks la sou ekran an. |
-| `compare.word.missing` | missing | manke |
-| `compare.word.extra` | extra | anplis |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | Mo ki gen kontou ak tirè manke nan repons ou a. Mo ki bare yo te anplis. |
 | `intro.profile.legend` | Choose a practice profile | Chwazi yon pwofil pratik |
 | `intro.profile.help` | Every profile is invented. | Tout pwofil yo envante. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Pratike kòmsi yo te depoze N-400 la… |
@@ -271,3 +268,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Navigatè sa a pa kapab anrejistre vwa ou. Ou ka toujou tcheke lekti ou ak “Pale” oswa lè ou tape. |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | Mikwofòn nan bloke. Pèmèt aksè nan mikwofòn nan paramèt navigatè ou a. |
 | `selfReview.error` | Recording did not work this time. Try again. | Anrejistreman an pa mache fwa sa a. Eseye ankò. |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | Tout mo enpòtan nan fraz la te la, nan lòd. |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Ou di “{said}”. Fraz la di “{expected}”. Sa toujou konte. |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | Ou ekri “{said}”. Fraz la di “{expected}”. Sa toujou konte. |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Ou di “{said}”. Fraz la di “{expected}”. Se yon lòt mo, kidonk sa poko konte. |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Ou ekri “{said}”. Fraz la di “{expected}”. Se yon lòt mo, kidonk sa poko konte. |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | Ou ekri “{said}”. Fraz la gen “{expected}”. Sa toujou konte. Tcheke òtograf la. |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | Gen yon mo ki manke: “{expected}”. Sa poko konte. |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | Ou ajoute “{said}”, ki pa nan fraz la. Sa poko konte. |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Ou ajoute “{said}”, ki pa nan fraz la. Sa toujou konte. |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | Mo kout “{expected}” la pa t di. Sa toujou konte. |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Ou ajoute mo kout “{said}”. Sa toujou konte. |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Rezilta sa a baze sou mo aparèy ou a tande. Si li tande w mal, eseye ankò oswa tape repons ou a. |
+| `compare.honest.typed` | This result is based on the words you typed. | Rezilta sa a baze sou mo ou tape yo. |

@@ -101,9 +101,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.play` | Play aloud | Nghe đọc |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Giọng của thiết bị: giọng cài sẵn trên điện thoại hoặc máy tính của bạn. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Trình duyệt này không đọc to được. Hãy đọc chữ trên màn hình. |
-| `compare.word.missing` | missing | thiếu |
-| `compare.word.extra` | extra | thừa |
-| `compare.legend` | Dashed words are missing from your answer. Crossed-out words were extra. | Từ có viền đứt là từ bị thiếu trong câu trả lời của bạn. Từ bị gạch ngang là từ thừa. |
 | `intro.profile.legend` | Choose a practice profile | Chọn một hồ sơ luyện tập |
 | `intro.profile.help` | Every profile is invented. | Mọi hồ sơ đều là giả định, không phải người thật. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Hãy luyện tập như thể đơn N-400 đã được nộp… |
@@ -271,3 +268,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Trình duyệt này không thu âm giọng của bạn được. Bạn vẫn có thể kiểm tra bài đọc bằng nút “Nói” hoặc bằng cách gõ. |
 | `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | Micrô đang bị chặn. Hãy cho phép dùng micrô trong phần cài đặt của trình duyệt. |
 | `selfReview.error` | Recording did not work this time. Try again. | Lần này việc thu âm không thành công. Hãy thử lại. |
+| `compare.why.allWords` | Every important word of the sentence was there, in order. | Mọi từ quan trọng của câu đều có, đúng thứ tự. |
+| `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Bạn đã nói “{said}”. Câu có “{expected}”. Vẫn được tính. |
+| `compare.note.variant.wrote` | You wrote “{said}”. The sentence says “{expected}”. This still counts. | Bạn đã gõ “{said}”. Câu có “{expected}”. Vẫn được tính. |
+| `compare.note.different.said` | You said “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Bạn đã nói “{said}”. Câu có “{expected}”. Đó là một từ khác, nên chưa được tính. |
+| `compare.note.different.wrote` | You wrote “{said}”. The sentence says “{expected}”. That is a different word, so this does not count yet. | Bạn đã gõ “{said}”. Câu có “{expected}”. Đó là một từ khác, nên chưa được tính. |
+| `compare.note.spelling` | You wrote “{said}”. The sentence has “{expected}”. This still counts. Check the spelling. | Bạn đã gõ “{said}”. Câu có “{expected}”. Vẫn được tính. Hãy kiểm tra chính tả. |
+| `compare.note.missing` | A word is missing: “{expected}”. This does not count yet. | Thiếu một từ: “{expected}”. Chưa được tính. |
+| `compare.note.extra` | You added “{said}”, which is not in the sentence. This does not count yet. | Bạn đã thêm “{said}”, từ này không có trong câu. Chưa được tính. |
+| `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Bạn đã thêm “{said}”, từ này không có trong câu. Vẫn được tính. |
+| `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | Từ ngắn “{expected}” bị bỏ sót. Vẫn được tính. |
+| `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Bạn đã thêm từ ngắn “{said}”. Vẫn được tính. |
+| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Kết quả này dựa trên những từ thiết bị của bạn nghe được. Nếu thiết bị nghe sai, hãy thử lại hoặc gõ câu trả lời. |
+| `compare.honest.typed` | This result is based on the words you typed. | Kết quả này dựa trên những từ bạn đã gõ. |
