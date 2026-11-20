@@ -46,30 +46,36 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender
         <h2 id="home-choose" className="choices__legend">
           {t("home.choose")}
         </h2>
-        <button type="button" className="option-card option-card--primary" onClick={() => onChoose("full")}>
-          <span className="option-card__title">{t("home.full.title")}</span>
-          <span className="option-card__text">{t("home.full.text")}</span>
-        </button>
-        {onStudy !== undefined && (
+        {/* While civics is locked, say first what this build can do, and offer only that. */}
+        {civicsLocked && (
+          <div className="panel" role="note">
+            <h3 className="panel__title">{t("home.locked.title")}</h3>
+            <p>
+              <ReviewIcon className="icon-inline icon-inline--attention" /> <LegalText messageKey="intro.locked" />
+            </p>
+          </div>
+        )}
+        {!civicsLocked && (
+          <button type="button" className="option-card option-card--primary" onClick={() => onChoose("full")}>
+            <span className="option-card__title">{t("home.full.title")}</span>
+            <span className="option-card__text">{t("home.full.text")}</span>
+          </button>
+        )}
+        {!civicsLocked && onStudy !== undefined && (
           <button type="button" className="option-card" onClick={onStudy}>
             <span className="option-card__title">{t("home.study.title")}</span>
             <span className="option-card__text">{t("home.study.text")}</span>
           </button>
         )}
-        <h3 className="panel__title">{t("home.parts.title")}</h3>
+        {!civicsLocked && <h3 className="panel__title">{t("home.parts.title")}</h3>}
         <div className="option-grid">
-          {PARTS.map((part) => (
+          {PARTS.filter((part) => !(civicsLocked && part.mode === "civics")).map((part) => (
             <button key={part.mode} type="button" className="option-card" onClick={() => onChoose(part.mode)}>
               <span className="option-card__title">{t(part.title)}</span>
               <span className="option-card__text">{t(part.text)}</span>
             </button>
           ))}
         </div>
-        {civicsLocked && (
-          <p className="status status--attention">
-            <ReviewIcon className="icon-inline icon-inline--attention" /> <LegalText messageKey="intro.locked" />
-          </p>
-        )}
       </section>
 
       <Disclaimer variant="prominent" id="home-disclaimer" messageKey="disclaimer.full" />

@@ -42,10 +42,20 @@ describe("HomeScreen", () => {
     expect(html).not.toContain('type="text"');
   });
 
+  it("while civics is locked, offers only what works: no full interview, no Study first, no civics card", () => {
+    const locked = renderToString(<HomeScreen civicsLocked onChoose={() => {}} onStudy={() => {}} />);
+    expect(locked).not.toContain("Full practice interview");
+    expect(locked).not.toContain("Look through the civics questions");
+    expect(locked).not.toContain("Answer civics questions");
+    for (const part of ["N-400 interview", "Reading", "Writing"]) expect(locked).toContain(part);
+    // The notice comes before the cards.
+    expect(locked.indexOf("In this build you can practice")).toBeLessThan(locked.indexOf("N-400 interview"));
+  });
   it("explains a build that cannot score civics", () => {
     const locked = renderToString(<HomeScreen civicsLocked onChoose={() => {}} />);
-    expect(locked).toContain("Civics scoring is switched off in this build");
-    expect(html).not.toContain("Civics scoring is switched off");
+    expect(locked).toContain("In this build you can practice");
+    expect(locked).toContain("You can practice the N-400 interview, reading and writing.");
+    expect(html).not.toContain("In this build you can practice");
   });
 });
 

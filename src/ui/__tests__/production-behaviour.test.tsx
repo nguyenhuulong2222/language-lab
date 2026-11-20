@@ -33,10 +33,12 @@ describe("production build with unreviewed answer keys", () => {
     }
   });
 
-  it("the intro works and says civics scoring is switched off", () => {
+  it("the home screen says what this build offers and does not headline the full interview", () => {
     const html = renderToString(<PracticeApp engine={createPracticeEngine(productionEnv())} />);
     expect(html).toContain("Welcome to the booth");
-    expect(html).toContain("Civics scoring is switched off in this build");
+    expect(html).toContain("In this build you can practice");
+    expect(html).toContain("Civics, Study first and the full practice interview are switched off in this build");
+    expect(html).not.toContain("All four parts in order, then one report.");
   });
 
   it("interview, reading and writing run; civics is locked; no report is built", () => {
