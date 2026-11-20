@@ -7,9 +7,12 @@
  */
 import {
   outcomeFromError,
-  outcomeFromTranscripts,
+  outcomeFromResults,
   type VoiceOutcome,
 } from "../../engine/recognition-outcome";
+
+/** How many alternatives the recogniser is asked for. */
+export const MAX_ALTERNATIVES = 5;
 
 export interface SpeechListener {
   /** False when this browser has no speech recognition. `listen` then returns "unsupported". */
@@ -56,16 +59,23 @@ export function createBrowserSpeechListener(
           recognition.lang = "en-US";
           recognition.interimResults = false;
           recognition.continuous = false;
-          recognition.maxAlternatives = 1;
-          const pieces: string[] = [];
+          // Ask for several ways of hearing the same speech; every one is scored against the sentence.
+          recognition.maxAlternatives = MAX_ALTERNATIVES;
+          const results: string[][] = [];
           recognition.onresult = (event: SpeechRecognitionEvent) => {
             for (let i = event.resultIndex; i < event.results.length; i++) {
-              const alternative = event.results[i]?.[0];
-              if (alternative) pieces.push(alternative.transcript);
+              const result = event.results[i];
+              if (!result) continue;
+              const alternatives: string[] = [];
+              for (let k = 0; k < result.length; k++) {
+                const alternative = result[k];
+                if (alternative) alternatives.push(alternative.transcript);
+              }
+              if (alternatives.length > 0) results.push(alternatives);
             }
           };
           recognition.onerror = (event: SpeechRecognitionErrorEvent) => finish(outcomeFromError(event.error));
-          recognition.onend = () => finish(outcomeFromTranscripts(pieces));
+          recognition.onend = () => finish(outcomeFromResults(results));
           recognition.start();
         } catch (error) {
           finish({ kind: "error", code: error instanceof Error ? error.name : "unknown" });

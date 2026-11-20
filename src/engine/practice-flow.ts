@@ -38,7 +38,7 @@ import {
   type PracticePart,
 } from "./part-report.js";
 import { buildFinalReport } from "./report-builder.js";
-import { compareSentence } from "./sentence-compare.js";
+import { compareSentence, pickBestAlternative } from "./sentence-compare.js";
 import {
   loadCivicsBoundaryDate,
   loadCivicsRules,
@@ -118,8 +118,12 @@ export interface PracticeSetup {
 
 export interface SentenceAttempt {
   sentenceId: string;
-  /** What the user said or typed. */
+  /** What the user said or typed. For speech: the best-scoring alternative the recogniser gave. */
   transcript: string;
+  /** How many different alternatives were scored (1 when typed). */
+  alternativesScored: number;
+  /** Which one was used: 0 is the recogniser's main text. */
+  usedAlternative: number;
   input: InputMode;
   accuracy: number;
   isCorrect: boolean;
@@ -160,8 +164,8 @@ export type PracticeAction =
   | { type: "start"; profileId?: string; filedOn?: FiledChoice; seed: number; at: string }
   | { type: "answerN400"; questionId: string; questionText: string; transcript: string; at: string }
   | { type: "finishN400"; at: string }
-  | { type: "submitReading"; transcript: string; input: InputMode; at: string }
-  | { type: "submitWriting"; transcript: string; input: InputMode; at: string }
+  | { type: "submitReading"; transcript: string; alternatives?: readonly string[]; input: InputMode; at: string }
+  | { type: "submitWriting"; transcript: string; alternatives?: readonly string[]; input: InputMode; at: string }
   | { type: "submitCivics"; response: string; input: InputMode; at: string }
   | { type: "continue"; at: string }
   | { type: "restart" };
@@ -608,14 +612,18 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
         if (state.phase !== kind) return state;
         const progress = englishProgress(state, kind);
         if (progress.done || progress.current === null) return state;
-        const comparison = compareSentence(
-          progress.current.text,
-          action.transcript,
-          env.config.sentenceMatch[kind].minWordAccuracy
-        );
+        const target = progress.current.text;
+        const minWordAccuracy = env.config.sentenceMatch[kind].minWordAccuracy;
+        // Spoken attempts: every alternative the recogniser gave is scored, the best one is used.
+        // Typed text (or text the user edited) arrives without alternatives and is scored as it is.
+        const candidates = [action.transcript, ...(action.alternatives ?? [])].filter((c, i, all) => all.indexOf(c) === i);
+        const best = pickBestAlternative(candidates, (text) => compareSentence(target, text, minWordAccuracy));
+        const comparison = best.comparison;
         const attempt: SentenceAttempt = {
           sentenceId: progress.current.id,
-          transcript: action.transcript,
+          transcript: best.text,
+          alternativesScored: candidates.length,
+          usedAlternative: best.index,
           input: action.input,
           accuracy: comparison.accuracy,
           isCorrect: comparison.isCorrect,

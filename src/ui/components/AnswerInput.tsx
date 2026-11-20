@@ -20,7 +20,8 @@ interface AnswerInputProps {
   voice: boolean;
   /** Offer "Skip this one", which sends an empty answer. */
   allowSkip?: boolean;
-  onSubmit: (text: string, input: InputMode) => void;
+  /** `alternatives` are the other ways the recogniser heard the speech, only when the text was not edited. */
+  onSubmit: (text: string, input: InputMode, alternatives?: readonly string[]) => void;
 }
 
 const MESSAGE: Record<Exclude<VoiceOutcome["kind"], "transcript">, MessageKey> = {
@@ -42,6 +43,7 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
     voice && !listener.supported ? "voice.unsupported" : null
   );
   const heard = useRef<string | null>(null);
+  const heardAlternatives = useRef<readonly string[]>([]);
   const box = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => () => listener.stop(), [listener]);
@@ -53,6 +55,7 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
       setListening(false);
       if (outcome.kind === "transcript") {
         heard.current = outcome.text;
+        heardAlternatives.current = outcome.alternatives;
         setText(outcome.text);
         setMessage("voice.heard");
       } else {
@@ -71,7 +74,10 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
   };
 
   const send = (value: string) => {
-    onSubmit(value, heard.current !== null && heard.current === value ? "voice" : "typed");
+    // Alternatives are used only for text that came from the recogniser and was not edited.
+    const spoken = heard.current !== null && heard.current === value;
+    if (spoken) onSubmit(value, "voice", heardAlternatives.current);
+    else onSubmit(value, "typed");
   };
 
   const canListen = voice && listener.supported;

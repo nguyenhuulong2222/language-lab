@@ -179,8 +179,14 @@ export function Screen({
           progress={engine.englishProgress(state, kind)}
           minWordAccuracy={env.config.sentenceMatch[kind].minWordAccuracy}
           nextIsReport={state.mode !== "full"}
-          onSubmit={(transcript, input) =>
-            dispatch({ type: kind === "reading" ? "submitReading" : "submitWriting", transcript, input, at: now() })
+          onSubmit={(transcript, input, alternatives) =>
+            dispatch({
+              type: kind === "reading" ? "submitReading" : "submitWriting",
+              transcript,
+              ...(alternatives === undefined ? {} : { alternatives }),
+              input,
+              at: now(),
+            })
           }
           onContinue={() => dispatch({ type: "continue", at: now() })}
         />

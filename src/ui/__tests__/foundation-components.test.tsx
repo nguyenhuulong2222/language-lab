@@ -120,6 +120,7 @@ describe("voice adapters without a browser", () => {
     expect(await createBrowserSpeechListener({ SpeechRecognition: make(["we pay", "taxes"]) }).listen()).toEqual({
       kind: "transcript",
       text: "we pay taxes",
+      alternatives: ["we pay taxes"],
     });
   });
 });

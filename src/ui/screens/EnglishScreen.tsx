@@ -20,7 +20,7 @@ interface EnglishScreenProps {
   progress: EnglishProgress;
   /** Words that must match, from the practice config. Shown, never decided here. */
   minWordAccuracy: number;
-  onSubmit: (transcript: string, input: InputMode) => void;
+  onSubmit: (transcript: string, input: InputMode, alternatives?: readonly string[]) => void;
   onContinue: () => void;
   /** After this stage comes the report (a single-part session), not another part. */
   nextIsReport?: boolean;
@@ -134,9 +134,9 @@ export function EnglishScreen({
               submitLabel={reading ? t("reading.submit") : t("writing.submit")}
               voice={reading}
               allowSkip
-              onSubmit={(text, input) => {
+              onSubmit={(text, input, alternatives) => {
                 setFeedback(true);
-                onSubmit(text, input);
+                onSubmit(text, input, alternatives);
               }}
             />
             <p className="note">{t("compare.setting", { percent: Math.round(minWordAccuracy * 100) })}</p>

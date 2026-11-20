@@ -84,3 +84,38 @@ export function compareSentence(
     diff,
   };
 }
+
+export interface BestAlternative {
+  /** Index in the candidates (0 = the recogniser's main text). */
+  index: number;
+  text: string;
+  comparison: SentenceComparison;
+}
+
+/**
+ * Score every candidate (the recogniser's alternatives) and pick the best one. Order of preference:
+ * it counts; then more of the sentence matched (higher accuracy); then fewer extra words; then the
+ * recogniser's own order. Empty candidates are ignored. With one candidate this is just that one.
+ */
+export function pickBestAlternative(
+  candidates: readonly string[],
+  compare: (text: string) => SentenceComparison
+): BestAlternative {
+  const list = candidates.length === 0 ? [""] : candidates;
+  let best: BestAlternative | null = null;
+  list.forEach((text, index) => {
+    const comparison = compare(text);
+    const candidate: BestAlternative = { index, text, comparison };
+    if (best === null || isBetter(candidate, best)) best = candidate;
+  });
+  return best as unknown as BestAlternative;
+}
+
+function isBetter(a: BestAlternative, b: BestAlternative): boolean {
+  if (a.comparison.isCorrect !== b.comparison.isCorrect) return a.comparison.isCorrect;
+  if (a.comparison.accuracy !== b.comparison.accuracy) return a.comparison.accuracy > b.comparison.accuracy;
+  const extraA = a.comparison.attemptWords - a.comparison.matchedWords;
+  const extraB = b.comparison.attemptWords - b.comparison.matchedWords;
+  if (extraA !== extraB) return extraA < extraB;
+  return false; // keep the earlier one
+}

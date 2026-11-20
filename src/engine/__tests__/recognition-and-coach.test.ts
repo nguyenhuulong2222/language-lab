@@ -31,7 +31,7 @@ describe("outcomeFromError", () => {
 
 describe("outcomeFromTranscripts", () => {
   it("joins pieces", () => {
-    expect(outcomeFromTranscripts(["we pay", " taxes "])).toEqual({ kind: "transcript", text: "we pay taxes" });
+    expect(outcomeFromTranscripts(["we pay", " taxes "])).toEqual({ kind: "transcript", text: "we pay taxes", alternatives: ["we pay taxes"] });
   });
   it("nothing or blank text is nothing heard", () => {
     expect(outcomeFromTranscripts([])).toEqual({ kind: "nothing-heard" });
