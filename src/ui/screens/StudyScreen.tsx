@@ -29,7 +29,10 @@ interface StudyScreenProps {
   pictureFor?: (questionId: string) => PictureEntry | null;
   /** Start on a version (tests). */
   initialVersion?: CivicsTestVersion;
+  /** Fetch what a version needs (answer key, official answers) before it is shown. */
+  prepare?: (version: CivicsTestVersion) => Preparing;
 }
+type Preparing = Promise<void>;
 
 const VERSIONS: readonly CivicsTestVersion[] = ["2008", "2025"];
 
@@ -38,7 +41,7 @@ export function studyQuestions(key: ReadonlyMap<string, CivicsAnswerEntry>): Civ
   return [...key.values()].filter((e) => e.answerType === "static").sort((a, b) => a.id.localeCompare(b.id));
 }
 
-export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion, initialVersion }: StudyScreenProps) {
+export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion, initialVersion, prepare }: StudyScreenProps) {
   const t = useT();
   const [version, setVersion] = useState<CivicsTestVersion | null>(initialVersion ?? null);
   const [index, setIndex] = useState(0);
@@ -82,8 +85,12 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
               type="button"
               className="option-card"
               onClick={() => {
-                setVersion(v);
-                setIndex(0);
+                const show = () => {
+                  setVersion(v);
+                  setIndex(0);
+                };
+                if (prepare === undefined) return show();
+                void prepare(v).catch(() => {}).then(show);
               }}
             >
               <span className="option-card__title">{t(v === "2008" ? "study.version.2008" : "study.version.2025")}</span>

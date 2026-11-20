@@ -28,7 +28,7 @@ describe("no source file reads translated civics text", () => {
     const users = Object.entries(sources).filter(([, text]) => /data\/translations/.test(text));
     expect(users.map(([f]) => f.replace(/^(\.\.\/)+/, ""))).toEqual(["engine/official-answer-text.ts"]);
     for (const [, text] of users) {
-      const imports = [...text.matchAll(/from "([^"]*data\/translations[^"]*)"/g)].map((m) => m[1] as string);
+      const imports = [...text.matchAll(/(?:from |import\()"([^"]*data\/translations[^"]*)"/g)].map((m) => m[1] as string);
       expect(imports.length).toBeGreaterThan(0);
       expect(imports.every((i) => i.endsWith("/en.json"))).toBe(true);
     }

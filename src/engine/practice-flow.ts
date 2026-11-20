@@ -25,7 +25,14 @@ import type {
   SessionStage,
   Turn,
 } from "../contracts/session.js";
-import { loadAnswerKey, type CivicsAnswerEntry } from "./civics-answer-key.js";
+import {
+  AnswerKeyNotLoadedError,
+  answerKeyLockedInBuild,
+  loadAnswerKey,
+  preloadAnswerKey,
+  type CivicsAnswerEntry,
+} from "./civics-answer-key.js";
+import { preloadOfficialAnswerText } from "./official-answer-text.js";
 import { matchedAnswerCount, runCivicsStage, type CivicsStageResult } from "./civics-grader.js";
 import { runEnglishStage, type EnglishStageKind, type EnglishStageResult } from "./english-grader.js";
 import type { N400Answer } from "./n400-coach.js";
@@ -111,6 +118,13 @@ export interface PracticeEnv {
   civicsRules(version: CivicsTestVersion): CivicsTestRules;
   boundaryDate: string;
   answerKey(version: CivicsTestVersion): AnswerKeyResult;
+  /**
+   * Fetch what a civics part or Study first needs for this version (the answer key and the official
+   * answer text) before `answerKey` is called. Optional: tests pass keys that are already in memory.
+   */
+  prepareCivics?(version: CivicsTestVersion): Promise<void>;
+  /** True when this build refuses the answer keys, known without loading them. Optional (tests). */
+  civicsLocked?(): boolean;
 }
 
 /** The user's choices. A field is null when the chosen mode does not need it. */
@@ -254,6 +268,10 @@ function previousDay(isoDate: string): string {
  * A fictional filing date for the choice: the day before the boundary date ("before") or the
  * boundary date itself ("on_or_after"). selectTestVersion then picks the test.
  */
+/** The civics test version a filing choice leads to (the same choice the engine makes on "start"). */
+export function civicsVersionFor(choice: FiledChoice, boundaryDate: string): CivicsTestVersion {
+  return selectTestVersion(representativeFilingDate(choice, boundaryDate), boundaryDate);
+}
 export function representativeFilingDate(choice: FiledChoice, boundaryDate: string): string {
   assertValidIsoDate(boundaryDate, "boundary date");
   return choice === "before" ? previousDay(boundaryDate) : boundaryDate;
@@ -303,6 +321,8 @@ export function createAnswerKeyLoader(
       result = { status: "ready", key: load(version) };
     } catch (error) {
       result = { status: "locked", reason: error instanceof Error ? error.message : String(error) };
+      // Not fetched yet is not a lock: do not remember it, so the key is used once it has arrived.
+      if (error instanceof AnswerKeyNotLoadedError) return result;
     }
     cache.set(version, result);
     return result;
@@ -318,6 +338,12 @@ export function createDefaultPracticeEnv(): PracticeEnv {
     civicsRules: (version) => loadCivicsRules(version),
     boundaryDate: loadCivicsBoundaryDate(),
     answerKey: createAnswerKeyLoader(),
+    civicsLocked: () => (["2008", "2025"] as const).some((v) => answerKeyLockedInBuild(v)),
+    async prepareCivics(version) {
+      // A key that this build refuses is not downloaded at all.
+      if (answerKeyLockedInBuild(version)) return;
+      await Promise.all([preloadAnswerKey(version), preloadOfficialAnswerText(version)]);
+    },
   };
 }
 

@@ -5,7 +5,9 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { renderToString } from "react-dom/server";
 import { PracticeApp } from "../PracticeApp";
-import { loadAnswerKey } from "../../engine/civics-answer-key";
+import { answerKeyLockedInBuild, ANSWER_KEY_NEEDS_REVIEW, loadAnswerKey } from "../../engine/civics-answer-key";
+import raw2008 from "../../../data/civics-answers/2008.json";
+import raw2025 from "../../../data/civics-answers/2025.json";
 import { createAnswerKeyLoader, createDefaultPracticeEnv, createPracticeEngine } from "../../engine/practice-flow";
 
 /**
@@ -16,6 +18,7 @@ function productionEnv() {
   return {
     ...createDefaultPracticeEnv(),
     answerKey: createAnswerKeyLoader((version) => loadAnswerKey(version, { production: true })),
+    civicsLocked: () => (["2008", "2025"] as const).some((v) => answerKeyLockedInBuild(v, { production: true })),
   };
 }
 
@@ -77,5 +80,16 @@ describe("production build with unreviewed answer keys", () => {
     expect(env.answerKey("2008").status).toBe("ready");
     expect(env.answerKey("2025").status).toBe("ready");
     warn.mockRestore();
+  });
+});
+
+describe("the copy of the review flags used before the keys are fetched", () => {
+  it("is equal to needsHumanReview in the answer key files", () => {
+    expect(ANSWER_KEY_NEEDS_REVIEW["2008"]).toBe((raw2008 as { needsHumanReview: boolean }).needsHumanReview);
+    expect(ANSWER_KEY_NEEDS_REVIEW["2025"]).toBe((raw2025 as { needsHumanReview: boolean }).needsHumanReview);
+  });
+  it("does not replace the loader's own production check", () => {
+    expect(() => loadAnswerKey("2008", { production: true })).toThrow(/needsHumanReview/);
+    expect(() => loadAnswerKey("2025", { production: true })).toThrow(/needsHumanReview/);
   });
 });

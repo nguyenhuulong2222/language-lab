@@ -4,8 +4,8 @@
  * They live in React state only: nothing is saved in the browser, and they reset when the
  * page is reloaded.
  */
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { AVAILABLE_UI_LANGUAGES, type LanguageCode } from "../i18n";
+import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { AVAILABLE_UI_LANGUAGES, loadLocale, type LanguageCode } from "../i18n";
 
 export type TextSize = "normal" | "large" | "extra-large";
 
@@ -38,8 +38,15 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
   const [textSize, setTextSize] = useState<TextSize>(DEFAULTS.textSize);
   const [slowPlayback, setSlowPlayback] = useState(DEFAULTS.slowPlayback);
   const [language, setLanguageState] = useState<LanguageCode>(DEFAULTS.language);
+  // The locale file is fetched first; the interface switches when it has arrived and passed the checks.
+  // Only the last choice counts, if two arrive out of order.
+  const latest = useRef<LanguageCode>(DEFAULTS.language);
   const setLanguage = (next: LanguageCode) => {
-    if (AVAILABLE_UI_LANGUAGES.some((l) => l.code === next)) setLanguageState(next);
+    if (!AVAILABLE_UI_LANGUAGES.some((l) => l.code === next)) return;
+    latest.current = next;
+    void loadLocale(next).then((ok) => {
+      if (ok && latest.current === next) setLanguageState(next);
+    });
   };
 
   // The page root scales every rem size (type, spacing, tap targets) with the chosen size.

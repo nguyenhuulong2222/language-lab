@@ -10,8 +10,6 @@
  * Pure module: no DOM, no fetch, no React.
  */
 
-import RAW_2008 from "../../data/civics-answers/2008.json" with { type: "json" };
-import RAW_2025 from "../../data/civics-answers/2025.json" with { type: "json" };
 import { containsPhrase, normalise } from "./answer-normaliser.js";
 import type { CivicsTestVersion } from "./version-selector.js";
 
@@ -250,12 +248,46 @@ export function parseAnswerKey(
   return entries;
 }
 
-/** Load the answer key for a test version, keyed by question id. */
+// The answer key files are large (about 135 kB together), so they are not in the first download:
+// each is fetched when a civics part or Study first needs it (preloadAnswerKey).
+const RAW_FILES: Record<CivicsTestVersion, () => Promise<unknown>> = {
+  "2008": () => import("../../data/civics-answers/2008.json").then((m) => m.default),
+  "2025": () => import("../../data/civics-answers/2025.json").then((m) => m.default),
+};
+const RAW_LOADED = new Map<CivicsTestVersion, unknown>();
+/** Thrown by loadAnswerKey when the file has not been fetched yet. Not a review lock. */
+export class AnswerKeyNotLoadedError extends Error {
+  constructor(version: CivicsTestVersion) {
+    super(`The ${version} answer key has not been loaded yet (call preloadAnswerKey first).`);
+    this.name = "AnswerKeyNotLoadedError";
+  }
+}
+/** Fetch the answer key file of a version (once). Resolves when loadAnswerKey can be called. */
+export async function preloadAnswerKey(version: CivicsTestVersion): Promise<void> {
+  if (RAW_LOADED.has(version)) return;
+  RAW_LOADED.set(version, await RAW_FILES[version]());
+}
+export function isAnswerKeyLoaded(version: CivicsTestVersion): boolean {
+  return RAW_LOADED.has(version);
+}
+/**
+ * Whether each answer key file is still marked needsHumanReview. A copy of the flag in the data
+ * files, so the app can tell that civics is locked in production without downloading the keys
+ * (a test keeps it equal to the files). It does not replace the check in parseAnswerKey: a file
+ * that is marked for review is refused in production whatever this says.
+ */
+export const ANSWER_KEY_NEEDS_REVIEW: Readonly<Record<CivicsTestVersion, boolean>> = { "2008": true, "2025": true };
+/** True when this build will refuse the answer key of a version (production and not yet reviewed). */
+export function answerKeyLockedInBuild(version: CivicsTestVersion, options: LoadOptions = {}): boolean {
+  return ANSWER_KEY_NEEDS_REVIEW[version] && (options.production ?? isProductionBuild());
+}
+/** Load the answer key for a test version, keyed by question id. The file must have been preloaded. */
 export function loadAnswerKey(
   version: CivicsTestVersion,
   options: LoadOptions = {}
 ): Map<string, CivicsAnswerEntry> {
-  return parseAnswerKey(version === "2008" ? RAW_2008 : RAW_2025, version, options);
+  if (!RAW_LOADED.has(version)) throw new AnswerKeyNotLoadedError(version);
+  return parseAnswerKey(RAW_LOADED.get(version), version, options);
 }
 
 // ---------------------------------------------------------------------------

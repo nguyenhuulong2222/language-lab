@@ -296,6 +296,8 @@ async function checkConfiguration(cdp, size, lang) {
     await click(L("home.study.title"));
     await record("study-choose");
     await click(L("study.version.2008"));
+    // The answer key is fetched first: make sure a question is really on screen.
+    await waitFor(() => lab(`has(${js(L("civics.next"))})`), "a Study first question");
     await record("study-question");
     await click(L("report.home"));
   }

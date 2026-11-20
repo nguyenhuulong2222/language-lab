@@ -12,6 +12,7 @@
  * Pure module: no React, no DOM, no fetch.
  */
 import en from "./locales/en.json";
+import STATUS_FILE from "./locale-status.json";
 import { checkLocale, checkMeta, isReviewed, type LocaleMeta } from "./locale-checks.js";
 import { isLegalKey } from "./legal-keys.js";
 import {
@@ -40,27 +41,42 @@ export type LocaleStatus = Partial<Record<LanguageCode, LocaleMeta>>;
 type RawLocale = Partial<Messages> & { _meta?: LocaleMeta };
 
 /**
- * Every locale file in src/i18n/locales/. English is the source. A locale's "_meta" is split off
- * and kept as its status; everything else is the message catalogue.
+ * English is in the first download. Every other locale file is fetched only when it is chosen
+ * (loadLocale), so a visitor downloads one language, not fourteen. The menu and the AI label read
+ * src/i18n/locale-status.json instead: each locale's `_meta` and whether it passed the checks when
+ * the file was built (tools/i18n/build-locale-status.mjs; a test keeps it in step).
  */
-function loadLocales(): { catalogs: Catalogs; status: LocaleStatus } {
-  const catalogs: Catalogs = {};
-  const status: LocaleStatus = {};
-  const modules = import.meta.glob<RawLocale>("./locales/*.json", { eager: true, import: "default" });
-  for (const [file, raw] of Object.entries(modules)) {
-    const code = /\/([a-z]+)\.json$/.exec(file)?.[1];
-    if (code === undefined || !isLanguageCode(code)) continue;
-    const { _meta, ...messages } = raw;
-    catalogs[code] = messages;
-    if (_meta !== undefined) status[code] = _meta;
-  }
-  return { catalogs, status };
+const LAZY_LOCALES = import.meta.glob<RawLocale>(["./locales/*.json", "!./locales/en.json"], { import: "default" });
+const STATUS = STATUS_FILE as Record<string, { meta: LocaleMeta | null; passesChecks: boolean }>;
+/** The message catalogues in memory: English, and each language once it has been loaded. */
+export const CATALOGS: Catalogs = { en };
+export const LOCALE_STATUS: LocaleStatus = Object.fromEntries(
+  Object.entries(STATUS)
+    .filter(([code, entry]) => isLanguageCode(code) && entry.meta !== null)
+    .map(([code, entry]) => [code, entry.meta])
+) as LocaleStatus;
+export function isLocaleLoaded(code: LanguageCode): boolean {
+  return CATALOGS[code] !== undefined;
 }
-
-const LOADED = loadLocales();
-export const CATALOGS: Catalogs = LOADED.catalogs;
-export const LOCALE_STATUS: LocaleStatus = LOADED.status;
-
+/**
+ * Fetch a locale file and check it again against English. Resolves true when the language can be
+ * shown; false when the file is missing or fails a check (the interface then stays as it is).
+ */
+export async function loadLocale(code: LanguageCode): Promise<boolean> {
+  if (isLocaleLoaded(code)) return true;
+  const load = LAZY_LOCALES[`./locales/${code}.json`];
+  if (load === undefined) return false;
+  const { _meta, ...messages } = await load();
+  if (checkMeta(_meta).length > 0) return false;
+  if (checkLocale(en as Record<string, string>, messages as Record<string, string>).length > 0) return false;
+  CATALOGS[code] = messages;
+  if (_meta !== undefined) LOCALE_STATUS[code] = _meta;
+  return true;
+}
+/** Load every locale (tests and tools). */
+export async function preloadAllLocales(): Promise<void> {
+  await Promise.all(LANGUAGE_CODES.map((code) => loadLocale(code)));
+}
 /** The languages the interface can be switched to: all 14, English first. A locale must still pass the checks. */
 export const UI_LANGUAGE_CODES: readonly LanguageCode[] = LANGUAGE_CODES;
 
@@ -75,8 +91,9 @@ export function localePassesChecks(
 ): boolean {
   if (code === DEFAULT_LANGUAGE) return true;
   const messages = catalogs[code];
-  if (messages === undefined) return false;
   if (checkMeta(status[code]).length > 0) return false;
+  // Not loaded yet: the result recorded when locale-status.json was built (checked again on load).
+  if (messages === undefined) return catalogs === CATALOGS && STATUS[code]?.passesChecks === true;
   return checkLocale(en as Record<string, string>, messages as Record<string, string>).length === 0;
 }
 

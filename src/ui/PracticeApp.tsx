@@ -10,9 +10,11 @@ import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "r
 import type { InterviewSession } from "../contracts";
 import { createScriptedN400Coach } from "../engine/n400-coach";
 import {
+  civicsVersionFor,
   createDefaultPracticeEnv,
   createPracticeEngine,
   modeNeeds,
+  modeParts,
   sessionSteps,
   type PracticeAction,
   type PracticeEngine,
@@ -50,7 +52,10 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
   );
   const coach = useMemo(() => createScriptedN400Coach(engine.env.content.n400Questions), [engine]);
   const civicsLockedInBuild = useMemo(
-    () => (["2008", "2025"] as const).some((v) => engine.env.answerKey(v).status === "locked"),
+    () =>
+      engine.env.civicsLocked !== undefined
+        ? engine.env.civicsLocked()
+        : (["2008", "2025"] as const).some((v) => engine.env.answerKey(v).status === "locked"),
     [engine]
   );
   const [restarts, setRestarts] = useState(0);
@@ -72,7 +77,11 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
     return (
       <HelpSessionProvider>
         <Shell onHome={exitStudy}>
-          <StudyScreen answerKey={(v) => engine.env.answerKey(v)} onHome={exitStudy} />
+          <StudyScreen
+            answerKey={(v) => engine.env.answerKey(v)}
+            {...(engine.env.prepareCivics === undefined ? {} : { prepare: (v) => engine.env.prepareCivics!(v) })}
+            onHome={exitStudy}
+          />
         </Shell>
       </HelpSessionProvider>
     );
@@ -149,7 +158,16 @@ export function Screen({
           boundaryDate={env.boundaryDate}
           needs={modeNeeds(state.mode ?? "full")}
           focusOnFirstRender
-          onStart={(choice) => dispatch({ type: "start", ...choice, seed: seed(), at: now() })}
+          onStart={(choice) => {
+            const go = () => dispatch({ type: "start", ...choice, seed: seed(), at: now() });
+            // The answer key and the official answers are fetched when a civics part starts.
+            const needsCivics = modeParts(state.mode ?? "full").includes("civics") && choice.filedOn !== undefined;
+            if (!needsCivics || env.prepareCivics === undefined) return go();
+            void env
+              .prepareCivics(civicsVersionFor(choice.filedOn!, env.boundaryDate))
+              .catch(() => {})
+              .then(go);
+          }}
         />
       );
 

@@ -10,6 +10,8 @@ export default defineConfig({
     // CSS files are empty in tests, except when a test reads one as raw text (?raw).
     css: { include: [/\?raw/] },
     environment: "node",
+    // Loads every locale and both answer keys, which the app fetches only when needed.
+    setupFiles: ["src/test-setup.ts"],
     include: [
       "src/**/*.test.ts",
       "src/**/*.test.tsx",

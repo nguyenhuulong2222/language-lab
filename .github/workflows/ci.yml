@@ -1,0 +1,25 @@
+# Typecheck, tests and the production build on every push and pull request (audit COR-02).
+# Cloudflare Pages runs only `npm run build`, so this is where the tests run.
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          # The tools import TypeScript directly, which needs Node 22.18 or later.
+          node-version: "22.18"
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - name: Guard for secret paths (hook script)
+        run: npm run test:hooks

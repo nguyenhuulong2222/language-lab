@@ -8,16 +8,26 @@
  * The files sit in data/translations/civics/<version>/en.json because they belong with the
  * display files, but this is the official English text, not a translation.
  */
-import EN_2008 from "../../data/translations/civics/2008/en.json" with { type: "json" };
-import EN_2025 from "../../data/translations/civics/2025/en.json" with { type: "json" };
 import type { CivicsTestVersion } from "./version-selector.js";
 
 interface EnglishFile {
   entries: Record<string, { question: string; answers: string[] | null }>;
 }
 
-/** The USCIS answer lines of a question, or null when it has none (answers that change). */
+// Fetched with the answer key, when a civics part or Study first starts (not in the first download).
+const FILES: Record<CivicsTestVersion, () => Promise<unknown>> = {
+  "2008": () => import("../../data/translations/civics/2008/en.json").then((m) => m.default),
+  "2025": () => import("../../data/translations/civics/2025/en.json").then((m) => m.default),
+};
+const LOADED = new Map<CivicsTestVersion, EnglishFile>();
+export async function preloadOfficialAnswerText(version: CivicsTestVersion): Promise<void> {
+  if (LOADED.has(version)) return;
+  LOADED.set(version, (await FILES[version]()) as EnglishFile);
+}
+/**
+ * The USCIS answer lines of a question, or null when it has none (answers that change) or the file
+ * has not been loaded yet.
+ */
 export function officialAnswerLines(version: CivicsTestVersion, questionId: string): string[] | null {
-  const file = (version === "2008" ? EN_2008 : EN_2025) as unknown as EnglishFile;
-  return file.entries[questionId]?.answers ?? null;
+  return LOADED.get(version)?.entries[questionId]?.answers ?? null;
 }
