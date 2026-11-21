@@ -389,7 +389,7 @@ describe("attribution as text only (REQ-C20)", () => {
   });
 });
 
-describe("coach text in other languages (REQ-C21)", () => {
+describe("coach text in other languages (REQ-C22)", () => {
   const scripted = createScriptedN400Coach(content.n400Questions);
   const vi_ = (props: Partial<Parameters<typeof N400Screen>[0]> = {}) =>
     renderToString(
@@ -415,5 +415,18 @@ describe("coach text in other languages (REQ-C21)", () => {
     for (const k of ["home.coach.title", "home.coach.text", "coach.poweredBy", "coach.choice.title", "coach.choice.lead", "coach.choice.use", "coach.choice.no"]) {
       expect(LEGAL_KEYS as readonly string[], k).not.toContain(k);
     }
+  });
+});
+
+describe("fictional practice, truthful real interview (REQ-C21)", () => {
+  const KEYS = ["intro.privacy", "n400.sample.note", "coach.notice.text"] as const;
+  it.each(KEYS)("%s says both halves in English", (key) => {
+    const text = ENGLISH_MESSAGES[key];
+    expect(text, key).toMatch(/fictional (profile|person)/);
+    expect(text, key).toContain("In your real interview, you must answer truthfully about your own life.");
+  });
+  it("the three lines stay legal keys (English until a person reviews them)", async () => {
+    const { isLegalKey } = await import("../../i18n/legal-keys");
+    for (const key of KEYS) expect(isLegalKey(key), key).toBe(true);
   });
 });

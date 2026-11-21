@@ -352,8 +352,53 @@ Spec: `.kiro/specs/interview-coach/` (requirements revision 2 with two Analyze R
   rule-5 sentence; all fixed. The prompt now forbids comparing facts with the sample answer,
   correctness verdicts and speaking for USCIS.
 - **Open (owner):** Anthropic data retention terms; a dedicated Privacy screen if wanted; the
-  notice is dense for ESL learners and English only until reviewed; `product.md` says "answer
-  truthfully from their own circumstances" while the coach notice says "answer as the fictional
-  person" (the brief's wording); the officeholder list needs updating when officeholders change;
+  notice is dense for ESL learners and English only until reviewed; `product.md` and the coach notice wording (resolved in M); the officeholder list needs updating when officeholders change;
   names, street addresses, receipt and passport numbers are not screened; the per-session turn cap
   is advisory on the server.
+
+## M. Discoverable AI coach (2026-11-20, branch ui/coach-discoverable)
+- **Problem:** the coach switch inside the N-400 screen was not found. The coach is now offered
+  from outside, and consent is unchanged: nothing is sent until the notice is confirmed, and consent
+  lasts for the session only.
+- **Home card:** "Practice the N-400 interview with an AI coach" sits directly under the full
+  interview card, with the owner's text ("The coach asks a follow-up like an officer might and gives
+  tips on your English. Optional.") and "Powered by Claude (Anthropic)". It starts a single-part
+  N-400 session and opens the consent notice as soon as the N-400 stage starts. The card is marked
+  by a 3px teal frame and its own words, not by colour alone. The follow-up label in the feedback
+  step stays "A practice follow-up question:" (spec C1). The content reviewer suggested softening
+  "like an officer might"; kept as the owner's wording, open for the owner.
+- **"AI" badge** on the N-400 part card: the word "AI" in a pill (`currentColor` border). Screen
+  readers hear "AI coach (optional)" instead (reusing `coach.switch.label`), so the badge does not
+  suggest the part always uses AI. `home.part.n400.badge` may equal English in every language (C5).
+- **Choice screen:** every session that reaches the N-400 part asks "Would you like to use the AI
+  coach?" before the first question, with "Use the AI coach" and "No, practice without AI" as two
+  equal-size buttons (no nudge towards AI). "Use" opens the notice; Cancel returns to the choice
+  (C3); "No" starts the scripted interview. The switch above the questions stays. Entry state is
+  held by pure helpers (`src/ui/coach/coach-entry.ts`); "confirm" is reachable only from the notice.
+- **Attribution: text only, no logo.** Source: Anthropic Trademark Guidelines,
+  <https://www.anthropic.com/legal/trademark-guidelines> (read 2026-11-20): Anthropic's names, logos
+  and brand elements may be used only as specifically permitted and in materials Anthropic has
+  approved in advance; logo images are supplied on request; no use may imply sponsorship or
+  affiliation; questions go to marketing@anthropic.com. Also read:
+  <https://code.claude.com/docs/en/legal-and-compliance>. No public developer badge for apps that
+  call the API was found, so no asset was added. "Powered by Claude (Anthropic)" appears as plain
+  text on the home card, the choice screen, the consent notice and the feedback step (only after an
+  AI reply, not on fallback lines). NOTICE item 8 and README say Claude and Anthropic are trademarks
+  of Anthropic, PBC, and that Language Lab is not affiliated with, sponsored by or endorsed by
+  Anthropic. "Claude" and "Anthropic" are in `FIXED_TERMS`.
+- **Text:** new keys in all 14 locales (AI drafts, not legal keys). Draft fixes after review: zh
+  "移民官" (immigration officer) to "面談人員"; pt "oficial" to "entrevistador"; vi and hmn
+  "Powered by" no longer read as "Use Claude" (hmn still needs a Hmong reader).
+- **Steering (C4, owner decision):** practice always uses a fictional profile, so no real personal
+  data is spoken, typed or sent; the app also tells learners that in their real interview they must
+  answer truthfully about their own life. `product.md` says this; `intro.privacy`,
+  `n400.sample.note` and `coach.notice.text` (legal keys, English until reviewed) each say both
+  halves; drafts and back-translations updated in 13 languages. `content-safety.md` rule 2 is
+  unchanged: it already forbids suggesting what to claim.
+- **Reviews:** `ui-reviewer`: focus was lost after Cancel (now back on "Use the AI coach"), long
+  accessible names (now the title, with text and attribution as the description), notice spacing
+  and a double rule, wrapping at 320px, the focus ring on the teal frame; all fixed. The translation
+  label it asked about is already on every screen (Shell `AiNotice`). `content-reviewer`: no
+  must-fix; the zh/pt/vi/hmn wording above and the badge fixed.
+- **Layout check:** the choice screen, the home card's setup and its notice are recorded in the 10
+  production languages at normal and extra-large text, at 390px and 320px: all pass.

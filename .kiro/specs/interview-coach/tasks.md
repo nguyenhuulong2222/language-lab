@@ -31,10 +31,10 @@ never calls `/api/coach`.
 `content-reviewer` with fixes, layout check, build, `decisions-log.md`, `kiro-log.md`.
 
 ## Revision 3 (branch ui/coach-discoverable)
-- D-00 Spec revision 3 (this update).
-- D-01 Home card and the "AI" badge on the N-400 part card.
-- D-02 Choice screen before the first N-400 question; shared `CoachNotice`; tests for both entry paths and "No".
-- D-03 "Powered by Claude (Anthropic)" text on the four surfaces; "Claude" and "Anthropic" in `FIXED_TERMS`; no logo.
-- D-04 Strings in 14 languages, review sheets.
-- D-05 Layout check for the new screens; `ui-reviewer` and `content-reviewer` with fixes.
-- D-06 Steering: fictional practice, truthful real interview.
+- [x] D-00 Spec revision 3 (this update).
+- [x] D-01 Home card and the "AI" badge on the N-400 part card.
+- [x] D-02 Choice screen before the first N-400 question; shared `CoachNotice`; tests for both entry paths and "No".
+- [x] D-03 "Powered by Claude (Anthropic)" text on the four surfaces; "Claude" and "Anthropic" in `FIXED_TERMS`; no logo.
+- [x] D-04 Strings in 14 languages, review sheets.
+- [x] D-05 Layout check for the new screens; `ui-reviewer` and `content-reviewer` with fixes.
+- [x] D-06 Steering: fictional practice, truthful real interview.

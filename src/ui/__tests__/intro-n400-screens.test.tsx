@@ -117,7 +117,8 @@ describe("N400View", () => {
     expect(html).toContain(question.text);
     expect(html).toContain(question.sampleAnswers[profile.id]!);
     expect(html).toContain(`Sample answer for ${profile.displayName} (fictional)`);
-    expect(html).toContain("you answer truthfully about your own life");
+    expect(html).toContain("you must answer truthfully about your own life");
+    expect(html).toContain("Practice uses the fictional profile");
     expect(html).toContain("Nothing in this step is scored");
     expect(html).toContain("<textarea");
     expect(html).toContain(`Question 1 of ${content.n400Questions.length}`);
