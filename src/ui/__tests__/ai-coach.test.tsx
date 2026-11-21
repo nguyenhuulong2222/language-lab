@@ -257,8 +257,18 @@ describe("discoverable coach: home card (REQ-C18)", () => {
     expect(html).toContain("Powered by Claude (Anthropic)");
   });
   it("the N-400 part card carries a word badge \"AI\", not a colour", () => {
-    expect(home().replace(/<!-- -->/g, "")).toMatch(/N-400 interview <span class="option-card__badge">AI<\/span>/);
+    // Seen: the word "AI". Heard: "AI coach (optional)", so the badge does not suggest the part always uses AI.
+    expect(home().replace(/<!-- -->/g, "")).toMatch(/N-400 interview <span class="option-card__badge" aria-hidden="true">AI<\/span><span class="ll-sr-only">AI coach \(optional\)<\/span>/);
     expect(home({ onChooseCoach: undefined })).not.toContain("option-card__badge");
+  });
+  it("the card's name is its title; the text and the attribution are its description", () => {
+    const html = home();
+    const tag = html.slice(html.lastIndexOf("<button", html.indexOf("option-card--coach")), html.indexOf(">", html.indexOf("option-card--coach")));
+    const labelledby = /aria-labelledby="([^"]+)"/.exec(tag)![1]!;
+    const describedby = /aria-describedby="([^"]+)"/.exec(tag)![1]!.split(" ");
+    expect(html).toContain(`id="${labelledby}" class="option-card__title">Practice the N-400 interview with an AI coach<`);
+    expect(describedby).toHaveLength(2);
+    expect(html).toContain(`id="${describedby[1]}" class="option-card__meta">Powered by Claude (Anthropic)<`);
   });
   it("no logo or brand artwork: no image or svg on the card", () => {
     const html = home();
@@ -286,6 +296,14 @@ describe("discoverable coach: the choice before the first question (REQ-C19)", (
     expect(html).not.toContain("sent as text to Anthropic");
     expect(html).not.toContain(question.text);
     expect(transport).not.toHaveBeenCalled();
+  });
+  it("\"Use\" is named by its title, with the attribution as its description", () => {
+    const { html } = screen();
+    const tag = /<button[^>]*option-card--coach[^>]*>/.exec(html)![0];
+    const labelledby = /aria-labelledby="([^"]+)"/.exec(tag)![1]!;
+    const describedby = /aria-describedby="([^"]+)"/.exec(tag)![1]!;
+    expect(html).toContain(`id="${labelledby}" class="option-card__title">Use the AI coach<`);
+    expect(html).toContain(`id="${describedby}" class="option-card__meta">Powered by Claude (Anthropic)<`);
   });
   it("from the home coach card the notice is open at once; still nothing is sent", () => {
     const { html, transport } = screen({ coachEntry: "notice" });

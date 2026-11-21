@@ -3,6 +3,7 @@
  * interview and one part. Nothing is asked here; the setup screen (only for the parts that
  * need it) comes next.
  */
+import { useId } from "react";
 import { LegalText } from "../components/LegalText";
 import type { PracticeMode } from "../../engine/practice-flow";
 import type { MessageKey } from "../../i18n";
@@ -36,6 +37,9 @@ const PARTS: ReadonlyArray<{ mode: Exclude<PracticeMode, "full">; title: Message
 
 export function HomeScreen({ civicsLocked, onChoose, onStudy, onChooseCoach, focusOnFirstRender = false }: HomeScreenProps) {
   const t = useT();
+  const coachTitleId = useId();
+  const coachTextId = useId();
+  const coachMetaId = useId();
   return (
     <div className="screen">
       <TakeHeader stage="home" title={t("home.title")} lead={t("home.lead")} focusOnFirstRender={focusOnFirstRender} />
@@ -64,10 +68,23 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, onChooseCoach, foc
           </button>
         )}
         {onChooseCoach !== undefined && (
-          <button type="button" className="option-card option-card--coach" onClick={onChooseCoach}>
-            <span className="option-card__title">{t("home.coach.title")}</span>
-            <span className="option-card__text">{t("home.coach.text")}</span>
-            <span className="option-card__meta">{t("coach.poweredBy")}</span>
+          <button
+            type="button"
+            className="option-card option-card--coach"
+            aria-labelledby={coachTitleId}
+            aria-describedby={`${coachTextId} ${coachMetaId}`}
+            onClick={onChooseCoach}
+          >
+            {/* A short name (the title); the text and the attribution are read as the description. */}
+            <span id={coachTitleId} className="option-card__title">
+              {t("home.coach.title")}
+            </span>
+            <span id={coachTextId} className="option-card__text">
+              {t("home.coach.text")}
+            </span>
+            <span id={coachMetaId} className="option-card__meta">
+              {t("coach.poweredBy")}
+            </span>
           </button>
         )}
         {!civicsLocked && onStudy !== undefined && (
@@ -85,7 +102,10 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, onChooseCoach, foc
                 {part.mode === "n400" && onChooseCoach !== undefined && (
                   <>
                     {" "}
-                    <span className="option-card__badge">{t("home.part.n400.badge")}</span>
+                    <span className="option-card__badge" aria-hidden="true">
+                      {t("home.part.n400.badge")}
+                    </span>
+                    <span className="ll-sr-only">{t("coach.switch.label")}</span>
                   </>
                 )}
               </span>

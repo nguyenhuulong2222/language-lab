@@ -94,6 +94,7 @@
   color: var(--ink);
   text-align: left;
   cursor: pointer;
+  overflow-wrap: anywhere;
 }
 .option-card--primary {
   border-color: var(--teal);
@@ -116,6 +117,10 @@
   border-color: var(--teal);
   background: var(--surface);
   color: var(--ink);
+}
+/* The card's own frame is teal: a wider gap keeps the focus ring distinct from it. */
+.option-card--coach:focus-visible {
+  outline-offset: calc(var(--focus-offset) + 3px);
 }
 .option-card__meta {
   font-size: var(--fs-meta);

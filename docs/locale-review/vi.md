@@ -222,7 +222,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.full.text` | All four parts in order, then one report. | Cả bốn phần theo thứ tự, rồi một báo cáo. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Luyện phỏng vấn N-400 với huấn luyện viên AI |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | Huấn luyện viên hỏi thêm một câu như viên chức có thể hỏi và cho bạn mẹo về tiếng Anh. Không bắt buộc. |
-| `coach.poweredBy` | Powered by Claude (Anthropic) | Sử dụng Claude (Anthropic) |
+| `coach.poweredBy` | Powered by Claude (Anthropic) | Hỗ trợ bởi Claude (Anthropic) |
 | `home.parts.title` | Practice one part | Luyện từng phần |
 | `home.part.n400.title` | N-400 interview | Phỏng vấn N-400 |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | Trả lời các câu hỏi về hồ sơ. Không chấm điểm. |
