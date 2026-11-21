@@ -33,6 +33,8 @@ export function CoachNotice({ onConfirm, onCancel }: { onConfirm: () => void; on
       <p>
         <LegalText messageKey="coach.notice.text" />
       </p>
+      {/* Attribution as plain text: no Anthropic or Claude logo (spec REQ-C20). */}
+      <p className="note">{t("coach.poweredBy")}</p>
       <div className="btn-row">
         <button type="button" className="btn" onClick={onConfirm}>
           {t("coach.notice.confirm")}

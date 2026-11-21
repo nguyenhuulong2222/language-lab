@@ -29,7 +29,7 @@ export interface LocaleProblem {
 }
 
 /** Names and terms that are never translated. If the English line has one, the translation has it. */
-export const FIXED_TERMS: readonly string[] = ["Language Lab", "USCIS", "N-400", "DHS", "uscis.gov", "A-number"];
+export const FIXED_TERMS: readonly string[] = ["Language Lab", "USCIS", "N-400", "DHS", "uscis.gov", "A-number", "Claude", "Anthropic"];
 
 /**
  * Keys that may be identical to English in any language: the product name, the decorative tape

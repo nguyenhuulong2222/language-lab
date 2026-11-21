@@ -331,3 +331,42 @@ describe("discoverable coach: the choice before the first question (REQ-C19)", (
     expect(src).not.toMatch(/onNo=\{[^}]*giveConsent/);
   });
 });
+
+describe("attribution as text only (REQ-C20)", () => {
+  const POWERED = "Powered by Claude (Anthropic)";
+  const scripted = createScriptedN400Coach(content.n400Questions);
+  const surfaces: Array<[string, string]> = [
+    ["home card", renderToString(<HomeScreen civicsLocked={false} onChoose={() => {}} onStudy={() => {}} onChooseCoach={() => {}} />)],
+    ["choice screen", renderToString(<N400Screen coach={scripted} profile={profile} answers={[]} onAnswer={() => {}} onFinish={() => {}} coachTransport={vi.fn<CoachTransport>()} />)],
+    ["notice", renderToString(<N400Screen coach={scripted} profile={profile} answers={[]} onAnswer={() => {}} onFinish={() => {}} coachTransport={vi.fn<CoachTransport>()} coachEntry="notice" />)],
+    ["switch notice", renderToString(<CoachSwitch on={false} noticeOpen offForSession={false} onRequestOn={() => {}} onTurnOff={() => {}} onConfirm={() => {}} onCancel={() => {}} />)],
+    ["feedback step", renderToString(<CoachFeedback step={{ status: "done", result: { kind: "ai", reply } }} onNext={() => {}} />)],
+  ];
+  it.each(surfaces)("the %s says \"Powered by Claude (Anthropic)\" once, as text", (_name, html) => {
+    expect(html.split(POWERED).length - 1).toBe(1);
+  });
+  it.each(surfaces)("the %s has no image or svg (no logo or brand artwork)", (name, html) => {
+    if (name === "home card") {
+      const card = html.slice(html.indexOf("option-card--coach"), html.indexOf(POWERED));
+      expect(card).not.toMatch(/<img|<svg/);
+    } else {
+      expect(html).not.toMatch(/<img/);
+      // The only svg allowed is the app's own status icon (check or review marker), never brand artwork.
+      for (const m of html.matchAll(/<svg[^>]*>/g)) expect(m[0]).toContain('class="icon-inline"');
+    }
+    // The attribution line itself is plain text.
+    expect(html).toMatch(/>Powered by Claude \(Anthropic\)</);
+  });
+  it("no attribution on fallback lines: the AI did not write them", () => {
+    const html = renderToString(<CoachFeedback step={{ status: "done", result: { kind: "fallback", reason: "unavailable", disable: false } }} onNext={() => {}} />);
+    expect(html).not.toContain(POWERED);
+  });
+  it("Claude and Anthropic are fixed terms: a translation without them fails the check", async () => {
+    const { FIXED_TERMS, checkLocale } = await import("../../i18n/locale-checks");
+    expect(FIXED_TERMS).toEqual(expect.arrayContaining(["Claude", "Anthropic"]));
+    const en = { "coach.poweredBy": POWERED };
+    expect(checkLocale(en, { "coach.poweredBy": "Hỗ trợ bởi Claude (Anthropic)" })).toEqual([]);
+    expect(checkLocale(en, { "coach.poweredBy": "Hỗ trợ bởi Klod (Anthropic)" }).map((p) => p.kind)).toEqual(["fixed-term"]);
+    expect(checkLocale(en, { "coach.poweredBy": "Hỗ trợ bởi Claude (Anthrópic)" }).map((p) => p.kind)).toEqual(["fixed-term"]);
+  });
+});

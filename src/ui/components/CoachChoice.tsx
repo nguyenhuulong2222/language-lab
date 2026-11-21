@@ -31,7 +31,6 @@ export function CoachChoice({ noticeOpen, onUse, onNo, onConfirm, onCancel }: Co
         {noticeOpen ? (
           <section className="panel coach">
             <CoachNotice onConfirm={onConfirm} onCancel={onCancel} />
-            <p className="note">{t("coach.poweredBy")}</p>
           </section>
         ) : (
           <div className="coach__choices">

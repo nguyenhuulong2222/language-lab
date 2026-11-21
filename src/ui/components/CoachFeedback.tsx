@@ -66,6 +66,7 @@ export function CoachFeedback({ step, onNext }: { step: CoachStep; onNext: () =>
           <p className="note">
             <LegalText messageKey="coach.followUp.note" />
           </p>
+          <p className="note">{t("coach.poweredBy")}</p>
         </>
       );
     } else if (r.kind === "screened") {

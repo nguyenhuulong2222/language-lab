@@ -40,6 +40,12 @@ agency. Nothing here is legal advice.
    API (model claude-haiku-5-5) through functions/api/coach.ts, and the reply is shown labelled
    "AI-generated feedback". The replies are AI output, not legal advice and not a USCIS assessment.
    Anthropic's terms and privacy policy apply to that processing (anthropic.com/legal/privacy).
+   Attribution is the plain text "Powered by Claude (Anthropic)". No Anthropic or Claude logo or
+   brand artwork is used: Anthropic's Trademark Guidelines (https://www.anthropic.com/legal/
+   trademark-guidelines, read 2026-11-20) allow its trademarks only as specifically permitted and in
+   materials it approves beforehand, and no public badge for developers was found. Claude and
+   Anthropic are trademarks of Anthropic, PBC. Language Lab is not affiliated with, sponsored by or
+   endorsed by Anthropic.
 9. formN400.org. This repository contains no text, translation, data or design from formN400.org
    or the separate N400 project of the same owner, and nothing here grants any right to
    formN400.org or its content. Earlier versions of this repository's history contained civics
