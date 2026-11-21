@@ -6,7 +6,7 @@
 import { useEffect, useId, useRef } from "react";
 import { ENGLISH_MESSAGES, type MessageKey } from "../../i18n";
 import { useT } from "../../i18n/react";
-import { LegalText } from "./LegalText";
+import { CoachNotice } from "./CoachNotice";
 import "./Coach.css";
 
 interface CoachSwitchProps {
@@ -26,13 +26,11 @@ export function CoachSwitch({ on, noticeOpen, offForSession, onRequestOn, onTurn
   const t = useT();
   const labelId = useId();
   const helpId = useId();
-  const noticeId = useId();
   const switchRef = useRef<HTMLButtonElement>(null);
-  const noticeRef = useRef<HTMLHeadingElement>(null);
   const wasOpen = useRef(noticeOpen);
+  // The notice focuses its own heading; when it closes, focus comes back to the switch.
   useEffect(() => {
-    if (noticeOpen) noticeRef.current?.focus();
-    else if (wasOpen.current) switchRef.current?.focus();
+    if (!noticeOpen && wasOpen.current) switchRef.current?.focus();
     wasOpen.current = noticeOpen;
   }, [noticeOpen]);
   return (
@@ -66,34 +64,7 @@ export function CoachSwitch({ on, noticeOpen, offForSession, onRequestOn, onTurn
       <p id={helpId} className="note">
         {offForSession ? t("coach.offNow") : t("coach.switch.help")}
       </p>
-      {noticeOpen && (
-        <div
-          className="coach__notice"
-          role="group"
-          aria-labelledby={noticeId}
-          onKeyDown={(event) => {
-            if (event.key === "Escape") {
-              event.stopPropagation();
-              onCancel();
-            }
-          }}
-        >
-          <h2 id={noticeId} ref={noticeRef} tabIndex={-1} className="panel__title">
-            {t("coach.notice.title")}
-          </h2>
-          <p>
-            <LegalText messageKey="coach.notice.text" />
-          </p>
-          <div className="btn-row">
-            <button type="button" className="btn" onClick={onConfirm}>
-              {t("coach.notice.confirm")}
-            </button>
-            <button type="button" className="btn btn--secondary" onClick={onCancel}>
-              {t("coach.notice.cancel")}
-            </button>
-          </div>
-        </div>
-      )}
+      {noticeOpen && <CoachNotice onConfirm={onConfirm} onCancel={onCancel} />}
       {on && (
         <ul className="notice-list coach__disclaimers" lang="en">
           {DISCLAIMERS.map((key) => (

@@ -611,3 +611,13 @@ Spec first (`88e7d15`, BS-22 to BS-25); decisions in `docs/decisions-log.md`, se
   calls `/api/coach`.
 - C-05: deploy notes, README, NOTICE, structure steering, `ui-reviewer` and `content-reviewer` with
   fixes, layout check, build.
+## 2026-11-20: discoverable AI coach (branch ui/coach-discoverable)
+- D-00: spec revision 3 (REQ-C18 to C22, Analyze Requirements C1 to C5).
+- D-01: home card for the coach and the "AI" badge on the N-400 part card.
+- D-02: choice screen before the first N-400 question, shared consent notice, tests for both entry
+  paths and "No".
+- D-03: "Powered by Claude (Anthropic)" as text on four surfaces, no logo (Anthropic trademark
+  guidelines), fixed terms, NOTICE and README.
+- D-04: strings in 14 languages, review sheets, tests for the translated choice screen.
+- D-05: layout check for the new screens (40 configurations pass), reviewer fixes.
+- D-06: steering and the three legal lines say fictional practice, truthful real interview.

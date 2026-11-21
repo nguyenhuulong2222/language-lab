@@ -6,6 +6,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { renderToString } from "react-dom/server";
 import { createAiCoachSession, COACH_ENDPOINT, type CoachTransport } from "../coach/ai-coach-client";
 import { createAiN400Coach } from "../coach/ai-n400-coach";
+import { initialCoachEntry, nextCoachEntry } from "../coach/coach-entry";
 import { loadCoachConfig } from "../../engine/coach/config";
 import { createScriptedN400Coach } from "../../engine/n400-coach";
 import { loadPracticeContent } from "../../engine/practice-content";
@@ -14,6 +15,7 @@ import { CoachSwitch } from "../components/CoachSwitch";
 import { CoachFeedback } from "../components/CoachFeedback";
 import { N400Screen } from "../screens/N400Screen";
 import { PracticeApp } from "../PracticeApp";
+import { HomeScreen } from "../screens/HomeScreen";
 import { I18nProvider } from "../../i18n/react";
 import { ENGLISH_MESSAGES } from "../../i18n";
 
@@ -237,5 +239,194 @@ describe("interface (REQ-C14)", () => {
     expect(html).toContain("Getting AI feedback");
     expect(html).toMatch(/role="status" aria-live="polite"/);
     expect(html).not.toContain("Continue");
+  });
+});
+
+describe("discoverable coach: home card (REQ-C18)", () => {
+  const home = (props: Partial<Parameters<typeof HomeScreen>[0]> = {}) =>
+    renderToString(<HomeScreen civicsLocked={false} onChoose={() => {}} onStudy={() => {}} onChooseCoach={() => {}} {...props} />);
+  it("the card sits directly under the full-interview card, with the attribution line", () => {
+    const html = home();
+    const full = html.indexOf("Full practice interview");
+    const card = html.indexOf("Practice the N-400 interview with an AI coach");
+    const study = html.indexOf("Study first");
+    expect(full).toBeGreaterThan(-1);
+    expect(card).toBeGreaterThan(full);
+    expect(card).toBeLessThan(study);
+    expect(html).toContain("The coach asks a follow-up like an officer might and gives tips on your English. Optional.");
+    expect(html).toContain("Powered by Claude (Anthropic)");
+  });
+  it("the N-400 part card carries a word badge \"AI\", not a colour", () => {
+    // Seen: the word "AI". Heard: "AI coach (optional)", so the badge does not suggest the part always uses AI.
+    expect(home().replace(/<!-- -->/g, "")).toMatch(/N-400 interview <span class="option-card__badge" aria-hidden="true">AI<\/span><span class="ll-sr-only">AI coach \(optional\)<\/span>/);
+    expect(home({ onChooseCoach: undefined })).not.toContain("option-card__badge");
+  });
+  it("the card's name is its title; the text and the attribution are its description", () => {
+    const html = home();
+    const tag = html.slice(html.lastIndexOf("<button", html.indexOf("option-card--coach")), html.indexOf(">", html.indexOf("option-card--coach")));
+    const labelledby = /aria-labelledby="([^"]+)"/.exec(tag)![1]!;
+    const describedby = /aria-describedby="([^"]+)"/.exec(tag)![1]!.split(" ");
+    expect(html).toContain(`id="${labelledby}" class="option-card__title">Practice the N-400 interview with an AI coach<`);
+    expect(describedby).toHaveLength(2);
+    expect(html).toContain(`id="${describedby[1]}" class="option-card__meta">Powered by Claude (Anthropic)<`);
+  });
+  it("no logo or brand artwork: no image or svg on the card", () => {
+    const html = home();
+    const card = html.slice(html.indexOf("option-card--coach"), html.indexOf("Powered by Claude (Anthropic)"));
+    expect(card).not.toMatch(/<img|<svg/);
+  });
+});
+
+describe("discoverable coach: the choice before the first question (REQ-C19)", () => {
+  const scripted = createScriptedN400Coach(content.n400Questions);
+  const screen = (props: Partial<Parameters<typeof N400Screen>[0]> = {}) => {
+    const transport = vi.fn<CoachTransport>();
+    const html = renderToString(
+      <N400Screen coach={scripted} profile={profile} answers={[]} onAnswer={() => {}} onFinish={() => {}} coachTransport={transport} {...props} />
+    );
+    return { html, transport };
+  };
+  it("a normal entry asks first, with two large buttons and the disclaimers; nothing is sent", () => {
+    const { html, transport } = screen();
+    expect(html).toContain("Would you like to use the AI coach?");
+    expect(html).toContain("Use the AI coach");
+    expect(html).toContain("No, practice without AI");
+    expect(html).toContain("Powered by Claude (Anthropic)");
+    for (const key of ["intro.notice.practice", "intro.notice.legal", "intro.notice.government"] as const) expect(html).toContain(ENGLISH_MESSAGES[key]);
+    expect(html).not.toContain("sent as text to Anthropic");
+    expect(html).not.toContain(question.text);
+    expect(transport).not.toHaveBeenCalled();
+  });
+  it("\"Use\" is named by its title, with the attribution as its description", () => {
+    const { html } = screen();
+    const tag = /<button[^>]*option-card--coach[^>]*>/.exec(html)![0];
+    const labelledby = /aria-labelledby="([^"]+)"/.exec(tag)![1]!;
+    const describedby = /aria-describedby="([^"]+)"/.exec(tag)![1]!;
+    expect(html).toContain(`id="${labelledby}" class="option-card__title">Use the AI coach<`);
+    expect(html).toContain(`id="${describedby}" class="option-card__meta">Powered by Claude (Anthropic)<`);
+  });
+  it("from the home coach card the notice is open at once; still nothing is sent", () => {
+    const { html, transport } = screen({ coachEntry: "notice" });
+    expect(html).toContain("Before you turn on the AI coach");
+    expect(html).toContain("sent as text to Anthropic");
+    expect(html).toContain("Turn on the AI coach");
+    expect(html).not.toContain("No, practice without AI");
+    expect(transport).not.toHaveBeenCalled();
+  });
+  it("no choice when the coach is not offered, or once the interview has started", () => {
+    expect(renderToString(<N400Screen coach={scripted} profile={profile} answers={[]} onAnswer={() => {}} onFinish={() => {}} />)).not.toContain("Would you like to use the AI coach?");
+    const started = screen({ answers: [{ questionId: question.id, questionText: question.text, transcript: "x" }] });
+    expect(started.html).not.toContain("Would you like to use the AI coach?");
+    expect(started.html).toContain('role="switch"');
+  });
+  it("the entry paths: Use → notice → Confirm; Use → notice → Cancel → choice; No → questions", () => {
+    expect(initialCoachEntry(true, 0, "choice")).toBe("choice");
+    expect(initialCoachEntry(true, 0, "notice")).toBe("notice");
+    expect(initialCoachEntry(false, 0, "notice")).toBe("done");
+    expect(initialCoachEntry(true, 2, "choice")).toBe("done");
+    expect(nextCoachEntry("choice", "use")).toBe("notice");
+    expect(nextCoachEntry("notice", "confirm")).toBe("done");
+    expect(nextCoachEntry("notice", "cancel")).toBe("choice");
+    expect(nextCoachEntry("choice", "no")).toBe("done");
+    // "confirm" is not reachable from the choice screen: consent needs the notice.
+    expect(nextCoachEntry("choice", "confirm")).toBe("choice");
+    expect(nextCoachEntry("done", "use")).toBe("done");
+  });
+  it("\"No\": the session stays without consent and the transport is never called", async () => {
+    const transport = spy();
+    const s = createAiCoachSession({ transport, config });
+    // The screen does nothing to the session on "No"; answers go straight to the scripted coach.
+    const ai = createAiN400Coach(scripted, s);
+    expect(await ai.turnFeedback({ profile, answered: [] }, { questionId: question.id, questionText: question.text, transcript: "My name is Aurora Thistlewood." })).toEqual({ kind: "off" });
+    expect(transport).not.toHaveBeenCalled();
+  });
+  it("only the notice's Confirm gives consent (source check of the screen)", async () => {
+    const sources = import.meta.glob("../screens/N400Screen.tsx", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
+    const src = Object.values(sources)[0]!;
+    expect(src.match(/giveConsent\(\)/g)?.length).toBe(2); // the choice screen's notice and the switch's notice
+    for (const m of src.matchAll(/onConfirm=\{\(\) => \{\s*(?:\/\/[^\n]*\s*)?session\.giveConsent\(\)/g)) expect(m[0]).toContain("onConfirm");
+    expect(src).not.toMatch(/onUse=\{[^}]*giveConsent/);
+    expect(src).not.toMatch(/onNo=\{[^}]*giveConsent/);
+  });
+});
+
+describe("attribution as text only (REQ-C20)", () => {
+  const POWERED = "Powered by Claude (Anthropic)";
+  const scripted = createScriptedN400Coach(content.n400Questions);
+  const surfaces: Array<[string, string]> = [
+    ["home card", renderToString(<HomeScreen civicsLocked={false} onChoose={() => {}} onStudy={() => {}} onChooseCoach={() => {}} />)],
+    ["choice screen", renderToString(<N400Screen coach={scripted} profile={profile} answers={[]} onAnswer={() => {}} onFinish={() => {}} coachTransport={vi.fn<CoachTransport>()} />)],
+    ["notice", renderToString(<N400Screen coach={scripted} profile={profile} answers={[]} onAnswer={() => {}} onFinish={() => {}} coachTransport={vi.fn<CoachTransport>()} coachEntry="notice" />)],
+    ["switch notice", renderToString(<CoachSwitch on={false} noticeOpen offForSession={false} onRequestOn={() => {}} onTurnOff={() => {}} onConfirm={() => {}} onCancel={() => {}} />)],
+    ["feedback step", renderToString(<CoachFeedback step={{ status: "done", result: { kind: "ai", reply } }} onNext={() => {}} />)],
+  ];
+  it.each(surfaces)("the %s says \"Powered by Claude (Anthropic)\" once, as text", (_name, html) => {
+    expect(html.split(POWERED).length - 1).toBe(1);
+  });
+  it.each(surfaces)("the %s has no image or svg (no logo or brand artwork)", (name, html) => {
+    if (name === "home card") {
+      const card = html.slice(html.indexOf("option-card--coach"), html.indexOf(POWERED));
+      expect(card).not.toMatch(/<img|<svg/);
+    } else {
+      expect(html).not.toMatch(/<img/);
+      // The only svg allowed is the app's own status icon (check or review marker), never brand artwork.
+      for (const m of html.matchAll(/<svg[^>]*>/g)) expect(m[0]).toContain('class="icon-inline"');
+    }
+    // The attribution line itself is plain text.
+    expect(html).toMatch(/>Powered by Claude \(Anthropic\)</);
+  });
+  it("no attribution on fallback lines: the AI did not write them", () => {
+    const html = renderToString(<CoachFeedback step={{ status: "done", result: { kind: "fallback", reason: "unavailable", disable: false } }} onNext={() => {}} />);
+    expect(html).not.toContain(POWERED);
+  });
+  it("Claude and Anthropic are fixed terms: a translation without them fails the check", async () => {
+    const { FIXED_TERMS, checkLocale } = await import("../../i18n/locale-checks");
+    expect(FIXED_TERMS).toEqual(expect.arrayContaining(["Claude", "Anthropic"]));
+    const en = { "coach.poweredBy": POWERED };
+    expect(checkLocale(en, { "coach.poweredBy": "Hỗ trợ bởi Claude (Anthropic)" })).toEqual([]);
+    expect(checkLocale(en, { "coach.poweredBy": "Hỗ trợ bởi Klod (Anthropic)" }).map((p) => p.kind)).toEqual(["fixed-term"]);
+    expect(checkLocale(en, { "coach.poweredBy": "Hỗ trợ bởi Claude (Anthrópic)" }).map((p) => p.kind)).toEqual(["fixed-term"]);
+  });
+});
+
+describe("coach text in other languages (REQ-C22)", () => {
+  const scripted = createScriptedN400Coach(content.n400Questions);
+  const vi_ = (props: Partial<Parameters<typeof N400Screen>[0]> = {}) =>
+    renderToString(
+      <I18nProvider language="vi">
+        <N400Screen coach={scripted} profile={profile} answers={[]} onAnswer={() => {}} onFinish={() => {}} coachTransport={vi.fn<CoachTransport>()} {...props} />
+      </I18nProvider>
+    );
+  it("the choice screen is translated; the three disclaimers stay English", () => {
+    const html = vi_();
+    expect(html).toContain("Bạn có muốn dùng huấn luyện viên AI không?");
+    expect(html).toContain("Claude (Anthropic)");
+    expect(html).not.toContain("Would you like to use the AI coach?");
+    for (const key of ["intro.notice.practice", "intro.notice.legal", "intro.notice.government"] as const) expect(html).toContain(ENGLISH_MESSAGES[key]);
+  });
+  it("the notice opened from the home card: consent text in English, attribution translated", () => {
+    const html = vi_({ coachEntry: "notice" });
+    expect(html).toContain(ENGLISH_MESSAGES["coach.notice.text"].replace(/'/g, "&#x27;"));
+    expect(html).not.toContain("Powered by Claude (Anthropic)");
+    expect(html).toContain("Claude (Anthropic)");
+  });
+  it("the new coach keys are interface text, not legal keys", async () => {
+    const { LEGAL_KEYS } = await import("../../i18n/legal-keys");
+    for (const k of ["home.coach.title", "home.coach.text", "coach.poweredBy", "coach.choice.title", "coach.choice.lead", "coach.choice.use", "coach.choice.no"]) {
+      expect(LEGAL_KEYS as readonly string[], k).not.toContain(k);
+    }
+  });
+});
+
+describe("fictional practice, truthful real interview (REQ-C21)", () => {
+  const KEYS = ["intro.privacy", "n400.sample.note", "coach.notice.text"] as const;
+  it.each(KEYS)("%s says both halves in English", (key) => {
+    const text = ENGLISH_MESSAGES[key];
+    expect(text, key).toMatch(/fictional (profile|person)/);
+    expect(text, key).toContain("In your real interview, you must answer truthfully about your own life.");
+  });
+  it("the three lines stay legal keys (English until a person reviews them)", async () => {
+    const { isLegalKey } = await import("../../i18n/legal-keys");
+    for (const key of KEYS) expect(isLegalKey(key), key).toBe(true);
   });
 });

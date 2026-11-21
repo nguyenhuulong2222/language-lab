@@ -152,3 +152,27 @@ Function logs only `coach <status> <reason>`.
 | Handler | with mocked model and memory store: ok path, every refusal, every limit, timeout, rejection, injection attempts (the mock returns what an injected model might), headers |
 | Client | consent off never calls the transport; screened text never calls it; fallback mapping; switch-off reasons |
 | App | rendering and running the N-400 stage with the coach off never calls `fetch` for `/api/coach` |
+
+## Revision 3 — discoverable coach
+
+```
+Home ── "Practice the N-400 interview with an AI coach" card ──► choose n400 with coachEntry "notice"
+     └─ any other card ───────────────────────────────────────► coachEntry "choice" (when the session has N-400)
+setup (fictional profile) ─► N-400 stage
+  N400Screen entry state:  "choice" ─ Use ─► "notice" ─ Confirm ─► consent, coach on ─► questions
+                                  └─ No ──────────────────────────► coach off ─────────► questions
+                           "notice" ─ Cancel ─► "choice"
+```
+- `PracticeApp` keeps `coachEntry` ("choice" | "notice") for the session, set by the home card
+  that started it; a restart resets it.
+- `N400Screen` holds the entry state; it starts at "choice" (or "notice") only when the coach is
+  offered and no N-400 answer exists yet, and ends at "done". Consent and the session are the same
+  `AiCoachSession` as before.
+- `CoachNotice` (new) is the notice of `CoachSwitch`, shared by the switch and the choice screen:
+  heading focus on open, Escape cancels, the "Powered by" line.
+- `CoachChoice` (new): TakeHeader overline of the N-400 stage, the question as H1, the two buttons
+  as large option cards, the "Powered by" line and the three English disclaimers.
+- `CoachFeedback` adds the "Powered by" line under the AI lines.
+- Layout check: the home card is in the home screenshot; the full interview records
+  `coach-choice` and answers "No"; a second pass starts from the home card and records
+  `coach-notice-home`, then cancels to the choice screen and answers "No".

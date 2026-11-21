@@ -245,3 +245,59 @@ cost per session and per day at the configured caps, and how to change the model
 | B18 | The switch shows when the endpoint is off; no provider backstop. | REQ-C11: the switch turns itself off after "unavailable" (no probe before consent, so no call is made without consent). REQ-C17: Anthropic spend limit and WAF rule. Open: a learner may see the notice once and then "not available" while the coach is off. |
 | B19 | External facts unverifiable from the repo. | Read from the docs on 2026-11-20; `checkedOn` in the config. |
 | B20 | Session id generation. | REQ-C10 and REQ-C11: random per consent, memory only; the per-session cap is advisory. |
+
+## Revision 3 — making the coach discoverable (2026-11-20, branch ui/coach-discoverable)
+
+Problem: the coach was a switch inside the N-400 screen, so learners did not find it. These
+requirements make it visible from outside the screen. Consent is not weakened: nothing is sent
+before the learner confirms the notice of REQ-C07, and consent still lasts for one practice only.
+
+### REQ-C18 — Home card
+Directly under the full-interview card, a prominent card: title "Practice the N-400 interview with an
+AI coach", text "The coach asks a follow-up like an officer might and gives tips on your English.
+Optional.", and a line "Powered by Claude (Anthropic)". Choosing it starts a single-part N-400
+session; when the N-400 stage starts, the consent notice is open at once. The N-400 part card shows a
+small text badge "AI". Status is never shown by colour alone (the badge is a word).
+
+### REQ-C19 — Choice before the first N-400 question
+Every session that reaches the N-400 stage (full interview and single part) shows a choice screen
+before the first question: "Would you like to use the AI coach?" with two large buttons, "Use the AI
+coach" and "No, practice without AI".
+- "Use the AI coach" opens the consent notice; nothing is sent until it is confirmed. "Cancel" in
+  the notice returns to the choice screen.
+- "No, practice without AI" starts the scripted N-400 as before, with the coach off.
+- Coming from the home card (REQ-C18) skips the choice and opens the notice at once.
+- The switch on the N-400 screen stays, so the learner can change their mind.
+- Consent lasts for the session only. The test that `/api/coach` is never called before consent
+  keeps passing; new tests cover both entry paths and "No".
+The choice screen shows the three disclaimers in English, like the switch.
+
+### REQ-C20 — Attribution as text
+"Powered by Claude (Anthropic)" is shown as text on the home card, the choice screen, the consent
+notice and the feedback step. No Anthropic or Claude logo or brand artwork is drawn, copied or
+embedded: Anthropic's Trademark Guidelines (anthropic.com/legal/trademark-guidelines, read
+2026-11-20) allow its trademarks only as specifically permitted and in materials it approves
+beforehand, and Anthropic supplies artwork on request; no public developer badge was found. "Claude"
+and "Anthropic" join `FIXED_TERMS`, so translations keep them.
+
+### REQ-C21 — Fictional practice, truthful real interview
+Owner decision: practice always uses a fictional profile, so no real personal data is spoken, typed
+or sent; the app also tells learners that in their real interview they must answer truthfully about
+their own life. `.kiro/steering/product.md`, `intro.privacy`, `n400.sample.note` and
+`coach.notice.text` say both halves.
+
+### REQ-C22 — Text and checks
+All new strings are in `en.json` with AI drafts in the other 13 locales; consent and privacy lines
+stay legal keys (English only until reviewed); the review sheets are regenerated. The layout check
+records the home card, the choice screen and the notice opened from home in every production
+language at normal and extra-large text and at 320px.
+
+### Analyze Requirements, revision 3
+
+| # | Point | Settled |
+|---|---|---|
+| C1 | The home card text says "like an officer might", which the content review of revision 2 avoided in the follow-up label. | The owner's wording is used on the card; the follow-up label stays "A practice follow-up question:". |
+| C2 | Using Anthropic's names, even as text, is covered by its trademark guidelines. | Plain factual attribution only, no logo; NOTICE and README say Language Lab is not affiliated with or endorsed by Anthropic. Open: the owner may ask marketing@anthropic.com if any wider use is wanted. |
+| C3 | "Cancel" in a notice opened from home: where does it go? | To the choice screen (REQ-C19), so the learner still decides. |
+| C4 | `content-safety.md` rule 2 also says "answer truthfully from their own real circumstances". | It concerns the real application; the new wording is consistent with it. Only `product.md` is changed, as instructed. Open: the owner may align rule 2's wording. |
+| C5 | "AI" equals the English text in most locales, which the locale check refuses. | The badge key joins `IDENTICAL_ALLOWED`. |

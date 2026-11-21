@@ -29,7 +29,7 @@ export interface LocaleProblem {
 }
 
 /** Names and terms that are never translated. If the English line has one, the translation has it. */
-export const FIXED_TERMS: readonly string[] = ["Language Lab", "USCIS", "N-400", "DHS", "uscis.gov", "A-number"];
+export const FIXED_TERMS: readonly string[] = ["Language Lab", "USCIS", "N-400", "DHS", "uscis.gov", "A-number", "Claude", "Anthropic"];
 
 /**
  * Keys that may be identical to English in any language: the product name, the decorative tape
@@ -42,6 +42,8 @@ export const IDENTICAL_ALLOWED: readonly string[] = [
   "stage.n400_interview.short",
   "stage.civics.short",
   "settings.textSize.normal",
+  // The "AI" badge on the N-400 part card is the same short word in many languages.
+  "home.part.n400.badge",
 ];
 
 /** Digits of other scripts that a translator might use, mapped to ASCII. */

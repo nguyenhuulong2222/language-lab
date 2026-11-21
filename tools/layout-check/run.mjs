@@ -341,6 +341,10 @@ async function checkConfiguration(cdp, size, lang) {
   await choose(L(FILED_BEFORE ? "intro.filed.before" : "intro.filed.onOrAfter").replace("{date}", boundary));
   await click(L("intro.start"));
 
+  // The choice before the first N-400 question: record it, then practise without AI.
+  await waitFor(() => lab(`has(${js(L("coach.choice.no"))})`), "the AI coach choice");
+  await record("coach-choice");
+  await click(L("coach.choice.no"));
   await waitFor(() => lab(`has(${js(L("n400.save"))})`), "the N-400 question");
   await record("n400-question");
   // The AI coach switch and its notice (opened and cancelled, so nothing is sent).
@@ -414,7 +418,27 @@ async function checkConfiguration(cdp, size, lang) {
   await waitFor(() => lab(`has(${js(L("report.home"))})`), "the part report");
   await record("part-report");
   await click(L("report.home"));
+  await homeCoachPass({ cdp, lab, js, click, record, L });
   return results;
+}
+
+/**
+ * The home card "Practice the N-400 interview with an AI coach": the consent notice must be open at
+ * once when the N-400 stage starts. It is cancelled (back to the choice screen), then "No", so
+ * nothing is ever sent. Runs last: the next configuration reloads the page.
+ */
+async function homeCoachPass({ cdp, lab, js, click, record, L }) {
+  await click(L("home.coach.title"));
+  await record("setup-coach");
+  await cdp.evaluate(`document.querySelector('input[name="profile"]').click()`);
+  await click(L("intro.start"));
+  await waitFor(() => lab(`has(${js(L("coach.notice.cancel"))})`), "the AI coach notice opened from home");
+  if (await lab(`has(${js(L("coach.choice.no"))})`)) throw new Error("the home coach card showed the choice screen, not the notice");
+  await record("coach-notice-home");
+  await click(L("coach.notice.cancel"));
+  await waitFor(() => lab(`has(${js(L("coach.choice.no"))})`), "the AI coach choice after Cancel");
+  await click(L("coach.choice.no"));
+  await waitFor(() => lab(`has(${js(L("n400.save"))})`), "the N-400 question after No");
 }
 
 /** What the production build offers while civics is locked: the N-400 part, reading and writing, each to its report. */
@@ -424,6 +448,9 @@ async function productionParts(cdp, results, { L, lab, js, click, choose, type, 
   await record("setup");
   await cdp.evaluate(`document.querySelector('input[name="profile"]').click()`);
   await click(L("intro.start"));
+  await waitFor(() => lab(`has(${js(L("coach.choice.no"))})`), "the AI coach choice");
+  await record("coach-choice");
+  await click(L("coach.choice.no"));
   await waitFor(() => lab(`has(${js(L("n400.save"))})`), "the N-400 question");
   await record("n400-question");
   // One part: the summary ends with "See report" (report.see), not "Go to reading".
@@ -460,6 +487,7 @@ async function productionParts(cdp, results, { L, lab, js, click, choose, type, 
     await record(`part-report-${part}`);
     await click(L("report.home"));
   }
+  await homeCoachPass({ cdp, lab, js, click, record, L });
   return results;
 }
 // ---------------------------------------------------------------------------

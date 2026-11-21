@@ -3,6 +3,7 @@
  * interview and one part. Nothing is asked here; the setup screen (only for the parts that
  * need it) comes next.
  */
+import { useId } from "react";
 import { LegalText } from "../components/LegalText";
 import type { PracticeMode } from "../../engine/practice-flow";
 import type { MessageKey } from "../../i18n";
@@ -21,6 +22,8 @@ interface HomeScreenProps {
   onChoose: (mode: PracticeMode) => void;
   /** Open "Study first" (questions with pictures and official answers, not scored). */
   onStudy?: () => void;
+  /** Start the N-400 part with the AI coach's consent notice open (spec REQ-C18). Absent: no coach card. */
+  onChooseCoach?: () => void;
   /** The home screen is shown again after "back to home": focus then moves to its heading. */
   focusOnFirstRender?: boolean;
 }
@@ -32,8 +35,11 @@ const PARTS: ReadonlyArray<{ mode: Exclude<PracticeMode, "full">; title: Message
   { mode: "civics", title: "home.part.civics.title", text: "home.part.civics.text" },
 ];
 
-export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender = false }: HomeScreenProps) {
+export function HomeScreen({ civicsLocked, onChoose, onStudy, onChooseCoach, focusOnFirstRender = false }: HomeScreenProps) {
   const t = useT();
+  const coachTitleId = useId();
+  const coachTextId = useId();
+  const coachMetaId = useId();
   return (
     <div className="screen">
       <TakeHeader stage="home" title={t("home.title")} lead={t("home.lead")} focusOnFirstRender={focusOnFirstRender} />
@@ -61,6 +67,26 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender
             <span className="option-card__text">{t("home.full.text")}</span>
           </button>
         )}
+        {onChooseCoach !== undefined && (
+          <button
+            type="button"
+            className="option-card option-card--coach"
+            aria-labelledby={coachTitleId}
+            aria-describedby={`${coachTextId} ${coachMetaId}`}
+            onClick={onChooseCoach}
+          >
+            {/* A short name (the title); the text and the attribution are read as the description. */}
+            <span id={coachTitleId} className="option-card__title">
+              {t("home.coach.title")}
+            </span>
+            <span id={coachTextId} className="option-card__text">
+              {t("home.coach.text")}
+            </span>
+            <span id={coachMetaId} className="option-card__meta">
+              {t("coach.poweredBy")}
+            </span>
+          </button>
+        )}
         {!civicsLocked && onStudy !== undefined && (
           <button type="button" className="option-card" onClick={onStudy}>
             <span className="option-card__title">{t("home.study.title")}</span>
@@ -71,7 +97,18 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender
         <div className="option-grid">
           {PARTS.filter((part) => !(civicsLocked && part.mode === "civics")).map((part) => (
             <button key={part.mode} type="button" className="option-card" onClick={() => onChoose(part.mode)}>
-              <span className="option-card__title">{t(part.title)}</span>
+              <span className="option-card__title">
+                {t(part.title)}
+                {part.mode === "n400" && onChooseCoach !== undefined && (
+                  <>
+                    {" "}
+                    <span className="option-card__badge" aria-hidden="true">
+                      {t("home.part.n400.badge")}
+                    </span>
+                    <span className="ll-sr-only">{t("coach.switch.label")}</span>
+                  </>
+                )}
+              </span>
               <span className="option-card__text">{t(part.text)}</span>
             </button>
           ))}

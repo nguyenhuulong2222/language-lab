@@ -39,5 +39,15 @@ Honest about limitations. Never alarmist. Never suggests what users should claim
 
 ## Independent Study Tool
 
-This is an independent study aid. Practice must teach users to answer truthfully from their
-own circumstances. The tool never suggests answers that may not apply to the user.
+This is an independent study aid. Two rules hold together (owner decision, 2026-11-20):
+
+- **Practice uses a fictional profile.** In every practice session the learner answers as the
+  fictional profile they chose. No real personal data is spoken, typed or sent, including to the
+  optional AI coach.
+- **The real interview is answered truthfully.** The app tells learners that in their real
+  interview they must answer truthfully about their own life. The keys `intro.privacy`,
+  `n400.sample.note` and `coach.notice.text` each say both halves.
+
+The tool never suggests what a learner should claim about their own real circumstances. The
+fictional profile's sample answers are shown only as that profile's answers, never as advice for
+the learner's own application.

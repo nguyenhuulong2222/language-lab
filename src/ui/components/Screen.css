@@ -94,6 +94,7 @@
   color: var(--ink);
   text-align: left;
   cursor: pointer;
+  overflow-wrap: anywhere;
 }
 .option-card--primary {
   border-color: var(--teal);
@@ -109,6 +110,32 @@
 .option-card__text {
   font-size: var(--fs-meta);
   line-height: var(--lh-snug);
+}
+/* The AI coach card: prominent by a thick teal frame and its own line, not by colour alone. */
+.option-card--coach {
+  border-width: 3px;
+  border-color: var(--teal);
+  background: var(--surface);
+  color: var(--ink);
+}
+/* The card's own frame is teal: a wider gap keeps the focus ring distinct from it. */
+.option-card--coach:focus-visible {
+  outline-offset: calc(var(--focus-offset) + 3px);
+}
+.option-card__meta {
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}
+/* A word, not a colour: "AI". */
+.option-card__badge {
+  display: inline-block;
+  padding: 0 var(--space-2);
+  border: 2px solid currentColor;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  vertical-align: middle;
 }
 .speak {
   display: flex;

@@ -93,8 +93,20 @@
   padding-top: var(--space-2);
 }
 .coach__notice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
   border-top: 1px solid var(--border);
   padding-top: var(--space-3);
+  overflow-wrap: anywhere;
+}
+.coach__notice > * {
+  margin: 0;
+}
+/* On the choice screen the panel is the frame: no second rule inside it. */
+.coach--notice-only > .coach__notice {
+  border-top: 0;
+  padding-top: 0;
 }
 .coach__disclaimers {
   font-size: var(--fs-meta);
@@ -111,4 +123,8 @@
   border-radius: var(--radius-pill);
   font-size: var(--fs-meta);
   color: var(--ink-2);
+}
+.coach__choices {
+  display: grid;
+  gap: var(--space-3);
 }
