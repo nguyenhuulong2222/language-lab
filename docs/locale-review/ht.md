@@ -125,6 +125,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.notice.title` | Before you turn on the AI coach | Anvan ou limen antrenè AI a |
 | `coach.notice.confirm` | Turn on the AI coach | Limen antrenè AI a |
 | `coach.notice.cancel` | Cancel | Anile |
+| `coach.choice.title` | Would you like to use the AI coach? | Èske ou vle sèvi ak antrenè AI a? |
+| `coach.choice.lead` | You can practice with or without it. You can turn it on or off later with the switch above the questions. | Ou ka pratike avè l oswa san li. Pita ou ka limen l oswa etenn li ak bouton ki anlè kesyon yo. |
+| `coach.choice.use` | Use the AI coach | Sèvi ak antrenè AI a |
+| `coach.choice.no` | No, practice without AI | Non, pratike san AI |
 | `coach.label` | AI-generated feedback | Kòmantè AI fè |
 | `coach.followUp.label` | A practice follow-up question: | Yon kesyon pratik ki swiv: |
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Si ou vle, pratike yon repons byen fò. Yo pa anrejistre kesyon sa a. |

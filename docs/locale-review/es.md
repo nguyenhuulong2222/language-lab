@@ -125,6 +125,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.notice.title` | Before you turn on the AI coach | Antes de activar el entrenador de IA |
 | `coach.notice.confirm` | Turn on the AI coach | Activar el entrenador de IA |
 | `coach.notice.cancel` | Cancel | Cancelar |
+| `coach.choice.title` | Would you like to use the AI coach? | ¿Quiere usar el entrenador de IA? |
+| `coach.choice.lead` | You can practice with or without it. You can turn it on or off later with the switch above the questions. | Puede practicar con él o sin él. Más tarde puede activarlo o desactivarlo con el interruptor que está sobre las preguntas. |
+| `coach.choice.use` | Use the AI coach | Usar el entrenador de IA |
+| `coach.choice.no` | No, practice without AI | No, practicar sin IA |
 | `coach.label` | AI-generated feedback | Comentarios generados por IA |
 | `coach.followUp.label` | A practice follow-up question: | Una pregunta de práctica adicional: |
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Si quiere, practique una respuesta en voz alta. Esta pregunta no se guarda. |

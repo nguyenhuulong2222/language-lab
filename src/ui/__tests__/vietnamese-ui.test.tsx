@@ -140,10 +140,11 @@ describe("practice screens in Vietnamese", () => {
   it("the N-400 question and the sample answer stay English", () => {
     let s = engine.reduce(engine.initial(), { type: "choose", mode: "n400", seed: 3, at: AT });
     s = engine.reduce(s, { type: "start", profileId: profile, seed: 3, at: AT });
-    // The question loads asynchronously; the loading state is shown on the server render.
+    // The stage first asks about the AI coach (REQ-C19): translated, with the disclaimers in English.
     const html = inVietnamese(s);
-    expect(html).toContain("Phỏng vấn N-400");
-    expect(html).toContain("Đang lấy câu hỏi tiếp theo");
+    expect(html).toContain("Bạn có muốn dùng huấn luyện viên AI không?");
+    expect(html).toContain("Không, luyện tập không có AI");
+    expect(html).toContain("This is a practice tool only.");
   });
 
   it("the full report carries the engine's English disclaimer, with no Vietnamese copy of it", () => {

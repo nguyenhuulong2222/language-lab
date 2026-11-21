@@ -125,6 +125,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.notice.title` | Before you turn on the AI coach | ก่อนเปิดโค้ช AI |
 | `coach.notice.confirm` | Turn on the AI coach | เปิดโค้ช AI |
 | `coach.notice.cancel` | Cancel | ยกเลิก |
+| `coach.choice.title` | Would you like to use the AI coach? | คุณต้องการใช้โค้ช AI ไหม |
+| `coach.choice.lead` | You can practice with or without it. You can turn it on or off later with the switch above the questions. | คุณฝึกได้ทั้งแบบมีและไม่มีโค้ช ภายหลังคุณเปิดหรือปิดได้ด้วยสวิตช์เหนือคำถาม |
+| `coach.choice.use` | Use the AI coach | ใช้โค้ช AI |
+| `coach.choice.no` | No, practice without AI | ไม่ ฝึกโดยไม่ใช้ AI |
 | `coach.label` | AI-generated feedback | คำติชมที่สร้างโดย AI |
 | `coach.followUp.label` | A practice follow-up question: | คำถามต่อเนื่องสำหรับฝึก: |
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | ถ้าต้องการ ลองฝึกตอบออกเสียง คำถามนี้ไม่ถูกบันทึก |

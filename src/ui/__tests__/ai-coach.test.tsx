@@ -6,6 +6,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { renderToString } from "react-dom/server";
 import { createAiCoachSession, COACH_ENDPOINT, type CoachTransport } from "../coach/ai-coach-client";
 import { createAiN400Coach } from "../coach/ai-n400-coach";
+import { initialCoachEntry, nextCoachEntry } from "../coach/coach-entry";
 import { loadCoachConfig } from "../../engine/coach/config";
 import { createScriptedN400Coach } from "../../engine/n400-coach";
 import { loadPracticeContent } from "../../engine/practice-content";
@@ -263,5 +264,70 @@ describe("discoverable coach: home card (REQ-C18)", () => {
     const html = home();
     const card = html.slice(html.indexOf("option-card--coach"), html.indexOf("Powered by Claude (Anthropic)"));
     expect(card).not.toMatch(/<img|<svg/);
+  });
+});
+
+describe("discoverable coach: the choice before the first question (REQ-C19)", () => {
+  const scripted = createScriptedN400Coach(content.n400Questions);
+  const screen = (props: Partial<Parameters<typeof N400Screen>[0]> = {}) => {
+    const transport = vi.fn<CoachTransport>();
+    const html = renderToString(
+      <N400Screen coach={scripted} profile={profile} answers={[]} onAnswer={() => {}} onFinish={() => {}} coachTransport={transport} {...props} />
+    );
+    return { html, transport };
+  };
+  it("a normal entry asks first, with two large buttons and the disclaimers; nothing is sent", () => {
+    const { html, transport } = screen();
+    expect(html).toContain("Would you like to use the AI coach?");
+    expect(html).toContain("Use the AI coach");
+    expect(html).toContain("No, practice without AI");
+    expect(html).toContain("Powered by Claude (Anthropic)");
+    for (const key of ["intro.notice.practice", "intro.notice.legal", "intro.notice.government"] as const) expect(html).toContain(ENGLISH_MESSAGES[key]);
+    expect(html).not.toContain("sent as text to Anthropic");
+    expect(html).not.toContain(question.text);
+    expect(transport).not.toHaveBeenCalled();
+  });
+  it("from the home coach card the notice is open at once; still nothing is sent", () => {
+    const { html, transport } = screen({ coachEntry: "notice" });
+    expect(html).toContain("Before you turn on the AI coach");
+    expect(html).toContain("sent as text to Anthropic");
+    expect(html).toContain("Turn on the AI coach");
+    expect(html).not.toContain("No, practice without AI");
+    expect(transport).not.toHaveBeenCalled();
+  });
+  it("no choice when the coach is not offered, or once the interview has started", () => {
+    expect(renderToString(<N400Screen coach={scripted} profile={profile} answers={[]} onAnswer={() => {}} onFinish={() => {}} />)).not.toContain("Would you like to use the AI coach?");
+    const started = screen({ answers: [{ questionId: question.id, questionText: question.text, transcript: "x" }] });
+    expect(started.html).not.toContain("Would you like to use the AI coach?");
+    expect(started.html).toContain('role="switch"');
+  });
+  it("the entry paths: Use → notice → Confirm; Use → notice → Cancel → choice; No → questions", () => {
+    expect(initialCoachEntry(true, 0, "choice")).toBe("choice");
+    expect(initialCoachEntry(true, 0, "notice")).toBe("notice");
+    expect(initialCoachEntry(false, 0, "notice")).toBe("done");
+    expect(initialCoachEntry(true, 2, "choice")).toBe("done");
+    expect(nextCoachEntry("choice", "use")).toBe("notice");
+    expect(nextCoachEntry("notice", "confirm")).toBe("done");
+    expect(nextCoachEntry("notice", "cancel")).toBe("choice");
+    expect(nextCoachEntry("choice", "no")).toBe("done");
+    // "confirm" is not reachable from the choice screen: consent needs the notice.
+    expect(nextCoachEntry("choice", "confirm")).toBe("choice");
+    expect(nextCoachEntry("done", "use")).toBe("done");
+  });
+  it("\"No\": the session stays without consent and the transport is never called", async () => {
+    const transport = spy();
+    const s = createAiCoachSession({ transport, config });
+    // The screen does nothing to the session on "No"; answers go straight to the scripted coach.
+    const ai = createAiN400Coach(scripted, s);
+    expect(await ai.turnFeedback({ profile, answered: [] }, { questionId: question.id, questionText: question.text, transcript: "My name is Aurora Thistlewood." })).toEqual({ kind: "off" });
+    expect(transport).not.toHaveBeenCalled();
+  });
+  it("only the notice's Confirm gives consent (source check of the screen)", async () => {
+    const sources = import.meta.glob("../screens/N400Screen.tsx", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
+    const src = Object.values(sources)[0]!;
+    expect(src.match(/giveConsent\(\)/g)?.length).toBe(2); // the choice screen's notice and the switch's notice
+    for (const m of src.matchAll(/onConfirm=\{\(\) => \{\s*(?:\/\/[^\n]*\s*)?session\.giveConsent\(\)/g)) expect(m[0]).toContain("onConfirm");
+    expect(src).not.toMatch(/onUse=\{[^}]*giveConsent/);
+    expect(src).not.toMatch(/onNo=\{[^}]*giveConsent/);
   });
 });

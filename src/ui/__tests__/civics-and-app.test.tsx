@@ -144,7 +144,8 @@ describe("the app, phase by phase", () => {
   it("shows each phase for a started session", () => {
     let s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 5, at: AT });
     s = engine.reduce(s, { type: "start", profileId: profile, filedOn: "on_or_after", seed: 5, at: AT });
-    expect(renderScreen(engine, s)).toContain("N-400 interview");
+    // The N-400 stage asks about the AI coach before the first question (REQ-C19).
+    expect(renderScreen(engine, s)).toContain("Would you like to use the AI coach?");
     s = engine.reduce(s, { type: "finishN400", at: AT });
     expect(renderScreen(engine, s)).toContain("Read the sentence out loud");
     s = toCivics(engine, "on_or_after");

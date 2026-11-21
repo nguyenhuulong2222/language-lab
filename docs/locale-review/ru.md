@@ -125,6 +125,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.notice.title` | Before you turn on the AI coach | Прежде чем включить ИИ-тренера |
 | `coach.notice.confirm` | Turn on the AI coach | Включить ИИ-тренера |
 | `coach.notice.cancel` | Cancel | Отмена |
+| `coach.choice.title` | Would you like to use the AI coach? | Хотите использовать ИИ-тренера? |
+| `coach.choice.lead` | You can practice with or without it. You can turn it on or off later with the switch above the questions. | Можно практиковаться с ним или без него. Позже его можно включить или выключить переключателем над вопросами. |
+| `coach.choice.use` | Use the AI coach | Использовать ИИ-тренера |
+| `coach.choice.no` | No, practice without AI | Нет, практиковаться без ИИ |
 | `coach.label` | AI-generated feedback | Отзыв, созданный ИИ |
 | `coach.followUp.label` | A practice follow-up question: | Дополнительный вопрос для практики: |
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Если хотите, потренируйтесь отвечать вслух. Этот вопрос не записывается. |

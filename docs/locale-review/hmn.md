@@ -125,6 +125,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.notice.title` | Before you turn on the AI coach | Ua ntej koj qhib AI tus kws qhia |
 | `coach.notice.confirm` | Turn on the AI coach | Qhib AI tus kws qhia |
 | `coach.notice.cancel` | Cancel | Tso tseg |
+| `coach.choice.title` | Would you like to use the AI coach? | Koj puas xav siv AI tus kws qhia? |
+| `coach.choice.lead` | You can practice with or without it. You can turn it on or off later with the switch above the questions. | Koj xyaum tau thaum muaj los yog tsis muaj nws. Tom qab koj qhib los yog kaw tau nws nrog lub pob hloov saum cov lus nug. |
+| `coach.choice.use` | Use the AI coach | Siv AI tus kws qhia |
+| `coach.choice.no` | No, practice without AI | Tsis siv, xyaum tsis muaj AI |
 | `coach.label` | AI-generated feedback | Lus tawm tswv yim uas AI ua |
 | `coach.followUp.label` | A practice follow-up question: | Ib lo lus nug ntxiv rau kev xyaum: |
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Yog koj xav, xyaum teb nrov nrov. Lo lus nug no tsis raug kaw cia. |

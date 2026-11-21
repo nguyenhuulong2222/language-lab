@@ -125,6 +125,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.notice.title` | Before you turn on the AI coach | ກ່ອນທ່ານເປີດໂຄ້ດ AI |
 | `coach.notice.confirm` | Turn on the AI coach | ເປີດໂຄ້ດ AI |
 | `coach.notice.cancel` | Cancel | ຍົກເລີກ |
+| `coach.choice.title` | Would you like to use the AI coach? | ທ່ານຕ້ອງການໃຊ້ໂຄ້ດ AI ບໍ? |
+| `coach.choice.lead` | You can practice with or without it. You can turn it on or off later with the switch above the questions. | ທ່ານຝຶກໄດ້ທັງມີ ແລະ ບໍ່ມີໂຄ້ດ. ຕໍ່ມາທ່ານເປີດ ຫຼື ປິດໄດ້ດ້ວຍສະວິດຢູ່ເທິງຄຳຖາມ. |
+| `coach.choice.use` | Use the AI coach | ໃຊ້ໂຄ້ດ AI |
+| `coach.choice.no` | No, practice without AI | ບໍ່, ຝຶກໂດຍບໍ່ໃຊ້ AI |
 | `coach.label` | AI-generated feedback | ຄຳຕິຊົມທີ່ສ້າງໂດຍ AI |
 | `coach.followUp.label` | A practice follow-up question: | ຄຳຖາມຕໍ່ເນື່ອງສຳລັບຝຶກ: |
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | ຖ້າຕ້ອງການ, ລອງຝຶກຕອບອອກສຽງ. ຄຳຖາມນີ້ບໍ່ຖືກບັນທຶກ. |

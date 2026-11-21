@@ -112,3 +112,7 @@
   font-size: var(--fs-meta);
   color: var(--ink-2);
 }
+.coach__choices {
+  display: grid;
+  gap: var(--space-3);
+}

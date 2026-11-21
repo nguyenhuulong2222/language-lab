@@ -14,6 +14,8 @@ import { createAiCoachSession, type CoachTransport } from "../coach/ai-coach-cli
 import { createAiN400Coach } from "../coach/ai-n400-coach";
 import { CoachFeedback, type CoachStep } from "../components/CoachFeedback";
 import { CoachSwitch } from "../components/CoachSwitch";
+import { CoachChoice } from "../components/CoachChoice";
+import { initialCoachEntry, nextCoachEntry, type CoachEntry, type CoachEntryEvent, type CoachEntryState } from "../coach/coach-entry";
 import type { CoachTurnResult } from "../../engine/coach/types";
 import type { PracticeProfile } from "../../engine/practice-content";
 import { useT } from "../../i18n/react";
@@ -42,7 +44,7 @@ interface N400ScreenProps {
   /** How the stage starts with the coach: ask first ("choice"), or open the notice at once ("notice"). */
   coachEntry?: CoachEntry;
 }
-export type CoachEntry = "choice" | "notice";
+export type { CoachEntry };
 
 type PromptState = { status: "loading" } | { status: "failed" } | { status: "done" } | { status: "ready"; prompt: N400Prompt };
 
@@ -53,7 +55,10 @@ export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish,
   const session = useMemo(() => (coachTransport ? createAiCoachSession({ transport: coachTransport, config: loadCoachConfig() }) : null), [coachTransport]);
   const aiCoach = useMemo(() => (session ? createAiN400Coach(coach, session) : null), [coach, session]);
   const [coachOn, setCoachOn] = useState(false);
-  const [noticeOpen, setNoticeOpen] = useState(() => session !== null && coachEntry === "notice" && answers.length === 0);
+  const [noticeOpen, setNoticeOpen] = useState(false);
+  // Before the first question: ask (or, from the home coach card, open the notice at once).
+  const [entry, setEntry] = useState<CoachEntryState>(() => initialCoachEntry(session !== null, answers.length, coachEntry));
+  const moveEntry = (event: CoachEntryEvent) => setEntry((current) => nextCoachEntry(current, event));
   const [offForSession, setOffForSession] = useState(false);
   const [step, setStep] = useState<{ prompt: N400Prompt; transcript: string; view: CoachStep } | null>(null);
 
@@ -84,6 +89,23 @@ export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish,
         setStep({ prompt, transcript, view: { status: "done", result } });
       });
   };
+  if (session && entry !== "done") {
+    return (
+      <CoachChoice
+        noticeOpen={entry === "notice"}
+        onUse={() => moveEntry("use")}
+        onNo={() => moveEntry("no")}
+        onCancel={() => moveEntry("cancel")}
+        onConfirm={() => {
+          // The only place, with the switch's notice, where consent is given.
+          session.giveConsent();
+          setCoachOn(session.consent);
+          setOffForSession(!session.available);
+          moveEntry("confirm");
+        }}
+      />
+    );
+  }
   const controls = session ? (
     <CoachSwitch
       on={coachOn}

@@ -125,6 +125,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.notice.title` | Before you turn on the AI coach | AI 코치를 켜기 전에 |
 | `coach.notice.confirm` | Turn on the AI coach | AI 코치 켜기 |
 | `coach.notice.cancel` | Cancel | 취소 |
+| `coach.choice.title` | Would you like to use the AI coach? | AI 코치를 사용하시겠어요? |
+| `coach.choice.lead` | You can practice with or without it. You can turn it on or off later with the switch above the questions. | 코치 없이도, 코치와 함께도 연습할 수 있습니다. 나중에 질문 위의 스위치로 켜거나 끌 수 있습니다. |
+| `coach.choice.use` | Use the AI coach | AI 코치 사용하기 |
+| `coach.choice.no` | No, practice without AI | 아니요, AI 없이 연습하기 |
 | `coach.label` | AI-generated feedback | AI가 만든 피드백 |
 | `coach.followUp.label` | A practice follow-up question: | 연습용 후속 질문: |
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | 원하면 소리 내어 답을 연습해 보세요. 이 질문은 기록되지 않습니다. |

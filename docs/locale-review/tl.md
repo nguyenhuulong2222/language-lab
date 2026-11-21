@@ -125,6 +125,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.notice.title` | Before you turn on the AI coach | Bago mo buksan ang AI coach |
 | `coach.notice.confirm` | Turn on the AI coach | Buksan ang AI coach |
 | `coach.notice.cancel` | Cancel | Kanselahin |
+| `coach.choice.title` | Would you like to use the AI coach? | Gusto mo bang gamitin ang AI coach? |
+| `coach.choice.lead` | You can practice with or without it. You can turn it on or off later with the switch above the questions. | Maaari kang magsanay nang may coach o wala. Mabubuksan o maisasara mo ito mamaya gamit ang switch sa itaas ng mga tanong. |
+| `coach.choice.use` | Use the AI coach | Gamitin ang AI coach |
+| `coach.choice.no` | No, practice without AI | Hindi, magsanay nang walang AI |
 | `coach.label` | AI-generated feedback | Feedback na gawa ng AI |
 | `coach.followUp.label` | A practice follow-up question: | Isang tanong pang-follow-up para sa pagsasanay: |
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Kung gusto mo, magsanay ng sagot nang malakas. Hindi nire-record ang tanong na ito. |

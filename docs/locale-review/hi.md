@@ -125,6 +125,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.notice.title` | Before you turn on the AI coach | AI कोच चालू करने से पहले |
 | `coach.notice.confirm` | Turn on the AI coach | AI कोच चालू करें |
 | `coach.notice.cancel` | Cancel | रद्द करें |
+| `coach.choice.title` | Would you like to use the AI coach? | क्या आप AI कोच का उपयोग करना चाहेंगे? |
+| `coach.choice.lead` | You can practice with or without it. You can turn it on or off later with the switch above the questions. | आप इसके साथ या इसके बिना अभ्यास कर सकते हैं। बाद में आप प्रश्नों के ऊपर वाले स्विच से इसे चालू या बंद कर सकते हैं। |
+| `coach.choice.use` | Use the AI coach | AI कोच का उपयोग करें |
+| `coach.choice.no` | No, practice without AI | नहीं, AI के बिना अभ्यास करें |
 | `coach.label` | AI-generated feedback | AI द्वारा बनाई गई प्रतिक्रिया |
 | `coach.followUp.label` | A practice follow-up question: | अभ्यास के लिए एक और प्रश्न: |
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | चाहें तो ज़ोर से उत्तर का अभ्यास करें। यह प्रश्न रिकॉर्ड नहीं होता। |

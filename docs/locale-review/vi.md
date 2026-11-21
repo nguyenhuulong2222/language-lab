@@ -125,6 +125,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.notice.title` | Before you turn on the AI coach | Trước khi bạn bật huấn luyện viên AI |
 | `coach.notice.confirm` | Turn on the AI coach | Bật huấn luyện viên AI |
 | `coach.notice.cancel` | Cancel | Hủy |
+| `coach.choice.title` | Would you like to use the AI coach? | Bạn có muốn dùng huấn luyện viên AI không? |
+| `coach.choice.lead` | You can practice with or without it. You can turn it on or off later with the switch above the questions. | Bạn có thể luyện tập có hoặc không có nó. Sau này bạn có thể bật hoặc tắt bằng nút gạt phía trên các câu hỏi. |
+| `coach.choice.use` | Use the AI coach | Dùng huấn luyện viên AI |
+| `coach.choice.no` | No, practice without AI | Không, luyện tập không có AI |
 | `coach.label` | AI-generated feedback | Nhận xét do AI tạo ra |
 | `coach.followUp.label` | A practice follow-up question: | Một câu hỏi tiếp theo để luyện tập: |
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Nếu muốn, hãy tập trả lời thành tiếng. Câu hỏi này không được ghi lại. |

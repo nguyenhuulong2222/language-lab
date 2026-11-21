@@ -125,6 +125,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.notice.title` | Before you turn on the AI coach | 開啟 AI 教練之前 |
 | `coach.notice.confirm` | Turn on the AI coach | 開啟 AI 教練 |
 | `coach.notice.cancel` | Cancel | 取消 |
+| `coach.choice.title` | Would you like to use the AI coach? | 您想使用 AI 教練嗎？ |
+| `coach.choice.lead` | You can practice with or without it. You can turn it on or off later with the switch above the questions. | 有沒有它都可以練習。之後您可以用問題上方的開關開啟或關閉它。 |
+| `coach.choice.use` | Use the AI coach | 使用 AI 教練 |
+| `coach.choice.no` | No, practice without AI | 不用，不使用 AI 練習 |
 | `coach.label` | AI-generated feedback | AI 產生的回饋 |
 | `coach.followUp.label` | A practice follow-up question: | 一個練習用的追問： |
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | 如果願意，可以大聲練習回答。這個問題不會被記錄。 |
