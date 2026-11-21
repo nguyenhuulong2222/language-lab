@@ -216,9 +216,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.choose` | What would you like to do? | Koj xav ua dab tsi? |
 | `home.full.title` | Full practice interview | Kev xam phaj xyaum tag nrho |
 | `home.full.text` | All four parts in order, then one report. | Plaub ntu ib ntu tom qab ib ntu, ces ib daim ntawv qhia. |
+| `home.coach.title` | Practice the N-400 interview with an AI coach | Xyaum kev xam phaj N-400 nrog AI tus kws qhia |
+| `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | Tus kws qhia nug ib lo lus nug ntxiv zoo li tus neeg ua haujlwm yuav nug thiab qhia koj txog koj cov lus Askiv. Yog koj xav tau. |
+| `coach.poweredBy` | Powered by Claude (Anthropic) | Siv Claude (Anthropic) |
 | `home.parts.title` | Practice one part | Xyaum ib ntu xwb |
 | `home.part.n400.title` | N-400 interview | Kev xam phaj txog N-400 |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | Teb cov lus nug txog daim ntawv thov. Tsis muab qhab nia. |
+| `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | Nyeem ntawv |
 | `home.part.reading.text` | Read sentences out loud. | Nyeem cov kab lus tawm suab. |
 | `home.part.writing.title` | Writing | Sau ntawv |

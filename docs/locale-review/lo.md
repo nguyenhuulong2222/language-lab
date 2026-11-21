@@ -216,9 +216,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.choose` | What would you like to do? | ທ່ານຢາກເຮັດຫຍັງ? |
 | `home.full.title` | Full practice interview | ການສໍາພາດຝຶກແບບເຕັມ |
 | `home.full.text` | All four parts in order, then one report. | ສີ່ສ່ວນຕາມລໍາດັບ ແລ້ວໄດ້ບົດລາຍງານໜຶ່ງສະບັບ. |
+| `home.coach.title` | Practice the N-400 interview with an AI coach | ຝຶກສຳພາດ N-400 ກັບໂຄ້ດ AI |
+| `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | ໂຄ້ດຖາມຄຳຖາມຕໍ່ເນື່ອງແບບທີ່ເຈົ້າໜ້າທີ່ອາດຖາມ ແລະ ໃຫ້ຄຳແນະນຳກ່ຽວກັບພາສາອັງກິດຂອງທ່ານ. ບໍ່ບັງຄັບ. |
+| `coach.poweredBy` | Powered by Claude (Anthropic) | ຂັບເຄື່ອນໂດຍ Claude (Anthropic) |
 | `home.parts.title` | Practice one part | ຝຶກພຽງໜຶ່ງສ່ວນ |
 | `home.part.n400.title` | N-400 interview | ການສໍາພາດກ່ຽວກັບ N-400 |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | ຕອບຄໍາຖາມກ່ຽວກັບໃບຄໍາຮ້ອງ. ບໍ່ມີການໃຫ້ຄະແນນ. |
+| `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | ການອ່ານ |
 | `home.part.reading.text` | Read sentences out loud. | ອ່ານປະໂຫຍກອອກສຽງ. |
 | `home.part.writing.title` | Writing | ການຂຽນ |

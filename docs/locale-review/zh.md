@@ -216,9 +216,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.choose` | What would you like to do? | 您想做什麼？ |
 | `home.full.title` | Full practice interview | 完整練習面談 |
 | `home.full.text` | All four parts in order, then one report. | 依序完成四個部分，最後得到一份報告。 |
+| `home.coach.title` | Practice the N-400 interview with an AI coach | 和 AI 教練一起練習 N-400 面試 |
+| `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | 教練會像移民官那樣追問一個問題，並給您英語方面的建議。可選。 |
+| `coach.poweredBy` | Powered by Claude (Anthropic) | 由 Claude（Anthropic）提供技術支援 |
 | `home.parts.title` | Practice one part | 只練習一個部分 |
 | `home.part.n400.title` | N-400 interview | N-400 面談 |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | 回答有關申請表的問題。不計分。 |
+| `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | 閱讀 |
 | `home.part.reading.text` | Read sentences out loud. | 大聲朗讀句子。 |
 | `home.part.writing.title` | Writing | 書寫 |

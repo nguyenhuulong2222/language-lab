@@ -21,6 +21,8 @@ interface HomeScreenProps {
   onChoose: (mode: PracticeMode) => void;
   /** Open "Study first" (questions with pictures and official answers, not scored). */
   onStudy?: () => void;
+  /** Start the N-400 part with the AI coach's consent notice open (spec REQ-C18). Absent: no coach card. */
+  onChooseCoach?: () => void;
   /** The home screen is shown again after "back to home": focus then moves to its heading. */
   focusOnFirstRender?: boolean;
 }
@@ -32,7 +34,7 @@ const PARTS: ReadonlyArray<{ mode: Exclude<PracticeMode, "full">; title: Message
   { mode: "civics", title: "home.part.civics.title", text: "home.part.civics.text" },
 ];
 
-export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender = false }: HomeScreenProps) {
+export function HomeScreen({ civicsLocked, onChoose, onStudy, onChooseCoach, focusOnFirstRender = false }: HomeScreenProps) {
   const t = useT();
   return (
     <div className="screen">
@@ -61,6 +63,13 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender
             <span className="option-card__text">{t("home.full.text")}</span>
           </button>
         )}
+        {onChooseCoach !== undefined && (
+          <button type="button" className="option-card option-card--coach" onClick={onChooseCoach}>
+            <span className="option-card__title">{t("home.coach.title")}</span>
+            <span className="option-card__text">{t("home.coach.text")}</span>
+            <span className="option-card__meta">{t("coach.poweredBy")}</span>
+          </button>
+        )}
         {!civicsLocked && onStudy !== undefined && (
           <button type="button" className="option-card" onClick={onStudy}>
             <span className="option-card__title">{t("home.study.title")}</span>
@@ -71,7 +80,15 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender
         <div className="option-grid">
           {PARTS.filter((part) => !(civicsLocked && part.mode === "civics")).map((part) => (
             <button key={part.mode} type="button" className="option-card" onClick={() => onChoose(part.mode)}>
-              <span className="option-card__title">{t(part.title)}</span>
+              <span className="option-card__title">
+                {t(part.title)}
+                {part.mode === "n400" && onChooseCoach !== undefined && (
+                  <>
+                    {" "}
+                    <span className="option-card__badge">{t("home.part.n400.badge")}</span>
+                  </>
+                )}
+              </span>
               <span className="option-card__text">{t(part.text)}</span>
             </button>
           ))}

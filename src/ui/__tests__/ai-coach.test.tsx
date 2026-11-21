@@ -14,6 +14,7 @@ import { CoachSwitch } from "../components/CoachSwitch";
 import { CoachFeedback } from "../components/CoachFeedback";
 import { N400Screen } from "../screens/N400Screen";
 import { PracticeApp } from "../PracticeApp";
+import { HomeScreen } from "../screens/HomeScreen";
 import { I18nProvider } from "../../i18n/react";
 import { ENGLISH_MESSAGES } from "../../i18n";
 
@@ -237,5 +238,30 @@ describe("interface (REQ-C14)", () => {
     expect(html).toContain("Getting AI feedback");
     expect(html).toMatch(/role="status" aria-live="polite"/);
     expect(html).not.toContain("Continue");
+  });
+});
+
+describe("discoverable coach: home card (REQ-C18)", () => {
+  const home = (props: Partial<Parameters<typeof HomeScreen>[0]> = {}) =>
+    renderToString(<HomeScreen civicsLocked={false} onChoose={() => {}} onStudy={() => {}} onChooseCoach={() => {}} {...props} />);
+  it("the card sits directly under the full-interview card, with the attribution line", () => {
+    const html = home();
+    const full = html.indexOf("Full practice interview");
+    const card = html.indexOf("Practice the N-400 interview with an AI coach");
+    const study = html.indexOf("Study first");
+    expect(full).toBeGreaterThan(-1);
+    expect(card).toBeGreaterThan(full);
+    expect(card).toBeLessThan(study);
+    expect(html).toContain("The coach asks a follow-up like an officer might and gives tips on your English. Optional.");
+    expect(html).toContain("Powered by Claude (Anthropic)");
+  });
+  it("the N-400 part card carries a word badge \"AI\", not a colour", () => {
+    expect(home().replace(/<!-- -->/g, "")).toMatch(/N-400 interview <span class="option-card__badge">AI<\/span>/);
+    expect(home({ onChooseCoach: undefined })).not.toContain("option-card__badge");
+  });
+  it("no logo or brand artwork: no image or svg on the card", () => {
+    const html = home();
+    const card = html.slice(html.indexOf("option-card--coach"), html.indexOf("Powered by Claude (Anthropic)"));
+    expect(card).not.toMatch(/<img|<svg/);
   });
 });

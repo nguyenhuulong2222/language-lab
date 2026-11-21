@@ -216,9 +216,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.choose` | What would you like to do? | आप क्या करना चाहेंगे? |
 | `home.full.title` | Full practice interview | पूरा अभ्यास इंटरव्यू |
 | `home.full.text` | All four parts in order, then one report. | चारों भाग क्रम से, फिर एक रिपोर्ट। |
+| `home.coach.title` | Practice the N-400 interview with an AI coach | AI कोच के साथ N-400 इंटरव्यू का अभ्यास करें |
+| `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | कोच किसी अधिकारी की तरह एक और प्रश्न पूछता है और आपकी अंग्रेज़ी पर सुझाव देता है। वैकल्पिक। |
+| `coach.poweredBy` | Powered by Claude (Anthropic) | Claude (Anthropic) द्वारा संचालित |
 | `home.parts.title` | Practice one part | केवल एक भाग का अभ्यास |
 | `home.part.n400.title` | N-400 interview | N-400 इंटरव्यू |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | आवेदन के बारे में प्रश्नों के उत्तर दें। स्कोर नहीं दिया जाता। |
+| `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | पढ़ना |
 | `home.part.reading.text` | Read sentences out loud. | वाक्य ज़ोर से पढ़ें। |
 | `home.part.writing.title` | Writing | लिखना |

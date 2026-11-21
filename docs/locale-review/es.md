@@ -216,9 +216,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.choose` | What would you like to do? | ¿Qué le gustaría hacer? |
 | `home.full.title` | Full practice interview | Entrevista de práctica completa |
 | `home.full.text` | All four parts in order, then one report. | Las cuatro partes en orden y un solo informe. |
+| `home.coach.title` | Practice the N-400 interview with an AI coach | Practique la entrevista del N-400 con un entrenador de IA |
+| `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | El entrenador hace una pregunta adicional como podría hacerla un oficial y le da consejos sobre su inglés. Opcional. |
+| `coach.poweredBy` | Powered by Claude (Anthropic) | Con tecnología de Claude (Anthropic) |
 | `home.parts.title` | Practice one part | Practicar una sola parte |
 | `home.part.n400.title` | N-400 interview | Entrevista sobre el N-400 |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | Responda preguntas sobre una solicitud. Sin calificación. |
+| `home.part.n400.badge` | AI | IA |
 | `home.part.reading.title` | Reading | Lectura |
 | `home.part.reading.text` | Read sentences out loud. | Lea oraciones en voz alta. |
 | `home.part.writing.title` | Writing | Escritura |

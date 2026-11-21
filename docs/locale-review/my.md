@@ -216,9 +216,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.choose` | What would you like to do? | သင် ဘာလုပ်ချင်ပါသလဲ။ |
 | `home.full.title` | Full practice interview | လေ့ကျင့်ရေးအင်တာဗျူး အပြည့်အစုံ |
 | `home.full.text` | All four parts in order, then one report. | အပိုင်းလေးခုကို အစဉ်လိုက်လုပ်ပြီး အစီရင်ခံစာတစ်စောင် ရရှိမည်။ |
+| `home.coach.title` | Practice the N-400 interview with an AI coach | AI နည်းပြနှင့်အတူ N-400 အင်တာဗျူးကို လေ့ကျင့်ပါ |
+| `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | နည်းပြသည် အရာရှိတစ်ဦး မေးနိုင်သကဲ့သို့ နောက်ဆက်တွဲမေးခွန်းကို မေးပြီး သင့်အင်္ဂလိပ်စာအတွက် အကြံပြုချက်များ ပေးပါသည်။ ရွေးချယ်နိုင်ပါသည်။ |
+| `coach.poweredBy` | Powered by Claude (Anthropic) | Claude (Anthropic) ဖြင့် လုပ်ဆောင်သည် |
 | `home.parts.title` | Practice one part | အပိုင်းတစ်ခုတည်း လေ့ကျင့်ရန် |
 | `home.part.n400.title` | N-400 interview | N-400 အင်တာဗျူး |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | လျှောက်လွှာနှင့်ပတ်သက်သော မေးခွန်းများကို ဖြေပါ။ အမှတ်မပေးပါ။ |
+| `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | ဖတ်ခြင်း |
 | `home.part.reading.text` | Read sentences out loud. | စာကြောင်းများကို အသံထွက်ဖတ်ပါ။ |
 | `home.part.writing.title` | Writing | ရေးခြင်း |

@@ -216,9 +216,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.choose` | What would you like to do? | 무엇을 하시겠어요? |
 | `home.full.title` | Full practice interview | 전체 연습 인터뷰 |
 | `home.full.text` | All four parts in order, then one report. | 네 부분을 차례로 진행하고 보고서 하나를 받습니다. |
+| `home.coach.title` | Practice the N-400 interview with an AI coach | AI 코치와 함께 N-400 면접 연습하기 |
+| `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | 코치가 심사관처럼 후속 질문을 하고 영어에 대한 팁을 줍니다. 선택 사항입니다. |
+| `coach.poweredBy` | Powered by Claude (Anthropic) | Claude (Anthropic) 기반 |
 | `home.parts.title` | Practice one part | 한 부분만 연습하기 |
 | `home.part.n400.title` | N-400 interview | N-400 인터뷰 |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | 신청서에 대한 질문에 답합니다. 채점하지 않습니다. |
+| `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | 읽기 |
 | `home.part.reading.text` | Read sentences out loud. | 문장을 소리 내어 읽습니다. |
 | `home.part.writing.title` | Writing | 쓰기 |

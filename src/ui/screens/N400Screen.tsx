@@ -39,18 +39,21 @@ interface N400ScreenProps {
   onRetry?: () => void;
   /** Offer the optional AI coach, sending through this transport (fetch in the app). */
   coachTransport?: CoachTransport;
+  /** How the stage starts with the coach: ask first ("choice"), or open the notice at once ("notice"). */
+  coachEntry?: CoachEntry;
 }
+export type CoachEntry = "choice" | "notice";
 
 type PromptState = { status: "loading" } | { status: "failed" } | { status: "done" } | { status: "ready"; prompt: N400Prompt };
 
-export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish, nextIsReport, coachTransport }: N400ScreenProps) {
+export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish, nextIsReport, coachTransport, coachEntry = "choice" }: N400ScreenProps) {
   const [state, setState] = useState<PromptState>({ status: "loading" });
   const [attempt, setAttempt] = useState(0);
   // The AI coach lives as long as this screen: a new practice starts with it off.
   const session = useMemo(() => (coachTransport ? createAiCoachSession({ transport: coachTransport, config: loadCoachConfig() }) : null), [coachTransport]);
   const aiCoach = useMemo(() => (session ? createAiN400Coach(coach, session) : null), [coach, session]);
   const [coachOn, setCoachOn] = useState(false);
-  const [noticeOpen, setNoticeOpen] = useState(false);
+  const [noticeOpen, setNoticeOpen] = useState(() => session !== null && coachEntry === "notice" && answers.length === 0);
   const [offForSession, setOffForSession] = useState(false);
   const [step, setStep] = useState<{ prompt: N400Prompt; transcript: string; view: CoachStep } | null>(null);
 
@@ -128,7 +131,7 @@ export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish,
   );
 }
 
-interface N400ViewProps extends Omit<N400ScreenProps, "coach" | "coachTransport"> {
+interface N400ViewProps extends Omit<N400ScreenProps, "coach" | "coachTransport" | "coachEntry"> {
   state: PromptState;
   /** What "Save answer" does. Default: record the answer at once. */
   onSubmitAnswer?: (prompt: N400Prompt, transcript: string) => void;

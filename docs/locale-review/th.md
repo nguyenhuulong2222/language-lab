@@ -216,9 +216,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.choose` | What would you like to do? | คุณต้องการทำอะไร |
 | `home.full.title` | Full practice interview | การสัมภาษณ์ฝึกแบบเต็ม |
 | `home.full.text` | All four parts in order, then one report. | ทั้งสี่ส่วนตามลำดับ แล้วได้รายงานหนึ่งฉบับ |
+| `home.coach.title` | Practice the N-400 interview with an AI coach | ฝึกสัมภาษณ์ N-400 กับโค้ช AI |
+| `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | โค้ชถามคำถามต่อเนื่องแบบที่เจ้าหน้าที่อาจถาม และให้คำแนะนำเรื่องภาษาอังกฤษของคุณ ไม่บังคับ |
+| `coach.poweredBy` | Powered by Claude (Anthropic) | ขับเคลื่อนโดย Claude (Anthropic) |
 | `home.parts.title` | Practice one part | ฝึกเพียงหนึ่งส่วน |
 | `home.part.n400.title` | N-400 interview | การสัมภาษณ์เรื่อง N-400 |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | ตอบคำถามเกี่ยวกับใบคำร้อง ไม่มีการให้คะแนน |
+| `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | การอ่าน |
 | `home.part.reading.text` | Read sentences out loud. | อ่านประโยคออกเสียง |
 | `home.part.writing.title` | Writing | การเขียน |

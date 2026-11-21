@@ -216,9 +216,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.choose` | What would you like to do? | Kisa ou ta renmen fè? |
 | `home.full.title` | Full practice interview | Entèvyou pratik konplè |
 | `home.full.text` | All four parts in order, then one report. | Kat pati yo youn apre lòt, epi yon sèl rapò. |
+| `home.coach.title` | Practice the N-400 interview with an AI coach | Pratike antrevi N-400 a ak yon antrenè AI |
+| `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | Antrenè a poze yon lòt kesyon tankou yon ofisye ta ka fè l epi li ba ou konsèy sou angle ou. Si ou vle. |
+| `coach.poweredBy` | Powered by Claude (Anthropic) | Ak teknoloji Claude (Anthropic) |
 | `home.parts.title` | Practice one part | Pratike yon sèl pati |
 | `home.part.n400.title` | N-400 interview | Entèvyou sou N-400 |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | Reponn kesyon sou yon demann. Pa gen nòt. |
+| `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | Lekti |
 | `home.part.reading.text` | Read sentences out loud. | Li fraz yo byen fò. |
 | `home.part.writing.title` | Writing | Ekriti |

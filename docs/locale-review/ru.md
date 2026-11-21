@@ -216,9 +216,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.choose` | What would you like to do? | Что вы хотите сделать? |
 | `home.full.title` | Full practice interview | Полное учебное собеседование |
 | `home.full.text` | All four parts in order, then one report. | Все четыре части по порядку и один отчёт. |
+| `home.coach.title` | Practice the N-400 interview with an AI coach | Тренируйте собеседование по N-400 с ИИ-тренером |
+| `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | Тренер задаёт дополнительный вопрос, как мог бы сотрудник, и даёт советы по вашему английскому. По желанию. |
+| `coach.poweredBy` | Powered by Claude (Anthropic) | Работает на Claude (Anthropic) |
 | `home.parts.title` | Practice one part | Тренировать одну часть |
 | `home.part.n400.title` | N-400 interview | Собеседование по форме N-400 |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | Отвечайте на вопросы о заявлении. Без оценки. |
+| `home.part.n400.badge` | AI | ИИ |
 | `home.part.reading.title` | Reading | Чтение |
 | `home.part.reading.text` | Read sentences out loud. | Читайте предложения вслух. |
 | `home.part.writing.title` | Writing | Письмо |

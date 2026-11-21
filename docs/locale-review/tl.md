@@ -216,9 +216,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.choose` | What would you like to do? | Ano po ang gusto ninyong gawin? |
 | `home.full.title` | Full practice interview | Buong pagsasanay na panayam |
 | `home.full.text` | All four parts in order, then one report. | Ang apat na bahagi nang sunud-sunod, saka isang ulat. |
+| `home.coach.title` | Practice the N-400 interview with an AI coach | Magsanay sa N-400 interview kasama ang AI coach |
+| `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | Nagtatanong ang coach ng follow-up gaya ng maaaring itanong ng opisyal at nagbibigay ng tip sa iyong Ingles. Opsiyonal. |
+| `coach.poweredBy` | Powered by Claude (Anthropic) | Pinapagana ng Claude (Anthropic) |
 | `home.parts.title` | Practice one part | Magsanay ng isang bahagi |
 | `home.part.n400.title` | N-400 interview | Panayam tungkol sa N-400 |
 | `home.part.n400.text` | Answer questions about an application. Not scored. | Sagutin ang mga tanong tungkol sa isang aplikasyon. Hindi iniiskor. |
+| `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | Pagbasa |
 | `home.part.reading.text` | Read sentences out loud. | Basahin nang malakas ang mga pangungusap. |
 | `home.part.writing.title` | Writing | Pagsulat |

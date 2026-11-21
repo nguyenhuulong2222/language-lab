@@ -23,6 +23,7 @@ import {
 import { useT } from "../i18n/react";
 import { HelpSessionProvider } from "./help-session";
 import type { CoachTransport } from "./coach/ai-coach-client";
+import type { CoachEntry } from "./screens/N400Screen";
 import { Shell } from "./components/Shell";
 import { CivicsScreen } from "./screens/CivicsScreen";
 import { EnglishScreen } from "./screens/EnglishScreen";
@@ -62,10 +63,14 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
     [engine]
   );
   const [restarts, setRestarts] = useState(0);
+  // How the N-400 stage starts with the AI coach: ask first, or open the consent notice at once
+  // (the home coach card). For this practice only; a restart asks again.
+  const [coachEntry, setCoachEntry] = useState<CoachEntry>("choice");
   // "Study first" is a view of its own: no session, no scoring, nothing recorded.
   const [studying, setStudying] = useState(false);
   const restart = useCallback(() => {
     setRestarts((n) => n + 1);
+    setCoachEntry("choice");
     dispatch({ type: "restart" });
   }, []);
 
@@ -104,6 +109,8 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
         civicsLockedInBuild={civicsLockedInBuild}
         afterRestart={restarts > 0}
         onStudy={() => setStudying(true)}
+        coachEntry={coachEntry}
+        onCoachEntry={setCoachEntry}
         now={now}
         seed={seed}
         restart={restart}
@@ -123,6 +130,9 @@ interface ScreenProps {
   afterRestart?: boolean;
   /** Open "Study first" from the home screen. */
   onStudy?: () => void;
+  /** Default "choice": ask before the first N-400 question. */
+  coachEntry?: CoachEntry;
+  onCoachEntry?: (entry: CoachEntry) => void;
   now: () => string;
   seed: () => number;
   restart: () => void;
@@ -137,6 +147,8 @@ export function Screen({
   civicsLockedInBuild,
   afterRestart = false,
   onStudy,
+  coachEntry = "choice",
+  onCoachEntry = () => {},
   now,
   seed,
   restart,
@@ -150,7 +162,14 @@ export function Screen({
           civicsLocked={civicsLockedInBuild}
           focusOnFirstRender={afterRestart}
           {...(onStudy === undefined ? {} : { onStudy })}
-          onChoose={(mode) => dispatch({ type: "choose", mode, seed: seed(), at: now() })}
+          onChoose={(mode) => {
+            onCoachEntry("choice");
+            dispatch({ type: "choose", mode, seed: seed(), at: now() });
+          }}
+          onChooseCoach={() => {
+            onCoachEntry("notice");
+            dispatch({ type: "choose", mode: "n400", seed: seed(), at: now() });
+          }}
         />
       );
 
@@ -181,6 +200,7 @@ export function Screen({
         <N400Screen
           coach={coach}
           coachTransport={coachTransport}
+          coachEntry={coachEntry}
           profile={profile}
           answers={state.n400Answers}
           total={env.content.n400Questions.length}
