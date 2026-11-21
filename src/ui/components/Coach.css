@@ -32,9 +32,10 @@
   font-weight: 600;
   cursor: pointer;
 }
-.coach__switch:disabled {
+.coach__switch[aria-disabled="true"] {
   cursor: not-allowed;
-  opacity: 0.7;
+  border-style: dashed;
+  color: var(--ink-2);
 }
 .coach__track {
   position: relative;
@@ -66,9 +67,30 @@
   background: var(--on-accent);
 }
 @media (forced-colors: active) {
+  .coach__thumb,
   .coach__switch--on .coach__thumb {
     background: CanvasText;
   }
+  .coach__track {
+    border-color: CanvasText;
+  }
+  .coach__switch--on .coach__track {
+    background: Highlight;
+  }
+  .coach__switch[aria-disabled="true"] {
+    color: GrayText;
+  }
+}
+.coach__region:focus {
+  outline: none;
+}
+.coach__region:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+.coach__disclaimer {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-2);
 }
 .coach__notice {
   border-top: 1px solid var(--border);

@@ -174,7 +174,7 @@ On the N-400 screen:
   to the notice and back to the switch;
 - with the coach on, after an answer is sent a feedback step shows before the next question: the
   AI lines in a polite live region, each with the "AI-generated feedback" label, the feedback as an
-  icon and a plain label (never colour alone, no harsh wording), then "Next question";
+  icon and a plain label (never colour alone, no harsh wording), then "Continue";
 - the fallback line of REQ-C11 in the same place when AI feedback is not available;
 - the three disclaimers (practice only, not legal advice, not a government service) in English.
 All text in the locale files; the consent notice and the legal lines are legal keys (English only

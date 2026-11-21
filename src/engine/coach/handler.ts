@@ -157,11 +157,11 @@ export async function handleCoachRequest(request: Request, env: CoachEnv, deps: 
   const spendKey = `spend:${day}`;
   try {
     const ipHash = await deps.sha256(`${ip}:${day}:${salt}`);
-    if (!(await store.increment(`day:${day}`, day, config.limits.dailyRequestBudget))) return respond(503, { status: "unavailable", reason: "budget" }, log);
-    if (!(await store.increment(`ipd:${ipHash}`, day, config.limits.perIpPerDay))) return respond(429, { status: "limited", reason: "ip" }, log);
-    if (!(await store.increment(`iph:${ipHash}:${utcHour(now).slice(11)}`, day, config.limits.perIpPerHour))) return respond(429, { status: "limited", reason: "ip" }, log);
-    if (!(await store.increment(`ses:${body.sessionId}:${day}`, day, config.limits.maxTurnsPerSession))) return respond(429, { status: "limited", reason: "session" }, log);
-    if (!(await store.reserve(spendKey, day, worst, usdToMicro(config.limits.dailySpendCapUsd)))) return respond(503, { status: "unavailable", reason: "spend" }, log);
+    if (!(await store.increment(`day:${day}`, day, config.limits.dailyRequestBudget))) return finish(503, { status: "unavailable", reason: "budget" });
+    if (!(await store.increment(`ipd:${ipHash}`, day, config.limits.perIpPerDay))) return finish(429, { status: "limited", reason: "ip" });
+    if (!(await store.increment(`iph:${ipHash}:${utcHour(now).slice(11)}`, day, config.limits.perIpPerHour))) return finish(429, { status: "limited", reason: "ip" });
+    if (!(await store.increment(`ses:${body.sessionId}:${day}`, day, config.limits.maxTurnsPerSession))) return finish(429, { status: "limited", reason: "session" });
+    if (!(await store.reserve(spendKey, day, worst, usdToMicro(config.limits.dailySpendCapUsd)))) return finish(503, { status: "unavailable", reason: "spend" });
   } catch {
     return respond(503, { status: "unavailable", reason: "store" }, log);
   }

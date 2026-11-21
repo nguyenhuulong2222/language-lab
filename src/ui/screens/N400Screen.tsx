@@ -14,6 +14,7 @@ import { createAiCoachSession, type CoachTransport } from "../coach/ai-coach-cli
 import { createAiN400Coach } from "../coach/ai-n400-coach";
 import { CoachFeedback, type CoachStep } from "../components/CoachFeedback";
 import { CoachSwitch } from "../components/CoachSwitch";
+import type { CoachTurnResult } from "../../engine/coach/types";
 import type { PracticeProfile } from "../../engine/practice-content";
 import { useT } from "../../i18n/react";
 import { AnswerInput } from "../components/AnswerInput";
@@ -69,13 +70,16 @@ export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish,
     if (!aiCoach || !session || !coachOn || !session.consent) return onAnswer(prompt, transcript);
     setStep({ prompt, transcript, view: { status: "checking" } });
     const answer: N400Answer = { questionId: prompt.id, questionText: prompt.text, transcript };
-    void aiCoach.turnFeedback({ profile, answered: [] }, answer).then((result) => {
-      if (result.kind === "fallback" && result.disable) {
-        setCoachOn(false);
-        setOffForSession(true);
-      }
-      setStep({ prompt, transcript, view: { status: "done", result } });
-    });
+    void aiCoach
+      .turnFeedback({ profile, answered: [] }, answer)
+      .catch((): CoachTurnResult => ({ kind: "fallback", reason: "error", disable: false }))
+      .then((result) => {
+        if (result.kind === "fallback" && result.disable) {
+          setCoachOn(false);
+          setOffForSession(true);
+        }
+        setStep({ prompt, transcript, view: { status: "done", result } });
+      });
   };
   const controls = session ? (
     <CoachSwitch

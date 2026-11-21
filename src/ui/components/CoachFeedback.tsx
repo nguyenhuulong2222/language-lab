@@ -1,11 +1,15 @@
 /**
  * The feedback step after an answer while the AI coach is on (spec REQ-C11, REQ-C14): the AI lines
- * with an "AI-generated feedback" label each, or the plain fallback line, then "Next question".
- * The AI lines are English (lang="en"). Status is an icon plus a label, never colour alone.
+ * with an "AI-generated feedback" label, or the plain fallback line, then "Continue".
+ *
+ * Screen readers: one status region is mounted from the "checking" line on and its text is
+ * replaced by the result, so the result is announced. Focus goes to that region while checking and
+ * when the result arrives (it reads it); "Continue" comes next in the tab order, outside the region.
+ * The AI lines are English (lang="en"); status is an icon plus a label, never colour alone.
  */
 import { useEffect, useRef } from "react";
 import type { CoachTurnResult, IdentifierKind } from "../../engine/coach/types";
-import { isEnglishOnly, tEn, type MessageKey } from "../../i18n";
+import { ENGLISH_MESSAGES, isEnglishOnly, tEn, type MessageKey } from "../../i18n";
 import { useLanguage, useT } from "../../i18n/react";
 import { CheckIcon, ReviewIcon } from "./icons";
 import { LegalText } from "./LegalText";
@@ -29,12 +33,10 @@ export type CoachStep = { status: "checking" } | { status: "done"; result: Coach
 export function CoachFeedback({ step, onNext }: { step: CoachStep; onNext: () => void }) {
   const t = useT();
   const language = useLanguage();
-  const nextRef = useRef<HTMLButtonElement>(null);
-  const done = step.status === "done";
+  const regionRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    if (done) nextRef.current?.focus();
-  }, [done]);
-  const aiLabel = <span className="coach__ai-label">{t("coach.label")}</span>;
+    regionRef.current?.focus();
+  }, [step.status]);
   let body: React.ReactNode;
   if (step.status === "checking") {
     body = <p className="status">{t("coach.checking")}</p>;
@@ -42,11 +44,16 @@ export function CoachFeedback({ step, onNext }: { step: CoachStep; onNext: () =>
     const r = step.result;
     if (r.kind === "ai") {
       const Icon = r.reply.feedback === "understood" ? CheckIcon : ReviewIcon;
+      // The owner's rule: an "AI-generated feedback" label on every AI line.
+      const aiLabel = <span className="coach__ai-label">{t("coach.label")}</span>;
       body = (
         <>
           <p className="coach__line">
             <Icon className={r.reply.feedback === "understood" ? "icon-inline" : "icon-inline icon-inline--attention"} />{" "}
             {t(FEEDBACK_KEY[r.reply.feedback])} {aiLabel}
+          </p>
+          <p className="note">
+            <LegalText messageKey="coach.feedback.scope" />
           </p>
           <p className="progress-line">{t("coach.tip.label")}</p>
           <p className="coach__line">
@@ -56,7 +63,9 @@ export function CoachFeedback({ step, onNext }: { step: CoachStep; onNext: () =>
           <p className="coach__line">
             <span lang="en">{r.reply.followUp}</span> {aiLabel}
           </p>
-          <p className="note">{t("coach.followUp.note")}</p>
+          <p className="note">
+            <LegalText messageKey="coach.followUp.note" />
+          </p>
         </>
       );
     } else if (r.kind === "screened") {
@@ -79,11 +88,18 @@ export function CoachFeedback({ step, onNext }: { step: CoachStep; onNext: () =>
     }
   }
   return (
-    <section className="panel coach__feedback" aria-live="polite">
-      {body}
-      {done && (
+    <section className="panel coach__feedback">
+      <div ref={regionRef} role="status" aria-live="polite" tabIndex={-1} className="coach__region">
+        {body}
+      </div>
+      {step.status === "done" && step.result.kind === "ai" && (
+        <p className="note coach__disclaimer" lang="en">
+          {ENGLISH_MESSAGES["disclaimer.report"]}
+        </p>
+      )}
+      {step.status === "done" && (
         <div className="btn-row">
-          <button type="button" ref={nextRef} className="btn" onClick={onNext}>
+          <button type="button" className="btn" onClick={onNext}>
             {t("coach.next")}
           </button>
         </div>

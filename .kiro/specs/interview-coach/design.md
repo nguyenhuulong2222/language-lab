@@ -50,9 +50,10 @@ The Function folder is new to `structure.md` (thin handler; logic in `src/engine
 ## Data shapes
 
 ```ts
-// request body (client → Function), at most 4,096 bytes
-{ sessionId: string /* 16-64 [A-Za-z0-9_-] */, profileName: string, question: string,
-  sampleAnswer: string | null, answer: string }
+// request body (client → Function), at most 4,096 bytes. Ids, not texts: the server looks up the
+// fictional profile's name, the scripted question and the sample answer itself, so the learner's
+// answer is the only free text that can reach the model (changed during C-03).
+{ sessionId: string /* 16-64 [A-Za-z0-9_-] */, profileId: string, questionId: string, answer: string }
 // model reply (strict JSON schema)
 { followUp: string, feedback: "understood" | "needs_practice" | "unclear", tip: string }
 // Function → client

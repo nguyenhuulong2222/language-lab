@@ -173,6 +173,12 @@ describe("interface (REQ-C14)", () => {
         <CoachSwitch on={false} noticeOpen={false} offForSession={false} onRequestOn={() => {}} onTurnOff={() => {}} onConfirm={() => {}} onCancel={() => {}} {...props} />
       </I18nProvider>
     );
+  it("switched off for the session: still focusable (aria-disabled), with the reason", () => {
+    const html = sw({ offForSession: true });
+    expect(html).toContain('aria-disabled="true"');
+    expect(html).not.toMatch(/<button[^>]*disabled=""/);
+    expect(html).toContain("The AI coach is off for the rest of this practice.");
+  });
   it("a labelled switch, off by default", () => {
     const html = sw();
     expect(html).toContain("AI coach (optional)");
@@ -208,9 +214,13 @@ describe("interface (REQ-C14)", () => {
     expect(html.match(/AI-generated feedback/g)?.length).toBe(3);
     expect(html).toContain(`<span lang="en">${reply.tip}</span>`);
     expect(html).toContain(`<span lang="en">${reply.followUp}</span>`);
-    expect(html).toContain("Clear answer");
-    expect(html).toContain("Next question");
-    expect(html).toContain('aria-live="polite"');
+    expect(html).toContain("Easy to understand");
+    expect(html).toContain("It does not say whether an answer is right or true.");
+    expect(html).toContain(ENGLISH_MESSAGES["disclaimer.report"]);
+    expect(html).toContain("Continue");
+    // One status region, mounted while checking too, holds the result; Continue is outside it.
+    expect(html).toMatch(/role="status" aria-live="polite"/);
+    expect(html.indexOf("Continue")).toBeGreaterThan(html.lastIndexOf('aria-live="polite"'));
   });
   it("the plain fallback line, and the off-for-session note when disabled", () => {
     const html = fb({ status: "done", result: { kind: "fallback", reason: "unavailable", disable: true } });
@@ -225,6 +235,7 @@ describe("interface (REQ-C14)", () => {
   it("while checking, no Next button yet", () => {
     const html = fb({ status: "checking" });
     expect(html).toContain("Getting AI feedback");
-    expect(html).not.toContain("Next question");
+    expect(html).toMatch(/role="status" aria-live="polite"/);
+    expect(html).not.toContain("Continue");
   });
 });

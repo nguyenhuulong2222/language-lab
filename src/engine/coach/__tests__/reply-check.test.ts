@@ -71,6 +71,18 @@ describe("reply check (REQ-C09)", () => {
       expect(reason({ ...good, followUp: q }), q).toBe("followup_asks_identifier");
     }
   });
+  it("review fixes: more claim, outcome and model-answer phrasings; government voice; first-person tips; fewer false positives", () => {
+    expect(reason({ ...good, tip: "That is correct, and speak slowly." })).toBe("tip_outcome");
+    expect(reason({ ...good, tip: "USCIS officers expect short answers." })).toBe("tip_outcome");
+    expect(reason({ ...good, tip: "Do not say that part, speak slowly." })).toBe("tip_claim");
+    expect(reason({ ...good, tip: "You might say it more slowly." })).toBe("tip_model_answer");
+    expect(reason({ ...good, tip: "I have worked as a nurse for five years." })).toBe("tip_model_answer");
+    expect(reason({ ...good, tip: "When you say your address, speak slowly." })).toBe("tip_identifier_words");
+    expect(reason({ ...good, followUp: "Did senator O'Brien help you?" })).toBe("followup_title_name");
+    expect(reason({ ...good, followUp: "Why did you apply for citizenship?" })).toBe("ok");
+    expect(reason({ ...good, followUp: "Do you work for the Justice Department?" })).not.toBe("followup_title_name");
+    expect(reason({ ...good, tip: "Use ‘have lived’ for time up to now, 100% of the time." })).toBe("ok");
+  });
   it("a tip never gives a model answer", () => {
     expect(reason({ ...good, tip: 'You could say "I have worked as a nurse for five years."' })).toBe("tip_model_answer");
     expect(reason({ ...good, tip: "Try saying the whole sentence again." })).toBe("tip_model_answer");

@@ -89,6 +89,7 @@ I translated the disclaimer, privacy and legal lines (16 keys, 13 languages) bac
 - hmn `voice.consent.text`: "Say" is the plain verb for speaking, and "language" (lus) stands in for "words". Needs a Hmong reader.
 - hmn `compare.setting.writing`: "punctuation" is rendered as "stopping marks" (cov cim nres) and "spelling" as "writing". Needs a Hmong reader.
 - hmn `coach.notice.text`: "fictional" is "not real" and "on/off" is "open/closed" (qhib, kaw). Needs a Hmong reader.
+- hmn `coach.privacy`: "salted code" is rendered as "secret number" (lej zais). Needs a Hmong reader.
 - my `aiNotice.text`: "authoritative" is rendered as "official": close, slightly weaker.
 - my `compare.notYet`: "Not yet" is rendered literally as "has not arrived yet". Low confidence.
 - my `voice.consent.text`: "voice recording system" for "voice recognition" (အသံမှတ်သားစနစ်): recording and recognition are not the same thing. Needs a Burmese reader.

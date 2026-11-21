@@ -601,3 +601,13 @@ Spec first (`88e7d15`, BS-22 to BS-25); decisions in `docs/decisions-log.md`, se
 - Step 2: sentence answers matched by content words in order; property tests.
 - Step 3: independent source check (0 mismatches, decisions listed); review recorded through `review.json`; loader requires a named reviewer.
 - Step 4: production unlocks civics; verified with `layout-check --prod` (both test versions, Study pictures, no CSP violation); CON-01 closed.
+
+## 2026-11-20: optional AI coach for the N-400 part (branch engine/interview-coach)
+- C-00: spec with two Analyze Requirements rounds (author and an independent reviewer, 20 findings).
+- C-01: config, identifier screen, deny-list and reply check with property tests.
+- C-02: fixed system prompt and request, limits and cost maths, D1 counters tested on `node:sqlite`.
+- C-03: endpoint handler and Pages Function; mocked model, stubbed fetch, prompt-injection tests.
+- C-04: client session, switch and notice, feedback step, 14 languages, test that consent off never
+  calls `/api/coach`.
+- C-05: deploy notes, README, NOTICE, structure steering, `ui-reviewer` and `content-reviewer` with
+  fixes, layout check, build.

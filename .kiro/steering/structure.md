@@ -52,10 +52,18 @@ first, even though the same person makes the change.
 - Thin API layer: validates input, calls engine logic, returns responses.
 - No secrets in source; reads from environment bindings.
 
+### `functions/`
+- Cloudflare Pages Functions, same origin as the app (`functions/api/coach.ts`: the optional AI
+  coach, spec `.kiro/specs/interview-coach`).
+- Thin: builds the dependencies and calls `src/engine/coach/handler.ts`, where every check lives.
+- No secrets in source; reads `ANTHROPIC_API_KEY`, `COACH_IP_SALT`, `COACH_ENABLED` and the D1
+  binding `COACH_DB` from the environment (see `docs/coach-deploy.md`).
+
 ### `data/`
 - `test-rules.json` — official test parameters (question count, passing score).
 - `civics-answers/` — answer key files, human-reviewed only.
 - `translations/` — only the official English display text of the civics questions (`civics/<version>/en.json`), built from `sources/`. No non-English file is allowed here (see `NOTICE`); interface translations live in `src/i18n/locales/`.
+- `coach-config.json`, `coach-deny-list.json` — AI coach settings and reply deny-lists.
 - `practice/` — practice content (fictional profiles, N-400 script, reading and writing sentences, vocabulary) and `practice/practice-config.json` (practice settings that are not USCIS rules). Marked `needsHumanReview`.
 - `sources/` — official USCIS documents with URL and checksum.
 

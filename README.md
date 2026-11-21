@@ -172,6 +172,21 @@ See [`docs/kiro-log.md`](docs/kiro-log.md) for architecture decisions.
 - Civics answers are scored from the answer key only. AI never decides civics scores.
 - Civics questions, answers and practice sentences are English only and are never machine-translated. The interface can be switched to other languages; those translations are AI-generated unless marked as reviewed (see the disclosure section).
 - Voice: the words you say are recognised by your browser (the browser maker may process the audio). Language Lab never sends or saves your voice. "Record and compare" keeps a recording in memory on your device for the current sentence only and deletes it when you move on.
+- AI coach (optional, N-400 part only): off by default and off again in every new practice. Only when
+  you turn it on and confirm the notice, the text of each N-400 answer (never audio, never earlier
+  answers) is sent through Language Lab's server (a Cloudflare Pages Function on this site) to
+  Anthropic's API to make one follow-up question, a feedback label and one English tip, all marked
+  "AI-generated feedback". The model is `claude-haiku-5-5` (settings in `data/coach-config.json`).
+  Before sending, the app and the server refuse answers that look like an A-number, a Social
+  Security number, a phone number, an e-mail address or a full date; this cannot catch every
+  personal detail, so answer as the fictional person. The reply is checked before it is shown
+  (English only, length limits, no outcome predictions, no legal advice, no officeholder names, no
+  requests for personal details); anything that fails is dropped. The coach never scores civics,
+  reading or writing, and the report does not score the N-400 part. The server stores no answers or
+  replies; it keeps counters in Cloudflare D1 (per UTC day: a salted, daily hash of the IP address and
+  a random per-practice session id), removed during later requests, normally within two days. The
+  reply checks are best effort, not a guarantee. Anthropic's handling of API data: <https://www.anthropic.com/legal/privacy>.
+  Deploy notes, limits and costs: [`docs/coach-deploy.md`](docs/coach-deploy.md).
 - No government seals or implied official endorsement.
 
 See [`.kiro/steering/content-safety.md`](.kiro/steering/content-safety.md) for the full rules.

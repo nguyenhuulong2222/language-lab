@@ -6,6 +6,9 @@ commit. No task calls the real Anthropic API.
 ## C-00 — Spec (done)
 `requirements.md` (revision 2, with both Analyze Requirements rounds), `design.md`, this file.
 
+**Status:** C-00 to C-05 done and committed. Open points are listed in `docs/decisions-log.md`
+section L and in `docs/audit/open-findings.md`.
+
 ## C-01 — Config, identifier screen, deny-list, reply check
 `data/coach-config.json`, `data/coach-deny-list.json`, `src/engine/coach/{types,config,
 identifier-screen,reply-check}.ts` with unit and property tests.

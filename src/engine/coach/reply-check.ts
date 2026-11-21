@@ -48,10 +48,10 @@ export function loadDenyList(): DenyList {
 
 const FEEDBACK = ["understood", "needs_practice", "unclear"] as const;
 /** Latin letters (with accents), digits, spaces and common punctuation. Anything else is not English. */
-const ENGLISH_CHARS = /^[A-Za-z\u00C0-\u00FF0-9 .,;:!?'’"“”()\-–—/&]+$/;
+const ENGLISH_CHARS = /^[A-Za-z\u00C0-\u00FF0-9 .,;:!?'‘’"“”()\-–—/&%+…]+$/;
 /** Common English words: a reply with none of them is not English ("Eres un buen estudiante"). */
 const ENGLISH_WORDS = new Set(
-  "the you your is are was were be to of and in it for with do did does have has had what how where when why who which can could will would should say use try speak speaking word words sentence sentences please my me this that on at about from as more slowly clearly full answer question tell long many often every each work live lived job family time years".split(" ")
+  "the you your is are was were be to of and in it for with do did does have has had what how where when why who which can could will would should say use try speak speaking word words sentence sentences please my me this that on at about from as more slowly clearly full answer question tell long many often every each work live lived job family time years answers questions short good great well very not yes if or but so try one two some any here there now then when again also just like way next first part name names".split(" ")
 );
 const looksEnglish = (text: string): boolean => (text.toLowerCase().match(/[a-z']+/g) ?? []).some((w) => ENGLISH_WORDS.has(w));
 const URL_LIKE = /(https?:\/\/|www\.|\b[a-z0-9-]+\.(com|org|net|gov|edu|io|us)\b)/i;
@@ -66,9 +66,18 @@ function phraseRegex(phrase: string): RegExp {
 function containsAny(text: string, phrases: readonly string[]): boolean {
   return phrases.some((p) => phraseRegex(p).test(text));
 }
-/** A title followed by a capitalised word: "President Smith", "Senator Doe". */
+/** Capitalised words after a title that are not names ("Justice Department", "Secretary General"). */
+const NOT_NAMES: ReadonlySet<string> = new Set(["Department", "Court", "Office", "Day", "General", "Program", "Act", "Branch"]);
+/** A title (any case) followed by a capitalised name: "President Smith", "senator O'Brien". */
 function titleWithName(text: string, titles: readonly string[]): boolean {
-  return titles.some((t) => new RegExp(`\\b${escape(t).replace(/\s+/g, "\\s+")}\\s+[A-Z][a-z]+`).test(text));
+  for (const t of titles) {
+    const re = new RegExp(`\\b${escape(t).replace(/\s+/g, "\\s+")}\\s+([A-Za-z][A-Za-z'’-]*)`, "gi");
+    for (const m of text.matchAll(re)) {
+      const word = m[1] ?? "";
+      if (/^[A-Z]/.test(word) && !NOT_NAMES.has(word)) return true;
+    }
+  }
+  return false;
 }
 /** A quoted span of five or more words: a model answer. */
 function quotedSentence(text: string): boolean {
@@ -122,6 +131,8 @@ export function checkReply(
     if (containsAny(text, deny.claimPhrases)) return { ok: false, reason: `${field}_claim` };
   }
   if (containsAny(f, deny.identifierRequestWords)) return { ok: false, reason: "followup_asks_identifier" };
-  if (quotedSentence(t) || containsAny(t, deny.modelAnswerPhrases)) return { ok: false, reason: "tip_model_answer" };
+  if (containsAny(t, deny.identifierRequestWords)) return { ok: false, reason: "tip_identifier_words" };
+  // A model answer: a quoted sentence, a "you could say" phrase, or a tip that is itself a first-person answer.
+  if (quotedSentence(t) || containsAny(t, deny.modelAnswerPhrases) || /^(I|I'm|I’m|My|We)\b/.test(t)) return { ok: false, reason: "tip_model_answer" };
   return { ok: true, reply: { followUp: f, feedback: fb as CoachReply["feedback"], tip: t } };
 }

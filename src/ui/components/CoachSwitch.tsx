@@ -49,8 +49,13 @@ export function CoachSwitch({ on, noticeOpen, offForSession, onRequestOn, onTurn
           aria-labelledby={labelId}
           aria-describedby={helpId}
           className={on ? "coach__switch coach__switch--on" : "coach__switch"}
-          disabled={offForSession}
-          onClick={() => (on ? onTurnOff() : onRequestOn())}
+          // aria-disabled, not disabled: the switch stays reachable and its reason is read with it.
+          aria-disabled={offForSession || undefined}
+          onClick={() => {
+            if (offForSession) return;
+            if (on) onTurnOff();
+            else onRequestOn();
+          }}
         >
           <span className="coach__track" aria-hidden="true">
             <span className="coach__thumb" />
@@ -62,7 +67,17 @@ export function CoachSwitch({ on, noticeOpen, offForSession, onRequestOn, onTurn
         {offForSession ? t("coach.offNow") : t("coach.switch.help")}
       </p>
       {noticeOpen && (
-        <div className="coach__notice" role="group" aria-labelledby={noticeId}>
+        <div
+          className="coach__notice"
+          role="group"
+          aria-labelledby={noticeId}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              event.stopPropagation();
+              onCancel();
+            }
+          }}
+        >
           <h2 id={noticeId} ref={noticeRef} tabIndex={-1} className="panel__title">
             {t("coach.notice.title")}
           </h2>

@@ -297,3 +297,63 @@ Spec: BS-22 to BS-25. Source: USCIS Policy Manual, Vol. 12, Part E, Ch. 2 (saved
 - **Review record:** `tools/answer-key/review.json` holds the reviewer, date, note and the SHA-256 of the reviewed entries; the build writes `needsHumanReview: false` only while the entries match. My choice, so that a later rebuild cannot keep a stale approval. The loader refuses in production a file marked reviewed without `reviewedBy` and `reviewedOn`.
 - **Independent check:** `tools/answer-key/check-against-source.py` (from the audit's `keycheck2.py`, extended to every combination of optional parentheses, slash alternatives, "Also acceptable" notes, any-order items, and a list of answers that come from owner decisions). 0 mismatches for both versions.
 - **Production:** civics, Study first and the full interview are on; `layout-check --prod` now also asserts every home card, a loaded Study picture and the test version on the report, and takes `--filed=before` for the 2008 test.
+
+## L. Optional AI coach for the N-400 part (2026-11-20, branch engine/interview-coach)
+
+Spec: `.kiro/specs/interview-coach/` (requirements revision 2 with two Analyze Requirements rounds).
+
+- **Server:** Cloudflare Pages Function `functions/api/coach.ts`, same origin, so the CSP keeps
+  `connect-src 'self'`. Thin; every check is in `src/engine/coach/` and tested there. The Function
+  sets its own security headers (`_headers` does not reach Functions).
+- **Counters:** D1 (`COACH_DB`), because the Workers rate-limiting binding is not available to Pages
+  Functions and KV is eventually consistent. One atomic `INSERT ... ON CONFLICT DO UPDATE ... WHERE
+  count < limit RETURNING` per counter; spend is reserved before a call and settled after.
+- **Model:** `claude-haiku-5-5` (cheapest current model; $0.10 / $0.50 per MTok), effort `low`,
+  thinking off, `max_tokens` 300, strict JSON schema output, API version `2026-10-21`.
+  `temperature` stays in the config as `null` because that API version rejects it (owner's brief
+  asked for it; recorded as A1).
+- **My decisions:**
+  - The client sends ids (profile, question), not texts; the server looks them up. The learner's
+    answer is the only free text that reaches the model.
+  - The follow-up question is shown for practice only; it is not answered, recorded or sent.
+  - The feedback step sits between the answer and the next question only while the coach is on.
+  - The AI result type is engine-local (`src/engine/coach/types.ts`); no contract change.
+  - No probe before consent: a learner may see the notice once and then "not available" if the
+    coach is switched off; the switch then turns itself off.
+  - Limits: answer 600 characters, body 4,096 bytes, 12 turns per session, 30 per IP per hour and
+    80 per day, 600 calls and $0.50 per UTC day, 8 s upstream and 12 s client timeouts.
+  - IP counters use SHA-256 of IP, UTC day and a required secret salt; no salt means unavailable.
+  - The deny-lists (`data/coach-deny-list.json`) are mine, best effort. After the content review I
+    added more claim, outcome, correctness and government-voice phrases, removed "apply for" and
+    "file for" (they blocked normal follow-ups), made the title-and-name check case-insensitive with
+    apostrophes, and applied the identifier-request words to the tip too. Known false positives:
+    follow-ups that mention "government", "official", "address" or "email" are dropped.
+  - Feedback labels: "Easy to understand", "Worth practicing again", "Hard to follow. Try again.",
+    with the line "This checks how clear your English is. It does not say whether an answer is right
+    or true." The follow-up is "A practice follow-up question:" (not "An officer might also ask").
+  - The rule-5 disclaimer (`disclaimer.report`, English) shows in the feedback step; the three short
+    disclaimers show in English under the switch while the coach is on.
+  - "AI-generated feedback" stays on every AI line (the owner's rule), although the content reviewer
+    suggested one label per block to reduce screen-reader repetition.
+  - Translations: AI drafts in 13 languages; the legal keys (`coach.notice.text`, `coach.privacy`,
+    `coach.screened`, `coach.followUp.note`, `coach.switch.help`, `coach.feedback.scope`) are shown in
+    English until a reviewer is recorded. The back-translations of `coach.notice.text` and
+    `coach.privacy` after the review rewrite are one English rendering checked against each draft by
+    me: a weak check, like the rest of that file.
+  - No Privacy screen exists; the privacy line `coach.privacy` is on the home screen, the setup
+    screen and the About panel.
+- **Reviews:** `ui-reviewer` found that the result was probably not announced (live region mounted
+  with its content, and focus moved away at once); fixed with one status region mounted from the
+  "checking" line and focus on it. Also fixed: focus while checking, a stuck "checking" if the call
+  rejected, the disabled switch (now `aria-disabled`, still focusable), Escape on the notice,
+  forced-colours thumb, "Next question" after the last question (now "Continue"). `content-reviewer`
+  found the notice's "your voice is never sent" too absolute (browser speech recognition), no
+  retention statement, the sample answer used without a rule, thin deny-lists, and the missing
+  rule-5 sentence; all fixed. The prompt now forbids comparing facts with the sample answer,
+  correctness verdicts and speaking for USCIS.
+- **Open (owner):** Anthropic data retention terms; a dedicated Privacy screen if wanted; the
+  notice is dense for ESL learners and English only until reviewed; `product.md` says "answer
+  truthfully from their own circumstances" while the coach notice says "answer as the fictional
+  person" (the brief's wording); the officeholder list needs updating when officeholders change;
+  names, street addresses, receipt and passport numbers are not screened; the per-session turn cap
+  is advisory on the server.
