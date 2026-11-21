@@ -370,3 +370,32 @@ describe("attribution as text only (REQ-C20)", () => {
     expect(checkLocale(en, { "coach.poweredBy": "Hỗ trợ bởi Claude (Anthrópic)" }).map((p) => p.kind)).toEqual(["fixed-term"]);
   });
 });
+
+describe("coach text in other languages (REQ-C21)", () => {
+  const scripted = createScriptedN400Coach(content.n400Questions);
+  const vi_ = (props: Partial<Parameters<typeof N400Screen>[0]> = {}) =>
+    renderToString(
+      <I18nProvider language="vi">
+        <N400Screen coach={scripted} profile={profile} answers={[]} onAnswer={() => {}} onFinish={() => {}} coachTransport={vi.fn<CoachTransport>()} {...props} />
+      </I18nProvider>
+    );
+  it("the choice screen is translated; the three disclaimers stay English", () => {
+    const html = vi_();
+    expect(html).toContain("Bạn có muốn dùng huấn luyện viên AI không?");
+    expect(html).toContain("Claude (Anthropic)");
+    expect(html).not.toContain("Would you like to use the AI coach?");
+    for (const key of ["intro.notice.practice", "intro.notice.legal", "intro.notice.government"] as const) expect(html).toContain(ENGLISH_MESSAGES[key]);
+  });
+  it("the notice opened from the home card: consent text in English, attribution translated", () => {
+    const html = vi_({ coachEntry: "notice" });
+    expect(html).toContain(ENGLISH_MESSAGES["coach.notice.text"].replace(/'/g, "&#x27;"));
+    expect(html).not.toContain("Powered by Claude (Anthropic)");
+    expect(html).toContain("Claude (Anthropic)");
+  });
+  it("the new coach keys are interface text, not legal keys", async () => {
+    const { LEGAL_KEYS } = await import("../../i18n/legal-keys");
+    for (const k of ["home.coach.title", "home.coach.text", "coach.poweredBy", "coach.choice.title", "coach.choice.lead", "coach.choice.use", "coach.choice.no"]) {
+      expect(LEGAL_KEYS as readonly string[], k).not.toContain(k);
+    }
+  });
+});
