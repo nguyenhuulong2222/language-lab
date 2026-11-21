@@ -3,8 +3,9 @@
  *
  * The one interface the N-400 interview screen talks to. Today only the scripted coach exists:
  * it asks the questions of data/practice/n400-questions.json in order, offers the sample answer
- * of the fictional profile, and gives no feedback. A later Worker-backed coach can implement the
- * same interface (follow-up questions, feedback) and the screen does not change.
+ * of the fictional profile, and gives no feedback. The optional AI coach (src/ui/coach/,
+ * spec .kiro/specs/interview-coach) implements the same interface and adds `turnFeedback`; the
+ * scripted coach stays the default and the fallback.
  *
  * Rules for every implementation:
  * - Feedback never suggests what a user should claim and never scores civics.
@@ -12,6 +13,7 @@
  * - No real personal data is sent anywhere by this module.
  */
 import type { N400Feedback } from "../contracts/session.js";
+import type { CoachTurnResult } from "./coach/types.js";
 import type { N400Question, PracticeProfile } from "./practice-content.js";
 
 export interface N400Answer {
@@ -39,6 +41,11 @@ export interface N400Coach {
   nextQuestion(context: N400Context): Promise<N400Prompt | null>;
   /** Feedback on the latest answer, or null when this coach gives none. */
   feedback(context: N400Context, answer: N400Answer): Promise<N400Feedback | null>;
+  /**
+   * Optional (the AI coach only): feedback, one follow-up question and one English tip for the
+   * current answer. Only `answer` and the profile are used; earlier turns are never sent.
+   */
+  turnFeedback?(context: N400Context, answer: N400Answer): Promise<CoachTurnResult>;
 }
 
 /** Asks every scripted question once, in order. No feedback, no scoring. */

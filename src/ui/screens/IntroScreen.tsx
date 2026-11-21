@@ -52,6 +52,7 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, focusOnFir
         {needs.profile && (
           <>
             <p className="note"><LegalText messageKey="intro.privacy" /></p>
+            <p className="note"><LegalText messageKey="coach.privacy" /></p>
             <fieldset className="choices">
               <legend className="choices__legend">{t("intro.profile.legend")}</legend>
               <p className="note">{t("intro.profile.help")}</p>

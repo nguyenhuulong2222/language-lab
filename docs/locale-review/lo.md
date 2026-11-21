@@ -41,6 +41,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | ໃນການຝຶກນີ້ ການອ່ານ, ການຂຽນ ແລະ ພົນລະເມືອງ ແຕ່ລະພາກເຖິງຄະແນນທີ່ Language Lab ໃຊ້. ໃຊ້ບັນທຶກຂ້າງລຸ່ມເພື່ອຝຶກຕໍ່. | In this practice, reading, writing and citizenship each reached the score Language Lab uses. Use the notes below to keep practicing. |
 | `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | ການຝຶກມີໄວ້ເພື່ອສິ່ງນີ້. ບັນທຶກຂ້າງລຸ່ມສະແດງວ່າຄວນເນັ້ນບ່ອນໃດກ່ອນລອງອີກຄັ້ງ. | Practice is for this. The notes below show where to focus before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | ການຂຽນ: USCIS ບອກວ່າການສະກົດຜິດ, ຕົວພິມໃຫຍ່ ແລະ ເຄື່ອງໝາຍວັກຕອນ ບໍ່ເຮັດໃຫ້ສອບຂຽນບໍ່ຜ່ານ ເວັ້ນເສຍແຕ່ປະໂຫຍກຈະອ່ານບໍ່ເຂົ້າໃຈແລ້ວ. ຢູ່ນີ້ ການສະກົດຜິດເລັກນ້ອຍຍັງນັບ ແລະ ຄຳທີ່ຍາວກວ່າຜິດໄດ້ຫຼາຍກວ່າ. ບໍ່ກວດຕົວພິມໃຫຍ່ ແລະ ເຄື່ອງໝາຍວັກຕອນ. | Writing: USCIS says misspelling, capital letters and punctuation marks do not make you fail the writing test unless the sentence can no longer be understood. Here, small misspellings still count, and longer words may have more mistakes. Capital letters and punctuation are not checked. |
+| `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | ເມື່ອເປີດໂຄ້ດ AI, ຄຳໃນແຕ່ລະຄຳຕອບທີ່ທ່ານພິມ ຫຼື ເວົ້າໃນພາກນີ້ ຈະຖືກສົ່ງເປັນຂໍ້ຄວາມໄປຫາ Anthropic, ບໍລິສັດ AI, ຜ່ານເຊີບເວີຂອງ Language Lab, ເພື່ອຂຽນຄຳຕິຊົມ. Language Lab ແລະ Anthropic ບໍ່ເຄີຍໄດ້ຮັບສຽງຂອງທ່ານ, ໄດ້ຮັບແຕ່ຄຳ. ຕອບໃນຖານະບຸກຄົນສົມມຸດ. ຢ່າບອກຊື່ແທ້, ທີ່ຢູ່, ວັນເກີດ, A-number ຫຼື ລາຍລະອຽດຄະດີ. Language Lab ກວດຕົວເລກບາງຢ່າງ, ແຕ່ຈັບຂໍ້ມູນສ່ວນຕົວບໍ່ໄດ້ທັງໝົດ. Language Lab ບໍ່ເກັບຄຳຕອບຂອງທ່ານ. ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວຂອງ Anthropic ບອກວ່າ Anthropic ຈັດການມັນແນວໃດ: anthropic.com/legal/privacy. ໂຄ້ດ AI ຈະປິດອີກເມື່ອທ່ານເລີ່ມການຝຶກໃໝ່. | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
+| `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | ໂຄ້ດ AI: ປິດຢູ່ຈົນກວ່າທ່ານຈະເປີດໃນພາກ N-400. ເມື່ອເປີດ, ຂໍ້ຄວາມຂອງແຕ່ລະຄຳຕອບ N-400 ຈະຖືກສົ່ງໄປຫາ Anthropic ຜ່ານເຊີບເວີຂອງ Language Lab ເພື່ອຂຽນຄຳຕິຊົມ; ບໍ່ມີການສົ່ງສຽງ. ເພື່ອຈຳກັດການໃຊ້, ເຊີບເວີນັບຄຳຂໍດ້ວຍລະຫັດປະຈຳວັນທີ່ເພີ່ມຄ່າລັບ ເຊິ່ງສ້າງຈາກທີ່ຢູ່ອິນເຕີເນັດຂອງທ່ານ; ຈຳນວນນັບເກົ່າຈະຖືກລຶບໃນຄຳຂໍຕໍ່ໆໄປ, ປົກກະຕິພາຍໃນສອງວັນ. ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວຂອງ Anthropic: anthropic.com/legal/privacy. | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
 
 ## 2. Lines that mention USCIS, test rules or the answer key
 
@@ -116,6 +118,31 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.sample.label` | Sample answer for {name} (fictional) | ຕົວຢ່າງຄໍາຕອບຂອງ {name} (ສົມມຸດ) |
 | `n400.yourAnswer` | Your answer, as {name} | ຄໍາຕອບຂອງທ່ານ ໃນຖານະ {name} |
 | `n400.save` | Save answer and continue | ບັນທຶກຄໍາຕອບ ແລະ ສືບຕໍ່ |
+| `coach.switch.label` | AI coach (optional) | ໂຄ້ດ AI (ບໍ່ບັງຄັບ) |
+| `coach.switch.on` | On | ເປີດ |
+| `coach.switch.off` | Off | ປິດ |
+| `coach.switch.help` | After each answer, get a short AI tip about your English. Off unless you turn it on. | ຫຼັງຈາກແຕ່ລະຄຳຕອບ, ຮັບຄຳແນະນຳສັ້ນໆຈາກ AI ກ່ຽວກັບພາສາອັງກິດຂອງທ່ານ. ປິດຢູ່ຈົນກວ່າທ່ານຈະເປີດ. |
+| `coach.notice.title` | Before you turn on the AI coach | ກ່ອນທ່ານເປີດໂຄ້ດ AI |
+| `coach.notice.confirm` | Turn on the AI coach | ເປີດໂຄ້ດ AI |
+| `coach.notice.cancel` | Cancel | ຍົກເລີກ |
+| `coach.label` | AI-generated feedback | ຄຳຕິຊົມທີ່ສ້າງໂດຍ AI |
+| `coach.followUp.label` | A practice follow-up question: | ຄຳຖາມຕໍ່ເນື່ອງສຳລັບຝຶກ: |
+| `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | ຖ້າຕ້ອງການ, ລອງຝຶກຕອບອອກສຽງ. ຄຳຖາມນີ້ບໍ່ຖືກບັນທຶກ. |
+| `coach.tip.label` | Tip about your English: | ຄຳແນະນຳກ່ຽວກັບພາສາອັງກິດຂອງທ່ານ: |
+| `coach.feedback.understood` | Easy to understand | ເຂົ້າໃຈງ່າຍ |
+| `coach.feedback.needs_practice` | Worth practicing again | ຄວນຝຶກອີກ |
+| `coach.feedback.unclear` | Hard to follow. Try again. | ຟັງເຂົ້າໃຈຍາກ. ລອງໃໝ່. |
+| `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | ສ່ວນນີ້ກວດແຕ່ວ່າພາສາອັງກິດຂອງທ່ານຊັດເຈນພຽງໃດ. ມັນບໍ່ໄດ້ບອກວ່າຄຳຕອບຖືກ ຫຼື ເປັນຄວາມຈິງບໍ. |
+| `coach.checking` | Getting AI feedback… | ກຳລັງຮັບຄຳຕິຊົມຈາກ AI… |
+| `coach.unavailable` | AI feedback is not available right now. You can keep practicing. | ຕອນນີ້ບໍ່ມີຄຳຕິຊົມຈາກ AI. ທ່ານຝຶກຕໍ່ໄດ້. |
+| `coach.offNow` | The AI coach is off for the rest of this practice. | ໂຄ້ດ AI ປິດໄປຕະຫຼອດການຝຶກຄັ້ງນີ້. |
+| `coach.screened` | This answer was not sent to the AI coach because it seems to contain {kind}. Answer as the fictional person, without real personal details. | ຄຳຕອບນີ້ບໍ່ໄດ້ຖືກສົ່ງໄປຫາໂຄ້ດ AI ເພາະເບິ່ງຄືວ່າມີ {kind}. ຕອບໃນຖານະບຸກຄົນສົມມຸດ, ໂດຍບໍ່ມີຂໍ້ມູນສ່ວນຕົວແທ້. |
+| `coach.kind.aNumber` | an A-number | A-number |
+| `coach.kind.ssn` | a Social Security number | ເລກປະກັນສັງຄົມ |
+| `coach.kind.phone` | a phone number | ເບີໂທລະສັບ |
+| `coach.kind.email` | an e-mail address | ທີ່ຢູ່ອີເມວ |
+| `coach.kind.dateOfBirth` | a full date, such as a date of birth | ວັນທີເຕັມ ເຊັ່ນ ວັນເກີດ |
+| `coach.next` | Continue | ສືບຕໍ່ |
 | `n400.loading` | Getting the next question… | ກໍາລັງໂຫຼດຄໍາຖາມຕໍ່ໄປ… |
 | `n400.failed` | The next question could not be loaded. Start over to try again. | ໂຫຼດຄໍາຖາມຕໍ່ໄປບໍ່ໄດ້. ເລີ່ມໃໝ່ເພື່ອລອງອີກຄັ້ງ. |
 | `n400.done.title` | Your answers | ຄໍາຕອບຂອງທ່ານ |

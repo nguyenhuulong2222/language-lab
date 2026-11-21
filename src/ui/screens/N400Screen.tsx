@@ -1,13 +1,20 @@
 /**
  * N-400 interview. The screen asks an N400Coach for each question, shows it with the sample
- * answer of the fictional profile, and records the user's own words. No scoring, no AI: the
- * scripted coach reads data/practice/n400-questions.json. A coach that talks to a Worker can
- * be passed in its place without a change here.
+ * answer of the fictional profile, and records the user's own words. No scoring. The scripted
+ * coach (data/practice/n400-questions.json) is the default. With a `coachTransport`, the screen
+ * offers the optional AI coach (spec .kiro/specs/interview-coach): off by default, a notice before
+ * it turns on, and a feedback step after each answer while it is on. Nothing is sent while it is off.
  */
 import { LegalText } from "../components/LegalText";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { n400QuestionClipId, sampleAnswerClipId } from "../../engine/audio-clips";
 import type { N400Answer, N400Coach, N400Prompt } from "../../engine/n400-coach";
+import { loadCoachConfig } from "../../engine/coach/config";
+import { createAiCoachSession, type CoachTransport } from "../coach/ai-coach-client";
+import { createAiN400Coach } from "../coach/ai-n400-coach";
+import { CoachFeedback, type CoachStep } from "../components/CoachFeedback";
+import { CoachSwitch } from "../components/CoachSwitch";
+import type { CoachTurnResult } from "../../engine/coach/types";
 import type { PracticeProfile } from "../../engine/practice-content";
 import { useT } from "../../i18n/react";
 import { AnswerInput } from "../components/AnswerInput";
@@ -30,13 +37,22 @@ interface N400ScreenProps {
   nextIsReport?: boolean;
   /** Try loading the question again after a failure. */
   onRetry?: () => void;
+  /** Offer the optional AI coach, sending through this transport (fetch in the app). */
+  coachTransport?: CoachTransport;
 }
 
 type PromptState = { status: "loading" } | { status: "failed" } | { status: "done" } | { status: "ready"; prompt: N400Prompt };
 
-export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish, nextIsReport }: N400ScreenProps) {
+export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish, nextIsReport, coachTransport }: N400ScreenProps) {
   const [state, setState] = useState<PromptState>({ status: "loading" });
   const [attempt, setAttempt] = useState(0);
+  // The AI coach lives as long as this screen: a new practice starts with it off.
+  const session = useMemo(() => (coachTransport ? createAiCoachSession({ transport: coachTransport, config: loadCoachConfig() }) : null), [coachTransport]);
+  const aiCoach = useMemo(() => (session ? createAiN400Coach(coach, session) : null), [coach, session]);
+  const [coachOn, setCoachOn] = useState(false);
+  const [noticeOpen, setNoticeOpen] = useState(false);
+  const [offForSession, setOffForSession] = useState(false);
+  const [step, setStep] = useState<{ prompt: N400Prompt; transcript: string; view: CoachStep } | null>(null);
 
   useEffect(() => {
     let current = true;
@@ -50,6 +66,39 @@ export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish,
     };
   }, [coach, profile, answers, attempt]);
 
+  const submitAnswer = (prompt: N400Prompt, transcript: string) => {
+    if (!aiCoach || !session || !coachOn || !session.consent) return onAnswer(prompt, transcript);
+    setStep({ prompt, transcript, view: { status: "checking" } });
+    const answer: N400Answer = { questionId: prompt.id, questionText: prompt.text, transcript };
+    void aiCoach
+      .turnFeedback({ profile, answered: [] }, answer)
+      .catch((): CoachTurnResult => ({ kind: "fallback", reason: "error", disable: false }))
+      .then((result) => {
+        if (result.kind === "fallback" && result.disable) {
+          setCoachOn(false);
+          setOffForSession(true);
+        }
+        setStep({ prompt, transcript, view: { status: "done", result } });
+      });
+  };
+  const controls = session ? (
+    <CoachSwitch
+      on={coachOn}
+      noticeOpen={noticeOpen}
+      offForSession={offForSession}
+      onRequestOn={() => setNoticeOpen(true)}
+      onCancel={() => setNoticeOpen(false)}
+      onConfirm={() => {
+        session.giveConsent();
+        setCoachOn(session.consent);
+        setNoticeOpen(false);
+      }}
+      onTurnOff={() => {
+        session.withdraw();
+        setCoachOn(false);
+      }}
+    />
+  ) : undefined;
   return (
     <N400View
       state={state}
@@ -57,19 +106,40 @@ export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish,
       answers={answers}
       total={total}
       onAnswer={onAnswer}
+      onSubmitAnswer={submitAnswer}
       onFinish={onFinish}
       onRetry={() => setAttempt((n) => n + 1)}
+      {...(controls ? { coachControls: controls } : {})}
+      {...(step
+        ? {
+            coachStep: (
+              <CoachFeedback
+                step={step.view}
+                onNext={() => {
+                  setStep(null);
+                  onAnswer(step.prompt, step.transcript);
+                }}
+              />
+            ),
+          }
+        : {})}
       {...(nextIsReport === undefined ? {} : { nextIsReport })}
     />
   );
 }
 
-interface N400ViewProps extends Omit<N400ScreenProps, "coach"> {
+interface N400ViewProps extends Omit<N400ScreenProps, "coach" | "coachTransport"> {
   state: PromptState;
+  /** What "Save answer" does. Default: record the answer at once. */
+  onSubmitAnswer?: (prompt: N400Prompt, transcript: string) => void;
+  /** The AI coach switch, when the coach is offered. */
+  coachControls?: ReactNode;
+  /** The feedback step after an answer; it takes the place of the answer box. */
+  coachStep?: ReactNode;
 }
 
 /** The screen without its data loading, so every state can be rendered and tested. */
-export function N400View({ state, profile, answers, total, onAnswer, onFinish, nextIsReport = false, onRetry }: N400ViewProps) {
+export function N400View({ state, profile, answers, total, onAnswer, onFinish, nextIsReport = false, onRetry, onSubmitAnswer, coachControls, coachStep }: N400ViewProps) {
   const t = useT();
   const name = profile.displayName;
 
@@ -111,6 +181,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
         <p className="progress-line">
           {total === undefined ? t("n400.number", { current }) : t("n400.count", { current, total })}
         </p>
+        {coachControls}
         {state.status === "loading" && <p role="status">{t("n400.loading")}</p>}
         {state.status === "failed" && (
           <div className="screen__body">
@@ -145,12 +216,14 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
               </section>
             )}
             <ScreenHelp screen="n400" />
-            <AnswerInput
-              label={t("n400.yourAnswer", { name })}
-              submitLabel={t("n400.save")}
-              voice
-              onSubmit={(text) => onAnswer(state.prompt, text)}
-            />
+            {coachStep ?? (
+              <AnswerInput
+                label={t("n400.yourAnswer", { name })}
+                submitLabel={t("n400.save")}
+                voice
+                onSubmit={(text) => (onSubmitAnswer ?? onAnswer)(state.prompt, text)}
+              />
+            )}
           </div>
         )}
       </div>

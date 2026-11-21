@@ -91,6 +91,7 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, focusOnFirstRender
         </li>
       </ul>
       <p className="note"><LegalText messageKey="voice.privacy" /></p>
+      <p className="note"><LegalText messageKey="coach.privacy" /></p>
     </div>
   );
 }

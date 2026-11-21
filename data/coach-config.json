@@ -1,0 +1,37 @@
+{
+  "_note": "Settings of the optional AI coach for the N-400 stage (spec .kiro/specs/interview-coach). Language Lab settings, not USCIS rules. Model facts and prices were read from platform.claude.com/docs on checkedOn; check them again before changing the model or the API version.",
+  "model": {
+    "id": "claude-haiku-5-5",
+    "apiVersion": "2026-10-21",
+    "maxTokens": 300,
+    "effort": "low",
+    "thinking": "disabled",
+    "temperature": null,
+    "_temperature": "Must stay null: API version 2026-10-21 removed temperature, top_p and top_k (a request that sends them is a 400 error).",
+    "inputUsdPerMillionTokens": 0.1,
+    "outputUsdPerMillionTokens": 0.5,
+    "checkedOn": "2026-11-20"
+  },
+  "reply": {
+    "followUpMaxChars": 140,
+    "tipMaxChars": 220
+  },
+  "limits": {
+    "maxAnswerChars": 600,
+    "maxRequestBytes": 4096,
+    "maxTurnsPerSession": 12,
+    "perIpPerHour": 30,
+    "perIpPerDay": 80,
+    "dailyRequestBudget": 600,
+    "dailySpendCapUsd": 0.5,
+    "fixedInputTokens": 1400,
+    "charsPerToken": 2,
+    "upstreamTimeoutMs": 8000,
+    "clientTimeoutMs": 12000,
+    "cleanupBatch": 50
+  },
+  "origins": {
+    "exact": ["https://language-lab-ade.pages.dev", "http://localhost:8788", "http://127.0.0.1:8788"],
+    "previewSuffix": ".language-lab-ade.pages.dev"
+  }
+}

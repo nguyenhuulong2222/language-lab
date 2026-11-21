@@ -22,6 +22,7 @@ import {
 } from "../engine/practice-flow";
 import { useT } from "../i18n/react";
 import { HelpSessionProvider } from "./help-session";
+import type { CoachTransport } from "./coach/ai-coach-client";
 import { Shell } from "./components/Shell";
 import { CivicsScreen } from "./screens/CivicsScreen";
 import { EnglishScreen } from "./screens/EnglishScreen";
@@ -40,6 +41,8 @@ interface PracticeAppProps {
   seed?: () => number;
 }
 
+/** The AI coach's only way out: same-origin fetch to /api/coach, used only after the learner turns the coach on. */
+const coachTransport: CoachTransport = (url, init) => fetch(url, init);
 const defaultNow = () => new Date().toISOString();
 const defaultSeed = () => Math.floor(Math.random() * 2_147_483_647);
 
@@ -177,6 +180,7 @@ export function Screen({
       return (
         <N400Screen
           coach={coach}
+          coachTransport={coachTransport}
           profile={profile}
           answers={state.n400Answers}
           total={env.content.n400Questions.length}

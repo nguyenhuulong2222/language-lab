@@ -36,7 +36,11 @@ agency. Nothing here is legal advice.
    test tools (MIT, ISC, Apache-2.0, BSD-3-Clause, CC-BY-4.0 for caniuse-lite) are development
    dependencies only. Licences are in each package under node_modules after installation.
 
-8. formN400.org. This repository contains no text, translation, data or design from formN400.org
+8. AI coach (optional). When a learner turns it on, the N-400 answer text is sent to Anthropic's
+   API (model claude-haiku-5-5) through functions/api/coach.ts, and the reply is shown labelled
+   "AI-generated feedback". The replies are AI output, not legal advice and not a USCIS assessment.
+   Anthropic's terms and privacy policy apply to that processing (anthropic.com/legal/privacy).
+9. formN400.org. This repository contains no text, translation, data or design from formN400.org
    or the separate N400 project of the same owner, and nothing here grants any right to
    formN400.org or its content. Earlier versions of this repository's history contained civics
    translations imported from that project; they were removed from the working tree and are not

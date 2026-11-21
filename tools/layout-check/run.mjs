@@ -343,6 +343,11 @@ async function checkConfiguration(cdp, size, lang) {
 
   await waitFor(() => lab(`has(${js(L("n400.save"))})`), "the N-400 question");
   await record("n400-question");
+  // The AI coach switch and its notice (opened and cancelled, so nothing is sent).
+  await cdp.evaluate(`document.querySelector('.coach__switch').click()`);
+  await waitFor(() => lab(`has(${js(L("coach.notice.cancel"))})`), "the AI coach notice");
+  await record("coach-notice");
+  await click(L("coach.notice.cancel"));
   for (let i = 0; i < 7; i++) {
     await waitFor(() => lab(`has(${js(L("n400.save"))})`), "an N-400 question");
     await type("My answer is short.");

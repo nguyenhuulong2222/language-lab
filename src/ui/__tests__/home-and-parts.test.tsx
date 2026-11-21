@@ -64,7 +64,10 @@ describe("the stepper shows only the steps of the session", () => {
     expect(html).toContain("Stage 1 of 2");
     expect(html).toContain("Reading");
     expect(html).toContain("Report");
-    for (const other of ["Civics", "Writing", "N-400"]) expect(html).not.toContain(other);
+    // Only the stepper is checked: the About panel's privacy line names the N-400 part (AI coach).
+    const stepper = /<nav[\s\S]*?<\/nav>/.exec(html)?.[0] ?? "";
+    expect(stepper).toContain("Reading");
+    for (const other of ["Civics", "Writing", "N-400"]) expect(stepper).not.toContain(other);
   });
 
   it("civics only: setup, civics and the report", () => {

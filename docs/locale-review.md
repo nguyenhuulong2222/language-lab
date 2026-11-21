@@ -88,9 +88,12 @@ I translated the disclaimer, privacy and legal lines (16 keys, 13 languages) bac
 - hmn `compare.setting`: "in order" now "ib lo tom qab ib lo" (one word after another) and "may be missing" "poob tau" (may fall out). Still needs a Hmong reader.
 - hmn `voice.consent.text`: "Say" is the plain verb for speaking, and "language" (lus) stands in for "words". Needs a Hmong reader.
 - hmn `compare.setting.writing`: "punctuation" is rendered as "stopping marks" (cov cim nres) and "spelling" as "writing". Needs a Hmong reader.
+- hmn `coach.notice.text`: "fictional" is "not real" and "on/off" is "open/closed" (qhib, kaw). Needs a Hmong reader.
+- hmn `coach.privacy`: "salted code" is rendered as "secret number" (lej zais). Needs a Hmong reader.
 - my `aiNotice.text`: "authoritative" is rendered as "official": close, slightly weaker.
 - my `compare.notYet`: "Not yet" is rendered literally as "has not arrived yet". Low confidence.
 - my `voice.consent.text`: "voice recording system" for "voice recognition" (အသံမှတ်သားစနစ်): recording and recognition are not the same thing. Needs a Burmese reader.
+- my `coach.notice.text`: "fictional" is "imaginary" (စိတ်ကူးယဉ်). Needs a Burmese reader.
 - tl `aiNotice.text`: "authoritative" is rendered as "valid" (may bisa): close, slightly weaker.
 - ko `compare.counts`: "This counts" is rendered "is accepted" (인정됩니다), a little stronger than "counts".
 - ko `intro.locked`: "Answer key" is rendered "answer table" (정답표); fine in context.

@@ -27,7 +27,9 @@
     "report.title.review",
     "report.lead.onTrack",
     "report.lead.review",
-    "compare.setting.writing"
+    "compare.setting.writing",
+    "coach.notice.text",
+    "coach.privacy"
   ],
   "backTranslations": {
     "es": {
@@ -57,7 +59,9 @@
       "report.title.review": "A few things to go over",
       "report.lead.onTrack": "In this practice, reading, writing and civics each reached the score that Language Lab uses. Use the notes below to keep practicing.",
       "report.lead.review": "That is what practice is for. The notes below show what to focus on before trying again.",
-      "compare.setting.writing": "Writing: USCIS says that spelling, capital letter and punctuation errors do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked."
+      "compare.setting.writing": "Writing: USCIS says that spelling, capital letter and punctuation errors do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     },
     "pt": {
       "disclaimer.title": "Please read this",
@@ -86,7 +90,9 @@
       "report.title.review": "Some things to review",
       "report.lead.onTrack": "In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to keep practicing.",
       "report.lead.review": "That is what practice is for. The notes below show what to focus on before trying again.",
-      "compare.setting.writing": "Writing: USCIS says that spelling, capital letter and punctuation errors do not fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked."
+      "compare.setting.writing": "Writing: USCIS says that spelling, capital letter and punctuation errors do not fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     },
     "ru": {
       "disclaimer.title": "Please read",
@@ -115,7 +121,9 @@
       "report.title.review": "There is something to review",
       "report.lead.onTrack": "In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to keep practicing.",
       "report.lead.review": "That is what practice is for. The notes below show what to focus on before trying again.",
-      "compare.setting.writing": "Writing: according to USCIS, errors in spelling, capital letters and punctuation do not lead to failing the written test if the sentence can still be understood. Here, small spelling errors are counted as correct, and in long words there may be more of them. Capital letters and punctuation are not checked."
+      "compare.setting.writing": "Writing: according to USCIS, errors in spelling, capital letters and punctuation do not lead to failing the written test if the sentence can still be understood. Here, small spelling errors are counted as correct, and in long words there may be more of them. Capital letters and punctuation are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     },
     "zh": {
       "disclaimer.title": "Please read first",
@@ -144,7 +152,9 @@
       "report.title.review": "There are a few things you can review",
       "report.lead.onTrack": "In this practice, reading, writing and civics each reached the score Language Lab uses. Please use the notes below to keep practicing.",
       "report.lead.review": "This is exactly the purpose of practice. The notes below tell you where to focus before trying again.",
-      "compare.setting.writing": "Writing: USCIS says spelling, capitalization and punctuation errors will not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words may have more errors. Capitalization and punctuation are not checked."
+      "compare.setting.writing": "Writing: USCIS says spelling, capitalization and punctuation errors will not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words may have more errors. Capitalization and punctuation are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     },
     "ko": {
       "disclaimer.title": "Please be sure to read",
@@ -173,7 +183,9 @@
       "report.title.review": "There are a few things to look at again",
       "report.lead.onTrack": "In this practice, reading, writing and civics each reached the score Language Lab uses. Look at the notes below and keep practicing.",
       "report.lead.review": "This is when practice is needed. The notes below tell you where to focus before trying again.",
-      "compare.setting.writing": "Writing: according to USCIS, spelling, capitalization and punctuation errors are not a reason to fail the writing test unless the sentence can no longer be understood. Here, small spelling mistakes are accepted, and longer words allow more. Capitalization and punctuation are not checked."
+      "compare.setting.writing": "Writing: according to USCIS, spelling, capitalization and punctuation errors are not a reason to fail the writing test unless the sentence can no longer be understood. Here, small spelling mistakes are accepted, and longer words allow more. Capitalization and punctuation are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     },
     "tl": {
       "disclaimer.title": "Please read this",
@@ -202,7 +214,9 @@
       "report.title.review": "There are some things to go back to",
       "report.lead.onTrack": "In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to continue practicing.",
       "report.lead.review": "That is the use of practice. The notes below show where to focus before trying again.",
-      "compare.setting.writing": "Writing: USCIS says that mistakes in spelling, capital letters and punctuation do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling mistakes are still counted, and more are allowed in longer words. Capital letters and punctuation are not checked."
+      "compare.setting.writing": "Writing: USCIS says that mistakes in spelling, capital letters and punctuation do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling mistakes are still counted, and more are allowed in longer words. Capital letters and punctuation are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     },
     "hi": {
       "disclaimer.title": "Please read this",
@@ -231,7 +245,9 @@
       "report.title.review": "A few things to revise",
       "report.lead.onTrack": "In this practice, reading, writing and civics, all three, reached the score that Language Lab uses. See the notes below to continue practicing.",
       "report.lead.review": "That is what practice is for. The notes below tell you what to focus on before trying again.",
-      "compare.setting.writing": "Writing: according to USCIS, mistakes in spelling, capital letters and punctuation do not make you fail the writing test, unless the sentence stops being understandable. Here, small spelling mistakes are also accepted, and longer words can have more mistakes. Capital letters and punctuation are not checked."
+      "compare.setting.writing": "Writing: according to USCIS, mistakes in spelling, capital letters and punctuation do not make you fail the writing test, unless the sentence stops being understandable. Here, small spelling mistakes are also accepted, and longer words can have more mistakes. Capital letters and punctuation are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     },
     "ht": {
       "disclaimer.title": "Please read this",
@@ -260,7 +276,9 @@
       "report.title.review": "Some things to review",
       "report.lead.onTrack": "In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing.",
       "report.lead.review": "That is what practice is for. The notes below show where to focus before you try again.",
-      "compare.setting.writing": "Writing: USCIS says spelling, capital letter and punctuation errors do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked."
+      "compare.setting.writing": "Writing: USCIS says spelling, capital letter and punctuation errors do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     },
     "th": {
       "disclaimer.title": "Please read this message",
@@ -289,7 +307,9 @@
       "report.title.review": "There are some things worth reviewing",
       "report.lead.onTrack": "In this practice, reading, writing and civic duties each reached the score Language Lab uses. Use the notes below to keep practicing.",
       "report.lead.review": "Practice is for this. The notes below show where to focus before trying again.",
-      "compare.setting.writing": "Writing: USCIS states that misspelling, capital letters and punctuation do not make you fail the writing test, unless the sentence can no longer be understood. Here, small misspellings still count, and longer words may have more mistakes. Capital letters and punctuation are not checked."
+      "compare.setting.writing": "Writing: USCIS states that misspelling, capital letters and punctuation do not make you fail the writing test, unless the sentence can no longer be understood. Here, small misspellings still count, and longer words may have more mistakes. Capital letters and punctuation are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     },
     "lo": {
       "disclaimer.title": "Please read this",
@@ -318,7 +338,9 @@
       "report.title.review": "There are some things that should be reviewed",
       "report.lead.onTrack": "In this practice, reading, writing and citizenship each reached the score Language Lab uses. Use the notes below to keep practicing.",
       "report.lead.review": "Practice is for this. The notes below show where to focus before trying again.",
-      "compare.setting.writing": "Writing: USCIS says misspelling, capital letters and punctuation marks do not make you fail the writing test unless the sentence can no longer be understood. Here, small misspellings still count, and longer words may have more mistakes. Capital letters and punctuation are not checked."
+      "compare.setting.writing": "Writing: USCIS says misspelling, capital letters and punctuation marks do not make you fail the writing test unless the sentence can no longer be understood. Here, small misspellings still count, and longer words may have more mistakes. Capital letters and punctuation are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     },
     "hmn": {
       "disclaimer.title": "Please read this",
@@ -347,7 +369,9 @@
       "report.title.review": "There are a few things you should look at again",
       "report.lead.onTrack": "In this practice, reading, writing and learning about citizens each reached the score Language Lab uses. Use the notes below to practice more.",
       "report.lead.review": "Practice is for this. The notes below show where to focus before you try again.",
-      "compare.setting.writing": "Writing: USCIS says that writing mistakes, capital letters and stopping marks do not make you fail the writing test, except when the sentence can no longer be understood. Here, small writing mistakes still count, and longer words can have more mistakes. Capital letters and stopping marks are not checked."
+      "compare.setting.writing": "Writing: USCIS says that writing mistakes, capital letters and stopping marks do not make you fail the writing test, except when the sentence can no longer be understood. Here, small writing mistakes still count, and longer words can have more mistakes. Capital letters and stopping marks are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     },
     "my": {
       "disclaimer.title": "Please read this point",
@@ -376,7 +400,9 @@
       "report.title.review": "A few points to look at again",
       "report.lead.onTrack": "In this practice, every part of reading, writing and civics reaches the score Language Lab uses. Use the notes below to continue practicing.",
       "report.lead.review": "Practice is for that. The notes below show which point to focus on before trying again.",
-      "compare.setting.writing": "Writing: USCIS says spelling, capital letter and punctuation mistakes do not make you fail the writing exam except when the sentence can no longer be understood. Here, small spelling mistakes are still counted, and long words can have more. Capital letters and punctuation are not checked."
+      "compare.setting.writing": "Writing: USCIS says spelling, capital letter and punctuation mistakes do not make you fail the writing exam except when the sentence can no longer be understood. Here, small spelling mistakes are still counted, and long words can have more. Capital letters and punctuation are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     },
     "vi": {
       "disclaimer.title": "Please read this section",
@@ -405,7 +431,9 @@
       "report.title.review": "There are a few things to look at again",
       "report.lead.onTrack": "In this practice session, reading, writing and civics all reached the score level that Language Lab uses. Use the notes below to keep practicing.",
       "report.lead.review": "That is exactly the purpose of practicing. The notes below show where to focus before trying again.",
-      "compare.setting.writing": "Writing: USCIS says spelling, capitalization and punctuation mistakes do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling mistakes still count, and longer words may have more mistakes. Capital letters and punctuation are not checked."
+      "compare.setting.writing": "Writing: USCIS says spelling, capitalization and punctuation mistakes do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling mistakes still count, and longer words may have more mistakes. Capital letters and punctuation are not checked.",
+      "coach.notice.text": "When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice.",
+      "coach.privacy": "AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy."
     }
   },
   "differs": {
@@ -420,12 +448,15 @@
       "header.about": "\"Txog peb thiab ceeb toom\" reads as \"About us and warning\", not \"About & disclaimer\". Needs a Hmong reader.",
       "compare.setting": "\"in order\" now \"ib lo tom qab ib lo\" (one word after another) and \"may be missing\" \"poob tau\" (may fall out). Still needs a Hmong reader.",
       "voice.consent.text": "\"Say\" is the plain verb for speaking, and \"language\" (lus) stands in for \"words\". Needs a Hmong reader.",
-      "compare.setting.writing": "\"punctuation\" is rendered as \"stopping marks\" (cov cim nres) and \"spelling\" as \"writing\". Needs a Hmong reader."
+      "compare.setting.writing": "\"punctuation\" is rendered as \"stopping marks\" (cov cim nres) and \"spelling\" as \"writing\". Needs a Hmong reader.",
+      "coach.notice.text": "\"fictional\" is \"not real\" and \"on/off\" is \"open/closed\" (qhib, kaw). Needs a Hmong reader.",
+      "coach.privacy": "\"salted code\" is rendered as \"secret number\" (lej zais). Needs a Hmong reader."
     },
     "my": {
       "aiNotice.text": "\"authoritative\" is rendered as \"official\": close, slightly weaker.",
       "compare.notYet": "\"Not yet\" is rendered literally as \"has not arrived yet\". Low confidence.",
-      "voice.consent.text": "\"voice recording system\" for \"voice recognition\" (အသံမှတ်သားစနစ်): recording and recognition are not the same thing. Needs a Burmese reader."
+      "voice.consent.text": "\"voice recording system\" for \"voice recognition\" (အသံမှတ်သားစနစ်): recording and recognition are not the same thing. Needs a Burmese reader.",
+      "coach.notice.text": "\"fictional\" is \"imaginary\" (စိတ်ကူးယဉ်). Needs a Burmese reader."
     },
     "tl": {
       "aiNotice.text": "\"authoritative\" is rendered as \"valid\" (may bisa): close, slightly weaker."

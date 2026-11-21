@@ -48,6 +48,18 @@ an action that this pass was not allowed to take (push, deploy, review data, cha
 | ui-reviewer | Low | The font credit is English in every language. | A proper name and a licence title. |
 | audit evidence | Low | `docs/audit/evidence/probe-locked.mjs` still clicks "Aurora Vance". | It is the audit's evidence as it was run; left unchanged. |
 
+## AI coach (branch engine/interview-coach), open
+
+| Item | Why open |
+|---|---|
+| Anthropic retention terms for API data | Owner decision; the notice links Anthropic's privacy policy. |
+| Names, street addresses, receipt and passport numbers are not screened | Only number shapes are screened; the notice asks learners to answer as the fictional person. |
+| Officeholder deny-list | Best effort; must be updated when officeholders change. |
+| Per-session turn cap is advisory on the server | No accounts; per-IP and daily limits are the server guards. |
+| The coach notice is long and English only in unreviewed languages | Legal key; needs the owner's wording review and a native reviewer. |
+| No dedicated Privacy screen | Privacy lines are on the home, setup and About surfaces. |
+| No live test against the real API or Cloudflare | Not deployed; the secret and bindings are the owner's to create. |
+
 ## Not verified in this pass
 
 - No real iPhone or Android device; no screen reader.
