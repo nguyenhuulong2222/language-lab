@@ -10,7 +10,7 @@ inclusion: always
 |---|---|---|
 | Frontend build | Vite + React + TypeScript | Fast HMR, first-class TS, wide ecosystem |
 | Hosting | Cloudflare Pages | Free tier, global CDN, zero-config deploys |
-| API / logic | Cloudflare Worker | Runs at the edge, same Cloudflare project |
+| API / logic | Cloudflare Pages Functions (`functions/`) | Same origin and project as the app; only the optional AI coach uses one |
 | Unit / property tests | Vitest + fast-check | Native ESM, compatible with Vite; fast-check for property-based edge cases |
 
 ## Key Constraints
@@ -42,4 +42,5 @@ inclusion: always
 
 - `main` branch → Cloudflare Pages production.
 - PR branches → Cloudflare Pages preview deployments.
-- Worker deployed via Wrangler as part of the Pages project (Functions or standalone Worker).
+- Pages Functions in `functions/` deploy with the Pages project (see `docs/coach-deploy.md`).
+  There is no standalone Worker (the unused `worker/` placeholder was removed, audit SEC-08).

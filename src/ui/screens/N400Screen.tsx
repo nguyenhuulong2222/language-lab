@@ -247,6 +247,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
                 submitLabel={t("n400.save")}
                 voice
                 onSubmit={(text) => (onSubmitAnswer ?? onAnswer)(state.prompt, text)}
+                hint={<LegalText messageKey="n400.box.reminder" />}
               />
             )}
           </div>

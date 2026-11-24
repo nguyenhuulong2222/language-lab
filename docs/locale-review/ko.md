@@ -56,6 +56,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | 이 선택은 연습만 바꿉니다. 아무것도 저장하거나 보내지 않습니다. 시민 상식 부분에서 공식 목록에 별표(*)가 있는 {bank}개 질문 중 {asked}개를 묻습니다. {asked}개를 모두 묻습니다. 연습 합격 점수는 정답 {pass}개입니다. |
 | `special.language.link` | Exceptions and accommodations on uscis.gov | uscis.gov의 예외 및 편의 제공 |
 | `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {bank}개 질문 중 {count}개는 지금 누가 어떤 직위에 있는지처럼 답이 바뀝니다. 여기에는 표시하지 않습니다. uscis.gov/citizenship/testupdates에서 확인하세요. |
+| `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | {asked}개 질문을 모두 물었고, 연습 합격 점수 {score}에 도달했습니다. |
+| `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | 연습 합격 점수에 도달해서 연습 시험이 멈췄습니다. |
+| `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | 연습 합격 점수 {score}에 도달하기 전에 틀린 답 {incorrect}개로 연습 시험이 멈췄습니다. |
+| `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | 연습 합격 점수는 정답 {score}개이며, 이번에는 도달하지 못했습니다. |
+| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | 채점하지 않음. 답이 바뀌거나 정답 목록에 없습니다: {names}. 이 질문들은 맞거나 틀린 것으로 세지 않습니다. |
+| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | 기기가 말씀하신 내용을 여러 가지로 추측했습니다. 정답 목록의 답에 가장 가까운 것을 보여 줍니다. |
 
 ## 3. All other lines
 
@@ -182,7 +188,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.heard` | What we heard | 우리가 들은 내용 |
 | `compare.typed` | What you typed | 입력하신 내용 |
 | `compare.wanted` | The sentence | 문장 |
-| `compare.counts` ⚠ | This counts. | 인정됩니다. |
+| `compare.counts` | This counts. | 점수에 포함됩니다. |
 | `compare.notYet` | Not yet. | 아직이에요. |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | 이 브라우저는 소리 내어 읽어 줄 수 없어서 문장을 여기에 표시합니다. 입력해 보세요. |
 | `writing.hidden` | The sentence stays hidden until you answer. | 답하기 전까지 문장은 숨겨져 있습니다. |
@@ -335,8 +341,19 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | 저는 65세 이상이며 영주권자로 20년 이상 지냈습니다 |
 | `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | 65/20 신청자는 통역사와 함께 자신의 언어로 실제 시민 상식 시험을 볼 수 있습니다. |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | 65/20용 질문만 (별표 표시) |
+| `report.line.civics.none` | No civics questions were scored. | 채점된 시민 상식 질문이 없습니다. |
+| `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | 맞게 답한 시민 상식 질문: {scored}개 중 {correct}개. |
+| `report.line.reading.none` | No reading sentences were completed. | 완료한 읽기 문장이 없습니다. |
+| `report.line.reading.done` | Sentence {n} was read correctly. | {n}번째 문장을 맞게 읽었습니다. |
+| `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | 맞게 읽은 읽기 문장: {presented}개 중 {correct}개. 필요한 정답 문장 수: {needed}. |
+| `report.line.writing.none` | No writing sentences were completed. | 완료한 쓰기 문장이 없습니다. |
+| `report.line.writing.done` | Sentence {n} was written correctly. | {n}번째 문장을 맞게 썼습니다. |
+| `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | 맞게 쓴 쓰기 문장: {presented}개 중 {correct}개. 필요한 정답 문장 수: {needed}. |
+| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | 화면에 문장을 보고 쓴 쓰기 시도(도움 받음): {presented}번 중 {assisted}번. |
+| `report.review.reading` | Practice reading the sentences aloud. | 문장을 소리 내어 읽는 연습을 하세요. |
+| `report.review.writing` | Practice writing the sentences you hear. | 들은 문장을 쓰는 연습을 하세요. |
+| `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | 가상의 인물로 답하세요. 실제 이름, 주소, 날짜, 번호를 입력하지 마세요. |
 
 ## Lines marked ⚠ (meaning differs a little)
 
-- `compare.counts`: "This counts" is rendered "is accepted" (인정됩니다), a little stronger than "counts".
 - `intro.locked`: "Answer key" is rendered "answer table" (정답표); fine in context.

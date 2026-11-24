@@ -5,28 +5,31 @@ closed in Steps 1 to 10 (see `docs/decisions-log.md`, section J). "Owner" means 
 an action that this pass was not allowed to take (push, deploy, review data, change review flags).
 
 ## Still open
-
 | Id | Severity | What is left | Why it is still open |
 |---|---|---|---|
-| KIRO-01 | Blocker | `origin/main` is far behind this branch; the live site serves an older build (Google Fonts, no `_headers`). | Owner: this pass never pushes or deploys. |
 | SEC-03 | High (rest) | Rotate the OpenAI key if any agent transcript could have captured it; keep keys outside the repository folder. | Owner action. The guard itself is fixed and tested (Step 4). It is a guard against accidents, not a security boundary. |
-| CON-04 | Medium (rest) | The engine's stage summaries (`report-builder.ts`) are English in every interface language. | They are a `FinalReport` contract string; moving them to locale files needs a contract request. The wording now says "practice passing score". |
-| CON-06 | Medium | Content loaders (practice content, pictures) throw unless `needsHumanReview === true`, so reviewed practice content cannot be marked reviewed without a code change. (The answer keys now have this path: `review.json` and a named reviewer.) | Owner decision on the end state (allow `false` once a reviewer is recorded; gate production on it or not). Changing it now would touch the review flags. |
-| CON-07 | Medium (rest) | In vi, ru and pt, "legal advice" back-translates as "consultation" or "counseling". | Needs native readers. Those lines are shown in English until a reviewer is recorded, so users do not see the drafts. |
-| COR-01 | Medium | UI tests are server-render only; no DOM environment, no coverage report, no worker test. | New test infrastructure (a DOM library and coverage tool) is more than a fix. Focus and keyboard behaviour is covered only by the Chrome layout check. |
-| COR-04 | Low (rest) | The plural rule's 3-letter limit is still a constant in `sentence-compare.ts`. | The spelling limits moved to `practice-config.json` (Step 6). The plural limit is tied to `sameInflection`'s safety argument; moving it is a refactor. |
-| SEC-07 | Low | `vite.speech-test.config.ts` binds `0.0.0.0` with the project root as server root. | Developer tool for phone testing; Vite's deny list returned 403 for the key file and `.git` in the audit. Changing it changes the owner's test workflow. |
-| SEC-08 | Low | `worker/index.ts` `/api/health` has no CORS or rate limit. | The worker is not used by the app. |
-| A11Y-11 | Low | Forced-colours mode: stepper fill, expanded header button and `.btn--active` rely on background colour. | Needs design work and a Windows high-contrast check on a device. |
-| A11Y-12 | Low | Amber on `--surface-2` in light mode is 4.43:1. | Only icons use that pair, where 3:1 applies. No change needed. |
-| A11Y-13 | Low | `StatusBadge` fixed line-height in tall scripts; very long words at 125% and 320 px. | The layout check found no overflow at 320 px; needs a check on a real phone. |
-| CON-09 | Low | 65/20 passing score and early-stop values are `null` with `needsVerification: true`. | The quote that states 6 of 10 is not in the saved sources in `data/sources/`; save the source first. |
-| CON-10 | Low | Civics feedback "You said" shows the best of the recogniser's guesses. | A deliberate, deterministic choice (no AI), documented in `decisions-log.md`. |
-| CON-12 | Low | Wording points in th, hmn, hi, ko and my drafts. | Needs native readers. |
-| CON-13 | Low | Picture records with creator "Unknown" and rights lines that point to further pages. | Needs a person to check the source records. |
-| CON-14 | Low | No reminder next to the N-400 text box not to type real details. | New copy in 14 languages; `intro.privacy` and the fictional profile cover rule 1 today. |
-| DEP-02 | Low | Major upgrades available (Vite 8, Vitest 5, TypeScript 7, plugin-react 6, fast-check 4). | Upgrades are not fixes; `npm audit` reports 0. |
-| KIRO-03 | Low | GitHub repository description and homepage are empty. | Owner: GitHub settings. |
+| COR-01 | Medium | UI tests were server-render only. | Closed in release/finish Step 3 if that step is committed (see below). |
+| DEP-02 | Low | Major upgrades available (Vite 8, Vitest 5, TypeScript 7, plugin-react 6, fast-check 4). | Left for the separate upgrade branch (owner). |
+| KIRO-03 | Low | GitHub repository description and homepage are empty. | Owner: the release/finish report gives one `gh repo edit` command to run. |
+
+## Closed in release/finish (2026-11-20)
+| Id | How |
+|---|---|
+| KIRO-01 | Owner: `main` is merged and deployed (https://language-lab-ade.pages.dev). |
+| CON-09 | Step 1. The 65/20 values come from the USCIS Policy Manual, Vol. 12, Part E, Ch. 2 (saved, SHA-256 in `data/sources/README.md`): bank 20, 10 asked, 6 to pass. No source states an early-stop rule, so those two values stay `null` with `needsVerification: true` and the 65/20 practice asks all 10. The designated questions are `data/civics-65-20.json`, tested against the asterisks of all three official lists. |
+| CON-04 | Every report stage summary also carries its lines as message keys with the numbers as placeholders (`StageSummary.summaryLines`, CR-007). The report screen renders them through the locale files; in English they equal `summary` (tested). The two English review items are translated the same way. Question texts stay English; the disclaimer stays English-only. |
+| CON-06 | `src/engine/review-flag.ts`: practice content, the practice config and the picture pairings load with `needsHumanReview: false` once `reviewedBy` and an ISO `reviewedOn` are present, the same rule as the answer keys. No flag was changed. |
+| CON-07 | The missing back-translation keys were added in the fix pass. "Legal advice" in vi ("tư vấn pháp lý"), ru ("юридическая консультация") and pt ("aconselhamento jurídico") is the usual term in disclaimers; the back-translations were literal. A note in each review sheet asks the native reader to confirm. The lines stay English until a reviewer is recorded. |
+| CON-10 | The civics feedback note says, after a voice answer with several guesses, that the guess closest to an answer in the key is shown (`civics.heard.closest`). |
+| CON-12 | Drafts corrected where the audit named the problem: th `disclaimer.full` ("endorsed", not "certified"), hi `lang.interviewEnglish` ("exception", not "exemption"), ko `compare.counts`, my `compare.notYet`; recorded under `fixed` in `back-translations.json`. hmn "qauv" for "profile" is left with its note for a Hmong reader (Hmong is hidden in production). All drafts still need native review. |
+| CON-13 | The picture records with creator "Unknown" and rights lines that point to further pages are items in the owner's checklist `docs/content-review.md` (Step 4). |
+| CON-14 | A reminder under the N-400 answer box, read with it: "Answer as the fictional person. Do not type your real name, address, dates or numbers." (`n400.box.reminder`, a legal key). |
+| COR-04 | The plural limit is `sentenceMatch.pluralMinLetters` (3) in `practice-config.json`; the loader checks it. |
+| SEC-07 | `vite.speech-test.config.ts` binds 127.0.0.1 with `server.fs.strict`; `npm run speech-test -- --host` opens it to a phone for one run. |
+| SEC-08 | The unused `worker/` placeholder and `@cloudflare/workers-types` were removed; steering (`structure.md`, `tech.md`) and README name `functions/` instead. |
+| A11Y-11 | `@media (forced-colors: active)` rules: the stepper bar has an outline and a `Highlight` fill, an open header button has a thicker frame and an underline, `.btn--active` uses `Highlight` with a double frame. Not yet checked on a Windows device. |
+| A11Y-12 | The accent-on-background pairs are in `design-system.md`; light amber on `--surface-2` (4.43:1) is recorded as icons only. |
+| A11Y-13 | `StatusBadge` uses `var(--lh-snug)`; `.btn` and `.option-card` have `overflow-wrap: anywhere`. Not yet checked on a real phone. |
 
 ## Closed after the fix pass
 

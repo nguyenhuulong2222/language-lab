@@ -7,6 +7,7 @@
  *
  * Pure module: no DOM, no network.
  */
+import { reviewFlagProblem } from "./review-flag.js";
 import PROFILES from "../../data/practice/profiles.json" with { type: "json" };
 import N400 from "../../data/practice/n400-questions.json" with { type: "json" };
 import READING from "../../data/practice/reading-sentences.json" with { type: "json" };
@@ -69,7 +70,9 @@ function list(value: unknown, where: string): unknown[] {
 
 function checkFlags(raw: unknown, where: string): Record<string, unknown> {
   if (!isRecord(raw)) throw new Error(`${where}: file must be a JSON object.`);
-  if (raw["needsHumanReview"] !== true) throw new Error(`${where}: needsHumanReview must be true.`);
+  // Reviewed content loads: false is allowed once a reviewer and a date are named (CON-06).
+  const problem = reviewFlagProblem(raw);
+  if (problem !== null) throw new Error(`${where}: ${problem}.`);
   return raw;
 }
 

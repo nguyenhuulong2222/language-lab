@@ -12,8 +12,6 @@
     "moduleDetection": "force",
     "noEmit": true,
 
-    /* Cloudflare Workers globals */
-    "types": ["@cloudflare/workers-types"],
 
     /* Strict */
     "strict": true,
@@ -22,5 +20,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts", "vite.speech-test.config.ts", "worker/**/*.ts"]
+  "include": ["vite.config.ts", "vite.speech-test.config.ts"]
 }

@@ -56,6 +56,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | ອັນນີ້ປ່ຽນແຕ່ການຝຶກເທົ່ານັ້ນ; ບໍ່ມີຫຍັງຖືກບັນທຶກ ຫຼື ສົ່ງ. ພາກວິຊາພົນລະເມືອງຈະຖາມ {asked} ຂໍ້ຈາກ {bank} ຂໍ້ທີ່ມີເຄື່ອງໝາຍດາວ (*) ໃນລາຍການທາງການ. ຖາມຄົບທັງ {asked} ຂໍ້. ຄະແນນຜ່ານຂອງການຝຶກແມ່ນຕອບຖືກ {pass} ຂໍ້. |
 | `special.language.link` | Exceptions and accommodations on uscis.gov | ຂໍ້ຍົກເວັ້ນ ແລະ ການອຳນວຍຄວາມສະດວກໃນ uscis.gov |
 | `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | ຄຳຖາມ {count} ຂໍ້ຈາກ {bank} ຂໍ້ມີຄຳຕອບທີ່ປ່ຽນໄປ ເຊັ່ນ ໃຜດຳລົງຕຳແໜ່ງຢູ່ໃນຕອນນີ້. ບໍ່ໄດ້ສະແດງຢູ່ນີ້. ກວດເບິ່ງໄດ້ທີ່ uscis.gov/citizenship/testupdates. |
+| `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | ຖາມຄົບທັງ {asked} ຂໍ້ ແລະ ຮອດຄະແນນຜ່ານຂອງການຝຶກ {score} ແລ້ວ. |
+| `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | ການທົດສອບຝຶກຢຸດເມື່ອຮອດຄະແນນຜ່ານຂອງການຝຶກ. |
+| `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | ການທົດສອບຝຶກຢຸດຫຼັງຈາກຕອບຜິດ {incorrect} ຂໍ້, ກ່ອນຮອດຄະແນນຜ່ານຂອງການຝຶກ {score}. |
+| `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | ຄະແນນຜ່ານຂອງການຝຶກແມ່ນຕອບຖືກ {score} ຂໍ້, ແລະ ຍັງບໍ່ຮອດ. |
+| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | ບໍ່ໄດ້ໃຫ້ຄະແນນ, ເພາະຄຳຕອບປ່ຽນໄປ ຫຼື ບໍ່ມີໃນເສັດລາຍການຄຳຕອບ: {names}. ຄຳຖາມເຫຼົ່ານີ້ບໍ່ນັບວ່າຖືກ ຫຼື ຜິດ. |
+| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | ອຸປະກອນຂອງທ່ານເດົາສິ່ງທີ່ທ່ານເວົ້າໄວ້ຫຼາຍແບບ. ແບບທີ່ໃກ້ກັບຄຳຕອບໃນລາຍການຄຳຕອບທີ່ສຸດຈະສະແດງໄວ້. |
 
 ## 3. All other lines
 
@@ -335,6 +341,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ຂ້ອຍມີອາຍຸ 65 ປີຂຶ້ນໄປ ແລະ ເປັນຜູ້ມີຖິ່ນທີ່ຢູ່ຖາວອນມາ 20 ປີຂຶ້ນໄປ |
 | `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | ຜູ້ຍື່ນຄຳຮ້ອງ 65/20 ສາມາດສອບວິຊາພົນລະເມືອງແທ້ເປັນພາສາຂອງຕົນເອງໂດຍມີລ່າມ. |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | ສະເພາະຄຳຖາມສຳລັບ 65/20 (ມີເຄື່ອງໝາຍດາວ) |
+| `report.line.civics.none` | No civics questions were scored. | ບໍ່ມີຄຳຖາມວິຊາພົນລະເມືອງໃດຖືກໃຫ້ຄະແນນ. |
+| `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | ຄຳຖາມວິຊາພົນລະເມືອງທີ່ຕອບຖືກ: {correct} ຈາກ {scored}. |
+| `report.line.reading.none` | No reading sentences were completed. | ຍັງບໍ່ມີປະໂຫຍກການອ່ານທີ່ເຮັດສຳເລັດ. |
+| `report.line.reading.done` | Sentence {n} was read correctly. | ອ່ານປະໂຫຍກທີ {n} ຖືກຕ້ອງ. |
+| `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | ປະໂຫຍກການອ່ານທີ່ອ່ານຖືກ: {correct} ຈາກ {presented}. ປະໂຫຍກທີ່ຕ້ອງຖືກ: {needed}. |
+| `report.line.writing.none` | No writing sentences were completed. | ຍັງບໍ່ມີປະໂຫຍກການຂຽນທີ່ເຮັດສຳເລັດ. |
+| `report.line.writing.done` | Sentence {n} was written correctly. | ຂຽນປະໂຫຍກທີ {n} ຖືກຕ້ອງ. |
+| `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | ປະໂຫຍກການຂຽນທີ່ຂຽນຖືກ: {correct} ຈາກ {presented}. ປະໂຫຍກທີ່ຕ້ອງຖືກ: {needed}. |
+| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | ຄັ້ງທີ່ຂຽນໂດຍເຫັນປະໂຫຍກຢູ່ໜ້າຈໍ (ມີຕົວຊ່ວຍ): {assisted} ຈາກ {presented}. |
+| `report.review.reading` | Practice reading the sentences aloud. | ຝຶກອ່ານປະໂຫຍກອອກສຽງ. |
+| `report.review.writing` | Practice writing the sentences you hear. | ຝຶກຂຽນປະໂຫຍກທີ່ທ່ານໄດ້ຍິນ. |
+| `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | ຕອບໃນຖານະບຸກຄົນສົມມຸດ. ຢ່າພິມຊື່, ທີ່ຢູ່, ວັນທີ ຫຼື ເລກແທ້ຂອງທ່ານ. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

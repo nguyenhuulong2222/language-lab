@@ -47,7 +47,7 @@ practice feedback, not an official assessment.
 |---|---|---|
 | Frontend | Vite + React + TypeScript | Vite 6.4.5, React 19.1.0, TS 5.8.3 |
 | Hosting | Cloudflare Pages | — |
-| API / logic | Cloudflare Worker | wrangler.toml in `worker/` |
+| API / logic | Cloudflare Pages Functions | `functions/` (the optional AI coach only) |
 | Tests | Vitest + fast-check | Vitest 4.1.12, fast-check 3.23.2 |
 
 ---
@@ -58,7 +58,7 @@ practice feedback, not an official assessment.
 
 - Node.js 22.18+ (the tools in `tools/` import TypeScript files directly; CI uses 22.18)
 - npm 10+
-- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) for Worker development
+- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) only to run the AI coach's Pages Function locally (see `docs/coach-deploy.md`)
 
 ### Setup
 
@@ -109,15 +109,9 @@ npm run test:watch
 npm run typecheck
 ```
 
-### Worker Development
-
-```bash
-# Start the local Worker (via Wrangler, installed separately)
-# See: https://developers.cloudflare.com/workers/wrangler/install-and-update/
-npx wrangler dev
-```
-
-Run this from the `worker/` directory, or point wrangler at `worker/wrangler.toml`.
+### Pages Functions
+The only server code is the optional AI coach, a Cloudflare Pages Function in `functions/api/coach.ts`.
+How to run and deploy it: [`docs/coach-deploy.md`](docs/coach-deploy.md).
 
 ---
 
@@ -141,7 +135,7 @@ language-lab/
 │   ├── contracts/   # Shared TypeScript types
 │   ├── engine/      # Pure scoring and session logic
 │   └── ui/          # React components
-├── worker/          # Cloudflare Worker
+├── functions/       # Cloudflare Pages Functions (AI coach)
 ├── data/            # Civics test rules and answer data
 ├── mock/            # Fictional session fixtures
 └── docs/            # kiro-log.md and guides

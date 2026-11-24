@@ -91,5 +91,27 @@ for the standard tests only.
   Result (2026-11-20): 65/20 adds no spoken text (its questions already have clips). The dry run lists
   18 clips, all for dynamic questions, which the app never plays; `--dry-run --skip-dynamic` lists 0.
 
-## Steps 2 to 5
+## Step 2 — Open findings (`docs/audit/open-findings.md`)
+- **REQ-F01 CON-04.** Each report stage summary also carries its lines as message keys with the
+  numbers as placeholders (`StageSummary.summaryLines`, contract request CR-07). The report screen
+  renders them through the locale files; in English the lines equal `summary`. Question texts stay
+  English; legal lines stay English-only.
+- **REQ-F02 CON-06.** Content loaders (practice content, pictures) accept `needsHumanReview: false`
+  only with a named `reviewedBy` and an ISO `reviewedOn`, as the answer keys do. No flag is changed.
+- **REQ-F03 CON-07, CON-12.** "Legal advice" and the listed wording points are corrected in the
+  drafts where the audit names the problem; back-translations updated. All drafts still need a
+  native reader (the AI label stays).
+- **REQ-F04 CON-10.** The civics voice note says the closest of the device's guesses was used.
+- **REQ-F05 CON-13.** Each picture question goes to the owner's checklist (Step 4).
+- **REQ-F06 CON-14.** One line under the N-400 answer box: answer as the fictional person, no real
+  details (a legal key).
+- **REQ-F07 COR-04.** The plural limit moves to `practice-config.json`.
+- **REQ-F08 SEC-07.** The speech-test server binds 127.0.0.1 unless `--host` is given; `fs.strict`.
+- **REQ-F09 SEC-08.** Remove `worker/` if nothing uses it; update steering and README.
+- **REQ-F10 A11Y-11, A11Y-12, A11Y-13.** Forced-colours borders for the stepper fill, the expanded
+  header button and `.btn--active`; the icon contrast pairs recorded in the design system;
+  `StatusBadge` line height from the tokens and `overflow-wrap: anywhere` on buttons.
+- **REQ-F11 KIRO-01** closed (main merged and deployed, owner). DEP-02 stays open.
+
+## Steps 3 to 5
 Written into this file before each step is built.

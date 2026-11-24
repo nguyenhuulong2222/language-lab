@@ -97,7 +97,10 @@ export function CivicsScreen({
             </h2>
             <p>{tEnglish("civics.youSaid", { text: progress.lastResponse === "" ? "…" : (progress.lastResponse ?? "") })}</p>
             {progress.lastResponse !== "" && (
-              <p className="note">{progress.lastInput === "voice" ? t("compare.honest.heard") : t("compare.honest.typed")}</p>
+              <p className="note">
+                {progress.lastInput === "voice" ? t("compare.honest.heard") : t("compare.honest.typed")}
+                {progress.lastInput === "voice" && progress.lastAlternatives > 1 && <> {t("civics.heard.closest")}</>}
+              </p>
             )}
             {lines !== null && (
               <>

@@ -56,6 +56,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | Qhov no tsuas hloov kev xyaum xwb; tsis muaj dab tsi raug khaws los yog xa mus. Ntu kev kawm txog pej xeem yuav nug {asked} ntawm {bank} lo lus nug uas muaj lub hnub qub (*) hauv daim ntawv teev npe. Nws nug tag nrho {asked} lo. Qhab nia dhau ntawm kev xyaum yog {pass} lo lus teb raug. |
 | `special.language.link` | Exceptions and accommodations on uscis.gov | Kev zam thiab kev pab ntawm uscis.gov |
 | `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {count} ntawm {bank} lo lus nug muaj lus teb uas hloov, xws li leej twg tuav ib txoj hauj lwm tam sim no. Lawv tsis tshwm ntawm no. Saib lawv ntawm uscis.gov/citizenship/testupdates. |
+| `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | Tau nug tag nrho {asked} lo lus nug, thiab tau txog qhab nia dhau ntawm kev xyaum, {score}. |
+| `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Kev xeem xyaum tau nres thaum txog qhab nia dhau ntawm kev xyaum. |
+| `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Kev xeem xyaum tau nres tom qab {incorrect} lo lus teb tsis raug, ua ntej txog qhab nia dhau ntawm kev xyaum, {score}. |
+| `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Qhab nia dhau ntawm kev xyaum yog {score} lo lus teb raug, thiab tsis tau txog. |
+| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | Tsis tau qhab nia, vim lo lus teb hloov los yog tsis nyob hauv cov lus teb: {names}. Cov lus nug no tsis suav tias raug los yog tsis raug. |
+| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | Koj lub cuab yeej kwv yees ob peb yam txog qhov koj hais. Yam uas ze tshaj rau ib lo lus teb hauv cov lus teb tau tshwm. |
 
 ## 3. All other lines
 
@@ -335,6 +341,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Kuv muaj hnub nyoog 65 xyoo los yog laus dua thiab kuv tau ua neeg nyob mus ib txhis tau 20 xyoo los yog ntev dua |
 | `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | Ib tus neeg thov 65/20 xeem tau kev kawm txog pej xeem tiag tiag ua nws hom lus nrog ib tus neeg txhais lus. |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Tsuas yog cov lus nug rau 65/20 (muaj lub hnub qub) |
+| `report.line.civics.none` | No civics questions were scored. | Tsis muaj lo lus nug txog pej xeem twg tau qhab nia. |
+| `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Cov lus nug txog pej xeem uas teb raug: {correct} ntawm {scored}. |
+| `report.line.reading.none` | No reading sentences were completed. | Tsis muaj kab lus nyeem twg ua tiav. |
+| `report.line.reading.done` | Sentence {n} was read correctly. | Kab lus {n} nyeem raug. |
+| `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Kab lus nyeem uas nyeem raug: {correct} ntawm {presented}. Kab lus raug uas yuav tsum muaj: {needed}. |
+| `report.line.writing.none` | No writing sentences were completed. | Tsis muaj kab lus sau twg ua tiav. |
+| `report.line.writing.done` | Sentence {n} was written correctly. | Kab lus {n} sau raug. |
+| `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Kab lus sau uas sau raug: {correct} ntawm {presented}. Kab lus raug uas yuav tsum muaj: {needed}. |
+| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | Cov zaus sau thaum pom kab lus ntawm lub vijtsam (muaj kev pab): {assisted} ntawm {presented}. |
+| `report.review.reading` | Practice reading the sentences aloud. | Xyaum nyeem cov kab lus nrov nrov. |
+| `report.review.writing` | Practice writing the sentences you hear. | Xyaum sau cov kab lus uas koj hnov. |
+| `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Teb ua tus neeg tsis muaj tiag. Tsis txhob ntaus koj lub npe tiag, chaw nyob, hnub tim los yog cov lej. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

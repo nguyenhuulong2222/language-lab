@@ -56,6 +56,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | Pagsasanay lang ang binabago nito; walang sine-save o ipinapadala. Itatanong ng bahagi ng sibika ang {asked} sa {bank} tanong na may tandang bituin (*) sa opisyal na listahan. Itatanong ang lahat ng {asked}. Ang practice passing score ay {pass} tamang sagot. |
 | `special.language.link` | Exceptions and accommodations on uscis.gov | Mga exception at accommodation sa uscis.gov |
 | `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {count} sa {bank} tanong ang may sagot na nagbabago, gaya ng kung sino ang may hawak ng isang posisyon ngayon. Hindi sila ipinapakita rito. Tingnan sila sa uscis.gov/citizenship/testupdates. |
+| `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | Naitanong ang lahat ng {asked} tanong, at naabot ang practice passing score na {score}. |
+| `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Huminto ang practice test nang maabot ang practice passing score. |
+| `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Huminto ang practice test pagkatapos ng {incorrect} maling sagot, bago maabot ang practice passing score na {score}. |
+| `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Ang practice passing score ay {score} tamang sagot, at hindi ito naabot. |
+| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | Hindi naiskor, dahil nagbabago ang sagot o wala ito sa answer key: {names}. Hindi binibilang na tama o mali ang mga tanong na ito. |
+| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | Nagbigay ang device mo ng ilang hula sa sinabi mo. Ipinapakita ang pinakamalapit sa isang sagot sa answer key. |
 
 ## 3. All other lines
 
@@ -335,6 +341,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Ako ay 65 taong gulang pataas at permanent resident na nang 20 taon o higit pa |
 | `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | Maaaring kumuha ang aplikanteng 65/20 ng totoong test sa sibika sa sarili niyang wika sa tulong ng interpreter. |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Mga tanong lang para sa 65/20 (may tandang bituin) |
+| `report.line.civics.none` | No civics questions were scored. | Walang tanong sa sibika na naiskor. |
+| `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Mga tanong sa sibika na tama ang sagot: {correct} sa {scored}. |
+| `report.line.reading.none` | No reading sentences were completed. | Walang natapos na pangungusap sa pagbasa. |
+| `report.line.reading.done` | Sentence {n} was read correctly. | Tama ang pagbasa sa pangungusap {n}. |
+| `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Mga pangungusap sa pagbasa na nabasa nang tama: {correct} sa {presented}. Kailangang tamang pangungusap: {needed}. |
+| `report.line.writing.none` | No writing sentences were completed. | Walang natapos na pangungusap sa pagsulat. |
+| `report.line.writing.done` | Sentence {n} was written correctly. | Tama ang pagsulat sa pangungusap {n}. |
+| `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Mga pangungusap sa pagsulat na naisulat nang tama: {correct} sa {presented}. Kailangang tamang pangungusap: {needed}. |
+| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | Mga pagsubok sa pagsulat na nakikita ang pangungusap sa screen (may tulong): {assisted} sa {presented}. |
+| `report.review.reading` | Practice reading the sentences aloud. | Sanayin ang pagbasa nang malakas ng mga pangungusap. |
+| `report.review.writing` | Practice writing the sentences you hear. | Sanayin ang pagsulat ng mga pangungusap na naririnig mo. |
+| `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Sumagot bilang ang kathang-isip na tao. Huwag i-type ang totoo mong pangalan, address, mga petsa o mga numero. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

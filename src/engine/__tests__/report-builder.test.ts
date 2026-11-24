@@ -252,7 +252,7 @@ describe("thresholds come from the rules", () => {
     };
     const report = build("2008", passingCivics("2008"), [false, false, false], [true], rules);
     const reading = report.stageSummaries.find((s) => s.stage === "reading")!;
-    expect(reading.summary).toContain("2 correct sentences are needed");
+    expect(reading.summary).toContain("Correct sentences needed: 2.");
   });
 });
 
@@ -309,7 +309,7 @@ describe("report contents", () => {
     const r = build("2008", passingCivics("2008"), [false, false, false], [true]);
     expect(r.stageSummaries[0]!.reviewItems).toHaveLength(1);
     expect(r.stageSummaries[1]!.reviewItems).toEqual([]);
-    expect(r.stageSummaries[0]!.summary).toBe("0 of 3 reading sentences were read correctly. 1 correct sentence is needed.");
+    expect(r.stageSummaries[0]!.summary).toBe("Reading sentences read correctly: 0 of 3. Correct sentences needed: 1.");
   });
 
   it("is deterministic", () => {
@@ -355,11 +355,11 @@ describe("unscored questions", () => {
   });
 
   it("are not counted as wrong: the correct count line leaves them out", () => {
-    expect(civicsSummary.summary).toContain("2 of 3 civics questions answered correctly.");
+    expect(civicsSummary.summary).toContain("Civics questions answered correctly: 2 of 3.");
   });
 
   it("are named separately in the summary and never in the review items", () => {
-    expect(civicsSummary.summary).toContain("2 questions were not scored");
+    expect(civicsSummary.summary).toContain("Not scored, because the answer changes or is not in the answer key:");
     expect(civicsSummary.summary).toContain(DYNAMIC_TEXT);
     expect(civicsSummary.summary).toContain(UNKNOWN_ID);
     expect(civicsSummary.summary).toContain("do not count as correct or incorrect");
@@ -504,7 +504,7 @@ describe("assisted writing attempts in the summary", () => {
     });
   const writing = (r: ReturnType<typeof makeReport>) => r.stageSummaries.find((s) => s.stage === "writing")!.summary;
   it("says how many attempts were made with the sentence shown", () => {
-    expect(writing(makeReport(1))).toContain("1 of the 2 writing attempts were made with the sentence shown on screen (assisted).");
+    expect(writing(makeReport(1))).toContain("Writing attempts made with the sentence shown on screen (assisted): 1 of 2.");
   });
   it("says nothing when there were none, or when the count is not given", () => {
     expect(writing(makeReport(0))).not.toContain("assisted");

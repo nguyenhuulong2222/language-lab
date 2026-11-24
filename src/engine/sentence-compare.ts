@@ -45,6 +45,8 @@ export interface MatchOptions {
   spellingSlips?: ReadonlyArray<{ fromLetters: number; maxEdits: number }>;
   /** Words of the official vocabulary: a typed word that is one of them is never read as a misspelling. */
   knownWords?: ReadonlySet<string>;
+  /** Shorter words get no plural or possessive variant (sentenceMatch.pluralMinLetters). Default 3. */
+  pluralMinLetters?: number;
 }
 
 export type NoteKind =
@@ -106,16 +108,16 @@ function withoutPossessive(word: string): string {
  * "elects", "tax" and "taxes", "city" and "cities", "state" and "States", "President's" and
  * "presidents". It compares the two words directly (one is the other plus "s", "es" or "ies" for "y"),
  * so it never shortens a word on its own and cannot turn two different words into one. Words of 2
- * letters or fewer, numbers, a plural that would end in "ss", and the words in `neverStem` (names and
+ * letters or fewer (fewer than `minLetters`, from sentenceMatch.pluralMinLetters), numbers, a plural that would end in "ss", and the words in `neverStem` (names and
  * words that already end in s, such as "news") are only equal when they are identical.
  */
-export function sameInflection(a: string, b: string, neverStem: ReadonlySet<string> = new Set()): boolean {
+export function sameInflection(a: string, b: string, neverStem: ReadonlySet<string> = new Set(), minLetters = 3): boolean {
   const x = withoutPossessive(a);
   const y = withoutPossessive(b);
   if (x === y) return true;
   if (/\d/.test(x) || /\d/.test(y)) return false;
   const [short, long] = x.length <= y.length ? [x, y] : [y, x];
-  if (short.length < 3 || neverStem.has(short) || neverStem.has(long)) return false;
+  if (short.length < minLetters || neverStem.has(short) || neverStem.has(long)) return false;
   if (long === `${short}s`) return !long.endsWith("ss");
   if (long === `${short}es`) return /(s|x|z|ch|sh|o)$/.test(short);
   if (short.endsWith("y") && long === `${short.slice(0, -1)}ies`) return short.length > 3;
@@ -166,7 +168,7 @@ function tokensOf(text: string): Token[] {
 /** Same word (after plural and possessive endings), or, when allowed, a one-letter spelling error. */
 function sameWord(target: Token, said: Token, options: MatchOptions): "same" | "variant" | "spelling" | null {
   if (target.raw === said.raw) return "same";
-  if (sameInflection(target.raw, said.raw, options.neverStem)) return "variant";
+  if (sameInflection(target.raw, said.raw, options.neverStem, options.pluralMinLetters ?? 3)) return "variant";
   if (options.spellingTolerance && said.raw.length >= 3 && target.raw[0] === said.raw[0] && !/\d/.test(said.raw + target.raw)) {
     const allowed = slipsAllowed(target.raw.length, options.spellingSlips ?? DEFAULT_SLIPS);
     if (allowed > 0 && !options.knownWords?.has(said.raw) && lettersApart(target.raw, said.raw, allowed) <= allowed) return "spelling";

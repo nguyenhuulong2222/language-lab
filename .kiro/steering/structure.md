@@ -13,7 +13,7 @@ language-lab/
 │   ├── engine/         # Pure logic: scoring, session flow, answer matching
 │   ├── ui/             # React components, hooks, pages
 │   └── main.tsx        # App entry point
-├── worker/             # Cloudflare Worker source (edge API handlers)
+├── functions/          # Cloudflare Pages Functions (the optional AI coach endpoint)
 ├── data/               # Static civics data: test-rules.json, answer files
 ├── mock/               # Fictional session fixtures for development and testing
 ├── docs/               # Architecture decisions (kiro-log.md), guides
@@ -26,7 +26,7 @@ language-lab/
 
 ## Ownership
 
-One person owns `src/engine/`, `worker/` and `src/ui/`. There is no separate UI owner or engine
+One person owns `src/engine/`, `functions/` and `src/ui/`. There is no separate UI owner or engine
 owner. `src/contracts/` is shared: any change to it needs an entry in `docs/contract-requests.md`
 first, even though the same person makes the change.
 
@@ -47,10 +47,7 @@ first, even though the same person makes the change.
 - Imports types from `src/contracts/`, logic from `src/engine/`.
 - No civics scoring logic lives here.
 
-### `worker/`
-- Cloudflare Worker handlers.
-- Thin API layer: validates input, calls engine logic, returns responses.
-- No secrets in source; reads from environment bindings.
+
 
 ### `functions/`
 - Cloudflare Pages Functions, same origin as the app (`functions/api/coach.ts`: the optional AI

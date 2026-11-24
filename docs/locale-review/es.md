@@ -56,6 +56,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | Esto solo cambia la práctica; no se guarda ni se envía nada. La parte de educación cívica le hace {asked} de las {bank} preguntas marcadas con un asterisco (*) en la lista oficial. Se hacen las {asked}. La puntuación de práctica para aprobar es de {pass} respuestas correctas. |
 | `special.language.link` | Exceptions and accommodations on uscis.gov | Excepciones y adaptaciones en uscis.gov |
 | `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {count} de las {bank} preguntas tienen respuestas que cambian, como quién ocupa un cargo ahora. No se muestran aquí. Revíselas en uscis.gov/citizenship/testupdates. |
+| `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | Se hicieron las {asked} preguntas y se alcanzó la puntuación de práctica para aprobar, {score}. |
+| `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | La prueba de práctica se detuvo al alcanzar la puntuación de práctica para aprobar. |
+| `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | La prueba de práctica se detuvo después de {incorrect} respuestas incorrectas, antes de alcanzar la puntuación de práctica para aprobar, {score}. |
+| `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | La puntuación de práctica para aprobar es de {score} respuestas correctas, y no se alcanzó. |
+| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | Sin calificar, porque la respuesta cambia o no está en la clave de respuestas: {names}. Estas preguntas no cuentan como correctas ni incorrectas. |
+| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | Su dispositivo dio varias opciones de lo que usted dijo. Se muestra la más cercana a una respuesta de la clave. |
 
 ## 3. All other lines
 
@@ -335,3 +341,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Tengo 65 años o más y he sido residente permanente durante 20 años o más |
 | `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | Una persona solicitante 65/20 puede hacer el examen real de educación cívica en su propio idioma con un intérprete. |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Solo las preguntas para 65/20 (marcadas con un asterisco) |
+| `report.line.civics.none` | No civics questions were scored. | No se calificó ninguna pregunta de educación cívica. |
+| `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Preguntas de educación cívica contestadas correctamente: {correct} de {scored}. |
+| `report.line.reading.none` | No reading sentences were completed. | No se completó ninguna oración de lectura. |
+| `report.line.reading.done` | Sentence {n} was read correctly. | La oración {n} se leyó correctamente. |
+| `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Oraciones de lectura leídas correctamente: {correct} de {presented}. Oraciones correctas necesarias: {needed}. |
+| `report.line.writing.none` | No writing sentences were completed. | No se completó ninguna oración de escritura. |
+| `report.line.writing.done` | Sentence {n} was written correctly. | La oración {n} se escribió correctamente. |
+| `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Oraciones de escritura escritas correctamente: {correct} de {presented}. Oraciones correctas necesarias: {needed}. |
+| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | Intentos de escritura hechos con la oración en pantalla (con ayuda): {assisted} de {presented}. |
+| `report.review.reading` | Practice reading the sentences aloud. | Practique leer las oraciones en voz alta. |
+| `report.review.writing` | Practice writing the sentences you hear. | Practique escribir las oraciones que escucha. |
+| `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Responda como la persona ficticia. No escriba su nombre, dirección, fechas ni números reales. |

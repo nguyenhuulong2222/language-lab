@@ -56,6 +56,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | 這只會改變練習；不會儲存或傳送任何資料。公民常識部分會從官方清單中標有星號（*）的 {bank} 題中問 {asked} 題。{asked} 題都會問完。練習及格分數是答對 {pass} 題。 |
 | `special.language.link` | Exceptions and accommodations on uscis.gov | uscis.gov 上的例外與便利措施 |
 | `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {bank} 題中有 {count} 題的答案會改變，例如現在由誰擔任某個職位。這些題目不在這裡顯示。請到 uscis.gov/citizenship/testupdates 查看。 |
+| `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | {asked} 題都已問完，並達到練習及格分數 {score}。 |
+| `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | 達到練習及格分數後，練習測驗就停止了。 |
+| `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | 答錯 {incorrect} 題後，練習測驗在達到練習及格分數 {score} 之前停止了。 |
+| `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | 練習及格分數是答對 {score} 題，這次沒有達到。 |
+| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | 未計分，因為答案會改變或不在答案範本中：{names}。這些問題不算對也不算錯。 |
+| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | 您的裝置對您說的話給出了幾種猜測。這裡顯示的是最接近答案範本中某個答案的那一種。 |
 
 ## 3. All other lines
 
@@ -335,3 +341,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | 我 65 歲或以上，並已是永久居民 20 年或以上 |
 | `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | 65/20 申請人可以在口譯員協助下，用自己的語言參加真正的公民常識考試。 |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | 只看 65/20 的問題（標有星號） |
+| `report.line.civics.none` | No civics questions were scored. | 沒有任何公民常識問題被計分。 |
+| `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | 公民常識問題答對：{scored} 題中答對 {correct} 題。 |
+| `report.line.reading.none` | No reading sentences were completed. | 沒有完成任何閱讀句子。 |
+| `report.line.reading.done` | Sentence {n} was read correctly. | 第 {n} 句閱讀正確。 |
+| `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | 閱讀句子讀對：{presented} 句中讀對 {correct} 句。需要讀對的句數：{needed}。 |
+| `report.line.writing.none` | No writing sentences were completed. | 沒有完成任何書寫句子。 |
+| `report.line.writing.done` | Sentence {n} was written correctly. | 第 {n} 句書寫正確。 |
+| `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | 書寫句子寫對：{presented} 句中寫對 {correct} 句。需要寫對的句數：{needed}。 |
+| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | 在畫面顯示句子時的書寫嘗試（有協助）：{presented} 次中有 {assisted} 次。 |
+| `report.review.reading` | Practice reading the sentences aloud. | 練習大聲讀出句子。 |
+| `report.review.writing` | Practice writing the sentences you hear. | 練習寫下您聽到的句子。 |
+| `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | 請以虛構人物的身分回答。不要輸入您真實的姓名、地址、日期或號碼。 |

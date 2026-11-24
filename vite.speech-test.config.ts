@@ -18,8 +18,11 @@ export default defineConfig({
     },
   },
   server: {
-    // Bind to all interfaces so phones on the same network can reach it
-    host: "0.0.0.0",
+    // This machine only (audit SEC-07). To test on a phone on the same network, start it with
+    // `npm run speech-test -- --host` (Vite's --host flag overrides this for that run only).
+    host: "127.0.0.1",
+    // Never serve files outside the project; Vite's default deny list (key and dot files, .git) stays.
+    fs: { strict: true },
     port: 5174,
     open: "/tools/speech-test/index.html",
     allowedHosts: [".trycloudflare.com"],

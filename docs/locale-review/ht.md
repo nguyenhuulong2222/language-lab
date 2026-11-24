@@ -56,6 +56,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | Sa a chanje pratik la sèlman; anyen pa sove ni voye. Pati edikasyon sivik la ap poze {asked} nan {bank} kesyon ki make ak yon zetwal (*) nan lis ofisyèl la. Li poze tout {asked} yo. Nòt pou pase pratik la se {pass} bon repons. |
 | `special.language.link` | Exceptions and accommodations on uscis.gov | Eksepsyon ak akomodasyon sou uscis.gov |
 | `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {count} nan {bank} kesyon yo gen repons ki chanje, tankou ki moun ki okipe yon pòs kounye a. Yo pa parèt isit la. Tcheke yo sou uscis.gov/citizenship/testupdates. |
+| `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | Tout {asked} kesyon yo te poze, epi ou rive nan nòt pou pase pratik la, {score}. |
+| `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Tès pratik la te kanpe lè ou te rive nan nòt pou pase pratik la. |
+| `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Tès pratik la te kanpe apre {incorrect} move repons, anvan ou rive nan nòt pou pase pratik la, {score}. |
+| `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Nòt pou pase pratik la se {score} bon repons, epi ou pa t rive ladan l. |
+| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | Pa gen nòt, paske repons lan chanje oswa li pa nan kle repons yo: {names}. Kesyon sa yo pa konte ni bon ni move. |
+| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | Aparèy ou a bay plizyè devinèt sou sa ou te di. Sa ki pi pre yon repons nan kle a parèt. |
 
 ## 3. All other lines
 
@@ -335,3 +341,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Mwen gen 65 an oswa plis epi mwen rezidan pèmanan depi 20 an oswa plis |
 | `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | Yon aplikan 65/20 ka pran vrè tès edikasyon sivik la nan pwòp lang li ak yon entèprèt. |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Sèlman kesyon pou 65/20 yo (make ak yon zetwal) |
+| `report.line.civics.none` | No civics questions were scored. | Pa gen okenn kesyon edikasyon sivik ki te resevwa nòt. |
+| `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Kesyon edikasyon sivik ou reponn kòrèkteman: {correct} sou {scored}. |
+| `report.line.reading.none` | No reading sentences were completed. | Pa gen okenn fraz lekti ki fini. |
+| `report.line.reading.done` | Sentence {n} was read correctly. | Ou li fraz {n} lan kòrèkteman. |
+| `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Fraz lekti ou li kòrèkteman: {correct} sou {presented}. Kantite bon fraz ki nesesè: {needed}. |
+| `report.line.writing.none` | No writing sentences were completed. | Pa gen okenn fraz ekriti ki fini. |
+| `report.line.writing.done` | Sentence {n} was written correctly. | Ou ekri fraz {n} lan kòrèkteman. |
+| `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Fraz ekriti ou ekri kòrèkteman: {correct} sou {presented}. Kantite bon fraz ki nesesè: {needed}. |
+| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | Esè ekriti ou fè ak fraz la sou ekran an (avèk èd): {assisted} sou {presented}. |
+| `report.review.reading` | Practice reading the sentences aloud. | Pratike li fraz yo awotvwa. |
+| `report.review.writing` | Practice writing the sentences you hear. | Pratike ekri fraz ou tande yo. |
+| `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Reponn tankou moun imajinè a. Pa tape vrè non ou, adrès ou, dat oswa nimewo ou. |

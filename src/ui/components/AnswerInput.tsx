@@ -4,6 +4,7 @@
  * user can read and fix it before sending. Every outcome has a message: heard, nothing heard,
  * microphone blocked, no microphone, browser cannot listen, other error.
  */
+import type { ReactNode } from "react";
 import { useEffect, useId, useRef, useState } from "react";
 import type { InputMode } from "../../engine/practice-flow";
 import type { VoiceOutcome } from "../../engine/recognition-outcome";
@@ -27,6 +28,8 @@ interface AnswerInputProps {
   onSubmit: (text: string, input: InputMode, alternatives?: readonly string[]) => void;
   /** Called when "Say it" starts, so another microphone user (the self-review recording) can stop. */
   onListenStart?: () => void;
+  /** A short note right under the box, read with it (aria-describedby). */
+  hint?: ReactNode;
 }
 
 const MESSAGE: Record<Exclude<VoiceOutcome["kind"], "transcript">, MessageKey> = {
@@ -39,11 +42,12 @@ const MESSAGE: Record<Exclude<VoiceOutcome["kind"], "transcript">, MessageKey> =
 
 /** Key in the session memory (help-session.tsx): the voice notice was shown. */
 const VOICE_NOTICE_KEY = "voice-notice";
-export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSubmit, onListenStart }: AnswerInputProps) {
+export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSubmit, onListenStart, hint }: AnswerInputProps) {
   const t = useT();
   const listener = useListener();
   const inputId = useId();
   const statusId = useId();
+  const hintId = useId();
   const consentId = useId();
   const [text, setText] = useState("");
   const [listening, setListening] = useState(false);
@@ -139,7 +143,7 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
         autoCapitalize="off"
         autoComplete="off"
         spellCheck={false}
-        aria-describedby={statusId}
+        aria-describedby={hint === undefined ? statusId : `${hintId} ${statusId}`}
         aria-invalid={message === "voice.needText" ? true : undefined}
         lang="en"
         onChange={(event) => {
@@ -147,6 +151,11 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
           setMessage((current) => (current === "voice.needText" ? null : current));
         }}
       />
+      {hint !== undefined && (
+        <p id={hintId} className="note field__hint">
+          {hint}
+        </p>
+      )}
       <p
         id={statusId}
         className={needsAttention ? "status status--attention" : "status"}

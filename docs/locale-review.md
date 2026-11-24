@@ -74,6 +74,10 @@ I translated the disclaimer, privacy and legal lines (16 keys, 13 languages) bac
 - my `aiNotice.text`: "authoritative" was written as "has power" (အာဏာရှိ). Changed to "official".
 - ru, lo, th, ko, hi, pt `aiNotice.text`: "Authoritative" was rendered as "main", "standard", "authentic" or "the one that counts". All six now say "official", as translation.notice does.
 - hmn `header.about, home.full.text, compare.setting`: Named in the audit (CON-02): "About us and warning", "according to cutting" (used twice). Rewritten as "About Language Lab and the disclaimer", "one part after another", "one word after another". Not reviewed by a Hmong speaker.
+- th `disclaimer.full`: "endorsed" was "certified" (รับรอง); now "supported/endorsed" (สนับสนุน). Audit CON-12.
+- hi `lang.interviewEnglish`: "exception" was "exemption" (छूट); now अपवाद. Audit CON-12.
+- ko `compare.counts`: "This counts" was "is accepted" (인정됩니다); now "is included in the score" (점수에 포함됩니다). Audit CON-12.
+- my `compare.notYet`: "Not yet" was literally "has not arrived yet"; now "not correct yet" (မမှန်သေးပါ). Audit CON-12.
 
 ### Still differs a little
 
@@ -91,16 +95,17 @@ I translated the disclaimer, privacy and legal lines (16 keys, 13 languages) bac
 - hmn `coach.notice.text`: "fictional" is "not real" and "on/off" is "open/closed" (qhib, kaw). Needs a Hmong reader.
 - hmn `coach.privacy`: "salted code" is rendered as "secret number" (lej zais). Needs a Hmong reader.
 - my `aiNotice.text`: "authoritative" is rendered as "official": close, slightly weaker.
-- my `compare.notYet`: "Not yet" is rendered literally as "has not arrived yet". Low confidence.
 - my `voice.consent.text`: "voice recording system" for "voice recognition" (အသံမှတ်သားစနစ်): recording and recognition are not the same thing. Needs a Burmese reader.
 - my `coach.notice.text`: "fictional" is "imaginary" (စိတ်ကူးယဉ်). Needs a Burmese reader.
 - tl `aiNotice.text`: "authoritative" is rendered as "valid" (may bisa): close, slightly weaker.
-- ko `compare.counts`: "This counts" is rendered "is accepted" (인정됩니다), a little stronger than "counts".
 - ko `intro.locked`: "Answer key" is rendered "answer table" (정답표); fine in context.
 - th `civics.officialNote`: "Any one of these answers counts" is rendered "counts as correct" (นับว่าถูก), slightly stronger.
 - th `report.lead.onTrack`: "civics" is rendered as "civic duties" (หน้าที่พลเมือง), as elsewhere in the Thai file.
 - lo `civics.officialNote`: Same: "counts as correct" (ນັບວ່າຖືກ).
 - ru `compare.setting.writing`: "counted as correct" (засчитываются) is a little stronger than "still count". Close enough; a Russian reader should confirm.
+- ru `intro.notice.legal`: "legal advice" is "юридическая консультация", back-translated word for word as "legal consulting/consultation/counseling". It is the usual term for "legal advice" in disclaimers in this language (audit CON-07); a native reader should confirm. The same term is used in disclaimer.short, disclaimer.full and disclaimer.report.
+- vi `intro.notice.legal`: "legal advice" is "tư vấn pháp lý", back-translated word for word as "legal consulting/consultation/counseling". It is the usual term for "legal advice" in disclaimers in this language (audit CON-07); a native reader should confirm. The same term is used in disclaimer.short, disclaimer.full and disclaimer.report.
+- pt `intro.notice.legal`: "legal advice" is "aconselhamento jurídico", back-translated word for word as "legal consulting/consultation/counseling". It is the usual term for "legal advice" in disclaimers in this language (audit CON-07); a native reader should confirm. The same term is used in disclaimer.short, disclaimer.full and disclaimer.report.
 
 ### Confidence
 

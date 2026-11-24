@@ -164,3 +164,17 @@ fieldset.choices {
     outline: none;
   }
 }
+/* Forced colours: an active button (recording) keeps a visible state with the system highlight
+   colours and a double frame (audit A11Y-11). */
+@media (forced-colors: active) {
+  .btn--active {
+    forced-color-adjust: none;
+    background: Highlight;
+    color: HighlightText;
+    border: 3px double HighlightText;
+  }
+}
+/* Very long words (125% text, 320px) wrap inside the button instead of overflowing (A11Y-13). */
+.btn {
+  overflow-wrap: anywhere;
+}

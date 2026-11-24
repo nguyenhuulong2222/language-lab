@@ -11,6 +11,7 @@
  *   data/images/manifest.json         every picture and where it came from
  *   data/images/question-images.json  question id -> picture id (needsHumanReview)
  */
+import { reviewFlagProblem } from "./review-flag.js";
 import MANIFEST_JSON from "../../data/images/manifest.json" with { type: "json" };
 import MAPPING_JSON from "../../data/images/question-images.json" with { type: "json" };
 
@@ -156,7 +157,9 @@ export function checkImageData(input: ImageCheckInput): ImageProblem[] {
   for (const id of ids) if (!used.has(id)) add(`picture ${id}`, "is in the manifest but no question uses it");
   const listed = new Set(input.manifest.images.map((p) => p.file));
   for (const file of input.files) if (!listed.has(file)) add(`file ${file}`, "is in public/images/civics/ but not in the manifest");
-  if (input.mapping.needsHumanReview !== true) add("question-images.json", "needsHumanReview must stay true until the owner has checked every pairing");
+  // The pairings may be marked reviewed once a reviewer and a date are named (CON-06).
+  const flagProblem = reviewFlagProblem(input.mapping as unknown as Record<string, unknown>);
+  if (flagProblem !== null) add("question-images.json", flagProblem);
   return problems;
 }
 

@@ -8,6 +8,7 @@
  *
  * Pure module: no DOM, no network.
  */
+import { reviewFlagProblem } from "./review-flag.js";
 import RAW from "../../data/practice/practice-config.json" with { type: "json" };
 import type { MatchOptions } from "./sentence-compare.js";
 
@@ -30,6 +31,8 @@ export interface PracticeConfig {
     neverStem: string[];
     /** Spelling slip limits by word length, shortest first (writing). */
     spellingSlips: SpellingSlip[];
+    /** Words shorter than this get no plural or possessive variant ("us" is never "u"). */
+    pluralMinLetters: number;
     reading: SentenceMatchConfig;
     writing: SentenceMatchConfig;
   };
@@ -72,11 +75,14 @@ function parseSlips(value: unknown): SpellingSlip[] {
     return { fromLetters: from, maxEdits: max };
   });
 }
+function positiveInteger(value: unknown, where: string): number {
+  if (typeof value !== "number" || !Number.isInteger(value) || value < 1) throw new Error(`practice-config: ${where} must be a whole number of 1 or more.`);
+  return value;
+}
 export function parsePracticeConfig(raw: unknown): PracticeConfig {
   if (!isRecord(raw)) throw new Error("practice-config: file must be a JSON object.");
-  if (typeof raw["needsHumanReview"] !== "boolean") {
-    throw new Error("practice-config: needsHumanReview must be true or false.");
-  }
+  const flagProblem = reviewFlagProblem(raw);
+  if (flagProblem !== null) throw new Error(`practice-config: ${flagProblem}.`);
   const match = raw["sentenceMatch"];
   if (!isRecord(match)) throw new Error("practice-config: sentenceMatch must be an object.");
   return {
@@ -84,6 +90,7 @@ export function parsePracticeConfig(raw: unknown): PracticeConfig {
       functionWords: words(match["functionWords"], "sentenceMatch.functionWords"),
       neverStem: words(match["neverStem"], "sentenceMatch.neverStem"),
       spellingSlips: parseSlips(match["spellingSlips"]),
+      pluralMinLetters: positiveInteger(match["pluralMinLetters"], "sentenceMatch.pluralMinLetters"),
       reading: parseMatch(match["reading"], "sentenceMatch.reading"),
       writing: parseMatch(match["writing"], "sentenceMatch.writing"),
     },
@@ -105,6 +112,7 @@ export function matchOptionsFor(
     extraContentWordsAllowed: m[kind].extraContentWordsAllowed,
     spellingTolerance: m[kind].spellingTolerance,
     spellingSlips: m.spellingSlips,
+    pluralMinLetters: m.pluralMinLetters,
     ...(knownWords === undefined ? {} : { knownWords }),
   };
 }

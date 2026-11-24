@@ -16,7 +16,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|---|
 | `disclaimer.title` | Please read this | โปรดอ่านข้อความนี้ | Please read this message |
 | `disclaimer.short` | Not affiliated with USCIS or any government agency. Not legal advice. | ไม่มีส่วนเกี่ยวข้องกับ USCIS หรือหน่วยงานรัฐบาลใด ๆ ไม่ใช่คำแนะนำทางกฎหมาย | Has no involvement with USCIS or any government agency. Not legal advice. |
-| `disclaimer.full` | Language Lab is an independent practice tool. It is not affiliated with, endorsed by, or connected to USCIS, DHS, or any U.S. government agency. Practice results do not predict or reflect any official immigration decision. Nothing here is legal advice. Consult a qualified immigration attorney for guidance on your actual case. | Language Lab เป็นเครื่องมือฝึกที่เป็นอิสระ ไม่มีส่วนเกี่ยวข้อง ไม่ได้รับการรับรอง และไม่ได้เชื่อมโยงกับ USCIS, DHS หรือหน่วยงานรัฐบาลสหรัฐฯ ใด ๆ ผลการฝึกไม่ได้ทำนายหรือสะท้อนการตัดสินใจด้านการเข้าเมืองอย่างเป็นทางการใด ๆ ไม่มีสิ่งใดในที่นี้ที่เป็นคำแนะนำทางกฎหมาย โปรดปรึกษาทนายความด้านคนเข้าเมืองที่มีคุณสมบัติเหมาะสมเกี่ยวกับกรณีจริงของคุณ | Language Lab is an independent practice tool. It has no involvement, is not certified, and is not linked with USCIS, DHS or any U.S. government agency. Practice results do not predict or reflect any official immigration decision. Nothing here is legal advice. Please consult a qualified immigration lawyer about your actual case. |
+| `disclaimer.full` | Language Lab is an independent practice tool. It is not affiliated with, endorsed by, or connected to USCIS, DHS, or any U.S. government agency. Practice results do not predict or reflect any official immigration decision. Nothing here is legal advice. Consult a qualified immigration attorney for guidance on your actual case. | Language Lab เป็นเครื่องมือฝึกที่เป็นอิสระ ไม่มีส่วนเกี่ยวข้อง ไม่ได้รับการสนับสนุน และไม่ได้เชื่อมโยงกับ USCIS, DHS หรือหน่วยงานรัฐบาลสหรัฐฯ ใด ๆ ผลการฝึกไม่ได้ทำนายหรือสะท้อนการตัดสินใจด้านการเข้าเมืองอย่างเป็นทางการใด ๆ ไม่มีสิ่งใดในที่นี้ที่เป็นคำแนะนำทางกฎหมาย โปรดปรึกษาทนายความด้านคนเข้าเมืองที่มีคุณสมบัติเหมาะสมเกี่ยวกับกรณีจริงของคุณ | Language Lab is an independent practice tool. It has no involvement, is not endorsed, and is not linked with USCIS, DHS or any U.S. government agency. Practice results do not predict or reflect any official immigration decision. Nothing here is legal advice. Please consult a qualified immigration lawyer about your actual case. |
 | `disclaimer.report` | This is a practice tool only. It is not affiliated with USCIS or any government agency. Results do not predict or reflect any official immigration decision. This is not legal advice. | นี่เป็นเพียงเครื่องมือฝึกเท่านั้น ไม่มีส่วนเกี่ยวข้องกับ USCIS หรือหน่วยงานรัฐบาลใด ๆ ผลลัพธ์ไม่ได้ทำนายหรือสะท้อนการตัดสินใจด้านการเข้าเมืองอย่างเป็นทางการใด ๆ นี่ไม่ใช่คำแนะนำทางกฎหมาย | This is only a practice tool. It has no involvement with USCIS or any government agency. Results do not predict or reflect any official immigration decision. This is not legal advice. |
 | `intro.notice.practice` | This is a practice tool only. | นี่เป็นเพียงเครื่องมือฝึกเท่านั้น | This is only a practice tool. |
 | `intro.notice.legal` | It is not legal advice. | นี่ไม่ใช่คำแนะนำทางกฎหมาย | This is not legal advice. |
@@ -56,6 +56,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | ตัวเลือกนี้เปลี่ยนเฉพาะการฝึก ไม่มีการบันทึกหรือส่งข้อมูลใด ๆ ส่วนความรู้พลเมืองจะถาม {asked} ข้อจาก {bank} ข้อที่มีเครื่องหมายดอกจัน (*) ในรายการทางการ ถามครบทั้ง {asked} ข้อ คะแนนผ่านของการฝึกคือตอบถูก {pass} ข้อ |
 | `special.language.link` | Exceptions and accommodations on uscis.gov | ข้อยกเว้นและการอำนวยความสะดวกบน uscis.gov |
 | `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | คำถาม {count} ข้อจาก {bank} ข้อมีคำตอบที่เปลี่ยนไป เช่น ใครดำรงตำแหน่งอยู่ในตอนนี้ จึงไม่แสดงที่นี่ ตรวจสอบได้ที่ uscis.gov/citizenship/testupdates |
+| `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | ถามครบทั้ง {asked} ข้อ และถึงคะแนนผ่านของการฝึก {score} แล้ว |
+| `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | การทดสอบฝึกหยุดเมื่อถึงคะแนนผ่านของการฝึก |
+| `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | การทดสอบฝึกหยุดหลังตอบผิด {incorrect} ข้อ ก่อนถึงคะแนนผ่านของการฝึก {score} |
+| `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | คะแนนผ่านของการฝึกคือตอบถูก {score} ข้อ และยังไม่ถึง |
+| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | ไม่ได้ให้คะแนน เพราะคำตอบเปลี่ยนไปหรือไม่มีในเฉลย: {names} คำถามเหล่านี้ไม่นับว่าถูกหรือผิด |
+| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | อุปกรณ์ของคุณเดาสิ่งที่คุณพูดไว้หลายแบบ แบบที่ใกล้กับคำตอบในเฉลยที่สุดจะแสดงไว้ |
 
 ## 3. All other lines
 
@@ -335,6 +341,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ฉันอายุ 65 ปีขึ้นไปและเป็นผู้มีถิ่นที่อยู่ถาวรมา 20 ปีขึ้นไป |
 | `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | ผู้ยื่นคำร้องกลุ่ม 65/20 สามารถสอบความรู้พลเมืองจริงเป็นภาษาของตนเองโดยมีล่าม |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | เฉพาะคำถามสำหรับ 65/20 (มีเครื่องหมายดอกจัน) |
+| `report.line.civics.none` | No civics questions were scored. | ไม่มีคำถามความรู้พลเมืองที่ได้รับคะแนน |
+| `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | คำถามความรู้พลเมืองที่ตอบถูก: {correct} จาก {scored} |
+| `report.line.reading.none` | No reading sentences were completed. | ยังไม่มีประโยคการอ่านที่ทำเสร็จ |
+| `report.line.reading.done` | Sentence {n} was read correctly. | อ่านประโยคที่ {n} ถูกต้อง |
+| `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | ประโยคการอ่านที่อ่านถูก: {correct} จาก {presented} ประโยคที่ต้องถูก: {needed} |
+| `report.line.writing.none` | No writing sentences were completed. | ยังไม่มีประโยคการเขียนที่ทำเสร็จ |
+| `report.line.writing.done` | Sentence {n} was written correctly. | เขียนประโยคที่ {n} ถูกต้อง |
+| `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | ประโยคการเขียนที่เขียนถูก: {correct} จาก {presented} ประโยคที่ต้องถูก: {needed} |
+| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | ครั้งที่เขียนโดยเห็นประโยคบนหน้าจอ (มีตัวช่วย): {assisted} จาก {presented} |
+| `report.review.reading` | Practice reading the sentences aloud. | ฝึกอ่านประโยคออกเสียง |
+| `report.review.writing` | Practice writing the sentences you hear. | ฝึกเขียนประโยคที่คุณได้ยิน |
+| `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | ตอบในฐานะบุคคลสมมติ อย่าพิมพ์ชื่อ ที่อยู่ วันที่ หรือหมายเลขจริงของคุณ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

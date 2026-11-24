@@ -21,6 +21,7 @@ export const LEGAL_KEYS: readonly string[] = [
   "intro.privacy",
   "intro.filed.help",
   "intro.special.help",
+  "n400.box.reminder",
   "special.language",
   "study.special.dynamic",
   "intro.locked",

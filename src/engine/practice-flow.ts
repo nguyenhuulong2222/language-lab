@@ -255,6 +255,8 @@ export interface CivicsProgress {
   lastResponse: string | null;
   /** How the latest answer was given. */
   lastInput: InputMode | null;
+  /** How many recogniser guesses were scored for the latest answer (1 when typed, 0 before any). */
+  lastAlternatives: number;
 }
 
 // ---------------------------------------------------------------------------
@@ -503,6 +505,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
         last: null,
         lastResponse: null,
         lastInput: null,
+        lastAlternatives: 0,
       };
     }
     const key = loaded.key;
@@ -524,6 +527,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
       last: lastScore && lastEntry ? { entry: lastEntry, result: lastScore.scoring.result } : null,
       lastResponse: state.civics[state.civics.length - 1]?.response ?? null,
       lastInput: state.civics[state.civics.length - 1]?.input ?? null,
+      lastAlternatives: state.civics[state.civics.length - 1]?.alternativesScored ?? 0,
     };
   }
 

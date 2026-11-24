@@ -145,3 +145,14 @@ union by part: disclaimer, generatedAt, and the counts of that part). The UI sho
 The first option leaves every existing report consumer unchanged.
 
 **What the UI needs to do:** nothing today. If the type moves, import it from the contracts.
+## CR-007 — Report summary lines as message keys (CON-04)
+**Requested by:** release/finish, Step 2
+**Status:** made (2026-11-20)
+**Type:** contract change, backward compatible (new optional field)
+The stage summaries of `FinalReport` are English sentences, so a report read in another language
+shows English summaries. `StageSummary` gets an optional `summaryLines: SummaryLine[]`, where
+`SummaryLine = { key: string; params?: Record<string, string | number> }`: each line names a key of
+`src/i18n/locales/en.json` and gives its numbers (and, for unscored civics questions, the English
+question texts) as placeholders. `summary` stays and equals the lines rendered in English, so
+existing consumers and fixtures are unchanged. The report screen renders the lines through the
+locale files; a key it does not know falls back to `summary`.

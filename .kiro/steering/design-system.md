@@ -72,6 +72,18 @@ Dark mode (espresso booth, amber glow):
 Button-on-amber pairs: light `#FBF7EE` on `#9A5A1A` = 5.10:1 (AA); dark `#1F1813` on
 `#D98A36` = 6.37:1 (AA). Amber is an accent only, never body text.
 
+Accent colours on each background (WCAG contrast, computed from the hex values above; audit A11Y-12):
+
+| Pair | `--bg` | `--surface` | `--surface-2` |
+|---|---|---|---|
+| Light teal `#2C6A66` | 5.40:1 | 5.84:1 | 5.08:1 |
+| Light amber `#9A5A1A` | 4.72:1 | 5.10:1 | 4.43:1 |
+| Dark teal `#62A89F` | 6.36:1 | 5.88:1 | 5.45:1 |
+| Dark amber `#D98A36` | 6.37:1 | 5.89:1 | 5.46:1 |
+
+Light amber on `--surface-2` (4.43:1) is below 4.5:1, so it is for icons and other non-text marks
+only (3:1 applies). No text is set in amber on `--surface-2`.
+
 Color theme is switched via a `data-theme="dark"` attribute on `<html>` (or the user's
 `prefers-color-scheme: dark` when no explicit choice is set).
 
