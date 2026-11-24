@@ -72,3 +72,21 @@ an action that this pass was not allowed to take (push, deploy, review data, cha
 - The slow-network probe (PERF-02) was not run again after self-hosting the font.
 - The CI workflow has not run on GitHub (nothing was pushed).
 - The surname "Thistlewood" was checked against officeholders from memory, not a database.
+
+## Final audit (December 2026, `docs/audit/2026-12-final-audit.md`)
+0 blocker and 0 high, 4 medium and 7 low. After the audit, on branch `release/submission`:
+
+| Id | Severity | Outcome |
+|---|---|---|
+| F-01 | Medium | Improved (`f9d82a1`): a loading shell paints readable text at about 1.26 s instead of about 4.16 s on the slow profile; the LCP is unchanged |
+| F-02 | Medium | Open, disclosed: civics translations from formN400.org remain in the git history (`NOTICE` item 9); only a history rewrite would remove them |
+| F-03 | Low | Done (`9d2bc4f`): the uscis.gov browser key strings are explained in `data/sources/README.md` |
+| F-04 | Low | Done in the repository (`9d2bc4f`): HSTS in `public/_headers`; live after the next deploy |
+| F-05, F-06 | Low | Corrected in the checklist (`1bddfc3`); F-06 closes when `release/submission` is merged |
+| F-07 | Medium | Done (`4afb084`): the prominent disclaimer under every result |
+| F-08 | Medium | Reduced (`81155d1`): addresses and ZIP codes are screened; names cannot be, and the notice says so |
+| F-09, F-10, F-11 | Low | No change (Cloudflare default CORS on public files; author e-mails in history; November evidence script kept as run) |
+
+The open item from the release finish, "a 65/20 applicant is exempt from the English test, which the
+app does not state", is closed by `65d50ef`.
+

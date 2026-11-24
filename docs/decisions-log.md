@@ -504,3 +504,18 @@ Spec: `.kiro/specs/interview-coach/` (requirements revision 2 with two Analyze R
   ordinary answers. The consent notice says so in a new legal key, `coach.notice.limits` ("...it
   cannot find names. Do not say or type a real person's name."), English until reviewed. The same
   screen runs on the client and again in the Pages Function.
+- **Prominent disclaimer on result screens (Step 1, audit F-07)**: `disclaimer.report` in the prominent
+  variant sits directly under the result on reading, writing and civics feedback (it replaces the short
+  civics line) and on the N-400 summary. No new key: the existing legal key and its reviewer drafts are
+  reused. The layout check now fails a result screen without it, with it above the result, or with the
+  result out of view. It measures where the app leaves the page: each result screen focuses its result
+  heading, which scrolls it into view. Measuring from the top of the page instead failed in vi at
+  extra-large text, because of the AI-translation notice above the screen, not the disclaimer.
+- **Loading shell (Step 3, audit F-01)**: static text inside `#root` (name, "Loading the practice
+  booth…", the short disclaimer in English), styled by `src/ui/styles/boot.css`, which Vite merges into
+  the main stylesheet; no inline style, so the CSP is unchanged. React replaces it on mount. No lazy
+  split, because most of the main chunk is React DOM and shared engine code.
+- **HSTS and the uscis.gov key strings (Step 4, audit F-04, F-03)**: `Strict-Transport-Security:
+  max-age=31536000` without `includeSubDomains` or `preload` (the site is one Pages host). The saved
+  uscis.gov pages keep their "AIza…" browser key strings unchanged (they are sources); the sources
+  README explains them.

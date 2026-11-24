@@ -217,3 +217,22 @@ within this table only.
 - **No lazy split.** Most of the 407 KB main chunk is React DOM and the shared engine, which every
   screen needs; splitting one screen would save little and could change focus order and timing on the
   first screen.
+
+### Status of the findings after the audit
+
+| Item | Status | Commit | What changed |
+|---|---|---|---|
+| Step 0 (65/20 and the English test, not an audit finding) | Done | `65d50ef` | Legal key `special.englishExempt` quotes the saved USCIS Exceptions page and the Policy Manual table. A 65/20 full interview skips reading and writing |
+| F-01 | Improved | `f9d82a1` | Loading shell in `#root`: first contentful paint on the slow profile about 1.26 s instead of about 4.16 s; LCP unchanged (table above). No lazy split |
+| F-03 | Done | `9d2bc4f` | `data/sources/README.md` says the "AIza…" strings are uscis.gov's own public browser key; the pages stay unchanged |
+| F-04 | Done in the repository | `9d2bc4f` | `Strict-Transport-Security: max-age=31536000` in the `/*` block of `public/_headers`, tested; on the live site after the next deploy |
+| F-07 | Done | `4afb084` | The prominent disclaimer (`disclaimer.report`) directly under the result on reading, writing and civics feedback and the N-400 summary; the layout check requires it below the result and the result in view |
+| F-08 | Reduced | `81155d1` | Street addresses, unit markers and ZIP codes next to a state are refused before sending; names are not detected, and the consent notice says so (`coach.notice.limits`) |
+| F-02, F-05, F-06, F-09, F-10, F-11 | No change | — | As in the findings above. F-05 and F-06 were corrected in the checklist in `1bddfc3` |
+
+Final run after these commits:
+- **Typecheck**: 0 errors.
+- **Tests**: 1390 of 1390 pass.
+- **Build**: passes.
+- **Layout check** (production, normal size, 390px): all 10 production languages (en, vi, es, zh, tl,
+  ko, hi, th, pt, ru), 25 screens each, all pass, no CSP violation.
