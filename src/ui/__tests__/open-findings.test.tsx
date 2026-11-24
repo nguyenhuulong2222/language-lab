@@ -202,3 +202,16 @@ describe("F-08: the coach notice says names are not detected", () => {
     expect(html.indexOf("cannot find names")).toBeLessThan(html.indexOf("<button"));
   });
 });
+
+describe("F-01: the loading shell in index.html", () => {
+  it("shows the name, a loading line and the short disclaimer in English, styled from a CSS file only", async () => {
+    const html = (await import("../../../index.html?raw")).default as string;
+    const root = html.slice(html.indexOf('<div id="root">'), html.indexOf("</body>"));
+    expect(root).toContain("Language Lab");
+    expect(root).toContain("Loading the practice booth…");
+    expect(root).toContain(ENGLISH_MESSAGES["disclaimer.short"]);
+    // The CSP has no 'unsafe-inline': no style attribute, no style or inline script element.
+    expect(html).not.toMatch(/\sstyle=|<style|<script(?![^>]*\bsrc=)/);
+    expect(html).toContain('<link rel="stylesheet" href="/src/ui/styles/boot.css" />');
+  });
+});

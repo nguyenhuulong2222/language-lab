@@ -1,0 +1,46 @@
+/*
+ * The loading shell in index.html (audit F-01): something readable paints before the app's script
+ * has run on a slow phone. React replaces it on mount. Colours and type follow tokens.css (which
+ * loads with the app, so the values are repeated here). No inline styles: the CSP has no
+ * 'unsafe-inline'.
+ */
+.boot {
+  box-sizing: border-box;
+  min-height: 100vh;
+  margin: 0;
+  padding: 3rem clamp(1rem, 5vw, 2rem);
+  background: #f4eee1;
+  color: #2a2118;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+.boot__inner {
+  max-width: 44rem;
+  margin: 0 auto;
+}
+.boot__name {
+  margin: 0 0 1rem;
+  font-family: "Bitter", "Roboto Slab", "Rockwell", Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.boot__line {
+  margin: 0 0 1.5rem;
+  font-size: 1.25rem;
+}
+.boot__note {
+  margin: 0;
+  font-size: 1rem;
+  color: #574635;
+}
+@media (prefers-color-scheme: dark) {
+  .boot {
+    background: #1f1813;
+    color: #f0e8d9;
+  }
+  .boot__note {
+    color: #c4b49c;
+  }
+}

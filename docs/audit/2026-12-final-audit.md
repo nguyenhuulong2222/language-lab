@@ -190,3 +190,30 @@ November's SEC-01 (headers), SEC-02 (Google Fonts), SEC-05 (hook paths), SEC-09 
 - Secret scan limits: pattern-based, no dedicated scanner, no check of git objects not reachable from any branch, no check of Cloudflare dashboard settings.
 - Whether Cloudflare keeps the D1 database and Pages project available until 2027-01-29, and the Devpost form fields, video and YouTube upload.
 - The statements in `docs/submission/video-script.md` and `kiro-usage.md` other than the test and property counts.
+
+## After the audit
+
+Added after the audit by the project, on branch `release/submission`. The findings above are unchanged.
+
+### F-01: first paint on the slow profile
+
+Measured with the November slow probe (the auditor's `nov-probe.mjs`, unchanged except that the
+build folder is read from an environment variable). It ran against local production builds served
+with the CSP of `public/_headers`: 400 kbps, 400 ms latency, 4x CPU, headless Chrome. Three runs
+each, on the same machine. The auditor's machine gave slower absolute numbers (LCP 6.0 s), so compare
+within this table only.
+
+| Build | First paint | First contentful paint | LCP | Load | Bytes |
+|---|---|---|---|---|---|
+| Before (empty `#root`), runs 1–3 | 1,240 / 1,220 / 1,220 ms | none before the app (first content is the LCP, about 4.16 s) | 4,156 / 4,172 / 4,164 ms | about 4.14 s | 162,219 |
+| After (loading shell), runs 1–3 | 1,268 / 1,260 / 1,260 ms | 1,268 / 1,260 / 1,260 ms | 4,140 / 4,144 / 4,160 ms | about 4.11 s | 162,527 |
+
+- With the shell, readable text (the app name, "Loading the practice booth…" and the short disclaimer
+  in English) paints at about 1.26 s instead of about 4.16 s, about 2.9 s earlier.
+- The LCP does not change. The app's own screen replaces the shell and is the largest element, and it
+  still appears only after the main script has run.
+- The probe's console shows no CSP violation apart from the one inline script the probe runs on
+  purpose to prove the CSP is enforced. The production layout check passes in en and vi.
+- **No lazy split.** Most of the 407 KB main chunk is React DOM and the shared engine, which every
+  screen needs; splitting one screen would save little and could change focus order and timing on the
+  first screen.
