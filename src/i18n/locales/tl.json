@@ -308,5 +308,13 @@
   "compare.note.shortLeft": "Nalaktawan ang maikling salitang “{expected}”. Bilang pa rin ito.",
   "compare.note.shortAdded": "Nagdagdag kayo ng maikling salitang “{said}”. Bilang pa rin ito.",
   "compare.honest.heard": "Batay ang resultang ito sa mga salitang narinig ng device ninyo. Kung mali ang pagkarinig nito, subukan muli o i-type ang sagot ninyo.",
-  "compare.honest.typed": "Batay ang resultang ito sa mga salitang in-type ninyo."
+  "compare.honest.typed": "Batay ang resultang ito sa mga salitang in-type ninyo.",
+  "home.special.title": "Pagsasanay sa sibika para sa 65/20",
+  "home.special.text": "Para sa mga 65 taong gulang pataas na permanent resident na nang 20 taon o higit pa. Sanayin ang mga tanong sa sibika na may tandang bituin (*).",
+  "intro.special.label": "Ako ay 65 taong gulang pataas at permanent resident na nang 20 taon o higit pa",
+  "intro.special.help": "Pagsasanay lang ang binabago nito; walang sine-save o ipinapadala. Itatanong ng bahagi ng sibika ang {asked} sa {bank} tanong na may tandang bituin (*) sa opisyal na listahan. Itatanong ang lahat ng {asked}. Ang practice passing score ay {pass} tamang sagot.",
+  "special.language": "Maaaring kumuha ang aplikanteng 65/20 ng totoong test sa sibika sa sarili niyang wika sa tulong ng interpreter.",
+  "special.language.link": "Mga exception at accommodation sa uscis.gov",
+  "study.special.label": "Mga tanong lang para sa 65/20 (may tandang bituin)",
+  "study.special.dynamic": "{count} sa {bank} tanong ang may sagot na nagbabago, gaya ng kung sino ang may hawak ng isang posisyon ngayon. Hindi sila ipinapakita rito. Tingnan sila sa uscis.gov/citizenship/testupdates."
 }

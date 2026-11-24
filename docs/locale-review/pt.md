@@ -53,6 +53,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Responda a perguntas de educação cívica. Conferidas com as respostas corretas. |
 | `partReport.unscored.missing` | A question that is not in the answer key | Uma pergunta que não está nas respostas corretas |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Estudar primeiro está desativado nesta versão até que uma pessoa revise as respostas corretas. |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | Isto só muda a prática; nada é salvo nem enviado. A parte de educação cívica faz {asked} das {bank} perguntas marcadas com um asterisco (*) na lista oficial. Todas as {asked} são feitas. A pontuação de aprovação da prática é de {pass} respostas corretas. |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | Exceções e adaptações em uscis.gov |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {count} das {bank} perguntas têm respostas que mudam, como quem ocupa um cargo agora. Elas não aparecem aqui. Confira-as em uscis.gov/citizenship/testupdates. |
 
 ## 3. All other lines
 
@@ -327,3 +330,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Você acrescentou a palavra curta “{said}”. Isto ainda conta. |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Este resultado se baseia nas palavras que o seu dispositivo ouviu. Se ele ouviu errado, tente de novo ou digite a sua resposta. |
 | `compare.honest.typed` | This result is based on the words you typed. | Este resultado se baseia nas palavras que você digitou. |
+| `home.special.title` | 65/20 civics practice | Prática de educação cívica 65/20 |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Para pessoas com 65 anos ou mais que são residentes permanentes há 20 anos ou mais. Pratique as perguntas de educação cívica marcadas com um asterisco (*). |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Tenho 65 anos ou mais e sou residente permanente há 20 anos ou mais |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | Um requerente 65/20 pode fazer o teste real de educação cívica no seu próprio idioma com um intérprete. |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | Só as perguntas para 65/20 (marcadas com um asterisco) |

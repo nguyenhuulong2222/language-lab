@@ -308,5 +308,13 @@
   "compare.note.shortLeft": "A palavra curta “{expected}” ficou de fora. Isto ainda conta.",
   "compare.note.shortAdded": "Você acrescentou a palavra curta “{said}”. Isto ainda conta.",
   "compare.honest.heard": "Este resultado se baseia nas palavras que o seu dispositivo ouviu. Se ele ouviu errado, tente de novo ou digite a sua resposta.",
-  "compare.honest.typed": "Este resultado se baseia nas palavras que você digitou."
+  "compare.honest.typed": "Este resultado se baseia nas palavras que você digitou.",
+  "home.special.title": "Prática de educação cívica 65/20",
+  "home.special.text": "Para pessoas com 65 anos ou mais que são residentes permanentes há 20 anos ou mais. Pratique as perguntas de educação cívica marcadas com um asterisco (*).",
+  "intro.special.label": "Tenho 65 anos ou mais e sou residente permanente há 20 anos ou mais",
+  "intro.special.help": "Isto só muda a prática; nada é salvo nem enviado. A parte de educação cívica faz {asked} das {bank} perguntas marcadas com um asterisco (*) na lista oficial. Todas as {asked} são feitas. A pontuação de aprovação da prática é de {pass} respostas corretas.",
+  "special.language": "Um requerente 65/20 pode fazer o teste real de educação cívica no seu próprio idioma com um intérprete.",
+  "special.language.link": "Exceções e adaptações em uscis.gov",
+  "study.special.label": "Só as perguntas para 65/20 (marcadas com um asterisco)",
+  "study.special.dynamic": "{count} das {bank} perguntas têm respostas que mudam, como quem ocupa um cargo agora. Elas não aparecem aqui. Confira-as em uscis.gov/citizenship/testupdates."
 }

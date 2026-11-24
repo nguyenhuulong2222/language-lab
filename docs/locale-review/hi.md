@@ -53,6 +53,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | नागरिक शास्त्र के प्रश्नों के उत्तर दें। उत्तर-कुंजी से मिलान किया जाता है। |
 | `partReport.unscored.missing` | A question that is not in the answer key | ऐसा प्रश्न जो उत्तर-कुंजी में नहीं है |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | जब तक कोई व्यक्ति उत्तर-कुंजी की समीक्षा नहीं कर लेता, इस संस्करण में “पहले पढ़ें” बंद है। |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | इससे केवल अभ्यास बदलता है; कुछ भी सहेजा या भेजा नहीं जाता। नागरिक शास्त्र भाग में आधिकारिक सूची के तारे (*) वाले {bank} प्रश्नों में से {asked} प्रश्न पूछे जाते हैं। सभी {asked} प्रश्न पूछे जाते हैं। अभ्यास का पास स्कोर {pass} सही उत्तर है। |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | uscis.gov पर अपवाद और सुविधाएँ |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {bank} में से {count} प्रश्नों के उत्तर बदलते रहते हैं, जैसे अभी कौन किसी पद पर है। वे यहाँ नहीं दिखाए जाते। उन्हें uscis.gov/citizenship/testupdates पर देखें। |
 
 ## 3. All other lines
 
@@ -327,3 +330,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | आपने छोटा शब्द “{said}” जोड़ा। यह फिर भी गिना जाएगा। |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | यह नतीजा उन शब्दों पर आधारित है जो आपके डिवाइस ने सुने। अगर उसने गलत सुना, तो फिर से कोशिश करें या अपना उत्तर टाइप करें। |
 | `compare.honest.typed` | This result is based on the words you typed. | यह नतीजा उन शब्दों पर आधारित है जो आपने टाइप किए। |
+| `home.special.title` | 65/20 civics practice | 65/20 नागरिक शास्त्र अभ्यास |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | उन लोगों के लिए जिनकी उम्र 65 वर्ष या उससे अधिक है और जो 20 वर्ष या उससे अधिक समय से स्थायी निवासी हैं। तारे (*) से चिह्नित नागरिक शास्त्र के प्रश्नों का अभ्यास करें। |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | मेरी उम्र 65 वर्ष या उससे अधिक है और मैं 20 वर्ष या उससे अधिक समय से स्थायी निवासी हूँ |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | 65/20 आवेदक असली नागरिक शास्त्र परीक्षा अपनी भाषा में एक दुभाषिए के साथ दे सकता है। |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | केवल 65/20 के प्रश्न (तारे से चिह्नित) |

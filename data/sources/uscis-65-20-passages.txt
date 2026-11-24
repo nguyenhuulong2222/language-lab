@@ -1,0 +1,22 @@
+Passages about the 65/20 special consideration, copied word for word from the saved pages named before each group. Nothing else changed. Used by the spec .kiro/specs/release-finish/requirements.md and data/test-rules.json.
+
+## uscis-policy-manual-vol12-parte-ch2.html (USCIS Policy Manual, Vol. 12, Part E, Ch. 2, fetched 2026-11-18)
+Age 65 or older and resided in the United States as an LPR for at least 20 years at time of filing
+Still required but officers administer specially designated test forms. Aliens may take the civics test in their language of choice using an interpreter.
+An officer gives special consideration to an alien who is 65 years of age or older and who has been living in the United States for periods totaling at least 20 years subsequent to a lawful admission for permanent residence.
+The age and time requirements must be met at the time of filing the naturalization application.
+The bank of civics test questions for aliens given special consideration contains 20 specially designated civics questions to study.
+The civics test for aliens given special consideration contains 10 questions.
+Aliens who filed a naturalization application before October 20, 2025, are given a 10-question test from the 20 specially designated questions on the 2008 Naturalization Civics Test.
+Aliens who file a naturalization application on or after October 20, 2025, are given a 10-question test from the 20 specially designated questions on the 2025 Naturalization Civics Test.
+An alien who meets the criteria for special consideration passes the civics test if he or she provides a correct answer or provides an alternative phrasing of the correct answer for at least six of 10 civics test questions from the specially designated list of 20 questions.
+
+## uscis-study-for-the-test.html (Study for the Test, fetched 2026-11-20)
+If you are 65 years old or older and have been living in the United States as a lawful permanent resident of the United States for 20 or more years, USCIS will continue to administer a test with 10 questions from a specially selected bank of 20 test questions from either the 2008 or 2025 Naturalization Civics Test.
+You may study just the 20 questions that have been marked with an asterisk (*).
+You may also take the naturalization test in the language of your choice.
+
+## uscis-exceptions-and-accommodations.html (Exceptions and Accommodations, fetched 2026-11-20)
+You will be permitted to take the civics test in your native language.
+If you take the test in your native language, you must bring an interpreter with you to your interview.
+If you are age 65 or older and have been a permanent resident for at least 20 years at the time of filing for naturalization, you will be given special consideration regarding the civics requirement.

@@ -308,5 +308,13 @@
   "compare.note.shortLeft": "漏掉了短字「{expected}」。這樣仍然算數。",
   "compare.note.shortAdded": "您多加了短字「{said}」。這樣仍然算數。",
   "compare.honest.heard": "這個結果是根據您的裝置聽到的字詞。如果它聽錯了，請再試一次或改用輸入。",
-  "compare.honest.typed": "這個結果是根據您輸入的字詞。"
+  "compare.honest.typed": "這個結果是根據您輸入的字詞。",
+  "home.special.title": "65/20 公民常識練習",
+  "home.special.text": "適用於 65 歲或以上、並已是永久居民 20 年或以上的人。練習標有星號（*）的公民常識問題。",
+  "intro.special.label": "我 65 歲或以上，並已是永久居民 20 年或以上",
+  "intro.special.help": "這只會改變練習；不會儲存或傳送任何資料。公民常識部分會從官方清單中標有星號（*）的 {bank} 題中問 {asked} 題。{asked} 題都會問完。練習及格分數是答對 {pass} 題。",
+  "special.language": "65/20 申請人可以在口譯員協助下，用自己的語言參加真正的公民常識考試。",
+  "special.language.link": "uscis.gov 上的例外與便利措施",
+  "study.special.label": "只看 65/20 的問題（標有星號）",
+  "study.special.dynamic": "{bank} 題中有 {count} 題的答案會改變，例如現在由誰擔任某個職位。這些題目不在這裡顯示。請到 uscis.gov/citizenship/testupdates 查看。"
 }

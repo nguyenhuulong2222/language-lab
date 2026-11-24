@@ -13,9 +13,11 @@ import {
   civicsVersionFor,
   createDefaultPracticeEnv,
   createPracticeEngine,
+  modeHasCivics,
   modeNeeds,
   modeParts,
   sessionSteps,
+  specialConsiderationOffered,
   type PracticeAction,
   type PracticeEngine,
   type PracticeState,
@@ -87,6 +89,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
         <Shell onHome={exitStudy}>
           <StudyScreen
             answerKey={(v) => engine.env.answerKey(v)}
+            {...(specialConsiderationOffered(engine.env) ? { designated: (v) => engine.env.designated!(v) } : {})}
             {...(engine.env.prepareCivics === undefined ? {} : { prepare: (v) => engine.env.prepareCivics!(v) })}
             onHome={exitStudy}
           />
@@ -154,6 +157,8 @@ export function Screen({
   restart,
 }: ScreenProps) {
   const { env } = engine;
+  // The 65/20 practice, when this build offers it (verified rules and the designated list).
+  const specialRules = specialConsiderationOffered(env) ? env.specialRules!() : null;
 
   switch (state.phase) {
     case "home":
@@ -170,6 +175,14 @@ export function Screen({
             onCoachEntry("notice");
             dispatch({ type: "choose", mode: "n400", seed: seed(), at: now() });
           }}
+          {...(specialRules === null
+            ? {}
+            : {
+                onChooseSpecial: () => {
+                  onCoachEntry("choice");
+                  dispatch({ type: "choose", mode: "civics", specialConsideration: true, seed: seed(), at: now() });
+                },
+              })}
         />
       );
 
@@ -179,6 +192,9 @@ export function Screen({
           profiles={env.content.profiles}
           boundaryDate={env.boundaryDate}
           needs={modeNeeds(state.mode ?? "full")}
+          {...(specialRules === null || !modeHasCivics(state.mode ?? "full")
+            ? {}
+            : { special: { rules: specialRules, initial: state.specialRequested } })}
           focusOnFirstRender
           onStart={(choice) => {
             const go = () => dispatch({ type: "start", ...choice, seed: seed(), at: now() });
@@ -248,6 +264,9 @@ export function Screen({
           }
           onContinue={() => dispatch({ type: "continue", at: now() })}
           onRestart={restart}
+          {...(state.setup?.specialConsideration === true && engine.civicsRulesFor(state) !== null
+            ? { special: engine.civicsRulesFor(state)! }
+            : {})}
         />
       );
 

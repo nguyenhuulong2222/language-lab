@@ -308,5 +308,13 @@
   "compare.note.shortLeft": "Mo kout “{expected}” la pa t di. Sa toujou konte.",
   "compare.note.shortAdded": "Ou ajoute mo kout “{said}”. Sa toujou konte.",
   "compare.honest.heard": "Rezilta sa a baze sou mo aparèy ou a tande. Si li tande w mal, eseye ankò oswa tape repons ou a.",
-  "compare.honest.typed": "Rezilta sa a baze sou mo ou tape yo."
+  "compare.honest.typed": "Rezilta sa a baze sou mo ou tape yo.",
+  "home.special.title": "Pratik edikasyon sivik 65/20",
+  "home.special.text": "Pou moun ki gen 65 an oswa plis epi ki rezidan pèmanan depi 20 an oswa plis. Pratike kesyon edikasyon sivik ki make ak yon zetwal (*).",
+  "intro.special.label": "Mwen gen 65 an oswa plis epi mwen rezidan pèmanan depi 20 an oswa plis",
+  "intro.special.help": "Sa a chanje pratik la sèlman; anyen pa sove ni voye. Pati edikasyon sivik la ap poze {asked} nan {bank} kesyon ki make ak yon zetwal (*) nan lis ofisyèl la. Li poze tout {asked} yo. Nòt pou pase pratik la se {pass} bon repons.",
+  "special.language": "Yon aplikan 65/20 ka pran vrè tès edikasyon sivik la nan pwòp lang li ak yon entèprèt.",
+  "special.language.link": "Eksepsyon ak akomodasyon sou uscis.gov",
+  "study.special.label": "Sèlman kesyon pou 65/20 yo (make ak yon zetwal)",
+  "study.special.dynamic": "{count} nan {bank} kesyon yo gen repons ki chanje, tankou ki moun ki okipe yon pòs kounye a. Yo pa parèt isit la. Tcheke yo sou uscis.gov/citizenship/testupdates."
 }

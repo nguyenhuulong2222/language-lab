@@ -308,5 +308,13 @@
   "compare.note.shortLeft": "Lo lus luv “{expected}” poob lawm. Qhov no tseem suav.",
   "compare.note.shortAdded": "Koj ntxiv lo lus luv “{said}”. Qhov no tseem suav.",
   "compare.honest.heard": "Qhov txiaj ntsig no raws li cov lus uas koj lub cuab yeej hnov. Yog nws hnov yuam kev, sim dua los yog ntaus koj cov lus teb.",
-  "compare.honest.typed": "Qhov txiaj ntsig no raws li cov lus uas koj ntaus."
+  "compare.honest.typed": "Qhov txiaj ntsig no raws li cov lus uas koj ntaus.",
+  "home.special.title": "Xyaum kev kawm txog pej xeem 65/20",
+  "home.special.text": "Rau cov neeg muaj hnub nyoog 65 xyoo los yog laus dua thiab tau ua neeg nyob mus ib txhis tau 20 xyoo los yog ntev dua. Xyaum cov lus nug txog pej xeem uas muaj lub hnub qub (*).",
+  "intro.special.label": "Kuv muaj hnub nyoog 65 xyoo los yog laus dua thiab kuv tau ua neeg nyob mus ib txhis tau 20 xyoo los yog ntev dua",
+  "intro.special.help": "Qhov no tsuas hloov kev xyaum xwb; tsis muaj dab tsi raug khaws los yog xa mus. Ntu kev kawm txog pej xeem yuav nug {asked} ntawm {bank} lo lus nug uas muaj lub hnub qub (*) hauv daim ntawv teev npe. Nws nug tag nrho {asked} lo. Qhab nia dhau ntawm kev xyaum yog {pass} lo lus teb raug.",
+  "special.language": "Ib tus neeg thov 65/20 xeem tau kev kawm txog pej xeem tiag tiag ua nws hom lus nrog ib tus neeg txhais lus.",
+  "special.language.link": "Kev zam thiab kev pab ntawm uscis.gov",
+  "study.special.label": "Tsuas yog cov lus nug rau 65/20 (muaj lub hnub qub)",
+  "study.special.dynamic": "{count} ntawm {bank} lo lus nug muaj lus teb uas hloov, xws li leej twg tuav ib txoj hauj lwm tam sim no. Lawv tsis tshwm ntawm no. Saib lawv ntawm uscis.gov/citizenship/testupdates."
 }

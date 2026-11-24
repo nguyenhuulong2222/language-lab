@@ -4,6 +4,8 @@
  * stage ends exactly where the engine ends it. When the answer key is refused (production
  * build, answer key still waiting for review), the screen explains that instead of scoring.
  */
+import type { CivicsPracticeRules } from "../../engine/test-rules-loader";
+import { SpecialConsiderationNote } from "../components/SpecialConsiderationNote";
 import { LegalText } from "../components/LegalText";
 import { useEffect, useRef, useState } from "react";
 import type { CivicsProgress, InputMode } from "../../engine/practice-flow";
@@ -33,8 +35,9 @@ interface CivicsScreenProps {
   showFeedbackInitially?: boolean;
   /** The picture of a question (tests replace it). Used only in the feedback view, after grading. */
   pictureFor?: (questionId: string) => PictureEntry | null;
+  /** The 65/20 rules when this is the 65/20 practice (spec release-finish REQ-S04). */
+  special?: CivicsPracticeRules;
 }
-
 export function CivicsScreen({
   progress,
   version,
@@ -43,6 +46,7 @@ export function CivicsScreen({
   onRestart,
   showFeedbackInitially = false,
   pictureFor = pictureForQuestion,
+  special,
 }: CivicsScreenProps) {
   const t = useT();
   const tEnglish = useTWithEnglish();
@@ -154,6 +158,7 @@ export function CivicsScreen({
       <EnglishNotice />
       <div className="screen__body">
         <p className="progress-line">{t("civics.count", { current: progress.position, total: progress.total })}</p>
+        {special !== undefined && progress.position === 1 && <SpecialConsiderationNote rules={special} />}
         {question !== null && (
           <div key={question.id} className="screen__body">
             <p className="prompt" lang="en">

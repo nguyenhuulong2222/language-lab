@@ -23,7 +23,7 @@ import type { EnglishStageKind, EnglishStageResult } from "./english-grader.js";
 import {
   loadCivicsRules,
   loadEnglishRules,
-  type CivicsTestRules,
+  type CivicsPracticeRules,
   type EnglishTestRules,
 } from "./test-rules-loader.js";
 
@@ -33,7 +33,7 @@ export const PRACTICE_DISCLAIMER =
   "Results do not predict or reflect any official immigration decision. This is not legal advice.";
 
 export interface ReportRules {
-  civics: CivicsTestRules;
+  civics: CivicsPracticeRules;
   english: EnglishTestRules;
 }
 
@@ -82,10 +82,10 @@ function plural(count: number, one: string, many: string): string {
   return count === 1 ? one : many;
 }
 
-function civicsPassed(result: CivicsStageResult, rules: CivicsTestRules): boolean {
+function civicsPassed(result: CivicsStageResult, rules: CivicsPracticeRules): boolean {
   return (
     result.passed &&
-    result.stopReason === "correct_threshold" &&
+    (result.stopReason === "correct_threshold" || result.stopReason === "all_asked") &&
     result.correctCount >= rules.passingScore.value
   );
 }
@@ -100,7 +100,7 @@ function englishPassed(
 function civicsSummary(
   result: CivicsStageResult,
   unscored: readonly UnscoredQuestion[],
-  rules: CivicsTestRules,
+  rules: CivicsPracticeRules,
   passed: boolean
 ): StageSummary {
   const scored = result.correctCount + result.incorrectCount;
@@ -112,7 +112,9 @@ function civicsSummary(
     parts.push(
       `${result.correctCount} of ${scored} civics ${plural(scored, "question", "questions")} answered correctly.`
     );
-    if (passed) {
+    if (passed && result.stopReason === "all_asked") {
+      parts.push(`All ${scored + result.unscoredCount} questions were asked, and the practice passing score of ${rules.passingScore.value} was reached.`);
+    } else if (passed) {
       parts.push("The practice test stopped once the practice passing score was reached.");
     } else if (result.stopReason === "incorrect_threshold") {
       parts.push(

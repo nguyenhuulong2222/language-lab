@@ -53,6 +53,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | 回答公民常識問題。會與標準答案核對。 |
 | `partReport.unscored.missing` | A question that is not in the answer key | 一道不在標準答案中的題目 |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | 在有人審核過答案表之前，這個版本已關閉「先學習」。 |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | 這只會改變練習；不會儲存或傳送任何資料。公民常識部分會從官方清單中標有星號（*）的 {bank} 題中問 {asked} 題。{asked} 題都會問完。練習及格分數是答對 {pass} 題。 |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | uscis.gov 上的例外與便利措施 |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {bank} 題中有 {count} 題的答案會改變，例如現在由誰擔任某個職位。這些題目不在這裡顯示。請到 uscis.gov/citizenship/testupdates 查看。 |
 
 ## 3. All other lines
 
@@ -327,3 +330,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | 您多加了短字「{said}」。這樣仍然算數。 |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | 這個結果是根據您的裝置聽到的字詞。如果它聽錯了，請再試一次或改用輸入。 |
 | `compare.honest.typed` | This result is based on the words you typed. | 這個結果是根據您輸入的字詞。 |
+| `home.special.title` | 65/20 civics practice | 65/20 公民常識練習 |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | 適用於 65 歲或以上、並已是永久居民 20 年或以上的人。練習標有星號（*）的公民常識問題。 |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | 我 65 歲或以上，並已是永久居民 20 年或以上 |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | 65/20 申請人可以在口譯員協助下，用自己的語言參加真正的公民常識考試。 |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | 只看 65/20 的問題（標有星號） |

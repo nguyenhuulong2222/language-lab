@@ -49,3 +49,19 @@ faa3c1e092e28cb2c9991aa7dc63f8315b825ec80b9965184dacdebebb10832b  uscis-policy-m
 The manual does not define "content word" or "short word". Language Lab uses the "Other (Function)" columns of the two official vocabulary lists above for "short words" (see `data/practice/practice-config.json`).
 
 The practice sentences in `data/practice/` were written by this project, not taken from USCIS. They use only words from these lists.
+
+## 65/20 special consideration (release/finish, Step 1)
+| File | Official source | Role |
+|---|---|---|
+| `uscis-study-for-the-test.html` | https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test, fetched 2026-11-20 | The "65/20 Special Consideration" paragraph: 10 questions from a bank of 20, the asterisk, language of choice. |
+| `uscis-2025-civics-test.html` | https://www.uscis.gov/citizenship-resource-center/naturalization-test-and-study-resources/2025-civics-test, fetched 2026-11-20 (page "Last Reviewed/Updated: 09/17/2025") | Checked for 65/20 rules: the page states none. Kept as the evidence of that. |
+| `uscis-exceptions-and-accommodations.html` | https://www.uscis.gov/citizenship/exceptions-and-accommodations, fetched 2026-11-20 (page "Last Reviewed/Updated: 01/09/2026") | Civics test in the native language with an interpreter; 65/20 special consideration. The app links this page. |
+| `uscis-65-20-passages.txt` | Copied from the three pages above and from `uscis-policy-manual-vol12-parte-ch2.html` (already saved, Section E.2 "Special Consideration") | The quoted sentences only, word for word. A test checks each one is in its page. |
+
+The 2025 list (`uscis-2025-civics-128.pdf`, page 1) and the 2008 text (`uscis-2008-civics-100-rev0119.txt`, line 12) also state the 65/20 rule and mark the 20 designated questions with an asterisk; `data/civics-65-20.json` lists them and a test checks it against both lists and the 2008 web page.
+```
+80c519afbd353ef7b083ea568c0d9dc2e3de1a35b33c3abe7b7907ba5c23fa06  uscis-study-for-the-test.html
+9beac946fe2109fb229b7e5f84b13a3b0a8f52415589347210e758e15dfd5afd  uscis-2025-civics-test.html
+35d27cc43d5b1cec4e58017897f381afbc16828d762e6e92adc5aa228d62aeb4  uscis-exceptions-and-accommodations.html
+afdf38d9b6fdb5782f37feb0e495833b5b39c5477a572c0609242dcfc65e0b31  uscis-65-20-passages.txt
+```

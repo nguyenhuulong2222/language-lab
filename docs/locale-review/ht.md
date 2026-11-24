@@ -53,6 +53,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Reponn kesyon edikasyon sivik. Yo tcheke ak kle repons yo. |
 | `partReport.unscored.missing` | A question that is not in the answer key | Yon kesyon ki pa nan kle repons yo |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Etidye anvan an fèmen nan vèsyon sa a jiskaske yon moun revize kle repons yo. |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | Sa a chanje pratik la sèlman; anyen pa sove ni voye. Pati edikasyon sivik la ap poze {asked} nan {bank} kesyon ki make ak yon zetwal (*) nan lis ofisyèl la. Li poze tout {asked} yo. Nòt pou pase pratik la se {pass} bon repons. |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | Eksepsyon ak akomodasyon sou uscis.gov |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {count} nan {bank} kesyon yo gen repons ki chanje, tankou ki moun ki okipe yon pòs kounye a. Yo pa parèt isit la. Tcheke yo sou uscis.gov/citizenship/testupdates. |
 
 ## 3. All other lines
 
@@ -327,3 +330,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Ou ajoute mo kout “{said}”. Sa toujou konte. |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Rezilta sa a baze sou mo aparèy ou a tande. Si li tande w mal, eseye ankò oswa tape repons ou a. |
 | `compare.honest.typed` | This result is based on the words you typed. | Rezilta sa a baze sou mo ou tape yo. |
+| `home.special.title` | 65/20 civics practice | Pratik edikasyon sivik 65/20 |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Pou moun ki gen 65 an oswa plis epi ki rezidan pèmanan depi 20 an oswa plis. Pratike kesyon edikasyon sivik ki make ak yon zetwal (*). |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Mwen gen 65 an oswa plis epi mwen rezidan pèmanan depi 20 an oswa plis |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | Yon aplikan 65/20 ka pran vrè tès edikasyon sivik la nan pwòp lang li ak yon entèprèt. |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | Sèlman kesyon pou 65/20 yo (make ak yon zetwal) |

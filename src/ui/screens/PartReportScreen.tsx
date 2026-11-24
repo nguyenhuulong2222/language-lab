@@ -11,6 +11,7 @@ import { Disclaimer } from "../components/Disclaimer";
 import { CheckIcon, ReviewIcon } from "../components/icons";
 import { StatusBadge } from "../components/StatusBadge";
 import { TakeHeader } from "../components/TakeHeader";
+import { SpecialLanguageLine } from "../components/SpecialConsiderationNote";
 import { formatDateTime } from "../format";
 import "../components/Screen.css";
 
@@ -76,7 +77,9 @@ function PartBody({ report }: { report: PartReport }) {
               ? t("partReport.none")
               : t("partReport.civics.summary", { correct: report.correct, scored })}
           </p>
+          {report.specialConsideration && <p className="progress-line">{t("home.special.title")}</p>}
           <p>{t("partReport.civics.needed", { needed: report.passingScore })}</p>
+          {report.specialConsideration && <SpecialLanguageLine />}
           <p className="note">
             {report.stopReason === "correct_threshold"
               ? <LegalText messageKey="civics.stopped.correct" />

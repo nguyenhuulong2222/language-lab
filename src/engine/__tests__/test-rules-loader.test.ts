@@ -250,12 +250,13 @@ describe("loadTestRules production guard", () => {
     warnSpy.mockRestore();
   });
 
-  it("65/20 unverified fields (passingScore, earlyStop) are NOT in the required list and do not block loading", () => {
-    // 65/20 passingScore is null/unverified, but it is not in REQUIRED_VERIFIED_PATHS.
-    // Loading must succeed even with those fields unverified.
+  it("65/20 unverified fields (earlyStop) are NOT in the required list and do not block loading", () => {
+    // The 65/20 early-stop values are null and unverified (no source states them), but they are
+    // not in REQUIRED_VERIFIED_PATHS: loading succeeds and the 65/20 practice asks every question.
     expect(() => loadTestRules()).not.toThrow();
     const rules = loadTestRules();
-    expect(rules["65_20_specialConsideration"].passingScore.needsVerification).toBe(true);
+    expect(rules["65_20_specialConsideration"].earlyStopOnCorrect.needsVerification).toBe(true);
+    expect(rules["65_20_specialConsideration"].passingScore.needsVerification).toBe(false);
   });
 });
 
@@ -307,8 +308,10 @@ describe("test-rules.json structural completeness", () => {
     const sc = loadTestRules()["65_20_specialConsideration"];
     expectQuote(sc.eligibilityAgeMinimum.sourceQuote);
     expectQuote(sc.questionBank.sourceQuote);
-    expect(sc.passingScore.sourceQuote).toBeNull();
+    expectQuote(sc.questionsAsked.sourceQuote);
+    expectQuote(sc.passingScore.sourceQuote);
     expect(sc.earlyStopOnCorrect.sourceQuote).toBeNull();
+    expect(sc.earlyStopOnIncorrect.sourceQuote).toBeNull();
   });
 });
 

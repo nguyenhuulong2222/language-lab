@@ -37,6 +37,15 @@ export interface CivicsTestRules {
   earlyStopOnCorrect: RuleValue<number>;
   earlyStopOnIncorrect: RuleValue<number>;
 }
+/**
+ * The rules a civics practice stage runs on: the 2008 or 2025 rules, or the 65/20 rules, whose
+ * early-stop values are null because no source states a stop rule (the stage then never stops
+ * early). Every CivicsTestRules is a CivicsPracticeRules.
+ */
+export type CivicsPracticeRules = Omit<CivicsTestRules, "earlyStopOnCorrect" | "earlyStopOnIncorrect"> & {
+  earlyStopOnCorrect: RuleValue<number | null>;
+  earlyStopOnIncorrect: RuleValue<number | null>;
+};
 
 export interface CivicsVersionSelectionRules {
   /** YYYY-MM-DD. Filed before it: 2008 test. Filed on or after it: 2025 test. */

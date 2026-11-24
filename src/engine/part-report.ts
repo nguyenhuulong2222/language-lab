@@ -19,7 +19,7 @@ import type { CivicsStageResult, CivicsStopReason } from "./civics-grader.js";
 import type { EnglishStageResult } from "./english-grader.js";
 import type { N400Answer } from "./n400-coach.js";
 import { listUnscoredQuestions, PRACTICE_DISCLAIMER, type UnscoredQuestion } from "./report-builder.js";
-import type { CivicsTestRules, EnglishTestRules } from "./test-rules-loader.js";
+import type { CivicsPracticeRules, EnglishTestRules } from "./test-rules-loader.js";
 import type { CivicsTestVersion } from "./version-selector.js";
 
 export type PracticePart = "n400_interview" | "reading" | "writing" | "civics";
@@ -67,6 +67,8 @@ export type PartReport =
       stopReason: CivicsStopReason;
       /** Correct answers needed, from the rules. */
       passingScore: number;
+      /** The 65/20 practice (10 of the 20 designated questions, no early stop). */
+      specialConsideration: boolean;
       /** Question texts of the answers that need more practice. */
       reviewItems: string[];
       /** Questions that could not be scored: not counted as right or wrong. */
@@ -108,8 +110,9 @@ export function buildCivicsPartReport(input: {
   version: CivicsTestVersion;
   result: CivicsStageResult;
   answerKey: ReadonlyMap<string, CivicsAnswerEntry>;
-  rules: CivicsTestRules;
+  rules: CivicsPracticeRules;
   now: Date;
+  specialConsideration?: boolean;
 }): PartReport {
   const { version, result, answerKey, rules, now } = input;
   const passingScore = rules.passingScore.value;
@@ -118,11 +121,12 @@ export function buildCivicsPartReport(input: {
     version,
     disclaimer: PRACTICE_DISCLAIMER,
     generatedAt: now.toISOString(),
-    passed: result.passed && result.stopReason === "correct_threshold" && result.correctCount >= passingScore,
+    passed: result.passed && (result.stopReason === "correct_threshold" || result.stopReason === "all_asked") && result.correctCount >= passingScore,
     correct: result.correctCount,
     incorrect: result.incorrectCount,
     stopReason: result.stopReason,
     passingScore,
+    specialConsideration: input.specialConsideration === true,
     reviewItems: [...result.reviewItems],
     unscored: listUnscoredQuestions(result, answerKey),
   };

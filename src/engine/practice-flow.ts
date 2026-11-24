@@ -56,9 +56,12 @@ import {
   loadCivicsBoundaryDate,
   loadCivicsRules,
   loadEnglishRules,
+  loadTestRules,
+  type CivicsPracticeRules,
   type CivicsTestRules,
   type EnglishTestRules,
 } from "./test-rules-loader.js";
+import { designatedQuestionIds, specialConsiderationRules } from "./special-consideration.js";
 import { assertValidIsoDate, selectTestVersion, type CivicsTestVersion } from "./version-selector.js";
 
 // ---------------------------------------------------------------------------
@@ -125,6 +128,23 @@ export interface PracticeEnv {
   prepareCivics?(version: CivicsTestVersion): Promise<void>;
   /** True when this build refuses the answer keys, known without loading them. Optional (tests). */
   civicsLocked?(): boolean;
+  /**
+   * The 65/20 rules (spec release-finish REQ-S02), or null when the mode is off. Optional: without
+   * it, or without `designated`, there is no 65/20 practice.
+   */
+  specialRules?(): CivicsPracticeRules | null;
+  /** The 20 designated question ids of a version (data/civics-65-20.json). */
+  designated?(version: CivicsTestVersion): readonly string[];
+}
+
+/** True when this environment offers the 65/20 practice. */
+export function specialConsiderationOffered(env: PracticeEnv): boolean {
+  return env.designated !== undefined && (env.specialRules?.() ?? null) !== null;
+}
+
+/** Modes that include the civics part, where the 65/20 choice applies. */
+export function modeHasCivics(mode: PracticeMode): boolean {
+  return modeParts(mode).includes("civics");
 }
 
 /** The user's choices. A field is null when the chosen mode does not need it. */
@@ -134,6 +154,11 @@ export interface PracticeSetup {
   /** A fictional filing date derived from the choice and the boundary date. */
   filingDate: string | null;
   version: CivicsTestVersion | null;
+  /**
+   * The 65/20 special consideration: the civics part uses the designated questions and the 65/20
+   * rules. Only true when the mode has civics and the environment offers it.
+   */
+  specialConsideration: boolean;
 }
 
 export interface SentenceAttempt {
@@ -185,11 +210,13 @@ export interface PracticeState {
   report: FinalReport | null;
   /** The report of a single practised part (no overall practice result). */
   partReport: PartReport | null;
+  /** Setup default for the 65/20 checkbox: true when the home 65/20 card was chosen. */
+  specialRequested: boolean;
 }
 
 export type PracticeAction =
-  | { type: "choose"; mode: PracticeMode; seed: number; at: string }
-  | { type: "start"; profileId?: string; filedOn?: FiledChoice; seed: number; at: string }
+  | { type: "choose"; mode: PracticeMode; seed: number; at: string; specialConsideration?: boolean }
+  | { type: "start"; profileId?: string; filedOn?: FiledChoice; specialConsideration?: boolean; seed: number; at: string }
   | { type: "answerN400"; questionId: string; questionText: string; transcript: string; at: string }
   | { type: "finishN400"; at: string }
   | { type: "submitReading"; transcript: string; alternatives?: readonly string[]; input: InputMode; at: string }
@@ -277,6 +304,17 @@ export function representativeFilingDate(choice: FiledChoice, boundaryDate: stri
   return choice === "before" ? previousDay(boundaryDate) : boundaryDate;
 }
 
+/**
+ * The 65/20 practice pool: the designated questions that are static (CR-003: dynamic answers
+ * change and are never practised), in list order.
+ */
+export function listDesignatedPracticeQuestions(
+  key: ReadonlyMap<string, CivicsAnswerEntry>,
+  designated: readonly string[]
+): CivicsAnswerEntry[] {
+  return designated.map((id) => key.get(id)).filter((e): e is CivicsAnswerEntry => e !== undefined && e.answerType === "static");
+}
+
 /** Static questions only (CR-003): dynamic answers change and are never practiced. */
 export function listPracticeQuestions(key: ReadonlyMap<string, CivicsAnswerEntry>): CivicsAnswerEntry[] {
   return [...key.values()].filter((entry) => entry.answerType === "static");
@@ -339,6 +377,9 @@ export function createDefaultPracticeEnv(): PracticeEnv {
     boundaryDate: loadCivicsBoundaryDate(),
     answerKey: createAnswerKeyLoader(),
     civicsLocked: () => (["2008", "2025"] as const).some((v) => answerKeyLockedInBuild(v)),
+    // 65/20: on only when the three values are verified (the rules file decides, in every build).
+    specialRules: () => specialConsiderationRules(loadTestRules()),
+    designated: (version) => designatedQuestionIds(version),
     async prepareCivics(version) {
       // A key that this build refuses is not downloaded at all.
       if (answerKeyLockedInBuild(version)) return;
@@ -369,6 +410,7 @@ export function createInitialPracticeState(): PracticeState {
     civicsLockReason: null,
     report: null,
     partReport: null,
+    specialRequested: false,
   };
 }
 
@@ -380,6 +422,8 @@ export interface PracticeEngine {
   civicsProgress(state: PracticeState): CivicsProgress;
   /** The settings that score a reading or writing attempt (from the practice config). */
   matchOptions(kind: EnglishStageKind): MatchOptions;
+  /** The civics rules of this session: the 65/20 rules or those of its test version. Null before setup. */
+  civicsRulesFor(state: PracticeState): CivicsPracticeRules | null;
   /** The session of a full practice interview. Null for a single part (see partReport). */
   buildSession(state: PracticeState): InterviewSession | null;
 }
@@ -418,6 +462,16 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
     };
   }
 
+  function civicsRulesFor(state: PracticeState): CivicsPracticeRules | null {
+    const version = state.setup?.version;
+    if (!version) return null;
+    if (state.setup?.specialConsideration) {
+      const special = env.specialRules?.() ?? null;
+      if (special !== null) return special;
+    }
+    return env.civicsRules(version);
+  }
+
   function civicsKey(state: PracticeState): AnswerKeyResult | null {
     const version = state.setup?.version;
     return version ? env.answerKey(version) : null;
@@ -452,7 +506,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
       };
     }
     const key = loaded.key;
-    const rules = env.civicsRules(version);
+    const rules = civicsRulesFor(state)!;
     const result = runCivicsStage({ turns: civicsTurns(state, key), answerKey: key, rules });
     const limit = Math.min(rules.questionsAsked.value, state.civicsIds.length);
     const done = result.stopReason !== "none" || state.civics.length >= limit;
@@ -528,7 +582,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
   /** Set up a session once the mode has what it needs, and go to its first part. */
   function begin(
     mode: PracticeMode,
-    choice: { profileId: string | null; filedOn: FiledChoice | null },
+    choice: { profileId: string | null; filedOn: FiledChoice | null; specialConsideration?: boolean },
     seed: number,
     at: string
   ): PracticeState {
@@ -540,11 +594,15 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
     let civicsIds: string[] = [];
     let civicsLocked = false;
     let civicsLockReason: string | null = null;
+    const special =
+      parts.includes("civics") && version !== null && choice.specialConsideration === true && specialConsiderationOffered(env);
     if (parts.includes("civics") && version) {
       const loaded = env.answerKey(version);
       if (loaded.status === "ready") {
-        civicsIds = seededShuffle(listPracticeQuestions(loaded.key), seed + 3)
-          .slice(0, env.civicsRules(version).questionsAsked.value)
+        const pool = special ? listDesignatedPracticeQuestions(loaded.key, env.designated!(version)) : listPracticeQuestions(loaded.key);
+        const asked = special ? env.specialRules!()!.questionsAsked.value : env.civicsRules(version).questionsAsked.value;
+        civicsIds = seededShuffle(pool, seed + 3)
+          .slice(0, asked)
           .map((e) => e.id);
       } else {
         civicsLocked = true;
@@ -556,7 +614,13 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
       ...createInitialPracticeState(),
       phase: parts[0]!,
       mode,
-      setup: { profileId: needs.profile ? choice.profileId : null, filedOn: needs.filing ? choice.filedOn : null, filingDate, version },
+      setup: {
+        profileId: needs.profile ? choice.profileId : null,
+        filedOn: needs.filing ? choice.filedOn : null,
+        filingDate,
+        version,
+        specialConsideration: special,
+      },
       startedAt: at,
       readingIds: parts.includes("reading")
         ? takeSentences(env.content.readingSentences, env.englishRules.reading.sentencesPresented.value, seed + 1)
@@ -609,8 +673,9 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
           version: state.setup.version,
           result: progress.result,
           answerKey: loaded.key,
-          rules: env.civicsRules(state.setup.version),
+          rules: civicsRulesFor(state)!,
           now,
+          specialConsideration: state.setup.specialConsideration,
         });
       }
       default:
@@ -628,7 +693,13 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
         const needs = modeNeeds(action.mode);
         if (needs.profile || needs.filing) {
           // Wait for the setup screen.
-          return { ...createInitialPracticeState(), phase: "intro", mode: action.mode, startedAt: action.at };
+          return {
+            ...createInitialPracticeState(),
+            phase: "intro",
+            mode: action.mode,
+            startedAt: action.at,
+            specialRequested: action.specialConsideration === true && modeHasCivics(action.mode) && specialConsiderationOffered(env),
+          };
         }
         return begin(action.mode, { profileId: null, filedOn: null }, action.seed, action.at);
       }
@@ -640,7 +711,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
         if (needs.filing && action.filedOn === undefined) return state;
         return begin(
           state.mode,
-          { profileId: action.profileId ?? null, filedOn: action.filedOn ?? null },
+          { profileId: action.profileId ?? null, filedOn: action.filedOn ?? null, specialConsideration: action.specialConsideration === true },
           action.seed,
           action.at
         );
@@ -743,7 +814,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
             writingResult: englishProgress(state, "writing").result,
             writingAssisted: state.writing.filter((a) => a.assisted).length,
             answerKey: loaded.key,
-            rules: { civics: env.civicsRules(state.setup.version), english: env.englishRules },
+            rules: { civics: civicsRulesFor(state)!, english: env.englishRules },
             now: new Date(action.at),
           });
           return { ...state, phase: "report", report };
@@ -756,6 +827,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
   return {
     env,
     initial: createInitialPracticeState,
+    civicsRulesFor,
     reduce,
     englishProgress,
     matchOptions,

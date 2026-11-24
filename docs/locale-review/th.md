@@ -53,6 +53,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | ตอบคำถามความรู้พลเมือง ตรวจกับเฉลย |
 | `partReport.unscored.missing` | A question that is not in the answer key | คำถามที่ไม่มีอยู่ในเฉลย |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | ฟีเจอร์ศึกษาก่อนถูกปิดในเวอร์ชันนี้ จนกว่าจะมีคนตรวจสอบเฉลยแล้ว |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | ตัวเลือกนี้เปลี่ยนเฉพาะการฝึก ไม่มีการบันทึกหรือส่งข้อมูลใด ๆ ส่วนความรู้พลเมืองจะถาม {asked} ข้อจาก {bank} ข้อที่มีเครื่องหมายดอกจัน (*) ในรายการทางการ ถามครบทั้ง {asked} ข้อ คะแนนผ่านของการฝึกคือตอบถูก {pass} ข้อ |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | ข้อยกเว้นและการอำนวยความสะดวกบน uscis.gov |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | คำถาม {count} ข้อจาก {bank} ข้อมีคำตอบที่เปลี่ยนไป เช่น ใครดำรงตำแหน่งอยู่ในตอนนี้ จึงไม่แสดงที่นี่ ตรวจสอบได้ที่ uscis.gov/citizenship/testupdates |
 
 ## 3. All other lines
 
@@ -327,6 +330,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | คุณเพิ่มคำสั้น “{said}” แบบนี้ยังนับได้ |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | ผลนี้อิงจากคำที่อุปกรณ์ของคุณได้ยิน ถ้าได้ยินผิด ให้ลองอีกครั้งหรือพิมพ์คำตอบ |
 | `compare.honest.typed` | This result is based on the words you typed. | ผลนี้อิงจากคำที่คุณพิมพ์ |
+| `home.special.title` | 65/20 civics practice | ฝึกความรู้พลเมืองสำหรับ 65/20 |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | สำหรับผู้ที่อายุ 65 ปีขึ้นไปและเป็นผู้มีถิ่นที่อยู่ถาวรมา 20 ปีขึ้นไป ฝึกคำถามความรู้พลเมืองที่มีเครื่องหมายดอกจัน (*) |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ฉันอายุ 65 ปีขึ้นไปและเป็นผู้มีถิ่นที่อยู่ถาวรมา 20 ปีขึ้นไป |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | ผู้ยื่นคำร้องกลุ่ม 65/20 สามารถสอบความรู้พลเมืองจริงเป็นภาษาของตนเองโดยมีล่าม |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | เฉพาะคำถามสำหรับ 65/20 (มีเครื่องหมายดอกจัน) |
 
 ## Lines marked ⚠ (meaning differs a little)
 

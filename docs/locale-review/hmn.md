@@ -53,6 +53,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Teb cov lus nug txog pej xeem. Piv nrog cov lus teb raug. |
 | `partReport.unscored.missing` | A question that is not in the answer key | Ib lo lus nug uas tsis muaj hauv cov lus teb raug |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Kawm ua ntej raug kaw hauv daim no kom txog thaum muaj neeg tshuaj xyuas cov lus teb raug. |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | Qhov no tsuas hloov kev xyaum xwb; tsis muaj dab tsi raug khaws los yog xa mus. Ntu kev kawm txog pej xeem yuav nug {asked} ntawm {bank} lo lus nug uas muaj lub hnub qub (*) hauv daim ntawv teev npe. Nws nug tag nrho {asked} lo. Qhab nia dhau ntawm kev xyaum yog {pass} lo lus teb raug. |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | Kev zam thiab kev pab ntawm uscis.gov |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {count} ntawm {bank} lo lus nug muaj lus teb uas hloov, xws li leej twg tuav ib txoj hauj lwm tam sim no. Lawv tsis tshwm ntawm no. Saib lawv ntawm uscis.gov/citizenship/testupdates. |
 
 ## 3. All other lines
 
@@ -327,6 +330,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Koj ntxiv lo lus luv “{said}”. Qhov no tseem suav. |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Qhov txiaj ntsig no raws li cov lus uas koj lub cuab yeej hnov. Yog nws hnov yuam kev, sim dua los yog ntaus koj cov lus teb. |
 | `compare.honest.typed` | This result is based on the words you typed. | Qhov txiaj ntsig no raws li cov lus uas koj ntaus. |
+| `home.special.title` | 65/20 civics practice | Xyaum kev kawm txog pej xeem 65/20 |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Rau cov neeg muaj hnub nyoog 65 xyoo los yog laus dua thiab tau ua neeg nyob mus ib txhis tau 20 xyoo los yog ntev dua. Xyaum cov lus nug txog pej xeem uas muaj lub hnub qub (*). |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Kuv muaj hnub nyoog 65 xyoo los yog laus dua thiab kuv tau ua neeg nyob mus ib txhis tau 20 xyoo los yog ntev dua |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | Ib tus neeg thov 65/20 xeem tau kev kawm txog pej xeem tiag tiag ua nws hom lus nrog ib tus neeg txhais lus. |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | Tsuas yog cov lus nug rau 65/20 (muaj lub hnub qub) |
 
 ## Lines marked ⚠ (meaning differs a little)
 

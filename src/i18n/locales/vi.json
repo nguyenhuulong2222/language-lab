@@ -308,5 +308,13 @@
   "compare.note.shortLeft": "Từ ngắn “{expected}” bị bỏ sót. Vẫn được tính.",
   "compare.note.shortAdded": "Bạn đã thêm từ ngắn “{said}”. Vẫn được tính.",
   "compare.honest.heard": "Kết quả này dựa trên những từ thiết bị của bạn nghe được. Nếu thiết bị nghe sai, hãy thử lại hoặc gõ câu trả lời.",
-  "compare.honest.typed": "Kết quả này dựa trên những từ bạn đã gõ."
+  "compare.honest.typed": "Kết quả này dựa trên những từ bạn đã gõ.",
+  "home.special.title": "Luyện kiến thức công dân 65/20",
+  "home.special.text": "Dành cho người từ 65 tuổi trở lên đã là thường trú nhân từ 20 năm trở lên. Luyện các câu hỏi kiến thức công dân có đánh dấu sao (*).",
+  "intro.special.label": "Tôi từ 65 tuổi trở lên và đã là thường trú nhân từ 20 năm trở lên",
+  "intro.special.help": "Lựa chọn này chỉ thay đổi phần luyện tập; không có gì được lưu hay gửi đi. Phần kiến thức công dân sẽ hỏi {asked} trong số {bank} câu hỏi có đánh dấu sao (*) trong danh sách chính thức. Cả {asked} câu đều được hỏi. Điểm đạt khi luyện tập là {pass} câu trả lời đúng.",
+  "special.language": "Người nộp đơn thuộc diện 65/20 có thể làm bài thi kiến thức công dân thật bằng ngôn ngữ của mình với một thông dịch viên.",
+  "special.language.link": "Ngoại lệ và hỗ trợ trên uscis.gov",
+  "study.special.label": "Chỉ các câu hỏi cho diện 65/20 (có đánh dấu sao)",
+  "study.special.dynamic": "{count} trong số {bank} câu hỏi có câu trả lời thay đổi, chẳng hạn ai đang giữ một chức vụ. Các câu này không hiện ở đây. Hãy xem trên uscis.gov/citizenship/testupdates."
 }

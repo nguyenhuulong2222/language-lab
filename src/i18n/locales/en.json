@@ -301,5 +301,13 @@
   "compare.note.shortLeft": "The short word “{expected}” was left out. This still counts.",
   "compare.note.shortAdded": "You added the short word “{said}”. This still counts.",
   "compare.honest.heard": "This result is based on the words your device heard. If it heard you wrong, try again or type your answer.",
-  "compare.honest.typed": "This result is based on the words you typed."
+  "compare.honest.typed": "This result is based on the words you typed.",
+  "home.special.title": "65/20 civics practice",
+  "home.special.text": "For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*).",
+  "intro.special.label": "I am 65 or older and have been a permanent resident for 20 years or more",
+  "intro.special.help": "This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers.",
+  "special.language": "A 65/20 applicant may take the real civics test in their own language with an interpreter.",
+  "special.language.link": "Exceptions and accommodations on uscis.gov",
+  "study.special.label": "Only the questions for 65/20 (marked with a star)",
+  "study.special.dynamic": "{count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates."
 }

@@ -53,6 +53,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | 시민 상식 질문에 답합니다. 정답표와 대조합니다. |
 | `partReport.unscored.missing` | A question that is not in the answer key | 정답표에 없는 질문 |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | 누군가 정답표를 검토하기 전까지 이 버전에서는 먼저 공부하기가 꺼져 있습니다. |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | 이 선택은 연습만 바꿉니다. 아무것도 저장하거나 보내지 않습니다. 시민 상식 부분에서 공식 목록에 별표(*)가 있는 {bank}개 질문 중 {asked}개를 묻습니다. {asked}개를 모두 묻습니다. 연습 합격 점수는 정답 {pass}개입니다. |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | uscis.gov의 예외 및 편의 제공 |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {bank}개 질문 중 {count}개는 지금 누가 어떤 직위에 있는지처럼 답이 바뀝니다. 여기에는 표시하지 않습니다. uscis.gov/citizenship/testupdates에서 확인하세요. |
 
 ## 3. All other lines
 
@@ -327,6 +330,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | 짧은 단어 “{said}”을(를) 더하셨습니다. 그래도 인정됩니다. |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | 이 결과는 기기가 들은 단어를 바탕으로 합니다. 잘못 들었다면 다시 해 보거나 직접 입력하세요. |
 | `compare.honest.typed` | This result is based on the words you typed. | 이 결과는 입력하신 단어를 바탕으로 합니다. |
+| `home.special.title` | 65/20 civics practice | 65/20 시민 상식 연습 |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | 65세 이상이며 영주권자로 20년 이상 지낸 분을 위한 연습입니다. 별표(*)가 있는 시민 상식 질문을 연습하세요. |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | 저는 65세 이상이며 영주권자로 20년 이상 지냈습니다 |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | 65/20 신청자는 통역사와 함께 자신의 언어로 실제 시민 상식 시험을 볼 수 있습니다. |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | 65/20용 질문만 (별표 표시) |
 
 ## Lines marked ⚠ (meaning differs a little)
 

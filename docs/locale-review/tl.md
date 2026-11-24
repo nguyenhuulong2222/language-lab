@@ -53,6 +53,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Sagutin ang mga tanong sa civics. Sinusuri laban sa answer key. |
 | `partReport.unscored.missing` | A question that is not in the answer key | Isang tanong na wala sa answer key |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Naka-off ang Mag-aral muna sa bersyong ito hanggang masuri ng isang tao ang answer key. |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | Pagsasanay lang ang binabago nito; walang sine-save o ipinapadala. Itatanong ng bahagi ng sibika ang {asked} sa {bank} tanong na may tandang bituin (*) sa opisyal na listahan. Itatanong ang lahat ng {asked}. Ang practice passing score ay {pass} tamang sagot. |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | Mga exception at accommodation sa uscis.gov |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {count} sa {bank} tanong ang may sagot na nagbabago, gaya ng kung sino ang may hawak ng isang posisyon ngayon. Hindi sila ipinapakita rito. Tingnan sila sa uscis.gov/citizenship/testupdates. |
 
 ## 3. All other lines
 
@@ -327,6 +330,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Nagdagdag kayo ng maikling salitang “{said}”. Bilang pa rin ito. |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Batay ang resultang ito sa mga salitang narinig ng device ninyo. Kung mali ang pagkarinig nito, subukan muli o i-type ang sagot ninyo. |
 | `compare.honest.typed` | This result is based on the words you typed. | Batay ang resultang ito sa mga salitang in-type ninyo. |
+| `home.special.title` | 65/20 civics practice | Pagsasanay sa sibika para sa 65/20 |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Para sa mga 65 taong gulang pataas na permanent resident na nang 20 taon o higit pa. Sanayin ang mga tanong sa sibika na may tandang bituin (*). |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Ako ay 65 taong gulang pataas at permanent resident na nang 20 taon o higit pa |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | Maaaring kumuha ang aplikanteng 65/20 ng totoong test sa sibika sa sarili niyang wika sa tulong ng interpreter. |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | Mga tanong lang para sa 65/20 (may tandang bituin) |
 
 ## Lines marked ⚠ (meaning differs a little)
 

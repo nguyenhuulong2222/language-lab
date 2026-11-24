@@ -53,6 +53,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Отвечайте на вопросы по обществоведению. Проверка по ключу правильных ответов. |
 | `partReport.unscored.missing` | A question that is not in the answer key | Вопрос, которого нет в ключе правильных ответов |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Режим «Сначала изучить» в этой версии отключён, пока человек не проверит ключ правильных ответов. |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | Это меняет только практику; ничего не сохраняется и не отправляется. Часть по обществоведению задаёт {asked} из {bank} вопросов, отмеченных звёздочкой (*) в официальном списке. Задаются все {asked}. Проходной балл практики — {pass} правильных ответов. |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | Исключения и особые условия на uscis.gov |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | У {count} из {bank} вопросов ответы меняются, например, кто сейчас занимает должность. Здесь они не показаны. Проверьте их на uscis.gov/citizenship/testupdates. |
 
 ## 3. All other lines
 
@@ -327,6 +330,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Вы добавили короткое слово «{said}». Это по-прежнему засчитывается. |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Этот результат основан на словах, которые услышало ваше устройство. Если оно услышало неверно, попробуйте снова или введите ответ. |
 | `compare.honest.typed` | This result is based on the words you typed. | Этот результат основан на словах, которые вы ввели. |
+| `home.special.title` | 65/20 civics practice | Практика по обществоведению 65/20 |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Для людей в возрасте 65 лет и старше, которые являются постоянными жителями 20 лет или больше. Тренируйте вопросы по обществоведению, отмеченные звёздочкой (*). |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Мне 65 лет или больше, и я постоянный житель 20 лет или больше |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | Заявитель 65/20 может сдавать настоящий тест по обществоведению на своём языке с переводчиком. |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | Только вопросы для 65/20 (отмечены звёздочкой) |
 
 ## Lines marked ⚠ (meaning differs a little)
 

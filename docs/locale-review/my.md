@@ -53,6 +53,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | နိုင်ငံသားဗဟုသုတမေးခွန်းများကို ဖြေပါ။ အဖြေမှန်များနှင့် တိုက်စစ်သည်။ |
 | `partReport.unscored.missing` | A question that is not in the answer key | အဖြေမှန်စာရင်းတွင် မပါသော မေးခွန်း |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | အဖြေမှန်များကို လူတစ်ဦးက စစ်ဆေးပြီးသည်အထိ ဤဗားရှင်းတွင် “အရင်လေ့လာရန်” ကို ပိတ်ထားသည်။ |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | ဤရွေးချယ်မှုသည် လေ့ကျင့်ခန်းကိုသာ ပြောင်းလဲသည်။ မည်သည့်အရာကိုမျှ မသိမ်းဆည်း၊ မပို့ပါ။ နိုင်ငံသားဗဟုသုတအပိုင်းတွင် တရားဝင်စာရင်းရှိ ကြယ်ပွင့် (*) ပါသော မေးခွန်း {bank} ခုထဲမှ {asked} ခုကို မေးပါမည်။ {asked} ခုလုံးကို မေးပါမည်။ လေ့ကျင့်ခန်းအောင်မှတ်မှာ အဖြေမှန် {pass} ခု ဖြစ်သည်။ |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | uscis.gov ရှိ ခြွင်းချက်များနှင့် အဆင်ပြေစေရေး အစီအစဉ်များ |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | မေးခွန်း {bank} ခုထဲမှ {count} ခု၏ အဖြေများ ပြောင်းလဲတတ်သည်၊ ဥပမာ ယခု ရာထူးတစ်ခုကို မည်သူ ထမ်းဆောင်နေသည်ဆိုသည်။ ၎င်းတို့ကို ဤနေရာတွင် မပြပါ။ uscis.gov/citizenship/testupdates တွင် စစ်ဆေးပါ။ |
 
 ## 3. All other lines
 
@@ -327,6 +330,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | သင်က စကားလုံးတို “{said}” ကို ထပ်ထည့်ခဲ့သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | ဤရလဒ်သည် သင့်စက်ကြားသော စကားလုံးများအပေါ် အခြေခံသည်။ မှားကြားခဲ့လျှင် ထပ်စမ်းကြည့်ပါ သို့မဟုတ် အဖြေကို ရိုက်ထည့်ပါ။ |
 | `compare.honest.typed` | This result is based on the words you typed. | ဤရလဒ်သည် သင်ရိုက်ထည့်ခဲ့သော စကားလုံးများအပေါ် အခြေခံသည်။ |
+| `home.special.title` | 65/20 civics practice | 65/20 နိုင်ငံသားဗဟုသုတ လေ့ကျင့်ခန်း |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး အမြဲတမ်းနေထိုင်သူအဖြစ် 20 နှစ်နှင့်အထက် နေထိုင်ခဲ့သူများအတွက်။ ကြယ်ပွင့် (*) အမှတ်အသားပါသော နိုင်ငံသားဗဟုသုတမေးခွန်းများကို လေ့ကျင့်ပါ။ |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ကျွန်ုပ်သည် အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး အမြဲတမ်းနေထိုင်သူအဖြစ် 20 နှစ်နှင့်အထက် နေထိုင်ခဲ့ပါသည် |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | 65/20 လျှောက်ထားသူသည် စကားပြန်တစ်ဦးနှင့်အတူ မိမိဘာသာစကားဖြင့် တကယ့်နိုင်ငံသားဗဟုသုတစာမေးပွဲကို ဖြေဆိုနိုင်သည်။ |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | 65/20 အတွက် မေးခွန်းများသာ (ကြယ်ပွင့်ပါသည်) |
 
 ## Lines marked ⚠ (meaning differs a little)
 

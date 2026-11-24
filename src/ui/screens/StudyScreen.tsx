@@ -20,6 +20,7 @@ import { EnglishNotice } from "../components/EnglishNotice";
 import { QuestionPicture } from "../components/QuestionPicture";
 import { SpeakButton } from "../components/SpeakButton";
 import { TakeHeader } from "../components/TakeHeader";
+import { SpecialLanguageLine } from "../components/SpecialConsiderationNote";
 import "../components/Screen.css";
 
 interface StudyScreenProps {
@@ -31,6 +32,10 @@ interface StudyScreenProps {
   initialVersion?: CivicsTestVersion;
   /** Fetch what a version needs (answer key, official answers) before it is shown. */
   prepare?: (version: CivicsTestVersion) => Preparing;
+  /** The 65/20 designated ids of a version (spec release-finish REQ-S07). Absent: no 65/20 option. */
+  designated?: (version: CivicsTestVersion) => readonly string[];
+  /** Start with "only the 65/20 questions" ticked (tests). */
+  initialSpecialOnly?: boolean;
 }
 type Preparing = Promise<void>;
 
@@ -41,8 +46,9 @@ export function studyQuestions(key: ReadonlyMap<string, CivicsAnswerEntry>): Civ
   return [...key.values()].filter((e) => e.answerType === "static").sort((a, b) => a.id.localeCompare(b.id));
 }
 
-export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion, initialVersion, prepare }: StudyScreenProps) {
+export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion, initialVersion, prepare, designated, initialSpecialOnly = false }: StudyScreenProps) {
   const t = useT();
+  const [specialOnly, setSpecialOnly] = useState(initialSpecialOnly && designated !== undefined);
   const [version, setVersion] = useState<CivicsTestVersion | null>(initialVersion ?? null);
   const [index, setIndex] = useState(0);
   const prompt = useRef<HTMLParagraphElement>(null);
@@ -98,6 +104,18 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
               <span className="option-card__title">{t(v === "2008" ? "study.version.2008" : "study.version.2025")}</span>
             </button>
           ))}
+          {designated !== undefined && (
+            <label className="choice">
+              <input
+                className="choice__input"
+                type="checkbox"
+                name="study-special"
+                checked={specialOnly}
+                onChange={(event) => setSpecialOnly(event.target.checked)}
+              />
+              <span className="choice__text">{t("study.special.label")}</span>
+            </label>
+          )}
         </fieldset>
         <div className="btn-row">
           <button type="button" className="btn btn--secondary" onClick={onHome}>
@@ -108,7 +126,11 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
     );
   }
 
-  const questions = studyQuestions(loaded.key);
+  const allStatic = studyQuestions(loaded.key);
+  const designatedIds = specialOnly && designated !== undefined ? designated(version) : null;
+  // 65/20: the designated questions in list order; those whose answers change are left out, as in the practice.
+  const questions = designatedIds === null ? allStatic : allStatic.filter((e) => designatedIds.includes(e.id));
+  const leftOut = designatedIds === null ? 0 : designatedIds.length - questions.length;
   const entry = questions[Math.min(index, questions.length - 1)];
   if (entry === undefined) return null;
   const lines = officialAnswerLines(version, entry.id);
@@ -123,6 +145,16 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
         <p className="progress-line">
           {t("civics.count", { current: index + 1, total: questions.length })}
         </p>
+        {designatedIds !== null && index === 0 && (
+          <>
+            {leftOut > 0 && (
+              <p className="note">
+                <LegalText messageKey="study.special.dynamic" params={{ count: leftOut, bank: designatedIds.length }} />
+              </p>
+            )}
+            <SpecialLanguageLine />
+          </>
+        )}
         <p className="prompt" lang="en" ref={prompt} tabIndex={-1}>
           {entry.questionText}
         </p>

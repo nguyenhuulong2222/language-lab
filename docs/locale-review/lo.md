@@ -53,6 +53,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | ຕອບຄໍາຖາມວິຊາພົນລະເມືອງ. ກວດກັບຄໍາເຉີຍ. |
 | `partReport.unscored.missing` | A question that is not in the answer key | ຄໍາຖາມທີ່ບໍ່ມີໃນຄໍາເຉີຍ |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | ສຶກສາກ່ອນຖືກປິດໃນເວີຊັນນີ້ ຈົນກວ່າຈະມີຄົນກວດຄໍາເຉີຍແລ້ວ. |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. All {asked} are asked. The practice passing score is {pass} correct answers. | ອັນນີ້ປ່ຽນແຕ່ການຝຶກເທົ່ານັ້ນ; ບໍ່ມີຫຍັງຖືກບັນທຶກ ຫຼື ສົ່ງ. ພາກວິຊາພົນລະເມືອງຈະຖາມ {asked} ຂໍ້ຈາກ {bank} ຂໍ້ທີ່ມີເຄື່ອງໝາຍດາວ (*) ໃນລາຍການທາງການ. ຖາມຄົບທັງ {asked} ຂໍ້. ຄະແນນຜ່ານຂອງການຝຶກແມ່ນຕອບຖືກ {pass} ຂໍ້. |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | ຂໍ້ຍົກເວັ້ນ ແລະ ການອຳນວຍຄວາມສະດວກໃນ uscis.gov |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | ຄຳຖາມ {count} ຂໍ້ຈາກ {bank} ຂໍ້ມີຄຳຕອບທີ່ປ່ຽນໄປ ເຊັ່ນ ໃຜດຳລົງຕຳແໜ່ງຢູ່ໃນຕອນນີ້. ບໍ່ໄດ້ສະແດງຢູ່ນີ້. ກວດເບິ່ງໄດ້ທີ່ uscis.gov/citizenship/testupdates. |
 
 ## 3. All other lines
 
@@ -327,6 +330,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | ທ່ານເພີ່ມຄໍາສັ້ນ “{said}”. ແບບນີ້ຍັງນັບໄດ້. |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | ຜົນນີ້ອີງໃສ່ຄໍາທີ່ອຸປະກອນຂອງທ່ານໄດ້ຍິນ. ຖ້າມັນໄດ້ຍິນຜິດ, ລອງອີກຄັ້ງ ຫຼື ພິມຄໍາຕອບ. |
 | `compare.honest.typed` | This result is based on the words you typed. | ຜົນນີ້ອີງໃສ່ຄໍາທີ່ທ່ານພິມ. |
+| `home.special.title` | 65/20 civics practice | ຝຶກວິຊາພົນລະເມືອງ 65/20 |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | ສຳລັບຜູ້ທີ່ມີອາຍຸ 65 ປີຂຶ້ນໄປ ແລະ ເປັນຜູ້ມີຖິ່ນທີ່ຢູ່ຖາວອນມາ 20 ປີຂຶ້ນໄປ. ຝຶກຄຳຖາມວິຊາພົນລະເມືອງທີ່ມີເຄື່ອງໝາຍດາວ (*). |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ຂ້ອຍມີອາຍຸ 65 ປີຂຶ້ນໄປ ແລະ ເປັນຜູ້ມີຖິ່ນທີ່ຢູ່ຖາວອນມາ 20 ປີຂຶ້ນໄປ |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | ຜູ້ຍື່ນຄຳຮ້ອງ 65/20 ສາມາດສອບວິຊາພົນລະເມືອງແທ້ເປັນພາສາຂອງຕົນເອງໂດຍມີລ່າມ. |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | ສະເພາະຄຳຖາມສຳລັບ 65/20 (ມີເຄື່ອງໝາຍດາວ) |
 
 ## Lines marked ⚠ (meaning differs a little)
 

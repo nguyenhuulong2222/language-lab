@@ -1,7 +1,6 @@
 {
   "_note": "All values sourced from uscis.gov. Any value that could not be confirmed from an official uscis.gov source is set to null with needsVerification: true. No values are guessed. Category weights are not included.",
   "_sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
-
   "civicsTestVersionSelection": {
     "_description": "Which civics test an applicant takes, chosen by the date Form N-400 was filed. Filed before the boundary date: 2008 test. Filed on or after the boundary date: 2025 test.",
     "boundaryDate": {
@@ -11,7 +10,6 @@
       "sourceQuote": "Aliens who file Form N-400 to apply for naturalization before Oct. 20, 2025, will take the 2008 naturalization civics test. Aliens who file Form N-400 to apply for naturalization on or after Oct. 20, 2025, will take the 2025 naturalization civics test."
     }
   },
-
   "englishTest": {
     "_description": "English reading and writing portion of the naturalization test. Applies to all applicants regardless of civics test version.",
     "reading": {
@@ -43,7 +41,6 @@
       }
     }
   },
-
   "2008": {
     "_description": "2008 Civics Test. Applies to Form N-400 filed before October 20, 2025.",
     "questionPoolSize": {
@@ -77,7 +74,6 @@
       "sourceQuote": "Officers will stop asking questions when an alien answers 6 questions correctly or 5 questions incorrectly."
     }
   },
-
   "2025": {
     "_description": "2025 Civics Test. Applies to Form N-400 filed on or after October 20, 2025.",
     "questionPoolSize": {
@@ -111,9 +107,8 @@
       "sourceQuote": "Officers will stop asking questions when an alien answers 12 questions correctly, or 9 questions incorrectly."
     }
   },
-
   "65_20_specialConsideration": {
-    "_description": "65/20 Special Consideration: for applicants aged 65+ who have been a lawful permanent resident for 20+ years. They take a 10-question test drawn from a 20-question bank (starred questions only) in either the 2008 or 2025 set, and may take the test in their language of choice.",
+    "_description": "65/20 Special Consideration: for applicants aged 65+ who have been a lawful permanent resident for 20+ years at the time of filing. They take a 10-question civics test drawn from the 20 specially designated (asterisked) questions of the 2008 or 2025 test, chosen by the filing date, and may take it in their language of choice with an interpreter. Designated ids: data/civics-65-20.json.",
     "eligibilityAgeMinimum": {
       "value": 65,
       "needsVerification": false,
@@ -129,41 +124,40 @@
     "questionBank": {
       "value": 20,
       "needsVerification": false,
-      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
-      "sourceQuote": "USCIS will continue to administer a test with 10 questions from a specially selected bank of 20 test questions from either the 2008 or 2025 Naturalization Civics Test."
+      "sourceUrl": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2",
+      "sourceQuote": "The bank of civics test questions for aliens given special consideration contains 20 specially designated civics questions to study."
     },
     "questionsAsked": {
       "value": 10,
       "needsVerification": false,
-      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
-      "sourceQuote": "USCIS will continue to administer a test with 10 questions from a specially selected bank of 20 test questions from either the 2008 or 2025 Naturalization Civics Test."
+      "sourceUrl": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2",
+      "sourceQuote": "The civics test for aliens given special consideration contains 10 questions."
     },
     "passingScore": {
-      "value": null,
-      "needsVerification": true,
-      "_note": "The Study for the Test page does not restate a passing score for the 65/20 format. The standard 2008 format requires 6 of 10; it is likely the same threshold, but this cannot be confirmed from an explicit uscis.gov sentence for the 65/20 track specifically.",
-      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
-      "sourceQuote": null
+      "value": 6,
+      "needsVerification": false,
+      "sourceUrl": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2",
+      "sourceQuote": "An alien who meets the criteria for special consideration passes the civics test if he or she provides a correct answer or provides an alternative phrasing of the correct answer for at least six of 10 civics test questions from the specially designated list of 20 questions."
     },
     "earlyStopOnCorrect": {
       "value": null,
       "needsVerification": true,
-      "_note": "No explicit early-stop rule stated for the 65/20 format on the Study for the Test page.",
-      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "_note": "No saved USCIS source states an early-stop rule for the 65/20 test (checked: Policy Manual Vol. 12 Part E Ch. 2 and 3, Study for the Test, 2025 Civics Test page, Exceptions and Accommodations, both official lists). The stop rules in the Policy Manual are stated for the standard 2008 and 2025 tests. The practice asks all 10 questions.",
+      "sourceUrl": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2",
       "sourceQuote": null
     },
     "earlyStopOnIncorrect": {
       "value": null,
       "needsVerification": true,
-      "_note": "No explicit early-stop rule stated for the 65/20 format on the Study for the Test page.",
-      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
+      "_note": "No saved USCIS source states an early-stop rule for the 65/20 test (checked: Policy Manual Vol. 12 Part E Ch. 2 and 3, Study for the Test, 2025 Civics Test page, Exceptions and Accommodations, both official lists). The stop rules in the Policy Manual are stated for the standard 2008 and 2025 tests. The practice asks all 10 questions.",
+      "sourceUrl": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2",
       "sourceQuote": null
     },
     "languageChoicePermitted": {
       "value": true,
       "needsVerification": false,
-      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
-      "sourceQuote": "You may also take the naturalization test in the language of your choice."
+      "sourceUrl": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2",
+      "sourceQuote": "Aliens may take the civics test in their language of choice using an interpreter."
     }
   }
 }
