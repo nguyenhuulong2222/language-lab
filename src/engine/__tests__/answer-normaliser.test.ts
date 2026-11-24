@@ -203,7 +203,7 @@ const word = fc.stringMatching(/^[a-z]{1,8}$/);
 describe("normalise properties", () => {
   it("property: normalise is idempotent", () => {
     fc.assert(
-      fc.property(fc.fullUnicodeString(), (text) => {
+      fc.property(fc.string({ unit: "binary" }), (text) => {
         const once = normalise(text);
         return normalise(once) === once;
       }),
@@ -213,7 +213,7 @@ describe("normalise properties", () => {
 
   it("property: output only has a-z, 0-9, apostrophes and single spaces, with no edge spaces or edge apostrophes", () => {
     fc.assert(
-      fc.property(fc.fullUnicodeString(), (text) => {
+      fc.property(fc.string({ unit: "binary" }), (text) => {
         const out = normalise(text);
         if (!/^[a-z0-9' ]*$/.test(out)) return false;
         if (out !== out.trim()) return false;

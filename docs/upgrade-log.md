@@ -153,3 +153,34 @@ Checks:
 - **Function bundle**: passes, 51,102 bytes.
 - **Layout check** (production, English, normal, 390px): 25 screens, all pass.
 - **Hook tests**: pass.
+
+## Group 4 — fast-check 3.23.2 → 4.11.0
+
+Source read: "From 3.x to 4.x" in the fast-check repository
+(https://github.com/dubzzz/fast-check/blob/main/website/docs/migration/from-3.x-to-4.x.md; the
+fast-check.dev URL returned 404 on 2026-11-20). @fast-check/vitest 0.5.0 depends on
+`fast-check ^3.0.0 || ^4.0.0`, so both use 4.11.0.
+
+Breaking changes checked against this repository (every `fc.*` call in `src/` and `tools/` was listed):
+- **Requirements** (Node 12.17+, ES2020, TypeScript 5.0+): met.
+- **`fullUnicodeString` removed**: the guide gives `fc.string({ unit: 'binary' })` as the exact
+  replacement. Changed in both properties in `src/engine/__tests__/answer-normaliser.test.ts`. This
+  changes the generator call, not what the test expects.
+- **`date` may produce Invalid Date**: the one `fc.date` already sets `noInvalidDate: true`.
+- **`record` may produce null-prototype objects; `withDeletedKeys` removed**: the one `fc.record` is
+  only destructured and has no flags, so it is unaffected.
+- **`dictionary`, `uuid`, `char`, `ascii`/`unicode`/`hexa`/`base64` strings, `stringOf`, `noBias`,
+  `noShrink`, `bigUint*`, `unicodeJson*`, `uuidV`, `scheduler`, custom reporters, `nextArrayInt`**:
+  not used.
+- **Errors are reported with `cause`**: affects only the failure message format. No test inspects it.
+
+What changed: `package.json`, the lockfile, and the two generator calls above. No test expectation
+changed; no test was skipped or removed.
+
+Checks:
+- **Typecheck**: 0 errors.
+- **Tests**: 1373 of 1373 pass.
+- **Build**: passes (fast-check is test-only, so the output is unchanged).
+- **Function bundle**: passes, 51,102 bytes.
+- **Layout check** (production, English, normal, 390px): 25 screens, all pass.
+- **Hook tests**: pass.
