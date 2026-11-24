@@ -19,7 +19,7 @@ it does not happen.
 | 1:15–1:30 | Reading: read the sentence aloud with one word changed by its ending (for example "citizens" for "A citizen can vote.", or "elect" for "Who elects the President?"); "Check my reading"; show "This counts." and the note "This still counts." | "Near misses are explained, and they still count" |
 | 1:30–1:47 | Civics: answer a question aloud, "Check my answer", show "Correct" and the official answers, then the picture under the answer | "Checked against the USCIS answer key, not by AI" |
 | 1:47–1:57 | Home, "Study first", "2025 civics test"; page forward twice | "Study the questions with the official answers" |
-| 1:57–2:05 | Home, "65/20 civics practice": the box is ticked; show the line about the interpreter; "Start practice": "Question 1 of 10" | "65/20: 10 of the 20 starred questions" |
+| 1:57–2:05 | Home, "65/20 civics practice": the box is ticked; show the USCIS line on the English exemption and the interpreter; "Start practice": "Question 1 of 10" | "65/20: 10 of the 20 starred questions" |
 | 2:05–2:13 | A full-interview report: each part with "Practice score reached" or "Worth reviewing", and the disclaimer | "A practice report, never pass or fail" |
 | 2:13–2:40 | Screen recording on a computer: the GitHub repository. Show `.kiro/steering/content-safety.md`, then `.kiro/specs/interview-coach/requirements.md` scrolled to "Analyze Requirements", then `.kiro/hooks/`, then `.kiro/agents/` | "Built with Kiro: steering, specs, hooks and custom agents" |
 
@@ -51,8 +51,8 @@ Smithsonian or the Library of Congress helps it stick.
 **1:47** Study first lets you go through the questions with the official answers, without a score.
 
 **1:57** People who are 65 or older with 20 years as permanent residents get the 65/20 version: 10
-questions from the 20 starred ones. The app also says they may take the real test in their own
-language with an interpreter.
+questions from the 20 starred ones. USCIS exempts them from the English test, and they may take
+civics in their own language with an interpreter. The app quotes the USCIS page.
 
 **2:05** At the end there is a practice report. It never says pass or fail, and it is not legal
 advice.

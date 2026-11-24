@@ -306,7 +306,7 @@
   "home.special.text": "For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*).",
   "intro.special.label": "I am 65 or older and have been a permanent resident for 20 years or more",
   "intro.special.help": "This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing.",
-  "special.language": "A 65/20 applicant may take the real civics test in their own language with an interpreter.",
+  "special.englishExempt": "USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms.",
   "special.language.link": "Exceptions and accommodations on uscis.gov",
   "study.special.label": "Only the questions for 65/20 (marked with a star)",
   "study.special.dynamic": "{count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates.",

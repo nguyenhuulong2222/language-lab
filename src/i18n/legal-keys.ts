@@ -28,7 +28,7 @@ export const LEGAL_KEYS: readonly string[] = [
   "report.line.civics.stoppedIncorrect",
   "report.line.civics.notReached",
   "n400.box.reminder",
-  "special.language",
+  "special.englishExempt",
   "study.special.dynamic",
   "intro.locked",
   "voice.privacy",

@@ -37,6 +37,8 @@ interface N400ScreenProps {
   onFinish: () => void;
   /** After the interview comes the report (a single-part session), not reading. */
   nextIsReport?: boolean;
+  /** After the interview comes civics (a 65/20 full interview has no reading and writing). */
+  nextIsCivics?: boolean;
   /** Try loading the question again after a failure. */
   onRetry?: () => void;
   /** Offer the optional AI coach, sending through this transport (fetch in the app). */
@@ -48,7 +50,7 @@ export type { CoachEntry };
 
 type PromptState = { status: "loading" } | { status: "failed" } | { status: "done" } | { status: "ready"; prompt: N400Prompt };
 
-export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish, nextIsReport, coachTransport, coachEntry = "choice" }: N400ScreenProps) {
+export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish, nextIsReport, nextIsCivics, coachTransport, coachEntry = "choice" }: N400ScreenProps) {
   const [state, setState] = useState<PromptState>({ status: "loading" });
   const [attempt, setAttempt] = useState(0);
   // The AI coach lives as long as this screen: a new practice starts with it off.
@@ -149,6 +151,7 @@ export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish,
           }
         : {})}
       {...(nextIsReport === undefined ? {} : { nextIsReport })}
+      {...(nextIsCivics === undefined ? {} : { nextIsCivics })}
     />
   );
 }
@@ -164,7 +167,7 @@ interface N400ViewProps extends Omit<N400ScreenProps, "coach" | "coachTransport"
 }
 
 /** The screen without its data loading, so every state can be rendered and tested. */
-export function N400View({ state, profile, answers, total, onAnswer, onFinish, nextIsReport = false, onRetry, onSubmitAnswer, coachControls, coachStep }: N400ViewProps) {
+export function N400View({ state, profile, answers, total, onAnswer, onFinish, nextIsReport = false, nextIsCivics = false, onRetry, onSubmitAnswer, coachControls, coachStep }: N400ViewProps) {
   const t = useT();
   const name = profile.displayName;
 
@@ -184,7 +187,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
           </ol>
           <div className="btn-row">
             <button type="button" className="btn" onClick={onFinish}>
-              {nextIsReport ? t("report.see") : t("n400.done.next")}
+              {nextIsReport ? t("report.see") : nextIsCivics ? t("writing.toCivics") : t("n400.done.next")}
             </button>
           </div>
         </div>

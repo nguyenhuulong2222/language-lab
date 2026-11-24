@@ -41,8 +41,13 @@ export interface ReportRules {
 export interface ReportInput {
   session: InterviewSession;
   civicsResult: CivicsStageResult;
-  readingResult: EnglishStageResult;
-  writingResult: EnglishStageResult;
+  /**
+   * Null when the session had no reading or writing part: a 65/20 full interview, because USCIS
+   * exempts 65/20 applicants from the English requirement. The report then has no English summaries
+   * and the practice result depends on the parts that ran.
+   */
+  readingResult: EnglishStageResult | null;
+  writingResult: EnglishStageResult | null;
   /** How many writing attempts were made with the sentence shown on screen (assisted). Default 0. */
   writingAssisted?: number;
   /** Used to name the questions that could not be scored. */
@@ -191,10 +196,10 @@ function englishSummary(
  */
 export function buildFinalReport(input: ReportInput): FinalReport {
   const { session, civicsResult, readingResult, writingResult, answerKey } = input;
-  if (readingResult.kind !== "reading") {
+  if (readingResult !== null && readingResult.kind !== "reading") {
     throw new Error(`readingResult is a "${readingResult.kind}" result.`);
   }
-  if (writingResult.kind !== "writing") {
+  if (writingResult !== null && writingResult.kind !== "writing") {
     throw new Error(`writingResult is a "${writingResult.kind}" result.`);
   }
 
@@ -204,13 +209,13 @@ export function buildFinalReport(input: ReportInput): FinalReport {
   };
 
   const civicsOk = civicsPassed(civicsResult, rules.civics);
-  const readingOk = englishPassed(readingResult, rules.english);
-  const writingOk = englishPassed(writingResult, rules.english);
+  const readingOk = readingResult === null || englishPassed(readingResult, rules.english);
+  const writingOk = writingResult === null || englishPassed(writingResult, rules.english);
 
   const unscored = listUnscoredQuestions(civicsResult, answerKey);
   const stageSummaries: StageSummary[] = [
-    englishSummary(readingResult, rules.english, readingOk),
-    englishSummary(writingResult, rules.english, writingOk, input.writingAssisted ?? 0),
+    ...(readingResult === null ? [] : [englishSummary(readingResult, rules.english, readingOk)]),
+    ...(writingResult === null ? [] : [englishSummary(writingResult, rules.english, writingOk, input.writingAssisted ?? 0)]),
     civicsSummary(civicsResult, unscored, rules.civics, civicsOk),
   ];
 

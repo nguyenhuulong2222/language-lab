@@ -193,6 +193,38 @@ describe("Study first and 65/20", () => {
     fireEvent.click(button(EN["intro.start"]));
     expect(await screen.findByText("Question 1 of 10")).toBeTruthy();
   });
+  it("65/20 full interview: N-400, then civics (no reading or writing), and the report says why", async () => {
+    app();
+    await startSetup(EN["home.full.title"], { profile: true, filed: "on_or_after" });
+    fireEvent.click(screen.getByLabelText(EN["intro.special.label"]));
+    fireEvent.click(button(EN["intro.start"]));
+    fireEvent.click(await findButton(EN["coach.choice.no"]));
+    // The stepper has no reading or writing step.
+    const nav = [...document.querySelectorAll("nav")].map((n) => n.textContent ?? "").join(" ");
+    expect(nav).toContain(EN["stage.civics.short"]);
+    expect(nav).not.toContain(EN["stage.reading.short"]);
+    for (let guard = 0; guard < 30 && !has(EN["writing.toCivics"]); guard++) {
+      await findButton(EN["n400.save"]);
+      typeAnswer("My answer is short.");
+      fireEvent.click(button(EN["n400.save"]));
+      await waitFor(() => expect(has(EN["n400.save"]) || has(EN["writing.toCivics"])).toBe(true));
+    }
+    expect(has(EN["n400.done.next"])).toBe(false);
+    fireEvent.click(button(EN["writing.toCivics"]));
+    expect(await screen.findByText("Question 1 of 10")).toBeTruthy();
+    expect(document.body.textContent).toContain("you are exempt from the English requirement");
+    for (let guard = 0; guard < 12 && !has(EN["civics.finish"]); guard++) {
+      await findButton(EN["civics.submit"]);
+      typeAnswer("zzz");
+      fireEvent.click(button(EN["civics.submit"]));
+      await waitFor(() => expect(has(EN["civics.next"]) || has(EN["civics.finish"])).toBe(true));
+      if (has(EN["civics.next"])) fireEvent.click(button(EN["civics.next"]));
+    }
+    fireEvent.click(button(EN["civics.finish"]));
+    expect(await findButton(EN["report.again"])).toBeTruthy();
+    expect(document.body.textContent).not.toContain("Reading sentences read correctly");
+    expect(document.body.textContent).toContain("If you are 65 or older with at least 20 years (65/20), you are also exempt from English");
+  }, 30000);
   it("65/20 can be unticked: then the normal 2025 test (20 questions) runs", async () => {
     app();
     fireEvent.click(button(EN["home.special.title"]));

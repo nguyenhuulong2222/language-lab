@@ -42,8 +42,9 @@ life.
   - The coach never scores anything.
 - **65/20 practice**: for applicants aged 65 or older with 20 years as permanent residents: 10 of the
   20 starred questions, with 6 correct for the practice score (USCIS Policy Manual, Vol. 12, Part E,
-  Ch. 2). A linked line says they may take the real civics test in their own language with an
-  interpreter.
+  Ch. 2). USCIS exempts them from the English test, so a 65/20 full interview skips reading and
+  writing. A linked line quotes the USCIS rules, including taking civics in their own language with
+  an interpreter.
 - **Study first**: the civics questions with official answers and pictures, not scored.
 - **Interface languages as labelled AI drafts**: 10 of 14 languages are shown in production. Each says
   it was translated by AI. Disclaimers, legal lines and civics questions stay in English.

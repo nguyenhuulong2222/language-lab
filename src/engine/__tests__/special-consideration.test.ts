@@ -15,6 +15,8 @@ import {
   type PracticeEnv,
   type PracticeMode,
   type PracticeState,
+  sessionParts,
+  sessionSteps,
 } from "../practice-flow";
 import { designatedQuestionIds, specialConsiderationRules } from "../special-consideration";
 import { loadTestRules, type TestRules } from "../test-rules-loader";
@@ -217,6 +219,50 @@ describe("65/20 properties (REQ-S04)", () => {
         });
         expect(withStop.stopReason).not.toBe("all_asked");
       })
+    );
+  });
+});
+
+describe("65/20 full interview: no English test (decisions log P)", () => {
+  const start = (special: boolean) => {
+    let s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 4, at: AT });
+    s = engine.reduce(s, { type: "start", profileId: PROFILE, filedOn: "before", specialConsideration: special, seed: 4, at: AT });
+    return s;
+  };
+  it("the steps are setup, N-400, civics, report; reading and writing are not selected", () => {
+    expect(sessionSteps("full", true)).toEqual(["intro", "n400_interview", "civics", "report"]);
+    expect(sessionSteps("full", false)).toEqual(["intro", "n400_interview", "reading", "writing", "civics", "report"]);
+    const s = start(true);
+    expect(sessionParts(s)).toEqual(["n400_interview", "civics"]);
+    expect(s.readingIds).toEqual([]);
+    expect(s.writingIds).toEqual([]);
+  });
+  it("after the N-400 part comes civics, and the report has no English summaries", () => {
+    let s = start(true);
+    s = engine.reduce(s, { type: "answerN400", questionId: "n400-001", questionText: "Q?", transcript: "my answer", at: AT });
+    s = engine.reduce(s, { type: "finishN400", at: AT });
+    expect(s.phase).toBe("civics");
+    s = answerCivics(s, [true, true, true, true, true, true, false, false, false, false]);
+    s = engine.reduce(s, { type: "continue", at: AT });
+    expect(s.phase).toBe("report");
+    expect(s.report?.stageSummaries.map((x) => x.stage)).toEqual(["civics"]);
+    expect(s.report?.practiceResult).toBe("practice_passed");
+  });
+  it("without 65/20 the full interview still goes to reading", () => {
+    let s = start(false);
+    s = engine.reduce(s, { type: "finishN400", at: AT });
+    expect(s.phase).toBe("reading");
+  });
+  it("property: with 65/20 the practice result follows civics alone", () => {
+    fc.assert(
+      fc.property(fc.array(fc.boolean(), { minLength: 10, maxLength: 10 }), fc.integer({ min: 0, max: 1000 }), (plan, seed) => {
+        let s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed, at: AT });
+        s = engine.reduce(s, { type: "start", profileId: PROFILE, filedOn: "on_or_after", specialConsideration: true, seed, at: AT });
+        s = engine.reduce(s, { type: "finishN400", at: AT });
+        s = engine.reduce(answerCivics(s, plan), { type: "continue", at: AT });
+        expect(s.report?.practiceResult).toBe(plan.filter(Boolean).length >= 6 ? "practice_passed" : "needs_more_practice");
+      }),
+      { numRuns: 40 }
     );
   });
 });

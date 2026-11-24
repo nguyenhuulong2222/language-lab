@@ -96,18 +96,30 @@ export function modeNeeds(mode: PracticeMode): { profile: boolean; filing: boole
   }
 }
 
-/** The practice parts of a mode, in order. */
-export function modeParts(mode: PracticeMode): PracticePart[] {
-  return mode === "full" ? ["n400_interview", "reading", "writing", "civics"] : [mode === "n400" ? "n400_interview" : mode];
+/**
+ * The practice parts of a mode, in order. A 65/20 full interview has no reading and writing: USCIS
+ * exempts 65/20 applicants from the English requirement (Policy Manual, Vol. 12, Part E, Ch. 2,
+ * table of exceptions; decisions log P).
+ */
+export function modeParts(mode: PracticeMode, specialConsideration = false): PracticePart[] {
+  if (mode === "full") {
+    return specialConsideration ? ["n400_interview", "civics"] : ["n400_interview", "reading", "writing", "civics"];
+  }
+  return [mode === "n400" ? "n400_interview" : mode];
+}
+
+/** The parts of this session (after setup the 65/20 choice is known). */
+export function sessionParts(state: Pick<PracticeState, "mode" | "setup">): PracticePart[] {
+  return state.mode === null ? [] : modeParts(state.mode, state.setup?.specialConsideration === true);
 }
 
 /**
  * The steps of a session, in order: the setup step only when the mode needs a choice, then the
  * parts, then the report. The stepper and the take counter show exactly these.
  */
-export function sessionSteps(mode: PracticeMode): SessionStage[] {
+export function sessionSteps(mode: PracticeMode, specialConsideration = false): SessionStage[] {
   const needs = modeNeeds(mode);
-  return [...(needs.profile || needs.filing ? (["intro"] as const) : []), ...modeParts(mode), "report"];
+  return [...(needs.profile || needs.filing ? (["intro"] as const) : []), ...modeParts(mode, specialConsideration), "report"];
 }
 
 export type AnswerKeyResult =
@@ -591,7 +603,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
     at: string
   ): PracticeState {
     const needs = modeNeeds(mode);
-    const parts = modeParts(mode);
+    const baseParts = modeParts(mode);
     const filingDate = needs.filing && choice.filedOn ? representativeFilingDate(choice.filedOn, env.boundaryDate) : null;
     const version = filingDate ? selectTestVersion(filingDate, env.boundaryDate) : null;
 
@@ -599,7 +611,8 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
     let civicsLocked = false;
     let civicsLockReason: string | null = null;
     const special =
-      parts.includes("civics") && version !== null && choice.specialConsideration === true && specialConsiderationOffered(env);
+      baseParts.includes("civics") && version !== null && choice.specialConsideration === true && specialConsiderationOffered(env);
+    const parts = modeParts(mode, special);
     if (parts.includes("civics") && version) {
       const loaded = env.answerKey(version);
       if (loaded.status === "ready") {
@@ -733,7 +746,9 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
         };
 
       case "finishN400":
-        return state.phase === "n400_interview" ? afterPart(state, "reading", action.at) : state;
+        return state.phase === "n400_interview"
+          ? afterPart(state, sessionParts(state).includes("reading") ? "reading" : "civics", action.at)
+          : state;
 
       case "submitReading":
       case "submitWriting": {
@@ -814,8 +829,9 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
           const report = buildFinalReport({
             session,
             civicsResult: progress.result,
-            readingResult: englishProgress(state, "reading").result,
-            writingResult: englishProgress(state, "writing").result,
+            // 65/20: no reading and writing parts, so no English results in the report.
+            readingResult: sessionParts(state).includes("reading") ? englishProgress(state, "reading").result : null,
+            writingResult: sessionParts(state).includes("writing") ? englishProgress(state, "writing").result : null,
             writingAssisted: state.writing.filter((a) => a.assisted).length,
             answerKey: loaded.key,
             rules: { civics: civicsRulesFor(state)!, english: env.englishRules },

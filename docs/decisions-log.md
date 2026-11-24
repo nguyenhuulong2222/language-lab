@@ -466,3 +466,26 @@ Spec: `.kiro/specs/interview-coach/` (requirements revision 2 with two Analyze R
   `engines` and the README say 22.20+.
 - **Not verified**: the GitHub Actions run itself (nothing pushed; reproduced locally with `npm ci` on
   Node 22.20.0), the Cloudflare Pages build image setting of the project, and a real deploy.
+
+## P. Submission follow-up (2026-11-20, branch release/submission)
+- **65/20 and the English test (Step 0)**: a new legal key `special.englishExempt` (English-only; AI
+  drafts kept in the locale files for the reviewer) replaces `special.language`. It quotes the saved
+  USCIS Exceptions and Accommodations page
+  (https://www.uscis.gov/citizenship/exceptions-and-accommodations,
+  `data/sources/uscis-exceptions-and-accommodations.html`): 50/20 and 55/15 are exempt from the
+  English requirement but must still take the civics test, which they may take in their native
+  language with an interpreter; 65/20 gets special consideration on civics. That page does not state
+  that 65/20 is exempt from English, and neither saved source calls the 65/20 test "simplified".
+  Two things come from the saved Policy Manual table
+  (`data/sources/uscis-policy-manual-vol12-parte-ch2.html`): its 65/20 row says English "Exempt" and
+  "specially designated test forms", and the chapter lists "read, write, speak, and understand". The
+  line uses those words, not "simplified". It shows on the 65/20 setup, the first 65/20 civics
+  question, Study first with 65/20, the 65/20 part report, and a 65/20 full report. It links the
+  Exceptions page.
+- **65/20 full interview skips reading and writing**: chosen over labelling them "optional English
+  practice". The sources say a 65/20 applicant is exempt from the English requirement. Skipping
+  matches that, and it leaves no parts in the report that do not apply. `modeParts(mode, special)`
+  gives N-400 then civics; the stepper, the N-400 "Go to civics" button and the report follow it.
+  The report builder accepts no reading or writing result, and the practice result then follows
+  civics. Tests: engine unit and property tests (`special-consideration.test.ts`) and a DOM
+  click-through (`interaction.test.tsx`).

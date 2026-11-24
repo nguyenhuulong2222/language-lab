@@ -313,7 +313,7 @@
   "home.special.text": "Para sa mga 65 taong gulang pataas na permanent resident na nang 20 taon o higit pa. Sanayin ang mga tanong sa sibika na may tandang bituin (*).",
   "intro.special.label": "Ako ay 65 taong gulang pataas at permanent resident na nang 20 taon o higit pa",
   "intro.special.help": "Pagsasanay lang ang binabago nito; walang sine-save o ipinapadala. Itatanong ng bahagi ng sibika ang {asked} sa {bank} tanong na may tandang bituin (*) sa opisyal na listahan. Sa pagsasanay na ito, itatanong ang lahat ng {asked}. Ang practice passing score ay {pass} tamang sagot. Para sa sarili mong kaso, tingnan ang uscis.gov: binibilang ang edad at mga taon sa petsa ng pag-file.",
-  "special.language": "Maaaring kumuha ang aplikanteng 65/20 ng totoong test sa sibika sa sarili niyang wika sa tulong ng interpreter.",
+  "special.englishExempt": "USCIS: sa petsa ng pag-file, kung ikaw ay 50 taong gulang pataas at 20 taon nang permanent resident (50/20), o 55 pataas at 15 taon (55/15), exempted ka sa English requirement (pagbasa, pagsulat, pagsasalita at pag-unawa ng English), pero kailangan mo pa ring kumuha ng civics test. Maaari mo itong kunin sa sarili mong wika kung may dala kang interpreter. Kung ikaw ay 65 pataas at hindi bababa sa 20 taon (65/20), exempted ka rin sa English, at gagamit ang opisyal ng mga espesyal na itinakdang civics test form.",
   "special.language.link": "Mga exception at accommodation sa uscis.gov",
   "study.special.label": "Mga tanong lang para sa 65/20 (may tandang bituin)",
   "study.special.dynamic": "{count} sa {bank} tanong ang may sagot na nagbabago, gaya ng kung sino ang may hawak ng isang posisyon ngayon. Hindi sila ipinapakita rito. Tingnan sila sa uscis.gov/citizenship/testupdates.",
