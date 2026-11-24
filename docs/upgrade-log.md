@@ -198,3 +198,11 @@ later, 24 and 26 bind them; checked with a probe script on 22.18.0, 22.19.0, 22.
 So `main`'s CI test step already fails on Node 22.18, independent of the upgrades. Fix: CI uses
 Node 22.20, and `engines` and the README say 22.20+. No test or SQL was changed. With Node 22.20.0,
 typecheck, all 1373 tests and the build pass.
+
+Cloudflare Pages builds with its own Node. The build image docs
+(https://developers.cloudflare.com/pages/configuration/build-image, read 2026-11-20) give the
+defaults: v3 image 22.23.4, v2 image 18.17.1. Vite 8 and plugin-react 6 need 20.19+ / 22.12+, so a
+project still on the v2 image would fail to build after this branch. Pages v3 does not read
+`engines`; both images read `.node-version`. So `.node-version` now pins 22.20.0, and CI reads the
+same file (`node-version-file`). The Pages project's build image could not be checked from here
+(owner's dashboard).

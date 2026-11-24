@@ -84,7 +84,8 @@ practice feedback, not an official assessment.
 ### Prerequisites
 
 - Node.js 22.20+ (the tools in `tools/` import TypeScript files directly, which needs 22.18; the AI
-  coach counter test needs node:sqlite's numbered parameters, from 22.20; CI uses 22.20)
+  coach counter test needs node:sqlite's numbered parameters, from 22.20). `.node-version` pins
+  22.20.0 for CI and for the Cloudflare Pages build, which reads that file.
 - npm 10+
 - [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) only to run the AI coach's Pages Function locally (see `docs/coach-deploy.md`)
 
