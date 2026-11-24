@@ -447,3 +447,22 @@ Spec: `.kiro/specs/interview-coach/` (requirements revision 2 with two Analyze R
   the eligibility quote from the Policy Manual, the stale `civics.officialNote`. Left: the checkbox
   wording (owner's); `civics.heard.closest` could say the closest guess is kinder than a real
   interview; zh "答案範本" for "answer key" and vi wording (drafts for native readers).
+
+## O. Dependency upgrades (2026-11-20, branch chore/upgrades)
+- **Order and rule**: TypeScript, then Vite with plugin-react, then Vitest, then fast-check. Each was
+  committed only after typecheck, the full tests, the build, the Pages Function esbuild bundle and the
+  production layout check passed. No group needed a revert. The log is `docs/upgrade-log.md`.
+- **Code changes**: `build.rollupOptions` → `build.rolldownOptions` in the speech-test config
+  (Vite 8); `fc.fullUnicodeString()` → `fc.string({ unit: "binary" })` in two properties
+  (fast-check 4's documented replacement). No test expectation changed.
+- **esbuild as a dev dependency**: Vite 8 no longer installs it, and the Pages Function bundle check
+  uses it. Pinned 0.28.2, inside Vite 8's peer range.
+- **React stays 19.1.0**: no newer major exists; the minor update is not part of a major-upgrade
+  branch.
+- **Node 22.20.0 in `.node-version`**: CI's 22.18 failed 2 tests on `main` already, because
+  `node:sqlite` binds numbered parameters only from 22.20. Raising the version fixes this without
+  changing the test or the SQL (D1 supports `?NNN`). The same file pins Node for Cloudflare Pages.
+  Its v2 build image defaults to Node 18, which Vite 8 does not support, and v3 ignores `engines`.
+  `engines` and the README say 22.20+.
+- **Not verified**: the GitHub Actions run itself (nothing pushed; reproduced locally with `npm ci` on
+  Node 22.20.0), the Cloudflare Pages build image setting of the project, and a real deploy.
