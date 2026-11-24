@@ -8,7 +8,7 @@ an action that this pass was not allowed to take (push, deploy, review data, cha
 | Id | Severity | What is left | Why it is still open |
 |---|---|---|---|
 | SEC-03 | High (rest) | Rotate the OpenAI key if any agent transcript could have captured it; keep keys outside the repository folder. | Owner action. The guard itself is fixed and tested (Step 4). It is a guard against accidents, not a security boundary. |
-| COR-01 | Medium | UI tests were server-render only. | Closed in release/finish Step 3 if that step is committed (see below). |
+
 | DEP-02 | Low | Major upgrades available (Vite 8, Vitest 5, TypeScript 7, plugin-react 6, fast-check 4). | Left for the separate upgrade branch (owner). |
 | KIRO-03 | Low | GitHub repository description and homepage are empty. | Owner: the release/finish report gives one `gh repo edit` command to run. |
 
@@ -16,6 +16,7 @@ an action that this pass was not allowed to take (push, deploy, review data, cha
 | Id | How |
 |---|---|
 | KIRO-01 | Owner: `main` is merged and deployed (https://language-lab-ade.pages.dev). |
+| COR-01 | Step 3. `jsdom` 31.0.1, `@testing-library/react` 16.3.3 and `@testing-library/dom` 10.4.2 (dev, exact). `src/ui/__tests__/interaction.test.tsx` renders the whole app with its providers and clicks through: the home AI coach card to the notice, Cancel back to the choice (focus returns), No to the first question; no fetch before consent and one after Confirm; the full interview to the report with typed answers; a reading near miss that still counts; writing with "Show the sentence"; Study first paging and 65/20; 65/20 setup ticked and unticked; the language menu; text size. Coverage reports and a Pages Function test against Cloudflare are still not set up. |
 | CON-09 | Step 1. The 65/20 values come from the USCIS Policy Manual, Vol. 12, Part E, Ch. 2 (saved, SHA-256 in `data/sources/README.md`): bank 20, 10 asked, 6 to pass. No source states an early-stop rule, so those two values stay `null` with `needsVerification: true` and the 65/20 practice asks all 10. The designated questions are `data/civics-65-20.json`, tested against the asterisks of all three official lists. |
 | CON-04 | Every report stage summary also carries its lines as message keys with the numbers as placeholders (`StageSummary.summaryLines`, CR-007). The report screen renders them through the locale files; in English they equal `summary` (tested). The two English review items are translated the same way. Question texts stay English; the disclaimer stays English-only. |
 | CON-06 | `src/engine/review-flag.ts`: practice content, the practice config and the picture pairings load with `needsHumanReview: false` once `reviewedBy` and an ISO `reviewedOn` are present, the same rule as the answer keys. No flag was changed. |

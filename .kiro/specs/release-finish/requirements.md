@@ -113,5 +113,14 @@ for the standard tests only.
   `StatusBadge` line height from the tokens and `overflow-wrap: anywhere` on buttons.
 - **REQ-F11 KIRO-01** closed (main merged and deployed, owner). DEP-02 stays open.
 
-## Steps 3 to 5
+## Step 3 — Interaction tests (COR-01)
+- **REQ-T01** Dev dependencies, exact versions checked on npm on 2026-11-20: `jsdom` 31.0.1,
+  `@testing-library/react` 16.3.3 and its peer `@testing-library/dom` 10.4.2. The new tests opt in
+  with `// @vitest-environment jsdom`; every existing test keeps the node environment.
+- **REQ-T02** Click-through tests with the real engine and real data: home AI coach card → notice →
+  Cancel → choice → No → first question; full interview → report with typed answers; reading near
+  miss that still counts; writing "Show the sentence"; Study first paging; 65/20 setup; language
+  menu; text size; no fetch before AI coach consent.
+
+## Steps 4 and 5
 Written into this file before each step is built.

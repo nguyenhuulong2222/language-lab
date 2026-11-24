@@ -161,7 +161,10 @@ describe("the app never calls /api/coach while consent is off (REQ-C16)", () => 
     const sources = import.meta.glob("../**/*.{ts,tsx}", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
     // Code only: comments may mention the endpoint.
     const code = (t: string) => t.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/[^\n]*$/gm, "");
-    const naming = Object.entries(sources).filter(([f, t]) => !f.includes("__tests__") && code(t).includes("/api/coach")).map(([f]) => f);
+    // Test files are left out (a file next to this one is listed as "./name.test.tsx").
+    const naming = Object.entries(sources)
+      .filter(([f, t]) => !f.includes("__tests__") && !/\.test\.tsx?$/.test(f) && code(t).includes("/api/coach"))
+      .map(([f]) => f);
     expect(naming).toEqual(["../coach/ai-coach-client.ts"]);
     const client = sources["../coach/ai-coach-client.ts"]!;
     expect(client.indexOf("if (!consent || sessionId === null)")).toBeLessThan(client.indexOf("await transport("));
