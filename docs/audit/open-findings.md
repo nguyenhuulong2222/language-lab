@@ -9,13 +9,14 @@ an action that this pass was not allowed to take (push, deploy, review data, cha
 |---|---|---|---|
 | SEC-03 | High (rest) | Rotate the OpenAI key if any agent transcript could have captured it; keep keys outside the repository folder. | Owner action. The guard itself is fixed and tested (Step 4). It is a guard against accidents, not a security boundary. |
 
-| DEP-02 | Low | Major upgrades available (Vite 8, Vitest 5, TypeScript 7, plugin-react 6, fast-check 4). | Left for the separate upgrade branch (owner). |
+
 | KIRO-03 | Low | GitHub repository description and homepage are empty. | Owner: the release/finish report gives one `gh repo edit` command to run. |
 
 ## Closed in release/finish (2026-11-20)
 | Id | How |
 |---|---|
 | KIRO-01 | Owner: `main` is merged and deployed (https://language-lab-ade.pages.dev). |
+| DEP-02 | Branch `chore/upgrades` (2026-11-20): TypeScript 5.8.3 → 7.0.2, Vite 6.4.5 → 8.3.8, @vitejs/plugin-react 4.5.2 → 6.3.0, Vitest 4.1.12 → 5.1.1, fast-check 3.23.2 → 4.11.0; one commit per group, each after typecheck, all 1373 tests, the build, the Pages Function bundle and the production layout check. No group reverted. React stays 19.1.0 (no newer major). Also found: CI's Node 22.18 cannot run the D1 counter test (node:sqlite binds `?1` only from 22.20), so `.node-version` now pins 22.20.0 for CI and Pages. Details: `docs/upgrade-log.md`. |
 | COR-01 | Step 3. `jsdom` 31.0.1, `@testing-library/react` 16.3.3 and `@testing-library/dom` 10.4.2 (dev, exact). `src/ui/__tests__/interaction.test.tsx` renders the whole app with its providers and clicks through: the home AI coach card to the notice, Cancel back to the choice (focus returns), No to the first question; no fetch before consent and one after Confirm; the full interview to the report with typed answers; a reading near miss that still counts; writing with "Show the sentence"; Study first paging and 65/20; 65/20 setup ticked and unticked; the language menu; text size. Coverage reports and a Pages Function test against Cloudflare are still not set up. |
 | CON-09 | Step 1. The 65/20 values come from the USCIS Policy Manual, Vol. 12, Part E, Ch. 2 (saved, SHA-256 in `data/sources/README.md`): bank 20, 10 asked, 6 to pass. No source states an early-stop rule, so those two values stay `null` with `needsVerification: true` and the 65/20 practice asks all 10. The designated questions are `data/civics-65-20.json`, tested against the asterisks of all three official lists. |
 | CON-04 | Every report stage summary also carries its lines as message keys with the numbers as placeholders (`StageSummary.summaryLines`, CR-007). The report screen renders them through the locale files; in English they equal `summary` (tested). The two English review items are translated the same way. Question texts stay English; the disclaimer stays English-only. |

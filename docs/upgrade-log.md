@@ -206,3 +206,58 @@ project still on the v2 image would fail to build after this branch. Pages v3 do
 `engines`; both images read `.node-version`. So `.node-version` now pins 22.20.0, and CI reads the
 same file (`node-version-file`). The Pages project's build image could not be checked from here
 (owner's dashboard).
+
+## Group 5 — Remaining dependencies
+
+`npm outdated` after group 4 lists no package with a newer major version. What is left:
+- **@types/react, @types/react-dom**: 19.1.6, latest 19.3.0. Same major.
+- **react, react-dom**: 19.1.0, latest 19.3.1. Same major. There is no React 20, so there is no
+  major migration to assess, and React stays at 19.1.0. A minor update to 19.3 is outside this
+  branch's scope (majors only); it can go with a routine update.
+- **@types/dom-speech-recognition 0.0.12, jsdom 31.0.1, @testing-library/react 16.3.3,
+  @testing-library/dom 10.4.2, @fast-check/vitest 0.5.0, esbuild 0.28.2**: already latest.
+
+No change, so no commit for this group.
+
+## Step 2 — Reverted groups
+
+None. Every group passed every check on its first upgrade with the changes listed. No test was weakened,
+skipped or removed, and no test expectation changed.
+
+## Step 3 — The deployed shape, checked locally
+
+- **Production build with `public/_headers`** (`layout-check --prod`, normal text, 390px), all 10
+  production languages (en, vi, es, zh, tl, ko, hi, th, pt, ru): 25 screens each, all pass. The
+  runner counts any `securitypolicyviolation` as a failure, so there was no CSP violation.
+- **Pages Function**: the esbuild bundle of `functions/api/coach.ts` builds (51,102 bytes, the same as
+  the baseline). The coach tests pass: 6 files, 66 tests, including `pages-function.test.ts`.
+- **CI as GitHub runs it**: `npm ci`, typecheck, `npm test`, build and hook test in a clean checkout
+  on Node 22.20.0: all pass, 1373 tests.
+- **`npm audit`**: 0 vulnerabilities (0 with `--omit=dev` too).
+- **Bundle sizes** compared with the baseline:
+
+  | Chunk | Baseline (Vite 6) | Now (Vite 8) | Change |
+  |---|---|---|---|
+  | Main JS | 412.38 kB / 122.73 kB gzip | 406.76 kB / 120.28 kB gzip | −1.4% / −2.0% |
+  | CSS | 24.51 kB / 5.27 kB gzip | 24.31 kB / 5.31 kB gzip | −0.8% / +0.8% (Lightning CSS) |
+  | 2008 answer key | 47.99 kB / 6.60 kB gzip | 46.15 kB / 6.42 kB gzip | −3.8% |
+  | 2025 answer key | 72.15 kB / 9.47 kB gzip | 69.84 kB / 9.28 kB gzip | −3.2% |
+  | Locale chunks (15) | 487.65 kB | 487.22 kB | −0.1% |
+  | All JS and CSS, gzipped together | 273,092 B | 268,803 B | −1.6% |
+
+  The whole `dist/` (with audio and pictures): 26,864 KB before, 26,860 KB after.
+
+## Final versions
+
+| Package | Before | After |
+|---|---|---|
+| typescript | 5.8.3 | 7.0.2 |
+| vite | 6.4.5 | 8.3.8 |
+| @vitejs/plugin-react | 4.5.2 | 6.3.0 |
+| vitest | 4.1.12 | 5.1.1 |
+| fast-check | 3.23.2 | 4.11.0 |
+| esbuild (dev, new and explicit) | 0.25.12 (through Vite 6) | 0.28.2 |
+| Node for CI and Pages | 22.18 (CI) | 22.20.0 (`.node-version`) |
+| everything else | unchanged | unchanged |
+
+Tests: 1373 before, 1373 after.

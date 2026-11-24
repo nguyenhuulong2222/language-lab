@@ -631,3 +631,7 @@ Spec first (`88e7d15`, BS-22 to BS-25); decisions in `docs/decisions-log.md`, se
 - R-05: "For judges" in README and `docs/judge-guide.md`.
 - R-06: ui-reviewer and content-reviewer with fixes, layout check in the 10 production languages at
   normal and extra-large text and at 390 and 320px, typecheck, tests, build.
+## 2026-11-20: dependency upgrades (branch chore/upgrades)
+- Baseline recorded; then TypeScript 7.0.2, Vite 8.3.8 with plugin-react 6.3.0, Vitest 5.1.1 and
+  fast-check 4.11.0, one commit each, all checks green; no revert. Node pinned to 22.20.0 for CI and
+  Pages (node:sqlite numbered parameters). DEP-02 closed. Details in `docs/upgrade-log.md`.
