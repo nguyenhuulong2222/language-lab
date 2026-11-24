@@ -1,5 +1,30 @@
 # Language Lab
 
+## For judges
+
+Live: <https://language-lab-ade.pages.dev>. The full guide is [`docs/judge-guide.md`](docs/judge-guide.md).
+
+A 3-minute path:
+
+1. **Home**: the welcome, "How it works" and the disclaimer.
+2. **AI coach**: "Practice the N-400 interview with an AI coach", pick a fictional profile, "Start
+   practice". The consent notice opens first; nothing is sent until you press "Turn on the AI coach".
+   Without AI: "Cancel", then "No, practice without AI".
+3. **Full interview**: from Home, "Full practice interview": profile, filing date (2008 or 2025 test),
+   then N-400, reading, writing ("Show the sentence" if you cannot listen) and civics.
+4. **Report**: "On track" or "Review this" per part, never pass or fail, with the disclaimer.
+5. **Study first**: page through the civics questions with official answers and pictures; not scored.
+6. **65/20**: "65/20 civics practice": 10 of the 20 starred questions, 6 correct for the practice
+   score (USCIS Policy Manual, Vol. 12, Part E, Ch. 2), with a link to the USCIS interpreter rule.
+7. **Language menu**: the globe button in the header; for example Tiếng Việt. Disclaimers, legal lines
+   and civics questions stay in English.
+
+Microphone: only "Say it" (speech recognition, in browsers that support it, such as Chrome, Edge or
+Safari) and "Record and compare" on the reading screen need one. Everything else, and every answer,
+works by typing. The AI coach is off by default and sends nothing until you confirm its notice.
+
+---
+
 **Free, voice-first practice for the U.S. naturalization interview.**
 
 Styled as a 1970s language lab booth — individual study, focused repetition, no pressure.

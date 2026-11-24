@@ -5,5 +5,5 @@
   SEC-08, A11Y-11, A11Y-12, A11Y-13, KIRO-01); `open-findings.md` updated.
 - [x] R-03 Interaction tests with jsdom and Testing Library (COR-01).
 - [x] R-04 `docs/content-review.md` checklists.
-- [ ] R-05 Judge path in README and `docs/judge-guide.md`.
+- [x] R-05 Judge path in README and `docs/judge-guide.md`.
 - [ ] R-06 Reviews, layout check, typecheck, tests, build, logs.

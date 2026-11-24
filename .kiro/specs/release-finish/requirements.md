@@ -128,5 +128,9 @@ for the standard tests only.
   every item on one line with what to check, sized for about 30 minutes. It also lists the picture
   records named in CON-13. It changes no flag and says how to record a review (CON-06 rule).
 
-## Step 5
-Written into this file before it is built.
+## Step 5 — Judge path
+- **REQ-J01** README starts with "For judges": the live URL, a 3-minute path (home → AI coach → full
+  interview → report → Study first → 65/20 → language menu), what needs a microphone, what works by
+  typing, and that the AI coach needs consent. `docs/judge-guide.md` has the same path in more detail.
+- **REQ-J02** The report gives one `gh repo edit` command for the repository description and
+  homepage (KIRO-03). It is not run.
