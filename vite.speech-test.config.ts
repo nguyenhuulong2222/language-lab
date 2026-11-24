@@ -13,7 +13,7 @@ export default defineConfig({
   root: ".",
   // Use the speech-test page as the default entry
   build: {
-    rollupOptions: {
+    rolldownOptions: {
       input: "tools/speech-test/index.html",
     },
   },

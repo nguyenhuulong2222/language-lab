@@ -80,3 +80,48 @@ Checks:
 - **Function bundle**: passes, 51,102 bytes.
 - **Layout check** (production, English, normal, 390px): 25 screens, all pass.
 - **Hook tests**: pass.
+
+## Group 2 — Vite 6.4.5 → 8.3.8, @vitejs/plugin-react 4.5.2 → 6.3.0
+
+Sources read:
+- "Migration from v6" (https://v7.vite.dev/guide/migration)
+- "Migration from v7" (https://vite.dev/guide/migration)
+- The plugin-react changelog
+  (https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/CHANGELOG.md, 5.0.0 to 6.3.0)
+
+Breaking changes checked against this repository:
+- **Node 20.19+ / 22.12+** (Vite 7, plugin-react 5): CI uses 22.18, the machine 26.13. No change.
+- **Default browser target** raised (Chrome 111, Edge 111, Firefox 114, Safari 16.4). The app sets no
+  `build.target`, so the default applies. That fits the audience's phones (Safari 16.4 is from
+  2023), but it is a change for very old browsers.
+- **Rolldown and Oxc replace Rollup and esbuild** (bundling, JS transform and minify); **Lightning CSS
+  minifies CSS**. The app has no esbuild or Rollup options. The build output changed size (below), and
+  the layout check confirms it runs.
+- **`build.rollupOptions` renamed to `build.rolldownOptions`**: changed in `vite.speech-test.config.ts`
+  (the only use). That config still builds.
+- **esbuild is no longer a dependency of Vite.** The Pages Function bundle check uses esbuild, so
+  `esbuild` 0.28.2 (inside Vite 8's peer range) is now an explicit dev dependency. The baseline check
+  used 0.25.12, which came with Vite 6.
+- **Consistent CommonJS interop, no format sniffing, `manualChunks` object form removed,
+  `splitVendorChunkPlugin` removed, Sass legacy API removed**: not used.
+- **plugin-react 6 removes the Babel features; 5 stops adding react to `resolve.dedupe`**: the config
+  calls `react()` with no options, and there is one copy of react (19.1.0).
+- Vitest 4.1.12 declares `vite ^6 || ^7 || ^8`, so it runs on Vite 8 unchanged.
+
+What changed: `package.json`, the lockfile, `vite.speech-test.config.ts`, and the `esbuild` dev
+dependency.
+
+Checks:
+- **Typecheck**: 0 errors.
+- **Tests**: 1373 of 1373 pass.
+- **Build**: passes.
+
+  | Chunk | Baseline | Vite 8 |
+  |---|---|---|
+  | Main JS (`index-*.js`) | 412.38 kB / 122.73 kB gzip | 406.76 kB / 120.28 kB gzip |
+  | CSS | 24.51 kB / 5.27 kB gzip | 24.31 kB / 5.31 kB gzip |
+  | All JS and CSS, gzipped | 273,092 bytes | 268,803 bytes (−1.6%) |
+
+- **Function bundle**: passes, 51,102 bytes (unchanged).
+- **Layout check** (production, English, normal, 390px): 25 screens, all pass, no CSP violation.
+- **Hook tests**: pass.
