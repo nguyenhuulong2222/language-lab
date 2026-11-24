@@ -3,6 +3,7 @@
  * aloud (typed fallback); it is not played to them first. Writing: the sentence is played aloud and the user types it. After
  * each answer the comparison is shown; the stage ends where runEnglishStage ends it.
  */
+import { Disclaimer } from "../components/Disclaimer";
 import { LegalText } from "../components/LegalText";
 import { useEffect, useRef, useState } from "react";
 import { writingClipId } from "../../engine/audio-clips";
@@ -75,6 +76,8 @@ export function EnglishScreen({
         <TakeHeader stage={stage} title={reading ? t("reading.title") : t("writing.title")} focusKey={null} />
         <div className="screen__body">
           <SentenceFeedback target={target.text} attempt={attempt} matchOptions={matchOptions} kind={stage} />
+          {/* Content-safety rule 5 (audit F-07): the prominent disclaimer directly under the result. */}
+          <Disclaimer variant="prominent" id={`${stage}-result-disclaimer`} messageKey="disclaimer.report" />
           {reading && (
             <ListenAndCompare
               review={review}

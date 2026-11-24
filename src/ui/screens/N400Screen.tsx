@@ -5,6 +5,7 @@
  * offers the optional AI coach (spec .kiro/specs/interview-coach): off by default, a notice before
  * it turns on, and a feedback step after each answer while it is on. Nothing is sent while it is off.
  */
+import { Disclaimer } from "../components/Disclaimer";
 import { LegalText } from "../components/LegalText";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { n400QuestionClipId, sampleAnswerClipId } from "../../engine/audio-clips";
@@ -185,6 +186,8 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
               </li>
             ))}
           </ol>
+          {/* Content-safety rule 5 (audit F-07): the prominent disclaimer directly under the answers. */}
+          <Disclaimer variant="prominent" id="n400-done-disclaimer" messageKey="disclaimer.report" />
           <div className="btn-row">
             <button type="button" className="btn" onClick={onFinish}>
               {nextIsReport ? t("report.see") : nextIsCivics ? t("writing.toCivics") : t("n400.done.next")}

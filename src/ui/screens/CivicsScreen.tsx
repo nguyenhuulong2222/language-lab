@@ -117,8 +117,9 @@ export function CivicsScreen({
               <p className="note">{t("civics.needs", { count: entry.requiredAnswerCount })}</p>
             )}
             {picture !== null && <QuestionPicture picture={picture} />}
-            <Disclaimer messageKey="disclaimer.short" />
           </section>
+          {/* Content-safety rule 5 (audit F-07): the prominent disclaimer directly under the result. */}
+          <Disclaimer variant="prominent" id="civics-result-disclaimer" messageKey="disclaimer.report" />
           {progress.done && (
             <p className="status">
               {stopped === "correct_threshold"

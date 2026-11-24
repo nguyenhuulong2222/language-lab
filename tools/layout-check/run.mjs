@@ -261,6 +261,18 @@ async function checkConfiguration(cdp, size, lang) {
   const record = async (name) => {
     const m = await lab("measure(" + MIN_TARGET + ")");
     m.cspViolations = await cdp.evaluate("window.__csp || []");
+    // Result screens (audit F-07): the prominent disclaimer is there, under the result, and the
+    // result heading is fully in view where the app leaves the page (it focuses the result, which
+    // scrolls it into view), so the disclaimer never hides the result.
+    if (/-feedback$|^n400-done$/.test(name)) {
+      m.resultCheck = await cdp.evaluate(`(() => {
+        const disclaimer = document.querySelector("main .disclaimer--prominent");
+        const heading = document.querySelector("main .screen__body .panel .panel__title") || document.querySelector("main h1");
+        const box = heading ? heading.getBoundingClientRect() : null;
+        return { disclaimer: !!disclaimer, headingTop: box ? Math.round(box.top) : null, headingBottom: box ? Math.round(box.bottom) : null, viewport: window.innerHeight,
+          order: !!(disclaimer && heading && (heading.compareDocumentPosition(disclaimer) & Node.DOCUMENT_POSITION_FOLLOWING)) };
+      })()`);
+    }
     results.push({ name, size, lang, ...m });
     if (wantShots) {
       fs.mkdirSync(SHOTS_DIR, { recursive: true });
@@ -573,6 +585,12 @@ async function main() {
     for (const x of r.clipped) problems.push(`clipped: ${x}`);
     for (const x of r.smallTargets) problems.push(`small target: ${x}`);
     for (const x of r.cspViolations ?? []) problems.push(`CSP violation: ${x}`);
+    if (r.resultCheck) {
+      const c = r.resultCheck;
+      if (!c.disclaimer) problems.push("no prominent disclaimer on a result screen");
+      else if (!c.order) problems.push("the prominent disclaimer is above the result");
+      if (c.headingTop === null || c.headingTop < 0 || c.headingBottom > c.viewport) problems.push(`the result is not in view (top ${c.headingTop}px, bottom ${c.headingBottom}px, viewport ${c.viewport}px)`);
+    }
     const expectedRoot = { normal: 16, large: 18, "extra-large": 20 }[r.size];
     if (r.rootPx !== expectedRoot) problems.push(`text size not applied: root font is ${r.rootPx}px, expected ${expectedRoot}px`);
     const status = problems.length === 0 ? "ok  " : "FAIL";
