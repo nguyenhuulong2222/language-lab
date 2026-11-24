@@ -57,7 +57,8 @@ describe("languages", () => {
 });
 
 describe("message keys are all used", () => {
-  const sources = import.meta.glob("../../ui/**/*.{ts,tsx}", {
+  // The UI, and the report builder, which names the summary line keys (CR-007).
+  const sources = import.meta.glob(["../../ui/**/*.{ts,tsx}", "../../engine/report-builder.ts"], {
     query: "?raw",
     import: "default",
     eager: true,

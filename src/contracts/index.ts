@@ -10,6 +10,7 @@ export type {
   N400Feedback,
   ScoringResult,
   StageSummary,
+  SummaryLine,
   PracticeResult,
   FinalReport,
   InterviewSession,

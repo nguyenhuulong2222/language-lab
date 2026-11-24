@@ -12,6 +12,8 @@ import { useLanguage, useT } from "../../i18n/react";
 import { ScreenHelp } from "../components/ScreenHelp";
 import { TakeHeader } from "../components/TakeHeader";
 import { formatDate } from "../format";
+import type { CivicsPracticeRules } from "../../engine/test-rules-loader";
+import { SpecialConsiderationNote } from "../components/SpecialConsiderationNote";
 import "../components/Screen.css";
 
 interface IntroScreenProps {
@@ -20,17 +22,24 @@ interface IntroScreenProps {
   boundaryDate: string;
   /** What the chosen part needs the user to choose. */
   needs: { profile: boolean; filing: boolean };
-  onStart: (choice: { profileId?: string; filedOn?: FiledChoice }) => void;
+  onStart: (choice: { profileId?: string; filedOn?: FiledChoice; specialConsideration?: boolean }) => void;
+  /**
+   * The 65/20 choice (spec release-finish REQ-S05): shown with the filing choice when the build
+   * offers it. `initial` is true when the home 65/20 card was chosen.
+   */
+  special?: { rules: CivicsPracticeRules; initial: boolean };
   /** True when the setup appears again after "start over": focus then moves to its heading. */
   focusOnFirstRender?: boolean;
 }
 
-export function IntroScreen({ profiles, boundaryDate, needs, onStart, focusOnFirstRender = true }: IntroScreenProps) {
+export function IntroScreen({ profiles, boundaryDate, needs, onStart, special, focusOnFirstRender = true }: IntroScreenProps) {
   const t = useT();
   const language = useLanguage();
   const [profileId, setProfileId] = useState<string | null>(null);
   const [presses, setPresses] = useState(0);
   const [filedOn, setFiledOn] = useState<FiledChoice | null>(null);
+  const [specialOn, setSpecialOn] = useState(special?.initial === true);
+  const showSpecial = needs.filing && special !== undefined;
   const date = formatDate(boundaryDate, language);
   const ready = (!needs.profile || profileId !== null) && (!needs.filing || filedOn !== null);
 
@@ -39,6 +48,7 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, focusOnFir
     onStart({
       ...(needs.profile && profileId !== null ? { profileId } : {}),
       ...(needs.filing && filedOn !== null ? { filedOn } : {}),
+      ...(showSpecial && specialOn ? { specialConsideration: true } : {}),
     });
   };
 
@@ -97,7 +107,22 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, focusOnFir
             ))}
           </fieldset>
         )}
-
+        {showSpecial && (
+          <div className="choices">
+            <label className="choice">
+              <input
+                className="choice__input"
+                type="checkbox"
+                name="special"
+                checked={specialOn}
+                aria-describedby="intro-special-help"
+                onChange={(event) => setSpecialOn(event.target.checked)}
+              />
+              <span className="choice__text">{t("intro.special.label")}</span>
+            </label>
+            <SpecialConsiderationNote rules={special.rules} id="intro-special-help" />
+          </div>
+        )}
         <div className="btn-row">
           <button
             type="button"

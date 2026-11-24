@@ -1,0 +1,58 @@
+# Judge guide: Language Lab in 3 minutes
+
+Live: <https://language-lab-ade.pages.dev> (the production build; features of a branch appear there
+only after that branch is merged and deployed)
+
+Language Lab is a free practice booth for the U.S. naturalization interview. Everyone practises as an
+invented person, so nobody types or says real details. It is an independent study aid. It is not
+affiliated with USCIS or any government agency, it is not legal advice, and practice results predict
+nothing.
+
+## What needs a microphone, and what works by typing
+
+- **Everything works by typing**: every answer box accepts typed text, and every screen can be
+  finished without a microphone.
+- **"Say it"** (answer by voice) uses the browser's speech recognition. It needs a microphone and a
+  browser that supports it, such as Chrome, Edge or Safari. The browser asks for permission first.
+- **"Record and compare"** on the reading screen records you on your device and plays it back. It needs
+  a microphone. The recording stays on the device.
+- **"Play aloud"** plays a recorded voice clip (or the device voice). It needs sound, not a microphone.
+
+## The path (about 3 minutes)
+
+1. **Home (15 s)**: read the welcome, "How it works" and the disclaimer. Note the cards: the full
+   interview, the AI coach, Study first, 65/20, and the single parts.
+2. **AI coach (40 s)**: choose "Practice the N-400 interview with an AI coach". Pick a fictional
+   profile and press "Start practice". The consent notice opens first, and nothing is sent until you
+   press "Turn on the AI coach". Turn it on and type one answer: the coach gives a feedback label, one
+   English tip and a practice follow-up question, each marked "AI-generated feedback". If the coach is
+   switched off on the live site, the screen says "AI feedback is not available right now" and the
+   practice goes on. Without AI: press "Cancel", then "No, practice without AI".
+3. **Full interview (60 s)**: go back to Home. Choose "Full practice interview", pick a profile, and
+   choose when the N-400 was filed (this picks the 2008 or 2025 civics test). Choose "No, practice
+   without AI". Type short answers to the N-400 questions. In reading, type the sentence shown. In
+   writing, press "Show the sentence" if you cannot listen, then type it. In civics, type answers. The
+   practice test stops on the official stop rule.
+4. **Report (20 s)**: each part shows "Practice score reached" or "Worth reviewing" (never pass or
+   fail), the items to practise, and the disclaimer.
+5. **Study first (15 s)**: from Home, choose "Study first" and a test version. Page through the
+   questions with the official answers and pictures. Nothing is scored.
+6. **65/20 (15 s)**: from Home, choose "65/20 civics practice". The setup has the choice "I am 65 or
+   older and have been a permanent resident for 20 years or more" already ticked. The civics part asks
+   10 of the 20 questions marked with a star in the official list, and the practice score is 6 correct
+   answers (USCIS Policy Manual, Vol. 12, Part E, Ch. 2). A line links the USCIS page that says a 65/20
+   applicant may take the real test in their own language with an interpreter. The questions stay
+   English.
+7. **Language menu (15 s)**: press the language button in the header (the globe) and choose, for
+   example, Tiếng Việt. The interface changes and says the translation was made by AI, may contain
+   mistakes, and that English is the authoritative version.
+   Disclaimers, legal lines and every civics question stay in English. "Settings" has text size (up to
+   125%) and slower recorded voices.
+
+## The AI coach and consent
+
+The AI coach is optional and off by default, and it is off again in every new practice. Only after you
+confirm the notice is the text of each N-400 answer sent to Anthropic's API, through the site's own
+server. Audio and earlier answers are never sent. Before sending, the app refuses text that looks like an
+A-number, a Social Security number, a phone number, an e-mail address or a full date. The coach never
+scores civics, reading or writing.

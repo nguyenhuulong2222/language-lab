@@ -621,3 +621,13 @@ Spec first (`88e7d15`, BS-22 to BS-25); decisions in `docs/decisions-log.md`, se
 - D-04: strings in 14 languages, review sheets, tests for the translated choice screen.
 - D-05: layout check for the new screens (40 configurations pass), reviewer fixes.
 - D-06: steering and the three legal lines say fictional practice, truthful real interview.
+## 2026-11-20: release finish (branch release/finish)
+- R-01: 65/20 practice from the Policy Manual (closes CON-09): sources, rules, designated set with a
+  data test, engine (all 10 asked), setup choice, home card, Study first, interpreter line.
+- R-02: open findings closed (CON-04, CON-06, CON-07, CON-10, CON-12, CON-13, CON-14, COR-04, SEC-07,
+  SEC-08, A11Y-11, A11Y-12, A11Y-13, KIRO-01); DEP-02 left for the upgrade branch.
+- R-03: interaction tests with jsdom and Testing Library (closes COR-01).
+- R-04: `docs/content-review.md` checklists for the owner.
+- R-05: "For judges" in README and `docs/judge-guide.md`.
+- R-06: ui-reviewer and content-reviewer with fixes, layout check in the 10 production languages at
+  normal and extra-large text and at 390 and 320px, typecheck, tests, build.

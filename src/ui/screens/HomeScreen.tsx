@@ -24,6 +24,8 @@ interface HomeScreenProps {
   onStudy?: () => void;
   /** Start the N-400 part with the AI coach's consent notice open (spec REQ-C18). Absent: no coach card. */
   onChooseCoach?: () => void;
+  /** Start the civics part with the 65/20 choice ticked (spec release-finish REQ-S06). Absent: no card. */
+  onChooseSpecial?: () => void;
   /** The home screen is shown again after "back to home": focus then moves to its heading. */
   focusOnFirstRender?: boolean;
 }
@@ -35,7 +37,7 @@ const PARTS: ReadonlyArray<{ mode: Exclude<PracticeMode, "full">; title: Message
   { mode: "civics", title: "home.part.civics.title", text: "home.part.civics.text" },
 ];
 
-export function HomeScreen({ civicsLocked, onChoose, onStudy, onChooseCoach, focusOnFirstRender = false }: HomeScreenProps) {
+export function HomeScreen({ civicsLocked, onChoose, onStudy, onChooseCoach, onChooseSpecial, focusOnFirstRender = false }: HomeScreenProps) {
   const t = useT();
   const coachTitleId = useId();
   const coachTextId = useId();
@@ -91,6 +93,12 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, onChooseCoach, foc
           <button type="button" className="option-card" onClick={onStudy}>
             <span className="option-card__title">{t("home.study.title")}</span>
             <span className="option-card__text">{t("home.study.text")}</span>
+          </button>
+        )}
+        {!civicsLocked && onChooseSpecial !== undefined && (
+          <button type="button" className="option-card" onClick={onChooseSpecial}>
+            <span className="option-card__title">{t("home.special.title")}</span>
+            <span className="option-card__text">{t("home.special.text")}</span>
           </button>
         )}
         {!civicsLocked && <h3 className="panel__title">{t("home.parts.title")}</h3>}

@@ -1,0 +1,58 @@
+{
+  "_note": "The 20 specially designated civics questions for the 65/20 special consideration, per test version: the questions marked with an asterisk (*) in the official USCIS lists. Ids are those of data/civics-answers/. Transcribed from the asterisks only; src/engine/__tests__/special-consideration-data.test.ts checks this file against data/sources/uscis-2025-civics-128.txt, uscis-2008-civics-100.html and uscis-2008-civics-100-rev0119.txt. Not an answer key: answers come from data/civics-answers/.",
+  "_sources": {
+    "2008": [
+      "data/sources/uscis-2008-civics-100.html",
+      "data/sources/uscis-2008-civics-100-rev0119.txt"
+    ],
+    "2025": [
+      "data/sources/uscis-2025-civics-128.pdf",
+      "data/sources/uscis-2025-civics-128.txt"
+    ],
+    "rule": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2"
+  },
+  "2008": [
+    "2008-006",
+    "2008-011",
+    "2008-013",
+    "2008-017",
+    "2008-020",
+    "2008-027",
+    "2008-028",
+    "2008-044",
+    "2008-045",
+    "2008-049",
+    "2008-054",
+    "2008-056",
+    "2008-070",
+    "2008-075",
+    "2008-078",
+    "2008-085",
+    "2008-094",
+    "2008-095",
+    "2008-097",
+    "2008-099"
+  ],
+  "2025": [
+    "2025-002",
+    "2025-007",
+    "2025-012",
+    "2025-020",
+    "2025-030",
+    "2025-036",
+    "2025-038",
+    "2025-039",
+    "2025-044",
+    "2025-052",
+    "2025-061",
+    "2025-066",
+    "2025-074",
+    "2025-078",
+    "2025-086",
+    "2025-094",
+    "2025-113",
+    "2025-115",
+    "2025-121",
+    "2025-126"
+  ]
+}

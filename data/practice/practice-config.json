@@ -57,6 +57,7 @@
         "maxEdits": 2
       }
     ],
+    "pluralMinLetters": 3,
     "reading": {
       "extraContentWordsAllowed": 1,
       "spellingTolerance": false

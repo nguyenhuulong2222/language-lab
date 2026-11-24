@@ -4,6 +4,8 @@
  * stage ends exactly where the engine ends it. When the answer key is refused (production
  * build, answer key still waiting for review), the screen explains that instead of scoring.
  */
+import type { CivicsPracticeRules } from "../../engine/test-rules-loader";
+import { SpecialConsiderationNote } from "../components/SpecialConsiderationNote";
 import { LegalText } from "../components/LegalText";
 import { useEffect, useRef, useState } from "react";
 import type { CivicsProgress, InputMode } from "../../engine/practice-flow";
@@ -33,8 +35,9 @@ interface CivicsScreenProps {
   showFeedbackInitially?: boolean;
   /** The picture of a question (tests replace it). Used only in the feedback view, after grading. */
   pictureFor?: (questionId: string) => PictureEntry | null;
+  /** The 65/20 rules when this is the 65/20 practice (spec release-finish REQ-S04). */
+  special?: CivicsPracticeRules;
 }
-
 export function CivicsScreen({
   progress,
   version,
@@ -43,6 +46,7 @@ export function CivicsScreen({
   onRestart,
   showFeedbackInitially = false,
   pictureFor = pictureForQuestion,
+  special,
 }: CivicsScreenProps) {
   const t = useT();
   const tEnglish = useTWithEnglish();
@@ -93,7 +97,10 @@ export function CivicsScreen({
             </h2>
             <p>{tEnglish("civics.youSaid", { text: progress.lastResponse === "" ? "…" : (progress.lastResponse ?? "") })}</p>
             {progress.lastResponse !== "" && (
-              <p className="note">{progress.lastInput === "voice" ? t("compare.honest.heard") : t("compare.honest.typed")}</p>
+              <p className="note">
+                {progress.lastInput === "voice" ? t("compare.honest.heard") : t("compare.honest.typed")}
+                {progress.lastInput === "voice" && progress.lastAlternatives > 1 && <> {t("civics.heard.closest")}</>}
+              </p>
             )}
             {lines !== null && (
               <>
@@ -174,6 +181,8 @@ export function CivicsScreen({
                 onSubmit(text, input, alternatives);
               }}
             />
+            {/* After the question and the answer box, so they stay at the top (ui-reviewer). */}
+            {special !== undefined && progress.position === 1 && <SpecialConsiderationNote rules={special} />}
           </div>
         )}
       </div>

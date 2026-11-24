@@ -128,6 +128,18 @@ export interface StageSummary {
   summary: string;
   /** Specific items recommended for further practice. */
   reviewItems: string[];
+  /**
+   * The same summary as message keys of the locale files with their numbers as placeholders, in
+   * order (CR-007). Rendered in English the lines equal `summary`. Optional: older reports and
+   * fixtures have only `summary`.
+   */
+  summaryLines?: SummaryLine[];
+}
+
+/** One line of a stage summary: a locale message key and its placeholder values (CR-007). */
+export interface SummaryLine {
+  key: string;
+  params?: Record<string, string | number>;
 }
 
 // ---------------------------------------------------------------------------

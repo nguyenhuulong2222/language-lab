@@ -16,14 +16,15 @@
  *
  * Pure module: no DOM, no network. The clock is injectable.
  */
-import type { FinalReport, InterviewSession, StageSummary } from "../contracts/session.js";
+import type { FinalReport, InterviewSession, StageSummary, SummaryLine } from "../contracts/session.js";
+import { tEn, type MessageKey } from "../i18n/index.js";
 import type { CivicsAnswerEntry } from "./civics-answer-key.js";
 import type { CivicsStageResult } from "./civics-grader.js";
 import type { EnglishStageKind, EnglishStageResult } from "./english-grader.js";
 import {
   loadCivicsRules,
   loadEnglishRules,
-  type CivicsTestRules,
+  type CivicsPracticeRules,
   type EnglishTestRules,
 } from "./test-rules-loader.js";
 
@@ -33,7 +34,7 @@ export const PRACTICE_DISCLAIMER =
   "Results do not predict or reflect any official immigration decision. This is not legal advice.";
 
 export interface ReportRules {
-  civics: CivicsTestRules;
+  civics: CivicsPracticeRules;
   english: EnglishTestRules;
 }
 
@@ -78,14 +79,12 @@ export function listUnscoredQuestions(
     });
 }
 
-function plural(count: number, one: string, many: string): string {
-  return count === 1 ? one : many;
-}
 
-function civicsPassed(result: CivicsStageResult, rules: CivicsTestRules): boolean {
+
+function civicsPassed(result: CivicsStageResult, rules: CivicsPracticeRules): boolean {
   return (
     result.passed &&
-    result.stopReason === "correct_threshold" &&
+    (result.stopReason === "correct_threshold" || result.stopReason === "all_asked") &&
     result.correctCount >= rules.passingScore.value
   );
 }
@@ -97,56 +96,60 @@ function englishPassed(
   return result.passed && result.correctCount >= rules[result.kind].sentencesToPassCount.value;
 }
 
+/** A summary line: a key of the locale files and its values (CR-007). */
+function line(key: MessageKey, params?: SummaryLine["params"]): SummaryLine {
+  return params === undefined ? { key } : { key, params };
+}
+
+/** The English text of the lines: the contract's `summary`. */
+function render(lines: readonly SummaryLine[]): string {
+  return lines.map((l) => tEn(l.key as MessageKey, l.params)).join(" ");
+}
+
 function civicsSummary(
   result: CivicsStageResult,
   unscored: readonly UnscoredQuestion[],
-  rules: CivicsTestRules,
+  rules: CivicsPracticeRules,
   passed: boolean
 ): StageSummary {
   const scored = result.correctCount + result.incorrectCount;
-  const parts: string[] = [];
+  const score = rules.passingScore.value;
+  const lines: SummaryLine[] = [];
 
   if (scored === 0) {
-    parts.push("No civics questions were scored.");
+    lines.push(line("report.line.civics.none"));
   } else {
-    parts.push(
-      `${result.correctCount} of ${scored} civics ${plural(scored, "question", "questions")} answered correctly.`
-    );
-    if (passed) {
-      parts.push("The practice test stopped once the practice passing score was reached.");
+    lines.push(line("report.line.civics.correct", { correct: result.correctCount, scored }));
+    if (passed && result.stopReason === "all_asked") {
+      lines.push(line("report.line.civics.allAsked", { asked: scored + result.unscoredCount, score }));
+    } else if (passed) {
+      lines.push(line("report.line.civics.stoppedAtScore"));
     } else if (result.stopReason === "incorrect_threshold") {
-      parts.push(
-        `The practice test stopped after ${rules.earlyStopOnIncorrect.value} incorrect answers, ` +
-          `before the practice passing score of ${rules.passingScore.value} was reached.`
-      );
+      lines.push(line("report.line.civics.stoppedIncorrect", { incorrect: result.incorrectCount, score }));
     } else {
-      parts.push(
-        `The practice passing score is ${rules.passingScore.value} correct answers, and it was not reached.`
-      );
+      lines.push(line("report.line.civics.notReached", { score }));
     }
   }
 
   if (unscored.length > 0) {
-    const names = unscored.map((u) => u.questionText ?? u.questionId).join("; ");
-    parts.push(
-      `${unscored.length} ${plural(unscored.length, "question was", "questions were")} not scored ` +
-        `because the answer changes or is not in the answer key (${names}). ` +
-        `${plural(unscored.length, "It does", "They do")} not count as correct or incorrect.`
-    );
+    // The question texts stay English (they are the official wording).
+    lines.push(line("report.line.civics.unscored", { names: unscored.map((u) => u.questionText ?? u.questionId).join("; ") }));
   }
 
   return {
     stage: "civics",
     turnsTotal: result.scores.length,
     turnsScored: scored,
-    summary: parts.join(" "),
+    summary: render(lines),
+    summaryLines: lines,
     reviewItems: [...result.reviewItems],
   };
 }
 
-const ENGLISH_WORDS: Record<EnglishStageKind, { done: string; practice: string }> = {
-  reading: { done: "read", practice: "Practice reading the sentences aloud." },
-  writing: { done: "written", practice: "Practice writing the sentences you hear." },
+/** Review items of the English parts. The report screen translates them by these exact texts. */
+export const ENGLISH_REVIEW_ITEMS: Record<EnglishStageKind, { text: string; key: MessageKey }> = {
+  reading: { text: tEn("report.review.reading"), key: "report.review.reading" },
+  writing: { text: tEn("report.review.writing"), key: "report.review.writing" },
 };
 
 function englishSummary(
@@ -155,28 +158,30 @@ function englishSummary(
   passed: boolean,
   assisted = 0
 ): StageSummary {
-  const words = ENGLISH_WORDS[result.kind];
+  const kind = result.kind;
   const presented = result.attempts;
-  let summary: string;
+  const lines: SummaryLine[] = [];
   if (presented === 0) {
-    summary = `No ${result.kind} sentences were completed.`;
+    lines.push(line(kind === "reading" ? "report.line.reading.none" : "report.line.writing.none"));
   } else if (passed) {
-    summary = `Sentence ${presented} was ${words.done} correctly.`;
+    lines.push(line(kind === "reading" ? "report.line.reading.done" : "report.line.writing.done", { n: presented }));
   } else {
-    summary =
-      `${result.correctCount} of ${presented} ${result.kind} ${plural(presented, "sentence", "sentences")} ` +
-      `${presented === 1 ? "was" : "were"} ${words.done} correctly. ` +
-      `${rules[result.kind].sentencesToPassCount.value} correct ${plural(rules[result.kind].sentencesToPassCount.value, "sentence is", "sentences are")} needed.`;
+    lines.push(
+      line(kind === "reading" ? "report.line.reading.count" : "report.line.writing.count", {
+        correct: result.correctCount,
+        presented,
+        needed: rules[kind].sentencesToPassCount.value,
+      })
+    );
   }
-  if (assisted > 0) {
-    summary += ` ${assisted} of the ${presented} writing ${plural(presented, "attempt was", "attempts were")} made with the sentence shown on screen (assisted).`;
-  }
+  if (assisted > 0) lines.push(line("report.line.writing.assisted", { assisted, presented }));
   return {
-    stage: result.kind,
+    stage: kind,
     turnsTotal: presented,
     turnsScored: presented,
-    summary,
-    reviewItems: passed ? [] : [words.practice],
+    summary: render(lines),
+    summaryLines: lines,
+    reviewItems: passed ? [] : [ENGLISH_REVIEW_ITEMS[kind].text],
   };
 }
 

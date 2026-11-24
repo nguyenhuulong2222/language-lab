@@ -164,3 +164,29 @@ fieldset.choices {
     outline: none;
   }
 }
+/* Forced colours: an active button (recording) keeps a visible state with the system highlight
+   colours and a double frame (audit A11Y-11). */
+@media (forced-colors: active) {
+  .btn--active {
+    forced-color-adjust: none;
+    background: Highlight;
+    color: HighlightText;
+    border: 3px double HighlightText;
+  }
+}
+/* Very long words (125% text, 320px) wrap inside the button instead of overflowing (A11Y-13). */
+.btn {
+  overflow-wrap: anywhere;
+}
+/* Forced colours: a button that cannot be used yet (aria-disabled) looks different (ui-reviewer). */
+@media (forced-colors: active) {
+  .btn[aria-disabled="true"] {
+    color: GrayText;
+    border-style: dashed;
+  }
+}
+/* Long words in a choice label wrap inside the card (125% text, 320px). */
+.choice__text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

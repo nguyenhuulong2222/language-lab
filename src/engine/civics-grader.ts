@@ -16,7 +16,7 @@ import { countMatchingPhrases, type SentenceRule } from "./answer-normaliser.js"
 import { loadPracticeConfig } from "./practice-config.js";
 import { sameInflection } from "./sentence-compare.js";
 import type { CivicsAnswerEntry } from "./civics-answer-key.js";
-import type { CivicsTestRules } from "./test-rules-loader.js";
+import type { CivicsPracticeRules } from "./test-rules-loader.js";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -35,10 +35,14 @@ export interface CivicsStageInput {
   /** Civics turns in the order they were asked. */
   turns: readonly Turn[];
   answerKey: ReadonlyMap<string, CivicsAnswerEntry>;
-  rules: CivicsTestRules;
+  rules: CivicsPracticeRules;
 }
 
-export type CivicsStopReason = "correct_threshold" | "incorrect_threshold" | "none";
+/**
+ * Why the stage ended. "all_asked": every question of the limit was scored and no early-stop rule
+ * applied (the 65/20 test, which has no sourced stop rule). "none": not finished.
+ */
+export type CivicsStopReason = "correct_threshold" | "incorrect_threshold" | "all_asked" | "none";
 
 export interface CivicsStageResult {
   /** One score per turn that was graded, in order. */
@@ -148,7 +152,9 @@ export function scoreCivicsTurn(
  *
  * The stage stops on the turn where correct answers reach `earlyStopOnCorrect` or
  * incorrect answers reach `earlyStopOnIncorrect`. If the turns or the question limit run
- * out first, the stage is not passed.
+ * out first, the stage is not passed. An early-stop value of null never stops the stage; then,
+ * once every question of the limit is scored, the stage ends with "all_asked" and is passed when
+ * the correct answers reach the passing score.
  */
 export function runCivicsStage(input: CivicsStageInput): CivicsStageResult {
   const { turns, answerKey, rules } = input;
@@ -180,16 +186,21 @@ export function runCivicsStage(input: CivicsStageInput): CivicsStageResult {
         break;
     }
 
-    if (correctCount >= stopOnCorrect) {
+    if (stopOnCorrect !== null && correctCount >= stopOnCorrect) {
       stopReason = "correct_threshold";
       stoppedAtTurnId = turn.turnId;
       break;
     }
-    if (incorrectCount >= stopOnIncorrect) {
+    if (stopOnIncorrect !== null && incorrectCount >= stopOnIncorrect) {
       stopReason = "incorrect_threshold";
       stoppedAtTurnId = turn.turnId;
       break;
     }
+  }
+
+  // No early stop happened and every question of the limit was scored.
+  if (stopReason === "none" && scores.length === questionLimit && (stopOnCorrect === null || stopOnIncorrect === null)) {
+    stopReason = "all_asked";
   }
 
   const reviewItems = scores
@@ -202,7 +213,7 @@ export function runCivicsStage(input: CivicsStageInput): CivicsStageResult {
     correctCount,
     incorrectCount,
     unscoredCount,
-    passed: stopReason === "correct_threshold" && correctCount >= passingScore,
+    passed: (stopReason === "correct_threshold" || stopReason === "all_asked") && correctCount >= passingScore,
     stopReason,
     stoppedAtTurnId,
     reviewItems,

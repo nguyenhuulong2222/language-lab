@@ -41,8 +41,12 @@ describe("practice config", () => {
   it("rejects values outside the range and wrong shapes", () => {
     const stage = { extraContentWordsAllowed: 1, spellingTolerance: false };
     const slips = [{ fromLetters: 4, maxEdits: 1 }];
-    const base = { needsHumanReview: true, sentenceMatch: { functionWords: ["the"], neverStem: ["news"], spellingSlips: slips, reading: stage, writing: stage } };
+    const base = { needsHumanReview: true, sentenceMatch: { functionWords: ["the"], neverStem: ["news"], spellingSlips: slips, pluralMinLetters: 3, reading: stage, writing: stage } };
     expect(() => parsePracticeConfig(base)).not.toThrow();
+    // COR-04: the plural limit comes from the config and must be a whole number of 1 or more.
+    for (const bad of [0, -1, 2.5, "3", undefined]) {
+      expect(() => parsePracticeConfig({ ...base, sentenceMatch: { ...base.sentenceMatch, pluralMinLetters: bad } }), String(bad)).toThrow();
+    }
     for (const bad of [-1, 1.5, 4, Number.NaN, "1"]) {
       expect(() =>
         parsePracticeConfig({ ...base, sentenceMatch: { ...base.sentenceMatch, reading: { ...stage, extraContentWordsAllowed: bad } } })

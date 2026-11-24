@@ -8,7 +8,8 @@
  * Content safety: the report always labels the profile as fictional and shows
  * the FinalReport.disclaimer prominently.
  */
-import { isEnglishOnly } from "../../i18n";
+import { ENGLISH_MESSAGES, isEnglishOnly, type MessageKey } from "../../i18n";
+import { ENGLISH_REVIEW_ITEMS } from "../../engine/report-builder";
 import type { InterviewSession, StageSummary } from "../../contracts";
 import { Disclaimer } from "../components/Disclaimer";
 import { StatusBadge } from "../components/StatusBadge";
@@ -90,12 +91,15 @@ export function ReportScreen({ session }: ReportScreenProps) {
           </h2>
           <p className="report__section-intro">{t("report.review.intro")}</p>
           <ul className="report__review-list">
-            {report.overallReviewItems.map((item, index) => (
-              <li key={index} className="report__review-item" lang="en">
-                <ReviewIcon className="report__review-icon" />
-                <span className="report__review-text">{item}</span>
-              </li>
-            ))}
+            {report.overallReviewItems.map((item, index) => {
+              const own = reviewItemKey(item);
+              return (
+                <li key={index} className="report__review-item" {...(own === null ? { lang: "en" } : {})}>
+                  <ReviewIcon className="report__review-icon" />
+                  <span className="report__review-text">{own === null ? item : t(own)}</span>
+                </li>
+              );
+            })}
           </ul>
         </section>
       )}
@@ -115,8 +119,27 @@ export function ReportScreen({ session }: ReportScreenProps) {
   );
 }
 
+/**
+ * The summary lines as known message keys (CR-007), or null: then the English `summary` is shown.
+ * Question texts inside a line stay English; they are the official wording.
+ */
+function summaryLines(summary: StageSummary): Array<{ key: MessageKey; params?: Record<string, string | number> }> | null {
+  const lines = summary.summaryLines;
+  if (lines === undefined || lines.length === 0) return null;
+  if (!lines.every((l) => Object.prototype.hasOwnProperty.call(ENGLISH_MESSAGES, l.key))) return null;
+  return lines.map((l) => ({ key: l.key as MessageKey, ...(l.params === undefined ? {} : { params: l.params }) }));
+}
+
+/** The message key of a review item the engine writes (reading and writing), or null for question texts. */
+function reviewItemKey(item: string): MessageKey | null {
+  for (const own of Object.values(ENGLISH_REVIEW_ITEMS)) if (own.text === item) return own.key;
+  return null;
+}
+
 function StageSummaryCard({ summary }: { summary: StageSummary }) {
   const t = useT();
+  const language = useLanguage();
+  const lines = summaryLines(summary);
   const meta = STAGES[stageIndex(summary.stage)];
   const hasReview = summary.reviewItems.length > 0;
   return (
@@ -128,15 +151,29 @@ function StageSummaryCard({ summary }: { summary: StageSummary }) {
           label={hasReview ? t("badge.review") : t("badge.onTrack")}
         />
       </div>
-      <p className="stage-card__summary" lang="en">{summary.summary}</p>
+      {lines === null ? (
+        <p className="stage-card__summary" lang="en">{summary.summary}</p>
+      ) : (
+        <p className="stage-card__summary">
+          {lines.map((l, i) => (
+            <span key={i} {...(isEnglishOnly(language, l.key) ? { lang: "en" } : {})}>
+              {i > 0 ? " " : ""}
+              {t(l.key, l.params)}
+            </span>
+          ))}
+        </p>
+      )}
       {hasReview && (
         <ul className="stage-card__review">
-          {summary.reviewItems.map((item, index) => (
-            <li key={index} className="stage-card__review-item" lang="en">
-              <ReviewIcon className="stage-card__review-icon" />
-              <span>{item}</span>
-            </li>
-          ))}
+          {summary.reviewItems.map((item, index) => {
+            const own = reviewItemKey(item);
+            return (
+              <li key={index} className="stage-card__review-item" {...(own === null ? { lang: "en" } : {})}>
+                <ReviewIcon className="stage-card__review-icon" />
+                <span>{own === null ? item : t(own)}</span>
+              </li>
+            );
+          })}
         </ul>
       )}
     </li>

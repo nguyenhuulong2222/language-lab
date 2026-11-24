@@ -81,3 +81,11 @@
   height: 1.25rem;
   flex: 0 0 auto;
 }
+/* Forced colours: the open state of a header button is shown by a thicker frame and an underline,
+   not by its background (audit A11Y-11). */
+@media (forced-colors: active) {
+  .header__button[aria-expanded="true"] {
+    border-width: 3px;
+    text-decoration: underline;
+  }
+}

@@ -32,7 +32,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | ဤသည်မှာ USCIS ၏ အမှတ်ပေးလမ်းညွှန်ချက်များကို အခြေခံသော Language Lab ၏ လေ့ကျင့်ရေးဆက်တင်ဖြစ်ပြီး USCIS စည်းမျဉ်း မဟုတ်ပါ- စာကြောင်း၏ အရေးကြီးသော စကားလုံးအားလုံး အစဉ်လိုက် ပါရမည်။ “the” ကဲ့သို့ စကားလုံးတိုများ ကျန်နိုင်သည်။ ရပ်နားခြင်းနှင့် အသံထွက်ကို အမှတ်မပေးပါ။ | This is Language Lab's practice setting based on the USCIS scoring guidelines, and it is not a USCIS rule: all important words of the sentence must be present in sequence. Short words such as “the” may be left over. Stopping and pronunciation are not scored. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | ဤရွေးချယ်မှုက သင် 2008 နှင့် 2025 နိုင်ငံသားဗဟုသုတစာမေးပွဲအနက် မည်သည့်စာမေးပွဲကို လေ့ကျင့်မည်ကို ဆုံးဖြတ်သည်။ ၎င်းသည် လေ့ကျင့်ရန်ရွေးချယ်မှုသာဖြစ်သည်။ သင့်ကိုယ်ပိုင်အမှုအတွက် မည်သည့်စာမေးပွဲ သက်ဆိုင်သည်ကို uscis.gov တွင် စစ်ကြည့်ပါ။ | This choice decides which of the 2008 and 2025 civics exams you practice. It is only a choice for practice. Check at uscis.gov which exam applies to your own case. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | နိုင်ငံသားဗဟုသုတလေ့ကျင့်မှုရှိ ပုံများသည် အမေရိကန်ဖက်ဒရယ်အစိုးရ၏ တရားဝင်ရင်းမြစ်များမှ လာသည်။ ပုံတစ်ပုံစီကို ၎င်း၏ကိုယ်ပိုင်မှတ်တမ်းတွင် အခွင့်အရေးများကို ရှင်းလင်းစွာ ဖော်ပြထားသောကြောင့်သာ အသုံးပြုသည်။ ၎င်းသည် မည်သည့်အဖွဲ့အစည်းကမျှ Language Lab ကို ထောက်ခံသည်ဟု မဆိုလိုပါ။ | The pictures in civics practice come from official sources of the U.S. federal government. Each picture is used only because its own record clearly states the rights. This does not mean any organization endorses Language Lab. |
-| `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | ယင်းတို့အနက် တစ်ခုခုကို ရေတွက်သည်။ စာရင်းကို USCIS အဖြေစာရင်းမှ ယူထားပြီး လူတစ်ဦး၏ စစ်ဆေးမှုကို စောင့်နေဆဲဖြစ်သည်။ | Any one of these is counted. The list is taken from the USCIS answer list and is still waiting for a person's check. |
+| `civics.officialNote` | Any of these counts. | ယင်းတို့အနက် တစ်ခုခုကို ရေတွက်သည်။ | Any one of these is counted. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | နိုင်ငံသားပညာ အဖြေများကို လူတစ်ဦးက စစ်ဆေးပြီးသည်အထိ ဤဗားရှင်းတွင် နိုင်ငံသားပညာ၊ အရင်လေ့လာရန်နှင့် အပြည့်အစုံ လေ့ကျင့်ရေးအင်တာဗျူးကို ပိတ်ထားပါသည်။ N-400 အင်တာဗျူး၊ ဖတ်ခြင်းနှင့် ရေးခြင်းကို လေ့ကျင့်နိုင်ပါသည်။ | Until a person checks the civics answers, civics, Study first and the full practice interview are closed in this version. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | နိုင်ငံသားဗဟုသုတ အဖြေမှန်များသည် လူတစ်ဦး၏ စစ်ဆေးမှုကို စောင့်နေဆဲဖြစ်သဖြင့် ဤဗားရှင်းသည် ၎င်းကို အမှတ်မပေးပါ၊ အစီရင်ခံစာလည်း မပြုလုပ်ပါ။ | The civics correct answers are still waiting for a person's check, so this version does not score it and does not make a report. |
 | `voice.consent.text` ⚠ | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | “ပြောမည်” ကို နှိပ်သောအခါ သင့်ဘရောက်ဇာ၏ အသံမှတ်သားစနစ်က သင့်အသံကို စာသားအဖြစ်ပြောင်းရန် Google သို့မဟုတ် Apple ကဲ့သို့ ဘရောက်ဇာ ပြုလုပ်သူကုမ္ပဏီထံ ပို့နိုင်ပါသည်။ Language Lab သည် သင့်အသံကို မပို့ပါ၊ မသိမ်းပါ။ ယင်းအစား အဖြေကို ရိုက်ထည့်နိုင်ပါသည်။ | When you press “Speak”, your browser's voice recording system may send your voice to the company that makes the browser, such as Google or Apple, to turn it into text. Language Lab does not send or save your voice. You can type your answer instead. |
@@ -53,6 +53,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | နိုင်ငံသားဗဟုသုတမေးခွန်းများကို ဖြေပါ။ အဖြေမှန်များနှင့် တိုက်စစ်သည်။ |
 | `partReport.unscored.missing` | A question that is not in the answer key | အဖြေမှန်စာရင်းတွင် မပါသော မေးခွန်း |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | အဖြေမှန်များကို လူတစ်ဦးက စစ်ဆေးပြီးသည်အထိ ဤဗားရှင်းတွင် “အရင်လေ့လာရန်” ကို ပိတ်ထားသည်။ |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | ဤရွေးချယ်မှုသည် လေ့ကျင့်ခန်းကိုသာ ပြောင်းလဲသည်။ မည်သည့်အရာကိုမျှ မသိမ်းဆည်း၊ မပို့ပါ။ နိုင်ငံသားဗဟုသုတအပိုင်းတွင် တရားဝင်စာရင်းရှိ ကြယ်ပွင့် (*) ပါသော မေးခွန်း {bank} ခုထဲမှ {asked} ခုကို မေးပါမည်။ ဤလေ့ကျင့်ခန်းတွင် {asked} ခုလုံးကို မေးပါမည်။ လေ့ကျင့်ခန်းအောင်မှတ်မှာ အဖြေမှန် {pass} ခု ဖြစ်သည်။ သင့်ကိစ္စအတွက် uscis.gov တွင် စစ်ဆေးပါ- အသက်နှင့် နှစ်များကို လျှောက်လွှာတင်သည့်နေ့တွင် ရေတွက်သည်။ |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | uscis.gov ရှိ ခြွင်းချက်များနှင့် အဆင်ပြေစေရေး အစီအစဉ်များ |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | မေးခွန်း {bank} ခုထဲမှ {count} ခု၏ အဖြေများ ပြောင်းလဲတတ်သည်၊ ဥပမာ ယခု ရာထူးတစ်ခုကို မည်သူ ထမ်းဆောင်နေသည်ဆိုသည်။ ၎င်းတို့ကို ဤနေရာတွင် မပြပါ။ uscis.gov/citizenship/testupdates တွင် စစ်ဆေးပါ။ |
+| `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | မေးခွန်း {asked} ခုလုံးကို မေးပြီး လေ့ကျင့်ခန်းအောင်မှတ် {score} ကို ရောက်ခဲ့သည်။ |
+| `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | လေ့ကျင့်ခန်းအောင်မှတ်ကို ရောက်သောအခါ လေ့ကျင့်စာမေးပွဲ ရပ်သွားသည်။ |
+| `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | လေ့ကျင့်ခန်းအောင်မှတ် {score} ကို မရောက်မီ အဖြေမှား {incorrect} ခုပြီးနောက် လေ့ကျင့်စာမေးပွဲ ရပ်သွားသည်။ |
+| `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | လေ့ကျင့်ခန်းအောင်မှတ်မှာ အဖြေမှန် {score} ခု ဖြစ်ပြီး မရောက်ခဲ့ပါ။ |
+| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | အမှတ်မပေးပါ၊ အဖြေ ပြောင်းလဲတတ်သောကြောင့် သို့မဟုတ် အဖြေစာရင်းတွင် မပါသောကြောင့်- {names}။ ဤမေးခွန်းများကို မှန်သည် သို့မဟုတ် မှားသည်ဟု မရေတွက်ပါ။ |
+| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | သင့်စက်က သင်ပြောခဲ့သည်ကို ခန့်မှန်းချက် အများအပြား ပေးခဲ့သည်။ အဖြေစာရင်းရှိ အဖြေတစ်ခုနှင့် အနီးစပ်ဆုံးကို ပြထားသည်။ |
 
 ## 3. All other lines
 
@@ -180,7 +189,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.typed` | What you typed | သင်ရိုက်ထည့်ခဲ့သည်များ |
 | `compare.wanted` | The sentence | စာကြောင်း |
 | `compare.counts` | This counts. | ၎င်းကို ရေတွက်သည်။ |
-| `compare.notYet` ⚠ | Not yet. | မရောက်သေးပါ။ |
+| `compare.notYet` | Not yet. | မမှန်သေးပါ။ |
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | ဤဘရောက်ဇာသည် အသံထွက်ဖတ်မပြနိုင်သဖြင့် စာကြောင်းကို ဤနေရာတွင် ပြထားသည်။ ၎င်းကို ရိုက်ထည့်ပါ။ |
 | `writing.hidden` | The sentence stays hidden until you answer. | သင်မဖြေမချင်း စာကြောင်းကို ဖျောက်ထားမည်။ |
 | `writing.show` | Show the sentence | ဝါကျကို ပြပါ |
@@ -327,10 +336,27 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | သင်က စကားလုံးတို “{said}” ကို ထပ်ထည့်ခဲ့သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | ဤရလဒ်သည် သင့်စက်ကြားသော စကားလုံးများအပေါ် အခြေခံသည်။ မှားကြားခဲ့လျှင် ထပ်စမ်းကြည့်ပါ သို့မဟုတ် အဖြေကို ရိုက်ထည့်ပါ။ |
 | `compare.honest.typed` | This result is based on the words you typed. | ဤရလဒ်သည် သင်ရိုက်ထည့်ခဲ့သော စကားလုံးများအပေါ် အခြေခံသည်။ |
+| `home.special.title` | 65/20 civics practice | 65/20 နိုင်ငံသားဗဟုသုတ လေ့ကျင့်ခန်း |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး အမြဲတမ်းနေထိုင်သူအဖြစ် 20 နှစ်နှင့်အထက် နေထိုင်ခဲ့သူများအတွက်။ ကြယ်ပွင့် (*) အမှတ်အသားပါသော နိုင်ငံသားဗဟုသုတမေးခွန်းများကို လေ့ကျင့်ပါ။ |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ကျွန်ုပ်သည် အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး အမြဲတမ်းနေထိုင်သူအဖြစ် 20 နှစ်နှင့်အထက် နေထိုင်ခဲ့ပါသည် |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | 65/20 လျှောက်ထားသူသည် စကားပြန်တစ်ဦးနှင့်အတူ မိမိဘာသာစကားဖြင့် တကယ့်နိုင်ငံသားဗဟုသုတစာမေးပွဲကို ဖြေဆိုနိုင်သည်။ |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | 65/20 အတွက် မေးခွန်းများသာ (ကြယ်ပွင့်ပါသည်) |
+| `report.line.civics.none` | No civics questions were scored. | အမှတ်ပေးခံရသော နိုင်ငံသားဗဟုသုတမေးခွန်း မရှိပါ။ |
+| `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | မှန်ကန်စွာ ဖြေခဲ့သော နိုင်ငံသားဗဟုသုတမေးခွန်း- {scored} ခုထဲမှ {correct} ခု။ |
+| `report.line.reading.none` | No reading sentences were completed. | ပြီးဆုံးသော ဖတ်ရန်ဝါကျ မရှိပါ။ |
+| `report.line.reading.done` | Sentence {n} was read correctly. | ဝါကျ {n} ကို မှန်ကန်စွာ ဖတ်ခဲ့သည်။ |
+| `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | မှန်ကန်စွာ ဖတ်ခဲ့သော ဝါကျ- {presented} ခုထဲမှ {correct} ခု။ လိုအပ်သော မှန်ကန်သည့်ဝါကျ- {needed}။ |
+| `report.line.writing.none` | No writing sentences were completed. | ပြီးဆုံးသော ရေးရန်ဝါကျ မရှိပါ။ |
+| `report.line.writing.done` | Sentence {n} was written correctly. | ဝါကျ {n} ကို မှန်ကန်စွာ ရေးခဲ့သည်။ |
+| `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | မှန်ကန်စွာ ရေးခဲ့သော ဝါကျ- {presented} ခုထဲမှ {correct} ခု။ လိုအပ်သော မှန်ကန်သည့်ဝါကျ- {needed}။ |
+| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | မျက်နှာပြင်ပေါ်တွင် ဝါကျကို ပြထားစဉ် ရေးခဲ့သော ကြိမ် (အကူအညီဖြင့်)- {presented} ကြိမ်ထဲမှ {assisted} ကြိမ်။ |
+| `report.review.reading` | Practice reading the sentences aloud. | ဝါကျများကို အသံထွက်ဖတ်ရန် လေ့ကျင့်ပါ။ |
+| `report.review.writing` | Practice writing the sentences you hear. | ကြားရသော ဝါကျများကို ရေးရန် လေ့ကျင့်ပါ။ |
+| `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | စိတ်ကူးယဉ်လူအဖြစ် ဖြေပါ။ သင့်နာမည်အစစ်၊ လိပ်စာ၊ ရက်စွဲ သို့မဟုတ် နံပါတ်များကို မရိုက်ပါနှင့်။ |
+| `common.newTab` | (opens in a new tab) | (တဘ်အသစ်တွင် ဖွင့်မည်) |
 
 ## Lines marked ⚠ (meaning differs a little)
 
 - `aiNotice.text`: "authoritative" is rendered as "official": close, slightly weaker.
-- `compare.notYet`: "Not yet" is rendered literally as "has not arrived yet". Low confidence.
 - `voice.consent.text`: "voice recording system" for "voice recognition" (အသံမှတ်သားစနစ်): recording and recognition are not the same thing. Needs a Burmese reader.
 - `coach.notice.text`: "fictional" is "imaginary" (စိတ်ကူးယဉ်). Needs a Burmese reader.

@@ -32,7 +32,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | 這是 Language Lab 依據 USCIS 評分指引設定的練習標準，不是 USCIS 的規定：句子中每個重要的字都必須出現，且順序正確。可以漏掉「the」這類短字。停頓和發音不計分。 | This is a practice standard set by Language Lab based on USCIS scoring guidelines, not a USCIS regulation: every important word in the sentence must appear, in the correct order. Short words like “the” may be omitted. Pauses and pronunciation are not scored. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | 這會決定您練習 2008 年還是 2025 年的公民常識測驗。這只是練習用的選擇。至於您自己的案件適用哪一種測驗，請到 uscis.gov 查詢。 | This decides whether you practice the 2008 or the 2025 civics test. This is only a choice for practice. As for which test applies to your own case, please check at uscis.gov. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | 公民常識練習中的圖片來自美國聯邦政府的官方來源。每張圖片都只因其本身的紀錄清楚載明權利而使用。這並不表示任何機關認可 Language Lab。 | The pictures in civics practice come from official sources of the U.S. federal government. Each picture is used only because its own record clearly states the rights. This does not mean any agency endorses Language Lab. |
-| `civics.officialNote` | Any of these counts. The list is taken from the USCIS answer list and is still waiting for a person to review it. | 其中任何一個都算數。這份清單取自 USCIS 的答案清單，仍在等待人工審核。 | Any one of these counts. This list is taken from USCIS's answer list and is still waiting for human review. |
+| `civics.officialNote` | Any of these counts. | 其中任何一個都算數。 | Any one of these counts. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | 在有人審核公民常識答案之前，這個版本關閉了公民常識、先學習和完整練習面試。您可以練習 N-400 面試、閱讀和書寫。 | Until someone reviews the civics answers, this version has turned off civics, Study first and the full practice interview. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 公民常識的標準答案仍在等待人工審核，所以這個版本不會為公民常識計分，也不會產生報告。 | The standard answers for civics are still waiting for human review, so this version will not score civics and will not produce a report. |
 | `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | 当您按下“说出来”时，浏览器的语音识别功能可能会把您的声音发送给浏览器的开发公司（例如 Google 或 Apple），以便转成文字。Language Lab 不会发送或保存您的声音。您也可以改为输入答案。 | When you press “Say it”, the browser's speech recognition function may send your voice to the browser's developer (such as Google or Apple) to convert it to text. Language Lab will not send or save your voice. You can also type your answer instead. |
@@ -53,6 +53,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.part.civics.text` | Answer civics questions. Checked against the answer key. | 回答公民常識問題。會與標準答案核對。 |
 | `partReport.unscored.missing` | A question that is not in the answer key | 一道不在標準答案中的題目 |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | 在有人審核過答案表之前，這個版本已關閉「先學習」。 |
+| `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | 這只會改變練習；不會儲存或傳送任何資料。公民常識部分會從官方清單中標有星號（*）的 {bank} 題中問 {asked} 題。在這個練習中，{asked} 題都會問完。練習及格分數是答對 {pass} 題。關於您自己的情況，請查看 uscis.gov：年齡和年數以提出申請的日期計算。 |
+| `special.language.link` | Exceptions and accommodations on uscis.gov | uscis.gov 上的例外與便利措施 |
+| `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {bank} 題中有 {count} 題的答案會改變，例如現在由誰擔任某個職位。這些題目不在這裡顯示。請到 uscis.gov/citizenship/testupdates 查看。 |
+| `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | {asked} 題都已問完，並達到練習及格分數 {score}。 |
+| `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | 達到練習及格分數後，練習測驗就停止了。 |
+| `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | 答錯 {incorrect} 題後，練習測驗在達到練習及格分數 {score} 之前停止了。 |
+| `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | 練習及格分數是答對 {score} 題，這次沒有達到。 |
+| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | 未計分，因為答案會改變或不在答案範本中：{names}。這些問題不算對也不算錯。 |
+| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | 您的裝置對您說的話給出了幾種猜測。這裡顯示的是最接近答案範本中某個答案的那一種。 |
 
 ## 3. All other lines
 
@@ -327,3 +336,21 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | 您多加了短字「{said}」。這樣仍然算數。 |
 | `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | 這個結果是根據您的裝置聽到的字詞。如果它聽錯了，請再試一次或改用輸入。 |
 | `compare.honest.typed` | This result is based on the words you typed. | 這個結果是根據您輸入的字詞。 |
+| `home.special.title` | 65/20 civics practice | 65/20 公民常識練習 |
+| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | 適用於 65 歲或以上、並已是永久居民 20 年或以上的人。練習標有星號（*）的公民常識問題。 |
+| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | 我 65 歲或以上，並已是永久居民 20 年或以上 |
+| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | 65/20 申請人可以在口譯員協助下，用自己的語言參加真正的公民常識考試。 |
+| `study.special.label` | Only the questions for 65/20 (marked with a star) | 只看 65/20 的問題（標有星號） |
+| `report.line.civics.none` | No civics questions were scored. | 沒有任何公民常識問題被計分。 |
+| `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | 公民常識問題答對：{scored} 題中答對 {correct} 題。 |
+| `report.line.reading.none` | No reading sentences were completed. | 沒有完成任何閱讀句子。 |
+| `report.line.reading.done` | Sentence {n} was read correctly. | 第 {n} 句閱讀正確。 |
+| `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | 閱讀句子讀對：{presented} 句中讀對 {correct} 句。需要讀對的句數：{needed}。 |
+| `report.line.writing.none` | No writing sentences were completed. | 沒有完成任何書寫句子。 |
+| `report.line.writing.done` | Sentence {n} was written correctly. | 第 {n} 句書寫正確。 |
+| `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | 書寫句子寫對：{presented} 句中寫對 {correct} 句。需要寫對的句數：{needed}。 |
+| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | 在畫面顯示句子時的書寫嘗試（有協助）：{presented} 次中有 {assisted} 次。 |
+| `report.review.reading` | Practice reading the sentences aloud. | 練習大聲讀出句子。 |
+| `report.review.writing` | Practice writing the sentences you hear. | 練習寫下您聽到的句子。 |
+| `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | 請以虛構人物的身分回答。不要輸入您真實的姓名、地址、日期或號碼。 |
+| `common.newTab` | (opens in a new tab) | （在新分頁開啟） |

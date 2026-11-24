@@ -9,7 +9,7 @@
   color: var(--ink);
   font-size: var(--fs-meta);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: var(--lh-snug); /* taller scripts need the token line height (A11Y-13) */
 }
 
 .badge__icon {

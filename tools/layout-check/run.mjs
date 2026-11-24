@@ -418,8 +418,29 @@ async function checkConfiguration(cdp, size, lang) {
   await waitFor(() => lab(`has(${js(L("report.home"))})`), "the part report");
   await record("part-report");
   await click(L("report.home"));
+  await specialPass({ cdp, lab, js, click, record, L });
   await homeCoachPass({ cdp, lab, js, click, record, L });
   return results;
+}
+
+/**
+ * The 65/20 practice (spec release-finish REQ-S05, S06): the home card, the setup with the choice
+ * ticked and the interpreter line, and the first civics question with the 65/20 note. Then Home.
+ */
+async function specialPass({ cdp, lab, js, click, record, L }) {
+  if (!(await lab(`has(${js(L("home.special.title"))})`))) throw new Error("the home screen has no 65/20 card");
+  await click(L("home.special.title"));
+  // The label is a legal key (English until reviewed), so wait for the checkbox itself.
+  await waitFor(() => cdp.evaluate(`!!document.querySelector('input[name="special"]')`), "the 65/20 choice on setup");
+  if (!(await cdp.evaluate(`document.querySelector('input[name="special"]').checked`))) throw new Error("the 65/20 card did not tick the choice");
+  await record("setup-special");
+  await cdp.evaluate(`document.querySelector('input[name="filed"][value="on_or_after"]').click()`);
+  await click(L("intro.start"));
+  await waitFor(() => lab(`has(${js(L("civics.submit"))})`), "the first 65/20 civics question");
+  await record("civics-special");
+  await click(L("header.home"));
+  await click(L("header.homeConfirm.yes"));
+  await waitFor(() => lab(`has(${js(L("home.special.title"))})`), "home after the 65/20 practice");
 }
 
 /**
@@ -487,6 +508,7 @@ async function productionParts(cdp, results, { L, lab, js, click, choose, type, 
     await record(`part-report-${part}`);
     await click(L("report.home"));
   }
+  await specialPass({ cdp, lab, js, click, record, L });
   await homeCoachPass({ cdp, lab, js, click, record, L });
   return results;
 }

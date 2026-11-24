@@ -1,5 +1,32 @@
 # Language Lab
 
+## For judges
+
+Live: <https://language-lab-ade.pages.dev> (features of a branch appear there after it is merged and
+deployed). The full guide is [`docs/judge-guide.md`](docs/judge-guide.md).
+
+A 3-minute path:
+
+1. **Home**: the welcome, "How it works" and the disclaimer.
+2. **AI coach**: "Practice the N-400 interview with an AI coach", pick a fictional profile, "Start
+   practice". The consent notice opens first; nothing is sent until you press "Turn on the AI coach".
+   Without AI: "Cancel", then "No, practice without AI".
+3. **Full interview**: from Home, "Full practice interview": profile, filing date (2008 or 2025 test),
+   then N-400, reading, writing ("Show the sentence" if you cannot listen) and civics.
+4. **Report**: "Practice score reached" or "Worth reviewing" per part, never pass or fail, with the
+   disclaimer.
+5. **Study first**: page through the civics questions with official answers and pictures; not scored.
+6. **65/20**: "65/20 civics practice": 10 of the 20 starred questions, 6 correct for the practice
+   score (USCIS Policy Manual, Vol. 12, Part E, Ch. 2), with a link to the USCIS interpreter rule.
+7. **Language menu**: the globe button in the header; for example Tiếng Việt. Disclaimers, legal lines
+   and civics questions stay in English.
+
+Microphone: only "Say it" (speech recognition, in browsers that support it, such as Chrome, Edge or
+Safari) and "Record and compare" on the reading screen need one. Everything else, and every answer,
+works by typing. The AI coach is off by default and sends nothing until you confirm its notice.
+
+---
+
 **Free, voice-first practice for the U.S. naturalization interview.**
 
 Styled as a 1970s language lab booth — individual study, focused repetition, no pressure.
@@ -47,7 +74,7 @@ practice feedback, not an official assessment.
 |---|---|---|
 | Frontend | Vite + React + TypeScript | Vite 6.4.5, React 19.1.0, TS 5.8.3 |
 | Hosting | Cloudflare Pages | — |
-| API / logic | Cloudflare Worker | wrangler.toml in `worker/` |
+| API / logic | Cloudflare Pages Functions | `functions/` (the optional AI coach only) |
 | Tests | Vitest + fast-check | Vitest 4.1.12, fast-check 3.23.2 |
 
 ---
@@ -58,7 +85,7 @@ practice feedback, not an official assessment.
 
 - Node.js 22.18+ (the tools in `tools/` import TypeScript files directly; CI uses 22.18)
 - npm 10+
-- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) for Worker development
+- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/) only to run the AI coach's Pages Function locally (see `docs/coach-deploy.md`)
 
 ### Setup
 
@@ -109,15 +136,9 @@ npm run test:watch
 npm run typecheck
 ```
 
-### Worker Development
-
-```bash
-# Start the local Worker (via Wrangler, installed separately)
-# See: https://developers.cloudflare.com/workers/wrangler/install-and-update/
-npx wrangler dev
-```
-
-Run this from the `worker/` directory, or point wrangler at `worker/wrangler.toml`.
+### Pages Functions
+The only server code is the optional AI coach, a Cloudflare Pages Function in `functions/api/coach.ts`.
+How to run and deploy it: [`docs/coach-deploy.md`](docs/coach-deploy.md).
 
 ---
 
@@ -141,7 +162,7 @@ language-lab/
 │   ├── contracts/   # Shared TypeScript types
 │   ├── engine/      # Pure scoring and session logic
 │   └── ui/          # React components
-├── worker/          # Cloudflare Worker
+├── functions/       # Cloudflare Pages Functions (AI coach)
 ├── data/            # Civics test rules and answer data
 ├── mock/            # Fictional session fixtures
 └── docs/            # kiro-log.md and guides
