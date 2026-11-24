@@ -29,6 +29,8 @@ describe("public/_headers", () => {
   it("sets the other security headers", () => {
     expect(headers).toContain("X-Content-Type-Options: nosniff");
     expect(headers).toContain("Referrer-Policy: no-referrer");
+    // Audit F-04 (December 2026).
+    expect(headers).toContain("Strict-Transport-Security: max-age=31536000");
     expect(headers).toMatch(/Permissions-Policy: .*microphone=\(self\)/);
   });
   it("sets cache rules for hashed assets, fonts and the page", () => {
