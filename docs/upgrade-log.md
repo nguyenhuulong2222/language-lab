@@ -48,3 +48,35 @@ Results:
 - **Layout check** (production, English, normal, 390px): 25 screens, all pass, no CSP violation.
 - **`npm audit`**: 0 vulnerabilities.
 - **Hook tests**: pass.
+
+## Group 1 — TypeScript 5.8.3 → 7.0.2
+
+Sources read: "Announcing TypeScript 7.0"
+(https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/), which sends readers to the
+TypeScript 6.0 notes for the deprecations. 7.0 is the Go port, with 6.0's type checking, and it turns
+6.0's deprecations into errors.
+
+Breaking changes checked against this repository:
+- **New defaults** (`strict`, `module: esnext`, `noUncheckedSideEffectImports`, `types: []`,
+  `rootDir: ./`): no effect. Both configs already set `strict`, `module`, `target` and
+  `noUncheckedSideEffectImports`. The app config lists its only ambient types
+  (`@types/dom-speech-recognition`), and the node config needs none. `noEmit` is set, so `rootDir`
+  does not apply.
+- **Removed options** (`es5`, `downlevelIteration`, `moduleResolution: node/node10/classic`,
+  `baseUrl`, `amd/umd/systemjs`, `esModuleInterop: false`, `asserts` imports): none are used. The
+  configs use `moduleResolution: bundler`, and JSON imports use `with`.
+- **No programmatic API in 7.0**: nothing in the repository imports `typescript`. Vite and Vitest
+  compile TypeScript with their own transformers, not with `tsc`.
+- **Template literal types and JavaScript (JSDoc) checking changes**: not used (`.mjs` tools are not
+  type-checked).
+
+What changed: `package.json` and the lockfile only.
+
+Checks:
+- **Typecheck**: 0 errors. TS 7 sees 161 files under `src/`, and a planted type error was reported,
+  so it is really checking.
+- **Tests**: 1373 of 1373 pass (62 files).
+- **Build**: passes; output byte-identical to the baseline (Vite does the compiling).
+- **Function bundle**: passes, 51,102 bytes.
+- **Layout check** (production, English, normal, 390px): 25 screens, all pass.
+- **Hook tests**: pass.
