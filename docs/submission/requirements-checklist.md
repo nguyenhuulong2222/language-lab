@@ -50,9 +50,9 @@ Status key: **Done** (with evidence), **Owner** (yours to do on Devpost, YouTube
 | 10 | Demo video under 3 minutes, on the intended device, public on YouTube, no third-party trademarks or copyrighted music | **Owner** to record and upload | Script and checklist: `docs/submission/video-script.md` (2:45, iPhone). Avoid music and logos |
 | 11 | Write-up on how Kiro was used | Drafted; **Owner** to paste | `docs/submission/kiro-usage.md`; README "How Kiro was used" |
 | 12 | Category | **Owner** to select | Resurrection (the 1970s language lab); stated in `docs/submission/devpost.md` |
-| 13 | Team of up to 3; one Representative submits | **Owner** | Long Nguyen and Tiffanie (git authors: Long Nguyen 130 commits, Tiffanie Nguyen 12, plus GitHub web commits). Add Tiffanie as a team member on Devpost |
+| 13 | Team of up to 3; one Representative submits | **Owner** | Long Nguyen and Tiffanie (git authors on `main`: Long Nguyen about 130 commits, Tiffanie Nguyen 12, plus GitHub web commits). Add Tiffanie as a team member on Devpost |
 | 14 | Submission materials in English | Done | All submission documents are English |
-| 15 | Runs as shown in the video and the description | Done in the repository | Every video claim is checked against the live app in `docs/submission/video-script.md`; final audit `docs/audit/2026-12-final-audit.md` |
+| 15 | Runs as shown in the video and the description | Done in the repository | Every video claim is checked against the live app in `docs/submission/video-script.md`; final audit `docs/audit/2026-12-final-audit.md` (0 blocker, 0 high). These files are on branch `release/submission`; **Owner** merges it so they are public |
 | 16 | Original work, solely owned, no IP infringement | Done in the repository; Owner confirms on the form | `NOTICE`; Anthropic attribution is text only (`docs/decisions-log.md` section M); formN400.org material removed (`NOTICE` item 9) |
 
 ## Bonus prizes
@@ -69,7 +69,8 @@ Status key: **Done** (with evidence), **Owner** (yours to do on Devpost, YouTube
 
 ## Not required but checked
 
-- **Live coach**: `POST /api/coach` with an empty body returns 400 `bad_request`. That check runs
+- **Live coach**: `POST /api/coach` with an empty JSON body and `Origin: https://language-lab-ade.pages.dev`
+  returns 400 `bad_request`; without that `Origin` header it returns 403 `forbidden`. That check runs
   after the kill switch, the API key, the salt and the D1 binding in `src/engine/coach/handler.ts`,
   so the coach is switched on and configured on the live site. Whether the key works was not tested
   (that would call the model).
