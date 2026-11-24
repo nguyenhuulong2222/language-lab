@@ -165,7 +165,7 @@
   "civics.notYet": "Ainda não",
   "civics.youSaid": "Você disse: {text}",
   "civics.official": "Respostas oficiais",
-  "civics.officialNote": "Qualquer uma destas vale. A lista vem da lista de respostas do USCIS e ainda aguarda a revisão de uma pessoa.",
+  "civics.officialNote": "Qualquer uma destas vale.",
   "civics.next": "Próxima pergunta",
   "civics.finish": "Ver o meu relatório",
   "civics.stopped.correct": "Você alcançou a pontuação de aprovação da prática, então o teste parou aqui.",
@@ -312,7 +312,7 @@
   "home.special.title": "Prática de educação cívica 65/20",
   "home.special.text": "Para pessoas com 65 anos ou mais que são residentes permanentes há 20 anos ou mais. Pratique as perguntas de educação cívica marcadas com um asterisco (*).",
   "intro.special.label": "Tenho 65 anos ou mais e sou residente permanente há 20 anos ou mais",
-  "intro.special.help": "Isto só muda a prática; nada é salvo nem enviado. A parte de educação cívica faz {asked} das {bank} perguntas marcadas com um asterisco (*) na lista oficial. Todas as {asked} são feitas. A pontuação de aprovação da prática é de {pass} respostas corretas.",
+  "intro.special.help": "Isto só muda a prática; nada é salvo nem enviado. A parte de educação cívica faz {asked} das {bank} perguntas marcadas com um asterisco (*) na lista oficial. Nesta prática, todas as {asked} são feitas. A pontuação de aprovação da prática é de {pass} respostas corretas. Para o seu próprio caso, consulte uscis.gov: a idade e os anos contam na data em que o pedido é apresentado.",
   "special.language": "Um requerente 65/20 pode fazer o teste real de educação cívica no seu próprio idioma com um intérprete.",
   "special.language.link": "Exceções e adaptações em uscis.gov",
   "study.special.label": "Só as perguntas para 65/20 (marcadas com um asterisco)",
@@ -334,5 +334,6 @@
   "report.review.reading": "Pratique ler as frases em voz alta.",
   "report.review.writing": "Pratique escrever as frases que você ouve.",
   "civics.heard.closest": "O seu aparelho deu vários palpites do que você disse. Aparece o mais próximo de uma resposta do gabarito.",
-  "n400.box.reminder": "Responda como a pessoa fictícia. Não digite o seu nome, endereço, datas ou números reais."
+  "n400.box.reminder": "Responda como a pessoa fictícia. Não digite o seu nome, endereço, datas ou números reais.",
+  "common.newTab": "(abre em uma nova aba)"
 }

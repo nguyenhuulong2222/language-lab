@@ -87,6 +87,18 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
         <EnglishNotice />
         <fieldset className="screen__body choices">
           <legend className="choices__legend">{t("study.version.legend")}</legend>
+          {designated !== undefined && (
+            <label className="choice">
+              <input
+                className="choice__input"
+                type="checkbox"
+                name="study-special"
+                checked={specialOnly}
+                onChange={(event) => setSpecialOnly(event.target.checked)}
+              />
+              <span className="choice__text">{t("study.special.label")}</span>
+            </label>
+          )}
           {VERSIONS.map((v) => (
             <button
               key={v}
@@ -104,18 +116,6 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
               <span className="option-card__title">{t(v === "2008" ? "study.version.2008" : "study.version.2025")}</span>
             </button>
           ))}
-          {designated !== undefined && (
-            <label className="choice">
-              <input
-                className="choice__input"
-                type="checkbox"
-                name="study-special"
-                checked={specialOnly}
-                onChange={(event) => setSpecialOnly(event.target.checked)}
-              />
-              <span className="choice__text">{t("study.special.label")}</span>
-            </label>
-          )}
         </fieldset>
         <div className="btn-row">
           <button type="button" className="btn btn--secondary" onClick={onHome}>

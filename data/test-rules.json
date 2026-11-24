@@ -112,14 +112,16 @@
     "eligibilityAgeMinimum": {
       "value": 65,
       "needsVerification": false,
-      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
-      "sourceQuote": "If you are 65 years old or older and have been living in the United States as a lawful permanent resident of the United States for 20 or more years, USCIS will continue to administer a test with 10 questions from a specially selected bank of 20 test questions from either the 2008 or 2025 Naturalization Civics Test."
+      "sourceUrl": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2",
+      "sourceQuote": "An officer gives special consideration to an alien who is 65 years of age or older and who has been living in the United States for periods totaling at least 20 years subsequent to a lawful admission for permanent residence.",
+      "_note": "The Policy Manual adds: \"The age and time requirements must be met at the time of filing the naturalization application.\" The Study for the Test page states the same rule in plainer words."
     },
     "eligibilityResidencyYearsMinimum": {
       "value": 20,
       "needsVerification": false,
-      "sourceUrl": "https://www.uscis.gov/citizenship/find-study-materials-and-resources/study-for-the-test",
-      "sourceQuote": "If you are 65 years old or older and have been living in the United States as a lawful permanent resident of the United States for 20 or more years, USCIS will continue to administer a test with 10 questions from a specially selected bank of 20 test questions from either the 2008 or 2025 Naturalization Civics Test."
+      "sourceUrl": "https://www.uscis.gov/policy-manual/volume-12-part-e-chapter-2",
+      "sourceQuote": "An officer gives special consideration to an alien who is 65 years of age or older and who has been living in the United States for periods totaling at least 20 years subsequent to a lawful admission for permanent residence.",
+      "_note": "The Policy Manual adds: \"The age and time requirements must be met at the time of filing the naturalization application.\" The Study for the Test page states the same rule in plainer words."
     },
     "questionBank": {
       "value": 20,

@@ -165,7 +165,7 @@
   "civics.notYet": "還不對",
   "civics.youSaid": "您說的是：{text}",
   "civics.official": "官方答案",
-  "civics.officialNote": "其中任何一個都算數。這份清單取自 USCIS 的答案清單，仍在等待人工審核。",
+  "civics.officialNote": "其中任何一個都算數。",
   "civics.next": "下一題",
   "civics.finish": "查看我的報告",
   "civics.stopped.correct": "您已達到練習的及格分數，所以測驗在這裡停止。",
@@ -312,7 +312,7 @@
   "home.special.title": "65/20 公民常識練習",
   "home.special.text": "適用於 65 歲或以上、並已是永久居民 20 年或以上的人。練習標有星號（*）的公民常識問題。",
   "intro.special.label": "我 65 歲或以上，並已是永久居民 20 年或以上",
-  "intro.special.help": "這只會改變練習；不會儲存或傳送任何資料。公民常識部分會從官方清單中標有星號（*）的 {bank} 題中問 {asked} 題。{asked} 題都會問完。練習及格分數是答對 {pass} 題。",
+  "intro.special.help": "這只會改變練習；不會儲存或傳送任何資料。公民常識部分會從官方清單中標有星號（*）的 {bank} 題中問 {asked} 題。在這個練習中，{asked} 題都會問完。練習及格分數是答對 {pass} 題。關於您自己的情況，請查看 uscis.gov：年齡和年數以提出申請的日期計算。",
   "special.language": "65/20 申請人可以在口譯員協助下，用自己的語言參加真正的公民常識考試。",
   "special.language.link": "uscis.gov 上的例外與便利措施",
   "study.special.label": "只看 65/20 的問題（標有星號）",
@@ -334,5 +334,6 @@
   "report.review.reading": "練習大聲讀出句子。",
   "report.review.writing": "練習寫下您聽到的句子。",
   "civics.heard.closest": "您的裝置對您說的話給出了幾種猜測。這裡顯示的是最接近答案範本中某個答案的那一種。",
-  "n400.box.reminder": "請以虛構人物的身分回答。不要輸入您真實的姓名、地址、日期或號碼。"
+  "n400.box.reminder": "請以虛構人物的身分回答。不要輸入您真實的姓名、地址、日期或號碼。",
+  "common.newTab": "（在新分頁開啟）"
 }

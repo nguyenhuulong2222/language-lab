@@ -178,3 +178,15 @@ fieldset.choices {
 .btn {
   overflow-wrap: anywhere;
 }
+/* Forced colours: a button that cannot be used yet (aria-disabled) looks different (ui-reviewer). */
+@media (forced-colors: active) {
+  .btn[aria-disabled="true"] {
+    color: GrayText;
+    border-style: dashed;
+  }
+}
+/* Long words in a choice label wrap inside the card (125% text, 320px). */
+.choice__text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

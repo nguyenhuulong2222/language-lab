@@ -161,7 +161,6 @@ export function CivicsScreen({
       <EnglishNotice />
       <div className="screen__body">
         <p className="progress-line">{t("civics.count", { current: progress.position, total: progress.total })}</p>
-        {special !== undefined && progress.position === 1 && <SpecialConsiderationNote rules={special} />}
         {question !== null && (
           <div key={question.id} className="screen__body">
             <p className="prompt" lang="en">
@@ -182,6 +181,8 @@ export function CivicsScreen({
                 onSubmit(text, input, alternatives);
               }}
             />
+            {/* After the question and the answer box, so they stay at the top (ui-reviewer). */}
+            {special !== undefined && progress.position === 1 && <SpecialConsiderationNote rules={special} />}
           </div>
         )}
       </div>

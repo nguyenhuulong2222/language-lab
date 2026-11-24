@@ -187,7 +187,7 @@ describe("Study first and 65/20", () => {
     const box = screen.getByLabelText<HTMLInputElement>(EN["intro.special.label"]);
     expect(box.checked).toBe(true);
     expect(document.body.textContent).toContain("asks 10 of the 20 questions marked with a star (*)");
-    const link = screen.getByRole("link", { name: EN["special.language.link"] });
+    const link = screen.getByRole("link", { name: (n) => n.startsWith(EN["special.language.link"]) && n.includes(EN["common.newTab"]) });
     expect(link.getAttribute("href")).toBe("https://www.uscis.gov/citizenship/exceptions-and-accommodations");
     fireEvent.click(document.querySelector<HTMLInputElement>('input[name="filed"][value="on_or_after"]')!);
     fireEvent.click(button(EN["intro.start"]));

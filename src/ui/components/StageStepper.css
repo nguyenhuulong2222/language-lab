@@ -139,4 +139,18 @@
     forced-color-adjust: none;
     background: Highlight;
   }
+  /* Desktop stepper: the current step has a thick frame, a completed one a double frame, and the
+     connector becomes a border so it stays visible. */
+  .stepper__marker {
+    border: 1px solid CanvasText;
+  }
+  .stepper__step--current .stepper__marker {
+    border: 3px solid Highlight;
+  }
+  .stepper__step--complete .stepper__marker {
+    border: 3px double CanvasText;
+  }
+  .stepper__connector {
+    border-top: 2px solid CanvasText;
+  }
 }

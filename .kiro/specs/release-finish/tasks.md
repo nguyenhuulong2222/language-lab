@@ -6,4 +6,4 @@
 - [x] R-03 Interaction tests with jsdom and Testing Library (COR-01).
 - [x] R-04 `docs/content-review.md` checklists.
 - [x] R-05 Judge path in README and `docs/judge-guide.md`.
-- [ ] R-06 Reviews, layout check, typecheck, tests, build, logs.
+- [x] R-06 Reviews, layout check, typecheck, tests, build, logs.

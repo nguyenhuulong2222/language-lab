@@ -2,7 +2,8 @@
 
 ## For judges
 
-Live: <https://language-lab-ade.pages.dev>. The full guide is [`docs/judge-guide.md`](docs/judge-guide.md).
+Live: <https://language-lab-ade.pages.dev> (features of a branch appear there after it is merged and
+deployed). The full guide is [`docs/judge-guide.md`](docs/judge-guide.md).
 
 A 3-minute path:
 
@@ -12,7 +13,8 @@ A 3-minute path:
    Without AI: "Cancel", then "No, practice without AI".
 3. **Full interview**: from Home, "Full practice interview": profile, filing date (2008 or 2025 test),
    then N-400, reading, writing ("Show the sentence" if you cannot listen) and civics.
-4. **Report**: "On track" or "Review this" per part, never pass or fail, with the disclaimer.
+4. **Report**: "Practice score reached" or "Worth reviewing" per part, never pass or fail, with the
+   disclaimer.
 5. **Study first**: page through the civics questions with official answers and pictures; not scored.
 6. **65/20**: "65/20 civics practice": 10 of the 20 starred questions, 6 correct for the practice
    score (USCIS Policy Manual, Vol. 12, Part E, Ch. 2), with a link to the USCIS interpreter rule.

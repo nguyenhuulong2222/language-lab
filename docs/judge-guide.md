@@ -1,6 +1,7 @@
 # Judge guide: Language Lab in 3 minutes
 
-Live: <https://language-lab-ade.pages.dev>
+Live: <https://language-lab-ade.pages.dev> (the production build; features of a branch appear there
+only after that branch is merged and deployed)
 
 Language Lab is a free practice booth for the U.S. naturalization interview. Everyone practises as an
 invented person, so nobody types or says real details. It is an independent study aid. It is not
@@ -32,8 +33,8 @@ nothing.
    without AI". Type short answers to the N-400 questions. In reading, type the sentence shown. In
    writing, press "Show the sentence" if you cannot listen, then type it. In civics, type answers. The
    practice test stops on the official stop rule.
-4. **Report (20 s)**: each part shows "On track" or "Review this" (never pass or fail), the items to
-   practise, and the disclaimer.
+4. **Report (20 s)**: each part shows "Practice score reached" or "Worth reviewing" (never pass or
+   fail), the items to practise, and the disclaimer.
 5. **Study first (15 s)**: from Home, choose "Study first" and a test version. Page through the
    questions with the official answers and pictures. Nothing is scored.
 6. **65/20 (15 s)**: from Home, choose "65/20 civics practice". The setup has the choice "I am 65 or
@@ -43,7 +44,8 @@ nothing.
    applicant may take the real test in their own language with an interpreter. The questions stay
    English.
 7. **Language menu (15 s)**: press the language button in the header (the globe) and choose, for
-   example, Tiếng Việt. The interface changes and says it was translated by AI and not yet reviewed.
+   example, Tiếng Việt. The interface changes and says the translation was made by AI, may contain
+   mistakes, and that English is the authoritative version.
    Disclaimers, legal lines and every civics question stay in English. "Settings" has text size (up to
    125%) and slower recorded voices.
 

@@ -7,14 +7,16 @@
 import type { CivicsPracticeRules } from "../../engine/test-rules-loader";
 import { useT } from "../../i18n/react";
 import { LegalText } from "./LegalText";
+import "./Screen.css";
 
 /** The USCIS page that states the interpreter rule (saved in data/sources/). */
 export const EXCEPTIONS_URL = "https://www.uscis.gov/citizenship/exceptions-and-accommodations";
 
 export function SpecialConsiderationNote({ rules, id }: { rules: CivicsPracticeRules; id?: string }) {
   return (
-    <div className="special-note" {...(id === undefined ? {} : { id })}>
-      <p className="note">
+    <div className="special-note">
+      {/* The id names only this paragraph: the checkbox is described by the rule, not the link. */}
+      <p className="note" {...(id === undefined ? {} : { id })}>
         <LegalText
           messageKey="intro.special.help"
           params={{ asked: rules.questionsAsked.value, bank: rules.questionPoolSize.value, pass: rules.passingScore.value }}
@@ -28,11 +30,17 @@ export function SpecialConsiderationNote({ rules, id }: { rules: CivicsPracticeR
 export function SpecialLanguageLine() {
   const t = useT();
   return (
-    <p className="note">
-      <LegalText messageKey="special.language" />{" "}
-      <a href={EXCEPTIONS_URL} target="_blank" rel="noopener noreferrer">
-        {t("special.language.link")}
-      </a>
-    </p>
+    <div className="special-note">
+      <p className="note">
+        <LegalText messageKey="special.language" />
+      </p>
+      {/* On its own line with a full-size tap target (design system: 48px minimum). */}
+      <p className="note">
+        <a className="special-note__link" href={EXCEPTIONS_URL} target="_blank" rel="noopener noreferrer">
+          {t("special.language.link")}
+          <span className="ll-sr-only"> {t("common.newTab")}</span>
+        </a>
+      </p>
+    </div>
   );
 }

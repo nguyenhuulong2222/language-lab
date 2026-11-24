@@ -138,6 +138,7 @@ function reviewItemKey(item: string): MessageKey | null {
 
 function StageSummaryCard({ summary }: { summary: StageSummary }) {
   const t = useT();
+  const language = useLanguage();
   const lines = summaryLines(summary);
   const meta = STAGES[stageIndex(summary.stage)];
   const hasReview = summary.reviewItems.length > 0;
@@ -153,7 +154,14 @@ function StageSummaryCard({ summary }: { summary: StageSummary }) {
       {lines === null ? (
         <p className="stage-card__summary" lang="en">{summary.summary}</p>
       ) : (
-        <p className="stage-card__summary">{lines.map((l) => t(l.key, l.params)).join(" ")}</p>
+        <p className="stage-card__summary">
+          {lines.map((l, i) => (
+            <span key={i} {...(isEnglishOnly(language, l.key) ? { lang: "en" } : {})}>
+              {i > 0 ? " " : ""}
+              {t(l.key, l.params)}
+            </span>
+          ))}
+        </p>
       )}
       {hasReview && (
         <ul className="stage-card__review">

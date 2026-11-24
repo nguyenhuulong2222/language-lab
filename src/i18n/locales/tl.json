@@ -165,7 +165,7 @@
   "civics.notYet": "Hindi pa",
   "civics.youSaid": "Sinabi ninyo: {text}",
   "civics.official": "Mga opisyal na sagot",
-  "civics.officialNote": "Mabibilang ang alinman sa mga ito. Kinuha ang listahan sa listahan ng sagot ng USCIS at naghihintay pa ng pagsusuri ng isang tao.",
+  "civics.officialNote": "Mabibilang ang alinman sa mga ito.",
   "civics.next": "Susunod na tanong",
   "civics.finish": "Tingnan ang aking ulat",
   "civics.stopped.correct": "Naabot ninyo ang puntos na pasado sa pagsasanay, kaya huminto rito ang test.",
@@ -312,7 +312,7 @@
   "home.special.title": "Pagsasanay sa sibika para sa 65/20",
   "home.special.text": "Para sa mga 65 taong gulang pataas na permanent resident na nang 20 taon o higit pa. Sanayin ang mga tanong sa sibika na may tandang bituin (*).",
   "intro.special.label": "Ako ay 65 taong gulang pataas at permanent resident na nang 20 taon o higit pa",
-  "intro.special.help": "Pagsasanay lang ang binabago nito; walang sine-save o ipinapadala. Itatanong ng bahagi ng sibika ang {asked} sa {bank} tanong na may tandang bituin (*) sa opisyal na listahan. Itatanong ang lahat ng {asked}. Ang practice passing score ay {pass} tamang sagot.",
+  "intro.special.help": "Pagsasanay lang ang binabago nito; walang sine-save o ipinapadala. Itatanong ng bahagi ng sibika ang {asked} sa {bank} tanong na may tandang bituin (*) sa opisyal na listahan. Sa pagsasanay na ito, itatanong ang lahat ng {asked}. Ang practice passing score ay {pass} tamang sagot. Para sa sarili mong kaso, tingnan ang uscis.gov: binibilang ang edad at mga taon sa petsa ng pag-file.",
   "special.language": "Maaaring kumuha ang aplikanteng 65/20 ng totoong test sa sibika sa sarili niyang wika sa tulong ng interpreter.",
   "special.language.link": "Mga exception at accommodation sa uscis.gov",
   "study.special.label": "Mga tanong lang para sa 65/20 (may tandang bituin)",
@@ -334,5 +334,6 @@
   "report.review.reading": "Sanayin ang pagbasa nang malakas ng mga pangungusap.",
   "report.review.writing": "Sanayin ang pagsulat ng mga pangungusap na naririnig mo.",
   "civics.heard.closest": "Nagbigay ang device mo ng ilang hula sa sinabi mo. Ipinapakita ang pinakamalapit sa isang sagot sa answer key.",
-  "n400.box.reminder": "Sumagot bilang ang kathang-isip na tao. Huwag i-type ang totoo mong pangalan, address, mga petsa o mga numero."
+  "n400.box.reminder": "Sumagot bilang ang kathang-isip na tao. Huwag i-type ang totoo mong pangalan, address, mga petsa o mga numero.",
+  "common.newTab": "(magbubukas sa bagong tab)"
 }

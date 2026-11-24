@@ -66,10 +66,11 @@ describe("CON-04: report summaries through the locale files", () => {
       expect(stage.summaryLines!.map((l) => tEn(l.key as MessageKey, l.params)).join(" ")).toBe(stage.summary);
     }
   });
-  it("numbers are placeholders, not text in the keys; no summary line is a legal key", () => {
+  it("numbers are placeholders; only the civics stop and score lines are legal keys", () => {
+    const legal = new Set(["report.line.civics.allAsked", "report.line.civics.stoppedAtScore", "report.line.civics.stoppedIncorrect", "report.line.civics.notReached"]);
     for (const stage of report.stageSummaries)
       for (const l of stage.summaryLines!) {
-        expect(isLegalKey(l.key), l.key).toBe(false);
+        expect(isLegalKey(l.key), l.key).toBe(legal.has(l.key));
         for (const v of Object.values(l.params ?? {})) if (typeof v === "string") expect(v).not.toMatch(/^\d+$/);
       }
   });

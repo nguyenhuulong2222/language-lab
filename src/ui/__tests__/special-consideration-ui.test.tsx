@@ -94,11 +94,12 @@ describe("setup choice (REQ-S05, REQ-S08)", () => {
     );
     expect(off).not.toContain(LABEL);
   });
-  it("in Vietnamese: the label is translated, the legal lines stay English", () => {
+  it("in Vietnamese: the eligibility label and the legal lines stay English (legal keys)", () => {
     const html = intro({}, "vi");
-    expect(html).toContain("Tôi từ 65 tuổi trở lên");
+    expect(html).toContain(LABEL);
+    expect(html).not.toContain("Tôi từ 65 tuổi trở lên");
     expect(html).toContain(ENGLISH_MESSAGES["special.language"]);
-    for (const key of ["intro.special.help", "special.language", "study.special.dynamic"] as const) expect(isLegalKey(key), key).toBe(true);
+    for (const key of ["intro.special.help", "intro.special.label", "home.special.text", "special.language", "study.special.dynamic"] as const) expect(isLegalKey(key), key).toBe(true);
   });
 });
 

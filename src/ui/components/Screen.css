@@ -171,3 +171,15 @@
 .plain-lines li {
   margin-bottom: var(--space-2);
 }
+/* The USCIS link of the 65/20 notes: a full-size tap target on its own line. */
+.special-note__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap-min);
+}
+/* The 65/20 notes: their paragraphs and the link keep a small gap between them. */
+.special-note {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}

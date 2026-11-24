@@ -165,7 +165,7 @@
   "civics.notYet": "Todavía no",
   "civics.youSaid": "Usted dijo: {text}",
   "civics.official": "Respuestas oficiales",
-  "civics.officialNote": "Cualquiera de estas cuenta. La lista proviene de la lista de respuestas de USCIS y todavía espera la revisión de una persona.",
+  "civics.officialNote": "Cualquiera de estas cuenta.",
   "civics.next": "Siguiente pregunta",
   "civics.finish": "Ver mi informe",
   "civics.stopped.correct": "Alcanzó la puntuación de aprobación de la práctica, así que la prueba se detuvo aquí.",
@@ -312,7 +312,7 @@
   "home.special.title": "Práctica de educación cívica 65/20",
   "home.special.text": "Para personas de 65 años o más que han sido residentes permanentes durante 20 años o más. Practique las preguntas de educación cívica marcadas con un asterisco (*).",
   "intro.special.label": "Tengo 65 años o más y he sido residente permanente durante 20 años o más",
-  "intro.special.help": "Esto solo cambia la práctica; no se guarda ni se envía nada. La parte de educación cívica le hace {asked} de las {bank} preguntas marcadas con un asterisco (*) en la lista oficial. Se hacen las {asked}. La puntuación de práctica para aprobar es de {pass} respuestas correctas.",
+  "intro.special.help": "Esto solo cambia la práctica; no se guarda ni se envía nada. La parte de educación cívica le hace {asked} de las {bank} preguntas marcadas con un asterisco (*) en la lista oficial. En esta práctica se hacen las {asked}. La puntuación de práctica para aprobar es de {pass} respuestas correctas. Para su propio caso, consulte uscis.gov: la edad y los años cuentan en la fecha de presentación de la solicitud.",
   "special.language": "Una persona solicitante 65/20 puede hacer el examen real de educación cívica en su propio idioma con un intérprete.",
   "special.language.link": "Excepciones y adaptaciones en uscis.gov",
   "study.special.label": "Solo las preguntas para 65/20 (marcadas con un asterisco)",
@@ -334,5 +334,6 @@
   "report.review.reading": "Practique leer las oraciones en voz alta.",
   "report.review.writing": "Practique escribir las oraciones que escucha.",
   "civics.heard.closest": "Su dispositivo dio varias opciones de lo que usted dijo. Se muestra la más cercana a una respuesta de la clave.",
-  "n400.box.reminder": "Responda como la persona ficticia. No escriba su nombre, dirección, fechas ni números reales."
+  "n400.box.reminder": "Responda como la persona ficticia. No escriba su nombre, dirección, fechas ni números reales.",
+  "common.newTab": "(se abre en una pestaña nueva)"
 }
