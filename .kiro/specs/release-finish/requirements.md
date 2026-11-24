@@ -122,5 +122,11 @@ for the standard tests only.
   miss that still counts; writing "Show the sentence"; Study first paging; 65/20 setup; language
   menu; text size; no fetch before AI coach consent.
 
-## Steps 4 and 5
-Written into this file before each step is built.
+## Step 4 — Content waiting for the owner's review
+- **REQ-R01** `tools/content-review/build-content-review.mjs` writes `docs/content-review.md`: one
+  short checklist per data file still marked `needsHumanReview: true` (found by scanning `data/`),
+  every item on one line with what to check, sized for about 30 minutes. It also lists the picture
+  records named in CON-13. It changes no flag and says how to record a review (CON-06 rule).
+
+## Step 5
+Written into this file before it is built.
