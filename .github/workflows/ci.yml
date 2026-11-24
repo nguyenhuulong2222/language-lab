@@ -14,8 +14,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          # The tools import TypeScript directly, which needs Node 22.18 or later.
-          node-version: "22.18"
+          # The tools import TypeScript directly (Node 22.18+), and the AI coach counter test runs its SQL
+          # on node:sqlite, which binds numbered parameters (?1, ?2) only from Node 22.20.
+          node-version: "22.20"
           cache: npm
       - run: npm ci
       - run: npm run typecheck

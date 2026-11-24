@@ -184,3 +184,17 @@ Checks:
 - **Function bundle**: passes, 51,102 bytes.
 - **Layout check** (production, English, normal, 390px): 25 screens, all pass.
 - **Hook tests**: pass.
+
+## Found while checking: CI's Node version (not an upgrade group)
+
+CI runs the tests on Node 22.18. On 22.18, 2 of the 1373 tests fail, the same 2 with the baseline
+dependencies (checked in a separate worktree at 7052f8b). The affected file is
+`src/engine/coach/__tests__/prompt-limits-counters.test.ts`, which runs the D1 counter SQL on
+`node:sqlite`. Node 22.18 and 22.19 do not bind positional values to numbered parameters
+(`?1`, `?2`, `?3`); they fail with SQLite error 25, "column index out of range". Node 22.20.0 and
+later, 24 and 26 bind them; checked with a probe script on 22.18.0, 22.19.0, 22.20.0, 22.21.0,
+22.22.0, 22.23.5, 24.22.3 and 26.13.0. The app is not affected: Cloudflare D1 supports `?NNN`.
+
+So `main`'s CI test step already fails on Node 22.18, independent of the upgrades. Fix: CI uses
+Node 22.20, and `engines` and the README say 22.20+. No test or SQL was changed. With Node 22.20.0,
+typecheck, all 1373 tests and the build pass.
