@@ -335,5 +335,8 @@
   "report.review.writing": "Xyaum sau cov kab lus uas koj hnov.",
   "civics.heard.closest": "Koj lub cuab yeej kwv yees ob peb yam txog qhov koj hais. Yam uas ze tshaj rau ib lo lus teb hauv cov lus teb tau tshwm.",
   "n400.box.reminder": "Teb ua tus neeg tsis muaj tiag. Tsis txhob ntaus koj lub npe tiag, chaw nyob, hnub tim los yog cov lej.",
-  "common.newTab": "(qhib rau hauv ib lub tab tshiab)"
+  "common.newTab": "(qhib rau hauv ib lub tab tshiab)",
+  "coach.kind.streetAddress": "ib qho chaw nyob ntawm txoj kev",
+  "coach.kind.zipCode": "ib tus ZIP code nrog lub xeev",
+  "coach.notice.limits": "Qhov kuaj no kuj nrhiav chaw nyob thiab ZIP code, tab sis nws nrhiav tsis tau npe. Tsis txhob hais los yog ntaus ib tus neeg tiag tiag lub npe."
 }

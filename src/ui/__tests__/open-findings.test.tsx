@@ -18,6 +18,7 @@ import { I18nProvider } from "../../i18n/react";
 import { isLegalKey } from "../../i18n/legal-keys";
 import { ReportScreen } from "../screens/ReportScreen";
 import { AnswerInput } from "../components/AnswerInput";
+import { CoachNotice } from "../components/CoachNotice";
 import { CivicsScreen } from "../screens/CivicsScreen";
 import { EnglishScreen } from "../screens/EnglishScreen";
 import { N400View } from "../screens/N400Screen";
@@ -186,5 +187,18 @@ describe("F-07: the prominent disclaimer under every result", () => {
     );
     const at = prominent(html, "n400-done-disclaimer");
     expect(html.indexOf("My name is Aurora Thistlewood.")).toBeLessThan(at);
+  });
+});
+
+describe("F-08: the coach notice says names are not detected", () => {
+  it("the limits line is a legal key, English in an unreviewed language, inside the notice", () => {
+    expect(isLegalKey("coach.notice.limits")).toBe(true);
+    const html = renderToString(
+      <I18nProvider language="vi">
+        <CoachNotice onConfirm={() => {}} onCancel={() => {}} />
+      </I18nProvider>
+    );
+    expect(html).toContain(ENGLISH_MESSAGES["coach.notice.limits"].replace(/'/g, "&#x27;"));
+    expect(html.indexOf("cannot find names")).toBeLessThan(html.indexOf("<button"));
   });
 });

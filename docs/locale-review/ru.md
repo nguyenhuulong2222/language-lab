@@ -354,6 +354,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | Потренируйтесь писать предложения, которые вы слышите. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Отвечайте как вымышленный человек. Не вводите своё настоящее имя, адрес, даты или номера. |
 | `common.newTab` | (opens in a new tab) | (откроется в новой вкладке) |
+| `coach.kind.streetAddress` | a street address | адрес |
+| `coach.kind.zipCode` | a ZIP code with a state | почтовый индекс (ZIP) со штатом |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Проверка также ищет адреса и почтовые индексы, но не может найти имена. Не называйте и не вводите имя реального человека. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -354,6 +354,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | 들은 문장을 쓰는 연습을 하세요. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | 가상의 인물로 답하세요. 실제 이름, 주소, 날짜, 번호를 입력하지 마세요. |
 | `common.newTab` | (opens in a new tab) | (새 탭에서 열림) |
+| `coach.kind.streetAddress` | a street address | 도로명 주소 |
+| `coach.kind.zipCode` | a ZIP code with a state | 주 이름이 붙은 우편번호 |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | 이 확인은 주소와 우편번호도 찾지만 이름은 찾을 수 없습니다. 실제 사람의 이름을 말하거나 입력하지 마세요. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

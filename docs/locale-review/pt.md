@@ -354,6 +354,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | Pratique escrever as frases que você ouve. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Responda como a pessoa fictícia. Não digite o seu nome, endereço, datas ou números reais. |
 | `common.newTab` | (opens in a new tab) | (abre em uma nova aba) |
+| `coach.kind.streetAddress` | a street address | um endereço |
+| `coach.kind.zipCode` | a ZIP code with a state | um CEP (ZIP) com um estado |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | A verificação também procura endereços e códigos ZIP, mas não consegue encontrar nomes. Não diga nem digite o nome de uma pessoa real. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

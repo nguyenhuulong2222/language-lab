@@ -354,6 +354,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | ကြားရသော ဝါကျများကို ရေးရန် လေ့ကျင့်ပါ။ |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | စိတ်ကူးယဉ်လူအဖြစ် ဖြေပါ။ သင့်နာမည်အစစ်၊ လိပ်စာ၊ ရက်စွဲ သို့မဟုတ် နံပါတ်များကို မရိုက်ပါနှင့်။ |
 | `common.newTab` | (opens in a new tab) | (တဘ်အသစ်တွင် ဖွင့်မည်) |
+| `coach.kind.streetAddress` | a street address | လမ်းလိပ်စာ |
+| `coach.kind.zipCode` | a ZIP code with a state | ပြည်နယ်အမည်ပါသော ZIP ကုဒ် |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | ဤစစ်ဆေးမှုသည် လမ်းလိပ်စာနှင့် ZIP ကုဒ်များကိုလည်း ရှာသော်လည်း အမည်များကို မရှာနိုင်ပါ။ လူအစစ်တစ်ဦး၏ အမည်ကို မပြော၊ မရိုက်ပါနှင့်။ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

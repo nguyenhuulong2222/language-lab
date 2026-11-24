@@ -328,5 +328,8 @@
   "report.review.writing": "Practice writing the sentences you hear.",
   "civics.heard.closest": "Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown.",
   "n400.box.reminder": "Answer as the fictional person. Do not type your real name, address, dates or numbers.",
-  "common.newTab": "(opens in a new tab)"
+  "common.newTab": "(opens in a new tab)",
+  "coach.kind.streetAddress": "a street address",
+  "coach.kind.zipCode": "a ZIP code with a state",
+  "coach.notice.limits": "The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name."
 }

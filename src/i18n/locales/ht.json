@@ -335,5 +335,8 @@
   "report.review.writing": "Pratike ekri fraz ou tande yo.",
   "civics.heard.closest": "Aparèy ou a bay plizyè devinèt sou sa ou te di. Sa ki pi pre yon repons nan kle a parèt.",
   "n400.box.reminder": "Reponn tankou moun imajinè a. Pa tape vrè non ou, adrès ou, dat oswa nimewo ou.",
-  "common.newTab": "(ap louvri nan yon nouvo onglè)"
+  "common.newTab": "(ap louvri nan yon nouvo onglè)",
+  "coach.kind.streetAddress": "yon adrès lari",
+  "coach.kind.zipCode": "yon kòd ZIP ak yon eta",
+  "coach.notice.limits": "Verifikasyon an chèche adrès ak kòd ZIP tou, men li pa ka jwenn non. Pa di ni tape non yon vrè moun."
 }

@@ -354,6 +354,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | Hãy luyện viết các câu bạn nghe. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Hãy trả lời như người hư cấu. Đừng gõ tên, địa chỉ, ngày tháng hay số thật của bạn. |
 | `common.newTab` | (opens in a new tab) | (mở trong thẻ mới) |
+| `coach.kind.streetAddress` | a street address | một địa chỉ nhà |
+| `coach.kind.zipCode` | a ZIP code with a state | một mã ZIP kèm tên tiểu bang |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Phần kiểm tra cũng tìm địa chỉ nhà và mã ZIP, nhưng không thể tìm ra tên người. Đừng nói hay gõ tên của một người thật. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -354,3 +354,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | Pratike ekri fraz ou tande yo. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Reponn tankou moun imajinè a. Pa tape vrè non ou, adrès ou, dat oswa nimewo ou. |
 | `common.newTab` | (opens in a new tab) | (ap louvri nan yon nouvo onglè) |
+| `coach.kind.streetAddress` | a street address | yon adrès lari |
+| `coach.kind.zipCode` | a ZIP code with a state | yon kòd ZIP ak yon eta |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Verifikasyon an chèche adrès ak kòd ZIP tou, men li pa ka jwenn non. Pa di ni tape non yon vrè moun. |

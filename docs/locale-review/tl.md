@@ -354,6 +354,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | Sanayin ang pagsulat ng mga pangungusap na naririnig mo. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Sumagot bilang ang kathang-isip na tao. Huwag i-type ang totoo mong pangalan, address, mga petsa o mga numero. |
 | `common.newTab` | (opens in a new tab) | (magbubukas sa bagong tab) |
+| `coach.kind.streetAddress` | a street address | isang address ng kalye |
+| `coach.kind.zipCode` | a ZIP code with a state | isang ZIP code na may estado |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Hinahanap din ng pagsusuri ang mga address at ZIP code, pero hindi nito mahahanap ang mga pangalan. Huwag sabihin o i-type ang pangalan ng totoong tao. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

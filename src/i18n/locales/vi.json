@@ -335,5 +335,8 @@
   "report.review.writing": "Hãy luyện viết các câu bạn nghe.",
   "civics.heard.closest": "Thiết bị của bạn đưa ra vài cách hiểu điều bạn nói. Cách gần nhất với một đáp án được hiển thị.",
   "n400.box.reminder": "Hãy trả lời như người hư cấu. Đừng gõ tên, địa chỉ, ngày tháng hay số thật của bạn.",
-  "common.newTab": "(mở trong thẻ mới)"
+  "common.newTab": "(mở trong thẻ mới)",
+  "coach.kind.streetAddress": "một địa chỉ nhà",
+  "coach.kind.zipCode": "một mã ZIP kèm tên tiểu bang",
+  "coach.notice.limits": "Phần kiểm tra cũng tìm địa chỉ nhà và mã ZIP, nhưng không thể tìm ra tên người. Đừng nói hay gõ tên của một người thật."
 }

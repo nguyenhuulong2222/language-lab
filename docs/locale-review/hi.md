@@ -354,3 +354,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | सुने हुए वाक्यों को लिखने का अभ्यास करें। |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | काल्पनिक व्यक्ति के रूप में उत्तर दें। अपना असली नाम, पता, तारीखें या नंबर टाइप न करें। |
 | `common.newTab` | (opens in a new tab) | (नए टैब में खुलता है) |
+| `coach.kind.streetAddress` | a street address | एक गली का पता |
+| `coach.kind.zipCode` | a ZIP code with a state | राज्य के साथ एक ZIP कोड |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | यह जाँच गली के पते और ZIP कोड भी खोजती है, लेकिन नाम नहीं खोज सकती। किसी असली व्यक्ति का नाम न बोलें और न टाइप करें। |

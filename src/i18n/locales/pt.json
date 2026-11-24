@@ -335,5 +335,8 @@
   "report.review.writing": "Pratique escrever as frases que você ouve.",
   "civics.heard.closest": "O seu aparelho deu vários palpites do que você disse. Aparece o mais próximo de uma resposta do gabarito.",
   "n400.box.reminder": "Responda como a pessoa fictícia. Não digite o seu nome, endereço, datas ou números reais.",
-  "common.newTab": "(abre em uma nova aba)"
+  "common.newTab": "(abre em uma nova aba)",
+  "coach.kind.streetAddress": "um endereço",
+  "coach.kind.zipCode": "um CEP (ZIP) com um estado",
+  "coach.notice.limits": "A verificação também procura endereços e códigos ZIP, mas não consegue encontrar nomes. Não diga nem digite o nome de uma pessoa real."
 }

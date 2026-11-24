@@ -72,3 +72,85 @@ describe("identifier screen (REQ-C08)", () => {
     );
   });
 });
+
+describe("street addresses and ZIP codes (audit F-08)", () => {
+  const positive: Array<[string, string]> = [
+    ["I live at 123 Main Street.", "street-address"],
+    ["12 Oak St", "street-address"],
+    ["4500 North Lake Shore Drive", "street-address"],
+    ["77 Elm Ave apartment 3", "street-address"],
+    ["1600 Pennsylvania Avenue", "street-address"],
+    ["9 Ocean View Rd", "street-address"],
+    ["250 Mission Blvd", "street-address"],
+    ["31 Maple Ln", "street-address"],
+    ["8 Cherry Way", "street-address"],
+    ["15 Birch Ct", "street-address"],
+    ["2200 Pacific Coast Hwy", "street-address"],
+    ["my apartment is Apt 4B", "street-address"],
+    ["Unit 12", "street-address"],
+    ["Suite 300", "street-address"],
+    ["building #12", "street-address"],
+    ["Honolulu, HI 96813", "zip-code"],
+    ["Los Angeles CA 90012-3456", "zip-code"],
+    ["in California 94105", "zip-code"],
+    ["New York, 10001", "zip-code"],
+    ["90210 CA", "zip-code"],
+  ];
+  it("finds a house number with a street word, a unit, and a ZIP code next to a state", () => {
+    for (const [text, kind] of positive) expect(screenIdentifiers(text), text).toBe(kind);
+  });
+  const negative = [
+    "In 2015 we moved to a new street.",
+    "I have 2 kids on our street.",
+    "We lived 3 blocks from the main road.",
+    "There is only 1 way to do it.",
+    "I drive 20 miles to work on the highway.",
+    "I worked 5 days a week at a store on that street.",
+    "I lived in California for 10 years.",
+    "I moved to Texas in 2019.",
+    
+    "My doctor is Dr Lee.",
+    "I visited 4 states.",
+    "We are number 1 in our team.",
+  ];
+  it("lets ordinary answers through", () => {
+    for (const text of negative) expect(screenIdentifiers(text), text).toBeNull();
+  });
+  it("a five-digit number after a state name is read as a ZIP code (narrow, on purpose)", () => {
+    expect(screenIdentifiers("I was in New York for 12345 reasons.")).toBeNull();
+    expect(screenIdentifiers("New York 12345")).toBe("zip-code");
+  });
+  it("lets every sample answer of the fictional profiles through", () => {
+    const content = loadPracticeContent();
+    for (const q of content.n400Questions) for (const answer of Object.values(q.sampleAnswers)) expect(screenIdentifiers(answer), answer).toBeNull();
+  });
+  const streetWords = ["Street", "St", "Avenue", "Ave", "Road", "Rd", "Blvd", "Drive", "Dr", "Lane", "Ln", "Way", "Ct", "Hwy"];
+  const nameWord = fc.stringMatching(/^[A-Z][a-z]{2,9}$/).filter((w) => !/^(?:The|And|For|Our|New|Old|Same|This|That|Years?|Days?|Kids|Miles?)$/i.test(w));
+  it("property: any house number, one to three name words and a street word flags", () => {
+    fc.assert(
+      fc.property(fc.integer({ min: 1, max: 99999 }), fc.array(nameWord, { minLength: 1, maxLength: 3 }), fc.constantFrom(...streetWords), (n, words, street) => {
+        expect(screenIdentifiers(`I live at ${n} ${words.join(" ")} ${street}.`)).toBe("street-address");
+      })
+    );
+  });
+  it("property: any state code with any ZIP code flags; the same digits alone do not", () => {
+    fc.assert(
+      fc.property(fc.constantFrom("CA", "TX", "NY", "HI", "FL", "WA"), fc.integer({ min: 10000, max: 99999 }), (state, zip) => {
+        expect(screenIdentifiers(`Springfield, ${state} ${zip}`)).toBe("zip-code");
+        expect(screenIdentifiers(`I paid ${zip} dollars.`)).toBeNull();
+      })
+    );
+  });
+  it("property: time and count phrases never flag as an address", () => {
+    fc.assert(
+      fc.property(
+        fc.integer({ min: 1, max: 2030 }),
+        fc.constantFrom("years", "days", "weeks", "months", "hours", "times", "kids", "children", "blocks", "miles"),
+        fc.constantFrom("on the street", "near the road", "by the highway", "on our street", "down the lane"),
+        (n, unit, place) => {
+          expect(screenIdentifiers(`I spent ${n} ${unit} ${place}.`)).toBeNull();
+        }
+      )
+    );
+  });
+});

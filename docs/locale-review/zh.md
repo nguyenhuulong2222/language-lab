@@ -354,3 +354,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | 練習寫下您聽到的句子。 |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | 請以虛構人物的身分回答。不要輸入您真實的姓名、地址、日期或號碼。 |
 | `common.newTab` | (opens in a new tab) | （在新分頁開啟） |
+| `coach.kind.streetAddress` | a street address | 一個街道地址 |
+| `coach.kind.zipCode` | a ZIP code with a state | 一個附有州名的郵遞區號 |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | 這項檢查也會找街道地址和郵遞區號，但無法找出姓名。請不要說出或輸入真實人物的姓名。 |

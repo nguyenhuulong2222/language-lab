@@ -354,6 +354,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | ฝึกเขียนประโยคที่คุณได้ยิน |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | ตอบในฐานะบุคคลสมมติ อย่าพิมพ์ชื่อ ที่อยู่ วันที่ หรือหมายเลขจริงของคุณ |
 | `common.newTab` | (opens in a new tab) | (เปิดในแท็บใหม่) |
+| `coach.kind.streetAddress` | a street address | ที่อยู่ตามถนน |
+| `coach.kind.zipCode` | a ZIP code with a state | รหัสไปรษณีย์พร้อมชื่อรัฐ |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | การตรวจนี้ยังมองหาที่อยู่และรหัสไปรษณีย์ด้วย แต่ไม่สามารถหาชื่อคนได้ อย่าพูดหรือพิมพ์ชื่อของคนจริง |
 
 ## Lines marked ⚠ (meaning differs a little)
 

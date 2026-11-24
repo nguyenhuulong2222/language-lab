@@ -335,5 +335,8 @@
   "report.review.writing": "Practique escribir las oraciones que escucha.",
   "civics.heard.closest": "Su dispositivo dio varias opciones de lo que usted dijo. Se muestra la más cercana a una respuesta de la clave.",
   "n400.box.reminder": "Responda como la persona ficticia. No escriba su nombre, dirección, fechas ni números reales.",
-  "common.newTab": "(se abre en una pestaña nueva)"
+  "common.newTab": "(se abre en una pestaña nueva)",
+  "coach.kind.streetAddress": "una dirección",
+  "coach.kind.zipCode": "un código postal con un estado",
+  "coach.notice.limits": "La revisión también busca direcciones y códigos postales, pero no puede encontrar nombres. No diga ni escriba el nombre de una persona real."
 }

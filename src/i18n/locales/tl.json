@@ -335,5 +335,8 @@
   "report.review.writing": "Sanayin ang pagsulat ng mga pangungusap na naririnig mo.",
   "civics.heard.closest": "Nagbigay ang device mo ng ilang hula sa sinabi mo. Ipinapakita ang pinakamalapit sa isang sagot sa answer key.",
   "n400.box.reminder": "Sumagot bilang ang kathang-isip na tao. Huwag i-type ang totoo mong pangalan, address, mga petsa o mga numero.",
-  "common.newTab": "(magbubukas sa bagong tab)"
+  "common.newTab": "(magbubukas sa bagong tab)",
+  "coach.kind.streetAddress": "isang address ng kalye",
+  "coach.kind.zipCode": "isang ZIP code na may estado",
+  "coach.notice.limits": "Hinahanap din ng pagsusuri ang mga address at ZIP code, pero hindi nito mahahanap ang mga pangalan. Huwag sabihin o i-type ang pangalan ng totoong tao."
 }

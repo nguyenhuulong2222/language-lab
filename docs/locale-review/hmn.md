@@ -354,6 +354,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | Xyaum sau cov kab lus uas koj hnov. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Teb ua tus neeg tsis muaj tiag. Tsis txhob ntaus koj lub npe tiag, chaw nyob, hnub tim los yog cov lej. |
 | `common.newTab` | (opens in a new tab) | (qhib rau hauv ib lub tab tshiab) |
+| `coach.kind.streetAddress` | a street address | ib qho chaw nyob ntawm txoj kev |
+| `coach.kind.zipCode` | a ZIP code with a state | ib tus ZIP code nrog lub xeev |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Qhov kuaj no kuj nrhiav chaw nyob thiab ZIP code, tab sis nws nrhiav tsis tau npe. Tsis txhob hais los yog ntaus ib tus neeg tiag tiag lub npe. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

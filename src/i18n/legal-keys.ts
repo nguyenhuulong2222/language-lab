@@ -34,6 +34,7 @@ export const LEGAL_KEYS: readonly string[] = [
   "voice.privacy",
   "voice.consent.text",
   "coach.notice.text",
+  "coach.notice.limits",
   "coach.screened",
   "coach.privacy",
   "coach.followUp.note",

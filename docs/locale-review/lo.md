@@ -354,6 +354,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | ຝຶກຂຽນປະໂຫຍກທີ່ທ່ານໄດ້ຍິນ. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | ຕອບໃນຖານະບຸກຄົນສົມມຸດ. ຢ່າພິມຊື່, ທີ່ຢູ່, ວັນທີ ຫຼື ເລກແທ້ຂອງທ່ານ. |
 | `common.newTab` | (opens in a new tab) | (ເປີດໃນແທັບໃໝ່) |
+| `coach.kind.streetAddress` | a street address | ທີ່ຢູ່ຖະໜົນ |
+| `coach.kind.zipCode` | a ZIP code with a state | ລະຫັດໄປສະນີ ZIP ພ້ອມຊື່ລັດ |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | ການກວດນີ້ຍັງຊອກຫາທີ່ຢູ່ ແລະ ລະຫັດ ZIP, ແຕ່ຊອກຫາຊື່ບໍ່ໄດ້. ຢ່າເວົ້າ ຫຼື ພິມຊື່ຂອງຄົນແທ້. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -489,3 +489,18 @@ Spec: `.kiro/specs/interview-coach/` (requirements revision 2 with two Analyze R
   The report builder accepts no reading or writing result, and the practice result then follows
   civics. Tests: engine unit and property tests (`special-consideration.test.ts`) and a DOM
   click-through (`interaction.test.tsx`).
+- **Coach screening, addresses and ZIP codes (Step 2, audit F-08)**: `identifier-screen.ts` now also
+  refuses:
+  - a house number followed by one to three words and a street word (St, Street, Ave, Avenue, Rd,
+    Road, Blvd, Dr, Drive, Ln, Lane, Way, Ct, Hwy);
+  - a unit marker with a number (Apt, Unit, Suite, #);
+  - a ZIP code next to a state code (capitals only) or a state name.
+
+  The words between the number and the street word may not be common short words or time and count
+  words, so "In 2015 we moved to a new street" passes. E-mail and phone were already covered. The
+  fictional profiles' sample answers still pass (tested).
+
+  **Names are not detected**: a name looks like any other word, and a list of names would block
+  ordinary answers. The consent notice says so in a new legal key, `coach.notice.limits` ("...it
+  cannot find names. Do not say or type a real person's name."), English until reviewed. The same
+  screen runs on the client and again in the Pages Function.

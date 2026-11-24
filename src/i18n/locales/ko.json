@@ -335,5 +335,8 @@
   "report.review.writing": "들은 문장을 쓰는 연습을 하세요.",
   "civics.heard.closest": "기기가 말씀하신 내용을 여러 가지로 추측했습니다. 정답 목록의 답에 가장 가까운 것을 보여 줍니다.",
   "n400.box.reminder": "가상의 인물로 답하세요. 실제 이름, 주소, 날짜, 번호를 입력하지 마세요.",
-  "common.newTab": "(새 탭에서 열림)"
+  "common.newTab": "(새 탭에서 열림)",
+  "coach.kind.streetAddress": "도로명 주소",
+  "coach.kind.zipCode": "주 이름이 붙은 우편번호",
+  "coach.notice.limits": "이 확인은 주소와 우편번호도 찾지만 이름은 찾을 수 없습니다. 실제 사람의 이름을 말하거나 입력하지 마세요."
 }
