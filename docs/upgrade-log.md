@@ -125,3 +125,31 @@ Checks:
 - **Function bundle**: passes, 51,102 bytes (unchanged).
 - **Layout check** (production, English, normal, 390px): 25 screens, all pass, no CSP violation.
 - **Hook tests**: pass.
+
+## Group 3 — Vitest 4.1.12 → 5.1.1 (with @fast-check/vitest, jsdom, @testing-library/react)
+
+Source read: "Migrating to Vitest 5.0" (https://vitest.dev/guide/migration). The companion packages
+were already at their latest versions, so they stay as they are: @fast-check/vitest 0.5.0 (declares
+`vitest ^4.1.0 || ^5.0.0`), jsdom 31.0.1, @testing-library/react 16.3.3, @testing-library/dom 10.4.2.
+
+Breaking changes checked against this repository:
+- **Node 22.12+ and Vite 6.4+**: CI 22.18, Vite 8.3.8.
+- **`clearMocks` is on by default**: no test counts calls across tests or records them in a setup file
+  or `beforeAll`. Every spy is created inside its test or in `beforeEach`. All tests pass unchanged.
+- **Unawaited `.resolves` / `.rejects` now fail; `vi.mock` / `vi.hoisted` must be top level;
+  `toThrow("")` matches any message; `test.sequential` removed; benchmark API rewritten; deprecated
+  entry points (`vitest/coverage`, `vitest/reporters`, ...) removed**: none of these are used (searched
+  `src/` and `tools/`). The only Vitest import besides `vitest` is `vitest/config`, which stays.
+- **Titles formatted with pretty-format**: no snapshot or title-dependent assertion.
+- **Global assignments propagate to the jsdom window**: the interaction tests use `vi.stubGlobal`, and
+  they pass.
+
+What changed: `package.json` and the lockfile only. No test expectation changed.
+
+Checks:
+- **Typecheck**: 0 errors.
+- **Tests**: 1373 of 1373 pass; none reported as skipped or todo.
+- **Build**: passes; same output as group 2.
+- **Function bundle**: passes, 51,102 bytes.
+- **Layout check** (production, English, normal, 390px): 25 screens, all pass.
+- **Hook tests**: pass.
