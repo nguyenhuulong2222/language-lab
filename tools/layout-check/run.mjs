@@ -228,7 +228,7 @@ window.__lab = (() => {
     out.primaryNames = primaries.map((el) => textOf(el).slice(0, 40));
     // A choice between equal options (the AI coach yes/no, the 2008/2025 study test) is made with
     // option cards and has no filled button, so the screen does not push one answer.
-    out.optionCards = [...document.body.querySelectorAll("main .option-card")].filter(visible).length;
+    out.optionCards = [...document.body.querySelectorAll("main .action-card")].filter(visible).length;
     out.shortPrimary = primaries.filter((el) => el.getBoundingClientRect().height < 63.5).map((el) => describe(el) + " " + Math.round(el.getBoundingClientRect().height) + "px high");
     // Q1: every screen except Home (and the picture credits, which have their own way back) shows
     // "Back to Home" in the first viewport, measured from the top of the page.

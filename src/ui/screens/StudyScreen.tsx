@@ -19,6 +19,7 @@ import { useT } from "../../i18n/react";
 import { EnglishNotice } from "../components/EnglishNotice";
 import { QuestionPicture } from "../components/QuestionPicture";
 import { SpeakButton } from "../components/SpeakButton";
+import { ActionCard } from "../components/ActionCard";
 import { TakeHeader } from "../components/TakeHeader";
 import { SpecialLanguageLine } from "../components/SpecialConsiderationNote";
 import "../components/Screen.css";
@@ -100,10 +101,10 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
             </label>
           )}
           {VERSIONS.map((v) => (
-            <button
+            <ActionCard
               key={v}
-              type="button"
-              className="option-card"
+              title={t(v === "2008" ? "study.version.2008" : "study.version.2025")}
+              verb={t("home.go.open")}
               onClick={() => {
                 const show = () => {
                   setVersion(v);
@@ -112,9 +113,7 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
                 if (prepare === undefined) return show();
                 void prepare(v).catch(() => {}).then(show);
               }}
-            >
-              <span className="option-card__title">{t(v === "2008" ? "study.version.2008" : "study.version.2025")}</span>
-            </button>
+            />
           ))}
         </fieldset>
       </div>

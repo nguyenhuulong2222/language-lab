@@ -54,7 +54,7 @@
 }
 .answer-list {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: var(--space-5);
 }
 .icon-inline {
   width: 1.1em;
@@ -67,11 +67,11 @@
 }
 .notice-list {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: var(--space-5);
 }
 .how-steps {
   margin: 0;
-  padding-left: 1.5rem;
+  padding-left: var(--space-5);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -80,62 +80,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
   gap: var(--space-3);
-}
-.option-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-1);
-  min-height: var(--tap-min);
-  padding: var(--space-4);
-  border: 2px solid var(--ink-2);
-  border-radius: var(--radius-md);
-  background: var(--surface);
-  color: var(--ink);
-  text-align: left;
-  cursor: pointer;
-  overflow-wrap: anywhere;
-}
-.option-card--primary {
-  border-color: var(--teal);
-  background: var(--teal);
-  color: var(--on-accent);
-}
-.option-card__title {
-  font-family: var(--font-display);
-  font-size: var(--fs-h3);
-  font-weight: 600;
-  line-height: var(--lh-tight);
-}
-.option-card__text {
-  font-size: var(--fs-meta);
-  line-height: var(--lh-body);
-}
-/* The AI coach card: prominent by a thick teal frame and its own line, not by colour alone. */
-.option-card--coach {
-  border-width: 3px;
-  border-color: var(--teal);
-  background: var(--surface);
-  color: var(--ink);
-}
-/* The card's own frame is teal: a wider gap keeps the focus ring distinct from it. */
-.option-card--coach:focus-visible {
-  outline-offset: calc(var(--focus-offset) + 3px);
-}
-.option-card__meta {
-  font-size: var(--fs-meta);
-  color: var(--ink-2);
-}
-/* A word, not a colour: "AI". */
-.option-card__badge {
-  display: inline-block;
-  padding: 0 var(--space-2);
-  border: 2px solid currentColor;
-  border-radius: var(--radius-pill);
-  font-family: var(--font-body);
-  font-size: var(--fs-meta);
-  font-weight: 600;
-  vertical-align: middle;
 }
 .speak {
   display: flex;
@@ -184,67 +128,10 @@
   gap: var(--space-2);
 }
 
-/* ---- Home, senior-friendly (branch ui/senior-friendly) ---- */
-/* "Start here": the full interview, with the screen's one primary button. */
-.start-here {
-  border: 3px solid var(--teal);
-}
-.start-here__label {
-  font-size: var(--fs-h4);
-  color: var(--ink);
-}
-.start-here__title {
-  font-family: var(--font-display);
-  font-size: var(--fs-h2);
-  font-weight: 600;
-  line-height: var(--lh-tight);
-}
-/* 65/20: a large card directly under "Start here". */
-.option-card--special {
-  border-width: 3px;
-  border-color: var(--ink-2);
-}
 /* "Practice one part" and "Study first": a plain list of full-width rows, not a grid of cards. */
 .home__section {
   margin-top: var(--space-5);
   font-size: var(--fs-h3);
-}
-.row-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-.row-list--alone {
-  margin-top: var(--space-5);
-}
-.row-button {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-1);
-  width: 100%;
-  min-height: var(--tap-min);
-  padding: var(--space-3) var(--space-4);
-  border: 2px solid var(--ink-2);
-  border-radius: var(--radius-md);
-  background: var(--surface);
-  color: var(--ink);
-  text-align: left;
-  cursor: pointer;
-  overflow-wrap: anywhere;
-}
-.row-button__title {
-  font-size: var(--fs-lg);
-  font-weight: 700;
-  line-height: var(--lh-snug);
-}
-.row-button__text {
-  font-size: var(--fs-meta);
-  line-height: var(--lh-body);
-  color: var(--ink-2);
 }
 /* The one-line text-size hint under the welcome. */
 .home__hint {

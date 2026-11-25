@@ -304,11 +304,15 @@ describe("discoverable coach: the choice before the first question (REQ-C19)", (
   });
   it("\"Use\" is named by its title, with the attribution as its description", () => {
     const { html } = screen();
-    const tag = /<button[^>]*option-card--coach[^>]*>/.exec(html)![0];
+    const at = html.indexOf(">Use the AI coach<");
+    const tag = html.slice(html.lastIndexOf("<button", at), html.indexOf(">", html.lastIndexOf("<button", at)) + 1);
     const labelledby = /aria-labelledby="([^"]+)"/.exec(tag)![1]!;
     const describedby = /aria-describedby="([^"]+)"/.exec(tag)![1]!;
-    expect(html).toContain(`id="${labelledby}" class="option-card__title">Use the AI coach<`);
-    expect(html).toContain(`id="${describedby}" class="option-card__meta">Powered by Claude (Anthropic)<`);
+    expect(html).toContain(`id="${labelledby}" class="action-card__title">Use the AI coach<`);
+    const desc = html.slice(html.indexOf(`id="${describedby}"`));
+    expect(desc.slice(0, 200)).toContain("Powered by Claude (Anthropic)");
+    // Two equal choices, neither filled.
+    expect(html).not.toContain("btn--primary");
   });
   it("from the home coach card the notice is open at once; still nothing is sent", () => {
     const { html, transport } = screen({ coachEntry: "notice" });
@@ -370,12 +374,12 @@ describe("attribution as text only (REQ-C20)", () => {
   });
   it.each(surfaces)("the %s has no image or svg (no logo or brand artwork)", (name, html) => {
     if (name === "home card") {
-      const card = html.slice(html.indexOf("option-card--coach"), html.indexOf(POWERED));
+      const card = html.slice(html.indexOf("Practice the N-400 interview with an AI coach"), html.indexOf(POWERED));
       expect(card).not.toMatch(/<img|<svg/);
     } else {
       expect(html).not.toMatch(/<img/);
-      // The only svg allowed is the app's own status icon (check or review marker), never brand artwork.
-      for (const m of html.matchAll(/<svg[^>]*>/g)) expect(m[0]).toContain('class="icon-inline"');
+      // The only svgs allowed are the app's own icons (check or review marker, the card arrow), never brand artwork.
+      for (const m of html.matchAll(/<svg[^>]*>/g)) expect(m[0]).toMatch(/class="(icon-inline|action-card__arrow)"/);
     }
     // The attribution line itself is plain text.
     expect(html).toMatch(/>Powered by Claude \(Anthropic\)</);

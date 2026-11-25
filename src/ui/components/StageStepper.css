@@ -150,3 +150,12 @@
     border-top: 2px solid CanvasText;
   }
 }
+/* Inside the main column, under "Back to Home": no second gutter, no full-width band. */
+.app__main .stepper {
+  background: none;
+  border-bottom: 0;
+  padding-block: 0 var(--space-3);
+}
+.app__main .stepper > .ll-container {
+  padding-inline: 0;
+}

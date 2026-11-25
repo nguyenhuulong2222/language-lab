@@ -209,7 +209,6 @@ export function EnglishScreen({
                 )}
               </>
             )}
-            {reading && <ListenAndCompare review={review} sentence={sentence} attempted={false} />}
             <ScreenHelp screen={stage} />
             <AnswerInput
               label={reading ? t("reading.yourAnswer") : t("writing.yourAnswer")}
@@ -224,6 +223,8 @@ export function EnglishScreen({
                 onSubmit(text, input, alternatives, sentenceShown);
               }}
             />
+            {/* Same order on every practice screen: question, answer, the one main button; extras after. */}
+            {reading && <ListenAndCompare review={review} sentence={sentence} attempted={false} />}
             <p className="note"><LegalText messageKey="compare.setting" /></p>
             {!reading && (
               <p className="note">

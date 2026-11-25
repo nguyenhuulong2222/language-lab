@@ -6,7 +6,7 @@
  * - `primary`: the screen's one filled main action (it carries `btn--primary`).
  * - `row`: a slimmer full-width row for lists ("Or practice one part").
  */
-import { useId, type ReactNode } from "react";
+import { useId, type ReactNode, type Ref } from "react";
 import { ArrowRightIcon } from "./icons";
 import "./ActionCard.css";
 
@@ -23,9 +23,10 @@ interface ActionCardProps {
   /** Something after the title on the same line (the "AI" word badge). */
   badge?: ReactNode;
   className?: string;
+  ref?: Ref<HTMLButtonElement>;
 }
 
-export function ActionCard({ title, text, meta, verb, onClick, primary = false, row = false, badge, className }: ActionCardProps) {
+export function ActionCard({ title, text, meta, verb, onClick, primary = false, row = false, badge, className, ref }: ActionCardProps) {
   const titleId = useId();
   const textId = useId();
   const classes = ["action-card", primary ? "action-card--primary btn--primary" : "", row ? "action-card--row" : "", className ?? ""]
@@ -34,6 +35,7 @@ export function ActionCard({ title, text, meta, verb, onClick, primary = false, 
   return (
     <button
       type="button"
+      ref={ref}
       className={classes}
       aria-labelledby={titleId}
       {...(text !== undefined || meta !== undefined ? { "aria-describedby": textId } : {})}

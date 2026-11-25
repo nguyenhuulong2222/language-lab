@@ -93,13 +93,14 @@ export function Shell({ steps, currentStage, onHome, confirmHome = false, langua
       </a>
       <Header {...(languageOnPage && !creditsOpen ? { onLanguage: focusHomeLanguage } : {})} />
       <AiNotice />
-      {stepper}
       <main id="main" className="app__main" tabIndex={-1}>
         {/* The practice stays mounted (hidden) while the credits are open, so no answers are lost. */}
         <div className="ll-container" hidden={creditsOpen}>
           {onHome !== undefined && (
             <BackToHome onHome={goHome} confirm={confirmHome} confirmOpen={confirmOpen} setConfirmOpen={setConfirmOpen} />
           )}
+          {/* Same order on every practice screen: Back to Home, the step line, then the screen. */}
+          {stepper}
           {/* While the leave question is open it is the only thing on the page (one main button). */}
           <div hidden={confirmHome && confirmOpen}>
             <PracticeHiddenContext.Provider value={practiceHidden}>{children}</PracticeHiddenContext.Provider>
