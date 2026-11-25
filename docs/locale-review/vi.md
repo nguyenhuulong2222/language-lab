@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Giọng do AI tạo. Âm thanh đã được tạo sẵn. |
 | `audio.playSample` | Play sample answer | Nghe câu trả lời mẫu |
 | `home.title` | Welcome to Language Lab | Chào mừng đến Language Lab |
-| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | Luyện tập cho buổi phỏng vấn nhập tịch. Bạn trả lời như một nhân vật hư cấu, nên không bao giờ phải chia sẻ gì về bản thân. |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | Luyện tập cho buổi phỏng vấn nhập tịch như một nhân vật hư cấu, nên không bao giờ phải chia sẻ gì về bản thân. |
 | `home.how.title` | How it works | Cách hoạt động |
 | `home.how.1.title` | Listen | Nghe |
 | `home.how.1.text` | Tap “Play the question” to hear it. | Chạm “Nghe câu hỏi” để nghe. |
@@ -223,12 +223,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.title` | See the result | Xem kết quả |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | Bạn sẽ thấy câu trả lời có được tính không, và nên luyện gì tiếp. |
 | `home.choose` | What would you like to do? | Bạn muốn làm gì? |
-| `home.full.title` | Full practice interview | Buổi phỏng vấn luyện tập đầy đủ |
-| `home.full.text` | All four parts in order, then one report. | Cả bốn phần theo thứ tự, rồi một báo cáo. |
+| `home.full.title` | Practice test | Thi thử |
+| `home.full.text` | Answer out loud like the real interview. | Trả lời thành tiếng như buổi phỏng vấn thật. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Luyện phỏng vấn N-400 với huấn luyện viên AI |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | Huấn luyện viên hỏi thêm một câu như viên chức có thể hỏi và cho bạn mẹo về tiếng Anh. Không bắt buộc. |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Hỗ trợ bởi Claude (Anthropic) |
-| `home.parts.title` | Practice one part | Luyện từng phần |
+| `home.parts.title` | Or practice one part | Hoặc luyện từng phần |
 | `home.part.n400.title` | N-400 interview | Phỏng vấn N-400 |
 | `home.part.n400.text` | Answer questions about the N-400 form. No score. | Trả lời câu hỏi về mẫu đơn N-400. Không chấm điểm. |
 | `home.part.n400.badge` | AI | AI |
@@ -288,8 +288,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | Các thông báo pháp lý vẫn bằng tiếng Anh cho đến khi có người kiểm tra bản dịch. |
 | `lang.menu.title` | Choose a language | Chọn ngôn ngữ |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Còn thêm các ngôn ngữ đang được kiểm tra. Chúng sẽ xuất hiện ở đây sau khi có người xem lại. |
-| `home.study.title` | Study first | Học trước |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Xem các câu hỏi civics kèm hình ảnh và đáp án chính thức. Không chấm điểm. |
+| `home.study.title` | Study | Học |
+| `home.study.text` | See each question with its answers and a picture. No score. | Xem từng câu hỏi với đáp án và hình ảnh. Không chấm điểm. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Xem từng câu hỏi civics một. Mỗi câu hiện đáp án chính thức. Không chấm điểm và không lưu gì. |
 | `study.version.legend` | Which civics test do you want to study? | Bạn muốn học bài kiểm tra civics nào? |
 | `study.version.2008` | 2008 civics test | Bài kiểm tra civics 2008 |
@@ -348,9 +348,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | một địa chỉ nhà |
 | `coach.kind.zipCode` | a ZIP code with a state | một mã ZIP kèm tên tiểu bang |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Phần kiểm tra cũng tìm địa chỉ nhà và mã ZIP, nhưng không thể tìm ra tên người. Đừng nói hay gõ tên của một người thật. |
-| `home.start.label` | Start here | Bắt đầu ở đây |
-| `home.full.start` | Start practice | Bắt đầu luyện tập |
-| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Từ 65 tuổi trở lên và có thẻ xanh 20 năm? Bắt đầu phần luyện tập 65/20. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | Chữ quá nhỏ? Chạm vào Cỡ chữ ở trên cùng. |
 | `audio.playing` | Playing… | Đang phát… |
 | `audio.playSentence` | Play the sentence | Nghe câu |
@@ -370,6 +367,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.textSize.sample` | Aa | Aa |
 | `lang.selected` | Selected | Đã chọn |
 | `aiNotice.more` | More | Xem thêm |
+| `home.who.title` | 1. Who is practicing? | 1. Ai đang luyện tập? |
+| `home.who.most.title` | Most people | Mọi người |
+| `home.who.most.text` | The usual civics test rules. | Quy định thông thường của bài thi kiến thức công dân. |
+| `home.who.special.title` | 65 or older, with a green card for 20 years or more | Từ 65 tuổi trở lên, có thẻ xanh từ 20 năm |
+| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | Ít câu hỏi hơn, chọn từ 20 câu có dấu sao. |
+| `home.who.notSure` | Not sure? Choose Most people. | Chưa chắc? Hãy chọn Mọi người. |
+| `home.what.title` | 2. What do you want to do? | 2. Bạn muốn làm gì? |
+| `home.part.notRequired` | Not required for 65/20 | Không bắt buộc với 65/20 |
+| `home.go.start` | Start | Bắt đầu |
+| `home.go.open` | Open | Mở |
 
 ## Lines marked ⚠ (meaning differs a little)
 

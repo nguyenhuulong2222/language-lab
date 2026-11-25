@@ -252,3 +252,33 @@
   font-weight: 600;
   color: var(--ink);
 }
+/* Home steps: "1. Who", "2. What", "Or one part", the coach card; one gap between them. */
+.home__step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.home__who-notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.home__not-sure {
+  margin: 0;
+  font-weight: 600;
+}
+.home__step .home__section {
+  margin: var(--space-4) 0 0;
+}
+/* Home is compact so the language grid, the welcome and "Who is practicing?" come early. */
+.screen--home .take__title {
+  font-size: var(--fs-h2);
+}
+.screen--home .take__lead {
+  font-size: var(--fs-body);
+  line-height: var(--lh-snug);
+}
+.home__hint {
+  margin: 0;
+  font-size: var(--fs-meta);
+}

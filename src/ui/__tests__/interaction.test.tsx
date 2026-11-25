@@ -92,7 +92,7 @@ describe("the AI coach from the home card (REQ-C18, REQ-C19)", () => {
 describe("the full interview to the report (typed answers)", () => {
   it("N-400, reading, writing and civics, then the report with its disclaimer", async () => {
     app();
-    await startSetup(EN["home.full.start"], { profile: true, filed: "before" });
+    await startSetup(EN["home.full.title"], { profile: true, filed: "before" });
     fireEvent.click(button(EN["intro.start"]));
     fireEvent.click(await findButton(EN["coach.choice.no"]));
     // N-400: answer every question.
@@ -183,9 +183,10 @@ describe("Study first and 65/20", () => {
     expect(await screen.findByText("Question 1 of 16")).toBeTruthy();
     expect(document.body.textContent).toContain("4 of the 20 questions have answers that change");
   });
-  it("65/20 setup: the home card ticks the choice; the civics part asks 10 questions", async () => {
+  it("65/20 setup: choosing 65/20 on Home ticks the choice; the civics part asks 10 questions", async () => {
     app();
-    fireEvent.click(button(EN["home.special.cta"]));
+    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="special"]')!);
+    fireEvent.click(button(EN["home.part.civics.title"]));
     const box = screen.getByLabelText<HTMLInputElement>(EN["intro.special.label"]);
     expect(box.checked).toBe(true);
     expect(document.body.textContent).toContain("asks 10 of the 20 questions marked with a star (*)");
@@ -197,7 +198,7 @@ describe("Study first and 65/20", () => {
   });
   it("65/20 full interview: N-400, then civics (no reading or writing), and the report says why", async () => {
     app();
-    await startSetup(EN["home.full.start"], { profile: true, filed: "on_or_after" });
+    await startSetup(EN["home.full.title"], { profile: true, filed: "on_or_after" });
     fireEvent.click(screen.getByLabelText(EN["intro.special.label"]));
     fireEvent.click(button(EN["intro.start"]));
     fireEvent.click(await findButton(EN["coach.choice.no"]));
@@ -229,7 +230,8 @@ describe("Study first and 65/20", () => {
   }, 30000);
   it("65/20 can be unticked: then the normal 2025 test (20 questions) runs", async () => {
     app();
-    fireEvent.click(button(EN["home.special.cta"]));
+    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="special"]')!);
+    fireEvent.click(button(EN["home.part.civics.title"]));
     fireEvent.click(screen.getByLabelText(EN["intro.special.label"]));
     fireEvent.click(document.querySelector<HTMLInputElement>('input[name="filed"][value="on_or_after"]')!);
     fireEvent.click(button(EN["intro.start"]));
@@ -243,8 +245,8 @@ describe("header settings", () => {
     fireEvent.click(document.querySelector<HTMLButtonElement>(".header__lang")!);
     fireEvent.click(document.querySelector<HTMLButtonElement>('.language-menu__option[lang="vi"]')!);
     await waitFor(() => expect(document.documentElement.lang).toBe("vi"));
-    // Senior-friendly step 3: Home starts with the "Start here" card.
-    expect(document.body.textContent).toContain("Bắt đầu ở đây");
+    // Home: "2. What do you want to do?" in Vietnamese.
+    expect(document.body.textContent).toContain("2. Bạn muốn làm gì?");
     fireEvent.click(screen.getByRole("button", { name: (n) => n.startsWith("Đọc") }));
     await waitFor(() => expect(document.querySelector(".prompt")).not.toBeNull());
     expect(document.querySelector(".prompt")!.getAttribute("lang")).toBe("en");
@@ -308,7 +310,7 @@ describe("the language grid on Home", () => {
   });
 });
 describe("the whole interface follows the language (L3)", () => {
-  it("Home in English, choose Tiếng Việt: welcome, Start here, Text size and the AI notice are Vietnamese, legal lines stay English; English brings everything back", async () => {
+  it("Home in English, choose Tiếng Việt: welcome, Who/What, Text size and the AI notice are Vietnamese, legal lines stay English; English brings everything back", async () => {
     const VI = (await import("../../i18n/locales/vi.json")).default as unknown as Record<string, string>;
     app();
     const grid = document.getElementById("home-language")!;
@@ -319,17 +321,18 @@ describe("the whole interface follows the language (L3)", () => {
     await waitFor(() => expect(h1()).toBe(VI["home.title"]));
     expect(document.documentElement.lang).toBe("vi");
     const body = document.body.textContent!;
-    expect(body).toContain(VI["home.start.label"]);
-    expect(screen.getByRole("button", { name: VI["home.full.start"] })).toBeTruthy();
+    expect(body).toContain(VI["home.what.title"]);
+    expect(body).toContain(VI["home.who.special.title"]);
+    expect(screen.getByRole("button", { name: VI["home.full.title"] })).toBeTruthy();
     expect(headerText()).toContain(VI["header.settings"]);
     expect(document.querySelector(".ai-notice")!.textContent).toContain(VI["aiNotice.text"]);
     // Legal lines stay English until a person reviews the translation.
     expect(body).toContain(EN["disclaimer.full"]);
-    expect(body).toContain(EN["home.special.cta"]);
+    expect(body).toContain(EN["home.special.text"]);
     fireEvent.click(grid.querySelector<HTMLButtonElement>('.language-menu__option[lang="en"]')!);
     await waitFor(() => expect(h1()).toBe(EN["home.title"]));
     expect(document.documentElement.lang).toBe("en");
-    expect(document.body.textContent).toContain(EN["home.start.label"]);
+    expect(document.body.textContent).toContain(EN["home.what.title"]);
     expect(headerText()).toContain(EN["header.settings"]);
     expect(document.querySelector(".ai-notice")).toBeNull();
   });
@@ -373,7 +376,7 @@ describe("Back to Home and the browser Back button (Q1)", () => {
     expect(backBar()!.textContent).toContain(EN["report.home"]);
     fireEvent.click(backBar()!);
     await waitFor(() => expect(onHome()).toBe(true));
-    await startSetup(EN["home.full.start"]);
+    await startSetup(EN["home.full.title"]);
     expect(backBar()).not.toBeNull();
     fireEvent.click(backBar()!);
     await waitFor(() => expect(onHome()).toBe(true));
@@ -419,5 +422,34 @@ describe("Back to Home and the browser Back button (Q1)", () => {
     await toReadingReport();
     window.history.back();
     await waitFor(() => expect(onHome()).toBe(true));
+  });
+});
+describe("the new Home: Who, then What (Q3)", () => {
+  it("exactly one filled button (Practice test); every card has a verb and an arrow", () => {
+    app();
+    const primaries = [...document.querySelectorAll("main .btn--primary")];
+    expect(primaries).toHaveLength(1);
+    expect(primaries[0]!.textContent).toContain(EN["home.full.title"]);
+    for (const card of document.querySelectorAll("main .action-card")) {
+      expect(card.querySelector(".action-card__go")!.textContent!.trim().length).toBeGreaterThan(0);
+      expect(card.querySelector(".action-card__arrow")).not.toBeNull();
+    }
+  });
+  it("Most people is chosen at first; 65/20 shows 'Not required for 65/20' on Reading and Writing and opens Study with the starred questions", async () => {
+    app();
+    expect(document.querySelector<HTMLInputElement>('input[name="who"][value="most"]')!.checked).toBe(true);
+    expect(document.body.textContent).toContain(EN["home.who.notSure"]);
+    expect(document.body.textContent).not.toContain(EN["home.part.notRequired"]);
+    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="special"]')!);
+    expect(document.querySelectorAll(".action-card__meta").length).toBeGreaterThanOrEqual(2);
+    expect(document.body.textContent).toContain(EN["home.part.notRequired"]);
+    fireEvent.click(button(EN["home.study.title"]));
+    expect(screen.getByLabelText<HTMLInputElement>(EN["study.special.label"]).checked).toBe(true);
+  });
+  it("65/20 then Practice test: setup has 65/20 ticked, so it is not asked twice", async () => {
+    app();
+    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="special"]')!);
+    fireEvent.click(button(EN["home.full.title"]));
+    expect(screen.getByLabelText<HTMLInputElement>(EN["intro.special.label"]).checked).toBe(true);
   });
 });

@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | AI से बनी आवाज़। ऑडियो पहले से तैयार किया गया था। |
 | `audio.playSample` | Play sample answer | नमूना उत्तर सुनें |
 | `home.title` | Welcome to Language Lab | Language Lab में आपका स्वागत है |
-| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | अपने नागरिकता इंटरव्यू का अभ्यास करें। आप एक काल्पनिक व्यक्ति बनकर उत्तर देते हैं, इसलिए अपने बारे में कुछ नहीं बताते। |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | काल्पनिक व्यक्ति बनकर अपने नागरिकता इंटरव्यू का अभ्यास करें, ताकि आप अपने बारे में कुछ न बताएँ। |
 | `home.how.title` | How it works | यह कैसे काम करता है |
 | `home.how.1.title` | Listen | सुनें |
 | `home.how.1.text` | Tap “Play the question” to hear it. | सुनने के लिए “प्रश्न सुनें” छुएँ। |
@@ -223,12 +223,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.title` | See the result | नतीजा देखें |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | आप देखेंगे कि आपका उत्तर गिना गया या नहीं, और आगे किसका अभ्यास करें। |
 | `home.choose` | What would you like to do? | आप क्या करना चाहेंगे? |
-| `home.full.title` | Full practice interview | पूरा अभ्यास इंटरव्यू |
-| `home.full.text` | All four parts in order, then one report. | चारों भाग क्रम से, फिर एक रिपोर्ट। |
+| `home.full.title` | Practice test | अभ्यास परीक्षा |
+| `home.full.text` | Answer out loud like the real interview. | असली इंटरव्यू की तरह ज़ोर से उत्तर दें। |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | AI कोच के साथ N-400 इंटरव्यू का अभ्यास करें |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | कोच किसी अधिकारी की तरह एक और प्रश्न पूछता है और आपकी अंग्रेज़ी पर सुझाव देता है। वैकल्पिक। |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Claude (Anthropic) द्वारा संचालित |
-| `home.parts.title` | Practice one part | केवल एक भाग का अभ्यास |
+| `home.parts.title` | Or practice one part | या एक भाग का अभ्यास करें |
 | `home.part.n400.title` | N-400 interview | N-400 इंटरव्यू |
 | `home.part.n400.text` | Answer questions about the N-400 form. No score. | N-400 फ़ॉर्म के बारे में प्रश्नों के उत्तर दें। कोई अंक नहीं। |
 | `home.part.n400.badge` | AI | AI |
@@ -288,8 +288,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | कानूनी सूचनाएँ तब तक अंग्रेज़ी में रहेंगी जब तक कोई व्यक्ति अनुवाद न जाँचे। |
 | `lang.menu.title` | Choose a language | भाषा चुनें |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | और भाषाएँ समीक्षा में हैं। किसी व्यक्ति के जाँच लेने के बाद वे यहाँ दिखाई देंगी। |
-| `home.study.title` | Study first | पहले पढ़ें |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | तस्वीरों और आधिकारिक उत्तरों के साथ नागरिक शास्त्र के प्रश्न देखें। कोई स्कोर नहीं दिया जाता। |
+| `home.study.title` | Study | पढ़ाई करें |
+| `home.study.text` | See each question with its answers and a picture. No score. | हर प्रश्न उसके उत्तरों और एक चित्र के साथ देखें। कोई अंक नहीं। |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | नागरिक शास्त्र के प्रश्न एक-एक करके देखें। हर प्रश्न के साथ आधिकारिक उत्तर दिखते हैं। कुछ भी स्कोर या सहेजा नहीं जाता। |
 | `study.version.legend` | Which civics test do you want to study? | आप नागरिक शास्त्र की कौन-सी परीक्षा पढ़ना चाहते हैं? |
 | `study.version.2008` | 2008 civics test | 2008 की नागरिक शास्त्र परीक्षा |
@@ -348,9 +348,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | एक गली का पता |
 | `coach.kind.zipCode` | a ZIP code with a state | राज्य के साथ एक ZIP कोड |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | यह जाँच गली के पते और ZIP कोड भी खोजती है, लेकिन नाम नहीं खोज सकती। किसी असली व्यक्ति का नाम न बोलें और न टाइप करें। |
-| `home.start.label` | Start here | यहाँ से शुरू करें |
-| `home.full.start` | Start practice | अभ्यास शुरू करें |
-| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | 65 वर्ष या अधिक, और 20 वर्ष से ग्रीन कार्ड? 65/20 अभ्यास शुरू करें। |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | अक्षर बहुत छोटे हैं? ऊपर अक्षर का आकार पर टैप करें। |
 | `audio.playing` | Playing… | चल रहा है… |
 | `audio.playSentence` | Play the sentence | वाक्य सुनें |
@@ -370,3 +367,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.textSize.sample` | Aa | Aa |
 | `lang.selected` | Selected | चुना गया |
 | `aiNotice.more` | More | और जानें |
+| `home.who.title` | 1. Who is practicing? | 1. कौन अभ्यास कर रहा है? |
+| `home.who.most.title` | Most people | ज़्यादातर लोग |
+| `home.who.most.text` | The usual civics test rules. | नागरिक शास्त्र परीक्षा के सामान्य नियम। |
+| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65 या उससे ज़्यादा उम्र, 20 साल या उससे ज़्यादा से ग्रीन कार्ड |
+| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | नागरिक शास्त्र के कम प्रश्न, तारे वाले 20 प्रश्नों की सूची से। |
+| `home.who.notSure` | Not sure? Choose Most people. | पक्का नहीं? ‘ज़्यादातर लोग’ चुनें। |
+| `home.what.title` | 2. What do you want to do? | 2. आप क्या करना चाहते हैं? |
+| `home.part.notRequired` | Not required for 65/20 | 65/20 के लिए ज़रूरी नहीं |
+| `home.go.start` | Start | शुरू करें |
+| `home.go.open` | Open | खोलें |

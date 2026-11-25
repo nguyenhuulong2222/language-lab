@@ -393,16 +393,16 @@ async function checkConfiguration(cdp, size, lang) {
   await record("credits");
   await click(L("credits.back"));
   // Production with reviewed keys: the home screen must offer every card.
-  if (PROD && (await cdp.evaluate(`window.__lab.has(${js(L("home.full.start"))})`))) {
+  if (PROD && (await cdp.evaluate(`window.__lab.has(${js(L("home.full.title"))})`))) {
     for (const key of ["home.study.title", "home.part.civics.title", "home.part.n400.title", "home.part.reading.title", "home.part.writing.title"]) {
       if (!(await cdp.evaluate(`window.__lab.has(${js(L(key))})`))) throw new Error(`the production home screen has no "${L(key)}" card`);
     }
   }
-  if (PROD && !(await cdp.evaluate(`window.__lab.has(${js(L("home.full.start"))})`))) {
+  if (PROD && !(await cdp.evaluate(`window.__lab.has(${js(L("home.full.title"))})`))) {
     return await productionParts(cdp, results, { L, lab, js, click, choose, type, record });
   }
   // Full interview
-  await click(L("home.full.start"));
+  await click(L("home.full.title"));
   await record("setup");
   // The first fictional profile (a name is not repeated here, so renaming a profile does not break the check).
   await cdp.evaluate(`document.querySelector('input[name="profile"]').click()`);
@@ -501,8 +501,12 @@ async function checkConfiguration(cdp, size, lang) {
  * ticked and the interpreter line, and the first civics question with the 65/20 note. Then Home.
  */
 async function specialPass({ cdp, lab, js, click, record, L }) {
-  if (!(await lab(`has(${js(L("home.special.cta"))})`))) throw new Error("the home screen has no 65/20 card");
-  await click(L("home.special.cta"));
+  // "Who is practicing?" → 65/20, then the civics part: setup starts with 65/20 ticked.
+  if (!(await cdp.evaluate(`!!document.querySelector('input[name="who"][value="special"]')`))) throw new Error("the home screen has no 65/20 choice");
+  await cdp.evaluate(`document.querySelector('input[name="who"][value="special"]').click()`);
+  await sleep(120);
+  await record("home-special");
+  await click(L("home.part.civics.title"));
   // The label is a legal key (English until reviewed), so wait for the checkbox itself.
   await waitFor(() => cdp.evaluate(`!!document.querySelector('input[name="special"]')`), "the 65/20 choice on setup");
   if (!(await cdp.evaluate(`document.querySelector('input[name="special"]').checked`))) throw new Error("the 65/20 card did not tick the choice");
@@ -513,7 +517,8 @@ async function specialPass({ cdp, lab, js, click, record, L }) {
   await record("civics-special");
   await cdp.evaluate("document.querySelector('main .back-home__button').click()");
   await click(L("header.homeConfirm.yes"));
-  await waitFor(() => lab(`has(${js(L("home.special.cta"))})`), "home after the 65/20 practice");
+  await waitFor(() => cdp.evaluate(`!!document.querySelector('input[name="who"]')`), "home after the 65/20 practice");
+  await cdp.evaluate(`document.querySelector('input[name="who"][value="most"]').click()`);
 }
 
 /**

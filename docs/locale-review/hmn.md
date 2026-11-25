@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Lub suab AI tsim. Lub suab tau npaj ua ntej lawm. |
 | `audio.playSample` | Play sample answer | Mloog piv txwv lus teb |
 | `home.title` | Welcome to Language Lab | Zoo siab txais tos rau Language Lab |
-| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | Xyaum rau koj qhov kev xam phaj ua pej xeem. Koj teb ua ib tug neeg dag, yog li koj yeej tsis qhia dab tsi txog koj tus kheej. |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | Xyaum rau koj qhov kev xam phaj ua pej xeem ua ib tug neeg dag, yog li koj yeej tsis qhia dab tsi txog koj tus kheej. |
 | `home.how.title` | How it works | Siv li cas |
 | `home.how.1.title` | Listen | Mloog |
 | `home.how.1.text` | Tap “Play the question” to hear it. | Nias “Mloog lo lus nug” kom hnov. |
@@ -223,12 +223,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.title` | See the result | Saib qhov tshwm sim |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | Koj yuav pom tias koj cov lus teb puas suav, thiab yuav xyaum dab tsi tom ntej. |
 | `home.choose` | What would you like to do? | Koj xav ua dab tsi? |
-| `home.full.title` | Full practice interview | Kev xam phaj xyaum tag nrho |
-| `home.full.text` | All four parts in order, then one report. | Plaub ntu ib ntu tom qab ib ntu, ces ib daim ntawv qhia. |
+| `home.full.title` | Practice test | Xeem xyaum |
+| `home.full.text` | Answer out loud like the real interview. | Teb kom nrov ib yam li qhov kev xam phaj tiag. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Xyaum kev xam phaj N-400 nrog AI tus kws qhia |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | Tus kws qhia nug ib lo lus nug ntxiv zoo li tus neeg ua haujlwm yuav nug thiab qhia koj txog koj cov lus Askiv. Yog koj xav tau. |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Ua los ntawm Claude (Anthropic) |
-| `home.parts.title` | Practice one part | Xyaum ib ntu xwb |
+| `home.parts.title` | Or practice one part | Los yog xyaum ib ntu |
 | `home.part.n400.title` | N-400 interview | Kev xam phaj txog N-400 |
 | `home.part.n400.text` | Answer questions about the N-400 form. No score. | Teb cov lus nug txog daim ntawv N-400. Tsis muaj qhab nia. |
 | `home.part.n400.badge` | AI | AI |
@@ -288,8 +288,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | Cov lus ceeb toom raws cai yuav nyob ua lus Askiv mus txog thaum ib tug neeg kuaj cov lus txhais. |
 | `lang.menu.title` | Choose a language | Xaiv ib hom lus |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Tseem muaj lwm yam lus tab tom tshuaj xyuas. Lawv yuav tshwm ntawm no tom qab muaj neeg tshuaj xyuas lawm. |
-| `home.study.title` | Study first | Kawm ua ntej |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Saib cov lus nug txog pej xeem nrog cov duab thiab cov lus teb raug cai. Tsis muaj qhab nia. |
+| `home.study.title` | Study | Kawm |
+| `home.study.text` | See each question with its answers and a picture. No score. | Saib txhua lo lus nug nrog cov lus teb thiab ib daim duab. Tsis muaj qhab nia. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Saib cov lus nug txog pej xeem ib qho zuj zus. Txhua qhov qhia cov lus teb raug cai. Tsis muab qhab nia thiab tsis khaws dab tsi. |
 | `study.version.legend` | Which civics test do you want to study? | Koj xav kawm qhov kev xeem txog pej xeem twg? |
 | `study.version.2008` | 2008 civics test | Kev xeem txog pej xeem xyoo 2008 |
@@ -348,9 +348,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | ib qho chaw nyob ntawm txoj kev |
 | `coach.kind.zipCode` | a ZIP code with a state | ib tus ZIP code nrog lub xeev |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Qhov kuaj no kuj nrhiav chaw nyob thiab ZIP code, tab sis nws nrhiav tsis tau npe. Tsis txhob hais los yog ntaus ib tus neeg tiag tiag lub npe. |
-| `home.start.label` | Start here | Pib ntawm no |
-| `home.full.start` | Start practice | Pib xyaum |
-| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Muaj 65 xyoo los yog laus dua, thiab muaj daim npav ntsuab 20 xyoo? Pib kev xyaum 65/20. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | Cov ntawv me dhau? Kov Qhov loj ntawm cov ntawv nyob saum toj. |
 | `audio.playing` | Playing… | Tab tom tso suab… |
 | `audio.playSentence` | Play the sentence | Mloog kab lus |
@@ -370,6 +367,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.textSize.sample` | Aa | Aa |
 | `lang.selected` | Selected | Xaiv lawm |
 | `aiNotice.more` | More | Ntxiv |
+| `home.who.title` | 1. Who is practicing? | 1. Leej twg xyaum? |
+| `home.who.most.title` | Most people | Feem ntau tib neeg |
+| `home.who.most.text` | The usual civics test rules. | Cov cai xeem kev kawm txog teb chaws ib txwm. |
+| `home.who.special.title` | 65 or older, with a green card for 20 years or more | Hnub nyoog 65 xyoo los yog laus dua, muaj daim green card 20 xyoo los yog ntev dua |
+| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | Cov lus nug tsawg dua, los ntawm daim ntawv 20 lo lus nug uas muaj hnub qub. |
+| `home.who.notSure` | Not sure? Choose Most people. | Tsis paub meej? Xaiv Feem ntau tib neeg. |
+| `home.what.title` | 2. What do you want to do? | 2. Koj xav ua dab tsi? |
+| `home.part.notRequired` | Not required for 65/20 | Tsis tas rau 65/20 |
+| `home.go.start` | Start | Pib |
+| `home.go.open` | Open | Qhib |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Voz generada por IA. El audio se preparó con anticipación. |
 | `audio.playSample` | Play sample answer | Escuchar la respuesta de ejemplo |
 | `home.title` | Welcome to Language Lab | Bienvenido a Language Lab |
-| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | Practique para su entrevista de ciudadanía. Usted responde como una persona inventada, así que nunca comparte nada sobre usted. |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | Practique para su entrevista de ciudadanía como una persona inventada, así nunca comparte nada sobre usted. |
 | `home.how.title` | How it works | Cómo funciona |
 | `home.how.1.title` | Listen | Escuche |
 | `home.how.1.text` | Tap “Play the question” to hear it. | Toque “Escuchar la pregunta” para oírla. |
@@ -223,12 +223,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.title` | See the result | Vea el resultado |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | Verá si su respuesta cuenta y qué practicar después. |
 | `home.choose` | What would you like to do? | ¿Qué le gustaría hacer? |
-| `home.full.title` | Full practice interview | Entrevista de práctica completa |
-| `home.full.text` | All four parts in order, then one report. | Las cuatro partes en orden y un solo informe. |
+| `home.full.title` | Practice test | Examen de práctica |
+| `home.full.text` | Answer out loud like the real interview. | Responda en voz alta como en la entrevista real. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Practique la entrevista del N-400 con un entrenador de IA |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | El entrenador hace una pregunta adicional como podría hacerla un oficial y le da consejos sobre su inglés. Opcional. |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Con tecnología de Claude (Anthropic) |
-| `home.parts.title` | Practice one part | Practicar una sola parte |
+| `home.parts.title` | Or practice one part | O practique una parte |
 | `home.part.n400.title` | N-400 interview | Entrevista sobre el N-400 |
 | `home.part.n400.text` | Answer questions about the N-400 form. No score. | Responda preguntas sobre el formulario N-400. Sin puntaje. |
 | `home.part.n400.badge` | AI | IA |
@@ -288,8 +288,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | Los avisos legales quedan en inglés hasta que una persona revise la traducción. |
 | `lang.menu.title` | Choose a language | Elija un idioma |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Hay más idiomas en revisión. Aparecerán aquí cuando una persona los haya revisado. |
-| `home.study.title` | Study first | Estudiar primero |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Revise las preguntas de educación cívica con imágenes y las respuestas oficiales. No se califica nada. |
+| `home.study.title` | Study | Estudiar |
+| `home.study.text` | See each question with its answers and a picture. No score. | Vea cada pregunta con sus respuestas y una imagen. Sin puntaje. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Revise las preguntas de educación cívica una por una. Cada una muestra las respuestas oficiales. No se califica ni se guarda nada. |
 | `study.version.legend` | Which civics test do you want to study? | ¿Qué examen de educación cívica quiere estudiar? |
 | `study.version.2008` | 2008 civics test | Examen de educación cívica de 2008 |
@@ -348,9 +348,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | una dirección |
 | `coach.kind.zipCode` | a ZIP code with a state | un código postal con un estado |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | La revisión también busca direcciones y códigos postales, pero no puede encontrar nombres. No diga ni escriba el nombre de una persona real. |
-| `home.start.label` | Start here | Empiece aquí |
-| `home.full.start` | Start practice | Empezar la práctica |
-| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | ¿Tiene 65 años o más y 20 años con la tarjeta verde? Empiece la práctica 65/20. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | ¿La letra es muy pequeña? Toque Tamaño del texto arriba. |
 | `audio.playing` | Playing… | Reproduciendo… |
 | `audio.playSentence` | Play the sentence | Escuchar la oración |
@@ -370,3 +367,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.textSize.sample` | Aa | Aa |
 | `lang.selected` | Selected | Seleccionado |
 | `aiNotice.more` | More | Más |
+| `home.who.title` | 1. Who is practicing? | 1. ¿Quién practica? |
+| `home.who.most.title` | Most people | La mayoría de las personas |
+| `home.who.most.text` | The usual civics test rules. | Las reglas habituales del examen de educación cívica. |
+| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65 años o más, con tarjeta verde desde hace 20 años o más |
+| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | Menos preguntas de educación cívica, de una lista de 20 marcadas con una estrella. |
+| `home.who.notSure` | Not sure? Choose Most people. | ¿No está seguro? Elija La mayoría de las personas. |
+| `home.what.title` | 2. What do you want to do? | 2. ¿Qué quiere hacer? |
+| `home.part.notRequired` | Not required for 65/20 | No es obligatorio para 65/20 |
+| `home.go.start` | Start | Empezar |
+| `home.go.open` | Open | Abrir |

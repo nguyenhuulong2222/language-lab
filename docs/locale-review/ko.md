@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | AI가 만든 음성입니다. 오디오는 미리 만들어 둔 것입니다. |
 | `audio.playSample` | Play sample answer | 예시 답변 듣기 |
 | `home.title` | Welcome to Language Lab | Language Lab에 오신 것을 환영합니다 |
-| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | 시민권 인터뷰를 연습하세요. 가상의 인물로서 답하므로 본인에 대해 아무것도 알릴 필요가 없습니다. |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | 가상의 인물로서 시민권 인터뷰를 연습하므로 본인에 대해 아무것도 알릴 필요가 없습니다. |
 | `home.how.title` | How it works | 이용 방법 |
 | `home.how.1.title` | Listen | 듣기 |
 | `home.how.1.text` | Tap “Play the question” to hear it. | “질문 듣기”을(를) 누르면 들을 수 있습니다. |
@@ -223,12 +223,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.title` | See the result | 결과 보기 |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | 답이 점수에 포함되는지, 다음에 무엇을 연습할지 볼 수 있습니다. |
 | `home.choose` | What would you like to do? | 무엇을 하시겠어요? |
-| `home.full.title` | Full practice interview | 전체 연습 인터뷰 |
-| `home.full.text` | All four parts in order, then one report. | 네 부분을 차례로 진행하고 보고서 하나를 받습니다. |
+| `home.full.title` | Practice test | 모의 시험 |
+| `home.full.text` | Answer out loud like the real interview. | 실제 인터뷰처럼 소리 내어 답하세요. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | AI 코치와 함께 N-400 면접 연습하기 |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | 코치가 심사관처럼 후속 질문을 하고 영어에 대한 팁을 줍니다. 선택 사항입니다. |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Claude (Anthropic) 기반 |
-| `home.parts.title` | Practice one part | 한 부분만 연습하기 |
+| `home.parts.title` | Or practice one part | 또는 한 부분만 연습하기 |
 | `home.part.n400.title` | N-400 interview | N-400 인터뷰 |
 | `home.part.n400.text` | Answer questions about the N-400 form. No score. | N-400 서류에 대한 질문에 답하세요. 점수 없음. |
 | `home.part.n400.badge` | AI | AI |
@@ -288,8 +288,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | 법적 안내는 사람이 번역을 확인할 때까지 영어로 표시됩니다. |
 | `lang.menu.title` | Choose a language | 언어를 선택하세요 |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | 더 많은 언어가 검토 중입니다. 사람이 확인한 뒤에 여기에 표시됩니다. |
-| `home.study.title` | Study first | 먼저 공부하기 |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | 그림과 공식 답이 있는 시민 상식 질문을 살펴보세요. 채점하지 않습니다. |
+| `home.study.title` | Study | 공부하기 |
+| `home.study.text` | See each question with its answers and a picture. No score. | 질문마다 답과 그림을 봅니다. 점수 없음. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | 시민 상식 질문을 한 번에 하나씩 살펴보세요. 질문마다 공식 답이 나옵니다. 채점하거나 저장하지 않습니다. |
 | `study.version.legend` | Which civics test do you want to study? | 어떤 시민 상식 시험을 공부하시겠어요? |
 | `study.version.2008` | 2008 civics test | 2008년 시민 상식 시험 |
@@ -348,9 +348,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | 도로명 주소 |
 | `coach.kind.zipCode` | a ZIP code with a state | 주 이름이 붙은 우편번호 |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | 이 확인은 주소와 우편번호도 찾지만 이름은 찾을 수 없습니다. 실제 사람의 이름을 말하거나 입력하지 마세요. |
-| `home.start.label` | Start here | 여기서 시작하세요 |
-| `home.full.start` | Start practice | 연습 시작 |
-| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | 65세 이상이고 영주권을 20년 가지셨나요? 65/20 연습을 시작하세요. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | 글자가 너무 작나요? 위쪽의 글자 크기를 누르세요. |
 | `audio.playing` | Playing… | 재생 중… |
 | `audio.playSentence` | Play the sentence | 문장 듣기 |
@@ -370,6 +367,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.textSize.sample` | Aa | Aa |
 | `lang.selected` | Selected | 선택됨 |
 | `aiNotice.more` | More | 더 보기 |
+| `home.who.title` | 1. Who is practicing? | 1. 누가 연습하나요? |
+| `home.who.most.title` | Most people | 대부분의 사람 |
+| `home.who.most.text` | The usual civics test rules. | 일반적인 시민 상식 시험 규칙. |
+| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65세 이상, 영주권 20년 이상 |
+| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | 시민 상식 질문이 더 적고, 별표가 있는 20개 목록에서 나옵니다. |
+| `home.who.notSure` | Not sure? Choose Most people. | 잘 모르겠다면 ‘대부분의 사람’을 고르세요. |
+| `home.what.title` | 2. What do you want to do? | 2. 무엇을 하고 싶나요? |
+| `home.part.notRequired` | Not required for 65/20 | 65/20에는 필요 없음 |
+| `home.go.start` | Start | 시작 |
+| `home.go.open` | Open | 열기 |
 
 ## Lines marked ⚠ (meaning differs a little)
 

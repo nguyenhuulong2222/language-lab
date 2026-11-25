@@ -1,43 +1,49 @@
 /**
- * Home (senior-friendly order): the language grid at the very top (always open, the same list as
- * the header panel); a short welcome and the text-size hint; "Start here" with the full
- * practice interview and one primary "Start practice" button; the 65/20 card; the AI coach card;
- * "Practice one part" as a simple list; "Study first"; then how it works, the English notice, the
- * disclaimers and the privacy notes at the bottom. Nothing is asked here; setup comes next.
+ * Home, top to bottom: the language grid (always open, the same list as the header panel); the
+ * welcome in one sentence and the text-size hint; "1. Who is practicing?" (Most people, or 65/20:
+ * two radio cards, Most people by default, in memory only); "2. What do you want to do?" (Study, and
+ * the one filled button "Practice test"); "Or practice one part" (whole-row buttons); the AI coach
+ * card; then how it works, the disclaimer and the privacy notes. Every tappable card is an
+ * ActionCard (frame, verb and arrow). The 65/20 choice is used by every card after it: Study starts
+ * with the starred questions, and the practice test and civics start with 65/20 ticked in setup.
  */
 import { useId, useState } from "react";
-import { languageInfo, type LanguageCode } from "../../i18n";
-import { LanguageMenu } from "../components/LanguageMenu";
-import { HOME_LANGUAGE_ID } from "../home-language";
-import { useSettings } from "../settings";
 import { LegalText } from "../components/LegalText";
 import type { PracticeMode } from "../../engine/practice-flow";
-import type { MessageKey } from "../../i18n";
+import { languageInfo, type LanguageCode, type MessageKey } from "../../i18n";
 import { useT } from "../../i18n/react";
+import { ActionCard } from "../components/ActionCard";
 import { Disclaimer } from "../components/Disclaimer";
 import { Bilingual } from "../components/EnglishLine";
 import { EnglishNotice } from "../components/EnglishNotice";
-import { ReviewIcon } from "../components/icons";
+import { PersonIcon, ReviewIcon, StarIcon } from "../components/icons";
 import { HowItWorks } from "../components/HowItWorks";
+import { LanguageMenu } from "../components/LanguageMenu";
+import { EXCEPTIONS_URL } from "../components/SpecialConsiderationNote";
 import { TakeHeader } from "../components/TakeHeader";
+import { HOME_LANGUAGE_ID } from "../home-language";
+import { useSettings } from "../settings";
 import "../components/Screen.css";
-
+/** Who is practicing: most people, or 65/20 (65 or older, a permanent resident for 20 years or more). */
+export type Who = "most" | "special";
 interface HomeScreenProps {
   /** True when this build cannot score civics (answer key not yet reviewed). */
   civicsLocked: boolean;
+  /** Start a practice. The app adds the 65/20 choice. */
   onChoose: (mode: PracticeMode) => void;
-  /** Open "Study first" (questions with pictures and official answers, not scored). */
+  /** Open Study (questions with pictures and official answers, not scored). */
   onStudy?: () => void;
   /** Start the N-400 part with the AI coach's consent notice open (spec REQ-C18). Absent: no coach card. */
   onChooseCoach?: () => void;
-  /** Start the civics part with the 65/20 choice ticked (spec release-finish REQ-S06). Absent: no card. */
-  onChooseSpecial?: () => void;
+  /** The 65/20 practice is offered in this build: "Who is practicing?" is shown. */
+  specialOffered?: boolean;
+  who?: Who;
+  onWho?: (who: Who) => void;
   /** The home screen is shown again after "back to home": focus then moves to its heading. */
   focusOnFirstRender?: boolean;
   /** Show the one-line text-size hint (the first visit of this page; nothing is stored). */
   showTextSizeHint?: boolean;
 }
-
 /**
  * "Choose a language" with every offered language under its own name, at the top of Home. Choosing
  * one changes the whole interface at once; focus stays on the chosen button, and a polite live
@@ -67,28 +73,27 @@ const PARTS: ReadonlyArray<{ mode: Exclude<PracticeMode, "full">; title: Message
   { mode: "writing", title: "home.part.writing.title", text: "home.part.writing.text" },
   { mode: "civics", title: "home.part.civics.title", text: "home.part.civics.text" },
 ];
-
 export function HomeScreen({
   civicsLocked,
   onChoose,
   onStudy,
   onChooseCoach,
-  onChooseSpecial,
+  specialOffered = false,
+  who = "most",
+  onWho = () => {},
   focusOnFirstRender = false,
   showTextSizeHint = false,
 }: HomeScreenProps) {
   const t = useT();
-  const coachTitleId = useId();
-  const coachTextId = useId();
-  const coachMetaId = useId();
-  const startTitleId = useId();
+  const whoTitleId = useId();
+  const eligibilityId = useId();
+  const special = specialOffered && who === "special";
   return (
-    <div className="screen">
+    <div className="screen screen--home">
       <HomeLanguage />
       <TakeHeader stage="home" title={t("home.title")} lead={t("home.lead")} focusOnFirstRender={focusOnFirstRender} />
       {showTextSizeHint && <p className="home__hint">{t("home.textSizeHint")}</p>}
-
-      <section className="screen__body" aria-label={t("home.choose")}>
+      <div className="screen__body" aria-label={t("home.choose")} role="group">
         {/* While civics is locked, say first what this build can do, and offer only that. */}
         {civicsLocked && (
           <div className="panel" role="note">
@@ -98,86 +103,103 @@ export function HomeScreen({
             </p>
           </div>
         )}
-        {!civicsLocked && (
-          <section className="panel start-here" aria-labelledby={startTitleId}>
-            <h2 id={startTitleId} className="start-here__label">
-              {t("home.start.label")}
+        {!civicsLocked && specialOffered && (
+          <section className="home__step" aria-labelledby={whoTitleId}>
+            <h2 id={whoTitleId} className="home__section">
+              {t("home.who.title")}
             </h2>
-            <p className="start-here__title">{t("home.full.title")}</p>
-            <p>{t("home.full.text")}</p>
-            <button type="button" className="btn btn--primary" onClick={() => onChoose("full")}>
-              {t("home.full.start")}
-            </button>
+            <fieldset className="who-cards" aria-labelledby={whoTitleId} aria-describedby={eligibilityId}>
+              <label className="who-card">
+                <input className="choice__input" type="radio" name="who" value="most" checked={who === "most"} onChange={() => onWho("most")} />
+                <PersonIcon className="who-card__icon" />
+                <span className="who-card__body">
+                  <span className="who-card__title">{t("home.who.most.title")}</span>
+                  <span className="who-card__text">{t("home.who.most.text")}</span>
+                </span>
+              </label>
+              <label className="who-card">
+                <input className="choice__input" type="radio" name="who" value="special" checked={who === "special"} onChange={() => onWho("special")} />
+                <StarIcon className="who-card__icon" />
+                <span className="who-card__body">
+                  <span className="who-card__title">{t("home.who.special.title")}</span>
+                  <span className="who-card__text">{t("home.who.special.text")}</span>
+                </span>
+              </label>
+            </fieldset>
+            <div className="home__who-notes">
+              <p className="note" id={eligibilityId}>
+                <LegalText messageKey="home.special.text" />
+              </p>
+              <p className="note">
+                <a className="special-note__link" href={EXCEPTIONS_URL} target="_blank" rel="noopener noreferrer">
+                  {t("special.language.link")}
+                  <span className="ll-sr-only"> {t("common.newTab")}</span>
+                </a>
+              </p>
+              <p className="home__not-sure">{t("home.who.notSure")}</p>
+            </div>
           </section>
         )}
-        {!civicsLocked && onChooseSpecial !== undefined && (
-          <button type="button" className="option-card option-card--special" onClick={onChooseSpecial}>
-            <span className="option-card__title">
-              <LegalText messageKey="home.special.cta" />
-            </span>
-            <span className="option-card__text">
-              <LegalText messageKey="home.special.text" />
-            </span>
-          </button>
-        )}
-        {onChooseCoach !== undefined && (
-          <button
-            type="button"
-            className="option-card option-card--coach"
-            aria-labelledby={coachTitleId}
-            aria-describedby={`${coachTextId} ${coachMetaId}`}
-            onClick={onChooseCoach}
-          >
-            {/* A short name (the title); the text and the attribution are read as the description. */}
-            <span id={coachTitleId} className="option-card__title">
-              {t("home.coach.title")}
-            </span>
-            <span id={coachTextId} className="option-card__text">
-              {t("home.coach.text")}
-            </span>
-            <span id={coachMetaId} className="option-card__meta">
-              {t("coach.poweredBy")}
-            </span>
-          </button>
-        )}
-
-        <h2 className="home__section">{t("home.parts.title")}</h2>
-        <ul className="row-list">
-          {PARTS.filter((part) => !(civicsLocked && part.mode === "civics")).map((part) => (
-            <li key={part.mode}>
-              <button type="button" className="row-button" onClick={() => onChoose(part.mode)}>
-                <span className="row-button__title">
-                  {t(part.title)}
-                  {part.mode === "n400" && onChooseCoach !== undefined && (
-                    <>
-                      {" "}
-                      <span className="option-card__badge" aria-hidden="true">
-                        {t("home.part.n400.badge")}
-                      </span>
-                      <span className="ll-sr-only">{t("coach.switch.label")}</span>
-                    </>
-                  )}
-                </span>
-                <span className="row-button__text">{t(part.text)}</span>
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        {!civicsLocked && onStudy !== undefined && (
-          <>
-            <ul className="row-list row-list--alone">
+        {!civicsLocked && (
+          <section className="home__step" aria-labelledby={`${whoTitleId}-what`}>
+            <h2 id={`${whoTitleId}-what`} className="home__section">
+              {t("home.what.title")}
+            </h2>
+            <ul className="action-list">
+              {onStudy !== undefined && (
+                <li>
+                  <ActionCard title={t("home.study.title")} text={t("home.study.text")} verb={t("home.go.open")} onClick={onStudy} />
+                </li>
+              )}
               <li>
-                <button type="button" className="row-button" onClick={onStudy}>
-                  <span className="row-button__title">{t("home.study.title")}</span>
-                  <span className="row-button__text">{t("home.study.text")}</span>
-                </button>
+                <ActionCard primary title={t("home.full.title")} text={t("home.full.text")} verb={t("home.go.start")} onClick={() => onChoose("full")} />
               </li>
             </ul>
-          </>
+          </section>
         )}
-      </section>
-
+        <section className="home__step" aria-labelledby={`${whoTitleId}-parts`}>
+          <h2 id={`${whoTitleId}-parts`} className="home__section">
+            {t("home.parts.title")}
+          </h2>
+          <ul className="action-list">
+            {PARTS.filter((part) => !(civicsLocked && part.mode === "civics")).map((part) => (
+              <li key={part.mode}>
+                <ActionCard
+                  row
+                  title={t(part.title)}
+                  text={t(part.text)}
+                  verb={t("home.go.start")}
+                  onClick={() => onChoose(part.mode)}
+                  {...(special && (part.mode === "reading" || part.mode === "writing") ? { meta: t("home.part.notRequired") } : {})}
+                  {...(part.mode === "n400" && onChooseCoach !== undefined
+                    ? {
+                        badge: (
+                          <>
+                            <span className="action-card__badge" aria-hidden="true">
+                              {t("home.part.n400.badge")}
+                            </span>
+                            <span className="ll-sr-only">{t("coach.switch.label")}</span>
+                          </>
+                        ),
+                      }
+                    : {})}
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+        {onChooseCoach !== undefined && (
+          <section className="home__step">
+            <ActionCard
+              title={t("home.coach.title")}
+              text={t("home.coach.text")}
+              meta={t("coach.poweredBy")}
+              verb={t("home.go.start")}
+              onClick={onChooseCoach}
+            />
+          </section>
+        )}
+      </div>
       <HowItWorks />
       <EnglishNotice always />
       <Disclaimer variant="prominent" id="home-disclaimer" messageKey="disclaimer.full" />

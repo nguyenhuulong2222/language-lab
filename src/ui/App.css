@@ -51,3 +51,7 @@
   box-shadow: var(--shadow-md);
   text-decoration: none;
 }
+/* Home starts close under the header: the language grid is first. */
+.app__main:has(#home-language) {
+  padding-top: var(--space-3);
+}

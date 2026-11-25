@@ -77,3 +77,9 @@ describe("the one-time voice notice", () => {
     expect(typeInstead).not.toContain("seen.add");
   });
 });
+describe("the page frame keeps its styles", () => {
+  it("Shell imports App.css (the skip link is hidden until focused, the column is centred)", async () => {
+    const shell = (await import("../components/Shell.tsx?raw")).default;
+    expect(shell).toContain('import "../App.css";');
+  });
+});

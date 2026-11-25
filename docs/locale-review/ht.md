@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Vwa AI fè. Yo te prepare odyo a davans. |
 | `audio.playSample` | Play sample answer | Koute egzanp repons lan |
 | `home.title` | Welcome to Language Lab | Byenveni nan Language Lab |
-| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | Pratike pou entèvyou sitwayènte ou. Ou reponn tankou yon moun envante, kidonk ou pa janm pataje anyen sou tèt ou. |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | Pratike pou entèvyou sitwayènte ou tankou yon moun envante, konsa ou pa janm pataje anyen sou tèt ou. |
 | `home.how.title` | How it works | Kijan li mache |
 | `home.how.1.title` | Listen | Koute |
 | `home.how.1.text` | Tap “Play the question” to hear it. | Touche “Koute kesyon an” pou w tande l. |
@@ -223,12 +223,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.title` | See the result | Gade rezilta a |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | Ou wè si repons ou konte, ak sa pou w pratike apre. |
 | `home.choose` | What would you like to do? | Kisa ou ta renmen fè? |
-| `home.full.title` | Full practice interview | Entèvyou pratik konplè |
-| `home.full.text` | All four parts in order, then one report. | Kat pati yo youn apre lòt, epi yon sèl rapò. |
+| `home.full.title` | Practice test | Egzamen pratik |
+| `home.full.text` | Answer out loud like the real interview. | Reponn byen fò tankou nan vrè entèvyou a. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Pratike antrevi N-400 a ak yon antrenè AI |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | Antrenè a poze yon lòt kesyon tankou yon ofisye ta ka fè l epi li ba ou konsèy sou angle ou. Si ou vle. |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Ak teknoloji Claude (Anthropic) |
-| `home.parts.title` | Practice one part | Pratike yon sèl pati |
+| `home.parts.title` | Or practice one part | Oswa pratike yon sèl pati |
 | `home.part.n400.title` | N-400 interview | Entèvyou sou N-400 |
 | `home.part.n400.text` | Answer questions about the N-400 form. No score. | Reponn kesyon sou fòm N-400 la. Pa gen nòt. |
 | `home.part.n400.badge` | AI | AI |
@@ -288,8 +288,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | Avi legal yo rete an angle jiskaske yon moun tcheke tradiksyon an. |
 | `lang.menu.title` | Choose a language | Chwazi yon lang |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Gen plis lang k ap revize. Y ap parèt isit la apre yon moun fin tcheke yo. |
-| `home.study.title` | Study first | Etidye anvan |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Gade kesyon edikasyon sivik yo ak imaj ak repons ofisyèl yo. Pa gen nòt ki bay. |
+| `home.study.title` | Study | Etidye |
+| `home.study.text` | See each question with its answers and a picture. No score. | Gade chak kesyon ak repons li yo ak yon foto. Pa gen nòt. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Gade kesyon edikasyon sivik yo youn apre lòt. Chak kesyon montre repons ofisyèl yo. Anyen pa jwenn nòt ni pa sove. |
 | `study.version.legend` | Which civics test do you want to study? | Ki tès edikasyon sivik ou vle etidye? |
 | `study.version.2008` | 2008 civics test | Tès edikasyon sivik 2008 |
@@ -348,9 +348,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | yon adrès lari |
 | `coach.kind.zipCode` | a ZIP code with a state | yon kòd ZIP ak yon eta |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Verifikasyon an chèche adrès ak kòd ZIP tou, men li pa ka jwenn non. Pa di ni tape non yon vrè moun. |
-| `home.start.label` | Start here | Kòmanse isit la |
-| `home.full.start` | Start practice | Kòmanse pratik la |
-| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Ou gen 65 an oswa plis, epi 20 an ak yon kat vèt? Kòmanse pratik 65/20 la. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | Tèks la twò piti? Tape Gwosè tèks anwo a. |
 | `audio.playing` | Playing… | Ap jwe… |
 | `audio.playSentence` | Play the sentence | Koute fraz la |
@@ -370,3 +367,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.textSize.sample` | Aa | Aa |
 | `lang.selected` | Selected | Chwazi |
 | `aiNotice.more` | More | Plis |
+| `home.who.title` | 1. Who is practicing? | 1. Kiyès k ap pratike? |
+| `home.who.most.title` | Most people | Pifò moun |
+| `home.who.most.text` | The usual civics test rules. | Règ nòmal egzamen sivik la. |
+| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65 an oswa plis, ak yon kat vèt depi 20 an oswa plis |
+| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | Mwens kesyon sivik, nan yon lis 20 ki make ak yon zetwal. |
+| `home.who.notSure` | Not sure? Choose Most people. | Ou pa sèten? Chwazi Pifò moun. |
+| `home.what.title` | 2. What do you want to do? | 2. Kisa ou vle fè? |
+| `home.part.notRequired` | Not required for 65/20 | Pa obligatwa pou 65/20 |
+| `home.go.start` | Start | Kòmanse |
+| `home.go.open` | Open | Louvri |

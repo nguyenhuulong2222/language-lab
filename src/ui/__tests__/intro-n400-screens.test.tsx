@@ -14,8 +14,8 @@ describe("HomeScreen", () => {
   const html = renderToString(<HomeScreen civicsLocked={false} onChoose={() => {}} />);
 
   it("offers the full interview and each single part", () => {
-    expect(html).toContain("Full practice interview");
-    expect(html).toContain("Practice one part");
+    expect(html).toContain("Practice test");
+    expect(html).toContain("Or practice one part");
     for (const part of ["N-400 interview", "Reading", "Writing", "Civics"]) expect(html).toContain(part);
   });
 
@@ -44,7 +44,7 @@ describe("HomeScreen", () => {
 
   it("while civics is locked, offers only what works: no full interview, no Study first, no civics card", () => {
     const locked = renderToString(<HomeScreen civicsLocked onChoose={() => {}} onStudy={() => {}} />);
-    expect(locked).not.toContain("Full practice interview");
+    expect(locked).not.toContain("Practice test");
     expect(locked).not.toContain("Look through the civics questions");
     expect(locked).not.toContain("Answer civics questions");
     for (const part of ["N-400 interview", "Reading", "Writing"]) expect(locked).toContain(part);

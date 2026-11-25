@@ -519,3 +519,16 @@ Spec: `.kiro/specs/interview-coach/` (requirements revision 2 with two Analyze R
   max-age=31536000` without `includeSubDomains` or `preload` (the site is one Pages host). The saved
   uscis.gov pages keep their "AIza…" browser key strings unchanged (they are sources); the sources
   README explains them.
+
+## 65/20 call to action is translated (owner decision, QA Q3)
+
+The owner tested Home in Vietnamese: the 65/20 card's title was English inside a Vietnamese page,
+because `home.special.cta` ("65 or older, 20 years with a green card? Start the 65/20 practice.") was a
+legal key. Decision: the choice's title and short line are interface text, not legal text. They are
+now normal keys with AI drafts in all 14 locales (`home.who.special.title` "65 or older, with a green
+card for 20 years or more", `home.who.special.text`), and `home.special.cta` is removed from
+`LEGAL_KEYS` and from the locales. Only the eligibility sentence (`home.special.text`) and the USCIS
+rules (`intro.special.help`, `intro.special.label`, `special.englishExempt`) stay legal keys, English
+until a person reviews the translation. The new Home asks "1. Who is practicing?" (Most people by
+default, in memory only) and every later card uses that choice: Study starts with the starred
+questions, and the practice test and civics start with 65/20 ticked in setup.

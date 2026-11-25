@@ -137,7 +137,7 @@ describe("the app, phase by phase", () => {
   it("starts at the home screen, with no stepper yet", () => {
     const html = renderToString(<PracticeApp engine={engine} />);
     expect(html).toContain("Welcome to Language Lab");
-    expect(html).toContain("Full practice interview");
+    expect(html).toContain("Practice test");
     expect(html).not.toContain("Interview stages");
     expect(html).not.toContain("Choose a practice profile");
   });

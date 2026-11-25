@@ -22,6 +22,7 @@ import { CreditsScreen } from "../screens/CreditsScreen";
 import { focusHomeLanguage } from "../home-language";
 import { BackToHome } from "./BackToHome";
 import { useSectionHistory } from "../section-history";
+import "../App.css";
 
 interface ShellProps {
   /** The steps of the session, in order. Undefined (the home screen): no stepper. */

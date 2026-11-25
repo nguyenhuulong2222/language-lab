@@ -43,15 +43,17 @@ const screen = (e = engine, state = e.initial(), language: "en" | "vi" = "en") =
     )
   );
 
-describe("home card (REQ-S06)", () => {
-  it("offered when the rules are verified; absent when the mode is off", () => {
-    expect(screen()).toContain("Start the 65/20 practice.");
+describe("Who is practicing? on Home (REQ-S06)", () => {
+  const SPECIAL = "65 or older, with a green card for 20 years or more";
+  it("offered when the rules are verified, Most people chosen; absent when the mode is off", () => {
+    expect(screen()).toContain(SPECIAL);
+    expect(screen()).toMatch(/value="most"[^>]*checked|checked[^>]*value="most"/);
     const off = createPracticeEngine({ ...env, specialRules: () => null });
-    expect(screen(off)).not.toContain("Start the 65/20 practice.");
+    expect(screen(off)).not.toContain(SPECIAL);
   });
   it("not offered while civics is locked", () => {
-    const html = renderToString(<HomeScreen civicsLocked onChoose={() => {}} onChooseSpecial={() => {}} />);
-    expect(html).not.toContain("Start the 65/20 practice.");
+    const html = renderToString(<HomeScreen civicsLocked onChoose={() => {}} specialOffered />);
+    expect(html).not.toContain(SPECIAL);
   });
 });
 

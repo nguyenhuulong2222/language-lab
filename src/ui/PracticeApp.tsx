@@ -31,7 +31,7 @@ import { Shell } from "./components/Shell";
 import { SpecialLanguageLine } from "./components/SpecialConsiderationNote";
 import { CivicsScreen } from "./screens/CivicsScreen";
 import { EnglishScreen } from "./screens/EnglishScreen";
-import { HomeScreen } from "./screens/HomeScreen";
+import { HomeScreen, type Who } from "./screens/HomeScreen";
 import { IntroScreen } from "./screens/IntroScreen";
 import { N400Screen } from "./screens/N400Screen";
 import { PartReportScreen } from "./screens/PartReportScreen";
@@ -72,6 +72,8 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
   const [coachEntry, setCoachEntry] = useState<CoachEntry>("choice");
   // "Study first" is a view of its own: no session, no scoring, nothing recorded.
   const [studying, setStudying] = useState(false);
+  // "Who is practicing?" on Home: in memory only, used by every card after it.
+  const [who, setWho] = useState<Who>("most");
   const restart = useCallback(() => {
     setRestarts((n) => n + 1);
     setCoachEntry("choice");
@@ -92,6 +94,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
           <StudyScreen
             answerKey={(v) => engine.env.answerKey(v)}
             {...(specialConsiderationOffered(engine.env) ? { designated: (v) => engine.env.designated!(v) } : {})}
+            initialSpecialOnly={who === "special"}
             {...(engine.env.prepareCivics === undefined ? {} : { prepare: (v) => engine.env.prepareCivics!(v) })}
             onHome={exitStudy}
           />
@@ -117,6 +120,8 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
         civicsLockedInBuild={civicsLockedInBuild}
         afterRestart={restarts > 0}
         onStudy={() => setStudying(true)}
+        who={who}
+        onWho={setWho}
         coachEntry={coachEntry}
         onCoachEntry={setCoachEntry}
         now={now}
@@ -138,6 +143,8 @@ interface ScreenProps {
   afterRestart?: boolean;
   /** Open "Study first" from the home screen. */
   onStudy?: () => void;
+  who?: Who;
+  onWho?: (who: Who) => void;
   /** Default "choice": ask before the first N-400 question. */
   coachEntry?: CoachEntry;
   onCoachEntry?: (entry: CoachEntry) => void;
@@ -155,6 +162,8 @@ export function Screen({
   civicsLockedInBuild,
   afterRestart = false,
   onStudy,
+  who = "most",
+  onWho = () => {},
   coachEntry = "choice",
   onCoachEntry = () => {},
   now,
@@ -173,23 +182,20 @@ export function Screen({
           focusOnFirstRender={afterRestart}
           // The first Home of this page load says where Text size is. Nothing is stored.
           showTextSizeHint={!afterRestart}
+          specialOffered={specialRules !== null}
+          who={who}
+          onWho={onWho}
           {...(onStudy === undefined ? {} : { onStudy })}
           onChoose={(mode) => {
             onCoachEntry("choice");
-            dispatch({ type: "choose", mode, seed: seed(), at: now() });
+            // 65/20 chosen on Home: setup starts with it ticked (it applies to parts with civics).
+            const special = specialRules !== null && who === "special";
+            dispatch({ type: "choose", mode, seed: seed(), at: now(), ...(special ? { specialConsideration: true } : {}) });
           }}
           onChooseCoach={() => {
             onCoachEntry("notice");
             dispatch({ type: "choose", mode: "n400", seed: seed(), at: now() });
           }}
-          {...(specialRules === null
-            ? {}
-            : {
-                onChooseSpecial: () => {
-                  onCoachEntry("choice");
-                  dispatch({ type: "choose", mode: "civics", specialConsideration: true, seed: seed(), at: now() });
-                },
-              })}
         />
       );
 

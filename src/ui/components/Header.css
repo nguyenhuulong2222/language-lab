@@ -116,3 +116,10 @@
   overflow-wrap: normal;
   line-height: var(--lh-tight);
 }
+/* The language button keeps its name whole; Text size may wrap inside itself instead. */
+.header__actions > .header__lang {
+  flex: 0 0 auto;
+}
+.header__actions > .header__button {
+  padding-inline: var(--space-2);
+}

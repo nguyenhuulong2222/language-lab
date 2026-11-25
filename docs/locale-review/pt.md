@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Voz gerada por IA. O áudio foi preparado com antecedência. |
 | `audio.playSample` | Play sample answer | Ouvir a resposta de exemplo |
 | `home.title` | Welcome to Language Lab | Bem-vindo ao Language Lab |
-| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | Pratique para sua entrevista de cidadania. Você responde como uma pessoa inventada, então nunca compartilha nada sobre você. |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | Pratique para sua entrevista de cidadania como uma pessoa inventada, assim você nunca compartilha nada sobre você. |
 | `home.how.title` | How it works | Como funciona |
 | `home.how.1.title` | Listen | Ouça |
 | `home.how.1.text` | Tap “Play the question” to hear it. | Toque em “Ouvir a pergunta” para ouvir. |
@@ -223,12 +223,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.title` | See the result | Veja o resultado |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | Você vê se sua resposta conta e o que praticar depois. |
 | `home.choose` | What would you like to do? | O que você gostaria de fazer? |
-| `home.full.title` | Full practice interview | Entrevista de prática completa |
-| `home.full.text` | All four parts in order, then one report. | As quatro partes em ordem e um único relatório. |
+| `home.full.title` | Practice test | Teste de prática |
+| `home.full.text` | Answer out loud like the real interview. | Responda em voz alta como na entrevista real. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Pratique a entrevista do N-400 com um treinador de IA |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | O treinador faz uma pergunta extra como um entrevistador poderia fazer e dá dicas sobre o seu inglês. Opcional. |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Com tecnologia Claude (Anthropic) |
-| `home.parts.title` | Practice one part | Praticar uma parte |
+| `home.parts.title` | Or practice one part | Ou pratique uma parte |
 | `home.part.n400.title` | N-400 interview | Entrevista sobre o N-400 |
 | `home.part.n400.text` | Answer questions about the N-400 form. No score. | Responda perguntas sobre o formulário N-400. Sem nota. |
 | `home.part.n400.badge` | AI | IA |
@@ -288,8 +288,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | Os avisos legais ficam em inglês até que uma pessoa confira a tradução. |
 | `lang.menu.title` | Choose a language | Escolha um idioma |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Há mais idiomas em revisão. Eles aparecerão aqui depois que uma pessoa os revisar. |
-| `home.study.title` | Study first | Estudar primeiro |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Veja as perguntas de educação cívica com imagens e as respostas oficiais. Nada é pontuado. |
+| `home.study.title` | Study | Estudar |
+| `home.study.text` | See each question with its answers and a picture. No score. | Veja cada pergunta com as respostas e uma imagem. Sem nota. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Veja as perguntas de educação cívica uma de cada vez. Cada uma mostra as respostas oficiais. Nada é pontuado nem guardado. |
 | `study.version.legend` | Which civics test do you want to study? | Qual teste de educação cívica você quer estudar? |
 | `study.version.2008` | 2008 civics test | Teste de educação cívica de 2008 |
@@ -348,9 +348,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | um endereço |
 | `coach.kind.zipCode` | a ZIP code with a state | um CEP (ZIP) com um estado |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | A verificação também procura endereços e códigos ZIP, mas não consegue encontrar nomes. Não diga nem digite o nome de uma pessoa real. |
-| `home.start.label` | Start here | Comece aqui |
-| `home.full.start` | Start practice | Começar a prática |
-| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Tem 65 anos ou mais e 20 anos com o green card? Comece a prática 65/20. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | O texto está pequeno? Toque em Tamanho do texto no alto. |
 | `audio.playing` | Playing… | Tocando… |
 | `audio.playSentence` | Play the sentence | Ouvir a frase |
@@ -370,6 +367,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.textSize.sample` | Aa | Aa |
 | `lang.selected` | Selected | Selecionado |
 | `aiNotice.more` | More | Mais |
+| `home.who.title` | 1. Who is practicing? | 1. Quem vai praticar? |
+| `home.who.most.title` | Most people | A maioria das pessoas |
+| `home.who.most.text` | The usual civics test rules. | As regras normais do teste de educação cívica. |
+| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65 anos ou mais, com green card há 20 anos ou mais |
+| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | Menos perguntas de educação cívica, de uma lista de 20 marcadas com uma estrela. |
+| `home.who.notSure` | Not sure? Choose Most people. | Não tem certeza? Escolha A maioria das pessoas. |
+| `home.what.title` | 2. What do you want to do? | 2. O que você quer fazer? |
+| `home.part.notRequired` | Not required for 65/20 | Não é obrigatório para 65/20 |
+| `home.go.start` | Start | Começar |
+| `home.go.open` | Open | Abrir |
 
 ## Lines marked ⚠ (meaning differs a little)
 

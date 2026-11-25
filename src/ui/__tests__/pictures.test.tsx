@@ -130,7 +130,7 @@ describe("after grading", () => {
 describe("Study first", () => {
   it("offers both test versions and no scoring", () => {
     const html = renderToString(<StudyScreen answerKey={(v) => keys[v]} onHome={noop} />);
-    expect(html).toContain("Study first");
+    expect(html).toContain(">Study<");
     expect(html).toContain("2008 civics test");
     expect(html).toContain("2025 civics test");
     expect(html).not.toContain("<textarea");
@@ -161,8 +161,8 @@ describe("Study first", () => {
   });
   it("is reachable from the home screen and the practice app", () => {
     const home = renderToString(<HomeScreen civicsLocked={false} onChoose={noop} onStudy={noop} />);
-    expect(home).toContain("Study first");
-    expect(renderToString(<PracticeApp engine={engine} />)).toContain("Study first");
+    expect(home).toContain(">Study<");
+    expect(renderToString(<PracticeApp engine={engine} />)).toContain(">Study<");
   });
 });
 

@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | ສຽງທີ່ສ້າງໂດຍ AI. ສຽງນີ້ຖືກເຮັດໄວ້ລ່ວງໜ້າ. |
 | `audio.playSample` | Play sample answer | ຟັງຕົວຢ່າງຄໍາຕອບ |
 | `home.title` | Welcome to Language Lab | ຍິນດີຕ້ອນຮັບສູ່ Language Lab |
-| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | ຝຶກສຳລັບການສຳພາດຂໍສັນຊາດ. ທ່ານຕອບໃນນາມບຸກຄົນສົມມຸດ ຈຶ່ງບໍ່ຕ້ອງບອກຫຍັງກ່ຽວກັບຕົວເອງ. |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | ຝຶກສຳພາດຂໍສັນຊາດໃນນາມບຸກຄົນສົມມຸດ ຈຶ່ງບໍ່ຕ້ອງບອກຫຍັງກ່ຽວກັບຕົວເອງ. |
 | `home.how.title` | How it works | ໃຊ້ງານແນວໃດ |
 | `home.how.1.title` | Listen | ຟັງ |
 | `home.how.1.text` | Tap “Play the question” to hear it. | ແຕະ “ຟັງຄຳຖາມ” ເພື່ອຟັງ. |
@@ -223,12 +223,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.title` | See the result | ເບິ່ງຜົນ |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | ທ່ານຈະເຫັນວ່າຄຳຕອບນັບໄດ້ບໍ່ ແລະ ຄວນຝຶກຫຍັງຕໍ່. |
 | `home.choose` | What would you like to do? | ທ່ານຢາກເຮັດຫຍັງ? |
-| `home.full.title` | Full practice interview | ການສໍາພາດຝຶກແບບເຕັມ |
-| `home.full.text` | All four parts in order, then one report. | ສີ່ສ່ວນຕາມລໍາດັບ ແລ້ວໄດ້ບົດລາຍງານໜຶ່ງສະບັບ. |
+| `home.full.title` | Practice test | ສອບຈຳລອງ |
+| `home.full.text` | Answer out loud like the real interview. | ຕອບອອກສຽງຄືການສຳພາດແທ້. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | ຝຶກສຳພາດ N-400 ກັບໂຄ້ດ AI |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | ໂຄ້ດຖາມຄຳຖາມຕໍ່ເນື່ອງແບບທີ່ເຈົ້າໜ້າທີ່ອາດຖາມ ແລະ ໃຫ້ຄຳແນະນຳກ່ຽວກັບພາສາອັງກິດຂອງທ່ານ. ບໍ່ບັງຄັບ. |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | ຂັບເຄື່ອນໂດຍ Claude (Anthropic) |
-| `home.parts.title` | Practice one part | ຝຶກພຽງໜຶ່ງສ່ວນ |
+| `home.parts.title` | Or practice one part | ຫຼື ຝຶກທີລະສ່ວນ |
 | `home.part.n400.title` | N-400 interview | ການສໍາພາດກ່ຽວກັບ N-400 |
 | `home.part.n400.text` | Answer questions about the N-400 form. No score. | ຕອບຄຳຖາມກ່ຽວກັບແບບຟອມ N-400. ບໍ່ມີຄະແນນ. |
 | `home.part.n400.badge` | AI | AI |
@@ -288,8 +288,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | ແຈ້ງການທາງກົດໝາຍຈະເປັນພາສາອັງກິດ ຈົນກວ່າຈະມີຄົນກວດການແປ. |
 | `lang.menu.title` | Choose a language | ເລືອກພາສາ |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | ຍັງມີພາສາອື່ນທີ່ກຳລັງກວດຢູ່. ພາສາເຫຼົ່ານັ້ນຈະປາກົດຢູ່ບ່ອນນີ້ຫຼັງຈາກມີຄົນກວດແລ້ວ. |
-| `home.study.title` | Study first | ສຶກສາກ່ອນ |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | ເບິ່ງຄໍາຖາມວິຊາພົນລະເມືອງພ້ອມຮູບພາບ ແລະ ຄໍາຕອບທາງການ. ບໍ່ມີການໃຫ້ຄະແນນ. |
+| `home.study.title` | Study | ຮຽນ |
+| `home.study.text` | See each question with its answers and a picture. No score. | ເບິ່ງແຕ່ລະຄຳຖາມພ້ອມຄຳຕອບ ແລະ ຮູບພາບ. ບໍ່ມີຄະແນນ. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | ເບິ່ງຄໍາຖາມວິຊາພົນລະເມືອງເທື່ອລະຂໍ້. ແຕ່ລະຂໍ້ສະແດງຄໍາຕອບທາງການ. ບໍ່ມີການໃຫ້ຄະແນນ ແລະ ບໍ່ບັນທຶກຫຍັງ. |
 | `study.version.legend` | Which civics test do you want to study? | ທ່ານຢາກສຶກສາບົດສອບວິຊາພົນລະເມືອງຊຸດໃດ? |
 | `study.version.2008` | 2008 civics test | ບົດສອບວິຊາພົນລະເມືອງ ປີ 2008 |
@@ -348,9 +348,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | ທີ່ຢູ່ຖະໜົນ |
 | `coach.kind.zipCode` | a ZIP code with a state | ລະຫັດໄປສະນີ ZIP ພ້ອມຊື່ລັດ |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | ການກວດນີ້ຍັງຊອກຫາທີ່ຢູ່ ແລະ ລະຫັດ ZIP, ແຕ່ຊອກຫາຊື່ບໍ່ໄດ້. ຢ່າເວົ້າ ຫຼື ພິມຊື່ຂອງຄົນແທ້. |
-| `home.start.label` | Start here | ເລີ່ມທີ່ນີ້ |
-| `home.full.start` | Start practice | ເລີ່ມການຝຶກ |
-| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | ອາຍຸ 65 ປີຂຶ້ນໄປ ແລະ ມີບັດຂຽວ 20 ປີ? ເລີ່ມການຝຶກ 65/20. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | ຕົວໜັງສືນ້ອຍເກີນໄປບໍ? ແຕະ ຂະໜາດຕົວໜັງສື ຢູ່ທາງເທິງ. |
 | `audio.playing` | Playing… | ກຳລັງຫຼິ້ນ… |
 | `audio.playSentence` | Play the sentence | ຟັງປະໂຫຍກ |
@@ -370,6 +367,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.textSize.sample` | Aa | Aa |
 | `lang.selected` | Selected | ເລືອກແລ້ວ |
 | `aiNotice.more` | More | ເພີ່ມເຕີມ |
+| `home.who.title` | 1. Who is practicing? | 1. ໃຜກຳລັງຝຶກ? |
+| `home.who.most.title` | Most people | ຄົນສ່ວນໃຫຍ່ |
+| `home.who.most.text` | The usual civics test rules. | ກົດການສອບຄວາມຮູ້ພົນລະເມືອງຕາມປົກກະຕິ. |
+| `home.who.special.title` | 65 or older, with a green card for 20 years or more | ອາຍຸ 65 ປີຂຶ້ນໄປ, ມີບັດຂຽວ 20 ປີຂຶ້ນໄປ |
+| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | ຄຳຖາມຄວາມຮູ້ພົນລະເມືອງໜ້ອຍລົງ, ຈາກລາຍການ 20 ຂໍ້ທີ່ມີດາວ. |
+| `home.who.notSure` | Not sure? Choose Most people. | ບໍ່ແນ່ໃຈ? ເລືອກ ຄົນສ່ວນໃຫຍ່. |
+| `home.what.title` | 2. What do you want to do? | 2. ທ່ານຢາກເຮັດຫຍັງ? |
+| `home.part.notRequired` | Not required for 65/20 | ບໍ່ຈຳເປັນສຳລັບ 65/20 |
+| `home.go.start` | Start | ເລີ່ມ |
+| `home.go.open` | Open | ເປີດ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

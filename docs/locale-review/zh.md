@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | AI 生成的語音。音訊是事先製作好的。 |
 | `audio.playSample` | Play sample answer | 播放範例答案 |
 | `home.title` | Welcome to Language Lab | 歡迎來到 Language Lab |
-| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | 為入籍面試做練習。您以虛構人物的身分回答，所以不必透露任何關於自己的事。 |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | 以虛構人物的身分練習入籍面試，不必透露任何關於自己的事。 |
 | `home.how.title` | How it works | 使用方式 |
 | `home.how.1.title` | Listen | 聆聽 |
 | `home.how.1.text` | Tap “Play the question” to hear it. | 點「播放問題」來聆聽。 |
@@ -223,12 +223,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.title` | See the result | 查看結果 |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | 您會看到回答是否算數，以及接下來要練習什麼。 |
 | `home.choose` | What would you like to do? | 您想做什麼？ |
-| `home.full.title` | Full practice interview | 完整練習面談 |
-| `home.full.text` | All four parts in order, then one report. | 依序完成四個部分，最後得到一份報告。 |
+| `home.full.title` | Practice test | 模擬考試 |
+| `home.full.text` | Answer out loud like the real interview. | 像真正的面試一樣大聲回答。 |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | 和 AI 教練一起練習 N-400 面試 |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | 教練會像面談人員可能做的那樣追問一個問題，並給您英語方面的建議。可選。 |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | 由 Claude（Anthropic）提供技術支援 |
-| `home.parts.title` | Practice one part | 只練習一個部分 |
+| `home.parts.title` | Or practice one part | 或練習其中一部分 |
 | `home.part.n400.title` | N-400 interview | N-400 面談 |
 | `home.part.n400.text` | Answer questions about the N-400 form. No score. | 回答關於 N-400 表格的問題。不評分。 |
 | `home.part.n400.badge` | AI | AI |
@@ -288,8 +288,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | 法律聲明在有人核對翻譯之前都以英文顯示。 |
 | `lang.menu.title` | Choose a language | 選擇語言 |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | 还有更多语言正在审核中。有人检查后，它们会出现在这里。 |
-| `home.study.title` | Study first | 先學習 |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | 瀏覽公民常識題目，附有圖片和官方答案。不計分。 |
+| `home.study.title` | Study | 學習 |
+| `home.study.text` | See each question with its answers and a picture. No score. | 看每個問題、答案和圖片。不評分。 |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | 一次看一道公民常識題目。每題都會顯示官方答案。不計分，也不儲存任何內容。 |
 | `study.version.legend` | Which civics test do you want to study? | 您想學習哪一種公民常識測驗？ |
 | `study.version.2008` | 2008 civics test | 2008 年公民常識測驗 |
@@ -348,9 +348,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | 一個街道地址 |
 | `coach.kind.zipCode` | a ZIP code with a state | 一個附有州名的郵遞區號 |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | 這項檢查也會找街道地址和郵遞區號，但無法找出姓名。請不要說出或輸入真實人物的姓名。 |
-| `home.start.label` | Start here | 從這裡開始 |
-| `home.full.start` | Start practice | 開始練習 |
-| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | 65 歲或以上，持綠卡 20 年？開始 65/20 練習。 |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | 字太小嗎？請點選上方的「文字大小」。 |
 | `audio.playing` | Playing… | 正在播放… |
 | `audio.playSentence` | Play the sentence | 播放句子 |
@@ -370,3 +367,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.textSize.sample` | Aa | Aa |
 | `lang.selected` | Selected | 已選擇 |
 | `aiNotice.more` | More | 更多 |
+| `home.who.title` | 1. Who is practicing? | 1. 誰在練習？ |
+| `home.who.most.title` | Most people | 大多數人 |
+| `home.who.most.text` | The usual civics test rules. | 一般的公民常識考試規則。 |
+| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65 歲或以上，持有綠卡 20 年或更久 |
+| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | 公民常識問題較少，從 20 個標有星號的問題中出題。 |
+| `home.who.notSure` | Not sure? Choose Most people. | 不確定？請選「大多數人」。 |
+| `home.what.title` | 2. What do you want to do? | 2. 您想做什麼？ |
+| `home.part.notRequired` | Not required for 65/20 | 65/20 不需要 |
+| `home.go.start` | Start | 開始 |
+| `home.go.open` | Open | 開啟 |

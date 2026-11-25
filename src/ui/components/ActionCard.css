@@ -1,0 +1,176 @@
+/* The one tappable card: a frame, a verb with an arrow, and hover/pressed states. */
+.action-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: max(72px, 4rem);
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--ink-2);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.action-card:hover {
+  border-color: var(--teal);
+  background: var(--surface-2);
+}
+.action-card:active {
+  background: var(--surface-2);
+  box-shadow: inset 0 0 0 2px var(--teal);
+}
+.action-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+.action-card__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+}
+.action-card__texts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.action-card__text {
+  font-size: var(--fs-body);
+  line-height: var(--lh-snug);
+}
+.action-card__meta {
+  font-size: var(--fs-meta);
+  line-height: var(--lh-snug);
+  color: var(--ink-2);
+}
+/* The verb and the arrow, always visible, on the right. */
+.action-card__go {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--teal);
+}
+.action-card__arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+/* A list row: the same card, the title in the body font. */
+.action-card--row .action-card__title {
+  font-family: var(--font-body);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+}
+/* The screen's one filled main action. Overrides .btn--primary's button sizes. */
+.action-card.action-card--primary {
+  min-height: max(88px, 5rem);
+  width: 100%;
+  border-color: var(--teal);
+  background: var(--teal);
+  color: var(--on-accent);
+  font-size: inherit;
+  font-weight: inherit;
+}
+.action-card.action-card--primary:hover,
+.action-card.action-card--primary:active {
+  border-color: var(--ink);
+  background: var(--teal);
+  box-shadow: inset 0 0 0 2px var(--on-accent);
+}
+.action-card--primary .action-card__go,
+.action-card--primary .action-card__meta {
+  color: var(--on-accent);
+}
+/* A word, not a colour: "AI". */
+.action-card__badge {
+  display: inline-block;
+  padding: 0 var(--space-2);
+  border: 2px solid currentColor;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+}
+/* Cards and rows stacked with one gap. */
+.action-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* "Who is practicing?": two large radio cards; the whole card is the label. */
+.who-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.who-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: max(72px, 4rem);
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--ink-2);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  cursor: pointer;
+}
+.who-card:hover {
+  border-color: var(--teal);
+}
+.who-card:has(input:checked) {
+  border-color: var(--teal);
+  background: var(--surface-2);
+  box-shadow: inset 0 0 0 2px var(--teal);
+}
+.who-card:has(input:focus-visible) {
+  outline: var(--focus-width) solid var(--teal);
+  outline-offset: var(--focus-offset);
+}
+.who-card__icon {
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+  color: var(--teal);
+}
+.who-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.who-card__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+}
+.who-card__text {
+  font-size: var(--fs-meta);
+  line-height: var(--lh-snug);
+  color: var(--ink-2);
+}
+.who-cards {
+  gap: var(--space-2);
+}
+.who-card {
+  padding: var(--space-2) var(--space-3);
+}

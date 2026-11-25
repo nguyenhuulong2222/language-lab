@@ -57,9 +57,9 @@ describe("production build with the reviewed answer keys", () => {
   });
   it("the home screen offers the full interview, Study first and civics, and no locked notice", () => {
     const html = renderToString(<PracticeApp engine={createPracticeEngine(productionEnv())} />);
-    expect(html).toContain("Full practice interview");
-    expect(html).toContain("All four parts in order, then one report.");
-    expect(html).toContain("Study first");
+    expect(html).toContain("Practice test");
+    expect(html).toContain("Answer out loud like the real interview.");
+    expect(html).toContain(">Study<");
     expect(html).toContain("Answer questions about U.S. history and government");
     expect(html).not.toContain("Right now you can practice");
   });
@@ -97,7 +97,7 @@ describe("production build with a key still marked for review", () => {
   it("the home screen says what this build offers and does not headline the full interview", () => {
     const html = renderToString(<PracticeApp engine={createPracticeEngine(unreviewedProductionEnv())} />);
     expect(html).toContain("Right now you can practice");
-    expect(html).not.toContain("All four parts in order, then one report.");
+    expect(html).not.toContain("Answer out loud like the real interview.");
   });
   it("interview, reading and writing run; civics is locked; no report is built", () => {
     const engine = createPracticeEngine(unreviewedProductionEnv());

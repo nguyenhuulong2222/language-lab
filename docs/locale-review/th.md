@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | เสียงที่สร้างโดย AI เสียงนี้ทำไว้ล่วงหน้า |
 | `audio.playSample` | Play sample answer | ฟังตัวอย่างคำตอบ |
 | `home.title` | Welcome to Language Lab | ยินดีต้อนรับสู่ Language Lab |
-| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | ฝึกสำหรับการสัมภาษณ์ขอสัญชาติ คุณตอบในฐานะบุคคลสมมติ จึงไม่ต้องบอกเรื่องของตัวเองเลย |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | ฝึกสัมภาษณ์ขอสัญชาติในฐานะบุคคลสมมติ จึงไม่ต้องบอกเรื่องของตัวเองเลย |
 | `home.how.title` | How it works | วิธีใช้งาน |
 | `home.how.1.title` | Listen | ฟัง |
 | `home.how.1.text` | Tap “Play the question” to hear it. | แตะ “ฟังคำถาม” เพื่อฟัง |
@@ -223,12 +223,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.title` | See the result | ดูผลลัพธ์ |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | คุณจะเห็นว่าคำตอบนับได้หรือไม่ และควรฝึกอะไรต่อ |
 | `home.choose` | What would you like to do? | คุณต้องการทำอะไร |
-| `home.full.title` | Full practice interview | การสัมภาษณ์ฝึกแบบเต็ม |
-| `home.full.text` | All four parts in order, then one report. | ทั้งสี่ส่วนตามลำดับ แล้วได้รายงานหนึ่งฉบับ |
+| `home.full.title` | Practice test | สอบจำลอง |
+| `home.full.text` | Answer out loud like the real interview. | ตอบออกเสียงเหมือนการสัมภาษณ์จริง |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | ฝึกสัมภาษณ์ N-400 กับโค้ช AI |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | โค้ชถามคำถามต่อเนื่องแบบที่เจ้าหน้าที่อาจถาม และให้คำแนะนำเรื่องภาษาอังกฤษของคุณ ไม่บังคับ |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | ขับเคลื่อนโดย Claude (Anthropic) |
-| `home.parts.title` | Practice one part | ฝึกเพียงหนึ่งส่วน |
+| `home.parts.title` | Or practice one part | หรือฝึกทีละส่วน |
 | `home.part.n400.title` | N-400 interview | การสัมภาษณ์เรื่อง N-400 |
 | `home.part.n400.text` | Answer questions about the N-400 form. No score. | ตอบคำถามเกี่ยวกับแบบฟอร์ม N-400 ไม่มีคะแนน |
 | `home.part.n400.badge` | AI | AI |
@@ -288,8 +288,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | ประกาศทางกฎหมายจะเป็นภาษาอังกฤษจนกว่าจะมีคนตรวจคำแปล |
 | `lang.menu.title` | Choose a language | เลือกภาษา |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | ยังมีภาษาอื่นที่กำลังรอการตรวจ ภาษาเหล่านั้นจะปรากฏที่นี่หลังจากมีคนตรวจแล้ว |
-| `home.study.title` | Study first | ศึกษาก่อน |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | ดูคำถามความรู้พลเมืองพร้อมรูปภาพและคำตอบอย่างเป็นทางการ ไม่มีการให้คะแนน |
+| `home.study.title` | Study | เรียน |
+| `home.study.text` | See each question with its answers and a picture. No score. | ดูคำถามแต่ละข้อพร้อมคำตอบและรูปภาพ ไม่มีคะแนน |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | ดูคำถามความรู้พลเมืองทีละข้อ แต่ละข้อแสดงคำตอบอย่างเป็นทางการ ไม่มีการให้คะแนนและไม่บันทึกอะไร |
 | `study.version.legend` | Which civics test do you want to study? | คุณต้องการศึกษาข้อสอบความรู้พลเมืองชุดไหน |
 | `study.version.2008` | 2008 civics test | ข้อสอบความรู้พลเมือง ปี 2008 |
@@ -348,9 +348,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | ที่อยู่ตามถนน |
 | `coach.kind.zipCode` | a ZIP code with a state | รหัสไปรษณีย์พร้อมชื่อรัฐ |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | การตรวจนี้ยังมองหาที่อยู่และรหัสไปรษณีย์ด้วย แต่ไม่สามารถหาชื่อคนได้ อย่าพูดหรือพิมพ์ชื่อของคนจริง |
-| `home.start.label` | Start here | เริ่มที่นี่ |
-| `home.full.start` | Start practice | เริ่มฝึก |
-| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | อายุ 65 ปีขึ้นไปและถือกรีนการ์ดมา 20 ปี? เริ่มการฝึก 65/20 |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | ตัวอักษรเล็กเกินไปใช่ไหม แตะ ขนาดตัวอักษร ที่ด้านบน |
 | `audio.playing` | Playing… | กำลังเล่น… |
 | `audio.playSentence` | Play the sentence | ฟังประโยค |
@@ -370,6 +367,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.textSize.sample` | Aa | Aa |
 | `lang.selected` | Selected | เลือกแล้ว |
 | `aiNotice.more` | More | เพิ่มเติม |
+| `home.who.title` | 1. Who is practicing? | 1. ใครกำลังฝึก? |
+| `home.who.most.title` | Most people | คนส่วนใหญ่ |
+| `home.who.most.text` | The usual civics test rules. | กฎการสอบหน้าที่พลเมืองตามปกติ |
+| `home.who.special.title` | 65 or older, with a green card for 20 years or more | อายุ 65 ปีขึ้นไป มีกรีนการ์ด 20 ปีขึ้นไป |
+| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | คำถามหน้าที่พลเมืองน้อยลง จากรายการ 20 ข้อที่มีดาว |
+| `home.who.notSure` | Not sure? Choose Most people. | ไม่แน่ใจ? เลือก คนส่วนใหญ่ |
+| `home.what.title` | 2. What do you want to do? | 2. คุณอยากทำอะไร? |
+| `home.part.notRequired` | Not required for 65/20 | ไม่จำเป็นสำหรับ 65/20 |
+| `home.go.start` | Start | เริ่ม |
+| `home.go.open` | Open | เปิด |
 
 ## Lines marked ⚠ (meaning differs a little)
 

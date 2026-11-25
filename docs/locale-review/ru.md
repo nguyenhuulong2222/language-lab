@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Голос создан ИИ. Аудио было подготовлено заранее. |
 | `audio.playSample` | Play sample answer | Прослушать пример ответа |
 | `home.title` | Welcome to Language Lab | Добро пожаловать в Language Lab |
-| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | Готовьтесь к собеседованию на гражданство. Вы отвечаете за вымышленного человека, поэтому ничего не рассказываете о себе. |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | Готовьтесь к собеседованию на гражданство за вымышленного человека, ничего не рассказывая о себе. |
 | `home.how.title` | How it works | Как это работает |
 | `home.how.1.title` | Listen | Слушайте |
 | `home.how.1.text` | Tap “Play the question” to hear it. | Нажмите «Прослушать вопрос», чтобы послушать. |
@@ -223,12 +223,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.title` | See the result | Смотрите результат |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | Вы увидите, засчитан ли ответ и что потренировать дальше. |
 | `home.choose` | What would you like to do? | Что вы хотите сделать? |
-| `home.full.title` | Full practice interview | Полное учебное собеседование |
-| `home.full.text` | All four parts in order, then one report. | Все четыре части по порядку и один отчёт. |
+| `home.full.title` | Practice test | Пробный экзамен |
+| `home.full.text` | Answer out loud like the real interview. | Отвечайте вслух, как на настоящем собеседовании. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Тренируйте собеседование по N-400 с ИИ-тренером |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | Тренер задаёт дополнительный вопрос, как мог бы сотрудник, и даёт советы по вашему английскому. По желанию. |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Работает на Claude (Anthropic) |
-| `home.parts.title` | Practice one part | Тренировать одну часть |
+| `home.parts.title` | Or practice one part | Или потренируйте одну часть |
 | `home.part.n400.title` | N-400 interview | Собеседование по форме N-400 |
 | `home.part.n400.text` | Answer questions about the N-400 form. No score. | Отвечайте на вопросы о форме N-400. Без оценки. |
 | `home.part.n400.badge` | AI | ИИ |
@@ -288,8 +288,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | Юридические уведомления остаются на английском, пока человек не проверит перевод. |
 | `lang.menu.title` | Choose a language | Выберите язык |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Другие языки проходят проверку. Они появятся здесь, когда их проверит человек. |
-| `home.study.title` | Study first | Сначала изучить |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Просмотрите вопросы по обществоведению с картинками и официальными ответами. Ничего не оценивается. |
+| `home.study.title` | Study | Учить |
+| `home.study.text` | See each question with its answers and a picture. No score. | Каждый вопрос с ответами и картинкой. Без оценки. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Просматривайте вопросы по обществоведению по одному. К каждому показаны официальные ответы. Ничего не оценивается и не сохраняется. |
 | `study.version.legend` | Which civics test do you want to study? | Какой тест по обществоведению вы хотите изучить? |
 | `study.version.2008` | 2008 civics test | Тест по обществоведению 2008 года |
@@ -348,9 +348,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | адрес |
 | `coach.kind.zipCode` | a ZIP code with a state | почтовый индекс (ZIP) со штатом |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Проверка также ищет адреса и почтовые индексы, но не может найти имена. Не называйте и не вводите имя реального человека. |
-| `home.start.label` | Start here | Начните здесь |
-| `home.full.start` | Start practice | Начать практику |
-| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Вам 65 лет или больше и у вас 20 лет грин-карта? Начните практику 65/20. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | Текст слишком мелкий? Нажмите «Размер текста» вверху. |
 | `audio.playing` | Playing… | Воспроизведение… |
 | `audio.playSentence` | Play the sentence | Прослушать предложение |
@@ -370,6 +367,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.textSize.sample` | Aa | Aa |
 | `lang.selected` | Selected | Выбрано |
 | `aiNotice.more` | More | Подробнее |
+| `home.who.title` | 1. Who is practicing? | 1. Кто тренируется? |
+| `home.who.most.title` | Most people | Большинство людей |
+| `home.who.most.text` | The usual civics test rules. | Обычные правила экзамена по граждановедению. |
+| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65 лет и старше, с грин-картой 20 лет и больше |
+| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | Меньше вопросов по граждановедению, из списка 20 вопросов со звёздочкой. |
+| `home.who.notSure` | Not sure? Choose Most people. | Не уверены? Выберите «Большинство людей». |
+| `home.what.title` | 2. What do you want to do? | 2. Что вы хотите сделать? |
+| `home.part.notRequired` | Not required for 65/20 | Не требуется для 65/20 |
+| `home.go.start` | Start | Начать |
+| `home.go.open` | Open | Открыть |
 
 ## Lines marked ⚠ (meaning differs a little)
 

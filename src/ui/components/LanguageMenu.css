@@ -50,8 +50,8 @@
 /* No frame around the grid: the full column width goes to the buttons, so names stay whole.
    A rule under it separates it from the welcome. */
 .home-language {
-  margin: 0 0 var(--space-5);
-  padding: 0 0 var(--space-4);
+  margin: 0 0 var(--space-3);
+  padding: var(--space-2) 0 var(--space-3);
   border-bottom: 2px solid var(--border);
 }
 .language-menu--home .language-menu__title {
@@ -69,8 +69,10 @@
 :root[data-text-size="extra-large"] .language-menu--home .language-menu__list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+/* Every button the same height: the check sits beside the name, and the frame is the same width. */
 .language-menu--home .language-menu__option {
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-1);
   padding: var(--space-2) var(--space-1);
@@ -80,8 +82,8 @@
   line-height: var(--lh-snug);
 }
 .language-menu--home .language-menu__option[aria-current="true"] {
-  border: 3px solid var(--teal);
-  box-shadow: none;
+  border-color: var(--teal);
+  box-shadow: inset 0 0 0 2px var(--teal);
   background: var(--surface-2);
   font-weight: 700;
 }
@@ -91,8 +93,8 @@
   overflow-wrap: anywhere;
 }
 .language-menu--home .language-menu__check {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 /* Every button fills its cell, so the grid lines up and all buttons in a row are the same height. */
 .language-menu--home .language-menu__list > li {
@@ -107,4 +109,56 @@
 /* Chinese breaks only before the bracket ("中文" / "（繁體）"), not inside a word. */
 .language-menu--home .language-menu__name:lang(zh) {
   word-break: keep-all;
+}
+/* Q3: every row the same height (the tallest button), the check in the corner beside the name so
+   it never adds a line, and the same frame on every button. Compact, so the welcome is near. */
+.language-menu--home .language-menu__list {
+  gap: var(--space-2);
+}
+.language-menu--home .language-menu__title {
+  margin-bottom: var(--space-2);
+  font-size: var(--fs-h4);
+}
+.language-menu--home .language-menu__option {
+  position: relative;
+  height: 100%;
+  min-height: var(--tap-min);
+  padding: var(--space-1) var(--space-5);
+  line-height: var(--lh-tight);
+}
+.language-menu--home .language-menu__check {
+  position: absolute;
+  top: var(--space-1);
+  right: var(--space-1);
+  width: 1.125rem;
+  height: 1.125rem;
+}
+.language-menu--home .language-menu__review {
+  margin-top: var(--space-2);
+}
+/* The check sits in a top band every button has, so names get the full width and rows stay even. */
+.language-menu--home .language-menu__list {
+  gap: var(--space-1);
+}
+.language-menu--home .language-menu__option {
+  padding: var(--space-4) var(--space-1) var(--space-2);
+}
+.language-menu--home .language-menu__check {
+  top: var(--space-1);
+  right: 50%;
+  transform: translateX(50%);
+  width: 1rem;
+  height: 1rem;
+}
+.language-menu--home .language-menu__check {
+  right: var(--space-1);
+  transform: none;
+}
+/* Compact rows: 56px buttons; a small top band holds the corner check. */
+.language-menu--home .language-menu__option {
+  padding: var(--space-3) var(--space-1) var(--space-2);
+}
+.language-menu--home .language-menu__review {
+  font-size: var(--fs-meta);
+  line-height: var(--lh-snug);
 }

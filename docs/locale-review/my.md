@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | AI ဖန်တီးသောအသံ။ အသံကို ကြိုတင်ပြုလုပ်ထားသည်။ |
 | `audio.playSample` | Play sample answer | နမူနာအဖြေကို နားထောင်ရန် |
 | `home.title` | Welcome to Language Lab | Language Lab မှ ကြိုဆိုပါသည် |
-| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | နိုင်ငံသားအင်တာဗျူးအတွက် လေ့ကျင့်ပါ။ စိတ်ကူးယဉ်လူအဖြစ် ဖြေသောကြောင့် သင့်အကြောင်း ဘာမျှ မျှဝေရန် မလိုပါ။ |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | စိတ်ကူးယဉ်လူအဖြစ် နိုင်ငံသားအင်တာဗျူးကို လေ့ကျင့်ပါ၊ သင့်အကြောင်း ဘာမျှ မျှဝေရန် မလိုပါ။ |
 | `home.how.title` | How it works | အသုံးပြုပုံ |
 | `home.how.1.title` | Listen | နားထောင်ပါ |
 | `home.how.1.text` | Tap “Play the question” to hear it. | နားထောင်ရန် “မေးခွန်းကို နားထောင်ရန်” ကို နှိပ်ပါ။ |
@@ -223,12 +223,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.3.title` | See the result | ရလဒ်ကို ကြည့်ပါ |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | သင့်အဖြေ ရေတွက်မရေတွက်နှင့် နောက်ထပ် ဘာလေ့ကျင့်ရမည်ကို တွေ့ရပါမည်။ |
 | `home.choose` | What would you like to do? | သင် ဘာလုပ်ချင်ပါသလဲ။ |
-| `home.full.title` | Full practice interview | လေ့ကျင့်ရေးအင်တာဗျူး အပြည့်အစုံ |
-| `home.full.text` | All four parts in order, then one report. | အပိုင်းလေးခုကို အစဉ်လိုက်လုပ်ပြီး အစီရင်ခံစာတစ်စောင် ရရှိမည်။ |
+| `home.full.title` | Practice test | စမ်းသပ်စာမေးပွဲ |
+| `home.full.text` | Answer out loud like the real interview. | တကယ့်အင်တာဗျူးကဲ့သို့ အသံထွက်ဖြေပါ။ |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | AI နည်းပြနှင့်အတူ N-400 အင်တာဗျူးကို လေ့ကျင့်ပါ |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | နည်းပြသည် အရာရှိတစ်ဦး မေးနိုင်သကဲ့သို့ နောက်ဆက်တွဲမေးခွန်းကို မေးပြီး သင့်အင်္ဂလိပ်စာအတွက် အကြံပြုချက်များ ပေးပါသည်။ ရွေးချယ်နိုင်ပါသည်။ |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Claude (Anthropic) ဖြင့် လုပ်ဆောင်သည် |
-| `home.parts.title` | Practice one part | အပိုင်းတစ်ခုတည်း လေ့ကျင့်ရန် |
+| `home.parts.title` | Or practice one part | သို့မဟုတ် အပိုင်းတစ်ခုကို လေ့ကျင့်ပါ |
 | `home.part.n400.title` | N-400 interview | N-400 အင်တာဗျူး |
 | `home.part.n400.text` | Answer questions about the N-400 form. No score. | N-400 ဖောင်အကြောင်း မေးခွန်းများကို ဖြေပါ။ အမှတ်မပေးပါ။ |
 | `home.part.n400.badge` | AI | AI |
@@ -288,8 +288,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | လူတစ်ဦးက ဘာသာပြန်ကို မစစ်ဆေးမချင်း ဥပဒေဆိုင်ရာ အသိပေးချက်များကို အင်္ဂလိပ်ဘာသာဖြင့်သာ ပြပါမည်။ |
 | `lang.menu.title` | Choose a language | ဘာသာစကား ရွေးပါ |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | နောက်ထပ်ဘာသာစကားများကို စစ်ဆေးနေဆဲဖြစ်ပါသည်။ လူတစ်ဦးက စစ်ဆေးပြီးနောက် ဤနေရာတွင် ပေါ်လာပါမည်။ |
-| `home.study.title` | Study first | အရင်လေ့လာရန် |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | နိုင်ငံသားဗဟုသုတမေးခွန်းများကို ပုံများနှင့် တရားဝင်အဖြေများနှင့်အတူ ကြည့်ပါ။ အမှတ်မပေးပါ။ |
+| `home.study.title` | Study | လေ့လာရန် |
+| `home.study.text` | See each question with its answers and a picture. No score. | မေးခွန်းတိုင်းကို အဖြေများနှင့် ပုံဖြင့် ကြည့်ပါ။ အမှတ်မပေးပါ။ |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | နိုင်ငံသားဗဟုသုတမေးခွန်းများကို တစ်ခုချင်း ကြည့်ပါ။ တစ်ခုစီတွင် တရားဝင်အဖြေများ ပြသည်။ အမှတ်မပေးပါ၊ ဘာမျှ မသိမ်းပါ။ |
 | `study.version.legend` | Which civics test do you want to study? | နိုင်ငံသားဗဟုသုတစာမေးပွဲ ဘယ်ဟာကို လေ့လာချင်ပါသလဲ။ |
 | `study.version.2008` | 2008 civics test | ၂၀၀၈ ခုနှစ် နိုင်ငံသားဗဟုသုတစာမေးပွဲ |
@@ -348,9 +348,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | လမ်းလိပ်စာ |
 | `coach.kind.zipCode` | a ZIP code with a state | ပြည်နယ်အမည်ပါသော ZIP ကုဒ် |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | ဤစစ်ဆေးမှုသည် လမ်းလိပ်စာနှင့် ZIP ကုဒ်များကိုလည်း ရှာသော်လည်း အမည်များကို မရှာနိုင်ပါ။ လူအစစ်တစ်ဦး၏ အမည်ကို မပြော၊ မရိုက်ပါနှင့်။ |
-| `home.start.label` | Start here | ဤနေရာမှ စတင်ပါ |
-| `home.full.start` | Start practice | လေ့ကျင့်မှု စတင်ပါ |
-| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး ဂရင်းကတ် 20 နှစ် ရှိပါသလား။ 65/20 လေ့ကျင့်မှုကို စတင်ပါ။ |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | စာလုံး အရမ်းသေးနေပါသလား။ အပေါ်ရှိ စာလုံးအရွယ်အစား ကို နှိပ်ပါ။ |
 | `audio.playing` | Playing… | ဖွင့်နေသည်… |
 | `audio.playSentence` | Play the sentence | ဝါကျကို နားထောင်ရန် |
@@ -370,6 +367,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `settings.textSize.sample` | Aa | Aa |
 | `lang.selected` | Selected | ရွေးထားသည် |
 | `aiNotice.more` | More | ထပ်ကြည့်ရန် |
+| `home.who.title` | 1. Who is practicing? | 1. ဘယ်သူ လေ့ကျင့်နေသလဲ။ |
+| `home.who.most.title` | Most people | လူအများစု |
+| `home.who.most.text` | The usual civics test rules. | ပုံမှန် နိုင်ငံသားပညာ စာမေးပွဲ စည်းမျဉ်းများ။ |
+| `home.who.special.title` | 65 or older, with a green card for 20 years or more | အသက် ၆၅ နှစ်နှင့်အထက်၊ ဂရင်းကတ် ၂၀ နှစ်နှင့်အထက် |
+| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | နိုင်ငံသားပညာ မေးခွန်း နည်းသည်၊ ကြယ်ပြထားသော ၂၀ ခုစာရင်းမှ ဖြစ်သည်။ |
+| `home.who.notSure` | Not sure? Choose Most people. | မသေချာလျှင် လူအများစု ကို ရွေးပါ။ |
+| `home.what.title` | 2. What do you want to do? | 2. ဘာလုပ်ချင်သလဲ။ |
+| `home.part.notRequired` | Not required for 65/20 | ၆၅/၂၀ အတွက် မလိုအပ်ပါ |
+| `home.go.start` | Start | စတင်ရန် |
+| `home.go.open` | Open | ဖွင့်ရန် |
 
 ## Lines marked ⚠ (meaning differs a little)
 

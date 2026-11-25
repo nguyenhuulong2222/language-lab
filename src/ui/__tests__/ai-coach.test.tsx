@@ -248,34 +248,36 @@ describe("interface (REQ-C14)", () => {
 describe("discoverable coach: home card (REQ-C18)", () => {
   const home = (props: Partial<Parameters<typeof HomeScreen>[0]> = {}) =>
     renderToString(<HomeScreen civicsLocked={false} onChoose={() => {}} onStudy={() => {}} onChooseCoach={() => {}} {...props} />);
-  it("the card sits directly under the full-interview card, with the attribution line", () => {
+  it("the coach card comes after the practice test and the parts, with the attribution line as plain text", () => {
     const html = home();
-    const full = html.indexOf("Full practice interview");
+    const test = html.indexOf(">Practice test<");
     const card = html.indexOf("Practice the N-400 interview with an AI coach");
-    const study = html.indexOf("Study first");
-    expect(full).toBeGreaterThan(-1);
-    expect(card).toBeGreaterThan(full);
-    expect(card).toBeLessThan(study);
+    const parts = html.indexOf(">Or practice one part<");
+    expect(test).toBeGreaterThan(-1);
+    expect(parts).toBeGreaterThan(test);
+    expect(card).toBeGreaterThan(parts);
     expect(html).toContain("The coach asks a follow-up like an officer might and gives tips on your English. Optional.");
     expect(html).toContain("Powered by Claude (Anthropic)");
   });
-  it("the N-400 part card carries a word badge \"AI\", not a colour", () => {
+  it("the N-400 part row carries a word badge \"AI\", not a colour", () => {
     // Seen: the word "AI". Heard: "AI coach (optional)", so the badge does not suggest the part always uses AI.
-    expect(home().replace(/<!-- -->/g, "")).toMatch(/N-400 interview <span class="option-card__badge" aria-hidden="true">AI<\/span><span class="ll-sr-only">AI coach \(optional\)<\/span>/);
-    expect(home({ onChooseCoach: undefined })).not.toContain("option-card__badge");
+    expect(home().replace(/<!-- -->/g, "")).toMatch(/N-400 interview<span class="action-card__badge" aria-hidden="true">AI<\/span><span class="ll-sr-only">AI coach \(optional\)<\/span>/);
+    expect(home({ onChooseCoach: undefined })).not.toContain("action-card__badge");
   });
   it("the card's name is its title; the text and the attribution are its description", () => {
     const html = home();
-    const tag = html.slice(html.lastIndexOf("<button", html.indexOf("option-card--coach")), html.indexOf(">", html.indexOf("option-card--coach")));
+    const at = html.indexOf("Practice the N-400 interview with an AI coach");
+    const tag = html.slice(html.lastIndexOf("<button", at), html.indexOf(">", html.lastIndexOf("<button", at)));
     const labelledby = /aria-labelledby="([^"]+)"/.exec(tag)![1]!;
-    const describedby = /aria-describedby="([^"]+)"/.exec(tag)![1]!.split(" ");
-    expect(html).toContain(`id="${labelledby}" class="option-card__title">Practice the N-400 interview with an AI coach<`);
-    expect(describedby).toHaveLength(2);
-    expect(html).toContain(`id="${describedby[1]}" class="option-card__meta">Powered by Claude (Anthropic)<`);
+    const describedby = /aria-describedby="([^"]+)"/.exec(tag)![1]!;
+    expect(html).toContain(`id="${labelledby}" class="action-card__title">Practice the N-400 interview with an AI coach<`);
+    const desc = html.slice(html.indexOf(`id="${describedby}"`));
+    expect(desc.slice(0, desc.indexOf("</span></span>") + 14)).toContain("Powered by Claude (Anthropic)");
   });
   it("no logo or brand artwork: no image or svg on the card", () => {
     const html = home();
-    const card = html.slice(html.indexOf("option-card--coach"), html.indexOf("Powered by Claude (Anthropic)"));
+    const at = html.indexOf("Practice the N-400 interview with an AI coach");
+    const card = html.slice(at, html.indexOf("Powered by Claude (Anthropic)"));
     expect(card).not.toMatch(/<img|<svg/);
   });
 });
