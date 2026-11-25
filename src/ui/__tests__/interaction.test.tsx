@@ -305,3 +305,45 @@ describe("the language grid on Home", () => {
     expect(vi.getAttribute("aria-current")).toBe("true");
   });
 });
+describe("the whole interface follows the language (L3)", () => {
+  it("Home in English, choose Tiếng Việt: welcome, Start here, Text size and the AI notice are Vietnamese, legal lines stay English; English brings everything back", async () => {
+    const VI = (await import("../../i18n/locales/vi.json")).default as unknown as Record<string, string>;
+    app();
+    const grid = document.getElementById("home-language")!;
+    const h1 = () => document.querySelector("main h1")!.textContent!.trim();
+    const headerText = () => document.querySelector("header")!.textContent!;
+    expect(h1()).toBe(EN["home.title"]);
+    fireEvent.click(grid.querySelector<HTMLButtonElement>('.language-menu__option[lang="vi"]')!);
+    await waitFor(() => expect(h1()).toBe(VI["home.title"]));
+    expect(document.documentElement.lang).toBe("vi");
+    const body = document.body.textContent!;
+    expect(body).toContain(VI["home.start.label"]);
+    expect(screen.getByRole("button", { name: VI["home.full.start"] })).toBeTruthy();
+    expect(headerText()).toContain(VI["header.settings"]);
+    expect(document.querySelector(".ai-notice")!.textContent).toContain(VI["aiNotice.text"]);
+    // Legal lines stay English until a person reviews the translation.
+    expect(body).toContain(EN["disclaimer.full"]);
+    expect(body).toContain(EN["home.special.cta"]);
+    fireEvent.click(grid.querySelector<HTMLButtonElement>('.language-menu__option[lang="en"]')!);
+    await waitFor(() => expect(h1()).toBe(EN["home.title"]));
+    expect(document.documentElement.lang).toBe("en");
+    expect(document.body.textContent).toContain(EN["home.start.label"]);
+    expect(headerText()).toContain(EN["header.settings"]);
+    expect(document.querySelector(".ai-notice")).toBeNull();
+  });
+  it("starts in Vietnamese on a phone set to vi-VN, en-US", async () => {
+    const VI = (await import("../../i18n/locales/vi.json")).default as unknown as Record<string, string>;
+    vi.spyOn(navigator, "languages", "get").mockReturnValue(["vi-VN", "en-US"]);
+    app();
+    await waitFor(() => expect(document.querySelector("main h1")!.textContent!.trim()).toBe(VI["home.title"]));
+    expect(document.documentElement.lang).toBe("vi");
+    expect(document.getElementById("home-language")!.querySelector('[aria-current="true"]')!.getAttribute("lang")).toBe("vi");
+  });
+  it("starts in English on a phone set to a language that is not offered (fr-FR)", async () => {
+    vi.spyOn(navigator, "languages", "get").mockReturnValue(["fr-FR"]);
+    app();
+    await new Promise((resolve) => setTimeout(resolve, 50));
+    expect(document.querySelector("main h1")!.textContent!.trim()).toBe(EN["home.title"]);
+    expect(document.documentElement.lang).toBe("en");
+  });
+});

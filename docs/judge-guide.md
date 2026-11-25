@@ -20,7 +20,9 @@ nothing.
 
 ## The path (about 3 minutes)
 
-1. **Home (15 s)**: read the welcome. Note the cards in order: "Start here" (the full interview),
+1. **Home (15 s)**: the app opens in your phone's language; English if it is not offered. At the
+   top is "Choose a language" with every language under its own name. Read the welcome. Note the
+   cards in order: "Start here" (the full interview),
    65/20, the AI coach, "Practice one part" and "Study first". "How it works" and the disclaimer are
    at the bottom.
 2. **AI coach (40 s)**: choose "Practice the N-400 interview with an AI coach". Pick a fictional
@@ -44,8 +46,9 @@ nothing.
    answers (USCIS Policy Manual, Vol. 12, Part E, Ch. 2). A line links the USCIS page that says a 65/20
    applicant may take the real test in their own language with an interpreter. The questions stay
    English.
-7. **Language menu (15 s)**: press the language button in the header (the globe) and choose, for
-   example, Tiếng Việt. The interface changes and says the translation was made by AI, may contain
+7. **Language (15 s)**: in "Choose a language" at the top of Home choose, for example, Tiếng
+   Việt (on other screens the globe button in the header opens the same list). The interface changes
+   at once and says the translation was made by AI, may contain
    mistakes, and that the English version is correct.
    Disclaimers, legal lines and every civics question stay in English. "Text size" in the header has three
    sizes (normal, large and extra large) and a "Slower voice" On/Off switch. Every practice screen

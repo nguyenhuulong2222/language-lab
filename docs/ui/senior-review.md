@@ -194,6 +194,7 @@ before (`main`, Step 0) and 50 after (Step 7), kept in the system temp folder (`
 |---|---|---|
 | Every screen (header) | 16px buttons: Language, Home, "Settings", About; root text 16px | 56px buttons with 12px gaps: Language, Home, "Text size", About; root text 18px (21 and 24px at large and extra large) |
 | Stepper | Monospace "Stage 5 of 6 · Civics", 16px | "Step 5 of 6: Civics" at 20px, semibold, wraps at 320px; current marker teal with an ink ring |
+| Home (language) | Always English at the start; the language list only behind the header globe button | Opens in the phone's language when offered (English otherwise). At the very top, "Choose a language": 3 columns of 56px buttons with each language's own name, the current one with a check, bold and a thick frame ("Selected" for screen readers), and the in-review line; the header globe on Home goes to this grid |
 | Home | "Welcome to the booth"; English notice and How it works above the choices; the full interview is a filled card; 65/20 below Study first | "Welcome to Language Lab", a two-sentence lead, the hint "Text too small? Tap Text size at the top.", then the "Start here" card with one primary "Start practice", the 65/20 card, the AI coach card, "Practice one part" as a list, "Study first"; How it works and the notices at the bottom |
 | Text size panel | "Comfort settings": three small radio rows and a checkbox "Play recorded voices more slowly" | "Text size and voice": three large "Aa" tiles (Normal, Large, Extra large) and a 64px "Slower voice" On/Off switch |
 | Setup | "Choose a practice profile", overline TAKE 01, start hint "Make your choice above to start." | "Choose a practice person", "Choose one answer in each group above. Then press “Start practice”." |
@@ -238,3 +239,26 @@ before (`main`, Step 0) and 50 after (Step 7), kept in the system temp folder (`
   - "AI-generated voice" note under the player: a disclosure that the voice is AI-made, kept.
   - Two primary buttons while the leave confirmation is open: the brief asks for "Keep practicing"
     as primary; the panel is a separate state above the screen.
+
+## Language follow-up (L1 to L3)
+
+The owner tested on an iPhone: the app always opened in English, and the language list was hidden
+behind the header button.
+
+- **L1, start in the phone's language.** `detectLanguage` (`src/i18n/detect-language.ts`) takes the
+  first of `navigator.languages` (then `navigator.language`) whose primary subtag this build offers:
+  vi-VN → vi, es-US → es, zh-TW / zh-Hant / zh-HK / zh / zh-CN → zh (Traditional), fil / tl → tl,
+  pt-BR → pt, and so on. English when nothing matches. Languages still in review are not offered in
+  production, so they never win. `main.tsx` loads that language before the first paint and sets
+  `<html lang>` and `dir`. Nothing is stored: detection runs on every load.
+- **L2, the grid on Home.** The same `LanguageMenu` as the header panel, always open at the top of
+  Home: "Choose a language", 3 columns from 360px (2 below 360px and at extra-large text, so names
+  keep whole words), 56px buttons, endonyms at body size in their own `lang`, a check, bold and a 3px
+  frame on the current one plus "Selected" for screen readers, and the in-review line. Choosing keeps
+  focus on the button and a polite live region says the name. On Home the header language button
+  scrolls to the grid and focuses the current language; elsewhere it opens the panel.
+- **L3, checks.** Interaction tests: English → Tiếng Việt changes the welcome, "Start here", the
+  "Text size" button and shows the AI notice while legal lines stay English, and English brings it
+  all back; `["vi-VN", "en-US"]` starts in Vietnamese and `["fr-FR"]` in English. The layout tool
+  switches language in the grid, records a `home-language` screen, and `--browser-lang=vi` starts
+  Chrome in Vietnamese and fails unless Home opens in Vietnamese.
