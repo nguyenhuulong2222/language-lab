@@ -13,7 +13,6 @@ import { compareSentence, type MatchNote, type MatchOptions } from "../../engine
 import type { SentenceAttempt } from "../../engine/practice-flow";
 import type { MessageKey } from "../../i18n";
 import { useT } from "../../i18n/react";
-import { Disclaimer } from "./Disclaimer";
 import { useTWithEnglish } from "./with-english";
 import { CheckIcon, ReviewIcon } from "./icons";
 import "./Screen.css";
@@ -97,7 +96,6 @@ export function SentenceFeedback({ target, attempt, matchOptions, kind }: Senten
           <LegalText messageKey="compare.setting.writing" />
         </p>
       )}
-      <Disclaimer messageKey="disclaimer.short" />
     </section>
   );
 }

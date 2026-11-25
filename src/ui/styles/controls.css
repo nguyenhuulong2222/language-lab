@@ -256,7 +256,7 @@ fieldset.choices {
 /* A result: a big headline first ("This counts" / "Not yet"), then one short reason. */
 .result-headline {
   margin: 0;
-  font-size: var(--fs-h2);
+  font-size: var(--fs-h1);
   line-height: var(--lh-tight);
 }
 .result-reason {

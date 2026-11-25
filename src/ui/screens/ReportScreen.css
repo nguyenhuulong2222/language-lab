@@ -153,3 +153,10 @@
     padding: var(--space-5);
   }
 }
+/* Senior step 7: report prose keeps the 34em line length. */
+.report__lead,
+.report__section-intro,
+.stage-card__summary,
+.report__review-item {
+  max-width: var(--measure);
+}

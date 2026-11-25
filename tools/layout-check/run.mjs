@@ -4,8 +4,9 @@
  *
  * Drives the real app in headless Google Chrome at a phone width (390px) and checks every screen
  * of the practice flow for: horizontal scroll, elements that run off the screen, clipped text,
- * and touch targets smaller than 56px. It clicks through the whole flow like a user, so it also
- * works as a smoke test.
+ * touch targets smaller than 56px, rendered text below 16px, and exactly one filled primary button
+ * (.btn--primary) per screen state, at least 64px high. It clicks through the whole flow like a
+ * user, so it also works as a smoke test.
  *
  *   node tools/layout-check/run.mjs                       all configurations
  *   node tools/layout-check/run.mjs --size=extra-large    one text size (normal, large, extra-large)
@@ -208,6 +209,23 @@ window.__lab = (() => {
       const r = box.getBoundingClientRect();
       if (r.height < min - 0.5 || (r.width < min - 0.5)) out.smallTargets.push(describe(el) + " " + Math.round(r.width) + "x" + Math.round(r.height));
     }
+    // Senior step 7: no rendered text below 16px (any element that holds visible text itself).
+    out.smallText = [];
+    for (const el of document.body.querySelectorAll("*")) {
+      if (!visible(el) || skip(el)) continue;
+      const own = [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim() !== "");
+      if (!own) continue;
+      const px = parseFloat(getComputedStyle(el).fontSize);
+      if (px < 15.95) out.smallText.push(describe(el) + " " + px + "px");
+    }
+    // Exactly one filled primary button per screen state, at least 64px high on a phone.
+    const primaries = [...document.body.querySelectorAll(".btn--primary")].filter((el) => visible(el) && !skip(el));
+    out.primaryCount = primaries.length;
+    out.primaryNames = primaries.map((el) => textOf(el).slice(0, 40));
+    // A choice between equal options (the AI coach yes/no, the 2008/2025 study test) is made with
+    // option cards and has no filled button, so the screen does not push one answer.
+    out.optionCards = [...document.body.querySelectorAll("main .option-card")].filter(visible).length;
+    out.shortPrimary = primaries.filter((el) => el.getBoundingClientRect().height < 63.5).map((el) => describe(el) + " " + Math.round(el.getBoundingClientRect().height) + "px high");
     out.horizontalScroll = out.scrollWidth > vw + 1;
     return out;
   };
@@ -596,6 +614,9 @@ async function main() {
     for (const x of r.offscreen) problems.push(`off screen: ${x}`);
     for (const x of r.clipped) problems.push(`clipped: ${x}`);
     for (const x of r.smallTargets) problems.push(`small target: ${x}`);
+    for (const x of r.smallText ?? []) problems.push(`text below 16px: ${x}`);
+    for (const x of r.shortPrimary ?? []) problems.push(`primary button below 64px: ${x}`);
+    if (r.primaryCount !== undefined && r.primaryCount !== 1 && !(r.primaryCount === 0 && r.optionCards > 1)) problems.push(`${r.primaryCount} primary buttons (expected exactly one)${r.primaryCount > 1 ? ": " + r.primaryNames.join(" / ") : ""}`);
     for (const x of r.cspViolations ?? []) problems.push(`CSP violation: ${x}`);
     if (r.resultCheck) {
       const c = r.resultCheck;

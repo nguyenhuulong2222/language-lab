@@ -186,4 +186,55 @@ Content (civics questions, answers, reading and writing sentences, N-400 questio
 
 ## Screens before and after
 
-Filled in by Step 7.
+Screenshots of the production build at 390px, normal text size, in English and Vietnamese: 50
+before (`main`, Step 0) and 50 after (Step 7), kept in the system temp folder (`ll-senior-before`,
+`ll-senior-after`), not in the repository.
+
+| Screen | Before | After |
+|---|---|---|
+| Every screen (header) | 16px buttons: Language, Home, "Settings", About; root text 16px | 56px buttons with 12px gaps: Language, Home, "Text size", About; root text 18px (21 and 24px at large and extra large) |
+| Stepper | Monospace "Stage 5 of 6 · Civics", 16px | "Step 5 of 6: Civics" at 20px, semibold, wraps at 320px; current marker teal with an ink ring |
+| Home | "Welcome to the booth"; English notice and How it works above the choices; the full interview is a filled card; 65/20 below Study first | "Welcome to Language Lab", a two-sentence lead, the hint "Text too small? Tap Text size at the top.", then the "Start here" card with one primary "Start practice", the 65/20 card, the AI coach card, "Practice one part" as a list, "Study first"; How it works and the notices at the bottom |
+| Text size panel | "Comfort settings": three small radio rows and a checkbox "Play recorded voices more slowly" | "Text size and voice": three large "Aa" tiles (Normal, Large, Extra large) and a 64px "Slower voice" On/Off switch |
+| Setup | "Choose a practice profile", overline TAKE 01, start hint "Make your choice above to start." | "Choose a practice person", "Choose one answer in each group above. Then press “Start practice”." |
+| N-400 question | TAKE 02 overline; "Play aloud" (48px); six help steps open; "Say it" next to the submit button under the box | No overline; 64px "Play the question" and "Play again" side by side, "Playing…" while it plays; three help steps; 64px "Tap to speak" above the box; the box labelled "Or type your answer"; one full-width primary "Save answer and continue" |
+| Reading question | Six help steps; "Say it" beside "Check my reading" | Three help steps; "Tap to speak" first, then the box; primary "Check my reading", secondary "Skip this one" |
+| Writing question | "Play aloud" | "Play the sentence" (64px) and "Play again"; three help steps; "Show the sentence" explained without "assisted" |
+| Civics question | Bitter question text; "Play aloud" 48px; six help steps | Question in the body font, semibold; the same 64px player; three help steps; microphone and box as above |
+| Microphone blocked | One sentence: allow access in the browser settings | The sentence plus "How to allow the microphone" with steps for iPhone Safari and Android Chrome, and "You can always type your answer in the box instead." |
+| Reading and writing result | "This counts." / "Not yet." at 18px inside the panel, a short disclaimer inside the panel as well as the prominent one | A 34px headline with icon, the reason lines at 22px, then the details, the prominent disclaimer, one primary Next |
+| Civics result | "Correct" / "Not yet" at 18px | 34px "This counts" / "Not yet" with icon, one reason line ("Your answer matches an official answer."), the official answers, the prominent disclaimer, primary "Next question" |
+| Part report | A small pill badge "This part reached the practice score" / "Worth reviewing" | A 34px headline "You reached the practice goal" / "Practice this again" with icon, then the count as the reason |
+| Full report | "TAKE 06 · PRACTICE REPORT" overline; "Practice complete: each part reached the practice score"; badges "Practice score reached" / "Worth reviewing" | No overline; "Well done. Each part reached the practice goal."; "You reached the practice goal" / "Practice this again"; prose limited to 34em |
+| Study first | Next disabled on the last question, with Home as a secondary button | On the last question "Back to home" is the primary button |
+| Leave confirmation | "Yes, go home" (primary) and "Stay here", side by side | Full-width "Keep practicing" (primary) and "Leave" (secondary), stacked |
+| Coach choice, Study test choice | Option cards | Unchanged: two equal option cards and no filled button, so the screen does not push one answer |
+
+## Step 7 checks
+
+- Layout check, production build with the CSP of `public/_headers`, MIN_TARGET 56: all 10 production
+  languages at normal size and 390px; English and Vietnamese at large and extra large, at 390px and
+  320px. 18 runs, 25 screens each, all pass, no CSP violation.
+- New layout checks: no rendered text below 16px; every primary button at least 64px high at phone
+  width; exactly one `.btn--primary` per screen state (a screen with two or more option cards and no
+  primary is allowed: the coach yes/no and the 2008/2025 choice).
+- New unit test `src/ui/__tests__/contrast.test.ts` reads `tokens.css`: text pairs (ink, ink-2 and
+  teal on every background, on-accent on teal) 7:1 or more; amber and on-accent on amber 4.5:1 or
+  more; borders 3:1 or more; light and dark (both dark blocks equal).
+- Second ui-reviewer pass. Fixed: part report headline and reason; the duplicate short disclaimer in
+  the sentence feedback panel; Study first last question; report line length; result headline size.
+  Not changed, with reasons:
+  - Sticky header: with 56px buttons the header is two rows on a phone (four at 320px and extra
+    large); keeping it on screen would cover a third of the page. The "Text size" button is at the top
+    of every screen.
+  - Long notes on answer and result screens (`compare.setting`, `compare.setting.writing`,
+    `compare.vocab`, `partReport.scope`, the consent text): legal keys. They stay visible and keep
+    their wording.
+  - Jargon in `intro.locked`, `civics.locked.text`, `study.locked`, `civics.stopped.correct`,
+    `intro.special.help`: legal keys, unchanged. The locked texts only show in a build without
+    reviewed answer keys, never in production.
+  - Help opens by itself on the first visit to a screen: kept, now three short steps; it stays in
+    the page (no pop-up) and closes with the same "Help" button.
+  - "AI-generated voice" note under the player: a disclosure that the voice is AI-made, kept.
+  - Two primary buttons while the leave confirmation is open: the brief asks for "Keep practicing"
+    as primary; the panel is a separate state above the screen.

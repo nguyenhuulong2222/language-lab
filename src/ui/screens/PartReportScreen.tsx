@@ -9,7 +9,6 @@ import type { MessageKey } from "../../i18n";
 import { useLanguage, useT } from "../../i18n/react";
 import { Disclaimer } from "../components/Disclaimer";
 import { CheckIcon, ReviewIcon } from "../components/icons";
-import { StatusBadge } from "../components/StatusBadge";
 import { TakeHeader } from "../components/TakeHeader";
 import { SpecialLanguageLine } from "../components/SpecialConsiderationNote";
 import { formatDateTime } from "../format";
@@ -43,6 +42,17 @@ export function PartReportScreen({ report, onHome }: { report: PartReport; onHom
   );
 }
 
+/** A big headline first, with an icon and a word, so the result is not told by colour alone. */
+function ResultHeadline({ passed }: { passed: boolean }) {
+  const t = useT();
+  const Icon = passed ? CheckIcon : ReviewIcon;
+  return (
+    <h2 className="result-headline">
+      <Icon className={passed ? "icon-inline" : "icon-inline icon-inline--attention"} />{" "}
+      {passed ? t("partReport.badge.good") : t("badge.review")}
+    </h2>
+  );
+}
 function PartBody({ report }: { report: PartReport }) {
   const t = useT();
 
@@ -68,11 +78,8 @@ function PartBody({ report }: { report: PartReport }) {
     return (
       <>
         <section className="panel">
-          <StatusBadge
-            variant={report.passed ? "positive" : "attention"}
-            label={report.passed ? t("partReport.badge.good") : t("badge.review")}
-          />
-          <p>
+          <ResultHeadline passed={report.passed} />
+          <p className="result-reason">
             {scored === 0
               ? t("partReport.none")
               : t("partReport.civics.summary", { correct: report.correct, scored })}
@@ -117,11 +124,8 @@ function PartBody({ report }: { report: PartReport }) {
   return (
     <>
       <section className="panel">
-        <StatusBadge
-          variant={report.passed ? "positive" : "attention"}
-          label={report.passed ? t("partReport.badge.good") : t("badge.review")}
-        />
-        <p>
+        <ResultHeadline passed={report.passed} />
+        <p className="result-reason">
           {report.attempts === 0
             ? t("partReport.none")
             : t("partReport.sentences", { correct: report.correct, attempts: report.attempts })}

@@ -176,9 +176,16 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
           <button type="button" className="btn btn--secondary" disabled={index === 0} onClick={() => setIndex(index - 1)}>
             {t("study.prev")}
           </button>
-          <button type="button" className="btn btn--primary" disabled={last} onClick={() => setIndex(index + 1)}>
-            {t("civics.next")}
-          </button>
+          {/* On the last question the main action is going home, so the primary button never sits disabled. */}
+          {last ? (
+            <button type="button" className="btn btn--primary" onClick={onHome}>
+              {t("report.home")}
+            </button>
+          ) : (
+            <button type="button" className="btn btn--primary" onClick={() => setIndex(index + 1)}>
+              {t("civics.next")}
+            </button>
+          )}
           <button
             type="button"
             className="btn btn--secondary"
@@ -189,9 +196,11 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
           >
             {t("study.change")}
           </button>
-          <button type="button" className="btn btn--secondary" onClick={onHome}>
-            {t("report.home")}
-          </button>
+          {!last && (
+            <button type="button" className="btn btn--secondary" onClick={onHome}>
+              {t("report.home")}
+            </button>
+          )}
         </div>
       </div>
     </div>
