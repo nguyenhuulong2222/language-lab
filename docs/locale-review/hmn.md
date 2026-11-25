@@ -262,27 +262,20 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Cov lus nug no muab qhab nia tsis tau, yog li tsis suav tias raug lossis tsis raug. |
 | `report.see` | See my report | Saib kuv daim ntawv qhia |
 | `header.home` | Home | Tsev |
-| `help.button` | How this works | Lub vijtsam no siv li cas |
+| `help.button` | Help | Kev pab |
 | `help.setup.1` | Tap one choice in each group on this screen. | Kov ib qho kev xaiv hauv txhua pawg ntawm lub vijtsam no. |
 | `help.setup.3` | Press “{start}” when you are ready. | Nias “{start}” thaum koj npaj txhij. |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | Nias “{play}” kom hnov. Nias tib lub khawm dua kom nres. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | Nyeem cov lus teb piv txwv, lossis mloog nws. Nws yog ntawm tus neeg tsim los. Nws yog ib qho piv txwv xwb. |
-| `help.read` | Read the sentence on the screen out loud. | Nyeem kab lus ntawm lub vijtsam tawm suab. |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | Nias “{say}” thiab hais lus. Yog koj lub xov tooj nug tias puas tso cai siv lub microphone, nias Tso cai. Nias “{stop}” thaum koj tas. |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | Koj ib txwm ntaus tau xwb. Kov lub thawv thiab ntaus. Kev ntaus ib txwm siv tau. |
-| `help.typeOnly` | Tap the box and type what you hear. | Kov lub thawv thiab ntaus qhov koj hnov. |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | Saib cov lus hauv lub thawv. Koj hloov tau. Ces nias “{send}”. |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | Nias “{skip}” yog koj tsis paub. Nws xa ib qho lus teb khoob thiab mus ntxiv. Nws suav tias tsis tau. |
-| `help.notScored` | Nothing in this part is scored. | Tsis muaj dab tsi hauv ntu no muab qhab nia. |
-| `help.result.reading` | Then you see which words matched. | Ces koj yuav pom cov lus twg phim. |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | Ces koj yuav pom Raug lossis Tsis tau, thiab cov lus teb raug cai. |
-| `header.settings` | Settings | Chaw teeb tsa |
-| `settings.title` | Comfort settings | Chaw teeb tsa kom yooj yim |
+| `help.listen` | Press “{play}” to hear it. | Nias “{play}” kom hnov. |
+| `help.read` | Read the sentence out loud. | Nyeem kab lus kom nrov. |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | Nias “{say}” thiab hais lus. Los yog ntaus rau hauv lub npov. |
+| `help.typeOnly` | Type what you hear in the box. | Ntaus qhov koj hnov rau hauv lub npov. |
+| `header.settings` | Text size | Qhov loj ntawm ntawv |
+| `settings.title` | Text size and voice | Qhov loj ntawm cov ntawv thiab lub suab |
 | `settings.textSize.legend` | Text size | Qhov loj ntawm ntawv |
 | `settings.textSize.normal` | Normal | Li qub |
 | `settings.textSize.large` | Large | Loj |
 | `settings.textSize.extraLarge` | Extra large | Loj heev |
-| `settings.slow.label` | Play recorded voices more slowly | Ua si cov suab uas tau thaij qeeb dua |
+| `settings.slow.label` | Slower voice | Lub suab qeeb dua |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | Qhov no hloov qhov nrawm xwb. Yog tib daim suab thaij. |
 | `settings.memory` | These settings last until you close or reload this page. | Cov chaw teeb tsa no nyob kom txog thaum koj kaw lossis rov qhib nplooj ntawv no. |
 | `settings.close` | Close settings | Kaw chaw teeb tsa |
@@ -370,6 +363,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.micHelp.typing` | You can always type your answer in the box instead. | Koj yeej ntaus tau koj cov lus teb rau hauv lub npov. |
 | `civics.why.correct` | Your answer matches an official answer. | Koj cov lus teb zoo ib yam li ib qho lus teb raug cai. |
 | `civics.why.notYet` | Your answer does not match the official answers yet. | Koj cov lus teb tseem tsis tau zoo ib yam li cov lus teb raug cai. |
+| `settings.slow.on` | On | Qhib |
+| `settings.slow.off` | Off | Kaw |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | Nias “{send}” kom mus ntxiv. Ntawm no tsis muaj qhab nia. |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | Nias “{send}”. Ces koj yuav pom tias puas suav. |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Nias “{send}”. Ces koj yuav pom tias puas suav, thiab cov lus teb raug cai. |
+| `settings.textSize.sample` | Aa | Aa |
 
 ## Lines marked ⚠ (meaning differs a little)
 

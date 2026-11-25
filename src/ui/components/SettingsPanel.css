@@ -6,3 +6,64 @@
 .settings__legend {
   font-size: var(--fs-h4);
 }
+/* Three big "Aa" tiles in a row; they stack when the screen or the text is too narrow for three. */
+.size-choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+  gap: var(--space-3);
+}
+.size-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap-min);
+  padding: var(--space-3);
+  border: 2px solid var(--ink-2);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  text-align: center;
+  cursor: pointer;
+}
+/* The chosen tile: a thicker teal frame and a filled radio mark (not colour alone). */
+.size-choice:has(input:checked) {
+  border: 3px solid var(--teal);
+  background: var(--surface-2);
+}
+.size-choice:has(input:focus-visible) {
+  outline: var(--focus-width) solid var(--teal);
+  outline-offset: var(--focus-offset);
+}
+/* The sample letters are fixed sizes, so the three tiles always show the difference. */
+.size-choice__sample {
+  font-family: var(--font-body);
+  font-weight: 600;
+  line-height: 1;
+}
+.size-choice__sample--normal {
+  font-size: 24px;
+}
+.size-choice__sample--large {
+  font-size: 30px;
+}
+.size-choice__sample--extra-large {
+  font-size: 36px;
+}
+.size-choice__text {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.settings__switch-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+/* A large switch: 64px high, the word On or Off in large bold text. */
+.settings__switch {
+  min-height: max(64px, 3.5556rem);
+  font-size: 1.25rem;
+  font-weight: 700;
+}

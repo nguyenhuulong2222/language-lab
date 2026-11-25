@@ -262,27 +262,20 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Estas preguntas no se pudieron calificar, así que no cuentan como correctas ni incorrectas. |
 | `report.see` | See my report | Ver mi informe |
 | `header.home` | Home | Inicio |
-| `help.button` | How this works | Cómo funciona esta pantalla |
+| `help.button` | Help | Ayuda |
 | `help.setup.1` | Tap one choice in each group on this screen. | Toque una opción en cada grupo de esta pantalla. |
 | `help.setup.3` | Press “{start}” when you are ready. | Presione “{start}” cuando esté listo. |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | Presione “{play}” para oírlo. Presione el mismo botón otra vez para detenerlo. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | Lea la respuesta de ejemplo, o escúchela. Es de la persona inventada. Es solo un ejemplo. |
-| `help.read` | Read the sentence on the screen out loud. | Lea en voz alta la oración que aparece en la pantalla. |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | Presione “{say}” y hable. Si su teléfono le pide permiso para usar el micrófono, presione Permitir. Presione “{stop}” cuando termine. |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | Siempre puede escribir en su lugar. Toque el cuadro y escriba. Escribir siempre funciona. |
-| `help.typeOnly` | Tap the box and type what you hear. | Toque el cuadro y escriba lo que oiga. |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | Revise las palabras del cuadro. Puede cambiarlas. Luego presione “{send}”. |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | Presione “{skip}” si no sabe. Envía una respuesta vacía y sigue adelante. Cuenta como todavía no. |
-| `help.notScored` | Nothing in this part is scored. | Nada en esta parte se califica. |
-| `help.result.reading` | Then you see which words matched. | Luego verá qué palabras coincidieron. |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | Luego verá Correcto o Todavía no, y las respuestas oficiales. |
-| `header.settings` | Settings | Ajustes |
-| `settings.title` | Comfort settings | Ajustes de comodidad |
+| `help.listen` | Press “{play}” to hear it. | Presione “{play}” para oírlo. |
+| `help.read` | Read the sentence out loud. | Lea la oración en voz alta. |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | Presione “{say}” y hable. O escriba en el cuadro. |
+| `help.typeOnly` | Type what you hear in the box. | Escriba en el cuadro lo que oiga. |
+| `header.settings` | Text size | Tamaño del texto |
+| `settings.title` | Text size and voice | Tamaño del texto y voz |
 | `settings.textSize.legend` | Text size | Tamaño del texto |
 | `settings.textSize.normal` | Normal | Normal |
 | `settings.textSize.large` | Large | Grande |
 | `settings.textSize.extraLarge` | Extra large | Muy grande |
-| `settings.slow.label` | Play recorded voices more slowly | Reproducir las voces grabadas más despacio |
+| `settings.slow.label` | Slower voice | Voz más lenta |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | Solo cambia la velocidad. Es la misma grabación. |
 | `settings.memory` | These settings last until you close or reload this page. | Estos ajustes duran hasta que cierre o vuelva a cargar esta página. |
 | `settings.close` | Close settings | Cerrar ajustes |
@@ -370,3 +363,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.micHelp.typing` | You can always type your answer in the box instead. | Siempre puede escribir su respuesta en el cuadro. |
 | `civics.why.correct` | Your answer matches an official answer. | Su respuesta coincide con una respuesta oficial. |
 | `civics.why.notYet` | Your answer does not match the official answers yet. | Su respuesta todavía no coincide con las respuestas oficiales. |
+| `settings.slow.on` | On | Activado |
+| `settings.slow.off` | Off | Desactivado |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | Presione “{send}” para seguir. Aquí nada recibe puntaje. |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | Presione “{send}”. Luego verá si cuenta. |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Presione “{send}”. Luego verá si cuenta y las respuestas oficiales. |
+| `settings.textSize.sample` | Aa | Aa |

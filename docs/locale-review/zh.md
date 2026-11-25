@@ -262,27 +262,20 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | 這些題目無法計分，所以不算對也不算錯。 |
 | `report.see` | See my report | 查看我的報告 |
 | `header.home` | Home | 首頁 |
-| `help.button` | How this works | 這個畫面怎麼用 |
+| `help.button` | Help | 說明 |
 | `help.setup.1` | Tap one choice in each group on this screen. | 在這個畫面的每一組中各點選一個選項。 |
 | `help.setup.3` | Press “{start}” when you are ready. | 準備好後，請按「{start}」。 |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | 按「{play}」來聆聽。再按一次同一個按鈕可以停止。 |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | 請閱讀範例答案，或播放它。它屬於虛構的人物，只是一個例子。 |
-| `help.read` | Read the sentence on the screen out loud. | 請大聲朗讀螢幕上的句子。 |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | 按「{say}」然後說話。如果手機詢問是否使用麥克風，請按「允許」。說完後按「{stop}」。 |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | 您隨時都可以改用輸入。點選輸入框並輸入。輸入永遠可用。 |
-| `help.typeOnly` | Tap the box and type what you hear. | 點選輸入框，輸入您聽到的內容。 |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | 請檢查輸入框中的字詞。您可以修改它們。然後按「{send}」。 |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | 如果您不知道，請按「{skip}」。它會送出空白答案並繼續。這會算成還不對。 |
-| `help.notScored` | Nothing in this part is scored. | 這個部分的任何內容都不計分。 |
-| `help.result.reading` | Then you see which words matched. | 接著您會看到哪些字詞相符。 |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | 接著您會看到「正確」或「還不對」，以及官方答案。 |
-| `header.settings` | Settings | 設定 |
-| `settings.title` | Comfort settings | 舒適設定 |
+| `help.listen` | Press “{play}” to hear it. | 按「{play}」來聆聽。 |
+| `help.read` | Read the sentence out loud. | 大聲讀出這個句子。 |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | 按「{say}」然後說話。或在方框中輸入。 |
+| `help.typeOnly` | Type what you hear in the box. | 在方框中輸入您聽到的內容。 |
+| `header.settings` | Text size | 文字大小 |
+| `settings.title` | Text size and voice | 文字大小和語音 |
 | `settings.textSize.legend` | Text size | 文字大小 |
 | `settings.textSize.normal` | Normal | 標準 |
 | `settings.textSize.large` | Large | 大 |
 | `settings.textSize.extraLarge` | Extra large | 特大 |
-| `settings.slow.label` | Play recorded voices more slowly | 以較慢速度播放錄製的語音 |
+| `settings.slow.label` | Slower voice | 較慢的語音 |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | 只會改變速度。錄音內容相同。 |
 | `settings.memory` | These settings last until you close or reload this page. | 這些設定會保留到您關閉或重新載入本頁為止。 |
 | `settings.close` | Close settings | 關閉設定 |
@@ -370,3 +363,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.micHelp.typing` | You can always type your answer in the box instead. | 您隨時可以在方框中輸入回答。 |
 | `civics.why.correct` | Your answer matches an official answer. | 您的回答符合一個官方答案。 |
 | `civics.why.notYet` | Your answer does not match the official answers yet. | 您的回答還不符合官方答案。 |
+| `settings.slow.on` | On | 開啟 |
+| `settings.slow.off` | Off | 關閉 |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | 按「{send}」繼續。這裡不會評分。 |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | 按「{send}」。然後您會看到這次是否算數。 |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | 按「{send}」。然後您會看到這次是否算數，以及官方答案。 |
+| `settings.textSize.sample` | Aa | Aa |

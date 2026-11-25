@@ -262,27 +262,20 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | คำถามเหล่านี้ให้คะแนนไม่ได้ จึงไม่นับว่าถูกหรือผิด |
 | `report.see` | See my report | ดูรายงานของฉัน |
 | `header.home` | Home | หน้าแรก |
-| `help.button` | How this works | หน้าจอนี้ใช้อย่างไร |
+| `help.button` | Help | วิธีใช้ |
 | `help.setup.1` | Tap one choice in each group on this screen. | แตะหนึ่งตัวเลือกในแต่ละกลุ่มบนหน้าจอนี้ |
 | `help.setup.3` | Press “{start}” when you are ready. | กด “{start}” เมื่อคุณพร้อม |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | กด “{play}” เพื่อฟัง กดปุ่มเดิมอีกครั้งเพื่อหยุด |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | อ่านตัวอย่างคำตอบ หรือฟังก็ได้ เป็นของบุคคลสมมติ และเป็นเพียงตัวอย่าง |
-| `help.read` | Read the sentence on the screen out loud. | อ่านประโยคบนหน้าจอออกเสียง |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | กด “{say}” แล้วพูด ถ้าโทรศัพท์ถามว่าจะอนุญาตให้ใช้ไมโครโฟนไหม ให้กด “อนุญาต” เมื่อพูดจบให้กด “{stop}” |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | คุณพิมพ์แทนได้เสมอ แตะที่ช่องแล้วพิมพ์ การพิมพ์ใช้ได้เสมอ |
-| `help.typeOnly` | Tap the box and type what you hear. | แตะที่ช่องแล้วพิมพ์สิ่งที่คุณได้ยิน |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | ตรวจดูคำในช่อง คุณแก้ไขได้ แล้วกด “{send}” |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | กด “{skip}” ถ้าคุณไม่รู้ ระบบจะส่งคำตอบว่างแล้วไปต่อ และนับเป็น “ยังไม่ถูก” |
-| `help.notScored` | Nothing in this part is scored. | ไม่มีการให้คะแนนในส่วนนี้ |
-| `help.result.reading` | Then you see which words matched. | จากนั้นคุณจะเห็นว่าคำใดตรงกัน |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | จากนั้นคุณจะเห็น “ถูกต้อง” หรือ “ยังไม่ถูก” และคำตอบอย่างเป็นทางการ |
-| `header.settings` | Settings | การตั้งค่า |
-| `settings.title` | Comfort settings | การตั้งค่าเพื่อความสะดวก |
+| `help.listen` | Press “{play}” to hear it. | กด “{play}” เพื่อฟัง |
+| `help.read` | Read the sentence out loud. | อ่านประโยคออกเสียง |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | กด “{say}” แล้วพูด หรือพิมพ์ในช่อง |
+| `help.typeOnly` | Type what you hear in the box. | พิมพ์สิ่งที่ได้ยินลงในช่อง |
+| `header.settings` | Text size | ขนาดตัวอักษร |
+| `settings.title` | Text size and voice | ขนาดตัวอักษรและเสียง |
 | `settings.textSize.legend` | Text size | ขนาดตัวอักษร |
 | `settings.textSize.normal` | Normal | ปกติ |
 | `settings.textSize.large` | Large | ใหญ่ |
 | `settings.textSize.extraLarge` | Extra large | ใหญ่มาก |
-| `settings.slow.label` | Play recorded voices more slowly | เล่นเสียงที่บันทึกไว้ให้ช้าลง |
+| `settings.slow.label` | Slower voice | เสียงช้าลง |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | เปลี่ยนเฉพาะความเร็ว เป็นการบันทึกเสียงเดิม |
 | `settings.memory` | These settings last until you close or reload this page. | การตั้งค่าเหล่านี้อยู่จนกว่าคุณจะปิดหรือโหลดหน้านี้ใหม่ |
 | `settings.close` | Close settings | ปิดการตั้งค่า |
@@ -370,6 +363,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.micHelp.typing` | You can always type your answer in the box instead. | คุณพิมพ์คำตอบในช่องแทนได้เสมอ |
 | `civics.why.correct` | Your answer matches an official answer. | คำตอบของคุณตรงกับคำตอบทางการข้อหนึ่ง |
 | `civics.why.notYet` | Your answer does not match the official answers yet. | คำตอบของคุณยังไม่ตรงกับคำตอบทางการ |
+| `settings.slow.on` | On | เปิด |
+| `settings.slow.off` | Off | ปิด |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | กด “{send}” เพื่อไปต่อ ส่วนนี้ไม่มีการให้คะแนน |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | กด “{send}” แล้วคุณจะเห็นว่านับได้หรือไม่ |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | กด “{send}” แล้วคุณจะเห็นว่านับได้หรือไม่ และคำตอบทางการ |
+| `settings.textSize.sample` | Aa | Aa |
 
 ## Lines marked ⚠ (meaning differs a little)
 

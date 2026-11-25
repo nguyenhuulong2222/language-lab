@@ -256,4 +256,19 @@ describe("header settings", () => {
     fireEvent.click(within(dialog).getByLabelText(EN["settings.textSize.normal"]));
     await waitFor(() => expect(document.documentElement.dataset["textSize"]).toBe("normal"));
   });
+  it("slower voice: the switch says Off, then On after a tap", () => {
+    app();
+    fireEvent.click(button(EN["header.settings"]));
+    const toggle = screen.getByRole("switch", { name: EN["settings.slow.label"] });
+    expect(toggle.getAttribute("aria-checked")).toBe("false");
+    expect(toggle.textContent).toContain(EN["settings.slow.off"]);
+    fireEvent.click(toggle);
+    expect(toggle.getAttribute("aria-checked")).toBe("true");
+    expect(toggle.textContent).toContain(EN["settings.slow.on"]);
+  });
+  it("the first Home says where Text size is, in the page (no pop-up)", () => {
+    app();
+    expect(document.body.textContent).toContain(EN["home.textSizeHint"]);
+    expect(document.querySelector("[role='dialog']")).toBeNull();
+  });
 });

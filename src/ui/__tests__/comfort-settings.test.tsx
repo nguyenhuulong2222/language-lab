@@ -19,11 +19,11 @@ const cssFiles = import.meta.glob("../**/*.css", { query: "?raw", import: "defau
 describe("the header", () => {
   const html = renderToString(<Header onHome={() => {}} />);
 
-  it("has Home (in a session), Settings and About buttons that open panels", () => {
+  it("has Home (in a session), Text size and About buttons that open panels", () => {
     expect(html).toContain("Home");
-    expect(html).toContain("Settings");
+    expect(html).toContain(">Text size<");
     expect(html).toContain("About &amp; disclaimer");
-    // Language, Home (with a session), Settings and About each open a panel.
+    // Language, Home (with a session), Text size and About each open a panel.
     expect((html.match(/aria-expanded="false"/g) ?? []).length).toBe(4);
     expect((html.match(/aria-controls=/g) ?? []).length).toBe(4);
   });
@@ -47,9 +47,9 @@ describe("the header", () => {
     expect(settings).toContain('role="group"');
   });
 
-  it("holds the comfort settings in a closed panel", () => {
+  it("holds the text size and voice settings in a closed panel", () => {
     expect(html).toMatch(/class="[^"]*header__panel"[^>]*hidden/);
-    expect(html).toContain("Comfort settings");
+    expect(html).toContain("Text size and voice");
   });
 });
 
@@ -60,17 +60,18 @@ describe("the settings panel", () => {
     </SettingsProvider>
   );
 
-  it("offers three text sizes, normal selected, as radio buttons", () => {
+  it("offers three text sizes as big Aa choices, normal selected, as radio buttons", () => {
     expect((html.match(/name="text-size"/g) ?? []).length).toBe(TEXT_SIZES.length);
     for (const label of ["Normal", "Large", "Extra large"]) expect(html).toContain(label);
     expect(html).toMatch(/value="normal"[^>]*checked|checked[^>]*value="normal"/);
+    expect((html.match(/>Aa</g) ?? []).length).toBe(TEXT_SIZES.length);
   });
 
-  it("offers slower playback, off at first, and says it is the same recording", () => {
-    expect(html).toContain("Play recorded voices more slowly");
+  it("offers a slower voice On/Off switch, off at first, and says it is the same recording", () => {
+    expect(html).toContain("Slower voice");
     expect(html).toContain("It is the same recording.");
-    expect(html).toMatch(/type="checkbox"/);
-    expect(html).not.toMatch(/type="checkbox"[^>]*checked/);
+    expect(html).toMatch(/role="switch"[^>]*aria-checked="false"/);
+    expect(html).toMatch(/<span>Off<\/span>/);
   });
 
   it("says the settings are kept for this page only", () => {

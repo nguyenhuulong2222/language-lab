@@ -262,27 +262,20 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | 이 질문들은 채점할 수 없어서 맞음이나 틀림으로 세지 않습니다. |
 | `report.see` | See my report | 내 보고서 보기 |
 | `header.home` | Home | 홈 |
-| `help.button` | How this works | 이 화면 사용법 |
+| `help.button` | Help | 도움말 |
 | `help.setup.1` | Tap one choice in each group on this screen. | 이 화면의 각 그룹에서 하나씩 선택하세요. |
 | `help.setup.3` | Press “{start}” when you are ready. | 준비되면 ‘{start}’를 누르세요. |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | ‘{play}’를 누르면 들을 수 있습니다. 같은 버튼을 다시 누르면 멈춥니다. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | 예시 답변을 읽거나 들어 보세요. 지어낸 인물의 답이며 예시일 뿐입니다. |
-| `help.read` | Read the sentence on the screen out loud. | 화면에 있는 문장을 소리 내어 읽으세요. |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | ‘{say}’를 누르고 말씀하세요. 휴대폰이 마이크 사용을 물으면 ‘허용’을 누르세요. 끝나면 ‘{stop}’를 누르세요. |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | 언제든 대신 입력할 수 있습니다. 입력란을 누르고 입력하세요. 입력은 항상 가능합니다. |
-| `help.typeOnly` | Tap the box and type what you hear. | 입력란을 누르고 들은 내용을 입력하세요. |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | 입력란의 단어를 확인하세요. 고칠 수 있습니다. 그런 다음 ‘{send}’를 누르세요. |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | 모르면 ‘{skip}’를 누르세요. 빈 답을 보내고 다음으로 넘어갑니다. ‘아직’으로 계산됩니다. |
-| `help.notScored` | Nothing in this part is scored. | 이 부분은 채점되지 않습니다. |
-| `help.result.reading` | Then you see which words matched. | 그다음 어떤 단어가 일치했는지 볼 수 있습니다. |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | 그다음 ‘정답’ 또는 ‘아직이에요’와 공식 답을 볼 수 있습니다. |
-| `header.settings` | Settings | 설정 |
-| `settings.title` | Comfort settings | 편의 설정 |
+| `help.listen` | Press “{play}” to hear it. | “{play}”을(를) 누르면 들을 수 있습니다. |
+| `help.read` | Read the sentence out loud. | 문장을 소리 내어 읽으세요. |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | “{say}”을(를) 누르고 말하세요. 또는 상자에 입력하세요. |
+| `help.typeOnly` | Type what you hear in the box. | 들은 내용을 상자에 입력하세요. |
+| `header.settings` | Text size | 글자 크기 |
+| `settings.title` | Text size and voice | 글자 크기와 음성 |
 | `settings.textSize.legend` | Text size | 글자 크기 |
 | `settings.textSize.normal` | Normal | 보통 |
 | `settings.textSize.large` | Large | 크게 |
 | `settings.textSize.extraLarge` | Extra large | 아주 크게 |
-| `settings.slow.label` | Play recorded voices more slowly | 녹음된 음성을 더 천천히 재생 |
+| `settings.slow.label` | Slower voice | 느린 음성 |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | 속도만 바뀝니다. 같은 녹음입니다. |
 | `settings.memory` | These settings last until you close or reload this page. | 이 설정은 이 페이지를 닫거나 새로 고칠 때까지 유지됩니다. |
 | `settings.close` | Close settings | 설정 닫기 |
@@ -370,6 +363,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.micHelp.typing` | You can always type your answer in the box instead. | 언제든 상자에 답을 입력할 수 있습니다. |
 | `civics.why.correct` | Your answer matches an official answer. | 답이 공식 답 중 하나와 맞습니다. |
 | `civics.why.notYet` | Your answer does not match the official answers yet. | 답이 아직 공식 답과 맞지 않습니다. |
+| `settings.slow.on` | On | 켜짐 |
+| `settings.slow.off` | Off | 꺼짐 |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | “{send}”을(를) 누르면 다음으로 갑니다. 여기서는 점수를 매기지 않습니다. |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | “{send}”을(를) 누르세요. 그러면 점수에 포함되는지 볼 수 있습니다. |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | “{send}”을(를) 누르세요. 그러면 점수에 포함되는지와 공식 답을 볼 수 있습니다. |
+| `settings.textSize.sample` | Aa | Aa |
 
 ## Lines marked ⚠ (meaning differs a little)
 

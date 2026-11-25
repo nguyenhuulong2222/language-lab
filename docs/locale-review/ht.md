@@ -262,27 +262,20 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Nou pa t ka bay nòt pou kesyon sa yo, se konsa yo pa konte kòm bon oswa move. |
 | `report.see` | See my report | Gade rapò mwen |
 | `header.home` | Home | Akèy |
-| `help.button` | How this works | Kijan ekran sa a mache |
+| `help.button` | Help | Èd |
 | `help.setup.1` | Tap one choice in each group on this screen. | Tape sou yon chwa nan chak gwoup sou ekran sa a. |
 | `help.setup.3` | Press “{start}” when you are ready. | Peze “{start}” lè ou pare. |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | Peze “{play}” pou tande l. Peze menm bouton an ankò pou sispann. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | Li egzanp repons lan, oswa koute l. Se pou moun envante a. Se sèlman yon egzanp. |
-| `help.read` | Read the sentence on the screen out loud. | Li byen fò fraz ki sou ekran an. |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | Peze “{say}” epi pale. Si telefòn ou mande pèmisyon pou itilize mikwofòn nan, peze Pèmèt. Peze “{stop}” lè ou fini. |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | Ou ka toujou tape olye de sa. Tape sou bwat la epi tape. Tape toujou mache. |
-| `help.typeOnly` | Tap the box and type what you hear. | Tape sou bwat la epi tape sa ou tande. |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | Tcheke mo ki nan bwat la. Ou ka chanje yo. Apre sa peze “{send}”. |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | Peze “{skip}” si ou pa konnen. Li voye yon repons vid epi li kontinye. Li konte kòm poko. |
-| `help.notScored` | Nothing in this part is scored. | Anyen nan pati sa a pa jwenn nòt. |
-| `help.result.reading` | Then you see which words matched. | Apre sa ou wè ki mo ki koresponn. |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | Apre sa ou wè Kòrèk oswa Poko, ak repons ofisyèl yo. |
-| `header.settings` | Settings | Paramèt |
-| `settings.title` | Comfort settings | Paramèt konfò |
+| `help.listen` | Press “{play}” to hear it. | Peze “{play}” pou w tande l. |
+| `help.read` | Read the sentence out loud. | Li fraz la byen fò. |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | Peze “{say}” epi pale. Oswa tape nan bwat la. |
+| `help.typeOnly` | Type what you hear in the box. | Tape sa w tande a nan bwat la. |
+| `header.settings` | Text size | Gwosè tèks |
+| `settings.title` | Text size and voice | Gwosè tèks ak vwa |
 | `settings.textSize.legend` | Text size | Gwosè tèks |
 | `settings.textSize.normal` | Normal | Nòmal |
 | `settings.textSize.large` | Large | Gwo |
 | `settings.textSize.extraLarge` | Extra large | Trè gwo |
-| `settings.slow.label` | Play recorded voices more slowly | Jwe vwa anrejistre yo pi dousman |
+| `settings.slow.label` | Slower voice | Vwa pi dousman |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | Sa chanje sèlman vitès la. Se menm anrejistreman an. |
 | `settings.memory` | These settings last until you close or reload this page. | Paramèt sa yo rete jiskaske ou fèmen oswa rechaje paj sa a. |
 | `settings.close` | Close settings | Fèmen paramèt yo |
@@ -370,3 +363,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.micHelp.typing` | You can always type your answer in the box instead. | Ou ka toujou tape repons ou nan bwat la. |
 | `civics.why.correct` | Your answer matches an official answer. | Repons ou koresponn ak yon repons ofisyèl. |
 | `civics.why.notYet` | Your answer does not match the official answers yet. | Repons ou poko koresponn ak repons ofisyèl yo. |
+| `settings.slow.on` | On | Limen |
+| `settings.slow.off` | Off | Etenn |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | Peze “{send}” pou kontinye. Pa gen nòt isit la. |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | Peze “{send}”. Apre sa w ap wè si sa konte. |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Peze “{send}”. Apre sa w ap wè si sa konte, ak repons ofisyèl yo. |
+| `settings.textSize.sample` | Aa | Aa |

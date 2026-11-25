@@ -262,27 +262,20 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Hindi maiskor ang mga tanong na ito, kaya hindi sila bilang na tama o mali. |
 | `report.see` | See my report | Tingnan ang aking ulat |
 | `header.home` | Home | Simula |
-| `help.button` | How this works | Paano gumagana ang screen na ito |
+| `help.button` | Help | Tulong |
 | `help.setup.1` | Tap one choice in each group on this screen. | I-tap ang isang pagpipilian sa bawat grupo sa screen na ito. |
 | `help.setup.3` | Press “{start}” when you are ready. | Pindutin ang “{start}” kapag handa na kayo. |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | Pindutin ang “{play}” para marinig ito. Pindutin muli ang parehong button para huminto. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | Basahin ang halimbawang sagot, o pakinggan ito. Sa gawa-gawang tao ito. Halimbawa lamang ito. |
-| `help.read` | Read the sentence on the screen out loud. | Basahin nang malakas ang pangungusap sa screen. |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | Pindutin ang “{say}” at magsalita. Kung hihingi ng pahintulot ang telepono ninyo na gamitin ang mikropono, pindutin ang Payagan. Pindutin ang “{stop}” kapag tapos na kayo. |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | Maaari kayong laging mag-type sa halip. I-tap ang kahon at mag-type. Laging gumagana ang pag-type. |
-| `help.typeOnly` | Tap the box and type what you hear. | I-tap ang kahon at i-type ang inyong narinig. |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | Tingnan ang mga salita sa kahon. Puwede ninyo itong baguhin. Pagkatapos ay pindutin ang “{send}”. |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | Pindutin ang “{skip}” kung hindi ninyo alam. Magpapadala ito ng walang laman na sagot at magpapatuloy. Mabibilang itong hindi pa. |
-| `help.notScored` | Nothing in this part is scored. | Walang iniiskor sa bahaging ito. |
-| `help.result.reading` | Then you see which words matched. | Pagkatapos ay makikita ninyo kung aling mga salita ang tumugma. |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | Pagkatapos ay makikita ninyo ang Tama o Hindi pa, at ang mga opisyal na sagot. |
-| `header.settings` | Settings | Mga setting |
-| `settings.title` | Comfort settings | Mga setting para sa ginhawa |
+| `help.listen` | Press “{play}” to hear it. | Pindutin ang “{play}” para marinig ito. |
+| `help.read` | Read the sentence out loud. | Basahin nang malakas ang pangungusap. |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | Pindutin ang “{say}” at magsalita. O mag-type sa kahon. |
+| `help.typeOnly` | Type what you hear in the box. | I-type sa kahon ang naririnig mo. |
+| `header.settings` | Text size | Laki ng teksto |
+| `settings.title` | Text size and voice | Laki ng teksto at boses |
 | `settings.textSize.legend` | Text size | Laki ng teksto |
 | `settings.textSize.normal` | Normal | Karaniwan |
 | `settings.textSize.large` | Large | Malaki |
 | `settings.textSize.extraLarge` | Extra large | Napakalaki |
-| `settings.slow.label` | Play recorded voices more slowly | Patugtugin nang mas mabagal ang mga naka-record na boses |
+| `settings.slow.label` | Slower voice | Mas mabagal na boses |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | Bilis lang ang nagbabago. Parehong recording pa rin ito. |
 | `settings.memory` | These settings last until you close or reload this page. | Tatagal ang mga setting na ito hanggang isara o i-reload ninyo ang pahinang ito. |
 | `settings.close` | Close settings | Isara ang mga setting |
@@ -370,6 +363,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.micHelp.typing` | You can always type your answer in the box instead. | Maaari mo ring i-type ang iyong sagot sa kahon. |
 | `civics.why.correct` | Your answer matches an official answer. | Tugma ang iyong sagot sa isang opisyal na sagot. |
 | `civics.why.notYet` | Your answer does not match the official answers yet. | Hindi pa tugma ang iyong sagot sa mga opisyal na sagot. |
+| `settings.slow.on` | On | Bukas |
+| `settings.slow.off` | Off | Sarado |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | Pindutin ang “{send}” para magpatuloy. Walang iskor dito. |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | Pindutin ang “{send}”. Pagkatapos makikita mo kung bilang ito. |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Pindutin ang “{send}”. Pagkatapos makikita mo kung bilang ito, at ang mga opisyal na sagot. |
+| `settings.textSize.sample` | Aa | Aa |
 
 ## Lines marked ⚠ (meaning differs a little)
 

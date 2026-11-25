@@ -89,7 +89,7 @@ describe("practice screens in Vietnamese", () => {
     const question = engine.civicsProgress(s).current!;
     const html = inVietnamese(s);
     expect(html).toContain("Kiểm tra câu trả lời");
-    expect(html).toContain("Cách dùng màn hình này");
+    expect(html).toContain("Trợ giúp");
     expect(html).toContain("The real interview is held in English unless USCIS allows an exception for you.");
     expect(html).toContain('lang="en"');
     const escaped = question.questionText.replace(/&/g, "&amp;").replace(/'/g, "&#x27;");

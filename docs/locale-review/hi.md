@@ -262,27 +262,20 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | इन प्रश्नों का स्कोर नहीं दिया जा सका, इसलिए इन्हें न सही गिना गया न गलत। |
 | `report.see` | See my report | मेरी रिपोर्ट देखें |
 | `header.home` | Home | होम |
-| `help.button` | How this works | यह स्क्रीन कैसे काम करती है |
+| `help.button` | Help | मदद |
 | `help.setup.1` | Tap one choice in each group on this screen. | इस स्क्रीन पर हर समूह में से एक विकल्प पर टैप करें। |
 | `help.setup.3` | Press “{start}” when you are ready. | तैयार होने पर “{start}” दबाएँ। |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | सुनने के लिए “{play}” दबाएँ। रोकने के लिए वही बटन फिर दबाएँ। |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | नमूना उत्तर पढ़ें, या उसे सुनें। यह गढ़े हुए व्यक्ति का उत्तर है। यह केवल एक उदाहरण है। |
-| `help.read` | Read the sentence on the screen out loud. | स्क्रीन पर लिखा वाक्य ज़ोर से पढ़ें। |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | “{say}” दबाएँ और बोलें। अगर फ़ोन माइक्रोफ़ोन इस्तेमाल करने की अनुमति माँगे, तो “अनुमति दें” दबाएँ। बोलना पूरा होने पर “{stop}” दबाएँ। |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | आप हमेशा इसके बजाय टाइप कर सकते हैं। बॉक्स पर टैप करें और टाइप करें। टाइप करना हमेशा काम करता है। |
-| `help.typeOnly` | Tap the box and type what you hear. | बॉक्स पर टैप करें और जो सुनें वह टाइप करें। |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | बॉक्स में शब्द जाँचें। आप उन्हें बदल सकते हैं। फिर “{send}” दबाएँ। |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | अगर आपको नहीं पता, तो “{skip}” दबाएँ। यह खाली उत्तर भेजकर आगे बढ़ जाता है। इसे “अभी नहीं” गिना जाता है। |
-| `help.notScored` | Nothing in this part is scored. | इस भाग में किसी चीज़ का स्कोर नहीं दिया जाता। |
-| `help.result.reading` | Then you see which words matched. | फिर आप देखते हैं कि कौन-से शब्द मेल खाए। |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | फिर आप “सही” या “अभी नहीं” और आधिकारिक उत्तर देखते हैं। |
-| `header.settings` | Settings | सेटिंग |
-| `settings.title` | Comfort settings | सुविधा सेटिंग |
+| `help.listen` | Press “{play}” to hear it. | सुनने के लिए “{play}” दबाएँ। |
+| `help.read` | Read the sentence out loud. | वाक्य को ज़ोर से पढ़ें। |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | “{say}” दबाएँ और बोलें। या बॉक्स में टाइप करें। |
+| `help.typeOnly` | Type what you hear in the box. | जो सुनें, उसे बॉक्स में टाइप करें। |
+| `header.settings` | Text size | अक्षर का आकार |
+| `settings.title` | Text size and voice | अक्षरों का आकार और आवाज़ |
 | `settings.textSize.legend` | Text size | अक्षर का आकार |
 | `settings.textSize.normal` | Normal | सामान्य |
 | `settings.textSize.large` | Large | बड़ा |
 | `settings.textSize.extraLarge` | Extra large | बहुत बड़ा |
-| `settings.slow.label` | Play recorded voices more slowly | रिकॉर्ड की गई आवाज़ें धीमे चलाएँ |
+| `settings.slow.label` | Slower voice | धीमी आवाज़ |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | इससे केवल गति बदलती है। रिकॉर्डिंग वही रहती है। |
 | `settings.memory` | These settings last until you close or reload this page. | ये सेटिंग तब तक रहती हैं जब तक आप यह पेज बंद या रीलोड नहीं करते। |
 | `settings.close` | Close settings | सेटिंग बंद करें |
@@ -370,3 +363,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.micHelp.typing` | You can always type your answer in the box instead. | आप हमेशा बॉक्स में अपना उत्तर टाइप कर सकते हैं। |
 | `civics.why.correct` | Your answer matches an official answer. | आपका उत्तर एक आधिकारिक उत्तर से मेल खाता है। |
 | `civics.why.notYet` | Your answer does not match the official answers yet. | आपका उत्तर अभी आधिकारिक उत्तरों से मेल नहीं खाता। |
+| `settings.slow.on` | On | चालू |
+| `settings.slow.off` | Off | बंद |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | आगे बढ़ने के लिए “{send}” दबाएँ। यहाँ कोई अंक नहीं मिलते। |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | “{send}” दबाएँ। फिर आप देखेंगे कि यह गिना गया या नहीं। |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | “{send}” दबाएँ। फिर आप देखेंगे कि यह गिना गया या नहीं, और आधिकारिक उत्तर। |
+| `settings.textSize.sample` | Aa | Aa |

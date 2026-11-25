@@ -213,7 +213,15 @@ window.__lab = (() => {
   };
 
   const buttons = () => [...document.querySelectorAll("button, summary, label")].filter(visible);
-  const find = (text) => buttons().find((el) => textOf(el) === text) || buttons().find((el) => textOf(el).startsWith(text)) || null;
+  // The words a person reads as the control's name: decoration marked aria-hidden (the "Aa" on the
+  // text size choices) is left out.
+  const nameOf = (el) => {
+    if (!el.querySelector('[aria-hidden="true"]')) return textOf(el);
+    const copy = el.cloneNode(true);
+    for (const hidden of copy.querySelectorAll('[aria-hidden="true"]')) hidden.remove();
+    return (copy.textContent || "").replace(/\\s+/g, " ").trim();
+  };
+  const find = (text) => buttons().find((el) => nameOf(el) === text) || buttons().find((el) => nameOf(el).startsWith(text)) || null;
   return {
     measure,
     has: (text) => find(text) !== null,
@@ -364,7 +372,7 @@ async function checkConfiguration(cdp, size, lang) {
   await waitFor(() => lab(`has(${js(L("n400.save"))})`), "the N-400 question");
   await record("n400-question");
   // The AI coach switch and its notice (opened and cancelled, so nothing is sent).
-  await cdp.evaluate(`document.querySelector('.coach__switch').click()`);
+  await cdp.evaluate(`document.querySelector('section.coach .coach__switch').click()`);
   await waitFor(() => lab(`has(${js(L("coach.notice.cancel"))})`), "the AI coach notice");
   await record("coach-notice");
   await click(L("coach.notice.cancel"));

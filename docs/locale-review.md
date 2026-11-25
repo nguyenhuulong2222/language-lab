@@ -31,7 +31,7 @@ A named human reviewer and an ISO review date in the `_meta` of the locale file.
 
 Same keys as English. Same `{placeholders}`. Every number in the English line appears with the same value (digits of other scripts are read as numbers). No empty text.
 These terms stay as written: `Language Lab`, `USCIS`, `N-400`, `DHS`, `uscis.gov`, `A-number`, `Claude`, `Anthropic`.
-Nothing may equal the English text except: `app.name`, `stage.n400_interview.short`, `stage.civics.short`, `settings.textSize.normal`, `home.part.n400.badge`.
+Nothing may equal the English text except: `app.name`, `stage.n400_interview.short`, `stage.civics.short`, `settings.textSize.normal`, `home.part.n400.badge`, `settings.textSize.sample`.
 The checks do not read meaning. That is what the sheets are for.
 
 ## Choices to confirm

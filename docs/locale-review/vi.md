@@ -262,27 +262,20 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Những câu hỏi này không chấm điểm được, nên không tính là đúng hay sai. |
 | `report.see` | See my report | Xem báo cáo của tôi |
 | `header.home` | Home | Trang chủ |
-| `help.button` | How this works | Cách dùng màn hình này |
+| `help.button` | Help | Trợ giúp |
 | `help.setup.1` | Tap one choice in each group on this screen. | Chạm vào một lựa chọn trong mỗi nhóm trên màn hình này. |
 | `help.setup.3` | Press “{start}” when you are ready. | Bấm “{start}” khi bạn sẵn sàng. |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | Bấm “{play}” để nghe. Bấm lại nút đó để dừng. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | Hãy đọc câu trả lời mẫu, hoặc nghe nó. Câu này là của nhân vật giả định. Đó chỉ là một ví dụ. |
-| `help.read` | Read the sentence on the screen out loud. | Hãy đọc to câu trên màn hình. |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | Bấm “{say}” rồi nói. Nếu điện thoại hỏi có cho dùng micrô không, hãy bấm Cho phép. Bấm “{stop}” khi bạn nói xong. |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | Bạn luôn có thể gõ thay vì nói. Chạm vào ô và gõ. Gõ luôn dùng được. |
-| `help.typeOnly` | Tap the box and type what you hear. | Chạm vào ô và gõ những gì bạn nghe được. |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | Xem lại các từ trong ô. Bạn có thể sửa. Sau đó bấm “{send}”. |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | Bấm “{skip}” nếu bạn không biết. Nút này gửi một câu trả lời trống và chuyển tiếp. Câu đó tính là chưa đúng. |
-| `help.notScored` | Nothing in this part is scored. | Không có gì trong phần này được chấm điểm. |
-| `help.result.reading` | Then you see which words matched. | Sau đó bạn sẽ thấy những từ nào khớp. |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | Sau đó bạn sẽ thấy Đúng hoặc Chưa đúng, cùng các đáp án chính thức. |
-| `header.settings` | Settings | Cài đặt |
-| `settings.title` | Comfort settings | Cài đặt cho dễ dùng |
+| `help.listen` | Press “{play}” to hear it. | Bấm “{play}” để nghe. |
+| `help.read` | Read the sentence out loud. | Đọc to câu này. |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | Bấm “{say}” rồi nói. Hoặc gõ vào ô. |
+| `help.typeOnly` | Type what you hear in the box. | Gõ những gì bạn nghe vào ô. |
+| `header.settings` | Text size | Cỡ chữ |
+| `settings.title` | Text size and voice | Cỡ chữ và giọng đọc |
 | `settings.textSize.legend` | Text size | Cỡ chữ |
 | `settings.textSize.normal` | Normal | Bình thường |
 | `settings.textSize.large` | Large | Lớn |
 | `settings.textSize.extraLarge` | Extra large | Rất lớn |
-| `settings.slow.label` | Play recorded voices more slowly | Phát giọng thu sẵn chậm hơn |
+| `settings.slow.label` | Slower voice | Giọng đọc chậm hơn |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | Chỉ đổi tốc độ. Vẫn là cùng một bản ghi âm. |
 | `settings.memory` | These settings last until you close or reload this page. | Các cài đặt này được giữ cho đến khi bạn đóng hoặc tải lại trang. |
 | `settings.close` | Close settings | Đóng cài đặt |
@@ -370,6 +363,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.micHelp.typing` | You can always type your answer in the box instead. | Bạn luôn có thể gõ câu trả lời vào ô. |
 | `civics.why.correct` | Your answer matches an official answer. | Câu trả lời của bạn khớp với một đáp án chính thức. |
 | `civics.why.notYet` | Your answer does not match the official answers yet. | Câu trả lời của bạn chưa khớp với đáp án chính thức. |
+| `settings.slow.on` | On | Bật |
+| `settings.slow.off` | Off | Tắt |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | Bấm “{send}” để tiếp tục. Phần này không chấm điểm. |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | Bấm “{send}”. Sau đó bạn sẽ thấy câu có được tính không. |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Bấm “{send}”. Sau đó bạn sẽ thấy câu trả lời có được tính không, và các đáp án chính thức. |
+| `settings.textSize.sample` | Aa | Aa |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -168,6 +168,8 @@ export function Screen({
         <HomeScreen
           civicsLocked={civicsLockedInBuild}
           focusOnFirstRender={afterRestart}
+          // The first Home of this page load says where Text size is. Nothing is stored.
+          showTextSizeHint={!afterRestart}
           {...(onStudy === undefined ? {} : { onStudy })}
           onChoose={(mode) => {
             onCoachEntry("choice");

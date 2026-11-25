@@ -262,27 +262,20 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | ຄໍາຖາມເຫຼົ່ານີ້ໃຫ້ຄະແນນບໍ່ໄດ້, ຈຶ່ງບໍ່ນັບວ່າຖືກ ຫຼື ຜິດ. |
 | `report.see` | See my report | ເບິ່ງບົດລາຍງານຂອງຂ້ອຍ |
 | `header.home` | Home | ໜ້າຫຼັກ |
-| `help.button` | How this works | ໜ້າຈໍນີ້ໃຊ້ແນວໃດ |
+| `help.button` | Help | ຊ່ວຍເຫຼືອ |
 | `help.setup.1` | Tap one choice in each group on this screen. | ແຕະໜຶ່ງຕົວເລືອກໃນແຕ່ລະກຸ່ມເທິງໜ້າຈໍນີ້. |
 | `help.setup.3` | Press “{start}” when you are ready. | ກົດ “{start}” ເມື່ອທ່ານພ້ອມ. |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | ກົດ “{play}” ເພື່ອຟັງ. ກົດປຸ່ມດຽວກັນອີກຄັ້ງເພື່ອຢຸດ. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | ອ່ານຕົວຢ່າງຄໍາຕອບ ຫຼື ຟັງກໍໄດ້. ມັນເປັນຂອງບຸກຄົນສົມມຸດ ແລະ ເປັນພຽງຕົວຢ່າງ. |
-| `help.read` | Read the sentence on the screen out loud. | ອ່ານປະໂຫຍກເທິງໜ້າຈໍອອກສຽງ. |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | ກົດ “{say}” ແລ້ວເວົ້າ. ຖ້າໂທລະສັບຖາມວ່າຈະອະນຸຍາດໃຫ້ໃຊ້ໄມໂຄຣໂຟນບໍ່, ກົດ “ອະນຸຍາດ”. ເມື່ອເວົ້າຈົບ ກົດ “{stop}”. |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | ທ່ານພິມແທນໄດ້ສະເໝີ. ແຕະທີ່ຊ່ອງແລ້ວພິມ. ການພິມໃຊ້ໄດ້ສະເໝີ. |
-| `help.typeOnly` | Tap the box and type what you hear. | ແຕະທີ່ຊ່ອງແລ້ວພິມສິ່ງທີ່ທ່ານໄດ້ຍິນ. |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | ກວດເບິ່ງຄໍາໃນຊ່ອງ. ທ່ານແກ້ໄຂໄດ້. ແລ້ວກົດ “{send}”. |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | ກົດ “{skip}” ຖ້າທ່ານບໍ່ຮູ້. ມັນຈະສົ່ງຄໍາຕອບເປົ່າ ແລະ ໄປຕໍ່. ນັບວ່າ “ຍັງບໍ່ຖືກ”. |
-| `help.notScored` | Nothing in this part is scored. | ບໍ່ມີຫຍັງໃນສ່ວນນີ້ທີ່ຖືກໃຫ້ຄະແນນ. |
-| `help.result.reading` | Then you see which words matched. | ຈາກນັ້ນທ່ານຈະເຫັນວ່າຄໍາໃດຕົງກັນ. |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | ຈາກນັ້ນທ່ານຈະເຫັນ “ຖືກຕ້ອງ” ຫຼື “ຍັງບໍ່ຖືກ” ແລະ ຄໍາຕອບທາງການ. |
-| `header.settings` | Settings | ການຕັ້ງຄ່າ |
-| `settings.title` | Comfort settings | ການຕັ້ງຄ່າເພື່ອຄວາມສະດວກ |
+| `help.listen` | Press “{play}” to hear it. | ກົດ “{play}” ເພື່ອຟັງ. |
+| `help.read` | Read the sentence out loud. | ອ່ານປະໂຫຍກອອກສຽງ. |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | ກົດ “{say}” ແລ້ວເວົ້າ. ຫຼື ພິມໃນຫ້ອງ. |
+| `help.typeOnly` | Type what you hear in the box. | ພິມສິ່ງທີ່ທ່ານໄດ້ຍິນໃສ່ຫ້ອງ. |
+| `header.settings` | Text size | ຂະໜາດຕົວອັກສອນ |
+| `settings.title` | Text size and voice | ຂະໜາດຕົວອັກສອນ ແລະ ສຽງ |
 | `settings.textSize.legend` | Text size | ຂະໜາດຕົວອັກສອນ |
 | `settings.textSize.normal` | Normal | ປົກກະຕິ |
 | `settings.textSize.large` | Large | ໃຫຍ່ |
 | `settings.textSize.extraLarge` | Extra large | ໃຫຍ່ຫຼາຍ |
-| `settings.slow.label` | Play recorded voices more slowly | ຫຼິ້ນສຽງທີ່ບັນທຶກໄວ້ຊ້າລົງ |
+| `settings.slow.label` | Slower voice | ສຽງຊ້າລົງ |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | ປ່ຽນສະເພາະຄວາມໄວ. ເປັນການບັນທຶກສຽງອັນດຽວກັນ. |
 | `settings.memory` | These settings last until you close or reload this page. | ການຕັ້ງຄ່າເຫຼົ່ານີ້ຢູ່ຈົນກວ່າທ່ານຈະປິດ ຫຼື ໂຫຼດໜ້ານີ້ໃໝ່. |
 | `settings.close` | Close settings | ປິດການຕັ້ງຄ່າ |
@@ -370,6 +363,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.micHelp.typing` | You can always type your answer in the box instead. | ທ່ານສາມາດພິມຄຳຕອບໃນຫ້ອງແທນໄດ້ສະເໝີ. |
 | `civics.why.correct` | Your answer matches an official answer. | ຄຳຕອບຂອງທ່ານກົງກັບຄຳຕອບທາງການຂໍ້ໜຶ່ງ. |
 | `civics.why.notYet` | Your answer does not match the official answers yet. | ຄຳຕອບຂອງທ່ານຍັງບໍ່ກົງກັບຄຳຕອບທາງການ. |
+| `settings.slow.on` | On | ເປີດ |
+| `settings.slow.off` | Off | ປິດ |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | ກົດ “{send}” ເພື່ອໄປຕໍ່. ສ່ວນນີ້ບໍ່ມີຄະແນນ. |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | ກົດ “{send}”. ແລ້ວທ່ານຈະເຫັນວ່ານັບໄດ້ບໍ່. |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | ກົດ “{send}”. ແລ້ວທ່ານຈະເຫັນວ່ານັບໄດ້ບໍ່ ແລະ ຄຳຕອບທາງການ. |
+| `settings.textSize.sample` | Aa | Aa |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -262,27 +262,20 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Эти вопросы нельзя было оценить, поэтому они не считаются ни верными, ни неверными. |
 | `report.see` | See my report | Посмотреть мой отчёт |
 | `header.home` | Home | Главная |
-| `help.button` | How this works | Как это работает |
+| `help.button` | Help | Помощь |
 | `help.setup.1` | Tap one choice in each group on this screen. | Коснитесь одного варианта в каждой группе на этом экране. |
 | `help.setup.3` | Press “{start}” when you are ready. | Нажмите «{start}», когда будете готовы. |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | Нажмите «{play}», чтобы услышать. Нажмите ту же кнопку ещё раз, чтобы остановить. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | Прочитайте пример ответа или прослушайте его. Он принадлежит вымышленному человеку. Это только пример. |
-| `help.read` | Read the sentence on the screen out loud. | Прочитайте вслух предложение на экране. |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | Нажмите «{say}» и говорите. Если телефон спросит разрешение на микрофон, нажмите «Разрешить». Нажмите «{stop}», когда закончите. |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | Вместо этого всегда можно ввести ответ. Коснитесь поля и печатайте. Ввод с клавиатуры всегда работает. |
-| `help.typeOnly` | Tap the box and type what you hear. | Коснитесь поля и введите то, что услышали. |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | Проверьте слова в поле. Их можно изменить. Затем нажмите «{send}». |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | Нажмите «{skip}», если не знаете. Это отправит пустой ответ и перейдёт дальше. Он считается как «пока нет». |
-| `help.notScored` | Nothing in this part is scored. | В этой части ничего не оценивается. |
-| `help.result.reading` | Then you see which words matched. | Затем вы увидите, какие слова совпали. |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | Затем вы увидите «Верно» или «Пока нет» и официальные ответы. |
-| `header.settings` | Settings | Настройки |
-| `settings.title` | Comfort settings | Настройки удобства |
+| `help.listen` | Press “{play}” to hear it. | Нажмите «{play}», чтобы послушать. |
+| `help.read` | Read the sentence out loud. | Прочитайте предложение вслух. |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | Нажмите «{say}» и говорите. Или напечатайте в поле. |
+| `help.typeOnly` | Type what you hear in the box. | Напечатайте в поле то, что услышите. |
+| `header.settings` | Text size | Размер текста |
+| `settings.title` | Text size and voice | Размер текста и голос |
 | `settings.textSize.legend` | Text size | Размер текста |
 | `settings.textSize.normal` | Normal | Обычный |
 | `settings.textSize.large` | Large | Крупный |
 | `settings.textSize.extraLarge` | Extra large | Очень крупный |
-| `settings.slow.label` | Play recorded voices more slowly | Воспроизводить записанные голоса медленнее |
+| `settings.slow.label` | Slower voice | Более медленный голос |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | Меняется только скорость. Запись та же. |
 | `settings.memory` | These settings last until you close or reload this page. | Эти настройки действуют, пока вы не закроете или не перезагрузите страницу. |
 | `settings.close` | Close settings | Закрыть настройки |
@@ -370,6 +363,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.micHelp.typing` | You can always type your answer in the box instead. | Вы всегда можете напечатать ответ в поле. |
 | `civics.why.correct` | Your answer matches an official answer. | Ваш ответ совпадает с официальным ответом. |
 | `civics.why.notYet` | Your answer does not match the official answers yet. | Ваш ответ пока не совпадает с официальными ответами. |
+| `settings.slow.on` | On | Вкл. |
+| `settings.slow.off` | Off | Выкл. |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | Нажмите «{send}», чтобы продолжить. Здесь ничего не оценивается. |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | Нажмите «{send}». Потом вы увидите, засчитано ли. |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Нажмите «{send}». Потом вы увидите, засчитано ли, и официальные ответы. |
+| `settings.textSize.sample` | Aa | Aa |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -43,6 +43,8 @@ export const IDENTICAL_ALLOWED: readonly string[] = [
   "settings.textSize.normal",
   // The "AI" badge on the N-400 part card is the same short word in many languages.
   "home.part.n400.badge",
+  // The "Aa" letters on the text size choices: a sample of letters, not a word.
+  "settings.textSize.sample",
 ];
 
 /** Digits of other scripts that a translator might use, mapped to ASCII. */

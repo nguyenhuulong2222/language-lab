@@ -262,27 +262,20 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | ဤမေးခွန်းများကို အမှတ်မပေးနိုင်သဖြင့် မှန်သည်ဟုလည်း မှားသည်ဟုလည်း မရေတွက်ပါ။ |
 | `report.see` | See my report | ကျွန်ုပ်၏အစီရင်ခံစာကို ကြည့်ရန် |
 | `header.home` | Home | ပင်မ |
-| `help.button` | How this works | ဤစာမျက်နှာ အသုံးပြုပုံ |
+| `help.button` | Help | အကူအညီ |
 | `help.setup.1` | Tap one choice in each group on this screen. | ဤစာမျက်နှာရှိ အုပ်စုတစ်ခုစီမှ ရွေးချယ်စရာတစ်ခုကို နှိပ်ပါ။ |
 | `help.setup.3` | Press “{start}” when you are ready. | အဆင်သင့်ဖြစ်သောအခါ “{start}” ကို နှိပ်ပါ။ |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | ကြားရန် “{play}” ကို နှိပ်ပါ။ ရပ်ရန် တူညီသောခလုတ်ကို ထပ်နှိပ်ပါ။ |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | နမူနာအဖြေကို ဖတ်ပါ၊ သို့မဟုတ် နားထောင်ပါ။ ၎င်းသည် ဖန်တီးထားသောလူ၏အဖြေဖြစ်ပြီး ဥပမာတစ်ခုသာဖြစ်သည်။ |
-| `help.read` | Read the sentence on the screen out loud. | ဖန်သားပြင်ပေါ်ရှိ စာကြောင်းကို အသံထွက်ဖတ်ပါ။ |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | “{say}” ကို နှိပ်ပြီး ပြောပါ။ ဖုန်းက မိုက်ခရိုဖုန်းသုံးခွင့် မေးလာလျှင် “ခွင့်ပြုရန်” ကို နှိပ်ပါ။ ပြီးသောအခါ “{stop}” ကို နှိပ်ပါ။ |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | ယင်းအစား အမြဲရိုက်ထည့်နိုင်သည်။ ကွက်ကို နှိပ်ပြီး ရိုက်ပါ။ ရိုက်ထည့်ခြင်းသည် အမြဲအလုပ်လုပ်သည်။ |
-| `help.typeOnly` | Tap the box and type what you hear. | ကွက်ကို နှိပ်ပြီး ကြားရသည့်အတိုင်း ရိုက်ထည့်ပါ။ |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | ကွက်ထဲရှိ စကားလုံးများကို စစ်ကြည့်ပါ။ ပြင်နိုင်သည်။ ထို့နောက် “{send}” ကို နှိပ်ပါ။ |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | မသိလျှင် “{skip}” ကို နှိပ်ပါ။ ၎င်းသည် အဖြေအလွတ်ကို ပို့ပြီး ဆက်သွားသည်။ “မမှန်သေး” အဖြစ် ရေတွက်သည်။ |
-| `help.notScored` | Nothing in this part is scored. | ဤအပိုင်းတွင် မည်သည့်အရာကိုမျှ အမှတ်မပေးပါ။ |
-| `help.result.reading` | Then you see which words matched. | ထို့နောက် မည်သည့်စကားလုံးများ ကိုက်ညီသည်ကို မြင်ရမည်။ |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | ထို့နောက် “မှန်သည်” သို့မဟုတ် “မမှန်သေးပါ” နှင့် တရားဝင်အဖြေများကို မြင်ရမည်။ |
-| `header.settings` | Settings | ဆက်တင်များ |
-| `settings.title` | Comfort settings | အဆင်ပြေစေရန် ဆက်တင်များ |
+| `help.listen` | Press “{play}” to hear it. | နားထောင်ရန် “{play}” ကို နှိပ်ပါ။ |
+| `help.read` | Read the sentence out loud. | ဝါကျကို အသံထွက်ဖတ်ပါ။ |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | “{say}” ကို နှိပ်ပြီး ပြောပါ။ သို့မဟုတ် အကွက်ထဲတွင် ရိုက်ထည့်ပါ။ |
+| `help.typeOnly` | Type what you hear in the box. | ကြားသည့်အတိုင်း အကွက်ထဲတွင် ရိုက်ထည့်ပါ။ |
+| `header.settings` | Text size | စာလုံးအရွယ်အစား |
+| `settings.title` | Text size and voice | စာလုံးအရွယ်အစားနှင့် အသံ |
 | `settings.textSize.legend` | Text size | စာလုံးအရွယ်အစား |
 | `settings.textSize.normal` | Normal | ပုံမှန် |
 | `settings.textSize.large` | Large | ကြီး |
 | `settings.textSize.extraLarge` | Extra large | အလွန်ကြီး |
-| `settings.slow.label` | Play recorded voices more slowly | မှတ်တမ်းတင်ထားသောအသံများကို ပိုနှေးနှေး ဖွင့်ရန် |
+| `settings.slow.label` | Slower voice | အသံ ပိုနှေးရန် |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | အမြန်နှုန်းကိုသာ ပြောင်းသည်။ မှတ်တမ်းတင်ထားသော အသံအတူတူပင်ဖြစ်သည်။ |
 | `settings.memory` | These settings last until you close or reload this page. | သင် ဤစာမျက်နှာကို ပိတ်သည်အထိ သို့မဟုတ် ပြန်ဖွင့်သည်အထိ ဤဆက်တင်များ ရှိနေမည်။ |
 | `settings.close` | Close settings | ဆက်တင်များ ပိတ်ရန် |
@@ -370,6 +363,12 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.micHelp.typing` | You can always type your answer in the box instead. | သင့်အဖြေကို အကွက်ထဲတွင် အမြဲရိုက်ထည့်နိုင်ပါသည်။ |
 | `civics.why.correct` | Your answer matches an official answer. | သင့်အဖြေသည် တရားဝင်အဖြေတစ်ခုနှင့် ကိုက်ညီသည်။ |
 | `civics.why.notYet` | Your answer does not match the official answers yet. | သင့်အဖြေသည် တရားဝင်အဖြေများနှင့် မကိုက်ညီသေးပါ။ |
+| `settings.slow.on` | On | ဖွင့် |
+| `settings.slow.off` | Off | ပိတ် |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | ဆက်သွားရန် “{send}” ကို နှိပ်ပါ။ ဤနေရာတွင် အမှတ်မပေးပါ။ |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | “{send}” ကို နှိပ်ပါ။ ထို့နောက် ရေတွက်မရေတွက် တွေ့ရပါမည်။ |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | “{send}” ကို နှိပ်ပါ။ ထို့နောက် ရေတွက်မရေတွက်နှင့် တရားဝင်အဖြေများကို တွေ့ရပါမည်။ |
+| `settings.textSize.sample` | Aa | Aa |
 
 ## Lines marked ⚠ (meaning differs a little)
 
