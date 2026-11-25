@@ -369,3 +369,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.done.english` | Press “{send}”. Then you see if it counts. | “{send}” दबाएँ। फिर आप देखेंगे कि यह गिना गया या नहीं। |
 | `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | “{send}” दबाएँ। फिर आप देखेंगे कि यह गिना गया या नहीं, और आधिकारिक उत्तर। |
 | `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | चुना गया |

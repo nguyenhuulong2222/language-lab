@@ -350,5 +350,6 @@
   "help.done.n400": "Нажмите «{send}», чтобы продолжить. Здесь ничего не оценивается.",
   "help.done.english": "Нажмите «{send}». Потом вы увидите, засчитано ли.",
   "help.done.civics": "Нажмите «{send}». Потом вы увидите, засчитано ли, и официальные ответы.",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "Выбрано"
 }

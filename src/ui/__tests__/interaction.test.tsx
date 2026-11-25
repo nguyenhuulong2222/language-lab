@@ -272,3 +272,36 @@ describe("header settings", () => {
     expect(document.querySelector("[role='dialog']")).toBeNull();
   });
 });
+describe("the language grid on Home", () => {
+  const grid = () => document.getElementById("home-language")!;
+  it("is open at the top of Home, above the welcome, with the current language marked and the review line", () => {
+    app();
+    expect(grid()).not.toBeNull();
+    expect(grid().compareDocumentPosition(document.querySelector("main h1")!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(within(grid()).getByText(EN["lang.menu.title"])).toBeTruthy();
+    const current = grid().querySelector<HTMLElement>('.language-menu__option[aria-current="true"]')!;
+    expect(current.getAttribute("lang")).toBe("en");
+    expect(current.textContent).toContain(EN["lang.selected"]);
+    expect(current.querySelector("svg")).not.toBeNull();
+    expect(grid().querySelectorAll(".language-menu__option").length).toBeGreaterThan(1);
+  });
+  it("the header language button on Home goes to the grid and focuses the current language (no second copy)", () => {
+    app();
+    const headerButton = document.querySelector<HTMLButtonElement>(".header__lang")!;
+    expect(headerButton.hasAttribute("aria-expanded")).toBe(false);
+    fireEvent.click(headerButton);
+    expect(document.activeElement).toBe(grid().querySelector('.language-menu__option[aria-current="true"]'));
+  });
+  it("choosing a language keeps focus on that button and says its name politely", async () => {
+    app();
+    const vi = grid().querySelector<HTMLButtonElement>('.language-menu__option[lang="vi"]')!;
+    vi.focus();
+    fireEvent.click(vi);
+    await waitFor(() => expect(document.documentElement.lang).toBe("vi"));
+    expect(document.activeElement).toBe(vi);
+    const live = grid().querySelector('[role="status"]')!;
+    expect(live.getAttribute("aria-live")).toBe("polite");
+    expect(live.textContent).toBe("Tiếng Việt");
+    expect(vi.getAttribute("aria-current")).toBe("true");
+  });
+});

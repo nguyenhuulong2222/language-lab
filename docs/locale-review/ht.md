@@ -369,3 +369,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.done.english` | Press “{send}”. Then you see if it counts. | Peze “{send}”. Apre sa w ap wè si sa konte. |
 | `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Peze “{send}”. Apre sa w ap wè si sa konte, ak repons ofisyèl yo. |
 | `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | Chwazi |

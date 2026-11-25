@@ -369,3 +369,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.done.english` | Press “{send}”. Then you see if it counts. | 按「{send}」。然後您會看到這次是否算數。 |
 | `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | 按「{send}」。然後您會看到這次是否算數，以及官方答案。 |
 | `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | 已選擇 |

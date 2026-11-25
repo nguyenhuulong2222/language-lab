@@ -2,8 +2,12 @@
  * The list of interface languages, each under its own name, English first. It is a list of
  * buttons (not radio buttons: arrow keys on radios would change the language as they move).
  * Arrow keys, Home and End move focus; Enter or Space chooses. The current language is marked
- * with `aria-current` and a check icon, not by colour alone. The list may show in several columns;
- * the arrow keys still move in reading order, not by row.
+ * with `aria-current`, a check icon and the word "Selected" for screen readers, not by colour alone.
+ * The list may show in several columns; the arrow keys still move in reading order, not by row.
+ *
+ * Two places use it: the header panel (`open` moves focus into it when the panel opens) and the
+ * top of Home (`variant="home"`, always shown; the header language button focuses it, see
+ * home-language.ts).
  */
 import { useEffect, useState, useId, useRef, type KeyboardEvent } from "react";
 import { AVAILABLE_UI_LANGUAGES, SOME_LANGUAGES_IN_REVIEW, type LanguageCode } from "../../i18n";
@@ -12,7 +16,14 @@ import { languageInfo } from "../../i18n/languages";
 import { CheckIcon } from "./icons";
 import "./LanguageMenu.css";
 
-export function LanguageMenu({ open, onChoose }: { open: boolean; onChoose: (code: LanguageCode) => void }) {
+interface LanguageMenuProps {
+  /** The header panel is open: focus goes to the current language. */
+  open?: boolean;
+  onChoose: (code: LanguageCode) => void;
+  /** "home": the always-open grid at the top of Home. */
+  variant?: "panel" | "home";
+}
+export function LanguageMenu({ open = false, onChoose, variant = "panel" }: LanguageMenuProps) {
   const t = useT();
   const current = useLanguage();
   const titleId = useId();
@@ -28,6 +39,7 @@ export function LanguageMenu({ open, onChoose }: { open: boolean; onChoose: (cod
     items.current[index]?.focus();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
+
 
   const onKeyDown = (event: KeyboardEvent) => {
     const count = AVAILABLE_UI_LANGUAGES.length;
@@ -45,7 +57,12 @@ export function LanguageMenu({ open, onChoose }: { open: boolean; onChoose: (cod
   };
 
   return (
-    <div role="group" aria-labelledby={titleId} onKeyDown={onKeyDown}>
+    <div
+      role="group"
+      aria-labelledby={titleId}
+      className={variant === "home" ? "language-menu language-menu--home" : "language-menu"}
+      onKeyDown={onKeyDown}
+    >
       <p id={titleId} className="language-menu__title">
         {t("lang.menu.title")}
       </p>
@@ -63,10 +80,21 @@ export function LanguageMenu({ open, onChoose }: { open: boolean; onChoose: (cod
                 tabIndex={index === active ? 0 : -1}
                 lang={languageInfo(language.code).htmlLang}
                 aria-current={isCurrent ? "true" : undefined}
-                onClick={() => onChoose(language.code)}
+                onClick={() => {
+                  setActive(index);
+                  onChoose(language.code);
+                }}
               >
-                <span>{language.endonym}</span>
-                {isCurrent && <CheckIcon className="language-menu__check" />}
+                <span className="language-menu__name">{language.endonym}</span>
+                {isCurrent && (
+                  <>
+                    <CheckIcon className="language-menu__check" />
+                    <span className="ll-sr-only" lang={languageInfo(current).htmlLang}>
+                      {" "}
+                      {t("lang.selected")}
+                    </span>
+                  </>
+                )}
               </button>
             </li>
           );

@@ -350,5 +350,6 @@
   "help.done.n400": "按「{send}」繼續。這裡不會評分。",
   "help.done.english": "按「{send}」。然後您會看到這次是否算數。",
   "help.done.civics": "按「{send}」。然後您會看到這次是否算數，以及官方答案。",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "已選擇"
 }

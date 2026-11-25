@@ -15,6 +15,7 @@
  *   node tools/layout-check/run.mjs --width=320           phone width in CSS px (default 390; 320 is the WCAG reflow width)
  *   node tools/layout-check/run.mjs --filed=before        file before the boundary date, so the full interview
  *                                                         uses the 2008 test (default: on or after, 2025 test)
+ *   node tools/layout-check/run.mjs --browser-lang=vi     Chrome set to that language: Home must open in it
  *   node tools/layout-check/run.mjs --prod                the production build (what Cloudflare serves), with the
  *                                                         headers of public/_headers, and a check that the page
  *                                                         raises no Content-Security-Policy violation
@@ -46,6 +47,8 @@ const SHOTS_DIR = path.join(os.tmpdir(), "language-lab-layout");
 const MIN_TARGET = 56;
 const WIDTH = Number((process.argv.slice(2).find((a) => a.startsWith("--width=")) ?? "--width=390").slice(8));
 const PROD = process.argv.includes("--prod");
+/** --browser-lang=vi: start Chrome with that interface language (navigator.languages) and check Home opens in it. */
+const BROWSER_LANG = (process.argv.slice(2).find((a) => a.startsWith("--browser-lang=")) ?? "").slice(15) || null;
 const FILED_BEFORE = process.argv.includes("--filed=before");
 const PROD_DIR = path.join(os.tmpdir(), "language-lab-layout-dist");
 const HEIGHT = 844;
@@ -317,13 +320,23 @@ async function checkConfiguration(cdp, size, lang) {
   await cdp.send("Page.navigate", { url: `http://localhost:${APP_PORT}/` });
   await waitFor(async () => (await cdp.evaluate("document.readyState")) === "complete" && (await cdp.evaluate("!!document.querySelector('h1')")), "the page");
   await cdp.evaluate(PAGE_HELPERS);
-
-  // Language first (the button in the header), then the settings, so every screen is checked with both.
-  if (lang !== "en") {
-    const info = LANGUAGES.find((l) => l.code === lang);
-    await cdp.evaluate("document.querySelector('.header__lang').click()");
-    await waitFor(() => cdp.evaluate(`!!document.querySelector('.language-menu__option[lang="${info.htmlLang}"]')`), "the language menu");
-    await cdp.evaluate(`document.querySelector('.language-menu__option[lang="${info.htmlLang}"]').click()`);
+  // --browser-lang: Chrome runs with that language, so Home must open in it, without a tap.
+  if (BROWSER_LANG !== null) {
+    const expected = LANGUAGES.find((l) => l.code === BROWSER_LANG);
+    const htmlLang = await cdp.evaluate("document.documentElement.lang");
+    const title = await cdp.evaluate("document.querySelector('main h1').textContent.trim()");
+    if (htmlLang !== expected.htmlLang || title !== locales[BROWSER_LANG]["home.title"]) {
+      throw new Error(`Chrome in ${BROWSER_LANG}: Home opened as lang="${htmlLang}" with "${title}"`);
+    }
+    console.log(`Chrome in ${BROWSER_LANG}: Home opened in ${BROWSER_LANG} ("${title}").`);
+  }
+  // Language first (the grid at the top of Home; the header button goes there), then the settings,
+  // so every screen is checked with both.
+  const info = LANGUAGES.find((l) => l.code === lang);
+  await cdp.evaluate("document.querySelector('.header__lang').click()");
+  await waitFor(() => cdp.evaluate(`document.activeElement && document.activeElement.matches('#home-language .language-menu__option')`), "the language grid on Home (focused from the header button)");
+  if ((await cdp.evaluate("document.documentElement.lang")) !== info.htmlLang) {
+    await cdp.evaluate(`document.querySelector('#home-language .language-menu__option[lang="${info.htmlLang}"]').click()`);
     await waitFor(async () => (await cdp.evaluate("document.documentElement.lang")) === info.htmlLang, `the page language ${lang}`);
     await sleep(150);
   }
@@ -336,6 +349,11 @@ async function checkConfiguration(cdp, size, lang) {
   await record("about-open");
   await click(L("header.about"));
   await record("home");
+  // The header language button on Home scrolls to the language grid at the top.
+  await cdp.evaluate("document.querySelector('.header__lang').click()");
+  await sleep(120);
+  await record("home-language");
+  await cdp.evaluate("window.scrollTo(0, 0)");
 
   // Study first and the picture credits
   if (await cdp.evaluate(`window.__lab.has(${js(L("home.study.title"))})`)) {
@@ -575,6 +593,7 @@ async function main() {
     `--remote-debugging-port=${CDP_PORT}`,
     `--user-data-dir=${profile}`,
     "--no-first-run",
+    ...(BROWSER_LANG === null ? [] : [`--lang=${BROWSER_LANG}`, `--accept-lang=${BROWSER_LANG}`]),
     "--disable-gpu",
     `--window-size=${WIDTH},${HEIGHT}`,
     "about:blank",

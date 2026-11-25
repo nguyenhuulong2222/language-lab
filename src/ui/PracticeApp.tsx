@@ -105,6 +105,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
       {...(steps === undefined ? {} : { steps })}
       {...(state.phase === "home" ? {} : { currentStage: state.phase })}
       {...(state.phase === "home" ? {} : { onHome: restart })}
+      languageOnPage={state.phase === "home"}
     >
       <Screen
         engine={engine}

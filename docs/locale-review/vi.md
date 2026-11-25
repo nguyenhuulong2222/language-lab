@@ -369,6 +369,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.done.english` | Press “{send}”. Then you see if it counts. | Bấm “{send}”. Sau đó bạn sẽ thấy câu có được tính không. |
 | `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Bấm “{send}”. Sau đó bạn sẽ thấy câu trả lời có được tính không, và các đáp án chính thức. |
 | `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | Đã chọn |
 
 ## Lines marked ⚠ (meaning differs a little)
 

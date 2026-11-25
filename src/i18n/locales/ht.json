@@ -350,5 +350,6 @@
   "help.done.n400": "Peze “{send}” pou kontinye. Pa gen nòt isit la.",
   "help.done.english": "Peze “{send}”. Apre sa w ap wè si sa konte.",
   "help.done.civics": "Peze “{send}”. Apre sa w ap wè si sa konte, ak repons ofisyèl yo.",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "Chwazi"
 }

@@ -369,6 +369,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.done.english` | Press “{send}”. Then you see if it counts. | Pindutin ang “{send}”. Pagkatapos makikita mo kung bilang ito. |
 | `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Pindutin ang “{send}”. Pagkatapos makikita mo kung bilang ito, at ang mga opisyal na sagot. |
 | `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | Napili |
 
 ## Lines marked ⚠ (meaning differs a little)
 

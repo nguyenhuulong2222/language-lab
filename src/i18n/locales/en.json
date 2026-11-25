@@ -343,5 +343,6 @@
   "help.done.n400": "Press “{send}” to go on. Nothing here gets a score.",
   "help.done.english": "Press “{send}”. Then you see if it counts.",
   "help.done.civics": "Press “{send}”. Then you see if it counts, and the official answers.",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "Selected"
 }

@@ -350,5 +350,6 @@
   "help.done.n400": "ဆက်သွားရန် “{send}” ကို နှိပ်ပါ။ ဤနေရာတွင် အမှတ်မပေးပါ။",
   "help.done.english": "“{send}” ကို နှိပ်ပါ။ ထို့နောက် ရေတွက်မရေတွက် တွေ့ရပါမည်။",
   "help.done.civics": "“{send}” ကို နှိပ်ပါ။ ထို့နောက် ရေတွက်မရေတွက်နှင့် တရားဝင်အဖြေများကို တွေ့ရပါမည်။",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "ရွေးထားသည်"
 }

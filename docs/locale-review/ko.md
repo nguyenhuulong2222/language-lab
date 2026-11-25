@@ -369,6 +369,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.done.english` | Press “{send}”. Then you see if it counts. | “{send}”을(를) 누르세요. 그러면 점수에 포함되는지 볼 수 있습니다. |
 | `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | “{send}”을(를) 누르세요. 그러면 점수에 포함되는지와 공식 답을 볼 수 있습니다. |
 | `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | 선택됨 |
 
 ## Lines marked ⚠ (meaning differs a little)
 

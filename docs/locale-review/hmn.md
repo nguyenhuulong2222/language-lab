@@ -369,6 +369,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.done.english` | Press “{send}”. Then you see if it counts. | Nias “{send}”. Ces koj yuav pom tias puas suav. |
 | `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Nias “{send}”. Ces koj yuav pom tias puas suav, thiab cov lus teb raug cai. |
 | `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | Xaiv lawm |
 
 ## Lines marked ⚠ (meaning differs a little)
 

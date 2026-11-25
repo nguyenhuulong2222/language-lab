@@ -350,5 +350,6 @@
   "help.done.n400": "“{send}”을(를) 누르면 다음으로 갑니다. 여기서는 점수를 매기지 않습니다.",
   "help.done.english": "“{send}”을(를) 누르세요. 그러면 점수에 포함되는지 볼 수 있습니다.",
   "help.done.civics": "“{send}”을(를) 누르세요. 그러면 점수에 포함되는지와 공식 답을 볼 수 있습니다.",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "선택됨"
 }

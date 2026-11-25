@@ -369,6 +369,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.done.english` | Press “{send}”. Then you see if it counts. | Toque em “{send}”. Depois você vê se conta. |
 | `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Toque em “{send}”. Depois você vê se conta e as respostas oficiais. |
 | `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | Selecionado |
 
 ## Lines marked ⚠ (meaning differs a little)
 

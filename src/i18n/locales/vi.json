@@ -350,5 +350,6 @@
   "help.done.n400": "Bấm “{send}” để tiếp tục. Phần này không chấm điểm.",
   "help.done.english": "Bấm “{send}”. Sau đó bạn sẽ thấy câu có được tính không.",
   "help.done.civics": "Bấm “{send}”. Sau đó bạn sẽ thấy câu trả lời có được tính không, và các đáp án chính thức.",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "Đã chọn"
 }

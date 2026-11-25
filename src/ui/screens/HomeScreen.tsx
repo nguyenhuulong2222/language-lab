@@ -1,10 +1,15 @@
 /**
- * Home (senior-friendly order): a short welcome and the text-size hint; "Start here" with the full
+ * Home (senior-friendly order): the language grid at the very top (always open, the same list as
+ * the header panel); a short welcome and the text-size hint; "Start here" with the full
  * practice interview and one primary "Start practice" button; the 65/20 card; the AI coach card;
  * "Practice one part" as a simple list; "Study first"; then how it works, the English notice, the
  * disclaimers and the privacy notes at the bottom. Nothing is asked here; setup comes next.
  */
-import { useId } from "react";
+import { useId, useState } from "react";
+import { languageInfo, type LanguageCode } from "../../i18n";
+import { LanguageMenu } from "../components/LanguageMenu";
+import { HOME_LANGUAGE_ID } from "../home-language";
+import { useSettings } from "../settings";
 import { LegalText } from "../components/LegalText";
 import type { PracticeMode } from "../../engine/practice-flow";
 import type { MessageKey } from "../../i18n";
@@ -33,6 +38,29 @@ interface HomeScreenProps {
   showTextSizeHint?: boolean;
 }
 
+/**
+ * "Choose a language" with every offered language under its own name, at the top of Home. Choosing
+ * one changes the whole interface at once; focus stays on the chosen button, and a polite live
+ * region says the language's name.
+ */
+function HomeLanguage() {
+  const { setLanguage } = useSettings();
+  const [announced, setAnnounced] = useState<LanguageCode | null>(null);
+  return (
+    <section id={HOME_LANGUAGE_ID} className="home-language">
+      <LanguageMenu
+        variant="home"
+        onChoose={(code) => {
+          setLanguage(code);
+          setAnnounced(code);
+        }}
+      />
+      <p className="ll-sr-only" role="status" aria-live="polite" lang={announced === null ? undefined : languageInfo(announced).htmlLang}>
+        {announced === null ? "" : languageInfo(announced).endonym}
+      </p>
+    </section>
+  );
+}
 const PARTS: ReadonlyArray<{ mode: Exclude<PracticeMode, "full">; title: MessageKey; text: MessageKey }> = [
   { mode: "n400", title: "home.part.n400.title", text: "home.part.n400.text" },
   { mode: "reading", title: "home.part.reading.title", text: "home.part.reading.text" },
@@ -56,6 +84,7 @@ export function HomeScreen({
   const startTitleId = useId();
   return (
     <div className="screen">
+      <HomeLanguage />
       <TakeHeader stage="home" title={t("home.title")} lead={t("home.lead")} focusOnFirstRender={focusOnFirstRender} />
       {showTextSizeHint && <p className="home__hint">{t("home.textSizeHint")}</p>}
 

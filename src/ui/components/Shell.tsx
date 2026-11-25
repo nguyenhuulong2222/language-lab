@@ -14,6 +14,7 @@ import { Header } from "./Header";
 import { StageStepper } from "./StageStepper";
 import { useSpeaker } from "../voice/VoiceProvider";
 import { CreditsScreen } from "../screens/CreditsScreen";
+import { focusHomeLanguage } from "../home-language";
 import "../App.css";
 
 interface ShellProps {
@@ -22,10 +23,12 @@ interface ShellProps {
   currentStage?: SessionStage;
   /** Go back to the home screen (shown in the header once a session has started). */
   onHome?: () => void;
+  /** Home is on screen with its language grid: the header language button goes to it. */
+  languageOnPage?: boolean;
   children: ReactNode;
 }
 
-export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
+export function Shell({ steps, currentStage, onHome, languageOnPage = false, children }: ShellProps) {
   const t = useT();
   const [creditsOpen, setCreditsOpen] = useState(false);
   const creditsButton = useRef<HTMLElement | null>(null);
@@ -72,6 +75,7 @@ export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
                 onHome();
               },
             })}
+        {...(languageOnPage && !creditsOpen ? { onLanguage: focusHomeLanguage } : {})}
       />
       <AiNotice />
       {stepper}

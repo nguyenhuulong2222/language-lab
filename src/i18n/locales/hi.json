@@ -350,5 +350,6 @@
   "help.done.n400": "आगे बढ़ने के लिए “{send}” दबाएँ। यहाँ कोई अंक नहीं मिलते।",
   "help.done.english": "“{send}” दबाएँ। फिर आप देखेंगे कि यह गिना गया या नहीं।",
   "help.done.civics": "“{send}” दबाएँ। फिर आप देखेंगे कि यह गिना गया या नहीं, और आधिकारिक उत्तर।",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "चुना गया"
 }

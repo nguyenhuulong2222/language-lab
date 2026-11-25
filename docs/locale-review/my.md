@@ -369,6 +369,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.done.english` | Press “{send}”. Then you see if it counts. | “{send}” ကို နှိပ်ပါ။ ထို့နောက် ရေတွက်မရေတွက် တွေ့ရပါမည်။ |
 | `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | “{send}” ကို နှိပ်ပါ။ ထို့နောက် ရေတွက်မရေတွက်နှင့် တရားဝင်အဖြေများကို တွေ့ရပါမည်။ |
 | `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | ရွေးထားသည် |
 
 ## Lines marked ⚠ (meaning differs a little)
 

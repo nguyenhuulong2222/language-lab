@@ -350,5 +350,6 @@
   "help.done.n400": "Pindutin ang “{send}” para magpatuloy. Walang iskor dito.",
   "help.done.english": "Pindutin ang “{send}”. Pagkatapos makikita mo kung bilang ito.",
   "help.done.civics": "Pindutin ang “{send}”. Pagkatapos makikita mo kung bilang ito, at ang mga opisyal na sagot.",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "Napili"
 }

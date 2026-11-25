@@ -350,5 +350,6 @@
   "help.done.n400": "Toque em “{send}” para continuar. Nada aqui recebe nota.",
   "help.done.english": "Toque em “{send}”. Depois você vê se conta.",
   "help.done.civics": "Toque em “{send}”. Depois você vê se conta e as respostas oficiais.",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "Selecionado"
 }

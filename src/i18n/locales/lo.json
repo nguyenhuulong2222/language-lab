@@ -350,5 +350,6 @@
   "help.done.n400": "ກົດ “{send}” ເພື່ອໄປຕໍ່. ສ່ວນນີ້ບໍ່ມີຄະແນນ.",
   "help.done.english": "ກົດ “{send}”. ແລ້ວທ່ານຈະເຫັນວ່ານັບໄດ້ບໍ່.",
   "help.done.civics": "ກົດ “{send}”. ແລ້ວທ່ານຈະເຫັນວ່ານັບໄດ້ບໍ່ ແລະ ຄຳຕອບທາງການ.",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "ເລືອກແລ້ວ"
 }

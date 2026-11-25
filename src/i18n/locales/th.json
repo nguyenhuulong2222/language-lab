@@ -350,5 +350,6 @@
   "help.done.n400": "กด “{send}” เพื่อไปต่อ ส่วนนี้ไม่มีการให้คะแนน",
   "help.done.english": "กด “{send}” แล้วคุณจะเห็นว่านับได้หรือไม่",
   "help.done.civics": "กด “{send}” แล้วคุณจะเห็นว่านับได้หรือไม่ และคำตอบทางการ",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "เลือกแล้ว"
 }

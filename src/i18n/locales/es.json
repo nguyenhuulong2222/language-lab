@@ -350,5 +350,6 @@
   "help.done.n400": "Presione “{send}” para seguir. Aquí nada recibe puntaje.",
   "help.done.english": "Presione “{send}”. Luego verá si cuenta.",
   "help.done.civics": "Presione “{send}”. Luego verá si cuenta y las respuestas oficiales.",
-  "settings.textSize.sample": "Aa"
+  "settings.textSize.sample": "Aa",
+  "lang.selected": "Seleccionado"
 }

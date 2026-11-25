@@ -20,7 +20,7 @@ import "./Header.css";
 
 type PanelName = "language" | "settings" | "about" | "home";
 
-export function Header({ onHome }: { onHome?: () => void }) {
+export function Header({ onHome, onLanguage }: { onHome?: () => void; onLanguage?: () => boolean }) {
   const t = useT();
   const language = useLanguage();
   const { setLanguage } = useSettings();
@@ -70,9 +70,15 @@ export function Header({ onHome }: { onHome?: () => void }) {
             type="button"
             ref={bind("language")}
             className="header__button header__lang"
-            aria-expanded={panel === "language"}
-            aria-controls={ids.language}
-            onClick={() => toggle("language")}
+            // On Home the grid is on the page: the button goes there instead of opening a second copy.
+            {...(onLanguage === undefined ? { "aria-expanded": panel === "language", "aria-controls": ids.language } : {})}
+            onClick={() => {
+              if (onLanguage !== undefined) {
+                setPanel(null);
+                if (onLanguage()) return;
+              }
+              toggle("language");
+            }}
           >
             <GlobeIcon className="header__globe" />
             <span className="ll-sr-only">{t("lang.label")}: </span>
