@@ -10,13 +10,23 @@
     />
     <title>Language Lab</title>
     <link rel="preload" href="/fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/src/ui/styles/boot.css" />
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%23F4EEE1' stroke='%232C6A66' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='3.4' fill='%232C6A66'/%3E%3C/svg%3E"
     />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Loading shell (audit F-01): shown until the app mounts; styled by boot.css only. -->
+      <div class="boot">
+        <div class="boot__inner">
+          <p class="boot__name">Language Lab</p>
+          <p class="boot__line">Loading the practice booth…</p>
+          <p class="boot__note">Not affiliated with USCIS or any government agency. Not legal advice.</p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

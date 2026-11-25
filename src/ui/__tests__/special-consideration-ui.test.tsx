@@ -83,7 +83,9 @@ describe("setup choice (REQ-S05, REQ-S08)", () => {
     const html = intro();
     expect(html).toContain("asks 10 of the 20 questions marked with a star (*)");
     expect(html).toContain("The practice passing score is 6 correct answers.");
-    expect(html).toContain("A 65/20 applicant may take the real civics test in their own language with an interpreter.");
+    // The exemption line (decisions log P): sourced from the USCIS Exceptions page and the Policy Manual table.
+    expect(html).toContain("you are exempt from the English requirement (reading, writing, speaking and understanding English)");
+    expect(html).toContain("If you are 65 or older with at least 20 years (65/20), you are also exempt from English");
     expect(html).toContain(`href="${EXCEPTIONS_URL}"`);
     expect(html).toContain('aria-describedby="intro-special-help"');
   });
@@ -98,8 +100,8 @@ describe("setup choice (REQ-S05, REQ-S08)", () => {
     const html = intro({}, "vi");
     expect(html).toContain(LABEL);
     expect(html).not.toContain("Tôi từ 65 tuổi trở lên");
-    expect(html).toContain(ENGLISH_MESSAGES["special.language"]);
-    for (const key of ["intro.special.help", "intro.special.label", "home.special.text", "special.language", "study.special.dynamic"] as const) expect(isLegalKey(key), key).toBe(true);
+    expect(html).toContain(ENGLISH_MESSAGES["special.englishExempt"]);
+    for (const key of ["intro.special.help", "intro.special.label", "home.special.text", "special.englishExempt", "study.special.dynamic"] as const) expect(isLegalKey(key), key).toBe(true);
   });
 });
 
@@ -139,7 +141,7 @@ describe("civics screen and part report (REQ-S04, REQ-S08)", () => {
     expect(screen(engine, s)).toContain("asks 10 of the 20 questions");
     const vi = screen(engine, s, "vi");
     expect(vi).toContain(`lang="en">${first.questionText.replace(/'/g, "'")}`);
-    expect(vi).toContain(ENGLISH_MESSAGES["special.language"]);
+    expect(vi).toContain(ENGLISH_MESSAGES["special.englishExempt"]);
   });
   it("the part report says 65/20 and the needed count of 6", () => {
     let s = start();

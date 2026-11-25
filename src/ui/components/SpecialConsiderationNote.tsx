@@ -32,7 +32,7 @@ export function SpecialLanguageLine() {
   return (
     <div className="special-note">
       <p className="note">
-        <LegalText messageKey="special.language" />
+        <LegalText messageKey="special.englishExempt" />
       </p>
       {/* On its own line with a full-size tap target (design system: 48px minimum). */}
       <p className="note">

@@ -21,6 +21,8 @@ const KIND_KEY: Record<IdentifierKind, MessageKey> = {
   phone: "coach.kind.phone",
   email: "coach.kind.email",
   "date-of-birth": "coach.kind.dateOfBirth",
+  "street-address": "coach.kind.streetAddress",
+  "zip-code": "coach.kind.zipCode",
 };
 const FEEDBACK_KEY = {
   understood: "coach.feedback.understood",

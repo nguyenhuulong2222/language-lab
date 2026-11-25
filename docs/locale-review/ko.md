@@ -54,6 +54,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.missing` | A question that is not in the answer key | 정답표에 없는 질문 |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | 누군가 정답표를 검토하기 전까지 이 버전에서는 먼저 공부하기가 꺼져 있습니다. |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | 이 선택은 연습만 바꿉니다. 아무것도 저장하거나 보내지 않습니다. 시민 상식 부분에서 공식 목록에 별표(*)가 있는 {bank}개 질문 중 {asked}개를 묻습니다. 이 연습에서는 {asked}개를 모두 묻습니다. 연습 합격 점수는 정답 {pass}개입니다. 본인의 경우는 uscis.gov에서 확인하세요. 나이와 햇수는 신청서를 제출한 날을 기준으로 합니다. |
+| `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS: 신청일 기준으로 50세 이상이고 영주권자로 20년(50/20), 또는 55세 이상이고 15년(55/15)이면 영어 요건(영어 읽기, 쓰기, 말하기, 이해)이 면제되지만 시민 상식 시험은 봐야 합니다. 통역사를 데려오면 모국어로 볼 수 있습니다. 65세 이상이고 최소 20년(65/20)이면 영어도 면제되며, 심사관은 특별히 지정된 시민 상식 시험지를 사용합니다. |
 | `special.language.link` | Exceptions and accommodations on uscis.gov | uscis.gov의 예외 및 편의 제공 |
 | `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {bank}개 질문 중 {count}개는 지금 누가 어떤 직위에 있는지처럼 답이 바뀝니다. 여기에는 표시하지 않습니다. uscis.gov/citizenship/testupdates에서 확인하세요. |
 | `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | {asked}개 질문을 모두 물었고, 연습 합격 점수 {score}에 도달했습니다. |
@@ -339,7 +340,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.special.title` | 65/20 civics practice | 65/20 시민 상식 연습 |
 | `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | 65세 이상이며 영주권자로 20년 이상 지낸 분을 위한 연습입니다. 별표(*)가 있는 시민 상식 질문을 연습하세요. |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | 저는 65세 이상이며 영주권자로 20년 이상 지냈습니다 |
-| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | 65/20 신청자는 통역사와 함께 자신의 언어로 실제 시민 상식 시험을 볼 수 있습니다. |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | 65/20용 질문만 (별표 표시) |
 | `report.line.civics.none` | No civics questions were scored. | 채점된 시민 상식 질문이 없습니다. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | 맞게 답한 시민 상식 질문: {scored}개 중 {correct}개. |
@@ -354,6 +354,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | 들은 문장을 쓰는 연습을 하세요. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | 가상의 인물로 답하세요. 실제 이름, 주소, 날짜, 번호를 입력하지 마세요. |
 | `common.newTab` | (opens in a new tab) | (새 탭에서 열림) |
+| `coach.kind.streetAddress` | a street address | 도로명 주소 |
+| `coach.kind.zipCode` | a ZIP code with a state | 주 이름이 붙은 우편번호 |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | 이 확인은 주소와 우편번호도 찾지만 이름은 찾을 수 없습니다. 실제 사람의 이름을 말하거나 입력하지 마세요. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

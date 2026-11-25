@@ -313,7 +313,7 @@
   "home.special.text": "適用於 65 歲或以上、並已是永久居民 20 年或以上的人。練習標有星號（*）的公民常識問題。",
   "intro.special.label": "我 65 歲或以上，並已是永久居民 20 年或以上",
   "intro.special.help": "這只會改變練習；不會儲存或傳送任何資料。公民常識部分會從官方清單中標有星號（*）的 {bank} 題中問 {asked} 題。在這個練習中，{asked} 題都會問完。練習及格分數是答對 {pass} 題。關於您自己的情況，請查看 uscis.gov：年齡和年數以提出申請的日期計算。",
-  "special.language": "65/20 申請人可以在口譯員協助下，用自己的語言參加真正的公民常識考試。",
+  "special.englishExempt": "USCIS：在提出申請時，如果您 50 歲或以上並已是永久居民 20 年（50/20），或 55 歲或以上並已 15 年（55/15），您可免除英語要求（閱讀、書寫、口說和理解英語），但仍須參加公民常識考試。若您自備口譯員，可用母語參加。如果您 65 歲或以上並至少 20 年（65/20），您也可免除英語，官員會使用特別指定的公民常識考試表。",
   "special.language.link": "uscis.gov 上的例外與便利措施",
   "study.special.label": "只看 65/20 的問題（標有星號）",
   "study.special.dynamic": "{bank} 題中有 {count} 題的答案會改變，例如現在由誰擔任某個職位。這些題目不在這裡顯示。請到 uscis.gov/citizenship/testupdates 查看。",
@@ -335,5 +335,8 @@
   "report.review.writing": "練習寫下您聽到的句子。",
   "civics.heard.closest": "您的裝置對您說的話給出了幾種猜測。這裡顯示的是最接近答案範本中某個答案的那一種。",
   "n400.box.reminder": "請以虛構人物的身分回答。不要輸入您真實的姓名、地址、日期或號碼。",
-  "common.newTab": "（在新分頁開啟）"
+  "common.newTab": "（在新分頁開啟）",
+  "coach.kind.streetAddress": "一個街道地址",
+  "coach.kind.zipCode": "一個附有州名的郵遞區號",
+  "coach.notice.limits": "這項檢查也會找街道地址和郵遞區號，但無法找出姓名。請不要說出或輸入真實人物的姓名。"
 }

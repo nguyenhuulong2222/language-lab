@@ -33,6 +33,10 @@ export function CoachNotice({ onConfirm, onCancel }: { onConfirm: () => void; on
       <p>
         <LegalText messageKey="coach.notice.text" />
       </p>
+      {/* What the identifier check cannot do (audit F-08): names are not detected. */}
+      <p>
+        <LegalText messageKey="coach.notice.limits" />
+      </p>
       {/* Attribution as plain text: no Anthropic or Claude logo (spec REQ-C20). */}
       <p className="note">{t("coach.poweredBy")}</p>
       <div className="btn-row">

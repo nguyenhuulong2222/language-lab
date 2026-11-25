@@ -18,7 +18,10 @@ import { I18nProvider } from "../../i18n/react";
 import { isLegalKey } from "../../i18n/legal-keys";
 import { ReportScreen } from "../screens/ReportScreen";
 import { AnswerInput } from "../components/AnswerInput";
+import { CoachNotice } from "../components/CoachNotice";
 import { CivicsScreen } from "../screens/CivicsScreen";
+import { EnglishScreen } from "../screens/EnglishScreen";
+import { N400View } from "../screens/N400Screen";
 
 function quietKey(version: CivicsTestVersion): AnswerKeyResult {
   const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
@@ -141,5 +144,74 @@ describe("COR-04: the plural limit comes from the config", () => {
     expect(compareSentence("We pay taxes", "We pay tax", options).isCorrect).toBe(true);
     expect(sameInflection("tax", "taxes", new Set(), 3)).toBe(true);
     expect(sameInflection("tax", "taxes", new Set(), 4)).toBe(false);
+  });
+});
+
+describe("F-07: the prominent disclaimer under every result", () => {
+  const prominent = (html: string, id: string) => {
+    const at = html.indexOf(`id="${id}"`);
+    expect(at, id).toBeGreaterThan(-1);
+    expect(html).toContain("disclaimer disclaimer--prominent");
+    expect(html).toContain(ENGLISH_MESSAGES["disclaimer.report"].replace(/'/g, "&#x27;"));
+    return at;
+  };
+  it("reading and writing feedback: directly after the result panel, before the next button", () => {
+    for (const kind of ["reading", "writing"] as const) {
+      let s = engine.reduce(engine.initial(), { type: "choose", mode: kind, seed: 1, at: AT });
+      const sentence = engine.englishProgress(s, kind).current!;
+      s = engine.reduce(s, { type: kind === "reading" ? "submitReading" : "submitWriting", transcript: sentence.text, input: "typed", at: AT });
+      const html = renderToString(
+        <EnglishScreen progress={engine.englishProgress(s, kind)} matchOptions={engine.matchOptions(kind)} onSubmit={() => {}} onContinue={() => {}} showFeedbackInitially />
+      );
+      const at = prominent(html, `${kind}-result-disclaimer`);
+      expect(html.indexOf(ENGLISH_MESSAGES["compare.counts"]), kind).toBeLessThan(at);
+      expect(at, kind).toBeLessThan(html.lastIndexOf('class="btn"'));
+    }
+  });
+  it("civics feedback: the prominent disclaimer replaces the short line, under the result", () => {
+    let s = engine.reduce(engine.initial(), { type: "choose", mode: "civics", seed: 1, at: AT });
+    s = engine.reduce(s, { type: "start", filedOn: "before", seed: 1, at: AT });
+    s = engine.reduce(s, { type: "submitCivics", response: "zzz", input: "typed", at: AT });
+    const html = renderToString(
+      <CivicsScreen progress={engine.civicsProgress(s)} version="2008" onSubmit={() => {}} onContinue={() => {}} onRestart={() => {}} showFeedbackInitially pictureFor={() => null} />
+    );
+    const at = prominent(html, "civics-result-disclaimer");
+    expect(html.indexOf(ENGLISH_MESSAGES["civics.notYet"])).toBeLessThan(at);
+    expect(html).not.toContain("disclaimer disclaimer--inline");
+  });
+  it("N-400 done: under the answers", () => {
+    const profile = env.content.profiles[0]!;
+    const answers = [{ questionId: "n400-001", questionText: "Can you tell me your full name?", transcript: "My name is Aurora Thistlewood." }];
+    const html = renderToString(
+      <N400View profile={profile} answers={answers} total={7} onAnswer={() => {}} onFinish={() => {}} state={{ status: "done" }} />
+    );
+    const at = prominent(html, "n400-done-disclaimer");
+    expect(html.indexOf("My name is Aurora Thistlewood.")).toBeLessThan(at);
+  });
+});
+
+describe("F-08: the coach notice says names are not detected", () => {
+  it("the limits line is a legal key, English in an unreviewed language, inside the notice", () => {
+    expect(isLegalKey("coach.notice.limits")).toBe(true);
+    const html = renderToString(
+      <I18nProvider language="vi">
+        <CoachNotice onConfirm={() => {}} onCancel={() => {}} />
+      </I18nProvider>
+    );
+    expect(html).toContain(ENGLISH_MESSAGES["coach.notice.limits"].replace(/'/g, "&#x27;"));
+    expect(html.indexOf("cannot find names")).toBeLessThan(html.indexOf("<button"));
+  });
+});
+
+describe("F-01: the loading shell in index.html", () => {
+  it("shows the name, a loading line and the short disclaimer in English, styled from a CSS file only", async () => {
+    const html = (await import("../../../index.html?raw")).default as string;
+    const root = html.slice(html.indexOf('<div id="root">'), html.indexOf("</body>"));
+    expect(root).toContain("Language Lab");
+    expect(root).toContain("Loading the practice booth…");
+    expect(root).toContain(ENGLISH_MESSAGES["disclaimer.short"]);
+    // The CSP has no 'unsafe-inline': no style attribute, no style or inline script element.
+    expect(html).not.toMatch(/\sstyle=|<style|<script(?![^>]*\bsrc=)/);
+    expect(html).toContain('<link rel="stylesheet" href="/src/ui/styles/boot.css" />');
   });
 });

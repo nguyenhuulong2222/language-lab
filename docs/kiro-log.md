@@ -635,3 +635,12 @@ Spec first (`88e7d15`, BS-22 to BS-25); decisions in `docs/decisions-log.md`, se
 - Baseline recorded; then TypeScript 7.0.2, Vite 8.3.8 with plugin-react 6.3.0, Vitest 5.1.1 and
   fast-check 4.11.0, one commit each, all checks green; no revert. Node pinned to 22.20.0 for CI and
   Pages (node:sqlite numbered parameters). DEP-02 closed. Details in `docs/upgrade-log.md`.
+## 2026-11-20: submission follow-up (branch release/submission)
+- Step 0: 65/20 English exemption line from the saved USCIS sources (legal key); a 65/20 full
+  interview skips reading and writing (`65d50ef`).
+- Step 1: prominent disclaimer under every result; the layout check enforces it (`4afb084`).
+- Step 2: coach screening for street addresses and ZIP codes; names limit in the notice (`81155d1`).
+- Step 3: loading shell; first contentful paint about 4.16 s → 1.26 s on the slow profile (`f9d82a1`).
+- Step 4: HSTS; note on the uscis.gov key strings (`9d2bc4f`).
+- Step 5: statuses in the final audit and open findings; 1390 tests; layout check passes in all 10
+  production languages.

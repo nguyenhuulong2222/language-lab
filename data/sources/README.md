@@ -4,6 +4,8 @@ These are official USCIS documents, kept unchanged so every answer in `data/civi
 can be traced back to its source. Do not edit them. Files are public U.S. government
 documents; Language Lab is an independent project and is not affiliated with USCIS.
 
+The "AIza…" strings in the saved uscis.gov pages (one in each of the five saved HTML pages) are uscis.gov's own public browser key, embedded by USCIS in its page settings. They are not a Language Lab secret, and the pages are kept unchanged (audit F-03, December 2026).
+
 | File | Official source | Role |
 |---|---|---|
 | `uscis-2025-civics-128.pdf` | https://www.uscis.gov/sites/default/files/document/questions-and-answers/2025-Civics-Test-128-Questions-and-Answers.pdf (M-1778, 09/25) | Official 2025 list. Supplied by the project owner; SHA-256 is identical to a fresh download from the URL on 2026-11-17. |

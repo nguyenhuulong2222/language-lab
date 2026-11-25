@@ -16,6 +16,7 @@ import {
   modeHasCivics,
   modeNeeds,
   modeParts,
+  sessionParts,
   sessionSteps,
   specialConsiderationOffered,
   type PracticeAction,
@@ -27,6 +28,7 @@ import { HelpSessionProvider } from "./help-session";
 import type { CoachTransport } from "./coach/ai-coach-client";
 import type { CoachEntry } from "./screens/N400Screen";
 import { Shell } from "./components/Shell";
+import { SpecialLanguageLine } from "./components/SpecialConsiderationNote";
 import { CivicsScreen } from "./screens/CivicsScreen";
 import { EnglishScreen } from "./screens/EnglishScreen";
 import { HomeScreen } from "./screens/HomeScreen";
@@ -81,7 +83,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
     setStudying(false);
     setRestarts((n) => n + 1);
   };
-  const steps = state.mode === null ? undefined : sessionSteps(state.mode);
+  const steps = state.mode === null ? undefined : sessionSteps(state.mode, state.setup?.specialConsideration === true);
 
   if (studying && state.phase === "home") {
     return (
@@ -224,6 +226,7 @@ export function Screen({
             dispatch({ type: "answerN400", questionId: prompt.id, questionText: prompt.text, transcript, at: now() })
           }
           nextIsReport={state.mode !== "full"}
+          nextIsCivics={state.mode === "full" && !sessionParts(state).includes("reading")}
           onFinish={() => dispatch({ type: "finishN400", at: now() })}
         />
       );
@@ -294,6 +297,10 @@ function ReportPage({ session, restart }: { session: InterviewSession; restart: 
     <div className="screen" ref={container}>
       <ReportScreen session={session} />
       <p className="note"><LegalText messageKey="report.n400Note" /></p>
+      {/* A 65/20 full interview has no reading and writing: say why, with the USCIS source. */}
+      {session.finalReport !== undefined && !session.finalReport.stageSummaries.some((s) => s.stage === "reading") && (
+        <SpecialLanguageLine />
+      )}
       <div className="btn-row">
         <button type="button" className="btn" onClick={restart}>
           {t("report.again")}

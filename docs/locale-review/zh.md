@@ -54,6 +54,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.missing` | A question that is not in the answer key | 一道不在標準答案中的題目 |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | 在有人審核過答案表之前，這個版本已關閉「先學習」。 |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | 這只會改變練習；不會儲存或傳送任何資料。公民常識部分會從官方清單中標有星號（*）的 {bank} 題中問 {asked} 題。在這個練習中，{asked} 題都會問完。練習及格分數是答對 {pass} 題。關於您自己的情況，請查看 uscis.gov：年齡和年數以提出申請的日期計算。 |
+| `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS：在提出申請時，如果您 50 歲或以上並已是永久居民 20 年（50/20），或 55 歲或以上並已 15 年（55/15），您可免除英語要求（閱讀、書寫、口說和理解英語），但仍須參加公民常識考試。若您自備口譯員，可用母語參加。如果您 65 歲或以上並至少 20 年（65/20），您也可免除英語，官員會使用特別指定的公民常識考試表。 |
 | `special.language.link` | Exceptions and accommodations on uscis.gov | uscis.gov 上的例外與便利措施 |
 | `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {bank} 題中有 {count} 題的答案會改變，例如現在由誰擔任某個職位。這些題目不在這裡顯示。請到 uscis.gov/citizenship/testupdates 查看。 |
 | `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | {asked} 題都已問完，並達到練習及格分數 {score}。 |
@@ -339,7 +340,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.special.title` | 65/20 civics practice | 65/20 公民常識練習 |
 | `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | 適用於 65 歲或以上、並已是永久居民 20 年或以上的人。練習標有星號（*）的公民常識問題。 |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | 我 65 歲或以上，並已是永久居民 20 年或以上 |
-| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | 65/20 申請人可以在口譯員協助下，用自己的語言參加真正的公民常識考試。 |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | 只看 65/20 的問題（標有星號） |
 | `report.line.civics.none` | No civics questions were scored. | 沒有任何公民常識問題被計分。 |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | 公民常識問題答對：{scored} 題中答對 {correct} 題。 |
@@ -354,3 +354,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | 練習寫下您聽到的句子。 |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | 請以虛構人物的身分回答。不要輸入您真實的姓名、地址、日期或號碼。 |
 | `common.newTab` | (opens in a new tab) | （在新分頁開啟） |
+| `coach.kind.streetAddress` | a street address | 一個街道地址 |
+| `coach.kind.zipCode` | a ZIP code with a state | 一個附有州名的郵遞區號 |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | 這項檢查也會找街道地址和郵遞區號，但無法找出姓名。請不要說出或輸入真實人物的姓名。 |

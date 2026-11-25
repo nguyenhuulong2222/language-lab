@@ -54,6 +54,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.missing` | A question that is not in the answer key | Một câu hỏi không có trong bộ đáp án |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Phần Học trước đang tắt trong bản này cho đến khi có người xem xét bộ đáp án. |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | Lựa chọn này chỉ thay đổi phần luyện tập; không có gì được lưu hay gửi đi. Phần kiến thức công dân sẽ hỏi {asked} trong số {bank} câu hỏi có đánh dấu sao (*) trong danh sách chính thức. Trong phần luyện tập này, cả {asked} câu đều được hỏi. Điểm đạt khi luyện tập là {pass} câu trả lời đúng. Với hồ sơ của chính bạn, hãy xem uscis.gov: tuổi và số năm được tính vào ngày nộp đơn. |
+| `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS: vào ngày nộp đơn, nếu bạn từ 50 tuổi trở lên và đã là thường trú nhân 20 năm (50/20), hoặc từ 55 tuổi trở lên và 15 năm (55/15), bạn được miễn yêu cầu tiếng Anh (đọc, viết, nói và hiểu tiếng Anh), nhưng vẫn phải thi kiến thức công dân. Bạn có thể thi bằng tiếng mẹ đẻ nếu mang theo thông dịch viên. Nếu bạn từ 65 tuổi trở lên và có ít nhất 20 năm (65/20), bạn cũng được miễn tiếng Anh, và viên chức dùng các mẫu đề thi kiến thức công dân được chỉ định riêng. |
 | `special.language.link` | Exceptions and accommodations on uscis.gov | Ngoại lệ và hỗ trợ trên uscis.gov |
 | `study.special.dynamic` | {count} of the {bank} questions have answers that change, such as who holds an office now. They are not shown here. Check them at uscis.gov/citizenship/testupdates. | {count} trong số {bank} câu hỏi có câu trả lời thay đổi, chẳng hạn ai đang giữ một chức vụ. Các câu này không hiện ở đây. Hãy xem trên uscis.gov/citizenship/testupdates. |
 | `report.line.civics.allAsked` | All {asked} questions were asked, and the practice passing score of {score} was reached. | Cả {asked} câu hỏi đều đã được hỏi, và đã đạt điểm đạt khi luyện tập là {score}. |
@@ -339,7 +340,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.special.title` | 65/20 civics practice | Luyện kiến thức công dân 65/20 |
 | `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Dành cho người từ 65 tuổi trở lên đã là thường trú nhân từ 20 năm trở lên. Luyện các câu hỏi kiến thức công dân có đánh dấu sao (*). |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Tôi từ 65 tuổi trở lên và đã là thường trú nhân từ 20 năm trở lên |
-| `special.language` | A 65/20 applicant may take the real civics test in their own language with an interpreter. | Người nộp đơn thuộc diện 65/20 có thể làm bài thi kiến thức công dân thật bằng ngôn ngữ của mình với một thông dịch viên. |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Chỉ các câu hỏi cho diện 65/20 (có đánh dấu sao) |
 | `report.line.civics.none` | No civics questions were scored. | Không có câu hỏi kiến thức công dân nào được chấm. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Số câu hỏi kiến thức công dân trả lời đúng: {correct} trên {scored}. |
@@ -354,6 +354,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.writing` | Practice writing the sentences you hear. | Hãy luyện viết các câu bạn nghe. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Hãy trả lời như người hư cấu. Đừng gõ tên, địa chỉ, ngày tháng hay số thật của bạn. |
 | `common.newTab` | (opens in a new tab) | (mở trong thẻ mới) |
+| `coach.kind.streetAddress` | a street address | một địa chỉ nhà |
+| `coach.kind.zipCode` | a ZIP code with a state | một mã ZIP kèm tên tiểu bang |
+| `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Phần kiểm tra cũng tìm địa chỉ nhà và mã ZIP, nhưng không thể tìm ra tên người. Đừng nói hay gõ tên của một người thật. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

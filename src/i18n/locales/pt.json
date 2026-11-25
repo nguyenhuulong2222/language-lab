@@ -313,7 +313,7 @@
   "home.special.text": "Para pessoas com 65 anos ou mais que são residentes permanentes há 20 anos ou mais. Pratique as perguntas de educação cívica marcadas com um asterisco (*).",
   "intro.special.label": "Tenho 65 anos ou mais e sou residente permanente há 20 anos ou mais",
   "intro.special.help": "Isto só muda a prática; nada é salvo nem enviado. A parte de educação cívica faz {asked} das {bank} perguntas marcadas com um asterisco (*) na lista oficial. Nesta prática, todas as {asked} são feitas. A pontuação de aprovação da prática é de {pass} respostas corretas. Para o seu próprio caso, consulte uscis.gov: a idade e os anos contam na data em que o pedido é apresentado.",
-  "special.language": "Um requerente 65/20 pode fazer o teste real de educação cívica no seu próprio idioma com um intérprete.",
+  "special.englishExempt": "USCIS: na data do pedido, se você tem 50 anos ou mais e 20 anos como residente permanente (50/20), ou 55 anos ou mais e 15 anos (55/15), está isento do requisito de inglês (ler, escrever, falar e entender inglês), mas ainda precisa fazer o teste de educação cívica. Pode fazê-lo no seu idioma nativo se trouxer um intérprete. Se você tem 65 anos ou mais e pelo menos 20 anos (65/20), também está isento do inglês, e o oficial usa formulários de teste de educação cívica especialmente designados.",
   "special.language.link": "Exceções e adaptações em uscis.gov",
   "study.special.label": "Só as perguntas para 65/20 (marcadas com um asterisco)",
   "study.special.dynamic": "{count} das {bank} perguntas têm respostas que mudam, como quem ocupa um cargo agora. Elas não aparecem aqui. Confira-as em uscis.gov/citizenship/testupdates.",
@@ -335,5 +335,8 @@
   "report.review.writing": "Pratique escrever as frases que você ouve.",
   "civics.heard.closest": "O seu aparelho deu vários palpites do que você disse. Aparece o mais próximo de uma resposta do gabarito.",
   "n400.box.reminder": "Responda como a pessoa fictícia. Não digite o seu nome, endereço, datas ou números reais.",
-  "common.newTab": "(abre em uma nova aba)"
+  "common.newTab": "(abre em uma nova aba)",
+  "coach.kind.streetAddress": "um endereço",
+  "coach.kind.zipCode": "um CEP (ZIP) com um estado",
+  "coach.notice.limits": "A verificação também procura endereços e códigos ZIP, mas não consegue encontrar nomes. Não diga nem digite o nome de uma pessoa real."
 }

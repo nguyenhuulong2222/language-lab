@@ -31,7 +31,7 @@ export interface CoachReply {
 }
 
 /** Kinds of personal identifiers the screen refuses to send. */
-export type IdentifierKind = "a-number" | "ssn" | "phone" | "email" | "date-of-birth";
+export type IdentifierKind = "a-number" | "ssn" | "phone" | "email" | "date-of-birth" | "street-address" | "zip-code";
 
 /** Why the client fell back to the scripted coach. */
 export type CoachFallbackReason =

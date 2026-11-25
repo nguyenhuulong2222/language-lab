@@ -466,3 +466,56 @@ Spec: `.kiro/specs/interview-coach/` (requirements revision 2 with two Analyze R
   `engines` and the README say 22.20+.
 - **Not verified**: the GitHub Actions run itself (nothing pushed; reproduced locally with `npm ci` on
   Node 22.20.0), the Cloudflare Pages build image setting of the project, and a real deploy.
+
+## P. Submission follow-up (2026-11-20, branch release/submission)
+- **65/20 and the English test (Step 0)**: a new legal key `special.englishExempt` (English-only; AI
+  drafts kept in the locale files for the reviewer) replaces `special.language`. It quotes the saved
+  USCIS Exceptions and Accommodations page
+  (https://www.uscis.gov/citizenship/exceptions-and-accommodations,
+  `data/sources/uscis-exceptions-and-accommodations.html`): 50/20 and 55/15 are exempt from the
+  English requirement but must still take the civics test, which they may take in their native
+  language with an interpreter; 65/20 gets special consideration on civics. That page does not state
+  that 65/20 is exempt from English, and neither saved source calls the 65/20 test "simplified".
+  Two things come from the saved Policy Manual table
+  (`data/sources/uscis-policy-manual-vol12-parte-ch2.html`): its 65/20 row says English "Exempt" and
+  "specially designated test forms", and the chapter lists "read, write, speak, and understand". The
+  line uses those words, not "simplified". It shows on the 65/20 setup, the first 65/20 civics
+  question, Study first with 65/20, the 65/20 part report, and a 65/20 full report. It links the
+  Exceptions page.
+- **65/20 full interview skips reading and writing**: chosen over labelling them "optional English
+  practice". The sources say a 65/20 applicant is exempt from the English requirement. Skipping
+  matches that, and it leaves no parts in the report that do not apply. `modeParts(mode, special)`
+  gives N-400 then civics; the stepper, the N-400 "Go to civics" button and the report follow it.
+  The report builder accepts no reading or writing result, and the practice result then follows
+  civics. Tests: engine unit and property tests (`special-consideration.test.ts`) and a DOM
+  click-through (`interaction.test.tsx`).
+- **Coach screening, addresses and ZIP codes (Step 2, audit F-08)**: `identifier-screen.ts` now also
+  refuses:
+  - a house number followed by one to three words and a street word (St, Street, Ave, Avenue, Rd,
+    Road, Blvd, Dr, Drive, Ln, Lane, Way, Ct, Hwy);
+  - a unit marker with a number (Apt, Unit, Suite, #);
+  - a ZIP code next to a state code (capitals only) or a state name.
+
+  The words between the number and the street word may not be common short words or time and count
+  words, so "In 2015 we moved to a new street" passes. E-mail and phone were already covered. The
+  fictional profiles' sample answers still pass (tested).
+
+  **Names are not detected**: a name looks like any other word, and a list of names would block
+  ordinary answers. The consent notice says so in a new legal key, `coach.notice.limits` ("...it
+  cannot find names. Do not say or type a real person's name."), English until reviewed. The same
+  screen runs on the client and again in the Pages Function.
+- **Prominent disclaimer on result screens (Step 1, audit F-07)**: `disclaimer.report` in the prominent
+  variant sits directly under the result on reading, writing and civics feedback (it replaces the short
+  civics line) and on the N-400 summary. No new key: the existing legal key and its reviewer drafts are
+  reused. The layout check now fails a result screen without it, with it above the result, or with the
+  result out of view. It measures where the app leaves the page: each result screen focuses its result
+  heading, which scrolls it into view. Measuring from the top of the page instead failed in vi at
+  extra-large text, because of the AI-translation notice above the screen, not the disclaimer.
+- **Loading shell (Step 3, audit F-01)**: static text inside `#root` (name, "Loading the practice
+  booth…", the short disclaimer in English), styled by `src/ui/styles/boot.css`, which Vite merges into
+  the main stylesheet; no inline style, so the CSP is unchanged. React replaces it on mount. No lazy
+  split, because most of the main chunk is React DOM and shared engine code.
+- **HSTS and the uscis.gov key strings (Step 4, audit F-04, F-03)**: `Strict-Transport-Security:
+  max-age=31536000` without `includeSubDomains` or `preload` (the site is one Pages host). The saved
+  uscis.gov pages keep their "AIza…" browser key strings unchanged (they are sources); the sources
+  README explains them.

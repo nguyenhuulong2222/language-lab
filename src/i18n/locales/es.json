@@ -313,7 +313,7 @@
   "home.special.text": "Para personas de 65 años o más que han sido residentes permanentes durante 20 años o más. Practique las preguntas de educación cívica marcadas con un asterisco (*).",
   "intro.special.label": "Tengo 65 años o más y he sido residente permanente durante 20 años o más",
   "intro.special.help": "Esto solo cambia la práctica; no se guarda ni se envía nada. La parte de educación cívica le hace {asked} de las {bank} preguntas marcadas con un asterisco (*) en la lista oficial. En esta práctica se hacen las {asked}. La puntuación de práctica para aprobar es de {pass} respuestas correctas. Para su propio caso, consulte uscis.gov: la edad y los años cuentan en la fecha de presentación de la solicitud.",
-  "special.language": "Una persona solicitante 65/20 puede hacer el examen real de educación cívica en su propio idioma con un intérprete.",
+  "special.englishExempt": "USCIS: en la fecha de presentación, si tiene 50 años o más y 20 años como residente permanente (50/20), o 55 años o más y 15 años (55/15), está exento del requisito de inglés (leer, escribir, hablar y entender inglés), pero debe tomar el examen de educación cívica. Puede tomarlo en su idioma natal si trae un intérprete. Si tiene 65 años o más y al menos 20 años (65/20), también está exento del inglés, y el oficial usa formularios de examen de educación cívica especialmente designados.",
   "special.language.link": "Excepciones y adaptaciones en uscis.gov",
   "study.special.label": "Solo las preguntas para 65/20 (marcadas con un asterisco)",
   "study.special.dynamic": "{count} de las {bank} preguntas tienen respuestas que cambian, como quién ocupa un cargo ahora. No se muestran aquí. Revíselas en uscis.gov/citizenship/testupdates.",
@@ -335,5 +335,8 @@
   "report.review.writing": "Practique escribir las oraciones que escucha.",
   "civics.heard.closest": "Su dispositivo dio varias opciones de lo que usted dijo. Se muestra la más cercana a una respuesta de la clave.",
   "n400.box.reminder": "Responda como la persona ficticia. No escriba su nombre, dirección, fechas ni números reales.",
-  "common.newTab": "(se abre en una pestaña nueva)"
+  "common.newTab": "(se abre en una pestaña nueva)",
+  "coach.kind.streetAddress": "una dirección",
+  "coach.kind.zipCode": "un código postal con un estado",
+  "coach.notice.limits": "La revisión también busca direcciones y códigos postales, pero no puede encontrar nombres. No diga ni escriba el nombre de una persona real."
 }
