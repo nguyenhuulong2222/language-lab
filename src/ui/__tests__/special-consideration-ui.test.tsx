@@ -134,8 +134,8 @@ describe("Study first for 65/20 (REQ-S07)", () => {
 
 describe("civics screen and part report (REQ-S04, REQ-S08)", () => {
   const start = () => {
-    const chosen = engine.reduce(engine.initial(), { type: "choose", mode: "civics", seed: 1, at: AT, specialConsideration: true });
-    return engine.reduce(chosen, { type: "start", filedOn: "on_or_after", specialConsideration: true, seed: 1, at: AT });
+    const chosen = engine.reduce(engine.initial(), { type: "choose", mode: "civics", seed: 1, at: AT, exception: "65/20" });
+    return engine.reduce(chosen, { type: "start", filedOn: "on_or_after", exception: "65/20", seed: 1, at: AT });
   };
   it("the first question names the 65/20 practice; the question is English in Vietnamese too", () => {
     const s = start();

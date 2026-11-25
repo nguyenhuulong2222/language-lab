@@ -62,6 +62,8 @@ import {
   type EnglishTestRules,
 } from "./test-rules-loader.js";
 import { designatedQuestionIds, specialConsiderationRules } from "./special-consideration.js";
+import { englishExempt, usesDesignatedSet, type AgeException } from "./exceptions.js";
+export { AGE_EXCEPTIONS, englishExempt, isAgeException, usesDesignatedSet, type AgeException } from "./exceptions.js";
 import { assertValidIsoDate, selectTestVersion, type CivicsTestVersion } from "./version-selector.js";
 
 // ---------------------------------------------------------------------------
@@ -97,29 +99,29 @@ export function modeNeeds(mode: PracticeMode): { profile: boolean; filing: boole
 }
 
 /**
- * The practice parts of a mode, in order. A 65/20 full interview has no reading and writing: USCIS
- * exempts 65/20 applicants from the English requirement (Policy Manual, Vol. 12, Part E, Ch. 2,
- * table of exceptions; decisions log P).
+ * The practice parts of a mode, in order. A full interview for 50/20, 55/15 or 65/20 has no reading
+ * and writing: USCIS exempts them from the English requirement (Policy Manual, Vol. 12, Part E,
+ * Ch. 2, table of exceptions; decisions log P and Q).
  */
-export function modeParts(mode: PracticeMode, specialConsideration = false): PracticePart[] {
+export function modeParts(mode: PracticeMode, exception: AgeException = "none"): PracticePart[] {
   if (mode === "full") {
-    return specialConsideration ? ["n400_interview", "civics"] : ["n400_interview", "reading", "writing", "civics"];
+    return englishExempt(exception) ? ["n400_interview", "civics"] : ["n400_interview", "reading", "writing", "civics"];
   }
   return [mode === "n400" ? "n400_interview" : mode];
 }
 
-/** The parts of this session (after setup the 65/20 choice is known). */
+/** The parts of this session (after setup the exception is known). */
 export function sessionParts(state: Pick<PracticeState, "mode" | "setup">): PracticePart[] {
-  return state.mode === null ? [] : modeParts(state.mode, state.setup?.specialConsideration === true);
+  return state.mode === null ? [] : modeParts(state.mode, state.setup?.exception ?? "none");
 }
 
 /**
  * The steps of a session, in order: the setup step only when the mode needs a choice, then the
  * parts, then the report. The stepper and the take counter show exactly these.
  */
-export function sessionSteps(mode: PracticeMode, specialConsideration = false): SessionStage[] {
+export function sessionSteps(mode: PracticeMode, exception: AgeException = "none"): SessionStage[] {
   const needs = modeNeeds(mode);
-  return [...(needs.profile || needs.filing ? (["intro"] as const) : []), ...modeParts(mode, specialConsideration), "report"];
+  return [...(needs.profile || needs.filing ? (["intro"] as const) : []), ...modeParts(mode, exception), "report"];
 }
 
 export type AnswerKeyResult =
@@ -154,7 +156,11 @@ export function specialConsiderationOffered(env: PracticeEnv): boolean {
   return env.designated !== undefined && (env.specialRules?.() ?? null) !== null;
 }
 
-/** Modes that include the civics part, where the 65/20 choice applies. */
+/** True when this environment offers an exception: 65/20 needs the designated list and its rules. */
+export function exceptionOffered(env: PracticeEnv, exception: AgeException): boolean {
+  return exception !== "65/20" || specialConsiderationOffered(env);
+}
+/** Modes that include the civics part, where the exception applies. */
 export function modeHasCivics(mode: PracticeMode): boolean {
   return modeParts(mode).includes("civics");
 }
@@ -167,10 +173,11 @@ export interface PracticeSetup {
   filingDate: string | null;
   version: CivicsTestVersion | null;
   /**
-   * The 65/20 special consideration: the civics part uses the designated questions and the 65/20
-   * rules. Only true when the mode has civics and the environment offers it.
+   * The age and residency exception (decisions log Q). 50/20, 55/15 and 65/20 skip reading and
+   * writing in a full interview; 65/20 also uses the designated questions and rules. "none" unless
+   * the mode has civics and the environment offers the exception.
    */
-  specialConsideration: boolean;
+  exception: AgeException;
 }
 
 export interface SentenceAttempt {
@@ -222,13 +229,13 @@ export interface PracticeState {
   report: FinalReport | null;
   /** The report of a single practised part (no overall practice result). */
   partReport: PartReport | null;
-  /** Setup default for the 65/20 checkbox: true when the home 65/20 card was chosen. */
-  specialRequested: boolean;
+  /** Setup default for the exception choice: the one chosen on Home. */
+  exceptionRequested: AgeException;
 }
 
 export type PracticeAction =
-  | { type: "choose"; mode: PracticeMode; seed: number; at: string; specialConsideration?: boolean }
-  | { type: "start"; profileId?: string; filedOn?: FiledChoice; specialConsideration?: boolean; seed: number; at: string }
+  | { type: "choose"; mode: PracticeMode; seed: number; at: string; exception?: AgeException }
+  | { type: "start"; profileId?: string; filedOn?: FiledChoice; exception?: AgeException; seed: number; at: string }
   | { type: "answerN400"; questionId: string; questionText: string; transcript: string; at: string }
   | { type: "finishN400"; at: string }
   | { type: "submitReading"; transcript: string; alternatives?: readonly string[]; input: InputMode; at: string }
@@ -424,7 +431,7 @@ export function createInitialPracticeState(): PracticeState {
     civicsLockReason: null,
     report: null,
     partReport: null,
-    specialRequested: false,
+    exceptionRequested: "none",
   };
 }
 
@@ -479,7 +486,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
   function civicsRulesFor(state: PracticeState): CivicsPracticeRules | null {
     const version = state.setup?.version;
     if (!version) return null;
-    if (state.setup?.specialConsideration) {
+    if (state.setup !== null && usesDesignatedSet(state.setup.exception)) {
       const special = env.specialRules?.() ?? null;
       if (special !== null) return special;
     }
@@ -598,7 +605,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
   /** Set up a session once the mode has what it needs, and go to its first part. */
   function begin(
     mode: PracticeMode,
-    choice: { profileId: string | null; filedOn: FiledChoice | null; specialConsideration?: boolean },
+    choice: { profileId: string | null; filedOn: FiledChoice | null; exception?: AgeException },
     seed: number,
     at: string
   ): PracticeState {
@@ -610,9 +617,12 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
     let civicsIds: string[] = [];
     let civicsLocked = false;
     let civicsLockReason: string | null = null;
-    const special =
-      baseParts.includes("civics") && version !== null && choice.specialConsideration === true && specialConsiderationOffered(env);
-    const parts = modeParts(mode, special);
+    const requested = choice.exception ?? "none";
+    const exception: AgeException =
+      baseParts.includes("civics") && version !== null && exceptionOffered(env, requested) ? requested : "none";
+    // 65/20: the designated questions and rules. 50/20 and 55/15: the usual pool and rules.
+    const special = usesDesignatedSet(exception);
+    const parts = modeParts(mode, exception);
     if (parts.includes("civics") && version) {
       const loaded = env.answerKey(version);
       if (loaded.status === "ready") {
@@ -636,7 +646,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
         filedOn: needs.filing ? choice.filedOn : null,
         filingDate,
         version,
-        specialConsideration: special,
+        exception,
       },
       startedAt: at,
       readingIds: parts.includes("reading")
@@ -692,7 +702,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
           answerKey: loaded.key,
           rules: civicsRulesFor(state)!,
           now,
-          specialConsideration: state.setup.specialConsideration,
+          exception: state.setup.exception,
         });
       }
       default:
@@ -715,7 +725,8 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
             phase: "intro",
             mode: action.mode,
             startedAt: action.at,
-            specialRequested: action.specialConsideration === true && modeHasCivics(action.mode) && specialConsiderationOffered(env),
+            exceptionRequested:
+              action.exception !== undefined && modeHasCivics(action.mode) && exceptionOffered(env, action.exception) ? action.exception : "none",
           };
         }
         return begin(action.mode, { profileId: null, filedOn: null }, action.seed, action.at);
@@ -728,7 +739,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
         if (needs.filing && action.filedOn === undefined) return state;
         return begin(
           state.mode,
-          { profileId: action.profileId ?? null, filedOn: action.filedOn ?? null, specialConsideration: action.specialConsideration === true },
+          { profileId: action.profileId ?? null, filedOn: action.filedOn ?? null, ...(action.exception === undefined ? {} : { exception: action.exception }) },
           action.seed,
           action.at
         );
@@ -829,7 +840,7 @@ export function createPracticeEngine(env: PracticeEnv): PracticeEngine {
           const report = buildFinalReport({
             session,
             civicsResult: progress.result,
-            // 65/20: no reading and writing parts, so no English results in the report.
+            // 50/20, 55/15 and 65/20: no reading and writing parts, so no English results in the report.
             readingResult: sessionParts(state).includes("reading") ? englishProgress(state, "reading").result : null,
             writingResult: sessionParts(state).includes("writing") ? englishProgress(state, "writing").result : null,
             writingAssisted: state.writing.filter((a) => a.assisted).length,

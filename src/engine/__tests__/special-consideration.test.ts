@@ -47,8 +47,8 @@ const key = (v: CivicsTestVersion) => {
 };
 
 function startCivics(version: CivicsTestVersion, special: boolean, seed = 1, e = engine): PracticeState {
-  const chosen = e.reduce(e.initial(), { type: "choose", mode: "civics", seed, at: AT, specialConsideration: special });
-  return e.reduce(chosen, { type: "start", filedOn: FILED[version], specialConsideration: special, seed, at: AT });
+  const chosen = e.reduce(e.initial(), { type: "choose", mode: "civics", seed, at: AT, exception: special ? "65/20" : "none" });
+  return e.reduce(chosen, { type: "start", filedOn: FILED[version], exception: special ? "65/20" : "none", seed, at: AT });
 }
 
 /** Answer the civics part, one answer per plan entry: true answers correctly, false wrongly. */
@@ -89,14 +89,14 @@ describe("65/20 rules (REQ-S01, REQ-S02)", () => {
     const off = createPracticeEngine({ ...env, specialRules: () => null });
     expect(specialConsiderationOffered(off.env)).toBe(false);
     const s = startCivics("2025", true, 1, off);
-    expect(s.setup?.specialConsideration).toBe(false);
+    expect(s.setup?.exception).toBe("none");
     expect(s.civicsIds).toHaveLength(20); // the normal 2025 test
   });
   it("an environment without the 65/20 functions has no 65/20 practice", () => {
     const { specialRules: _r, designated: _d, ...rest } = env;
     const plain = createPracticeEngine(rest);
     expect(specialConsiderationOffered(plain.env)).toBe(false);
-    expect(startCivics("2008", true, 1, plain).setup?.specialConsideration).toBe(false);
+    expect(startCivics("2008", true, 1, plain).setup?.exception).toBe("none");
   });
 });
 
@@ -105,7 +105,7 @@ describe("65/20 practice in the engine (REQ-S04)", () => {
     it(`${version}: 10 designated static questions, never a dynamic one`, () => {
       const s = startCivics(version, true);
       const designated = new Set(designatedQuestionIds(version));
-      expect(s.setup?.specialConsideration).toBe(true);
+      expect(s.setup?.exception).toBe("65/20");
       expect(s.civicsIds).toHaveLength(10);
       expect(new Set(s.civicsIds).size).toBe(10);
       for (const id of s.civicsIds) {
@@ -137,23 +137,23 @@ describe("65/20 practice in the engine (REQ-S04)", () => {
   }
   it("without the choice the normal test runs unchanged", () => {
     const s = startCivics("2008", false);
-    expect(s.setup?.specialConsideration).toBe(false);
+    expect(s.setup?.exception).toBe("none");
     expect(s.civicsIds).toHaveLength(10);
     const done = answerCivics(s, [true, true, true, true, true, true]);
     expect(engine.civicsProgress(done).result?.stopReason).toBe("correct_threshold");
   });
   it("the choice only applies to modes with civics", () => {
     for (const mode of ["n400", "reading", "writing"] as const satisfies readonly PracticeMode[]) {
-      const s = engine.reduce(engine.initial(), { type: "choose", mode, seed: 1, at: AT, specialConsideration: true });
-      expect(s.specialRequested, mode).toBe(false);
-      expect(s.setup?.specialConsideration ?? false, mode).toBe(false);
+      const s = engine.reduce(engine.initial(), { type: "choose", mode, seed: 1, at: AT, exception: "65/20" });
+      expect(s.exceptionRequested, mode).toBe("none");
+      expect(s.setup?.exception ?? "none", mode).toBe("none");
     }
-    const civics = engine.reduce(engine.initial(), { type: "choose", mode: "civics", seed: 1, at: AT, specialConsideration: true });
-    expect(civics.specialRequested).toBe(true);
+    const civics = engine.reduce(engine.initial(), { type: "choose", mode: "civics", seed: 1, at: AT, exception: "65/20" });
+    expect(civics.exceptionRequested).toBe("65/20");
   });
   it("the full interview with 65/20: the civics part uses the 65/20 rules and the report counts it", () => {
     let s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 2, at: AT });
-    s = engine.reduce(s, { type: "start", profileId: PROFILE, filedOn: "on_or_after", specialConsideration: true, seed: 2, at: AT });
+    s = engine.reduce(s, { type: "start", profileId: PROFILE, filedOn: "on_or_after", exception: "65/20", seed: 2, at: AT });
     expect(s.civicsIds).toHaveLength(10);
     expect(engine.civicsRulesFor(s)?.passingScore.value).toBe(6);
     s = engine.reduce(s, { type: "answerN400", questionId: "n400-001", questionText: "Q?", transcript: "my answer", at: AT });
@@ -226,12 +226,12 @@ describe("65/20 properties (REQ-S04)", () => {
 describe("65/20 full interview: no English test (decisions log P)", () => {
   const start = (special: boolean) => {
     let s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 4, at: AT });
-    s = engine.reduce(s, { type: "start", profileId: PROFILE, filedOn: "before", specialConsideration: special, seed: 4, at: AT });
+    s = engine.reduce(s, { type: "start", profileId: PROFILE, filedOn: "before", exception: special ? "65/20" : "none", seed: 4, at: AT });
     return s;
   };
   it("the steps are setup, N-400, civics, report; reading and writing are not selected", () => {
-    expect(sessionSteps("full", true)).toEqual(["intro", "n400_interview", "civics", "report"]);
-    expect(sessionSteps("full", false)).toEqual(["intro", "n400_interview", "reading", "writing", "civics", "report"]);
+    expect(sessionSteps("full", "65/20")).toEqual(["intro", "n400_interview", "civics", "report"]);
+    expect(sessionSteps("full", "none")).toEqual(["intro", "n400_interview", "reading", "writing", "civics", "report"]);
     const s = start(true);
     expect(sessionParts(s)).toEqual(["n400_interview", "civics"]);
     expect(s.readingIds).toEqual([]);
@@ -257,7 +257,7 @@ describe("65/20 full interview: no English test (decisions log P)", () => {
     fc.assert(
       fc.property(fc.array(fc.boolean(), { minLength: 10, maxLength: 10 }), fc.integer({ min: 0, max: 1000 }), (plan, seed) => {
         let s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed, at: AT });
-        s = engine.reduce(s, { type: "start", profileId: PROFILE, filedOn: "on_or_after", specialConsideration: true, seed, at: AT });
+        s = engine.reduce(s, { type: "start", profileId: PROFILE, filedOn: "on_or_after", exception: "65/20", seed, at: AT });
         s = engine.reduce(s, { type: "finishN400", at: AT });
         s = engine.reduce(answerCivics(s, plan), { type: "continue", at: AT });
         expect(s.report?.practiceResult).toBe(plan.filter(Boolean).length >= 6 ? "practice_passed" : "needs_more_practice");
