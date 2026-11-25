@@ -163,5 +163,6 @@ export const tEn: Translate = createTranslator("en");
 
 export { en as ENGLISH_MESSAGES };
 export * from "./languages.js";
+export * from "./detect-language.js";
 export * from "./legal-keys.js";
 export * from "./locale-checks.js";
