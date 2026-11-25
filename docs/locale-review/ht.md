@@ -35,7 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. | Nenpòt nan sa yo konte. | Any one of these counts. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | Sivik, Etidye anvan ak antrevi pratik konplè a fèmen nan vèsyon sa a jiskaske yon moun revize repons sivik yo. Ou ka pratike antrevi N-400 a, lekti ak ekriti. | Civics, Study first and the full practice interview are closed in this version until a person reviews the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Kle repons edikasyon sivik la ap tann yon moun revize l toujou, se konsa vèsyon sa a pa bay nòt pou edikasyon sivik e li pa fè rapò. | The civics answer key is still waiting for a person to review it, so this version does not give a score for civics and does not make a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Lè w peze “Di li”, rekonesans vwa navigatè w la ka voye vwa w bay konpayi ki fè navigatè a, tankou Google oswa Apple, pou transfòme l an mo. Language Lab pa voye ni konsève vwa w. Ou ka tape repons ou olye de sa. | When you press “Say it”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Lè w peze “Touche pou w pale”, rekonesans vwa navigatè w la ka voye vwa w bay konpayi ki fè navigatè a, tankou Google oswa Apple, pou transfòme l an mo. Language Lab pa voye ni konsève vwa w. Ou ka tape repons ou olye de sa. | When you press “Say it”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. |
 | `report.title.onTrack` | Practice complete: each part reached the practice score | Pratik la fini: chak pati rive nan nòt pratik la | The practice is finished: each part reached the practice score |
 | `report.title.review` | A few things to review | Kèk bagay pou revize | Some things to review |
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Nan pratik sa a, lekti, ekriti ak sivik chak rive nan nòt Language Lab itilize a. Sèvi ak nòt ki anba yo pou kontinye pratike. | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. |
@@ -73,7 +73,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Etap pratik sa a poko pare. |
 | `header.about` | About & disclaimer | Apwopo ak avètisman |
 | `stepper.label` | Interview stages | Etap entèvyou a |
-| `stepper.count` | Stage {current} of {total} | Etap {current} sou {total} |
+| `stepper.count` | Step {current} of {total}: {name} | Etap {current} sou {total}: {name} |
 | `stepper.status.complete` | completed | fini |
 | `stepper.status.current` | current step | etap kounye a |
 | `stepper.status.upcoming` | upcoming | ki ap vini |
@@ -100,8 +100,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.intro` | Focus on these before your next practice. | Konsantre sou sa yo anvan pwochen pratik ou a. |
 | `report.generated` | Report generated {datetime} | Rapò a fèt nan dat {datetime} |
 | `translation.english` | English | Angle |
-| `voice.say` | Say it | Pale |
-| `voice.stop` | Stop listening | Sispann koute |
+| `voice.say` | Tap to speak | Touche pou w pale |
+| `voice.stop` | Listening… tap when you finish | N ap koute… touche lè w fini |
 | `voice.listening` | Listening. Say your answer now. | N ap koute. Di repons ou a kounye a. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | Nou tande ou. Tcheke mo yo, chanje yo si ou vle, epi voye. |
 | `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | Mikwofòn nan bloke. Pèmèt aksè nan mikwofòn nan paramèt navigatè a, oswa tape repons ou a. |
@@ -110,7 +110,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | Nou pa jwenn okenn mikwofòn. Tape repons ou a olye. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | Koute a pa mache fwa sa a. Eseye ankò, oswa tape repons ou a. |
 | `voice.skip` | Skip this one | Sote youn sa a |
-| `audio.play` | Play aloud | Koute byen fò |
+| `audio.play` | Play the question | Koute kesyon an |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Vwa aparèy la: vwa ki enstale sou telefòn oswa òdinatè ou a. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Navigatè sa a pa ka li byen fò. Li tèks la sou ekran an. |
 | `intro.profile.legend` | Choose a practice profile | Chwazi yon pwofil pratik |
@@ -201,7 +201,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.needs` | This question needs {count} different answers. | Kesyon sa a bezwen {count} repons diferan. |
 | `civics.yourAnswer` | Your answer | Repons ou |
 | `civics.submit` | Check my answer | Tcheke repons mwen |
-| `civics.correct` | Correct | Kòrèk |
+| `civics.correct` | This counts | Sa konte |
 | `civics.notYet` | Not yet | Poko |
 | `civics.youSaid` | You said: {text} | Ou te di: {text} |
 | `civics.official` | Official answers | Repons ofisyèl yo |
@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.again` | Practice again | Pratike ankò |
 | `common.startOver` | Start over | Rekòmanse |
 | `voice.needText` | Type or say your answer first, or choose Skip. | Premye tape oswa di repons ou, oswa chwazi Sote. |
-| `audio.stop` | Stop playing | Sispann jwe |
+| `audio.stop` | Stop | Kanpe |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Vwa AI fè. Yo te prepare odyo a davans. |
 | `audio.playSample` | Play sample answer | Koute egzanp repons lan |
 | `home.title` | Welcome to the booth | Byenvini nan Language Lab |
@@ -290,8 +290,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Son an pa jwe. Eseye ankò, oswa li tèks ki sou ekran an. |
 | `lang.label` | Language | Lang |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Tounen nan akèy? Repons ou yo nan pratik sa a ap pèdi. |
-| `header.homeConfirm.yes` | Yes, go home | Wi, tounen nan akèy |
-| `header.homeConfirm.no` | Stay here | Rete isit la |
+| `header.homeConfirm.yes` | Leave | Kite |
+| `header.homeConfirm.no` | Keep practicing | Kontinye pratike |
 | `common.retry` | Try again | Eseye ankò |
 | `partReport.badge.good` | This part reached the practice score | Pati sa a rive nan nòt pratik la |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Yo te montre fraz la sou ekran an (tantativ ak èd). |
@@ -360,3 +360,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.full.start` | Start practice | Kòmanse pratik la |
 | `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Ou gen 65 an oswa plis, epi 20 an ak yon kat vèt? Kòmanse pratik 65/20 la. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | Tèks la twò piti? Tape Gwosè tèks anwo a. |
+| `audio.playing` | Playing… | Ap jwe… |
+| `audio.playSentence` | Play the sentence | Koute fraz la |
+| `voice.gotIt` | Got it. Tap to speak again | Nou tande w. Touche pou pale ankò |
+| `voice.orType` | Or type your answer | Oswa tape repons ou |
+| `voice.micHelp.title` | How to allow the microphone | Kijan pou pèmèt mikwo a |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): touche “aA” bò adrès sit la, apre sa Website Settings, apre sa Microphone, epi chwazi Allow. Apre sa, rechaje paj la. |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): touche ti ikòn ki agoch adrès sit la, apre sa Permissions, epi limen Microphone. Apre sa, rechaje paj la. |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | Ou ka toujou tape repons ou nan bwat la. |
+| `civics.why.correct` | Your answer matches an official answer. | Repons ou koresponn ak yon repons ofisyèl. |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | Repons ou poko koresponn ak repons ofisyèl yo. |

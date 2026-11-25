@@ -271,7 +271,7 @@ async function checkConfiguration(cdp, size, lang) {
     if (/-feedback$|^n400-done$/.test(name)) {
       m.resultCheck = await cdp.evaluate(`(() => {
         const disclaimer = document.querySelector("main .disclaimer--prominent");
-        const heading = document.querySelector("main .screen__body .panel .panel__title") || document.querySelector("main h1");
+        const heading = document.querySelector("main .screen__body .panel .result-headline") || document.querySelector("main h1");
         const box = heading ? heading.getBoundingClientRect() : null;
         return { disclaimer: !!disclaimer, headingTop: box ? Math.round(box.top) : null, headingBottom: box ? Math.round(box.bottom) : null, viewport: window.innerHeight,
           order: !!(disclaimer && heading && (heading.compareDocumentPosition(disclaimer) & Node.DOCUMENT_POSITION_FOLLOWING)) };

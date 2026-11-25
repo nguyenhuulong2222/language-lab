@@ -35,7 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` ⚠ | Any of these counts. | คำตอบใดคำตอบหนึ่งเหล่านี้นับว่าถูก | Any one of these answers counts as correct. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | หน้าที่พลเมือง เรียนก่อน และการสัมภาษณ์ฝึกแบบเต็ม ปิดอยู่ในเวอร์ชันนี้ จนกว่าจะมีคนตรวจคำตอบหน้าที่พลเมือง คุณฝึกการสัมภาษณ์ N-400 การอ่าน และการเขียนได้ | Civic duties, Study first and the full practice interview are closed in this version until someone checks the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | เฉลยความรู้พลเมืองยังรอให้มีผู้ตรวจสอบ เวอร์ชันนี้จึงไม่ให้คะแนนส่วนนี้และไม่สร้างรายงาน | The civics answer key is still waiting for someone to review it. This version therefore does not score this part and does not create a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | เมื่อคุณกด “พูด” ระบบรู้จำเสียงพูดของเบราว์เซอร์อาจส่งเสียงของคุณไปยังบริษัทผู้สร้างเบราว์เซอร์ เช่น Google หรือ Apple เพื่อแปลงเป็นข้อความ Language Lab ไม่ส่งหรือเก็บเสียงของคุณ คุณพิมพ์คำตอบแทนได้ | When you press “Speak”, the browser's speech recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead. |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | เมื่อคุณกด “แตะเพื่อพูด” ระบบรู้จำเสียงพูดของเบราว์เซอร์อาจส่งเสียงของคุณไปยังบริษัทผู้สร้างเบราว์เซอร์ เช่น Google หรือ Apple เพื่อแปลงเป็นข้อความ Language Lab ไม่ส่งหรือเก็บเสียงของคุณ คุณพิมพ์คำตอบแทนได้ | When you press “Speak”, the browser's speech recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead. |
 | `report.title.onTrack` | Practice complete: each part reached the practice score | ฝึกเสร็จแล้ว: ทุกส่วนถึงคะแนนฝึก | Practice finished: every part reached the practice score |
 | `report.title.review` | A few things to review | มีบางเรื่องที่ควรทบทวน | There are some things worth reviewing |
 | `report.lead.onTrack` ⚠ | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | ในการฝึกครั้งนี้ การอ่าน การเขียน และหน้าที่พลเมือง ต่างถึงคะแนนที่ Language Lab ใช้ ใช้บันทึกด้านล่างเพื่อฝึกต่อไป | In this practice, reading, writing and civic duties each reached the score Language Lab uses. Use the notes below to keep practicing. |
@@ -73,7 +73,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | ขั้นตอนการฝึกนี้ยังไม่พร้อมใช้งาน |
 | `header.about` | About & disclaimer | เกี่ยวกับและข้อจำกัดความรับผิดชอบ |
 | `stepper.label` | Interview stages | ขั้นตอนการสัมภาษณ์ |
-| `stepper.count` | Stage {current} of {total} | ขั้นตอนที่ {current} จาก {total} |
+| `stepper.count` | Step {current} of {total}: {name} | ขั้นตอนที่ {current} จาก {total}: {name} |
 | `stepper.status.complete` | completed | เสร็จแล้ว |
 | `stepper.status.current` | current step | ขั้นตอนปัจจุบัน |
 | `stepper.status.upcoming` | upcoming | ขั้นตอนถัดไป |
@@ -100,8 +100,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.intro` | Focus on these before your next practice. | โปรดเน้นเรื่องเหล่านี้ก่อนการฝึกครั้งต่อไป |
 | `report.generated` | Report generated {datetime} | สร้างรายงานเมื่อ {datetime} |
 | `translation.english` | English | อังกฤษ |
-| `voice.say` | Say it | พูด |
-| `voice.stop` | Stop listening | หยุดฟัง |
+| `voice.say` | Tap to speak | แตะเพื่อพูด |
+| `voice.stop` | Listening… tap when you finish | กำลังฟัง… แตะเมื่อพูดจบ |
 | `voice.listening` | Listening. Say your answer now. | กำลังฟัง โปรดพูดคำตอบของคุณตอนนี้ |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | เราได้ยินคุณแล้ว ตรวจดูคำ แก้ไขได้ถ้าต้องการ แล้วส่ง |
 | `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | ไมโครโฟนถูกบล็อก โปรดอนุญาตการใช้ไมโครโฟนในการตั้งค่าของเบราว์เซอร์ หรือพิมพ์คำตอบ |
@@ -110,7 +110,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | ไม่พบไมโครโฟน โปรดพิมพ์คำตอบแทน |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | ครั้งนี้การฟังไม่สำเร็จ ลองอีกครั้ง หรือพิมพ์คำตอบ |
 | `voice.skip` | Skip this one | ข้ามข้อนี้ |
-| `audio.play` | Play aloud | ฟังเสียงอ่าน |
+| `audio.play` | Play the question | ฟังคำถาม |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | เสียงของอุปกรณ์: เสียงที่ติดตั้งในโทรศัพท์หรือคอมพิวเตอร์ของคุณ |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | เบราว์เซอร์นี้อ่านออกเสียงไม่ได้ โปรดอ่านข้อความบนหน้าจอ |
 | `intro.profile.legend` | Choose a practice profile | เลือกโปรไฟล์ฝึก |
@@ -201,7 +201,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.needs` | This question needs {count} different answers. | คำถามนี้ต้องการคำตอบที่ต่างกัน {count} คำตอบ |
 | `civics.yourAnswer` | Your answer | คำตอบของคุณ |
 | `civics.submit` | Check my answer | ตรวจคำตอบของฉัน |
-| `civics.correct` | Correct | ถูกต้อง |
+| `civics.correct` | This counts | ถือว่านับได้ |
 | `civics.notYet` | Not yet | ยังไม่ถูก |
 | `civics.youSaid` | You said: {text} | คุณพูดว่า: {text} |
 | `civics.official` | Official answers | คำตอบอย่างเป็นทางการ |
@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.again` | Practice again | ฝึกอีกครั้ง |
 | `common.startOver` | Start over | เริ่มใหม่ |
 | `voice.needText` | Type or say your answer first, or choose Skip. | โปรดพิมพ์หรือพูดคำตอบก่อน หรือเลือกข้าม |
-| `audio.stop` | Stop playing | หยุดเล่น |
+| `audio.stop` | Stop | หยุด |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | เสียงที่สร้างโดย AI เสียงนี้ทำไว้ล่วงหน้า |
 | `audio.playSample` | Play sample answer | ฟังตัวอย่างคำตอบ |
 | `home.title` | Welcome to the booth | ยินดีต้อนรับสู่ Language Lab |
@@ -290,8 +290,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | เสียงไม่เล่น ลองอีกครั้ง หรืออ่านข้อความบนหน้าจอ |
 | `lang.label` | Language | ภาษา |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | กลับหน้าแรกไหม คำตอบของคุณในการฝึกนี้จะหายไป |
-| `header.homeConfirm.yes` | Yes, go home | ใช่ กลับหน้าแรก |
-| `header.homeConfirm.no` | Stay here | อยู่ที่นี่ต่อ |
+| `header.homeConfirm.yes` | Leave | ออก |
+| `header.homeConfirm.no` | Keep practicing | ฝึกต่อ |
 | `common.retry` | Try again | ลองอีกครั้ง |
 | `partReport.badge.good` | This part reached the practice score | ส่วนนี้ถึงคะแนนฝึกแล้ว |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | ประโยคถูกแสดงบนหน้าจอ (การลองที่มีตัวช่วย) |
@@ -360,6 +360,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.full.start` | Start practice | เริ่มฝึก |
 | `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | อายุ 65 ปีขึ้นไปและถือกรีนการ์ดมา 20 ปี? เริ่มการฝึก 65/20 |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | ตัวอักษรเล็กเกินไปใช่ไหม แตะ ขนาดตัวอักษร ที่ด้านบน |
+| `audio.playing` | Playing… | กำลังเล่น… |
+| `audio.playSentence` | Play the sentence | ฟังประโยค |
+| `voice.gotIt` | Got it. Tap to speak again | ได้ยินแล้ว แตะเพื่อพูดอีกครั้ง |
+| `voice.orType` | Or type your answer | หรือพิมพ์คำตอบของคุณ |
+| `voice.micHelp.title` | How to allow the microphone | วิธีอนุญาตไมโครโฟน |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): แตะ “aA” ข้างที่อยู่เว็บ แล้วแตะ การตั้งค่าเว็บไซต์ แล้วแตะ ไมโครโฟน และเลือก อนุญาต จากนั้นโหลดหน้าใหม่ |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): แตะไอคอนเล็ก ๆ ทางซ้ายของที่อยู่เว็บ แล้วแตะ สิทธิ์ และเปิด ไมโครโฟน จากนั้นโหลดหน้าใหม่ |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | คุณพิมพ์คำตอบในช่องแทนได้เสมอ |
+| `civics.why.correct` | Your answer matches an official answer. | คำตอบของคุณตรงกับคำตอบทางการข้อหนึ่ง |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | คำตอบของคุณยังไม่ตรงกับคำตอบทางการ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

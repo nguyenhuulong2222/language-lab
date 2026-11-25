@@ -36,8 +36,8 @@ describe("the header", () => {
 
   it("asks before Home throws away the answers, in a closed panel", () => {
     expect(html).toContain("Your answers in this practice will be lost.");
-    expect(html).toContain("Yes, go home");
-    expect(html).toContain("Stay here");
+    expect(html).toMatch(/btn--primary"[^>]*>Keep practicing</);
+    expect(html).toMatch(/btn--secondary"[^>]*>Leave</);
     expect(html).toMatch(/header__panel"[^>]*hidden/);
   });
 
@@ -128,13 +128,14 @@ describe("Play again", () => {
     cancel: () => {},
   };
 
-  it("is offered once the audio has been played; before that the first button is Play aloud", () => {
+  it("is always next to the play button, and nothing plays by itself", () => {
     const html = renderToString(
       <VoiceProvider speaker={speaker} listener={UNSUPPORTED_LISTENER}>
         <SpeakButton text="Hello." />
       </VoiceProvider>
     );
-    expect(html).toContain("Play aloud");
-    expect(html).not.toContain("Play again");
+    expect(html).toContain("Play the question");
+    expect(html).toContain("Play again");
+    expect(html).not.toContain("Playing…");
   });
 });

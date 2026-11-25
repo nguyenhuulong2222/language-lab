@@ -38,7 +38,7 @@ describe("ScreenHelp", () => {
   it("explains the microphone button, typing, and Skip on the screens that have them", () => {
     for (const screen of ["reading", "civics"] as const) {
       const html = renderToString(<ScreenHelp screen={screen} />);
-      expect(html, screen).toContain("Say it");
+      expect(html, screen).toContain("Tap to speak");
       expect(html, screen).toContain("If your phone asks to use the microphone, press Allow.");
       expect(html, screen).toContain("Typing always works.");
       expect(html, screen).toContain("Skip this one");

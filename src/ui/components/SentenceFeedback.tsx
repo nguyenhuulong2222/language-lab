@@ -68,14 +68,15 @@ export function SentenceFeedback({ target, attempt, matchOptions, kind }: Senten
   const noteLines = shown.map((note) => lineFor(note, typed, attempt.isCorrect));
   return (
     <section className="panel">
-      <h2 className="panel__title" ref={heading} tabIndex={-1}>
+      {/* A big headline first ("This counts." / "Not yet."), then the reason lines, then the details. */}
+      <h2 className="result-headline" ref={heading} tabIndex={-1}>
         <Icon className={attempt.isCorrect ? "icon-inline" : "icon-inline icon-inline--attention"} />{" "}
         {attempt.isCorrect ? t("compare.counts") : t("compare.notYet")}
       </h2>
       {empty ? (
         <p>{t("voice.nothingHeard")}</p>
       ) : (
-        <ul className="plain-lines">
+        <ul className="plain-lines result-reason">
           {attempt.isCorrect && noteLines.every((l) => l.key.startsWith("compare.note.short")) && (
             <li>{t("compare.why.allWords")}</li>
           )}

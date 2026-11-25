@@ -35,7 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. | 其中任何一個都算數。 | Any one of these counts. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | 在有人審核公民常識答案之前，這個版本關閉了公民常識、先學習和完整練習面試。您可以練習 N-400 面試、閱讀和書寫。 | Until someone reviews the civics answers, this version has turned off civics, Study first and the full practice interview. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 公民常識的標準答案仍在等待人工審核，所以這個版本不會為公民常識計分，也不會產生報告。 | The standard answers for civics are still waiting for human review, so this version will not score civics and will not produce a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | 当您按下“说出来”时，浏览器的语音识别功能可能会把您的声音发送给浏览器的开发公司（例如 Google 或 Apple），以便转成文字。Language Lab 不会发送或保存您的声音。您也可以改为输入答案。 | When you press “Say it”, the browser's speech recognition function may send your voice to the browser's developer (such as Google or Apple) to convert it to text. Language Lab will not send or save your voice. You can also type your answer instead. |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | 当您按下“點一下開始說話”时，浏览器的语音识别功能可能会把您的声音发送给浏览器的开发公司（例如 Google 或 Apple），以便转成文字。Language Lab 不会发送或保存您的声音。您也可以改为输入答案。 | When you press “Say it”, the browser's speech recognition function may send your voice to the browser's developer (such as Google or Apple) to convert it to text. Language Lab will not send or save your voice. You can also type your answer instead. |
 | `report.title.onTrack` | Practice complete: each part reached the practice score | 練習完成：每個部分都達到練習分數 | Practice complete: every part reached the practice score |
 | `report.title.review` | A few things to review | 有幾件事可以複習 | There are a few things you can review |
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | 在這次練習中，閱讀、書寫和公民常識都各自達到 Language Lab 使用的分數。請用下面的筆記繼續練習。 | In this practice, reading, writing and civics each reached the score Language Lab uses. Please use the notes below to keep practicing. |
@@ -73,7 +73,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | 這個練習階段尚未完成。 |
 | `header.about` | About & disclaimer | 關於與免責聲明 |
 | `stepper.label` | Interview stages | 面談階段 |
-| `stepper.count` | Stage {current} of {total} | 第 {current} 階段，共 {total} 階段 |
+| `stepper.count` | Step {current} of {total}: {name} | 第 {current} 步，共 {total} 步：{name} |
 | `stepper.status.complete` | completed | 已完成 |
 | `stepper.status.current` | current step | 目前階段 |
 | `stepper.status.upcoming` | upcoming | 即將進行 |
@@ -100,8 +100,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.intro` | Focus on these before your next practice. | 下次練習前，請先把重點放在這些項目上。 |
 | `report.generated` | Report generated {datetime} | 報告產生時間：{datetime} |
 | `translation.english` | English | 英文 |
-| `voice.say` | Say it | 說話 |
-| `voice.stop` | Stop listening | 停止聆聽 |
+| `voice.say` | Tap to speak | 點一下開始說話 |
+| `voice.stop` | Listening… tap when you finish | 正在聽…說完後點一下 |
 | `voice.listening` | Listening. Say your answer now. | 正在聆聽。請現在說出您的答案。 |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | 我們聽到了。請檢查文字，需要的話可以修改，然後送出。 |
 | `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | 麥克風被封鎖。請在瀏覽器設定中允許使用麥克風，或直接輸入您的答案。 |
@@ -110,7 +110,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | 找不到麥克風。請改為輸入您的答案。 |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | 這次聆聽沒有成功。請再試一次，或輸入您的答案。 |
 | `voice.skip` | Skip this one | 跳過這題 |
-| `audio.play` | Play aloud | 朗讀 |
+| `audio.play` | Play the question | 播放問題 |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | 裝置語音：安裝在您手機或電腦上的語音。 |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | 這個瀏覽器無法朗讀。請閱讀螢幕上的文字。 |
 | `intro.profile.legend` | Choose a practice profile | 選擇一個練習檔案 |
@@ -201,7 +201,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.needs` | This question needs {count} different answers. | 這一題需要 {count} 個不同的答案。 |
 | `civics.yourAnswer` | Your answer | 您的答案 |
 | `civics.submit` | Check my answer | 檢查我的答案 |
-| `civics.correct` | Correct | 正確 |
+| `civics.correct` | This counts | 這次算數 |
 | `civics.notYet` | Not yet | 還不對 |
 | `civics.youSaid` | You said: {text} | 您說的是：{text} |
 | `civics.official` | Official answers | 官方答案 |
@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.again` | Practice again | 再練習一次 |
 | `common.startOver` | Start over | 重新開始 |
 | `voice.needText` | Type or say your answer first, or choose Skip. | 請先輸入或說出您的答案，或選擇跳過。 |
-| `audio.stop` | Stop playing | 停止播放 |
+| `audio.stop` | Stop | 停止 |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | AI 生成的語音。音訊是事先製作好的。 |
 | `audio.playSample` | Play sample answer | 播放範例答案 |
 | `home.title` | Welcome to the booth | 歡迎來到 Language Lab |
@@ -290,8 +290,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | 音訊沒有播放。請再試一次，或閱讀螢幕上的文字。 |
 | `lang.label` | Language | 語言 |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | 要回到首頁嗎？您在這次練習中的答案將會消失。 |
-| `header.homeConfirm.yes` | Yes, go home | 是，回到首頁 |
-| `header.homeConfirm.no` | Stay here | 留在這裡 |
+| `header.homeConfirm.yes` | Leave | 離開 |
+| `header.homeConfirm.no` | Keep practicing | 繼續練習 |
 | `common.retry` | Try again | 再試一次 |
 | `partReport.badge.good` | This part reached the practice score | 這個部分已達練習分數 |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | 句子已顯示在螢幕上（有輔助的嘗試）。 |
@@ -360,3 +360,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.full.start` | Start practice | 開始練習 |
 | `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | 65 歲或以上，持綠卡 20 年？開始 65/20 練習。 |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | 字太小嗎？請點選上方的「文字大小」。 |
+| `audio.playing` | Playing… | 正在播放… |
+| `audio.playSentence` | Play the sentence | 播放句子 |
+| `voice.gotIt` | Got it. Tap to speak again | 收到了。點一下再說一次 |
+| `voice.orType` | Or type your answer | 或輸入您的回答 |
+| `voice.micHelp.title` | How to allow the microphone | 如何允許使用麥克風 |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone（Safari）：點一下網址旁的「aA」，再點「網站設定」、「麥克風」，然後選「允許」。之後重新載入網頁。 |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android（Chrome）：點一下網址左邊的小圖示，再點「權限」，然後開啟「麥克風」。之後重新載入網頁。 |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | 您隨時可以在方框中輸入回答。 |
+| `civics.why.correct` | Your answer matches an official answer. | 您的回答符合一個官方答案。 |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | 您的回答還不符合官方答案。 |

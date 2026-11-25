@@ -12,7 +12,7 @@ describe("translator", () => {
   it("returns the English text and fills placeholders", () => {
     const t = createTranslator("en");
     expect(t("app.name")).toBe("Language Lab");
-    expect(t("stepper.count", { current: 6, total: 6 })).toBe("Stage 6 of 6");
+    expect(t("stepper.count", { current: 6, total: 6, name: "Report" })).toBe("Step 6 of 6: Report");
     expect(t("report.profile.meta", { version: "2025", date: "March 15, 2024" })).toBe(
       "2025 civics test · filed March 15, 2024"
     );

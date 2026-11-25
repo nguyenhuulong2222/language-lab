@@ -78,7 +78,7 @@ describe("civics screen", () => {
     expect(progress.current!.answerType).toBe("static");
   });
 
-  it("after a right answer: Correct, the official answers, and a next button", () => {
+  it("after a right answer: This counts, the reason, the official answers, and a next button", () => {
     let s = toCivics(engine);
     const q = engine.civicsProgress(s).current!;
     s = engine.reduce(s, { type: "submitCivics", response: q.acceptedAnswers.slice(0, q.requiredAnswerCount).join(" and "), input: "typed", at: AT });
@@ -86,7 +86,8 @@ describe("civics screen", () => {
     const html = renderToString(
       <CivicsScreen progress={progress} version="2008" onSubmit={() => {}} onContinue={() => {}} onRestart={() => {}} showFeedbackInitially />
     );
-    expect(html).toContain("Correct");
+    expect(html).toContain("This counts");
+    expect(html).toContain("Your answer matches an official answer.");
     expect(html).toContain("Official answers");
     const first = officialAnswerLines("2008", q.id)![0]!;
     expect(html).toContain(first.replace(/&/g, "&amp;").replace(/’/g, "’").replace(/'/g, "&#x27;"));

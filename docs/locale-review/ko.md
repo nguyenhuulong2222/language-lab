@@ -35,7 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. | 이 중 어느 것이든 인정됩니다. | Any one of these is accepted. |
 | `intro.locked` ⚠ | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | 사람이 시민 상식 답안을 검토하기 전까지 이 버전에서는 시민 상식, 먼저 공부하기, 전체 연습 면접이 꺼져 있습니다. N-400 면접, 읽기, 쓰기는 연습할 수 있습니다. | Until a person reviews the civics answers, civics, Study first and the full practice interview are turned off in this version. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 시민 상식 정답표가 아직 사람의 검토를 기다리고 있어서, 이 버전은 시민 상식을 채점하거나 보고서를 만들지 않습니다. | The civics answer table is still waiting for a person's review, so this version does not score civics or create a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | “말하기”를 누르면 브라우저의 음성 인식 기능이 음성을 글자로 바꾸기 위해 Google이나 Apple 같은 브라우저 제작사에 음성을 보낼 수 있습니다. Language Lab은 음성을 보내거나 저장하지 않습니다. 대신 답을 직접 입력할 수도 있습니다. | When you press “Speak”, the browser's voice recognition may send your voice to the browser maker such as Google or Apple to convert it into text. Language Lab does not send or save your voice. You can type your answer instead. |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | “눌러서 말하기”를 누르면 브라우저의 음성 인식 기능이 음성을 글자로 바꾸기 위해 Google이나 Apple 같은 브라우저 제작사에 음성을 보낼 수 있습니다. Language Lab은 음성을 보내거나 저장하지 않습니다. 대신 답을 직접 입력할 수도 있습니다. | When you press “Speak”, the browser's voice recognition may send your voice to the browser maker such as Google or Apple to convert it into text. Language Lab does not send or save your voice. You can type your answer instead. |
 | `report.title.onTrack` | Practice complete: each part reached the practice score | 연습 완료: 모든 부분이 연습 점수에 도달했어요 | Practice complete: every part reached the practice score |
 | `report.title.review` | A few things to review | 다시 살펴볼 것이 몇 가지 있어요 | There are a few things to look at again |
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | 이번 연습에서 읽기, 쓰기, 시민 상식이 각각 Language Lab이 사용하는 점수에 도달했습니다. 아래 메모를 보고 계속 연습하세요. | In this practice, reading, writing and civics each reached the score Language Lab uses. Look at the notes below and keep practicing. |
@@ -73,7 +73,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | 이 연습 단계는 아직 준비되지 않았습니다. |
 | `header.about` | About & disclaimer | 소개 및 면책 안내 |
 | `stepper.label` | Interview stages | 인터뷰 단계 |
-| `stepper.count` | Stage {current} of {total} | {total}단계 중 {current}단계 |
+| `stepper.count` | Step {current} of {total}: {name} | {total}단계 중 {current}단계: {name} |
 | `stepper.status.complete` | completed | 완료됨 |
 | `stepper.status.current` | current step | 현재 단계 |
 | `stepper.status.upcoming` | upcoming | 예정 |
@@ -100,8 +100,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.intro` | Focus on these before your next practice. | 다음 연습 전에 이 부분에 집중해 보세요. |
 | `report.generated` | Report generated {datetime} | 보고서 생성 시각: {datetime} |
 | `translation.english` | English | 영어 |
-| `voice.say` | Say it | 말하기 |
-| `voice.stop` | Stop listening | 듣기 중지 |
+| `voice.say` | Tap to speak | 눌러서 말하기 |
+| `voice.stop` | Listening… tap when you finish | 듣는 중… 다 말하면 누르세요 |
 | `voice.listening` | Listening. Say your answer now. | 듣고 있습니다. 지금 답을 말씀하세요. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | 잘 들었습니다. 단어를 확인하고 필요하면 고친 다음 보내세요. |
 | `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | 마이크가 차단되어 있습니다. 브라우저 설정에서 마이크 사용을 허용하거나 답을 직접 입력하세요. |
@@ -110,7 +110,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | 마이크를 찾을 수 없습니다. 대신 답을 입력하세요. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | 이번에는 듣기가 되지 않았습니다. 다시 시도하거나 답을 입력하세요. |
 | `voice.skip` | Skip this one | 이 문제 건너뛰기 |
-| `audio.play` | Play aloud | 소리 내어 듣기 |
+| `audio.play` | Play the question | 질문 듣기 |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | 기기 음성: 휴대폰이나 컴퓨터에 설치된 음성입니다. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | 이 브라우저는 소리 내어 읽어 줄 수 없습니다. 화면의 글을 읽어 주세요. |
 | `intro.profile.legend` | Choose a practice profile | 연습 프로필을 선택하세요 |
@@ -201,7 +201,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.needs` | This question needs {count} different answers. | 이 질문에는 서로 다른 답이 {count}개 필요합니다. |
 | `civics.yourAnswer` | Your answer | 내 답 |
 | `civics.submit` | Check my answer | 내 답 확인 |
-| `civics.correct` | Correct | 정답 |
+| `civics.correct` | This counts | 점수에 포함됩니다 |
 | `civics.notYet` | Not yet | 아직이에요 |
 | `civics.youSaid` | You said: {text} | 말씀하신 내용: {text} |
 | `civics.official` | Official answers | 공식 답 |
@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.again` | Practice again | 다시 연습하기 |
 | `common.startOver` | Start over | 처음부터 다시 |
 | `voice.needText` | Type or say your answer first, or choose Skip. | 먼저 답을 입력하거나 말씀하세요. 아니면 건너뛰기를 선택하세요. |
-| `audio.stop` | Stop playing | 재생 중지 |
+| `audio.stop` | Stop | 멈추기 |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | AI가 만든 음성입니다. 오디오는 미리 만들어 둔 것입니다. |
 | `audio.playSample` | Play sample answer | 예시 답변 듣기 |
 | `home.title` | Welcome to the booth | Language Lab에 오신 것을 환영합니다 |
@@ -290,8 +290,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | 오디오가 재생되지 않았습니다. 다시 시도하거나 화면의 글을 읽으세요. |
 | `lang.label` | Language | 언어 |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | 홈으로 돌아갈까요? 이번 연습의 답변이 사라집니다. |
-| `header.homeConfirm.yes` | Yes, go home | 예, 홈으로 |
-| `header.homeConfirm.no` | Stay here | 여기 있기 |
+| `header.homeConfirm.yes` | Leave | 나가기 |
+| `header.homeConfirm.no` | Keep practicing | 계속 연습하기 |
 | `common.retry` | Try again | 다시 시도 |
 | `partReport.badge.good` | This part reached the practice score | 이 부분은 연습 점수에 도달했어요 |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | 문장이 화면에 표시되었습니다(도움을 받은 시도). |
@@ -360,6 +360,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.full.start` | Start practice | 연습 시작 |
 | `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | 65세 이상이고 영주권을 20년 가지셨나요? 65/20 연습을 시작하세요. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | 글자가 너무 작나요? 위쪽의 글자 크기를 누르세요. |
+| `audio.playing` | Playing… | 재생 중… |
+| `audio.playSentence` | Play the sentence | 문장 듣기 |
+| `voice.gotIt` | Got it. Tap to speak again | 들었어요. 다시 말하려면 누르세요 |
+| `voice.orType` | Or type your answer | 또는 답을 입력하세요 |
+| `voice.micHelp.title` | How to allow the microphone | 마이크 허용 방법 |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone(Safari): 웹 주소 옆의 “가가”(aA)를 누르고, 웹 사이트 설정, 마이크를 차례로 누른 뒤 허용을 선택하세요. 그다음 페이지를 새로 고치세요. |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android(Chrome): 웹 주소 왼쪽의 작은 아이콘을 누르고 권한을 누른 뒤 마이크를 켜세요. 그다음 페이지를 새로 고치세요. |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | 언제든 상자에 답을 입력할 수 있습니다. |
+| `civics.why.correct` | Your answer matches an official answer. | 답이 공식 답 중 하나와 맞습니다. |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | 답이 아직 공식 답과 맞지 않습니다. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

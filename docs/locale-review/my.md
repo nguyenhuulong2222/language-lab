@@ -35,7 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. | ယင်းတို့အနက် တစ်ခုခုကို ရေတွက်သည်။ | Any one of these is counted. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | နိုင်ငံသားပညာ အဖြေများကို လူတစ်ဦးက စစ်ဆေးပြီးသည်အထိ ဤဗားရှင်းတွင် နိုင်ငံသားပညာ၊ အရင်လေ့လာရန်နှင့် အပြည့်အစုံ လေ့ကျင့်ရေးအင်တာဗျူးကို ပိတ်ထားပါသည်။ N-400 အင်တာဗျူး၊ ဖတ်ခြင်းနှင့် ရေးခြင်းကို လေ့ကျင့်နိုင်ပါသည်။ | Until a person checks the civics answers, civics, Study first and the full practice interview are closed in this version. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | နိုင်ငံသားဗဟုသုတ အဖြေမှန်များသည် လူတစ်ဦး၏ စစ်ဆေးမှုကို စောင့်နေဆဲဖြစ်သဖြင့် ဤဗားရှင်းသည် ၎င်းကို အမှတ်မပေးပါ၊ အစီရင်ခံစာလည်း မပြုလုပ်ပါ။ | The civics correct answers are still waiting for a person's check, so this version does not score it and does not make a report. |
-| `voice.consent.text` ⚠ | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | “ပြောမည်” ကို နှိပ်သောအခါ သင့်ဘရောက်ဇာ၏ အသံမှတ်သားစနစ်က သင့်အသံကို စာသားအဖြစ်ပြောင်းရန် Google သို့မဟုတ် Apple ကဲ့သို့ ဘရောက်ဇာ ပြုလုပ်သူကုမ္ပဏီထံ ပို့နိုင်ပါသည်။ Language Lab သည် သင့်အသံကို မပို့ပါ၊ မသိမ်းပါ။ ယင်းအစား အဖြေကို ရိုက်ထည့်နိုင်ပါသည်။ | When you press “Speak”, your browser's voice recording system may send your voice to the company that makes the browser, such as Google or Apple, to turn it into text. Language Lab does not send or save your voice. You can type your answer instead. |
+| `voice.consent.text` ⚠ | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | “ပြောရန် နှိပ်ပါ” ကို နှိပ်သောအခါ သင့်ဘရောက်ဇာ၏ အသံမှတ်သားစနစ်က သင့်အသံကို စာသားအဖြစ်ပြောင်းရန် Google သို့မဟုတ် Apple ကဲ့သို့ ဘရောက်ဇာ ပြုလုပ်သူကုမ္ပဏီထံ ပို့နိုင်ပါသည်။ Language Lab သည် သင့်အသံကို မပို့ပါ၊ မသိမ်းပါ။ ယင်းအစား အဖြေကို ရိုက်ထည့်နိုင်ပါသည်။ | When you press “Speak”, your browser's voice recording system may send your voice to the company that makes the browser, such as Google or Apple, to turn it into text. Language Lab does not send or save your voice. You can type your answer instead. |
 | `report.title.onTrack` | Practice complete: each part reached the practice score | လေ့ကျင့်မှု ပြီးပါပြီ- အပိုင်းတိုင်း လေ့ကျင့်ရေးအမှတ်သို့ ရောက်ပါသည် | Practice is finished: every part reaches the practice score |
 | `report.title.review` | A few things to review | ပြန်လည်ကြည့်ရန် အချက်အနည်းငယ် | A few points to look at again |
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | ဤလေ့ကျင့်မှုတွင် ဖတ်ခြင်း၊ ရေးခြင်းနှင့် နိုင်ငံသားပညာ အပိုင်းတိုင်းသည် Language Lab အသုံးပြုသော အမှတ်သို့ ရောက်ပါသည်။ ဆက်လက်လေ့ကျင့်ရန် အောက်ပါမှတ်စုများကို အသုံးပြုပါ။ | In this practice, every part of reading, writing and civics reaches the score Language Lab uses. Use the notes below to continue practicing. |
@@ -73,7 +73,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | ဤလေ့ကျင့်ရေးအဆင့်ကို မပြီးသေးပါ။ |
 | `header.about` | About & disclaimer | အကြောင်းနှင့် တာဝန်ငြင်းဆိုချက် |
 | `stepper.label` | Interview stages | အင်တာဗျူးအဆင့်များ |
-| `stepper.count` | Stage {current} of {total} | အဆင့် {current} / {total} |
+| `stepper.count` | Step {current} of {total}: {name} | အဆင့် {current} / {total}: {name} |
 | `stepper.status.complete` | completed | ပြီးပါပြီ |
 | `stepper.status.current` | current step | လက်ရှိအဆင့် |
 | `stepper.status.upcoming` | upcoming | လာမည့်အဆင့် |
@@ -100,8 +100,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.intro` | Focus on these before your next practice. | နောက်လေ့ကျင့်မှုမတိုင်မီ ဤအချက်များကို အာရုံစိုက်ပါ။ |
 | `report.generated` | Report generated {datetime} | အစီရင်ခံစာကို {datetime} တွင် ပြုလုပ်ခဲ့သည် |
 | `translation.english` | English | အင်္ဂလိပ် |
-| `voice.say` | Say it | ပြောရန် |
-| `voice.stop` | Stop listening | နားထောင်ခြင်း ရပ်ရန် |
+| `voice.say` | Tap to speak | ပြောရန် နှိပ်ပါ |
+| `voice.stop` | Listening… tap when you finish | နားထောင်နေသည်… ပြောပြီးလျှင် နှိပ်ပါ |
 | `voice.listening` | Listening. Say your answer now. | နားထောင်နေသည်။ ယခု သင်၏အဖြေကို ပြောပါ။ |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | သင့်စကားကို ကြားပါပြီ။ စကားလုံးများကို စစ်ကြည့်ပါ၊ လိုလျှင် ပြင်ပါ၊ ထို့နောက် ပို့ပါ။ |
 | `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | မိုက်ခရိုဖုန်း ပိတ်ထားသည်။ ဘရောက်ဇာဆက်တင်တွင် မိုက်ခရိုဖုန်းအသုံးပြုခွင့်ပေးပါ၊ သို့မဟုတ် သင်၏အဖြေကို ရိုက်ထည့်ပါ။ |
@@ -110,7 +110,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | မိုက်ခရိုဖုန်း မတွေ့ပါ။ အဖြေကို ရိုက်ထည့်ပါ။ |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | ယခုအကြိမ် နားထောင်ခြင်း မအောင်မြင်ပါ။ ထပ်ကြိုးစားပါ၊ သို့မဟုတ် သင်၏အဖြေကို ရိုက်ထည့်ပါ။ |
 | `voice.skip` | Skip this one | ဤအချက်ကို ကျော်ရန် |
-| `audio.play` | Play aloud | အသံထွက်ဖတ်ပြရန် |
+| `audio.play` | Play the question | မေးခွန်းကို နားထောင်ရန် |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | စက်၏အသံ- သင့်ဖုန်း သို့မဟုတ် ကွန်ပျူတာတွင် ထည့်သွင်းထားသော အသံ။ |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | ဤဘရောက်ဇာသည် အသံထွက်ဖတ်မပြနိုင်ပါ။ ဖန်သားပြင်ပေါ်ရှိ စာသားကို ဖတ်ပါ။ |
 | `intro.profile.legend` | Choose a practice profile | လေ့ကျင့်ရေးပရိုဖိုင်တစ်ခု ရွေးပါ |
@@ -201,7 +201,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.needs` | This question needs {count} different answers. | ဤမေးခွန်းသည် ကွဲပြားသောအဖြေ {count} ခု လိုအပ်သည်။ |
 | `civics.yourAnswer` | Your answer | သင်၏အဖြေ |
 | `civics.submit` | Check my answer | ကျွန်ုပ်၏အဖြေကို စစ်ရန် |
-| `civics.correct` | Correct | မှန်သည် |
+| `civics.correct` | This counts | ၎င်းကို ရေတွက်သည် |
 | `civics.notYet` | Not yet | မမှန်သေးပါ |
 | `civics.youSaid` | You said: {text} | သင်ပြောသည်- {text} |
 | `civics.official` | Official answers | တရားဝင်အဖြေများ |
@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.again` | Practice again | ထပ်မံလေ့ကျင့်ရန် |
 | `common.startOver` | Start over | အစမှ ပြန်စရန် |
 | `voice.needText` | Type or say your answer first, or choose Skip. | အဖြေကို အရင်ရိုက်ထည့်ပါ သို့မဟုတ် ပြောပါ၊ သို့မဟုတ် ကျော်ရန် ရွေးပါ။ |
-| `audio.stop` | Stop playing | ဖွင့်ခြင်း ရပ်ရန် |
+| `audio.stop` | Stop | ရပ်ရန် |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | AI ဖန်တီးသောအသံ။ အသံကို ကြိုတင်ပြုလုပ်ထားသည်။ |
 | `audio.playSample` | Play sample answer | နမူနာအဖြေကို နားထောင်ရန် |
 | `home.title` | Welcome to the booth | Language Lab မှ ကြိုဆိုပါသည် |
@@ -290,8 +290,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | အသံမထွက်ခဲ့ပါ။ ထပ်ကြိုးစားပါ၊ သို့မဟုတ် မျက်နှာပြင်ပေါ်ရှိ စာကို ဖတ်ပါ။ |
 | `lang.label` | Language | ဘာသာစကား |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | ပင်မစာမျက်နှာသို့ ပြန်သွားမလား။ ဤလေ့ကျင့်မှုရှိ သင်၏အဖြေများ ပျောက်သွားမည်။ |
-| `header.homeConfirm.yes` | Yes, go home | ဟုတ်ကဲ့၊ ပင်မသို့ သွားမည် |
-| `header.homeConfirm.no` | Stay here | ဤနေရာတွင် ဆက်နေမည် |
+| `header.homeConfirm.yes` | Leave | ထွက်မည် |
+| `header.homeConfirm.no` | Keep practicing | ဆက်လေ့ကျင့်မည် |
 | `common.retry` | Try again | ထပ်ကြိုးစားရန် |
 | `partReport.badge.good` | This part reached the practice score | ဤအပိုင်းသည် လေ့ကျင့်ရေးအမှတ်သို့ ရောက်ပါသည် |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | ဝါကျကို မျက်နှာပြင်ပေါ်တွင် ပြခဲ့သည် (အကူအညီရထားသော ကြိုးစားမှု)။ |
@@ -360,6 +360,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.full.start` | Start practice | လေ့ကျင့်မှု စတင်ပါ |
 | `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး ဂရင်းကတ် 20 နှစ် ရှိပါသလား။ 65/20 လေ့ကျင့်မှုကို စတင်ပါ။ |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | စာလုံး အရမ်းသေးနေပါသလား။ အပေါ်ရှိ စာလုံးအရွယ်အစား ကို နှိပ်ပါ။ |
+| `audio.playing` | Playing… | ဖွင့်နေသည်… |
+| `audio.playSentence` | Play the sentence | ဝါကျကို နားထောင်ရန် |
+| `voice.gotIt` | Got it. Tap to speak again | ကြားပြီးပါပြီ။ ထပ်ပြောရန် နှိပ်ပါ |
+| `voice.orType` | Or type your answer | သို့မဟုတ် သင့်အဖြေကို ရိုက်ထည့်ပါ |
+| `voice.micHelp.title` | How to allow the microphone | မိုက်ခရိုဖုန်းကို ခွင့်ပြုနည်း |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): ဝက်ဘ်လိပ်စာဘေးရှိ “aA” ကို နှိပ်ပါ၊ ထို့နောက် Website Settings၊ Microphone ကို နှိပ်ပြီး Allow ကို ရွေးပါ။ ထို့နောက် စာမျက်နှာကို ပြန်ဖွင့်ပါ။ |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): ဝက်ဘ်လိပ်စာ၏ ဘယ်ဘက်ရှိ အိုင်ကွန်လေးကို နှိပ်ပါ၊ ထို့နောက် Permissions ကို နှိပ်ပြီး Microphone ကို ဖွင့်ပါ။ ထို့နောက် စာမျက်နှာကို ပြန်ဖွင့်ပါ။ |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | သင့်အဖြေကို အကွက်ထဲတွင် အမြဲရိုက်ထည့်နိုင်ပါသည်။ |
+| `civics.why.correct` | Your answer matches an official answer. | သင့်အဖြေသည် တရားဝင်အဖြေတစ်ခုနှင့် ကိုက်ညီသည်။ |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | သင့်အဖြေသည် တရားဝင်အဖြေများနှင့် မကိုက်ညီသေးပါ။ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -6,7 +6,7 @@
  * marker + aria-current (current), or a number (upcoming), each paired with a
  * screen-reader-only status word — never by color alone.
  *
- * Mobile shows a condensed "Stage N of M" line plus a progress bar; desktop
+ * Mobile shows one plain line, "Step N of M: name", plus a progress bar; desktop
  * shows the full numbered stepper. Exactly one is in the accessibility tree per
  * breakpoint.
  */
@@ -49,16 +49,9 @@ export function StageStepper({ stages, currentStage }: StageStepperProps) {
     <nav className="stepper" aria-label={t("stepper.label")}>
       <div className="ll-container">
         {/* Condensed view (mobile) */}
+        {/* One plain line: "Step 3 of 6: Reading". It wraps on a narrow screen instead of shrinking. */}
         <p className="stepper__condensed">
-          <span className="stepper__condensed-count">
-            {t("stepper.count", { current: currentIndex + 1, total: stages.length })}
-          </span>
-          <span className="stepper__condensed-sep" aria-hidden="true">
-            ·
-          </span>
-          <span className="stepper__condensed-label">
-            {t(stages[currentIndex]!.labelKey)}
-          </span>
+          {t("stepper.count", { current: currentIndex + 1, total: stages.length, name: t(stages[currentIndex]!.labelKey) })}
         </p>
         <div
           className="stepper__bar"

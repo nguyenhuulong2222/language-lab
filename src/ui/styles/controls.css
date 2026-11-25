@@ -211,3 +211,62 @@ fieldset.choices {
   min-width: 0;
   overflow-wrap: anywhere;
 }
+/* A large secondary control (the play button, the microphone): 64px, large bold text. */
+.btn--large {
+  min-height: max(64px, 3.5556rem);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.speak__state {
+  min-height: 1.6em;
+  font-weight: 600;
+}
+/* The microphone button fills the row on a phone. */
+.btn--wide {
+  width: 100%;
+}
+.field__label {
+  font-size: var(--fs-lg);
+}
+.field__sub {
+  font-size: var(--fs-meta);
+  color: var(--ink-2);
+}
+/* "How to allow the microphone": a tappable heading row that opens short steps. */
+.mic-help {
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--ink-2);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+.mic-help__summary {
+  display: flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  font-weight: 700;
+  cursor: pointer;
+}
+.mic-help__steps {
+  margin: var(--space-3) 0 0;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+/* A result: a big headline first ("This counts" / "Not yet"), then one short reason. */
+.result-headline {
+  margin: 0;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-tight);
+}
+.result-reason {
+  font-size: var(--fs-lg);
+  line-height: var(--lh-large);
+}
+/* Two choices stacked, each the full width (the leave confirmation). */
+.btn-row--stack {
+  flex-direction: column;
+}
+.btn-row--stack > .btn {
+  width: 100%;
+}

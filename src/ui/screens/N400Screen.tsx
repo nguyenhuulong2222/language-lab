@@ -242,6 +242,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
                   text={state.prompt.sampleAnswer}
                   clipId={sampleAnswerClipId(state.prompt.id, profile.id)}
                   labelKey="audio.playSample"
+                  large={false}
                 />
                 <p className="note"><LegalText messageKey="n400.sample.note" /></p>
               </section>

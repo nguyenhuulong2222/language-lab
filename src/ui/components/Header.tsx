@@ -163,19 +163,20 @@ export function Header({ onHome }: { onHome?: () => void }) {
           hidden={panel !== "home"}
         >
           <p>{t("header.homeConfirm")}</p>
-          <div className="btn-row">
+          {/* Staying is the main action: "Keep practicing" first and filled, "Leave" outlined, both full width. */}
+          <div className="btn-row btn-row--stack">
+            <button type="button" className="btn btn--primary" onClick={close}>
+              {t("header.homeConfirm.no")}
+            </button>
             <button
               type="button"
-              className="btn btn--primary"
+              className="btn btn--secondary"
               onClick={() => {
                 setPanel(null);
                 onHome();
               }}
             >
               {t("header.homeConfirm.yes")}
-            </button>
-            <button type="button" className="btn btn--secondary" onClick={close}>
-              {t("header.homeConfirm.no")}
             </button>
           </div>
         </div>

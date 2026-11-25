@@ -91,10 +91,12 @@ export function CivicsScreen({
             {entry.questionText}
           </p>
           <section className="panel">
-            <h2 className="panel__title" ref={resultHeading} tabIndex={-1}>
+            {/* A big headline first, then one short reason, then the details. */}
+            <h2 className="result-headline" ref={resultHeading} tabIndex={-1}>
               <Icon className={correct ? "icon-inline" : "icon-inline icon-inline--attention"} />{" "}
               {correct ? t("civics.correct") : t("civics.notYet")}
             </h2>
+            <p className="result-reason">{correct ? t("civics.why.correct") : t("civics.why.notYet")}</p>
             <p>{tEnglish("civics.youSaid", { text: progress.lastResponse === "" ? "…" : (progress.lastResponse ?? "") })}</p>
             {progress.lastResponse !== "" && (
               <p className="note">

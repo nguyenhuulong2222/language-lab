@@ -1,8 +1,9 @@
 /**
  * Plays a prompt aloud and says which voice it is: "AI-generated voice" when a pre-generated
- * clip plays, "Device voice" only when the browser's own voice is used instead. Tapping while
- * it plays stops it. Once it has played, "Play again" starts it from the beginning. The comfort
- * setting "slower playback" changes the speed of the same recording.
+ * clip plays, "Device voice" only when the browser's own voice is used instead. Large by default
+ * ("Play the question", 64px). While it plays, the line under it says "Playing…" and the button
+ * says "Stop". "Play again" is always next to it and starts from the beginning. Nothing plays by
+ * itself. The comfort setting "slower voice" changes the speed of the same recording.
  *
  * Playback starts inside the click handler (iPhone Safari needs a tap).
  */
@@ -21,15 +22,16 @@ interface SpeakButtonProps {
   labelKey?: MessageKey;
   /** Called when the prompt could not be played at all (after the device voice was tried). */
   onFailed?: () => void;
+  /** The large 64px player for the main prompt. Default true; false for sample answers. */
+  large?: boolean;
 }
 
-export function SpeakButton({ text, clipId, labelKey = "audio.play", onFailed }: SpeakButtonProps) {
+export function SpeakButton({ text, clipId, labelKey = "audio.play", onFailed, large = true }: SpeakButtonProps) {
   const t = useT();
   const speaker = useSpeaker();
   const { slowPlayback } = useSettings();
   const prompt = useMemo(() => (clipId === undefined ? { text } : { text, clipId }), [text, clipId]);
   const [playing, setPlaying] = useState(false);
-  const [played, setPlayed] = useState(false);
   const [fellBack, setFellBack] = useState(false);
   const [failed, setFailed] = useState(false);
   // Each play gets a number, so a clip that was cut off by "Play again" cannot reset the button of the new one.
@@ -48,7 +50,6 @@ export function SpeakButton({ text, clipId, labelKey = "audio.play", onFailed }:
     setFellBack(false);
     setFailed(false);
     setPlaying(true);
-    setPlayed(true);
     speaker
       .speak(prompt, {
         onFallback: () => setFellBack(true),
@@ -73,15 +74,16 @@ export function SpeakButton({ text, clipId, labelKey = "audio.play", onFailed }:
   return (
     <div className="speak">
       <div className="btn-row">
-        <button type="button" className="btn btn--secondary" onClick={playing ? stop : play}>
+        <button type="button" className={large ? "btn btn--secondary btn--large" : "btn btn--secondary"} onClick={playing ? stop : play}>
           {playing ? t("audio.stop") : t(labelKey)}
         </button>
-        {played && (
-          <button type="button" className="btn btn--secondary" onClick={play}>
-            {t("audio.again")}
-          </button>
-        )}
+        <button type="button" className={large ? "btn btn--secondary btn--large" : "btn btn--secondary"} onClick={play}>
+          {t("audio.again")}
+        </button>
       </div>
+      <p className="speak__state" role="status">
+        {playing ? t("audio.playing") : ""}
+      </p>
       <p className="note">{voice === "recording" ? t("audio.aiVoice") : t("audio.deviceVoice")}</p>
       {/* Always in the page, so a screen reader announces the text when it appears. */}
       <p className={failed ? "status status--attention" : "ll-sr-only"} role="status">

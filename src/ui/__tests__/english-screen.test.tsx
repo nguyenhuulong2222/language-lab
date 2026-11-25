@@ -57,11 +57,12 @@ describe("reading screen", () => {
     const html = render(s, "reading");
     const sentence = engine.englishProgress(s, "reading").current!;
     expect(html).toContain(sentence.text.replace("’", "&#x27;"));
-    expect(html).toContain("Say it");
+    expect(html).toContain("Tap to speak");
     expect(html).toContain("<textarea");
     expect(html).toContain("Skip this one");
     // The sentence is not played before the attempt.
-    expect(html).not.toContain("Play aloud");
+    expect(html).not.toContain("Play the sentence");
+    expect(html).not.toContain("Play the question");
     expect(html).toContain("every important word of the sentence must be there, in order");
     expect(html).toContain("not a USCIS rule");
     expect(html).toContain("official USCIS reading and writing vocabulary lists");
@@ -71,7 +72,7 @@ describe("reading screen", () => {
   it("without voice support still offers typing and says why", () => {
     const html = render(atReading(), "reading", { voice: false });
     expect(html).toContain("<textarea");
-    expect(html).not.toContain(">Say it<");
+    expect(html).not.toContain(">Tap to speak<");
     expect(html).toContain("cannot listen");
   });
 
@@ -125,10 +126,10 @@ describe("writing screen", () => {
     const s = atWriting();
     const sentence = engine.englishProgress(s, "writing").current!;
     const html = render(s, "writing");
-    expect(html).toContain("Play aloud");
+    expect(html).toContain("Play the sentence");
     expect(html).toContain("The sentence stays hidden until you answer.");
     expect(html).not.toContain(sentence.text);
-    expect(html).not.toContain("Say it");
+    expect(html).not.toContain("Tap to speak");
     expect(html).toContain("<textarea");
     expect(html).toContain("every important word of the sentence must be there, in order");
   });
@@ -176,9 +177,10 @@ describe("listen and compare on the reading screen", () => {
     const html = render(atReading(), "reading", { recorder: RECORDER });
     expect(html).toContain("Listen and compare");
     expect(html).toContain("Record and compare");
-    expect(html).toContain("Say it");
+    expect(html).toContain("Tap to speak");
     expect(html).not.toContain("Hear the sample");
-    expect(html).not.toContain("Play aloud");
+    expect(html).not.toContain("Play the sentence");
+    expect(html).not.toContain("Play the question");
     expect(html).toContain("stays on this device");
   });
   it("the sample is not offered before the first attempt even when the browser cannot record", () => {

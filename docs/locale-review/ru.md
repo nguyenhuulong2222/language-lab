@@ -35,7 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. | Засчитывается любой из них. | Any one of them is counted. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | Обществоведение, «Сначала изучить» и полное пробное собеседование отключены в этой версии, пока человек не проверит ответы по обществоведению. Вы можете практиковать собеседование по N-400, чтение и письмо. | Civics, "Study first" and the full practice interview are turned off in this version until a person checks the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Ключ с правильными ответами по обществоведению ещё ждёт проверки человеком, поэтому эта версия не оценивает эту часть и не создаёт отчёт. | The key with the correct civics answers is still waiting for a person to check it, so this version does not grade this part and does not create a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Когда вы нажимаете «Сказать», функция распознавания речи в вашем браузере может отправить ваш голос компании, которая сделала браузер, например Google или Apple, чтобы превратить его в слова. Language Lab не отправляет и не сохраняет ваш голос. Вместо этого вы можете напечатать ответ. | When you press “Say”, the speech recognition function in your browser may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type the answer instead. |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Когда вы нажимаете «Нажмите, чтобы говорить», функция распознавания речи в вашем браузере может отправить ваш голос компании, которая сделала браузер, например Google или Apple, чтобы превратить его в слова. Language Lab не отправляет и не сохраняет ваш голос. Вместо этого вы можете напечатать ответ. | When you press “Say”, the speech recognition function in your browser may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type the answer instead. |
 | `report.title.onTrack` | Practice complete: each part reached the practice score | Практика завершена: каждая часть достигла практического балла | Practice finished: each part reached the practice score |
 | `report.title.review` | A few things to review | Есть что повторить | There is something to review |
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | В этой практике чтение, письмо и обществоведение достигли балла, который использует Language Lab. Используйте заметки ниже, чтобы продолжать практиковаться. | In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to keep practicing. |
@@ -73,7 +73,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Этот этап практики пока не готов. |
 | `header.about` | About & disclaimer | О программе и отказ от ответственности |
 | `stepper.label` | Interview stages | Этапы собеседования |
-| `stepper.count` | Stage {current} of {total} | Этап {current} из {total} |
+| `stepper.count` | Step {current} of {total}: {name} | Шаг {current} из {total}: {name} |
 | `stepper.status.complete` | completed | завершён |
 | `stepper.status.current` | current step | текущий этап |
 | `stepper.status.upcoming` | upcoming | впереди |
@@ -100,8 +100,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.intro` | Focus on these before your next practice. | Сосредоточьтесь на этом перед следующей практикой. |
 | `report.generated` | Report generated {datetime} | Отчёт создан {datetime} |
 | `translation.english` | English | Английский |
-| `voice.say` | Say it | Сказать |
-| `voice.stop` | Stop listening | Перестать слушать |
+| `voice.say` | Tap to speak | Нажмите, чтобы говорить |
+| `voice.stop` | Listening… tap when you finish | Слушаю… нажмите, когда закончите |
 | `voice.listening` | Listening. Say your answer now. | Слушаю. Говорите ответ сейчас. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | Мы вас услышали. Проверьте слова, при желании измените их и отправьте. |
 | `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | Микрофон заблокирован. Разрешите доступ к микрофону в настройках браузера или введите ответ с клавиатуры. |
@@ -110,7 +110,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | Микрофон не найден. Введите ответ с клавиатуры. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | В этот раз прослушивание не получилось. Попробуйте ещё раз или введите ответ с клавиатуры. |
 | `voice.skip` | Skip this one | Пропустить |
-| `audio.play` | Play aloud | Прослушать |
+| `audio.play` | Play the question | Прослушать вопрос |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Голос устройства: голос, установленный на вашем телефоне или компьютере. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Этот браузер не умеет читать вслух. Прочитайте текст на экране. |
 | `intro.profile.legend` | Choose a practice profile | Выберите учебный профиль |
@@ -201,7 +201,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.needs` | This question needs {count} different answers. | Для этого вопроса нужно {count} разных ответов. |
 | `civics.yourAnswer` | Your answer | Ваш ответ |
 | `civics.submit` | Check my answer | Проверить мой ответ |
-| `civics.correct` | Correct | Верно |
+| `civics.correct` | This counts | Это засчитывается |
 | `civics.notYet` | Not yet | Пока нет |
 | `civics.youSaid` | You said: {text} | Вы сказали: {text} |
 | `civics.official` | Official answers | Официальные ответы |
@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.again` | Practice again | Тренироваться снова |
 | `common.startOver` | Start over | Начать заново |
 | `voice.needText` | Type or say your answer first, or choose Skip. | Сначала введите или скажите ответ либо выберите «Пропустить». |
-| `audio.stop` | Stop playing | Остановить |
+| `audio.stop` | Stop | Стоп |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Голос создан ИИ. Аудио было подготовлено заранее. |
 | `audio.playSample` | Play sample answer | Прослушать пример ответа |
 | `home.title` | Welcome to the booth | Добро пожаловать в Language Lab |
@@ -290,8 +290,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Звук не воспроизвёлся. Попробуйте ещё раз или прочитайте текст на экране. |
 | `lang.label` | Language | Язык |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Вернуться на главную? Ваши ответы в этой практике будут потеряны. |
-| `header.homeConfirm.yes` | Yes, go home | Да, на главную |
-| `header.homeConfirm.no` | Stay here | Остаться здесь |
+| `header.homeConfirm.yes` | Leave | Выйти |
+| `header.homeConfirm.no` | Keep practicing | Продолжить практику |
 | `common.retry` | Try again | Попробовать снова |
 | `partReport.badge.good` | This part reached the practice score | Эта часть достигла практического балла |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Предложение было показано на экране (попытка с подсказкой). |
@@ -360,6 +360,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.full.start` | Start practice | Начать практику |
 | `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Вам 65 лет или больше и у вас 20 лет грин-карта? Начните практику 65/20. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | Текст слишком мелкий? Нажмите «Размер текста» вверху. |
+| `audio.playing` | Playing… | Воспроизведение… |
+| `audio.playSentence` | Play the sentence | Прослушать предложение |
+| `voice.gotIt` | Got it. Tap to speak again | Готово. Нажмите, чтобы сказать снова |
+| `voice.orType` | Or type your answer | Или напечатайте ответ |
+| `voice.micHelp.title` | How to allow the microphone | Как разрешить микрофон |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): нажмите «аА» рядом с адресом сайта, затем «Настройки веб-сайта», затем «Микрофон» и выберите «Разрешить». Потом обновите страницу. |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): нажмите маленький значок слева от адреса сайта, затем «Разрешения» и включите «Микрофон». Потом обновите страницу. |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | Вы всегда можете напечатать ответ в поле. |
+| `civics.why.correct` | Your answer matches an official answer. | Ваш ответ совпадает с официальным ответом. |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | Ваш ответ пока не совпадает с официальными ответами. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

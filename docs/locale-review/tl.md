@@ -35,7 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. | Mabibilang ang alinman sa mga ito. | Any of these will be counted. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | Naka-off sa bersiyong ito ang sibika, Pag-aralan muna at ang buong practice interview hanggang masuri ng isang tao ang mga sagot sa sibika. Maaari mong sanayin ang N-400 interview, pagbasa at pagsulat. | Civics, Study first and the full practice interview are off in this version until a person checks the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Naghihintay pa ng pagsusuri ng isang tao ang answer key ng civics, kaya hindi ini-iskor ng bersyong ito ang civics at hindi gumagawa ng ulat. | The civics answer key is still waiting for review by a person, so this version does not score civics and does not make a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Kapag pinindot mo ang “Sabihin”, maaaring ipadala ng speech recognition ng iyong browser ang boses mo sa gumawa ng browser, tulad ng Google o Apple, para gawing salita. Hindi ipinapadala o sine-save ng Language Lab ang boses mo. Maaari mong i-type na lang ang sagot mo. | When you press “Say”, your browser's speech recognition may send your voice to the maker of the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can just type your answer. |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Kapag pinindot mo ang “I-tap para magsalita”, maaaring ipadala ng speech recognition ng iyong browser ang boses mo sa gumawa ng browser, tulad ng Google o Apple, para gawing salita. Hindi ipinapadala o sine-save ng Language Lab ang boses mo. Maaari mong i-type na lang ang sagot mo. | When you press “Say”, your browser's speech recognition may send your voice to the maker of the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can just type your answer. |
 | `report.title.onTrack` | Practice complete: each part reached the practice score | Tapos na ang pagsasanay: naabot ng bawat bahagi ang iskor sa pagsasanay | Practice is done: each part reached the score in practice |
 | `report.title.review` | A few things to review | May ilang bagay na dapat balikan | There are some things to go back to |
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Sa pagsasanay na ito, naabot ng pagbasa, pagsulat at sibika ang iskor na ginagamit ng Language Lab. Gamitin ang mga tala sa ibaba para magpatuloy sa pagsasanay. | In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to continue practicing. |
@@ -73,7 +73,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Hindi pa handa ang bahaging ito ng pagsasanay. |
 | `header.about` | About & disclaimer | Tungkol dito at paunawa |
 | `stepper.label` | Interview stages | Mga yugto ng panayam |
-| `stepper.count` | Stage {current} of {total} | Yugto {current} sa {total} |
+| `stepper.count` | Step {current} of {total}: {name} | Hakbang {current} sa {total}: {name} |
 | `stepper.status.complete` | completed | tapos na |
 | `stepper.status.current` | current step | kasalukuyang yugto |
 | `stepper.status.upcoming` | upcoming | susunod |
@@ -100,8 +100,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.intro` | Focus on these before your next practice. | Magtuon sa mga ito bago ang susunod ninyong pagsasanay. |
 | `report.generated` | Report generated {datetime} | Ginawa ang ulat noong {datetime} |
 | `translation.english` | English | Ingles |
-| `voice.say` | Say it | Magsalita |
-| `voice.stop` | Stop listening | Itigil ang pakikinig |
+| `voice.say` | Tap to speak | I-tap para magsalita |
+| `voice.stop` | Listening… tap when you finish | Nakikinig… i-tap kapag tapos ka na |
 | `voice.listening` | Listening. Say your answer now. | Nakikinig. Sabihin na ngayon ang inyong sagot. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | Narinig namin kayo. Tingnan ang mga salita, baguhin kung gusto, saka ipadala. |
 | `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | Naka-block ang mikropono. Payagan ang access sa mikropono sa settings ng browser, o i-type ang inyong sagot. |
@@ -110,7 +110,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | Walang nakitang mikropono. I-type na lang ang inyong sagot. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | Hindi gumana ang pakikinig ngayon. Subukang muli, o i-type ang inyong sagot. |
 | `voice.skip` | Skip this one | Laktawan ito |
-| `audio.play` | Play aloud | Pakinggan nang malakas |
+| `audio.play` | Play the question | Pakinggan ang tanong |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Boses ng device: ang boses na naka-install sa inyong telepono o computer. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Hindi kayang magbasa nang malakas ng browser na ito. Basahin ang teksto sa screen. |
 | `intro.profile.legend` | Choose a practice profile | Pumili ng profile sa pagsasanay |
@@ -201,7 +201,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.needs` | This question needs {count} different answers. | Kailangan ng tanong na ito ng {count} magkakaibang sagot. |
 | `civics.yourAnswer` | Your answer | Ang inyong sagot |
 | `civics.submit` | Check my answer | Suriin ang aking sagot |
-| `civics.correct` | Correct | Tama |
+| `civics.correct` | This counts | Bilang ito |
 | `civics.notYet` | Not yet | Hindi pa |
 | `civics.youSaid` | You said: {text} | Sinabi ninyo: {text} |
 | `civics.official` | Official answers | Mga opisyal na sagot |
@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.again` | Practice again | Magsanay muli |
 | `common.startOver` | Start over | Magsimulang muli |
 | `voice.needText` | Type or say your answer first, or choose Skip. | I-type o sabihin muna ang inyong sagot, o piliin ang Laktawan. |
-| `audio.stop` | Stop playing | Ihinto ang pagpapatugtog |
+| `audio.stop` | Stop | Ihinto |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Boses na gawa ng AI. Inihanda nang maaga ang audio. |
 | `audio.playSample` | Play sample answer | Pakinggan ang halimbawang sagot |
 | `home.title` | Welcome to the booth | Maligayang pagdating sa Language Lab |
@@ -290,8 +290,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Hindi na-play ang audio. Subukan ulit, o basahin ang teksto sa screen. |
 | `lang.label` | Language | Wika |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Babalik sa simula? Mawawala ang mga sagot ninyo sa pagsasanay na ito. |
-| `header.homeConfirm.yes` | Yes, go home | Oo, bumalik sa simula |
-| `header.homeConfirm.no` | Stay here | Manatili rito |
+| `header.homeConfirm.yes` | Leave | Umalis |
+| `header.homeConfirm.no` | Keep practicing | Magpatuloy sa pagsasanay |
 | `common.retry` | Try again | Subukang muli |
 | `partReport.badge.good` | This part reached the practice score | Naabot ng bahaging ito ang iskor sa pagsasanay |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Ipinakita ang pangungusap sa screen (pagsubok na may tulong). |
@@ -360,6 +360,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.full.start` | Start practice | Simulan ang pagsasanay |
 | `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | 65 pataas at 20 taon nang may green card? Simulan ang pagsasanay na 65/20. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | Masyadong maliit ang teksto? I-tap ang Laki ng teksto sa itaas. |
+| `audio.playing` | Playing… | Nagpe-play… |
+| `audio.playSentence` | Play the sentence | Pakinggan ang pangungusap |
+| `voice.gotIt` | Got it. Tap to speak again | Nakuha. I-tap para magsalita ulit |
+| `voice.orType` | Or type your answer | O i-type ang iyong sagot |
+| `voice.micHelp.title` | How to allow the microphone | Paano payagan ang mikropono |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): i-tap ang “aA” sa tabi ng web address, pagkatapos ang Website Settings, pagkatapos ang Microphone, at piliin ang Allow. Pagkatapos ay i-reload ang page. |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): i-tap ang maliit na icon sa kaliwa ng web address, pagkatapos ang Permissions, at i-on ang Microphone. Pagkatapos ay i-reload ang page. |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | Maaari mo ring i-type ang iyong sagot sa kahon. |
+| `civics.why.correct` | Your answer matches an official answer. | Tugma ang iyong sagot sa isang opisyal na sagot. |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | Hindi pa tugma ang iyong sagot sa mga opisyal na sagot. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

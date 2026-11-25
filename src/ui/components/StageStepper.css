@@ -6,20 +6,13 @@
 }
 
 /* ---- Condensed (mobile) ---- */
+/* At least 18px (body size), wraps rather than shrinks */
 .stepper__condensed {
   margin: 0 0 var(--space-2);
-  font-size: var(--fs-meta);
-  color: var(--ink-2);
-}
-
-.stepper__condensed-count {
-  font-family: var(--font-body);
-  color: var(--ink);
-}
-
-.stepper__condensed-label {
-  color: var(--ink);
+  font-size: var(--fs-body);
   font-weight: 600;
+  line-height: var(--lh-snug);
+  color: var(--ink);
 }
 
 .stepper__bar {
@@ -92,13 +85,16 @@
 .stepper__step--complete .stepper__marker {
   background: var(--status-positive);
   border-color: var(--status-positive);
-  color: var(--surface);
+  color: var(--on-accent);
 }
 
+/* The current step: a teal fill with a thick ink ring, plus the "current step" word for screen
+   readers and the bold label, so it is not told by colour alone (amber means "review"). */
 .stepper__step--current .stepper__marker {
-  background: var(--status-attention);
-  border-color: var(--status-attention);
-  color: var(--surface);
+  background: var(--teal);
+  border-color: var(--ink);
+  border-width: 3px;
+  color: var(--on-accent);
 }
 
 .stepper__marker-icon {

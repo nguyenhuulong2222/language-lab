@@ -35,7 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. | Ib qho twg ntawm cov no suav. | Any one of these counts. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | Kev kawm txog pej xeem, Kawm ua ntej thiab kev xyaum xam phaj tag nrho raug kaw hauv version no mus txog thaum muaj neeg tshuaj xyuas cov lus teb txog pej xeem. Koj xyaum tau kev xam phaj N-400, kev nyeem thiab kev sau. | Learning about citizens, Study first and the full practice interview are closed in this version until someone checks the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Cov lus teb raug txog pej xeem tseem tos ib tug neeg tshuaj xyuas, yog li daim no tsis muab qhab nia rau qhov no thiab tsis tsim daim ntawv qhia. | The correct civics answers are still waiting for a person to check them, so this version does not give scores for this and does not make a report. |
-| `voice.consent.text` ⚠ | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Thaum koj nias “Hais”, koj lub browser txoj kev paub lub suab tuaj yeem xa koj lub suab mus rau lub tuam txhab uas ua browser, xws li Google lossis Apple, kom hloov mus ua lus. Language Lab tsis xa lossis khaws koj lub suab. Koj tuaj yeem ntaus koj cov lus teb hloov chaw. | When you press “Say”, your browser's voice recognition may send your voice to the company that makes the browser, such as Google or Apple, to turn it into language. Language Lab does not send or keep your voice. You can type your answer instead. |
+| `voice.consent.text` ⚠ | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Thaum koj nias “Nias los hais lus”, koj lub browser txoj kev paub lub suab tuaj yeem xa koj lub suab mus rau lub tuam txhab uas ua browser, xws li Google lossis Apple, kom hloov mus ua lus. Language Lab tsis xa lossis khaws koj lub suab. Koj tuaj yeem ntaus koj cov lus teb hloov chaw. | When you press “Say”, your browser's voice recognition may send your voice to the company that makes the browser, such as Google or Apple, to turn it into language. Language Lab does not send or keep your voice. You can type your answer instead. |
 | `report.title.onTrack` | Practice complete: each part reached the practice score | Xyaum tiav lawm: txhua ntu tau txog cov qhab nia xyaum | Practice finished: every part reached the practice score |
 | `report.title.review` | A few things to review | Muaj ob peb yam yuav tsum rov saib | There are a few things you should look at again |
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Hauv qhov kev xyaum no, kev nyeem, kev sau thiab kev kawm txog pej xeem txhua ntu tau txog cov qhab nia uas Language Lab siv. Siv cov ntawv sau hauv qab no los xyaum ntxiv. | In this practice, reading, writing and learning about citizens each reached the score Language Lab uses. Use the notes below to practice more. |
@@ -73,7 +73,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Qhov kev xyaum no tseem tsis tau npaj tiav. |
 | `header.about` ⚠ | About & disclaimer | Txog Language Lab thiab daim ntawv tsis lees paub |
 | `stepper.label` | Interview stages | Cov theem ntawm kev xam phaj |
-| `stepper.count` | Stage {current} of {total} | Theem {current} ntawm {total} |
+| `stepper.count` | Step {current} of {total}: {name} | Kauj ruam {current} ntawm {total}: {name} |
 | `stepper.status.complete` | completed | ua tiav lawm |
 | `stepper.status.current` | current step | theem tam sim no |
 | `stepper.status.upcoming` | upcoming | theem tom ntej |
@@ -100,8 +100,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.intro` | Focus on these before your next practice. | Tsom rau cov no ua ntej koj xyaum zaum tom ntej. |
 | `report.generated` | Report generated {datetime} | Tsim daim ntawv qhia rau hnub {datetime} |
 | `translation.english` | English | Askiv |
-| `voice.say` | Say it | Hais lus |
-| `voice.stop` | Stop listening | Nres mloog |
+| `voice.say` | Tap to speak | Nias los hais lus |
+| `voice.stop` | Listening… tap when you finish | Tab tom mloog… nias thaum koj hais tag |
 | `voice.listening` | Listening. Say your answer now. | Tab tom mloog. Hais koj cov lus teb tam sim no. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | Peb hnov koj lawm. Saib cov lus, hloov yog koj xav hloov, ces xa mus. |
 | `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | Lub microphone raug thaiv. Thov tso cai siv lub microphone hauv browser cov chaw teeb tsa, lossis ntaus koj cov lus teb. |
@@ -110,7 +110,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | Tsis pom lub microphone. Thov ntaus koj cov lus teb. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | Zaum no kev mloog tsis ua haujlwm. Sim dua, lossis ntaus koj cov lus teb. |
 | `voice.skip` | Skip this one | Hla qhov no |
-| `audio.play` | Play aloud | Mloog nyeem |
+| `audio.play` | Play the question | Mloog lo lus nug |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Lub suab ntawm lub cuab yeej: lub suab teeb tsa rau hauv koj lub xov tooj lossis lub computer. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Lub browser no nyeem tsis tau tawm suab. Nyeem cov ntawv ntawm lub vijtsam. |
 | `intro.profile.legend` ⚠ | Choose a practice profile | Xaiv ib tus qauv xyaum |
@@ -201,7 +201,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.needs` | This question needs {count} different answers. | Lus nug no xav tau {count} cov lus teb txawv. |
 | `civics.yourAnswer` | Your answer | Koj cov lus teb |
 | `civics.submit` | Check my answer | Tshawb xyuas kuv cov lus teb |
-| `civics.correct` | Correct | Raug |
+| `civics.correct` | This counts | Qhov no suav |
 | `civics.notYet` | Not yet | Tsis tau |
 | `civics.youSaid` | You said: {text} | Koj hais tias: {text} |
 | `civics.official` | Official answers | Cov lus teb raug cai |
@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.again` | Practice again | Xyaum dua |
 | `common.startOver` | Start over | Pib dua |
 | `voice.needText` | Type or say your answer first, or choose Skip. | Ntaus los yog hais koj cov lus teb ua ntej, lossis xaiv Hla. |
-| `audio.stop` | Stop playing | Nres ua si |
+| `audio.stop` | Stop | Nres |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Lub suab AI tsim. Lub suab tau npaj ua ntej lawm. |
 | `audio.playSample` | Play sample answer | Mloog piv txwv lus teb |
 | `home.title` | Welcome to the booth | Txais tos rau Language Lab |
@@ -290,8 +290,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Suab tsis tau ua si. Sim dua, los yog nyeem cov ntawv ntawm lub vijtsam. |
 | `lang.label` | Language | Lus |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Rov qab mus tsev? Koj cov lus teb hauv kev xyaum no yuav ploj. |
-| `header.homeConfirm.yes` | Yes, go home | Yog, rov qab mus tsev |
-| `header.homeConfirm.no` | Stay here | Nyob ntawm no |
+| `header.homeConfirm.yes` | Leave | Tawm mus |
+| `header.homeConfirm.no` | Keep practicing | Txuas ntxiv xyaum |
 | `common.retry` | Try again | Sim dua |
 | `partReport.badge.good` | This part reached the practice score | Ntu no tau txog qhab nia xyaum |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Kab lus tau qhia rau ntawm lub vijtsam (kev sim muaj kev pab). |
@@ -360,6 +360,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.full.start` | Start practice | Pib xyaum |
 | `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Muaj 65 xyoo los yog laus dua, thiab muaj daim npav ntsuab 20 xyoo? Pib kev xyaum 65/20. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | Cov ntawv me dhau? Kov Qhov loj ntawm cov ntawv nyob saum toj. |
+| `audio.playing` | Playing… | Tab tom tso suab… |
+| `audio.playSentence` | Play the sentence | Mloog kab lus |
+| `voice.gotIt` | Got it. Tap to speak again | Tau lawm. Nias los hais dua |
+| `voice.orType` | Or type your answer | Los yog ntaus koj cov lus teb |
+| `voice.micHelp.title` | How to allow the microphone | Yuav ua li cas tso cai siv lub microphone |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): nias “aA” ntawm ib sab ntawm qhov chaw nyob hauv web, ces nias Website Settings, ces Microphone, thiab xaiv Allow. Ces rov qhib nplooj ntawv dua. |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): nias lub cim me me sab laug ntawm qhov chaw nyob hauv web, ces nias Permissions, thiab qhib Microphone. Ces rov qhib nplooj ntawv dua. |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | Koj yeej ntaus tau koj cov lus teb rau hauv lub npov. |
+| `civics.why.correct` | Your answer matches an official answer. | Koj cov lus teb zoo ib yam li ib qho lus teb raug cai. |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | Koj cov lus teb tseem tsis tau zoo ib yam li cov lus teb raug cai. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

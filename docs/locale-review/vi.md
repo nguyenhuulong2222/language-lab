@@ -35,7 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. | Chỉ cần một trong các đáp án này là được tính. | Only one of these answers is needed to count. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | Phần công dân, Học trước và buổi phỏng vấn luyện tập đầy đủ đang tắt trong bản này cho đến khi có người kiểm tra đáp án phần công dân. Bạn có thể luyện tập phỏng vấn N-400, đọc và viết. | Civics, Study first and the full practice interview are off in this version until someone checks the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Bộ đáp án civics vẫn đang chờ người xem xét, nên bản này không chấm điểm civics và không tạo báo cáo. | The civics answer set is still waiting for a person to review it, so this build does not score civics and does not create a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Khi bạn nhấn “Nói”, tính năng nhận dạng giọng nói của trình duyệt có thể gửi giọng của bạn đến nhà sản xuất trình duyệt, như Google hoặc Apple, để chuyển thành chữ. Language Lab không gửi hay lưu giọng nói của bạn. Bạn có thể gõ câu trả lời thay vào đó. | When you press “Speak”, the browser's voice recognition feature may send your voice to the browser's maker, such as Google or Apple, to convert it to text. Language Lab does not send or save your voice. You can type your answer instead. |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Khi bạn nhấn “Chạm để nói”, tính năng nhận dạng giọng nói của trình duyệt có thể gửi giọng của bạn đến nhà sản xuất trình duyệt, như Google hoặc Apple, để chuyển thành chữ. Language Lab không gửi hay lưu giọng nói của bạn. Bạn có thể gõ câu trả lời thay vào đó. | When you press “Speak”, the browser's voice recognition feature may send your voice to the browser's maker, such as Google or Apple, to convert it to text. Language Lab does not send or save your voice. You can type your answer instead. |
 | `report.title.onTrack` | Practice complete: each part reached the practice score | Đã luyện tập xong: mỗi phần đều đạt điểm luyện tập | Finished practicing: each part reached the practice score |
 | `report.title.review` | A few things to review | Có vài điều cần xem lại | There are a few things to look at again |
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Trong buổi luyện tập này, phần đọc, viết và công dân đều đạt mức điểm mà Language Lab dùng. Hãy dùng các ghi chú bên dưới để tiếp tục luyện tập. | In this practice session, reading, writing and civics all reached the score level that Language Lab uses. Use the notes below to keep practicing. |
@@ -73,7 +73,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Phần luyện tập này chưa sẵn sàng. |
 | `header.about` | About & disclaimer | Giới thiệu & miễn trừ trách nhiệm |
 | `stepper.label` | Interview stages | Các bước luyện tập |
-| `stepper.count` | Stage {current} of {total} | Bước {current}/{total} |
+| `stepper.count` | Step {current} of {total}: {name} | Bước {current}/{total}: {name} |
 | `stepper.status.complete` | completed | đã xong |
 | `stepper.status.current` | current step | bước hiện tại |
 | `stepper.status.upcoming` | upcoming | sắp tới |
@@ -100,8 +100,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.intro` | Focus on these before your next practice. | Hãy tập trung vào những điều này trước lần luyện tập tiếp theo. |
 | `report.generated` | Report generated {datetime} | Báo cáo được tạo lúc {datetime} |
 | `translation.english` | English | Tiếng Anh |
-| `voice.say` | Say it | Nói |
-| `voice.stop` | Stop listening | Dừng nghe |
+| `voice.say` | Tap to speak | Chạm để nói |
+| `voice.stop` | Listening… tap when you finish | Đang nghe… chạm khi bạn nói xong |
 | `voice.listening` | Listening. Say your answer now. | Đang nghe. Hãy nói câu trả lời của bạn. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | Đã nghe xong. Hãy xem lại các từ, sửa nếu muốn, rồi gửi. |
 | `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | Micrô đang bị chặn. Hãy cho phép dùng micrô trong phần cài đặt của trình duyệt, hoặc gõ câu trả lời. |
@@ -110,7 +110,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | Không tìm thấy micrô. Hãy gõ câu trả lời. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | Lần này chưa nghe được. Hãy thử lại, hoặc gõ câu trả lời. |
 | `voice.skip` | Skip this one | Bỏ qua câu này |
-| `audio.play` | Play aloud | Nghe đọc |
+| `audio.play` | Play the question | Nghe câu hỏi |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Giọng của thiết bị: giọng cài sẵn trên điện thoại hoặc máy tính của bạn. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Trình duyệt này không đọc to được. Hãy đọc chữ trên màn hình. |
 | `intro.profile.legend` | Choose a practice profile | Chọn một hồ sơ luyện tập |
@@ -201,7 +201,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.needs` | This question needs {count} different answers. | Câu hỏi này cần {count} đáp án khác nhau. |
 | `civics.yourAnswer` | Your answer | Câu trả lời của bạn |
 | `civics.submit` | Check my answer | Kiểm tra câu trả lời |
-| `civics.correct` | Correct | Đúng |
+| `civics.correct` | This counts | Câu này được tính |
 | `civics.notYet` | Not yet | Chưa đúng |
 | `civics.youSaid` | You said: {text} | Bạn đã nói: {text} |
 | `civics.official` | Official answers | Đáp án chính thức |
@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.again` | Practice again | Luyện tập lại |
 | `common.startOver` | Start over | Bắt đầu lại |
 | `voice.needText` | Type or say your answer first, or choose Skip. | Hãy gõ hoặc nói câu trả lời trước, hoặc chọn Bỏ qua. |
-| `audio.stop` | Stop playing | Dừng phát |
+| `audio.stop` | Stop | Dừng |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Giọng do AI tạo. Âm thanh đã được tạo sẵn. |
 | `audio.playSample` | Play sample answer | Nghe câu trả lời mẫu |
 | `home.title` | Welcome to the booth | Chào mừng đến Language Lab |
@@ -290,8 +290,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Âm thanh không phát được. Hãy thử lại, hoặc đọc chữ trên màn hình. |
 | `lang.label` | Language | Ngôn ngữ |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Về trang chủ? Các câu trả lời của bạn trong buổi luyện tập này sẽ mất. |
-| `header.homeConfirm.yes` | Yes, go home | Vâng, về trang chủ |
-| `header.homeConfirm.no` | Stay here | Ở lại đây |
+| `header.homeConfirm.yes` | Leave | Rời đi |
+| `header.homeConfirm.no` | Keep practicing | Tiếp tục luyện tập |
 | `common.retry` | Try again | Thử lại |
 | `partReport.badge.good` | This part reached the practice score | Phần này đã đạt điểm luyện tập |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Câu đã được hiện trên màn hình (lần thử có hỗ trợ). |
@@ -360,6 +360,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.full.start` | Start practice | Bắt đầu luyện tập |
 | `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Từ 65 tuổi trở lên và có thẻ xanh 20 năm? Bắt đầu phần luyện tập 65/20. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | Chữ quá nhỏ? Chạm vào Cỡ chữ ở trên cùng. |
+| `audio.playing` | Playing… | Đang phát… |
+| `audio.playSentence` | Play the sentence | Nghe câu |
+| `voice.gotIt` | Got it. Tap to speak again | Đã nghe. Chạm để nói lại |
+| `voice.orType` | Or type your answer | Hoặc gõ câu trả lời |
+| `voice.micHelp.title` | How to allow the microphone | Cách cho phép micrô |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): chạm vào “aA” cạnh địa chỉ trang web, chọn Cài đặt trang web, rồi Micrô, rồi chọn Cho phép. Sau đó tải lại trang. |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): chạm vào biểu tượng nhỏ bên trái địa chỉ trang web, chọn Quyền, rồi bật Micrô. Sau đó tải lại trang. |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | Bạn luôn có thể gõ câu trả lời vào ô. |
+| `civics.why.correct` | Your answer matches an official answer. | Câu trả lời của bạn khớp với một đáp án chính thức. |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | Câu trả lời của bạn chưa khớp với đáp án chính thức. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

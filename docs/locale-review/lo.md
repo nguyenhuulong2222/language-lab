@@ -35,7 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` ⚠ | Any of these counts. | ຄໍາຕອບໃດໜຶ່ງເຫຼົ່ານີ້ນັບວ່າຖືກ. | Any one of these answers counts as correct. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | ພົນລະເມືອງ, ຮຽນກ່ອນ ແລະ ການສຳພາດຝຶກແບບເຕັມ ຖືກປິດໃນເວີຊັນນີ້ ຈົນກວ່າຈະມີຄົນກວດຄຳຕອບພົນລະເມືອງ. ທ່ານຝຶກການສຳພາດ N-400, ການອ່ານ ແລະ ການຂຽນໄດ້. | Citizenship, Study first and the full practice interview are closed in this version until someone checks the citizenship answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | ຄໍາເຉີຍວິຊາພົນລະເມືອງຍັງລໍຖ້າໃຫ້ມີຄົນກວດສອບ, ດັ່ງນັ້ນເວີຊັນນີ້ຈຶ່ງບໍ່ໃຫ້ຄະແນນສ່ວນນີ້ ແລະ ບໍ່ສ້າງບົດລາຍງານ. | The civics answer key is still waiting for someone to check it, so this version does not score this part and does not create a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | ເມື່ອທ່ານກົດ “ເວົ້າ” ລະບົບຮັບຮູ້ສຽງຂອງບຣາວເຊີອາດສົ່ງສຽງຂອງທ່ານໄປຫາບໍລິສັດທີ່ສ້າງບຣາວເຊີ ເຊັ່ນ Google ຫຼື Apple ເພື່ອປ່ຽນເປັນຂໍ້ຄວາມ. Language Lab ບໍ່ສົ່ງ ແລະ ບໍ່ເກັບສຽງຂອງທ່ານ. ທ່ານສາມາດພິມຄຳຕອບແທນໄດ້. | When you press “Speak”, the browser's voice recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead. |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | ເມື່ອທ່ານກົດ “ແຕະເພື່ອເວົ້າ” ລະບົບຮັບຮູ້ສຽງຂອງບຣາວເຊີອາດສົ່ງສຽງຂອງທ່ານໄປຫາບໍລິສັດທີ່ສ້າງບຣາວເຊີ ເຊັ່ນ Google ຫຼື Apple ເພື່ອປ່ຽນເປັນຂໍ້ຄວາມ. Language Lab ບໍ່ສົ່ງ ແລະ ບໍ່ເກັບສຽງຂອງທ່ານ. ທ່ານສາມາດພິມຄຳຕອບແທນໄດ້. | When you press “Speak”, the browser's voice recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead. |
 | `report.title.onTrack` | Practice complete: each part reached the practice score | ຝຶກສຳເລັດ: ທຸກພາກເຖິງຄະແນນຝຶກ | Practice finished: every part reached the practice score |
 | `report.title.review` | A few things to review | ມີບາງຢ່າງທີ່ຄວນທົບທວນ | There are some things that should be reviewed |
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | ໃນການຝຶກນີ້ ການອ່ານ, ການຂຽນ ແລະ ພົນລະເມືອງ ແຕ່ລະພາກເຖິງຄະແນນທີ່ Language Lab ໃຊ້. ໃຊ້ບັນທຶກຂ້າງລຸ່ມເພື່ອຝຶກຕໍ່. | In this practice, reading, writing and citizenship each reached the score Language Lab uses. Use the notes below to keep practicing. |
@@ -73,7 +73,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | ຂັ້ນຕອນການຝຶກນີ້ຍັງບໍ່ພ້ອມໃຊ້ງານ. |
 | `header.about` | About & disclaimer | ກ່ຽວກັບ ແລະ ຂໍ້ຈໍາກັດຄວາມຮັບຜິດຊອບ |
 | `stepper.label` | Interview stages | ຂັ້ນຕອນການສໍາພາດ |
-| `stepper.count` | Stage {current} of {total} | ຂັ້ນຕອນທີ {current} ຈາກ {total} |
+| `stepper.count` | Step {current} of {total}: {name} | ຂັ້ນຕອນທີ {current} ຈາກ {total}: {name} |
 | `stepper.status.complete` | completed | ສໍາເລັດແລ້ວ |
 | `stepper.status.current` | current step | ຂັ້ນຕອນປັດຈຸບັນ |
 | `stepper.status.upcoming` | upcoming | ຂັ້ນຕອນຕໍ່ໄປ |
@@ -100,8 +100,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.intro` | Focus on these before your next practice. | ກະລຸນາເນັ້ນສິ່ງເຫຼົ່ານີ້ກ່ອນການຝຶກຄັ້ງຕໍ່ໄປ. |
 | `report.generated` | Report generated {datetime} | ສ້າງບົດລາຍງານເມື່ອ {datetime} |
 | `translation.english` | English | ອັງກິດ |
-| `voice.say` | Say it | ເວົ້າ |
-| `voice.stop` | Stop listening | ຢຸດຟັງ |
+| `voice.say` | Tap to speak | ແຕະເພື່ອເວົ້າ |
+| `voice.stop` | Listening… tap when you finish | ກຳລັງຟັງ… ແຕະເມື່ອເວົ້າແລ້ວ |
 | `voice.listening` | Listening. Say your answer now. | ກໍາລັງຟັງ. ກະລຸນາເວົ້າຄໍາຕອບຂອງທ່ານດຽວນີ້. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | ພວກເຮົາໄດ້ຍິນທ່ານແລ້ວ. ກວດເບິ່ງຄໍາ, ແກ້ໄຂໄດ້ຖ້າຕ້ອງການ, ແລ້ວສົ່ງ. |
 | `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | ໄມໂຄຣໂຟນຖືກບລັອກ. ກະລຸນາອະນຸຍາດການໃຊ້ໄມໂຄຣໂຟນໃນການຕັ້ງຄ່າຂອງບຣາວເຊີ ຫຼື ພິມຄໍາຕອບຂອງທ່ານ. |
@@ -110,7 +110,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | ບໍ່ພົບໄມໂຄຣໂຟນ. ກະລຸນາພິມຄໍາຕອບແທນ. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | ຄັ້ງນີ້ການຟັງບໍ່ສໍາເລັດ. ລອງອີກຄັ້ງ ຫຼື ພິມຄໍາຕອບຂອງທ່ານ. |
 | `voice.skip` | Skip this one | ຂ້າມຂໍ້ນີ້ |
-| `audio.play` | Play aloud | ຟັງສຽງອ່ານ |
+| `audio.play` | Play the question | ຟັງຄຳຖາມ |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | ສຽງຂອງອຸປະກອນ: ສຽງທີ່ຕິດຕັ້ງໃນໂທລະສັບ ຫຼື ຄອມພິວເຕີຂອງທ່ານ. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | ບຣາວເຊີນີ້ອ່ານອອກສຽງບໍ່ໄດ້. ກະລຸນາອ່ານຂໍ້ຄວາມເທິງໜ້າຈໍ. |
 | `intro.profile.legend` | Choose a practice profile | ເລືອກໂປຣໄຟລ໌ຝຶກ |
@@ -201,7 +201,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.needs` | This question needs {count} different answers. | ຄໍາຖາມນີ້ຕ້ອງການຄໍາຕອບທີ່ແຕກຕ່າງກັນ {count} ຄໍາຕອບ. |
 | `civics.yourAnswer` | Your answer | ຄໍາຕອບຂອງທ່ານ |
 | `civics.submit` | Check my answer | ກວດຄໍາຕອບຂອງຂ້ອຍ |
-| `civics.correct` | Correct | ຖືກຕ້ອງ |
+| `civics.correct` | This counts | ນັບໄດ້ |
 | `civics.notYet` | Not yet | ຍັງບໍ່ຖືກ |
 | `civics.youSaid` | You said: {text} | ທ່ານເວົ້າວ່າ: {text} |
 | `civics.official` | Official answers | ຄໍາຕອບທາງການ |
@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.again` | Practice again | ຝຶກອີກຄັ້ງ |
 | `common.startOver` | Start over | ເລີ່ມໃໝ່ |
 | `voice.needText` | Type or say your answer first, or choose Skip. | ກະລຸນາພິມ ຫຼື ເວົ້າຄໍາຕອບກ່ອນ ຫຼື ເລືອກຂ້າມ. |
-| `audio.stop` | Stop playing | ຢຸດຫຼິ້ນ |
+| `audio.stop` | Stop | ຢຸດ |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | ສຽງທີ່ສ້າງໂດຍ AI. ສຽງນີ້ຖືກເຮັດໄວ້ລ່ວງໜ້າ. |
 | `audio.playSample` | Play sample answer | ຟັງຕົວຢ່າງຄໍາຕອບ |
 | `home.title` | Welcome to the booth | ຍິນດີຕ້ອນຮັບສູ່ Language Lab |
@@ -290,8 +290,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | ສຽງບໍ່ໄດ້ຫຼິ້ນ. ລອງໃໝ່ ຫຼື ອ່ານຂໍ້ຄວາມຢູ່ໜ້າຈໍ. |
 | `lang.label` | Language | ພາສາ |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | ກັບໄປໜ້າຫຼັກບໍ? ຄໍາຕອບຂອງທ່ານໃນການຝຶກນີ້ຈະຫາຍໄປ. |
-| `header.homeConfirm.yes` | Yes, go home | ແມ່ນ, ກັບໄປໜ້າຫຼັກ |
-| `header.homeConfirm.no` | Stay here | ຢູ່ທີ່ນີ້ຕໍ່ |
+| `header.homeConfirm.yes` | Leave | ອອກ |
+| `header.homeConfirm.no` | Keep practicing | ຝຶກຕໍ່ |
 | `common.retry` | Try again | ລອງອີກຄັ້ງ |
 | `partReport.badge.good` | This part reached the practice score | ພາກນີ້ເຖິງຄະແນນຝຶກແລ້ວ |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | ປະໂຫຍກຖືກສະແດງຢູ່ໜ້າຈໍ (ການພະຍາຍາມທີ່ມີຕົວຊ່ວຍ). |
@@ -360,6 +360,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.full.start` | Start practice | ເລີ່ມການຝຶກ |
 | `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | ອາຍຸ 65 ປີຂຶ້ນໄປ ແລະ ມີບັດຂຽວ 20 ປີ? ເລີ່ມການຝຶກ 65/20. |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | ຕົວໜັງສືນ້ອຍເກີນໄປບໍ? ແຕະ ຂະໜາດຕົວໜັງສື ຢູ່ທາງເທິງ. |
+| `audio.playing` | Playing… | ກຳລັງຫຼິ້ນ… |
+| `audio.playSentence` | Play the sentence | ຟັງປະໂຫຍກ |
+| `voice.gotIt` | Got it. Tap to speak again | ໄດ້ຍິນແລ້ວ. ແຕະເພື່ອເວົ້າອີກ |
+| `voice.orType` | Or type your answer | ຫຼື ພິມຄຳຕອບຂອງທ່ານ |
+| `voice.micHelp.title` | How to allow the microphone | ວິທີອະນຸຍາດໄມໂຄຣໂຟນ |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): ແຕະ “aA” ຂ້າງທີ່ຢູ່ເວັບ, ແລ້ວແຕະ Website Settings, ແລ້ວ Microphone, ແລະເລືອກ Allow. ຈາກນັ້ນໂຫຼດໜ້າໃໝ່. |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): ແຕະໄອຄອນນ້ອຍທາງຊ້າຍຂອງທີ່ຢູ່ເວັບ, ແລ້ວແຕະ Permissions, ແລະເປີດ Microphone. ຈາກນັ້ນໂຫຼດໜ້າໃໝ່. |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | ທ່ານສາມາດພິມຄຳຕອບໃນຫ້ອງແທນໄດ້ສະເໝີ. |
+| `civics.why.correct` | Your answer matches an official answer. | ຄຳຕອບຂອງທ່ານກົງກັບຄຳຕອບທາງການຂໍ້ໜຶ່ງ. |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | ຄຳຕອບຂອງທ່ານຍັງບໍ່ກົງກັບຄຳຕອບທາງການ. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

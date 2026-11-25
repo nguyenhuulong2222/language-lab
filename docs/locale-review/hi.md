@@ -35,7 +35,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.officialNote` | Any of these counts. | इनमें से कोई भी उत्तर मान्य है। | Any one of these answers is valid. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | जब तक कोई व्यक्ति नागरिक शास्त्र के उत्तरों की समीक्षा नहीं करता, इस संस्करण में नागरिक शास्त्र, पहले पढ़ें और पूरा अभ्यास साक्षात्कार बंद हैं। आप N-400 साक्षात्कार, पढ़ना और लिखना अभ्यास कर सकते हैं। | Until a person reviews the civics answers, civics, Study first and the full practice interview are off in this version. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | नागरिक शास्त्र की उत्तर-कुंजी अभी किसी व्यक्ति की समीक्षा की प्रतीक्षा में है, इसलिए यह संस्करण नागरिक शास्त्र का स्कोर नहीं देता और रिपोर्ट नहीं बनाता। | The civics answer key is still waiting for a person's review, so this version does not give a civics score and does not make a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | जब आप “बोलें” दबाते हैं, तो आपके ब्राउज़र की आवाज़ पहचान सुविधा आपकी आवाज़ को शब्दों में बदलने के लिए ब्राउज़र बनाने वाली कंपनी, जैसे Google या Apple, को भेज सकती है। Language Lab आपकी आवाज़ न भेजता है, न सहेजता है। आप इसके बजाय अपना उत्तर टाइप कर सकते हैं। | When you press “Speak”, your browser's voice recognition feature may send your voice to the company that makes the browser, such as Google or Apple, to turn it into words. Language Lab neither sends nor saves your voice. You can type your answer instead. |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | जब आप “बोलने के लिए छुएँ” दबाते हैं, तो आपके ब्राउज़र की आवाज़ पहचान सुविधा आपकी आवाज़ को शब्दों में बदलने के लिए ब्राउज़र बनाने वाली कंपनी, जैसे Google या Apple, को भेज सकती है। Language Lab आपकी आवाज़ न भेजता है, न सहेजता है। आप इसके बजाय अपना उत्तर टाइप कर सकते हैं। | When you press “Speak”, your browser's voice recognition feature may send your voice to the company that makes the browser, such as Google or Apple, to turn it into words. Language Lab neither sends nor saves your voice. You can type your answer instead. |
 | `report.title.onTrack` | Practice complete: each part reached the practice score | अभ्यास पूरा: हर भाग अभ्यास स्कोर तक पहुँचा | Practice complete: every part reached the practice score |
 | `report.title.review` | A few things to review | दोहराने के लिए कुछ बातें | A few things to revise |
 | `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | इस अभ्यास में पढ़ना, लिखना और नागरिक शास्त्र, तीनों उस स्कोर तक पहुँचे जो Language Lab इस्तेमाल करता है। अभ्यास जारी रखने के लिए नीचे दिए नोट्स देखें। | In this practice, reading, writing and civics, all three, reached the score that Language Lab uses. See the notes below to continue practicing. |
@@ -73,7 +73,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `app.stageNotBuilt` | This stage of the practice isn’t built yet. | अभ्यास का यह चरण अभी तैयार नहीं है। |
 | `header.about` | About & disclaimer | परिचय और अस्वीकरण |
 | `stepper.label` | Interview stages | इंटरव्यू के चरण |
-| `stepper.count` | Stage {current} of {total} | चरण {current} / {total} |
+| `stepper.count` | Step {current} of {total}: {name} | चरण {current} / {total}: {name} |
 | `stepper.status.complete` | completed | पूरा हुआ |
 | `stepper.status.current` | current step | वर्तमान चरण |
 | `stepper.status.upcoming` | upcoming | आगामी |
@@ -100,8 +100,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.review.intro` | Focus on these before your next practice. | अपने अगले अभ्यास से पहले इन पर ध्यान दें। |
 | `report.generated` | Report generated {datetime} | रिपोर्ट बनाई गई: {datetime} |
 | `translation.english` | English | अंग्रेज़ी |
-| `voice.say` | Say it | बोलें |
-| `voice.stop` | Stop listening | सुनना बंद करें |
+| `voice.say` | Tap to speak | बोलने के लिए छुएँ |
+| `voice.stop` | Listening… tap when you finish | सुन रहे हैं… बोलना खत्म होने पर छुएँ |
 | `voice.listening` | Listening. Say your answer now. | सुन रहे हैं। अब अपना उत्तर बोलें। |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | हमने आपको सुन लिया। शब्द देखें, चाहें तो बदलें, फिर भेजें। |
 | `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | माइक्रोफ़ोन ब्लॉक है। अपने ब्राउज़र की सेटिंग में माइक्रोफ़ोन की अनुमति दें, या अपना उत्तर टाइप करें। |
@@ -110,7 +110,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | कोई माइक्रोफ़ोन नहीं मिला। इसके बजाय अपना उत्तर टाइप करें। |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | इस बार सुनना सफल नहीं हुआ। फिर से कोशिश करें, या अपना उत्तर टाइप करें। |
 | `voice.skip` | Skip this one | इसे छोड़ें |
-| `audio.play` | Play aloud | ज़ोर से सुनें |
+| `audio.play` | Play the question | प्रश्न सुनें |
 | `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | डिवाइस की आवाज़: आपके फ़ोन या कंप्यूटर में इंस्टॉल की गई आवाज़। |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | यह ब्राउज़र ज़ोर से पढ़ नहीं सकता। स्क्रीन पर लिखा पाठ पढ़ें। |
 | `intro.profile.legend` | Choose a practice profile | एक अभ्यास प्रोफ़ाइल चुनें |
@@ -201,7 +201,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.needs` | This question needs {count} different answers. | इस प्रश्न के लिए {count} अलग-अलग उत्तर चाहिए। |
 | `civics.yourAnswer` | Your answer | आपका उत्तर |
 | `civics.submit` | Check my answer | मेरा उत्तर जाँचें |
-| `civics.correct` | Correct | सही |
+| `civics.correct` | This counts | यह गिना जाएगा |
 | `civics.notYet` | Not yet | अभी नहीं |
 | `civics.youSaid` | You said: {text} | आपने कहा: {text} |
 | `civics.official` | Official answers | आधिकारिक उत्तर |
@@ -214,7 +214,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.again` | Practice again | फिर से अभ्यास करें |
 | `common.startOver` | Start over | फिर से शुरू करें |
 | `voice.needText` | Type or say your answer first, or choose Skip. | पहले अपना उत्तर टाइप करें या बोलें, या छोड़ें चुनें। |
-| `audio.stop` | Stop playing | चलाना रोकें |
+| `audio.stop` | Stop | रोकें |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | AI से बनी आवाज़। ऑडियो पहले से तैयार किया गया था। |
 | `audio.playSample` | Play sample answer | नमूना उत्तर सुनें |
 | `home.title` | Welcome to the booth | Language Lab में आपका स्वागत है |
@@ -290,8 +290,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | ऑडियो नहीं चला। फिर कोशिश करें, या स्क्रीन पर लिखा पाठ पढ़ें। |
 | `lang.label` | Language | भाषा |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | होम पर वापस जाएँ? इस अभ्यास में आपके उत्तर खो जाएँगे। |
-| `header.homeConfirm.yes` | Yes, go home | हाँ, होम पर जाएँ |
-| `header.homeConfirm.no` | Stay here | यहीं रहें |
+| `header.homeConfirm.yes` | Leave | छोड़ें |
+| `header.homeConfirm.no` | Keep practicing | अभ्यास जारी रखें |
 | `common.retry` | Try again | फिर से कोशिश करें |
 | `partReport.badge.good` | This part reached the practice score | यह भाग अभ्यास स्कोर तक पहुँचा |
 | `partReport.assisted` | The sentence was shown on screen (assisted attempt). | वाक्य स्क्रीन पर दिखाया गया था (सहायता वाला प्रयास)। |
@@ -360,3 +360,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.full.start` | Start practice | अभ्यास शुरू करें |
 | `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | 65 वर्ष या अधिक, और 20 वर्ष से ग्रीन कार्ड? 65/20 अभ्यास शुरू करें। |
 | `home.textSizeHint` | Text too small? Tap Text size at the top. | अक्षर बहुत छोटे हैं? ऊपर अक्षर का आकार पर टैप करें। |
+| `audio.playing` | Playing… | चल रहा है… |
+| `audio.playSentence` | Play the sentence | वाक्य सुनें |
+| `voice.gotIt` | Got it. Tap to speak again | सुन लिया। फिर से बोलने के लिए छुएँ |
+| `voice.orType` | Or type your answer | या अपना उत्तर टाइप करें |
+| `voice.micHelp.title` | How to allow the microphone | माइक्रोफ़ोन की अनुमति कैसे दें |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): वेब पते के पास “aA” छुएँ, फिर Website Settings, फिर Microphone, और Allow चुनें। फिर पेज को दोबारा लोड करें। |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): वेब पते के बाईं ओर छोटा आइकन छुएँ, फिर अनुमतियाँ, और माइक्रोफ़ोन चालू करें। फिर पेज को दोबारा लोड करें। |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | आप हमेशा बॉक्स में अपना उत्तर टाइप कर सकते हैं। |
+| `civics.why.correct` | Your answer matches an official answer. | आपका उत्तर एक आधिकारिक उत्तर से मेल खाता है। |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | आपका उत्तर अभी आधिकारिक उत्तरों से मेल नहीं खाता। |

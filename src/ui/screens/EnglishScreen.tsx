@@ -178,6 +178,7 @@ export function EnglishScreen({
                 <SpeakButton
                   text={sentence.text}
                   clipId={writingClipId(sentence.id)}
+                  labelKey="audio.playSentence"
                   onFailed={() => setShownFor(sentence.id)}
                 />
                 {noVoice || shownFor === sentence.id ? (

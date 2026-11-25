@@ -61,7 +61,7 @@ describe("the stepper shows only the steps of the session", () => {
   it("one part: that part and the report", () => {
     const s = engine.reduce(engine.initial(), { type: "choose", mode: "reading", seed: 1, at: AT });
     const html = renderShell("reading", s);
-    expect(html).toContain("Stage 1 of 2");
+    expect(html).toContain("Step 1 of 2:");
     expect(html).toContain("Reading");
     expect(html).toContain("Report");
     // Only the stepper is checked: the About panel's privacy line names the N-400 part (AI coach).
@@ -72,12 +72,12 @@ describe("the stepper shows only the steps of the session", () => {
 
   it("civics only: setup, civics and the report", () => {
     const s = engine.reduce(engine.initial(), { type: "choose", mode: "civics", seed: 1, at: AT });
-    expect(renderShell("civics", s)).toContain("Stage 1 of 3");
+    expect(renderShell("civics", s)).toContain("Step 1 of 3:");
   });
 
   it("the full interview: all six steps", () => {
     const s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 1, at: AT });
-    expect(renderShell("full", s)).toContain("Stage 1 of 6");
+    expect(renderShell("full", s)).toContain("Step 1 of 6:");
   });
 
   it("no screen shows the decorative take counter (senior-friendly step 3); the stepper counts the steps", () => {
