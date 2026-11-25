@@ -59,6 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | လေ့ကျင့်ခန်းအောင်မှတ်ကို ရောက်သောအခါ လေ့ကျင့်စာမေးပွဲ ရပ်သွားသည်။ |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | လေ့ကျင့်ခန်းအောင်မှတ် {score} ကို မရောက်မီ အဖြေမှား {incorrect} ခုပြီးနောက် လေ့ကျင့်စာမေးပွဲ ရပ်သွားသည်။ |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | လေ့ကျင့်ခန်းအောင်မှတ်မှာ အဖြေမှန် {score} ခု ဖြစ်ပြီး မရောက်ခဲ့ပါ။ |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS သည် အသက်နှင့် အမြဲတမ်းနေထိုင်သူ နှစ်များကို N-400 တင်သည့်နေ့တွင် ရေတွက်သည်။ |
 
 ## 3. All other lines
 
@@ -370,16 +371,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | အင်္ဂလိပ်စာမေးပွဲ မရှိ။ မေးခွန်း နည်းသည်- ကြယ်ပြ ၂၀ ခု။ |
 | `home.who.notSure` | Not sure? Choose Most people. | မသေချာလျှင် လူအများစု ကို ရွေးပါ။ |
 | `home.what.title` | 2. What do you want to do? | 2. ဘာလုပ်ချင်သလဲ။ |
-| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | 50/20၊ 55/15 နှင့် 65/20 အတွက် မလိုအပ်ပါ |
+| `home.part.notRequired` | Not required for {exception} | {exception} အတွက် မလိုအပ်ပါ |
 | `home.go.start` | Start | စတင်ရန် |
 | `home.go.open` | Open | ဖွင့်ရန် |
 | `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | အသက် ၅၀ နှင့်အထက်၊ ဂရင်းကတ် ၂၀ နှစ်နှင့်အထက် (50/20) |
 | `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | အသက် ၅၅ နှင့်အထက်၊ ဂရင်းကတ် ၁၅ နှစ်နှင့်အထက် (55/15) |
-| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | အင်္ဂလိပ်စာမေးပွဲ မရှိ။ နိုင်ငံသားပညာ ပုံမှန်အတိုင်း၊ စကားပြန် သုံးနိုင်သည်။ |
-| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | သင့်အသက်နှင့် အမြဲတမ်းနေထိုင်သူ နှစ်များကို N-400 တင်သည့်နေ့တွင် ရေတွက်သည်။ |
-| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | အင်တာဗျူးတွင် စကားပြန်ဖြင့် ကိုယ်ပိုင်ဘာသာစကားဖြင့် နိုင်ငံသားပညာကို ဖြေနိုင်သည်။ ဤအက်ပ်သည် အင်္ဂလိပ်မေးခွန်းများကို လေ့ကျင့်ပေးသည်။ |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | အင်္ဂလိပ်စာမေးပွဲ မရှိ။ နိုင်ငံသားပညာ ပုံမှန်အတိုင်း၊ စကားပြန် ကိုယ်တိုင်ခေါ်လာလျှင် ကိုယ့်ဘာသာဖြင့် ဖြေနိုင်သည်။ |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | အင်တာဗျူးတွင် စကားပြန် ကိုယ်တိုင်ခေါ်လာလျှင် နိုင်ငံသားပညာကို ကိုယ့်ဘာသာဖြင့် ဖြေနိုင်သည်။ ဤအက်ပ်သည် အင်္ဂလိပ်မေးခွန်းများကို လေ့ကျင့်ပေးသည်။ |
 | `report.exception` | Practice as {exception} | {exception} အဖြစ် လေ့ကျင့်ခြင်း |
-| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | စကားပြန်ဖြင့် ကိုယ်ပိုင်ဘာသာစကားဖြင့် တကယ့် နိုင်ငံသားပညာ စာမေးပွဲကို ဖြေဆိုနိုင်သည်။ |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | စကားပြန် ကိုယ်တိုင်ခေါ်လာလျှင် တကယ့် နိုင်ငံသားပညာ စာမေးပွဲကို ကိုယ့်ဘာသာဖြင့် ဖြေဆိုနိုင်သည်။ |
 | `intro.who.legend` | Who is practicing? | ဘယ်သူ လေ့ကျင့်နေသလဲ။ |
 
 ## Lines marked ⚠ (meaning differs a little)

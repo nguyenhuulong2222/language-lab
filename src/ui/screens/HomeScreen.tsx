@@ -1,11 +1,12 @@
 /**
  * Home, top to bottom: the language grid (always open, the same list as the header panel); the
- * welcome in one sentence and the text-size hint; "1. Who is practicing?" (Most people, or 65/20:
- * two radio cards, Most people by default, in memory only); "2. What do you want to do?" (Study, and
+ * welcome in one sentence and the text-size hint; "1. Who is practicing?" (four radio cards:
+ * Most people, 50/20, 55/15, 65/20; Most people by default, in memory only); "2. What do you want to do?" (Study, and
  * the one filled button "Practice test"); "Or practice one part" (whole-row buttons); the AI coach
  * card; then how it works, the disclaimer and the privacy notes. Every tappable card is an
- * ActionCard (frame, verb and arrow). The 65/20 choice is used by every card after it: Study starts
- * with the starred questions, and the practice test and civics start with 65/20 ticked in setup.
+ * ActionCard (frame, verb and arrow). The choice is used by every card after it: Study (65/20: the
+ * starred questions; the others: the full bank with the interpreter note), and the practice test and
+ * civics start with it chosen in setup (decisions log Q).
  */
 import { useId, useState, type ReactElement } from "react";
 import type { AgeException } from "../../engine/exceptions";
@@ -36,7 +37,7 @@ const WHO_CARDS: ReadonlyArray<{ value: Who; title: MessageKey; text: MessageKey
 interface HomeScreenProps {
   /** True when this build cannot score civics (answer key not yet reviewed). */
   civicsLocked: boolean;
-  /** Start a practice. The app adds the 65/20 choice. */
+  /** Start a practice. The app adds the exception chosen here. */
   onChoose: (mode: PracticeMode) => void;
   /** Open Study (questions with pictures and official answers, not scored). */
   onStudy?: () => void;
@@ -112,11 +113,11 @@ export function HomeScreen({
           </div>
         )}
         {!civicsLocked && (
-          <section className="home__step" aria-labelledby={whoTitleId}>
-            <fieldset className="who-cards" aria-describedby={eligibilityId}>
-              <legend id={whoTitleId} className="who-cards__legend">
-                {t("home.who.title")}
-              </legend>
+          <section className="home__step">
+            <h2 id={whoTitleId} className="home__section">
+              {t("home.who.title")}
+            </h2>
+            <fieldset className="who-cards" aria-labelledby={whoTitleId} aria-describedby={eligibilityId}>
               {WHO_CARDS.filter((card) => card.value !== "65/20" || specialOffered).map((card) => {
                 const Icon = card.icon;
                 return (
@@ -139,8 +140,11 @@ export function HomeScreen({
               })}
             </fieldset>
             <div className="home__who-notes">
-              <p className="note" id={eligibilityId}>
-                <LegalText messageKey="home.exceptions.timing" /> <LegalText messageKey="special.englishExempt" />
+              <p className="note">
+                <span id={eligibilityId}>
+                  <LegalText messageKey="home.exceptions.timing" />
+                </span>{" "}
+                <LegalText messageKey="special.englishExempt" />
               </p>
               <p className="note">
                 <a className="special-note__link" href={EXCEPTIONS_URL} target="_blank" rel="noopener noreferrer">
@@ -182,7 +186,7 @@ export function HomeScreen({
                   text={t(part.text)}
                   verb={t("home.go.start")}
                   onClick={() => onChoose(part.mode)}
-                  {...(exempt && (part.mode === "reading" || part.mode === "writing") ? { meta: t("home.part.notRequired") } : {})}
+                  {...(exempt && (part.mode === "reading" || part.mode === "writing") ? { meta: t("home.part.notRequired", { exception: who }) } : {})}
                   {...(part.mode === "n400" && onChooseCoach !== undefined
                     ? {
                         badge: (

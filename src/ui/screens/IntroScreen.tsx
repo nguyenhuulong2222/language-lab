@@ -14,7 +14,7 @@ import { ScreenHelp } from "../components/ScreenHelp";
 import { TakeHeader } from "../components/TakeHeader";
 import { formatDate } from "../format";
 import type { CivicsPracticeRules } from "../../engine/test-rules-loader";
-import { SpecialConsiderationNote } from "../components/SpecialConsiderationNote";
+import { EXCEPTIONS_URL, SpecialConsiderationNote } from "../components/SpecialConsiderationNote";
 import "../components/Screen.css";
 
 interface IntroScreenProps {
@@ -132,9 +132,15 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, exceptions
               </label>
             ))}
             <p className="note" id="intro-who-help">
-              <LegalText messageKey="home.exceptions.timing" /> <LegalText messageKey="special.englishExempt" />
+              <LegalText messageKey="home.exceptions.timing" />
             </p>
-            {exception === "65/20" && exceptions.special !== null && <SpecialConsiderationNote rules={exceptions.special} />}
+            <p className="note">
+              <a className="special-note__link" href={EXCEPTIONS_URL} target="_blank" rel="noopener noreferrer">
+                {t("special.language.link")}
+                <span className="ll-sr-only"> {t("common.newTab")}</span>
+              </a>
+            </p>
+            {exception === "65/20" && exceptions.special !== null && <SpecialConsiderationNote rules={exceptions.special} languageLine={false} />}
           </fieldset>
         )}
         <div className="btn-row">

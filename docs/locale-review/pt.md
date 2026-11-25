@@ -59,6 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | O teste de prática parou quando a pontuação de aprovação da prática foi alcançada. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | O teste de prática parou depois de {incorrect} respostas incorretas, antes de a pontuação de aprovação da prática, {score}, ser alcançada. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | A pontuação de aprovação da prática é de {score} respostas corretas, e ela não foi alcançada. |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | O USCIS conta a idade e os anos como residente permanente no dia em que o N-400 é enviado. |
 
 ## 3. All other lines
 
@@ -370,16 +371,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Sem teste de inglês. Menos perguntas de educação cívica: as 20 com estrela. |
 | `home.who.notSure` | Not sure? Choose Most people. | Não tem certeza? Escolha A maioria das pessoas. |
 | `home.what.title` | 2. What do you want to do? | 2. O que você quer fazer? |
-| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | Não é obrigatório para 50/20, 55/15 e 65/20 |
+| `home.part.notRequired` | Not required for {exception} | Não é obrigatório para {exception} |
 | `home.go.start` | Start | Começar |
 | `home.go.open` | Open | Abrir |
 | `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 anos ou mais, green card há 20 anos ou mais (50/20) |
 | `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 anos ou mais, green card há 15 anos ou mais (55/15) |
-| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Sem teste de inglês. Educação cívica como de costume; você pode usar um intérprete. |
-| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Sua idade e seus anos como residente permanente contam no dia em que você envia o N-400. |
-| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Na entrevista você pode responder educação cívica no seu idioma com um intérprete. Este app pratica as perguntas em inglês. |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | Sem teste de inglês. Educação cívica como de costume, no seu idioma se você levar um intérprete. |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | Na entrevista você pode responder educação cívica no seu idioma se levar um intérprete. Este app pratica as perguntas em inglês. |
 | `report.exception` | Practice as {exception} | Prática como {exception} |
-| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | Você pode fazer o teste real de educação cívica no seu idioma com um intérprete. |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | Você pode fazer o teste real de educação cívica no seu idioma se levar um intérprete. |
 | `intro.who.legend` | Who is practicing? | Quem vai praticar? |
 
 ## Lines marked ⚠ (meaning differs a little)

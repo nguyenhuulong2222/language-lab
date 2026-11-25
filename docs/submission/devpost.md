@@ -40,11 +40,11 @@ life.
   - Replies are checked before they are shown. The limits are 12 turns per practice, 30 requests per
     IP address per hour and 80 per day, and 600 requests or US$0.50 per day overall.
   - The coach never scores anything.
-- **65/20 practice**: for applicants aged 65 or older with 20 years as permanent residents: 10 of the
-  20 starred questions, with 6 correct for the practice score (USCIS Policy Manual, Vol. 12, Part E,
-  Ch. 2). USCIS exempts them from the English test, so a 65/20 full interview skips reading and
-  writing. A linked line quotes the USCIS rules, including taking civics in their own language with
-  an interpreter.
+- **50/20, 55/15 and 65/20 exceptions**: the three USCIS age and residency exceptions. Each skips
+  reading and writing in the full interview (USCIS exempts them from the English test); 50/20 and
+  55/15 take the usual civics test, and 65/20 takes 10 of the 20 starred questions, with 6 correct
+  for the practice score (USCIS Policy Manual, Vol. 12, Part E, Ch. 2). A linked line quotes the
+  USCIS rules, including taking civics in their own language with an interpreter.
 - **Study first**: the civics questions with official answers and pictures, not scored.
 - **Interface languages as labelled AI drafts**: 10 of 14 languages are shown in production. Each says
   it was translated by AI. Disclaimers, legal lines and civics questions stay in English.

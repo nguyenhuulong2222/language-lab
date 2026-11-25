@@ -215,7 +215,8 @@ describe("Study first and 65/20", () => {
     expect(has(EN["n400.done.next"])).toBe(false);
     fireEvent.click(button(EN["writing.toCivics"]));
     expect(await screen.findByText("Question 1 of 10")).toBeTruthy();
-    expect(document.body.textContent).toContain("you are exempt from the English requirement");
+    // On civics the interpreter line once; the full exemption text is on Home and the report.
+    expect(document.body.textContent).toContain(EN["civics.exempt.line"]);
     for (let guard = 0; guard < 12 && !has(EN["civics.finish"]); guard++) {
       await findButton(EN["civics.submit"]);
       typeAnswer("zzz");
@@ -439,10 +440,10 @@ describe("the new Home: Who, then What (Q3)", () => {
     app();
     expect(document.querySelector<HTMLInputElement>('input[name="who"][value="none"]')!.checked).toBe(true);
     expect(document.body.textContent).toContain(EN["home.who.notSure"]);
-    expect(document.body.textContent).not.toContain(EN["home.part.notRequired"]);
+    expect(document.body.textContent).not.toContain("Not required for");
     fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="65/20"]')!);
     expect(document.querySelectorAll(".action-card__meta").length).toBeGreaterThanOrEqual(2);
-    expect(document.body.textContent).toContain(EN["home.part.notRequired"]);
+    expect(document.body.textContent).toContain("Not required for 65/20");
     fireEvent.click(button(EN["home.study.title"]));
     expect(screen.getByLabelText<HTMLInputElement>(EN["study.special.label"]).checked).toBe(true);
   });
@@ -469,7 +470,7 @@ describe("Who is practicing: four choices (E2)", () => {
     for (const value of ["50/20", "55/15"]) {
       const view = app();
       pick(value);
-      expect(document.body.textContent).toContain(EN["home.part.notRequired"]);
+      expect(document.body.textContent).toContain(`Not required for ${value}`);
       fireEvent.click(button(EN["home.study.title"]));
       expect(screen.getByLabelText<HTMLInputElement>(EN["study.special.label"]).checked).toBe(false);
       expect(document.body.textContent).toContain(EN["study.exempt.note"]);
@@ -479,13 +480,83 @@ describe("Who is practicing: four choices (E2)", () => {
       view.unmount();
     }
   });
-  it("65/20: Study shows only the starred questions, without the interpreter note", async () => {
+  it("65/20: Study shows only the starred questions; the interpreter is said once", async () => {
     app();
     pick("65/20");
     fireEvent.click(button(EN["home.study.title"]));
     expect(screen.getByLabelText<HTMLInputElement>(EN["study.special.label"]).checked).toBe(true);
-    expect(document.body.textContent).not.toContain(EN["study.exempt.note"]);
     fireEvent.click(button(EN["study.version.2025"]));
     expect(await screen.findByText("Question 1 of 16")).toBeTruthy();
+    // The interpreter is said once, by the 65/20 line, not twice.
+    expect(document.body.textContent).not.toContain(EN["study.exempt.note"]);
+    expect(document.body.textContent).toContain(EN["special.englishExempt"]);
   });
+});
+describe("each of the four choices runs the right practice (E4)", () => {
+  const CHOICES = [
+    { value: "none", parts: ["reading", "writing"], asked: 20, needed: 12 },
+    { value: "50/20", parts: [], asked: 20, needed: 12 },
+    { value: "55/15", parts: [], asked: 20, needed: 12 },
+    { value: "65/20", parts: [], asked: 10, needed: 6 },
+  ] as const;
+  const pick = (value: string) => fireEvent.click(document.querySelector<HTMLInputElement>(`input[name="who"][value="${value}"]`)!);
+  async function answerCivicsToTheEnd() {
+    for (let guard = 0; guard < 25; guard++) {
+      await findButton(EN["civics.submit"]);
+      typeAnswer("zzz");
+      fireEvent.click(button(EN["civics.submit"]));
+      if (has(EN["civics.finish"]) || has(EN["report.see"])) break;
+      fireEvent.click(await findButton(EN["civics.next"]));
+    }
+    fireEvent.click(await findButton(has(EN["report.see"]) ? EN["report.see"] : EN["civics.finish"]));
+  }
+  for (const choice of CHOICES) {
+    it(`${choice.value}: Practice test runs the right parts and civics pool; the report names the choice`, async () => {
+      app();
+      pick(choice.value);
+      fireEvent.click(button(EN["home.full.title"]));
+      expect(document.querySelector<HTMLInputElement>(`input[name="exception"][value="${choice.value}"]`)!.checked).toBe(true);
+      fireEvent.click(document.querySelector<HTMLInputElement>('input[name="profile"]')!);
+      fireEvent.click(document.querySelector<HTMLInputElement>('input[name="filed"][value="on_or_after"]')!);
+      fireEvent.click(button(EN["intro.start"]));
+      fireEvent.click(await findButton(EN["coach.choice.no"]));
+      const nav = [...document.querySelectorAll("nav")].map((n) => n.textContent ?? "").join(" ");
+      expect(nav.includes(EN["stage.reading.label"]), "reading step").toBe(choice.value === "none");
+      // After the N-400 summary: reading for Most people, civics for an exception.
+      const next = choice.value === "none" ? EN["n400.done.next"] : EN["writing.toCivics"];
+      for (let guard = 0; guard < 30 && !has(next); guard++) {
+        await findButton(EN["n400.save"]);
+        typeAnswer("My answer is short.");
+        fireEvent.click(button(EN["n400.save"]));
+        await waitFor(() => expect(has(EN["n400.save"]) || has(next)).toBe(true));
+      }
+      fireEvent.click(button(next));
+      if (choice.value === "none") {
+        expect(await findButton(EN["reading.submit"])).toBeTruthy();
+        return; // The full four-part run is covered by "the full interview to the report".
+      }
+      expect(await screen.findByText(`Question 1 of ${choice.asked}`)).toBeTruthy();
+      expect(document.body.textContent).toContain(EN["civics.exempt.line"]);
+      await answerCivicsToTheEnd();
+      await findButton(EN["report.again"]);
+      const text = document.body.textContent!;
+      expect(text).toContain(`Practice as ${choice.value}`);
+      expect(text).toContain("you are exempt from the English requirement");
+    }, 30000);
+    it(`${choice.value}: the civics part asks ${choice.asked} and needs ${choice.needed}; its report names the choice`, async () => {
+      app();
+      pick(choice.value);
+      fireEvent.click(button(EN["home.part.civics.title"]));
+      fireEvent.click(document.querySelector<HTMLInputElement>('input[name="filed"][value="on_or_after"]')!);
+      fireEvent.click(button(EN["intro.start"]));
+      expect(await screen.findByText(`Question 1 of ${choice.asked}`)).toBeTruthy();
+      expect(document.body.textContent!.includes(EN["civics.exempt.line"])).toBe(choice.value !== "none");
+      await answerCivicsToTheEnd();
+      await findButton(EN["report.home"]);
+      const text = document.body.textContent!;
+      expect(text).toContain(`Correct answers needed: ${choice.needed}.`);
+      expect(text.includes("Practice as ")).toBe(choice.value !== "none");
+      if (choice.value !== "none") expect(text).toContain(`Practice as ${choice.value}`);
+    }, 30000);
+  }
 });

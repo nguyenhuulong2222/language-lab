@@ -158,7 +158,6 @@ export function CivicsScreen({
   const question = progress.current;
   return (
     <div className="screen">
-      {exempt && <ExemptCivicsLine />}
       <TakeHeader
         stage="civics"
         title={t("civics.title")}
@@ -167,6 +166,8 @@ export function CivicsScreen({
       />
       <EnglishNotice />
       <div className="screen__body">
+        {/* 50/20, 55/15, 65/20: the interpreter line, once, near the top. */}
+        {exempt && <ExemptCivicsLine />}
         <p className="progress-line">{t("civics.count", { current: progress.position, total: progress.total })}</p>
         {question !== null && (
           <div key={question.id} className="screen__body">
@@ -189,7 +190,7 @@ export function CivicsScreen({
               }}
             />
             {/* After the question and the answer box, so they stay at the top (ui-reviewer). */}
-            {special !== undefined && progress.position === 1 && <SpecialConsiderationNote rules={special} />}
+            {special !== undefined && progress.position === 1 && <SpecialConsiderationNote rules={special} languageLine={false} />}
           </div>
         )}
       </div>

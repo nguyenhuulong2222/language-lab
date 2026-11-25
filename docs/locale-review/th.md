@@ -59,6 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | การทดสอบฝึกหยุดเมื่อถึงคะแนนผ่านของการฝึก |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | การทดสอบฝึกหยุดหลังตอบผิด {incorrect} ข้อ ก่อนถึงคะแนนผ่านของการฝึก {score} |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | คะแนนผ่านของการฝึกคือตอบถูก {score} ข้อ และยังไม่ถึง |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS นับอายุและจำนวนปีที่เป็นผู้มีถิ่นที่อยู่ถาวร ณ วันที่ยื่น N-400 |
 
 ## 3. All other lines
 
@@ -370,16 +371,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | ไม่ต้องสอบภาษาอังกฤษ คำถามน้อยลง: 20 ข้อที่มีดาว |
 | `home.who.notSure` | Not sure? Choose Most people. | ไม่แน่ใจ? เลือก คนส่วนใหญ่ |
 | `home.what.title` | 2. What do you want to do? | 2. คุณอยากทำอะไร? |
-| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | ไม่จำเป็นสำหรับ 50/20, 55/15 และ 65/20 |
+| `home.part.notRequired` | Not required for {exception} | ไม่จำเป็นสำหรับ {exception} |
 | `home.go.start` | Start | เริ่ม |
 | `home.go.open` | Open | เปิด |
 | `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | อายุ 50 ปีขึ้นไป มีกรีนการ์ด 20 ปีขึ้นไป (50/20) |
 | `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | อายุ 55 ปีขึ้นไป มีกรีนการ์ด 15 ปีขึ้นไป (55/15) |
-| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | ไม่ต้องสอบภาษาอังกฤษ สอบหน้าที่พลเมืองตามปกติ ใช้ล่ามได้ |
-| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | อายุและจำนวนปีที่เป็นผู้มีถิ่นที่อยู่ถาวรนับ ณ วันที่ยื่น N-400 |
-| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | ในการสัมภาษณ์ คุณตอบคำถามหน้าที่พลเมืองเป็นภาษาของคุณผ่านล่ามได้ แอปนี้ฝึกคำถามภาษาอังกฤษ |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | ไม่ต้องสอบภาษาอังกฤษ สอบหน้าที่พลเมืองตามปกติ เป็นภาษาของคุณได้ถ้าพาล่ามมาเอง |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | ในการสัมภาษณ์ คุณตอบคำถามหน้าที่พลเมืองเป็นภาษาของคุณได้ถ้าพาล่ามมาเอง แอปนี้ฝึกคำถามภาษาอังกฤษ |
 | `report.exception` | Practice as {exception} | ฝึกในกรณี {exception} |
-| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | คุณสอบหน้าที่พลเมืองจริงเป็นภาษาของคุณผ่านล่ามได้ |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | คุณสอบหน้าที่พลเมืองจริงเป็นภาษาของคุณได้ ถ้าพาล่ามมาเอง |
 | `intro.who.legend` | Who is practicing? | ใครกำลังฝึก? |
 
 ## Lines marked ⚠ (meaning differs a little)

@@ -113,7 +113,7 @@
   padding: 0;
   list-style: none;
 }
-/* "Who is practicing?": two large radio cards; the whole card is the label. */
+/* "Who is practicing?": four large radio cards; the whole card is the label. */
 .who-cards {
   display: flex;
   flex-direction: column;
@@ -167,13 +167,4 @@
   font-size: var(--fs-meta);
   line-height: var(--lh-snug);
   color: var(--ink-2);
-}
-/* The legend of "Who is practicing?" is the visible step heading. */
-.who-cards__legend {
-  padding: 0;
-  margin: var(--space-4) 0 var(--space-1);
-  font-family: var(--font-display);
-  font-size: var(--fs-h3);
-  font-weight: 600;
-  line-height: var(--lh-tight);
 }

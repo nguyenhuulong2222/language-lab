@@ -59,6 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Kev xeem xyaum tau nres thaum txog qhab nia dhau ntawm kev xyaum. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Kev xeem xyaum tau nres tom qab {incorrect} lo lus teb tsis raug, ua ntej txog qhab nia dhau ntawm kev xyaum, {score}. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Qhab nia dhau ntawm kev xyaum yog {score} lo lus teb raug, thiab tsis tau txog. |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS suav lub hnub nyoog thiab cov xyoo ua neeg nyob mus ib txhis rau hnub xa daim N-400. |
 
 ## 3. All other lines
 
@@ -370,16 +371,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Tsis xeem lus Askiv. Cov lus nug tsawg dua: 20 lo uas muaj hnub qub. |
 | `home.who.notSure` | Not sure? Choose Most people. | Tsis paub meej? Xaiv Feem ntau tib neeg. |
 | `home.what.title` | 2. What do you want to do? | 2. Koj xav ua dab tsi? |
-| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | Tsis tas rau 50/20, 55/15 thiab 65/20 |
+| `home.part.notRequired` | Not required for {exception} | Tsis tas rau {exception} |
 | `home.go.start` | Start | Pib |
 | `home.go.open` | Open | Qhib |
 | `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | Hnub nyoog 50 xyoo los yog laus dua, muaj daim green card 20 xyoo los yog ntev dua (50/20) |
 | `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | Hnub nyoog 55 xyoo los yog laus dua, muaj daim green card 15 xyoo los yog ntev dua (55/15) |
-| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Tsis xeem lus Askiv. Xeem kev kawm txog teb chaws ib txwm; koj siv tau ib tug neeg txhais lus. |
-| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Koj lub hnub nyoog thiab cov xyoo ua neeg nyob mus ib txhis suav rau hnub koj xa daim N-400. |
-| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Thaum xam phaj koj teb tau cov lus nug txog teb chaws ua koj hom lus nrog ib tug neeg txhais lus. Lub app no xyaum cov lus nug ua lus Askiv. |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | Tsis xeem lus Askiv. Xeem kev kawm txog teb chaws ib txwm, ua koj hom lus yog koj coj ib tug neeg txhais lus tuaj. |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | Thaum xam phaj yog koj coj ib tug neeg txhais lus tuaj, koj teb tau cov lus nug txog teb chaws ua koj hom lus. Lub app no xyaum cov lus nug ua lus Askiv. |
 | `report.exception` | Practice as {exception} | Xyaum ua {exception} |
-| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | Koj xeem tau qhov kev xeem tiag txog teb chaws ua koj hom lus nrog ib tug neeg txhais lus. |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | Koj xeem tau qhov kev xeem tiag txog teb chaws ua koj hom lus yog koj coj ib tug neeg txhais lus tuaj. |
 | `intro.who.legend` | Who is practicing? | Leej twg xyaum? |
 
 ## Lines marked ⚠ (meaning differs a little)

@@ -282,3 +282,30 @@ in the system temp folder: before `ll-senior-qa-before` (the state after Step 7 
 
 Browser Back: before, it left the app from every screen. After, it returns to Home from Study,
 setup and reports, and asks "Keep practicing / Leave" in a practice; on Home it leaves the app.
+
+## Exceptions follow-up (E1 to E4): 50/20, 55/15 and 65/20
+
+The owner asked why only 65/20 was offered. USCIS has three age and residency exceptions, counted on
+the day the N-400 is filed (decisions log Q, from the two saved USCIS pages). Screens, before → after:
+
+| Screen | Before | After |
+|---|---|---|
+| Home, "1. Who is practicing?" | Two cards: Most people, 65/20 | Four cards: Most people, 50/20, 55/15, 65/20 (icon, title, one line); one legal line (the timing rule and the USCIS exemption text), the USCIS link, "Not sure? Choose Most people." |
+| Home, "Or practice one part" | "Not required for 65/20" on Reading and Writing | "Not required for 55/15" (the choice made) for any exception |
+| Study | 65/20: starred only | 65/20: starred only; 50/20 and 55/15: the full bank with "At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions." |
+| Setup | A 65/20 checkbox, with the long exemption paragraph and a second USCIS link | "Who is practicing?" as a radio group with the four choices, set from Home; the timing line and one USCIS link; the 65/20 rule note only for 65/20 |
+| Civics | The 65/20 note on question 1 | For any exception, one line near the top: "You may take the real civics test in your own language if you bring an interpreter." with the USCIS link; the 65/20 rule note on question 1 without repeating it |
+| Reports | 65/20: the part report named "65/20 civics practice" | "Practice as 55/15" (the choice made) on the full and the part report, and the USCIS exemption line for any exception |
+
+From the ui-reviewer pass on these screens, fixed: the exemption paragraph and the USCIS link were
+shown twice on Setup and on civics question 1 for 65/20; the interpreter line came before the page
+heading; the wording now says the applicant brings the interpreter ("if you bring an interpreter",
+as the USCIS page says "must bring an interpreter"); the timing line names USCIS as the one who counts
+("USCIS counts the age and the years as a permanent resident on the day the N-400 is filed."); step 1
+is an `h2` like steps 2 and 3; the radio groups are described by the short timing line only, not the
+long English paragraph; the "Not required" line names the choice made; the interpreter note is in
+Study for 65/20 when the starred filter is off; stale 65/20-only comments and an unused class
+removed. Kept, with reasons: the card titles say "green card for 20 years or more" (the owner's
+wording; the legal line under the cards quotes the USCIS rule exactly), and "Not sure? Choose Most
+people." (the owner's wording; the timing line says USCIS decides by the filing date, and the app only
+chooses which rules to practise).

@@ -59,6 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | 達到練習及格分數後，練習測驗就停止了。 |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | 答錯 {incorrect} 題後，練習測驗在達到練習及格分數 {score} 之前停止了。 |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | 練習及格分數是答對 {score} 題，這次沒有達到。 |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS 以遞交 N-400 當天計算年齡和永久居民年數。 |
 
 ## 3. All other lines
 
@@ -370,14 +371,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | 不考英文。公民常識問題較少：20 個有星號的問題。 |
 | `home.who.notSure` | Not sure? Choose Most people. | 不確定？請選「大多數人」。 |
 | `home.what.title` | 2. What do you want to do? | 2. 您想做什麼？ |
-| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | 50/20、55/15 和 65/20 不需要 |
+| `home.part.notRequired` | Not required for {exception} | {exception} 不需要 |
 | `home.go.start` | Start | 開始 |
 | `home.go.open` | Open | 開啟 |
 | `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 歲或以上，持綠卡 20 年或更久 (50/20) |
 | `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 歲或以上，持綠卡 15 年或更久 (55/15) |
-| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | 不考英文。公民常識照常考；您可以使用口譯員。 |
-| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | 您的年齡和永久居民年數，以遞交 N-400 當天計算。 |
-| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | 面試時，您可以透過口譯員用自己的語言回答公民常識問題。這個應用程式練習的是英文問題。 |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | 不考英文。公民常識照常考；如果您自備口譯員，可以用自己的語言考。 |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | 面試時，如果您自備口譯員，可以用自己的語言回答公民常識問題。這個應用程式練習的是英文問題。 |
 | `report.exception` | Practice as {exception} | 以 {exception} 身分練習 |
-| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | 您可以透過口譯員用自己的語言參加真正的公民常識考試。 |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | 如果您自備口譯員，可以用自己的語言參加真正的公民常識考試。 |
 | `intro.who.legend` | Who is practicing? | 誰在練習？ |

@@ -59,6 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Huminto ang practice test nang maabot ang practice passing score. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Huminto ang practice test pagkatapos ng {incorrect} maling sagot, bago maabot ang practice passing score na {score}. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Ang practice passing score ay {score} tamang sagot, at hindi ito naabot. |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | Binibilang ng USCIS ang edad at mga taon bilang permanenteng residente sa araw na isinumite ang N-400. |
 
 ## 3. All other lines
 
@@ -370,16 +371,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Walang pagsusulit sa Ingles. Mas kaunting tanong sa sibika: ang 20 na may bituin. |
 | `home.who.notSure` | Not sure? Choose Most people. | Hindi sigurado? Piliin ang Karamihan ng tao. |
 | `home.what.title` | 2. What do you want to do? | 2. Ano ang gusto mong gawin? |
-| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | Hindi kailangan para sa 50/20, 55/15 at 65/20 |
+| `home.part.notRequired` | Not required for {exception} | Hindi kailangan para sa {exception} |
 | `home.go.start` | Start | Simulan |
 | `home.go.open` | Open | Buksan |
 | `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 taong gulang pataas, may green card nang 20 taon o higit pa (50/20) |
 | `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 taong gulang pataas, may green card nang 15 taon o higit pa (55/15) |
-| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Walang pagsusulit sa Ingles. Karaniwang sibika; maaari kang gumamit ng interpreter. |
-| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Ang iyong edad at mga taon bilang permanenteng residente ay binibilang sa araw na isinumite mo ang N-400. |
-| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Sa iyong interview, maaari kang sumagot sa sibika sa sarili mong wika gamit ang interpreter. Ang app na ito ay nagsasanay sa mga tanong sa Ingles. |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | Walang pagsusulit sa Ingles. Karaniwang sibika, sa sarili mong wika kung magdadala ka ng interpreter. |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | Sa iyong interview, maaari kang sumagot sa sibika sa sarili mong wika kung magdadala ka ng interpreter. Ang app na ito ay nagsasanay sa mga tanong sa Ingles. |
 | `report.exception` | Practice as {exception} | Pagsasanay bilang {exception} |
-| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | Maaari mong kunin ang totoong pagsusulit sa sibika sa sarili mong wika gamit ang interpreter. |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | Maaari mong kunin ang totoong pagsusulit sa sibika sa sarili mong wika kung magdadala ka ng interpreter. |
 | `intro.who.legend` | Who is practicing? | Sino ang nagsasanay? |
 
 ## Lines marked ⚠ (meaning differs a little)

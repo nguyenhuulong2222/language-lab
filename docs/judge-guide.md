@@ -22,8 +22,8 @@ nothing.
 
 1. **Home (15 s)**: the app opens in your phone's language; English if it is not offered. At the
    top is "Choose a language" with every language under its own name. Then the welcome and two
-   steps: "1. Who is practicing?" (Most people, chosen by default, or 65 or older with a green card
-   for 20 years or more) and "2. What do you want to do?" (Study, or the filled "Practice test").
+   steps: "1. Who is practicing?" (four choices: Most people, chosen by default, then the USCIS age
+   and residency exceptions 50/20, 55/15 and 65/20) and "2. What do you want to do?" (Study, or the filled "Practice test").
    Below: "Or practice one part" and the AI coach card. Every card has a verb and an arrow. "How it
    works" and the disclaimer are at the bottom; "About & disclaimer" is in the footer. Every other
    screen starts with "← Back to Home", and the browser Back button goes to Home too (in a practice
@@ -45,14 +45,20 @@ nothing.
 5. **Study (15 s)**: from Home, under "2. What do you want to do?" choose "Study" and a test
    version. Page through the questions with "Previous" and "Next", with the official answers and
    pictures. Nothing is scored. "← Back to Home" is at the top.
-6. **65/20 (15 s)**: on Home, under "1. Who is practicing?" choose "65 or older, with a green card
-   for 20 years or more". "Study" now opens with only the starred questions, and Reading and Writing
-   say "Not required for 65/20". Choose "Civics" under "Or practice one part". The setup has the choice "I am 65 or
-   older and have been a permanent resident for 20 years or more" already ticked. The civics part asks
-   10 of the 20 questions marked with a star in the official list, and the practice score is 6 correct
-   answers (USCIS Policy Manual, Vol. 12, Part E, Ch. 2). A line links the USCIS page that says a 65/20
-   applicant may take the real test in their own language with an interpreter. The questions stay
-   English.
+6. **Exceptions (20 s)**: USCIS has three age and residency exceptions, counted on the day the
+   N-400 is filed (USCIS Exceptions and Accommodations page; Policy Manual, Vol. 12, Part E, Ch. 2):
+   - "50 or older, green card for 20 years or more (50/20)" and "55 or older, green card for 15
+     years or more (55/15)": no English test; the usual civics test (2008 or 2025 by filing date),
+     which may be taken in their own language with an interpreter they bring. "Practice test" runs
+     the N-400 part and then civics, with no reading and no writing. Study shows the full bank with a
+     note about the interpreter.
+   - "65 or older, green card for 20 years or more (65/20)": no English test; civics uses the 20
+     starred questions, 10 asked, 6 correct for the practice score. Study shows only the starred
+     questions.
+   Choose one on Home: Reading and Writing then say "Not required for 55/15" (or the choice made)
+   and stay usable. Setup shows the same four choices, already set. On civics one line says the real
+   test may be taken in their own language with an interpreter, linked to USCIS. The report says
+   "Practice as 55/15" and why reading and writing are not there. The questions stay English.
 7. **Language (15 s)**: in "Choose a language" at the top of Home choose, for example, Tiếng
    Việt (on other screens the globe button in the header opens the same list). The interface changes
    at once and says the translation was made by AI, may contain

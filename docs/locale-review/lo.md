@@ -59,6 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | ການທົດສອບຝຶກຢຸດເມື່ອຮອດຄະແນນຜ່ານຂອງການຝຶກ. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | ການທົດສອບຝຶກຢຸດຫຼັງຈາກຕອບຜິດ {incorrect} ຂໍ້, ກ່ອນຮອດຄະແນນຜ່ານຂອງການຝຶກ {score}. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | ຄະແນນຜ່ານຂອງການຝຶກແມ່ນຕອບຖືກ {score} ຂໍ້, ແລະ ຍັງບໍ່ຮອດ. |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS ນັບອາຍຸ ແລະ ຈຳນວນປີທີ່ເປັນຜູ້ຢູ່ອາໄສຖາວອນ ໃນມື້ທີ່ຍື່ນ N-400. |
 
 ## 3. All other lines
 
@@ -370,16 +371,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | ບໍ່ຕ້ອງສອບພາສາອັງກິດ. ຄຳຖາມໜ້ອຍລົງ: 20 ຂໍ້ທີ່ມີດາວ. |
 | `home.who.notSure` | Not sure? Choose Most people. | ບໍ່ແນ່ໃຈ? ເລືອກ ຄົນສ່ວນໃຫຍ່. |
 | `home.what.title` | 2. What do you want to do? | 2. ທ່ານຢາກເຮັດຫຍັງ? |
-| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | ບໍ່ຈຳເປັນສຳລັບ 50/20, 55/15 ແລະ 65/20 |
+| `home.part.notRequired` | Not required for {exception} | ບໍ່ຈຳເປັນສຳລັບ {exception} |
 | `home.go.start` | Start | ເລີ່ມ |
 | `home.go.open` | Open | ເປີດ |
 | `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | ອາຍຸ 50 ປີຂຶ້ນໄປ, ມີບັດຂຽວ 20 ປີຂຶ້ນໄປ (50/20) |
 | `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | ອາຍຸ 55 ປີຂຶ້ນໄປ, ມີບັດຂຽວ 15 ປີຂຶ້ນໄປ (55/15) |
-| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | ບໍ່ຕ້ອງສອບພາສາອັງກິດ. ສອບຄວາມຮູ້ພົນລະເມືອງຕາມປົກກະຕິ; ໃຊ້ນາຍແປພາສາໄດ້. |
-| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | ອາຍຸ ແລະ ຈຳນວນປີທີ່ເປັນຜູ້ຢູ່ອາໄສຖາວອນ ນັບໃນມື້ທີ່ທ່ານຍື່ນ N-400. |
-| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | ໃນການສຳພາດ ທ່ານຕອບຄຳຖາມຄວາມຮູ້ພົນລະເມືອງເປັນພາສາຂອງທ່ານຜ່ານນາຍແປພາສາໄດ້. ແອັບນີ້ຝຶກຄຳຖາມພາສາອັງກິດ. |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | ບໍ່ຕ້ອງສອບພາສາອັງກິດ. ສອບຄວາມຮູ້ພົນລະເມືອງຕາມປົກກະຕິ, ເປັນພາສາຂອງທ່ານຖ້າພານາຍແປພາສາມາເອງ. |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | ໃນການສຳພາດ ທ່ານຕອບຄຳຖາມຄວາມຮູ້ພົນລະເມືອງເປັນພາສາຂອງທ່ານໄດ້ ຖ້າພານາຍແປພາສາມາເອງ. ແອັບນີ້ຝຶກຄຳຖາມພາສາອັງກິດ. |
 | `report.exception` | Practice as {exception} | ຝຶກໃນກໍລະນີ {exception} |
-| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | ທ່ານສອບຄວາມຮູ້ພົນລະເມືອງແທ້ເປັນພາສາຂອງທ່ານຜ່ານນາຍແປພາສາໄດ້. |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | ທ່ານສອບຄວາມຮູ້ພົນລະເມືອງແທ້ເປັນພາສາຂອງທ່ານໄດ້ ຖ້າພານາຍແປພາສາມາເອງ. |
 | `intro.who.legend` | Who is practicing? | ໃຜກຳລັງຝຶກ? |
 
 ## Lines marked ⚠ (meaning differs a little)

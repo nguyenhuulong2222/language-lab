@@ -19,7 +19,7 @@ it does not happen.
 | 1:15–1:30 | Reading: read the sentence aloud with one word changed by its ending (for example "citizens" for "A citizen can vote.", or "elect" for "Who elects the President?"); "Check my reading"; show "This counts." and the note "This still counts." | "Near misses are explained, and they still count" |
 | 1:30–1:47 | Civics: answer a question aloud, "Check my answer", show "This counts" and the official answers, then the picture under the answer | "Checked against the USCIS answer key, not by AI" |
 | 1:47–1:57 | "← Back to Home", "Study", "2025 civics test"; "Next" twice, "Previous" once | "Study the questions with the official answers" |
-| 1:57–2:05 | "← Back to Home"; "1. Who is practicing?": "65 or older, with a green card for 20 years or more"; Reading and Writing now say "Not required for 65/20"; "Civics": the 65/20 box is already ticked; show the USCIS line on the English exemption and the interpreter; "Start practice": "Question 1 of 10" | "65/20: 10 of the 20 starred questions" |
+| 1:57–2:05 | "← Back to Home"; "1. Who is practicing?" shows four choices; tap "65 or older, green card for 20 years or more (65/20)"; Reading and Writing now say "Not required for 65/20"; "Civics": setup has 65/20 already chosen; "Start practice": "Question 1 of 10", with the interpreter line at the top | "50/20, 55/15 and 65/20: the USCIS exceptions" |
 | 2:05–2:13 | A full-interview report: each part with "You reached the practice goal" or "Practice this again", and the disclaimer | "A practice report, never pass or fail" |
 | 2:13–2:40 | Screen recording on a computer: the GitHub repository. Show `.kiro/steering/content-safety.md`, then `.kiro/specs/interview-coach/requirements.md` scrolled to "Analyze Requirements", then `.kiro/hooks/`, then `.kiro/agents/` | "Built with Kiro: steering, specs, hooks and custom agents" |
 
@@ -50,9 +50,10 @@ Smithsonian or the Library of Congress helps it stick.
 
 **1:47** Study first lets you go through the questions with the official answers, without a score.
 
-**1:57** People who are 65 or older with 20 years as permanent residents get the 65/20 version: 10
-questions from the 20 starred ones. USCIS exempts them from the English test, and they may take
-civics in their own language with an interpreter. The app quotes the USCIS page.
+**1:57** USCIS has three age exceptions. People who are 50 with 20 years as permanent residents, or
+55 with 15 years, skip the English test and take the usual civics test, in their own language if
+they bring an interpreter. At 65 with 20 years, civics uses 10 of the 20 starred questions. The
+app quotes the USCIS page.
 
 **2:05** At the end there is a practice report. It never says pass or fail, and it is not legal
 advice.

@@ -38,7 +38,7 @@ interface N400ScreenProps {
   onFinish: () => void;
   /** After the interview comes the report (a single-part session), not reading. */
   nextIsReport?: boolean;
-  /** After the interview comes civics (a 65/20 full interview has no reading and writing). */
+  /** After the interview comes civics (a full interview for 50/20, 55/15 or 65/20 has no reading and writing). */
   nextIsCivics?: boolean;
   /** Try loading the question again after a failure. */
   onRetry?: () => void;

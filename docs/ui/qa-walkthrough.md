@@ -141,3 +141,28 @@ practicing?" starts at 797px, inside the first viewport, but the second card end
 Vietnamese (with the AI notice) "Who" starts at 1066px. The grid is ten 56px buttons in three columns
 plus its heading and the in-review line (about 410px); it cannot shrink further without going below
 the 56px target or dropping a required element.
+
+## Exceptions walkthrough (E4)
+
+Same driver (`~/ll-senior/walk.mjs`), production build at 390px, after the exception steps.
+Screenshots in `$TMPDIR/ll-walk-exc-A`, `-B`, `-C`.
+
+**Persona A** (72, 65/20, Vietnamese, extra-large text) now taps: "Từ 65 tuổi trở lên, có thẻ xanh
+từ 20 năm (65/20)" → "Học" (Study opens with only the starred questions) → the 2025 test → "Câu hỏi
+tiếp theo" to the last question → browser Back (stays in the app, Home) → "Kiến thức công dân" under
+"Hoặc luyện từng phần" (setup has 65/20 chosen) → the filing date → "Bắt đầu luyện tập" → 10
+questions, with the interpreter line at the top → the report says "Luyện tập theo diện 65/20" and why
+there is no reading or writing. Back from the report returns to Home.
+
+**Persona B** (35, Spanish, normal text) is unchanged: Most people stays chosen, so the practice test
+runs all four parts; then the AI coach card.
+
+**Persona C** (56, a permanent resident for 15 years, 55/15, Vietnamese, large text) taps: "Từ 55
+tuổi trở lên, có thẻ xanh từ 15 năm (55/15)" → "Thi thử" (Practice test) → setup has 55/15 already
+chosen (checked: true) → a profile and the filing date → "Bắt đầu luyện tập" → "Không, luyện tập không
+có AI" → the N-400 answers → the summary's button goes to civics (no reading, no writing) → the usual
+2025 civics test, with the interpreter line at the top → the report names "55/15" (checked: true) and
+says why reading and writing are not there → browser Back returns to Home.
+
+On every non-Home screen of the three walks "Back to Home" was in the first viewport, there was one
+filled button, and no English interface line outside `lang="en"`.

@@ -98,7 +98,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
             answerKey={(v) => engine.env.answerKey(v)}
             {...(specialConsiderationOffered(engine.env) ? { designated: (v) => engine.env.designated!(v) } : {})}
             initialSpecialOnly={who === "65/20"}
-            interpreterNote={who === "50/20" || who === "55/15"}
+            interpreterNote={who !== "none"}
             {...(engine.env.prepareCivics === undefined ? {} : { prepare: (v) => engine.env.prepareCivics!(v) })}
             onHome={exitStudy}
           />

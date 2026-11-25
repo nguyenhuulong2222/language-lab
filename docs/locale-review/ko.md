@@ -59,6 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | 연습 합격 점수에 도달해서 연습 시험이 멈췄습니다. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | 연습 합격 점수 {score}에 도달하기 전에 틀린 답 {incorrect}개로 연습 시험이 멈췄습니다. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | 연습 합격 점수는 정답 {score}개이며, 이번에는 도달하지 못했습니다. |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS는 N-400을 제출한 날을 기준으로 나이와 영주권자로 지낸 기간을 계산합니다. |
 
 ## 3. All other lines
 
@@ -370,16 +371,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | 영어 시험 없음. 시민 상식 질문이 더 적음: 별표 20개. |
 | `home.who.notSure` | Not sure? Choose Most people. | 잘 모르겠다면 ‘대부분의 사람’을 고르세요. |
 | `home.what.title` | 2. What do you want to do? | 2. 무엇을 하고 싶나요? |
-| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | 50/20, 55/15, 65/20에는 필요 없음 |
+| `home.part.notRequired` | Not required for {exception} | {exception}에는 필요 없음 |
 | `home.go.start` | Start | 시작 |
 | `home.go.open` | Open | 열기 |
 | `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50세 이상, 영주권 20년 이상 (50/20) |
 | `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55세 이상, 영주권 15년 이상 (55/15) |
-| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | 영어 시험 없음. 시민 상식은 평소대로; 통역사를 쓸 수 있습니다. |
-| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | 나이와 영주권자로 지낸 기간은 N-400을 제출하는 날을 기준으로 합니다. |
-| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | 인터뷰에서는 통역사와 함께 모국어로 시민 상식에 답할 수 있습니다. 이 앱은 영어 질문을 연습합니다. |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | 영어 시험 없음. 시민 상식은 평소대로, 통역사를 데려오면 모국어로 볼 수 있습니다. |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | 인터뷰에서 통역사를 데려오면 시민 상식에 모국어로 답할 수 있습니다. 이 앱은 영어 질문을 연습합니다. |
 | `report.exception` | Practice as {exception} | {exception}(으)로 연습 |
-| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | 실제 시민 상식 시험은 통역사와 함께 모국어로 볼 수 있습니다. |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | 통역사를 데려오면 실제 시민 상식 시험을 모국어로 볼 수 있습니다. |
 | `intro.who.legend` | Who is practicing? | 누가 연습하나요? |
 
 ## Lines marked ⚠ (meaning differs a little)

@@ -59,6 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | अभ्यास का पास स्कोर पूरा होते ही अभ्यास परीक्षा रुक गई। |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | अभ्यास का पास स्कोर {score} पूरा होने से पहले, {incorrect} गलत उत्तरों के बाद अभ्यास परीक्षा रुक गई। |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | अभ्यास का पास स्कोर {score} सही उत्तर है, और वह पूरा नहीं हुआ। |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS उम्र और स्थायी निवासी के रूप में साल N-400 जमा होने के दिन गिनता है। |
 
 ## 3. All other lines
 
@@ -370,14 +371,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | अंग्रेज़ी की परीक्षा नहीं। नागरिक शास्त्र के कम प्रश्न: तारे वाले 20। |
 | `home.who.notSure` | Not sure? Choose Most people. | पक्का नहीं? ‘ज़्यादातर लोग’ चुनें। |
 | `home.what.title` | 2. What do you want to do? | 2. आप क्या करना चाहते हैं? |
-| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | 50/20, 55/15 और 65/20 के लिए ज़रूरी नहीं |
+| `home.part.notRequired` | Not required for {exception} | {exception} के लिए ज़रूरी नहीं |
 | `home.go.start` | Start | शुरू करें |
 | `home.go.open` | Open | खोलें |
 | `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 या उससे ज़्यादा उम्र, 20 साल या उससे ज़्यादा से ग्रीन कार्ड (50/20) |
 | `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 या उससे ज़्यादा उम्र, 15 साल या उससे ज़्यादा से ग्रीन कार्ड (55/15) |
-| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | अंग्रेज़ी की परीक्षा नहीं। नागरिक शास्त्र सामान्य रूप से; आप दुभाषिया ले सकते हैं। |
-| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | आपकी उम्र और स्थायी निवासी के रूप में साल N-400 जमा करने के दिन गिने जाते हैं। |
-| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | इंटरव्यू में आप दुभाषिए के साथ अपनी भाषा में नागरिक शास्त्र के उत्तर दे सकते हैं। यह ऐप अंग्रेज़ी प्रश्नों का अभ्यास कराता है। |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | अंग्रेज़ी की परीक्षा नहीं। नागरिक शास्त्र सामान्य रूप से, अपनी भाषा में अगर आप दुभाषिया साथ लाएँ। |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | इंटरव्यू में अगर आप दुभाषिया साथ लाएँ, तो नागरिक शास्त्र के उत्तर अपनी भाषा में दे सकते हैं। यह ऐप अंग्रेज़ी प्रश्नों का अभ्यास कराता है। |
 | `report.exception` | Practice as {exception} | {exception} के रूप में अभ्यास |
-| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | आप असली नागरिक शास्त्र परीक्षा दुभाषिए के साथ अपनी भाषा में दे सकते हैं। |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | अगर आप दुभाषिया साथ लाएँ, तो असली नागरिक शास्त्र परीक्षा अपनी भाषा में दे सकते हैं। |
 | `intro.who.legend` | Who is practicing? | कौन अभ्यास कर रहा है? |

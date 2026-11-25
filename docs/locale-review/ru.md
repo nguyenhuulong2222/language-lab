@@ -59,6 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Практический тест остановился, когда был достигнут проходной балл практики. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Практический тест остановился после {incorrect} неправильных ответов, до того как был достигнут проходной балл практики ({score}). |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Проходной балл практики — {score} правильных ответов, и он не достигнут. |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS считает возраст и годы постоянного проживания на день подачи N-400. |
 
 ## 3. All other lines
 
@@ -370,16 +371,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Без экзамена по английскому. Меньше вопросов: 20 со звёздочкой. |
 | `home.who.notSure` | Not sure? Choose Most people. | Не уверены? Выберите «Большинство людей». |
 | `home.what.title` | 2. What do you want to do? | 2. Что вы хотите сделать? |
-| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | Не требуется для 50/20, 55/15 и 65/20 |
+| `home.part.notRequired` | Not required for {exception} | Не требуется для {exception} |
 | `home.go.start` | Start | Начать |
 | `home.go.open` | Open | Открыть |
 | `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 лет и старше, грин-карта 20 лет и больше (50/20) |
 | `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 лет и старше, грин-карта 15 лет и больше (55/15) |
-| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Без экзамена по английскому. Граждановедение как обычно; можно с переводчиком. |
-| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Возраст и годы постоянного проживания считаются на день подачи N-400. |
-| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | На собеседовании можно отвечать на вопросы по граждановедению на своём языке с переводчиком. В этом приложении — вопросы на английском. |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | Без экзамена по английскому. Граждановедение как обычно, на своём языке, если вы приведёте переводчика. |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | На собеседовании можно отвечать по граждановедению на своём языке, если вы приведёте переводчика. В этом приложении — вопросы на английском. |
 | `report.exception` | Practice as {exception} | Практика как {exception} |
-| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | Настоящий экзамен по граждановедению можно сдавать на своём языке с переводчиком. |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | Настоящий экзамен по граждановедению можно сдавать на своём языке, если вы приведёте переводчика. |
 | `intro.who.legend` | Who is practicing? | Кто тренируется? |
 
 ## Lines marked ⚠ (meaning differs a little)

@@ -59,6 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Bài thi luyện tập dừng lại khi đạt điểm đạt khi luyện tập. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Bài thi luyện tập dừng lại sau {incorrect} câu trả lời sai, trước khi đạt điểm đạt khi luyện tập là {score}. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Điểm đạt khi luyện tập là {score} câu trả lời đúng, và chưa đạt được. |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS tính tuổi và số năm thường trú vào ngày nộp đơn N-400. |
 
 ## 3. All other lines
 
@@ -370,16 +371,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Không thi tiếng Anh. Ít câu hỏi hơn: 20 câu có dấu sao. |
 | `home.who.notSure` | Not sure? Choose Most people. | Chưa chắc? Hãy chọn Mọi người. |
 | `home.what.title` | 2. What do you want to do? | 2. Bạn muốn làm gì? |
-| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | Không bắt buộc với 50/20, 55/15 và 65/20 |
+| `home.part.notRequired` | Not required for {exception} | Không bắt buộc với {exception} |
 | `home.go.start` | Start | Bắt đầu |
 | `home.go.open` | Open | Mở |
 | `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | Từ 50 tuổi trở lên, có thẻ xanh từ 20 năm (50/20) |
 | `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | Từ 55 tuổi trở lên, có thẻ xanh từ 15 năm (55/15) |
-| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Không thi tiếng Anh. Thi kiến thức công dân như thường; bạn có thể dùng thông dịch viên. |
-| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Tuổi và số năm thường trú của bạn được tính vào ngày bạn nộp đơn N-400. |
-| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Khi phỏng vấn, bạn có thể trả lời kiến thức công dân bằng tiếng mẹ đẻ với thông dịch viên. Ứng dụng này luyện câu hỏi tiếng Anh. |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | Không thi tiếng Anh. Thi kiến thức công dân như thường, bằng tiếng mẹ đẻ nếu bạn mang theo thông dịch viên. |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | Khi phỏng vấn, bạn có thể trả lời kiến thức công dân bằng tiếng mẹ đẻ nếu bạn mang theo thông dịch viên. Ứng dụng này luyện câu hỏi tiếng Anh. |
 | `report.exception` | Practice as {exception} | Luyện tập theo diện {exception} |
-| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | Bạn có thể thi kiến thức công dân thật bằng tiếng mẹ đẻ với thông dịch viên. |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | Bạn có thể thi kiến thức công dân thật bằng tiếng mẹ đẻ nếu bạn mang theo thông dịch viên. |
 | `intro.who.legend` | Who is practicing? | Ai đang luyện tập? |
 
 ## Lines marked ⚠ (meaning differs a little)

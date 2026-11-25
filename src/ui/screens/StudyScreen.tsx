@@ -37,7 +37,7 @@ interface StudyScreenProps {
   designated?: (version: CivicsTestVersion) => readonly string[];
   /** Start with "only the 65/20 questions" ticked (65/20 chosen on Home, tests). */
   initialSpecialOnly?: boolean;
-  /** 50/20 or 55/15 chosen on Home: the full bank, with the interpreter note. */
+  /** An exception chosen on Home: the interpreter note (65/20 shows the starred questions too). */
   interpreterNote?: boolean;
 }
 type Preparing = Promise<void>;
@@ -146,7 +146,8 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
         <p className="progress-line">
           {t("civics.count", { current: index + 1, total: questions.length })}
         </p>
-        {interpreterNote && index === 0 && (
+        {/* With the 65/20 filter on, the 65/20 line below already says it. */}
+        {interpreterNote && index === 0 && designatedIds === null && (
           <p className="note">
             <LegalText messageKey="study.exempt.note" />
           </p>

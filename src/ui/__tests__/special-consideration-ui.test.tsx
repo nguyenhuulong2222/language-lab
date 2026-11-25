@@ -95,9 +95,10 @@ describe("setup choice (REQ-S05, REQ-S08)", () => {
     expect(html).toContain("asks 10 of the 20 questions marked with a star (*)");
     expect(html).toContain("The practice passing score is 6 correct answers.");
     // The exemption line (decisions log P): sourced from the USCIS Exceptions page and the Policy Manual table.
-    expect(html).toContain("you are exempt from the English requirement (reading, writing, speaking and understanding English)");
-    expect(html).toContain("If you are 65 or older with at least 20 years (65/20), you are also exempt from English");
-    expect(html).toContain(`href="${EXCEPTIONS_URL}"`);
+    // Setup states the timing rule and links USCIS once; the full exemption text is on Home and the reports.
+    expect(html).toContain(ENGLISH_MESSAGES["home.exceptions.timing"]);
+    expect(html).not.toContain(ENGLISH_MESSAGES["special.englishExempt"]);
+    expect(html.split(`href="${EXCEPTIONS_URL}"`).length - 1).toBe(1);
     expect(html).toContain('aria-describedby="intro-who-help"');
   });
   it("no choice without the filing question (N-400, reading, writing) or when the mode is off", () => {
@@ -111,7 +112,6 @@ describe("setup choice (REQ-S05, REQ-S08)", () => {
     const html = intro({}, "vi");
     expect(html).not.toContain(LABEL);
     expect(html).toContain("Từ 65 tuổi trở lên, có thẻ xanh từ 20 năm (65/20)");
-    expect(html).toContain(ENGLISH_MESSAGES["special.englishExempt"]);
     expect(html).toContain(ENGLISH_MESSAGES["home.exceptions.timing"]);
     for (const key of ["intro.special.help", "home.exceptions.timing", "special.englishExempt", "study.special.dynamic", "civics.exempt.line", "study.exempt.note"] as const) expect(isLegalKey(key), key).toBe(true);
     for (const key of ["home.who.5020.title", "home.who.5515.title", "home.who.special.title", "home.who.exempt.text", "report.exception"] as const) expect(isLegalKey(key), key).toBe(false);
@@ -154,7 +154,8 @@ describe("civics screen and part report (REQ-S04, REQ-S08)", () => {
     expect(screen(engine, s)).toContain("asks 10 of the 20 questions");
     const vi = screen(engine, s, "vi");
     expect(vi).toContain(`lang="en">${first.questionText.replace(/'/g, "'")}`);
-    expect(vi).toContain(ENGLISH_MESSAGES["special.englishExempt"]);
+    // The interpreter line, once, in English (a legal key).
+    expect(vi).toContain(ENGLISH_MESSAGES["civics.exempt.line"]);
   });
   it("the part report says 65/20 and the needed count of 6", () => {
     let s = start();

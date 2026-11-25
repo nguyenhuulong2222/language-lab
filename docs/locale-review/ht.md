@@ -59,6 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Tès pratik la te kanpe lè ou te rive nan nòt pou pase pratik la. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Tès pratik la te kanpe apre {incorrect} move repons, anvan ou rive nan nòt pou pase pratik la, {score}. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Nòt pou pase pratik la se {score} bon repons, epi ou pa t rive ladan l. |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS konte laj la ak ane kòm rezidan pèmanan jou yo depoze N-400 la. |
 
 ## 3. All other lines
 
@@ -370,14 +371,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Pa gen egzamen angle. Mwens kesyon sivik: 20 ki gen zetwal yo. |
 | `home.who.notSure` | Not sure? Choose Most people. | Ou pa sèten? Chwazi Pifò moun. |
 | `home.what.title` | 2. What do you want to do? | 2. Kisa ou vle fè? |
-| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | Pa obligatwa pou 50/20, 55/15 ak 65/20 |
+| `home.part.notRequired` | Not required for {exception} | Pa obligatwa pou {exception} |
 | `home.go.start` | Start | Kòmanse |
 | `home.go.open` | Open | Louvri |
 | `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 an oswa plis, kat vèt depi 20 an oswa plis (50/20) |
 | `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 an oswa plis, kat vèt depi 15 an oswa plis (55/15) |
-| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Pa gen egzamen angle. Sivik nòmal; ou ka sèvi ak yon entèprèt. |
-| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Laj ou ak ane ou kòm rezidan pèmanan konte jou ou depoze N-400 la. |
-| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Nan entèvyou a ou ka reponn kesyon sivik nan pwòp lang ou ak yon entèprèt. App sa a pratike kesyon an angle yo. |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | Pa gen egzamen angle. Sivik nòmal, nan lang ou si ou mennen yon entèprèt. |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | Nan entèvyou a ou ka reponn kesyon sivik nan pwòp lang ou si ou mennen yon entèprèt. App sa a pratike kesyon an angle yo. |
 | `report.exception` | Practice as {exception} | Pratik kòm {exception} |
-| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | Ou ka pase vrè egzamen sivik la nan pwòp lang ou ak yon entèprèt. |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | Ou ka pase vrè egzamen sivik la nan pwòp lang ou si ou mennen yon entèprèt. |
 | `intro.who.legend` | Who is practicing? | Kiyès k ap pratike? |
