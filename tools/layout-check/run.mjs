@@ -591,7 +591,7 @@ async function main() {
       else if (!c.order) problems.push("the prominent disclaimer is above the result");
       if (c.headingTop === null || c.headingTop < 0 || c.headingBottom > c.viewport) problems.push(`the result is not in view (top ${c.headingTop}px, bottom ${c.headingBottom}px, viewport ${c.viewport}px)`);
     }
-    const expectedRoot = { normal: 16, large: 18, "extra-large": 20 }[r.size];
+    const expectedRoot = { normal: 18, large: 21, "extra-large": 24 }[r.size];
     if (r.rootPx !== expectedRoot) problems.push(`text size not applied: root font is ${r.rootPx}px, expected ${expectedRoot}px`);
     const status = problems.length === 0 ? "ok  " : "FAIL";
     console.log(`${status} ${r.lang} ${r.size.padEnd(11)} ${r.name} (root ${r.rootPx}px)`);

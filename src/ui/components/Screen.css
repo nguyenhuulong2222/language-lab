@@ -15,7 +15,7 @@
   gap: var(--space-3);
 }
 .take__overline {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--fs-meta);
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -23,7 +23,7 @@
   color: var(--ink-2);
 }
 .take__number {
-  color: var(--teal);
+  color: var(--ink-2);
 }
 .take__sep {
   margin-inline: var(--space-2);
@@ -38,17 +38,19 @@
 }
 .take__lead {
   font-size: var(--fs-lg);
-  line-height: var(--lh-large);
+  line-height: var(--lh-body);
   color: var(--ink-2);
   max-width: var(--measure);
 }
+/* The question or sentence: body font (Bitter is for headings only), large and semi-bold */
 .prompt {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--fs-h2);
-  line-height: var(--lh-snug);
+  font-weight: 600;
+  line-height: var(--lh-body);
 }
 .progress-line {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--fs-meta);
   color: var(--ink-2);
 }
@@ -109,7 +111,7 @@
 }
 .option-card__text {
   font-size: var(--fs-meta);
-  line-height: var(--lh-snug);
+  line-height: var(--lh-body);
 }
 /* The AI coach card: prominent by a thick teal frame and its own line, not by colour alone. */
 .option-card--coach {

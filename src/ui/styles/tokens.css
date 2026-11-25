@@ -11,10 +11,10 @@
   --surface-2: #efe7d6;
   --ink: #2a2118;
   --ink-2: #574635;
-  --teal: #2c6a66;
-  --amber: #9a5a1a;
-  --border: #c9bc9f;
-  /* Text on a teal or amber button: surface in light mode (5.1:1 or better) */
+  --teal: #235350; /* 7:1 or more on bg, surface and surface-2, and with --on-accent */
+  --amber: #98591a; /* 4.5:1 or more: large text, icons and borders only */
+  --border: #968255; /* 3:1 or more on every background: control edges */
+  /* Text on a teal button: 7:1 or more in both themes; on amber 4.5:1 or more (large bold text only) */
   --on-accent: #fbf7ee;
 
   /* Semantic status (reference primitives so theme overrides cascade) */
@@ -30,24 +30,24 @@
   /* System monospace for labels / tape readouts. */
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 
-  /* Type scale (root 16px). --fs-body is the 18px floor. */
-  --fs-display: 2.5rem; /* 40px */
-  --fs-h1: 2rem; /* 32px */
-  --fs-h2: 1.625rem; /* 26px */
-  --fs-h3: 1.375rem; /* 22px */
-  --fs-h4: 1.125rem; /* 18px */
-  --fs-lg: 1.25rem; /* 20px */
-  --fs-body: 1.125rem; /* 18px — minimum for prose */
-  --fs-meta: 1rem; /* 16px — minimum visible size */
+  /* Type scale. Root 18px at normal text size (base.css): every rem below grows with it. */
+  --fs-display: 2.25rem; /* 40.5px */
+  --fs-h1: 1.875rem; /* 33.75px */
+  --fs-h2: 1.5rem; /* 27px */
+  --fs-h3: 1.3125rem; /* 23.6px */
+  --fs-h4: 1.1875rem; /* 21.4px: a small heading stays above body text */
+  --fs-lg: 1.25rem; /* 22.5px */
+  --fs-body: 1.125rem; /* 20.25px at normal size */
+  --fs-meta: 1rem; /* 18px at normal size; nothing is ever below 16px */
 
   --lh-tight: 1.2;
-  --lh-snug: 1.35;
-  --lh-large: 1.4;
-  --lh-body: 1.7;
+  --lh-snug: 1.5;
+  --lh-large: 1.6;
+  --lh-body: 1.6;
   --lh-loose: 1.8;
 
-  --measure: 68ch;
-  --measure-narrow: 42ch;
+  --measure: 34em; /* readable line length */
+  --measure-narrow: 28em;
 
   /* ---- Spacing ---- */
   --space-1: 0.25rem; /* 4px */
@@ -71,7 +71,7 @@
   --shadow-md: 0 2px 8px rgba(42, 33, 24, 0.08);
 
   /* ---- Interaction ---- */
-  --tap-min: 3rem; /* 48px at normal text size; grows with the text size */
+  --tap-min: 3rem; /* 54px at normal text size; grows with the text size (Step 2 sets 56px) */
   --focus-width: 3px;
   --focus-offset: 2px;
 
@@ -87,9 +87,9 @@
   --surface-2: #2e251e;
   --ink: #f0e8d9;
   --ink-2: #c4b49c;
-  --teal: #62a89f;
+  --teal: #85bcb5;
   --amber: #d98a36;
-  --border: #4a3d2f;
+  --border: #836c53;
   --on-accent: #1f1813;
 }
 
@@ -101,9 +101,9 @@
     --surface-2: #2e251e;
     --ink: #f0e8d9;
     --ink-2: #c4b49c;
-    --teal: #62a89f;
+    --teal: #85bcb5;
     --amber: #d98a36;
-    --border: #4a3d2f;
+    --border: #836c53;
     --on-accent: #1f1813;
   }
 }

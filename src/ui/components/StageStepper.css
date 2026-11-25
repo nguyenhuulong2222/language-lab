@@ -13,7 +13,7 @@
 }
 
 .stepper__condensed-count {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   color: var(--ink);
 }
 
@@ -81,7 +81,7 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--fs-meta);
   font-weight: 600;
   border: 2px solid var(--border);

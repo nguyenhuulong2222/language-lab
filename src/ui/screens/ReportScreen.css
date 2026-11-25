@@ -11,7 +11,7 @@
 /* Tape-counter overline: mono, uppercase reel-to-reel take label above the H1.
    The take counter and separator are decorative; the page label is announced. */
 .report__overline {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--fs-meta);
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -57,7 +57,7 @@
 }
 
 .report__profile-name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--fs-lg);
   font-weight: 600;
   color: var(--ink);

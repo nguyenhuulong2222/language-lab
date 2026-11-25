@@ -87,9 +87,11 @@ describe("settings are kept in memory only", () => {
 });
 
 describe("text size styles", () => {
-  it("scale the root size for large and extra large, so every rem size follows", () => {
-    expect(baseCss).toMatch(/html\[data-text-size="large"\]\s*\{\s*font-size:\s*112\.5%/);
-    expect(baseCss).toMatch(/html\[data-text-size="extra-large"\]\s*\{\s*font-size:\s*125%/);
+  it("scale the root size: 18px normal, 21px large, 24px extra large, so every rem size follows", () => {
+    // Senior-friendly step 1: the default (normal) is already 18px, because settings are not stored.
+    expect(baseCss).toMatch(/html\s*\{\s*font-size:\s*112\.5%/);
+    expect(baseCss).toMatch(/html\[data-text-size="large"\]\s*\{\s*font-size:\s*131\.25%/);
+    expect(baseCss).toMatch(/html\[data-text-size="extra-large"\]\s*\{\s*font-size:\s*150%/);
   });
 
   it("make the tap target 48px at normal size (3rem) and let it grow", () => {
