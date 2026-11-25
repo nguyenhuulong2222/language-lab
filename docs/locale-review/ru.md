@@ -326,7 +326,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Этот результат основан на словах, которые услышал телефон или компьютер. Если он услышал неверно, попробуйте снова или напечатайте ответ. |
 | `compare.honest.typed` | This result is based on the words you typed. | Этот результат основан на словах, которые вы ввели. |
 | `home.special.title` | 65/20 civics practice | Практика по обществоведению 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Для людей в возрасте 65 лет и старше, которые являются постоянными жителями 20 лет или больше. Тренируйте вопросы по обществоведению, отмеченные звёздочкой (*). |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Мне 65 лет или больше, и я постоянный житель 20 лет или больше |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Только вопросы для 65/20 (отмечены звёздочкой) |
 | `report.line.civics.none` | No civics questions were scored. | Ни один вопрос по обществоведению не был оценён. |
@@ -369,13 +368,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.title` | 1. Who is practicing? | 1. Кто тренируется? |
 | `home.who.most.title` | Most people | Большинство людей |
 | `home.who.most.text` | The usual civics test rules. | Обычные правила экзамена по граждановедению. |
-| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65 лет и старше, с грин-картой 20 лет и больше |
-| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | Меньше вопросов по граждановедению, из списка 20 вопросов со звёздочкой. |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | 65 лет и старше, грин-карта 20 лет и больше (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Без экзамена по английскому. Меньше вопросов: 20 со звёздочкой. |
 | `home.who.notSure` | Not sure? Choose Most people. | Не уверены? Выберите «Большинство людей». |
 | `home.what.title` | 2. What do you want to do? | 2. Что вы хотите сделать? |
-| `home.part.notRequired` | Not required for 65/20 | Не требуется для 65/20 |
+| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | Не требуется для 50/20, 55/15 и 65/20 |
 | `home.go.start` | Start | Начать |
 | `home.go.open` | Open | Открыть |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 лет и старше, грин-карта 20 лет и больше (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 лет и старше, грин-карта 15 лет и больше (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Без экзамена по английскому. Граждановедение как обычно; можно с переводчиком. |
+| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Возраст и годы постоянного проживания считаются на день подачи N-400. |
+| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | На собеседовании можно отвечать на вопросы по граждановедению на своём языке с переводчиком. В этом приложении — вопросы на английском. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

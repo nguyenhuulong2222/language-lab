@@ -300,7 +300,6 @@
   "compare.honest.heard": "Qhov tshwm sim no siv cov lus uas koj lub xov tooj lossis computer hnov. Yog nws hnov yuam kev, sim dua lossis ntaus koj cov lus teb.",
   "compare.honest.typed": "Qhov txiaj ntsig no raws li cov lus uas koj ntaus.",
   "home.special.title": "Xyaum kev kawm txog pej xeem 65/20",
-  "home.special.text": "Rau cov neeg muaj hnub nyoog 65 xyoo los yog laus dua thiab tau ua neeg nyob mus ib txhis tau 20 xyoo los yog ntev dua. Xyaum cov lus nug txog pej xeem uas muaj lub hnub qub (*).",
   "intro.special.label": "Kuv muaj hnub nyoog 65 xyoo los yog laus dua thiab kuv tau ua neeg nyob mus ib txhis tau 20 xyoo los yog ntev dua",
   "intro.special.help": "Qhov no tsuas hloov kev xyaum xwb; tsis muaj dab tsi raug khaws los yog xa mus. Ntu kev kawm txog pej xeem yuav nug {asked} ntawm {bank} lo lus nug uas muaj lub hnub qub (*) hauv daim ntawv teev npe. Hauv kev xyaum no, nws nug tag nrho {asked} lo. Qhab nia dhau ntawm kev xyaum yog {pass} lo lus teb raug. Rau koj tus kheej rooj plaub, saib uscis.gov: hnub nyoog thiab cov xyoo suav rau hnub uas xa daim ntawv thov.",
   "special.englishExempt": "USCIS: rau hnub uas xa daim ntawv thov, yog koj muaj 50 xyoo los yog laus dua thiab tau ua neeg nyob mus ib txhis 20 xyoo (50/20), los yog 55 xyoo los yog laus dua thiab 15 xyoo (55/15), koj tsis tas ua raws li qhov yuav tsum paub lus Askiv (nyeem, sau, hais thiab to taub lus Askiv), tab sis koj tseem yuav tsum xeem kev kawm txog pej xeem. Koj xeem tau ua koj hom lus yog koj coj ib tus neeg txhais lus tuaj. Yog koj muaj 65 xyoo los yog laus dua thiab tsawg kawg 20 xyoo (65/20), koj kuj tsis tas xeem lus Askiv, thiab tus tub ceev xwm siv cov ntawv xeem txog pej xeem uas tau xaiv tshwj xeeb.",
@@ -351,11 +350,16 @@
   "home.who.title": "1. Leej twg xyaum?",
   "home.who.most.title": "Feem ntau tib neeg",
   "home.who.most.text": "Cov cai xeem kev kawm txog teb chaws ib txwm.",
-  "home.who.special.title": "Hnub nyoog 65 xyoo los yog laus dua, muaj daim green card 20 xyoo los yog ntev dua",
-  "home.who.special.text": "Cov lus nug tsawg dua, los ntawm daim ntawv 20 lo lus nug uas muaj hnub qub.",
+  "home.who.special.title": "Hnub nyoog 65 xyoo los yog laus dua, muaj daim green card 20 xyoo los yog ntev dua (65/20)",
+  "home.who.special.text": "Tsis xeem lus Askiv. Cov lus nug tsawg dua: 20 lo uas muaj hnub qub.",
   "home.who.notSure": "Tsis paub meej? Xaiv Feem ntau tib neeg.",
   "home.what.title": "2. Koj xav ua dab tsi?",
-  "home.part.notRequired": "Tsis tas rau 65/20",
+  "home.part.notRequired": "Tsis tas rau 50/20, 55/15 thiab 65/20",
   "home.go.start": "Pib",
-  "home.go.open": "Qhib"
+  "home.go.open": "Qhib",
+  "home.who.5020.title": "Hnub nyoog 50 xyoo los yog laus dua, muaj daim green card 20 xyoo los yog ntev dua (50/20)",
+  "home.who.5515.title": "Hnub nyoog 55 xyoo los yog laus dua, muaj daim green card 15 xyoo los yog ntev dua (55/15)",
+  "home.who.exempt.text": "Tsis xeem lus Askiv. Xeem kev kawm txog teb chaws ib txwm; koj siv tau ib tug neeg txhais lus.",
+  "home.exceptions.timing": "Koj lub hnub nyoog thiab cov xyoo ua neeg nyob mus ib txhis suav rau hnub koj xa daim N-400.",
+  "study.exempt.note": "Thaum xam phaj koj teb tau cov lus nug txog teb chaws ua koj hom lus nrog ib tug neeg txhais lus. Lub app no xyaum cov lus nug ua lus Askiv."
 }

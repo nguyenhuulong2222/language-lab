@@ -326,7 +326,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Ginagamit ng resultang ito ang mga salitang narinig ng iyong phone o computer. Kung mali ang pagkarinig, subukan ulit o i-type ang iyong sagot. |
 | `compare.honest.typed` | This result is based on the words you typed. | Batay ang resultang ito sa mga salitang in-type ninyo. |
 | `home.special.title` | 65/20 civics practice | Pagsasanay sa sibika para sa 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Para sa mga 65 taong gulang pataas na permanent resident na nang 20 taon o higit pa. Sanayin ang mga tanong sa sibika na may tandang bituin (*). |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Ako ay 65 taong gulang pataas at permanent resident na nang 20 taon o higit pa |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Mga tanong lang para sa 65/20 (may tandang bituin) |
 | `report.line.civics.none` | No civics questions were scored. | Walang tanong sa sibika na naiskor. |
@@ -369,13 +368,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.title` | 1. Who is practicing? | 1. Sino ang nagsasanay? |
 | `home.who.most.title` | Most people | Karamihan ng tao |
 | `home.who.most.text` | The usual civics test rules. | Ang karaniwang patakaran ng pagsusulit sa sibika. |
-| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65 taong gulang pataas, may green card nang 20 taon o higit pa |
-| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | Mas kaunting tanong sa sibika, mula sa listahan ng 20 na may bituin. |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | 65 taong gulang pataas, may green card nang 20 taon o higit pa (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Walang pagsusulit sa Ingles. Mas kaunting tanong sa sibika: ang 20 na may bituin. |
 | `home.who.notSure` | Not sure? Choose Most people. | Hindi sigurado? Piliin ang Karamihan ng tao. |
 | `home.what.title` | 2. What do you want to do? | 2. Ano ang gusto mong gawin? |
-| `home.part.notRequired` | Not required for 65/20 | Hindi kailangan para sa 65/20 |
+| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | Hindi kailangan para sa 50/20, 55/15 at 65/20 |
 | `home.go.start` | Start | Simulan |
 | `home.go.open` | Open | Buksan |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 taong gulang pataas, may green card nang 20 taon o higit pa (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 taong gulang pataas, may green card nang 15 taon o higit pa (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Walang pagsusulit sa Ingles. Karaniwang sibika; maaari kang gumamit ng interpreter. |
+| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Ang iyong edad at mga taon bilang permanenteng residente ay binibilang sa araw na isinumite mo ang N-400. |
+| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Sa iyong interview, maaari kang sumagot sa sibika sa sarili mong wika gamit ang interpreter. Ang app na ito ay nagsasanay sa mga tanong sa Ingles. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

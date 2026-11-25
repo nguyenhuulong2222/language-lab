@@ -19,6 +19,7 @@ import {
   sessionParts,
   sessionSteps,
   specialConsiderationOffered,
+  exceptionOffered,
   type PracticeAction,
   type PracticeEngine,
   type PracticeState,
@@ -73,7 +74,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
   // "Study first" is a view of its own: no session, no scoring, nothing recorded.
   const [studying, setStudying] = useState(false);
   // "Who is practicing?" on Home: in memory only, used by every card after it.
-  const [who, setWho] = useState<Who>("most");
+  const [who, setWho] = useState<Who>("none");
   const restart = useCallback(() => {
     setRestarts((n) => n + 1);
     setCoachEntry("choice");
@@ -94,7 +95,8 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
           <StudyScreen
             answerKey={(v) => engine.env.answerKey(v)}
             {...(specialConsiderationOffered(engine.env) ? { designated: (v) => engine.env.designated!(v) } : {})}
-            initialSpecialOnly={who === "special"}
+            initialSpecialOnly={who === "65/20"}
+            interpreterNote={who === "50/20" || who === "55/15"}
             {...(engine.env.prepareCivics === undefined ? {} : { prepare: (v) => engine.env.prepareCivics!(v) })}
             onHome={exitStudy}
           />
@@ -162,7 +164,7 @@ export function Screen({
   civicsLockedInBuild,
   afterRestart = false,
   onStudy,
-  who = "most",
+  who = "none",
   onWho = () => {},
   coachEntry = "choice",
   onCoachEntry = () => {},
@@ -188,9 +190,9 @@ export function Screen({
           {...(onStudy === undefined ? {} : { onStudy })}
           onChoose={(mode) => {
             onCoachEntry("choice");
-            // 65/20 chosen on Home: setup starts with it ticked (it applies to parts with civics).
-            const special = specialRules !== null && who === "special";
-            dispatch({ type: "choose", mode, seed: seed(), at: now(), ...(special ? { exception: "65/20" as const } : {}) });
+            // The exception chosen on Home: setup starts with it chosen (it applies to parts with civics).
+            const exception = exceptionOffered(env, who) ? who : "none";
+            dispatch({ type: "choose", mode, seed: seed(), at: now(), ...(exception === "none" ? {} : { exception }) });
           }}
           onChooseCoach={() => {
             onCoachEntry("notice");
@@ -211,8 +213,10 @@ export function Screen({
           focusOnFirstRender
           onStart={(choice) => {
             const { specialConsideration, ...rest } = choice;
-            const go = () =>
-              dispatch({ type: "start", ...rest, ...(specialConsideration === true ? { exception: "65/20" as const } : {}), seed: seed(), at: now() });
+            // 65/20 from the setup box; 50/20 and 55/15 carried from Home.
+            const requested = state.exceptionRequested;
+            const exception = specialConsideration === true ? "65/20" : requested === "50/20" || requested === "55/15" ? requested : "none";
+            const go = () => dispatch({ type: "start", ...rest, ...(exception === "none" ? {} : { exception }), seed: seed(), at: now() });
             // The answer key and the official answers are fetched when a civics part starts.
             const needsCivics = modeParts(state.mode ?? "full").includes("civics") && choice.filedOn !== undefined;
             if (!needsCivics || env.prepareCivics === undefined) return go();

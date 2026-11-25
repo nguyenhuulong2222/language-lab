@@ -7,7 +7,8 @@
  * ActionCard (frame, verb and arrow). The 65/20 choice is used by every card after it: Study starts
  * with the starred questions, and the practice test and civics start with 65/20 ticked in setup.
  */
-import { useId, useState } from "react";
+import { useId, useState, type ReactElement } from "react";
+import type { AgeException } from "../../engine/exceptions";
 import { LegalText } from "../components/LegalText";
 import type { PracticeMode } from "../../engine/practice-flow";
 import { languageInfo, type LanguageCode, type MessageKey } from "../../i18n";
@@ -16,7 +17,7 @@ import { ActionCard } from "../components/ActionCard";
 import { Disclaimer } from "../components/Disclaimer";
 import { Bilingual } from "../components/EnglishLine";
 import { EnglishNotice } from "../components/EnglishNotice";
-import { PersonIcon, ReviewIcon, StarIcon } from "../components/icons";
+import { CalendarIcon, PersonIcon, ReviewIcon, StarIcon } from "../components/icons";
 import { HowItWorks } from "../components/HowItWorks";
 import { LanguageMenu } from "../components/LanguageMenu";
 import { EXCEPTIONS_URL } from "../components/SpecialConsiderationNote";
@@ -24,8 +25,14 @@ import { TakeHeader } from "../components/TakeHeader";
 import { HOME_LANGUAGE_ID } from "../home-language";
 import { useSettings } from "../settings";
 import "../components/Screen.css";
-/** Who is practicing: most people, or 65/20 (65 or older, a permanent resident for 20 years or more). */
-export type Who = "most" | "special";
+/** Who is practicing: most people, or one of the USCIS age and residency exceptions. */
+export type Who = AgeException;
+const WHO_CARDS: ReadonlyArray<{ value: Who; title: MessageKey; text: MessageKey; icon: (p: { className?: string }) => ReactElement }> = [
+  { value: "none", title: "home.who.most.title", text: "home.who.most.text", icon: PersonIcon },
+  { value: "50/20", title: "home.who.5020.title", text: "home.who.exempt.text", icon: CalendarIcon },
+  { value: "55/15", title: "home.who.5515.title", text: "home.who.exempt.text", icon: CalendarIcon },
+  { value: "65/20", title: "home.who.special.title", text: "home.who.special.text", icon: StarIcon },
+];
 interface HomeScreenProps {
   /** True when this build cannot score civics (answer key not yet reviewed). */
   civicsLocked: boolean;
@@ -35,7 +42,7 @@ interface HomeScreenProps {
   onStudy?: () => void;
   /** Start the N-400 part with the AI coach's consent notice open (spec REQ-C18). Absent: no coach card. */
   onChooseCoach?: () => void;
-  /** The 65/20 practice is offered in this build: "Who is practicing?" is shown. */
+  /** The 65/20 practice is offered in this build (the designated list and its rules): its card is shown. */
   specialOffered?: boolean;
   who?: Who;
   onWho?: (who: Who) => void;
@@ -79,7 +86,7 @@ export function HomeScreen({
   onStudy,
   onChooseCoach,
   specialOffered = false,
-  who = "most",
+  who = "none",
   onWho = () => {},
   focusOnFirstRender = false,
   showTextSizeHint = false,
@@ -87,7 +94,8 @@ export function HomeScreen({
   const t = useT();
   const whoTitleId = useId();
   const eligibilityId = useId();
-  const special = specialOffered && who === "special";
+  // Reading and Writing are not required for any exception; they stay usable.
+  const exempt = who !== "none";
   return (
     <div className="screen screen--home">
       <HomeLanguage />
@@ -103,32 +111,36 @@ export function HomeScreen({
             </p>
           </div>
         )}
-        {!civicsLocked && specialOffered && (
+        {!civicsLocked && (
           <section className="home__step" aria-labelledby={whoTitleId}>
             <fieldset className="who-cards" aria-describedby={eligibilityId}>
               <legend id={whoTitleId} className="who-cards__legend">
                 {t("home.who.title")}
               </legend>
-              <label className="who-card">
-                <input className="choice__input" type="radio" name="who" value="most" checked={who === "most"} onChange={() => onWho("most")} />
-                <PersonIcon className="who-card__icon" />
-                <span className="who-card__body">
-                  <span className="who-card__title">{t("home.who.most.title")}</span>
-                  <span className="who-card__text">{t("home.who.most.text")}</span>
-                </span>
-              </label>
-              <label className="who-card">
-                <input className="choice__input" type="radio" name="who" value="special" checked={who === "special"} onChange={() => onWho("special")} />
-                <StarIcon className="who-card__icon" />
-                <span className="who-card__body">
-                  <span className="who-card__title">{t("home.who.special.title")}</span>
-                  <span className="who-card__text">{t("home.who.special.text")}</span>
-                </span>
-              </label>
+              {WHO_CARDS.filter((card) => card.value !== "65/20" || specialOffered).map((card) => {
+                const Icon = card.icon;
+                return (
+                  <label key={card.value} className="who-card">
+                    <input
+                      className="choice__input"
+                      type="radio"
+                      name="who"
+                      value={card.value}
+                      checked={who === card.value}
+                      onChange={() => onWho(card.value)}
+                    />
+                    <Icon className="who-card__icon" />
+                    <span className="who-card__body">
+                      <span className="who-card__title">{t(card.title)}</span>
+                      <span className="who-card__text">{t(card.text)}</span>
+                    </span>
+                  </label>
+                );
+              })}
             </fieldset>
             <div className="home__who-notes">
               <p className="note" id={eligibilityId}>
-                <LegalText messageKey="home.special.text" />
+                <LegalText messageKey="home.exceptions.timing" /> <LegalText messageKey="special.englishExempt" />
               </p>
               <p className="note">
                 <a className="special-note__link" href={EXCEPTIONS_URL} target="_blank" rel="noopener noreferrer">
@@ -170,7 +182,7 @@ export function HomeScreen({
                   text={t(part.text)}
                   verb={t("home.go.start")}
                   onClick={() => onChoose(part.mode)}
-                  {...(special && (part.mode === "reading" || part.mode === "writing") ? { meta: t("home.part.notRequired") } : {})}
+                  {...(exempt && (part.mode === "reading" || part.mode === "writing") ? { meta: t("home.part.notRequired") } : {})}
                   {...(part.mode === "n400" && onChooseCoach !== undefined
                     ? {
                         badge: (

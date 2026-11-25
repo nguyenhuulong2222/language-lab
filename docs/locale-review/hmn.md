@@ -326,7 +326,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Qhov tshwm sim no siv cov lus uas koj lub xov tooj lossis computer hnov. Yog nws hnov yuam kev, sim dua lossis ntaus koj cov lus teb. |
 | `compare.honest.typed` | This result is based on the words you typed. | Qhov txiaj ntsig no raws li cov lus uas koj ntaus. |
 | `home.special.title` | 65/20 civics practice | Xyaum kev kawm txog pej xeem 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Rau cov neeg muaj hnub nyoog 65 xyoo los yog laus dua thiab tau ua neeg nyob mus ib txhis tau 20 xyoo los yog ntev dua. Xyaum cov lus nug txog pej xeem uas muaj lub hnub qub (*). |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Kuv muaj hnub nyoog 65 xyoo los yog laus dua thiab kuv tau ua neeg nyob mus ib txhis tau 20 xyoo los yog ntev dua |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Tsuas yog cov lus nug rau 65/20 (muaj lub hnub qub) |
 | `report.line.civics.none` | No civics questions were scored. | Tsis muaj lo lus nug txog pej xeem twg tau qhab nia. |
@@ -369,13 +368,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.title` | 1. Who is practicing? | 1. Leej twg xyaum? |
 | `home.who.most.title` | Most people | Feem ntau tib neeg |
 | `home.who.most.text` | The usual civics test rules. | Cov cai xeem kev kawm txog teb chaws ib txwm. |
-| `home.who.special.title` | 65 or older, with a green card for 20 years or more | Hnub nyoog 65 xyoo los yog laus dua, muaj daim green card 20 xyoo los yog ntev dua |
-| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | Cov lus nug tsawg dua, los ntawm daim ntawv 20 lo lus nug uas muaj hnub qub. |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | Hnub nyoog 65 xyoo los yog laus dua, muaj daim green card 20 xyoo los yog ntev dua (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Tsis xeem lus Askiv. Cov lus nug tsawg dua: 20 lo uas muaj hnub qub. |
 | `home.who.notSure` | Not sure? Choose Most people. | Tsis paub meej? Xaiv Feem ntau tib neeg. |
 | `home.what.title` | 2. What do you want to do? | 2. Koj xav ua dab tsi? |
-| `home.part.notRequired` | Not required for 65/20 | Tsis tas rau 65/20 |
+| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | Tsis tas rau 50/20, 55/15 thiab 65/20 |
 | `home.go.start` | Start | Pib |
 | `home.go.open` | Open | Qhib |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | Hnub nyoog 50 xyoo los yog laus dua, muaj daim green card 20 xyoo los yog ntev dua (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | Hnub nyoog 55 xyoo los yog laus dua, muaj daim green card 15 xyoo los yog ntev dua (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Tsis xeem lus Askiv. Xeem kev kawm txog teb chaws ib txwm; koj siv tau ib tug neeg txhais lus. |
+| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Koj lub hnub nyoog thiab cov xyoo ua neeg nyob mus ib txhis suav rau hnub koj xa daim N-400. |
+| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Thaum xam phaj koj teb tau cov lus nug txog teb chaws ua koj hom lus nrog ib tug neeg txhais lus. Lub app no xyaum cov lus nug ua lus Askiv. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -91,9 +91,9 @@ describe("every screen in Vietnamese has no English interface line (Q4)", () => 
     fireEvent.click(document.querySelector<HTMLButtonElement>(".footer__about")!);
     expectVietnamese("about panel");
     fireEvent.click(document.querySelector<HTMLButtonElement>(".footer__about")!);
-    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="special"]')!);
+    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="65/20"]')!);
     expectVietnamese("home 65/20");
-    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="most"]')!);
+    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="none"]')!);
 
     // Study
     fireEvent.click(button(VI["home.study.title"]));

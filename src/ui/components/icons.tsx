@@ -105,3 +105,12 @@ export function StarIcon({ className }: IconProps) {
     </svg>
   );
 }
+/** A calendar: the 50/20 and 55/15 choices (age and years at the time of filing). */
+export function CalendarIcon({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" focusable="false">
+      <rect x="4" y="5.5" width="16" height="14" rx="2" />
+      <path d="M4 10h16M8.5 3.5v4M15.5 3.5v4" strokeLinecap="round" />
+    </svg>
+  );
+}

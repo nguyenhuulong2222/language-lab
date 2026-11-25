@@ -326,7 +326,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | यह नतीजा आपके फ़ोन या कंप्यूटर के सुने शब्दों पर आधारित है। अगर उसने गलत सुना, तो फिर कोशिश करें या अपना उत्तर टाइप करें। |
 | `compare.honest.typed` | This result is based on the words you typed. | यह नतीजा उन शब्दों पर आधारित है जो आपने टाइप किए। |
 | `home.special.title` | 65/20 civics practice | 65/20 नागरिक शास्त्र अभ्यास |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | उन लोगों के लिए जिनकी उम्र 65 वर्ष या उससे अधिक है और जो 20 वर्ष या उससे अधिक समय से स्थायी निवासी हैं। तारे (*) से चिह्नित नागरिक शास्त्र के प्रश्नों का अभ्यास करें। |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | मेरी उम्र 65 वर्ष या उससे अधिक है और मैं 20 वर्ष या उससे अधिक समय से स्थायी निवासी हूँ |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | केवल 65/20 के प्रश्न (तारे से चिह्नित) |
 | `report.line.civics.none` | No civics questions were scored. | नागरिक शास्त्र का कोई प्रश्न अंकित नहीं हुआ। |
@@ -369,10 +368,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.title` | 1. Who is practicing? | 1. कौन अभ्यास कर रहा है? |
 | `home.who.most.title` | Most people | ज़्यादातर लोग |
 | `home.who.most.text` | The usual civics test rules. | नागरिक शास्त्र परीक्षा के सामान्य नियम। |
-| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65 या उससे ज़्यादा उम्र, 20 साल या उससे ज़्यादा से ग्रीन कार्ड |
-| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | नागरिक शास्त्र के कम प्रश्न, तारे वाले 20 प्रश्नों की सूची से। |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | 65 या उससे ज़्यादा उम्र, 20 साल या उससे ज़्यादा से ग्रीन कार्ड (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | अंग्रेज़ी की परीक्षा नहीं। नागरिक शास्त्र के कम प्रश्न: तारे वाले 20। |
 | `home.who.notSure` | Not sure? Choose Most people. | पक्का नहीं? ‘ज़्यादातर लोग’ चुनें। |
 | `home.what.title` | 2. What do you want to do? | 2. आप क्या करना चाहते हैं? |
-| `home.part.notRequired` | Not required for 65/20 | 65/20 के लिए ज़रूरी नहीं |
+| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | 50/20, 55/15 और 65/20 के लिए ज़रूरी नहीं |
 | `home.go.start` | Start | शुरू करें |
 | `home.go.open` | Open | खोलें |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 या उससे ज़्यादा उम्र, 20 साल या उससे ज़्यादा से ग्रीन कार्ड (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 या उससे ज़्यादा उम्र, 15 साल या उससे ज़्यादा से ग्रीन कार्ड (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | अंग्रेज़ी की परीक्षा नहीं। नागरिक शास्त्र सामान्य रूप से; आप दुभाषिया ले सकते हैं। |
+| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | आपकी उम्र और स्थायी निवासी के रूप में साल N-400 जमा करने के दिन गिने जाते हैं। |
+| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | इंटरव्यू में आप दुभाषिए के साथ अपनी भाषा में नागरिक शास्त्र के उत्तर दे सकते हैं। यह ऐप अंग्रेज़ी प्रश्नों का अभ्यास कराता है। |

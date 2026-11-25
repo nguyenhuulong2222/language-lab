@@ -300,7 +300,6 @@
   "compare.honest.heard": "Este resultado usa las palabras que oyó su teléfono o computadora. Si le oyó mal, inténtelo otra vez o escriba su respuesta.",
   "compare.honest.typed": "Este resultado se basa en las palabras que usted escribió.",
   "home.special.title": "Práctica de educación cívica 65/20",
-  "home.special.text": "Para personas de 65 años o más que han sido residentes permanentes durante 20 años o más. Practique las preguntas de educación cívica marcadas con un asterisco (*).",
   "intro.special.label": "Tengo 65 años o más y he sido residente permanente durante 20 años o más",
   "intro.special.help": "Esto solo cambia la práctica; no se guarda ni se envía nada. La parte de educación cívica le hace {asked} de las {bank} preguntas marcadas con un asterisco (*) en la lista oficial. En esta práctica se hacen las {asked}. La puntuación de práctica para aprobar es de {pass} respuestas correctas. Para su propio caso, consulte uscis.gov: la edad y los años cuentan en la fecha de presentación de la solicitud.",
   "special.englishExempt": "USCIS: en la fecha de presentación, si tiene 50 años o más y 20 años como residente permanente (50/20), o 55 años o más y 15 años (55/15), está exento del requisito de inglés (leer, escribir, hablar y entender inglés), pero debe tomar el examen de educación cívica. Puede tomarlo en su idioma natal si trae un intérprete. Si tiene 65 años o más y al menos 20 años (65/20), también está exento del inglés, y el oficial usa formularios de examen de educación cívica especialmente designados.",
@@ -351,11 +350,16 @@
   "home.who.title": "1. ¿Quién practica?",
   "home.who.most.title": "La mayoría de las personas",
   "home.who.most.text": "Las reglas habituales del examen de educación cívica.",
-  "home.who.special.title": "65 años o más, con tarjeta verde desde hace 20 años o más",
-  "home.who.special.text": "Menos preguntas de educación cívica, de una lista de 20 marcadas con una estrella.",
+  "home.who.special.title": "65 años o más, tarjeta verde desde hace 20 años o más (65/20)",
+  "home.who.special.text": "Sin examen de inglés. Menos preguntas de educación cívica: las 20 con estrella.",
   "home.who.notSure": "¿No está seguro? Elija La mayoría de las personas.",
   "home.what.title": "2. ¿Qué quiere hacer?",
-  "home.part.notRequired": "No es obligatorio para 65/20",
+  "home.part.notRequired": "No es obligatorio para 50/20, 55/15 y 65/20",
   "home.go.start": "Empezar",
-  "home.go.open": "Abrir"
+  "home.go.open": "Abrir",
+  "home.who.5020.title": "50 años o más, tarjeta verde desde hace 20 años o más (50/20)",
+  "home.who.5515.title": "55 años o más, tarjeta verde desde hace 15 años o más (55/15)",
+  "home.who.exempt.text": "Sin examen de inglés. Educación cívica como siempre; puede usar un intérprete.",
+  "home.exceptions.timing": "Su edad y sus años como residente permanente cuentan el día en que presenta el N-400.",
+  "study.exempt.note": "En su entrevista puede responder educación cívica en su propio idioma con un intérprete. Esta app practica las preguntas en inglés."
 }

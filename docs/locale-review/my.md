@@ -326,7 +326,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | ဤရလဒ်သည် သင့်ဖုန်း သို့မဟုတ် ကွန်ပျူတာ ကြားသော စကားလုံးများကို အသုံးပြုသည်။ မှားကြားလျှင် ထပ်စမ်းပါ သို့မဟုတ် အဖြေကို ရိုက်ထည့်ပါ။ |
 | `compare.honest.typed` | This result is based on the words you typed. | ဤရလဒ်သည် သင်ရိုက်ထည့်ခဲ့သော စကားလုံးများအပေါ် အခြေခံသည်။ |
 | `home.special.title` | 65/20 civics practice | 65/20 နိုင်ငံသားဗဟုသုတ လေ့ကျင့်ခန်း |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး အမြဲတမ်းနေထိုင်သူအဖြစ် 20 နှစ်နှင့်အထက် နေထိုင်ခဲ့သူများအတွက်။ ကြယ်ပွင့် (*) အမှတ်အသားပါသော နိုင်ငံသားဗဟုသုတမေးခွန်းများကို လေ့ကျင့်ပါ။ |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ကျွန်ုပ်သည် အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး အမြဲတမ်းနေထိုင်သူအဖြစ် 20 နှစ်နှင့်အထက် နေထိုင်ခဲ့ပါသည် |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | 65/20 အတွက် မေးခွန်းများသာ (ကြယ်ပွင့်ပါသည်) |
 | `report.line.civics.none` | No civics questions were scored. | အမှတ်ပေးခံရသော နိုင်ငံသားဗဟုသုတမေးခွန်း မရှိပါ။ |
@@ -369,13 +368,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.title` | 1. Who is practicing? | 1. ဘယ်သူ လေ့ကျင့်နေသလဲ။ |
 | `home.who.most.title` | Most people | လူအများစု |
 | `home.who.most.text` | The usual civics test rules. | ပုံမှန် နိုင်ငံသားပညာ စာမေးပွဲ စည်းမျဉ်းများ။ |
-| `home.who.special.title` | 65 or older, with a green card for 20 years or more | အသက် ၆၅ နှစ်နှင့်အထက်၊ ဂရင်းကတ် ၂၀ နှစ်နှင့်အထက် |
-| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | နိုင်ငံသားပညာ မေးခွန်း နည်းသည်၊ ကြယ်ပြထားသော ၂၀ ခုစာရင်းမှ ဖြစ်သည်။ |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | အသက် ၆၅ နှင့်အထက်၊ ဂရင်းကတ် ၂၀ နှစ်နှင့်အထက် (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | အင်္ဂလိပ်စာမေးပွဲ မရှိ။ မေးခွန်း နည်းသည်- ကြယ်ပြ ၂၀ ခု။ |
 | `home.who.notSure` | Not sure? Choose Most people. | မသေချာလျှင် လူအများစု ကို ရွေးပါ။ |
 | `home.what.title` | 2. What do you want to do? | 2. ဘာလုပ်ချင်သလဲ။ |
-| `home.part.notRequired` | Not required for 65/20 | ၆၅/၂၀ အတွက် မလိုအပ်ပါ |
+| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | 50/20၊ 55/15 နှင့် 65/20 အတွက် မလိုအပ်ပါ |
 | `home.go.start` | Start | စတင်ရန် |
 | `home.go.open` | Open | ဖွင့်ရန် |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | အသက် ၅၀ နှင့်အထက်၊ ဂရင်းကတ် ၂၀ နှစ်နှင့်အထက် (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | အသက် ၅၅ နှင့်အထက်၊ ဂရင်းကတ် ၁၅ နှစ်နှင့်အထက် (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | အင်္ဂလိပ်စာမေးပွဲ မရှိ။ နိုင်ငံသားပညာ ပုံမှန်အတိုင်း၊ စကားပြန် သုံးနိုင်သည်။ |
+| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | သင့်အသက်နှင့် အမြဲတမ်းနေထိုင်သူ နှစ်များကို N-400 တင်သည့်နေ့တွင် ရေတွက်သည်။ |
+| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | အင်တာဗျူးတွင် စကားပြန်ဖြင့် ကိုယ်ပိုင်ဘာသာစကားဖြင့် နိုင်ငံသားပညာကို ဖြေနိုင်သည်။ ဤအက်ပ်သည် အင်္ဂလိပ်မေးခွန်းများကို လေ့ကျင့်ပေးသည်။ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

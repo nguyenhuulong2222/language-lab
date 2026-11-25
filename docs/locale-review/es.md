@@ -326,7 +326,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Este resultado usa las palabras que oyó su teléfono o computadora. Si le oyó mal, inténtelo otra vez o escriba su respuesta. |
 | `compare.honest.typed` | This result is based on the words you typed. | Este resultado se basa en las palabras que usted escribió. |
 | `home.special.title` | 65/20 civics practice | Práctica de educación cívica 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Para personas de 65 años o más que han sido residentes permanentes durante 20 años o más. Practique las preguntas de educación cívica marcadas con un asterisco (*). |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Tengo 65 años o más y he sido residente permanente durante 20 años o más |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Solo las preguntas para 65/20 (marcadas con un asterisco) |
 | `report.line.civics.none` | No civics questions were scored. | No se calificó ninguna pregunta de educación cívica. |
@@ -369,10 +368,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.title` | 1. Who is practicing? | 1. ¿Quién practica? |
 | `home.who.most.title` | Most people | La mayoría de las personas |
 | `home.who.most.text` | The usual civics test rules. | Las reglas habituales del examen de educación cívica. |
-| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65 años o más, con tarjeta verde desde hace 20 años o más |
-| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | Menos preguntas de educación cívica, de una lista de 20 marcadas con una estrella. |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | 65 años o más, tarjeta verde desde hace 20 años o más (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Sin examen de inglés. Menos preguntas de educación cívica: las 20 con estrella. |
 | `home.who.notSure` | Not sure? Choose Most people. | ¿No está seguro? Elija La mayoría de las personas. |
 | `home.what.title` | 2. What do you want to do? | 2. ¿Qué quiere hacer? |
-| `home.part.notRequired` | Not required for 65/20 | No es obligatorio para 65/20 |
+| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | No es obligatorio para 50/20, 55/15 y 65/20 |
 | `home.go.start` | Start | Empezar |
 | `home.go.open` | Open | Abrir |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 años o más, tarjeta verde desde hace 20 años o más (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 años o más, tarjeta verde desde hace 15 años o más (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Sin examen de inglés. Educación cívica como siempre; puede usar un intérprete. |
+| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Su edad y sus años como residente permanente cuentan el día en que presenta el N-400. |
+| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | En su entrevista puede responder educación cívica en su propio idioma con un intérprete. Esta app practica las preguntas en inglés. |

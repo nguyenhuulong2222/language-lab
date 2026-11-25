@@ -36,9 +36,9 @@ describe("HomeScreen", () => {
     expect(html).toContain("the recording stays on this device, in memory");
   });
 
-  it("asks for nothing on the home screen", () => {
+  it("asks for nothing on the home screen (only who is practicing, no personal data)", () => {
     expect(html).not.toContain("<textarea");
-    expect(html).not.toContain('type="radio"');
+    expect(html.match(/type="radio"/g)?.length ?? 0).toBe((html.match(/name="who"/g) ?? []).length);
     expect(html).not.toContain('type="text"');
   });
 

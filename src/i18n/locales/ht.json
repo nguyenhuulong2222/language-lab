@@ -300,7 +300,6 @@
   "compare.honest.heard": "Rezilta sa a sèvi ak mo telefòn oswa òdinatè w tande. Si li tande w mal, eseye ankò oswa tape repons ou.",
   "compare.honest.typed": "Rezilta sa a baze sou mo ou tape yo.",
   "home.special.title": "Pratik edikasyon sivik 65/20",
-  "home.special.text": "Pou moun ki gen 65 an oswa plis epi ki rezidan pèmanan depi 20 an oswa plis. Pratike kesyon edikasyon sivik ki make ak yon zetwal (*).",
   "intro.special.label": "Mwen gen 65 an oswa plis epi mwen rezidan pèmanan depi 20 an oswa plis",
   "intro.special.help": "Sa a chanje pratik la sèlman; anyen pa sove ni voye. Pati edikasyon sivik la ap poze {asked} nan {bank} kesyon ki make ak yon zetwal (*) nan lis ofisyèl la. Nan pratik sa a, li poze tout {asked} yo. Nòt pou pase pratik la se {pass} bon repons. Pou pwòp ka pa ou, tcheke uscis.gov: laj ak ane yo konte nan dat ou depoze aplikasyon an.",
   "special.englishExempt": "USCIS: nan dat ou depoze aplikasyon an, si ou gen 50 an oswa plis epi ou rezidan pèmanan depi 20 an (50/20), oswa 55 an oswa plis ak 15 an (55/15), ou egzante de egzijans angle a (li, ekri, pale ak konprann angle), men ou dwe toujou pran tès edikasyon sivik la. Ou ka pran l nan lang natif natal ou si ou mennen yon entèprèt. Si ou gen 65 an oswa plis ak omwen 20 an (65/20), ou egzante de angle tou, epi ofisye a sèvi ak fòm tès edikasyon sivik ki deziyen espesyalman.",
@@ -351,11 +350,16 @@
   "home.who.title": "1. Kiyès k ap pratike?",
   "home.who.most.title": "Pifò moun",
   "home.who.most.text": "Règ nòmal egzamen sivik la.",
-  "home.who.special.title": "65 an oswa plis, ak yon kat vèt depi 20 an oswa plis",
-  "home.who.special.text": "Mwens kesyon sivik, nan yon lis 20 ki make ak yon zetwal.",
+  "home.who.special.title": "65 an oswa plis, kat vèt depi 20 an oswa plis (65/20)",
+  "home.who.special.text": "Pa gen egzamen angle. Mwens kesyon sivik: 20 ki gen zetwal yo.",
   "home.who.notSure": "Ou pa sèten? Chwazi Pifò moun.",
   "home.what.title": "2. Kisa ou vle fè?",
-  "home.part.notRequired": "Pa obligatwa pou 65/20",
+  "home.part.notRequired": "Pa obligatwa pou 50/20, 55/15 ak 65/20",
   "home.go.start": "Kòmanse",
-  "home.go.open": "Louvri"
+  "home.go.open": "Louvri",
+  "home.who.5020.title": "50 an oswa plis, kat vèt depi 20 an oswa plis (50/20)",
+  "home.who.5515.title": "55 an oswa plis, kat vèt depi 15 an oswa plis (55/15)",
+  "home.who.exempt.text": "Pa gen egzamen angle. Sivik nòmal; ou ka sèvi ak yon entèprèt.",
+  "home.exceptions.timing": "Laj ou ak ane ou kòm rezidan pèmanan konte jou ou depoze N-400 la.",
+  "study.exempt.note": "Nan entèvyou a ou ka reponn kesyon sivik nan pwòp lang ou ak yon entèprèt. App sa a pratike kesyon an angle yo."
 }

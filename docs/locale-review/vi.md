@@ -326,7 +326,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Kết quả này dựa trên những từ điện thoại hoặc máy tính nghe được. Nếu nó nghe sai, hãy thử lại hoặc gõ câu trả lời. |
 | `compare.honest.typed` | This result is based on the words you typed. | Kết quả này dựa trên những từ bạn đã gõ. |
 | `home.special.title` | 65/20 civics practice | Luyện kiến thức công dân 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Dành cho người từ 65 tuổi trở lên đã là thường trú nhân từ 20 năm trở lên. Luyện các câu hỏi kiến thức công dân có đánh dấu sao (*). |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Tôi từ 65 tuổi trở lên và đã là thường trú nhân từ 20 năm trở lên |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Chỉ các câu hỏi cho diện 65/20 (có đánh dấu sao) |
 | `report.line.civics.none` | No civics questions were scored. | Không có câu hỏi kiến thức công dân nào được chấm. |
@@ -369,13 +368,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.title` | 1. Who is practicing? | 1. Ai đang luyện tập? |
 | `home.who.most.title` | Most people | Mọi người |
 | `home.who.most.text` | The usual civics test rules. | Quy định thông thường của bài thi kiến thức công dân. |
-| `home.who.special.title` | 65 or older, with a green card for 20 years or more | Từ 65 tuổi trở lên, có thẻ xanh từ 20 năm |
-| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | Ít câu hỏi hơn, chọn từ 20 câu có dấu sao. |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | Từ 65 tuổi trở lên, có thẻ xanh từ 20 năm (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Không thi tiếng Anh. Ít câu hỏi hơn: 20 câu có dấu sao. |
 | `home.who.notSure` | Not sure? Choose Most people. | Chưa chắc? Hãy chọn Mọi người. |
 | `home.what.title` | 2. What do you want to do? | 2. Bạn muốn làm gì? |
-| `home.part.notRequired` | Not required for 65/20 | Không bắt buộc với 65/20 |
+| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | Không bắt buộc với 50/20, 55/15 và 65/20 |
 | `home.go.start` | Start | Bắt đầu |
 | `home.go.open` | Open | Mở |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | Từ 50 tuổi trở lên, có thẻ xanh từ 20 năm (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | Từ 55 tuổi trở lên, có thẻ xanh từ 15 năm (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Không thi tiếng Anh. Thi kiến thức công dân như thường; bạn có thể dùng thông dịch viên. |
+| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Tuổi và số năm thường trú của bạn được tính vào ngày bạn nộp đơn N-400. |
+| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Khi phỏng vấn, bạn có thể trả lời kiến thức công dân bằng tiếng mẹ đẻ với thông dịch viên. Ứng dụng này luyện câu hỏi tiếng Anh. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

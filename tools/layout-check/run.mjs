@@ -502,8 +502,8 @@ async function checkConfiguration(cdp, size, lang) {
  */
 async function specialPass({ cdp, lab, js, click, record, L }) {
   // "Who is practicing?" → 65/20, then the civics part: setup starts with 65/20 ticked.
-  if (!(await cdp.evaluate(`!!document.querySelector('input[name="who"][value="special"]')`))) throw new Error("the home screen has no 65/20 choice");
-  await cdp.evaluate(`document.querySelector('input[name="who"][value="special"]').click()`);
+  if (!(await cdp.evaluate(`!!document.querySelector('input[name="who"][value="65/20"]')`))) throw new Error("the home screen has no 65/20 choice");
+  await cdp.evaluate(`document.querySelector('input[name="who"][value="65/20"]').click()`);
   await sleep(120);
   await record("home-special");
   await click(L("home.part.civics.title"));
@@ -518,7 +518,7 @@ async function specialPass({ cdp, lab, js, click, record, L }) {
   await cdp.evaluate("document.querySelector('main .back-home__button').click()");
   await click(L("header.homeConfirm.yes"));
   await waitFor(() => cdp.evaluate(`!!document.querySelector('input[name="who"]')`), "home after the 65/20 practice");
-  await cdp.evaluate(`document.querySelector('input[name="who"][value="most"]').click()`);
+  await cdp.evaluate(`document.querySelector('input[name="who"][value="none"]').click()`);
 }
 
 /**

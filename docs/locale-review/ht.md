@@ -326,7 +326,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Rezilta sa a sèvi ak mo telefòn oswa òdinatè w tande. Si li tande w mal, eseye ankò oswa tape repons ou. |
 | `compare.honest.typed` | This result is based on the words you typed. | Rezilta sa a baze sou mo ou tape yo. |
 | `home.special.title` | 65/20 civics practice | Pratik edikasyon sivik 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Pou moun ki gen 65 an oswa plis epi ki rezidan pèmanan depi 20 an oswa plis. Pratike kesyon edikasyon sivik ki make ak yon zetwal (*). |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Mwen gen 65 an oswa plis epi mwen rezidan pèmanan depi 20 an oswa plis |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Sèlman kesyon pou 65/20 yo (make ak yon zetwal) |
 | `report.line.civics.none` | No civics questions were scored. | Pa gen okenn kesyon edikasyon sivik ki te resevwa nòt. |
@@ -369,10 +368,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.title` | 1. Who is practicing? | 1. Kiyès k ap pratike? |
 | `home.who.most.title` | Most people | Pifò moun |
 | `home.who.most.text` | The usual civics test rules. | Règ nòmal egzamen sivik la. |
-| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65 an oswa plis, ak yon kat vèt depi 20 an oswa plis |
-| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | Mwens kesyon sivik, nan yon lis 20 ki make ak yon zetwal. |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | 65 an oswa plis, kat vèt depi 20 an oswa plis (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Pa gen egzamen angle. Mwens kesyon sivik: 20 ki gen zetwal yo. |
 | `home.who.notSure` | Not sure? Choose Most people. | Ou pa sèten? Chwazi Pifò moun. |
 | `home.what.title` | 2. What do you want to do? | 2. Kisa ou vle fè? |
-| `home.part.notRequired` | Not required for 65/20 | Pa obligatwa pou 65/20 |
+| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | Pa obligatwa pou 50/20, 55/15 ak 65/20 |
 | `home.go.start` | Start | Kòmanse |
 | `home.go.open` | Open | Louvri |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 an oswa plis, kat vèt depi 20 an oswa plis (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 an oswa plis, kat vèt depi 15 an oswa plis (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Pa gen egzamen angle. Sivik nòmal; ou ka sèvi ak yon entèprèt. |
+| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Laj ou ak ane ou kòm rezidan pèmanan konte jou ou depoze N-400 la. |
+| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Nan entèvyou a ou ka reponn kesyon sivik nan pwòp lang ou ak yon entèprèt. App sa a pratike kesyon an angle yo. |

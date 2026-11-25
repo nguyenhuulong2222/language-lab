@@ -326,7 +326,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | ผลนี้ใช้คำที่โทรศัพท์หรือคอมพิวเตอร์ได้ยิน ถ้าได้ยินผิด ให้ลองอีกครั้งหรือพิมพ์คำตอบ |
 | `compare.honest.typed` | This result is based on the words you typed. | ผลนี้อิงจากคำที่คุณพิมพ์ |
 | `home.special.title` | 65/20 civics practice | ฝึกความรู้พลเมืองสำหรับ 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | สำหรับผู้ที่อายุ 65 ปีขึ้นไปและเป็นผู้มีถิ่นที่อยู่ถาวรมา 20 ปีขึ้นไป ฝึกคำถามความรู้พลเมืองที่มีเครื่องหมายดอกจัน (*) |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ฉันอายุ 65 ปีขึ้นไปและเป็นผู้มีถิ่นที่อยู่ถาวรมา 20 ปีขึ้นไป |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | เฉพาะคำถามสำหรับ 65/20 (มีเครื่องหมายดอกจัน) |
 | `report.line.civics.none` | No civics questions were scored. | ไม่มีคำถามความรู้พลเมืองที่ได้รับคะแนน |
@@ -369,13 +368,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.title` | 1. Who is practicing? | 1. ใครกำลังฝึก? |
 | `home.who.most.title` | Most people | คนส่วนใหญ่ |
 | `home.who.most.text` | The usual civics test rules. | กฎการสอบหน้าที่พลเมืองตามปกติ |
-| `home.who.special.title` | 65 or older, with a green card for 20 years or more | อายุ 65 ปีขึ้นไป มีกรีนการ์ด 20 ปีขึ้นไป |
-| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | คำถามหน้าที่พลเมืองน้อยลง จากรายการ 20 ข้อที่มีดาว |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | อายุ 65 ปีขึ้นไป มีกรีนการ์ด 20 ปีขึ้นไป (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | ไม่ต้องสอบภาษาอังกฤษ คำถามน้อยลง: 20 ข้อที่มีดาว |
 | `home.who.notSure` | Not sure? Choose Most people. | ไม่แน่ใจ? เลือก คนส่วนใหญ่ |
 | `home.what.title` | 2. What do you want to do? | 2. คุณอยากทำอะไร? |
-| `home.part.notRequired` | Not required for 65/20 | ไม่จำเป็นสำหรับ 65/20 |
+| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | ไม่จำเป็นสำหรับ 50/20, 55/15 และ 65/20 |
 | `home.go.start` | Start | เริ่ม |
 | `home.go.open` | Open | เปิด |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | อายุ 50 ปีขึ้นไป มีกรีนการ์ด 20 ปีขึ้นไป (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | อายุ 55 ปีขึ้นไป มีกรีนการ์ด 15 ปีขึ้นไป (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | ไม่ต้องสอบภาษาอังกฤษ สอบหน้าที่พลเมืองตามปกติ ใช้ล่ามได้ |
+| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | อายุและจำนวนปีที่เป็นผู้มีถิ่นที่อยู่ถาวรนับ ณ วันที่ยื่น N-400 |
+| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | ในการสัมภาษณ์ คุณตอบคำถามหน้าที่พลเมืองเป็นภาษาของคุณผ่านล่ามได้ แอปนี้ฝึกคำถามภาษาอังกฤษ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

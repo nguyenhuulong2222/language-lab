@@ -44,10 +44,10 @@ const screen = (e = engine, state = e.initial(), language: "en" | "vi" = "en") =
   );
 
 describe("Who is practicing? on Home (REQ-S06)", () => {
-  const SPECIAL = "65 or older, with a green card for 20 years or more";
+  const SPECIAL = "65 or older, green card for 20 years or more (65/20)";
   it("offered when the rules are verified, Most people chosen; absent when the mode is off", () => {
     expect(screen()).toContain(SPECIAL);
-    expect(screen()).toMatch(/value="most"[^>]*checked|checked[^>]*value="most"/);
+    expect(screen()).toMatch(/value="none"[^>]*checked|checked[^>]*value="none"/);
     const off = createPracticeEngine({ ...env, specialRules: () => null });
     expect(screen(off)).not.toContain(SPECIAL);
   });
@@ -103,7 +103,7 @@ describe("setup choice (REQ-S05, REQ-S08)", () => {
     expect(html).toContain(LABEL);
     expect(html).not.toContain("Tôi từ 65 tuổi trở lên");
     expect(html).toContain(ENGLISH_MESSAGES["special.englishExempt"]);
-    for (const key of ["intro.special.help", "intro.special.label", "home.special.text", "special.englishExempt", "study.special.dynamic"] as const) expect(isLegalKey(key), key).toBe(true);
+    for (const key of ["intro.special.help", "intro.special.label", "home.exceptions.timing", "special.englishExempt", "study.special.dynamic"] as const) expect(isLegalKey(key), key).toBe(true);
   });
 });
 

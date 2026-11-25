@@ -326,7 +326,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | 이 결과는 휴대폰이나 컴퓨터가 들은 말을 기준으로 합니다. 잘못 들었다면 다시 해 보거나 답을 입력하세요. |
 | `compare.honest.typed` | This result is based on the words you typed. | 이 결과는 입력하신 단어를 바탕으로 합니다. |
 | `home.special.title` | 65/20 civics practice | 65/20 시민 상식 연습 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | 65세 이상이며 영주권자로 20년 이상 지낸 분을 위한 연습입니다. 별표(*)가 있는 시민 상식 질문을 연습하세요. |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | 저는 65세 이상이며 영주권자로 20년 이상 지냈습니다 |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | 65/20용 질문만 (별표 표시) |
 | `report.line.civics.none` | No civics questions were scored. | 채점된 시민 상식 질문이 없습니다. |
@@ -369,13 +368,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.title` | 1. Who is practicing? | 1. 누가 연습하나요? |
 | `home.who.most.title` | Most people | 대부분의 사람 |
 | `home.who.most.text` | The usual civics test rules. | 일반적인 시민 상식 시험 규칙. |
-| `home.who.special.title` | 65 or older, with a green card for 20 years or more | 65세 이상, 영주권 20년 이상 |
-| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | 시민 상식 질문이 더 적고, 별표가 있는 20개 목록에서 나옵니다. |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | 65세 이상, 영주권 20년 이상 (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | 영어 시험 없음. 시민 상식 질문이 더 적음: 별표 20개. |
 | `home.who.notSure` | Not sure? Choose Most people. | 잘 모르겠다면 ‘대부분의 사람’을 고르세요. |
 | `home.what.title` | 2. What do you want to do? | 2. 무엇을 하고 싶나요? |
-| `home.part.notRequired` | Not required for 65/20 | 65/20에는 필요 없음 |
+| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | 50/20, 55/15, 65/20에는 필요 없음 |
 | `home.go.start` | Start | 시작 |
 | `home.go.open` | Open | 열기 |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50세 이상, 영주권 20년 이상 (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55세 이상, 영주권 15년 이상 (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | 영어 시험 없음. 시민 상식은 평소대로; 통역사를 쓸 수 있습니다. |
+| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | 나이와 영주권자로 지낸 기간은 N-400을 제출하는 날을 기준으로 합니다. |
+| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | 인터뷰에서는 통역사와 함께 모국어로 시민 상식에 답할 수 있습니다. 이 앱은 영어 질문을 연습합니다. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

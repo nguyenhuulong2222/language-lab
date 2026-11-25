@@ -300,7 +300,6 @@
   "compare.honest.heard": "Ginagamit ng resultang ito ang mga salitang narinig ng iyong phone o computer. Kung mali ang pagkarinig, subukan ulit o i-type ang iyong sagot.",
   "compare.honest.typed": "Batay ang resultang ito sa mga salitang in-type ninyo.",
   "home.special.title": "Pagsasanay sa sibika para sa 65/20",
-  "home.special.text": "Para sa mga 65 taong gulang pataas na permanent resident na nang 20 taon o higit pa. Sanayin ang mga tanong sa sibika na may tandang bituin (*).",
   "intro.special.label": "Ako ay 65 taong gulang pataas at permanent resident na nang 20 taon o higit pa",
   "intro.special.help": "Pagsasanay lang ang binabago nito; walang sine-save o ipinapadala. Itatanong ng bahagi ng sibika ang {asked} sa {bank} tanong na may tandang bituin (*) sa opisyal na listahan. Sa pagsasanay na ito, itatanong ang lahat ng {asked}. Ang practice passing score ay {pass} tamang sagot. Para sa sarili mong kaso, tingnan ang uscis.gov: binibilang ang edad at mga taon sa petsa ng pag-file.",
   "special.englishExempt": "USCIS: sa petsa ng pag-file, kung ikaw ay 50 taong gulang pataas at 20 taon nang permanent resident (50/20), o 55 pataas at 15 taon (55/15), exempted ka sa English requirement (pagbasa, pagsulat, pagsasalita at pag-unawa ng English), pero kailangan mo pa ring kumuha ng civics test. Maaari mo itong kunin sa sarili mong wika kung may dala kang interpreter. Kung ikaw ay 65 pataas at hindi bababa sa 20 taon (65/20), exempted ka rin sa English, at gagamit ang opisyal ng mga espesyal na itinakdang civics test form.",
@@ -351,11 +350,16 @@
   "home.who.title": "1. Sino ang nagsasanay?",
   "home.who.most.title": "Karamihan ng tao",
   "home.who.most.text": "Ang karaniwang patakaran ng pagsusulit sa sibika.",
-  "home.who.special.title": "65 taong gulang pataas, may green card nang 20 taon o higit pa",
-  "home.who.special.text": "Mas kaunting tanong sa sibika, mula sa listahan ng 20 na may bituin.",
+  "home.who.special.title": "65 taong gulang pataas, may green card nang 20 taon o higit pa (65/20)",
+  "home.who.special.text": "Walang pagsusulit sa Ingles. Mas kaunting tanong sa sibika: ang 20 na may bituin.",
   "home.who.notSure": "Hindi sigurado? Piliin ang Karamihan ng tao.",
   "home.what.title": "2. Ano ang gusto mong gawin?",
-  "home.part.notRequired": "Hindi kailangan para sa 65/20",
+  "home.part.notRequired": "Hindi kailangan para sa 50/20, 55/15 at 65/20",
   "home.go.start": "Simulan",
-  "home.go.open": "Buksan"
+  "home.go.open": "Buksan",
+  "home.who.5020.title": "50 taong gulang pataas, may green card nang 20 taon o higit pa (50/20)",
+  "home.who.5515.title": "55 taong gulang pataas, may green card nang 15 taon o higit pa (55/15)",
+  "home.who.exempt.text": "Walang pagsusulit sa Ingles. Karaniwang sibika; maaari kang gumamit ng interpreter.",
+  "home.exceptions.timing": "Ang iyong edad at mga taon bilang permanenteng residente ay binibilang sa araw na isinumite mo ang N-400.",
+  "study.exempt.note": "Sa iyong interview, maaari kang sumagot sa sibika sa sarili mong wika gamit ang interpreter. Ang app na ito ay nagsasanay sa mga tanong sa Ingles."
 }

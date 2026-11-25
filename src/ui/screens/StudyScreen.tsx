@@ -35,8 +35,10 @@ interface StudyScreenProps {
   prepare?: (version: CivicsTestVersion) => Preparing;
   /** The 65/20 designated ids of a version (spec release-finish REQ-S07). Absent: no 65/20 option. */
   designated?: (version: CivicsTestVersion) => readonly string[];
-  /** Start with "only the 65/20 questions" ticked (tests). */
+  /** Start with "only the 65/20 questions" ticked (65/20 chosen on Home, tests). */
   initialSpecialOnly?: boolean;
+  /** 50/20 or 55/15 chosen on Home: the full bank, with the interpreter note. */
+  interpreterNote?: boolean;
 }
 type Preparing = Promise<void>;
 
@@ -47,7 +49,7 @@ export function studyQuestions(key: ReadonlyMap<string, CivicsAnswerEntry>): Civ
   return [...key.values()].filter((e) => e.answerType === "static").sort((a, b) => a.id.localeCompare(b.id));
 }
 
-export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion, initialVersion, prepare, designated, initialSpecialOnly = false }: StudyScreenProps) {
+export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion, initialVersion, prepare, designated, initialSpecialOnly = false, interpreterNote = false }: StudyScreenProps) {
   const t = useT();
   const [specialOnly, setSpecialOnly] = useState(initialSpecialOnly && designated !== undefined);
   const [version, setVersion] = useState<CivicsTestVersion | null>(initialVersion ?? null);
@@ -86,6 +88,11 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
       <div className="screen">
         <TakeHeader stage="home" title={t("home.study.title")} lead={t("study.lead")} />
         <EnglishNotice />
+        {interpreterNote && (
+          <p className="note">
+            <LegalText messageKey="study.exempt.note" />
+          </p>
+        )}
         <fieldset className="screen__body choices">
           <legend className="choices__legend">{t("study.version.legend")}</legend>
           {designated !== undefined && (
@@ -139,6 +146,11 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
         <p className="progress-line">
           {t("civics.count", { current: index + 1, total: questions.length })}
         </p>
+        {interpreterNote && index === 0 && (
+          <p className="note">
+            <LegalText messageKey="study.exempt.note" />
+          </p>
+        )}
         {designatedIds !== null && index === 0 && (
           <>
             {leftOut > 0 && (

@@ -326,7 +326,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | ຜົນນີ້ໃຊ້ຄຳທີ່ໂທລະສັບ ຫຼື ຄອມພິວເຕີໄດ້ຍິນ. ຖ້າໄດ້ຍິນຜິດ ໃຫ້ລອງອີກ ຫຼື ພິມຄຳຕອບ. |
 | `compare.honest.typed` | This result is based on the words you typed. | ຜົນນີ້ອີງໃສ່ຄໍາທີ່ທ່ານພິມ. |
 | `home.special.title` | 65/20 civics practice | ຝຶກວິຊາພົນລະເມືອງ 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | ສຳລັບຜູ້ທີ່ມີອາຍຸ 65 ປີຂຶ້ນໄປ ແລະ ເປັນຜູ້ມີຖິ່ນທີ່ຢູ່ຖາວອນມາ 20 ປີຂຶ້ນໄປ. ຝຶກຄຳຖາມວິຊາພົນລະເມືອງທີ່ມີເຄື່ອງໝາຍດາວ (*). |
 | `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ຂ້ອຍມີອາຍຸ 65 ປີຂຶ້ນໄປ ແລະ ເປັນຜູ້ມີຖິ່ນທີ່ຢູ່ຖາວອນມາ 20 ປີຂຶ້ນໄປ |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | ສະເພາະຄຳຖາມສຳລັບ 65/20 (ມີເຄື່ອງໝາຍດາວ) |
 | `report.line.civics.none` | No civics questions were scored. | ບໍ່ມີຄຳຖາມວິຊາພົນລະເມືອງໃດຖືກໃຫ້ຄະແນນ. |
@@ -369,13 +368,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.title` | 1. Who is practicing? | 1. ໃຜກຳລັງຝຶກ? |
 | `home.who.most.title` | Most people | ຄົນສ່ວນໃຫຍ່ |
 | `home.who.most.text` | The usual civics test rules. | ກົດການສອບຄວາມຮູ້ພົນລະເມືອງຕາມປົກກະຕິ. |
-| `home.who.special.title` | 65 or older, with a green card for 20 years or more | ອາຍຸ 65 ປີຂຶ້ນໄປ, ມີບັດຂຽວ 20 ປີຂຶ້ນໄປ |
-| `home.who.special.text` | Fewer civics questions, from a list of 20 marked with a star. | ຄຳຖາມຄວາມຮູ້ພົນລະເມືອງໜ້ອຍລົງ, ຈາກລາຍການ 20 ຂໍ້ທີ່ມີດາວ. |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | ອາຍຸ 65 ປີຂຶ້ນໄປ, ມີບັດຂຽວ 20 ປີຂຶ້ນໄປ (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | ບໍ່ຕ້ອງສອບພາສາອັງກິດ. ຄຳຖາມໜ້ອຍລົງ: 20 ຂໍ້ທີ່ມີດາວ. |
 | `home.who.notSure` | Not sure? Choose Most people. | ບໍ່ແນ່ໃຈ? ເລືອກ ຄົນສ່ວນໃຫຍ່. |
 | `home.what.title` | 2. What do you want to do? | 2. ທ່ານຢາກເຮັດຫຍັງ? |
-| `home.part.notRequired` | Not required for 65/20 | ບໍ່ຈຳເປັນສຳລັບ 65/20 |
+| `home.part.notRequired` | Not required for 50/20, 55/15 and 65/20 | ບໍ່ຈຳເປັນສຳລັບ 50/20, 55/15 ແລະ 65/20 |
 | `home.go.start` | Start | ເລີ່ມ |
 | `home.go.open` | Open | ເປີດ |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | ອາຍຸ 50 ປີຂຶ້ນໄປ, ມີບັດຂຽວ 20 ປີຂຶ້ນໄປ (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | ອາຍຸ 55 ປີຂຶ້ນໄປ, ມີບັດຂຽວ 15 ປີຂຶ້ນໄປ (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | ບໍ່ຕ້ອງສອບພາສາອັງກິດ. ສອບຄວາມຮູ້ພົນລະເມືອງຕາມປົກກະຕິ; ໃຊ້ນາຍແປພາສາໄດ້. |
+| `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | ອາຍຸ ແລະ ຈຳນວນປີທີ່ເປັນຜູ້ຢູ່ອາໄສຖາວອນ ນັບໃນມື້ທີ່ທ່ານຍື່ນ N-400. |
+| `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | ໃນການສຳພາດ ທ່ານຕອບຄຳຖາມຄວາມຮູ້ພົນລະເມືອງເປັນພາສາຂອງທ່ານຜ່ານນາຍແປພາສາໄດ້. ແອັບນີ້ຝຶກຄຳຖາມພາສາອັງກິດ. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

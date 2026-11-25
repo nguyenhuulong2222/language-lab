@@ -185,7 +185,7 @@ describe("Study first and 65/20", () => {
   });
   it("65/20 setup: choosing 65/20 on Home ticks the choice; the civics part asks 10 questions", async () => {
     app();
-    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="special"]')!);
+    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="65/20"]')!);
     fireEvent.click(button(EN["home.part.civics.title"]));
     const box = screen.getByLabelText<HTMLInputElement>(EN["intro.special.label"]);
     expect(box.checked).toBe(true);
@@ -230,7 +230,7 @@ describe("Study first and 65/20", () => {
   }, 30000);
   it("65/20 can be unticked: then the normal 2025 test (20 questions) runs", async () => {
     app();
-    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="special"]')!);
+    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="65/20"]')!);
     fireEvent.click(button(EN["home.part.civics.title"]));
     fireEvent.click(screen.getByLabelText(EN["intro.special.label"]));
     fireEvent.click(document.querySelector<HTMLInputElement>('input[name="filed"][value="on_or_after"]')!);
@@ -328,7 +328,7 @@ describe("the whole interface follows the language (L3)", () => {
     expect(document.querySelector(".ai-notice")!.textContent).toContain(VI["aiNotice.text"]);
     // Legal lines stay English until a person reviews the translation.
     expect(body).toContain(EN["disclaimer.full"]);
-    expect(body).toContain(EN["home.special.text"]);
+    expect(body).toContain(EN["home.exceptions.timing"]);
     fireEvent.click(grid.querySelector<HTMLButtonElement>('.language-menu__option[lang="en"]')!);
     await waitFor(() => expect(h1()).toBe(EN["home.title"]));
     expect(document.documentElement.lang).toBe("en");
@@ -437,10 +437,10 @@ describe("the new Home: Who, then What (Q3)", () => {
   });
   it("Most people is chosen at first; 65/20 shows 'Not required for 65/20' on Reading and Writing and opens Study with the starred questions", async () => {
     app();
-    expect(document.querySelector<HTMLInputElement>('input[name="who"][value="most"]')!.checked).toBe(true);
+    expect(document.querySelector<HTMLInputElement>('input[name="who"][value="none"]')!.checked).toBe(true);
     expect(document.body.textContent).toContain(EN["home.who.notSure"]);
     expect(document.body.textContent).not.toContain(EN["home.part.notRequired"]);
-    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="special"]')!);
+    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="65/20"]')!);
     expect(document.querySelectorAll(".action-card__meta").length).toBeGreaterThanOrEqual(2);
     expect(document.body.textContent).toContain(EN["home.part.notRequired"]);
     fireEvent.click(button(EN["home.study.title"]));
@@ -448,8 +448,44 @@ describe("the new Home: Who, then What (Q3)", () => {
   });
   it("65/20 then Practice test: setup has 65/20 ticked, so it is not asked twice", async () => {
     app();
-    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="special"]')!);
+    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="65/20"]')!);
     fireEvent.click(button(EN["home.full.title"]));
     expect(screen.getByLabelText<HTMLInputElement>(EN["intro.special.label"]).checked).toBe(true);
+  });
+});
+describe("Who is practicing: four choices (E2)", () => {
+  const pick = (value: string) => fireEvent.click(document.querySelector<HTMLInputElement>(`input[name="who"][value="${value}"]`)!);
+  it("four radio cards in order, Most people first and chosen, with the timing and exemption legal line", () => {
+    app();
+    const values = [...document.querySelectorAll<HTMLInputElement>('input[name="who"]')].map((i) => i.value);
+    expect(values).toEqual(["none", "50/20", "55/15", "65/20"]);
+    expect(document.querySelector<HTMLInputElement>('input[name="who"][value="none"]')!.checked).toBe(true);
+    const text = document.body.textContent!;
+    for (const key of ["home.who.5020.title", "home.who.5515.title", "home.who.special.title", "home.who.exempt.text", "home.exceptions.timing", "special.englishExempt", "home.who.notSure"] as const) {
+      expect(text, key).toContain(EN[key]);
+    }
+  });
+  it("50/20 and 55/15: Reading and Writing say not required; Study shows the full bank with the interpreter note", async () => {
+    for (const value of ["50/20", "55/15"]) {
+      const view = app();
+      pick(value);
+      expect(document.body.textContent).toContain(EN["home.part.notRequired"]);
+      fireEvent.click(button(EN["home.study.title"]));
+      expect(screen.getByLabelText<HTMLInputElement>(EN["study.special.label"]).checked).toBe(false);
+      expect(document.body.textContent).toContain(EN["study.exempt.note"]);
+      fireEvent.click(button(EN["study.version.2025"]));
+      expect(await screen.findByText(/^Question 1 of (\d+)$/)).toBeTruthy();
+      expect(document.body.textContent).not.toMatch(/Question 1 of 16\b/);
+      view.unmount();
+    }
+  });
+  it("65/20: Study shows only the starred questions, without the interpreter note", async () => {
+    app();
+    pick("65/20");
+    fireEvent.click(button(EN["home.study.title"]));
+    expect(screen.getByLabelText<HTMLInputElement>(EN["study.special.label"]).checked).toBe(true);
+    expect(document.body.textContent).not.toContain(EN["study.exempt.note"]);
+    fireEvent.click(button(EN["study.version.2025"]));
+    expect(await screen.findByText("Question 1 of 16")).toBeTruthy();
   });
 });
