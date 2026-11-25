@@ -1,6 +1,11 @@
 /**
  * The page frame: skip link, header, stage stepper, main workspace and footer, in one centred
  * column. Used by the practice flow and by the report-only App.
+ *
+ * Every screen except Home starts with "← Back to Home" (BackToHome). The browser Back button (and
+ * the iPhone swipe back) does the same: entering a section from Home adds one history entry
+ * (pushState), and Back (popstate) returns to Home, with the same "Keep practicing / Leave" question
+ * while a practice is in progress. Back on Home leaves the app as usual. No URL routing.
  */
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import type { SessionStage } from "../../contracts";
@@ -14,20 +19,43 @@ import { Header } from "./Header";
 import { StageStepper } from "./StageStepper";
 import { useSpeaker } from "../voice/VoiceProvider";
 import { CreditsScreen } from "../screens/CreditsScreen";
+import { focusHomeLanguage } from "../home-language";
+import { BackToHome } from "./BackToHome";
+import { useSectionHistory } from "../section-history";
 import "../App.css";
 
 interface ShellProps {
   /** The steps of the session, in order. Undefined (the home screen): no stepper. */
   steps?: readonly SessionStage[];
   currentStage?: SessionStage;
-  /** Go back to the home screen (shown in the header once a session has started). */
+  /** Go back to the home screen. Given on every screen except Home: "Back to Home" shows. */
   onHome?: () => void;
+  /** Ask before going home (a practice with answers that would be lost). */
+  confirmHome?: boolean;
+  /** Home is on screen with its language grid: the header language button goes to it. */
+  languageOnPage?: boolean;
   children: ReactNode;
 }
 
-export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
+export function Shell({ steps, currentStage, onHome, confirmHome = false, languageOnPage = false, children }: ShellProps) {
   const t = useT();
   const [creditsOpen, setCreditsOpen] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const goHome = () => {
+    setCreditsOpen(false);
+    setConfirmOpen(false);
+    onHome?.();
+  };
+  // The browser Back button inside a section: Home, or the leave question during a practice.
+  useSectionHistory(onHome !== undefined, () => {
+    setCreditsOpen(false);
+    if (confirmHome) {
+      setConfirmOpen(true);
+      return "stay";
+    }
+    goHome();
+    return "home";
+  });
   const creditsButton = useRef<HTMLElement | null>(null);
   const speaker = useSpeaker();
   // The practice stays mounted but hidden while credits are open, and keeps running when the tab
@@ -39,7 +67,7 @@ export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
     document.addEventListener("visibilitychange", onChange);
     return () => document.removeEventListener("visibilitychange", onChange);
   }, []);
-  const practiceHidden = creditsOpen || tabHidden;
+  const practiceHidden = creditsOpen || tabHidden || (confirmHome && confirmOpen);
   // Escape closes the credits, like the header panels.
   useEffect(() => {
     if (!creditsOpen) return;
@@ -63,22 +91,20 @@ export function Shell({ steps, currentStage, onHome, children }: ShellProps) {
       <a className="ll-skip-link" href="#main">
         {t("app.skipToMain")}
       </a>
-      <Header
-        {...(onHome === undefined
-          ? {}
-          : {
-              onHome: () => {
-                setCreditsOpen(false);
-                onHome();
-              },
-            })}
-      />
+      <Header {...(languageOnPage && !creditsOpen ? { onLanguage: focusHomeLanguage } : {})} />
       <AiNotice />
-      {stepper}
       <main id="main" className="app__main" tabIndex={-1}>
         {/* The practice stays mounted (hidden) while the credits are open, so no answers are lost. */}
         <div className="ll-container" hidden={creditsOpen}>
-          <PracticeHiddenContext.Provider value={practiceHidden}>{children}</PracticeHiddenContext.Provider>
+          {onHome !== undefined && (
+            <BackToHome onHome={goHome} confirm={confirmHome} confirmOpen={confirmOpen} setConfirmOpen={setConfirmOpen} />
+          )}
+          {/* Same order on every practice screen: Back to Home, the step line, then the screen. */}
+          {!(confirmHome && confirmOpen) && stepper}
+          {/* While the leave question is open it is the only thing on the page (one main button). */}
+          <div hidden={confirmHome && confirmOpen}>
+            <PracticeHiddenContext.Provider value={practiceHidden}>{children}</PracticeHiddenContext.Provider>
+          </div>
         </div>
         {creditsOpen && (
           <div className="ll-container">

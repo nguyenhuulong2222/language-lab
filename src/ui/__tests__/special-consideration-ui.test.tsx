@@ -31,7 +31,7 @@ const env: PracticeEnv = { ...BASE, answerKey: (v) => KEYS[v] };
 const engine = createPracticeEngine(env);
 const rules = env.specialRules!()!;
 const AT = "2026-11-20T10:00:00.000Z";
-const LABEL = "I am 65 or older and have been a permanent resident for 20 years or more";
+const LABEL = "65 or older, green card for 20 years or more (65/20)";
 const plain = (html: string) => html.replace(/<!-- -->/g, "").replace(/&#x27;/g, "'");
 
 const screen = (e = engine, state = e.initial(), language: "en" | "vi" = "en") =>
@@ -43,15 +43,17 @@ const screen = (e = engine, state = e.initial(), language: "en" | "vi" = "en") =
     )
   );
 
-describe("home card (REQ-S06)", () => {
-  it("offered when the rules are verified; absent when the mode is off", () => {
-    expect(screen()).toContain("65/20 civics practice");
+describe("Who is practicing? on Home (REQ-S06)", () => {
+  const SPECIAL = "65 or older, green card for 20 years or more (65/20)";
+  it("offered when the rules are verified, Most people chosen; absent when the mode is off", () => {
+    expect(screen()).toContain(SPECIAL);
+    expect(screen()).toMatch(/value="none"[^>]*checked|checked[^>]*value="none"/);
     const off = createPracticeEngine({ ...env, specialRules: () => null });
-    expect(screen(off)).not.toContain("65/20 civics practice");
+    expect(screen(off)).not.toContain(SPECIAL);
   });
   it("not offered while civics is locked", () => {
-    const html = renderToString(<HomeScreen civicsLocked onChoose={() => {}} onChooseSpecial={() => {}} />);
-    expect(html).not.toContain("65/20 civics practice");
+    const html = renderToString(<HomeScreen civicsLocked onChoose={() => {}} specialOffered />);
+    expect(html).not.toContain(SPECIAL);
   });
 });
 
@@ -65,29 +67,39 @@ describe("setup choice (REQ-S05, REQ-S08)", () => {
             boundaryDate={BASE.boundaryDate}
             needs={{ profile: false, filing: true }}
             onStart={() => {}}
-            special={{ rules, initial: false }}
+            exceptions={{ initial: "none", special: rules }}
             {...props}
           />
         </I18nProvider>
       )
     );
-  it("the checkbox in the owner's words, off unless the home card was chosen", () => {
+  it("four choices as a radio group, pre-filled from Home (Most people unless another was chosen)", () => {
     const html = intro();
     expect(html).toContain(LABEL);
-    const box = (h: string) => /<input[^>]*name="special"[^>]*>/.exec(h)?.[0] ?? "";
-    expect(box(html)).toContain('type="checkbox"');
-    expect(box(html)).not.toContain("checked");
-    expect(box(intro({ special: { rules, initial: true } }))).toContain('checked=""');
+    const radios = [...html.matchAll(/<input[^>]*name="exception"[^>]*>/g)].map((m) => m[0]);
+    expect(radios.map((r) => /value="([^"]+)"/.exec(r)![1])).toEqual(["none", "50/20", "55/15", "65/20"]);
+    expect(radios[0]).toContain("checked");
+    const checked = (h: string) => {
+      const tag = [...h.matchAll(/<input[^>]*name="exception"[^>]*>/g)].map((m) => m[0]).find((t) => t.includes("checked"));
+      return tag === undefined ? undefined : /value="([^"]+)"/.exec(tag)![1];
+    };
+    for (const e of ["50/20", "55/15", "65/20"] as const) {
+      const h = intro({ exceptions: { initial: e, special: rules } });
+      expect(checked(h), e).toBe(e);
+    }
+    // Without the 65/20 list and rules, there is no 65/20 choice.
+    expect(intro({ exceptions: { initial: "none", special: null } })).not.toContain(LABEL);
   });
-  it("the numbers come from the rules; the language line links the USCIS page", () => {
-    const html = intro();
+  it("the numbers come from the rules (shown for 65/20); the language line links the USCIS page", () => {
+    const html = intro({ exceptions: { initial: "65/20", special: rules } });
     expect(html).toContain("asks 10 of the 20 questions marked with a star (*)");
     expect(html).toContain("The practice passing score is 6 correct answers.");
     // The exemption line (decisions log P): sourced from the USCIS Exceptions page and the Policy Manual table.
-    expect(html).toContain("you are exempt from the English requirement (reading, writing, speaking and understanding English)");
-    expect(html).toContain("If you are 65 or older with at least 20 years (65/20), you are also exempt from English");
-    expect(html).toContain(`href="${EXCEPTIONS_URL}"`);
-    expect(html).toContain('aria-describedby="intro-special-help"');
+    // Setup states the timing rule and links USCIS once; the full exemption text is on Home and the reports.
+    expect(html).toContain(ENGLISH_MESSAGES["home.exceptions.timing"]);
+    expect(html).not.toContain(ENGLISH_MESSAGES["special.englishExempt"]);
+    expect(html.split(`href="${EXCEPTIONS_URL}"`).length - 1).toBe(1);
+    expect(html).toContain('aria-describedby="intro-who-help"');
   });
   it("no choice without the filing question (N-400, reading, writing) or when the mode is off", () => {
     expect(intro({ needs: { profile: true, filing: false } })).not.toContain(LABEL);
@@ -96,12 +108,13 @@ describe("setup choice (REQ-S05, REQ-S08)", () => {
     );
     expect(off).not.toContain(LABEL);
   });
-  it("in Vietnamese: the eligibility label and the legal lines stay English (legal keys)", () => {
+  it("in Vietnamese: the choices are translated; the eligibility and USCIS lines stay English (legal keys)", () => {
     const html = intro({}, "vi");
-    expect(html).toContain(LABEL);
-    expect(html).not.toContain("Tôi từ 65 tuổi trở lên");
-    expect(html).toContain(ENGLISH_MESSAGES["special.englishExempt"]);
-    for (const key of ["intro.special.help", "intro.special.label", "home.special.text", "special.englishExempt", "study.special.dynamic"] as const) expect(isLegalKey(key), key).toBe(true);
+    expect(html).not.toContain(LABEL);
+    expect(html).toContain("Từ 65 tuổi trở lên, có thẻ xanh từ 20 năm (65/20)");
+    expect(html).toContain(ENGLISH_MESSAGES["home.exceptions.timing"]);
+    for (const key of ["intro.special.help", "home.exceptions.timing", "special.englishExempt", "study.special.dynamic", "civics.exempt.line", "study.exempt.note"] as const) expect(isLegalKey(key), key).toBe(true);
+    for (const key of ["home.who.5020.title", "home.who.5515.title", "home.who.special.title", "home.who.exempt.text", "report.exception"] as const) expect(isLegalKey(key), key).toBe(false);
   });
 });
 
@@ -132,8 +145,8 @@ describe("Study first for 65/20 (REQ-S07)", () => {
 
 describe("civics screen and part report (REQ-S04, REQ-S08)", () => {
   const start = () => {
-    const chosen = engine.reduce(engine.initial(), { type: "choose", mode: "civics", seed: 1, at: AT, specialConsideration: true });
-    return engine.reduce(chosen, { type: "start", filedOn: "on_or_after", specialConsideration: true, seed: 1, at: AT });
+    const chosen = engine.reduce(engine.initial(), { type: "choose", mode: "civics", seed: 1, at: AT, exception: "65/20" });
+    return engine.reduce(chosen, { type: "start", filedOn: "on_or_after", exception: "65/20", seed: 1, at: AT });
   };
   it("the first question names the 65/20 practice; the question is English in Vietnamese too", () => {
     const s = start();
@@ -141,7 +154,8 @@ describe("civics screen and part report (REQ-S04, REQ-S08)", () => {
     expect(screen(engine, s)).toContain("asks 10 of the 20 questions");
     const vi = screen(engine, s, "vi");
     expect(vi).toContain(`lang="en">${first.questionText.replace(/'/g, "'")}`);
-    expect(vi).toContain(ENGLISH_MESSAGES["special.englishExempt"]);
+    // The interpreter line, once, in English (a legal key).
+    expect(vi).toContain(ENGLISH_MESSAGES["civics.exempt.line"]);
   });
   it("the part report says 65/20 and the needed count of 6", () => {
     let s = start();
@@ -152,7 +166,7 @@ describe("civics screen and part report (REQ-S04, REQ-S08)", () => {
     }
     s = engine.reduce(s, { type: "continue", at: AT });
     const html = screen(engine, s);
-    expect(html).toContain("65/20 civics practice");
+    expect(html).toContain("Practice as 65/20");
     expect(html).toContain("Correct answers needed: 6.");
     expect(html).toContain("You have answered every question for this practice test.");
   });

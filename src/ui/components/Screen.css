@@ -15,15 +15,13 @@
   gap: var(--space-3);
 }
 .take__overline {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--fs-meta);
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--ink-2);
 }
 .take__number {
-  color: var(--teal);
+  color: var(--ink-2);
 }
 .take__sep {
   margin-inline: var(--space-2);
@@ -38,23 +36,25 @@
 }
 .take__lead {
   font-size: var(--fs-lg);
-  line-height: var(--lh-large);
+  line-height: var(--lh-body);
   color: var(--ink-2);
   max-width: var(--measure);
 }
+/* The question or sentence: body font (Bitter is for headings only), large and semi-bold */
 .prompt {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--fs-h2);
-  line-height: var(--lh-snug);
+  font-weight: 600;
+  line-height: var(--lh-body);
 }
 .progress-line {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--fs-meta);
   color: var(--ink-2);
 }
 .answer-list {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: var(--space-5);
 }
 .icon-inline {
   width: 1.1em;
@@ -67,11 +67,11 @@
 }
 .notice-list {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: var(--space-5);
 }
 .how-steps {
   margin: 0;
-  padding-left: 1.5rem;
+  padding-left: var(--space-5);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -80,62 +80,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
   gap: var(--space-3);
-}
-.option-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-1);
-  min-height: var(--tap-min);
-  padding: var(--space-4);
-  border: 2px solid var(--ink-2);
-  border-radius: var(--radius-md);
-  background: var(--surface);
-  color: var(--ink);
-  text-align: left;
-  cursor: pointer;
-  overflow-wrap: anywhere;
-}
-.option-card--primary {
-  border-color: var(--teal);
-  background: var(--teal);
-  color: var(--on-accent);
-}
-.option-card__title {
-  font-family: var(--font-display);
-  font-size: var(--fs-h3);
-  font-weight: 600;
-  line-height: var(--lh-tight);
-}
-.option-card__text {
-  font-size: var(--fs-meta);
-  line-height: var(--lh-snug);
-}
-/* The AI coach card: prominent by a thick teal frame and its own line, not by colour alone. */
-.option-card--coach {
-  border-width: 3px;
-  border-color: var(--teal);
-  background: var(--surface);
-  color: var(--ink);
-}
-/* The card's own frame is teal: a wider gap keeps the focus ring distinct from it. */
-.option-card--coach:focus-visible {
-  outline-offset: calc(var(--focus-offset) + 3px);
-}
-.option-card__meta {
-  font-size: var(--fs-meta);
-  color: var(--ink-2);
-}
-/* A word, not a colour: "AI". */
-.option-card__badge {
-  display: inline-block;
-  padding: 0 var(--space-2);
-  border: 2px solid currentColor;
-  border-radius: var(--radius-pill);
-  font-family: var(--font-body);
-  font-size: var(--fs-meta);
-  font-weight: 600;
-  vertical-align: middle;
 }
 .speak {
   display: flex;
@@ -182,4 +126,41 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+}
+
+.home__section {
+  font-size: var(--fs-h3);
+}
+/* Home steps: "1. Who", "2. What", "Or one part", the coach card; one gap between them. */
+.home__step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.home__who-notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.home__not-sure {
+  margin: 0;
+  font-weight: 600;
+}
+.home__step .home__section {
+  margin: var(--space-4) 0 0;
+}
+/* Home is compact so the language grid, the welcome and "Who is practicing?" come early. */
+.screen--home .take__title {
+  font-size: var(--fs-h2);
+}
+.screen--home .take__lead {
+  font-size: var(--fs-body);
+  line-height: var(--lh-snug);
+}
+/* The one-line text-size hint under the welcome. */
+.home__hint {
+  margin: 0;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--ink);
 }

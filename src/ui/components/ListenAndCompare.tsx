@@ -95,7 +95,7 @@ export function ListenAndCompare({ review, sentence, attempted, onTryAgain }: Li
           <ReviewIcon className="icon-inline icon-inline--attention" /> {t(review.problem)}
         </p>
       )}
-      {sampleAllowed && <SpeakButton text={sentence.text} clipId={readingClipId(sentence.id)} labelKey="selfReview.hearSample" />}
+      {sampleAllowed && <SpeakButton text={sentence.text} clipId={readingClipId(sentence.id)} labelKey="selfReview.hearSample" large={false} />}
       {(recorded || attempted) && (
         <div className="btn-row">
           <button type="button" className="btn btn--secondary" onClick={onTryAgain ?? review.again}>

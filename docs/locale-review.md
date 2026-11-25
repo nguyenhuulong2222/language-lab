@@ -31,7 +31,7 @@ A named human reviewer and an ISO review date in the `_meta` of the locale file.
 
 Same keys as English. Same `{placeholders}`. Every number in the English line appears with the same value (digits of other scripts are read as numbers). No empty text.
 These terms stay as written: `Language Lab`, `USCIS`, `N-400`, `DHS`, `uscis.gov`, `A-number`, `Claude`, `Anthropic`.
-Nothing may equal the English text except: `app.name`, `report.take`, `stage.n400_interview.short`, `stage.civics.short`, `settings.textSize.normal`, `home.part.n400.badge`.
+Nothing may equal the English text except: `app.name`, `stage.n400_interview.short`, `stage.civics.short`, `settings.textSize.normal`, `home.part.n400.badge`, `settings.textSize.sample`.
 The checks do not read meaning. That is what the sheets are for.
 
 ## Choices to confirm
@@ -46,19 +46,19 @@ The checks do not read meaning. That is what the sheets are for.
 
 | Code | Civics (stage name) | Worth reviewing (badge) | Not affiliated (short disclaimer) |
 |---|---|---|---|
-| vi | Kiến thức công dân | Nên xem lại | Không liên kết với USCIS hay bất kỳ cơ quan chính phủ nào. Không phải tư vấn pháp lý. |
-| es | Educación cívica | Conviene repasar | Sin afiliación con USCIS ni con ninguna agencia del gobierno. No es asesoría legal. |
-| zh | 公民常識 | 值得複習 | 與 USCIS 及任何政府機關無關。不是法律建議。 |
-| tl | Sibika (Civics) | Dapat balikan | Walang kaugnayan sa USCIS o sa anumang ahensya ng gobyerno. Hindi ito legal na payo. |
-| ko | 시민 상식 | 다시 볼 만해요 | USCIS 및 어떤 정부 기관과도 관련이 없습니다. 법률 자문이 아닙니다. |
-| hi | नागरिक शास्त्र | दोहराने लायक | USCIS या किसी भी सरकारी एजेंसी से कोई संबंध नहीं। यह कानूनी सलाह नहीं है। |
-| ht | Edikasyon sivik | Mande revize | Pa gen okenn rapò ak USCIS oswa ak nenpòt ajans gouvènman. Se pa konsèy jiridik. |
-| th | ความรู้พลเมือง | ควรทบทวน | ไม่มีส่วนเกี่ยวข้องกับ USCIS หรือหน่วยงานรัฐบาลใด ๆ ไม่ใช่คำแนะนำทางกฎหมาย |
-| lo | ວິຊາພົນລະເມືອງ | ຄວນທົບທວນ | ບໍ່ມີສ່ວນກ່ຽວຂ້ອງກັບ USCIS ຫຼື ອົງການລັດຖະບານໃດໆ. ບໍ່ແມ່ນຄໍາແນະນໍາທາງກົດໝາຍ. |
-| hmn | Kev kawm txog pej xeem | Yuav tsum rov saib | Tsis muaj feem xyuam nrog USCIS lossis ib lub koom haum tsoomfwv twg. Tsis yog lus qhia txog kev cai lij choj. |
-| my | နိုင်ငံသားဗဟုသုတ | ပြန်လည်ကြည့်သင့်သည် | USCIS သို့မဟုတ် မည်သည့်အစိုးရအဖွဲ့အစည်းနှင့်မျှ မသက်ဆိုင်ပါ။ ဥပဒေအကြံဉာဏ် မဟုတ်ပါ။ |
-| pt | Educação cívica | Vale revisar | Sem vínculo com o USCIS nem com qualquer órgão do governo. Não é aconselhamento jurídico. |
-| ru | Обществоведение | Стоит повторить | Не связано с USCIS и никакими государственными органами. Это не юридическая консультация. |
+| vi | Kiến thức công dân | Hãy luyện lại phần này | Không liên kết với USCIS hay bất kỳ cơ quan chính phủ nào. Không phải tư vấn pháp lý. |
+| es | Educación cívica | Practique esto otra vez | Sin afiliación con USCIS ni con ninguna agencia del gobierno. No es asesoría legal. |
+| zh | 公民常識 | 再練習一次 | 與 USCIS 及任何政府機關無關。不是法律建議。 |
+| tl | Sibika (Civics) | Sanayin ulit ito | Walang kaugnayan sa USCIS o sa anumang ahensya ng gobyerno. Hindi ito legal na payo. |
+| ko | 시민 상식 | 다시 연습해 보세요 | USCIS 및 어떤 정부 기관과도 관련이 없습니다. 법률 자문이 아닙니다. |
+| hi | नागरिक शास्त्र | इसका फिर से अभ्यास करें | USCIS या किसी भी सरकारी एजेंसी से कोई संबंध नहीं। यह कानूनी सलाह नहीं है। |
+| ht | Edikasyon sivik | Pratike sa a ankò | Pa gen okenn rapò ak USCIS oswa ak nenpòt ajans gouvènman. Se pa konsèy jiridik. |
+| th | ความรู้พลเมือง | ฝึกส่วนนี้อีกครั้ง | ไม่มีส่วนเกี่ยวข้องกับ USCIS หรือหน่วยงานรัฐบาลใด ๆ ไม่ใช่คำแนะนำทางกฎหมาย |
+| lo | ວິຊາພົນລະເມືອງ | ຝຶກອັນນີ້ອີກ | ບໍ່ມີສ່ວນກ່ຽວຂ້ອງກັບ USCIS ຫຼື ອົງການລັດຖະບານໃດໆ. ບໍ່ແມ່ນຄໍາແນະນໍາທາງກົດໝາຍ. |
+| hmn | Kev kawm txog pej xeem | Xyaum qhov no dua | Tsis muaj feem xyuam nrog USCIS lossis ib lub koom haum tsoomfwv twg. Tsis yog lus qhia txog kev cai lij choj. |
+| my | နိုင်ငံသားဗဟုသုတ | ဤအရာကို ထပ်လေ့ကျင့်ပါ | USCIS သို့မဟုတ် မည်သည့်အစိုးရအဖွဲ့အစည်းနှင့်မျှ မသက်ဆိုင်ပါ။ ဥပဒေအကြံဉာဏ် မဟုတ်ပါ။ |
+| pt | Educação cívica | Pratique isto de novo | Sem vínculo com o USCIS nem com qualquer órgão do governo. Não é aconselhamento jurídico. |
+| ru | Обществоведение | Потренируйте это ещё раз | Не связано с USCIS и никакими государственными органами. Это не юридическая консультация. |
 
 ## Back-translation pass
 

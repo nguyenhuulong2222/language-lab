@@ -13,12 +13,17 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
-/* Comfort setting: every rem size (type, spacing, tap targets) follows the root size */
-html[data-text-size="large"] {
+/* Root size: 18px at normal (the default must be comfortable: settings are not stored), 21px
+   large, 24px extra large. Every rem size (type, spacing, tap targets) follows it. Percentages of
+   the browser's own default, so a larger default in the phone settings still counts. */
+html {
   font-size: 112.5%;
 }
+html[data-text-size="large"] {
+  font-size: 131.25%;
+}
 html[data-text-size="extra-large"] {
-  font-size: 125%;
+  font-size: 150%;
 }
 /* Long words and numbers wrap instead of running off a narrow screen */
 body {
@@ -51,10 +56,15 @@ h4 {
 p {
   margin: 0;
 }
+/* Paragraph spacing at least 0.75em */
+p + p {
+  margin-block-start: 0.75em;
+}
 
 a {
   color: var(--teal);
-  text-underline-offset: 0.15em;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
 }
 
 button {

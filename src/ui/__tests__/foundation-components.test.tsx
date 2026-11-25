@@ -39,19 +39,19 @@ describe("AnswerInput", () => {
     }
   });
 
-  it("offers Say it when the browser can listen", () => {
-    expect(input(true, workingListener)).toContain("Say it");
+  it("offers Tap to speak when the browser can listen", () => {
+    expect(input(true, workingListener)).toContain("Tap to speak");
   });
 
-  it("says so, and hides Say it, when the browser cannot listen", () => {
+  it("says so, and hides Tap to speak, when the browser cannot listen", () => {
     const html = input(true, UNSUPPORTED_LISTENER);
-    expect(html).not.toContain("Say it");
+    expect(html).not.toContain("Tap to speak");
     expect(html).toContain("This browser cannot listen to your voice. Type your answer instead.");
   });
 
   it("does not offer voice on a typed-only step", () => {
     const html = input(false, workingListener);
-    expect(html).not.toContain("Say it");
+    expect(html).not.toContain("Tap to speak");
     expect(html).not.toContain("cannot listen");
   });
 
@@ -124,29 +124,29 @@ describe("voice adapters without a browser", () => {
 });
 
 describe("SpeakButton", () => {
-  it("offers Play aloud and labels the voice as the device voice", () => {
+  it("offers Play the question and labels the voice as the device voice", () => {
     const html = renderToString(
       <VoiceProvider speaker={deviceSpeaker} listener={UNSUPPORTED_LISTENER}>
         <SpeakButton text="Who was George Washington?" />
       </VoiceProvider>
     );
-    expect(html).toContain("Play aloud");
-    expect(html).toContain("Device voice");
+    expect(html).toContain("Play the question");
+    expect(html).toContain("Built-in voice");
     expect(html).not.toMatch(/<button[^>]*disabled/);
   });
 
   it("says when the browser cannot read aloud", () => {
     const html = renderToString(<SpeakButton text="Hello" />);
-    expect(html).not.toContain("Play aloud");
+    expect(html).not.toContain("Play the question");
     expect(html).toContain("This browser cannot read aloud");
   });
 });
 
 describe("TakeHeader", () => {
-  it("shows the take counter with the stage name and the title as H1", () => {
+  it("shows the title as H1 and the lead, with no decorative take counter (senior-friendly step 3)", () => {
     const html = renderToString(<TakeHeader stage="reading" title="Reading" lead="Read it." />);
-    expect(html).toContain("TAKE");
-    expect(html).toContain("03");
+    expect(html).not.toContain("TAKE");
+    expect(html).not.toContain("take__overline");
     expect(html).toContain("<h1");
     expect(html).toContain("Read it.");
   });

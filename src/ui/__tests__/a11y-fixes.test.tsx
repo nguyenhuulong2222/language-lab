@@ -5,6 +5,7 @@
 import { describe, expect, it } from "vitest";
 import { renderToString } from "react-dom/server";
 import headerSource from "../components/Header.tsx?raw";
+import backToHomeSource from "../components/BackToHome.tsx?raw";
 import answerInputSource from "../components/AnswerInput.tsx?raw";
 import scriptsCss from "../styles/scripts.css?raw";
 import { AnswerInput } from "../components/AnswerInput";
@@ -18,8 +19,8 @@ import { loadCivicsBoundaryDate } from "../../engine/test-rules-loader";
 import type { PictureEntry } from "../../engine/question-images";
 const noop = () => {};
 describe("A11Y-02 and A11Y-03: header panels", () => {
-  it("Yes, go home closes the panel before going home", () => {
-    expect(headerSource).toMatch(/setPanel\(null\);\s*onHome\(\);/);
+  it("Leave closes the question before going home", () => {
+    expect(backToHomeSource).toMatch(/setConfirmOpen\(false\);\s*onHome\(\);/);
   });
   it("an opened panel can take focus", () => {
     expect(headerSource).toContain("tabIndex={-1}");
@@ -74,5 +75,11 @@ describe("the one-time voice notice", () => {
     expect(continueWithVoice).toContain("seen.add(VOICE_NOTICE_KEY)");
     expect(typeInstead).not.toBe("");
     expect(typeInstead).not.toContain("seen.add");
+  });
+});
+describe("the page frame keeps its styles", () => {
+  it("Shell imports App.css (the skip link is hidden until focused, the column is centred)", async () => {
+    const shell = (await import("../components/Shell.tsx?raw")).default;
+    expect(shell).toContain('import "../App.css";');
   });
 });

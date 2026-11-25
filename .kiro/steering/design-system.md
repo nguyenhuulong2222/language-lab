@@ -46,9 +46,9 @@ Light mode (parchment booth, lights on):
 | `--surface-2` | `#EFE7D6` | Recessed / wells | — |
 | `--ink` | `#2A2118` | Primary text | 13.67:1 (AAA) |
 | `--ink-2` | `#574635` | Secondary text | 7.79:1 (AAA) |
-| `--teal` | `#2C6A66` | Accent, links, on-track status | 5.40:1 (AA) |
-| `--amber` | `#9A5A1A` | Active/record, review status | 4.72:1 (AA) |
-| `--border` | `#C9BC9F` | Hairline rules / dividers | decorative |
+| `--teal` | `#235350` | Accent, links, on-track status | 7.49:1 (AAA) |
+| `--amber` | `#98591A` | Active/record, review status (large text, icons, borders only) | 4.81:1 |
+| `--border` | `#968255` | Rules, dividers and control edges | 3.23:1 (3:1 for edges) |
 | `--status-positive` | `--teal` | Understood / correct / practice_passed | — |
 | `--status-attention` | `--amber` | Needs practice / incorrect / needs_more_practice | — |
 
@@ -61,24 +61,24 @@ Dark mode (espresso booth, amber glow):
 | `--surface-2` | `#2E251E` | Recessed / wells | — |
 | `--ink` | `#F0E8D9` | Primary text | 14.39:1 (AAA) |
 | `--ink-2` | `#C4B49C` | Secondary text | 8.64:1 (AAA) |
-| `--teal` | `#62A89F` | Accent, links, on-track status | 6.36:1 (AA) |
+| `--teal` | `#85BCB5` | Accent, links, on-track status | 8.23:1 (AAA) |
 | `--amber` | `#D98A36` | Active/record, review status | 6.37:1 (AA) |
-| `--border` | `#4A3D2F` | Hairline rules / dividers | decorative |
+| `--border` | `#836C53` | Rules, dividers and control edges | 3.53:1 (3:1 for edges) |
 | `--status-positive` | `--teal` | Understood / correct / practice_passed | — |
 | `--status-attention` | `--amber` | Needs practice / incorrect / needs_more_practice | — |
 
 `--on-accent` is the text colour on teal and amber buttons: `#FBF7EE` in light mode, `#1F1813` in dark mode.
 
-Button-on-amber pairs: light `#FBF7EE` on `#9A5A1A` = 5.10:1 (AA); dark `#1F1813` on
-`#D98A36` = 6.37:1 (AA). Amber is an accent only, never body text.
+Button pairs: light `#FBF7EE` on teal `#235350` = 8.10:1, dark `#1F1813` on teal `#85BCB5` = 8.23:1. On amber (the listening state, large bold text only): light `#FBF7EE` on `#98591A` = 5.20:1; dark `#1F1813` on
+`#D98A36` = 6.37:1. Amber is never body text.
 
 Accent colours on each background (WCAG contrast, computed from the hex values above; audit A11Y-12):
 
 | Pair | `--bg` | `--surface` | `--surface-2` |
 |---|---|---|---|
-| Light teal `#2C6A66` | 5.40:1 | 5.84:1 | 5.08:1 |
-| Light amber `#9A5A1A` | 4.72:1 | 5.10:1 | 4.43:1 |
-| Dark teal `#62A89F` | 6.36:1 | 5.88:1 | 5.45:1 |
+| Light teal `#235350` | 7.49:1 | 8.10:1 | 7.04:1 |
+| Light amber `#98591A` | 4.81:1 | 5.20:1 | 4.52:1 |
+| Dark teal `#85BCB5` | 8.23:1 | 7.60:1 | 7.04:1 |
 | Dark amber `#D98A36` | 6.37:1 | 5.89:1 | 5.46:1 |
 
 Light amber on `--surface-2` (4.43:1) is below 4.5:1, so it is for icons and other non-text marks
@@ -102,7 +102,7 @@ ESL readability pull the same direction. Only one web font is loaded (two weight
 the bundle light; body and mono use system stacks with robust fallbacks. Load with
 `font-display: swap` so headings render in the serif fallback immediately.
 
-### Type scale (root 16px; `--fs-body` is the 18px floor)
+### Type scale (root 18px at normal, 21px large, 24px extra large; `--fs-body` 1.125rem = 20px)
 
 | Token | Value | Use |
 |---|---|---|
@@ -110,13 +110,13 @@ the bundle light; body and mono use system stacks with robust fallbacks. Load wi
 | `--fs-h1` | 2rem (32px) | Page titles |
 | `--fs-h2` | 1.625rem (26px) | Section titles |
 | `--fs-h3` | 1.375rem (22px) | Subsection / card titles |
-| `--fs-h4` | 1.125rem (18px) | Small headings (bold body) |
+| `--fs-h4` | 1.1875rem (21px) | Small headings (bold body) |
 | `--fs-lg` | 1.25rem (20px) | Lead / intro text |
-| `--fs-body` | 1.125rem (18px) | Body text — minimum for prose |
-| `--fs-meta` | 1rem (16px) | Labels, meta, status — minimum visible size |
+| `--fs-body` | 1.125rem (20px) | Body text |
+| `--fs-meta` | 1rem (18px) | Labels, meta, status; nothing below 16px at any setting |
 
 Line-height: `--lh-tight` 1.2 (headings), `--lh-snug` 1.35, `--lh-large` 1.4 (large text such
-as the lead), `--lh-body` 1.7 (body, generous), `--lh-loose` 1.8. Line length: `--measure` 68ch for prose, `--measure-narrow` 42ch for
+as the lead), `--lh-body` 1.6 (body and every multi-line text), `--lh-loose` 1.8. Line length: `--measure` 34em for prose, `--measure-narrow` 28em for
 forms/inputs. No visible text falls below 16px.
 
 ## Spacing, radius, elevation
@@ -213,9 +213,9 @@ current President" — not "Wrong").
 
 ## Accessibility floor
 
-- Body text ≥ 18px; generous line-height; AA minimum, AAA for body where feasible (both themes).
+- Body text 20px at normal size; line height 1.6; body and small text 7:1 or more (AAA) in both themes; teal and amber only for large text, icons and borders (4.5:1 or more).
 - Minimum tap target 48px (`--tap-min`, `3rem`, so it grows with the text size); all interactive controls meet it.
-- Comfort settings in the header: text size (normal 100%, large 112.5%, extra large 125% of the root size) and slower playback of recorded voices. They live in memory for the session only.
+- Comfort settings in the header: text size (normal 18px, large 21px, extra large 24px root; the default is already the comfortable size because settings are not stored) and slower playback of recorded voices. They live in memory for the session only.
 - Visible keyboard focus: a 3px teal focus ring with offset on every focusable element.
 - Full keyboard navigation; the stepper and report are operable without a pointer.
 - Status and progress never rely on color alone (icon + label always present).

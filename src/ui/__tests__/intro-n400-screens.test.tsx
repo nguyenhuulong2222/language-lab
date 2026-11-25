@@ -14,8 +14,8 @@ describe("HomeScreen", () => {
   const html = renderToString(<HomeScreen civicsLocked={false} onChoose={() => {}} />);
 
   it("offers the full interview and each single part", () => {
-    expect(html).toContain("Full practice interview");
-    expect(html).toContain("Practice one part");
+    expect(html).toContain("Practice test");
+    expect(html).toContain("Or practice one part");
     for (const part of ["N-400 interview", "Reading", "Writing", "Civics"]) expect(html).toContain(part);
   });
 
@@ -36,26 +36,26 @@ describe("HomeScreen", () => {
     expect(html).toContain("the recording stays on this device, in memory");
   });
 
-  it("asks for nothing on the home screen", () => {
+  it("asks for nothing on the home screen (only who is practicing, no personal data)", () => {
     expect(html).not.toContain("<textarea");
-    expect(html).not.toContain('type="radio"');
+    expect(html.match(/type="radio"/g)?.length ?? 0).toBe((html.match(/name="who"/g) ?? []).length);
     expect(html).not.toContain('type="text"');
   });
 
   it("while civics is locked, offers only what works: no full interview, no Study first, no civics card", () => {
     const locked = renderToString(<HomeScreen civicsLocked onChoose={() => {}} onStudy={() => {}} />);
-    expect(locked).not.toContain("Full practice interview");
+    expect(locked).not.toContain("Practice test");
     expect(locked).not.toContain("Look through the civics questions");
     expect(locked).not.toContain("Answer civics questions");
     for (const part of ["N-400 interview", "Reading", "Writing"]) expect(locked).toContain(part);
     // The notice comes before the cards.
-    expect(locked.indexOf("In this build you can practice")).toBeLessThan(locked.indexOf("N-400 interview"));
+    expect(locked.indexOf("Right now you can practice")).toBeLessThan(locked.indexOf("N-400 interview"));
   });
   it("explains a build that cannot score civics", () => {
     const locked = renderToString(<HomeScreen civicsLocked onChoose={() => {}} />);
-    expect(locked).toContain("In this build you can practice");
+    expect(locked).toContain("Right now you can practice");
     expect(locked).toContain("You can practice the N-400 interview, reading and writing.");
-    expect(html).not.toContain("In this build you can practice");
+    expect(html).not.toContain("Right now you can practice");
   });
 });
 
@@ -68,7 +68,7 @@ describe("IntroScreen (setup)", () => {
     const html = render({ profile: true, filing: true });
     for (const p of content.profiles) expect(html).toContain(p.displayName);
     expect((html.match(/type="radio"/g) ?? []).length).toBe(content.profiles.length + 2);
-    expect(html).toContain("Choose a practice profile");
+    expect(html).toContain("Choose a practice person");
     expect(html).toContain("Practice as if the N-400 was filed");
     expect(html).toContain("Before October 20, 2025");
     expect(html).toContain("On or after October 20, 2025");
@@ -78,14 +78,14 @@ describe("IntroScreen (setup)", () => {
 
   it("the N-400 part asks only for a profile", () => {
     const html = render({ profile: true, filing: false });
-    expect(html).toContain("Choose a practice profile");
+    expect(html).toContain("Choose a practice person");
     expect(html).not.toContain("Practice as if the N-400 was filed");
     expect(html).toContain("Do not say your real name, address, date of birth or A-number");
   });
 
   it("the civics part asks only for the filing choice", () => {
     const html = render({ profile: false, filing: true });
-    expect(html).not.toContain("Choose a practice profile");
+    expect(html).not.toContain("Choose a practice person");
     expect(html).toContain("Practice as if the N-400 was filed");
     expect(html).not.toContain("A-number");
     expect((html.match(/type="radio"/g) ?? []).length).toBe(2);
@@ -103,7 +103,7 @@ describe("IntroScreen (setup)", () => {
     // aria-disabled, not disabled: the button stays focusable and its hint can be read.
     expect(html).toMatch(/<button[^>]*aria-disabled="true"[^>]*>Start practice/);
     expect(html).not.toMatch(/<button[^>]*\sdisabled[^>]*>Start practice/);
-    expect(html).toContain("Make your choice above to start.");
+    expect(html).toContain("Choose one answer in each group above. Then press “Start practice”.");
   });
 });
 
@@ -119,7 +119,7 @@ describe("N400View", () => {
     expect(html).toContain(`Sample answer for ${profile.displayName} (fictional)`);
     expect(html).toContain("you must answer truthfully about your own life");
     expect(html).toContain("Practice uses the fictional profile");
-    expect(html).toContain("Nothing in this step is scored");
+    expect(html).toContain("This part gets no score.");
     expect(html).toContain("<textarea");
     expect(html).toContain(`Question 1 of ${content.n400Questions.length}`);
   });
@@ -132,7 +132,7 @@ describe("N400View", () => {
 
   it("shows loading and failure states", () => {
     expect(renderToString(<N400View {...base} state={{ status: "loading" }} />)).toContain("Getting the next question");
-    expect(renderToString(<N400View {...base} state={{ status: "failed" }} />)).toContain("could not be loaded");
+    expect(renderToString(<N400View {...base} state={{ status: "failed" }} />)).toContain("did not load");
   });
 
   it("at the end shows the user's own words and a way to go on", () => {

@@ -129,11 +129,45 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
   const needsAttention =
     message !== null && message !== "voice.listening" && message !== "voice.heard" && message !== "voice.unsupported";
 
+  const gotIt = message === "voice.heard";
+  const blocked = message === "voice.denied" || message === "voice.unsupported" || message === "voice.noMicrophone";
+  // With a microphone, speaking comes first and the box is the other way: "Or type your answer".
+  const boxLabel = canListen ? t("voice.orType") : label;
+
   return (
     <div className="field">
+      {canListen && (
+        <div className="btn-row">
+          <button
+            type="button"
+            ref={voiceButton}
+            className={listening ? "btn btn--active btn--large btn--wide" : "btn btn--secondary btn--large btn--wide"}
+            aria-describedby={statusId}
+            onClick={listening ? () => listener.stop() : listen}
+          >
+            {listening ? t("voice.stop") : gotIt ? t("voice.gotIt") : t("voice.say")}
+          </button>
+        </div>
+      )}
+      {consentOpen && (
+        <div className="panel" role="group" aria-labelledby={consentId}>
+          <p id={consentId}>
+            <LegalText messageKey="voice.consent.text" />
+          </p>
+          <div className="btn-row">
+            <button type="button" ref={consentButton} className="btn btn--secondary" onClick={continueWithVoice}>
+              {t("voice.consent.continue")}
+            </button>
+            <button type="button" className="btn btn--secondary" onClick={typeInstead}>
+              {t("voice.consent.type")}
+            </button>
+          </div>
+        </div>
+      )}
       <label className="field__label" htmlFor={inputId}>
-        {label}
+        {boxLabel}
       </label>
+      {canListen && label !== boxLabel && <p className="field__sub">{label}</p>}
       <textarea
         id={inputId}
         ref={box}
@@ -166,33 +200,18 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
         {needsAttention && " "}
         {message === null ? "" : t(message)}
       </p>
-      {consentOpen && (
-        <div className="panel" role="group" aria-labelledby={consentId}>
-          <p id={consentId}>
-            <LegalText messageKey="voice.consent.text" />
-          </p>
-          <div className="btn-row">
-            <button type="button" ref={consentButton} className="btn" onClick={continueWithVoice}>
-              {t("voice.consent.continue")}
-            </button>
-            <button type="button" className="btn btn--secondary" onClick={typeInstead}>
-              {t("voice.consent.type")}
-            </button>
-          </div>
-        </div>
+      {voice && blocked && (
+        <details className="mic-help" open>
+          <summary className="mic-help__summary">{t("voice.micHelp.title")}</summary>
+          <ol className="mic-help__steps">
+            <li>{t("voice.micHelp.iphone")}</li>
+            <li>{t("voice.micHelp.android")}</li>
+            <li>{t("voice.micHelp.typing")}</li>
+          </ol>
+        </details>
       )}
       <div className="btn-row">
-        {canListen && (
-          <button
-            type="button"
-            ref={voiceButton}
-            className={listening ? "btn btn--active" : "btn btn--secondary"}
-            onClick={listening ? () => listener.stop() : listen}
-          >
-            {listening ? t("voice.stop") : t("voice.say")}
-          </button>
-        )}
-        <button type="button" className="btn" onClick={submit}>
+        <button type="button" className="btn btn--primary" onClick={submit}>
           {submitLabel}
         </button>
         {allowSkip && (

@@ -14,6 +14,7 @@
  *
  * Pure module: no DOM, no network.
  */
+import type { AgeException } from "./exceptions.js";
 import type { CivicsAnswerEntry } from "./civics-answer-key.js";
 import type { CivicsStageResult, CivicsStopReason } from "./civics-grader.js";
 import type { EnglishStageResult } from "./english-grader.js";
@@ -67,8 +68,8 @@ export type PartReport =
       stopReason: CivicsStopReason;
       /** Correct answers needed, from the rules. */
       passingScore: number;
-      /** The 65/20 practice (10 of the 20 designated questions, no early stop). */
-      specialConsideration: boolean;
+      /** The exception the learner chose; 65/20 is 10 of the 20 designated questions, no early stop. */
+      exception: AgeException;
       /** Question texts of the answers that need more practice. */
       reviewItems: string[];
       /** Questions that could not be scored: not counted as right or wrong. */
@@ -112,7 +113,7 @@ export function buildCivicsPartReport(input: {
   answerKey: ReadonlyMap<string, CivicsAnswerEntry>;
   rules: CivicsPracticeRules;
   now: Date;
-  specialConsideration?: boolean;
+  exception?: AgeException;
 }): PartReport {
   const { version, result, answerKey, rules, now } = input;
   const passingScore = rules.passingScore.value;
@@ -126,7 +127,7 @@ export function buildCivicsPartReport(input: {
     incorrect: result.incorrectCount,
     stopReason: result.stopReason,
     passingScore,
-    specialConsideration: input.specialConsideration === true,
+    exception: input.exception ?? "none",
     reviewItems: [...result.reviewItems],
     unscored: listUnscoredQuestions(result, answerKey),
   };

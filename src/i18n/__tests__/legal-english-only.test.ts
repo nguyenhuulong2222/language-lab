@@ -34,8 +34,8 @@ describe("legal keys", () => {
     expect(isEnglishOnly("vi", "disclaimer.title", { ...LOCALE_STATUS, vi: reviewedMeta })).toBe(false);
   });
   it("other keys stay translated", () => {
-    expect(isLegalKey("home.choose")).toBe(false);
-    expect(createTranslator("vi", CATALOGS, LOCALE_STATUS)("home.choose")).not.toBe(en["home.choose"]);
+    expect(isLegalKey("home.what.title")).toBe(false);
+    expect(createTranslator("vi", CATALOGS, LOCALE_STATUS)("home.what.title")).not.toBe(en["home.what.title"]);
   });
   it("the two new lines exist in every language, translated", () => {
     for (const code of LANGUAGE_CODES) {

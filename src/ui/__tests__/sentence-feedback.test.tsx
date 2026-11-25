@@ -95,7 +95,7 @@ describe("English words inside translated lines", () => {
 });
 
 describe("the honest line", () => {
-  const heard = "This result is based on the words your device heard. If it heard you wrong, try again or type your answer.";
+  const heard = "This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer.";
   it("is under every spoken result, whether it counts or not", () => {
     for (const said of ["we pay taxes", "we taxes", "", "zzz", "we pay the taxes"]) {
       expect(render("We pay taxes.", said), said).toContain(heard);
@@ -108,10 +108,10 @@ describe("the honest line", () => {
   });
   it("is left out when a typed answer was empty (a skip): there are no typed words to base it on", () => {
     expect(render("We pay taxes.", "", "reading", "typed")).not.toContain("This result is based on");
-    expect(render("We pay taxes.", "", "reading", "voice")).toContain("This result is based on the words your device heard");
+    expect(render("We pay taxes.", "", "reading", "voice")).toContain("This result uses the words your phone or computer heard");
   });
   it("exists in every language", () => {
-    expect(render("We pay taxes.", "we taxes", "reading", "voice", "vi")).toContain("Kết quả này dựa trên những từ thiết bị của bạn nghe được");
+    expect(render("We pay taxes.", "we taxes", "reading", "voice", "vi")).toContain("Kết quả này dựa trên những từ điện thoại");
   });
 });
 

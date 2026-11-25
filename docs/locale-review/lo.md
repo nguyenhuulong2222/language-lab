@@ -28,18 +28,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | ການສໍາພາດຈິງເປັນພາສາອັງກິດ ເວັ້ນເສຍແຕ່ USCIS ອະນຸຍາດຂໍ້ຍົກເວັ້ນໃຫ້ທ່ານ. ຄໍາຖາມ ແລະ ປະໂຫຍກໃນໜ້າຈໍເຫຼົ່ານີ້ຍັງເປັນພາສາອັງກິດ ເພື່ອໃຫ້ທ່ານຝຶກໄດ້. | The real interview is in English unless USCIS permits an exception for you. The questions and sentences on these screens remain in English so you can practice. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | ບົດລາຍງານນີ້ແມ່ນສໍາລັບພຽງໜຶ່ງສ່ວນ. ມັນສະແດງວ່າສ່ວນນີ້ເປັນແນວໃດໃນການຝຶກ, ບໍ່ແມ່ນວ່າທ່ານຈະເຮັດແບບທົດສອບຈິງໄດ້ແນວໃດ, ແລະ ບໍ່ໃຫ້ຜົນການຝຶກໂດຍລວມ. | This report is for only one part. It shows how this part was in practice, not how you would do the real test, and does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | ການສໍາພາດກ່ຽວກັບ N-400 ເປັນພຽງການຝຶກ ແລະ ບໍ່ມີການໃຫ້ຄະແນນ. | The interview about N-400 is only practice and has no scoring. |
-| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | ການແປນີ້ເຮັດໂດຍ AI ແລະ ອາດມີຂໍ້ຜິດພາດ. ສະບັບພາສາອັງກິດເປັນສະບັບທາງການ. | This translation was done by AI and may have errors. The English version is the official version. |
+| `aiNotice.text` | Translated by AI. It may have mistakes. The English is correct. | ແປໂດຍ AI. ອາດມີຂໍ້ຜິດພາດ. ໃຫ້ຖືພາສາອັງກິດ. | This translation was done by AI and may have errors. The English version is the official version. |
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | ນີ້ແມ່ນການຕັ້ງຄ່າການຝຶກຂອງ Language Lab ອີງຕາມແນວທາງການໃຫ້ຄະແນນຂອງ USCIS, ບໍ່ແມ່ນກົດຂອງ USCIS: ຕ້ອງມີຄໍາສໍາຄັນທຸກຄໍາຂອງປະໂຫຍກຕາມລໍາດັບ. ຄໍາສັ້ນໆ ເຊັ່ນ “the” ຂາດໄດ້. ການຢຸດພັກ ແລະ ການອອກສຽງບໍ່ໄດ້ຖືກໃຫ້ຄະແນນ. | This is a Language Lab practice setting based on USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there in order. Short words such as “the” may be missing. Pausing and pronunciation are not given scores. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | ການເລືອກນີ້ກໍານົດວ່າທ່ານຈະຝຶກແບບທົດສອບວິຊາພົນລະເມືອງປີ 2008 ຫຼື ປີ 2025. ມັນເປັນພຽງການເລືອກເພື່ອຝຶກ. ສໍາລັບກໍລະນີຂອງທ່ານເອງ, ກະລຸນາກວດເບິ່ງທີ່ uscis.gov ວ່າແບບທົດສອບໃດໃຊ້ກັບທ່ານ. | This choice determines whether you will practice the 2008 or the 2025 civics test. It is only a choice for practice. For your own case, please check at uscis.gov which test applies to you. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | ຮູບພາບໃນການຝຶກວິຊາພົນລະເມືອງມາຈາກແຫຼ່ງທາງການຂອງລັດຖະບານກາງສະຫະລັດ. ແຕ່ລະຮູບໃຊ້ໄດ້ ເພາະບັນທຶກຂອງຮູບນັ້ນບອກສິດໄວ້ຢ່າງຊັດເຈນ. ນີ້ບໍ່ໄດ້ໝາຍຄວາມວ່າມີອົງການໃດຮັບຮອງ Language Lab. | The pictures in civics practice come from official sources of the U.S. federal government. Each picture can be used because that picture's record states its rights clearly. This does not mean any organization endorses Language Lab. |
 | `civics.officialNote` ⚠ | Any of these counts. | ຄໍາຕອບໃດໜຶ່ງເຫຼົ່ານີ້ນັບວ່າຖືກ. | Any one of these answers counts as correct. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | ພົນລະເມືອງ, ຮຽນກ່ອນ ແລະ ການສຳພາດຝຶກແບບເຕັມ ຖືກປິດໃນເວີຊັນນີ້ ຈົນກວ່າຈະມີຄົນກວດຄຳຕອບພົນລະເມືອງ. ທ່ານຝຶກການສຳພາດ N-400, ການອ່ານ ແລະ ການຂຽນໄດ້. | Citizenship, Study first and the full practice interview are closed in this version until someone checks the citizenship answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | ຄໍາເຉີຍວິຊາພົນລະເມືອງຍັງລໍຖ້າໃຫ້ມີຄົນກວດສອບ, ດັ່ງນັ້ນເວີຊັນນີ້ຈຶ່ງບໍ່ໃຫ້ຄະແນນສ່ວນນີ້ ແລະ ບໍ່ສ້າງບົດລາຍງານ. | The civics answer key is still waiting for someone to check it, so this version does not score this part and does not create a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | ເມື່ອທ່ານກົດ “ເວົ້າ” ລະບົບຮັບຮູ້ສຽງຂອງບຣາວເຊີອາດສົ່ງສຽງຂອງທ່ານໄປຫາບໍລິສັດທີ່ສ້າງບຣາວເຊີ ເຊັ່ນ Google ຫຼື Apple ເພື່ອປ່ຽນເປັນຂໍ້ຄວາມ. Language Lab ບໍ່ສົ່ງ ແລະ ບໍ່ເກັບສຽງຂອງທ່ານ. ທ່ານສາມາດພິມຄຳຕອບແທນໄດ້. | When you press “Speak”, the browser's voice recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead. |
-| `report.title.onTrack` | Practice complete: each part reached the practice score | ຝຶກສຳເລັດ: ທຸກພາກເຖິງຄະແນນຝຶກ | Practice finished: every part reached the practice score |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | ເມື່ອທ່ານກົດ “ແຕະເພື່ອເວົ້າ” ລະບົບຮັບຮູ້ສຽງຂອງບຣາວເຊີອາດສົ່ງສຽງຂອງທ່ານໄປຫາບໍລິສັດທີ່ສ້າງບຣາວເຊີ ເຊັ່ນ Google ຫຼື Apple ເພື່ອປ່ຽນເປັນຂໍ້ຄວາມ. Language Lab ບໍ່ສົ່ງ ແລະ ບໍ່ເກັບສຽງຂອງທ່ານ. ທ່ານສາມາດພິມຄຳຕອບແທນໄດ້. | When you press “Speak”, the browser's voice recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead. |
+| `report.title.onTrack` | Well done. Each part reached the practice goal. | ດີຫຼາຍ. ທຸກສ່ວນໄປຮອດເປົ້າໝາຍການຝຶກ. | Practice finished: every part reached the practice score |
 | `report.title.review` | A few things to review | ມີບາງຢ່າງທີ່ຄວນທົບທວນ | There are some things that should be reviewed |
-| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | ໃນການຝຶກນີ້ ການອ່ານ, ການຂຽນ ແລະ ພົນລະເມືອງ ແຕ່ລະພາກເຖິງຄະແນນທີ່ Language Lab ໃຊ້. ໃຊ້ບັນທຶກຂ້າງລຸ່ມເພື່ອຝຶກຕໍ່. | In this practice, reading, writing and citizenship each reached the score Language Lab uses. Use the notes below to keep practicing. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | ການຝຶກມີໄວ້ເພື່ອສິ່ງນີ້. ບັນທຶກຂ້າງລຸ່ມສະແດງວ່າຄວນເນັ້ນບ່ອນໃດກ່ອນລອງອີກຄັ້ງ. | Practice is for this. The notes below show where to focus before trying again. |
+| `report.lead.onTrack` | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. | ການອ່ານ, ການຂຽນ ແລະ ຄວາມຮູ້ພົນລະເມືອງ ໄປຮອດເປົ້າໝາຍການຝຶກ. ອ່ານບັນທຶກຂ້າງລຸ່ມ ແລະ ຝຶກຕໍ່. | In this practice, reading, writing and citizenship each reached the score Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That is what practice is for. The notes below show what to practice next. | ນີ້ແມ່ນປະໂຫຍດຂອງການຝຶກ. ບັນທຶກຂ້າງລຸ່ມບອກວ່າຄວນຝຶກຫຍັງຕໍ່. | Practice is for this. The notes below show where to focus before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | ການຂຽນ: USCIS ບອກວ່າການສະກົດຜິດ, ຕົວພິມໃຫຍ່ ແລະ ເຄື່ອງໝາຍວັກຕອນ ບໍ່ເຮັດໃຫ້ສອບຂຽນບໍ່ຜ່ານ ເວັ້ນເສຍແຕ່ປະໂຫຍກຈະອ່ານບໍ່ເຂົ້າໃຈແລ້ວ. ຢູ່ນີ້ ການສະກົດຜິດເລັກນ້ອຍຍັງນັບ ແລະ ຄຳທີ່ຍາວກວ່າຜິດໄດ້ຫຼາຍກວ່າ. ບໍ່ກວດຕົວພິມໃຫຍ່ ແລະ ເຄື່ອງໝາຍວັກຕອນ. | Writing: USCIS says misspelling, capital letters and punctuation marks do not make you fail the writing test unless the sentence can no longer be understood. Here, small misspellings still count, and longer words may have more mistakes. Capital letters and punctuation are not checked. |
 | `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | ເມື່ອເປີດໂຄ້ດ AI, ຄຳໃນແຕ່ລະຄຳຕອບທີ່ທ່ານພິມ ຫຼື ເວົ້າໃນພາກນີ້ ຈະຖືກສົ່ງເປັນຂໍ້ຄວາມໄປຫາ Anthropic, ບໍລິສັດ AI, ຜ່ານເຊີບເວີຂອງ Language Lab, ເພື່ອຂຽນຄຳຕິຊົມ. Language Lab ແລະ Anthropic ບໍ່ເຄີຍໄດ້ຮັບສຽງຂອງທ່ານ, ໄດ້ຮັບແຕ່ຄຳ. ຕອບໃນຖານະບຸກຄົນສົມມຸດ. ຢ່າບອກຊື່ແທ້, ທີ່ຢູ່, ວັນເກີດ, A-number ຫຼື ລາຍລະອຽດຄະດີ. ໃນການສໍາພາດຈິງ, ທ່ານຕ້ອງຕອບຕາມຄວາມຈິງກ່ຽວກັບຊີວິດຂອງທ່ານເອງ. Language Lab ກວດຕົວເລກບາງຢ່າງ, ແຕ່ຈັບຂໍ້ມູນສ່ວນຕົວບໍ່ໄດ້ທັງໝົດ. Language Lab ບໍ່ເກັບຄຳຕອບຂອງທ່ານ. ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວຂອງ Anthropic ບອກວ່າ Anthropic ຈັດການມັນແນວໃດ: anthropic.com/legal/privacy. ໂຄ້ດ AI ຈະປິດອີກເມື່ອທ່ານເລີ່ມການຝຶກໃໝ່. | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
 | `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | ໂຄ້ດ AI: ປິດຢູ່ຈົນກວ່າທ່ານຈະເປີດໃນພາກ N-400. ເມື່ອເປີດ, ຂໍ້ຄວາມຂອງແຕ່ລະຄຳຕອບ N-400 ຈະຖືກສົ່ງໄປຫາ Anthropic ຜ່ານເຊີບເວີຂອງ Language Lab ເພື່ອຂຽນຄຳຕິຊົມ; ບໍ່ມີການສົ່ງສຽງ. ເພື່ອຈຳກັດການໃຊ້, ເຊີບເວີນັບຄຳຂໍດ້ວຍລະຫັດປະຈຳວັນທີ່ເພີ່ມຄ່າລັບ ເຊິ່ງສ້າງຈາກທີ່ຢູ່ອິນເຕີເນັດຂອງທ່ານ; ຈຳນວນນັບເກົ່າຈະຖືກລຶບໃນຄຳຂໍຕໍ່ໆໄປ, ປົກກະຕິພາຍໃນສອງວັນ. ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວຂອງ Anthropic: anthropic.com/legal/privacy. | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
@@ -50,8 +50,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | ປະໂຫຍກໃຊ້ສະເພາະຄໍາຈາກລາຍການຄໍາສັບການອ່ານ ແລະ ການຂຽນທາງການຂອງ USCIS. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | ທ່ານໄດ້ຄະແນນຜ່ານຂອງການຝຶກແລ້ວ, ແບບທົດສອບຈຶ່ງຢຸດຢູ່ນີ້. |
-| `home.part.civics.text` | Answer civics questions. Checked against the answer key. | ຕອບຄໍາຖາມວິຊາພົນລະເມືອງ. ກວດກັບຄໍາເຉີຍ. |
-| `partReport.unscored.missing` | A question that is not in the answer key | ຄໍາຖາມທີ່ບໍ່ມີໃນຄໍາເຉີຍ |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | ສຶກສາກ່ອນຖືກປິດໃນເວີຊັນນີ້ ຈົນກວ່າຈະມີຄົນກວດຄໍາເຉີຍແລ້ວ. |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | ອັນນີ້ປ່ຽນແຕ່ການຝຶກເທົ່ານັ້ນ; ບໍ່ມີຫຍັງຖືກບັນທຶກ ຫຼື ສົ່ງ. ພາກວິຊາພົນລະເມືອງຈະຖາມ {asked} ຂໍ້ຈາກ {bank} ຂໍ້ທີ່ມີເຄື່ອງໝາຍດາວ (*) ໃນລາຍການທາງການ. ໃນການຝຶກນີ້ ຖາມຄົບທັງ {asked} ຂໍ້. ຄະແນນຜ່ານຂອງການຝຶກແມ່ນຕອບຖືກ {pass} ຂໍ້. ສຳລັບກໍລະນີຂອງທ່ານເອງ ໃຫ້ກວດເບິ່ງ uscis.gov: ອາຍຸ ແລະ ຈຳນວນປີນັບໃນວັນທີຍື່ນຄຳຮ້ອງ. |
 | `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS: ໃນວັນທີຍື່ນຄຳຮ້ອງ, ຖ້າທ່ານມີອາຍຸ 50 ປີຂຶ້ນໄປ ແລະ ເປັນຜູ້ມີຖິ່ນທີ່ຢູ່ຖາວອນ 20 ປີ (50/20), ຫຼື 55 ປີຂຶ້ນໄປ ແລະ 15 ປີ (55/15), ທ່ານໄດ້ຮັບການຍົກເວັ້ນຂໍ້ກຳນົດພາສາອັງກິດ (ອ່ານ, ຂຽນ, ເວົ້າ ແລະ ເຂົ້າໃຈພາສາອັງກິດ), ແຕ່ຍັງຕ້ອງສອບວິຊາພົນລະເມືອງ. ທ່ານສອບເປັນພາສາແມ່ໄດ້ ຖ້າພາລ່າມມາ. ຖ້າທ່ານມີອາຍຸ 65 ປີຂຶ້ນໄປ ແລະ ຢ່າງໜ້ອຍ 20 ປີ (65/20), ທ່ານກໍໄດ້ຮັບການຍົກເວັ້ນພາສາອັງກິດ, ແລະ ເຈົ້າໜ້າທີ່ໃຊ້ແບບທົດສອບວິຊາພົນລະເມືອງທີ່ກຳນົດໄວ້ເປັນພິເສດ. |
@@ -61,8 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | ການທົດສອບຝຶກຢຸດເມື່ອຮອດຄະແນນຜ່ານຂອງການຝຶກ. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | ການທົດສອບຝຶກຢຸດຫຼັງຈາກຕອບຜິດ {incorrect} ຂໍ້, ກ່ອນຮອດຄະແນນຜ່ານຂອງການຝຶກ {score}. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | ຄະແນນຜ່ານຂອງການຝຶກແມ່ນຕອບຖືກ {score} ຂໍ້, ແລະ ຍັງບໍ່ຮອດ. |
-| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | ບໍ່ໄດ້ໃຫ້ຄະແນນ, ເພາະຄຳຕອບປ່ຽນໄປ ຫຼື ບໍ່ມີໃນເສັດລາຍການຄຳຕອບ: {names}. ຄຳຖາມເຫຼົ່ານີ້ບໍ່ນັບວ່າຖືກ ຫຼື ຜິດ. |
-| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | ອຸປະກອນຂອງທ່ານເດົາສິ່ງທີ່ທ່ານເວົ້າໄວ້ຫຼາຍແບບ. ແບບທີ່ໃກ້ກັບຄຳຕອບໃນລາຍການຄຳຕອບທີ່ສຸດຈະສະແດງໄວ້. |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS ນັບອາຍຸ ແລະ ຈຳນວນປີທີ່ເປັນຜູ້ຢູ່ອາໄສຖາວອນ ໃນມື້ທີ່ຍື່ນ N-400. |
 
 ## 3. All other lines
 
@@ -70,16 +67,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | ຂ້າມໄປຫາເນື້ອຫາຫຼັກ |
-| `app.stageNotBuilt` | This stage of the practice isn’t built yet. | ຂັ້ນຕອນການຝຶກນີ້ຍັງບໍ່ພ້ອມໃຊ້ງານ. |
+| `app.stageNotBuilt` | This part is not ready yet. Go back to Home and choose another part. | ສ່ວນນີ້ຍັງບໍ່ພ້ອມ. ກັບໄປໜ້າຫຼັກ ແລະ ເລືອກສ່ວນອື່ນ. |
 | `header.about` | About & disclaimer | ກ່ຽວກັບ ແລະ ຂໍ້ຈໍາກັດຄວາມຮັບຜິດຊອບ |
-| `stepper.label` | Interview stages | ຂັ້ນຕອນການສໍາພາດ |
-| `stepper.count` | Stage {current} of {total} | ຂັ້ນຕອນທີ {current} ຈາກ {total} |
+| `stepper.label` | Your steps | ຂັ້ນຕອນຂອງທ່ານ |
+| `stepper.count` | Step {current} of {total}: {name} | ຂັ້ນຕອນທີ {current} ຈາກ {total}: {name} |
 | `stepper.status.complete` | completed | ສໍາເລັດແລ້ວ |
 | `stepper.status.current` | current step | ຂັ້ນຕອນປັດຈຸບັນ |
 | `stepper.status.upcoming` | upcoming | ຂັ້ນຕອນຕໍ່ໄປ |
-| `stage.intro.label` | Welcome | ຍິນດີຕ້ອນຮັບ |
-| `stage.intro.short` | Intro | ເລີ່ມຕົ້ນ |
-| `stage.n400_interview.label` | N-400 conversation | ການສົນທະນາກ່ຽວກັບ N-400 |
+| `stage.intro.label` | Set up | ກຽມຕົວ |
+| `stage.intro.short` | Set up | ກຽມຕົວ |
+| `stage.n400_interview.label` | N-400 questions | ຄຳຖາມ N-400 |
 | `stage.n400_interview.short` | N-400 | N-400 |
 | `stage.reading.label` | Reading | ການອ່ານ |
 | `stage.reading.short` | Reading | ອ່ານ |
@@ -87,43 +84,42 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.writing.short` | Writing | ຂຽນ |
 | `stage.civics.label` | Civics | ວິຊາພົນລະເມືອງ |
 | `stage.civics.short` | Civics | Civics |
-| `stage.report.label` | Practice report | ບົດລາຍງານການຝຶກ |
+| `stage.report.label` | Your report | ລາຍງານຂອງທ່ານ |
 | `stage.report.short` | Report | ລາຍງານ |
-| `badge.onTrack` | Practice score reached | ເຖິງຄະແນນຝຶກແລ້ວ |
-| `badge.review` | Worth reviewing | ຄວນທົບທວນ |
-| `report.empty` | Your practice report will appear here once the session is complete. | ບົດລາຍງານການຝຶກຂອງທ່ານຈະສະແດງຢູ່ນີ້ເມື່ອຈົບຮອບການຝຶກ. |
-| `report.take` | TAKE | TAKE |
+| `badge.onTrack` | You reached the practice goal | ທ່ານໄປຮອດເປົ້າໝາຍການຝຶກແລ້ວ |
+| `badge.review` | Practice this again | ຝຶກອັນນີ້ອີກ |
+| `report.empty` | Your report will show here when you finish the practice. | ລາຍງານຈະສະແດງຢູ່ນີ້ເມື່ອທ່ານຝຶກແລ້ວ. |
 | `report.overline` | Practice report | ບົດລາຍງານການຝຶກ |
-| `report.profile.label` | Practice profile (fictional) | ໂປຣໄຟລ໌ຝຶກ (ສົມມຸດ) |
+| `report.profile.label` | Practice person (made up) | ບຸກຄົນສຳລັບຝຶກ (ສົມມຸດ) |
 | `report.profile.meta` | {version} civics test · filed {date} | ແບບທົດສອບວິຊາພົນລະເມືອງປີ {version} · ຍື່ນຄໍາຮ້ອງວັນທີ {date} |
 | `report.stages.heading` | How each part went | ແຕ່ລະສ່ວນເປັນແນວໃດ |
 | `report.review.heading` | Things to review | ສິ່ງທີ່ຄວນທົບທວນ |
 | `report.review.intro` | Focus on these before your next practice. | ກະລຸນາເນັ້ນສິ່ງເຫຼົ່ານີ້ກ່ອນການຝຶກຄັ້ງຕໍ່ໄປ. |
-| `report.generated` | Report generated {datetime} | ສ້າງບົດລາຍງານເມື່ອ {datetime} |
+| `report.generated` | Report made {datetime} | ສ້າງລາຍງານເມື່ອ {datetime} |
 | `translation.english` | English | ອັງກິດ |
-| `voice.say` | Say it | ເວົ້າ |
-| `voice.stop` | Stop listening | ຢຸດຟັງ |
+| `voice.say` | Tap to speak | ແຕະເພື່ອເວົ້າ |
+| `voice.stop` | Listening… tap when you finish | ກຳລັງຟັງ… ແຕະເມື່ອເວົ້າແລ້ວ |
 | `voice.listening` | Listening. Say your answer now. | ກໍາລັງຟັງ. ກະລຸນາເວົ້າຄໍາຕອບຂອງທ່ານດຽວນີ້. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | ພວກເຮົາໄດ້ຍິນທ່ານແລ້ວ. ກວດເບິ່ງຄໍາ, ແກ້ໄຂໄດ້ຖ້າຕ້ອງການ, ແລ້ວສົ່ງ. |
-| `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | ໄມໂຄຣໂຟນຖືກບລັອກ. ກະລຸນາອະນຸຍາດການໃຊ້ໄມໂຄຣໂຟນໃນການຕັ້ງຄ່າຂອງບຣາວເຊີ ຫຼື ພິມຄໍາຕອບຂອງທ່ານ. |
+| `voice.denied` | The microphone is blocked. Follow the steps below to allow it, or type your answer. | ໄມໂຄຣໂຟນຖືກບລັອກ. ເຮັດຕາມຂັ້ນຕອນຂ້າງລຸ່ມເພື່ອອະນຸຍາດ ຫຼື ພິມຄຳຕອບຂອງທ່ານ. |
 | `voice.unsupported` | This browser cannot listen to your voice. Type your answer instead. | ບຣາວເຊີນີ້ຟັງສຽງຂອງທ່ານບໍ່ໄດ້. ກະລຸນາພິມຄໍາຕອບແທນ. |
 | `voice.nothingHeard` | We did not hear anything. Try again, or type your answer. | ພວກເຮົາບໍ່ໄດ້ຍິນຫຍັງເລີຍ. ລອງອີກຄັ້ງ ຫຼື ພິມຄໍາຕອບຂອງທ່ານ. |
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | ບໍ່ພົບໄມໂຄຣໂຟນ. ກະລຸນາພິມຄໍາຕອບແທນ. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | ຄັ້ງນີ້ການຟັງບໍ່ສໍາເລັດ. ລອງອີກຄັ້ງ ຫຼື ພິມຄໍາຕອບຂອງທ່ານ. |
 | `voice.skip` | Skip this one | ຂ້າມຂໍ້ນີ້ |
-| `audio.play` | Play aloud | ຟັງສຽງອ່ານ |
-| `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | ສຽງຂອງອຸປະກອນ: ສຽງທີ່ຕິດຕັ້ງໃນໂທລະສັບ ຫຼື ຄອມພິວເຕີຂອງທ່ານ. |
+| `audio.play` | Play the question | ຟັງຄຳຖາມ |
+| `audio.deviceVoice` | Built-in voice: the voice of your phone or computer. | ສຽງໃນເຄື່ອງ: ສຽງຂອງໂທລະສັບ ຫຼື ຄອມພິວເຕີຂອງທ່ານ. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | ບຣາວເຊີນີ້ອ່ານອອກສຽງບໍ່ໄດ້. ກະລຸນາອ່ານຂໍ້ຄວາມເທິງໜ້າຈໍ. |
-| `intro.profile.legend` | Choose a practice profile | ເລືອກໂປຣໄຟລ໌ຝຶກ |
-| `intro.profile.help` | Every profile is invented. | ທຸກໂປຣໄຟລ໌ແມ່ນສົມມຸດຂຶ້ນ. |
+| `intro.profile.legend` | Choose a practice person | ເລືອກບຸກຄົນສຳລັບຝຶກ |
+| `intro.profile.help` | Every person here is made up. | ທຸກຄົນຢູ່ນີ້ແມ່ນສົມມຸດ. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | ຝຶກໂດຍສົມມຸດວ່າໄດ້ຍື່ນ N-400… |
 | `intro.filed.before` | Before {date} | ກ່ອນວັນທີ {date} |
 | `intro.filed.onOrAfter` | On or after {date} | ວັນທີ {date} ຫຼື ຫຼັງຈາກນັ້ນ |
 | `intro.start` | Start practice | ເລີ່ມຝຶກ |
-| `intro.startHint` | Make your choice above to start. | ເລືອກຂ້າງເທິງເພື່ອເລີ່ມ. |
-| `home.locked.title` | In this build you can practice | ໃນເວີຊັນນີ້ທ່ານຝຶກໄດ້ |
+| `intro.startHint` | Choose one answer in each group above. Then press “Start practice”. | ເລືອກຄຳຕອບໜຶ່ງໃນແຕ່ລະກຸ່ມຂ້າງເທິງ. ແລ້ວກົດ “ເລີ່ມຝຶກ”. |
+| `home.locked.title` | Right now you can practice | ຕອນນີ້ທ່ານຝຶກໄດ້ |
 | `n400.title` | N-400 interview | ການສໍາພາດກ່ຽວກັບ N-400 |
-| `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | ຝຶກຕອບຄໍາຖາມແບບທີ່ເຈົ້າໜ້າທີ່ຖາມກ່ຽວກັບໃບຄໍາຮ້ອງຢ່າງສະຫງົບ. ຕອບໃນຖານະ {name}. ຂັ້ນຕອນນີ້ບໍ່ມີການໃຫ້ຄະແນນ. |
+| `n400.lead` | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. | ເຈົ້າໜ້າທີ່ອາດຖາມຄຳຖາມແບບນີ້ກ່ຽວກັບແບບຟອມຂອງທ່ານ. ຕອບໃນນາມ {name}. ສ່ວນນີ້ບໍ່ມີຄະແນນ. |
 | `n400.count` | Question {current} of {total} | ຄໍາຖາມທີ {current} ຈາກ {total} |
 | `n400.sample.label` | Sample answer for {name} (fictional) | ຕົວຢ່າງຄໍາຕອບຂອງ {name} (ສົມມຸດ) |
 | `n400.yourAnswer` | Your answer, as {name} | ຄໍາຕອບຂອງທ່ານ ໃນຖານະ {name} |
@@ -144,7 +140,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | ຖ້າຕ້ອງການ, ລອງຝຶກຕອບອອກສຽງ. ຄຳຖາມນີ້ບໍ່ຖືກບັນທຶກ. |
 | `coach.tip.label` | Tip about your English: | ຄຳແນະນຳກ່ຽວກັບພາສາອັງກິດຂອງທ່ານ: |
 | `coach.feedback.understood` | Easy to understand | ເຂົ້າໃຈງ່າຍ |
-| `coach.feedback.needs_practice` | Worth practicing again | ຄວນຝຶກອີກ |
+| `coach.feedback.needs_practice` | Practice this again | ຝຶກອັນນີ້ອີກ |
 | `coach.feedback.unclear` | Hard to follow. Try again. | ຟັງເຂົ້າໃຈຍາກ. ລອງໃໝ່. |
 | `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | ສ່ວນນີ້ກວດແຕ່ວ່າພາສາອັງກິດຂອງທ່ານຊັດເຈນພຽງໃດ. ມັນບໍ່ໄດ້ບອກວ່າຄຳຕອບຖືກ ຫຼື ເປັນຄວາມຈິງບໍ. |
 | `coach.checking` | Getting AI feedback… | ກຳລັງຮັບຄຳຕິຊົມຈາກ AI… |
@@ -158,11 +154,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.dateOfBirth` | a full date, such as a date of birth | ວັນທີເຕັມ ເຊັ່ນ ວັນເກີດ |
 | `coach.next` | Continue | ສືບຕໍ່ |
 | `n400.loading` | Getting the next question… | ກໍາລັງໂຫຼດຄໍາຖາມຕໍ່ໄປ… |
-| `n400.failed` | The next question could not be loaded. Start over to try again. | ໂຫຼດຄໍາຖາມຕໍ່ໄປບໍ່ໄດ້. ເລີ່ມໃໝ່ເພື່ອລອງອີກຄັ້ງ. |
+| `n400.failed` | The next question did not load. Check your internet, then press “Start over”. | ຄຳຖາມຕໍ່ໄປໂຫຼດບໍ່ໄດ້. ກວດອິນເຕີເນັດ ແລ້ວກົດ “ເລີ່ມໃໝ່”. |
 | `n400.done.title` | Your answers | ຄໍາຕອບຂອງທ່ານ |
 | `n400.done.lead` | These are the words you gave. They are not scored. | ນີ້ແມ່ນຄໍາທີ່ທ່ານເວົ້າ. ບໍ່ມີການໃຫ້ຄະແນນ. |
 | `n400.done.next` | Go to reading | ໄປທີ່ການອ່ານ |
-| `voice.consent.continue` | Continue and say it | ສືບຕໍ່ ແລະ ເວົ້າ |
+| `voice.consent.continue` | Continue and speak | ສືບຕໍ່ ແລະ ເວົ້າ |
 | `voice.consent.type` | Type instead | ພິມແທນ |
 | `n400.number` | Question {current} | ຄໍາຖາມທີ {current} |
 | `common.fictional` | Fictional practice profile | ໂປຣໄຟລ໌ຝຶກສົມມຸດ |
@@ -194,15 +190,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | ບຣາວເຊີນີ້ອ່ານອອກສຽງບໍ່ໄດ້, ດັ່ງນັ້ນຈຶ່ງສະແດງປະໂຫຍກຢູ່ນີ້. ກະລຸນາພິມຕາມ. |
 | `writing.hidden` | The sentence stays hidden until you answer. | ປະໂຫຍກຈະຖືກເຊື່ອງໄວ້ຈົນກວ່າທ່ານຈະຕອບ. |
 | `writing.show` | Show the sentence | ສະແດງປະໂຫຍກ |
-| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | ຖ້າທ່ານບໍ່ໄດ້ຍິນສຽງ, ໃຫ້ສະແດງປະໂຫຍກແລ້ວພິມຕາມ. ກວດແບບດຽວກັນ. ລາຍງານຂອງທ່ານຈະໝາຍການພະຍາຍາມຄັ້ງນີ້ວ່າມີຕົວຊ່ວຍ. |
-| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | ສະແດງປະໂຫຍກແລ້ວ. ລາຍງານຂອງທ່ານຈະໝາຍການພະຍາຍາມຄັ້ງນີ້ວ່າມີຕົວຊ່ວຍ. |
+| `writing.show.help` | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. | ຖ້າບໍ່ໄດ້ຍິນສຽງ ໃຫ້ສະແດງປະໂຫຍກ ແລ້ວພິມ. ການກວດຄືເກົ່າ. ລາຍງານຈະບອກວ່າໄດ້ສະແດງປະໂຫຍກ. |
+| `writing.shown` | The sentence is shown. Your report will say so. | ສະແດງປະໂຫຍກແລ້ວ. ລາຍງານຈະບອກເລື່ອງນີ້. |
 | `civics.title` | Civics | ວິຊາພົນລະເມືອງ |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | ຕອບອອກສຽງ ຫຼື ພິມກໍໄດ້. ຄໍາຕອບສັ້ນໆ ໃຊ້ໄດ້, ແຕ່ໃຫ້ເວົ້າຄໍາຕອບໃຫ້ຄົບ. |
 | `civics.count` | Question {current} of {total} | ຄໍາຖາມທີ {current} ຈາກ {total} |
 | `civics.needs` | This question needs {count} different answers. | ຄໍາຖາມນີ້ຕ້ອງການຄໍາຕອບທີ່ແຕກຕ່າງກັນ {count} ຄໍາຕອບ. |
 | `civics.yourAnswer` | Your answer | ຄໍາຕອບຂອງທ່ານ |
 | `civics.submit` | Check my answer | ກວດຄໍາຕອບຂອງຂ້ອຍ |
-| `civics.correct` | Correct | ຖືກຕ້ອງ |
+| `civics.correct` | This counts | ນັບໄດ້ |
 | `civics.notYet` | Not yet | ຍັງບໍ່ຖືກ |
 | `civics.youSaid` | You said: {text} | ທ່ານເວົ້າວ່າ: {text} |
 | `civics.official` | Official answers | ຄໍາຕອບທາງການ |
@@ -211,39 +207,39 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.stopped.incorrect` | The test stopped because too many answers need more practice. | ແບບທົດສອບຢຸດລົງເພາະມີຄໍາຕອບທີ່ຕ້ອງຝຶກເພີ່ມຫຼາຍເກີນໄປ. |
 | `civics.stopped.none` | You have answered every question for this practice test. | ທ່ານຕອບຄໍາຖາມຄົບທຸກຂໍ້ຂອງແບບທົດສອບຝຶກນີ້ແລ້ວ. |
 | `civics.tally` | {correct} correct, {incorrect} not yet. | ຖືກ {correct} ຂໍ້, ຍັງບໍ່ຖືກ {incorrect} ຂໍ້. |
-| `civics.locked.title` | Civics is switched off in this build | ວິຊາພົນລະເມືອງຖືກປິດໃນເວີຊັນນີ້ |
+| `civics.locked.title` | Civics is not available right now | ຄວາມຮູ້ພົນລະເມືອງຍັງໃຊ້ບໍ່ໄດ້ຕອນນີ້ |
 | `report.again` | Practice again | ຝຶກອີກຄັ້ງ |
 | `common.startOver` | Start over | ເລີ່ມໃໝ່ |
-| `voice.needText` | Type or say your answer first, or choose Skip. | ກະລຸນາພິມ ຫຼື ເວົ້າຄໍາຕອບກ່ອນ ຫຼື ເລືອກຂ້າມ. |
-| `audio.stop` | Stop playing | ຢຸດຫຼິ້ນ |
+| `voice.needText` | The box is empty. Type or say your answer, or press “Skip this one”. | ຫ້ອງວ່າງຢູ່. ພິມ ຫຼື ເວົ້າຄຳຕອບ, ຫຼື ກົດ “ຂ້າມຂໍ້ນີ້”. |
+| `audio.stop` | Stop | ຢຸດ |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | ສຽງທີ່ສ້າງໂດຍ AI. ສຽງນີ້ຖືກເຮັດໄວ້ລ່ວງໜ້າ. |
 | `audio.playSample` | Play sample answer | ຟັງຕົວຢ່າງຄໍາຕອບ |
-| `home.title` | Welcome to the booth | ຍິນດີຕ້ອນຮັບສູ່ Language Lab |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | ຝຶກສໍາລັບການສໍາພາດຂໍສັນຊາດໃນບ່ອນທີ່ງຽບສະຫງົບ. ທ່ານຕອບໃນຖານະບຸກຄົນສົມມຸດ, ດັ່ງນັ້ນບໍ່ຈໍາເປັນຕ້ອງໃຫ້ຂໍ້ມູນຈິງ. |
+| `home.title` | Welcome to Language Lab | ຍິນດີຕ້ອນຮັບສູ່ Language Lab |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | ຝຶກສຳພາດຂໍສັນຊາດໃນນາມບຸກຄົນສົມມຸດ ຈຶ່ງບໍ່ຕ້ອງບອກຫຍັງກ່ຽວກັບຕົວເອງ. |
 | `home.how.title` | How it works | ໃຊ້ງານແນວໃດ |
 | `home.how.1.title` | Listen | ຟັງ |
-| `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | ແຕະ “ຟັງສຽງອ່ານ” ເພື່ອຟັງຄໍາຖາມ ຫຼື ປະໂຫຍກ. |
+| `home.how.1.text` | Tap “Play the question” to hear it. | ແຕະ “ຟັງຄຳຖາມ” ເພື່ອຟັງ. |
 | `home.how.2.title` | Speak or type | ເວົ້າ ຫຼື ພິມ |
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | ເວົ້າຄໍາຕອບຂອງທ່ານ ຫຼື ພິມກໍໄດ້. ການພິມໃຊ້ໄດ້ສະເໝີ. |
 | `home.how.3.title` | See the result | ເບິ່ງຜົນ |
-| `home.how.3.text` | You see how your answer compares, and what to practice next. | ທ່ານຈະເຫັນວ່າຄໍາຕອບຂອງທ່ານປຽບທຽບກັນແນວໃດ ແລະ ຄວນຝຶກຫຍັງຕໍ່ໄປ. |
-| `home.choose` | What would you like to do? | ທ່ານຢາກເຮັດຫຍັງ? |
-| `home.full.title` | Full practice interview | ການສໍາພາດຝຶກແບບເຕັມ |
-| `home.full.text` | All four parts in order, then one report. | ສີ່ສ່ວນຕາມລໍາດັບ ແລ້ວໄດ້ບົດລາຍງານໜຶ່ງສະບັບ. |
+| `home.how.3.text` | You see if your answer counts, and what to practice next. | ທ່ານຈະເຫັນວ່າຄຳຕອບນັບໄດ້ບໍ່ ແລະ ຄວນຝຶກຫຍັງຕໍ່. |
+| `home.full.title` | Practice test | ສອບຈຳລອງ |
+| `home.full.text` | Answer out loud like the real interview. | ຕອບອອກສຽງຄືການສຳພາດແທ້. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | ຝຶກສຳພາດ N-400 ກັບໂຄ້ດ AI |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | ໂຄ້ດຖາມຄຳຖາມຕໍ່ເນື່ອງແບບທີ່ເຈົ້າໜ້າທີ່ອາດຖາມ ແລະ ໃຫ້ຄຳແນະນຳກ່ຽວກັບພາສາອັງກິດຂອງທ່ານ. ບໍ່ບັງຄັບ. |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | ຂັບເຄື່ອນໂດຍ Claude (Anthropic) |
-| `home.parts.title` | Practice one part | ຝຶກພຽງໜຶ່ງສ່ວນ |
+| `home.parts.title` | Or practice one part | ຫຼື ຝຶກທີລະສ່ວນ |
 | `home.part.n400.title` | N-400 interview | ການສໍາພາດກ່ຽວກັບ N-400 |
-| `home.part.n400.text` | Answer questions about an application. Not scored. | ຕອບຄໍາຖາມກ່ຽວກັບໃບຄໍາຮ້ອງ. ບໍ່ມີການໃຫ້ຄະແນນ. |
+| `home.part.n400.text` | Answer questions about the N-400 form. No score. | ຕອບຄຳຖາມກ່ຽວກັບແບບຟອມ N-400. ບໍ່ມີຄະແນນ. |
 | `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | ການອ່ານ |
 | `home.part.reading.text` | Read sentences out loud. | ອ່ານປະໂຫຍກອອກສຽງ. |
 | `home.part.writing.title` | Writing | ການຂຽນ |
 | `home.part.writing.text` | Listen and type the sentence. | ຟັງ ແລະ ພິມປະໂຫຍກ. |
 | `home.part.civics.title` | Civics | ວິຊາພົນລະເມືອງ |
+| `home.part.civics.text` | Answer questions about U.S. history and government. Checked with the official answers. | ຕອບຄຳຖາມກ່ຽວກັບປະຫວັດສາດ ແລະ ລັດຖະບານສະຫະລັດ. ກວດກັບຄຳຕອບທາງການ. |
 | `setup.title` | Set up your practice | ຕັ້ງຄ່າການຝຶກຂອງທ່ານ |
-| `setup.lead` | Choose what this practice needs. Nothing real is asked. | ເລືອກສິ່ງທີ່ການຝຶກນີ້ຕ້ອງການ. ບໍ່ມີການຖາມຂໍ້ມູນຈິງໃດໆ. |
+| `setup.lead` | Choose one answer in each group. Nothing here asks about you. | ເລືອກຄຳຕອບໜຶ່ງໃນແຕ່ລະກຸ່ມ. ບໍ່ມີຫຍັງຢູ່ນີ້ຖາມກ່ຽວກັບທ່ານ. |
 | `report.home` | Back to home | ກັບໄປໜ້າຫຼັກ |
 | `partReport.title.n400_interview` | N-400 interview practice | ການຝຶກສໍາພາດກ່ຽວກັບ N-400 |
 | `partReport.title.reading` | Reading practice | ການຝຶກອ່ານ |
@@ -260,30 +256,23 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.civics.needed` | Correct answers needed: {needed}. | ຈໍານວນຄໍາຕອບທີ່ຕ້ອງຖືກ: {needed}. |
 | `partReport.review` | Questions to review | ຄໍາຖາມທີ່ຄວນທົບທວນ |
 | `partReport.unscored.title` | Not scored | ບໍ່ໄດ້ໃຫ້ຄະແນນ |
-| `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | ຄໍາຖາມເຫຼົ່ານີ້ໃຫ້ຄະແນນບໍ່ໄດ້, ຈຶ່ງບໍ່ນັບວ່າຖືກ ຫຼື ຜິດ. |
+| `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | ຄຳຖາມເຫຼົ່ານີ້ບໍ່ມີຄະແນນ. ບໍ່ນັບວ່າຖືກ ຫຼື ຜິດ. |
+| `partReport.unscored.missing` | A question we cannot check | ຄຳຖາມທີ່ພວກເຮົາກວດບໍ່ໄດ້ |
 | `report.see` | See my report | ເບິ່ງບົດລາຍງານຂອງຂ້ອຍ |
-| `header.home` | Home | ໜ້າຫຼັກ |
-| `help.button` | How this works | ໜ້າຈໍນີ້ໃຊ້ແນວໃດ |
+| `help.button` | Help | ຊ່ວຍເຫຼືອ |
 | `help.setup.1` | Tap one choice in each group on this screen. | ແຕະໜຶ່ງຕົວເລືອກໃນແຕ່ລະກຸ່ມເທິງໜ້າຈໍນີ້. |
 | `help.setup.3` | Press “{start}” when you are ready. | ກົດ “{start}” ເມື່ອທ່ານພ້ອມ. |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | ກົດ “{play}” ເພື່ອຟັງ. ກົດປຸ່ມດຽວກັນອີກຄັ້ງເພື່ອຢຸດ. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | ອ່ານຕົວຢ່າງຄໍາຕອບ ຫຼື ຟັງກໍໄດ້. ມັນເປັນຂອງບຸກຄົນສົມມຸດ ແລະ ເປັນພຽງຕົວຢ່າງ. |
-| `help.read` | Read the sentence on the screen out loud. | ອ່ານປະໂຫຍກເທິງໜ້າຈໍອອກສຽງ. |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | ກົດ “{say}” ແລ້ວເວົ້າ. ຖ້າໂທລະສັບຖາມວ່າຈະອະນຸຍາດໃຫ້ໃຊ້ໄມໂຄຣໂຟນບໍ່, ກົດ “ອະນຸຍາດ”. ເມື່ອເວົ້າຈົບ ກົດ “{stop}”. |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | ທ່ານພິມແທນໄດ້ສະເໝີ. ແຕະທີ່ຊ່ອງແລ້ວພິມ. ການພິມໃຊ້ໄດ້ສະເໝີ. |
-| `help.typeOnly` | Tap the box and type what you hear. | ແຕະທີ່ຊ່ອງແລ້ວພິມສິ່ງທີ່ທ່ານໄດ້ຍິນ. |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | ກວດເບິ່ງຄໍາໃນຊ່ອງ. ທ່ານແກ້ໄຂໄດ້. ແລ້ວກົດ “{send}”. |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | ກົດ “{skip}” ຖ້າທ່ານບໍ່ຮູ້. ມັນຈະສົ່ງຄໍາຕອບເປົ່າ ແລະ ໄປຕໍ່. ນັບວ່າ “ຍັງບໍ່ຖືກ”. |
-| `help.notScored` | Nothing in this part is scored. | ບໍ່ມີຫຍັງໃນສ່ວນນີ້ທີ່ຖືກໃຫ້ຄະແນນ. |
-| `help.result.reading` | Then you see which words matched. | ຈາກນັ້ນທ່ານຈະເຫັນວ່າຄໍາໃດຕົງກັນ. |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | ຈາກນັ້ນທ່ານຈະເຫັນ “ຖືກຕ້ອງ” ຫຼື “ຍັງບໍ່ຖືກ” ແລະ ຄໍາຕອບທາງການ. |
-| `header.settings` | Settings | ການຕັ້ງຄ່າ |
-| `settings.title` | Comfort settings | ການຕັ້ງຄ່າເພື່ອຄວາມສະດວກ |
+| `help.listen` | Press “{play}” to hear it. | ກົດ “{play}” ເພື່ອຟັງ. |
+| `help.read` | Read the sentence out loud. | ອ່ານປະໂຫຍກອອກສຽງ. |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | ກົດ “{say}” ແລ້ວເວົ້າ. ຫຼື ພິມໃນຫ້ອງ. |
+| `help.typeOnly` | Type what you hear in the box. | ພິມສິ່ງທີ່ທ່ານໄດ້ຍິນໃສ່ຫ້ອງ. |
+| `header.settings` | Text size | ຂະໜາດຕົວອັກສອນ |
+| `settings.title` | Text size and voice | ຂະໜາດຕົວອັກສອນ ແລະ ສຽງ |
 | `settings.textSize.legend` | Text size | ຂະໜາດຕົວອັກສອນ |
 | `settings.textSize.normal` | Normal | ປົກກະຕິ |
 | `settings.textSize.large` | Large | ໃຫຍ່ |
 | `settings.textSize.extraLarge` | Extra large | ໃຫຍ່ຫຼາຍ |
-| `settings.slow.label` | Play recorded voices more slowly | ຫຼິ້ນສຽງທີ່ບັນທຶກໄວ້ຊ້າລົງ |
+| `settings.slow.label` | Slower voice | ສຽງຊ້າລົງ |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | ປ່ຽນສະເພາະຄວາມໄວ. ເປັນການບັນທຶກສຽງອັນດຽວກັນ. |
 | `settings.memory` | These settings last until you close or reload this page. | ການຕັ້ງຄ່າເຫຼົ່ານີ້ຢູ່ຈົນກວ່າທ່ານຈະປິດ ຫຼື ໂຫຼດໜ້ານີ້ໃໝ່. |
 | `settings.close` | Close settings | ປິດການຕັ້ງຄ່າ |
@@ -291,16 +280,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | ສຽງບໍ່ໄດ້ຫຼິ້ນ. ລອງໃໝ່ ຫຼື ອ່ານຂໍ້ຄວາມຢູ່ໜ້າຈໍ. |
 | `lang.label` | Language | ພາສາ |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | ກັບໄປໜ້າຫຼັກບໍ? ຄໍາຕອບຂອງທ່ານໃນການຝຶກນີ້ຈະຫາຍໄປ. |
-| `header.homeConfirm.yes` | Yes, go home | ແມ່ນ, ກັບໄປໜ້າຫຼັກ |
-| `header.homeConfirm.no` | Stay here | ຢູ່ທີ່ນີ້ຕໍ່ |
+| `header.homeConfirm.yes` | Leave | ອອກ |
+| `header.homeConfirm.no` | Keep practicing | ຝຶກຕໍ່ |
 | `common.retry` | Try again | ລອງອີກຄັ້ງ |
-| `partReport.badge.good` | This part reached the practice score | ພາກນີ້ເຖິງຄະແນນຝຶກແລ້ວ |
-| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | ປະໂຫຍກຖືກສະແດງຢູ່ໜ້າຈໍ (ການພະຍາຍາມທີ່ມີຕົວຊ່ວຍ). |
-| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | ຂໍ້ຄວາມປະຕິເສດຄວາມຮັບຜິດຊອບ ແລະ ຂໍ້ຄວາມທາງກົດໝາຍ ຈະສະແດງເປັນພາສາອັງກິດເທົ່ານັ້ນ ຈົນກວ່າຈະມີຄົນກວດການແປ. |
+| `partReport.badge.good` | You reached the practice goal | ທ່ານໄປຮອດເປົ້າໝາຍການຝຶກແລ້ວ |
+| `partReport.assisted` | The sentence was shown on the screen. | ໄດ້ສະແດງປະໂຫຍກເທິງໜ້າຈໍ. |
+| `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | ແຈ້ງການທາງກົດໝາຍຈະເປັນພາສາອັງກິດ ຈົນກວ່າຈະມີຄົນກວດການແປ. |
 | `lang.menu.title` | Choose a language | ເລືອກພາສາ |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | ຍັງມີພາສາອື່ນທີ່ກຳລັງກວດຢູ່. ພາສາເຫຼົ່ານັ້ນຈະປາກົດຢູ່ບ່ອນນີ້ຫຼັງຈາກມີຄົນກວດແລ້ວ. |
-| `home.study.title` | Study first | ສຶກສາກ່ອນ |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | ເບິ່ງຄໍາຖາມວິຊາພົນລະເມືອງພ້ອມຮູບພາບ ແລະ ຄໍາຕອບທາງການ. ບໍ່ມີການໃຫ້ຄະແນນ. |
+| `home.study.title` | Study | ຮຽນ |
+| `home.study.text` | See each question with its answers and a picture. No score. | ເບິ່ງແຕ່ລະຄຳຖາມພ້ອມຄຳຕອບ ແລະ ຮູບພາບ. ບໍ່ມີຄະແນນ. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | ເບິ່ງຄໍາຖາມວິຊາພົນລະເມືອງເທື່ອລະຂໍ້. ແຕ່ລະຂໍ້ສະແດງຄໍາຕອບທາງການ. ບໍ່ມີການໃຫ້ຄະແນນ ແລະ ບໍ່ບັນທຶກຫຍັງ. |
 | `study.version.legend` | Which civics test do you want to study? | ທ່ານຢາກສຶກສາບົດສອບວິຊາພົນລະເມືອງຊຸດໃດ? |
 | `study.version.2008` | 2008 civics test | ບົດສອບວິຊາພົນລະເມືອງ ປີ 2008 |
@@ -321,8 +310,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.hearSample` | Hear the sample | ຟັງຕົວຢ່າງ |
 | `selfReview.tryAgain` | Try again | ລອງອີກຄັ້ງ |
 | `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | ສຽງທີ່ບັນທຶກຢູ່ໃນອຸປະກອນເຄື່ອງນີ້ເທົ່ານັ້ນ. ບໍ່ຖືກສົ່ງໄປບ່ອນໃດ ຫຼື ເກັບໄວ້, ແລະ ຈະຖືກລຶບເມື່ອທ່ານໄປປະໂຫຍກຕໍ່ໄປ ຫຼື ອອກຈາກໜ້າຈໍນີ້. |
-| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | ບຣາວເຊີນີ້ບັນທຶກສຽງຂອງທ່ານບໍ່ໄດ້. ທ່ານຍັງກວດການອ່ານດ້ວຍປຸ່ມ “ເວົ້າ” ຫຼື ດ້ວຍການພິມໄດ້. |
-| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | ໄມໂຄຣໂຟນຖືກບລັອກຢູ່. ກະລຸນາອະນຸຍາດການໃຊ້ໄມໂຄຣໂຟນໃນການຕັ້ງຄ່າບຣາວເຊີ. |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still press “Tap to speak” or type. | ບຣາວເຊີນີ້ບັນທຶກສຽງຂອງທ່ານບໍ່ໄດ້. ທ່ານຍັງກົດ “ແຕະເພື່ອເວົ້າ” ຫຼື ພິມໄດ້. |
+| `selfReview.denied` | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. | ໄມໂຄຣໂຟນຖືກບລັອກ ຈຶ່ງເລີ່ມບັນທຶກບໍ່ໄດ້. ອະນຸຍາດໄມໂຄຣໂຟນສຳລັບເວັບນີ້ໃນການຕັ້ງຄ່າບຣາວເຊີ ແລ້ວລອງອີກ. |
 | `selfReview.error` | Recording did not work this time. Try again. | ຄັ້ງນີ້ບັນທຶກສຽງບໍ່ສໍາເລັດ. ລອງອີກຄັ້ງ. |
 | `compare.why.allWords` | Every important word of the sentence was there, in order. | ມີຄໍາສໍາຄັນທຸກຄໍາຂອງປະໂຫຍກຕາມລໍາດັບ. |
 | `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | ທ່ານເວົ້າວ່າ “{said}”. ປະໂຫຍກແມ່ນ “{expected}”. ແບບນີ້ຍັງນັບໄດ້. |
@@ -335,28 +324,63 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | ທ່ານເພີ່ມຄໍາວ່າ “{said}” ເຊິ່ງບໍ່ມີໃນປະໂຫຍກ. ແບບນີ້ຍັງນັບໄດ້. |
 | `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | ຄໍາສັ້ນ “{expected}” ຫາຍໄປ. ແບບນີ້ຍັງນັບໄດ້. |
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | ທ່ານເພີ່ມຄໍາສັ້ນ “{said}”. ແບບນີ້ຍັງນັບໄດ້. |
-| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | ຜົນນີ້ອີງໃສ່ຄໍາທີ່ອຸປະກອນຂອງທ່ານໄດ້ຍິນ. ຖ້າມັນໄດ້ຍິນຜິດ, ລອງອີກຄັ້ງ ຫຼື ພິມຄໍາຕອບ. |
+| `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | ຜົນນີ້ໃຊ້ຄຳທີ່ໂທລະສັບ ຫຼື ຄອມພິວເຕີໄດ້ຍິນ. ຖ້າໄດ້ຍິນຜິດ ໃຫ້ລອງອີກ ຫຼື ພິມຄຳຕອບ. |
 | `compare.honest.typed` | This result is based on the words you typed. | ຜົນນີ້ອີງໃສ່ຄໍາທີ່ທ່ານພິມ. |
-| `home.special.title` | 65/20 civics practice | ຝຶກວິຊາພົນລະເມືອງ 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | ສຳລັບຜູ້ທີ່ມີອາຍຸ 65 ປີຂຶ້ນໄປ ແລະ ເປັນຜູ້ມີຖິ່ນທີ່ຢູ່ຖາວອນມາ 20 ປີຂຶ້ນໄປ. ຝຶກຄຳຖາມວິຊາພົນລະເມືອງທີ່ມີເຄື່ອງໝາຍດາວ (*). |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ຂ້ອຍມີອາຍຸ 65 ປີຂຶ້ນໄປ ແລະ ເປັນຜູ້ມີຖິ່ນທີ່ຢູ່ຖາວອນມາ 20 ປີຂຶ້ນໄປ |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | ສະເພາະຄຳຖາມສຳລັບ 65/20 (ມີເຄື່ອງໝາຍດາວ) |
 | `report.line.civics.none` | No civics questions were scored. | ບໍ່ມີຄຳຖາມວິຊາພົນລະເມືອງໃດຖືກໃຫ້ຄະແນນ. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | ຄຳຖາມວິຊາພົນລະເມືອງທີ່ຕອບຖືກ: {correct} ຈາກ {scored}. |
+| `report.line.civics.unscored` | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. | ບໍ່ມີຄະແນນສຳລັບຂໍ້ເຫຼົ່ານີ້ ເພາະຄຳຕອບປ່ຽນຕາມເວລາ ຫຼື ພວກເຮົາກວດບໍ່ໄດ້: {names}. ບໍ່ນັບວ່າຖືກ ຫຼື ຜິດ. |
 | `report.line.reading.none` | No reading sentences were completed. | ຍັງບໍ່ມີປະໂຫຍກການອ່ານທີ່ເຮັດສຳເລັດ. |
 | `report.line.reading.done` | Sentence {n} was read correctly. | ອ່ານປະໂຫຍກທີ {n} ຖືກຕ້ອງ. |
 | `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | ປະໂຫຍກການອ່ານທີ່ອ່ານຖືກ: {correct} ຈາກ {presented}. ປະໂຫຍກທີ່ຕ້ອງຖືກ: {needed}. |
 | `report.line.writing.none` | No writing sentences were completed. | ຍັງບໍ່ມີປະໂຫຍກການຂຽນທີ່ເຮັດສຳເລັດ. |
 | `report.line.writing.done` | Sentence {n} was written correctly. | ຂຽນປະໂຫຍກທີ {n} ຖືກຕ້ອງ. |
 | `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | ປະໂຫຍກການຂຽນທີ່ຂຽນຖືກ: {correct} ຈາກ {presented}. ປະໂຫຍກທີ່ຕ້ອງຖືກ: {needed}. |
-| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | ຄັ້ງທີ່ຂຽນໂດຍເຫັນປະໂຫຍກຢູ່ໜ້າຈໍ (ມີຕົວຊ່ວຍ): {assisted} ຈາກ {presented}. |
+| `report.line.writing.assisted` | Sentences written while the sentence was shown: {assisted} of {presented}. | ປະໂຫຍກທີ່ຂຽນຂະນະສະແດງປະໂຫຍກ: {assisted} ຈາກ {presented}. |
 | `report.review.reading` | Practice reading the sentences aloud. | ຝຶກອ່ານປະໂຫຍກອອກສຽງ. |
 | `report.review.writing` | Practice writing the sentences you hear. | ຝຶກຂຽນປະໂຫຍກທີ່ທ່ານໄດ້ຍິນ. |
+| `civics.heard.closest` | Your phone or computer heard a few possible answers. We show the one closest to an official answer. | ໂທລະສັບ ຫຼື ຄອມພິວເຕີໄດ້ຍິນຄຳຕອບທີ່ເປັນໄປໄດ້ຫຼາຍແບບ. ພວກເຮົາສະແດງແບບທີ່ໃກ້ຄຳຕອບທາງການທີ່ສຸດ. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | ຕອບໃນຖານະບຸກຄົນສົມມຸດ. ຢ່າພິມຊື່, ທີ່ຢູ່, ວັນທີ ຫຼື ເລກແທ້ຂອງທ່ານ. |
 | `common.newTab` | (opens in a new tab) | (ເປີດໃນແທັບໃໝ່) |
 | `coach.kind.streetAddress` | a street address | ທີ່ຢູ່ຖະໜົນ |
 | `coach.kind.zipCode` | a ZIP code with a state | ລະຫັດໄປສະນີ ZIP ພ້ອມຊື່ລັດ |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | ການກວດນີ້ຍັງຊອກຫາທີ່ຢູ່ ແລະ ລະຫັດ ZIP, ແຕ່ຊອກຫາຊື່ບໍ່ໄດ້. ຢ່າເວົ້າ ຫຼື ພິມຊື່ຂອງຄົນແທ້. |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | ຕົວໜັງສືນ້ອຍເກີນໄປບໍ? ແຕະ ຂະໜາດຕົວໜັງສື ຢູ່ທາງເທິງ. |
+| `audio.playing` | Playing… | ກຳລັງຫຼິ້ນ… |
+| `audio.playSentence` | Play the sentence | ຟັງປະໂຫຍກ |
+| `voice.gotIt` | Got it. Tap to speak again | ໄດ້ຍິນແລ້ວ. ແຕະເພື່ອເວົ້າອີກ |
+| `voice.orType` | Or type your answer | ຫຼື ພິມຄຳຕອບຂອງທ່ານ |
+| `voice.micHelp.title` | How to allow the microphone | ວິທີອະນຸຍາດໄມໂຄຣໂຟນ |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): ແຕະ “aA” ຂ້າງທີ່ຢູ່ເວັບ, ແລ້ວແຕະ Website Settings, ແລ້ວ Microphone, ແລະເລືອກ Allow. ຈາກນັ້ນໂຫຼດໜ້າໃໝ່. |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): ແຕະໄອຄອນນ້ອຍທາງຊ້າຍຂອງທີ່ຢູ່ເວັບ, ແລ້ວແຕະ Permissions, ແລະເປີດ Microphone. ຈາກນັ້ນໂຫຼດໜ້າໃໝ່. |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | ທ່ານສາມາດພິມຄຳຕອບໃນຫ້ອງແທນໄດ້ສະເໝີ. |
+| `civics.why.correct` | Your answer matches an official answer. | ຄຳຕອບຂອງທ່ານກົງກັບຄຳຕອບທາງການຂໍ້ໜຶ່ງ. |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | ຄຳຕອບຂອງທ່ານຍັງບໍ່ກົງກັບຄຳຕອບທາງການ. |
+| `settings.slow.on` | On | ເປີດ |
+| `settings.slow.off` | Off | ປິດ |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | ກົດ “{send}” ເພື່ອໄປຕໍ່. ສ່ວນນີ້ບໍ່ມີຄະແນນ. |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | ກົດ “{send}”. ແລ້ວທ່ານຈະເຫັນວ່ານັບໄດ້ບໍ່. |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | ກົດ “{send}”. ແລ້ວທ່ານຈະເຫັນວ່ານັບໄດ້ບໍ່ ແລະ ຄຳຕອບທາງການ. |
+| `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | ເລືອກແລ້ວ |
+| `aiNotice.more` | More | ເພີ່ມເຕີມ |
+| `home.who.title` | 1. Who is practicing? | 1. ໃຜກຳລັງຝຶກ? |
+| `home.who.most.title` | Most people | ຄົນສ່ວນໃຫຍ່ |
+| `home.who.most.text` | The usual civics test rules. | ກົດການສອບຄວາມຮູ້ພົນລະເມືອງຕາມປົກກະຕິ. |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | ອາຍຸ 65 ປີຂຶ້ນໄປ, ມີບັດຂຽວ 20 ປີຂຶ້ນໄປ (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | ບໍ່ຕ້ອງສອບພາສາອັງກິດ. ຄຳຖາມໜ້ອຍລົງ: 20 ຂໍ້ທີ່ມີດາວ. |
+| `home.who.notSure` | Not sure? Choose Most people. | ບໍ່ແນ່ໃຈ? ເລືອກ ຄົນສ່ວນໃຫຍ່. |
+| `home.what.title` | 2. What do you want to do? | 2. ທ່ານຢາກເຮັດຫຍັງ? |
+| `home.part.notRequired` | Not required for {exception} | ບໍ່ຈຳເປັນສຳລັບ {exception} |
+| `home.go.start` | Start | ເລີ່ມ |
+| `home.go.open` | Open | ເປີດ |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | ອາຍຸ 50 ປີຂຶ້ນໄປ, ມີບັດຂຽວ 20 ປີຂຶ້ນໄປ (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | ອາຍຸ 55 ປີຂຶ້ນໄປ, ມີບັດຂຽວ 15 ປີຂຶ້ນໄປ (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | ບໍ່ຕ້ອງສອບພາສາອັງກິດ. ສອບຄວາມຮູ້ພົນລະເມືອງຕາມປົກກະຕິ, ເປັນພາສາຂອງທ່ານຖ້າພານາຍແປພາສາມາເອງ. |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | ໃນການສຳພາດ ທ່ານຕອບຄຳຖາມຄວາມຮູ້ພົນລະເມືອງເປັນພາສາຂອງທ່ານໄດ້ ຖ້າພານາຍແປພາສາມາເອງ. ແອັບນີ້ຝຶກຄຳຖາມພາສາອັງກິດ. |
+| `report.exception` | Practice as {exception} | ຝຶກໃນກໍລະນີ {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | ທ່ານສອບຄວາມຮູ້ພົນລະເມືອງແທ້ເປັນພາສາຂອງທ່ານໄດ້ ຖ້າພານາຍແປພາສາມາເອງ. |
+| `intro.who.legend` | Who is practicing? | ໃຜກຳລັງຝຶກ? |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -11,11 +11,9 @@
 /* Tape-counter overline: mono, uppercase reel-to-reel take label above the H1.
    The take counter and separator are decorative; the page label is announced. */
 .report__overline {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--fs-meta);
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--ink-2);
   margin-bottom: var(--space-3);
 }
@@ -57,7 +55,7 @@
 }
 
 .report__profile-name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--fs-lg);
   font-weight: 600;
   color: var(--ink);
@@ -141,7 +139,7 @@
   width: 1.1rem;
   height: 1.1rem;
   flex: 0 0 auto;
-  margin-top: 0.3rem;
+  margin-top: var(--space-1);
   color: var(--status-attention);
 }
 
@@ -154,4 +152,11 @@
   .stage-card {
     padding: var(--space-5);
   }
+}
+/* Senior step 7: report prose keeps the 34em line length. */
+.report__lead,
+.report__section-intro,
+.stage-card__summary,
+.report__review-item {
+  max-width: var(--measure);
 }

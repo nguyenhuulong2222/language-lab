@@ -28,18 +28,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | असली इंटरव्यू अंग्रेज़ी में होता है, जब तक USCIS आपके लिए अपवाद की अनुमति न दे। इन स्क्रीन पर प्रश्न और वाक्य अंग्रेज़ी में ही रहते हैं ताकि आप उनका अभ्यास कर सकें। | The real interview is in English, unless USCIS allows an exception for you. The questions and sentences on these screens remain in English so that you can practice them. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | यह रिपोर्ट केवल एक भाग की है। यह दिखाती है कि अभ्यास में यह भाग कैसा रहा, यह नहीं कि असली टेस्ट में आपका प्रदर्शन कैसा होता, और यह कुल अभ्यास परिणाम नहीं देती। | This report is of one part only. It shows how this part went in practice, not how your performance would have been in the real test, and it does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | N-400 इंटरव्यू केवल अभ्यास है और इसका स्कोर नहीं दिया जाता। | The N-400 interview is only practice and no score is given for it. |
-| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | यह अनुवाद AI ने बनाया है और इसमें गलतियाँ हो सकती हैं। अंग्रेज़ी संस्करण ही आधिकारिक है। | This translation was made by AI and may contain mistakes. The English version is the official one. |
+| `aiNotice.text` | Translated by AI. It may have mistakes. The English is correct. | AI द्वारा अनुवादित। इसमें गलतियाँ हो सकती हैं। अंग्रेज़ी सही है। | This translation was made by AI and may contain mistakes. The English version is the official one. |
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | यह USCIS के अंक-निर्धारण दिशानिर्देशों पर आधारित Language Lab की अभ्यास सेटिंग है, USCIS का नियम नहीं: वाक्य का हर ज़रूरी शब्द क्रम से होना चाहिए। “the” जैसे छोटे शब्द छूट सकते हैं। रुकने और उच्चारण का स्कोर नहीं दिया जाता। | This is Language Lab's practice setting based on USCIS scoring guidelines, not a USCIS rule: every necessary word of the sentence must be there in order. Short words like “the” may be missed. Pauses and pronunciation are not given a score. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | इससे तय होता है कि आप 2008 का नागरिक शास्त्र टेस्ट अभ्यास करेंगे या 2025 का। यह केवल अभ्यास के लिए एक चुनाव है। अपने मामले में कौन-सा टेस्ट लागू होता है, यह uscis.gov पर देखें। | This decides whether you will practice the 2008 civics test or the 2025 one. This is only a choice for practice. See uscis.gov for which test applies in your case. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | नागरिक शास्त्र अभ्यास की तस्वीरें अमेरिकी संघीय सरकार के आधिकारिक स्रोतों से ली गई हैं। हर तस्वीर इसलिए इस्तेमाल की गई है क्योंकि उसके अपने रिकॉर्ड में उसके अधिकार साफ़ लिखे हैं। इसका यह मतलब नहीं कि कोई एजेंसी Language Lab का समर्थन करती है। | The pictures of the civics practice have been taken from official sources of the U.S. federal government. Each picture has been used because its own record clearly states its rights. This does not mean that any agency supports Language Lab. |
 | `civics.officialNote` | Any of these counts. | इनमें से कोई भी उत्तर मान्य है। | Any one of these answers is valid. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | जब तक कोई व्यक्ति नागरिक शास्त्र के उत्तरों की समीक्षा नहीं करता, इस संस्करण में नागरिक शास्त्र, पहले पढ़ें और पूरा अभ्यास साक्षात्कार बंद हैं। आप N-400 साक्षात्कार, पढ़ना और लिखना अभ्यास कर सकते हैं। | Until a person reviews the civics answers, civics, Study first and the full practice interview are off in this version. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | नागरिक शास्त्र की उत्तर-कुंजी अभी किसी व्यक्ति की समीक्षा की प्रतीक्षा में है, इसलिए यह संस्करण नागरिक शास्त्र का स्कोर नहीं देता और रिपोर्ट नहीं बनाता। | The civics answer key is still waiting for a person's review, so this version does not give a civics score and does not make a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | जब आप “बोलें” दबाते हैं, तो आपके ब्राउज़र की आवाज़ पहचान सुविधा आपकी आवाज़ को शब्दों में बदलने के लिए ब्राउज़र बनाने वाली कंपनी, जैसे Google या Apple, को भेज सकती है। Language Lab आपकी आवाज़ न भेजता है, न सहेजता है। आप इसके बजाय अपना उत्तर टाइप कर सकते हैं। | When you press “Speak”, your browser's voice recognition feature may send your voice to the company that makes the browser, such as Google or Apple, to turn it into words. Language Lab neither sends nor saves your voice. You can type your answer instead. |
-| `report.title.onTrack` | Practice complete: each part reached the practice score | अभ्यास पूरा: हर भाग अभ्यास स्कोर तक पहुँचा | Practice complete: every part reached the practice score |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | जब आप “बोलने के लिए छुएँ” दबाते हैं, तो आपके ब्राउज़र की आवाज़ पहचान सुविधा आपकी आवाज़ को शब्दों में बदलने के लिए ब्राउज़र बनाने वाली कंपनी, जैसे Google या Apple, को भेज सकती है। Language Lab आपकी आवाज़ न भेजता है, न सहेजता है। आप इसके बजाय अपना उत्तर टाइप कर सकते हैं। | When you press “Speak”, your browser's voice recognition feature may send your voice to the company that makes the browser, such as Google or Apple, to turn it into words. Language Lab neither sends nor saves your voice. You can type your answer instead. |
+| `report.title.onTrack` | Well done. Each part reached the practice goal. | बहुत अच्छा। हर भाग अभ्यास के लक्ष्य तक पहुँचा। | Practice complete: every part reached the practice score |
 | `report.title.review` | A few things to review | दोहराने के लिए कुछ बातें | A few things to revise |
-| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | इस अभ्यास में पढ़ना, लिखना और नागरिक शास्त्र, तीनों उस स्कोर तक पहुँचे जो Language Lab इस्तेमाल करता है। अभ्यास जारी रखने के लिए नीचे दिए नोट्स देखें। | In this practice, reading, writing and civics, all three, reached the score that Language Lab uses. See the notes below to continue practicing. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | अभ्यास इसी के लिए होता है। नीचे दिए नोट्स बताते हैं कि दोबारा कोशिश करने से पहले किन बातों पर ध्यान देना है। | That is what practice is for. The notes below tell you what to focus on before trying again. |
+| `report.lead.onTrack` | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. | पढ़ना, लिखना और नागरिक शास्त्र, हर भाग अभ्यास के लक्ष्य तक पहुँचा। नीचे दिए नोट पढ़ें और अभ्यास जारी रखें। | In this practice, reading, writing and civics, all three, reached the score that Language Lab uses. See the notes below to continue practicing. |
+| `report.lead.review` | That is what practice is for. The notes below show what to practice next. | अभ्यास इसी के लिए है। नीचे दिए नोट बताते हैं कि आगे किसका अभ्यास करें। | That is what practice is for. The notes below tell you what to focus on before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | लिखना: USCIS के अनुसार वर्तनी, बड़े अक्षर और विराम चिह्न की गलतियों से लेखन परीक्षा में आप असफल नहीं होते, जब तक वाक्य समझ में आना बंद न हो जाए। यहाँ वर्तनी की छोटी गलतियाँ भी मान ली जाती हैं, और लंबे शब्दों में ज़्यादा गलतियाँ चल सकती हैं। बड़े अक्षर और विराम चिह्न नहीं जाँचे जाते। | Writing: according to USCIS, mistakes in spelling, capital letters and punctuation do not make you fail the writing test, unless the sentence stops being understandable. Here, small spelling mistakes are also accepted, and longer words can have more mistakes. Capital letters and punctuation are not checked. |
 | `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | AI कोच चालू होने पर, इस भाग में आप जो भी उत्तर टाइप करते हैं या बोलते हैं, उसके शब्द प्रतिक्रिया लिखने के लिए Language Lab के सर्वर के ज़रिए AI कंपनी Anthropic को टेक्स्ट के रूप में भेजे जाते हैं। Language Lab और Anthropic को आपकी आवाज़ कभी नहीं मिलती, सिर्फ़ शब्द। काल्पनिक व्यक्ति के रूप में उत्तर दें। असली नाम, पते, जन्म तिथि, A-number या केस का विवरण न बताएँ। अपने असली इंटरव्यू में आपको अपने जीवन के बारे में सच-सच उत्तर देना होगा। Language Lab कुछ नंबरों की जाँच करता है, लेकिन हर निजी जानकारी नहीं पकड़ सकता। Language Lab आपके उत्तर नहीं रखता। Anthropic उन्हें कैसे संभालता है, यह Anthropic की गोपनीयता नीति में है: anthropic.com/legal/privacy। नया अभ्यास शुरू करने पर AI कोच फिर से बंद हो जाता है। | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
 | `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | AI कोच: जब तक आप इसे N-400 भाग में चालू न करें, बंद रहता है। चालू होने पर, हर N-400 उत्तर का टेक्स्ट प्रतिक्रिया लिखने के लिए Language Lab के सर्वर के ज़रिए Anthropic को भेजा जाता है; कोई ऑडियो नहीं भेजा जाता। उपयोग सीमित करने के लिए, सर्वर आपके इंटरनेट पते से बने, रोज़ बदलने वाले और साल्ट मिले कोड से अनुरोध गिनता है; पुरानी गिनती बाद के अनुरोधों में हटा दी जाती है, आमतौर पर दो दिन में। Anthropic की गोपनीयता नीति: anthropic.com/legal/privacy। | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
@@ -50,8 +50,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | वाक्यों में केवल USCIS की आधिकारिक पढ़ने और लिखने की शब्द-सूचियों के शब्द इस्तेमाल होते हैं। |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | आप अभ्यास के उत्तीर्ण स्कोर तक पहुँच गए, इसलिए टेस्ट यहीं रुक गया। |
-| `home.part.civics.text` | Answer civics questions. Checked against the answer key. | नागरिक शास्त्र के प्रश्नों के उत्तर दें। उत्तर-कुंजी से मिलान किया जाता है। |
-| `partReport.unscored.missing` | A question that is not in the answer key | ऐसा प्रश्न जो उत्तर-कुंजी में नहीं है |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | जब तक कोई व्यक्ति उत्तर-कुंजी की समीक्षा नहीं कर लेता, इस संस्करण में “पहले पढ़ें” बंद है। |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | इससे केवल अभ्यास बदलता है; कुछ भी सहेजा या भेजा नहीं जाता। नागरिक शास्त्र भाग में आधिकारिक सूची के तारे (*) वाले {bank} प्रश्नों में से {asked} प्रश्न पूछे जाते हैं। इस अभ्यास में सभी {asked} प्रश्न पूछे जाते हैं। अभ्यास का पास स्कोर {pass} सही उत्तर है। अपने मामले के लिए uscis.gov देखें: उम्र और वर्ष आवेदन जमा करने की तारीख पर गिने जाते हैं। |
 | `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS: आवेदन की तारीख पर, यदि आपकी उम्र 50 वर्ष या अधिक है और आप 20 वर्ष से स्थायी निवासी हैं (50/20), या 55 वर्ष या अधिक और 15 वर्ष (55/15), तो आपको अंग्रेज़ी की आवश्यकता (अंग्रेज़ी पढ़ना, लिखना, बोलना और समझना) से छूट है, लेकिन नागरिक शास्त्र परीक्षा फिर भी देनी होगी। दुभाषिया साथ लाने पर आप इसे अपनी मातृभाषा में दे सकते हैं। यदि आपकी उम्र 65 वर्ष या अधिक है और कम से कम 20 वर्ष (65/20), तो आपको भी अंग्रेज़ी से छूट है, और अधिकारी विशेष रूप से निर्धारित नागरिक शास्त्र परीक्षा फ़ॉर्म का उपयोग करते हैं। |
@@ -61,8 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | अभ्यास का पास स्कोर पूरा होते ही अभ्यास परीक्षा रुक गई। |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | अभ्यास का पास स्कोर {score} पूरा होने से पहले, {incorrect} गलत उत्तरों के बाद अभ्यास परीक्षा रुक गई। |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | अभ्यास का पास स्कोर {score} सही उत्तर है, और वह पूरा नहीं हुआ। |
-| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | अंकित नहीं, क्योंकि उत्तर बदलता है या उत्तर कुंजी में नहीं है: {names}। ये प्रश्न सही या गलत नहीं गिने जाते। |
-| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | आपके डिवाइस ने आपकी बात के कई अनुमान दिए। उत्तर कुंजी के किसी उत्तर के सबसे पास वाला अनुमान दिखाया गया है। |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS उम्र और स्थायी निवासी के रूप में साल N-400 जमा होने के दिन गिनता है। |
 
 ## 3. All other lines
 
@@ -70,16 +67,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | मुख्य सामग्री पर जाएँ |
-| `app.stageNotBuilt` | This stage of the practice isn’t built yet. | अभ्यास का यह चरण अभी तैयार नहीं है। |
+| `app.stageNotBuilt` | This part is not ready yet. Go back to Home and choose another part. | यह भाग अभी तैयार नहीं है। होम पर लौटें और दूसरा भाग चुनें। |
 | `header.about` | About & disclaimer | परिचय और अस्वीकरण |
-| `stepper.label` | Interview stages | इंटरव्यू के चरण |
-| `stepper.count` | Stage {current} of {total} | चरण {current} / {total} |
+| `stepper.label` | Your steps | आपके चरण |
+| `stepper.count` | Step {current} of {total}: {name} | चरण {current} / {total}: {name} |
 | `stepper.status.complete` | completed | पूरा हुआ |
 | `stepper.status.current` | current step | वर्तमान चरण |
 | `stepper.status.upcoming` | upcoming | आगामी |
-| `stage.intro.label` | Welcome | स्वागत |
-| `stage.intro.short` | Intro | शुरुआत |
-| `stage.n400_interview.label` | N-400 conversation | N-400 बातचीत |
+| `stage.intro.label` | Set up | तैयारी |
+| `stage.intro.short` | Set up | तैयारी |
+| `stage.n400_interview.label` | N-400 questions | N-400 के प्रश्न |
 | `stage.n400_interview.short` | N-400 | N-400 |
 | `stage.reading.label` | Reading | पढ़ना |
 | `stage.reading.short` | Reading | पढ़ना |
@@ -87,43 +84,42 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.writing.short` | Writing | लिखना |
 | `stage.civics.label` | Civics | नागरिक शास्त्र |
 | `stage.civics.short` | Civics | Civics |
-| `stage.report.label` | Practice report | अभ्यास रिपोर्ट |
+| `stage.report.label` | Your report | आपकी रिपोर्ट |
 | `stage.report.short` | Report | रिपोर्ट |
-| `badge.onTrack` | Practice score reached | अभ्यास स्कोर पूरा |
-| `badge.review` | Worth reviewing | दोहराने लायक |
-| `report.empty` | Your practice report will appear here once the session is complete. | सत्र पूरा होने पर आपकी अभ्यास रिपोर्ट यहाँ दिखाई देगी। |
-| `report.take` | TAKE | TAKE |
+| `badge.onTrack` | You reached the practice goal | आप अभ्यास के लक्ष्य तक पहुँच गए |
+| `badge.review` | Practice this again | इसका फिर से अभ्यास करें |
+| `report.empty` | Your report will show here when you finish the practice. | अभ्यास पूरा होने पर आपकी रिपोर्ट यहाँ दिखेगी। |
 | `report.overline` | Practice report | अभ्यास रिपोर्ट |
-| `report.profile.label` | Practice profile (fictional) | अभ्यास प्रोफ़ाइल (काल्पनिक) |
+| `report.profile.label` | Practice person (made up) | अभ्यास का व्यक्ति (काल्पनिक) |
 | `report.profile.meta` | {version} civics test · filed {date} | {version} का नागरिक शास्त्र टेस्ट · आवेदन की तारीख {date} |
 | `report.stages.heading` | How each part went | हर भाग कैसा रहा |
 | `report.review.heading` | Things to review | दोहराने की बातें |
 | `report.review.intro` | Focus on these before your next practice. | अपने अगले अभ्यास से पहले इन पर ध्यान दें। |
-| `report.generated` | Report generated {datetime} | रिपोर्ट बनाई गई: {datetime} |
+| `report.generated` | Report made {datetime} | रिपोर्ट बनी: {datetime} |
 | `translation.english` | English | अंग्रेज़ी |
-| `voice.say` | Say it | बोलें |
-| `voice.stop` | Stop listening | सुनना बंद करें |
+| `voice.say` | Tap to speak | बोलने के लिए छुएँ |
+| `voice.stop` | Listening… tap when you finish | सुन रहे हैं… बोलना खत्म होने पर छुएँ |
 | `voice.listening` | Listening. Say your answer now. | सुन रहे हैं। अब अपना उत्तर बोलें। |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | हमने आपको सुन लिया। शब्द देखें, चाहें तो बदलें, फिर भेजें। |
-| `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | माइक्रोफ़ोन ब्लॉक है। अपने ब्राउज़र की सेटिंग में माइक्रोफ़ोन की अनुमति दें, या अपना उत्तर टाइप करें। |
+| `voice.denied` | The microphone is blocked. Follow the steps below to allow it, or type your answer. | माइक्रोफ़ोन ब्लॉक है। इसकी अनुमति देने के लिए नीचे दिए चरण अपनाएँ, या अपना उत्तर टाइप करें। |
 | `voice.unsupported` | This browser cannot listen to your voice. Type your answer instead. | यह ब्राउज़र आपकी आवाज़ नहीं सुन सकता। इसके बजाय अपना उत्तर टाइप करें। |
 | `voice.nothingHeard` | We did not hear anything. Try again, or type your answer. | हमें कुछ सुनाई नहीं दिया। फिर से कोशिश करें, या अपना उत्तर टाइप करें। |
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | कोई माइक्रोफ़ोन नहीं मिला। इसके बजाय अपना उत्तर टाइप करें। |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | इस बार सुनना सफल नहीं हुआ। फिर से कोशिश करें, या अपना उत्तर टाइप करें। |
 | `voice.skip` | Skip this one | इसे छोड़ें |
-| `audio.play` | Play aloud | ज़ोर से सुनें |
-| `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | डिवाइस की आवाज़: आपके फ़ोन या कंप्यूटर में इंस्टॉल की गई आवाज़। |
+| `audio.play` | Play the question | प्रश्न सुनें |
+| `audio.deviceVoice` | Built-in voice: the voice of your phone or computer. | बिल्ट-इन आवाज़: आपके फ़ोन या कंप्यूटर की आवाज़। |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | यह ब्राउज़र ज़ोर से पढ़ नहीं सकता। स्क्रीन पर लिखा पाठ पढ़ें। |
-| `intro.profile.legend` | Choose a practice profile | एक अभ्यास प्रोफ़ाइल चुनें |
-| `intro.profile.help` | Every profile is invented. | हर प्रोफ़ाइल गढ़ी हुई है। |
+| `intro.profile.legend` | Choose a practice person | अभ्यास के लिए एक व्यक्ति चुनें |
+| `intro.profile.help` | Every person here is made up. | यहाँ हर व्यक्ति काल्पनिक है। |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | ऐसे अभ्यास करें जैसे N-400 दाखिल किया गया हो… |
 | `intro.filed.before` | Before {date} | {date} से पहले |
 | `intro.filed.onOrAfter` | On or after {date} | {date} को या उसके बाद |
 | `intro.start` | Start practice | अभ्यास शुरू करें |
-| `intro.startHint` | Make your choice above to start. | शुरू करने के लिए ऊपर अपना चुनाव करें। |
-| `home.locked.title` | In this build you can practice | इस संस्करण में आप यह अभ्यास कर सकते हैं |
+| `intro.startHint` | Choose one answer in each group above. Then press “Start practice”. | ऊपर हर समूह में एक उत्तर चुनें। फिर “अभ्यास शुरू करें” दबाएँ। |
+| `home.locked.title` | Right now you can practice | अभी आप इसका अभ्यास कर सकते हैं |
 | `n400.title` | N-400 interview | N-400 इंटरव्यू |
-| `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | आवेदन के बारे में अधिकारी जिस तरह के सवाल पूछता है, उनका शांति से अभ्यास। {name} के रूप में उत्तर दें। इस चरण में कोई स्कोर नहीं दिया जाता। |
+| `n400.lead` | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. | अधिकारी आपके फ़ॉर्म के बारे में ऐसे प्रश्न पूछ सकते हैं। {name} बनकर उत्तर दें। इस भाग में कोई अंक नहीं मिलते। |
 | `n400.count` | Question {current} of {total} | प्रश्न {current} / {total} |
 | `n400.sample.label` | Sample answer for {name} (fictional) | {name} के लिए नमूना उत्तर (काल्पनिक) |
 | `n400.yourAnswer` | Your answer, as {name} | {name} के रूप में आपका उत्तर |
@@ -144,7 +140,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | चाहें तो ज़ोर से उत्तर का अभ्यास करें। यह प्रश्न रिकॉर्ड नहीं होता। |
 | `coach.tip.label` | Tip about your English: | आपकी अंग्रेज़ी के बारे में सुझाव: |
 | `coach.feedback.understood` | Easy to understand | समझने में आसान |
-| `coach.feedback.needs_practice` | Worth practicing again | फिर से अभ्यास करने लायक |
+| `coach.feedback.needs_practice` | Practice this again | इसका फिर से अभ्यास करें |
 | `coach.feedback.unclear` | Hard to follow. Try again. | समझना मुश्किल है। फिर कोशिश करें। |
 | `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | यह सिर्फ़ देखता है कि आपकी अंग्रेज़ी कितनी साफ़ है। यह नहीं बताता कि उत्तर सही या सच है या नहीं। |
 | `coach.checking` | Getting AI feedback… | AI प्रतिक्रिया ली जा रही है… |
@@ -158,11 +154,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.dateOfBirth` | a full date, such as a date of birth | पूरी तारीख, जैसे जन्म तिथि |
 | `coach.next` | Continue | जारी रखें |
 | `n400.loading` | Getting the next question… | अगला प्रश्न लाया जा रहा है… |
-| `n400.failed` | The next question could not be loaded. Start over to try again. | अगला प्रश्न लोड नहीं हो सका। फिर से कोशिश करने के लिए शुरू से आरंभ करें। |
+| `n400.failed` | The next question did not load. Check your internet, then press “Start over”. | अगला प्रश्न लोड नहीं हुआ। अपना इंटरनेट जाँचें, फिर “फिर से शुरू करें” दबाएँ। |
 | `n400.done.title` | Your answers | आपके उत्तर |
 | `n400.done.lead` | These are the words you gave. They are not scored. | ये वे शब्द हैं जो आपने कहे। इनका कोई स्कोर नहीं दिया जाता। |
 | `n400.done.next` | Go to reading | पढ़ने पर जाएँ |
-| `voice.consent.continue` | Continue and say it | जारी रखें और बोलें |
+| `voice.consent.continue` | Continue and speak | जारी रखें और बोलें |
 | `voice.consent.type` | Type instead | इसके बजाय टाइप करें |
 | `n400.number` | Question {current} | प्रश्न {current} |
 | `common.fictional` | Fictional practice profile | काल्पनिक अभ्यास प्रोफ़ाइल |
@@ -194,15 +190,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | यह ब्राउज़र ज़ोर से पढ़ नहीं सकता, इसलिए वाक्य यहाँ दिखाया गया है। इसे टाइप करें। |
 | `writing.hidden` | The sentence stays hidden until you answer. | जब तक आप उत्तर नहीं देते, वाक्य छिपा रहता है। |
 | `writing.show` | Show the sentence | वाक्य दिखाएँ |
-| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | अगर आप ऑडियो नहीं सुन पा रहे हैं, तो वाक्य दिखाएँ और उसे टाइप करें। उसकी जाँच उसी तरह होती है। आपकी रिपोर्ट इस प्रयास को सहायता वाला प्रयास चिह्नित करती है। |
-| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | वाक्य दिखाया गया है। आपकी रिपोर्ट इस प्रयास को सहायता वाला प्रयास चिह्नित करती है। |
+| `writing.show.help` | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. | अगर आवाज़ सुनाई न दे, तो वाक्य दिखाएँ और उसे टाइप करें। जाँच उसी तरह होती है। आपकी रिपोर्ट में लिखा होगा कि वाक्य दिखाया गया था। |
+| `writing.shown` | The sentence is shown. Your report will say so. | वाक्य दिखाया गया है। आपकी रिपोर्ट में यह लिखा होगा। |
 | `civics.title` | Civics | नागरिक शास्त्र |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | ज़ोर से उत्तर दें या टाइप करें। छोटे उत्तर ठीक हैं, पर पूरा उत्तर बोलें। |
 | `civics.count` | Question {current} of {total} | प्रश्न {current} / {total} |
 | `civics.needs` | This question needs {count} different answers. | इस प्रश्न के लिए {count} अलग-अलग उत्तर चाहिए। |
 | `civics.yourAnswer` | Your answer | आपका उत्तर |
 | `civics.submit` | Check my answer | मेरा उत्तर जाँचें |
-| `civics.correct` | Correct | सही |
+| `civics.correct` | This counts | यह गिना जाएगा |
 | `civics.notYet` | Not yet | अभी नहीं |
 | `civics.youSaid` | You said: {text} | आपने कहा: {text} |
 | `civics.official` | Official answers | आधिकारिक उत्तर |
@@ -211,39 +207,39 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.stopped.incorrect` | The test stopped because too many answers need more practice. | टेस्ट रुक गया क्योंकि बहुत से उत्तरों को और अभ्यास की ज़रूरत है। |
 | `civics.stopped.none` | You have answered every question for this practice test. | आपने इस अभ्यास टेस्ट के सभी प्रश्नों के उत्तर दे दिए। |
 | `civics.tally` | {correct} correct, {incorrect} not yet. | {correct} सही, {incorrect} अभी नहीं। |
-| `civics.locked.title` | Civics is switched off in this build | इस संस्करण में नागरिक शास्त्र बंद है |
+| `civics.locked.title` | Civics is not available right now | नागरिक शास्त्र अभी उपलब्ध नहीं है |
 | `report.again` | Practice again | फिर से अभ्यास करें |
 | `common.startOver` | Start over | फिर से शुरू करें |
-| `voice.needText` | Type or say your answer first, or choose Skip. | पहले अपना उत्तर टाइप करें या बोलें, या छोड़ें चुनें। |
-| `audio.stop` | Stop playing | चलाना रोकें |
+| `voice.needText` | The box is empty. Type or say your answer, or press “Skip this one”. | बॉक्स खाली है। अपना उत्तर टाइप करें या बोलें, या “इसे छोड़ें” दबाएँ। |
+| `audio.stop` | Stop | रोकें |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | AI से बनी आवाज़। ऑडियो पहले से तैयार किया गया था। |
 | `audio.playSample` | Play sample answer | नमूना उत्तर सुनें |
-| `home.title` | Welcome to the booth | Language Lab में आपका स्वागत है |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | शांत जगह में नैचुरलाइज़ेशन इंटरव्यू का अभ्यास करें। आप एक गढ़े हुए व्यक्ति के रूप में उत्तर देते हैं, इसलिए असली जानकारी देने की ज़रूरत नहीं है। |
+| `home.title` | Welcome to Language Lab | Language Lab में आपका स्वागत है |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | काल्पनिक व्यक्ति बनकर अपने नागरिकता इंटरव्यू का अभ्यास करें, ताकि आप अपने बारे में कुछ न बताएँ। |
 | `home.how.title` | How it works | यह कैसे काम करता है |
 | `home.how.1.title` | Listen | सुनें |
-| `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | प्रश्न या वाक्य सुनने के लिए “ज़ोर से सुनें” दबाएँ। |
+| `home.how.1.text` | Tap “Play the question” to hear it. | सुनने के लिए “प्रश्न सुनें” छुएँ। |
 | `home.how.2.title` | Speak or type | बोलें या टाइप करें |
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | अपना उत्तर बोलें या टाइप करें। टाइप करना हमेशा काम करता है। |
 | `home.how.3.title` | See the result | नतीजा देखें |
-| `home.how.3.text` | You see how your answer compares, and what to practice next. | आप देखते हैं कि आपका उत्तर कैसा रहा और आगे क्या अभ्यास करना है। |
-| `home.choose` | What would you like to do? | आप क्या करना चाहेंगे? |
-| `home.full.title` | Full practice interview | पूरा अभ्यास इंटरव्यू |
-| `home.full.text` | All four parts in order, then one report. | चारों भाग क्रम से, फिर एक रिपोर्ट। |
+| `home.how.3.text` | You see if your answer counts, and what to practice next. | आप देखेंगे कि आपका उत्तर गिना गया या नहीं, और आगे किसका अभ्यास करें। |
+| `home.full.title` | Practice test | अभ्यास परीक्षा |
+| `home.full.text` | Answer out loud like the real interview. | असली इंटरव्यू की तरह ज़ोर से उत्तर दें। |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | AI कोच के साथ N-400 इंटरव्यू का अभ्यास करें |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | कोच किसी अधिकारी की तरह एक और प्रश्न पूछता है और आपकी अंग्रेज़ी पर सुझाव देता है। वैकल्पिक। |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Claude (Anthropic) द्वारा संचालित |
-| `home.parts.title` | Practice one part | केवल एक भाग का अभ्यास |
+| `home.parts.title` | Or practice one part | या एक भाग का अभ्यास करें |
 | `home.part.n400.title` | N-400 interview | N-400 इंटरव्यू |
-| `home.part.n400.text` | Answer questions about an application. Not scored. | आवेदन के बारे में प्रश्नों के उत्तर दें। स्कोर नहीं दिया जाता। |
+| `home.part.n400.text` | Answer questions about the N-400 form. No score. | N-400 फ़ॉर्म के बारे में प्रश्नों के उत्तर दें। कोई अंक नहीं। |
 | `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | पढ़ना |
 | `home.part.reading.text` | Read sentences out loud. | वाक्य ज़ोर से पढ़ें। |
 | `home.part.writing.title` | Writing | लिखना |
 | `home.part.writing.text` | Listen and type the sentence. | वाक्य सुनें और टाइप करें। |
 | `home.part.civics.title` | Civics | नागरिक शास्त्र |
+| `home.part.civics.text` | Answer questions about U.S. history and government. Checked with the official answers. | अमेरिका के इतिहास और सरकार के बारे में प्रश्नों के उत्तर दें। आधिकारिक उत्तरों से जाँचा जाता है। |
 | `setup.title` | Set up your practice | अपना अभ्यास तैयार करें |
-| `setup.lead` | Choose what this practice needs. Nothing real is asked. | चुनें कि इस अभ्यास के लिए क्या चाहिए। कोई असली जानकारी नहीं पूछी जाती। |
+| `setup.lead` | Choose one answer in each group. Nothing here asks about you. | हर समूह में एक उत्तर चुनें। यहाँ आपके बारे में कुछ नहीं पूछा जाता। |
 | `report.home` | Back to home | होम पर वापस जाएँ |
 | `partReport.title.n400_interview` | N-400 interview practice | N-400 इंटरव्यू अभ्यास |
 | `partReport.title.reading` | Reading practice | पढ़ने का अभ्यास |
@@ -260,30 +256,23 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.civics.needed` | Correct answers needed: {needed}. | ज़रूरी सही उत्तर: {needed}। |
 | `partReport.review` | Questions to review | दोहराने लायक प्रश्न |
 | `partReport.unscored.title` | Not scored | स्कोर नहीं दिया गया |
-| `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | इन प्रश्नों का स्कोर नहीं दिया जा सका, इसलिए इन्हें न सही गिना गया न गलत। |
+| `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | इन प्रश्नों के कोई अंक नहीं हैं। ये सही या गलत नहीं गिने जाते। |
+| `partReport.unscored.missing` | A question we cannot check | एक प्रश्न जिसे हम जाँच नहीं सकते |
 | `report.see` | See my report | मेरी रिपोर्ट देखें |
-| `header.home` | Home | होम |
-| `help.button` | How this works | यह स्क्रीन कैसे काम करती है |
+| `help.button` | Help | मदद |
 | `help.setup.1` | Tap one choice in each group on this screen. | इस स्क्रीन पर हर समूह में से एक विकल्प पर टैप करें। |
 | `help.setup.3` | Press “{start}” when you are ready. | तैयार होने पर “{start}” दबाएँ। |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | सुनने के लिए “{play}” दबाएँ। रोकने के लिए वही बटन फिर दबाएँ। |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | नमूना उत्तर पढ़ें, या उसे सुनें। यह गढ़े हुए व्यक्ति का उत्तर है। यह केवल एक उदाहरण है। |
-| `help.read` | Read the sentence on the screen out loud. | स्क्रीन पर लिखा वाक्य ज़ोर से पढ़ें। |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | “{say}” दबाएँ और बोलें। अगर फ़ोन माइक्रोफ़ोन इस्तेमाल करने की अनुमति माँगे, तो “अनुमति दें” दबाएँ। बोलना पूरा होने पर “{stop}” दबाएँ। |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | आप हमेशा इसके बजाय टाइप कर सकते हैं। बॉक्स पर टैप करें और टाइप करें। टाइप करना हमेशा काम करता है। |
-| `help.typeOnly` | Tap the box and type what you hear. | बॉक्स पर टैप करें और जो सुनें वह टाइप करें। |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | बॉक्स में शब्द जाँचें। आप उन्हें बदल सकते हैं। फिर “{send}” दबाएँ। |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | अगर आपको नहीं पता, तो “{skip}” दबाएँ। यह खाली उत्तर भेजकर आगे बढ़ जाता है। इसे “अभी नहीं” गिना जाता है। |
-| `help.notScored` | Nothing in this part is scored. | इस भाग में किसी चीज़ का स्कोर नहीं दिया जाता। |
-| `help.result.reading` | Then you see which words matched. | फिर आप देखते हैं कि कौन-से शब्द मेल खाए। |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | फिर आप “सही” या “अभी नहीं” और आधिकारिक उत्तर देखते हैं। |
-| `header.settings` | Settings | सेटिंग |
-| `settings.title` | Comfort settings | सुविधा सेटिंग |
+| `help.listen` | Press “{play}” to hear it. | सुनने के लिए “{play}” दबाएँ। |
+| `help.read` | Read the sentence out loud. | वाक्य को ज़ोर से पढ़ें। |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | “{say}” दबाएँ और बोलें। या बॉक्स में टाइप करें। |
+| `help.typeOnly` | Type what you hear in the box. | जो सुनें, उसे बॉक्स में टाइप करें। |
+| `header.settings` | Text size | अक्षर का आकार |
+| `settings.title` | Text size and voice | अक्षरों का आकार और आवाज़ |
 | `settings.textSize.legend` | Text size | अक्षर का आकार |
 | `settings.textSize.normal` | Normal | सामान्य |
 | `settings.textSize.large` | Large | बड़ा |
 | `settings.textSize.extraLarge` | Extra large | बहुत बड़ा |
-| `settings.slow.label` | Play recorded voices more slowly | रिकॉर्ड की गई आवाज़ें धीमे चलाएँ |
+| `settings.slow.label` | Slower voice | धीमी आवाज़ |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | इससे केवल गति बदलती है। रिकॉर्डिंग वही रहती है। |
 | `settings.memory` | These settings last until you close or reload this page. | ये सेटिंग तब तक रहती हैं जब तक आप यह पेज बंद या रीलोड नहीं करते। |
 | `settings.close` | Close settings | सेटिंग बंद करें |
@@ -291,16 +280,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | ऑडियो नहीं चला। फिर कोशिश करें, या स्क्रीन पर लिखा पाठ पढ़ें। |
 | `lang.label` | Language | भाषा |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | होम पर वापस जाएँ? इस अभ्यास में आपके उत्तर खो जाएँगे। |
-| `header.homeConfirm.yes` | Yes, go home | हाँ, होम पर जाएँ |
-| `header.homeConfirm.no` | Stay here | यहीं रहें |
+| `header.homeConfirm.yes` | Leave | छोड़ें |
+| `header.homeConfirm.no` | Keep practicing | अभ्यास जारी रखें |
 | `common.retry` | Try again | फिर से कोशिश करें |
-| `partReport.badge.good` | This part reached the practice score | यह भाग अभ्यास स्कोर तक पहुँचा |
-| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | वाक्य स्क्रीन पर दिखाया गया था (सहायता वाला प्रयास)। |
-| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | अनुवाद की समीक्षा किसी व्यक्ति द्वारा किए जाने तक अस्वीकरण और कानूनी पाठ केवल अंग्रेज़ी में दिखाए जाते हैं। |
+| `partReport.badge.good` | You reached the practice goal | आप अभ्यास के लक्ष्य तक पहुँच गए |
+| `partReport.assisted` | The sentence was shown on the screen. | वाक्य स्क्रीन पर दिखाया गया था। |
+| `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | कानूनी सूचनाएँ तब तक अंग्रेज़ी में रहेंगी जब तक कोई व्यक्ति अनुवाद न जाँचे। |
 | `lang.menu.title` | Choose a language | भाषा चुनें |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | और भाषाएँ समीक्षा में हैं। किसी व्यक्ति के जाँच लेने के बाद वे यहाँ दिखाई देंगी। |
-| `home.study.title` | Study first | पहले पढ़ें |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | तस्वीरों और आधिकारिक उत्तरों के साथ नागरिक शास्त्र के प्रश्न देखें। कोई स्कोर नहीं दिया जाता। |
+| `home.study.title` | Study | पढ़ाई करें |
+| `home.study.text` | See each question with its answers and a picture. No score. | हर प्रश्न उसके उत्तरों और एक चित्र के साथ देखें। कोई अंक नहीं। |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | नागरिक शास्त्र के प्रश्न एक-एक करके देखें। हर प्रश्न के साथ आधिकारिक उत्तर दिखते हैं। कुछ भी स्कोर या सहेजा नहीं जाता। |
 | `study.version.legend` | Which civics test do you want to study? | आप नागरिक शास्त्र की कौन-सी परीक्षा पढ़ना चाहते हैं? |
 | `study.version.2008` | 2008 civics test | 2008 की नागरिक शास्त्र परीक्षा |
@@ -321,8 +310,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.hearSample` | Hear the sample | नमूना सुनें |
 | `selfReview.tryAgain` | Try again | फिर से कोशिश करें |
 | `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | आपकी रिकॉर्डिंग इसी डिवाइस पर रहती है। वह कहीं भेजी या सहेजी नहीं जाती, और अगले वाक्य पर जाने या इस स्क्रीन से निकलने पर मिटा दी जाती है। |
-| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | यह ब्राउज़र आपकी आवाज़ रिकॉर्ड नहीं कर सकता। फिर भी आप “बोलें” से या टाइप करके अपना पढ़ना जाँच सकते हैं। |
-| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | माइक्रोफ़ोन ब्लॉक है। अपने ब्राउज़र की सेटिंग में माइक्रोफ़ोन की अनुमति दें। |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still press “Tap to speak” or type. | यह ब्राउज़र आपकी आवाज़ रिकॉर्ड नहीं कर सकता। आप फिर भी “बोलने के लिए छुएँ” दबा सकते हैं या टाइप कर सकते हैं। |
+| `selfReview.denied` | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. | माइक्रोफ़ोन ब्लॉक है, इसलिए रिकॉर्डिंग शुरू नहीं हो सकती। ब्राउज़र सेटिंग में इस साइट के लिए माइक्रोफ़ोन की अनुमति दें, फिर दोबारा कोशिश करें। |
 | `selfReview.error` | Recording did not work this time. Try again. | इस बार रिकॉर्डिंग नहीं हो पाई। फिर से कोशिश करें। |
 | `compare.why.allWords` | Every important word of the sentence was there, in order. | वाक्य के सभी ज़रूरी शब्द क्रम से मौजूद थे। |
 | `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | आपने “{said}” कहा। वाक्य में “{expected}” है। यह फिर भी गिना जाएगा। |
@@ -335,25 +324,60 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | आपने “{said}” जोड़ा, जो वाक्य में नहीं है। यह फिर भी गिना जाएगा। |
 | `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | छोटा शब्द “{expected}” छूट गया। यह फिर भी गिना जाएगा। |
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | आपने छोटा शब्द “{said}” जोड़ा। यह फिर भी गिना जाएगा। |
-| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | यह नतीजा उन शब्दों पर आधारित है जो आपके डिवाइस ने सुने। अगर उसने गलत सुना, तो फिर से कोशिश करें या अपना उत्तर टाइप करें। |
+| `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | यह नतीजा आपके फ़ोन या कंप्यूटर के सुने शब्दों पर आधारित है। अगर उसने गलत सुना, तो फिर कोशिश करें या अपना उत्तर टाइप करें। |
 | `compare.honest.typed` | This result is based on the words you typed. | यह नतीजा उन शब्दों पर आधारित है जो आपने टाइप किए। |
-| `home.special.title` | 65/20 civics practice | 65/20 नागरिक शास्त्र अभ्यास |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | उन लोगों के लिए जिनकी उम्र 65 वर्ष या उससे अधिक है और जो 20 वर्ष या उससे अधिक समय से स्थायी निवासी हैं। तारे (*) से चिह्नित नागरिक शास्त्र के प्रश्नों का अभ्यास करें। |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | मेरी उम्र 65 वर्ष या उससे अधिक है और मैं 20 वर्ष या उससे अधिक समय से स्थायी निवासी हूँ |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | केवल 65/20 के प्रश्न (तारे से चिह्नित) |
 | `report.line.civics.none` | No civics questions were scored. | नागरिक शास्त्र का कोई प्रश्न अंकित नहीं हुआ। |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | नागरिक शास्त्र के सही उत्तर वाले प्रश्न: {scored} में से {correct}। |
+| `report.line.civics.unscored` | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. | इनके कोई अंक नहीं, क्योंकि उत्तर समय के साथ बदलता है या हम उसे जाँच नहीं सकते: {names}। ये सही या गलत नहीं गिने जाते। |
 | `report.line.reading.none` | No reading sentences were completed. | पढ़ने का कोई वाक्य पूरा नहीं हुआ। |
 | `report.line.reading.done` | Sentence {n} was read correctly. | वाक्य {n} सही पढ़ा गया। |
 | `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | सही पढ़े गए वाक्य: {presented} में से {correct}। ज़रूरी सही वाक्य: {needed}। |
 | `report.line.writing.none` | No writing sentences were completed. | लिखने का कोई वाक्य पूरा नहीं हुआ। |
 | `report.line.writing.done` | Sentence {n} was written correctly. | वाक्य {n} सही लिखा गया। |
 | `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | सही लिखे गए वाक्य: {presented} में से {correct}। ज़रूरी सही वाक्य: {needed}। |
-| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | स्क्रीन पर वाक्य दिखते हुए लिखने के प्रयास (सहायता के साथ): {presented} में से {assisted}। |
+| `report.line.writing.assisted` | Sentences written while the sentence was shown: {assisted} of {presented}. | वाक्य दिखते हुए लिखे गए वाक्य: {presented} में से {assisted}। |
 | `report.review.reading` | Practice reading the sentences aloud. | वाक्यों को ज़ोर से पढ़ने का अभ्यास करें। |
 | `report.review.writing` | Practice writing the sentences you hear. | सुने हुए वाक्यों को लिखने का अभ्यास करें। |
+| `civics.heard.closest` | Your phone or computer heard a few possible answers. We show the one closest to an official answer. | आपके फ़ोन या कंप्यूटर ने कुछ संभावित उत्तर सुने। हम आधिकारिक उत्तर के सबसे करीब वाला दिखाते हैं। |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | काल्पनिक व्यक्ति के रूप में उत्तर दें। अपना असली नाम, पता, तारीखें या नंबर टाइप न करें। |
 | `common.newTab` | (opens in a new tab) | (नए टैब में खुलता है) |
 | `coach.kind.streetAddress` | a street address | एक गली का पता |
 | `coach.kind.zipCode` | a ZIP code with a state | राज्य के साथ एक ZIP कोड |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | यह जाँच गली के पते और ZIP कोड भी खोजती है, लेकिन नाम नहीं खोज सकती। किसी असली व्यक्ति का नाम न बोलें और न टाइप करें। |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | अक्षर बहुत छोटे हैं? ऊपर अक्षर का आकार पर टैप करें। |
+| `audio.playing` | Playing… | चल रहा है… |
+| `audio.playSentence` | Play the sentence | वाक्य सुनें |
+| `voice.gotIt` | Got it. Tap to speak again | सुन लिया। फिर से बोलने के लिए छुएँ |
+| `voice.orType` | Or type your answer | या अपना उत्तर टाइप करें |
+| `voice.micHelp.title` | How to allow the microphone | माइक्रोफ़ोन की अनुमति कैसे दें |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): वेब पते के पास “aA” छुएँ, फिर Website Settings, फिर Microphone, और Allow चुनें। फिर पेज को दोबारा लोड करें। |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): वेब पते के बाईं ओर छोटा आइकन छुएँ, फिर अनुमतियाँ, और माइक्रोफ़ोन चालू करें। फिर पेज को दोबारा लोड करें। |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | आप हमेशा बॉक्स में अपना उत्तर टाइप कर सकते हैं। |
+| `civics.why.correct` | Your answer matches an official answer. | आपका उत्तर एक आधिकारिक उत्तर से मेल खाता है। |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | आपका उत्तर अभी आधिकारिक उत्तरों से मेल नहीं खाता। |
+| `settings.slow.on` | On | चालू |
+| `settings.slow.off` | Off | बंद |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | आगे बढ़ने के लिए “{send}” दबाएँ। यहाँ कोई अंक नहीं मिलते। |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | “{send}” दबाएँ। फिर आप देखेंगे कि यह गिना गया या नहीं। |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | “{send}” दबाएँ। फिर आप देखेंगे कि यह गिना गया या नहीं, और आधिकारिक उत्तर। |
+| `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | चुना गया |
+| `aiNotice.more` | More | और जानें |
+| `home.who.title` | 1. Who is practicing? | 1. कौन अभ्यास कर रहा है? |
+| `home.who.most.title` | Most people | ज़्यादातर लोग |
+| `home.who.most.text` | The usual civics test rules. | नागरिक शास्त्र परीक्षा के सामान्य नियम। |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | 65 या उससे ज़्यादा उम्र, 20 साल या उससे ज़्यादा से ग्रीन कार्ड (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | अंग्रेज़ी की परीक्षा नहीं। नागरिक शास्त्र के कम प्रश्न: तारे वाले 20। |
+| `home.who.notSure` | Not sure? Choose Most people. | पक्का नहीं? ‘ज़्यादातर लोग’ चुनें। |
+| `home.what.title` | 2. What do you want to do? | 2. आप क्या करना चाहते हैं? |
+| `home.part.notRequired` | Not required for {exception} | {exception} के लिए ज़रूरी नहीं |
+| `home.go.start` | Start | शुरू करें |
+| `home.go.open` | Open | खोलें |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 या उससे ज़्यादा उम्र, 20 साल या उससे ज़्यादा से ग्रीन कार्ड (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 या उससे ज़्यादा उम्र, 15 साल या उससे ज़्यादा से ग्रीन कार्ड (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | अंग्रेज़ी की परीक्षा नहीं। नागरिक शास्त्र सामान्य रूप से, अपनी भाषा में अगर आप दुभाषिया साथ लाएँ। |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | इंटरव्यू में अगर आप दुभाषिया साथ लाएँ, तो नागरिक शास्त्र के उत्तर अपनी भाषा में दे सकते हैं। यह ऐप अंग्रेज़ी प्रश्नों का अभ्यास कराता है। |
+| `report.exception` | Practice as {exception} | {exception} के रूप में अभ्यास |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | अगर आप दुभाषिया साथ लाएँ, तो असली नागरिक शास्त्र परीक्षा अपनी भाषा में दे सकते हैं। |
+| `intro.who.legend` | Who is practicing? | कौन अभ्यास कर रहा है? |

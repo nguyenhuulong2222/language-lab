@@ -5,7 +5,7 @@
  * build, answer key still waiting for review), the screen explains that instead of scoring.
  */
 import type { CivicsPracticeRules } from "../../engine/test-rules-loader";
-import { SpecialConsiderationNote } from "../components/SpecialConsiderationNote";
+import { ExemptCivicsLine, SpecialConsiderationNote } from "../components/SpecialConsiderationNote";
 import { LegalText } from "../components/LegalText";
 import { useEffect, useRef, useState } from "react";
 import type { CivicsProgress, InputMode } from "../../engine/practice-flow";
@@ -37,6 +37,8 @@ interface CivicsScreenProps {
   pictureFor?: (questionId: string) => PictureEntry | null;
   /** The 65/20 rules when this is the 65/20 practice (spec release-finish REQ-S04). */
   special?: CivicsPracticeRules;
+  /** 50/20, 55/15 or 65/20: the interpreter line under the stepper. */
+  exempt?: boolean;
 }
 export function CivicsScreen({
   progress,
@@ -47,6 +49,7 @@ export function CivicsScreen({
   showFeedbackInitially = false,
   pictureFor = pictureForQuestion,
   special,
+  exempt = false,
 }: CivicsScreenProps) {
   const t = useT();
   const tEnglish = useTWithEnglish();
@@ -66,7 +69,7 @@ export function CivicsScreen({
         <div className="screen__body">
           <p><LegalText messageKey="civics.locked.text" /></p>
           <div className="btn-row">
-            <button type="button" className="btn" onClick={onRestart}>
+            <button type="button" className="btn btn--primary" onClick={onRestart}>
               {t("common.startOver")}
             </button>
           </div>
@@ -91,10 +94,12 @@ export function CivicsScreen({
             {entry.questionText}
           </p>
           <section className="panel">
-            <h2 className="panel__title" ref={resultHeading} tabIndex={-1}>
+            {/* A big headline first, then one short reason, then the details. */}
+            <h2 className="result-headline" ref={resultHeading} tabIndex={-1}>
               <Icon className={correct ? "icon-inline" : "icon-inline icon-inline--attention"} />{" "}
               {correct ? t("civics.correct") : t("civics.notYet")}
             </h2>
+            <p className="result-reason">{correct ? t("civics.why.correct") : t("civics.why.notYet")}</p>
             <p>{tEnglish("civics.youSaid", { text: progress.lastResponse === "" ? "…" : (progress.lastResponse ?? "") })}</p>
             {progress.lastResponse !== "" && (
               <p className="note">
@@ -136,7 +141,7 @@ export function CivicsScreen({
           <div className="btn-row">
             <button
               type="button"
-              className="btn"
+              className="btn btn--primary"
               onClick={() => {
                 setFeedback(false);
                 if (progress.done) onContinue();
@@ -161,6 +166,8 @@ export function CivicsScreen({
       />
       <EnglishNotice />
       <div className="screen__body">
+        {/* 50/20, 55/15, 65/20: the interpreter line, once, near the top. */}
+        {exempt && <ExemptCivicsLine />}
         <p className="progress-line">{t("civics.count", { current: progress.position, total: progress.total })}</p>
         {question !== null && (
           <div key={question.id} className="screen__body">
@@ -183,7 +190,7 @@ export function CivicsScreen({
               }}
             />
             {/* After the question and the answer box, so they stay at the top (ui-reviewer). */}
-            {special !== undefined && progress.position === 1 && <SpecialConsiderationNote rules={special} />}
+            {special !== undefined && progress.position === 1 && <SpecialConsiderationNote rules={special} languageLine={false} />}
           </div>
         )}
       </div>

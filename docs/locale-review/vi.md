@@ -28,18 +28,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | Buổi phỏng vấn thật được thực hiện bằng tiếng Anh, trừ khi USCIS cho phép một ngoại lệ đối với bạn. Các câu hỏi và câu văn trên những màn hình này vẫn bằng tiếng Anh để bạn luyện tập. | The real interview is conducted in English, unless USCIS allows an exception for you. The questions and sentences on these screens remain in English so you can practice. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | Báo cáo này chỉ cho một phần. Báo cáo cho biết phần này diễn ra thế nào khi luyện tập, không cho biết bạn sẽ làm bài thật ra sao, và không đưa ra kết quả luyện tập tổng thể. | This report is for one part only. It tells how this part went during practice, does not tell how you would do on the real test, and does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | Phỏng vấn N-400 chỉ để luyện tập và không chấm điểm. | The N-400 interview is for practice only and is not scored. |
-| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Bản dịch này do AI tạo ra và có thể có lỗi. Bản tiếng Anh là bản có giá trị chính thức. | This translation was made by AI and may have errors. The English version is the one with official validity. |
+| `aiNotice.text` | Translated by AI. It may have mistakes. The English is correct. | Dịch bằng AI. Có thể có lỗi. Bản tiếng Anh là bản đúng. | This translation was made by AI and may have errors. The English version is the one with official validity. |
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Đây là mức luyện tập của Language Lab dựa trên hướng dẫn chấm điểm của USCIS, không phải quy định của USCIS: mọi từ quan trọng của câu phải có, đúng thứ tự. Có thể thiếu những từ ngắn như “the”. Quãng nghỉ và cách phát âm không được chấm. | This is Language Lab's practice level based on USCIS scoring guidance, not a USCIS regulation: every important word of the sentence must be present, in the right order. Short words like “the” may be missing. Pauses and pronunciation are not scored. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | Lựa chọn này quyết định bạn luyện bài kiểm tra civics năm 2008 hay năm 2025. Đây chỉ là lựa chọn để luyện tập. Với trường hợp của riêng bạn, hãy xem uscis.gov để biết bài kiểm tra nào áp dụng cho bạn. | This choice decides whether you practice the 2008 or the 2025 civics test. This is only a choice for practice. For your own case, see uscis.gov to know which test applies to you. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Các hình ảnh trong phần luyện tập civics đến từ các nguồn chính thức của chính phủ liên bang Hoa Kỳ. Mỗi hình chỉ được dùng vì chính hồ sơ của nó nêu rõ quyền sử dụng. Điều này không có nghĩa là cơ quan nào bảo trợ Language Lab. | The images in the civics practice come from official sources of the U.S. federal government. Each image is used only because its own record clearly states the rights of use. This does not mean any agency sponsors Language Lab. |
 | `civics.officialNote` | Any of these counts. | Chỉ cần một trong các đáp án này là được tính. | Only one of these answers is needed to count. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | Phần công dân, Học trước và buổi phỏng vấn luyện tập đầy đủ đang tắt trong bản này cho đến khi có người kiểm tra đáp án phần công dân. Bạn có thể luyện tập phỏng vấn N-400, đọc và viết. | Civics, Study first and the full practice interview are off in this version until someone checks the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Bộ đáp án civics vẫn đang chờ người xem xét, nên bản này không chấm điểm civics và không tạo báo cáo. | The civics answer set is still waiting for a person to review it, so this build does not score civics and does not create a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Khi bạn nhấn “Nói”, tính năng nhận dạng giọng nói của trình duyệt có thể gửi giọng của bạn đến nhà sản xuất trình duyệt, như Google hoặc Apple, để chuyển thành chữ. Language Lab không gửi hay lưu giọng nói của bạn. Bạn có thể gõ câu trả lời thay vào đó. | When you press “Speak”, the browser's voice recognition feature may send your voice to the browser's maker, such as Google or Apple, to convert it to text. Language Lab does not send or save your voice. You can type your answer instead. |
-| `report.title.onTrack` | Practice complete: each part reached the practice score | Đã luyện tập xong: mỗi phần đều đạt điểm luyện tập | Finished practicing: each part reached the practice score |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Khi bạn nhấn “Chạm để nói”, tính năng nhận dạng giọng nói của trình duyệt có thể gửi giọng của bạn đến nhà sản xuất trình duyệt, như Google hoặc Apple, để chuyển thành chữ. Language Lab không gửi hay lưu giọng nói của bạn. Bạn có thể gõ câu trả lời thay vào đó. | When you press “Speak”, the browser's voice recognition feature may send your voice to the browser's maker, such as Google or Apple, to convert it to text. Language Lab does not send or save your voice. You can type your answer instead. |
+| `report.title.onTrack` | Well done. Each part reached the practice goal. | Làm tốt lắm. Mỗi phần đều đạt mục tiêu luyện tập. | Finished practicing: each part reached the practice score |
 | `report.title.review` | A few things to review | Có vài điều cần xem lại | There are a few things to look at again |
-| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Trong buổi luyện tập này, phần đọc, viết và công dân đều đạt mức điểm mà Language Lab dùng. Hãy dùng các ghi chú bên dưới để tiếp tục luyện tập. | In this practice session, reading, writing and civics all reached the score level that Language Lab uses. Use the notes below to keep practicing. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Đó chính là mục đích của việc luyện tập. Các ghi chú bên dưới cho biết nên tập trung vào đâu trước khi thử lại. | That is exactly the purpose of practicing. The notes below show where to focus before trying again. |
+| `report.lead.onTrack` | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. | Đọc, viết và kiến thức công dân đều đạt mục tiêu luyện tập. Hãy đọc ghi chú bên dưới và tiếp tục luyện tập. | In this practice session, reading, writing and civics all reached the score level that Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That is what practice is for. The notes below show what to practice next. | Luyện tập là để như vậy. Ghi chú bên dưới cho biết nên luyện gì tiếp theo. | That is exactly the purpose of practicing. The notes below show where to focus before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Phần viết: USCIS nói rằng lỗi chính tả, viết hoa và dấu câu không làm bạn trượt bài viết, trừ khi câu không còn hiểu được. Ở đây, lỗi chính tả nhỏ vẫn được tính, và từ dài hơn có thể có nhiều lỗi hơn. Chữ hoa và dấu câu không được kiểm tra. | Writing: USCIS says spelling, capitalization and punctuation mistakes do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling mistakes still count, and longer words may have more mistakes. Capital letters and punctuation are not checked. |
 | `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | Khi huấn luyện viên AI được bật, các từ trong mỗi câu trả lời bạn gõ hoặc nói ở phần này được gửi dưới dạng chữ đến Anthropic, một công ty AI, qua máy chủ của Language Lab, để viết nhận xét. Language Lab và Anthropic không bao giờ nhận giọng nói của bạn, chỉ nhận các từ. Hãy trả lời như người hư cấu. Đừng nói tên thật, địa chỉ, ngày sinh, số A-number hay chi tiết hồ sơ. Trong buổi phỏng vấn thật, bạn phải trả lời trung thực về cuộc sống của chính mình. Language Lab có kiểm tra một số con số, nhưng không thể phát hiện mọi thông tin cá nhân. Language Lab không lưu các câu trả lời của bạn. Chính sách quyền riêng tư của Anthropic nói Anthropic xử lý chúng thế nào: anthropic.com/legal/privacy. Huấn luyện viên AI sẽ tắt lại khi bạn bắt đầu một buổi luyện tập mới. | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
 | `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | Huấn luyện viên AI: tắt, trừ khi bạn bật nó trong phần N-400. Khi được bật, chữ của mỗi câu trả lời N-400 được gửi đến Anthropic qua máy chủ của Language Lab để viết nhận xét; không gửi âm thanh. Để giới hạn việc sử dụng, máy chủ đếm số yêu cầu bằng một mã hằng ngày có thêm muối, tạo từ địa chỉ internet của bạn; số đếm cũ được xóa trong các yêu cầu sau, thường trong vòng hai ngày. Chính sách quyền riêng tư của Anthropic: anthropic.com/legal/privacy. | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
@@ -50,8 +50,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | Các câu chỉ dùng những từ có trong danh sách từ vựng đọc và viết chính thức của USCIS. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Bạn đã đạt số điểm đậu của bài luyện tập, nên bài kiểm tra dừng ở đây. |
-| `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Trả lời các câu hỏi civics. Được đối chiếu với bộ đáp án. |
-| `partReport.unscored.missing` | A question that is not in the answer key | Một câu hỏi không có trong bộ đáp án |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Phần Học trước đang tắt trong bản này cho đến khi có người xem xét bộ đáp án. |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | Lựa chọn này chỉ thay đổi phần luyện tập; không có gì được lưu hay gửi đi. Phần kiến thức công dân sẽ hỏi {asked} trong số {bank} câu hỏi có đánh dấu sao (*) trong danh sách chính thức. Trong phần luyện tập này, cả {asked} câu đều được hỏi. Điểm đạt khi luyện tập là {pass} câu trả lời đúng. Với hồ sơ của chính bạn, hãy xem uscis.gov: tuổi và số năm được tính vào ngày nộp đơn. |
 | `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS: vào ngày nộp đơn, nếu bạn từ 50 tuổi trở lên và đã là thường trú nhân 20 năm (50/20), hoặc từ 55 tuổi trở lên và 15 năm (55/15), bạn được miễn yêu cầu tiếng Anh (đọc, viết, nói và hiểu tiếng Anh), nhưng vẫn phải thi kiến thức công dân. Bạn có thể thi bằng tiếng mẹ đẻ nếu mang theo thông dịch viên. Nếu bạn từ 65 tuổi trở lên và có ít nhất 20 năm (65/20), bạn cũng được miễn tiếng Anh, và viên chức dùng các mẫu đề thi kiến thức công dân được chỉ định riêng. |
@@ -61,8 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Bài thi luyện tập dừng lại khi đạt điểm đạt khi luyện tập. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Bài thi luyện tập dừng lại sau {incorrect} câu trả lời sai, trước khi đạt điểm đạt khi luyện tập là {score}. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Điểm đạt khi luyện tập là {score} câu trả lời đúng, và chưa đạt được. |
-| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | Không chấm, vì câu trả lời thay đổi hoặc không có trong đáp án: {names}. Các câu hỏi này không tính là đúng hay sai. |
-| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | Thiết bị của bạn đưa ra vài cách hiểu điều bạn nói. Cách gần nhất với một đáp án được hiển thị. |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS tính tuổi và số năm thường trú vào ngày nộp đơn N-400. |
 
 ## 3. All other lines
 
@@ -70,16 +67,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | Chuyển đến nội dung chính |
-| `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Phần luyện tập này chưa sẵn sàng. |
+| `app.stageNotBuilt` | This part is not ready yet. Go back to Home and choose another part. | Phần này chưa sẵn sàng. Hãy quay về Trang chủ và chọn phần khác. |
 | `header.about` | About & disclaimer | Giới thiệu & miễn trừ trách nhiệm |
-| `stepper.label` | Interview stages | Các bước luyện tập |
-| `stepper.count` | Stage {current} of {total} | Bước {current}/{total} |
+| `stepper.label` | Your steps | Các bước của bạn |
+| `stepper.count` | Step {current} of {total}: {name} | Bước {current}/{total}: {name} |
 | `stepper.status.complete` | completed | đã xong |
 | `stepper.status.current` | current step | bước hiện tại |
 | `stepper.status.upcoming` | upcoming | sắp tới |
-| `stage.intro.label` | Welcome | Chào mừng |
-| `stage.intro.short` | Intro | Mở đầu |
-| `stage.n400_interview.label` | N-400 conversation | Phỏng vấn N-400 |
+| `stage.intro.label` | Set up | Chuẩn bị |
+| `stage.intro.short` | Set up | Chuẩn bị |
+| `stage.n400_interview.label` | N-400 questions | Câu hỏi N-400 |
 | `stage.n400_interview.short` | N-400 | N-400 |
 | `stage.reading.label` | Reading | Đọc |
 | `stage.reading.short` | Reading | Đọc |
@@ -87,43 +84,42 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.writing.short` | Writing | Viết |
 | `stage.civics.label` | Civics | Kiến thức công dân |
 | `stage.civics.short` | Civics | Civics |
-| `stage.report.label` | Practice report | Báo cáo luyện tập |
+| `stage.report.label` | Your report | Báo cáo của bạn |
 | `stage.report.short` | Report | Báo cáo |
-| `badge.onTrack` | Practice score reached | Đã đạt điểm luyện tập |
-| `badge.review` | Worth reviewing | Nên xem lại |
-| `report.empty` | Your practice report will appear here once the session is complete. | Báo cáo luyện tập của bạn sẽ hiện ở đây khi buổi luyện tập hoàn tất. |
-| `report.take` | TAKE | TAKE |
+| `badge.onTrack` | You reached the practice goal | Bạn đã đạt mục tiêu luyện tập |
+| `badge.review` | Practice this again | Hãy luyện lại phần này |
+| `report.empty` | Your report will show here when you finish the practice. | Báo cáo sẽ hiện ở đây khi bạn luyện tập xong. |
 | `report.overline` | Practice report | Báo cáo luyện tập |
-| `report.profile.label` | Practice profile (fictional) | Hồ sơ luyện tập (giả định) |
+| `report.profile.label` | Practice person (made up) | Nhân vật luyện tập (hư cấu) |
 | `report.profile.meta` | {version} civics test · filed {date} | Bài kiểm tra civics {version} · nộp đơn ngày {date} |
 | `report.stages.heading` | How each part went | Từng phần diễn ra thế nào |
 | `report.review.heading` | Things to review | Những điều cần xem lại |
 | `report.review.intro` | Focus on these before your next practice. | Hãy tập trung vào những điều này trước lần luyện tập tiếp theo. |
-| `report.generated` | Report generated {datetime} | Báo cáo được tạo lúc {datetime} |
+| `report.generated` | Report made {datetime} | Báo cáo lập lúc {datetime} |
 | `translation.english` | English | Tiếng Anh |
-| `voice.say` | Say it | Nói |
-| `voice.stop` | Stop listening | Dừng nghe |
+| `voice.say` | Tap to speak | Chạm để nói |
+| `voice.stop` | Listening… tap when you finish | Đang nghe… chạm khi bạn nói xong |
 | `voice.listening` | Listening. Say your answer now. | Đang nghe. Hãy nói câu trả lời của bạn. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | Đã nghe xong. Hãy xem lại các từ, sửa nếu muốn, rồi gửi. |
-| `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | Micrô đang bị chặn. Hãy cho phép dùng micrô trong phần cài đặt của trình duyệt, hoặc gõ câu trả lời. |
+| `voice.denied` | The microphone is blocked. Follow the steps below to allow it, or type your answer. | Micrô đang bị chặn. Hãy làm theo các bước bên dưới để cho phép, hoặc gõ câu trả lời. |
 | `voice.unsupported` | This browser cannot listen to your voice. Type your answer instead. | Trình duyệt này không nghe được giọng nói của bạn. Hãy gõ câu trả lời. |
 | `voice.nothingHeard` | We did not hear anything. Try again, or type your answer. | Chúng tôi không nghe thấy gì. Hãy thử lại, hoặc gõ câu trả lời. |
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | Không tìm thấy micrô. Hãy gõ câu trả lời. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | Lần này chưa nghe được. Hãy thử lại, hoặc gõ câu trả lời. |
 | `voice.skip` | Skip this one | Bỏ qua câu này |
-| `audio.play` | Play aloud | Nghe đọc |
-| `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Giọng của thiết bị: giọng cài sẵn trên điện thoại hoặc máy tính của bạn. |
+| `audio.play` | Play the question | Nghe câu hỏi |
+| `audio.deviceVoice` | Built-in voice: the voice of your phone or computer. | Giọng có sẵn: giọng của điện thoại hoặc máy tính. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Trình duyệt này không đọc to được. Hãy đọc chữ trên màn hình. |
-| `intro.profile.legend` | Choose a practice profile | Chọn một hồ sơ luyện tập |
-| `intro.profile.help` | Every profile is invented. | Mọi hồ sơ đều là giả định, không phải người thật. |
+| `intro.profile.legend` | Choose a practice person | Chọn một nhân vật luyện tập |
+| `intro.profile.help` | Every person here is made up. | Mọi nhân vật ở đây đều là hư cấu. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Hãy luyện tập như thể đơn N-400 đã được nộp… |
 | `intro.filed.before` | Before {date} | Trước ngày {date} |
 | `intro.filed.onOrAfter` | On or after {date} | Vào hoặc sau ngày {date} |
 | `intro.start` | Start practice | Bắt đầu luyện tập |
-| `intro.startHint` | Make your choice above to start. | Hãy chọn ở trên để bắt đầu. |
-| `home.locked.title` | In this build you can practice | Trong bản này, bạn có thể luyện tập |
+| `intro.startHint` | Choose one answer in each group above. Then press “Start practice”. | Chọn một câu trả lời trong mỗi nhóm ở trên. Rồi bấm “Bắt đầu luyện tập”. |
+| `home.locked.title` | Right now you can practice | Hiện bạn có thể luyện |
 | `n400.title` | N-400 interview | Phỏng vấn N-400 |
-| `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | Một lượt hỏi nhẹ nhàng về những câu mà viên chức thường hỏi về hồ sơ. Hãy trả lời với tư cách {name}. Phần này không chấm điểm. |
+| `n400.lead` | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. | Viên chức có thể hỏi những câu như thế này về đơn của bạn. Hãy trả lời như {name}. Phần này không chấm điểm. |
 | `n400.count` | Question {current} of {total} | Câu hỏi {current}/{total} |
 | `n400.sample.label` | Sample answer for {name} (fictional) | Câu trả lời mẫu cho {name} (giả định) |
 | `n400.yourAnswer` | Your answer, as {name} | Câu trả lời của bạn, với tư cách {name} |
@@ -144,7 +140,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Nếu muốn, hãy tập trả lời thành tiếng. Câu hỏi này không được ghi lại. |
 | `coach.tip.label` | Tip about your English: | Mẹo về tiếng Anh của bạn: |
 | `coach.feedback.understood` | Easy to understand | Dễ hiểu |
-| `coach.feedback.needs_practice` | Worth practicing again | Nên luyện tập lại |
+| `coach.feedback.needs_practice` | Practice this again | Hãy luyện lại phần này |
 | `coach.feedback.unclear` | Hard to follow. Try again. | Khó theo dõi. Hãy thử lại. |
 | `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | Phần này kiểm tra tiếng Anh của bạn rõ ràng đến đâu. Nó không nói câu trả lời đúng hay có thật không. |
 | `coach.checking` | Getting AI feedback… | Đang lấy nhận xét từ AI… |
@@ -158,11 +154,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.dateOfBirth` | a full date, such as a date of birth | một ngày tháng năm đầy đủ, như ngày sinh |
 | `coach.next` | Continue | Tiếp tục |
 | `n400.loading` | Getting the next question… | Đang lấy câu hỏi tiếp theo… |
-| `n400.failed` | The next question could not be loaded. Start over to try again. | Không tải được câu hỏi tiếp theo. Hãy bắt đầu lại để thử lần nữa. |
+| `n400.failed` | The next question did not load. Check your internet, then press “Start over”. | Câu hỏi tiếp theo không tải được. Hãy kiểm tra mạng, rồi bấm “Bắt đầu lại”. |
 | `n400.done.title` | Your answers | Các câu trả lời của bạn |
 | `n400.done.lead` | These are the words you gave. They are not scored. | Đây là những câu trả lời bạn đã đưa ra. Phần này không chấm điểm. |
 | `n400.done.next` | Go to reading | Sang phần đọc |
-| `voice.consent.continue` | Continue and say it | Tiếp tục và nói |
+| `voice.consent.continue` | Continue and speak | Tiếp tục và nói |
 | `voice.consent.type` | Type instead | Gõ thay vào đó |
 | `n400.number` | Question {current} | Câu hỏi {current} |
 | `common.fictional` | Fictional practice profile | Hồ sơ luyện tập giả định |
@@ -194,15 +190,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Trình duyệt này không đọc to được, nên câu hiện ngay tại đây. Hãy gõ lại câu đó. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Câu sẽ ẩn cho đến khi bạn trả lời. |
 | `writing.show` | Show the sentence | Hiện câu |
-| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | Nếu bạn không nghe được âm thanh, hãy hiện câu và gõ lại. Câu được kiểm tra theo cách giống nhau. Báo cáo của bạn ghi lần thử này là có hỗ trợ. |
-| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | Câu đang được hiện. Báo cáo của bạn ghi lần thử này là có hỗ trợ. |
+| `writing.show.help` | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. | Nếu bạn không nghe được tiếng, hãy hiện câu và gõ lại. Câu được kiểm tra như nhau. Báo cáo sẽ ghi là câu đã được hiện. |
+| `writing.shown` | The sentence is shown. Your report will say so. | Câu đã được hiện. Báo cáo sẽ ghi điều này. |
 | `civics.title` | Civics | Kiến thức công dân (civics) |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | Hãy trả lời bằng giọng nói hoặc gõ. Trả lời ngắn cũng được, nhưng hãy nói đủ ý. |
 | `civics.count` | Question {current} of {total} | Câu hỏi {current}/{total} |
 | `civics.needs` | This question needs {count} different answers. | Câu hỏi này cần {count} đáp án khác nhau. |
 | `civics.yourAnswer` | Your answer | Câu trả lời của bạn |
 | `civics.submit` | Check my answer | Kiểm tra câu trả lời |
-| `civics.correct` | Correct | Đúng |
+| `civics.correct` | This counts | Câu này được tính |
 | `civics.notYet` | Not yet | Chưa đúng |
 | `civics.youSaid` | You said: {text} | Bạn đã nói: {text} |
 | `civics.official` | Official answers | Đáp án chính thức |
@@ -211,39 +207,39 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.stopped.incorrect` | The test stopped because too many answers need more practice. | Bài kiểm tra dừng vì có quá nhiều câu trả lời cần luyện thêm. |
 | `civics.stopped.none` | You have answered every question for this practice test. | Bạn đã trả lời hết các câu của bài luyện tập này. |
 | `civics.tally` | {correct} correct, {incorrect} not yet. | {correct} câu đúng, {incorrect} câu chưa đúng. |
-| `civics.locked.title` | Civics is switched off in this build | Phần civics đang tắt trong bản này |
+| `civics.locked.title` | Civics is not available right now | Phần kiến thức công dân hiện chưa dùng được |
 | `report.again` | Practice again | Luyện tập lại |
 | `common.startOver` | Start over | Bắt đầu lại |
-| `voice.needText` | Type or say your answer first, or choose Skip. | Hãy gõ hoặc nói câu trả lời trước, hoặc chọn Bỏ qua. |
-| `audio.stop` | Stop playing | Dừng phát |
+| `voice.needText` | The box is empty. Type or say your answer, or press “Skip this one”. | Ô đang trống. Hãy gõ hoặc nói câu trả lời, hoặc bấm “Bỏ qua câu này”. |
+| `audio.stop` | Stop | Dừng |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Giọng do AI tạo. Âm thanh đã được tạo sẵn. |
 | `audio.playSample` | Play sample answer | Nghe câu trả lời mẫu |
-| `home.title` | Welcome to the booth | Chào mừng đến Language Lab |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | Hãy luyện cho buổi phỏng vấn nhập tịch trong một phòng luyện tập yên tĩnh. Bạn trả lời với tư cách một nhân vật giả định, nên bạn không cần nói thông tin thật. |
+| `home.title` | Welcome to Language Lab | Chào mừng đến Language Lab |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | Luyện tập cho buổi phỏng vấn nhập tịch như một nhân vật hư cấu, nên không bao giờ phải chia sẻ gì về bản thân. |
 | `home.how.title` | How it works | Cách hoạt động |
 | `home.how.1.title` | Listen | Nghe |
-| `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | Bấm Nghe đọc để nghe một câu hỏi hoặc một câu. |
+| `home.how.1.text` | Tap “Play the question” to hear it. | Chạm “Nghe câu hỏi” để nghe. |
 | `home.how.2.title` | Speak or type | Nói hoặc gõ |
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | Hãy nói câu trả lời, hoặc gõ. Gõ luôn dùng được. |
 | `home.how.3.title` | See the result | Xem kết quả |
-| `home.how.3.text` | You see how your answer compares, and what to practice next. | Bạn sẽ thấy câu trả lời của mình so với câu mẫu ra sao, và nên luyện gì tiếp. |
-| `home.choose` | What would you like to do? | Bạn muốn làm gì? |
-| `home.full.title` | Full practice interview | Buổi phỏng vấn luyện tập đầy đủ |
-| `home.full.text` | All four parts in order, then one report. | Cả bốn phần theo thứ tự, rồi một báo cáo. |
+| `home.how.3.text` | You see if your answer counts, and what to practice next. | Bạn sẽ thấy câu trả lời có được tính không, và nên luyện gì tiếp. |
+| `home.full.title` | Practice test | Thi thử |
+| `home.full.text` | Answer out loud like the real interview. | Trả lời thành tiếng như buổi phỏng vấn thật. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Luyện phỏng vấn N-400 với huấn luyện viên AI |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | Huấn luyện viên hỏi thêm một câu như viên chức có thể hỏi và cho bạn mẹo về tiếng Anh. Không bắt buộc. |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Hỗ trợ bởi Claude (Anthropic) |
-| `home.parts.title` | Practice one part | Luyện từng phần |
+| `home.parts.title` | Or practice one part | Hoặc luyện từng phần |
 | `home.part.n400.title` | N-400 interview | Phỏng vấn N-400 |
-| `home.part.n400.text` | Answer questions about an application. Not scored. | Trả lời các câu hỏi về hồ sơ. Không chấm điểm. |
+| `home.part.n400.text` | Answer questions about the N-400 form. No score. | Trả lời câu hỏi về mẫu đơn N-400. Không chấm điểm. |
 | `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | Đọc |
 | `home.part.reading.text` | Read sentences out loud. | Đọc to các câu. |
 | `home.part.writing.title` | Writing | Viết |
 | `home.part.writing.text` | Listen and type the sentence. | Nghe và gõ lại câu. |
 | `home.part.civics.title` | Civics | Kiến thức công dân |
+| `home.part.civics.text` | Answer questions about U.S. history and government. Checked with the official answers. | Trả lời câu hỏi về lịch sử và chính quyền Hoa Kỳ. Được so với đáp án chính thức. |
 | `setup.title` | Set up your practice | Chuẩn bị buổi luyện tập |
-| `setup.lead` | Choose what this practice needs. Nothing real is asked. | Hãy chọn những gì buổi luyện tập này cần. Không có thông tin thật nào được hỏi. |
+| `setup.lead` | Choose one answer in each group. Nothing here asks about you. | Chọn một câu trả lời trong mỗi nhóm. Không có câu nào hỏi về bạn. |
 | `report.home` | Back to home | Về trang chủ |
 | `partReport.title.n400_interview` | N-400 interview practice | Luyện phỏng vấn N-400 |
 | `partReport.title.reading` | Reading practice | Luyện đọc |
@@ -260,30 +256,23 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.civics.needed` | Correct answers needed: {needed}. | Số đáp án đúng cần có: {needed}. |
 | `partReport.review` | Questions to review | Các câu hỏi nên xem lại |
 | `partReport.unscored.title` | Not scored | Không chấm điểm |
-| `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Những câu hỏi này không chấm điểm được, nên không tính là đúng hay sai. |
+| `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | Những câu hỏi này không chấm điểm. Không tính là đúng hay sai. |
+| `partReport.unscored.missing` | A question we cannot check | Một câu hỏi chúng tôi không kiểm tra được |
 | `report.see` | See my report | Xem báo cáo của tôi |
-| `header.home` | Home | Trang chủ |
-| `help.button` | How this works | Cách dùng màn hình này |
+| `help.button` | Help | Trợ giúp |
 | `help.setup.1` | Tap one choice in each group on this screen. | Chạm vào một lựa chọn trong mỗi nhóm trên màn hình này. |
 | `help.setup.3` | Press “{start}” when you are ready. | Bấm “{start}” khi bạn sẵn sàng. |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | Bấm “{play}” để nghe. Bấm lại nút đó để dừng. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | Hãy đọc câu trả lời mẫu, hoặc nghe nó. Câu này là của nhân vật giả định. Đó chỉ là một ví dụ. |
-| `help.read` | Read the sentence on the screen out loud. | Hãy đọc to câu trên màn hình. |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | Bấm “{say}” rồi nói. Nếu điện thoại hỏi có cho dùng micrô không, hãy bấm Cho phép. Bấm “{stop}” khi bạn nói xong. |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | Bạn luôn có thể gõ thay vì nói. Chạm vào ô và gõ. Gõ luôn dùng được. |
-| `help.typeOnly` | Tap the box and type what you hear. | Chạm vào ô và gõ những gì bạn nghe được. |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | Xem lại các từ trong ô. Bạn có thể sửa. Sau đó bấm “{send}”. |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | Bấm “{skip}” nếu bạn không biết. Nút này gửi một câu trả lời trống và chuyển tiếp. Câu đó tính là chưa đúng. |
-| `help.notScored` | Nothing in this part is scored. | Không có gì trong phần này được chấm điểm. |
-| `help.result.reading` | Then you see which words matched. | Sau đó bạn sẽ thấy những từ nào khớp. |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | Sau đó bạn sẽ thấy Đúng hoặc Chưa đúng, cùng các đáp án chính thức. |
-| `header.settings` | Settings | Cài đặt |
-| `settings.title` | Comfort settings | Cài đặt cho dễ dùng |
+| `help.listen` | Press “{play}” to hear it. | Bấm “{play}” để nghe. |
+| `help.read` | Read the sentence out loud. | Đọc to câu này. |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | Bấm “{say}” rồi nói. Hoặc gõ vào ô. |
+| `help.typeOnly` | Type what you hear in the box. | Gõ những gì bạn nghe vào ô. |
+| `header.settings` | Text size | Cỡ chữ |
+| `settings.title` | Text size and voice | Cỡ chữ và giọng đọc |
 | `settings.textSize.legend` | Text size | Cỡ chữ |
 | `settings.textSize.normal` | Normal | Bình thường |
 | `settings.textSize.large` | Large | Lớn |
 | `settings.textSize.extraLarge` | Extra large | Rất lớn |
-| `settings.slow.label` | Play recorded voices more slowly | Phát giọng thu sẵn chậm hơn |
+| `settings.slow.label` | Slower voice | Giọng đọc chậm hơn |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | Chỉ đổi tốc độ. Vẫn là cùng một bản ghi âm. |
 | `settings.memory` | These settings last until you close or reload this page. | Các cài đặt này được giữ cho đến khi bạn đóng hoặc tải lại trang. |
 | `settings.close` | Close settings | Đóng cài đặt |
@@ -291,16 +280,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Âm thanh không phát được. Hãy thử lại, hoặc đọc chữ trên màn hình. |
 | `lang.label` | Language | Ngôn ngữ |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Về trang chủ? Các câu trả lời của bạn trong buổi luyện tập này sẽ mất. |
-| `header.homeConfirm.yes` | Yes, go home | Vâng, về trang chủ |
-| `header.homeConfirm.no` | Stay here | Ở lại đây |
+| `header.homeConfirm.yes` | Leave | Rời đi |
+| `header.homeConfirm.no` | Keep practicing | Tiếp tục luyện tập |
 | `common.retry` | Try again | Thử lại |
-| `partReport.badge.good` | This part reached the practice score | Phần này đã đạt điểm luyện tập |
-| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Câu đã được hiện trên màn hình (lần thử có hỗ trợ). |
-| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Phần tuyên bố miễn trừ và văn bản pháp lý chỉ hiển thị bằng tiếng Anh cho đến khi có người kiểm tra bản dịch. |
+| `partReport.badge.good` | You reached the practice goal | Bạn đã đạt mục tiêu luyện tập |
+| `partReport.assisted` | The sentence was shown on the screen. | Câu đã được hiện trên màn hình. |
+| `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | Các thông báo pháp lý vẫn bằng tiếng Anh cho đến khi có người kiểm tra bản dịch. |
 | `lang.menu.title` | Choose a language | Chọn ngôn ngữ |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Còn thêm các ngôn ngữ đang được kiểm tra. Chúng sẽ xuất hiện ở đây sau khi có người xem lại. |
-| `home.study.title` | Study first | Học trước |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Xem các câu hỏi civics kèm hình ảnh và đáp án chính thức. Không chấm điểm. |
+| `home.study.title` | Study | Học |
+| `home.study.text` | See each question with its answers and a picture. No score. | Xem từng câu hỏi với đáp án và hình ảnh. Không chấm điểm. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Xem từng câu hỏi civics một. Mỗi câu hiện đáp án chính thức. Không chấm điểm và không lưu gì. |
 | `study.version.legend` | Which civics test do you want to study? | Bạn muốn học bài kiểm tra civics nào? |
 | `study.version.2008` | 2008 civics test | Bài kiểm tra civics 2008 |
@@ -321,8 +310,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.hearSample` | Hear the sample | Nghe câu mẫu |
 | `selfReview.tryAgain` | Try again | Thử lại |
 | `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | Bản thu của bạn chỉ nằm trên thiết bị này. Bản thu không được gửi đi đâu hay lưu lại, và sẽ bị xóa khi bạn sang câu tiếp theo hoặc rời màn hình này. |
-| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Trình duyệt này không thu âm giọng của bạn được. Bạn vẫn có thể kiểm tra bài đọc bằng nút “Nói” hoặc bằng cách gõ. |
-| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | Micrô đang bị chặn. Hãy cho phép dùng micrô trong phần cài đặt của trình duyệt. |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still press “Tap to speak” or type. | Trình duyệt này không ghi âm được giọng của bạn. Bạn vẫn có thể bấm “Chạm để nói” hoặc gõ. |
+| `selfReview.denied` | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. | Micrô đang bị chặn nên không ghi âm được. Hãy cho phép micrô cho trang này trong cài đặt trình duyệt, rồi thử lại. |
 | `selfReview.error` | Recording did not work this time. Try again. | Lần này việc thu âm không thành công. Hãy thử lại. |
 | `compare.why.allWords` | Every important word of the sentence was there, in order. | Mọi từ quan trọng của câu đều có, đúng thứ tự. |
 | `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Bạn đã nói “{said}”. Câu có “{expected}”. Vẫn được tính. |
@@ -335,28 +324,63 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Bạn đã thêm “{said}”, từ này không có trong câu. Vẫn được tính. |
 | `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | Từ ngắn “{expected}” bị bỏ sót. Vẫn được tính. |
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Bạn đã thêm từ ngắn “{said}”. Vẫn được tính. |
-| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Kết quả này dựa trên những từ thiết bị của bạn nghe được. Nếu thiết bị nghe sai, hãy thử lại hoặc gõ câu trả lời. |
+| `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Kết quả này dựa trên những từ điện thoại hoặc máy tính nghe được. Nếu nó nghe sai, hãy thử lại hoặc gõ câu trả lời. |
 | `compare.honest.typed` | This result is based on the words you typed. | Kết quả này dựa trên những từ bạn đã gõ. |
-| `home.special.title` | 65/20 civics practice | Luyện kiến thức công dân 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Dành cho người từ 65 tuổi trở lên đã là thường trú nhân từ 20 năm trở lên. Luyện các câu hỏi kiến thức công dân có đánh dấu sao (*). |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Tôi từ 65 tuổi trở lên và đã là thường trú nhân từ 20 năm trở lên |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Chỉ các câu hỏi cho diện 65/20 (có đánh dấu sao) |
 | `report.line.civics.none` | No civics questions were scored. | Không có câu hỏi kiến thức công dân nào được chấm. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Số câu hỏi kiến thức công dân trả lời đúng: {correct} trên {scored}. |
+| `report.line.civics.unscored` | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. | Không chấm điểm các câu này, vì đáp án thay đổi theo thời gian hoặc chúng tôi không kiểm tra được: {names}. Không tính là đúng hay sai. |
 | `report.line.reading.none` | No reading sentences were completed. | Chưa hoàn thành câu đọc nào. |
 | `report.line.reading.done` | Sentence {n} was read correctly. | Câu {n} đã được đọc đúng. |
 | `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Số câu đọc đúng: {correct} trên {presented}. Số câu đúng cần có: {needed}. |
 | `report.line.writing.none` | No writing sentences were completed. | Chưa hoàn thành câu viết nào. |
 | `report.line.writing.done` | Sentence {n} was written correctly. | Câu {n} đã được viết đúng. |
 | `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Số câu viết đúng: {correct} trên {presented}. Số câu đúng cần có: {needed}. |
-| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | Số lần viết khi câu hiện trên màn hình (có hỗ trợ): {assisted} trên {presented}. |
+| `report.line.writing.assisted` | Sentences written while the sentence was shown: {assisted} of {presented}. | Số câu viết khi câu đang được hiện: {assisted}/{presented}. |
 | `report.review.reading` | Practice reading the sentences aloud. | Hãy luyện đọc to các câu. |
 | `report.review.writing` | Practice writing the sentences you hear. | Hãy luyện viết các câu bạn nghe. |
+| `civics.heard.closest` | Your phone or computer heard a few possible answers. We show the one closest to an official answer. | Điện thoại hoặc máy tính nghe được vài câu có thể. Chúng tôi hiện câu gần nhất với đáp án chính thức. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Hãy trả lời như người hư cấu. Đừng gõ tên, địa chỉ, ngày tháng hay số thật của bạn. |
 | `common.newTab` | (opens in a new tab) | (mở trong thẻ mới) |
 | `coach.kind.streetAddress` | a street address | một địa chỉ nhà |
 | `coach.kind.zipCode` | a ZIP code with a state | một mã ZIP kèm tên tiểu bang |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Phần kiểm tra cũng tìm địa chỉ nhà và mã ZIP, nhưng không thể tìm ra tên người. Đừng nói hay gõ tên của một người thật. |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | Chữ quá nhỏ? Chạm vào Cỡ chữ ở trên cùng. |
+| `audio.playing` | Playing… | Đang phát… |
+| `audio.playSentence` | Play the sentence | Nghe câu |
+| `voice.gotIt` | Got it. Tap to speak again | Đã nghe. Chạm để nói lại |
+| `voice.orType` | Or type your answer | Hoặc gõ câu trả lời |
+| `voice.micHelp.title` | How to allow the microphone | Cách cho phép micrô |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): chạm vào “aA” cạnh địa chỉ trang web, chọn Cài đặt trang web, rồi Micrô, rồi chọn Cho phép. Sau đó tải lại trang. |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): chạm vào biểu tượng nhỏ bên trái địa chỉ trang web, chọn Quyền, rồi bật Micrô. Sau đó tải lại trang. |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | Bạn luôn có thể gõ câu trả lời vào ô. |
+| `civics.why.correct` | Your answer matches an official answer. | Câu trả lời của bạn khớp với một đáp án chính thức. |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | Câu trả lời của bạn chưa khớp với đáp án chính thức. |
+| `settings.slow.on` | On | Bật |
+| `settings.slow.off` | Off | Tắt |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | Bấm “{send}” để tiếp tục. Phần này không chấm điểm. |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | Bấm “{send}”. Sau đó bạn sẽ thấy câu có được tính không. |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Bấm “{send}”. Sau đó bạn sẽ thấy câu trả lời có được tính không, và các đáp án chính thức. |
+| `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | Đã chọn |
+| `aiNotice.more` | More | Xem thêm |
+| `home.who.title` | 1. Who is practicing? | 1. Ai đang luyện tập? |
+| `home.who.most.title` | Most people | Mọi người |
+| `home.who.most.text` | The usual civics test rules. | Quy định thông thường của bài thi kiến thức công dân. |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | Từ 65 tuổi trở lên, có thẻ xanh từ 20 năm (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Không thi tiếng Anh. Ít câu hỏi hơn: 20 câu có dấu sao. |
+| `home.who.notSure` | Not sure? Choose Most people. | Chưa chắc? Hãy chọn Mọi người. |
+| `home.what.title` | 2. What do you want to do? | 2. Bạn muốn làm gì? |
+| `home.part.notRequired` | Not required for {exception} | Không bắt buộc với {exception} |
+| `home.go.start` | Start | Bắt đầu |
+| `home.go.open` | Open | Mở |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | Từ 50 tuổi trở lên, có thẻ xanh từ 20 năm (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | Từ 55 tuổi trở lên, có thẻ xanh từ 15 năm (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | Không thi tiếng Anh. Thi kiến thức công dân như thường, bằng tiếng mẹ đẻ nếu bạn mang theo thông dịch viên. |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | Khi phỏng vấn, bạn có thể trả lời kiến thức công dân bằng tiếng mẹ đẻ nếu bạn mang theo thông dịch viên. Ứng dụng này luyện câu hỏi tiếng Anh. |
+| `report.exception` | Practice as {exception} | Luyện tập theo diện {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | Bạn có thể thi kiến thức công dân thật bằng tiếng mẹ đẻ nếu bạn mang theo thông dịch viên. |
+| `intro.who.legend` | Who is practicing? | Ai đang luyện tập? |
 
 ## Lines marked ⚠ (meaning differs a little)
 

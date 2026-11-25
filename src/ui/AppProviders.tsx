@@ -3,7 +3,7 @@
  * for that language, and the voice. All in memory; nothing is stored.
  */
 import { useEffect, type ReactNode } from "react";
-import { languageInfo } from "../i18n";
+import { languageInfo, type LanguageCode } from "../i18n";
 import { I18nProvider } from "../i18n/react";
 import { SettingsProvider, useSettings } from "./settings";
 import { VoiceProvider } from "./voice/VoiceProvider";
@@ -19,9 +19,9 @@ function Localized({ children }: { children: ReactNode }) {
   return <I18nProvider language={language}>{children}</I18nProvider>;
 }
 
-export function AppProviders({ children }: { children: ReactNode }) {
+export function AppProviders({ children, initialLanguage }: { children: ReactNode; initialLanguage?: LanguageCode }) {
   return (
-    <SettingsProvider>
+    <SettingsProvider {...(initialLanguage === undefined ? {} : { initialLanguage })}>
       <Localized>
         <VoiceProvider>{children}</VoiceProvider>
       </Localized>

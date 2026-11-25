@@ -215,28 +215,28 @@ describe("the label under the button", () => {
       </VoiceProvider>
     );
 
-  it("says AI-generated voice when a clip will play, and not Device voice", () => {
+  it("says AI-generated voice when a clip will play, and not Built-in voice", () => {
     const html = render(setup().speaker);
     expect(html).toContain("AI-generated voice");
-    expect(html).not.toContain("Device voice");
-    expect(html).toContain("Play aloud");
+    expect(html).not.toContain("Built-in voice");
+    expect(html).toContain("Play the question");
   });
 
-  it("says Device voice only when the device voice is used", () => {
+  it("says Built-in voice only when the device voice is used", () => {
     const html = render(setup({ manifest: emptyManifest() }).speaker);
-    expect(html).toContain("Device voice");
+    expect(html).toContain("Built-in voice");
     expect(html).not.toContain("AI-generated voice");
   });
 
   it("with an empty manifest every prompt still has a voice when the device can speak", () => {
     const html = render(setup({ manifest: emptyManifest() }).speaker, { text: "Anything." });
-    expect(html).toContain("Play aloud");
+    expect(html).toContain("Play the question");
   });
 
   it("says so when nothing can speak", () => {
     const html = render(setup({ audio: null, fallback: new FakeFallback(false), manifest: emptyManifest() }).speaker);
     expect(html).toContain("This browser cannot read aloud");
-    expect(html).not.toContain("Play aloud");
+    expect(html).not.toContain("Play the question");
   });
 });
 
@@ -265,11 +265,11 @@ describe("N-400 screen audio", () => {
         />
       </VoiceProvider>
     );
-    expect(html).toContain("Play aloud");
+    expect(html).toContain("Play the question");
     expect(html).toContain("Play sample answer");
     // The question has a clip, the sample answer does not (yet): one of each label.
     expect(html).toContain("AI-generated voice");
-    expect(html).toContain("Device voice");
+    expect(html).toContain("Built-in voice");
   });
 });
 describe("a prompt that cannot be played says so (audit A11Y-01)", () => {

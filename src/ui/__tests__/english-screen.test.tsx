@@ -57,11 +57,12 @@ describe("reading screen", () => {
     const html = render(s, "reading");
     const sentence = engine.englishProgress(s, "reading").current!;
     expect(html).toContain(sentence.text.replace("’", "&#x27;"));
-    expect(html).toContain("Say it");
+    expect(html).toContain("Tap to speak");
     expect(html).toContain("<textarea");
     expect(html).toContain("Skip this one");
     // The sentence is not played before the attempt.
-    expect(html).not.toContain("Play aloud");
+    expect(html).not.toContain("Play the sentence");
+    expect(html).not.toContain("Play the question");
     expect(html).toContain("every important word of the sentence must be there, in order");
     expect(html).toContain("not a USCIS rule");
     expect(html).toContain("official USCIS reading and writing vocabulary lists");
@@ -71,7 +72,7 @@ describe("reading screen", () => {
   it("without voice support still offers typing and says why", () => {
     const html = render(atReading(), "reading", { voice: false });
     expect(html).toContain("<textarea");
-    expect(html).not.toContain(">Say it<");
+    expect(html).not.toContain(">Tap to speak<");
     expect(html).toContain("cannot listen");
   });
 
@@ -125,10 +126,10 @@ describe("writing screen", () => {
     const s = atWriting();
     const sentence = engine.englishProgress(s, "writing").current!;
     const html = render(s, "writing");
-    expect(html).toContain("Play aloud");
+    expect(html).toContain("Play the sentence");
     expect(html).toContain("The sentence stays hidden until you answer.");
     expect(html).not.toContain(sentence.text);
-    expect(html).not.toContain("Say it");
+    expect(html).not.toContain("Tap to speak");
     expect(html).toContain("<textarea");
     expect(html).toContain("every important word of the sentence must be there, in order");
   });
@@ -136,11 +137,11 @@ describe("writing screen", () => {
   it("with a voice, offers a clearly labelled Show the sentence button and explains it", () => {
     const html = render(atWriting(), "writing");
     expect(html).toContain("Show the sentence");
-    expect(html).toContain("Your report marks this attempt as assisted.");
+    expect(html).toContain("Your report will say the sentence was shown.");
   });
   it("without a voice, shows the sentence, says it is assisted and offers no button for it", () => {
     const html = render(atWriting(), "writing", { voice: false });
-    expect(html).toContain("Your report marks this attempt as assisted.");
+    expect(html).toContain("The sentence is shown. Your report will say so.");
     expect(html).not.toContain("Show the sentence");
   });
   it("reading never offers Show the sentence", () => {
@@ -157,7 +158,7 @@ describe("writing screen", () => {
   it("feedback marks an assisted attempt and says nothing about an unassisted one", () => {
     let s = atWriting();
     s = engine.reduce(s, { type: "submitWriting", transcript: "we pay", input: "typed", assisted: true, at: AT });
-    expect(render(s, "writing", { feedback: true })).toContain("The sentence was shown on screen (assisted attempt).");
+    expect(render(s, "writing", { feedback: true })).toContain("The sentence was shown on the screen.");
     let plain = atWriting();
     plain = engine.reduce(plain, { type: "submitWriting", transcript: "we pay", input: "typed", at: AT });
     expect(render(plain, "writing", { feedback: true })).not.toContain("assisted attempt");
@@ -176,9 +177,10 @@ describe("listen and compare on the reading screen", () => {
     const html = render(atReading(), "reading", { recorder: RECORDER });
     expect(html).toContain("Listen and compare");
     expect(html).toContain("Record and compare");
-    expect(html).toContain("Say it");
+    expect(html).toContain("Tap to speak");
     expect(html).not.toContain("Hear the sample");
-    expect(html).not.toContain("Play aloud");
+    expect(html).not.toContain("Play the sentence");
+    expect(html).not.toContain("Play the question");
     expect(html).toContain("stays on this device");
   });
   it("the sample is not offered before the first attempt even when the browser cannot record", () => {

@@ -16,7 +16,7 @@
 .question-picture__caption {
   margin-top: var(--space-2);
   font-size: var(--fs-meta);
-  line-height: var(--lh-snug);
+  line-height: var(--lh-body);
   color: var(--ink);
   max-width: var(--measure);
 }

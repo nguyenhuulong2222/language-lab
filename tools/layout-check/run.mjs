@@ -4,8 +4,10 @@
  *
  * Drives the real app in headless Google Chrome at a phone width (390px) and checks every screen
  * of the practice flow for: horizontal scroll, elements that run off the screen, clipped text,
- * and touch targets smaller than 48px. It clicks through the whole flow like a user, so it also
- * works as a smoke test.
+ * touch targets smaller than 56px, rendered text below 16px, a missing "Back to Home" in the first
+ * viewport on any screen but Home, and exactly one filled primary button
+ * (.btn--primary) per screen state, at least 64px high. It clicks through the whole flow like a
+ * user, so it also works as a smoke test.
  *
  *   node tools/layout-check/run.mjs                       all configurations
  *   node tools/layout-check/run.mjs --size=extra-large    one text size (normal, large, extra-large)
@@ -14,6 +16,7 @@
  *   node tools/layout-check/run.mjs --width=320           phone width in CSS px (default 390; 320 is the WCAG reflow width)
  *   node tools/layout-check/run.mjs --filed=before        file before the boundary date, so the full interview
  *                                                         uses the 2008 test (default: on or after, 2025 test)
+ *   node tools/layout-check/run.mjs --browser-lang=vi     Chrome set to that language: Home must open in it
  *   node tools/layout-check/run.mjs --prod                the production build (what Cloudflare serves), with the
  *                                                         headers of public/_headers, and a check that the page
  *                                                         raises no Content-Security-Policy violation
@@ -34,15 +37,19 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import http from "node:http";
 import { LANGUAGES, IN_REVIEW_LANGUAGES } from "../../src/i18n/languages.ts";
+import { isLegalKey } from "../../src/i18n/legal-keys.ts";
+import { isReviewed } from "../../src/i18n/locale-checks.ts";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const APP_PORT = 5198;
 const CDP_PORT = 9333;
 const CHROME = process.env.CHROME_PATH ?? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const SHOTS_DIR = path.join(os.tmpdir(), "language-lab-layout");
-const MIN_TARGET = 48;
+const MIN_TARGET = 56;
 const WIDTH = Number((process.argv.slice(2).find((a) => a.startsWith("--width=")) ?? "--width=390").slice(8));
 const PROD = process.argv.includes("--prod");
+/** --browser-lang=vi: start Chrome with that interface language (navigator.languages) and check Home opens in it. */
+const BROWSER_LANG = (process.argv.slice(2).find((a) => a.startsWith("--browser-lang=")) ?? "").slice(15) || null;
 const FILED_BEFORE = process.argv.includes("--filed=before");
 const PROD_DIR = path.join(os.tmpdir(), "language-lab-layout-dist");
 const HEIGHT = 844;
@@ -206,12 +213,49 @@ window.__lab = (() => {
       const r = box.getBoundingClientRect();
       if (r.height < min - 0.5 || (r.width < min - 0.5)) out.smallTargets.push(describe(el) + " " + Math.round(r.width) + "x" + Math.round(r.height));
     }
+    // Senior step 7: no rendered text below 16px (any element that holds visible text itself).
+    out.smallText = [];
+    for (const el of document.body.querySelectorAll("*")) {
+      if (!visible(el) || skip(el)) continue;
+      const own = [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent.trim() !== "");
+      if (!own) continue;
+      const px = parseFloat(getComputedStyle(el).fontSize);
+      if (px < 15.95) out.smallText.push(describe(el) + " " + px + "px");
+    }
+    // Exactly one filled primary button per screen state, at least 64px high on a phone.
+    const primaries = [...document.body.querySelectorAll(".btn--primary")].filter((el) => visible(el) && !skip(el));
+    out.primaryCount = primaries.length;
+    out.primaryNames = primaries.map((el) => textOf(el).slice(0, 40));
+    // A choice between equal options (the AI coach yes/no, the 2008/2025 study test) is made with
+    // option cards and has no filled button, so the screen does not push one answer.
+    out.optionCards = [...document.body.querySelectorAll("main .action-card")].filter(visible).length;
+    out.shortPrimary = primaries.filter((el) => el.getBoundingClientRect().height < 63.5).map((el) => describe(el) + " " + Math.round(el.getBoundingClientRect().height) + "px high");
+    // Q1: every screen except Home (and the picture credits, which have their own way back) shows
+    // "Back to Home" in the first viewport, measured from the top of the page.
+    const homeGrid = document.getElementById("home-language");
+    const onHome = homeGrid !== null && visible(homeGrid);
+    // The picture credits hide the practice column (the first one) and show their own.
+    const creditsOpen = document.querySelector("main > .ll-container")?.hidden === true;
+    const bar = [...document.querySelectorAll("main .back-home__button")].find(visible);
+    out.backHome = { needed: !onHome && !creditsOpen, top: bar ? Math.round(bar.getBoundingClientRect().top + window.scrollY) : null, viewport: window.innerHeight };
+    // Q2: the header rows (the logo and the buttons, grouped by their vertical centre).
+    const headerItems = [...document.querySelectorAll("header .header__brand, header .header__button")].filter(visible);
+    const centres = headerItems.map((el) => { const b = el.getBoundingClientRect(); return (b.top + b.bottom) / 2; }).sort((a, b) => a - b);
+    out.headerRows = centres.reduce((rows, c, i) => (i > 0 && c - centres[i - 1] < 20 ? rows : rows + 1), 0);
     out.horizontalScroll = out.scrollWidth > vw + 1;
     return out;
   };
 
   const buttons = () => [...document.querySelectorAll("button, summary, label")].filter(visible);
-  const find = (text) => buttons().find((el) => textOf(el) === text) || buttons().find((el) => textOf(el).startsWith(text)) || null;
+  // The words a person reads as the control's name: decoration marked aria-hidden (the "Aa" on the
+  // text size choices) is left out.
+  const nameOf = (el) => {
+    if (!el.querySelector('[aria-hidden="true"]')) return textOf(el);
+    const copy = el.cloneNode(true);
+    for (const hidden of copy.querySelectorAll('[aria-hidden="true"]')) hidden.remove();
+    return (copy.textContent || "").replace(/\\s+/g, " ").trim();
+  };
+  const find = (text) => buttons().find((el) => nameOf(el) === text) || buttons().find((el) => nameOf(el).startsWith(text)) || null;
   return {
     measure,
     has: (text) => find(text) !== null,
@@ -236,8 +280,10 @@ window.__lab = (() => {
 // ---------------------------------------------------------------------------
 
 async function checkConfiguration(cdp, size, lang) {
+  // As the app: a legal key shows in English until the language has a named reviewer.
   const L = (key) => {
-    const text = locales[lang]?.[key] ?? locales.en[key];
+    const englishOnly = lang !== "en" && isLegalKey(key) && !isReviewed(locales[lang]?._meta);
+    const text = (englishOnly ? undefined : locales[lang]?.[key]) ?? locales.en[key];
     if (text === undefined) throw new Error(`No text for key ${key}`);
     return text;
   };
@@ -267,7 +313,7 @@ async function checkConfiguration(cdp, size, lang) {
     if (/-feedback$|^n400-done$/.test(name)) {
       m.resultCheck = await cdp.evaluate(`(() => {
         const disclaimer = document.querySelector("main .disclaimer--prominent");
-        const heading = document.querySelector("main .screen__body .panel .panel__title") || document.querySelector("main h1");
+        const heading = document.querySelector("main .screen__body .panel .result-headline") || document.querySelector("main h1");
         const box = heading ? heading.getBoundingClientRect() : null;
         return { disclaimer: !!disclaimer, headingTop: box ? Math.round(box.top) : null, headingBottom: box ? Math.round(box.bottom) : null, viewport: window.innerHeight,
           order: !!(disclaimer && heading && (heading.compareDocumentPosition(disclaimer) & Node.DOCUMENT_POSITION_FOLLOWING)) };
@@ -287,13 +333,23 @@ async function checkConfiguration(cdp, size, lang) {
   await cdp.send("Page.navigate", { url: `http://localhost:${APP_PORT}/` });
   await waitFor(async () => (await cdp.evaluate("document.readyState")) === "complete" && (await cdp.evaluate("!!document.querySelector('h1')")), "the page");
   await cdp.evaluate(PAGE_HELPERS);
-
-  // Language first (the button in the header), then the settings, so every screen is checked with both.
-  if (lang !== "en") {
-    const info = LANGUAGES.find((l) => l.code === lang);
-    await cdp.evaluate("document.querySelector('.header__lang').click()");
-    await waitFor(() => cdp.evaluate(`!!document.querySelector('.language-menu__option[lang="${info.htmlLang}"]')`), "the language menu");
-    await cdp.evaluate(`document.querySelector('.language-menu__option[lang="${info.htmlLang}"]').click()`);
+  // --browser-lang: Chrome runs with that language, so Home must open in it, without a tap.
+  if (BROWSER_LANG !== null) {
+    const expected = LANGUAGES.find((l) => l.code === BROWSER_LANG);
+    const htmlLang = await cdp.evaluate("document.documentElement.lang");
+    const title = await cdp.evaluate("document.querySelector('main h1').textContent.trim()");
+    if (htmlLang !== expected.htmlLang || title !== locales[BROWSER_LANG]["home.title"]) {
+      throw new Error(`Chrome in ${BROWSER_LANG}: Home opened as lang="${htmlLang}" with "${title}"`);
+    }
+    console.log(`Chrome in ${BROWSER_LANG}: Home opened in ${BROWSER_LANG} ("${title}").`);
+  }
+  // Language first (the grid at the top of Home; the header button goes there), then the settings,
+  // so every screen is checked with both.
+  const info = LANGUAGES.find((l) => l.code === lang);
+  await cdp.evaluate("document.querySelector('.header__lang').click()");
+  await waitFor(() => cdp.evaluate(`document.activeElement && document.activeElement.matches('#home-language .language-menu__option')`), "the language grid on Home (focused from the header button)");
+  if ((await cdp.evaluate("document.documentElement.lang")) !== info.htmlLang) {
+    await cdp.evaluate(`document.querySelector('#home-language .language-menu__option[lang="${info.htmlLang}"]').click()`);
     await waitFor(async () => (await cdp.evaluate("document.documentElement.lang")) === info.htmlLang, `the page language ${lang}`);
     await sleep(150);
   }
@@ -306,6 +362,11 @@ async function checkConfiguration(cdp, size, lang) {
   await record("about-open");
   await click(L("header.about"));
   await record("home");
+  // The header language button on Home scrolls to the language grid at the top.
+  await cdp.evaluate("document.querySelector('.header__lang').click()");
+  await sleep(120);
+  await record("home-language");
+  await cdp.evaluate("window.scrollTo(0, 0)");
 
   // Study first and the picture credits
   if (await cdp.evaluate(`window.__lab.has(${js(L("home.study.title"))})`)) {
@@ -360,7 +421,7 @@ async function checkConfiguration(cdp, size, lang) {
   await waitFor(() => lab(`has(${js(L("n400.save"))})`), "the N-400 question");
   await record("n400-question");
   // The AI coach switch and its notice (opened and cancelled, so nothing is sent).
-  await cdp.evaluate(`document.querySelector('.coach__switch').click()`);
+  await cdp.evaluate(`document.querySelector('section.coach .coach__switch').click()`);
   await waitFor(() => lab(`has(${js(L("coach.notice.cancel"))})`), "the AI coach notice");
   await record("coach-notice");
   await click(L("coach.notice.cancel"));
@@ -440,19 +501,24 @@ async function checkConfiguration(cdp, size, lang) {
  * ticked and the interpreter line, and the first civics question with the 65/20 note. Then Home.
  */
 async function specialPass({ cdp, lab, js, click, record, L }) {
-  if (!(await lab(`has(${js(L("home.special.title"))})`))) throw new Error("the home screen has no 65/20 card");
-  await click(L("home.special.title"));
+  // "Who is practicing?" → 65/20, then the civics part: setup starts with 65/20 ticked.
+  if (!(await cdp.evaluate(`!!document.querySelector('input[name="who"][value="65/20"]')`))) throw new Error("the home screen has no 65/20 choice");
+  await cdp.evaluate(`document.querySelector('input[name="who"][value="65/20"]').click()`);
+  await sleep(120);
+  await record("home-special");
+  await click(L("home.part.civics.title"));
   // The label is a legal key (English until reviewed), so wait for the checkbox itself.
-  await waitFor(() => cdp.evaluate(`!!document.querySelector('input[name="special"]')`), "the 65/20 choice on setup");
-  if (!(await cdp.evaluate(`document.querySelector('input[name="special"]').checked`))) throw new Error("the 65/20 card did not tick the choice");
+  await waitFor(() => cdp.evaluate(`!!document.querySelector('input[name="exception"][value="65/20"]')`), "the 65/20 choice on setup");
+  if (!(await cdp.evaluate(`document.querySelector('input[name="exception"][value="65/20"]').checked`))) throw new Error("the 65/20 card did not tick the choice");
   await record("setup-special");
   await cdp.evaluate(`document.querySelector('input[name="filed"][value="on_or_after"]').click()`);
   await click(L("intro.start"));
   await waitFor(() => lab(`has(${js(L("civics.submit"))})`), "the first 65/20 civics question");
   await record("civics-special");
-  await click(L("header.home"));
+  await cdp.evaluate("document.querySelector('main .back-home__button').click()");
   await click(L("header.homeConfirm.yes"));
-  await waitFor(() => lab(`has(${js(L("home.special.title"))})`), "home after the 65/20 practice");
+  await waitFor(() => cdp.evaluate(`!!document.querySelector('input[name="who"]')`), "home after the 65/20 practice");
+  await cdp.evaluate(`document.querySelector('input[name="who"][value="none"]').click()`);
 }
 
 /**
@@ -545,6 +611,7 @@ async function main() {
     `--remote-debugging-port=${CDP_PORT}`,
     `--user-data-dir=${profile}`,
     "--no-first-run",
+    ...(BROWSER_LANG === null ? [] : [`--lang=${BROWSER_LANG}`, `--accept-lang=${BROWSER_LANG}`]),
     "--disable-gpu",
     `--window-size=${WIDTH},${HEIGHT}`,
     "about:blank",
@@ -584,6 +651,11 @@ async function main() {
     for (const x of r.offscreen) problems.push(`off screen: ${x}`);
     for (const x of r.clipped) problems.push(`clipped: ${x}`);
     for (const x of r.smallTargets) problems.push(`small target: ${x}`);
+    for (const x of r.smallText ?? []) problems.push(`text below 16px: ${x}`);
+    if (r.size === "normal" && r.headerRows > 1) problems.push(`the header is ${r.headerRows} rows at normal size (expected one)`);
+    if (r.backHome?.needed && (r.backHome.top === null || r.backHome.top + 1 > r.backHome.viewport)) problems.push(r.backHome.top === null ? "no visible Back to Home" : `Back to Home is below the first viewport (top ${r.backHome.top}px)`);
+    for (const x of r.shortPrimary ?? []) problems.push(`primary button below 64px: ${x}`);
+    if (r.primaryCount !== undefined && r.primaryCount !== 1 && !(r.primaryCount === 0 && r.optionCards > 1)) problems.push(`${r.primaryCount} primary buttons (expected exactly one)${r.primaryCount > 1 ? ": " + r.primaryNames.join(" / ") : ""}`);
     for (const x of r.cspViolations ?? []) problems.push(`CSP violation: ${x}`);
     if (r.resultCheck) {
       const c = r.resultCheck;
@@ -591,7 +663,7 @@ async function main() {
       else if (!c.order) problems.push("the prominent disclaimer is above the result");
       if (c.headingTop === null || c.headingTop < 0 || c.headingBottom > c.viewport) problems.push(`the result is not in view (top ${c.headingTop}px, bottom ${c.headingBottom}px, viewport ${c.viewport}px)`);
     }
-    const expectedRoot = { normal: 16, large: 18, "extra-large": 20 }[r.size];
+    const expectedRoot = { normal: 18, large: 21, "extra-large": 24 }[r.size];
     if (r.rootPx !== expectedRoot) problems.push(`text size not applied: root font is ${r.rootPx}px, expected ${expectedRoot}px`);
     const status = problems.length === 0 ? "ok  " : "FAIL";
     console.log(`${status} ${r.lang} ${r.size.padEnd(11)} ${r.name} (root ${r.rootPx}px)`);

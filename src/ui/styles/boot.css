@@ -8,7 +8,7 @@
   box-sizing: border-box;
   min-height: 100vh;
   margin: 0;
-  padding: 3rem clamp(1rem, 5vw, 2rem);
+  padding: var(--space-7) clamp(var(--space-4), 5vw, var(--space-6));
   background: #f4eee1;
   color: #2a2118;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -20,14 +20,14 @@
   margin: 0 auto;
 }
 .boot__name {
-  margin: 0 0 1rem;
+  margin: 0 0 var(--space-4);
   font-family: "Bitter", "Roboto Slab", "Rockwell", Georgia, serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.2;
 }
 .boot__line {
-  margin: 0 0 1.5rem;
+  margin: 0 0 var(--space-5);
   font-size: 1.25rem;
 }
 .boot__note {

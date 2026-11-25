@@ -28,18 +28,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | Vrè entèvyou a fèt an angle, sof si USCIS ba ou yon eksepsyon. Kesyon ak fraz ki sou ekran sa yo rete an angle pou ou ka pratike yo. | The real interview takes place in English, unless USCIS gives you an exception. The questions and sentences on these screens stay in English so you can practice them. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | Rapò sa a se pou yon sèl pati. Li montre kijan pati sa a te pase nan pratik la, se pa kijan w ta fè nan vrè tès la, e li pa bay yon rezilta pratik jeneral. | This report is for one part only. It shows how this part went in the practice, not how you would do in the real test, and it gives no general practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | Entèvyou sou N-400 la se pratik sèlman e li pa jwenn nòt. | The interview about N-400 is practice only and it does not get a grade. |
-| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Se yon AI ki fè tradiksyon sa a e li ka gen erè ladan l. Vèsyon angle a se sa ki gen otorite. | This translation was made by an AI and it may have errors in it. The English version is the one that has authority. |
+| `aiNotice.text` | Translated by AI. It may have mistakes. The English is correct. | Se AI ki tradui sa a. Li ka gen erè. Angle a kòrèk. | This translation was made by an AI and it may have errors in it. The English version is the one that has authority. |
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Se yon paramèt pratik Language Lab ki baze sou direktiv USCIS yo pou bay nòt, se pa yon règ USCIS: chak mo enpòtan nan fraz la dwe la, nan lòd. Mo kout tankou “the” ka manke. Poz ak pwononsyasyon pa gen nòt. | This is a Language Lab practice setting based on USCIS directions for giving scores, not a USCIS rule: every important word in the sentence must be there, in order. Short words like “the” may be missing. Pauses and pronunciation do not get a score. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | Sa a deside si ou pratike tès edikasyon sivik 2008 la oswa sa 2025 la. Se sèlman yon chwa pou pratike. Pou pwòp ka ou, gade sou uscis.gov pou konnen ki tès ki aplike pou ou. | This decides whether you practice the 2008 civics test or the 2025 one. It is only a choice to practice. For your own case, look on uscis.gov to know which test applies to you. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Imaj ki nan pratik edikasyon sivik la soti nan sous ofisyèl gouvènman federal Etazini. Chak imaj itilize paske pwòp dosye li di klèman dwa li yo. Sa pa vle di okenn ajans apwouve Language Lab. | The images in the civics practice come from official sources of the U.S. federal government. Each image is used because its own record clearly states its rights. This does not mean any agency approves Language Lab. |
 | `civics.officialNote` | Any of these counts. | Nenpòt nan sa yo konte. | Any one of these counts. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | Sivik, Etidye anvan ak antrevi pratik konplè a fèmen nan vèsyon sa a jiskaske yon moun revize repons sivik yo. Ou ka pratike antrevi N-400 a, lekti ak ekriti. | Civics, Study first and the full practice interview are closed in this version until a person reviews the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Kle repons edikasyon sivik la ap tann yon moun revize l toujou, se konsa vèsyon sa a pa bay nòt pou edikasyon sivik e li pa fè rapò. | The civics answer key is still waiting for a person to review it, so this version does not give a score for civics and does not make a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Lè w peze “Di li”, rekonesans vwa navigatè w la ka voye vwa w bay konpayi ki fè navigatè a, tankou Google oswa Apple, pou transfòme l an mo. Language Lab pa voye ni konsève vwa w. Ou ka tape repons ou olye de sa. | When you press “Say it”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. |
-| `report.title.onTrack` | Practice complete: each part reached the practice score | Pratik la fini: chak pati rive nan nòt pratik la | The practice is finished: each part reached the practice score |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Lè w peze “Touche pou w pale”, rekonesans vwa navigatè w la ka voye vwa w bay konpayi ki fè navigatè a, tankou Google oswa Apple, pou transfòme l an mo. Language Lab pa voye ni konsève vwa w. Ou ka tape repons ou olye de sa. | When you press “Say it”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. |
+| `report.title.onTrack` | Well done. Each part reached the practice goal. | Bon travay. Chak pati rive nan objektif pratik la. | The practice is finished: each part reached the practice score |
 | `report.title.review` | A few things to review | Kèk bagay pou revize | Some things to review |
-| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Nan pratik sa a, lekti, ekriti ak sivik chak rive nan nòt Language Lab itilize a. Sèvi ak nòt ki anba yo pou kontinye pratike. | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Se pou sa pratik la ye. Nòt ki anba yo montre sou ki kote pou konsantre anvan ou eseye ankò. | That is what practice is for. The notes below show where to focus before you try again. |
+| `report.lead.onTrack` | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. | Lekti, ekriti ak sivik rive nan objektif pratik la. Li nòt ki anba yo epi kontinye pratike. | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That is what practice is for. The notes below show what to practice next. | Se pou sa pratik la ye. Nòt ki anba yo montre sa pou w pratike apre. | That is what practice is for. The notes below show where to focus before you try again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Ekriti: USCIS di erè òtograf, lèt majiskil ak ponktiyasyon pa fè w echwe tès ekriti a, sòf si yo pa ka konprann fraz la ankò. Isit la, ti erè òtograf toujou konte, epi mo ki pi long yo ka genyen plis. Yo pa tcheke lèt majiskil ak ponktiyasyon. | Writing: USCIS says spelling, capital letter and punctuation errors do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked. |
 | `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | Lè antrenè AI a limen, mo chak repons ou tape oswa ou di nan pati sa a voye kòm tèks bay Anthropic, yon konpayi AI, atravè sèvè Language Lab, pou ekri kòmantè. Language Lab ak Anthropic pa janm resevwa vwa ou, se mo yo sèlman. Reponn tankou moun imajinè a. Pa di non reyèl, adrès, dat nesans, A-number oswa detay dosye. Nan vrè entèvyou ou, ou dwe reponn avèk verite sou pwòp lavi ou. Language Lab tcheke kèk nimewo, men li pa ka kenbe chak detay pèsonèl. Language Lab pa kenbe repons ou yo. Politik vi prive Anthropic di kijan Anthropic trete yo: anthropic.com/legal/privacy. Antrenè AI a etenn ankò lè ou kòmanse yon nouvo pratik. | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
 | `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | Antrenè AI: etenn sòf si ou limen l nan pati N-400 a. Lè li limen, yo voye tèks chak repons N-400 bay Anthropic atravè sèvè Language Lab pou ekri kòmantè; yo pa voye okenn odyo. Pou limite itilizasyon, sèvè a konte demann yo ak yon kòd chak jou ki gen sèl, ki fèt ak adrès entènèt ou; yo efase ansyen kont yo pandan demann ki vin apre yo, nòmalman nan de jou. Politik vi prive Anthropic: anthropic.com/legal/privacy. | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
@@ -50,8 +50,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | Fraz yo itilize sèlman mo ki sou lis vokabilè ofisyèl USCIS pou lekti ak ekriti. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Ou rive nan nòt pou pase pratik la, se konsa tès la sispann isit la. |
-| `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Reponn kesyon edikasyon sivik. Yo tcheke ak kle repons yo. |
-| `partReport.unscored.missing` | A question that is not in the answer key | Yon kesyon ki pa nan kle repons yo |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Etidye anvan an fèmen nan vèsyon sa a jiskaske yon moun revize kle repons yo. |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | Sa a chanje pratik la sèlman; anyen pa sove ni voye. Pati edikasyon sivik la ap poze {asked} nan {bank} kesyon ki make ak yon zetwal (*) nan lis ofisyèl la. Nan pratik sa a, li poze tout {asked} yo. Nòt pou pase pratik la se {pass} bon repons. Pou pwòp ka pa ou, tcheke uscis.gov: laj ak ane yo konte nan dat ou depoze aplikasyon an. |
 | `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS: nan dat ou depoze aplikasyon an, si ou gen 50 an oswa plis epi ou rezidan pèmanan depi 20 an (50/20), oswa 55 an oswa plis ak 15 an (55/15), ou egzante de egzijans angle a (li, ekri, pale ak konprann angle), men ou dwe toujou pran tès edikasyon sivik la. Ou ka pran l nan lang natif natal ou si ou mennen yon entèprèt. Si ou gen 65 an oswa plis ak omwen 20 an (65/20), ou egzante de angle tou, epi ofisye a sèvi ak fòm tès edikasyon sivik ki deziyen espesyalman. |
@@ -61,8 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Tès pratik la te kanpe lè ou te rive nan nòt pou pase pratik la. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Tès pratik la te kanpe apre {incorrect} move repons, anvan ou rive nan nòt pou pase pratik la, {score}. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Nòt pou pase pratik la se {score} bon repons, epi ou pa t rive ladan l. |
-| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | Pa gen nòt, paske repons lan chanje oswa li pa nan kle repons yo: {names}. Kesyon sa yo pa konte ni bon ni move. |
-| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | Aparèy ou a bay plizyè devinèt sou sa ou te di. Sa ki pi pre yon repons nan kle a parèt. |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS konte laj la ak ane kòm rezidan pèmanan jou yo depoze N-400 la. |
 
 ## 3. All other lines
 
@@ -70,16 +67,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | Ale nan kontni prensipal la |
-| `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Etap pratik sa a poko pare. |
+| `app.stageNotBuilt` | This part is not ready yet. Go back to Home and choose another part. | Pati sa a poko pare. Tounen nan paj Akèy la epi chwazi yon lòt pati. |
 | `header.about` | About & disclaimer | Apwopo ak avètisman |
-| `stepper.label` | Interview stages | Etap entèvyou a |
-| `stepper.count` | Stage {current} of {total} | Etap {current} sou {total} |
+| `stepper.label` | Your steps | Etap ou yo |
+| `stepper.count` | Step {current} of {total}: {name} | Etap {current} sou {total}: {name} |
 | `stepper.status.complete` | completed | fini |
 | `stepper.status.current` | current step | etap kounye a |
 | `stepper.status.upcoming` | upcoming | ki ap vini |
-| `stage.intro.label` | Welcome | Byenvini |
-| `stage.intro.short` | Intro | Kòmansman |
-| `stage.n400_interview.label` | N-400 conversation | Konvèsasyon sou N-400 |
+| `stage.intro.label` | Set up | Prepare |
+| `stage.intro.short` | Set up | Prepare |
+| `stage.n400_interview.label` | N-400 questions | Kesyon N-400 |
 | `stage.n400_interview.short` | N-400 | N-400 |
 | `stage.reading.label` | Reading | Lekti |
 | `stage.reading.short` | Reading | Lekti |
@@ -87,43 +84,42 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.writing.short` | Writing | Ekriti |
 | `stage.civics.label` | Civics | Edikasyon sivik |
 | `stage.civics.short` | Civics | Sivik |
-| `stage.report.label` | Practice report | Rapò pratik |
+| `stage.report.label` | Your report | Rapò ou |
 | `stage.report.short` | Report | Rapò |
-| `badge.onTrack` | Practice score reached | Nòt pratik la rive |
-| `badge.review` | Worth reviewing | Mande revize |
-| `report.empty` | Your practice report will appear here once the session is complete. | Rapò pratik ou a ap parèt isit la lè sesyon an fini. |
-| `report.take` | TAKE | TAKE |
+| `badge.onTrack` | You reached the practice goal | Ou rive nan objektif pratik la |
+| `badge.review` | Practice this again | Pratike sa a ankò |
+| `report.empty` | Your report will show here when you finish the practice. | Rapò ou ap parèt isit la lè w fin pratike. |
 | `report.overline` | Practice report | Rapò pratik |
-| `report.profile.label` | Practice profile (fictional) | Pwofil pratik (fiktif) |
+| `report.profile.label` | Practice person (made up) | Moun pou pratik (envante) |
 | `report.profile.meta` | {version} civics test · filed {date} | Tès edikasyon sivik {version} · depoze nan dat {date} |
 | `report.stages.heading` | How each part went | Kijan chak pati te pase |
 | `report.review.heading` | Things to review | Bagay pou revize |
 | `report.review.intro` | Focus on these before your next practice. | Konsantre sou sa yo anvan pwochen pratik ou a. |
-| `report.generated` | Report generated {datetime} | Rapò a fèt nan dat {datetime} |
+| `report.generated` | Report made {datetime} | Rapò fèt {datetime} |
 | `translation.english` | English | Angle |
-| `voice.say` | Say it | Pale |
-| `voice.stop` | Stop listening | Sispann koute |
+| `voice.say` | Tap to speak | Touche pou w pale |
+| `voice.stop` | Listening… tap when you finish | N ap koute… touche lè w fini |
 | `voice.listening` | Listening. Say your answer now. | N ap koute. Di repons ou a kounye a. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | Nou tande ou. Tcheke mo yo, chanje yo si ou vle, epi voye. |
-| `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | Mikwofòn nan bloke. Pèmèt aksè nan mikwofòn nan paramèt navigatè a, oswa tape repons ou a. |
+| `voice.denied` | The microphone is blocked. Follow the steps below to allow it, or type your answer. | Mikwo a bloke. Swiv etap ki anba yo pou pèmèt li, oswa tape repons ou. |
 | `voice.unsupported` | This browser cannot listen to your voice. Type your answer instead. | Navigatè sa a pa ka koute vwa ou. Tape repons ou a olye. |
 | `voice.nothingHeard` | We did not hear anything. Try again, or type your answer. | Nou pa tande anyen. Eseye ankò, oswa tape repons ou a. |
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | Nou pa jwenn okenn mikwofòn. Tape repons ou a olye. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | Koute a pa mache fwa sa a. Eseye ankò, oswa tape repons ou a. |
 | `voice.skip` | Skip this one | Sote youn sa a |
-| `audio.play` | Play aloud | Koute byen fò |
-| `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Vwa aparèy la: vwa ki enstale sou telefòn oswa òdinatè ou a. |
+| `audio.play` | Play the question | Koute kesyon an |
+| `audio.deviceVoice` | Built-in voice: the voice of your phone or computer. | Vwa ki deja la: vwa telefòn oswa òdinatè w. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Navigatè sa a pa ka li byen fò. Li tèks la sou ekran an. |
-| `intro.profile.legend` | Choose a practice profile | Chwazi yon pwofil pratik |
-| `intro.profile.help` | Every profile is invented. | Tout pwofil yo envante. |
+| `intro.profile.legend` | Choose a practice person | Chwazi yon moun pou pratik |
+| `intro.profile.help` | Every person here is made up. | Tout moun isit la envante. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Pratike kòmsi yo te depoze N-400 la… |
 | `intro.filed.before` | Before {date} | Anvan {date} |
 | `intro.filed.onOrAfter` | On or after {date} | Nan {date} oswa apre |
 | `intro.start` | Start practice | Kòmanse pratik la |
-| `intro.startHint` | Make your choice above to start. | Fè chwa ou anwo a pou kòmanse. |
-| `home.locked.title` | In this build you can practice | Nan vèsyon sa a ou ka pratike |
+| `intro.startHint` | Choose one answer in each group above. Then press “Start practice”. | Chwazi yon repons nan chak gwoup ki anwo a. Apre sa peze “Kòmanse pratik la”. |
+| `home.locked.title` | Right now you can practice | Pou kounye a ou ka pratike |
 | `n400.title` | N-400 interview | Entèvyou sou N-400 |
-| `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | Yon pratik trankil ak kalite kesyon yon ofisye poze sou yon demann. Reponn kòm {name}. Anyen nan etap sa a pa jwenn nòt. |
+| `n400.lead` | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. | Yon ofisye ka poze kesyon tankou sa yo sou fòm ou. Reponn tankou {name}. Pati sa a pa gen nòt. |
 | `n400.count` | Question {current} of {total} | Kesyon {current} sou {total} |
 | `n400.sample.label` | Sample answer for {name} (fictional) | Egzanp repons pou {name} (fiktif) |
 | `n400.yourAnswer` | Your answer, as {name} | Repons ou, kòm {name} |
@@ -144,7 +140,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Si ou vle, pratike yon repons byen fò. Yo pa anrejistre kesyon sa a. |
 | `coach.tip.label` | Tip about your English: | Konsèy sou angle ou: |
 | `coach.feedback.understood` | Easy to understand | Fasil pou konprann |
-| `coach.feedback.needs_practice` | Worth practicing again | Li vo pratike ankò |
+| `coach.feedback.needs_practice` | Practice this again | Pratike sa a ankò |
 | `coach.feedback.unclear` | Hard to follow. Try again. | Difisil pou swiv. Eseye ankò. |
 | `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | Sa a tcheke sèlman jan angle ou klè. Li pa di si yon repons kòrèk oswa vre. |
 | `coach.checking` | Getting AI feedback… | N ap jwenn kòmantè AI… |
@@ -158,11 +154,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.dateOfBirth` | a full date, such as a date of birth | yon dat konplè, tankou yon dat nesans |
 | `coach.next` | Continue | Kontinye |
 | `n400.loading` | Getting the next question… | N ap chache pwochen kesyon an… |
-| `n400.failed` | The next question could not be loaded. Start over to try again. | Nou pa t ka chaje pwochen kesyon an. Rekòmanse pou eseye ankò. |
+| `n400.failed` | The next question did not load. Check your internet, then press “Start over”. | Pwochen kesyon an pa chaje. Tcheke entènèt ou, epi peze “Rekòmanse”. |
 | `n400.done.title` | Your answers | Repons ou yo |
 | `n400.done.lead` | These are the words you gave. They are not scored. | Sa yo se mo ou te di yo. Yo pa jwenn nòt. |
 | `n400.done.next` | Go to reading | Ale nan lekti |
-| `voice.consent.continue` | Continue and say it | Kontinye epi pale |
+| `voice.consent.continue` | Continue and speak | Kontinye epi pale |
 | `voice.consent.type` | Type instead | Tape olye de sa |
 | `n400.number` | Question {current} | Kesyon {current} |
 | `common.fictional` | Fictional practice profile | Pwofil pratik fiktif |
@@ -194,15 +190,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Navigatè sa a pa ka li byen fò, se konsa fraz la parèt isit la. Tape l. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Fraz la rete kache jiskaske ou reponn. |
 | `writing.show` | Show the sentence | Montre fraz la |
-| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | Si ou pa ka tande son an, montre fraz la epi tape li. Yo tcheke li menm jan an. Rapò ou a make tantativ sa a kòm tantativ ak èd. |
-| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | Fraz la parèt. Rapò ou a make tantativ sa a kòm tantativ ak èd. |
+| `writing.show.help` | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. | Si w pa ka tande son an, montre fraz la epi tape l. Yo tcheke l menm jan an. Rapò ou ap di fraz la te parèt. |
+| `writing.shown` | The sentence is shown. Your report will say so. | Fraz la parèt. Rapò ou ap di sa. |
 | `civics.title` | Civics | Edikasyon sivik |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | Reponn byen fò oswa tape. Repons kout yo bon, men di repons lan tout antye. |
 | `civics.count` | Question {current} of {total} | Kesyon {current} sou {total} |
 | `civics.needs` | This question needs {count} different answers. | Kesyon sa a bezwen {count} repons diferan. |
 | `civics.yourAnswer` | Your answer | Repons ou |
 | `civics.submit` | Check my answer | Tcheke repons mwen |
-| `civics.correct` | Correct | Kòrèk |
+| `civics.correct` | This counts | Sa konte |
 | `civics.notYet` | Not yet | Poko |
 | `civics.youSaid` | You said: {text} | Ou te di: {text} |
 | `civics.official` | Official answers | Repons ofisyèl yo |
@@ -211,39 +207,39 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.stopped.incorrect` | The test stopped because too many answers need more practice. | Tès la sispann paske twòp repons bezwen plis pratik. |
 | `civics.stopped.none` | You have answered every question for this practice test. | Ou reponn tout kesyon nan tès pratik sa a. |
 | `civics.tally` | {correct} correct, {incorrect} not yet. | {correct} kòrèk, {incorrect} poko. |
-| `civics.locked.title` | Civics is switched off in this build | Edikasyon sivik la fèmen nan vèsyon sa a |
+| `civics.locked.title` | Civics is not available right now | Sivik pa disponib kounye a |
 | `report.again` | Practice again | Pratike ankò |
 | `common.startOver` | Start over | Rekòmanse |
-| `voice.needText` | Type or say your answer first, or choose Skip. | Premye tape oswa di repons ou, oswa chwazi Sote. |
-| `audio.stop` | Stop playing | Sispann jwe |
+| `voice.needText` | The box is empty. Type or say your answer, or press “Skip this one”. | Bwat la vid. Tape oswa di repons ou, oswa peze “Sote youn sa a”. |
+| `audio.stop` | Stop | Kanpe |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Vwa AI fè. Yo te prepare odyo a davans. |
 | `audio.playSample` | Play sample answer | Koute egzanp repons lan |
-| `home.title` | Welcome to the booth | Byenvini nan Language Lab |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | Pratike pou entèvyou natiralizasyon an nan yon espas trankil. Ou reponn kòm yon moun envante, kidonk ou pa bezwen bay vrè enfòmasyon. |
+| `home.title` | Welcome to Language Lab | Byenveni nan Language Lab |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | Pratike pou entèvyou sitwayènte ou tankou yon moun envante, konsa ou pa janm pataje anyen sou tèt ou. |
 | `home.how.title` | How it works | Kijan li mache |
 | `home.how.1.title` | Listen | Koute |
-| `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | Peze Koute byen fò pou tande yon kesyon oswa yon fraz. |
+| `home.how.1.text` | Tap “Play the question” to hear it. | Touche “Koute kesyon an” pou w tande l. |
 | `home.how.2.title` | Speak or type | Pale oswa tape |
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | Di repons ou, oswa tape l. Tape toujou mache. |
 | `home.how.3.title` | See the result | Gade rezilta a |
-| `home.how.3.text` | You see how your answer compares, and what to practice next. | Ou wè kijan repons ou konpare, ak sa pou pratike apre. |
-| `home.choose` | What would you like to do? | Kisa ou ta renmen fè? |
-| `home.full.title` | Full practice interview | Entèvyou pratik konplè |
-| `home.full.text` | All four parts in order, then one report. | Kat pati yo youn apre lòt, epi yon sèl rapò. |
+| `home.how.3.text` | You see if your answer counts, and what to practice next. | Ou wè si repons ou konte, ak sa pou w pratike apre. |
+| `home.full.title` | Practice test | Egzamen pratik |
+| `home.full.text` | Answer out loud like the real interview. | Reponn byen fò tankou nan vrè entèvyou a. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Pratike antrevi N-400 a ak yon antrenè AI |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | Antrenè a poze yon lòt kesyon tankou yon ofisye ta ka fè l epi li ba ou konsèy sou angle ou. Si ou vle. |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Ak teknoloji Claude (Anthropic) |
-| `home.parts.title` | Practice one part | Pratike yon sèl pati |
+| `home.parts.title` | Or practice one part | Oswa pratike yon sèl pati |
 | `home.part.n400.title` | N-400 interview | Entèvyou sou N-400 |
-| `home.part.n400.text` | Answer questions about an application. Not scored. | Reponn kesyon sou yon demann. Pa gen nòt. |
+| `home.part.n400.text` | Answer questions about the N-400 form. No score. | Reponn kesyon sou fòm N-400 la. Pa gen nòt. |
 | `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | Lekti |
 | `home.part.reading.text` | Read sentences out loud. | Li fraz yo byen fò. |
 | `home.part.writing.title` | Writing | Ekriti |
 | `home.part.writing.text` | Listen and type the sentence. | Koute epi tape fraz la. |
 | `home.part.civics.title` | Civics | Edikasyon sivik |
+| `home.part.civics.text` | Answer questions about U.S. history and government. Checked with the official answers. | Reponn kesyon sou istwa ak gouvènman Etazini. Yo tcheke yo ak repons ofisyèl yo. |
 | `setup.title` | Set up your practice | Prepare pratik ou |
-| `setup.lead` | Choose what this practice needs. Nothing real is asked. | Chwazi sa pratik sa a bezwen. Yo pa mande okenn bagay reyèl. |
+| `setup.lead` | Choose one answer in each group. Nothing here asks about you. | Chwazi yon repons nan chak gwoup. Anyen isit la pa mande sou ou. |
 | `report.home` | Back to home | Tounen nan akèy |
 | `partReport.title.n400_interview` | N-400 interview practice | Pratik entèvyou sou N-400 |
 | `partReport.title.reading` | Reading practice | Pratik lekti |
@@ -260,30 +256,23 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.civics.needed` | Correct answers needed: {needed}. | Kantite repons kòrèk ki nesesè: {needed}. |
 | `partReport.review` | Questions to review | Kesyon pou revize |
 | `partReport.unscored.title` | Not scored | Pa gen nòt |
-| `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Nou pa t ka bay nòt pou kesyon sa yo, se konsa yo pa konte kòm bon oswa move. |
+| `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | Kesyon sa yo pa gen nòt. Yo pa konte ni bon ni move. |
+| `partReport.unscored.missing` | A question we cannot check | Yon kesyon nou pa ka tcheke |
 | `report.see` | See my report | Gade rapò mwen |
-| `header.home` | Home | Akèy |
-| `help.button` | How this works | Kijan ekran sa a mache |
+| `help.button` | Help | Èd |
 | `help.setup.1` | Tap one choice in each group on this screen. | Tape sou yon chwa nan chak gwoup sou ekran sa a. |
 | `help.setup.3` | Press “{start}” when you are ready. | Peze “{start}” lè ou pare. |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | Peze “{play}” pou tande l. Peze menm bouton an ankò pou sispann. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | Li egzanp repons lan, oswa koute l. Se pou moun envante a. Se sèlman yon egzanp. |
-| `help.read` | Read the sentence on the screen out loud. | Li byen fò fraz ki sou ekran an. |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | Peze “{say}” epi pale. Si telefòn ou mande pèmisyon pou itilize mikwofòn nan, peze Pèmèt. Peze “{stop}” lè ou fini. |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | Ou ka toujou tape olye de sa. Tape sou bwat la epi tape. Tape toujou mache. |
-| `help.typeOnly` | Tap the box and type what you hear. | Tape sou bwat la epi tape sa ou tande. |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | Tcheke mo ki nan bwat la. Ou ka chanje yo. Apre sa peze “{send}”. |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | Peze “{skip}” si ou pa konnen. Li voye yon repons vid epi li kontinye. Li konte kòm poko. |
-| `help.notScored` | Nothing in this part is scored. | Anyen nan pati sa a pa jwenn nòt. |
-| `help.result.reading` | Then you see which words matched. | Apre sa ou wè ki mo ki koresponn. |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | Apre sa ou wè Kòrèk oswa Poko, ak repons ofisyèl yo. |
-| `header.settings` | Settings | Paramèt |
-| `settings.title` | Comfort settings | Paramèt konfò |
+| `help.listen` | Press “{play}” to hear it. | Peze “{play}” pou w tande l. |
+| `help.read` | Read the sentence out loud. | Li fraz la byen fò. |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | Peze “{say}” epi pale. Oswa tape nan bwat la. |
+| `help.typeOnly` | Type what you hear in the box. | Tape sa w tande a nan bwat la. |
+| `header.settings` | Text size | Gwosè tèks |
+| `settings.title` | Text size and voice | Gwosè tèks ak vwa |
 | `settings.textSize.legend` | Text size | Gwosè tèks |
 | `settings.textSize.normal` | Normal | Nòmal |
 | `settings.textSize.large` | Large | Gwo |
 | `settings.textSize.extraLarge` | Extra large | Trè gwo |
-| `settings.slow.label` | Play recorded voices more slowly | Jwe vwa anrejistre yo pi dousman |
+| `settings.slow.label` | Slower voice | Vwa pi dousman |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | Sa chanje sèlman vitès la. Se menm anrejistreman an. |
 | `settings.memory` | These settings last until you close or reload this page. | Paramèt sa yo rete jiskaske ou fèmen oswa rechaje paj sa a. |
 | `settings.close` | Close settings | Fèmen paramèt yo |
@@ -291,16 +280,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Son an pa jwe. Eseye ankò, oswa li tèks ki sou ekran an. |
 | `lang.label` | Language | Lang |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Tounen nan akèy? Repons ou yo nan pratik sa a ap pèdi. |
-| `header.homeConfirm.yes` | Yes, go home | Wi, tounen nan akèy |
-| `header.homeConfirm.no` | Stay here | Rete isit la |
+| `header.homeConfirm.yes` | Leave | Kite |
+| `header.homeConfirm.no` | Keep practicing | Kontinye pratike |
 | `common.retry` | Try again | Eseye ankò |
-| `partReport.badge.good` | This part reached the practice score | Pati sa a rive nan nòt pratik la |
-| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Yo te montre fraz la sou ekran an (tantativ ak èd). |
-| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Avètisman yo ak tèks legal yo parèt an Anglè sèlman jiskaske yon moun revize tradiksyon an. |
+| `partReport.badge.good` | You reached the practice goal | Ou rive nan objektif pratik la |
+| `partReport.assisted` | The sentence was shown on the screen. | Fraz la te parèt sou ekran an. |
+| `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | Avi legal yo rete an angle jiskaske yon moun tcheke tradiksyon an. |
 | `lang.menu.title` | Choose a language | Chwazi yon lang |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Gen plis lang k ap revize. Y ap parèt isit la apre yon moun fin tcheke yo. |
-| `home.study.title` | Study first | Etidye anvan |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Gade kesyon edikasyon sivik yo ak imaj ak repons ofisyèl yo. Pa gen nòt ki bay. |
+| `home.study.title` | Study | Etidye |
+| `home.study.text` | See each question with its answers and a picture. No score. | Gade chak kesyon ak repons li yo ak yon foto. Pa gen nòt. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Gade kesyon edikasyon sivik yo youn apre lòt. Chak kesyon montre repons ofisyèl yo. Anyen pa jwenn nòt ni pa sove. |
 | `study.version.legend` | Which civics test do you want to study? | Ki tès edikasyon sivik ou vle etidye? |
 | `study.version.2008` | 2008 civics test | Tès edikasyon sivik 2008 |
@@ -321,8 +310,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.hearSample` | Hear the sample | Koute echantiyon an |
 | `selfReview.tryAgain` | Try again | Eseye ankò |
 | `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | Anrejistreman ou a rete sou aparèy sa a. Yo pa voye l okenn kote ni sove l, e yo efase l lè ou pase nan pwochen fraz la oswa lè ou kite ekran sa a. |
-| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Navigatè sa a pa kapab anrejistre vwa ou. Ou ka toujou tcheke lekti ou ak “Pale” oswa lè ou tape. |
-| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | Mikwofòn nan bloke. Pèmèt aksè nan mikwofòn nan paramèt navigatè ou a. |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still press “Tap to speak” or type. | Navigatè sa a pa ka anrejistre vwa w. Ou ka toujou peze “Touche pou w pale” oswa tape. |
+| `selfReview.denied` | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. | Mikwo a bloke, kidonk anrejistreman an pa ka kòmanse. Pèmèt mikwo a pou sit sa a nan paramèt navigatè w, epi eseye ankò. |
 | `selfReview.error` | Recording did not work this time. Try again. | Anrejistreman an pa mache fwa sa a. Eseye ankò. |
 | `compare.why.allWords` | Every important word of the sentence was there, in order. | Tout mo enpòtan nan fraz la te la, nan lòd. |
 | `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Ou di “{said}”. Fraz la di “{expected}”. Sa toujou konte. |
@@ -335,25 +324,60 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Ou ajoute “{said}”, ki pa nan fraz la. Sa toujou konte. |
 | `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | Mo kout “{expected}” la pa t di. Sa toujou konte. |
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Ou ajoute mo kout “{said}”. Sa toujou konte. |
-| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Rezilta sa a baze sou mo aparèy ou a tande. Si li tande w mal, eseye ankò oswa tape repons ou a. |
+| `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Rezilta sa a sèvi ak mo telefòn oswa òdinatè w tande. Si li tande w mal, eseye ankò oswa tape repons ou. |
 | `compare.honest.typed` | This result is based on the words you typed. | Rezilta sa a baze sou mo ou tape yo. |
-| `home.special.title` | 65/20 civics practice | Pratik edikasyon sivik 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Pou moun ki gen 65 an oswa plis epi ki rezidan pèmanan depi 20 an oswa plis. Pratike kesyon edikasyon sivik ki make ak yon zetwal (*). |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Mwen gen 65 an oswa plis epi mwen rezidan pèmanan depi 20 an oswa plis |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Sèlman kesyon pou 65/20 yo (make ak yon zetwal) |
 | `report.line.civics.none` | No civics questions were scored. | Pa gen okenn kesyon edikasyon sivik ki te resevwa nòt. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Kesyon edikasyon sivik ou reponn kòrèkteman: {correct} sou {scored}. |
+| `report.line.civics.unscored` | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. | Pa gen nòt pou sa yo, paske repons lan chanje ak tan oswa nou pa ka tcheke l: {names}. Yo pa konte ni bon ni move. |
 | `report.line.reading.none` | No reading sentences were completed. | Pa gen okenn fraz lekti ki fini. |
 | `report.line.reading.done` | Sentence {n} was read correctly. | Ou li fraz {n} lan kòrèkteman. |
 | `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Fraz lekti ou li kòrèkteman: {correct} sou {presented}. Kantite bon fraz ki nesesè: {needed}. |
 | `report.line.writing.none` | No writing sentences were completed. | Pa gen okenn fraz ekriti ki fini. |
 | `report.line.writing.done` | Sentence {n} was written correctly. | Ou ekri fraz {n} lan kòrèkteman. |
 | `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Fraz ekriti ou ekri kòrèkteman: {correct} sou {presented}. Kantite bon fraz ki nesesè: {needed}. |
-| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | Esè ekriti ou fè ak fraz la sou ekran an (avèk èd): {assisted} sou {presented}. |
+| `report.line.writing.assisted` | Sentences written while the sentence was shown: {assisted} of {presented}. | Fraz ou ekri pandan fraz la te parèt: {assisted} sou {presented}. |
 | `report.review.reading` | Practice reading the sentences aloud. | Pratike li fraz yo awotvwa. |
 | `report.review.writing` | Practice writing the sentences you hear. | Pratike ekri fraz ou tande yo. |
+| `civics.heard.closest` | Your phone or computer heard a few possible answers. We show the one closest to an official answer. | Telefòn oswa òdinatè w tande kèk repons posib. Nou montre sa ki pi pre yon repons ofisyèl. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Reponn tankou moun imajinè a. Pa tape vrè non ou, adrès ou, dat oswa nimewo ou. |
 | `common.newTab` | (opens in a new tab) | (ap louvri nan yon nouvo onglè) |
 | `coach.kind.streetAddress` | a street address | yon adrès lari |
 | `coach.kind.zipCode` | a ZIP code with a state | yon kòd ZIP ak yon eta |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Verifikasyon an chèche adrès ak kòd ZIP tou, men li pa ka jwenn non. Pa di ni tape non yon vrè moun. |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | Tèks la twò piti? Tape Gwosè tèks anwo a. |
+| `audio.playing` | Playing… | Ap jwe… |
+| `audio.playSentence` | Play the sentence | Koute fraz la |
+| `voice.gotIt` | Got it. Tap to speak again | Nou tande w. Touche pou pale ankò |
+| `voice.orType` | Or type your answer | Oswa tape repons ou |
+| `voice.micHelp.title` | How to allow the microphone | Kijan pou pèmèt mikwo a |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): touche “aA” bò adrès sit la, apre sa Website Settings, apre sa Microphone, epi chwazi Allow. Apre sa, rechaje paj la. |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): touche ti ikòn ki agoch adrès sit la, apre sa Permissions, epi limen Microphone. Apre sa, rechaje paj la. |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | Ou ka toujou tape repons ou nan bwat la. |
+| `civics.why.correct` | Your answer matches an official answer. | Repons ou koresponn ak yon repons ofisyèl. |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | Repons ou poko koresponn ak repons ofisyèl yo. |
+| `settings.slow.on` | On | Limen |
+| `settings.slow.off` | Off | Etenn |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | Peze “{send}” pou kontinye. Pa gen nòt isit la. |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | Peze “{send}”. Apre sa w ap wè si sa konte. |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Peze “{send}”. Apre sa w ap wè si sa konte, ak repons ofisyèl yo. |
+| `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | Chwazi |
+| `aiNotice.more` | More | Plis |
+| `home.who.title` | 1. Who is practicing? | 1. Kiyès k ap pratike? |
+| `home.who.most.title` | Most people | Pifò moun |
+| `home.who.most.text` | The usual civics test rules. | Règ nòmal egzamen sivik la. |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | 65 an oswa plis, kat vèt depi 20 an oswa plis (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Pa gen egzamen angle. Mwens kesyon sivik: 20 ki gen zetwal yo. |
+| `home.who.notSure` | Not sure? Choose Most people. | Ou pa sèten? Chwazi Pifò moun. |
+| `home.what.title` | 2. What do you want to do? | 2. Kisa ou vle fè? |
+| `home.part.notRequired` | Not required for {exception} | Pa obligatwa pou {exception} |
+| `home.go.start` | Start | Kòmanse |
+| `home.go.open` | Open | Louvri |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | 50 an oswa plis, kat vèt depi 20 an oswa plis (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | 55 an oswa plis, kat vèt depi 15 an oswa plis (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | Pa gen egzamen angle. Sivik nòmal, nan lang ou si ou mennen yon entèprèt. |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | Nan entèvyou a ou ka reponn kesyon sivik nan pwòp lang ou si ou mennen yon entèprèt. App sa a pratike kesyon an angle yo. |
+| `report.exception` | Practice as {exception} | Pratik kòm {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | Ou ka pase vrè egzamen sivik la nan pwòp lang ou si ou mennen yon entèprèt. |
+| `intro.who.legend` | Who is practicing? | Kiyès k ap pratike? |

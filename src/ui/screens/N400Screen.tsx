@@ -38,7 +38,7 @@ interface N400ScreenProps {
   onFinish: () => void;
   /** After the interview comes the report (a single-part session), not reading. */
   nextIsReport?: boolean;
-  /** After the interview comes civics (a 65/20 full interview has no reading and writing). */
+  /** After the interview comes civics (a full interview for 50/20, 55/15 or 65/20 has no reading and writing). */
   nextIsCivics?: boolean;
   /** Try loading the question again after a failure. */
   onRetry?: () => void;
@@ -189,7 +189,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
           {/* Content-safety rule 5 (audit F-07): the prominent disclaimer directly under the answers. */}
           <Disclaimer variant="prominent" id="n400-done-disclaimer" messageKey="disclaimer.report" />
           <div className="btn-row">
-            <button type="button" className="btn" onClick={onFinish}>
+            <button type="button" className="btn btn--primary" onClick={onFinish}>
               {nextIsReport ? t("report.see") : nextIsCivics ? t("writing.toCivics") : t("n400.done.next")}
             </button>
           </div>
@@ -221,7 +221,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
             </p>
             {onRetry !== undefined && (
               <div className="btn-row">
-                <button type="button" className="btn" onClick={onRetry}>
+                <button type="button" className="btn btn--primary" onClick={onRetry}>
                   {t("common.retry")}
                 </button>
               </div>
@@ -242,6 +242,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
                   text={state.prompt.sampleAnswer}
                   clipId={sampleAnswerClipId(state.prompt.id, profile.id)}
                   labelKey="audio.playSample"
+                  large={false}
                 />
                 <p className="note"><LegalText messageKey="n400.sample.note" /></p>
               </section>

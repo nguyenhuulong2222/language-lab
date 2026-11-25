@@ -14,7 +14,7 @@ describe("ScreenHelp", () => {
           <ScreenHelp screen={screen} />
         </HelpSessionProvider>
       );
-      expect(html, screen).toContain("How this works");
+      expect(html, screen).toContain(">Help<");
       expect(html, screen).toContain('aria-expanded="true"');
       expect(html, screen).not.toMatch(/class="help__panel"[^>]*hidden/);
     }
@@ -32,33 +32,33 @@ describe("ScreenHelp", () => {
     );
     expect(html).toContain('aria-expanded="false"');
     expect(html).toContain("hidden");
-    expect(html).toContain("How this works");
+    expect(html).toContain(">Help<");
   });
 
-  it("explains the microphone button, typing, and Skip on the screens that have them", () => {
-    for (const screen of ["reading", "civics"] as const) {
+  it("has exactly three numbered steps on every screen", () => {
+    for (const screen of SCREENS) {
       const html = renderToString(<ScreenHelp screen={screen} />);
-      expect(html, screen).toContain("Say it");
-      expect(html, screen).toContain("If your phone asks to use the microphone, press Allow.");
-      expect(html, screen).toContain("Typing always works.");
-      expect(html, screen).toContain("Skip this one");
-      expect(html, screen).toContain("It sends an empty answer and moves on. It counts as not yet.");
+      expect(html, screen).toContain("<ol");
+      expect((html.match(/<li>/g) ?? []).length, screen).toBe(3);
     }
   });
-
-  it("the N-400 help has the microphone and typing but no Skip, and says nothing is scored", () => {
-    const html = renderToString(<ScreenHelp screen="n400" />);
-    expect(html).toContain("Typing always works.");
-    expect(html).toContain("Nothing in this part is scored.");
-    expect(html).not.toContain("Skip this one");
+  it("names the microphone button and typing on the screens that have a microphone", () => {
+    for (const screen of ["n400", "reading", "civics"] as const) {
+      const html = renderToString(<ScreenHelp screen={screen} />);
+      expect(html, screen).toContain("Tap to speak");
+      expect(html, screen).toContain("Or type in the box.");
+    }
   });
-
+  it("the N-400 help says nothing is scored", () => {
+    const html = renderToString(<ScreenHelp screen="n400" />);
+    expect(html).toContain("Nothing here gets a score.");
+  });
   it("the writing help is for typing only: no microphone step", () => {
     const html = renderToString(<ScreenHelp screen="writing" />);
-    expect(html).toContain("Tap the box and type what you hear.");
-    expect(html).not.toContain("press Allow");
+    expect(html).toContain("Play the sentence");
+    expect(html).toContain("Type what you hear in the box.");
+    expect(html).not.toContain("Tap to speak");
   });
-
   it("the setup help names the start button and warns against real details", () => {
     const html = renderToString(<ScreenHelp screen="setup" />);
     expect(html).toContain("Start practice");
@@ -102,7 +102,7 @@ describe("where the help sits on a question screen", () => {
     const sentence = engine.englishProgress(state, "reading").current!.text.replace(/&/g, "&amp;");
     const at = (text: string) => html.indexOf(text);
     expect(at(sentence)).toBeGreaterThan(0);
-    expect(at("How this works")).toBeGreaterThan(at(sentence));
-    expect(at("<textarea")).toBeGreaterThan(at("How this works"));
+    expect(at(">Help<")).toBeGreaterThan(at(sentence));
+    expect(at("<textarea")).toBeGreaterThan(at(">Help<"));
   });
 });

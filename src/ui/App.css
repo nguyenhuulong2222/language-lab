@@ -9,7 +9,7 @@
 
 .app__main {
   flex: 1 0 auto;
-  padding-block: clamp(2rem, 5vw, 3.5rem);
+  padding-block: clamp(var(--space-6), 5vw, var(--space-7));
 }
 
 .app__placeholder {
@@ -50,4 +50,8 @@
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-md);
   text-decoration: none;
+}
+/* Home starts close under the header: the language grid is first. */
+.app__main:has(#home-language) {
+  padding-top: var(--space-3);
 }

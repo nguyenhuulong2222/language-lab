@@ -24,3 +24,18 @@
   text-decoration: underline;
   cursor: pointer;
 }
+/* "About & disclaimer": a full-width button, the panel opens under it. */
+.footer__about {
+  width: 100%;
+  max-width: var(--measure-narrow);
+}
+.footer__panel {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.footer__panel[hidden] {
+  display: none;
+}

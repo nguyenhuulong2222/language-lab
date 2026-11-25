@@ -82,7 +82,7 @@ describe("choosing", () => {
     for (const mode of ["reading", "writing"] as const) {
       const s = choose(engine, mode);
       expect(s.phase).toBe(mode);
-      expect(s.setup).toEqual({ profileId: null, filedOn: null, filingDate: null, version: null, specialConsideration: false });
+      expect(s.setup).toEqual({ profileId: null, filedOn: null, filingDate: null, version: null, exception: "none" });
       expect(s.civicsIds).toEqual([]);
     }
     const reading = choose(engine, "reading");
@@ -101,7 +101,7 @@ describe("choosing", () => {
   it("setup: only the needed choices count; others are dropped", () => {
     const n400 = engine.reduce(choose(engine, "n400"), { type: "start", profileId: PROFILE, filedOn: "before", seed: 1, at: AT });
     expect(n400.phase).toBe("n400_interview");
-    expect(n400.setup).toEqual({ profileId: PROFILE, filedOn: null, filingDate: null, version: null, specialConsideration: false });
+    expect(n400.setup).toEqual({ profileId: PROFILE, filedOn: null, filingDate: null, version: null, exception: "none" });
     const civics = engine.reduce(choose(engine, "civics"), { type: "start", profileId: PROFILE, filedOn: "before", seed: 1, at: AT });
     expect(civics.phase).toBe("civics");
     expect(civics.setup?.profileId).toBeNull();

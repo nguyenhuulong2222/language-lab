@@ -2,10 +2,27 @@
  * Comfort settings for the session: text size, slower playback of the recorded voice, and the
  * interface language.
  * They live in React state only: nothing is saved in the browser, and they reset when the
- * page is reloaded.
+ * page is reloaded. The language starts as the device's language when this build offers it
+ * (detectLanguage), English otherwise; that runs again on every load.
  */
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { AVAILABLE_UI_LANGUAGES, loadLocale, type LanguageCode } from "../i18n";
+import { AVAILABLE_UI_LANGUAGES, DEFAULT_LANGUAGE, detectLanguage, isLocaleLoaded, loadLocale, type LanguageCode } from "../i18n";
+
+/** The device's preferred languages, most preferred first (navigator.languages, then navigator.language). */
+function preferredLanguages(): readonly string[] {
+  if (typeof navigator === "undefined") return [];
+  const list = navigator.languages;
+  if (list !== undefined && list.length > 0) return list;
+  return navigator.language ? [navigator.language] : [];
+}
+
+/** The language to start in: the device's language when this build offers it, else English. */
+export function startupLanguage(): LanguageCode {
+  return detectLanguage(
+    preferredLanguages(),
+    AVAILABLE_UI_LANGUAGES.map((l) => l.code)
+  );
+}
 
 export type TextSize = "normal" | "large" | "extra-large";
 
@@ -14,7 +31,7 @@ export const TEXT_SIZES: readonly TextSize[] = ["normal", "large", "extra-large"
 export interface Settings {
   textSize: TextSize;
   slowPlayback: boolean;
-  /** The interface language. English at the start of every session. */
+  /** The interface language. The device's language (when offered) or English at the start of every load. */
   language: LanguageCode;
 }
 
@@ -34,13 +51,16 @@ const SettingsContext = createContext<SettingsValue>({
   setLanguage: () => {},
 });
 
-export function SettingsProvider({ children }: { children: ReactNode }) {
+export function SettingsProvider({ children, initialLanguage }: { children: ReactNode; initialLanguage?: LanguageCode }) {
   const [textSize, setTextSize] = useState<TextSize>(DEFAULTS.textSize);
   const [slowPlayback, setSlowPlayback] = useState(DEFAULTS.slowPlayback);
-  const [language, setLanguageState] = useState<LanguageCode>(DEFAULTS.language);
+  // Worked out once. main.tsx loads its locale before the first paint; if it is not loaded yet
+  // (tests, a slow file), English shows until it arrives.
+  const [start] = useState<LanguageCode>(() => initialLanguage ?? startupLanguage());
+  const [language, setLanguageState] = useState<LanguageCode>(() => (isLocaleLoaded(start) ? start : DEFAULT_LANGUAGE));
   // The locale file is fetched first; the interface switches when it has arrived and passed the checks.
   // Only the last choice counts, if two arrive out of order.
-  const latest = useRef<LanguageCode>(DEFAULTS.language);
+  const latest = useRef<LanguageCode>(language);
   const setLanguage = (next: LanguageCode) => {
     if (!AVAILABLE_UI_LANGUAGES.some((l) => l.code === next)) return;
     latest.current = next;
@@ -49,6 +69,10 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     });
   };
 
+  useEffect(() => {
+    if (start !== latest.current) setLanguage(start);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   // The page root scales every rem size (type, spacing, tap targets) with the chosen size.
   useEffect(() => {
     document.documentElement.dataset["textSize"] = textSize;

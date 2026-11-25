@@ -121,7 +121,7 @@ export function EnglishScreen({
           <div className="btn-row">
             <button
               type="button"
-              className="btn"
+              className="btn btn--primary"
               onClick={() => {
                 setFeedback(false);
                 if (progress.done) onContinue();
@@ -178,6 +178,7 @@ export function EnglishScreen({
                 <SpeakButton
                   text={sentence.text}
                   clipId={writingClipId(sentence.id)}
+                  labelKey="audio.playSentence"
                   onFailed={() => setShownFor(sentence.id)}
                 />
                 {noVoice || shownFor === sentence.id ? (
@@ -208,7 +209,6 @@ export function EnglishScreen({
                 )}
               </>
             )}
-            {reading && <ListenAndCompare review={review} sentence={sentence} attempted={false} />}
             <ScreenHelp screen={stage} />
             <AnswerInput
               label={reading ? t("reading.yourAnswer") : t("writing.yourAnswer")}
@@ -223,6 +223,8 @@ export function EnglishScreen({
                 onSubmit(text, input, alternatives, sentenceShown);
               }}
             />
+            {/* Same order on every practice screen: question, answer, the one main button; extras after. */}
+            {reading && <ListenAndCompare review={review} sentence={sentence} attempted={false} />}
             <p className="note"><LegalText messageKey="compare.setting" /></p>
             {!reading && (
               <p className="note">

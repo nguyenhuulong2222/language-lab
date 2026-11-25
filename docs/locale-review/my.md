@@ -28,18 +28,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | USCIS က သင့်အတွက် ခြွင်းချက်ပေးခြင်း မရှိလျှင် တကယ့်အင်တာဗျူးကို အင်္ဂလိပ်ဘာသာဖြင့် ပြုလုပ်သည်။ သင်လေ့ကျင့်နိုင်စေရန် ဤစာမျက်နှာများရှိ မေးခွန်းများနှင့် စာကြောင်းများသည် အင်္ဂလိပ်ဘာသာအတိုင်း ရှိနေမည်။ | If USCIS does not give you an exception, the real interview is conducted in English. So that you can practice, the questions and sentences on these pages remain in English. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | ဤအစီရင်ခံစာသည် အပိုင်းတစ်ခုအတွက်သာ ဖြစ်သည်။ ဤအပိုင်း လေ့ကျင့်ရာတွင် မည်သို့ရှိခဲ့သည်ကို ပြသသည်၊ တကယ့်စာမေးပွဲတွင် သင်မည်သို့ရလဒ်ရမည်ကို မပြပါ၊ ယေဘုယျလေ့ကျင့်မှုရလဒ်လည်း မပေးပါ။ | This report is for one part only. It shows how this part was in practice, does not show how you would get results in the real exam, and also gives no general practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | N-400 အင်တာဗျူးသည် လေ့ကျင့်မှုသာဖြစ်ပြီး အမှတ်မပေးပါ။ | The N-400 interview is practice only and gives no marks. |
-| `aiNotice.text` ⚠ | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | ဤဘာသာပြန်ချက်ကို AI က ပြုလုပ်ထားပြီး အမှားများ ပါနိုင်သည်။ အင်္ဂလိပ်ဗားရှင်းသည် တရားဝင်ဗားရှင်း ဖြစ်သည်။ | This translation was made by AI and may contain mistakes. The English version is the official version. |
+| `aiNotice.text` ⚠ | Translated by AI. It may have mistakes. The English is correct. | AI ဖြင့် ဘာသာပြန်ထားသည်။ အမှားများ ရှိနိုင်သည်။ အင်္ဂလိပ်ဘာသာသည် မှန်ကန်သည်။ | This translation was made by AI and may contain mistakes. The English version is the official version. |
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | ဤသည်မှာ USCIS ၏ အမှတ်ပေးလမ်းညွှန်ချက်များကို အခြေခံသော Language Lab ၏ လေ့ကျင့်ရေးဆက်တင်ဖြစ်ပြီး USCIS စည်းမျဉ်း မဟုတ်ပါ- စာကြောင်း၏ အရေးကြီးသော စကားလုံးအားလုံး အစဉ်လိုက် ပါရမည်။ “the” ကဲ့သို့ စကားလုံးတိုများ ကျန်နိုင်သည်။ ရပ်နားခြင်းနှင့် အသံထွက်ကို အမှတ်မပေးပါ။ | This is Language Lab's practice setting based on the USCIS scoring guidelines, and it is not a USCIS rule: all important words of the sentence must be present in sequence. Short words such as “the” may be left over. Stopping and pronunciation are not scored. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | ဤရွေးချယ်မှုက သင် 2008 နှင့် 2025 နိုင်ငံသားဗဟုသုတစာမေးပွဲအနက် မည်သည့်စာမေးပွဲကို လေ့ကျင့်မည်ကို ဆုံးဖြတ်သည်။ ၎င်းသည် လေ့ကျင့်ရန်ရွေးချယ်မှုသာဖြစ်သည်။ သင့်ကိုယ်ပိုင်အမှုအတွက် မည်သည့်စာမေးပွဲ သက်ဆိုင်သည်ကို uscis.gov တွင် စစ်ကြည့်ပါ။ | This choice decides which of the 2008 and 2025 civics exams you practice. It is only a choice for practice. Check at uscis.gov which exam applies to your own case. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | နိုင်ငံသားဗဟုသုတလေ့ကျင့်မှုရှိ ပုံများသည် အမေရိကန်ဖက်ဒရယ်အစိုးရ၏ တရားဝင်ရင်းမြစ်များမှ လာသည်။ ပုံတစ်ပုံစီကို ၎င်း၏ကိုယ်ပိုင်မှတ်တမ်းတွင် အခွင့်အရေးများကို ရှင်းလင်းစွာ ဖော်ပြထားသောကြောင့်သာ အသုံးပြုသည်။ ၎င်းသည် မည်သည့်အဖွဲ့အစည်းကမျှ Language Lab ကို ထောက်ခံသည်ဟု မဆိုလိုပါ။ | The pictures in civics practice come from official sources of the U.S. federal government. Each picture is used only because its own record clearly states the rights. This does not mean any organization endorses Language Lab. |
 | `civics.officialNote` | Any of these counts. | ယင်းတို့အနက် တစ်ခုခုကို ရေတွက်သည်။ | Any one of these is counted. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | နိုင်ငံသားပညာ အဖြေများကို လူတစ်ဦးက စစ်ဆေးပြီးသည်အထိ ဤဗားရှင်းတွင် နိုင်ငံသားပညာ၊ အရင်လေ့လာရန်နှင့် အပြည့်အစုံ လေ့ကျင့်ရေးအင်တာဗျူးကို ပိတ်ထားပါသည်။ N-400 အင်တာဗျူး၊ ဖတ်ခြင်းနှင့် ရေးခြင်းကို လေ့ကျင့်နိုင်ပါသည်။ | Until a person checks the civics answers, civics, Study first and the full practice interview are closed in this version. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | နိုင်ငံသားဗဟုသုတ အဖြေမှန်များသည် လူတစ်ဦး၏ စစ်ဆေးမှုကို စောင့်နေဆဲဖြစ်သဖြင့် ဤဗားရှင်းသည် ၎င်းကို အမှတ်မပေးပါ၊ အစီရင်ခံစာလည်း မပြုလုပ်ပါ။ | The civics correct answers are still waiting for a person's check, so this version does not score it and does not make a report. |
-| `voice.consent.text` ⚠ | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | “ပြောမည်” ကို နှိပ်သောအခါ သင့်ဘရောက်ဇာ၏ အသံမှတ်သားစနစ်က သင့်အသံကို စာသားအဖြစ်ပြောင်းရန် Google သို့မဟုတ် Apple ကဲ့သို့ ဘရောက်ဇာ ပြုလုပ်သူကုမ္ပဏီထံ ပို့နိုင်ပါသည်။ Language Lab သည် သင့်အသံကို မပို့ပါ၊ မသိမ်းပါ။ ယင်းအစား အဖြေကို ရိုက်ထည့်နိုင်ပါသည်။ | When you press “Speak”, your browser's voice recording system may send your voice to the company that makes the browser, such as Google or Apple, to turn it into text. Language Lab does not send or save your voice. You can type your answer instead. |
-| `report.title.onTrack` | Practice complete: each part reached the practice score | လေ့ကျင့်မှု ပြီးပါပြီ- အပိုင်းတိုင်း လေ့ကျင့်ရေးအမှတ်သို့ ရောက်ပါသည် | Practice is finished: every part reaches the practice score |
+| `voice.consent.text` ⚠ | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | “ပြောရန် နှိပ်ပါ” ကို နှိပ်သောအခါ သင့်ဘရောက်ဇာ၏ အသံမှတ်သားစနစ်က သင့်အသံကို စာသားအဖြစ်ပြောင်းရန် Google သို့မဟုတ် Apple ကဲ့သို့ ဘရောက်ဇာ ပြုလုပ်သူကုမ္ပဏီထံ ပို့နိုင်ပါသည်။ Language Lab သည် သင့်အသံကို မပို့ပါ၊ မသိမ်းပါ။ ယင်းအစား အဖြေကို ရိုက်ထည့်နိုင်ပါသည်။ | When you press “Speak”, your browser's voice recording system may send your voice to the company that makes the browser, such as Google or Apple, to turn it into text. Language Lab does not send or save your voice. You can type your answer instead. |
+| `report.title.onTrack` | Well done. Each part reached the practice goal. | ကောင်းပါသည်။ အပိုင်းတိုင်း လေ့ကျင့်မှုပန်းတိုင်သို့ ရောက်ပါပြီ။ | Practice is finished: every part reaches the practice score |
 | `report.title.review` | A few things to review | ပြန်လည်ကြည့်ရန် အချက်အနည်းငယ် | A few points to look at again |
-| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | ဤလေ့ကျင့်မှုတွင် ဖတ်ခြင်း၊ ရေးခြင်းနှင့် နိုင်ငံသားပညာ အပိုင်းတိုင်းသည် Language Lab အသုံးပြုသော အမှတ်သို့ ရောက်ပါသည်။ ဆက်လက်လေ့ကျင့်ရန် အောက်ပါမှတ်စုများကို အသုံးပြုပါ။ | In this practice, every part of reading, writing and civics reaches the score Language Lab uses. Use the notes below to continue practicing. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | လေ့ကျင့်ခြင်းသည် ယင်းအတွက်ဖြစ်သည်။ ထပ်မံကြိုးစားမည့်အချိန်မတိုင်မီ မည်သည့်အချက်ကို အာရုံစိုက်ရမည်ကို အောက်ပါမှတ်စုများက ပြသသည်။ | Practice is for that. The notes below show which point to focus on before trying again. |
+| `report.lead.onTrack` | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. | စာဖတ်ခြင်း၊ စာရေးခြင်းနှင့် နိုင်ငံသားပညာ အားလုံး လေ့ကျင့်မှုပန်းတိုင်သို့ ရောက်ပါပြီ။ အောက်ပါမှတ်ချက်များကို ဖတ်ပြီး ဆက်လေ့ကျင့်ပါ။ | In this practice, every part of reading, writing and civics reaches the score Language Lab uses. Use the notes below to continue practicing. |
+| `report.lead.review` | That is what practice is for. The notes below show what to practice next. | လေ့ကျင့်ခြင်းသည် ဤအတွက်ဖြစ်သည်။ နောက်ထပ် ဘာလေ့ကျင့်ရမည်ကို အောက်ပါမှတ်ချက်များက ပြသည်။ | Practice is for that. The notes below show which point to focus on before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | ရေးခြင်း- USCIS က စာလုံးပေါင်း၊ စာလုံးကြီးနှင့် သတ်ပုံအမှားများသည် ဝါကျကို နားမလည်နိုင်တော့သည့်အခါမှလွဲ၍ ရေးခြင်းစာမေးပွဲကို မကျစေဟု ဆိုပါသည်။ ဤနေရာတွင် စာလုံးပေါင်းအမှားငယ်များကို ဆက်လက်ရေတွက်ပြီး စကားလုံးရှည်များတွင် ပိုများနိုင်ပါသည်။ စာလုံးကြီးနှင့် သတ်ပုံကို မစစ်ဆေးပါ။ | Writing: USCIS says spelling, capital letter and punctuation mistakes do not make you fail the writing exam except when the sentence can no longer be understood. Here, small spelling mistakes are still counted, and long words can have more. Capital letters and punctuation are not checked. |
 | `coach.notice.text` ⚠ | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | AI နည်းပြ ဖွင့်ထားသောအခါ ဤအပိုင်းတွင် သင်ရိုက်သော သို့မဟုတ် ပြောသော အဖြေတစ်ခုစီ၏ စကားလုံးများကို တုံ့ပြန်ချက်ရေးရန် Language Lab ၏ ဆာဗာမှတစ်ဆင့် AI ကုမ္ပဏီ Anthropic ထံ စာသားအဖြစ် ပို့ပါသည်။ Language Lab နှင့် Anthropic သည် သင့်အသံကို ဘယ်တော့မှ မရပါ၊ စကားလုံးများသာ ရပါသည်။ စိတ်ကူးယဉ်လူအဖြစ် ဖြေပါ။ အမည်အစစ်၊ လိပ်စာ၊ မွေးနေ့၊ A-number သို့မဟုတ် အမှုအသေးစိတ်များကို မပြောပါနှင့်။ တကယ့်အင်တာဗျူးတွင် သင့်ကိုယ်ပိုင်ဘဝအကြောင်း အမှန်အတိုင်း ဖြေရမည်။ Language Lab သည် နံပါတ်အချို့ကို စစ်ဆေးသော်လည်း ကိုယ်ရေးအချက်အလက် အားလုံးကို မဖမ်းမိနိုင်ပါ။ Language Lab သည် သင့်အဖြေများကို မသိမ်းထားပါ။ Anthropic က ၎င်းတို့ကို မည်သို့ကိုင်တွယ်သည်ကို Anthropic ၏ ကိုယ်ရေးလုံခြုံမှုမူဝါဒတွင် ဖော်ပြထားသည်- anthropic.com/legal/privacy။ လေ့ကျင့်မှုအသစ် စတင်သောအခါ AI နည်းပြ ပြန်ပိတ်ပါသည်။ | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
 | `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | AI နည်းပြ- N-400 အပိုင်းတွင် သင်မဖွင့်မချင်း ပိတ်ထားပါသည်။ ဖွင့်ထားသောအခါ N-400 အဖြေတစ်ခုစီ၏ စာသားကို တုံ့ပြန်ချက်ရေးရန် Language Lab ၏ ဆာဗာမှတစ်ဆင့် Anthropic ထံ ပို့ပါသည်၊ အသံမပို့ပါ။ အသုံးပြုမှုကို ကန့်သတ်ရန် ဆာဗာသည် သင့်အင်တာနက်လိပ်စာမှ ပြုလုပ်ထားသော နေ့စဉ်ပြောင်းလဲပြီး ဆားခပ်ထားသည့် ကုဒ်ဖြင့် တောင်းဆိုမှုများကို ရေတွက်ပါသည်၊ အဟောင်းများကို နောက်တောင်းဆိုမှုများတွင် ဖျက်ပြီး ပုံမှန်အားဖြင့် နှစ်ရက်အတွင်း ဖျက်ပါသည်။ Anthropic ၏ ကိုယ်ရေးလုံခြုံမှုမူဝါဒ- anthropic.com/legal/privacy။ | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
@@ -50,8 +50,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | စာကြောင်းများတွင် USCIS ၏ တရားဝင်ဖတ်ခြင်းနှင့် ရေးခြင်းဝေါဟာရစာရင်းမှ စကားလုံးများကိုသာ အသုံးပြုသည်။ |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | သင် လေ့ကျင့်မှု အောင်မှတ်ကို ရောက်သွားသဖြင့် စာမေးပွဲသည် ဤနေရာတွင် ရပ်သွားသည်။ |
-| `home.part.civics.text` | Answer civics questions. Checked against the answer key. | နိုင်ငံသားဗဟုသုတမေးခွန်းများကို ဖြေပါ။ အဖြေမှန်များနှင့် တိုက်စစ်သည်။ |
-| `partReport.unscored.missing` | A question that is not in the answer key | အဖြေမှန်စာရင်းတွင် မပါသော မေးခွန်း |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | အဖြေမှန်များကို လူတစ်ဦးက စစ်ဆေးပြီးသည်အထိ ဤဗားရှင်းတွင် “အရင်လေ့လာရန်” ကို ပိတ်ထားသည်။ |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | ဤရွေးချယ်မှုသည် လေ့ကျင့်ခန်းကိုသာ ပြောင်းလဲသည်။ မည်သည့်အရာကိုမျှ မသိမ်းဆည်း၊ မပို့ပါ။ နိုင်ငံသားဗဟုသုတအပိုင်းတွင် တရားဝင်စာရင်းရှိ ကြယ်ပွင့် (*) ပါသော မေးခွန်း {bank} ခုထဲမှ {asked} ခုကို မေးပါမည်။ ဤလေ့ကျင့်ခန်းတွင် {asked} ခုလုံးကို မေးပါမည်။ လေ့ကျင့်ခန်းအောင်မှတ်မှာ အဖြေမှန် {pass} ခု ဖြစ်သည်။ သင့်ကိစ္စအတွက် uscis.gov တွင် စစ်ဆေးပါ- အသက်နှင့် နှစ်များကို လျှောက်လွှာတင်သည့်နေ့တွင် ရေတွက်သည်။ |
 | `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS- လျှောက်လွှာတင်သည့်နေ့တွင် အသက် 50 နှစ်နှင့်အထက်ဖြစ်ပြီး အမြဲတမ်းနေထိုင်သူအဖြစ် 20 နှစ် (50/20) သို့မဟုတ် အသက် 55 နှစ်နှင့်အထက်ဖြစ်ပြီး 15 နှစ် (55/15) ဆိုလျှင် အင်္ဂလိပ်စာ လိုအပ်ချက် (အင်္ဂလိပ်စာ ဖတ်၊ ရေး၊ ပြော၊ နားလည်ခြင်း) မှ ကင်းလွတ်ခွင့်ရသော်လည်း နိုင်ငံသားဗဟုသုတစာမေးပွဲကို ဖြေရဆဲဖြစ်သည်။ စကားပြန်ခေါ်လာလျှင် မိခင်ဘာသာစကားဖြင့် ဖြေနိုင်သည်။ အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး အနည်းဆုံး 20 နှစ် (65/20) ဆိုလျှင် အင်္ဂလိပ်စာမှလည်း ကင်းလွတ်ခွင့်ရပြီး အရာရှိက အထူးသတ်မှတ်ထားသော နိုင်ငံသားဗဟုသုတ စာမေးပွဲပုံစံများကို သုံးသည်။ |
@@ -61,8 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | လေ့ကျင့်ခန်းအောင်မှတ်ကို ရောက်သောအခါ လေ့ကျင့်စာမေးပွဲ ရပ်သွားသည်။ |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | လေ့ကျင့်ခန်းအောင်မှတ် {score} ကို မရောက်မီ အဖြေမှား {incorrect} ခုပြီးနောက် လေ့ကျင့်စာမေးပွဲ ရပ်သွားသည်။ |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | လေ့ကျင့်ခန်းအောင်မှတ်မှာ အဖြေမှန် {score} ခု ဖြစ်ပြီး မရောက်ခဲ့ပါ။ |
-| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | အမှတ်မပေးပါ၊ အဖြေ ပြောင်းလဲတတ်သောကြောင့် သို့မဟုတ် အဖြေစာရင်းတွင် မပါသောကြောင့်- {names}။ ဤမေးခွန်းများကို မှန်သည် သို့မဟုတ် မှားသည်ဟု မရေတွက်ပါ။ |
-| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | သင့်စက်က သင်ပြောခဲ့သည်ကို ခန့်မှန်းချက် အများအပြား ပေးခဲ့သည်။ အဖြေစာရင်းရှိ အဖြေတစ်ခုနှင့် အနီးစပ်ဆုံးကို ပြထားသည်။ |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS သည် အသက်နှင့် အမြဲတမ်းနေထိုင်သူ နှစ်များကို N-400 တင်သည့်နေ့တွင် ရေတွက်သည်။ |
 
 ## 3. All other lines
 
@@ -70,16 +67,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | အဓိကအကြောင်းအရာသို့ ကျော်သွားရန် |
-| `app.stageNotBuilt` | This stage of the practice isn’t built yet. | ဤလေ့ကျင့်ရေးအဆင့်ကို မပြီးသေးပါ။ |
+| `app.stageNotBuilt` | This part is not ready yet. Go back to Home and choose another part. | ဤအပိုင်း မအဆင်သင့်သေးပါ။ ပင်မစာမျက်နှာသို့ ပြန်သွားပြီး အခြားအပိုင်းကို ရွေးပါ။ |
 | `header.about` | About & disclaimer | အကြောင်းနှင့် တာဝန်ငြင်းဆိုချက် |
-| `stepper.label` | Interview stages | အင်တာဗျူးအဆင့်များ |
-| `stepper.count` | Stage {current} of {total} | အဆင့် {current} / {total} |
+| `stepper.label` | Your steps | သင့်အဆင့်များ |
+| `stepper.count` | Step {current} of {total}: {name} | အဆင့် {current} / {total}: {name} |
 | `stepper.status.complete` | completed | ပြီးပါပြီ |
 | `stepper.status.current` | current step | လက်ရှိအဆင့် |
 | `stepper.status.upcoming` | upcoming | လာမည့်အဆင့် |
-| `stage.intro.label` | Welcome | ကြိုဆိုပါသည် |
-| `stage.intro.short` | Intro | စတင်ရန် |
-| `stage.n400_interview.label` | N-400 conversation | N-400 စကားဝိုင်း |
+| `stage.intro.label` | Set up | ပြင်ဆင်ရန် |
+| `stage.intro.short` | Set up | ပြင်ဆင်ရန် |
+| `stage.n400_interview.label` | N-400 questions | N-400 မေးခွန်းများ |
 | `stage.n400_interview.short` | N-400 | N-400 |
 | `stage.reading.label` | Reading | ဖတ်ခြင်း |
 | `stage.reading.short` | Reading | ဖတ်ခြင်း |
@@ -87,43 +84,42 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.writing.short` | Writing | ရေးခြင်း |
 | `stage.civics.label` | Civics | နိုင်ငံသားဗဟုသုတ |
 | `stage.civics.short` | Civics | Civics |
-| `stage.report.label` | Practice report | လေ့ကျင့်မှုအစီရင်ခံစာ |
+| `stage.report.label` | Your report | သင့်အစီရင်ခံစာ |
 | `stage.report.short` | Report | အစီရင်ခံစာ |
-| `badge.onTrack` | Practice score reached | လေ့ကျင့်ရေးအမှတ် ရောက်ပြီ |
-| `badge.review` | Worth reviewing | ပြန်လည်ကြည့်သင့်သည် |
-| `report.empty` | Your practice report will appear here once the session is complete. | စက်ရှင်ပြီးသောအခါ သင်၏ လေ့ကျင့်မှုအစီရင်ခံစာကို ဤနေရာတွင် မြင်ရပါမည်။ |
-| `report.take` | TAKE | TAKE |
+| `badge.onTrack` | You reached the practice goal | လေ့ကျင့်မှုပန်းတိုင်သို့ ရောက်ပါပြီ |
+| `badge.review` | Practice this again | ဤအရာကို ထပ်လေ့ကျင့်ပါ |
+| `report.empty` | Your report will show here when you finish the practice. | လေ့ကျင့်ပြီးသောအခါ သင့်အစီရင်ခံစာ ဤနေရာတွင် ပေါ်လာပါမည်။ |
 | `report.overline` | Practice report | လေ့ကျင့်မှုအစီရင်ခံစာ |
-| `report.profile.label` | Practice profile (fictional) | လေ့ကျင့်ရေးပရိုဖိုင် (စိတ်ကူးယဉ်) |
+| `report.profile.label` | Practice person (made up) | လေ့ကျင့်ရန် လူ (စိတ်ကူးယဉ်) |
 | `report.profile.meta` | {version} civics test · filed {date} | {version} နိုင်ငံသားဗဟုသုတစာမေးပွဲ · လျှောက်လွှာတင်သည့်ရက် {date} |
 | `report.stages.heading` | How each part went | အပိုင်းတစ်ခုစီ မည်သို့ရှိခဲ့သနည်း |
 | `report.review.heading` | Things to review | ပြန်လည်ကြည့်ရန်အချက်များ |
 | `report.review.intro` | Focus on these before your next practice. | နောက်လေ့ကျင့်မှုမတိုင်မီ ဤအချက်များကို အာရုံစိုက်ပါ။ |
-| `report.generated` | Report generated {datetime} | အစီရင်ခံစာကို {datetime} တွင် ပြုလုပ်ခဲ့သည် |
+| `report.generated` | Report made {datetime} | အစီရင်ခံစာ ပြုလုပ်ချိန် {datetime} |
 | `translation.english` | English | အင်္ဂလိပ် |
-| `voice.say` | Say it | ပြောရန် |
-| `voice.stop` | Stop listening | နားထောင်ခြင်း ရပ်ရန် |
+| `voice.say` | Tap to speak | ပြောရန် နှိပ်ပါ |
+| `voice.stop` | Listening… tap when you finish | နားထောင်နေသည်… ပြောပြီးလျှင် နှိပ်ပါ |
 | `voice.listening` | Listening. Say your answer now. | နားထောင်နေသည်။ ယခု သင်၏အဖြေကို ပြောပါ။ |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | သင့်စကားကို ကြားပါပြီ။ စကားလုံးများကို စစ်ကြည့်ပါ၊ လိုလျှင် ပြင်ပါ၊ ထို့နောက် ပို့ပါ။ |
-| `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | မိုက်ခရိုဖုန်း ပိတ်ထားသည်။ ဘရောက်ဇာဆက်တင်တွင် မိုက်ခရိုဖုန်းအသုံးပြုခွင့်ပေးပါ၊ သို့မဟုတ် သင်၏အဖြေကို ရိုက်ထည့်ပါ။ |
+| `voice.denied` | The microphone is blocked. Follow the steps below to allow it, or type your answer. | မိုက်ခရိုဖုန်း ပိတ်ထားသည်။ ခွင့်ပြုရန် အောက်ပါအဆင့်များကို လိုက်နာပါ သို့မဟုတ် သင့်အဖြေကို ရိုက်ထည့်ပါ။ |
 | `voice.unsupported` | This browser cannot listen to your voice. Type your answer instead. | ဤဘရောက်ဇာသည် သင့်အသံကို နားမထောင်နိုင်ပါ။ အဖြေကို ရိုက်ထည့်ပါ။ |
 | `voice.nothingHeard` | We did not hear anything. Try again, or type your answer. | ဘာမျှ မကြားရပါ။ ထပ်ကြိုးစားပါ၊ သို့မဟုတ် သင်၏အဖြေကို ရိုက်ထည့်ပါ။ |
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | မိုက်ခရိုဖုန်း မတွေ့ပါ။ အဖြေကို ရိုက်ထည့်ပါ။ |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | ယခုအကြိမ် နားထောင်ခြင်း မအောင်မြင်ပါ။ ထပ်ကြိုးစားပါ၊ သို့မဟုတ် သင်၏အဖြေကို ရိုက်ထည့်ပါ။ |
 | `voice.skip` | Skip this one | ဤအချက်ကို ကျော်ရန် |
-| `audio.play` | Play aloud | အသံထွက်ဖတ်ပြရန် |
-| `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | စက်၏အသံ- သင့်ဖုန်း သို့မဟုတ် ကွန်ပျူတာတွင် ထည့်သွင်းထားသော အသံ။ |
+| `audio.play` | Play the question | မေးခွန်းကို နားထောင်ရန် |
+| `audio.deviceVoice` | Built-in voice: the voice of your phone or computer. | မူလပါအသံ: သင့်ဖုန်း သို့မဟုတ် ကွန်ပျူတာ၏ အသံ။ |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | ဤဘရောက်ဇာသည် အသံထွက်ဖတ်မပြနိုင်ပါ။ ဖန်သားပြင်ပေါ်ရှိ စာသားကို ဖတ်ပါ။ |
-| `intro.profile.legend` | Choose a practice profile | လေ့ကျင့်ရေးပရိုဖိုင်တစ်ခု ရွေးပါ |
-| `intro.profile.help` | Every profile is invented. | ပရိုဖိုင်အားလုံးသည် ဖန်တီးထားခြင်းများ ဖြစ်သည်။ |
+| `intro.profile.legend` | Choose a practice person | လေ့ကျင့်ရန် လူတစ်ဦးကို ရွေးပါ |
+| `intro.profile.help` | Every person here is made up. | ဤနေရာရှိ လူတိုင်းသည် စိတ်ကူးယဉ်ဖြစ်သည်။ |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | N-400 ကို တင်သွင်းခဲ့သည်ဟု ယူဆ၍ လေ့ကျင့်ပါ… |
 | `intro.filed.before` | Before {date} | {date} မတိုင်မီ |
 | `intro.filed.onOrAfter` | On or after {date} | {date} သို့မဟုတ် ထို့နောက် |
 | `intro.start` | Start practice | လေ့ကျင့်မှု စတင်ရန် |
-| `intro.startHint` | Make your choice above to start. | စတင်ရန် အပေါ်တွင် ရွေးချယ်ပါ။ |
-| `home.locked.title` | In this build you can practice | ဤဗားရှင်းတွင် လေ့ကျင့်နိုင်သည်များ |
+| `intro.startHint` | Choose one answer in each group above. Then press “Start practice”. | အထက်ပါအုပ်စုတိုင်းတွင် အဖြေတစ်ခုစီ ရွေးပါ။ ထို့နောက် “လေ့ကျင့်မှု စတင်ရန်” ကို နှိပ်ပါ။ |
+| `home.locked.title` | Right now you can practice | ယခု လေ့ကျင့်နိုင်သည်များ |
 | `n400.title` | N-400 interview | N-400 အင်တာဗျူး |
-| `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | လျှောက်လွှာနှင့်ပတ်သက်၍ အရာရှိမေးလေ့ရှိသော မေးခွန်းမျိုးကို တည်ငြိမ်စွာ လေ့ကျင့်ခြင်း။ {name} အဖြစ် ဖြေပါ။ ဤအဆင့်တွင် အမှတ်မပေးပါ။ |
+| `n400.lead` | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. | အရာရှိက သင့်ဖောင်အကြောင်း ဤကဲ့သို့ မေးနိုင်သည်။ {name} အဖြစ် ဖြေပါ။ ဤအပိုင်းတွင် အမှတ်မပေးပါ။ |
 | `n400.count` | Question {current} of {total} | မေးခွန်း {current} / {total} |
 | `n400.sample.label` | Sample answer for {name} (fictional) | {name} အတွက် နမူနာအဖြေ (စိတ်ကူးယဉ်) |
 | `n400.yourAnswer` | Your answer, as {name} | {name} အဖြစ် သင်၏အဖြေ |
@@ -144,7 +140,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | လိုချင်လျှင် အဖြေကို အသံထွက်၍ လေ့ကျင့်ပါ။ ဤမေးခွန်းကို မှတ်တမ်းမတင်ပါ။ |
 | `coach.tip.label` | Tip about your English: | သင့်အင်္ဂလိပ်စာအကြောင်း အကြံပြုချက်- |
 | `coach.feedback.understood` | Easy to understand | နားလည်ရလွယ်သည် |
-| `coach.feedback.needs_practice` | Worth practicing again | ထပ်လေ့ကျင့်သင့်သည် |
+| `coach.feedback.needs_practice` | Practice this again | ဤအရာကို ထပ်လေ့ကျင့်ပါ |
 | `coach.feedback.unclear` | Hard to follow. Try again. | နားလည်ရခက်သည်။ ထပ်ကြိုးစားပါ။ |
 | `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | ဤအရာက သင့်အင်္ဂလိပ်စာ မည်မျှရှင်းလင်းသည်ကိုသာ စစ်ဆေးသည်။ အဖြေမှန်သလား၊ အမှန်တကယ်ဖြစ်သလား မပြောပါ။ |
 | `coach.checking` | Getting AI feedback… | AI တုံ့ပြန်ချက် ရယူနေသည်… |
@@ -158,11 +154,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.dateOfBirth` | a full date, such as a date of birth | မွေးနေ့ကဲ့သို့ ရက်စွဲအပြည့်အစုံ |
 | `coach.next` | Continue | ဆက်သွားမည် |
 | `n400.loading` | Getting the next question… | နောက်မေးခွန်းကို ရယူနေသည်… |
-| `n400.failed` | The next question could not be loaded. Start over to try again. | နောက်မေးခွန်းကို မဖွင့်နိုင်ပါ။ ထပ်ကြိုးစားရန် အစမှ ပြန်စပါ။ |
+| `n400.failed` | The next question did not load. Check your internet, then press “Start over”. | နောက်မေးခွန်း မတင်နိုင်ပါ။ အင်တာနက်ကို စစ်ပြီး “အစမှ ပြန်စရန်” ကို နှိပ်ပါ။ |
 | `n400.done.title` | Your answers | သင်၏အဖြေများ |
 | `n400.done.lead` | These are the words you gave. They are not scored. | ဤသည်တို့မှာ သင်ပြောခဲ့သော စကားလုံးများဖြစ်သည်။ အမှတ်မပေးပါ။ |
 | `n400.done.next` | Go to reading | ဖတ်ခြင်းသို့ သွားရန် |
-| `voice.consent.continue` | Continue and say it | ဆက်လက်၍ ပြောမည် |
+| `voice.consent.continue` | Continue and speak | ဆက်လုပ်ပြီး ပြောမည် |
 | `voice.consent.type` | Type instead | ယင်းအစား ရိုက်မည် |
 | `n400.number` | Question {current} | မေးခွန်း {current} |
 | `common.fictional` | Fictional practice profile | စိတ်ကူးယဉ်လေ့ကျင့်ရေးပရိုဖိုင် |
@@ -194,15 +190,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | ဤဘရောက်ဇာသည် အသံထွက်ဖတ်မပြနိုင်သဖြင့် စာကြောင်းကို ဤနေရာတွင် ပြထားသည်။ ၎င်းကို ရိုက်ထည့်ပါ။ |
 | `writing.hidden` | The sentence stays hidden until you answer. | သင်မဖြေမချင်း စာကြောင်းကို ဖျောက်ထားမည်။ |
 | `writing.show` | Show the sentence | ဝါကျကို ပြပါ |
-| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | အသံမကြားရလျှင် ဝါကျကို ပြ၍ ရိုက်ထည့်ပါ။ တူညီသောနည်းဖြင့် စစ်ဆေးပါသည်။ သင့်အစီရင်ခံစာတွင် ဤကြိုးစားမှုကို အကူအညီရထားသည်ဟု မှတ်သားပါမည်။ |
-| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | ဝါကျကို ပြထားပါသည်။ သင့်အစီရင်ခံစာတွင် ဤကြိုးစားမှုကို အကူအညီရထားသည်ဟု မှတ်သားပါမည်။ |
+| `writing.show.help` | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. | အသံ မကြားရလျှင် ဝါကျကို ပြပြီး ရိုက်ထည့်ပါ။ စစ်ဆေးပုံ အတူတူပင်။ ဝါကျကို ပြခဲ့ကြောင်း သင့်အစီရင်ခံစာတွင် ဖော်ပြပါမည်။ |
+| `writing.shown` | The sentence is shown. Your report will say so. | ဝါကျကို ပြထားသည်။ သင့်အစီရင်ခံစာတွင် ဖော်ပြပါမည်။ |
 | `civics.title` | Civics | နိုင်ငံသားဗဟုသုတ |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | အသံထွက်ဖြေပါ သို့မဟုတ် ရိုက်ထည့်ပါ။ အဖြေတိုများ ရသည်၊ သို့သော် အဖြေအပြည့်အစုံ ပြောပါ။ |
 | `civics.count` | Question {current} of {total} | မေးခွန်း {current} / {total} |
 | `civics.needs` | This question needs {count} different answers. | ဤမေးခွန်းသည် ကွဲပြားသောအဖြေ {count} ခု လိုအပ်သည်။ |
 | `civics.yourAnswer` | Your answer | သင်၏အဖြေ |
 | `civics.submit` | Check my answer | ကျွန်ုပ်၏အဖြေကို စစ်ရန် |
-| `civics.correct` | Correct | မှန်သည် |
+| `civics.correct` | This counts | ၎င်းကို ရေတွက်သည် |
 | `civics.notYet` | Not yet | မမှန်သေးပါ |
 | `civics.youSaid` | You said: {text} | သင်ပြောသည်- {text} |
 | `civics.official` | Official answers | တရားဝင်အဖြေများ |
@@ -211,39 +207,39 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.stopped.incorrect` | The test stopped because too many answers need more practice. | ထပ်မံလေ့ကျင့်ရန်လိုသော အဖြေများ များလွန်းသဖြင့် စာမေးပွဲ ရပ်သွားသည်။ |
 | `civics.stopped.none` | You have answered every question for this practice test. | ဤလေ့ကျင့်ရေးစာမေးပွဲ၏ မေးခွန်းအားလုံးကို သင်ဖြေပြီးပါပြီ။ |
 | `civics.tally` | {correct} correct, {incorrect} not yet. | မှန် {correct}၊ မမှန်သေး {incorrect}။ |
-| `civics.locked.title` | Civics is switched off in this build | ဤဗားရှင်းတွင် နိုင်ငံသားဗဟုသုတကို ပိတ်ထားသည် |
+| `civics.locked.title` | Civics is not available right now | နိုင်ငံသားပညာကို ယခု မသုံးနိုင်သေးပါ |
 | `report.again` | Practice again | ထပ်မံလေ့ကျင့်ရန် |
 | `common.startOver` | Start over | အစမှ ပြန်စရန် |
-| `voice.needText` | Type or say your answer first, or choose Skip. | အဖြေကို အရင်ရိုက်ထည့်ပါ သို့မဟုတ် ပြောပါ၊ သို့မဟုတ် ကျော်ရန် ရွေးပါ။ |
-| `audio.stop` | Stop playing | ဖွင့်ခြင်း ရပ်ရန် |
+| `voice.needText` | The box is empty. Type or say your answer, or press “Skip this one”. | အကွက် ဗလာဖြစ်နေသည်။ သင့်အဖြေကို ရိုက်ထည့်ပါ သို့မဟုတ် ပြောပါ၊ သို့မဟုတ် “ဤအချက်ကို ကျော်ရန်” ကို နှိပ်ပါ။ |
+| `audio.stop` | Stop | ရပ်ရန် |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | AI ဖန်တီးသောအသံ။ အသံကို ကြိုတင်ပြုလုပ်ထားသည်။ |
 | `audio.playSample` | Play sample answer | နမူနာအဖြေကို နားထောင်ရန် |
-| `home.title` | Welcome to the booth | Language Lab မှ ကြိုဆိုပါသည် |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | တိတ်ဆိတ်သောနေရာတွင် နိုင်ငံသားဖြစ်ခွင့်အင်တာဗျူးကို လေ့ကျင့်ပါ။ သင်သည် ဖန်တီးထားသောလူတစ်ဦးအဖြစ် ဖြေသဖြင့် အစစ်အမှန်အချက်အလက်များ ပေးရန် မလိုပါ။ |
+| `home.title` | Welcome to Language Lab | Language Lab မှ ကြိုဆိုပါသည် |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | စိတ်ကူးယဉ်လူအဖြစ် နိုင်ငံသားအင်တာဗျူးကို လေ့ကျင့်ပါ၊ သင့်အကြောင်း ဘာမျှ မျှဝေရန် မလိုပါ။ |
 | `home.how.title` | How it works | အသုံးပြုပုံ |
 | `home.how.1.title` | Listen | နားထောင်ပါ |
-| `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | မေးခွန်း သို့မဟုတ် စာကြောင်းကို ကြားရန် “အသံထွက်ဖတ်ပြရန်” ကို နှိပ်ပါ။ |
+| `home.how.1.text` | Tap “Play the question” to hear it. | နားထောင်ရန် “မေးခွန်းကို နားထောင်ရန်” ကို နှိပ်ပါ။ |
 | `home.how.2.title` | Speak or type | ပြောပါ သို့မဟုတ် ရိုက်ပါ |
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | သင်၏အဖြေကို ပြောပါ၊ သို့မဟုတ် ရိုက်ထည့်ပါ။ ရိုက်ထည့်ခြင်းသည် အမြဲအလုပ်လုပ်သည်။ |
 | `home.how.3.title` | See the result | ရလဒ်ကို ကြည့်ပါ |
-| `home.how.3.text` | You see how your answer compares, and what to practice next. | သင်၏အဖြေ မည်သို့နှိုင်းယှဉ်သည်နှင့် နောက်ထပ် မည်သည့်အရာကို လေ့ကျင့်ရမည်ကို မြင်ရမည်။ |
-| `home.choose` | What would you like to do? | သင် ဘာလုပ်ချင်ပါသလဲ။ |
-| `home.full.title` | Full practice interview | လေ့ကျင့်ရေးအင်တာဗျူး အပြည့်အစုံ |
-| `home.full.text` | All four parts in order, then one report. | အပိုင်းလေးခုကို အစဉ်လိုက်လုပ်ပြီး အစီရင်ခံစာတစ်စောင် ရရှိမည်။ |
+| `home.how.3.text` | You see if your answer counts, and what to practice next. | သင့်အဖြေ ရေတွက်မရေတွက်နှင့် နောက်ထပ် ဘာလေ့ကျင့်ရမည်ကို တွေ့ရပါမည်။ |
+| `home.full.title` | Practice test | စမ်းသပ်စာမေးပွဲ |
+| `home.full.text` | Answer out loud like the real interview. | တကယ့်အင်တာဗျူးကဲ့သို့ အသံထွက်ဖြေပါ။ |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | AI နည်းပြနှင့်အတူ N-400 အင်တာဗျူးကို လေ့ကျင့်ပါ |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | နည်းပြသည် အရာရှိတစ်ဦး မေးနိုင်သကဲ့သို့ နောက်ဆက်တွဲမေးခွန်းကို မေးပြီး သင့်အင်္ဂလိပ်စာအတွက် အကြံပြုချက်များ ပေးပါသည်။ ရွေးချယ်နိုင်ပါသည်။ |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Claude (Anthropic) ဖြင့် လုပ်ဆောင်သည် |
-| `home.parts.title` | Practice one part | အပိုင်းတစ်ခုတည်း လေ့ကျင့်ရန် |
+| `home.parts.title` | Or practice one part | သို့မဟုတ် အပိုင်းတစ်ခုကို လေ့ကျင့်ပါ |
 | `home.part.n400.title` | N-400 interview | N-400 အင်တာဗျူး |
-| `home.part.n400.text` | Answer questions about an application. Not scored. | လျှောက်လွှာနှင့်ပတ်သက်သော မေးခွန်းများကို ဖြေပါ။ အမှတ်မပေးပါ။ |
+| `home.part.n400.text` | Answer questions about the N-400 form. No score. | N-400 ဖောင်အကြောင်း မေးခွန်းများကို ဖြေပါ။ အမှတ်မပေးပါ။ |
 | `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | ဖတ်ခြင်း |
 | `home.part.reading.text` | Read sentences out loud. | စာကြောင်းများကို အသံထွက်ဖတ်ပါ။ |
 | `home.part.writing.title` | Writing | ရေးခြင်း |
 | `home.part.writing.text` | Listen and type the sentence. | နားထောင်ပြီး စာကြောင်းကို ရိုက်ထည့်ပါ။ |
 | `home.part.civics.title` | Civics | နိုင်ငံသားဗဟုသုတ |
+| `home.part.civics.text` | Answer questions about U.S. history and government. Checked with the official answers. | အမေရိကန် သမိုင်းနှင့် အစိုးရအကြောင်း မေးခွန်းများကို ဖြေပါ။ တရားဝင်အဖြေများနှင့် စစ်ဆေးသည်။ |
 | `setup.title` | Set up your practice | သင်၏လေ့ကျင့်မှုကို ပြင်ဆင်ပါ |
-| `setup.lead` | Choose what this practice needs. Nothing real is asked. | ဤလေ့ကျင့်မှုအတွက် လိုအပ်သည်ကို ရွေးပါ။ အစစ်အမှန်ကို မမေးပါ။ |
+| `setup.lead` | Choose one answer in each group. Nothing here asks about you. | အုပ်စုတိုင်းတွင် အဖြေတစ်ခုစီ ရွေးပါ။ ဤနေရာတွင် သင့်အကြောင်း မမေးပါ။ |
 | `report.home` | Back to home | ပင်မစာမျက်နှာသို့ ပြန်သွားရန် |
 | `partReport.title.n400_interview` | N-400 interview practice | N-400 အင်တာဗျူး လေ့ကျင့်မှု |
 | `partReport.title.reading` | Reading practice | ဖတ်ခြင်း လေ့ကျင့်မှု |
@@ -260,30 +256,23 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.civics.needed` | Correct answers needed: {needed}. | လိုအပ်သော အဖြေမှန်အရေအတွက်- {needed}။ |
 | `partReport.review` | Questions to review | ပြန်လည်ကြည့်ရန် မေးခွန်းများ |
 | `partReport.unscored.title` | Not scored | အမှတ်မပေးထားပါ |
-| `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | ဤမေးခွန်းများကို အမှတ်မပေးနိုင်သဖြင့် မှန်သည်ဟုလည်း မှားသည်ဟုလည်း မရေတွက်ပါ။ |
+| `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | ဤမေးခွန်းများ အမှတ်မပေးပါ။ မှန် သို့မဟုတ် မှား ဟု မရေတွက်ပါ။ |
+| `partReport.unscored.missing` | A question we cannot check | ကျွန်ုပ်တို့ မစစ်ဆေးနိုင်သော မေးခွန်း |
 | `report.see` | See my report | ကျွန်ုပ်၏အစီရင်ခံစာကို ကြည့်ရန် |
-| `header.home` | Home | ပင်မ |
-| `help.button` | How this works | ဤစာမျက်နှာ အသုံးပြုပုံ |
+| `help.button` | Help | အကူအညီ |
 | `help.setup.1` | Tap one choice in each group on this screen. | ဤစာမျက်နှာရှိ အုပ်စုတစ်ခုစီမှ ရွေးချယ်စရာတစ်ခုကို နှိပ်ပါ။ |
 | `help.setup.3` | Press “{start}” when you are ready. | အဆင်သင့်ဖြစ်သောအခါ “{start}” ကို နှိပ်ပါ။ |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | ကြားရန် “{play}” ကို နှိပ်ပါ။ ရပ်ရန် တူညီသောခလုတ်ကို ထပ်နှိပ်ပါ။ |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | နမူနာအဖြေကို ဖတ်ပါ၊ သို့မဟုတ် နားထောင်ပါ။ ၎င်းသည် ဖန်တီးထားသောလူ၏အဖြေဖြစ်ပြီး ဥပမာတစ်ခုသာဖြစ်သည်။ |
-| `help.read` | Read the sentence on the screen out loud. | ဖန်သားပြင်ပေါ်ရှိ စာကြောင်းကို အသံထွက်ဖတ်ပါ။ |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | “{say}” ကို နှိပ်ပြီး ပြောပါ။ ဖုန်းက မိုက်ခရိုဖုန်းသုံးခွင့် မေးလာလျှင် “ခွင့်ပြုရန်” ကို နှိပ်ပါ။ ပြီးသောအခါ “{stop}” ကို နှိပ်ပါ။ |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | ယင်းအစား အမြဲရိုက်ထည့်နိုင်သည်။ ကွက်ကို နှိပ်ပြီး ရိုက်ပါ။ ရိုက်ထည့်ခြင်းသည် အမြဲအလုပ်လုပ်သည်။ |
-| `help.typeOnly` | Tap the box and type what you hear. | ကွက်ကို နှိပ်ပြီး ကြားရသည့်အတိုင်း ရိုက်ထည့်ပါ။ |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | ကွက်ထဲရှိ စကားလုံးများကို စစ်ကြည့်ပါ။ ပြင်နိုင်သည်။ ထို့နောက် “{send}” ကို နှိပ်ပါ။ |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | မသိလျှင် “{skip}” ကို နှိပ်ပါ။ ၎င်းသည် အဖြေအလွတ်ကို ပို့ပြီး ဆက်သွားသည်။ “မမှန်သေး” အဖြစ် ရေတွက်သည်။ |
-| `help.notScored` | Nothing in this part is scored. | ဤအပိုင်းတွင် မည်သည့်အရာကိုမျှ အမှတ်မပေးပါ။ |
-| `help.result.reading` | Then you see which words matched. | ထို့နောက် မည်သည့်စကားလုံးများ ကိုက်ညီသည်ကို မြင်ရမည်။ |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | ထို့နောက် “မှန်သည်” သို့မဟုတ် “မမှန်သေးပါ” နှင့် တရားဝင်အဖြေများကို မြင်ရမည်။ |
-| `header.settings` | Settings | ဆက်တင်များ |
-| `settings.title` | Comfort settings | အဆင်ပြေစေရန် ဆက်တင်များ |
+| `help.listen` | Press “{play}” to hear it. | နားထောင်ရန် “{play}” ကို နှိပ်ပါ။ |
+| `help.read` | Read the sentence out loud. | ဝါကျကို အသံထွက်ဖတ်ပါ။ |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | “{say}” ကို နှိပ်ပြီး ပြောပါ။ သို့မဟုတ် အကွက်ထဲတွင် ရိုက်ထည့်ပါ။ |
+| `help.typeOnly` | Type what you hear in the box. | ကြားသည့်အတိုင်း အကွက်ထဲတွင် ရိုက်ထည့်ပါ။ |
+| `header.settings` | Text size | စာလုံးအရွယ်အစား |
+| `settings.title` | Text size and voice | စာလုံးအရွယ်အစားနှင့် အသံ |
 | `settings.textSize.legend` | Text size | စာလုံးအရွယ်အစား |
 | `settings.textSize.normal` | Normal | ပုံမှန် |
 | `settings.textSize.large` | Large | ကြီး |
 | `settings.textSize.extraLarge` | Extra large | အလွန်ကြီး |
-| `settings.slow.label` | Play recorded voices more slowly | မှတ်တမ်းတင်ထားသောအသံများကို ပိုနှေးနှေး ဖွင့်ရန် |
+| `settings.slow.label` | Slower voice | အသံ ပိုနှေးရန် |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | အမြန်နှုန်းကိုသာ ပြောင်းသည်။ မှတ်တမ်းတင်ထားသော အသံအတူတူပင်ဖြစ်သည်။ |
 | `settings.memory` | These settings last until you close or reload this page. | သင် ဤစာမျက်နှာကို ပိတ်သည်အထိ သို့မဟုတ် ပြန်ဖွင့်သည်အထိ ဤဆက်တင်များ ရှိနေမည်။ |
 | `settings.close` | Close settings | ဆက်တင်များ ပိတ်ရန် |
@@ -291,16 +280,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | အသံမထွက်ခဲ့ပါ။ ထပ်ကြိုးစားပါ၊ သို့မဟုတ် မျက်နှာပြင်ပေါ်ရှိ စာကို ဖတ်ပါ။ |
 | `lang.label` | Language | ဘာသာစကား |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | ပင်မစာမျက်နှာသို့ ပြန်သွားမလား။ ဤလေ့ကျင့်မှုရှိ သင်၏အဖြေများ ပျောက်သွားမည်။ |
-| `header.homeConfirm.yes` | Yes, go home | ဟုတ်ကဲ့၊ ပင်မသို့ သွားမည် |
-| `header.homeConfirm.no` | Stay here | ဤနေရာတွင် ဆက်နေမည် |
+| `header.homeConfirm.yes` | Leave | ထွက်မည် |
+| `header.homeConfirm.no` | Keep practicing | ဆက်လေ့ကျင့်မည် |
 | `common.retry` | Try again | ထပ်ကြိုးစားရန် |
-| `partReport.badge.good` | This part reached the practice score | ဤအပိုင်းသည် လေ့ကျင့်ရေးအမှတ်သို့ ရောက်ပါသည် |
-| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | ဝါကျကို မျက်နှာပြင်ပေါ်တွင် ပြခဲ့သည် (အကူအညီရထားသော ကြိုးစားမှု)။ |
-| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | ဘာသာပြန်ကို လူတစ်ဦးက စစ်ဆေးပြီးသည်အထိ ငြင်းဆိုချက်များနှင့် ဥပဒေဆိုင်ရာစာသားများကို အင်္ဂလိပ်လိုသာ ပြထားပါသည်။ |
+| `partReport.badge.good` | You reached the practice goal | လေ့ကျင့်မှုပန်းတိုင်သို့ ရောက်ပါပြီ |
+| `partReport.assisted` | The sentence was shown on the screen. | ဝါကျကို မျက်နှာပြင်ပေါ်တွင် ပြခဲ့သည်။ |
+| `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | လူတစ်ဦးက ဘာသာပြန်ကို မစစ်ဆေးမချင်း ဥပဒေဆိုင်ရာ အသိပေးချက်များကို အင်္ဂလိပ်ဘာသာဖြင့်သာ ပြပါမည်။ |
 | `lang.menu.title` | Choose a language | ဘာသာစကား ရွေးပါ |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | နောက်ထပ်ဘာသာစကားများကို စစ်ဆေးနေဆဲဖြစ်ပါသည်။ လူတစ်ဦးက စစ်ဆေးပြီးနောက် ဤနေရာတွင် ပေါ်လာပါမည်။ |
-| `home.study.title` | Study first | အရင်လေ့လာရန် |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | နိုင်ငံသားဗဟုသုတမေးခွန်းများကို ပုံများနှင့် တရားဝင်အဖြေများနှင့်အတူ ကြည့်ပါ။ အမှတ်မပေးပါ။ |
+| `home.study.title` | Study | လေ့လာရန် |
+| `home.study.text` | See each question with its answers and a picture. No score. | မေးခွန်းတိုင်းကို အဖြေများနှင့် ပုံဖြင့် ကြည့်ပါ။ အမှတ်မပေးပါ။ |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | နိုင်ငံသားဗဟုသုတမေးခွန်းများကို တစ်ခုချင်း ကြည့်ပါ။ တစ်ခုစီတွင် တရားဝင်အဖြေများ ပြသည်။ အမှတ်မပေးပါ၊ ဘာမျှ မသိမ်းပါ။ |
 | `study.version.legend` | Which civics test do you want to study? | နိုင်ငံသားဗဟုသုတစာမေးပွဲ ဘယ်ဟာကို လေ့လာချင်ပါသလဲ။ |
 | `study.version.2008` | 2008 civics test | ၂၀၀၈ ခုနှစ် နိုင်ငံသားဗဟုသုတစာမေးပွဲ |
@@ -321,8 +310,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.hearSample` | Hear the sample | နမူနာကို နားထောင်ရန် |
 | `selfReview.tryAgain` | Try again | ထပ်စမ်းကြည့်ရန် |
 | `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | သင့်အသံသွင်းချက်သည် ဤစက်ထဲတွင်သာ ရှိသည်။ မည်သည့်နေရာသို့မျှ မပို့ပါ၊ မသိမ်းပါ၊ နောက်စာကြောင်းသို့ သွားသောအခါ သို့မဟုတ် ဤစခရင်မှ ထွက်သောအခါ ဖျက်ပစ်သည်။ |
-| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | ဤဘရောက်ဇာသည် သင့်အသံကို မသွင်းနိုင်ပါ။ “ပြောရန်” ဖြင့် သို့မဟုတ် စာရိုက်၍ သင့်ဖတ်ခြင်းကို စစ်ဆေးနိုင်သေးသည်။ |
-| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | မိုက်ခရိုဖုန်းကို ပိတ်ထားသည်။ သင့်ဘရောက်ဇာဆက်တင်တွင် မိုက်ခရိုဖုန်းအသုံးပြုခွင့်ပေးပါ။ |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still press “Tap to speak” or type. | ဤဘရောက်ဇာသည် သင့်အသံကို မှတ်တမ်းမတင်နိုင်ပါ။ “ပြောရန် နှိပ်ပါ” ကို နှိပ်ခြင်း သို့မဟုတ် ရိုက်ထည့်ခြင်း ပြုလုပ်နိုင်ပါသေးသည်။ |
+| `selfReview.denied` | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. | မိုက်ခရိုဖုန်း ပိတ်ထားသောကြောင့် မှတ်တမ်းတင်ခြင်း မစနိုင်ပါ။ ဘရောက်ဇာ ဆက်တင်တွင် ဤဆိုက်အတွက် မိုက်ခရိုဖုန်းကို ခွင့်ပြုပြီး ထပ်စမ်းကြည့်ပါ။ |
 | `selfReview.error` | Recording did not work this time. Try again. | ဤတစ်ကြိမ် အသံသွင်းခြင်း မအောင်မြင်ပါ။ ထပ်စမ်းကြည့်ပါ။ |
 | `compare.why.allWords` | Every important word of the sentence was there, in order. | စာကြောင်း၏ အရေးကြီးသော စကားလုံးအားလုံး အစဉ်လိုက် ပါပြီ။ |
 | `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | သင်က “{said}” ဟု ပြောခဲ့သည်။ စာကြောင်းတွင် “{expected}” ဖြစ်သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ |
@@ -335,28 +324,63 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | သင်က စာကြောင်းတွင် မပါသော “{said}” ကို ထပ်ထည့်ခဲ့သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ |
 | `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | စကားလုံးတို “{expected}” ကျန်ခဲ့သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ |
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | သင်က စကားလုံးတို “{said}” ကို ထပ်ထည့်ခဲ့သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ |
-| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | ဤရလဒ်သည် သင့်စက်ကြားသော စကားလုံးများအပေါ် အခြေခံသည်။ မှားကြားခဲ့လျှင် ထပ်စမ်းကြည့်ပါ သို့မဟုတ် အဖြေကို ရိုက်ထည့်ပါ။ |
+| `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | ဤရလဒ်သည် သင့်ဖုန်း သို့မဟုတ် ကွန်ပျူတာ ကြားသော စကားလုံးများကို အသုံးပြုသည်။ မှားကြားလျှင် ထပ်စမ်းပါ သို့မဟုတ် အဖြေကို ရိုက်ထည့်ပါ။ |
 | `compare.honest.typed` | This result is based on the words you typed. | ဤရလဒ်သည် သင်ရိုက်ထည့်ခဲ့သော စကားလုံးများအပေါ် အခြေခံသည်။ |
-| `home.special.title` | 65/20 civics practice | 65/20 နိုင်ငံသားဗဟုသုတ လေ့ကျင့်ခန်း |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး အမြဲတမ်းနေထိုင်သူအဖြစ် 20 နှစ်နှင့်အထက် နေထိုင်ခဲ့သူများအတွက်။ ကြယ်ပွင့် (*) အမှတ်အသားပါသော နိုင်ငံသားဗဟုသုတမေးခွန်းများကို လေ့ကျင့်ပါ။ |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ကျွန်ုပ်သည် အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး အမြဲတမ်းနေထိုင်သူအဖြစ် 20 နှစ်နှင့်အထက် နေထိုင်ခဲ့ပါသည် |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | 65/20 အတွက် မေးခွန်းများသာ (ကြယ်ပွင့်ပါသည်) |
 | `report.line.civics.none` | No civics questions were scored. | အမှတ်ပေးခံရသော နိုင်ငံသားဗဟုသုတမေးခွန်း မရှိပါ။ |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | မှန်ကန်စွာ ဖြေခဲ့သော နိုင်ငံသားဗဟုသုတမေးခွန်း- {scored} ခုထဲမှ {correct} ခု။ |
+| `report.line.civics.unscored` | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. | အဖြေ အချိန်နှင့်အမျှ ပြောင်းလဲသောကြောင့် သို့မဟုတ် မစစ်ဆေးနိုင်သောကြောင့် အမှတ်မပေးပါ: {names}။ မှန် သို့မဟုတ် မှား ဟု မရေတွက်ပါ။ |
 | `report.line.reading.none` | No reading sentences were completed. | ပြီးဆုံးသော ဖတ်ရန်ဝါကျ မရှိပါ။ |
 | `report.line.reading.done` | Sentence {n} was read correctly. | ဝါကျ {n} ကို မှန်ကန်စွာ ဖတ်ခဲ့သည်။ |
 | `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | မှန်ကန်စွာ ဖတ်ခဲ့သော ဝါကျ- {presented} ခုထဲမှ {correct} ခု။ လိုအပ်သော မှန်ကန်သည့်ဝါကျ- {needed}။ |
 | `report.line.writing.none` | No writing sentences were completed. | ပြီးဆုံးသော ရေးရန်ဝါကျ မရှိပါ။ |
 | `report.line.writing.done` | Sentence {n} was written correctly. | ဝါကျ {n} ကို မှန်ကန်စွာ ရေးခဲ့သည်။ |
 | `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | မှန်ကန်စွာ ရေးခဲ့သော ဝါကျ- {presented} ခုထဲမှ {correct} ခု။ လိုအပ်သော မှန်ကန်သည့်ဝါကျ- {needed}။ |
-| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | မျက်နှာပြင်ပေါ်တွင် ဝါကျကို ပြထားစဉ် ရေးခဲ့သော ကြိမ် (အကူအညီဖြင့်)- {presented} ကြိမ်ထဲမှ {assisted} ကြိမ်။ |
+| `report.line.writing.assisted` | Sentences written while the sentence was shown: {assisted} of {presented}. | ဝါကျကို ပြထားစဉ် ရေးခဲ့သော ဝါကျများ: {presented} ခုအနက် {assisted} ခု။ |
 | `report.review.reading` | Practice reading the sentences aloud. | ဝါကျများကို အသံထွက်ဖတ်ရန် လေ့ကျင့်ပါ။ |
 | `report.review.writing` | Practice writing the sentences you hear. | ကြားရသော ဝါကျများကို ရေးရန် လေ့ကျင့်ပါ။ |
+| `civics.heard.closest` | Your phone or computer heard a few possible answers. We show the one closest to an official answer. | သင့်ဖုန်း သို့မဟုတ် ကွန်ပျူတာက ဖြစ်နိုင်သော အဖြေအချို့ကို ကြားခဲ့သည်။ တရားဝင်အဖြေနှင့် အနီးဆုံးကို ပြပါသည်။ |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | စိတ်ကူးယဉ်လူအဖြစ် ဖြေပါ။ သင့်နာမည်အစစ်၊ လိပ်စာ၊ ရက်စွဲ သို့မဟုတ် နံပါတ်များကို မရိုက်ပါနှင့်။ |
 | `common.newTab` | (opens in a new tab) | (တဘ်အသစ်တွင် ဖွင့်မည်) |
 | `coach.kind.streetAddress` | a street address | လမ်းလိပ်စာ |
 | `coach.kind.zipCode` | a ZIP code with a state | ပြည်နယ်အမည်ပါသော ZIP ကုဒ် |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | ဤစစ်ဆေးမှုသည် လမ်းလိပ်စာနှင့် ZIP ကုဒ်များကိုလည်း ရှာသော်လည်း အမည်များကို မရှာနိုင်ပါ။ လူအစစ်တစ်ဦး၏ အမည်ကို မပြော၊ မရိုက်ပါနှင့်။ |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | စာလုံး အရမ်းသေးနေပါသလား။ အပေါ်ရှိ စာလုံးအရွယ်အစား ကို နှိပ်ပါ။ |
+| `audio.playing` | Playing… | ဖွင့်နေသည်… |
+| `audio.playSentence` | Play the sentence | ဝါကျကို နားထောင်ရန် |
+| `voice.gotIt` | Got it. Tap to speak again | ကြားပြီးပါပြီ။ ထပ်ပြောရန် နှိပ်ပါ |
+| `voice.orType` | Or type your answer | သို့မဟုတ် သင့်အဖြေကို ရိုက်ထည့်ပါ |
+| `voice.micHelp.title` | How to allow the microphone | မိုက်ခရိုဖုန်းကို ခွင့်ပြုနည်း |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): ဝက်ဘ်လိပ်စာဘေးရှိ “aA” ကို နှိပ်ပါ၊ ထို့နောက် Website Settings၊ Microphone ကို နှိပ်ပြီး Allow ကို ရွေးပါ။ ထို့နောက် စာမျက်နှာကို ပြန်ဖွင့်ပါ။ |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): ဝက်ဘ်လိပ်စာ၏ ဘယ်ဘက်ရှိ အိုင်ကွန်လေးကို နှိပ်ပါ၊ ထို့နောက် Permissions ကို နှိပ်ပြီး Microphone ကို ဖွင့်ပါ။ ထို့နောက် စာမျက်နှာကို ပြန်ဖွင့်ပါ။ |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | သင့်အဖြေကို အကွက်ထဲတွင် အမြဲရိုက်ထည့်နိုင်ပါသည်။ |
+| `civics.why.correct` | Your answer matches an official answer. | သင့်အဖြေသည် တရားဝင်အဖြေတစ်ခုနှင့် ကိုက်ညီသည်။ |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | သင့်အဖြေသည် တရားဝင်အဖြေများနှင့် မကိုက်ညီသေးပါ။ |
+| `settings.slow.on` | On | ဖွင့် |
+| `settings.slow.off` | Off | ပိတ် |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | ဆက်သွားရန် “{send}” ကို နှိပ်ပါ။ ဤနေရာတွင် အမှတ်မပေးပါ။ |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | “{send}” ကို နှိပ်ပါ။ ထို့နောက် ရေတွက်မရေတွက် တွေ့ရပါမည်။ |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | “{send}” ကို နှိပ်ပါ။ ထို့နောက် ရေတွက်မရေတွက်နှင့် တရားဝင်အဖြေများကို တွေ့ရပါမည်။ |
+| `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | ရွေးထားသည် |
+| `aiNotice.more` | More | ထပ်ကြည့်ရန် |
+| `home.who.title` | 1. Who is practicing? | 1. ဘယ်သူ လေ့ကျင့်နေသလဲ။ |
+| `home.who.most.title` | Most people | လူအများစု |
+| `home.who.most.text` | The usual civics test rules. | ပုံမှန် နိုင်ငံသားပညာ စာမေးပွဲ စည်းမျဉ်းများ။ |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | အသက် ၆၅ နှင့်အထက်၊ ဂရင်းကတ် ၂၀ နှစ်နှင့်အထက် (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | အင်္ဂလိပ်စာမေးပွဲ မရှိ။ မေးခွန်း နည်းသည်- ကြယ်ပြ ၂၀ ခု။ |
+| `home.who.notSure` | Not sure? Choose Most people. | မသေချာလျှင် လူအများစု ကို ရွေးပါ။ |
+| `home.what.title` | 2. What do you want to do? | 2. ဘာလုပ်ချင်သလဲ။ |
+| `home.part.notRequired` | Not required for {exception} | {exception} အတွက် မလိုအပ်ပါ |
+| `home.go.start` | Start | စတင်ရန် |
+| `home.go.open` | Open | ဖွင့်ရန် |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | အသက် ၅၀ နှင့်အထက်၊ ဂရင်းကတ် ၂၀ နှစ်နှင့်အထက် (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | အသက် ၅၅ နှင့်အထက်၊ ဂရင်းကတ် ၁၅ နှစ်နှင့်အထက် (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | အင်္ဂလိပ်စာမေးပွဲ မရှိ။ နိုင်ငံသားပညာ ပုံမှန်အတိုင်း၊ စကားပြန် ကိုယ်တိုင်ခေါ်လာလျှင် ကိုယ့်ဘာသာဖြင့် ဖြေနိုင်သည်။ |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | အင်တာဗျူးတွင် စကားပြန် ကိုယ်တိုင်ခေါ်လာလျှင် နိုင်ငံသားပညာကို ကိုယ့်ဘာသာဖြင့် ဖြေနိုင်သည်။ ဤအက်ပ်သည် အင်္ဂလိပ်မေးခွန်းများကို လေ့ကျင့်ပေးသည်။ |
+| `report.exception` | Practice as {exception} | {exception} အဖြစ် လေ့ကျင့်ခြင်း |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | စကားပြန် ကိုယ်တိုင်ခေါ်လာလျှင် တကယ့် နိုင်ငံသားပညာ စာမေးပွဲကို ကိုယ့်ဘာသာဖြင့် ဖြေဆိုနိုင်သည်။ |
+| `intro.who.legend` | Who is practicing? | ဘယ်သူ လေ့ကျင့်နေသလဲ။ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

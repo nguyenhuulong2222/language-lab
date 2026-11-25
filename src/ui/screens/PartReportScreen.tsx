@@ -9,7 +9,6 @@ import type { MessageKey } from "../../i18n";
 import { useLanguage, useT } from "../../i18n/react";
 import { Disclaimer } from "../components/Disclaimer";
 import { CheckIcon, ReviewIcon } from "../components/icons";
-import { StatusBadge } from "../components/StatusBadge";
 import { TakeHeader } from "../components/TakeHeader";
 import { SpecialLanguageLine } from "../components/SpecialConsiderationNote";
 import { formatDateTime } from "../format";
@@ -34,7 +33,7 @@ export function PartReportScreen({ report, onHome }: { report: PartReport; onHom
         <Disclaimer variant="prominent" id="part-report-disclaimer" messageKey="disclaimer.report" />
         <p className="progress-line">{t("report.generated", { datetime: formatDateTime(report.generatedAt, language) })}</p>
         <div className="btn-row">
-          <button type="button" className="btn" onClick={onHome}>
+          <button type="button" className="btn btn--primary" onClick={onHome}>
             {t("report.home")}
           </button>
         </div>
@@ -43,6 +42,17 @@ export function PartReportScreen({ report, onHome }: { report: PartReport; onHom
   );
 }
 
+/** A big headline first, with an icon and a word, so the result is not told by colour alone. */
+function ResultHeadline({ passed }: { passed: boolean }) {
+  const t = useT();
+  const Icon = passed ? CheckIcon : ReviewIcon;
+  return (
+    <h2 className="result-headline">
+      <Icon className={passed ? "icon-inline" : "icon-inline icon-inline--attention"} />{" "}
+      {passed ? t("partReport.badge.good") : t("badge.review")}
+    </h2>
+  );
+}
 function PartBody({ report }: { report: PartReport }) {
   const t = useT();
 
@@ -68,18 +78,15 @@ function PartBody({ report }: { report: PartReport }) {
     return (
       <>
         <section className="panel">
-          <StatusBadge
-            variant={report.passed ? "positive" : "attention"}
-            label={report.passed ? t("partReport.badge.good") : t("badge.review")}
-          />
-          <p>
+          <ResultHeadline passed={report.passed} />
+          <p className="result-reason">
             {scored === 0
               ? t("partReport.none")
               : t("partReport.civics.summary", { correct: report.correct, scored })}
           </p>
-          {report.specialConsideration && <p className="progress-line">{t("home.special.title")}</p>}
+          {report.exception !== "none" && <p className="progress-line">{t("report.exception", { exception: report.exception })}</p>}
           <p>{t("partReport.civics.needed", { needed: report.passingScore })}</p>
-          {report.specialConsideration && <SpecialLanguageLine />}
+          {report.exception !== "none" && <SpecialLanguageLine />}
           <p className="note">
             {report.stopReason === "correct_threshold"
               ? <LegalText messageKey="civics.stopped.correct" />
@@ -117,11 +124,8 @@ function PartBody({ report }: { report: PartReport }) {
   return (
     <>
       <section className="panel">
-        <StatusBadge
-          variant={report.passed ? "positive" : "attention"}
-          label={report.passed ? t("partReport.badge.good") : t("badge.review")}
-        />
-        <p>
+        <ResultHeadline passed={report.passed} />
+        <p className="result-reason">
           {report.attempts === 0
             ? t("partReport.none")
             : t("partReport.sentences", { correct: report.correct, attempts: report.attempts })}

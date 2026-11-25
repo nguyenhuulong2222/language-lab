@@ -519,3 +519,49 @@ Spec: `.kiro/specs/interview-coach/` (requirements revision 2 with two Analyze R
   max-age=31536000` without `includeSubDomains` or `preload` (the site is one Pages host). The saved
   uscis.gov pages keep their "AIza…" browser key strings unchanged (they are sources); the sources
   README explains them.
+
+## 65/20 call to action is translated (owner decision, QA Q3)
+
+The owner tested Home in Vietnamese: the 65/20 card's title was English inside a Vietnamese page,
+because `home.special.cta` ("65 or older, 20 years with a green card? Start the 65/20 practice.") was a
+legal key. Decision: the choice's title and short line are interface text, not legal text. They are
+now normal keys with AI drafts in all 14 locales (`home.who.special.title` "65 or older, with a green
+card for 20 years or more", `home.who.special.text`), and `home.special.cta` is removed from
+`LEGAL_KEYS` and from the locales. Only the eligibility sentence (`home.special.text`) and the USCIS
+rules (`intro.special.help`, `intro.special.label`, `special.englishExempt`) stay legal keys, English
+until a person reviews the translation. The new Home asks "1. Who is practicing?" (Most people by
+default, in memory only) and every later card uses that choice: Study starts with the starred
+questions, and the practice test and civics start with 65/20 ticked in setup.
+
+## Q. Age and residency exceptions: 50/20, 55/15 and 65/20 (branch ui/senior-friendly)
+
+The owner asked why only 65/20 was offered. The saved USCIS sources give three exceptions, all
+counted at the time of filing:
+
+- `data/sources/uscis-exceptions-and-accommodations.html`: exempt from English "but are still
+  required to take the civics test if you are: Age 50 or older at the time of filing for
+  naturalization and have lived as a permanent resident (Green Card holder) in the United States for
+  20 years (commonly referred to as the “50/20” exception). OR Age 55 or older … for 15 years
+  (commonly referred to as the “55/15” exception)." and "You will be permitted to take the civics test
+  in your native language."
+- `data/sources/uscis-policy-manual-vol12-parte-ch2.html`, the table of exceptions: 50/20 and 55/15,
+  English "Exempt", civics "Still required. Aliens may take civics test in their language of choice
+  using an interpreter."; 65/20, English "Exempt", civics "Still required but officers administer
+  specially designated test forms."
+
+Mapping in the engine (`src/engine/exceptions.ts`; `exception: "none" | "50/20" | "55/15" | "65/20"`
+replaces the boolean `specialConsideration` in the setup, the state and the `choose` and `start`
+actions; the civics part report carries `exception`):
+
+| Choice | Full interview parts | Civics pool and rules | Report |
+|---|---|---|---|
+| none | N-400, reading, writing, civics | the usual test of the version set by the filing date | unchanged |
+| 50/20 | N-400, civics | the usual pool and rules (2008: 10 asked, 6 to pass; 2025: 20 asked, 12 to pass) | no English summaries |
+| 55/15 | N-400, civics | the same as 50/20 | no English summaries |
+| 65/20 | N-400, civics | the 20 designated questions, 10 asked, 6 to pass (unchanged) | no English summaries |
+
+`englishExempt` is true for the three exceptions; `usesDesignatedSet` only for 65/20. A single part
+keeps its own parts for every choice; the choice only applies to modes with civics, and 65/20 only
+where the build has the designated list and its rules. The app practises the English questions only:
+the interpreter rule is stated, never simulated. Wording comes from these saved pages only, not from
+formN400.org or the N400 repository.

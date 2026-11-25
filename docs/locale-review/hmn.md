@@ -28,18 +28,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | Kev xam phaj tiag yog ua lus Askiv, tshwj tsis yog USCIS tso cai rau koj muaj kev zam. Cov lus nug thiab cov kab lus ntawm cov vijtsam no tseem yog lus Askiv kom koj xyaum tau. | The real interview is in English, unless USCIS allows you an exception. The questions and sentences on these screens are still in English so you can practice. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | Daim ntawv qhia no yog rau ib ntu xwb. Nws qhia tias ntu no ua li cas hauv kev xyaum, tsis yog koj yuav ua li cas hauv qhov kev xeem tiag, thiab nws tsis muab qhov txiaj ntsig xyaum tag nrho. | This report is for one section only. It tells how this section went in practice, not how you would do in the real exam, and it does not give the total practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | Kev xam phaj txog N-400 yog kev xyaum xwb thiab tsis muab qhab nia. | The interview about N-400 is practice only and gives no score. |
-| `aiNotice.text` ⚠ | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Qhov kev txhais lus no AI ua thiab tej zaum yuav muaj qhov yuam kev. Daim ntawv Askiv yog daim raug cai. | This translation was done by AI and may possibly have mistakes. The English document is the official one. |
+| `aiNotice.text` ⚠ | Translated by AI. It may have mistakes. The English is correct. | AI txhais. Tej zaum yuav muaj qhov yuam kev. Cov lus Askiv yog qhov tseeb. | This translation was done by AI and may possibly have mistakes. The English document is the official one. |
 | `compare.setting` ⚠ | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Qhov no yog Language Lab txoj kev teeb tsa xyaum raws li USCIS cov lus qhia txog kev muab qhab nia, tsis yog USCIS txoj cai: txhua lo lus tseem ceeb ntawm kab lus yuav tsum muaj, ib lo tom qab ib lo. Cov lus luv xws li “the” poob tau. Kev nres thiab kev hais lus tsis muab qhab nia. | This is Language Lab's practice setting based on USCIS's guidance for giving scores, not USCIS's rule: every important word of the sentence must be there, one word after another. Short words such as “the” may fall out. Stopping and speaking are not given scores. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | Qhov no txiav txim seb koj xyaum kev xeem txog pej xeem xyoo 2008 lossis xyoo 2025. Qhov no yog kev xaiv rau kev xyaum xwb. Rau koj rooj plaub, mus saib uscis.gov kom paub tias kev xeem twg siv rau koj. | This decides whether you practice the 2008 or the 2025 civics exam. This is a choice for practice only. For your case, go look at uscis.gov to know which exam applies to you. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Cov duab hauv kev xyaum txog pej xeem los ntawm cov chaw raug cai ntawm tsoomfwv teb chaws Meskas. Txhua daim duab siv tau vim nws tus kheej cov ntaub ntawv qhia meej txog nws txoj cai. Qhov no tsis txhais hais tias muaj lub koom haum twg pom zoo rau Language Lab. | The pictures in the civics practice come from official places of the U.S. government. Every picture can be used because its own record clearly says its rights. This does not mean any organization approves Language Lab. |
 | `civics.officialNote` | Any of these counts. | Ib qho twg ntawm cov no suav. | Any one of these counts. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | Kev kawm txog pej xeem, Kawm ua ntej thiab kev xyaum xam phaj tag nrho raug kaw hauv version no mus txog thaum muaj neeg tshuaj xyuas cov lus teb txog pej xeem. Koj xyaum tau kev xam phaj N-400, kev nyeem thiab kev sau. | Learning about citizens, Study first and the full practice interview are closed in this version until someone checks the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Cov lus teb raug txog pej xeem tseem tos ib tug neeg tshuaj xyuas, yog li daim no tsis muab qhab nia rau qhov no thiab tsis tsim daim ntawv qhia. | The correct civics answers are still waiting for a person to check them, so this version does not give scores for this and does not make a report. |
-| `voice.consent.text` ⚠ | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Thaum koj nias “Hais”, koj lub browser txoj kev paub lub suab tuaj yeem xa koj lub suab mus rau lub tuam txhab uas ua browser, xws li Google lossis Apple, kom hloov mus ua lus. Language Lab tsis xa lossis khaws koj lub suab. Koj tuaj yeem ntaus koj cov lus teb hloov chaw. | When you press “Say”, your browser's voice recognition may send your voice to the company that makes the browser, such as Google or Apple, to turn it into language. Language Lab does not send or keep your voice. You can type your answer instead. |
-| `report.title.onTrack` | Practice complete: each part reached the practice score | Xyaum tiav lawm: txhua ntu tau txog cov qhab nia xyaum | Practice finished: every part reached the practice score |
+| `voice.consent.text` ⚠ | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Thaum koj nias “Nias los hais lus”, koj lub browser txoj kev paub lub suab tuaj yeem xa koj lub suab mus rau lub tuam txhab uas ua browser, xws li Google lossis Apple, kom hloov mus ua lus. Language Lab tsis xa lossis khaws koj lub suab. Koj tuaj yeem ntaus koj cov lus teb hloov chaw. | When you press “Say”, your browser's voice recognition may send your voice to the company that makes the browser, such as Google or Apple, to turn it into language. Language Lab does not send or keep your voice. You can type your answer instead. |
+| `report.title.onTrack` | Well done. Each part reached the practice goal. | Zoo heev. Txhua ntu ua tau raws li lub hom phiaj xyaum. | Practice finished: every part reached the practice score |
 | `report.title.review` | A few things to review | Muaj ob peb yam yuav tsum rov saib | There are a few things you should look at again |
-| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Hauv qhov kev xyaum no, kev nyeem, kev sau thiab kev kawm txog pej xeem txhua ntu tau txog cov qhab nia uas Language Lab siv. Siv cov ntawv sau hauv qab no los xyaum ntxiv. | In this practice, reading, writing and learning about citizens each reached the score Language Lab uses. Use the notes below to practice more. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Kev xyaum yog rau qhov no. Cov ntawv sau hauv qab no qhia tias yuav tsum tsom rau qhov twg ua ntej koj rov sim dua. | Practice is for this. The notes below show where to focus before you try again. |
+| `report.lead.onTrack` | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. | Kev nyeem, kev sau thiab kev kawm txog teb chaws ua tau raws li lub hom phiaj xyaum. Nyeem cov lus hauv qab no thiab txuas ntxiv xyaum. | In this practice, reading, writing and learning about citizens each reached the score Language Lab uses. Use the notes below to practice more. |
+| `report.lead.review` | That is what practice is for. The notes below show what to practice next. | Qhov no yog vim li cas peb xyaum. Cov lus hauv qab no qhia tias yuav xyaum dab tsi tom ntej. | Practice is for this. The notes below show where to focus before you try again. |
 | `compare.setting.writing` ⚠ | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Kev sau: USCIS hais tias kev sau ntawv yuam kev, cov tsiaj ntawv loj thiab cov cim nres tsis ua rau koj poob qhov kev xeem sau, tshwj tsis yog thaum kab lus nkag siab tsis tau lawm. Ntawm no, kev sau yuam kev me me tseem suav, thiab cov lo lus ntev dua yuam kev tau ntau dua. Tsis kuaj cov tsiaj ntawv loj thiab cov cim nres. | Writing: USCIS says that writing mistakes, capital letters and stopping marks do not make you fail the writing test, except when the sentence can no longer be understood. Here, small writing mistakes still count, and longer words can have more mistakes. Capital letters and stopping marks are not checked. |
 | `coach.notice.text` ⚠ | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | Thaum AI tus kws qhia qhib, cov lus hauv txhua lo lus teb uas koj ntaus lossis hais hauv ntu no raug xa ua ntawv mus rau Anthropic, ib lub tuam txhab AI, hla Language Lab lub server, kom sau tau lus tawm tswv yim. Language Lab thiab Anthropic yeej tsis tau txais koj lub suab, tsuas yog cov lus xwb. Teb ua tus neeg tsis muaj tiag. Tsis txhob hais lub npe tiag, chaw nyob, hnub yug, A-number lossis cov ntsiab lus ntawm rooj plaub. Hauv koj qhov kev xam phaj tiag, koj yuav tsum teb qhov tseeb txog koj tus kheej lub neej. Language Lab kuaj qee tus lej, tab sis nws ntes tsis tau txhua yam ntaub ntawv tus kheej. Language Lab tsis khaws koj cov lus teb. Anthropic txoj cai ceev ntiag tug qhia tias Anthropic siv lawv li cas: anthropic.com/legal/privacy. AI tus kws qhia rov kaw thaum koj pib ib qho kev xyaum tshiab. | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
 | `coach.privacy` ⚠ | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | AI tus kws qhia: kaw tshwj tsis yog koj qhib nws hauv ntu N-400. Thaum qhib, cov ntawv ntawm txhua lo lus teb N-400 raug xa mus rau Anthropic hla Language Lab lub server kom sau tau lus tawm tswv yim; tsis xa suab. Txhawm rau txwv kev siv, lub server suav cov kev thov nrog ib tug lej zais uas hloov txhua hnub, ua los ntawm koj qhov chaw nyob hauv internet; cov lej suav qub raug muab tshem tawm thaum muaj kev thov tom qab, feem ntau hauv ob hnub. Anthropic txoj cai ceev ntiag tug: anthropic.com/legal/privacy. | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
@@ -50,8 +50,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | Cov kab lus siv cov lus los ntawm USCIS cov npe lus nyeem thiab sau uas raug cai xwb. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Koj tau txog qhab nia dhau ntawm kev xyaum, yog li qhov kev xeem nres ntawm no. |
-| `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Teb cov lus nug txog pej xeem. Piv nrog cov lus teb raug. |
-| `partReport.unscored.missing` | A question that is not in the answer key | Ib lo lus nug uas tsis muaj hauv cov lus teb raug |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Kawm ua ntej raug kaw hauv daim no kom txog thaum muaj neeg tshuaj xyuas cov lus teb raug. |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | Qhov no tsuas hloov kev xyaum xwb; tsis muaj dab tsi raug khaws los yog xa mus. Ntu kev kawm txog pej xeem yuav nug {asked} ntawm {bank} lo lus nug uas muaj lub hnub qub (*) hauv daim ntawv teev npe. Hauv kev xyaum no, nws nug tag nrho {asked} lo. Qhab nia dhau ntawm kev xyaum yog {pass} lo lus teb raug. Rau koj tus kheej rooj plaub, saib uscis.gov: hnub nyoog thiab cov xyoo suav rau hnub uas xa daim ntawv thov. |
 | `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS: rau hnub uas xa daim ntawv thov, yog koj muaj 50 xyoo los yog laus dua thiab tau ua neeg nyob mus ib txhis 20 xyoo (50/20), los yog 55 xyoo los yog laus dua thiab 15 xyoo (55/15), koj tsis tas ua raws li qhov yuav tsum paub lus Askiv (nyeem, sau, hais thiab to taub lus Askiv), tab sis koj tseem yuav tsum xeem kev kawm txog pej xeem. Koj xeem tau ua koj hom lus yog koj coj ib tus neeg txhais lus tuaj. Yog koj muaj 65 xyoo los yog laus dua thiab tsawg kawg 20 xyoo (65/20), koj kuj tsis tas xeem lus Askiv, thiab tus tub ceev xwm siv cov ntawv xeem txog pej xeem uas tau xaiv tshwj xeeb. |
@@ -61,8 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Kev xeem xyaum tau nres thaum txog qhab nia dhau ntawm kev xyaum. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Kev xeem xyaum tau nres tom qab {incorrect} lo lus teb tsis raug, ua ntej txog qhab nia dhau ntawm kev xyaum, {score}. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Qhab nia dhau ntawm kev xyaum yog {score} lo lus teb raug, thiab tsis tau txog. |
-| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | Tsis tau qhab nia, vim lo lus teb hloov los yog tsis nyob hauv cov lus teb: {names}. Cov lus nug no tsis suav tias raug los yog tsis raug. |
-| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | Koj lub cuab yeej kwv yees ob peb yam txog qhov koj hais. Yam uas ze tshaj rau ib lo lus teb hauv cov lus teb tau tshwm. |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS suav lub hnub nyoog thiab cov xyoo ua neeg nyob mus ib txhis rau hnub xa daim N-400. |
 
 ## 3. All other lines
 
@@ -70,16 +67,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | Hla mus rau cov ntsiab lus tseem ceeb |
-| `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Qhov kev xyaum no tseem tsis tau npaj tiav. |
+| `app.stageNotBuilt` | This part is not ready yet. Go back to Home and choose another part. | Ntu no tseem tsis tau npaj txhij. Rov qab mus rau Home thiab xaiv lwm ntu. |
 | `header.about` ⚠ | About & disclaimer | Txog Language Lab thiab daim ntawv tsis lees paub |
-| `stepper.label` | Interview stages | Cov theem ntawm kev xam phaj |
-| `stepper.count` | Stage {current} of {total} | Theem {current} ntawm {total} |
+| `stepper.label` | Your steps | Koj cov kauj ruam |
+| `stepper.count` | Step {current} of {total}: {name} | Kauj ruam {current} ntawm {total}: {name} |
 | `stepper.status.complete` | completed | ua tiav lawm |
 | `stepper.status.current` | current step | theem tam sim no |
 | `stepper.status.upcoming` | upcoming | theem tom ntej |
-| `stage.intro.label` | Welcome | Txais tos |
-| `stage.intro.short` | Intro | Pib |
-| `stage.n400_interview.label` | N-400 conversation | Kev sib tham txog N-400 |
+| `stage.intro.label` | Set up | Npaj |
+| `stage.intro.short` | Set up | Npaj |
+| `stage.n400_interview.label` | N-400 questions | Cov lus nug N-400 |
 | `stage.n400_interview.short` | N-400 | N-400 |
 | `stage.reading.label` | Reading | Nyeem ntawv |
 | `stage.reading.short` | Reading | Nyeem |
@@ -87,43 +84,42 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.writing.short` | Writing | Sau |
 | `stage.civics.label` | Civics | Kev kawm txog pej xeem |
 | `stage.civics.short` | Civics | Civics |
-| `stage.report.label` | Practice report | Daim ntawv qhia txog kev xyaum |
+| `stage.report.label` | Your report | Koj daim ntawv qhia |
 | `stage.report.short` | Report | Daim ntawv qhia |
-| `badge.onTrack` | Practice score reached | Tau txog qhab nia xyaum |
-| `badge.review` | Worth reviewing | Yuav tsum rov saib |
-| `report.empty` | Your practice report will appear here once the session is complete. | Daim ntawv qhia txog kev xyaum ntawm koj yuav tshwm ntawm no thaum kev xyaum xaus. |
-| `report.take` | TAKE | TAKE |
+| `badge.onTrack` | You reached the practice goal | Koj ua tau raws li lub hom phiaj xyaum |
+| `badge.review` | Practice this again | Xyaum qhov no dua |
+| `report.empty` | Your report will show here when you finish the practice. | Koj daim ntawv qhia yuav tshwm ntawm no thaum koj xyaum tag. |
 | `report.overline` | Practice report | Daim ntawv qhia txog kev xyaum |
-| `report.profile.label` | Practice profile (fictional) | Tus qauv xyaum (tsim los) |
+| `report.profile.label` | Practice person (made up) | Tus neeg xyaum (dag) |
 | `report.profile.meta` | {version} civics test · filed {date} | Kev xeem txog pej xeem xyoo {version} · xa daim ntawv thov rau hnub {date} |
 | `report.stages.heading` | How each part went | Txhua ntu ua li cas |
 | `report.review.heading` | Things to review | Cov yam yuav tsum rov saib |
 | `report.review.intro` | Focus on these before your next practice. | Tsom rau cov no ua ntej koj xyaum zaum tom ntej. |
-| `report.generated` | Report generated {datetime} | Tsim daim ntawv qhia rau hnub {datetime} |
+| `report.generated` | Report made {datetime} | Daim ntawv qhia ua thaum {datetime} |
 | `translation.english` | English | Askiv |
-| `voice.say` | Say it | Hais lus |
-| `voice.stop` | Stop listening | Nres mloog |
+| `voice.say` | Tap to speak | Nias los hais lus |
+| `voice.stop` | Listening… tap when you finish | Tab tom mloog… nias thaum koj hais tag |
 | `voice.listening` | Listening. Say your answer now. | Tab tom mloog. Hais koj cov lus teb tam sim no. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | Peb hnov koj lawm. Saib cov lus, hloov yog koj xav hloov, ces xa mus. |
-| `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | Lub microphone raug thaiv. Thov tso cai siv lub microphone hauv browser cov chaw teeb tsa, lossis ntaus koj cov lus teb. |
+| `voice.denied` | The microphone is blocked. Follow the steps below to allow it, or type your answer. | Lub microphone raug thaiv. Ua raws li cov kauj ruam hauv qab no kom tso cai, lossis ntaus koj cov lus teb. |
 | `voice.unsupported` | This browser cannot listen to your voice. Type your answer instead. | Lub browser no mloog tsis tau koj lub suab. Thov ntaus koj cov lus teb. |
 | `voice.nothingHeard` | We did not hear anything. Try again, or type your answer. | Peb tsis hnov dab tsi li. Sim dua, lossis ntaus koj cov lus teb. |
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | Tsis pom lub microphone. Thov ntaus koj cov lus teb. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | Zaum no kev mloog tsis ua haujlwm. Sim dua, lossis ntaus koj cov lus teb. |
 | `voice.skip` | Skip this one | Hla qhov no |
-| `audio.play` | Play aloud | Mloog nyeem |
-| `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Lub suab ntawm lub cuab yeej: lub suab teeb tsa rau hauv koj lub xov tooj lossis lub computer. |
+| `audio.play` | Play the question | Mloog lo lus nug |
+| `audio.deviceVoice` | Built-in voice: the voice of your phone or computer. | Lub suab hauv lub cuab yeej: lub suab ntawm koj lub xov tooj lossis computer. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Lub browser no nyeem tsis tau tawm suab. Nyeem cov ntawv ntawm lub vijtsam. |
-| `intro.profile.legend` ⚠ | Choose a practice profile | Xaiv ib tus qauv xyaum |
-| `intro.profile.help` ⚠ | Every profile is invented. | Txhua tus qauv yog tsim los. |
+| `intro.profile.legend` ⚠ | Choose a practice person | Xaiv ib tug neeg xyaum |
+| `intro.profile.help` ⚠ | Every person here is made up. | Txhua tus neeg ntawm no yog dag xwb. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Xyaum zoo li N-400 tau xa mus… |
 | `intro.filed.before` | Before {date} | Ua ntej {date} |
 | `intro.filed.onOrAfter` | On or after {date} | Rau hnub {date} lossis tom qab |
 | `intro.start` | Start practice | Pib xyaum |
-| `intro.startHint` | Make your choice above to start. | Xaiv saum toj no kom pib. |
-| `home.locked.title` | In this build you can practice | Hauv version no koj xyaum tau |
+| `intro.startHint` | Choose one answer in each group above. Then press “Start practice”. | Xaiv ib lo lus teb hauv txhua pawg saum no. Ces nias “Pib xyaum”. |
+| `home.locked.title` | Right now you can practice | Tam sim no koj xyaum tau |
 | `n400.title` | N-400 interview | Kev xam phaj txog N-400 |
-| `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | Xyaum zoo siab txog cov lus nug uas tus tub ceev xwm nug txog daim ntawv thov. Teb ua {name}. Tsis muaj dab tsi hauv kauj ruam no muab qhab nia. |
+| `n400.lead` | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. | Ib tug neeg ua haujlwm yuav nug cov lus zoo li no txog koj daim ntawv. Teb ua {name}. Ntu no tsis muaj qhab nia. |
 | `n400.count` | Question {current} of {total} | Lus nug {current} ntawm {total} |
 | `n400.sample.label` | Sample answer for {name} (fictional) | Piv txwv lus teb rau {name} (tsim los) |
 | `n400.yourAnswer` | Your answer, as {name} | Koj cov lus teb, ua {name} |
@@ -144,7 +140,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Yog koj xav, xyaum teb nrov nrov. Lo lus nug no tsis raug kaw cia. |
 | `coach.tip.label` | Tip about your English: | Lus qhia txog koj cov lus Askiv: |
 | `coach.feedback.understood` | Easy to understand | Yooj yim to taub |
-| `coach.feedback.needs_practice` | Worth practicing again | Tsim nyog xyaum dua |
+| `coach.feedback.needs_practice` | Practice this again | Xyaum qhov no dua |
 | `coach.feedback.unclear` | Hard to follow. Try again. | Nyuaj to taub. Sim dua. |
 | `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | Qhov no tsuas kuaj seb koj cov lus Askiv meej npaum li cas. Nws tsis qhia tias lo lus teb yog lossis muaj tseeb. |
 | `coach.checking` | Getting AI feedback… | Tab tom tau lus tawm tswv yim los ntawm AI… |
@@ -158,11 +154,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.dateOfBirth` | a full date, such as a date of birth | ib hnub tim puv, xws li hnub yug |
 | `coach.next` | Continue | Mus ntxiv |
 | `n400.loading` | Getting the next question… | Tab tom nrhiav lus nug tom ntej… |
-| `n400.failed` | The next question could not be loaded. Start over to try again. | Nqa lus nug tom ntej tsis tau. Pib dua kom sim dua. |
+| `n400.failed` | The next question did not load. Check your internet, then press “Start over”. | Lo lus nug tom ntej tsis tau qhib. Saib koj lub internet, ces nias “Pib dua”. |
 | `n400.done.title` | Your answers | Koj cov lus teb |
 | `n400.done.lead` | These are the words you gave. They are not scored. | Cov no yog cov lus koj hais. Tsis muaj qhab nia. |
 | `n400.done.next` | Go to reading | Mus nyeem ntawv |
-| `voice.consent.continue` | Continue and say it | Mus ntxiv thiab hais |
+| `voice.consent.continue` | Continue and speak | Txuas ntxiv thiab hais lus |
 | `voice.consent.type` | Type instead | Ntaus hloov chaw |
 | `n400.number` | Question {current} | Lus nug {current} |
 | `common.fictional` ⚠ | Fictional practice profile | Tus qauv xyaum tsim los |
@@ -194,15 +190,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Lub browser no nyeem tsis tau tawm suab, yog li kab lus qhia ntawm no. Ntaus nws. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Kab lus zais kom txog thaum koj teb. |
 | `writing.show` | Show the sentence | Qhia kab lus |
-| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | Yog koj hnov suab tsis tau, qhia kab lus thiab ntaus nws. Kuaj tib yam. Koj daim ntawv qhia yuav cim qhov kev sim no tias muaj kev pab. |
-| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | Kab lus tau qhia lawm. Koj daim ntawv qhia yuav cim qhov kev sim no tias muaj kev pab. |
+| `writing.show.help` | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. | Yog koj tsis hnov lub suab, qhib kab lus thiab ntaus nws. Kuaj tib yam. Koj daim ntawv qhia yuav hais tias tau qhib kab lus. |
+| `writing.shown` | The sentence is shown. Your report will say so. | Kab lus qhib lawm. Koj daim ntawv qhia yuav hais li ntawd. |
 | `civics.title` | Civics | Kev kawm txog pej xeem |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | Teb tawm suab lossis ntaus. Cov lus teb luv luv zoo, tiam sis hais tag nrho cov lus teb. |
 | `civics.count` | Question {current} of {total} | Lus nug {current} ntawm {total} |
 | `civics.needs` | This question needs {count} different answers. | Lus nug no xav tau {count} cov lus teb txawv. |
 | `civics.yourAnswer` | Your answer | Koj cov lus teb |
 | `civics.submit` | Check my answer | Tshawb xyuas kuv cov lus teb |
-| `civics.correct` | Correct | Raug |
+| `civics.correct` | This counts | Qhov no suav |
 | `civics.notYet` | Not yet | Tsis tau |
 | `civics.youSaid` | You said: {text} | Koj hais tias: {text} |
 | `civics.official` | Official answers | Cov lus teb raug cai |
@@ -211,39 +207,39 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.stopped.incorrect` | The test stopped because too many answers need more practice. | Qhov kev xeem nres vim muaj cov lus teb ntau dhau uas yuav tsum xyaum ntxiv. |
 | `civics.stopped.none` | You have answered every question for this practice test. | Koj teb tag nrho cov lus nug ntawm qhov kev xeem xyaum no lawm. |
 | `civics.tally` | {correct} correct, {incorrect} not yet. | Raug {correct}, tsis tau {incorrect}. |
-| `civics.locked.title` | Civics is switched off in this build | Kev kawm txog pej xeem raug kaw hauv daim no |
+| `civics.locked.title` | Civics is not available right now | Kev kawm txog teb chaws tseem siv tsis tau tam sim no |
 | `report.again` | Practice again | Xyaum dua |
 | `common.startOver` | Start over | Pib dua |
-| `voice.needText` | Type or say your answer first, or choose Skip. | Ntaus los yog hais koj cov lus teb ua ntej, lossis xaiv Hla. |
-| `audio.stop` | Stop playing | Nres ua si |
+| `voice.needText` | The box is empty. Type or say your answer, or press “Skip this one”. | Lub npov tseem khoob. Ntaus lossis hais koj cov lus teb, lossis nias “Hla qhov no”. |
+| `audio.stop` | Stop | Nres |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Lub suab AI tsim. Lub suab tau npaj ua ntej lawm. |
 | `audio.playSample` | Play sample answer | Mloog piv txwv lus teb |
-| `home.title` | Welcome to the booth | Txais tos rau Language Lab |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | Xyaum rau kev xam phaj ua pej xeem hauv ib qho chaw ntsiag to. Koj teb ua ib tug neeg tsim los, yog li koj tsis tas yuav muab cov ntaub ntawv tiag. |
+| `home.title` | Welcome to Language Lab | Zoo siab txais tos rau Language Lab |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | Xyaum rau koj qhov kev xam phaj ua pej xeem ua ib tug neeg dag, yog li koj yeej tsis qhia dab tsi txog koj tus kheej. |
 | `home.how.title` | How it works | Siv li cas |
 | `home.how.1.title` | Listen | Mloog |
-| `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | Nias Mloog nyeem kom hnov ib lo lus nug lossis ib kab lus. |
+| `home.how.1.text` | Tap “Play the question” to hear it. | Nias “Mloog lo lus nug” kom hnov. |
 | `home.how.2.title` | Speak or type | Hais lossis ntaus |
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | Hais koj cov lus teb, lossis ntaus nws. Kev ntaus ib txwm siv tau. |
 | `home.how.3.title` | See the result | Saib qhov tshwm sim |
-| `home.how.3.text` | You see how your answer compares, and what to practice next. | Koj yuav pom koj cov lus teb piv li cas, thiab yuav xyaum dab tsi tom ntej. |
-| `home.choose` | What would you like to do? | Koj xav ua dab tsi? |
-| `home.full.title` | Full practice interview | Kev xam phaj xyaum tag nrho |
-| `home.full.text` | All four parts in order, then one report. | Plaub ntu ib ntu tom qab ib ntu, ces ib daim ntawv qhia. |
+| `home.how.3.text` | You see if your answer counts, and what to practice next. | Koj yuav pom tias koj cov lus teb puas suav, thiab yuav xyaum dab tsi tom ntej. |
+| `home.full.title` | Practice test | Xeem xyaum |
+| `home.full.text` | Answer out loud like the real interview. | Teb kom nrov ib yam li qhov kev xam phaj tiag. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Xyaum kev xam phaj N-400 nrog AI tus kws qhia |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | Tus kws qhia nug ib lo lus nug ntxiv zoo li tus neeg ua haujlwm yuav nug thiab qhia koj txog koj cov lus Askiv. Yog koj xav tau. |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Ua los ntawm Claude (Anthropic) |
-| `home.parts.title` | Practice one part | Xyaum ib ntu xwb |
+| `home.parts.title` | Or practice one part | Los yog xyaum ib ntu |
 | `home.part.n400.title` | N-400 interview | Kev xam phaj txog N-400 |
-| `home.part.n400.text` | Answer questions about an application. Not scored. | Teb cov lus nug txog daim ntawv thov. Tsis muab qhab nia. |
+| `home.part.n400.text` | Answer questions about the N-400 form. No score. | Teb cov lus nug txog daim ntawv N-400. Tsis muaj qhab nia. |
 | `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | Nyeem ntawv |
 | `home.part.reading.text` | Read sentences out loud. | Nyeem cov kab lus tawm suab. |
 | `home.part.writing.title` | Writing | Sau ntawv |
 | `home.part.writing.text` | Listen and type the sentence. | Mloog thiab ntaus kab lus. |
 | `home.part.civics.title` | Civics | Kev kawm txog pej xeem |
+| `home.part.civics.text` | Answer questions about U.S. history and government. Checked with the official answers. | Teb cov lus nug txog keeb kwm thiab tsoom fwv Asmeskas. Muab piv rau cov lus teb raug cai. |
 | `setup.title` | Set up your practice | Npaj koj txoj kev xyaum |
-| `setup.lead` | Choose what this practice needs. Nothing real is asked. | Xaiv qhov kev xyaum no xav tau. Tsis nug dab tsi tiag. |
+| `setup.lead` | Choose one answer in each group. Nothing here asks about you. | Xaiv ib lo lus teb hauv txhua pawg. Ntawm no tsis nug txog koj. |
 | `report.home` | Back to home | Rov qab mus tsev |
 | `partReport.title.n400_interview` | N-400 interview practice | Kev xyaum xam phaj txog N-400 |
 | `partReport.title.reading` | Reading practice | Kev xyaum nyeem |
@@ -260,30 +256,23 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.civics.needed` | Correct answers needed: {needed}. | Tus naj npawb lus teb raug uas xav tau: {needed}. |
 | `partReport.review` | Questions to review | Cov lus nug yuav tsum rov saib |
 | `partReport.unscored.title` | Not scored | Tsis tau muab qhab nia |
-| `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Cov lus nug no muab qhab nia tsis tau, yog li tsis suav tias raug lossis tsis raug. |
+| `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | Cov lus nug no tsis muaj qhab nia. Lawv tsis suav tias yog lossis tsis yog. |
+| `partReport.unscored.missing` | A question we cannot check | Ib lo lus nug uas peb kuaj tsis tau |
 | `report.see` | See my report | Saib kuv daim ntawv qhia |
-| `header.home` | Home | Tsev |
-| `help.button` | How this works | Lub vijtsam no siv li cas |
+| `help.button` | Help | Kev pab |
 | `help.setup.1` | Tap one choice in each group on this screen. | Kov ib qho kev xaiv hauv txhua pawg ntawm lub vijtsam no. |
 | `help.setup.3` | Press “{start}” when you are ready. | Nias “{start}” thaum koj npaj txhij. |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | Nias “{play}” kom hnov. Nias tib lub khawm dua kom nres. |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | Nyeem cov lus teb piv txwv, lossis mloog nws. Nws yog ntawm tus neeg tsim los. Nws yog ib qho piv txwv xwb. |
-| `help.read` | Read the sentence on the screen out loud. | Nyeem kab lus ntawm lub vijtsam tawm suab. |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | Nias “{say}” thiab hais lus. Yog koj lub xov tooj nug tias puas tso cai siv lub microphone, nias Tso cai. Nias “{stop}” thaum koj tas. |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | Koj ib txwm ntaus tau xwb. Kov lub thawv thiab ntaus. Kev ntaus ib txwm siv tau. |
-| `help.typeOnly` | Tap the box and type what you hear. | Kov lub thawv thiab ntaus qhov koj hnov. |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | Saib cov lus hauv lub thawv. Koj hloov tau. Ces nias “{send}”. |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | Nias “{skip}” yog koj tsis paub. Nws xa ib qho lus teb khoob thiab mus ntxiv. Nws suav tias tsis tau. |
-| `help.notScored` | Nothing in this part is scored. | Tsis muaj dab tsi hauv ntu no muab qhab nia. |
-| `help.result.reading` | Then you see which words matched. | Ces koj yuav pom cov lus twg phim. |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | Ces koj yuav pom Raug lossis Tsis tau, thiab cov lus teb raug cai. |
-| `header.settings` | Settings | Chaw teeb tsa |
-| `settings.title` | Comfort settings | Chaw teeb tsa kom yooj yim |
+| `help.listen` | Press “{play}” to hear it. | Nias “{play}” kom hnov. |
+| `help.read` | Read the sentence out loud. | Nyeem kab lus kom nrov. |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | Nias “{say}” thiab hais lus. Los yog ntaus rau hauv lub npov. |
+| `help.typeOnly` | Type what you hear in the box. | Ntaus qhov koj hnov rau hauv lub npov. |
+| `header.settings` | Text size | Qhov loj ntawm ntawv |
+| `settings.title` | Text size and voice | Qhov loj ntawm cov ntawv thiab lub suab |
 | `settings.textSize.legend` | Text size | Qhov loj ntawm ntawv |
 | `settings.textSize.normal` | Normal | Li qub |
 | `settings.textSize.large` | Large | Loj |
 | `settings.textSize.extraLarge` | Extra large | Loj heev |
-| `settings.slow.label` | Play recorded voices more slowly | Ua si cov suab uas tau thaij qeeb dua |
+| `settings.slow.label` | Slower voice | Lub suab qeeb dua |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | Qhov no hloov qhov nrawm xwb. Yog tib daim suab thaij. |
 | `settings.memory` | These settings last until you close or reload this page. | Cov chaw teeb tsa no nyob kom txog thaum koj kaw lossis rov qhib nplooj ntawv no. |
 | `settings.close` | Close settings | Kaw chaw teeb tsa |
@@ -291,16 +280,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | Suab tsis tau ua si. Sim dua, los yog nyeem cov ntawv ntawm lub vijtsam. |
 | `lang.label` | Language | Lus |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | Rov qab mus tsev? Koj cov lus teb hauv kev xyaum no yuav ploj. |
-| `header.homeConfirm.yes` | Yes, go home | Yog, rov qab mus tsev |
-| `header.homeConfirm.no` | Stay here | Nyob ntawm no |
+| `header.homeConfirm.yes` | Leave | Tawm mus |
+| `header.homeConfirm.no` | Keep practicing | Txuas ntxiv xyaum |
 | `common.retry` | Try again | Sim dua |
-| `partReport.badge.good` | This part reached the practice score | Ntu no tau txog qhab nia xyaum |
-| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Kab lus tau qhia rau ntawm lub vijtsam (kev sim muaj kev pab). |
-| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Cov lus tsis lees paub thiab cov ntawv raws cai yuav tshwm ua lus Askiv xwb mus txog thaum muaj neeg tshuaj xyuas kev txhais lus. |
+| `partReport.badge.good` | You reached the practice goal | Koj ua tau raws li lub hom phiaj xyaum |
+| `partReport.assisted` | The sentence was shown on the screen. | Kab lus tau tshwm rau ntawm lub vijtsam. |
+| `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | Cov lus ceeb toom raws cai yuav nyob ua lus Askiv mus txog thaum ib tug neeg kuaj cov lus txhais. |
 | `lang.menu.title` | Choose a language | Xaiv ib hom lus |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Tseem muaj lwm yam lus tab tom tshuaj xyuas. Lawv yuav tshwm ntawm no tom qab muaj neeg tshuaj xyuas lawm. |
-| `home.study.title` | Study first | Kawm ua ntej |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | Saib cov lus nug txog pej xeem nrog cov duab thiab cov lus teb raug cai. Tsis muaj qhab nia. |
+| `home.study.title` | Study | Kawm |
+| `home.study.text` | See each question with its answers and a picture. No score. | Saib txhua lo lus nug nrog cov lus teb thiab ib daim duab. Tsis muaj qhab nia. |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | Saib cov lus nug txog pej xeem ib qho zuj zus. Txhua qhov qhia cov lus teb raug cai. Tsis muab qhab nia thiab tsis khaws dab tsi. |
 | `study.version.legend` | Which civics test do you want to study? | Koj xav kawm qhov kev xeem txog pej xeem twg? |
 | `study.version.2008` | 2008 civics test | Kev xeem txog pej xeem xyoo 2008 |
@@ -321,8 +310,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.hearSample` | Hear the sample | Mloog tus qauv |
 | `selfReview.tryAgain` | Try again | Sim dua |
 | `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | Koj cov suab thaij nyob rau ntawm lub cuab yeej no xwb. Tsis xa mus qhov twg los yog khaws cia, thiab yuav raug rho tawm thaum koj mus rau kab lus tom ntej los yog tawm ntawm qhov screen no. |
-| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Lub browser no thaij tsis tau koj lub suab. Koj tseem tuaj yeem tshawb koj txoj kev nyeem nrog “Hais lus” los yog ntaus ntawv. |
-| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | Lub microphone raug thaiv. Thov tso cai siv microphone hauv koj lub browser qhov chaw teeb tsa. |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still press “Tap to speak” or type. | Lub browser no kaw tsis tau koj lub suab. Koj tseem nias tau “Nias los hais lus” lossis ntaus. |
+| `selfReview.denied` | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. | Lub microphone raug thaiv, yog li kaw tsis tau. Tso cai rau lub microphone rau lub vev xaib no hauv koj lub browser settings, ces sim dua. |
 | `selfReview.error` | Recording did not work this time. Try again. | Zaum no kev thaij suab tsis ua haujlwm. Sim dua. |
 | `compare.why.allWords` | Every important word of the sentence was there, in order. | Txhua lo lus tseem ceeb ntawm kab lus muaj, raws li kev txiav. |
 | `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Koj hais tias “{said}”. Kab lus hais tias “{expected}”. Qhov no tseem suav. |
@@ -335,28 +324,63 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Koj ntxiv “{said}”, uas tsis nyob hauv kab lus. Qhov no tseem suav. |
 | `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | Lo lus luv “{expected}” poob lawm. Qhov no tseem suav. |
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Koj ntxiv lo lus luv “{said}”. Qhov no tseem suav. |
-| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Qhov txiaj ntsig no raws li cov lus uas koj lub cuab yeej hnov. Yog nws hnov yuam kev, sim dua los yog ntaus koj cov lus teb. |
+| `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Qhov tshwm sim no siv cov lus uas koj lub xov tooj lossis computer hnov. Yog nws hnov yuam kev, sim dua lossis ntaus koj cov lus teb. |
 | `compare.honest.typed` | This result is based on the words you typed. | Qhov txiaj ntsig no raws li cov lus uas koj ntaus. |
-| `home.special.title` | 65/20 civics practice | Xyaum kev kawm txog pej xeem 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Rau cov neeg muaj hnub nyoog 65 xyoo los yog laus dua thiab tau ua neeg nyob mus ib txhis tau 20 xyoo los yog ntev dua. Xyaum cov lus nug txog pej xeem uas muaj lub hnub qub (*). |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Kuv muaj hnub nyoog 65 xyoo los yog laus dua thiab kuv tau ua neeg nyob mus ib txhis tau 20 xyoo los yog ntev dua |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Tsuas yog cov lus nug rau 65/20 (muaj lub hnub qub) |
 | `report.line.civics.none` | No civics questions were scored. | Tsis muaj lo lus nug txog pej xeem twg tau qhab nia. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Cov lus nug txog pej xeem uas teb raug: {correct} ntawm {scored}. |
+| `report.line.civics.unscored` | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. | Cov no tsis muaj qhab nia, vim lo lus teb hloov raws sij hawm lossis peb kuaj tsis tau: {names}. Lawv tsis suav tias yog lossis tsis yog. |
 | `report.line.reading.none` | No reading sentences were completed. | Tsis muaj kab lus nyeem twg ua tiav. |
 | `report.line.reading.done` | Sentence {n} was read correctly. | Kab lus {n} nyeem raug. |
 | `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Kab lus nyeem uas nyeem raug: {correct} ntawm {presented}. Kab lus raug uas yuav tsum muaj: {needed}. |
 | `report.line.writing.none` | No writing sentences were completed. | Tsis muaj kab lus sau twg ua tiav. |
 | `report.line.writing.done` | Sentence {n} was written correctly. | Kab lus {n} sau raug. |
 | `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Kab lus sau uas sau raug: {correct} ntawm {presented}. Kab lus raug uas yuav tsum muaj: {needed}. |
-| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | Cov zaus sau thaum pom kab lus ntawm lub vijtsam (muaj kev pab): {assisted} ntawm {presented}. |
+| `report.line.writing.assisted` | Sentences written while the sentence was shown: {assisted} of {presented}. | Cov kab lus sau thaum kab lus qhib: {assisted} ntawm {presented}. |
 | `report.review.reading` | Practice reading the sentences aloud. | Xyaum nyeem cov kab lus nrov nrov. |
 | `report.review.writing` | Practice writing the sentences you hear. | Xyaum sau cov kab lus uas koj hnov. |
+| `civics.heard.closest` | Your phone or computer heard a few possible answers. We show the one closest to an official answer. | Koj lub xov tooj lossis computer hnov ob peb lo lus teb. Peb qhia qhov ze tshaj plaws rau ib lo lus teb raug cai. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Teb ua tus neeg tsis muaj tiag. Tsis txhob ntaus koj lub npe tiag, chaw nyob, hnub tim los yog cov lej. |
 | `common.newTab` | (opens in a new tab) | (qhib rau hauv ib lub tab tshiab) |
 | `coach.kind.streetAddress` | a street address | ib qho chaw nyob ntawm txoj kev |
 | `coach.kind.zipCode` | a ZIP code with a state | ib tus ZIP code nrog lub xeev |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Qhov kuaj no kuj nrhiav chaw nyob thiab ZIP code, tab sis nws nrhiav tsis tau npe. Tsis txhob hais los yog ntaus ib tus neeg tiag tiag lub npe. |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | Cov ntawv me dhau? Kov Qhov loj ntawm cov ntawv nyob saum toj. |
+| `audio.playing` | Playing… | Tab tom tso suab… |
+| `audio.playSentence` | Play the sentence | Mloog kab lus |
+| `voice.gotIt` | Got it. Tap to speak again | Tau lawm. Nias los hais dua |
+| `voice.orType` | Or type your answer | Los yog ntaus koj cov lus teb |
+| `voice.micHelp.title` | How to allow the microphone | Yuav ua li cas tso cai siv lub microphone |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): nias “aA” ntawm ib sab ntawm qhov chaw nyob hauv web, ces nias Website Settings, ces Microphone, thiab xaiv Allow. Ces rov qhib nplooj ntawv dua. |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): nias lub cim me me sab laug ntawm qhov chaw nyob hauv web, ces nias Permissions, thiab qhib Microphone. Ces rov qhib nplooj ntawv dua. |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | Koj yeej ntaus tau koj cov lus teb rau hauv lub npov. |
+| `civics.why.correct` | Your answer matches an official answer. | Koj cov lus teb zoo ib yam li ib qho lus teb raug cai. |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | Koj cov lus teb tseem tsis tau zoo ib yam li cov lus teb raug cai. |
+| `settings.slow.on` | On | Qhib |
+| `settings.slow.off` | Off | Kaw |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | Nias “{send}” kom mus ntxiv. Ntawm no tsis muaj qhab nia. |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | Nias “{send}”. Ces koj yuav pom tias puas suav. |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | Nias “{send}”. Ces koj yuav pom tias puas suav, thiab cov lus teb raug cai. |
+| `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | Xaiv lawm |
+| `aiNotice.more` | More | Ntxiv |
+| `home.who.title` | 1. Who is practicing? | 1. Leej twg xyaum? |
+| `home.who.most.title` | Most people | Feem ntau tib neeg |
+| `home.who.most.text` | The usual civics test rules. | Cov cai xeem kev kawm txog teb chaws ib txwm. |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | Hnub nyoog 65 xyoo los yog laus dua, muaj daim green card 20 xyoo los yog ntev dua (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | Tsis xeem lus Askiv. Cov lus nug tsawg dua: 20 lo uas muaj hnub qub. |
+| `home.who.notSure` | Not sure? Choose Most people. | Tsis paub meej? Xaiv Feem ntau tib neeg. |
+| `home.what.title` | 2. What do you want to do? | 2. Koj xav ua dab tsi? |
+| `home.part.notRequired` | Not required for {exception} | Tsis tas rau {exception} |
+| `home.go.start` | Start | Pib |
+| `home.go.open` | Open | Qhib |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | Hnub nyoog 50 xyoo los yog laus dua, muaj daim green card 20 xyoo los yog ntev dua (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | Hnub nyoog 55 xyoo los yog laus dua, muaj daim green card 15 xyoo los yog ntev dua (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | Tsis xeem lus Askiv. Xeem kev kawm txog teb chaws ib txwm, ua koj hom lus yog koj coj ib tug neeg txhais lus tuaj. |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | Thaum xam phaj yog koj coj ib tug neeg txhais lus tuaj, koj teb tau cov lus nug txog teb chaws ua koj hom lus. Lub app no xyaum cov lus nug ua lus Askiv. |
+| `report.exception` | Practice as {exception} | Xyaum ua {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | Koj xeem tau qhov kev xeem tiag txog teb chaws ua koj hom lus yog koj coj ib tug neeg txhais lus tuaj. |
+| `intro.who.legend` | Who is practicing? | Leej twg xyaum? |
 
 ## Lines marked ⚠ (meaning differs a little)
 

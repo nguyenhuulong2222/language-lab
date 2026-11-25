@@ -64,7 +64,7 @@ export function CoachSwitch({ on, noticeOpen, offForSession, onRequestOn, onTurn
       <p id={helpId} className="note">
         {offForSession ? t("coach.offNow") : t("coach.switch.help")}
       </p>
-      {noticeOpen && <CoachNotice onConfirm={onConfirm} onCancel={onCancel} />}
+      {noticeOpen && <CoachNotice onConfirm={onConfirm} onCancel={onCancel} primary={false} />}
       {on && (
         <ul className="notice-list coach__disclaimers" lang="en">
           {DISCLAIMERS.map((key) => (

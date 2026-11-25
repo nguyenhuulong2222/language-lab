@@ -60,9 +60,9 @@ describe("home in Vietnamese", () => {
 
   it("is in Vietnamese", () => {
     expect(html).toContain("Chào mừng đến Language Lab");
-    expect(html).toContain("Buổi phỏng vấn luyện tập đầy đủ");
+    expect(html).toContain("Thi thử");
     expect(html).toContain("Cách hoạt động");
-    expect(html).not.toContain("Full practice interview");
+    expect(html).not.toContain("Practice test");
   });
 
   it("says the real interview is in English", () => {
@@ -89,7 +89,7 @@ describe("practice screens in Vietnamese", () => {
     const question = engine.civicsProgress(s).current!;
     const html = inVietnamese(s);
     expect(html).toContain("Kiểm tra câu trả lời");
-    expect(html).toContain("Cách dùng màn hình này");
+    expect(html).toContain("Trợ giúp");
     expect(html).toContain("The real interview is held in English unless USCIS allows an exception for you.");
     expect(html).toContain('lang="en"');
     const escaped = question.questionText.replace(/&/g, "&amp;").replace(/'/g, "&#x27;");
@@ -113,7 +113,7 @@ describe("practice screens in Vietnamese", () => {
   it("setup: the choices are Vietnamese, the profile names are not translated", () => {
     const s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 3, at: AT });
     const html = inVietnamese(s);
-    expect(html).toContain("Chọn một hồ sơ luyện tập");
+    expect(html).toContain("Chọn một nhân vật luyện tập");
     expect(html).toContain("Hồ sơ luyện tập giả định");
     for (const p of base.content.profiles) expect(html).toContain(p.displayName);
     expect(html).toContain("Trước ngày 20 tháng 10, 2025");

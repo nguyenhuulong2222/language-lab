@@ -19,6 +19,9 @@ import {
   sessionParts,
   sessionSteps,
   specialConsiderationOffered,
+  exceptionOffered,
+  englishExempt,
+  type AgeException,
   type PracticeAction,
   type PracticeEngine,
   type PracticeState,
@@ -31,7 +34,7 @@ import { Shell } from "./components/Shell";
 import { SpecialLanguageLine } from "./components/SpecialConsiderationNote";
 import { CivicsScreen } from "./screens/CivicsScreen";
 import { EnglishScreen } from "./screens/EnglishScreen";
-import { HomeScreen } from "./screens/HomeScreen";
+import { HomeScreen, type Who } from "./screens/HomeScreen";
 import { IntroScreen } from "./screens/IntroScreen";
 import { N400Screen } from "./screens/N400Screen";
 import { PartReportScreen } from "./screens/PartReportScreen";
@@ -72,6 +75,8 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
   const [coachEntry, setCoachEntry] = useState<CoachEntry>("choice");
   // "Study first" is a view of its own: no session, no scoring, nothing recorded.
   const [studying, setStudying] = useState(false);
+  // "Who is practicing?" on Home: in memory only, used by every card after it.
+  const [who, setWho] = useState<Who>("none");
   const restart = useCallback(() => {
     setRestarts((n) => n + 1);
     setCoachEntry("choice");
@@ -83,7 +88,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
     setStudying(false);
     setRestarts((n) => n + 1);
   };
-  const steps = state.mode === null ? undefined : sessionSteps(state.mode, state.setup?.specialConsideration === true);
+  const steps = state.mode === null ? undefined : sessionSteps(state.mode, state.setup?.exception ?? "none");
 
   if (studying && state.phase === "home") {
     return (
@@ -92,6 +97,8 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
           <StudyScreen
             answerKey={(v) => engine.env.answerKey(v)}
             {...(specialConsiderationOffered(engine.env) ? { designated: (v) => engine.env.designated!(v) } : {})}
+            initialSpecialOnly={who === "65/20"}
+            interpreterNote={who !== "none"}
             {...(engine.env.prepareCivics === undefined ? {} : { prepare: (v) => engine.env.prepareCivics!(v) })}
             onHome={exitStudy}
           />
@@ -105,6 +112,9 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
       {...(steps === undefined ? {} : { steps })}
       {...(state.phase === "home" ? {} : { currentStage: state.phase })}
       {...(state.phase === "home" ? {} : { onHome: restart })}
+      // A practice with answers asks before going home; setup and reports go straight home.
+      confirmHome={state.phase !== "home" && state.phase !== "intro" && state.phase !== "report"}
+      languageOnPage={state.phase === "home"}
     >
       <Screen
         engine={engine}
@@ -114,6 +124,8 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
         civicsLockedInBuild={civicsLockedInBuild}
         afterRestart={restarts > 0}
         onStudy={() => setStudying(true)}
+        who={who}
+        onWho={setWho}
         coachEntry={coachEntry}
         onCoachEntry={setCoachEntry}
         now={now}
@@ -135,6 +147,8 @@ interface ScreenProps {
   afterRestart?: boolean;
   /** Open "Study first" from the home screen. */
   onStudy?: () => void;
+  who?: Who;
+  onWho?: (who: Who) => void;
   /** Default "choice": ask before the first N-400 question. */
   coachEntry?: CoachEntry;
   onCoachEntry?: (entry: CoachEntry) => void;
@@ -152,6 +166,8 @@ export function Screen({
   civicsLockedInBuild,
   afterRestart = false,
   onStudy,
+  who = "none",
+  onWho = () => {},
   coachEntry = "choice",
   onCoachEntry = () => {},
   now,
@@ -168,23 +184,22 @@ export function Screen({
         <HomeScreen
           civicsLocked={civicsLockedInBuild}
           focusOnFirstRender={afterRestart}
+          // The first Home of this page load says where Text size is. Nothing is stored.
+          showTextSizeHint={!afterRestart}
+          specialOffered={specialRules !== null}
+          who={who}
+          onWho={onWho}
           {...(onStudy === undefined ? {} : { onStudy })}
           onChoose={(mode) => {
             onCoachEntry("choice");
-            dispatch({ type: "choose", mode, seed: seed(), at: now() });
+            // The exception chosen on Home: setup starts with it chosen (it applies to parts with civics).
+            const exception = exceptionOffered(env, who) ? who : "none";
+            dispatch({ type: "choose", mode, seed: seed(), at: now(), ...(exception === "none" ? {} : { exception }) });
           }}
           onChooseCoach={() => {
             onCoachEntry("notice");
             dispatch({ type: "choose", mode: "n400", seed: seed(), at: now() });
           }}
-          {...(specialRules === null
-            ? {}
-            : {
-                onChooseSpecial: () => {
-                  onCoachEntry("choice");
-                  dispatch({ type: "choose", mode: "civics", specialConsideration: true, seed: seed(), at: now() });
-                },
-              })}
         />
       );
 
@@ -194,9 +209,7 @@ export function Screen({
           profiles={env.content.profiles}
           boundaryDate={env.boundaryDate}
           needs={modeNeeds(state.mode ?? "full")}
-          {...(specialRules === null || !modeHasCivics(state.mode ?? "full")
-            ? {}
-            : { special: { rules: specialRules, initial: state.specialRequested } })}
+          {...(modeHasCivics(state.mode ?? "full") ? { exceptions: { initial: state.exceptionRequested, special: specialRules } } : {})}
           focusOnFirstRender
           onStart={(choice) => {
             const go = () => dispatch({ type: "start", ...choice, seed: seed(), at: now() });
@@ -267,9 +280,10 @@ export function Screen({
           }
           onContinue={() => dispatch({ type: "continue", at: now() })}
           onRestart={restart}
-          {...(state.setup?.specialConsideration === true && engine.civicsRulesFor(state) !== null
+          {...(state.setup?.exception === "65/20" && engine.civicsRulesFor(state) !== null
             ? { special: engine.civicsRulesFor(state)! }
             : {})}
+          exempt={state.setup !== null && englishExempt(state.setup.exception)}
         />
       );
 
@@ -277,7 +291,7 @@ export function Screen({
       if (state.partReport !== null) return <PartReportPage report={state.partReport} restart={restart} />;
       const session = engine.buildSession(state);
       if (session === null) return null;
-      return <ReportPage session={session} restart={restart} />;
+      return <ReportPage session={session} restart={restart} exception={state.setup?.exception ?? "none"} />;
     }
   }
 }
@@ -287,7 +301,7 @@ function PartReportPage({ report, restart }: { report: NonNullable<PracticeState
 }
 
 /** The full report with the N-400 note and a way back. Focus starts on the report heading. */
-function ReportPage({ session, restart }: { session: InterviewSession; restart: () => void }) {
+function ReportPage({ session, restart, exception }: { session: InterviewSession; restart: () => void; exception: AgeException }) {
   const t = useT();
   const container = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -296,13 +310,13 @@ function ReportPage({ session, restart }: { session: InterviewSession; restart: 
   return (
     <div className="screen" ref={container}>
       <ReportScreen session={session} />
+      {/* The choice made on Home or in setup, by name: "Practice as 55/15". */}
+      {exception !== "none" && <p className="progress-line report__exception">{t("report.exception", { exception })}</p>}
       <p className="note"><LegalText messageKey="report.n400Note" /></p>
-      {/* A 65/20 full interview has no reading and writing: say why, with the USCIS source. */}
-      {session.finalReport !== undefined && !session.finalReport.stageSummaries.some((s) => s.stage === "reading") && (
-        <SpecialLanguageLine />
-      )}
+      {/* 50/20, 55/15 and 65/20 have no reading and writing: say why, with the USCIS source. */}
+      {englishExempt(exception) && <SpecialLanguageLine />}
       <div className="btn-row">
-        <button type="button" className="btn" onClick={restart}>
+        <button type="button" className="btn btn--primary" onClick={restart}>
           {t("report.again")}
         </button>
       </div>

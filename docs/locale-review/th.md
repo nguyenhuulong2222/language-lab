@@ -28,18 +28,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | การสัมภาษณ์จริงใช้ภาษาอังกฤษ เว้นแต่ USCIS อนุญาตข้อยกเว้นให้คุณ คำถามและประโยคในหน้าจอเหล่านี้ยังเป็นภาษาอังกฤษเพื่อให้คุณฝึกได้ | The real interview uses English, unless USCIS grants you an exception. The questions and sentences on these screens remain in English so you can practice. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | รายงานนี้เป็นของเพียงหนึ่งส่วน แสดงว่าส่วนนี้เป็นอย่างไรในการฝึก ไม่ใช่ว่าคุณจะทำการทดสอบจริงได้อย่างไร และไม่ให้ผลการฝึกโดยรวม | This report is of only one part. It shows how this part went in practice, not how you would do on the real test, and it does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | การสัมภาษณ์เรื่อง N-400 เป็นเพียงการฝึกและไม่มีการให้คะแนน | The N-400 interview is only practice and is not given a score. |
-| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | คำแปลนี้ทำโดย AI และอาจมีข้อผิดพลาด ฉบับภาษาอังกฤษเป็นฉบับทางการ | This translation was done by AI and may contain errors. The English version is the official version. |
+| `aiNotice.text` | Translated by AI. It may have mistakes. The English is correct. | แปลโดย AI อาจมีข้อผิดพลาด ให้ถือภาษาอังกฤษเป็นหลัก | This translation was done by AI and may contain errors. The English version is the official version. |
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | นี่เป็นการตั้งค่าการฝึกของ Language Lab ตามแนวทางการให้คะแนนของ USCIS ไม่ใช่กฎของ USCIS: ต้องมีคำสำคัญทุกคำของประโยคตามลำดับ คำสั้น ๆ เช่น “the” ขาดได้ การหยุดพักและการออกเสียงไม่ถูกให้คะแนน | This is a Language Lab practice setting following USCIS's scoring guidelines, not a USCIS rule: every important word of the sentence must be there in order. Short words such as “the” may be missing. Pausing and pronunciation are not scored. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | ตัวเลือกนี้กำหนดว่าคุณจะฝึกแบบทดสอบความรู้พลเมืองปี 2008 หรือปี 2025 เป็นเพียงตัวเลือกสำหรับการฝึกเท่านั้น สำหรับกรณีของคุณเอง ให้ตรวจสอบที่ uscis.gov ว่าแบบทดสอบใดใช้กับคุณ | This option determines whether you will practice the 2008 or the 2025 civics test. It is only an option for practice. For your own case, check at uscis.gov which test applies to you. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | รูปภาพในการฝึกความรู้พลเมืองมาจากแหล่งทางการของรัฐบาลกลางสหรัฐฯ แต่ละรูปใช้ได้เพราะบันทึกของรูปนั้นระบุสิทธิ์ไว้อย่างชัดเจน ไม่ได้หมายความว่ามีหน่วยงานใดรับรอง Language Lab | The pictures in civics practice come from official sources of the U.S. federal government. Each picture can be used because that picture's record states its rights clearly. It does not mean any agency endorses Language Lab. |
 | `civics.officialNote` ⚠ | Any of these counts. | คำตอบใดคำตอบหนึ่งเหล่านี้นับว่าถูก | Any one of these answers counts as correct. |
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | หน้าที่พลเมือง เรียนก่อน และการสัมภาษณ์ฝึกแบบเต็ม ปิดอยู่ในเวอร์ชันนี้ จนกว่าจะมีคนตรวจคำตอบหน้าที่พลเมือง คุณฝึกการสัมภาษณ์ N-400 การอ่าน และการเขียนได้ | Civic duties, Study first and the full practice interview are closed in this version until someone checks the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | เฉลยความรู้พลเมืองยังรอให้มีผู้ตรวจสอบ เวอร์ชันนี้จึงไม่ให้คะแนนส่วนนี้และไม่สร้างรายงาน | The civics answer key is still waiting for someone to review it. This version therefore does not score this part and does not create a report. |
-| `voice.consent.text` | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | เมื่อคุณกด “พูด” ระบบรู้จำเสียงพูดของเบราว์เซอร์อาจส่งเสียงของคุณไปยังบริษัทผู้สร้างเบราว์เซอร์ เช่น Google หรือ Apple เพื่อแปลงเป็นข้อความ Language Lab ไม่ส่งหรือเก็บเสียงของคุณ คุณพิมพ์คำตอบแทนได้ | When you press “Speak”, the browser's speech recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead. |
-| `report.title.onTrack` | Practice complete: each part reached the practice score | ฝึกเสร็จแล้ว: ทุกส่วนถึงคะแนนฝึก | Practice finished: every part reached the practice score |
+| `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | เมื่อคุณกด “แตะเพื่อพูด” ระบบรู้จำเสียงพูดของเบราว์เซอร์อาจส่งเสียงของคุณไปยังบริษัทผู้สร้างเบราว์เซอร์ เช่น Google หรือ Apple เพื่อแปลงเป็นข้อความ Language Lab ไม่ส่งหรือเก็บเสียงของคุณ คุณพิมพ์คำตอบแทนได้ | When you press “Speak”, the browser's speech recognition system may send your voice to the company that made the browser, such as Google or Apple, to convert it to text. Language Lab does not send or store your voice. You can type your answer instead. |
+| `report.title.onTrack` | Well done. Each part reached the practice goal. | ทำได้ดีมาก ทุกส่วนถึงเป้าหมายการฝึก | Practice finished: every part reached the practice score |
 | `report.title.review` | A few things to review | มีบางเรื่องที่ควรทบทวน | There are some things worth reviewing |
-| `report.lead.onTrack` ⚠ | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | ในการฝึกครั้งนี้ การอ่าน การเขียน และหน้าที่พลเมือง ต่างถึงคะแนนที่ Language Lab ใช้ ใช้บันทึกด้านล่างเพื่อฝึกต่อไป | In this practice, reading, writing and civic duties each reached the score Language Lab uses. Use the notes below to keep practicing. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | การฝึกมีไว้เพื่อสิ่งนี้ บันทึกด้านล่างแสดงว่าควรเน้นตรงไหนก่อนลองอีกครั้ง | Practice is for this. The notes below show where to focus before trying again. |
+| `report.lead.onTrack` ⚠ | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. | การอ่าน การเขียน และหน้าที่พลเมือง ถึงเป้าหมายการฝึกทุกส่วน อ่านบันทึกด้านล่างแล้วฝึกต่อ | In this practice, reading, writing and civic duties each reached the score Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That is what practice is for. The notes below show what to practice next. | นี่คือประโยชน์ของการฝึก บันทึกด้านล่างบอกว่าควรฝึกอะไรต่อ | Practice is for this. The notes below show where to focus before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | การเขียน: USCIS ระบุว่าการสะกดผิด ตัวพิมพ์ใหญ่ และเครื่องหมายวรรคตอน ไม่ทำให้สอบเขียนไม่ผ่าน เว้นแต่ประโยคจะอ่านไม่เข้าใจแล้ว ที่นี่ การสะกดผิดเล็กน้อยยังนับ และคำที่ยาวกว่าผิดได้มากกว่า ไม่ตรวจตัวพิมพ์ใหญ่และเครื่องหมายวรรคตอน | Writing: USCIS states that misspelling, capital letters and punctuation do not make you fail the writing test, unless the sentence can no longer be understood. Here, small misspellings still count, and longer words may have more mistakes. Capital letters and punctuation are not checked. |
 | `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | เมื่อเปิดโค้ช AI คำในแต่ละคำตอบที่คุณพิมพ์หรือพูดในส่วนนี้จะถูกส่งเป็นข้อความไปยัง Anthropic ซึ่งเป็นบริษัท AI ผ่านเซิร์ฟเวอร์ของ Language Lab เพื่อเขียนคำติชม Language Lab และ Anthropic ไม่เคยได้รับเสียงของคุณ ได้รับเฉพาะคำ ตอบในฐานะบุคคลสมมติ อย่าบอกชื่อจริง ที่อยู่ วันเกิด A-number หรือรายละเอียดคดี ในการสัมภาษณ์จริง คุณต้องตอบตามความจริงเกี่ยวกับชีวิตของคุณเอง Language Lab ตรวจตัวเลขบางอย่าง แต่จับข้อมูลส่วนตัวไม่ได้ทั้งหมด Language Lab ไม่เก็บคำตอบของคุณ นโยบายความเป็นส่วนตัวของ Anthropic บอกว่า Anthropic จัดการคำตอบอย่างไร: anthropic.com/legal/privacy โค้ช AI จะปิดอีกครั้งเมื่อคุณเริ่มการฝึกใหม่ | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
 | `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | โค้ช AI: ปิดอยู่จนกว่าคุณจะเปิดในส่วน N-400 เมื่อเปิด ข้อความของแต่ละคำตอบ N-400 จะถูกส่งไปยัง Anthropic ผ่านเซิร์ฟเวอร์ของ Language Lab เพื่อเขียนคำติชม ไม่มีการส่งเสียง เพื่อจำกัดการใช้งาน เซิร์ฟเวอร์นับคำขอด้วยรหัสรายวันที่เติมค่าลับ ซึ่งสร้างจากที่อยู่อินเทอร์เน็ตของคุณ จำนวนนับเก่าจะถูกลบในคำขอครั้งต่อ ๆ ไป โดยปกติภายในสองวัน นโยบายความเป็นส่วนตัวของ Anthropic: anthropic.com/legal/privacy | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
@@ -50,8 +50,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | ประโยคใช้เฉพาะคำจากรายการคำศัพท์การอ่านและการเขียนอย่างเป็นทางการของ USCIS |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | คุณถึงคะแนนผ่านของการฝึกแล้ว แบบทดสอบจึงหยุดที่นี่ |
-| `home.part.civics.text` | Answer civics questions. Checked against the answer key. | ตอบคำถามความรู้พลเมือง ตรวจกับเฉลย |
-| `partReport.unscored.missing` | A question that is not in the answer key | คำถามที่ไม่มีอยู่ในเฉลย |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | ฟีเจอร์ศึกษาก่อนถูกปิดในเวอร์ชันนี้ จนกว่าจะมีคนตรวจสอบเฉลยแล้ว |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | ตัวเลือกนี้เปลี่ยนเฉพาะการฝึก ไม่มีการบันทึกหรือส่งข้อมูลใด ๆ ส่วนความรู้พลเมืองจะถาม {asked} ข้อจาก {bank} ข้อที่มีเครื่องหมายดอกจัน (*) ในรายการทางการ ในการฝึกนี้จะถามครบทั้ง {asked} ข้อ คะแนนผ่านของการฝึกคือตอบถูก {pass} ข้อ สำหรับกรณีของคุณเอง ให้ตรวจสอบที่ uscis.gov: อายุและจำนวนปีนับ ณ วันที่ยื่นคำร้อง |
 | `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS: ณ วันที่ยื่นคำร้อง หากคุณอายุ 50 ปีขึ้นไปและเป็นผู้มีถิ่นที่อยู่ถาวรมา 20 ปี (50/20) หรืออายุ 55 ปีขึ้นไปและ 15 ปี (55/15) คุณได้รับการยกเว้นข้อกำหนดภาษาอังกฤษ (อ่าน เขียน พูด และเข้าใจภาษาอังกฤษ) แต่ยังต้องสอบความรู้พลเมือง คุณสอบเป็นภาษาของคุณเองได้หากพาล่ามมาด้วย หากคุณอายุ 65 ปีขึ้นไปและอย่างน้อย 20 ปี (65/20) คุณก็ได้รับการยกเว้นภาษาอังกฤษเช่นกัน และเจ้าหน้าที่จะใช้แบบทดสอบความรู้พลเมืองที่กำหนดไว้เป็นพิเศษ |
@@ -61,8 +59,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | การทดสอบฝึกหยุดเมื่อถึงคะแนนผ่านของการฝึก |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | การทดสอบฝึกหยุดหลังตอบผิด {incorrect} ข้อ ก่อนถึงคะแนนผ่านของการฝึก {score} |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | คะแนนผ่านของการฝึกคือตอบถูก {score} ข้อ และยังไม่ถึง |
-| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | ไม่ได้ให้คะแนน เพราะคำตอบเปลี่ยนไปหรือไม่มีในเฉลย: {names} คำถามเหล่านี้ไม่นับว่าถูกหรือผิด |
-| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | อุปกรณ์ของคุณเดาสิ่งที่คุณพูดไว้หลายแบบ แบบที่ใกล้กับคำตอบในเฉลยที่สุดจะแสดงไว้ |
+| `home.exceptions.timing` | USCIS counts the age and the years as a permanent resident on the day the N-400 is filed. | USCIS นับอายุและจำนวนปีที่เป็นผู้มีถิ่นที่อยู่ถาวร ณ วันที่ยื่น N-400 |
 
 ## 3. All other lines
 
@@ -70,16 +67,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | ข้ามไปยังเนื้อหาหลัก |
-| `app.stageNotBuilt` | This stage of the practice isn’t built yet. | ขั้นตอนการฝึกนี้ยังไม่พร้อมใช้งาน |
+| `app.stageNotBuilt` | This part is not ready yet. Go back to Home and choose another part. | ส่วนนี้ยังไม่พร้อม กลับไปหน้าแรกแล้วเลือกส่วนอื่น |
 | `header.about` | About & disclaimer | เกี่ยวกับและข้อจำกัดความรับผิดชอบ |
-| `stepper.label` | Interview stages | ขั้นตอนการสัมภาษณ์ |
-| `stepper.count` | Stage {current} of {total} | ขั้นตอนที่ {current} จาก {total} |
+| `stepper.label` | Your steps | ขั้นตอนของคุณ |
+| `stepper.count` | Step {current} of {total}: {name} | ขั้นตอนที่ {current} จาก {total}: {name} |
 | `stepper.status.complete` | completed | เสร็จแล้ว |
 | `stepper.status.current` | current step | ขั้นตอนปัจจุบัน |
 | `stepper.status.upcoming` | upcoming | ขั้นตอนถัดไป |
-| `stage.intro.label` | Welcome | ยินดีต้อนรับ |
-| `stage.intro.short` | Intro | เริ่มต้น |
-| `stage.n400_interview.label` | N-400 conversation | การสนทนาเรื่อง N-400 |
+| `stage.intro.label` | Set up | เตรียมตัว |
+| `stage.intro.short` | Set up | เตรียมตัว |
+| `stage.n400_interview.label` | N-400 questions | คำถาม N-400 |
 | `stage.n400_interview.short` | N-400 | N-400 |
 | `stage.reading.label` | Reading | การอ่าน |
 | `stage.reading.short` | Reading | อ่าน |
@@ -87,43 +84,42 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.writing.short` | Writing | เขียน |
 | `stage.civics.label` | Civics | ความรู้พลเมือง |
 | `stage.civics.short` | Civics | Civics |
-| `stage.report.label` | Practice report | รายงานการฝึก |
+| `stage.report.label` | Your report | รายงานของคุณ |
 | `stage.report.short` | Report | รายงาน |
-| `badge.onTrack` | Practice score reached | ถึงคะแนนฝึกแล้ว |
-| `badge.review` | Worth reviewing | ควรทบทวน |
-| `report.empty` | Your practice report will appear here once the session is complete. | รายงานการฝึกของคุณจะแสดงที่นี่เมื่อจบรอบการฝึก |
-| `report.take` | TAKE | TAKE |
+| `badge.onTrack` | You reached the practice goal | คุณถึงเป้าหมายการฝึกแล้ว |
+| `badge.review` | Practice this again | ฝึกส่วนนี้อีกครั้ง |
+| `report.empty` | Your report will show here when you finish the practice. | รายงานจะแสดงที่นี่เมื่อคุณฝึกเสร็จ |
 | `report.overline` | Practice report | รายงานการฝึก |
-| `report.profile.label` | Practice profile (fictional) | โปรไฟล์ฝึก (สมมติ) |
+| `report.profile.label` | Practice person (made up) | บุคคลสำหรับฝึก (สมมติ) |
 | `report.profile.meta` | {version} civics test · filed {date} | แบบทดสอบความรู้พลเมืองปี {version} · ยื่นคำร้องเมื่อ {date} |
 | `report.stages.heading` | How each part went | แต่ละส่วนเป็นอย่างไรบ้าง |
 | `report.review.heading` | Things to review | สิ่งที่ควรทบทวน |
 | `report.review.intro` | Focus on these before your next practice. | โปรดเน้นเรื่องเหล่านี้ก่อนการฝึกครั้งต่อไป |
-| `report.generated` | Report generated {datetime} | สร้างรายงานเมื่อ {datetime} |
+| `report.generated` | Report made {datetime} | สร้างรายงานเมื่อ {datetime} |
 | `translation.english` | English | อังกฤษ |
-| `voice.say` | Say it | พูด |
-| `voice.stop` | Stop listening | หยุดฟัง |
+| `voice.say` | Tap to speak | แตะเพื่อพูด |
+| `voice.stop` | Listening… tap when you finish | กำลังฟัง… แตะเมื่อพูดจบ |
 | `voice.listening` | Listening. Say your answer now. | กำลังฟัง โปรดพูดคำตอบของคุณตอนนี้ |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | เราได้ยินคุณแล้ว ตรวจดูคำ แก้ไขได้ถ้าต้องการ แล้วส่ง |
-| `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | ไมโครโฟนถูกบล็อก โปรดอนุญาตการใช้ไมโครโฟนในการตั้งค่าของเบราว์เซอร์ หรือพิมพ์คำตอบ |
+| `voice.denied` | The microphone is blocked. Follow the steps below to allow it, or type your answer. | ไมโครโฟนถูกบล็อก ทำตามขั้นตอนด้านล่างเพื่ออนุญาต หรือพิมพ์คำตอบของคุณ |
 | `voice.unsupported` | This browser cannot listen to your voice. Type your answer instead. | เบราว์เซอร์นี้ฟังเสียงของคุณไม่ได้ โปรดพิมพ์คำตอบแทน |
 | `voice.nothingHeard` | We did not hear anything. Try again, or type your answer. | เราไม่ได้ยินอะไรเลย ลองอีกครั้ง หรือพิมพ์คำตอบ |
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | ไม่พบไมโครโฟน โปรดพิมพ์คำตอบแทน |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | ครั้งนี้การฟังไม่สำเร็จ ลองอีกครั้ง หรือพิมพ์คำตอบ |
 | `voice.skip` | Skip this one | ข้ามข้อนี้ |
-| `audio.play` | Play aloud | ฟังเสียงอ่าน |
-| `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | เสียงของอุปกรณ์: เสียงที่ติดตั้งในโทรศัพท์หรือคอมพิวเตอร์ของคุณ |
+| `audio.play` | Play the question | ฟังคำถาม |
+| `audio.deviceVoice` | Built-in voice: the voice of your phone or computer. | เสียงในเครื่อง: เสียงของโทรศัพท์หรือคอมพิวเตอร์ของคุณ |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | เบราว์เซอร์นี้อ่านออกเสียงไม่ได้ โปรดอ่านข้อความบนหน้าจอ |
-| `intro.profile.legend` | Choose a practice profile | เลือกโปรไฟล์ฝึก |
-| `intro.profile.help` | Every profile is invented. | ทุกโปรไฟล์เป็นเรื่องสมมติ |
+| `intro.profile.legend` | Choose a practice person | เลือกบุคคลสำหรับฝึก |
+| `intro.profile.help` | Every person here is made up. | ทุกคนในนี้เป็นบุคคลสมมติ |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | ฝึกโดยสมมติว่ายื่นแบบ N-400 ไว้… |
 | `intro.filed.before` | Before {date} | ก่อนวันที่ {date} |
 | `intro.filed.onOrAfter` | On or after {date} | ในวันที่ {date} หรือหลังจากนั้น |
 | `intro.start` | Start practice | เริ่มฝึก |
-| `intro.startHint` | Make your choice above to start. | เลือกด้านบนเพื่อเริ่ม |
-| `home.locked.title` | In this build you can practice | ในเวอร์ชันนี้คุณฝึกได้ |
+| `intro.startHint` | Choose one answer in each group above. Then press “Start practice”. | เลือกคำตอบหนึ่งข้อในแต่ละกลุ่มด้านบน แล้วกด “เริ่มฝึก” |
+| `home.locked.title` | Right now you can practice | ตอนนี้คุณฝึกได้ |
 | `n400.title` | N-400 interview | การสัมภาษณ์เรื่อง N-400 |
-| `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | ฝึกตอบคำถามแบบที่เจ้าหน้าที่ถามเกี่ยวกับใบคำร้องอย่างใจเย็น ตอบในฐานะ {name} ขั้นตอนนี้ไม่มีการให้คะแนน |
+| `n400.lead` | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. | เจ้าหน้าที่อาจถามคำถามแบบนี้เกี่ยวกับแบบฟอร์มของคุณ ตอบในฐานะ {name} ส่วนนี้ไม่มีการให้คะแนน |
 | `n400.count` | Question {current} of {total} | คำถามที่ {current} จาก {total} |
 | `n400.sample.label` | Sample answer for {name} (fictional) | ตัวอย่างคำตอบของ {name} (สมมติ) |
 | `n400.yourAnswer` | Your answer, as {name} | คำตอบของคุณในฐานะ {name} |
@@ -144,7 +140,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | ถ้าต้องการ ลองฝึกตอบออกเสียง คำถามนี้ไม่ถูกบันทึก |
 | `coach.tip.label` | Tip about your English: | คำแนะนำเรื่องภาษาอังกฤษของคุณ: |
 | `coach.feedback.understood` | Easy to understand | เข้าใจง่าย |
-| `coach.feedback.needs_practice` | Worth practicing again | ควรฝึกอีกครั้ง |
+| `coach.feedback.needs_practice` | Practice this again | ฝึกส่วนนี้อีกครั้ง |
 | `coach.feedback.unclear` | Hard to follow. Try again. | ฟังเข้าใจยาก ลองอีกครั้ง |
 | `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | ส่วนนี้ตรวจแค่ว่าภาษาอังกฤษของคุณชัดแค่ไหน ไม่ได้บอกว่าคำตอบถูกหรือเป็นความจริง |
 | `coach.checking` | Getting AI feedback… | กำลังรับคำติชมจาก AI… |
@@ -158,11 +154,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.dateOfBirth` | a full date, such as a date of birth | วันที่แบบเต็ม เช่น วันเกิด |
 | `coach.next` | Continue | ดำเนินการต่อ |
 | `n400.loading` | Getting the next question… | กำลังโหลดคำถามถัดไป… |
-| `n400.failed` | The next question could not be loaded. Start over to try again. | โหลดคำถามถัดไปไม่ได้ เริ่มใหม่เพื่อลองอีกครั้ง |
+| `n400.failed` | The next question did not load. Check your internet, then press “Start over”. | คำถามถัดไปโหลดไม่ได้ ตรวจสอบอินเทอร์เน็ต แล้วกด “เริ่มใหม่” |
 | `n400.done.title` | Your answers | คำตอบของคุณ |
 | `n400.done.lead` | These are the words you gave. They are not scored. | นี่คือสิ่งที่คุณพูด ไม่มีการให้คะแนน |
 | `n400.done.next` | Go to reading | ไปที่การอ่าน |
-| `voice.consent.continue` | Continue and say it | ดำเนินการต่อและพูด |
+| `voice.consent.continue` | Continue and speak | ดำเนินการต่อและพูด |
 | `voice.consent.type` | Type instead | พิมพ์แทน |
 | `n400.number` | Question {current} | คำถามที่ {current} |
 | `common.fictional` | Fictional practice profile | โปรไฟล์ฝึกสมมติ |
@@ -194,15 +190,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | เบราว์เซอร์นี้อ่านออกเสียงไม่ได้ จึงแสดงประโยคไว้ที่นี่ โปรดพิมพ์ตาม |
 | `writing.hidden` | The sentence stays hidden until you answer. | ประโยคจะถูกซ่อนไว้จนกว่าคุณจะตอบ |
 | `writing.show` | Show the sentence | แสดงประโยค |
-| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | ถ้าคุณฟังเสียงไม่ได้ ให้แสดงประโยคแล้วพิมพ์ตาม ระบบตรวจแบบเดียวกัน รายงานของคุณจะระบุว่าการลองครั้งนี้มีตัวช่วย |
-| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | แสดงประโยคแล้ว รายงานของคุณจะระบุว่าการลองครั้งนี้มีตัวช่วย |
+| `writing.show.help` | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. | ถ้าไม่ได้ยินเสียง ให้แสดงประโยคแล้วพิมพ์ การตรวจเหมือนเดิม รายงานจะบอกว่ามีการแสดงประโยค |
+| `writing.shown` | The sentence is shown. Your report will say so. | แสดงประโยคแล้ว รายงานจะบอกเรื่องนี้ |
 | `civics.title` | Civics | ความรู้พลเมือง |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | ตอบออกเสียงหรือพิมพ์ก็ได้ คำตอบสั้น ๆ ใช้ได้ แต่ให้พูดคำตอบให้ครบ |
 | `civics.count` | Question {current} of {total} | คำถามที่ {current} จาก {total} |
 | `civics.needs` | This question needs {count} different answers. | คำถามนี้ต้องการคำตอบที่ต่างกัน {count} คำตอบ |
 | `civics.yourAnswer` | Your answer | คำตอบของคุณ |
 | `civics.submit` | Check my answer | ตรวจคำตอบของฉัน |
-| `civics.correct` | Correct | ถูกต้อง |
+| `civics.correct` | This counts | ถือว่านับได้ |
 | `civics.notYet` | Not yet | ยังไม่ถูก |
 | `civics.youSaid` | You said: {text} | คุณพูดว่า: {text} |
 | `civics.official` | Official answers | คำตอบอย่างเป็นทางการ |
@@ -211,39 +207,39 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.stopped.incorrect` | The test stopped because too many answers need more practice. | แบบทดสอบหยุดลงเพราะมีคำตอบที่ต้องฝึกเพิ่มมากเกินไป |
 | `civics.stopped.none` | You have answered every question for this practice test. | คุณตอบคำถามครบทุกข้อของแบบทดสอบฝึกนี้แล้ว |
 | `civics.tally` | {correct} correct, {incorrect} not yet. | ถูก {correct} ข้อ ยังไม่ถูก {incorrect} ข้อ |
-| `civics.locked.title` | Civics is switched off in this build | ความรู้พลเมืองถูกปิดในเวอร์ชันนี้ |
+| `civics.locked.title` | Civics is not available right now | ส่วนหน้าที่พลเมืองยังใช้ไม่ได้ตอนนี้ |
 | `report.again` | Practice again | ฝึกอีกครั้ง |
 | `common.startOver` | Start over | เริ่มใหม่ |
-| `voice.needText` | Type or say your answer first, or choose Skip. | โปรดพิมพ์หรือพูดคำตอบก่อน หรือเลือกข้าม |
-| `audio.stop` | Stop playing | หยุดเล่น |
+| `voice.needText` | The box is empty. Type or say your answer, or press “Skip this one”. | ช่องว่างอยู่ พิมพ์หรือพูดคำตอบ หรือกด “ข้ามข้อนี้” |
+| `audio.stop` | Stop | หยุด |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | เสียงที่สร้างโดย AI เสียงนี้ทำไว้ล่วงหน้า |
 | `audio.playSample` | Play sample answer | ฟังตัวอย่างคำตอบ |
-| `home.title` | Welcome to the booth | ยินดีต้อนรับสู่ Language Lab |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | ฝึกสัมภาษณ์เพื่อขอสัญชาติในที่เงียบสงบ คุณตอบในฐานะบุคคลสมมติ จึงไม่ต้องให้ข้อมูลจริง |
+| `home.title` | Welcome to Language Lab | ยินดีต้อนรับสู่ Language Lab |
+| `home.lead` | Practice for your citizenship interview as a made-up person, so you never share anything about yourself. | ฝึกสัมภาษณ์ขอสัญชาติในฐานะบุคคลสมมติ จึงไม่ต้องบอกเรื่องของตัวเองเลย |
 | `home.how.title` | How it works | วิธีใช้งาน |
 | `home.how.1.title` | Listen | ฟัง |
-| `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | แตะ “ฟังเสียงอ่าน” เพื่อฟังคำถามหรือประโยค |
+| `home.how.1.text` | Tap “Play the question” to hear it. | แตะ “ฟังคำถาม” เพื่อฟัง |
 | `home.how.2.title` | Speak or type | พูดหรือพิมพ์ |
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | พูดคำตอบของคุณ หรือพิมพ์ก็ได้ การพิมพ์ใช้ได้เสมอ |
 | `home.how.3.title` | See the result | ดูผลลัพธ์ |
-| `home.how.3.text` | You see how your answer compares, and what to practice next. | คุณจะเห็นว่าคำตอบของคุณเทียบกับต้นฉบับอย่างไร และควรฝึกอะไรต่อ |
-| `home.choose` | What would you like to do? | คุณต้องการทำอะไร |
-| `home.full.title` | Full practice interview | การสัมภาษณ์ฝึกแบบเต็ม |
-| `home.full.text` | All four parts in order, then one report. | ทั้งสี่ส่วนตามลำดับ แล้วได้รายงานหนึ่งฉบับ |
+| `home.how.3.text` | You see if your answer counts, and what to practice next. | คุณจะเห็นว่าคำตอบนับได้หรือไม่ และควรฝึกอะไรต่อ |
+| `home.full.title` | Practice test | สอบจำลอง |
+| `home.full.text` | Answer out loud like the real interview. | ตอบออกเสียงเหมือนการสัมภาษณ์จริง |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | ฝึกสัมภาษณ์ N-400 กับโค้ช AI |
 | `home.coach.text` | The coach asks a follow-up like an officer might and gives tips on your English. Optional. | โค้ชถามคำถามต่อเนื่องแบบที่เจ้าหน้าที่อาจถาม และให้คำแนะนำเรื่องภาษาอังกฤษของคุณ ไม่บังคับ |
 | `coach.poweredBy` | Powered by Claude (Anthropic) | ขับเคลื่อนโดย Claude (Anthropic) |
-| `home.parts.title` | Practice one part | ฝึกเพียงหนึ่งส่วน |
+| `home.parts.title` | Or practice one part | หรือฝึกทีละส่วน |
 | `home.part.n400.title` | N-400 interview | การสัมภาษณ์เรื่อง N-400 |
-| `home.part.n400.text` | Answer questions about an application. Not scored. | ตอบคำถามเกี่ยวกับใบคำร้อง ไม่มีการให้คะแนน |
+| `home.part.n400.text` | Answer questions about the N-400 form. No score. | ตอบคำถามเกี่ยวกับแบบฟอร์ม N-400 ไม่มีคะแนน |
 | `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | การอ่าน |
 | `home.part.reading.text` | Read sentences out loud. | อ่านประโยคออกเสียง |
 | `home.part.writing.title` | Writing | การเขียน |
 | `home.part.writing.text` | Listen and type the sentence. | ฟังแล้วพิมพ์ประโยค |
 | `home.part.civics.title` | Civics | ความรู้พลเมือง |
+| `home.part.civics.text` | Answer questions about U.S. history and government. Checked with the official answers. | ตอบคำถามเกี่ยวกับประวัติศาสตร์และรัฐบาลสหรัฐฯ ตรวจกับคำตอบทางการ |
 | `setup.title` | Set up your practice | ตั้งค่าการฝึกของคุณ |
-| `setup.lead` | Choose what this practice needs. Nothing real is asked. | เลือกสิ่งที่การฝึกนี้ต้องใช้ ระบบไม่ถามข้อมูลจริงใด ๆ |
+| `setup.lead` | Choose one answer in each group. Nothing here asks about you. | เลือกคำตอบหนึ่งข้อในแต่ละกลุ่ม ที่นี่ไม่ถามเรื่องของคุณ |
 | `report.home` | Back to home | กลับหน้าแรก |
 | `partReport.title.n400_interview` | N-400 interview practice | การฝึกสัมภาษณ์เรื่อง N-400 |
 | `partReport.title.reading` | Reading practice | การฝึกอ่าน |
@@ -260,30 +256,23 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.civics.needed` | Correct answers needed: {needed}. | จำนวนคำตอบที่ต้องถูก: {needed} |
 | `partReport.review` | Questions to review | คำถามที่ควรทบทวน |
 | `partReport.unscored.title` | Not scored | ไม่ได้ให้คะแนน |
-| `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | คำถามเหล่านี้ให้คะแนนไม่ได้ จึงไม่นับว่าถูกหรือผิด |
+| `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | คำถามเหล่านี้ไม่มีคะแนน ไม่นับว่าถูกหรือผิด |
+| `partReport.unscored.missing` | A question we cannot check | คำถามที่เราตรวจไม่ได้ |
 | `report.see` | See my report | ดูรายงานของฉัน |
-| `header.home` | Home | หน้าแรก |
-| `help.button` | How this works | หน้าจอนี้ใช้อย่างไร |
+| `help.button` | Help | วิธีใช้ |
 | `help.setup.1` | Tap one choice in each group on this screen. | แตะหนึ่งตัวเลือกในแต่ละกลุ่มบนหน้าจอนี้ |
 | `help.setup.3` | Press “{start}” when you are ready. | กด “{start}” เมื่อคุณพร้อม |
-| `help.listen` | Press “{play}” to hear it. Press the same button again to stop. | กด “{play}” เพื่อฟัง กดปุ่มเดิมอีกครั้งเพื่อหยุด |
-| `help.sample` | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | อ่านตัวอย่างคำตอบ หรือฟังก็ได้ เป็นของบุคคลสมมติ และเป็นเพียงตัวอย่าง |
-| `help.read` | Read the sentence on the screen out loud. | อ่านประโยคบนหน้าจอออกเสียง |
-| `help.mic` | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | กด “{say}” แล้วพูด ถ้าโทรศัพท์ถามว่าจะอนุญาตให้ใช้ไมโครโฟนไหม ให้กด “อนุญาต” เมื่อพูดจบให้กด “{stop}” |
-| `help.type` | You can always type instead. Tap the box and type. Typing always works. | คุณพิมพ์แทนได้เสมอ แตะที่ช่องแล้วพิมพ์ การพิมพ์ใช้ได้เสมอ |
-| `help.typeOnly` | Tap the box and type what you hear. | แตะที่ช่องแล้วพิมพ์สิ่งที่คุณได้ยิน |
-| `help.send` | Check the words in the box. You can change them. Then press “{send}”. | ตรวจดูคำในช่อง คุณแก้ไขได้ แล้วกด “{send}” |
-| `help.skip` | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | กด “{skip}” ถ้าคุณไม่รู้ ระบบจะส่งคำตอบว่างแล้วไปต่อ และนับเป็น “ยังไม่ถูก” |
-| `help.notScored` | Nothing in this part is scored. | ไม่มีการให้คะแนนในส่วนนี้ |
-| `help.result.reading` | Then you see which words matched. | จากนั้นคุณจะเห็นว่าคำใดตรงกัน |
-| `help.result.civics` | Then you see Correct or Not yet, and the official answers. | จากนั้นคุณจะเห็น “ถูกต้อง” หรือ “ยังไม่ถูก” และคำตอบอย่างเป็นทางการ |
-| `header.settings` | Settings | การตั้งค่า |
-| `settings.title` | Comfort settings | การตั้งค่าเพื่อความสะดวก |
+| `help.listen` | Press “{play}” to hear it. | กด “{play}” เพื่อฟัง |
+| `help.read` | Read the sentence out loud. | อ่านประโยคออกเสียง |
+| `help.mic` | Press “{say}” and talk. Or type in the box. | กด “{say}” แล้วพูด หรือพิมพ์ในช่อง |
+| `help.typeOnly` | Type what you hear in the box. | พิมพ์สิ่งที่ได้ยินลงในช่อง |
+| `header.settings` | Text size | ขนาดตัวอักษร |
+| `settings.title` | Text size and voice | ขนาดตัวอักษรและเสียง |
 | `settings.textSize.legend` | Text size | ขนาดตัวอักษร |
 | `settings.textSize.normal` | Normal | ปกติ |
 | `settings.textSize.large` | Large | ใหญ่ |
 | `settings.textSize.extraLarge` | Extra large | ใหญ่มาก |
-| `settings.slow.label` | Play recorded voices more slowly | เล่นเสียงที่บันทึกไว้ให้ช้าลง |
+| `settings.slow.label` | Slower voice | เสียงช้าลง |
 | `settings.slow.help` | This only changes the speed. It is the same recording. | เปลี่ยนเฉพาะความเร็ว เป็นการบันทึกเสียงเดิม |
 | `settings.memory` | These settings last until you close or reload this page. | การตั้งค่าเหล่านี้อยู่จนกว่าคุณจะปิดหรือโหลดหน้านี้ใหม่ |
 | `settings.close` | Close settings | ปิดการตั้งค่า |
@@ -291,16 +280,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `audio.failed` | The audio did not play. Try again, or read the text on the screen. | เสียงไม่เล่น ลองอีกครั้ง หรืออ่านข้อความบนหน้าจอ |
 | `lang.label` | Language | ภาษา |
 | `header.homeConfirm` | Go back to home? Your answers in this practice will be lost. | กลับหน้าแรกไหม คำตอบของคุณในการฝึกนี้จะหายไป |
-| `header.homeConfirm.yes` | Yes, go home | ใช่ กลับหน้าแรก |
-| `header.homeConfirm.no` | Stay here | อยู่ที่นี่ต่อ |
+| `header.homeConfirm.yes` | Leave | ออก |
+| `header.homeConfirm.no` | Keep practicing | ฝึกต่อ |
 | `common.retry` | Try again | ลองอีกครั้ง |
-| `partReport.badge.good` | This part reached the practice score | ส่วนนี้ถึงคะแนนฝึกแล้ว |
-| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | ประโยคถูกแสดงบนหน้าจอ (การลองที่มีตัวช่วย) |
-| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | ข้อความปฏิเสธความรับผิดชอบและข้อความทางกฎหมายจะแสดงเป็นภาษาอังกฤษเท่านั้น จนกว่าจะมีคนตรวจคำแปล |
+| `partReport.badge.good` | You reached the practice goal | คุณถึงเป้าหมายการฝึกแล้ว |
+| `partReport.assisted` | The sentence was shown on the screen. | มีการแสดงประโยคบนหน้าจอ |
+| `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | ประกาศทางกฎหมายจะเป็นภาษาอังกฤษจนกว่าจะมีคนตรวจคำแปล |
 | `lang.menu.title` | Choose a language | เลือกภาษา |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | ยังมีภาษาอื่นที่กำลังรอการตรวจ ภาษาเหล่านั้นจะปรากฏที่นี่หลังจากมีคนตรวจแล้ว |
-| `home.study.title` | Study first | ศึกษาก่อน |
-| `home.study.text` | Look through the civics questions with pictures and the official answers. Nothing is scored. | ดูคำถามความรู้พลเมืองพร้อมรูปภาพและคำตอบอย่างเป็นทางการ ไม่มีการให้คะแนน |
+| `home.study.title` | Study | เรียน |
+| `home.study.text` | See each question with its answers and a picture. No score. | ดูคำถามแต่ละข้อพร้อมคำตอบและรูปภาพ ไม่มีคะแนน |
 | `study.lead` | Look through the civics questions one at a time. Each one shows the official answers. Nothing is scored or saved. | ดูคำถามความรู้พลเมืองทีละข้อ แต่ละข้อแสดงคำตอบอย่างเป็นทางการ ไม่มีการให้คะแนนและไม่บันทึกอะไร |
 | `study.version.legend` | Which civics test do you want to study? | คุณต้องการศึกษาข้อสอบความรู้พลเมืองชุดไหน |
 | `study.version.2008` | 2008 civics test | ข้อสอบความรู้พลเมือง ปี 2008 |
@@ -321,8 +310,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.hearSample` | Hear the sample | ฟังตัวอย่าง |
 | `selfReview.tryAgain` | Try again | ลองอีกครั้ง |
 | `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | เสียงที่บันทึกอยู่ในอุปกรณ์เครื่องนี้เท่านั้น ไม่ถูกส่งไปที่ใดหรือเก็บไว้ และจะถูกลบเมื่อคุณไปประโยคถัดไปหรือออกจากหน้าจอนี้ |
-| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | เบราว์เซอร์นี้บันทึกเสียงของคุณไม่ได้ คุณยังตรวจการอ่านด้วยปุ่ม “พูด” หรือด้วยการพิมพ์ได้ |
-| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | ไมโครโฟนถูกบล็อกอยู่ โปรดอนุญาตการใช้ไมโครโฟนในการตั้งค่าเบราว์เซอร์ |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still press “Tap to speak” or type. | เบราว์เซอร์นี้บันทึกเสียงของคุณไม่ได้ คุณยังกด “แตะเพื่อพูด” หรือพิมพ์ได้ |
+| `selfReview.denied` | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. | ไมโครโฟนถูกบล็อก จึงเริ่มบันทึกไม่ได้ อนุญาตไมโครโฟนสำหรับเว็บไซต์นี้ในการตั้งค่าเบราว์เซอร์ แล้วลองอีกครั้ง |
 | `selfReview.error` | Recording did not work this time. Try again. | ครั้งนี้บันทึกเสียงไม่สำเร็จ ลองอีกครั้ง |
 | `compare.why.allWords` | Every important word of the sentence was there, in order. | มีคำสำคัญทุกคำของประโยคตามลำดับ |
 | `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | คุณพูดว่า “{said}” ประโยคเป็น “{expected}” แบบนี้ยังนับได้ |
@@ -335,28 +324,63 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | คุณเพิ่มคำว่า “{said}” ซึ่งไม่มีในประโยค แบบนี้ยังนับได้ |
 | `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | คำสั้น “{expected}” หายไป แบบนี้ยังนับได้ |
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | คุณเพิ่มคำสั้น “{said}” แบบนี้ยังนับได้ |
-| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | ผลนี้อิงจากคำที่อุปกรณ์ของคุณได้ยิน ถ้าได้ยินผิด ให้ลองอีกครั้งหรือพิมพ์คำตอบ |
+| `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | ผลนี้ใช้คำที่โทรศัพท์หรือคอมพิวเตอร์ได้ยิน ถ้าได้ยินผิด ให้ลองอีกครั้งหรือพิมพ์คำตอบ |
 | `compare.honest.typed` | This result is based on the words you typed. | ผลนี้อิงจากคำที่คุณพิมพ์ |
-| `home.special.title` | 65/20 civics practice | ฝึกความรู้พลเมืองสำหรับ 65/20 |
-| `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | สำหรับผู้ที่อายุ 65 ปีขึ้นไปและเป็นผู้มีถิ่นที่อยู่ถาวรมา 20 ปีขึ้นไป ฝึกคำถามความรู้พลเมืองที่มีเครื่องหมายดอกจัน (*) |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ฉันอายุ 65 ปีขึ้นไปและเป็นผู้มีถิ่นที่อยู่ถาวรมา 20 ปีขึ้นไป |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | เฉพาะคำถามสำหรับ 65/20 (มีเครื่องหมายดอกจัน) |
 | `report.line.civics.none` | No civics questions were scored. | ไม่มีคำถามความรู้พลเมืองที่ได้รับคะแนน |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | คำถามความรู้พลเมืองที่ตอบถูก: {correct} จาก {scored} |
+| `report.line.civics.unscored` | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. | ข้อเหล่านี้ไม่มีคะแนน เพราะคำตอบเปลี่ยนไปตามเวลาหรือเราตรวจไม่ได้: {names} ไม่นับว่าถูกหรือผิด |
 | `report.line.reading.none` | No reading sentences were completed. | ยังไม่มีประโยคการอ่านที่ทำเสร็จ |
 | `report.line.reading.done` | Sentence {n} was read correctly. | อ่านประโยคที่ {n} ถูกต้อง |
 | `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | ประโยคการอ่านที่อ่านถูก: {correct} จาก {presented} ประโยคที่ต้องถูก: {needed} |
 | `report.line.writing.none` | No writing sentences were completed. | ยังไม่มีประโยคการเขียนที่ทำเสร็จ |
 | `report.line.writing.done` | Sentence {n} was written correctly. | เขียนประโยคที่ {n} ถูกต้อง |
 | `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | ประโยคการเขียนที่เขียนถูก: {correct} จาก {presented} ประโยคที่ต้องถูก: {needed} |
-| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | ครั้งที่เขียนโดยเห็นประโยคบนหน้าจอ (มีตัวช่วย): {assisted} จาก {presented} |
+| `report.line.writing.assisted` | Sentences written while the sentence was shown: {assisted} of {presented}. | ประโยคที่เขียนขณะแสดงประโยค: {assisted} จาก {presented} |
 | `report.review.reading` | Practice reading the sentences aloud. | ฝึกอ่านประโยคออกเสียง |
 | `report.review.writing` | Practice writing the sentences you hear. | ฝึกเขียนประโยคที่คุณได้ยิน |
+| `civics.heard.closest` | Your phone or computer heard a few possible answers. We show the one closest to an official answer. | โทรศัพท์หรือคอมพิวเตอร์ได้ยินคำตอบที่เป็นไปได้หลายแบบ เราแสดงแบบที่ใกล้คำตอบทางการที่สุด |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | ตอบในฐานะบุคคลสมมติ อย่าพิมพ์ชื่อ ที่อยู่ วันที่ หรือหมายเลขจริงของคุณ |
 | `common.newTab` | (opens in a new tab) | (เปิดในแท็บใหม่) |
 | `coach.kind.streetAddress` | a street address | ที่อยู่ตามถนน |
 | `coach.kind.zipCode` | a ZIP code with a state | รหัสไปรษณีย์พร้อมชื่อรัฐ |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | การตรวจนี้ยังมองหาที่อยู่และรหัสไปรษณีย์ด้วย แต่ไม่สามารถหาชื่อคนได้ อย่าพูดหรือพิมพ์ชื่อของคนจริง |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | ตัวอักษรเล็กเกินไปใช่ไหม แตะ ขนาดตัวอักษร ที่ด้านบน |
+| `audio.playing` | Playing… | กำลังเล่น… |
+| `audio.playSentence` | Play the sentence | ฟังประโยค |
+| `voice.gotIt` | Got it. Tap to speak again | ได้ยินแล้ว แตะเพื่อพูดอีกครั้ง |
+| `voice.orType` | Or type your answer | หรือพิมพ์คำตอบของคุณ |
+| `voice.micHelp.title` | How to allow the microphone | วิธีอนุญาตไมโครโฟน |
+| `voice.micHelp.iphone` | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. | iPhone (Safari): แตะ “aA” ข้างที่อยู่เว็บ แล้วแตะ การตั้งค่าเว็บไซต์ แล้วแตะ ไมโครโฟน และเลือก อนุญาต จากนั้นโหลดหน้าใหม่ |
+| `voice.micHelp.android` | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. | Android (Chrome): แตะไอคอนเล็ก ๆ ทางซ้ายของที่อยู่เว็บ แล้วแตะ สิทธิ์ และเปิด ไมโครโฟน จากนั้นโหลดหน้าใหม่ |
+| `voice.micHelp.typing` | You can always type your answer in the box instead. | คุณพิมพ์คำตอบในช่องแทนได้เสมอ |
+| `civics.why.correct` | Your answer matches an official answer. | คำตอบของคุณตรงกับคำตอบทางการข้อหนึ่ง |
+| `civics.why.notYet` | Your answer does not match the official answers yet. | คำตอบของคุณยังไม่ตรงกับคำตอบทางการ |
+| `settings.slow.on` | On | เปิด |
+| `settings.slow.off` | Off | ปิด |
+| `help.done.n400` | Press “{send}” to go on. Nothing here gets a score. | กด “{send}” เพื่อไปต่อ ส่วนนี้ไม่มีการให้คะแนน |
+| `help.done.english` | Press “{send}”. Then you see if it counts. | กด “{send}” แล้วคุณจะเห็นว่านับได้หรือไม่ |
+| `help.done.civics` | Press “{send}”. Then you see if it counts, and the official answers. | กด “{send}” แล้วคุณจะเห็นว่านับได้หรือไม่ และคำตอบทางการ |
+| `settings.textSize.sample` | Aa | Aa |
+| `lang.selected` | Selected | เลือกแล้ว |
+| `aiNotice.more` | More | เพิ่มเติม |
+| `home.who.title` | 1. Who is practicing? | 1. ใครกำลังฝึก? |
+| `home.who.most.title` | Most people | คนส่วนใหญ่ |
+| `home.who.most.text` | The usual civics test rules. | กฎการสอบหน้าที่พลเมืองตามปกติ |
+| `home.who.special.title` | 65 or older, green card for 20 years or more (65/20) | อายุ 65 ปีขึ้นไป มีกรีนการ์ด 20 ปีขึ้นไป (65/20) |
+| `home.who.special.text` | No English test. Fewer civics questions: the 20 starred ones. | ไม่ต้องสอบภาษาอังกฤษ คำถามน้อยลง: 20 ข้อที่มีดาว |
+| `home.who.notSure` | Not sure? Choose Most people. | ไม่แน่ใจ? เลือก คนส่วนใหญ่ |
+| `home.what.title` | 2. What do you want to do? | 2. คุณอยากทำอะไร? |
+| `home.part.notRequired` | Not required for {exception} | ไม่จำเป็นสำหรับ {exception} |
+| `home.go.start` | Start | เริ่ม |
+| `home.go.open` | Open | เปิด |
+| `home.who.5020.title` | 50 or older, green card for 20 years or more (50/20) | อายุ 50 ปีขึ้นไป มีกรีนการ์ด 20 ปีขึ้นไป (50/20) |
+| `home.who.5515.title` | 55 or older, green card for 15 years or more (55/15) | อายุ 55 ปีขึ้นไป มีกรีนการ์ด 15 ปีขึ้นไป (55/15) |
+| `home.who.exempt.text` | No English test. Civics as usual, in your language if you bring an interpreter. | ไม่ต้องสอบภาษาอังกฤษ สอบหน้าที่พลเมืองตามปกติ เป็นภาษาของคุณได้ถ้าพาล่ามมาเอง |
+| `study.exempt.note` | At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions. | ในการสัมภาษณ์ คุณตอบคำถามหน้าที่พลเมืองเป็นภาษาของคุณได้ถ้าพาล่ามมาเอง แอปนี้ฝึกคำถามภาษาอังกฤษ |
+| `report.exception` | Practice as {exception} | ฝึกในกรณี {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | คุณสอบหน้าที่พลเมืองจริงเป็นภาษาของคุณได้ ถ้าพาล่ามมาเอง |
+| `intro.who.legend` | Who is practicing? | ใครกำลังฝึก? |
 
 ## Lines marked ⚠ (meaning differs a little)
 

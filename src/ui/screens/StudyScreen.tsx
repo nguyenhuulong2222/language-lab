@@ -19,6 +19,7 @@ import { useT } from "../../i18n/react";
 import { EnglishNotice } from "../components/EnglishNotice";
 import { QuestionPicture } from "../components/QuestionPicture";
 import { SpeakButton } from "../components/SpeakButton";
+import { ActionCard } from "../components/ActionCard";
 import { TakeHeader } from "../components/TakeHeader";
 import { SpecialLanguageLine } from "../components/SpecialConsiderationNote";
 import "../components/Screen.css";
@@ -34,8 +35,10 @@ interface StudyScreenProps {
   prepare?: (version: CivicsTestVersion) => Preparing;
   /** The 65/20 designated ids of a version (spec release-finish REQ-S07). Absent: no 65/20 option. */
   designated?: (version: CivicsTestVersion) => readonly string[];
-  /** Start with "only the 65/20 questions" ticked (tests). */
+  /** Start with "only the 65/20 questions" ticked (65/20 chosen on Home, tests). */
   initialSpecialOnly?: boolean;
+  /** An exception chosen on Home: the interpreter note (65/20 shows the starred questions too). */
+  interpreterNote?: boolean;
 }
 type Preparing = Promise<void>;
 
@@ -46,7 +49,7 @@ export function studyQuestions(key: ReadonlyMap<string, CivicsAnswerEntry>): Civ
   return [...key.values()].filter((e) => e.answerType === "static").sort((a, b) => a.id.localeCompare(b.id));
 }
 
-export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion, initialVersion, prepare, designated, initialSpecialOnly = false }: StudyScreenProps) {
+export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion, initialVersion, prepare, designated, initialSpecialOnly = false, interpreterNote = false }: StudyScreenProps) {
   const t = useT();
   const [specialOnly, setSpecialOnly] = useState(initialSpecialOnly && designated !== undefined);
   const [version, setVersion] = useState<CivicsTestVersion | null>(initialVersion ?? null);
@@ -71,7 +74,7 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
             <button type="button" className="btn btn--secondary" onClick={() => setVersion(null)}>
               {t("study.change")}
             </button>
-            <button type="button" className="btn" onClick={onHome}>
+            <button type="button" className="btn btn--primary" onClick={onHome}>
               {t("report.home")}
             </button>
           </div>
@@ -85,6 +88,11 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
       <div className="screen">
         <TakeHeader stage="home" title={t("home.study.title")} lead={t("study.lead")} />
         <EnglishNotice />
+        {interpreterNote && (
+          <p className="note">
+            <LegalText messageKey="study.exempt.note" />
+          </p>
+        )}
         <fieldset className="screen__body choices">
           <legend className="choices__legend">{t("study.version.legend")}</legend>
           {designated !== undefined && (
@@ -100,10 +108,10 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
             </label>
           )}
           {VERSIONS.map((v) => (
-            <button
+            <ActionCard
               key={v}
-              type="button"
-              className="option-card"
+              title={t(v === "2008" ? "study.version.2008" : "study.version.2025")}
+              verb={t("home.go.open")}
               onClick={() => {
                 const show = () => {
                   setVersion(v);
@@ -112,16 +120,9 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
                 if (prepare === undefined) return show();
                 void prepare(v).catch(() => {}).then(show);
               }}
-            >
-              <span className="option-card__title">{t(v === "2008" ? "study.version.2008" : "study.version.2025")}</span>
-            </button>
+            />
           ))}
         </fieldset>
-        <div className="btn-row">
-          <button type="button" className="btn btn--secondary" onClick={onHome}>
-            {t("report.home")}
-          </button>
-        </div>
       </div>
     );
   }
@@ -145,6 +146,12 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
         <p className="progress-line">
           {t("civics.count", { current: index + 1, total: questions.length })}
         </p>
+        {/* With the 65/20 filter on, the 65/20 line below already says it. */}
+        {interpreterNote && index === 0 && designatedIds === null && (
+          <p className="note">
+            <LegalText messageKey="study.exempt.note" />
+          </p>
+        )}
         {designatedIds !== null && index === 0 && (
           <>
             {leftOut > 0 && (
@@ -172,13 +179,24 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
             <p className="note"><LegalText messageKey="civics.officialNote" /></p>
           </section>
         )}
+        {/* Previous and Next side by side, 56px. After the last question: Back to Home (the next step). */}
+        <div className="btn-pair">
+          {index > 0 && (
+            <button type="button" className="btn btn--secondary" onClick={() => setIndex(index - 1)}>
+              {t("study.prev")}
+            </button>
+          )}
+          {last ? (
+            <button type="button" className="btn btn--primary" onClick={onHome}>
+              {t("report.home")}
+            </button>
+          ) : (
+            <button type="button" className="btn btn--primary" onClick={() => setIndex(index + 1)}>
+              {t("civics.next")}
+            </button>
+          )}
+        </div>
         <div className="btn-row">
-          <button type="button" className="btn btn--secondary" disabled={index === 0} onClick={() => setIndex(index - 1)}>
-            {t("study.prev")}
-          </button>
-          <button type="button" className="btn" disabled={last} onClick={() => setIndex(index + 1)}>
-            {t("civics.next")}
-          </button>
           <button
             type="button"
             className="btn btn--secondary"
@@ -188,9 +206,6 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
             }}
           >
             {t("study.change")}
-          </button>
-          <button type="button" className="btn btn--secondary" onClick={onHome}>
-            {t("report.home")}
           </button>
         </div>
       </div>

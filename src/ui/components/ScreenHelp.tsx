@@ -1,7 +1,7 @@
 /**
- * A "How this works" button with a few short steps for one screen, in plain words. It opens by
- * itself the first time the screen is shown in a session, and can be opened any time.
- * Typing is always named as an option, and so is what the microphone button and Skip do.
+ * A "Help" button with three short numbered steps for one screen, in plain words. It opens by
+ * itself (in the page, not a pop-up) the first time the screen is shown in a session, and can be
+ * opened any time. Where there is a microphone, typing is named as the other way to answer.
  */
 import { useEffect, useId, useState, type ReactNode } from "react";
 import type { MessageKey } from "../../i18n";
@@ -22,33 +22,25 @@ export function ScreenHelp({ screen }: { screen: HelpScreen }) {
     seen.add(screen);
   }, [seen, screen]);
 
-  const mic = t("help.mic", { say: t("voice.say"), stop: t("voice.stop") });
+  const mic = t("help.mic", { say: t("voice.say") });
   const listen = t("help.listen", { play: t("audio.play") });
-  const skip = t("help.skip", { skip: t("voice.skip") });
-
-  let steps: ReactNode[];
+  // Three steps on every screen: what to do first, how to answer, what happens next.
+  let steps: [ReactNode, ReactNode, ReactNode];
   switch (screen) {
     case "setup":
       steps = [t("help.setup.1"), <LegalText key="s2" messageKey="help.setup.2" />, t("help.setup.3", { start: t("intro.start") })];
       break;
     case "n400":
-      steps = [listen, t("help.sample"), mic, t("help.type"), t("help.send", { send: t("n400.save") }), t("help.notScored")];
+      steps = [listen, mic, t("help.done.n400", { send: t("n400.save") })];
       break;
     case "reading":
-      steps = [
-        t("help.read"),
-        mic,
-        t("help.type"),
-        t("help.send", { send: t("reading.submit") }),
-        skip,
-        t("help.result.reading"),
-      ];
+      steps = [t("help.read"), mic, t("help.done.english", { send: t("reading.submit") })];
       break;
     case "writing":
-      steps = [listen, t("help.typeOnly"), t("help.send", { send: t("writing.submit") }), skip, t("help.result.reading")];
+      steps = [t("help.listen", { play: t("audio.playSentence") }), t("help.typeOnly"), t("help.done.english", { send: t("writing.submit") })];
       break;
     case "civics":
-      steps = [listen, mic, t("help.type"), t("help.send", { send: t("civics.submit") }), skip, t("help.result.civics")];
+      steps = [listen, mic, t("help.done.civics", { send: t("civics.submit") })];
       break;
   }
 
