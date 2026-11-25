@@ -31,11 +31,11 @@ describe("Report screen (SSR against session.json)", () => {
   });
 
   it("renders a headline that names the practice and predicts nothing", () => {
-    expect(html).toContain("Practice complete: each part reached the practice score");
+    expect(html).toContain("Well done. Each part reached the practice goal.");
   });
 
   it("renders the fictional profile card", () => {
-    expect(html).toContain("Practice profile (fictional)");
+    expect(html).toContain("Practice person (made up)");
     expect(html).toContain("Aurora Thistlewood");
     expect(html).toContain("civics test");
     expect(html).toContain("March 15, 2024");
@@ -43,13 +43,13 @@ describe("Report screen (SSR against session.json)", () => {
 
   it("renders a card for each stage summary", () => {
     expect(html).toContain("How each part went");
-    expect(html).toContain("Welcome");
-    expect(html).toContain("N-400 conversation");
+    expect(html).toContain("Set up");
+    expect(html).toContain("N-400 questions");
     expect(html).toContain("Reading");
     expect(html).toContain("Writing");
     expect(html).toContain("Civics");
-    expect(html).toContain("Practice score reached");
-    expect(html).toContain("Worth reviewing");
+    expect(html).toContain("You reached the practice goal");
+    expect(html).toContain("Practice this again");
   });
 
   it("renders the overall review list", () => {
@@ -64,10 +64,10 @@ describe("Report screen (SSR against session.json)", () => {
   });
 
   it("renders the generated timestamp and marks the report stage current", () => {
-    expect(html).toContain("Report generated");
+    expect(html).toContain("Report made");
     expect(html).toContain("March 20, 2024 at 10:42 AM");
     expect(html).toContain('aria-current="step"');
-    expect(html).toContain("Interview stages");
+    expect(html).toContain("Your steps");
   });
 });
 describe("report wording does not read as a prediction (audit CON-04)", () => {

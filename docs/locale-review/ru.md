@@ -28,7 +28,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | Настоящее собеседование проходит на английском языке. Исключение возможно только в том случае, если USCIS разрешит его вам. Вопросы и предложения на этих экранах остаются на английском, чтобы вы могли их тренировать. | The real interview is held in English. An exception is possible only if USCIS permits it for you. The questions and sentences on these screens stay in English so that you can practice them. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | Этот отчёт только об одной части. Он показывает, как прошла эта часть на практике, а не как вы выступили бы на настоящем тесте, и не даёт общего результата практики. | This report is about one part only. It shows how this part went in practice, and not how you would perform on the real test, and it does not give an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | Собеседование по форме N-400 — только практика, оно не оценивается. | The interview on the N-400 form is practice only; it is not assessed. |
-| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Этот перевод сделан ИИ и может содержать ошибки. Официальной является английская версия. | This translation was made by AI and may contain errors. The English version is the official one. |
+| `aiNotice.text` | This translation was made by AI and may have mistakes. If something is unclear, the English version is correct. | Этот перевод сделан ИИ и может содержать ошибки. Если что-то непонятно, верна английская версия. | This translation was made by AI and may contain errors. The English version is the official one. |
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Это настройка практики Language Lab на основе правил оценивания USCIS, а не правило USCIS: каждое важное слово предложения должно быть на месте, по порядку. Короткие слова вроде «the» можно пропустить. Паузы и произношение не оцениваются. | This is a Language Lab practice setting based on USCIS grading rules, not a USCIS rule: every important word of the sentence must be in place, in order. Short words like “the” can be skipped. Pauses and pronunciation are not graded. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | От этого зависит, какой тест по обществоведению вы тренируете: 2008 или 2025 года. Это только выбор для практики. Какой тест относится к вашему случаю, узнайте на uscis.gov. | What you train depends on this: the 2008 or the 2025 civics test. This is only a choice for practice. Which test applies to your case, find out at uscis.gov. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Картинки в практике по обществоведению взяты из официальных источников федерального правительства США. Каждая используется только потому, что в её собственной записи ясно указаны права. Это не значит, что какое-либо ведомство одобряет Language Lab. | The pictures in civics practice are taken from official sources of the U.S. federal government. Each is used only because its own record clearly states the rights. This does not mean that any agency approves Language Lab. |
@@ -36,10 +36,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | Обществоведение, «Сначала изучить» и полное пробное собеседование отключены в этой версии, пока человек не проверит ответы по обществоведению. Вы можете практиковать собеседование по N-400, чтение и письмо. | Civics, "Study first" and the full practice interview are turned off in this version until a person checks the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Ключ с правильными ответами по обществоведению ещё ждёт проверки человеком, поэтому эта версия не оценивает эту часть и не создаёт отчёт. | The key with the correct civics answers is still waiting for a person to check it, so this version does not grade this part and does not create a report. |
 | `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Когда вы нажимаете «Нажмите, чтобы говорить», функция распознавания речи в вашем браузере может отправить ваш голос компании, которая сделала браузер, например Google или Apple, чтобы превратить его в слова. Language Lab не отправляет и не сохраняет ваш голос. Вместо этого вы можете напечатать ответ. | When you press “Say”, the speech recognition function in your browser may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type the answer instead. |
-| `report.title.onTrack` | Practice complete: each part reached the practice score | Практика завершена: каждая часть достигла практического балла | Practice finished: each part reached the practice score |
+| `report.title.onTrack` | Well done. Each part reached the practice goal. | Отлично. Каждая часть достигла цели практики. | Practice finished: each part reached the practice score |
 | `report.title.review` | A few things to review | Есть что повторить | There is something to review |
-| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | В этой практике чтение, письмо и обществоведение достигли балла, который использует Language Lab. Используйте заметки ниже, чтобы продолжать практиковаться. | In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to keep practicing. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Для этого и нужна практика. Заметки ниже показывают, на чём сосредоточиться, прежде чем попробовать снова. | That is what practice is for. The notes below show what to focus on before trying again. |
+| `report.lead.onTrack` | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. | Чтение, письмо и граждановедение достигли цели практики. Прочитайте заметки ниже и продолжайте практику. | In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That is what practice is for. The notes below show what to practice next. | Для этого и нужна практика. Заметки ниже показывают, что потренировать дальше. | That is what practice is for. The notes below show what to focus on before trying again. |
 | `compare.setting.writing` ⚠ | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Письмо: по словам USCIS, ошибки в написании, заглавных буквах и пунктуации не приводят к провалу письменного теста, если предложение всё ещё можно понять. Здесь небольшие ошибки в написании засчитываются, а в длинных словах их может быть больше. Заглавные буквы и пунктуация не проверяются. | Writing: according to USCIS, errors in spelling, capital letters and punctuation do not lead to failing the written test if the sentence can still be understood. Here, small spelling errors are counted as correct, and in long words there may be more of them. Capital letters and punctuation are not checked. |
 | `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | Когда ИИ-тренер включён, слова каждого ответа, который вы печатаете или произносите в этой части, отправляются в виде текста компании Anthropic, разработчику ИИ, через сервер Language Lab, чтобы написать отзыв. Language Lab и Anthropic никогда не получают ваш голос, только слова. Отвечайте как вымышленный человек. Не называйте настоящие имена, адреса, даты рождения, A-number или подробности дела. На вашем настоящем собеседовании вы должны отвечать правдиво о своей собственной жизни. Language Lab проверяет некоторые номера, но не может заметить все личные данные. Language Lab не хранит ваши ответы. Как с ними обращается Anthropic, описано в политике конфиденциальности Anthropic: anthropic.com/legal/privacy. Когда вы начинаете новую практику, ИИ-тренер снова выключен. | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
 | `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | ИИ-тренер: выключен, пока вы не включите его в части N-400. Когда он включён, текст каждого ответа в N-400 отправляется Anthropic через сервер Language Lab, чтобы написать отзыв; звук не отправляется. Чтобы ограничить использование, сервер считает запросы по ежедневному коду с «солью», созданному из вашего интернет-адреса; старые счётчики удаляются при следующих запросах, обычно в течение двух дней. Политика конфиденциальности Anthropic: anthropic.com/legal/privacy. | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
@@ -50,8 +50,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | В предложениях используются только слова из официальных списков лексики USCIS для чтения и письма. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Вы набрали проходной балл практики, поэтому тест остановился здесь. |
-| `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Отвечайте на вопросы по обществоведению. Проверка по ключу правильных ответов. |
-| `partReport.unscored.missing` | A question that is not in the answer key | Вопрос, которого нет в ключе правильных ответов |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Режим «Сначала изучить» в этой версии отключён, пока человек не проверит ключ правильных ответов. |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | Это меняет только практику; ничего не сохраняется и не отправляется. Часть по обществоведению задаёт {asked} из {bank} вопросов, отмеченных звёздочкой (*) в официальном списке. В этой практике задаются все {asked}. Проходной балл практики — {pass} правильных ответов. Для своего случая проверьте uscis.gov: возраст и годы считаются на дату подачи заявления. |
 | `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS: на дату подачи, если вам 50 лет или больше и вы 20 лет постоянный житель (50/20), или 55 лет или больше и 15 лет (55/15), вы освобождены от требования по английскому языку (чтение, письмо, речь и понимание), но должны сдать тест по обществоведению. Его можно сдавать на родном языке, если вы приведёте переводчика. Если вам 65 лет или больше и вы не менее 20 лет постоянный житель (65/20), вы тоже освобождены от английского, и сотрудник использует специально установленные формы теста по обществоведению. |
@@ -61,8 +59,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Практический тест остановился, когда был достигнут проходной балл практики. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Практический тест остановился после {incorrect} неправильных ответов, до того как был достигнут проходной балл практики ({score}). |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Проходной балл практики — {score} правильных ответов, и он не достигнут. |
-| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | Не оценено, потому что ответ меняется или его нет в ключе ответов: {names}. Эти вопросы не считаются ни правильными, ни неправильными. |
-| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | Ваше устройство предложило несколько вариантов того, что вы сказали. Показан вариант, самый близкий к ответу из ключа. |
 
 ## 3. All other lines
 
@@ -70,16 +66,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | Перейти к основному содержимому |
-| `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Этот этап практики пока не готов. |
+| `app.stageNotBuilt` | This part is not ready yet. Go back to Home and choose another part. | Эта часть ещё не готова. Вернитесь на главную и выберите другую часть. |
 | `header.about` | About & disclaimer | О программе и отказ от ответственности |
-| `stepper.label` | Interview stages | Этапы собеседования |
+| `stepper.label` | Your steps | Ваши шаги |
 | `stepper.count` | Step {current} of {total}: {name} | Шаг {current} из {total}: {name} |
 | `stepper.status.complete` | completed | завершён |
 | `stepper.status.current` | current step | текущий этап |
 | `stepper.status.upcoming` | upcoming | впереди |
-| `stage.intro.label` | Welcome | Добро пожаловать |
-| `stage.intro.short` | Intro | Начало |
-| `stage.n400_interview.label` | N-400 conversation | Беседа по форме N-400 |
+| `stage.intro.label` | Set up | Настройка |
+| `stage.intro.short` | Set up | Настройка |
+| `stage.n400_interview.label` | N-400 questions | Вопросы по N-400 |
 | `stage.n400_interview.short` | N-400 | N-400 |
 | `stage.reading.label` | Reading | Чтение |
 | `stage.reading.short` | Reading | Чтение |
@@ -87,42 +83,42 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.writing.short` | Writing | Письмо |
 | `stage.civics.label` | Civics | Обществоведение |
 | `stage.civics.short` | Civics | Civics |
-| `stage.report.label` | Practice report | Отчёт о практике |
+| `stage.report.label` | Your report | Ваш отчёт |
 | `stage.report.short` | Report | Отчёт |
-| `badge.onTrack` | Practice score reached | Практический балл достигнут |
-| `badge.review` | Worth reviewing | Стоит повторить |
-| `report.empty` | Your practice report will appear here once the session is complete. | Ваш отчёт о практике появится здесь, когда сеанс закончится. |
+| `badge.onTrack` | You reached the practice goal | Вы достигли цели практики |
+| `badge.review` | Practice this again | Потренируйте это ещё раз |
+| `report.empty` | Your report will show here when you finish the practice. | Ваш отчёт появится здесь, когда вы закончите практику. |
 | `report.overline` | Practice report | Отчёт о практике |
-| `report.profile.label` | Practice profile (fictional) | Учебный профиль (вымышленный) |
+| `report.profile.label` | Practice person (made up) | Персонаж для практики (вымышленный) |
 | `report.profile.meta` | {version} civics test · filed {date} | Тест по обществоведению {version} · заявление подано {date} |
 | `report.stages.heading` | How each part went | Как прошла каждая часть |
 | `report.review.heading` | Things to review | Что стоит повторить |
 | `report.review.intro` | Focus on these before your next practice. | Сосредоточьтесь на этом перед следующей практикой. |
-| `report.generated` | Report generated {datetime} | Отчёт создан {datetime} |
+| `report.generated` | Report made {datetime} | Отчёт создан {datetime} |
 | `translation.english` | English | Английский |
 | `voice.say` | Tap to speak | Нажмите, чтобы говорить |
 | `voice.stop` | Listening… tap when you finish | Слушаю… нажмите, когда закончите |
 | `voice.listening` | Listening. Say your answer now. | Слушаю. Говорите ответ сейчас. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | Мы вас услышали. Проверьте слова, при желании измените их и отправьте. |
-| `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | Микрофон заблокирован. Разрешите доступ к микрофону в настройках браузера или введите ответ с клавиатуры. |
+| `voice.denied` | The microphone is blocked. Follow the steps below to allow it, or type your answer. | Микрофон заблокирован. Выполните шаги ниже, чтобы разрешить его, или напечатайте ответ. |
 | `voice.unsupported` | This browser cannot listen to your voice. Type your answer instead. | Этот браузер не может слушать ваш голос. Введите ответ с клавиатуры. |
 | `voice.nothingHeard` | We did not hear anything. Try again, or type your answer. | Мы ничего не услышали. Попробуйте ещё раз или введите ответ с клавиатуры. |
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | Микрофон не найден. Введите ответ с клавиатуры. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | В этот раз прослушивание не получилось. Попробуйте ещё раз или введите ответ с клавиатуры. |
 | `voice.skip` | Skip this one | Пропустить |
 | `audio.play` | Play the question | Прослушать вопрос |
-| `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Голос устройства: голос, установленный на вашем телефоне или компьютере. |
+| `audio.deviceVoice` | Built-in voice: the voice of your phone or computer. | Встроенный голос: голос вашего телефона или компьютера. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Этот браузер не умеет читать вслух. Прочитайте текст на экране. |
-| `intro.profile.legend` | Choose a practice profile | Выберите учебный профиль |
-| `intro.profile.help` | Every profile is invented. | Все профили вымышленные. |
+| `intro.profile.legend` | Choose a practice person | Выберите персонажа для практики |
+| `intro.profile.help` | Every person here is made up. | Все персонажи здесь вымышленные. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Тренируйтесь так, как будто форма N-400 подана… |
 | `intro.filed.before` | Before {date} | До {date} |
 | `intro.filed.onOrAfter` | On or after {date} | {date} или позже |
 | `intro.start` | Start practice | Начать практику |
-| `intro.startHint` | Make your choice above to start. | Сделайте выбор выше, чтобы начать. |
-| `home.locked.title` | In this build you can practice | В этой версии можно практиковать |
+| `intro.startHint` | Choose one answer in each group above. Then press “Start practice”. | Выберите один ответ в каждой группе выше. Затем нажмите «Начать практику». |
+| `home.locked.title` | Right now you can practice | Сейчас можно потренировать |
 | `n400.title` | N-400 interview | Собеседование по форме N-400 |
-| `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | Спокойное знакомство с вопросами, которые офицер задаёт по заявлению. Отвечайте как {name}. Этот этап не оценивается. |
+| `n400.lead` | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. | Сотрудник может задать такие вопросы о вашей форме. Отвечайте как {name}. Эта часть не оценивается. |
 | `n400.count` | Question {current} of {total} | Вопрос {current} из {total} |
 | `n400.sample.label` | Sample answer for {name} (fictional) | Пример ответа для {name} (вымышленный) |
 | `n400.yourAnswer` | Your answer, as {name} | Ваш ответ от имени {name} |
@@ -143,7 +139,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Если хотите, потренируйтесь отвечать вслух. Этот вопрос не записывается. |
 | `coach.tip.label` | Tip about your English: | Совет о вашем английском: |
 | `coach.feedback.understood` | Easy to understand | Легко понять |
-| `coach.feedback.needs_practice` | Worth practicing again | Стоит потренироваться ещё |
+| `coach.feedback.needs_practice` | Practice this again | Потренируйте это ещё раз |
 | `coach.feedback.unclear` | Hard to follow. Try again. | Трудно понять. Попробуйте ещё раз. |
 | `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | Здесь проверяется только, насколько понятен ваш английский. Это не говорит, правилен или правдив ответ. |
 | `coach.checking` | Getting AI feedback… | Получаем отзыв ИИ… |
@@ -157,11 +153,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.dateOfBirth` | a full date, such as a date of birth | полная дата, например дата рождения |
 | `coach.next` | Continue | Продолжить |
 | `n400.loading` | Getting the next question… | Загружаем следующий вопрос… |
-| `n400.failed` | The next question could not be loaded. Start over to try again. | Не удалось загрузить следующий вопрос. Начните заново, чтобы попробовать ещё раз. |
+| `n400.failed` | The next question did not load. Check your internet, then press “Start over”. | Следующий вопрос не загрузился. Проверьте интернет, затем нажмите «Начать заново». |
 | `n400.done.title` | Your answers | Ваши ответы |
 | `n400.done.lead` | These are the words you gave. They are not scored. | Это слова, которые вы сказали. Они не оцениваются. |
 | `n400.done.next` | Go to reading | Перейти к чтению |
-| `voice.consent.continue` | Continue and say it | Продолжить и сказать |
+| `voice.consent.continue` | Continue and speak | Продолжить и говорить |
 | `voice.consent.type` | Type instead | Напечатать вместо этого |
 | `n400.number` | Question {current} | Вопрос {current} |
 | `common.fictional` | Fictional practice profile | Вымышленный учебный профиль |
@@ -193,8 +189,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Этот браузер не умеет читать вслух, поэтому предложение показано здесь. Введите его. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Предложение скрыто, пока вы не ответите. |
 | `writing.show` | Show the sentence | Показать предложение |
-| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | Если вы не слышите звук, покажите предложение и напечатайте его. Проверка проходит так же. В отчёте эта попытка будет отмечена как попытка с подсказкой. |
-| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | Предложение показано. В отчёте эта попытка будет отмечена как попытка с подсказкой. |
+| `writing.show.help` | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. | Если вы не слышите звук, покажите предложение и напечатайте его. Проверка та же. В отчёте будет сказано, что предложение было показано. |
+| `writing.shown` | The sentence is shown. Your report will say so. | Предложение показано. В отчёте это будет сказано. |
 | `civics.title` | Civics | Обществоведение |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | Отвечайте вслух или вводите ответ. Короткие ответы подходят, но говорите ответ целиком. |
 | `civics.count` | Question {current} of {total} | Вопрос {current} из {total} |
@@ -210,22 +206,22 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.stopped.incorrect` | The test stopped because too many answers need more practice. | Тест остановился, потому что слишком много ответов требуют дополнительной практики. |
 | `civics.stopped.none` | You have answered every question for this practice test. | Вы ответили на все вопросы этого учебного теста. |
 | `civics.tally` | {correct} correct, {incorrect} not yet. | Верно: {correct}, пока нет: {incorrect}. |
-| `civics.locked.title` | Civics is switched off in this build | Обществоведение в этой версии отключено |
+| `civics.locked.title` | Civics is not available right now | Граждановедение сейчас недоступно |
 | `report.again` | Practice again | Тренироваться снова |
 | `common.startOver` | Start over | Начать заново |
-| `voice.needText` | Type or say your answer first, or choose Skip. | Сначала введите или скажите ответ либо выберите «Пропустить». |
+| `voice.needText` | The box is empty. Type or say your answer, or press “Skip this one”. | Поле пустое. Напечатайте или скажите ответ, или нажмите «Пропустить». |
 | `audio.stop` | Stop | Стоп |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Голос создан ИИ. Аудио было подготовлено заранее. |
 | `audio.playSample` | Play sample answer | Прослушать пример ответа |
-| `home.title` | Welcome to the booth | Добро пожаловать в Language Lab |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | Готовьтесь к собеседованию по натурализации в спокойной обстановке. Вы отвечаете как вымышленный человек, поэтому не нужно сообщать настоящие данные. |
+| `home.title` | Welcome to Language Lab | Добро пожаловать в Language Lab |
+| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | Готовьтесь к собеседованию на гражданство. Вы отвечаете за вымышленного человека, поэтому ничего не рассказываете о себе. |
 | `home.how.title` | How it works | Как это работает |
 | `home.how.1.title` | Listen | Слушайте |
-| `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | Нажмите «Прослушать», чтобы услышать вопрос или предложение. |
+| `home.how.1.text` | Tap “Play the question” to hear it. | Нажмите «Прослушать вопрос», чтобы послушать. |
 | `home.how.2.title` | Speak or type | Говорите или вводите |
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | Скажите ответ или введите его. Ввод с клавиатуры всегда работает. |
 | `home.how.3.title` | See the result | Смотрите результат |
-| `home.how.3.text` | You see how your answer compares, and what to practice next. | Вы увидите, как ваш ответ соотносится с образцом и что тренировать дальше. |
+| `home.how.3.text` | You see if your answer counts, and what to practice next. | Вы увидите, засчитан ли ответ и что потренировать дальше. |
 | `home.choose` | What would you like to do? | Что вы хотите сделать? |
 | `home.full.title` | Full practice interview | Полное учебное собеседование |
 | `home.full.text` | All four parts in order, then one report. | Все четыре части по порядку и один отчёт. |
@@ -234,15 +230,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Работает на Claude (Anthropic) |
 | `home.parts.title` | Practice one part | Тренировать одну часть |
 | `home.part.n400.title` | N-400 interview | Собеседование по форме N-400 |
-| `home.part.n400.text` | Answer questions about an application. Not scored. | Отвечайте на вопросы о заявлении. Без оценки. |
+| `home.part.n400.text` | Answer questions about the N-400 form. No score. | Отвечайте на вопросы о форме N-400. Без оценки. |
 | `home.part.n400.badge` | AI | ИИ |
 | `home.part.reading.title` | Reading | Чтение |
 | `home.part.reading.text` | Read sentences out loud. | Читайте предложения вслух. |
 | `home.part.writing.title` | Writing | Письмо |
 | `home.part.writing.text` | Listen and type the sentence. | Слушайте и вводите предложение. |
 | `home.part.civics.title` | Civics | Обществоведение |
+| `home.part.civics.text` | Answer questions about U.S. history and government. Checked with the official answers. | Отвечайте на вопросы об истории и правительстве США. Проверяется по официальным ответам. |
 | `setup.title` | Set up your practice | Подготовьте практику |
-| `setup.lead` | Choose what this practice needs. Nothing real is asked. | Выберите то, что нужно для этой практики. Ничего настоящего не спрашивается. |
+| `setup.lead` | Choose one answer in each group. Nothing here asks about you. | Выберите один ответ в каждой группе. Здесь ничего не спрашивают о вас. |
 | `report.home` | Back to home | На главную |
 | `partReport.title.n400_interview` | N-400 interview practice | Практика собеседования по форме N-400 |
 | `partReport.title.reading` | Reading practice | Практика чтения |
@@ -259,7 +256,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.civics.needed` | Correct answers needed: {needed}. | Нужно правильных ответов: {needed}. |
 | `partReport.review` | Questions to review | Вопросы для повторения |
 | `partReport.unscored.title` | Not scored | Не оценивались |
-| `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Эти вопросы нельзя было оценить, поэтому они не считаются ни верными, ни неверными. |
+| `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | Эти вопросы не оцениваются. Они не считаются ни верными, ни неверными. |
+| `partReport.unscored.missing` | A question we cannot check | Вопрос, который мы не можем проверить |
 | `report.see` | See my report | Посмотреть мой отчёт |
 | `header.home` | Home | Главная |
 | `help.button` | Help | Помощь |
@@ -286,9 +284,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Leave | Выйти |
 | `header.homeConfirm.no` | Keep practicing | Продолжить практику |
 | `common.retry` | Try again | Попробовать снова |
-| `partReport.badge.good` | This part reached the practice score | Эта часть достигла практического балла |
-| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Предложение было показано на экране (попытка с подсказкой). |
-| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Отказ от ответственности и юридические тексты показываются только по-английски, пока перевод не проверит человек. |
+| `partReport.badge.good` | You reached the practice goal | Вы достигли цели практики |
+| `partReport.assisted` | The sentence was shown on the screen. | Предложение было показано на экране. |
+| `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | Юридические уведомления остаются на английском, пока человек не проверит перевод. |
 | `lang.menu.title` | Choose a language | Выберите язык |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Другие языки проходят проверку. Они появятся здесь, когда их проверит человек. |
 | `home.study.title` | Study first | Сначала изучить |
@@ -313,8 +311,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.hearSample` | Hear the sample | Послушать образец |
 | `selfReview.tryAgain` | Try again | Попробовать снова |
 | `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | Ваша запись остаётся на этом устройстве. Она никуда не отправляется и не сохраняется, а удаляется, когда вы переходите к следующему предложению или уходите с этого экрана. |
-| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Этот браузер не может записать ваш голос. Вы всё равно можете проверить чтение кнопкой «Сказать» или набрав текст. |
-| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | Микрофон заблокирован. Разрешите доступ к микрофону в настройках браузера. |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still press “Tap to speak” or type. | Этот браузер не может записать ваш голос. Вы всё равно можете нажать «Нажмите, чтобы говорить» или напечатать. |
+| `selfReview.denied` | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. | Микрофон заблокирован, поэтому запись не начнётся. Разрешите микрофон для этого сайта в настройках браузера и попробуйте снова. |
 | `selfReview.error` | Recording did not work this time. Try again. | В этот раз запись не получилась. Попробуйте снова. |
 | `compare.why.allWords` | Every important word of the sentence was there, in order. | Все важные слова предложения были на месте, по порядку. |
 | `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Вы сказали «{said}». В предложении «{expected}». Это по-прежнему засчитывается. |
@@ -327,7 +325,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Вы добавили «{said}», этого слова нет в предложении. Это по-прежнему засчитывается. |
 | `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | Короткое слово «{expected}» пропущено. Это по-прежнему засчитывается. |
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Вы добавили короткое слово «{said}». Это по-прежнему засчитывается. |
-| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Этот результат основан на словах, которые услышало ваше устройство. Если оно услышало неверно, попробуйте снова или введите ответ. |
+| `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Этот результат основан на словах, которые услышал телефон или компьютер. Если он услышал неверно, попробуйте снова или напечатайте ответ. |
 | `compare.honest.typed` | This result is based on the words you typed. | Этот результат основан на словах, которые вы ввели. |
 | `home.special.title` | 65/20 civics practice | Практика по обществоведению 65/20 |
 | `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Для людей в возрасте 65 лет и старше, которые являются постоянными жителями 20 лет или больше. Тренируйте вопросы по обществоведению, отмеченные звёздочкой (*). |
@@ -335,15 +333,17 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Только вопросы для 65/20 (отмечены звёздочкой) |
 | `report.line.civics.none` | No civics questions were scored. | Ни один вопрос по обществоведению не был оценён. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Правильных ответов на вопросы по обществоведению: {correct} из {scored}. |
+| `report.line.civics.unscored` | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. | Без оценки, потому что ответ меняется со временем или мы не можем его проверить: {names}. Они не считаются ни верными, ни неверными. |
 | `report.line.reading.none` | No reading sentences were completed. | Ни одно предложение для чтения не выполнено. |
 | `report.line.reading.done` | Sentence {n} was read correctly. | Предложение {n} прочитано правильно. |
 | `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Предложений для чтения прочитано правильно: {correct} из {presented}. Нужно правильных предложений: {needed}. |
 | `report.line.writing.none` | No writing sentences were completed. | Ни одно предложение для письма не выполнено. |
 | `report.line.writing.done` | Sentence {n} was written correctly. | Предложение {n} написано правильно. |
 | `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Предложений для письма написано правильно: {correct} из {presented}. Нужно правильных предложений: {needed}. |
-| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | Попыток письма с предложением на экране (с подсказкой): {assisted} из {presented}. |
+| `report.line.writing.assisted` | Sentences written while the sentence was shown: {assisted} of {presented}. | Предложения, написанные при показанном тексте: {assisted} из {presented}. |
 | `report.review.reading` | Practice reading the sentences aloud. | Потренируйтесь читать предложения вслух. |
 | `report.review.writing` | Practice writing the sentences you hear. | Потренируйтесь писать предложения, которые вы слышите. |
+| `civics.heard.closest` | Your phone or computer heard a few possible answers. We show the one closest to an official answer. | Телефон или компьютер услышал несколько возможных ответов. Мы показываем самый близкий к официальному. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Отвечайте как вымышленный человек. Не вводите своё настоящее имя, адрес, даты или номера. |
 | `common.newTab` | (opens in a new tab) | (откроется в новой вкладке) |
 | `coach.kind.streetAddress` | a street address | адрес |

@@ -359,10 +359,10 @@ describe("unscored questions", () => {
   });
 
   it("are named separately in the summary and never in the review items", () => {
-    expect(civicsSummary.summary).toContain("Not scored, because the answer changes or is not in the answer key:");
+    expect(civicsSummary.summary).toContain("No score for these, because the answer changes over time or we cannot check it:");
     expect(civicsSummary.summary).toContain(DYNAMIC_TEXT);
     expect(civicsSummary.summary).toContain(UNKNOWN_ID);
-    expect(civicsSummary.summary).toContain("do not count as correct or incorrect");
+    expect(civicsSummary.summary).toContain("do not count as right or wrong");
     expect(civicsSummary.reviewItems).toEqual([STATIC_TEXT]);
     expect(report.overallReviewItems).not.toContain(DYNAMIC_TEXT);
   });
@@ -504,7 +504,7 @@ describe("assisted writing attempts in the summary", () => {
     });
   const writing = (r: ReturnType<typeof makeReport>) => r.stageSummaries.find((s) => s.stage === "writing")!.summary;
   it("says how many attempts were made with the sentence shown", () => {
-    expect(writing(makeReport(1))).toContain("Writing attempts made with the sentence shown on screen (assisted): 1 of 2.");
+    expect(writing(makeReport(1))).toContain("Sentences written while the sentence was shown: 1 of 2.");
   });
   it("says nothing when there were none, or when the count is not given", () => {
     expect(writing(makeReport(0))).not.toContain("assisted");

@@ -131,7 +131,7 @@ describe("SpeakButton", () => {
       </VoiceProvider>
     );
     expect(html).toContain("Play the question");
-    expect(html).toContain("Device voice");
+    expect(html).toContain("Built-in voice");
     expect(html).not.toMatch(/<button[^>]*disabled/);
   });
 

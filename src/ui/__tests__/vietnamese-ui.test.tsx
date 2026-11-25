@@ -113,7 +113,7 @@ describe("practice screens in Vietnamese", () => {
   it("setup: the choices are Vietnamese, the profile names are not translated", () => {
     const s = engine.reduce(engine.initial(), { type: "choose", mode: "full", seed: 3, at: AT });
     const html = inVietnamese(s);
-    expect(html).toContain("Chọn một hồ sơ luyện tập");
+    expect(html).toContain("Chọn một nhân vật luyện tập");
     expect(html).toContain("Hồ sơ luyện tập giả định");
     for (const p of base.content.profiles) expect(html).toContain(p.displayName);
     expect(html).toContain("Trước ngày 20 tháng 10, 2025");

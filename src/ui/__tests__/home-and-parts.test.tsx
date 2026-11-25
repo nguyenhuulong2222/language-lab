@@ -144,7 +144,7 @@ describe("single-part sessions in the app", () => {
     expect(html).toContain("Reading practice");
     expect(html).toContain("This report is for one part only.");
     expect(html).toContain("it gives no overall practice result");
-    expect(html).toContain("This part reached the practice score");
+    expect(html).toContain("You reached the practice goal");
     expect(html).not.toContain("Practice score reached");
     expect(html).toContain("It shows how this part went in practice, not how you would do on the real test");
     expect(html).toContain("Please read this");
@@ -167,7 +167,7 @@ describe("single-part sessions in the app", () => {
     s = engine.reduce(s, { type: "continue", at: AT });
     const html = renderScreen(s);
     expect(html).toContain("Civics practice");
-    expect(html).toContain("Worth reviewing");
+    expect(html).toContain("Practice this again");
     expect(html).toContain("Questions to review");
     expect(html).toContain("answered correctly");
     expect(html).not.toContain("practice_passed");

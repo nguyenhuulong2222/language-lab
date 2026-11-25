@@ -137,11 +137,11 @@ describe("writing screen", () => {
   it("with a voice, offers a clearly labelled Show the sentence button and explains it", () => {
     const html = render(atWriting(), "writing");
     expect(html).toContain("Show the sentence");
-    expect(html).toContain("Your report marks this attempt as assisted.");
+    expect(html).toContain("Your report will say the sentence was shown.");
   });
   it("without a voice, shows the sentence, says it is assisted and offers no button for it", () => {
     const html = render(atWriting(), "writing", { voice: false });
-    expect(html).toContain("Your report marks this attempt as assisted.");
+    expect(html).toContain("The sentence is shown. Your report will say so.");
     expect(html).not.toContain("Show the sentence");
   });
   it("reading never offers Show the sentence", () => {
@@ -158,7 +158,7 @@ describe("writing screen", () => {
   it("feedback marks an assisted attempt and says nothing about an unassisted one", () => {
     let s = atWriting();
     s = engine.reduce(s, { type: "submitWriting", transcript: "we pay", input: "typed", assisted: true, at: AT });
-    expect(render(s, "writing", { feedback: true })).toContain("The sentence was shown on screen (assisted attempt).");
+    expect(render(s, "writing", { feedback: true })).toContain("The sentence was shown on the screen.");
     let plain = atWriting();
     plain = engine.reduce(plain, { type: "submitWriting", transcript: "we pay", input: "typed", at: AT });
     expect(render(plain, "writing", { feedback: true })).not.toContain("assisted attempt");

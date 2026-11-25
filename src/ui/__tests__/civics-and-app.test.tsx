@@ -127,7 +127,7 @@ describe("civics screen", () => {
     const html = renderToString(
       <CivicsScreen progress={lockedEngine.civicsProgress(s)} version="2008" onSubmit={() => {}} onContinue={() => {}} onRestart={() => {}} />
     );
-    expect(html).toContain("Civics is switched off in this build");
+    expect(html).toContain("Civics is not available right now");
     expect(html).toContain("Start over");
     expect(html).not.toContain("<textarea");
   });
@@ -136,7 +136,7 @@ describe("civics screen", () => {
 describe("the app, phase by phase", () => {
   it("starts at the home screen, with no stepper yet", () => {
     const html = renderToString(<PracticeApp engine={engine} />);
-    expect(html).toContain("Welcome to the booth");
+    expect(html).toContain("Welcome to Language Lab");
     expect(html).toContain("Full practice interview");
     expect(html).not.toContain("Interview stages");
     expect(html).not.toContain("Choose a practice profile");
@@ -164,17 +164,17 @@ describe("the app, phase by phase", () => {
     s = engine.reduce(s, { type: "continue", at: AT });
     expect(s.phase).toBe("report");
     const html = renderScreen(engine, s);
-    expect(html).toContain("Practice complete: each part reached the practice score");
+    expect(html).toContain("Well done. Each part reached the practice goal.");
     expect(html).toContain("This is a practice tool only.");
     expect(html).toContain("The N-400 interview is practice only and is not scored.");
     expect(html).toContain("Practice again");
-    expect(html).toContain("Practice profile (fictional)");
+    expect(html).toContain("Practice person (made up)");
   });
 
   it("a locked build never reaches a report", () => {
     const s = toCivics(lockedEngine);
     const html = renderScreen(lockedEngine, s);
-    expect(html).toContain("Civics is switched off in this build");
+    expect(html).toContain("Civics is not available right now");
     expect(html).not.toContain("Practice report");
   });
 });
@@ -203,6 +203,6 @@ describe("civics answers by voice use the best alternative (answer key only)", (
     const html = renderToString(
       <CivicsScreen progress={engine.civicsProgress(s)} version="2008" onSubmit={() => {}} onContinue={() => {}} onRestart={() => {}} showFeedbackInitially />
     );
-    expect(html).toContain("This result is based on the words your device heard.");
+    expect(html).toContain("This result uses the words your phone or computer heard.");
   });
 });

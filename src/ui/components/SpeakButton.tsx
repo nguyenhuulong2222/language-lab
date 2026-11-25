@@ -1,6 +1,6 @@
 /**
  * Plays a prompt aloud and says which voice it is: "AI-generated voice" when a pre-generated
- * clip plays, "Device voice" only when the browser's own voice is used instead. Large by default
+ * clip plays, "Built-in voice" only when the browser's own voice is used instead. Large by default
  * ("Play the question", 64px). While it plays, the line under it says "Playing…" and the button
  * says "Stop". "Play again" is always next to it and starts from the beginning. Nothing plays by
  * itself. The comfort setting "slower voice" changes the speed of the same recording.

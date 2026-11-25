@@ -28,7 +28,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | Sa Ingles ginaganap ang tunay na panayam maliban kung pinapayagan kayo ng USCIS ng eksepsyon. Nananatiling Ingles ang mga tanong at pangungusap sa mga screen na ito para makapagsanay kayo. | The real interview is held in English unless USCIS allows you an exception. The questions and sentences on these screens remain in English so you can practice. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | Para sa isang bahagi lamang ang ulat na ito. Ipinapakita nito kung ano ang naging takbo ng bahaging ito sa pagsasanay, hindi kung ano ang magiging resulta ninyo sa tunay na test, at wala itong ibinibigay na pangkalahatang resulta ng pagsasanay. | This report is for one part only. It shows what the course of this part was in practice, not what your result would be in the real test, and it gives no overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | Pagsasanay lamang ang panayam tungkol sa N-400 at hindi ito iniiskor. | The interview about the N-400 is practice only and is not scored. |
-| `aiNotice.text` ⚠ | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Ang pagsasalin na ito ay ginawa ng AI at maaaring may mga pagkakamali. Ang bersyong Ingles ang may bisa. | This translation was made by AI and may have mistakes. The English version is the one that is valid. |
+| `aiNotice.text` ⚠ | This translation was made by AI and may have mistakes. If something is unclear, the English version is correct. | Ginawa ng AI ang salin na ito at maaaring may mali. Kung may hindi malinaw, ang bersyong Ingles ang tama. | This translation was made by AI and may have mistakes. The English version is the one that is valid. |
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Setting ng pagsasanay ng Language Lab batay sa mga alituntunin sa pag-iskor ng USCIS, hindi patakaran ng USCIS: kailangang naroon ang bawat mahalagang salita ng pangungusap, ayon sa pagkakasunod-sunod. Maaaring may kulang na maiikling salita tulad ng “the”. Hindi iniiskor ang mga paghinto at pagbigkas. | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS policy: every important word of the sentence must be there, according to the sequence. Some short words like “the” may be lacking. Pauses and pronunciation are not scored. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | Dito napagpapasyahan kung civics test ng 2008 o ng 2025 ang inyong pagsasanayan. Pagpili lang ito para sa pagsasanay. Para sa sarili ninyong kaso, tingnan ang uscis.gov para malaman kung aling test ang para sa inyo. | This is where it is decided whether the 2008 or the 2025 civics test is what you will practice. It is only a choice for practice. For your own case, look at uscis.gov to know which test is for you. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | Ang mga larawan sa pagsasanay sa civics ay galing sa mga opisyal na pinagmulan ng pederal na gobyerno ng U.S. Ginagamit ang bawat isa dahil malinaw na nakasaad sa sarili nitong tala ang mga karapatan nito. Hindi ito nangangahulugang inendorso ng anumang ahensya ang Language Lab. | The pictures in civics practice come from official sources of the U.S. federal government. Each one is used because its own record clearly states its rights. This does not mean that any agency endorsed Language Lab. |
@@ -36,10 +36,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | Naka-off sa bersiyong ito ang sibika, Pag-aralan muna at ang buong practice interview hanggang masuri ng isang tao ang mga sagot sa sibika. Maaari mong sanayin ang N-400 interview, pagbasa at pagsulat. | Civics, Study first and the full practice interview are off in this version until a person checks the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | Naghihintay pa ng pagsusuri ng isang tao ang answer key ng civics, kaya hindi ini-iskor ng bersyong ito ang civics at hindi gumagawa ng ulat. | The civics answer key is still waiting for review by a person, so this version does not score civics and does not make a report. |
 | `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Kapag pinindot mo ang “I-tap para magsalita”, maaaring ipadala ng speech recognition ng iyong browser ang boses mo sa gumawa ng browser, tulad ng Google o Apple, para gawing salita. Hindi ipinapadala o sine-save ng Language Lab ang boses mo. Maaari mong i-type na lang ang sagot mo. | When you press “Say”, your browser's speech recognition may send your voice to the maker of the browser, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can just type your answer. |
-| `report.title.onTrack` | Practice complete: each part reached the practice score | Tapos na ang pagsasanay: naabot ng bawat bahagi ang iskor sa pagsasanay | Practice is done: each part reached the score in practice |
+| `report.title.onTrack` | Well done. Each part reached the practice goal. | Magaling. Naabot ng bawat bahagi ang layunin ng pagsasanay. | Practice is done: each part reached the score in practice |
 | `report.title.review` | A few things to review | May ilang bagay na dapat balikan | There are some things to go back to |
-| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Sa pagsasanay na ito, naabot ng pagbasa, pagsulat at sibika ang iskor na ginagamit ng Language Lab. Gamitin ang mga tala sa ibaba para magpatuloy sa pagsasanay. | In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to continue practicing. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | Iyan ang silbi ng pagsasanay. Ipinapakita ng mga tala sa ibaba kung saan magtutuon bago subukang muli. | That is the use of practice. The notes below show where to focus before trying again. |
+| `report.lead.onTrack` | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. | Naabot ng pagbasa, pagsulat at sibika ang layunin ng pagsasanay. Basahin ang mga tala sa ibaba at magpatuloy sa pagsasanay. | In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to continue practicing. |
+| `report.lead.review` | That is what practice is for. The notes below show what to practice next. | Iyan ang layunin ng pagsasanay. Ipinapakita ng mga tala sa ibaba kung ano ang susunod na sanayin. | That is the use of practice. The notes below show where to focus before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Pagsulat: Sinasabi ng USCIS na ang mga mali sa baybay, malaking titik at bantas ay hindi nagpapabagsak sa pagsusulit sa pagsulat, maliban kung hindi na maintindihan ang pangungusap. Dito, binibilang pa rin ang maliliit na mali sa baybay, at mas marami ang puwede sa mas mahahabang salita. Hindi sinusuri ang malaking titik at bantas. | Writing: USCIS says that mistakes in spelling, capital letters and punctuation do not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling mistakes are still counted, and more are allowed in longer words. Capital letters and punctuation are not checked. |
 | `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | Kapag bukas ang AI coach, ang mga salita ng bawat sagot na tina-type o sinasabi mo sa bahaging ito ay ipinapadala bilang teksto sa Anthropic, isang kumpanya ng AI, sa pamamagitan ng server ng Language Lab, para sumulat ng feedback. Hindi kailanman natatanggap ng Language Lab at ng Anthropic ang boses mo, ang mga salita lang. Sumagot bilang ang kathang-isip na tao. Huwag sabihin ang totoong pangalan, address, petsa ng kapanganakan, A-number o detalye ng kaso. Sa inyong tunay na panayam, dapat kayong sumagot nang tapat tungkol sa sarili ninyong buhay. Tinitingnan ng Language Lab ang ilang numero, pero hindi nito mahuhuli ang bawat personal na detalye. Hindi itinatago ng Language Lab ang mga sagot mo. Sinasabi ng patakaran sa privacy ng Anthropic kung paano ito hinahawakan ng Anthropic: anthropic.com/legal/privacy. Sarado ulit ang AI coach kapag nagsimula ka ng bagong pagsasanay. | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
 | `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | AI coach: sarado maliban kung bubuksan mo ito sa bahaging N-400. Kapag bukas, ang teksto ng bawat sagot sa N-400 ay ipinapadala sa Anthropic sa pamamagitan ng server ng Language Lab para sumulat ng feedback; walang audio na ipinapadala. Para limitahan ang paggamit, binibilang ng server ang mga request gamit ang isang code na nagbabago araw-araw at may salt, na gawa mula sa internet address mo; binubura ang mga lumang bilang sa mga susunod na request, karaniwan sa loob ng dalawang araw. Patakaran sa privacy ng Anthropic: anthropic.com/legal/privacy. | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
@@ -50,8 +50,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | Mga salita lamang mula sa opisyal na listahan ng bokabularyo ng USCIS sa pagbasa at pagsulat ang ginagamit sa mga pangungusap. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Naabot ninyo ang puntos na pasado sa pagsasanay, kaya huminto rito ang test. |
-| `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Sagutin ang mga tanong sa civics. Sinusuri laban sa answer key. |
-| `partReport.unscored.missing` | A question that is not in the answer key | Isang tanong na wala sa answer key |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Naka-off ang Mag-aral muna sa bersyong ito hanggang masuri ng isang tao ang answer key. |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | Pagsasanay lang ang binabago nito; walang sine-save o ipinapadala. Itatanong ng bahagi ng sibika ang {asked} sa {bank} tanong na may tandang bituin (*) sa opisyal na listahan. Sa pagsasanay na ito, itatanong ang lahat ng {asked}. Ang practice passing score ay {pass} tamang sagot. Para sa sarili mong kaso, tingnan ang uscis.gov: binibilang ang edad at mga taon sa petsa ng pag-file. |
 | `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS: sa petsa ng pag-file, kung ikaw ay 50 taong gulang pataas at 20 taon nang permanent resident (50/20), o 55 pataas at 15 taon (55/15), exempted ka sa English requirement (pagbasa, pagsulat, pagsasalita at pag-unawa ng English), pero kailangan mo pa ring kumuha ng civics test. Maaari mo itong kunin sa sarili mong wika kung may dala kang interpreter. Kung ikaw ay 65 pataas at hindi bababa sa 20 taon (65/20), exempted ka rin sa English, at gagamit ang opisyal ng mga espesyal na itinakdang civics test form. |
@@ -61,8 +59,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | Huminto ang practice test nang maabot ang practice passing score. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | Huminto ang practice test pagkatapos ng {incorrect} maling sagot, bago maabot ang practice passing score na {score}. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | Ang practice passing score ay {score} tamang sagot, at hindi ito naabot. |
-| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | Hindi naiskor, dahil nagbabago ang sagot o wala ito sa answer key: {names}. Hindi binibilang na tama o mali ang mga tanong na ito. |
-| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | Nagbigay ang device mo ng ilang hula sa sinabi mo. Ipinapakita ang pinakamalapit sa isang sagot sa answer key. |
 
 ## 3. All other lines
 
@@ -70,16 +66,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | Lumaktaw sa pangunahing nilalaman |
-| `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Hindi pa handa ang bahaging ito ng pagsasanay. |
+| `app.stageNotBuilt` | This part is not ready yet. Go back to Home and choose another part. | Hindi pa handa ang bahaging ito. Bumalik sa Home at pumili ng ibang bahagi. |
 | `header.about` | About & disclaimer | Tungkol dito at paunawa |
-| `stepper.label` | Interview stages | Mga yugto ng panayam |
+| `stepper.label` | Your steps | Iyong mga hakbang |
 | `stepper.count` | Step {current} of {total}: {name} | Hakbang {current} sa {total}: {name} |
 | `stepper.status.complete` | completed | tapos na |
 | `stepper.status.current` | current step | kasalukuyang yugto |
 | `stepper.status.upcoming` | upcoming | susunod |
-| `stage.intro.label` | Welcome | Maligayang pagdating |
-| `stage.intro.short` | Intro | Simula |
-| `stage.n400_interview.label` | N-400 conversation | Usapan tungkol sa N-400 |
+| `stage.intro.label` | Set up | Paghahanda |
+| `stage.intro.short` | Set up | Paghahanda |
+| `stage.n400_interview.label` | N-400 questions | Mga tanong sa N-400 |
 | `stage.n400_interview.short` | N-400 | N-400 |
 | `stage.reading.label` | Reading | Pagbasa |
 | `stage.reading.short` | Reading | Pagbasa |
@@ -87,42 +83,42 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.writing.short` | Writing | Pagsulat |
 | `stage.civics.label` | Civics | Sibika (Civics) |
 | `stage.civics.short` | Civics | Civics |
-| `stage.report.label` | Practice report | Ulat ng pagsasanay |
+| `stage.report.label` | Your report | Iyong ulat |
 | `stage.report.short` | Report | Ulat |
-| `badge.onTrack` | Practice score reached | Naabot ang iskor sa pagsasanay |
-| `badge.review` | Worth reviewing | Dapat balikan |
-| `report.empty` | Your practice report will appear here once the session is complete. | Lalabas dito ang ulat ng inyong pagsasanay kapag tapos na ang sesyon. |
+| `badge.onTrack` | You reached the practice goal | Naabot mo ang layunin ng pagsasanay |
+| `badge.review` | Practice this again | Sanayin ulit ito |
+| `report.empty` | Your report will show here when you finish the practice. | Lalabas dito ang iyong ulat kapag natapos mo ang pagsasanay. |
 | `report.overline` | Practice report | Ulat ng pagsasanay |
-| `report.profile.label` | Practice profile (fictional) | Profile sa pagsasanay (kathang-isip) |
+| `report.profile.label` | Practice person (made up) | Taong pampraktis (gawa-gawa) |
 | `report.profile.meta` | {version} civics test · filed {date} | Civics test ng {version} · isinumite noong {date} |
 | `report.stages.heading` | How each part went | Kung paano nagtagumpay ang bawat bahagi |
 | `report.review.heading` | Things to review | Mga dapat balikan |
 | `report.review.intro` | Focus on these before your next practice. | Magtuon sa mga ito bago ang susunod ninyong pagsasanay. |
-| `report.generated` | Report generated {datetime} | Ginawa ang ulat noong {datetime} |
+| `report.generated` | Report made {datetime} | Ginawa ang ulat noong {datetime} |
 | `translation.english` | English | Ingles |
 | `voice.say` | Tap to speak | I-tap para magsalita |
 | `voice.stop` | Listening… tap when you finish | Nakikinig… i-tap kapag tapos ka na |
 | `voice.listening` | Listening. Say your answer now. | Nakikinig. Sabihin na ngayon ang inyong sagot. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | Narinig namin kayo. Tingnan ang mga salita, baguhin kung gusto, saka ipadala. |
-| `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | Naka-block ang mikropono. Payagan ang access sa mikropono sa settings ng browser, o i-type ang inyong sagot. |
+| `voice.denied` | The microphone is blocked. Follow the steps below to allow it, or type your answer. | Naka-block ang mikropono. Sundin ang mga hakbang sa ibaba para payagan ito, o i-type ang iyong sagot. |
 | `voice.unsupported` | This browser cannot listen to your voice. Type your answer instead. | Hindi kayang pakinggan ng browser na ito ang inyong boses. I-type na lang ang inyong sagot. |
 | `voice.nothingHeard` | We did not hear anything. Try again, or type your answer. | Wala kaming narinig. Subukang muli, o i-type ang inyong sagot. |
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | Walang nakitang mikropono. I-type na lang ang inyong sagot. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | Hindi gumana ang pakikinig ngayon. Subukang muli, o i-type ang inyong sagot. |
 | `voice.skip` | Skip this one | Laktawan ito |
 | `audio.play` | Play the question | Pakinggan ang tanong |
-| `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Boses ng device: ang boses na naka-install sa inyong telepono o computer. |
+| `audio.deviceVoice` | Built-in voice: the voice of your phone or computer. | Built-in na boses: ang boses ng iyong phone o computer. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Hindi kayang magbasa nang malakas ng browser na ito. Basahin ang teksto sa screen. |
-| `intro.profile.legend` | Choose a practice profile | Pumili ng profile sa pagsasanay |
-| `intro.profile.help` | Every profile is invented. | Gawa-gawa lang ang bawat profile. |
+| `intro.profile.legend` | Choose a practice person | Pumili ng taong pampraktis |
+| `intro.profile.help` | Every person here is made up. | Gawa-gawa lang ang bawat tao rito. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Magsanay na parang naisumite ang N-400… |
 | `intro.filed.before` | Before {date} | Bago ang {date} |
 | `intro.filed.onOrAfter` | On or after {date} | Sa {date} o pagkatapos |
 | `intro.start` | Start practice | Simulan ang pagsasanay |
-| `intro.startHint` | Make your choice above to start. | Pumili sa itaas para makapagsimula. |
-| `home.locked.title` | In this build you can practice | Sa bersiyong ito, maaari mong sanayin |
+| `intro.startHint` | Choose one answer in each group above. Then press “Start practice”. | Pumili ng isang sagot sa bawat grupo sa itaas. Pagkatapos pindutin ang “Simulan ang pagsasanay”. |
+| `home.locked.title` | Right now you can practice | Ito ang maaari mong sanayin ngayon |
 | `n400.title` | N-400 interview | Panayam tungkol sa N-400 |
-| `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | Mahinahong pagsasanay sa uri ng mga tanong na itinatanong ng opisyal tungkol sa isang aplikasyon. Sumagot bilang si {name}. Walang iniiskor sa hakbang na ito. |
+| `n400.lead` | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. | Maaaring magtanong ang opisyal ng ganito tungkol sa iyong form. Sumagot bilang si {name}. Walang iskor ang bahaging ito. |
 | `n400.count` | Question {current} of {total} | Tanong {current} sa {total} |
 | `n400.sample.label` | Sample answer for {name} (fictional) | Halimbawang sagot para kay {name} (kathang-isip) |
 | `n400.yourAnswer` | Your answer, as {name} | Ang inyong sagot, bilang si {name} |
@@ -143,7 +139,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Kung gusto mo, magsanay ng sagot nang malakas. Hindi nire-record ang tanong na ito. |
 | `coach.tip.label` | Tip about your English: | Tip tungkol sa iyong Ingles: |
 | `coach.feedback.understood` | Easy to understand | Madaling maintindihan |
-| `coach.feedback.needs_practice` | Worth practicing again | Mabuting sanayin ulit |
+| `coach.feedback.needs_practice` | Practice this again | Sanayin ulit ito |
 | `coach.feedback.unclear` | Hard to follow. Try again. | Mahirap sundan. Subukan ulit. |
 | `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | Sinusuri lang nito kung gaano kalinaw ang Ingles mo. Hindi nito sinasabi kung tama o totoo ang isang sagot. |
 | `coach.checking` | Getting AI feedback… | Kinukuha ang feedback ng AI… |
@@ -157,11 +153,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.dateOfBirth` | a full date, such as a date of birth | buong petsa, gaya ng petsa ng kapanganakan |
 | `coach.next` | Continue | Magpatuloy |
 | `n400.loading` | Getting the next question… | Kinukuha ang susunod na tanong… |
-| `n400.failed` | The next question could not be loaded. Start over to try again. | Hindi ma-load ang susunod na tanong. Magsimulang muli para subukan ulit. |
+| `n400.failed` | The next question did not load. Check your internet, then press “Start over”. | Hindi nag-load ang susunod na tanong. Tingnan ang iyong internet, pagkatapos pindutin ang “Magsimulang muli”. |
 | `n400.done.title` | Your answers | Ang inyong mga sagot |
 | `n400.done.lead` | These are the words you gave. They are not scored. | Ito ang mga salitang sinabi ninyo. Hindi ito iniiskor. |
 | `n400.done.next` | Go to reading | Pumunta sa pagbasa |
-| `voice.consent.continue` | Continue and say it | Magpatuloy at magsalita |
+| `voice.consent.continue` | Continue and speak | Magpatuloy at magsalita |
 | `voice.consent.type` | Type instead | I-type na lang |
 | `n400.number` | Question {current} | Tanong {current} |
 | `common.fictional` | Fictional practice profile | Kathang-isip na profile sa pagsasanay |
@@ -193,8 +189,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Hindi kayang magbasa nang malakas ng browser na ito, kaya ipinapakita rito ang pangungusap. I-type ito. |
 | `writing.hidden` | The sentence stays hidden until you answer. | Nakatago ang pangungusap hanggang sumagot kayo. |
 | `writing.show` | Show the sentence | Ipakita ang pangungusap |
-| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | Kung hindi mo marinig ang audio, ipakita ang pangungusap at i-type ito. Pareho ang paraan ng pagsusuri. Mamarkahan sa ulat mo ang pagsubok na ito bilang may tulong. |
-| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | Ipinapakita ang pangungusap. Mamarkahan sa ulat mo ang pagsubok na ito bilang may tulong. |
+| `writing.show.help` | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. | Kung hindi mo marinig ang tunog, ipakita ang pangungusap at i-type ito. Pareho ang pagsusuri. Sasabihin ng iyong ulat na ipinakita ang pangungusap. |
+| `writing.shown` | The sentence is shown. Your report will say so. | Ipinapakita ang pangungusap. Sasabihin ito ng iyong ulat. |
 | `civics.title` | Civics | Sibika (Civics) |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | Sumagot nang malakas o mag-type. Puwede ang maikling sagot, pero sabihin ang buong sagot. |
 | `civics.count` | Question {current} of {total} | Tanong {current} sa {total} |
@@ -210,22 +206,22 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.stopped.incorrect` | The test stopped because too many answers need more practice. | Huminto ang test dahil masyadong maraming sagot ang nangangailangan ng dagdag na pagsasanay. |
 | `civics.stopped.none` | You have answered every question for this practice test. | Nasagot na ninyo ang lahat ng tanong sa pagsasanay na test na ito. |
 | `civics.tally` | {correct} correct, {incorrect} not yet. | {correct} ang tama, {incorrect} ang hindi pa. |
-| `civics.locked.title` | Civics is switched off in this build | Naka-off ang civics sa bersyong ito |
+| `civics.locked.title` | Civics is not available right now | Hindi pa magagamit ang sibika ngayon |
 | `report.again` | Practice again | Magsanay muli |
 | `common.startOver` | Start over | Magsimulang muli |
-| `voice.needText` | Type or say your answer first, or choose Skip. | I-type o sabihin muna ang inyong sagot, o piliin ang Laktawan. |
+| `voice.needText` | The box is empty. Type or say your answer, or press “Skip this one”. | Walang laman ang kahon. I-type o sabihin ang iyong sagot, o pindutin ang “Laktawan ito”. |
 | `audio.stop` | Stop | Ihinto |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Boses na gawa ng AI. Inihanda nang maaga ang audio. |
 | `audio.playSample` | Play sample answer | Pakinggan ang halimbawang sagot |
-| `home.title` | Welcome to the booth | Maligayang pagdating sa Language Lab |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | Magsanay para sa panayam sa naturalisasyon sa tahimik na lugar. Sumasagot kayo bilang isang gawa-gawang tao, kaya hindi ninyo kailangang magbigay ng tunay na detalye. |
+| `home.title` | Welcome to Language Lab | Maligayang pagdating sa Language Lab |
+| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | Magsanay para sa iyong interview sa pagkamamamayan. Sasagot ka bilang isang gawa-gawang tao, kaya hindi mo kailangang magbahagi ng anuman tungkol sa iyo. |
 | `home.how.title` | How it works | Paano ito gumagana |
 | `home.how.1.title` | Listen | Making |
-| `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | I-tap ang Pakinggan nang malakas para marinig ang isang tanong o pangungusap. |
+| `home.how.1.text` | Tap “Play the question” to hear it. | I-tap ang “Pakinggan ang tanong” para marinig ito. |
 | `home.how.2.title` | Speak or type | Magsalita o mag-type |
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | Sabihin ang inyong sagot, o i-type ito. Laging gumagana ang pag-type. |
 | `home.how.3.title` | See the result | Tingnan ang resulta |
-| `home.how.3.text` | You see how your answer compares, and what to practice next. | Makikita ninyo kung paano naihahambing ang inyong sagot, at kung ano ang susunod na dapat sanayin. |
+| `home.how.3.text` | You see if your answer counts, and what to practice next. | Makikita mo kung bilang ang sagot mo, at kung ano ang susunod na sanayin. |
 | `home.choose` | What would you like to do? | Ano po ang gusto ninyong gawin? |
 | `home.full.title` | Full practice interview | Buong pagsasanay na panayam |
 | `home.full.text` | All four parts in order, then one report. | Ang apat na bahagi nang sunud-sunod, saka isang ulat. |
@@ -234,15 +230,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Pinapagana ng Claude (Anthropic) |
 | `home.parts.title` | Practice one part | Magsanay ng isang bahagi |
 | `home.part.n400.title` | N-400 interview | Panayam tungkol sa N-400 |
-| `home.part.n400.text` | Answer questions about an application. Not scored. | Sagutin ang mga tanong tungkol sa isang aplikasyon. Hindi iniiskor. |
+| `home.part.n400.text` | Answer questions about the N-400 form. No score. | Sagutin ang mga tanong tungkol sa form na N-400. Walang iskor. |
 | `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | Pagbasa |
 | `home.part.reading.text` | Read sentences out loud. | Basahin nang malakas ang mga pangungusap. |
 | `home.part.writing.title` | Writing | Pagsulat |
 | `home.part.writing.text` | Listen and type the sentence. | Making at i-type ang pangungusap. |
 | `home.part.civics.title` | Civics | Sibika (Civics) |
+| `home.part.civics.text` | Answer questions about U.S. history and government. Checked with the official answers. | Sagutin ang mga tanong tungkol sa kasaysayan at pamahalaan ng U.S. Sinusuri gamit ang mga opisyal na sagot. |
 | `setup.title` | Set up your practice | Ihanda ang inyong pagsasanay |
-| `setup.lead` | Choose what this practice needs. Nothing real is asked. | Piliin ang kailangan ng pagsasanay na ito. Walang tunay na impormasyong hinihingi. |
+| `setup.lead` | Choose one answer in each group. Nothing here asks about you. | Pumili ng isang sagot sa bawat grupo. Walang tanong dito tungkol sa iyo. |
 | `report.home` | Back to home | Bumalik sa simula |
 | `partReport.title.n400_interview` | N-400 interview practice | Pagsasanay sa panayam tungkol sa N-400 |
 | `partReport.title.reading` | Reading practice | Pagsasanay sa pagbasa |
@@ -259,7 +256,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.civics.needed` | Correct answers needed: {needed}. | Bilang ng tamang sagot na kailangan: {needed}. |
 | `partReport.review` | Questions to review | Mga tanong na dapat balikan |
 | `partReport.unscored.title` | Not scored | Hindi iniiskor |
-| `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Hindi maiskor ang mga tanong na ito, kaya hindi sila bilang na tama o mali. |
+| `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | Walang iskor ang mga tanong na ito. Hindi sila binibilang na tama o mali. |
+| `partReport.unscored.missing` | A question we cannot check | Isang tanong na hindi namin masuri |
 | `report.see` | See my report | Tingnan ang aking ulat |
 | `header.home` | Home | Simula |
 | `help.button` | Help | Tulong |
@@ -286,9 +284,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Leave | Umalis |
 | `header.homeConfirm.no` | Keep practicing | Magpatuloy sa pagsasanay |
 | `common.retry` | Try again | Subukang muli |
-| `partReport.badge.good` | This part reached the practice score | Naabot ng bahaging ito ang iskor sa pagsasanay |
-| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | Ipinakita ang pangungusap sa screen (pagsubok na may tulong). |
-| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Ang mga paunawa at legal na teksto ay nasa Ingles lamang hanggang may taong makasuri ng salin. |
+| `partReport.badge.good` | You reached the practice goal | Naabot mo ang layunin ng pagsasanay |
+| `partReport.assisted` | The sentence was shown on the screen. | Ipinakita ang pangungusap sa screen. |
+| `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | Mananatili sa Ingles ang mga legal na paunawa hanggang may taong sumuri sa salin. |
 | `lang.menu.title` | Choose a language | Pumili ng wika |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | May mga karagdagang wika na sinusuri. Lalabas ang mga ito rito pagkatapos itong suriin ng isang tao. |
 | `home.study.title` | Study first | Mag-aral muna |
@@ -313,8 +311,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.hearSample` | Hear the sample | Pakinggan ang sample |
 | `selfReview.tryAgain` | Try again | Subukan muli |
 | `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | Nananatili sa device na ito ang recording ninyo. Hindi ito ipinapadala kahit saan o sine-save, at buburahin ito kapag lumipat kayo sa susunod na pangungusap o umalis sa screen na ito. |
-| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Hindi makapag-record ng boses ninyo ang browser na ito. Maaari pa rin ninyong suriin ang pagbasa ninyo gamit ang “Magsalita” o sa pamamagitan ng pag-type. |
-| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | Naka-block ang mikropono. Payagan ang access sa mikropono sa mga setting ng browser ninyo. |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still press “Tap to speak” or type. | Hindi kayang i-record ng browser na ito ang iyong boses. Maaari mo pa ring pindutin ang “I-tap para magsalita” o mag-type. |
+| `selfReview.denied` | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. | Naka-block ang mikropono, kaya hindi makapagsimula ang pag-record. Payagan ang mikropono para sa site na ito sa settings ng browser, pagkatapos subukan ulit. |
 | `selfReview.error` | Recording did not work this time. Try again. | Hindi gumana ang pag-record ngayon. Subukan muli. |
 | `compare.why.allWords` | Every important word of the sentence was there, in order. | Naroon ang lahat ng mahalagang salita ng pangungusap, ayon sa pagkakasunod-sunod. |
 | `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Sinabi ninyo ang “{said}”. Ang sabi ng pangungusap ay “{expected}”. Bilang pa rin ito. |
@@ -327,7 +325,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Nagdagdag kayo ng “{said}”, na wala sa pangungusap. Bilang pa rin ito. |
 | `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | Nalaktawan ang maikling salitang “{expected}”. Bilang pa rin ito. |
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Nagdagdag kayo ng maikling salitang “{said}”. Bilang pa rin ito. |
-| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Batay ang resultang ito sa mga salitang narinig ng device ninyo. Kung mali ang pagkarinig nito, subukan muli o i-type ang sagot ninyo. |
+| `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Ginagamit ng resultang ito ang mga salitang narinig ng iyong phone o computer. Kung mali ang pagkarinig, subukan ulit o i-type ang iyong sagot. |
 | `compare.honest.typed` | This result is based on the words you typed. | Batay ang resultang ito sa mga salitang in-type ninyo. |
 | `home.special.title` | 65/20 civics practice | Pagsasanay sa sibika para sa 65/20 |
 | `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Para sa mga 65 taong gulang pataas na permanent resident na nang 20 taon o higit pa. Sanayin ang mga tanong sa sibika na may tandang bituin (*). |
@@ -335,15 +333,17 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Mga tanong lang para sa 65/20 (may tandang bituin) |
 | `report.line.civics.none` | No civics questions were scored. | Walang tanong sa sibika na naiskor. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Mga tanong sa sibika na tama ang sagot: {correct} sa {scored}. |
+| `report.line.civics.unscored` | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. | Walang iskor ang mga ito, dahil nagbabago ang sagot sa paglipas ng panahon o hindi namin ito masuri: {names}. Hindi sila binibilang na tama o mali. |
 | `report.line.reading.none` | No reading sentences were completed. | Walang natapos na pangungusap sa pagbasa. |
 | `report.line.reading.done` | Sentence {n} was read correctly. | Tama ang pagbasa sa pangungusap {n}. |
 | `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Mga pangungusap sa pagbasa na nabasa nang tama: {correct} sa {presented}. Kailangang tamang pangungusap: {needed}. |
 | `report.line.writing.none` | No writing sentences were completed. | Walang natapos na pangungusap sa pagsulat. |
 | `report.line.writing.done` | Sentence {n} was written correctly. | Tama ang pagsulat sa pangungusap {n}. |
 | `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Mga pangungusap sa pagsulat na naisulat nang tama: {correct} sa {presented}. Kailangang tamang pangungusap: {needed}. |
-| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | Mga pagsubok sa pagsulat na nakikita ang pangungusap sa screen (may tulong): {assisted} sa {presented}. |
+| `report.line.writing.assisted` | Sentences written while the sentence was shown: {assisted} of {presented}. | Mga pangungusap na isinulat habang ipinapakita ang pangungusap: {assisted} sa {presented}. |
 | `report.review.reading` | Practice reading the sentences aloud. | Sanayin ang pagbasa nang malakas ng mga pangungusap. |
 | `report.review.writing` | Practice writing the sentences you hear. | Sanayin ang pagsulat ng mga pangungusap na naririnig mo. |
+| `civics.heard.closest` | Your phone or computer heard a few possible answers. We show the one closest to an official answer. | Nakarinig ang iyong phone o computer ng ilang posibleng sagot. Ipinapakita namin ang pinakamalapit sa isang opisyal na sagot. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Sumagot bilang ang kathang-isip na tao. Huwag i-type ang totoo mong pangalan, address, mga petsa o mga numero. |
 | `common.newTab` | (opens in a new tab) | (magbubukas sa bagong tab) |
 | `coach.kind.streetAddress` | a street address | isang address ng kalye |

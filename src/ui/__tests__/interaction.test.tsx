@@ -156,7 +156,7 @@ describe("reading and writing", () => {
     expect(await screen.findByText(EN["compare.counts"], { exact: false })).toBeTruthy();
     fireEvent.click(await findButton(EN["report.see"]));
     expect(await findButton(EN["report.home"])).toBeTruthy();
-    expect(document.body.textContent?.toLowerCase()).toContain("assisted");
+    expect(document.body.textContent).toContain(EN["partReport.assisted"]);
   });
 });
 

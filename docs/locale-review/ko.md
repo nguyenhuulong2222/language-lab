@@ -28,7 +28,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | 실제 인터뷰는 USCIS가 예외를 허용하지 않는 한 영어로 진행됩니다. 이 화면의 질문과 문장은 연습할 수 있도록 영어로 유지됩니다. | The real interview is conducted in English unless USCIS permits an exception. The questions and sentences on this screen are kept in English so that you can practice. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | 이 보고서는 한 부분에 대한 것입니다. 이 부분이 연습에서 어땠는지를 보여 줄 뿐 실제 시험에서 어떨지를 보여 주는 것이 아니며, 전체 연습 결과도 제공하지 않습니다. | This report is about one part. It only shows how this part went in practice, not how it would be on the real test, and it also does not provide an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | N-400 인터뷰는 연습일 뿐이며 채점되지 않습니다. | The N-400 interview is only practice and is not graded. |
-| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | 이 번역은 AI가 만들었으며 오류가 있을 수 있습니다. 영어 버전이 공식 버전입니다. | This translation was made by AI and may contain errors. The English version is the official version. |
+| `aiNotice.text` | This translation was made by AI and may have mistakes. If something is unclear, the English version is correct. | 이 번역은 AI가 만들어 틀린 부분이 있을 수 있습니다. 분명하지 않으면 영어판이 맞습니다. | This translation was made by AI and may contain errors. The English version is the official version. |
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | USCIS 채점 지침을 바탕으로 한 Language Lab의 연습 설정이며 USCIS의 규정이 아닙니다. 문장의 중요한 단어가 모두 순서대로 있어야 합니다. “the” 같은 짧은 단어는 빠져도 됩니다. 멈춤과 발음은 채점하지 않습니다. | This is a practice setting of Language Lab based on USCIS scoring guidelines, and it is not a USCIS regulation. Every important word of the sentence must be there, in order. Short words like “the” may be left out. Pauses and pronunciation are not scored. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | 이 선택에 따라 2008년 시민 상식 시험을 연습할지 2025년 시험을 연습할지 정해집니다. 연습을 위한 선택일 뿐입니다. 본인의 경우에 어떤 시험이 적용되는지는 uscis.gov에서 확인하세요. | Depending on this choice, it is decided whether you practice the 2008 civics test or the 2025 test. It is only a choice for practice. Check uscis.gov to see which test applies in your own case. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | 시민 상식 연습의 사진은 미국 연방 정부의 공식 출처에서 가져왔습니다. 각 사진은 해당 기록에 권리가 분명히 적혀 있어서만 사용됩니다. 이것이 어떤 기관이 Language Lab을 보증한다는 뜻은 아닙니다. | The photos in civics practice were taken from official sources of the U.S. federal government. Each photo is used only because its record clearly states the rights. This does not mean that any agency endorses Language Lab. |
@@ -36,10 +36,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` ⚠ | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | 사람이 시민 상식 답안을 검토하기 전까지 이 버전에서는 시민 상식, 먼저 공부하기, 전체 연습 면접이 꺼져 있습니다. N-400 면접, 읽기, 쓰기는 연습할 수 있습니다. | Until a person reviews the civics answers, civics, Study first and the full practice interview are turned off in this version. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 시민 상식 정답표가 아직 사람의 검토를 기다리고 있어서, 이 버전은 시민 상식을 채점하거나 보고서를 만들지 않습니다. | The civics answer table is still waiting for a person's review, so this version does not score civics or create a report. |
 | `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | “눌러서 말하기”를 누르면 브라우저의 음성 인식 기능이 음성을 글자로 바꾸기 위해 Google이나 Apple 같은 브라우저 제작사에 음성을 보낼 수 있습니다. Language Lab은 음성을 보내거나 저장하지 않습니다. 대신 답을 직접 입력할 수도 있습니다. | When you press “Speak”, the browser's voice recognition may send your voice to the browser maker such as Google or Apple to convert it into text. Language Lab does not send or save your voice. You can type your answer instead. |
-| `report.title.onTrack` | Practice complete: each part reached the practice score | 연습 완료: 모든 부분이 연습 점수에 도달했어요 | Practice complete: every part reached the practice score |
+| `report.title.onTrack` | Well done. Each part reached the practice goal. | 잘하셨습니다. 모든 부분이 연습 목표에 도달했습니다. | Practice complete: every part reached the practice score |
 | `report.title.review` | A few things to review | 다시 살펴볼 것이 몇 가지 있어요 | There are a few things to look at again |
-| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | 이번 연습에서 읽기, 쓰기, 시민 상식이 각각 Language Lab이 사용하는 점수에 도달했습니다. 아래 메모를 보고 계속 연습하세요. | In this practice, reading, writing and civics each reached the score Language Lab uses. Look at the notes below and keep practicing. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | 연습은 이럴 때 필요한 것입니다. 아래 메모는 다시 도전하기 전에 어디에 집중하면 좋을지 알려 줍니다. | This is when practice is needed. The notes below tell you where to focus before trying again. |
+| `report.lead.onTrack` | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. | 읽기, 쓰기, 시민 상식 모두 연습 목표에 도달했습니다. 아래 메모를 읽고 계속 연습하세요. | In this practice, reading, writing and civics each reached the score Language Lab uses. Look at the notes below and keep practicing. |
+| `report.lead.review` | That is what practice is for. The notes below show what to practice next. | 연습은 바로 이럴 때를 위한 것입니다. 아래 메모에서 다음에 연습할 것을 볼 수 있습니다. | This is when practice is needed. The notes below tell you where to focus before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | 쓰기: USCIS에 따르면 철자, 대문자, 문장 부호 오류는 문장을 더 이상 이해할 수 없는 경우가 아니면 쓰기 시험 불합격 사유가 되지 않습니다. 여기서는 작은 철자 실수도 인정되며, 긴 단어일수록 더 많이 허용됩니다. 대문자와 문장 부호는 확인하지 않습니다. | Writing: according to USCIS, spelling, capitalization and punctuation errors are not a reason to fail the writing test unless the sentence can no longer be understood. Here, small spelling mistakes are accepted, and longer words allow more. Capitalization and punctuation are not checked. |
 | `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | AI 코치가 켜져 있으면, 이 부분에서 입력하거나 말한 각 답의 단어가 피드백을 쓰기 위해 Language Lab 서버를 거쳐 AI 회사인 Anthropic에 텍스트로 전송됩니다. Language Lab과 Anthropic은 목소리를 절대 받지 않고 단어만 받습니다. 가상의 인물로 답하세요. 실제 이름, 주소, 생년월일, A-number, 사건 세부 정보를 말하지 마세요. 실제 인터뷰에서는 본인의 삶에 대해 반드시 사실대로 답해야 합니다. Language Lab은 일부 번호를 확인하지만 모든 개인 정보를 찾아낼 수는 없습니다. Language Lab은 답을 보관하지 않습니다. Anthropic이 답을 어떻게 다루는지는 Anthropic 개인정보 처리방침에 있습니다: anthropic.com/legal/privacy. 새 연습을 시작하면 AI 코치는 다시 꺼집니다. | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
 | `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | AI 코치: N-400 부분에서 직접 켜지 않으면 꺼져 있습니다. 켜져 있으면 각 N-400 답의 텍스트가 피드백을 쓰기 위해 Language Lab 서버를 거쳐 Anthropic에 전송되며, 음성은 전송되지 않습니다. 사용을 제한하기 위해 서버는 인터넷 주소로 만든, 매일 바뀌고 솔트를 더한 코드로 요청 수를 셉니다. 오래된 기록은 이후 요청 때 지워지며 보통 이틀 안에 지워집니다. Anthropic 개인정보 처리방침: anthropic.com/legal/privacy. | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
@@ -50,8 +50,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | 문장에는 USCIS 공식 읽기·쓰기 어휘 목록에 있는 단어만 사용됩니다. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | 연습 합격 점수에 도달해서 시험이 여기서 멈췄습니다. |
-| `home.part.civics.text` | Answer civics questions. Checked against the answer key. | 시민 상식 질문에 답합니다. 정답표와 대조합니다. |
-| `partReport.unscored.missing` | A question that is not in the answer key | 정답표에 없는 질문 |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | 누군가 정답표를 검토하기 전까지 이 버전에서는 먼저 공부하기가 꺼져 있습니다. |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | 이 선택은 연습만 바꿉니다. 아무것도 저장하거나 보내지 않습니다. 시민 상식 부분에서 공식 목록에 별표(*)가 있는 {bank}개 질문 중 {asked}개를 묻습니다. 이 연습에서는 {asked}개를 모두 묻습니다. 연습 합격 점수는 정답 {pass}개입니다. 본인의 경우는 uscis.gov에서 확인하세요. 나이와 햇수는 신청서를 제출한 날을 기준으로 합니다. |
 | `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS: 신청일 기준으로 50세 이상이고 영주권자로 20년(50/20), 또는 55세 이상이고 15년(55/15)이면 영어 요건(영어 읽기, 쓰기, 말하기, 이해)이 면제되지만 시민 상식 시험은 봐야 합니다. 통역사를 데려오면 모국어로 볼 수 있습니다. 65세 이상이고 최소 20년(65/20)이면 영어도 면제되며, 심사관은 특별히 지정된 시민 상식 시험지를 사용합니다. |
@@ -61,8 +59,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | 연습 합격 점수에 도달해서 연습 시험이 멈췄습니다. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | 연습 합격 점수 {score}에 도달하기 전에 틀린 답 {incorrect}개로 연습 시험이 멈췄습니다. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | 연습 합격 점수는 정답 {score}개이며, 이번에는 도달하지 못했습니다. |
-| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | 채점하지 않음. 답이 바뀌거나 정답 목록에 없습니다: {names}. 이 질문들은 맞거나 틀린 것으로 세지 않습니다. |
-| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | 기기가 말씀하신 내용을 여러 가지로 추측했습니다. 정답 목록의 답에 가장 가까운 것을 보여 줍니다. |
 
 ## 3. All other lines
 
@@ -70,16 +66,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | 본문으로 건너뛰기 |
-| `app.stageNotBuilt` | This stage of the practice isn’t built yet. | 이 연습 단계는 아직 준비되지 않았습니다. |
+| `app.stageNotBuilt` | This part is not ready yet. Go back to Home and choose another part. | 이 부분은 아직 준비되지 않았습니다. 홈으로 돌아가 다른 부분을 고르세요. |
 | `header.about` | About & disclaimer | 소개 및 면책 안내 |
-| `stepper.label` | Interview stages | 인터뷰 단계 |
+| `stepper.label` | Your steps | 진행 단계 |
 | `stepper.count` | Step {current} of {total}: {name} | {total}단계 중 {current}단계: {name} |
 | `stepper.status.complete` | completed | 완료됨 |
 | `stepper.status.current` | current step | 현재 단계 |
 | `stepper.status.upcoming` | upcoming | 예정 |
-| `stage.intro.label` | Welcome | 환영합니다 |
-| `stage.intro.short` | Intro | 시작 |
-| `stage.n400_interview.label` | N-400 conversation | N-400 대화 |
+| `stage.intro.label` | Set up | 준비 |
+| `stage.intro.short` | Set up | 준비 |
+| `stage.n400_interview.label` | N-400 questions | N-400 질문 |
 | `stage.n400_interview.short` | N-400 | N-400 |
 | `stage.reading.label` | Reading | 읽기 |
 | `stage.reading.short` | Reading | 읽기 |
@@ -87,42 +83,42 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.writing.short` | Writing | 쓰기 |
 | `stage.civics.label` | Civics | 시민 상식 |
 | `stage.civics.short` | Civics | Civics |
-| `stage.report.label` | Practice report | 연습 보고서 |
+| `stage.report.label` | Your report | 내 보고서 |
 | `stage.report.short` | Report | 보고서 |
-| `badge.onTrack` | Practice score reached | 연습 점수 도달 |
-| `badge.review` | Worth reviewing | 다시 볼 만해요 |
-| `report.empty` | Your practice report will appear here once the session is complete. | 세션이 끝나면 연습 보고서가 여기에 나타납니다. |
+| `badge.onTrack` | You reached the practice goal | 연습 목표에 도달했습니다 |
+| `badge.review` | Practice this again | 다시 연습해 보세요 |
+| `report.empty` | Your report will show here when you finish the practice. | 연습을 마치면 여기에 보고서가 나타납니다. |
 | `report.overline` | Practice report | 연습 보고서 |
-| `report.profile.label` | Practice profile (fictional) | 연습 프로필(가상) |
+| `report.profile.label` | Practice person (made up) | 연습용 인물(가상) |
 | `report.profile.meta` | {version} civics test · filed {date} | {version}년 시민 상식 시험 · 신청 날짜 {date} |
 | `report.stages.heading` | How each part went | 각 부분의 결과 |
 | `report.review.heading` | Things to review | 다시 살펴볼 것 |
 | `report.review.intro` | Focus on these before your next practice. | 다음 연습 전에 이 부분에 집중해 보세요. |
-| `report.generated` | Report generated {datetime} | 보고서 생성 시각: {datetime} |
+| `report.generated` | Report made {datetime} | 보고서 작성: {datetime} |
 | `translation.english` | English | 영어 |
 | `voice.say` | Tap to speak | 눌러서 말하기 |
 | `voice.stop` | Listening… tap when you finish | 듣는 중… 다 말하면 누르세요 |
 | `voice.listening` | Listening. Say your answer now. | 듣고 있습니다. 지금 답을 말씀하세요. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | 잘 들었습니다. 단어를 확인하고 필요하면 고친 다음 보내세요. |
-| `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | 마이크가 차단되어 있습니다. 브라우저 설정에서 마이크 사용을 허용하거나 답을 직접 입력하세요. |
+| `voice.denied` | The microphone is blocked. Follow the steps below to allow it, or type your answer. | 마이크가 차단되었습니다. 아래 단계를 따라 허용하거나 답을 입력하세요. |
 | `voice.unsupported` | This browser cannot listen to your voice. Type your answer instead. | 이 브라우저는 음성을 들을 수 없습니다. 대신 답을 입력하세요. |
 | `voice.nothingHeard` | We did not hear anything. Try again, or type your answer. | 아무 소리도 듣지 못했습니다. 다시 시도하거나 답을 입력하세요. |
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | 마이크를 찾을 수 없습니다. 대신 답을 입력하세요. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | 이번에는 듣기가 되지 않았습니다. 다시 시도하거나 답을 입력하세요. |
 | `voice.skip` | Skip this one | 이 문제 건너뛰기 |
 | `audio.play` | Play the question | 질문 듣기 |
-| `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | 기기 음성: 휴대폰이나 컴퓨터에 설치된 음성입니다. |
+| `audio.deviceVoice` | Built-in voice: the voice of your phone or computer. | 기본 음성: 휴대폰이나 컴퓨터의 음성입니다. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | 이 브라우저는 소리 내어 읽어 줄 수 없습니다. 화면의 글을 읽어 주세요. |
-| `intro.profile.legend` | Choose a practice profile | 연습 프로필을 선택하세요 |
-| `intro.profile.help` | Every profile is invented. | 모든 프로필은 지어낸 것입니다. |
+| `intro.profile.legend` | Choose a practice person | 연습용 인물을 고르세요 |
+| `intro.profile.help` | Every person here is made up. | 여기 나오는 인물은 모두 가상입니다. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | N-400을 다음 시점에 신청했다고 가정하고 연습하세요… |
 | `intro.filed.before` | Before {date} | {date} 이전 |
 | `intro.filed.onOrAfter` | On or after {date} | {date} 이후(당일 포함) |
 | `intro.start` | Start practice | 연습 시작 |
-| `intro.startHint` | Make your choice above to start. | 시작하려면 위에서 선택하세요. |
-| `home.locked.title` | In this build you can practice | 이 버전에서 연습할 수 있는 것 |
+| `intro.startHint` | Choose one answer in each group above. Then press “Start practice”. | 위의 각 그룹에서 하나씩 고르세요. 그다음 “연습 시작”을(를) 누르세요. |
+| `home.locked.title` | Right now you can practice | 지금 연습할 수 있는 것 |
 | `n400.title` | N-400 interview | N-400 인터뷰 |
-| `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | 심사관이 신청서에 대해 묻는 질문을 차분히 연습해 봅니다. {name}으로서 답하세요. 이 단계는 채점되지 않습니다. |
+| `n400.lead` | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. | 심사관은 서류에 대해 이런 질문을 할 수 있습니다. {name}(으)로서 답하세요. 이 부분은 점수를 매기지 않습니다. |
 | `n400.count` | Question {current} of {total} | {total}개 질문 중 {current}번 |
 | `n400.sample.label` | Sample answer for {name} (fictional) | {name}의 예시 답변(가상) |
 | `n400.yourAnswer` | Your answer, as {name} | {name}으로서 하는 답 |
@@ -143,7 +139,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | 원하면 소리 내어 답을 연습해 보세요. 이 질문은 기록되지 않습니다. |
 | `coach.tip.label` | Tip about your English: | 영어에 대한 팁: |
 | `coach.feedback.understood` | Easy to understand | 이해하기 쉬움 |
-| `coach.feedback.needs_practice` | Worth practicing again | 다시 연습해 볼 만합니다 |
+| `coach.feedback.needs_practice` | Practice this again | 다시 연습해 보세요 |
 | `coach.feedback.unclear` | Hard to follow. Try again. | 따라가기 어렵습니다. 다시 해 보세요. |
 | `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | 영어가 얼마나 분명한지만 확인합니다. 답이 맞는지 또는 사실인지는 말하지 않습니다. |
 | `coach.checking` | Getting AI feedback… | AI 피드백을 가져오는 중… |
@@ -157,11 +153,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.dateOfBirth` | a full date, such as a date of birth | 생년월일 같은 전체 날짜 |
 | `coach.next` | Continue | 계속 |
 | `n400.loading` | Getting the next question… | 다음 질문을 불러오는 중… |
-| `n400.failed` | The next question could not be loaded. Start over to try again. | 다음 질문을 불러오지 못했습니다. 처음부터 다시 시작해 보세요. |
+| `n400.failed` | The next question did not load. Check your internet, then press “Start over”. | 다음 질문을 불러오지 못했습니다. 인터넷을 확인한 뒤 “처음부터 다시”을(를) 누르세요. |
 | `n400.done.title` | Your answers | 내 답변 |
 | `n400.done.lead` | These are the words you gave. They are not scored. | 말씀하신 내용입니다. 채점되지 않습니다. |
 | `n400.done.next` | Go to reading | 읽기로 이동 |
-| `voice.consent.continue` | Continue and say it | 계속하고 말하기 |
+| `voice.consent.continue` | Continue and speak | 계속하고 말하기 |
 | `voice.consent.type` | Type instead | 대신 입력하기 |
 | `n400.number` | Question {current} | {current}번 질문 |
 | `common.fictional` | Fictional practice profile | 가상 연습 프로필 |
@@ -193,8 +189,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | 이 브라우저는 소리 내어 읽어 줄 수 없어서 문장을 여기에 표시합니다. 입력해 보세요. |
 | `writing.hidden` | The sentence stays hidden until you answer. | 답하기 전까지 문장은 숨겨져 있습니다. |
 | `writing.show` | Show the sentence | 문장 보기 |
-| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | 소리를 들을 수 없으면 문장을 표시하고 입력하세요. 같은 방식으로 확인됩니다. 보고서에는 이 시도가 도움을 받은 시도로 표시됩니다. |
-| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | 문장이 표시되었습니다. 보고서에는 이 시도가 도움을 받은 시도로 표시됩니다. |
+| `writing.show.help` | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. | 소리가 들리지 않으면 문장을 보이게 하고 입력하세요. 확인 방법은 같습니다. 보고서에는 문장을 보았다고 표시됩니다. |
+| `writing.shown` | The sentence is shown. Your report will say so. | 문장이 보입니다. 보고서에 이 내용이 표시됩니다. |
 | `civics.title` | Civics | 시민 상식 |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | 소리 내어 답하거나 입력하세요. 짧은 답도 괜찮지만 답 전체를 말씀하세요. |
 | `civics.count` | Question {current} of {total} | {total}개 질문 중 {current}번 |
@@ -210,22 +206,22 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.stopped.incorrect` | The test stopped because too many answers need more practice. | 더 연습이 필요한 답이 너무 많아서 시험이 멈췄습니다. |
 | `civics.stopped.none` | You have answered every question for this practice test. | 이번 연습 시험의 모든 질문에 답하셨습니다. |
 | `civics.tally` | {correct} correct, {incorrect} not yet. | 정답 {correct}개, 아직 {incorrect}개. |
-| `civics.locked.title` | Civics is switched off in this build | 이 버전에서는 시민 상식이 꺼져 있습니다 |
+| `civics.locked.title` | Civics is not available right now | 시민 상식은 지금 이용할 수 없습니다 |
 | `report.again` | Practice again | 다시 연습하기 |
 | `common.startOver` | Start over | 처음부터 다시 |
-| `voice.needText` | Type or say your answer first, or choose Skip. | 먼저 답을 입력하거나 말씀하세요. 아니면 건너뛰기를 선택하세요. |
+| `voice.needText` | The box is empty. Type or say your answer, or press “Skip this one”. | 상자가 비어 있습니다. 답을 입력하거나 말하세요. 또는 “이 문제 건너뛰기”을(를) 누르세요. |
 | `audio.stop` | Stop | 멈추기 |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | AI가 만든 음성입니다. 오디오는 미리 만들어 둔 것입니다. |
 | `audio.playSample` | Play sample answer | 예시 답변 듣기 |
-| `home.title` | Welcome to the booth | Language Lab에 오신 것을 환영합니다 |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | 조용한 공간에서 귀화 인터뷰를 연습해 보세요. 지어낸 인물로 답하므로 실제 정보를 알려 주실 필요가 없습니다. |
+| `home.title` | Welcome to Language Lab | Language Lab에 오신 것을 환영합니다 |
+| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | 시민권 인터뷰를 연습하세요. 가상의 인물로서 답하므로 본인에 대해 아무것도 알릴 필요가 없습니다. |
 | `home.how.title` | How it works | 이용 방법 |
 | `home.how.1.title` | Listen | 듣기 |
-| `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | ‘소리 내어 듣기’를 눌러 질문이나 문장을 들어 보세요. |
+| `home.how.1.text` | Tap “Play the question” to hear it. | “질문 듣기”을(를) 누르면 들을 수 있습니다. |
 | `home.how.2.title` | Speak or type | 말하거나 입력하기 |
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | 답을 말하거나 입력하세요. 입력은 항상 가능합니다. |
 | `home.how.3.title` | See the result | 결과 보기 |
-| `home.how.3.text` | You see how your answer compares, and what to practice next. | 내 답이 어떻게 비교되는지, 다음에 무엇을 연습할지 볼 수 있습니다. |
+| `home.how.3.text` | You see if your answer counts, and what to practice next. | 답이 점수에 포함되는지, 다음에 무엇을 연습할지 볼 수 있습니다. |
 | `home.choose` | What would you like to do? | 무엇을 하시겠어요? |
 | `home.full.title` | Full practice interview | 전체 연습 인터뷰 |
 | `home.full.text` | All four parts in order, then one report. | 네 부분을 차례로 진행하고 보고서 하나를 받습니다. |
@@ -234,15 +230,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Claude (Anthropic) 기반 |
 | `home.parts.title` | Practice one part | 한 부분만 연습하기 |
 | `home.part.n400.title` | N-400 interview | N-400 인터뷰 |
-| `home.part.n400.text` | Answer questions about an application. Not scored. | 신청서에 대한 질문에 답합니다. 채점하지 않습니다. |
+| `home.part.n400.text` | Answer questions about the N-400 form. No score. | N-400 서류에 대한 질문에 답하세요. 점수 없음. |
 | `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | 읽기 |
 | `home.part.reading.text` | Read sentences out loud. | 문장을 소리 내어 읽습니다. |
 | `home.part.writing.title` | Writing | 쓰기 |
 | `home.part.writing.text` | Listen and type the sentence. | 문장을 듣고 입력합니다. |
 | `home.part.civics.title` | Civics | 시민 상식 |
+| `home.part.civics.text` | Answer questions about U.S. history and government. Checked with the official answers. | 미국 역사와 정부에 대한 질문에 답하세요. 공식 답과 비교해 확인합니다. |
 | `setup.title` | Set up your practice | 연습 준비 |
-| `setup.lead` | Choose what this practice needs. Nothing real is asked. | 이번 연습에 필요한 것을 선택하세요. 실제 정보는 묻지 않습니다. |
+| `setup.lead` | Choose one answer in each group. Nothing here asks about you. | 각 그룹에서 하나씩 고르세요. 여기서는 본인에 대해 묻지 않습니다. |
 | `report.home` | Back to home | 홈으로 돌아가기 |
 | `partReport.title.n400_interview` | N-400 interview practice | N-400 인터뷰 연습 |
 | `partReport.title.reading` | Reading practice | 읽기 연습 |
@@ -259,7 +256,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.civics.needed` | Correct answers needed: {needed}. | 필요한 정답 수: {needed}. |
 | `partReport.review` | Questions to review | 다시 볼 질문 |
 | `partReport.unscored.title` | Not scored | 채점하지 않음 |
-| `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | 이 질문들은 채점할 수 없어서 맞음이나 틀림으로 세지 않습니다. |
+| `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | 이 질문들은 점수를 매기지 않습니다. 맞거나 틀린 것으로 세지 않습니다. |
+| `partReport.unscored.missing` | A question we cannot check | 확인할 수 없는 질문 |
 | `report.see` | See my report | 내 보고서 보기 |
 | `header.home` | Home | 홈 |
 | `help.button` | Help | 도움말 |
@@ -286,9 +284,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Leave | 나가기 |
 | `header.homeConfirm.no` | Keep practicing | 계속 연습하기 |
 | `common.retry` | Try again | 다시 시도 |
-| `partReport.badge.good` | This part reached the practice score | 이 부분은 연습 점수에 도달했어요 |
-| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | 문장이 화면에 표시되었습니다(도움을 받은 시도). |
-| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | 번역을 사람이 검토하기 전까지 면책 고지와 법률 문구는 영어로만 표시됩니다. |
+| `partReport.badge.good` | You reached the practice goal | 연습 목표에 도달했습니다 |
+| `partReport.assisted` | The sentence was shown on the screen. | 문장이 화면에 보였습니다. |
+| `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | 법적 안내는 사람이 번역을 확인할 때까지 영어로 표시됩니다. |
 | `lang.menu.title` | Choose a language | 언어를 선택하세요 |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | 더 많은 언어가 검토 중입니다. 사람이 확인한 뒤에 여기에 표시됩니다. |
 | `home.study.title` | Study first | 먼저 공부하기 |
@@ -313,8 +311,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.hearSample` | Hear the sample | 샘플 듣기 |
 | `selfReview.tryAgain` | Try again | 다시 해 보기 |
 | `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | 녹음은 이 기기에만 남습니다. 어디로도 전송되거나 저장되지 않으며, 다음 문장으로 넘어가거나 이 화면을 나가면 삭제됩니다. |
-| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | 이 브라우저는 목소리를 녹음할 수 없습니다. “말하기”나 입력으로 읽기를 확인할 수는 있습니다. |
-| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | 마이크가 차단되어 있습니다. 브라우저 설정에서 마이크 사용을 허용하세요. |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still press “Tap to speak” or type. | 이 브라우저는 음성을 녹음할 수 없습니다. 그래도 “눌러서 말하기”을(를) 누르거나 입력할 수 있습니다. |
+| `selfReview.denied` | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. | 마이크가 차단되어 녹음을 시작할 수 없습니다. 브라우저 설정에서 이 사이트의 마이크를 허용한 뒤 다시 해 보세요. |
 | `selfReview.error` | Recording did not work this time. Try again. | 이번에는 녹음이 되지 않았습니다. 다시 해 보세요. |
 | `compare.why.allWords` | Every important word of the sentence was there, in order. | 문장의 중요한 단어가 모두 순서대로 있었습니다. |
 | `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | “{said}”(이)라고 말씀하셨습니다. 문장에는 “{expected}”(이)라고 되어 있습니다. 그래도 인정됩니다. |
@@ -327,7 +325,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | 문장에 없는 “{said}”을(를) 더하셨습니다. 그래도 인정됩니다. |
 | `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | 짧은 단어 “{expected}”이(가) 빠졌습니다. 그래도 인정됩니다. |
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | 짧은 단어 “{said}”을(를) 더하셨습니다. 그래도 인정됩니다. |
-| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | 이 결과는 기기가 들은 단어를 바탕으로 합니다. 잘못 들었다면 다시 해 보거나 직접 입력하세요. |
+| `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | 이 결과는 휴대폰이나 컴퓨터가 들은 말을 기준으로 합니다. 잘못 들었다면 다시 해 보거나 답을 입력하세요. |
 | `compare.honest.typed` | This result is based on the words you typed. | 이 결과는 입력하신 단어를 바탕으로 합니다. |
 | `home.special.title` | 65/20 civics practice | 65/20 시민 상식 연습 |
 | `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | 65세 이상이며 영주권자로 20년 이상 지낸 분을 위한 연습입니다. 별표(*)가 있는 시민 상식 질문을 연습하세요. |
@@ -335,15 +333,17 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | 65/20용 질문만 (별표 표시) |
 | `report.line.civics.none` | No civics questions were scored. | 채점된 시민 상식 질문이 없습니다. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | 맞게 답한 시민 상식 질문: {scored}개 중 {correct}개. |
+| `report.line.civics.unscored` | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. | 답이 바뀌거나 확인할 수 없어서 점수를 매기지 않은 질문: {names}. 맞거나 틀린 것으로 세지 않습니다. |
 | `report.line.reading.none` | No reading sentences were completed. | 완료한 읽기 문장이 없습니다. |
 | `report.line.reading.done` | Sentence {n} was read correctly. | {n}번째 문장을 맞게 읽었습니다. |
 | `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | 맞게 읽은 읽기 문장: {presented}개 중 {correct}개. 필요한 정답 문장 수: {needed}. |
 | `report.line.writing.none` | No writing sentences were completed. | 완료한 쓰기 문장이 없습니다. |
 | `report.line.writing.done` | Sentence {n} was written correctly. | {n}번째 문장을 맞게 썼습니다. |
 | `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | 맞게 쓴 쓰기 문장: {presented}개 중 {correct}개. 필요한 정답 문장 수: {needed}. |
-| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | 화면에 문장을 보고 쓴 쓰기 시도(도움 받음): {presented}번 중 {assisted}번. |
+| `report.line.writing.assisted` | Sentences written while the sentence was shown: {assisted} of {presented}. | 문장이 보이는 상태에서 쓴 문장: {presented}개 중 {assisted}개. |
 | `report.review.reading` | Practice reading the sentences aloud. | 문장을 소리 내어 읽는 연습을 하세요. |
 | `report.review.writing` | Practice writing the sentences you hear. | 들은 문장을 쓰는 연습을 하세요. |
+| `civics.heard.closest` | Your phone or computer heard a few possible answers. We show the one closest to an official answer. | 휴대폰이나 컴퓨터가 몇 가지 가능한 답을 들었습니다. 공식 답에 가장 가까운 것을 보여 드립니다. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | 가상의 인물로 답하세요. 실제 이름, 주소, 날짜, 번호를 입력하지 마세요. |
 | `common.newTab` | (opens in a new tab) | (새 탭에서 열림) |
 | `coach.kind.streetAddress` | a street address | 도로명 주소 |

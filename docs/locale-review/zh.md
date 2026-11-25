@@ -28,7 +28,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | 真正的面談以英文進行，除非 USCIS 允許您例外。這些畫面上的問題和句子仍維持英文，讓您可以練習。 | The real interview is held in English, unless USCIS allows you an exception. The questions and sentences on these screens remain in English so you can practice. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | 這份報告只針對一個部分。它顯示這個部分在練習中的表現，而不是您在真正測驗中的表現，也不提供整體的練習結果。 | This report is about one part only. It shows how this part performed in practice, not how you would perform in the real test, and it does not provide an overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | N-400 面談只是練習，不計分。 | The N-400 interview is only practice and is not scored. |
-| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | 這個翻譯由 AI 製作，可能有錯誤。以英文版本為準。 | This translation was made by AI and may contain errors. The English version governs. |
+| `aiNotice.text` | This translation was made by AI and may have mistakes. If something is unclear, the English version is correct. | 這份翻譯由 AI 製作，可能有錯誤。如有不清楚的地方，以英文版為準。 | This translation was made by AI and may contain errors. The English version governs. |
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | 這是 Language Lab 依據 USCIS 評分指引設定的練習標準，不是 USCIS 的規定：句子中每個重要的字都必須出現，且順序正確。可以漏掉「the」這類短字。停頓和發音不計分。 | This is a practice standard set by Language Lab based on USCIS scoring guidelines, not a USCIS regulation: every important word in the sentence must appear, in the correct order. Short words like “the” may be omitted. Pauses and pronunciation are not scored. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | 這會決定您練習 2008 年還是 2025 年的公民常識測驗。這只是練習用的選擇。至於您自己的案件適用哪一種測驗，請到 uscis.gov 查詢。 | This decides whether you practice the 2008 or the 2025 civics test. This is only a choice for practice. As for which test applies to your own case, please check at uscis.gov. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | 公民常識練習中的圖片來自美國聯邦政府的官方來源。每張圖片都只因其本身的紀錄清楚載明權利而使用。這並不表示任何機關認可 Language Lab。 | The pictures in civics practice come from official sources of the U.S. federal government. Each picture is used only because its own record clearly states the rights. This does not mean any agency endorses Language Lab. |
@@ -36,10 +36,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | 在有人審核公民常識答案之前，這個版本關閉了公民常識、先學習和完整練習面試。您可以練習 N-400 面試、閱讀和書寫。 | Until someone reviews the civics answers, this version has turned off civics, Study first and the full practice interview. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | 公民常識的標準答案仍在等待人工審核，所以這個版本不會為公民常識計分，也不會產生報告。 | The standard answers for civics are still waiting for human review, so this version will not score civics and will not produce a report. |
 | `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | 当您按下“點一下開始說話”时，浏览器的语音识别功能可能会把您的声音发送给浏览器的开发公司（例如 Google 或 Apple），以便转成文字。Language Lab 不会发送或保存您的声音。您也可以改为输入答案。 | When you press “Say it”, the browser's speech recognition function may send your voice to the browser's developer (such as Google or Apple) to convert it to text. Language Lab will not send or save your voice. You can also type your answer instead. |
-| `report.title.onTrack` | Practice complete: each part reached the practice score | 練習完成：每個部分都達到練習分數 | Practice complete: every part reached the practice score |
+| `report.title.onTrack` | Well done. Each part reached the practice goal. | 做得好。每一部分都達到了練習目標。 | Practice complete: every part reached the practice score |
 | `report.title.review` | A few things to review | 有幾件事可以複習 | There are a few things you can review |
-| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | 在這次練習中，閱讀、書寫和公民常識都各自達到 Language Lab 使用的分數。請用下面的筆記繼續練習。 | In this practice, reading, writing and civics each reached the score Language Lab uses. Please use the notes below to keep practicing. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | 這正是練習的目的。下面的筆記會告訴您，再試一次之前該把重點放在哪裡。 | This is exactly the purpose of practice. The notes below tell you where to focus before trying again. |
+| `report.lead.onTrack` | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. | 閱讀、寫作和公民常識都達到了練習目標。請看下面的說明，繼續練習。 | In this practice, reading, writing and civics each reached the score Language Lab uses. Please use the notes below to keep practicing. |
+| `report.lead.review` | That is what practice is for. The notes below show what to practice next. | 這正是練習的用處。下面的說明告訴您接下來要練習什麼。 | This is exactly the purpose of practice. The notes below tell you where to focus before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | 書寫：USCIS 表示，拼寫、大寫和標點符號的錯誤不會讓您的書寫測驗不及格，除非句子已經無法理解。在這裡，小的拼寫錯誤仍然算數，較長的單字可以有較多錯誤。不檢查大寫和標點符號。 | Writing: USCIS says spelling, capitalization and punctuation errors will not make you fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words may have more errors. Capitalization and punctuation are not checked. |
 | `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | AI 教練開啟時，您在這個部分輸入或說出的每個回答的文字，會經由 Language Lab 的伺服器以文字形式傳送給 AI 公司 Anthropic，以寫出回饋。Language Lab 和 Anthropic 絕不會收到您的聲音，只會收到文字。請以虛構人物的身分回答。不要說出真實姓名、地址、出生日期、A-number 或案件細節。在您真正的面談中，您必須如實回答自己的實際情況。Language Lab 會檢查某些號碼，但無法攔截所有個人資料。Language Lab 不會保存您的回答。Anthropic 的隱私權政策說明 Anthropic 如何處理它們：anthropic.com/legal/privacy。開始新的練習時，AI 教練會再次關閉。 | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
 | `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | AI 教練：除非您在 N-400 部分開啟，否則為關閉。開啟時，每個 N-400 回答的文字會經由 Language Lab 的伺服器傳送給 Anthropic 以寫出回饋；不會傳送任何音訊。為了限制使用量，伺服器會用一個由您的網路位址產生、每天更換並加鹽的代碼計算請求次數；舊的計數會在之後的請求中刪除，通常在兩天內。Anthropic 隱私權政策：anthropic.com/legal/privacy。 | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
@@ -50,8 +50,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | 這些句子只使用 USCIS 官方閱讀和書寫詞彙表中的字詞。 |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | 您已達到練習的及格分數，所以測驗在這裡停止。 |
-| `home.part.civics.text` | Answer civics questions. Checked against the answer key. | 回答公民常識問題。會與標準答案核對。 |
-| `partReport.unscored.missing` | A question that is not in the answer key | 一道不在標準答案中的題目 |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | 在有人審核過答案表之前，這個版本已關閉「先學習」。 |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | 這只會改變練習；不會儲存或傳送任何資料。公民常識部分會從官方清單中標有星號（*）的 {bank} 題中問 {asked} 題。在這個練習中，{asked} 題都會問完。練習及格分數是答對 {pass} 題。關於您自己的情況，請查看 uscis.gov：年齡和年數以提出申請的日期計算。 |
 | `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS：在提出申請時，如果您 50 歲或以上並已是永久居民 20 年（50/20），或 55 歲或以上並已 15 年（55/15），您可免除英語要求（閱讀、書寫、口說和理解英語），但仍須參加公民常識考試。若您自備口譯員，可用母語參加。如果您 65 歲或以上並至少 20 年（65/20），您也可免除英語，官員會使用特別指定的公民常識考試表。 |
@@ -61,8 +59,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | 達到練習及格分數後，練習測驗就停止了。 |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | 答錯 {incorrect} 題後，練習測驗在達到練習及格分數 {score} 之前停止了。 |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | 練習及格分數是答對 {score} 題，這次沒有達到。 |
-| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | 未計分，因為答案會改變或不在答案範本中：{names}。這些問題不算對也不算錯。 |
-| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | 您的裝置對您說的話給出了幾種猜測。這裡顯示的是最接近答案範本中某個答案的那一種。 |
 
 ## 3. All other lines
 
@@ -70,16 +66,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | 跳到主要內容 |
-| `app.stageNotBuilt` | This stage of the practice isn’t built yet. | 這個練習階段尚未完成。 |
+| `app.stageNotBuilt` | This part is not ready yet. Go back to Home and choose another part. | 這部分還沒準備好。請回到首頁，選擇其他部分。 |
 | `header.about` | About & disclaimer | 關於與免責聲明 |
-| `stepper.label` | Interview stages | 面談階段 |
+| `stepper.label` | Your steps | 您的步驟 |
 | `stepper.count` | Step {current} of {total}: {name} | 第 {current} 步，共 {total} 步：{name} |
 | `stepper.status.complete` | completed | 已完成 |
 | `stepper.status.current` | current step | 目前階段 |
 | `stepper.status.upcoming` | upcoming | 即將進行 |
-| `stage.intro.label` | Welcome | 歡迎 |
-| `stage.intro.short` | Intro | 開始 |
-| `stage.n400_interview.label` | N-400 conversation | N-400 面談 |
+| `stage.intro.label` | Set up | 準備 |
+| `stage.intro.short` | Set up | 準備 |
+| `stage.n400_interview.label` | N-400 questions | N-400 問題 |
 | `stage.n400_interview.short` | N-400 | N-400 |
 | `stage.reading.label` | Reading | 閱讀 |
 | `stage.reading.short` | Reading | 閱讀 |
@@ -87,42 +83,42 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.writing.short` | Writing | 書寫 |
 | `stage.civics.label` | Civics | 公民常識 |
 | `stage.civics.short` | Civics | Civics |
-| `stage.report.label` | Practice report | 練習報告 |
+| `stage.report.label` | Your report | 您的報告 |
 | `stage.report.short` | Report | 報告 |
-| `badge.onTrack` | Practice score reached | 已達練習分數 |
-| `badge.review` | Worth reviewing | 值得複習 |
-| `report.empty` | Your practice report will appear here once the session is complete. | 練習結束後，您的練習報告會顯示在這裡。 |
+| `badge.onTrack` | You reached the practice goal | 您達到了練習目標 |
+| `badge.review` | Practice this again | 再練習一次 |
+| `report.empty` | Your report will show here when you finish the practice. | 練習完成後，您的報告會顯示在這裡。 |
 | `report.overline` | Practice report | 練習報告 |
-| `report.profile.label` | Practice profile (fictional) | 練習檔案（虛構） |
+| `report.profile.label` | Practice person (made up) | 練習人物（虛構） |
 | `report.profile.meta` | {version} civics test · filed {date} | {version} 年公民常識測驗 · 申請於 {date} 提出 |
 | `report.stages.heading` | How each part went | 各部分的表現 |
 | `report.review.heading` | Things to review | 需要複習的項目 |
 | `report.review.intro` | Focus on these before your next practice. | 下次練習前，請先把重點放在這些項目上。 |
-| `report.generated` | Report generated {datetime} | 報告產生時間：{datetime} |
+| `report.generated` | Report made {datetime} | 報告製作時間：{datetime} |
 | `translation.english` | English | 英文 |
 | `voice.say` | Tap to speak | 點一下開始說話 |
 | `voice.stop` | Listening… tap when you finish | 正在聽…說完後點一下 |
 | `voice.listening` | Listening. Say your answer now. | 正在聆聽。請現在說出您的答案。 |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | 我們聽到了。請檢查文字，需要的話可以修改，然後送出。 |
-| `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | 麥克風被封鎖。請在瀏覽器設定中允許使用麥克風，或直接輸入您的答案。 |
+| `voice.denied` | The microphone is blocked. Follow the steps below to allow it, or type your answer. | 麥克風被封鎖。請按照下面的步驟允許使用，或輸入您的回答。 |
 | `voice.unsupported` | This browser cannot listen to your voice. Type your answer instead. | 這個瀏覽器無法聆聽您的聲音。請改為輸入您的答案。 |
 | `voice.nothingHeard` | We did not hear anything. Try again, or type your answer. | 我們沒有聽到任何聲音。請再試一次，或輸入您的答案。 |
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | 找不到麥克風。請改為輸入您的答案。 |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | 這次聆聽沒有成功。請再試一次，或輸入您的答案。 |
 | `voice.skip` | Skip this one | 跳過這題 |
 | `audio.play` | Play the question | 播放問題 |
-| `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | 裝置語音：安裝在您手機或電腦上的語音。 |
+| `audio.deviceVoice` | Built-in voice: the voice of your phone or computer. | 內建語音：您的手機或電腦的聲音。 |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | 這個瀏覽器無法朗讀。請閱讀螢幕上的文字。 |
-| `intro.profile.legend` | Choose a practice profile | 選擇一個練習檔案 |
-| `intro.profile.help` | Every profile is invented. | 所有檔案都是虛構的。 |
+| `intro.profile.legend` | Choose a practice person | 選擇一位練習人物 |
+| `intro.profile.help` | Every person here is made up. | 這裡的每個人物都是虛構的。 |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | 請假設 N-400 是在以下時間提出的來練習… |
 | `intro.filed.before` | Before {date} | {date} 之前 |
 | `intro.filed.onOrAfter` | On or after {date} | {date} 或之後 |
 | `intro.start` | Start practice | 開始練習 |
-| `intro.startHint` | Make your choice above to start. | 請先在上方做出選擇才能開始。 |
-| `home.locked.title` | In this build you can practice | 這個版本可以練習 |
+| `intro.startHint` | Choose one answer in each group above. Then press “Start practice”. | 在上面每一組中選一個答案。然後按「開始練習」。 |
+| `home.locked.title` | Right now you can practice | 目前您可以練習 |
 | `n400.title` | N-400 interview | N-400 面談 |
-| `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | 平靜地練習官員會就申請表詢問的問題。請以 {name} 的身分回答。這個步驟不計分。 |
+| `n400.lead` | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. | 官員可能會問您像這樣關於表格的問題。請以 {name} 的身分回答。這部分不評分。 |
 | `n400.count` | Question {current} of {total} | 第 {current} 題，共 {total} 題 |
 | `n400.sample.label` | Sample answer for {name} (fictional) | {name} 的範例答案（虛構） |
 | `n400.yourAnswer` | Your answer, as {name} | 您以 {name} 身分的答案 |
@@ -143,7 +139,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | 如果願意，可以大聲練習回答。這個問題不會被記錄。 |
 | `coach.tip.label` | Tip about your English: | 關於您英語的建議： |
 | `coach.feedback.understood` | Easy to understand | 容易聽懂 |
-| `coach.feedback.needs_practice` | Worth practicing again | 值得再練習一次 |
+| `coach.feedback.needs_practice` | Practice this again | 再練習一次 |
 | `coach.feedback.unclear` | Hard to follow. Try again. | 不容易聽懂。請再試一次。 |
 | `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | 這只檢查您的英語有多清楚，不代表回答是否正確或真實。 |
 | `coach.checking` | Getting AI feedback… | 正在取得 AI 回饋… |
@@ -157,11 +153,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.dateOfBirth` | a full date, such as a date of birth | 完整的日期，例如出生日期 |
 | `coach.next` | Continue | 繼續 |
 | `n400.loading` | Getting the next question… | 正在取得下一題… |
-| `n400.failed` | The next question could not be loaded. Start over to try again. | 無法載入下一題。請重新開始再試一次。 |
+| `n400.failed` | The next question did not load. Check your internet, then press “Start over”. | 下一題沒有載入。請檢查網路，然後按「重新開始」。 |
 | `n400.done.title` | Your answers | 您的答案 |
 | `n400.done.lead` | These are the words you gave. They are not scored. | 這些是您說出的話。它們不計分。 |
 | `n400.done.next` | Go to reading | 前往閱讀 |
-| `voice.consent.continue` | Continue and say it | 继续并说出来 |
+| `voice.consent.continue` | Continue and speak | 繼續並說話 |
 | `voice.consent.type` | Type instead | 改为输入 |
 | `n400.number` | Question {current} | 第 {current} 題 |
 | `common.fictional` | Fictional practice profile | 虛構的練習檔案 |
@@ -193,8 +189,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | 這個瀏覽器無法朗讀，所以句子顯示在這裡。請把它輸入。 |
 | `writing.hidden` | The sentence stays hidden until you answer. | 在您作答之前，句子會保持隱藏。 |
 | `writing.show` | Show the sentence | 顯示句子 |
-| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | 如果您聽不到音訊，可以顯示句子再輸入。檢查方式相同。您的報告會把這次嘗試標示為有輔助。 |
-| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | 句子已顯示。您的報告會把這次嘗試標示為有輔助。 |
+| `writing.show.help` | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. | 如果聽不到聲音，請顯示句子再輸入。檢查方式相同。您的報告會註明句子曾被顯示。 |
+| `writing.shown` | The sentence is shown. Your report will say so. | 句子已顯示。您的報告會註明這一點。 |
 | `civics.title` | Civics | 公民常識 |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | 請大聲回答或輸入答案。簡短的答案就可以，但要把完整的答案說出來。 |
 | `civics.count` | Question {current} of {total} | 第 {current} 題，共 {total} 題 |
@@ -210,22 +206,22 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.stopped.incorrect` | The test stopped because too many answers need more practice. | 測驗已停止，因為有太多答案需要再多練習。 |
 | `civics.stopped.none` | You have answered every question for this practice test. | 您已回答完這次練習測驗的所有題目。 |
 | `civics.tally` | {correct} correct, {incorrect} not yet. | 答對 {correct} 題，還不對 {incorrect} 題。 |
-| `civics.locked.title` | Civics is switched off in this build | 這個版本已關閉公民常識功能 |
+| `civics.locked.title` | Civics is not available right now | 公民常識目前無法使用 |
 | `report.again` | Practice again | 再練習一次 |
 | `common.startOver` | Start over | 重新開始 |
-| `voice.needText` | Type or say your answer first, or choose Skip. | 請先輸入或說出您的答案，或選擇跳過。 |
+| `voice.needText` | The box is empty. Type or say your answer, or press “Skip this one”. | 方框是空的。請輸入或說出您的回答，或按「跳過這題」。 |
 | `audio.stop` | Stop | 停止 |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | AI 生成的語音。音訊是事先製作好的。 |
 | `audio.playSample` | Play sample answer | 播放範例答案 |
-| `home.title` | Welcome to the booth | 歡迎來到 Language Lab |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | 在安靜的環境中練習歸化面談。您以虛構人物的身分作答，所以不需要提供任何真實資料。 |
+| `home.title` | Welcome to Language Lab | 歡迎來到 Language Lab |
+| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | 為入籍面試做練習。您以虛構人物的身分回答，所以不必透露任何關於自己的事。 |
 | `home.how.title` | How it works | 使用方式 |
 | `home.how.1.title` | Listen | 聆聽 |
-| `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | 點選「朗讀」來聽問題或句子。 |
+| `home.how.1.text` | Tap “Play the question” to hear it. | 點「播放問題」來聆聽。 |
 | `home.how.2.title` | Speak or type | 說話或輸入 |
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | 說出您的答案，或把它輸入。輸入永遠可用。 |
 | `home.how.3.title` | See the result | 查看結果 |
-| `home.how.3.text` | You see how your answer compares, and what to practice next. | 您會看到答案與標準的比較，以及接下來該練習什麼。 |
+| `home.how.3.text` | You see if your answer counts, and what to practice next. | 您會看到回答是否算數，以及接下來要練習什麼。 |
 | `home.choose` | What would you like to do? | 您想做什麼？ |
 | `home.full.title` | Full practice interview | 完整練習面談 |
 | `home.full.text` | All four parts in order, then one report. | 依序完成四個部分，最後得到一份報告。 |
@@ -234,15 +230,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.poweredBy` | Powered by Claude (Anthropic) | 由 Claude（Anthropic）提供技術支援 |
 | `home.parts.title` | Practice one part | 只練習一個部分 |
 | `home.part.n400.title` | N-400 interview | N-400 面談 |
-| `home.part.n400.text` | Answer questions about an application. Not scored. | 回答有關申請表的問題。不計分。 |
+| `home.part.n400.text` | Answer questions about the N-400 form. No score. | 回答關於 N-400 表格的問題。不評分。 |
 | `home.part.n400.badge` | AI | AI |
 | `home.part.reading.title` | Reading | 閱讀 |
 | `home.part.reading.text` | Read sentences out loud. | 大聲朗讀句子。 |
 | `home.part.writing.title` | Writing | 書寫 |
 | `home.part.writing.text` | Listen and type the sentence. | 聽句子並輸入。 |
 | `home.part.civics.title` | Civics | 公民常識 |
+| `home.part.civics.text` | Answer questions about U.S. history and government. Checked with the official answers. | 回答關於美國歷史和政府的問題。以官方答案核對。 |
 | `setup.title` | Set up your practice | 設定您的練習 |
-| `setup.lead` | Choose what this practice needs. Nothing real is asked. | 選擇這次練習需要的項目。不會詢問任何真實資料。 |
+| `setup.lead` | Choose one answer in each group. Nothing here asks about you. | 每一組選一個答案。這裡不會問關於您的事。 |
 | `report.home` | Back to home | 回到首頁 |
 | `partReport.title.n400_interview` | N-400 interview practice | N-400 面談練習 |
 | `partReport.title.reading` | Reading practice | 閱讀練習 |
@@ -259,7 +256,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.civics.needed` | Correct answers needed: {needed}. | 需要答對的題數：{needed}。 |
 | `partReport.review` | Questions to review | 需要複習的題目 |
 | `partReport.unscored.title` | Not scored | 未計分 |
-| `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | 這些題目無法計分，所以不算對也不算錯。 |
+| `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | 這些問題不評分，不算對也不算錯。 |
+| `partReport.unscored.missing` | A question we cannot check | 一個我們無法核對的問題 |
 | `report.see` | See my report | 查看我的報告 |
 | `header.home` | Home | 首頁 |
 | `help.button` | Help | 說明 |
@@ -286,9 +284,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Leave | 離開 |
 | `header.homeConfirm.no` | Keep practicing | 繼續練習 |
 | `common.retry` | Try again | 再試一次 |
-| `partReport.badge.good` | This part reached the practice score | 這個部分已達練習分數 |
-| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | 句子已顯示在螢幕上（有輔助的嘗試）。 |
-| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | 在有人审核翻译之前，免责声明和法律文字只显示英文。 |
+| `partReport.badge.good` | You reached the practice goal | 您達到了練習目標 |
+| `partReport.assisted` | The sentence was shown on the screen. | 句子曾顯示在畫面上。 |
+| `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | 法律聲明在有人核對翻譯之前都以英文顯示。 |
 | `lang.menu.title` | Choose a language | 選擇語言 |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | 还有更多语言正在审核中。有人检查后，它们会出现在这里。 |
 | `home.study.title` | Study first | 先學習 |
@@ -313,8 +311,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.hearSample` | Hear the sample | 聽範例 |
 | `selfReview.tryAgain` | Try again | 再試一次 |
 | `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | 您的錄音只留在這部裝置上。不會傳送到任何地方，也不會儲存，換到下一個句子或離開這個畫面時就會刪除。 |
-| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | 這個瀏覽器無法錄下您的聲音。您仍可以用「說話」或輸入文字來檢查朗讀。 |
-| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | 麥克風被封鎖了。請在瀏覽器設定中允許使用麥克風。 |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still press “Tap to speak” or type. | 這個瀏覽器無法錄下您的聲音。您仍然可以按「點一下開始說話」或輸入。 |
+| `selfReview.denied` | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. | 麥克風被封鎖，所以無法開始錄音。請在瀏覽器設定中允許此網站使用麥克風，然後再試一次。 |
 | `selfReview.error` | Recording did not work this time. Try again. | 這次錄音沒有成功。請再試一次。 |
 | `compare.why.allWords` | Every important word of the sentence was there, in order. | 句子裡每個重要的字都有，順序也對。 |
 | `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | 您說了「{said}」。句子是「{expected}」。這樣仍然算數。 |
@@ -327,7 +325,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | 您多加了「{said}」，句子裡沒有這個字。這樣仍然算數。 |
 | `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | 漏掉了短字「{expected}」。這樣仍然算數。 |
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | 您多加了短字「{said}」。這樣仍然算數。 |
-| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | 這個結果是根據您的裝置聽到的字詞。如果它聽錯了，請再試一次或改用輸入。 |
+| `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | 這個結果用的是您的手機或電腦聽到的字。如果聽錯了，請再試一次或輸入您的回答。 |
 | `compare.honest.typed` | This result is based on the words you typed. | 這個結果是根據您輸入的字詞。 |
 | `home.special.title` | 65/20 civics practice | 65/20 公民常識練習 |
 | `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | 適用於 65 歲或以上、並已是永久居民 20 年或以上的人。練習標有星號（*）的公民常識問題。 |
@@ -335,15 +333,17 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | 只看 65/20 的問題（標有星號） |
 | `report.line.civics.none` | No civics questions were scored. | 沒有任何公民常識問題被計分。 |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | 公民常識問題答對：{scored} 題中答對 {correct} 題。 |
+| `report.line.civics.unscored` | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. | 這些不評分，因為答案會隨時間改變，或我們無法核對：{names}。不算對也不算錯。 |
 | `report.line.reading.none` | No reading sentences were completed. | 沒有完成任何閱讀句子。 |
 | `report.line.reading.done` | Sentence {n} was read correctly. | 第 {n} 句閱讀正確。 |
 | `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | 閱讀句子讀對：{presented} 句中讀對 {correct} 句。需要讀對的句數：{needed}。 |
 | `report.line.writing.none` | No writing sentences were completed. | 沒有完成任何書寫句子。 |
 | `report.line.writing.done` | Sentence {n} was written correctly. | 第 {n} 句書寫正確。 |
 | `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | 書寫句子寫對：{presented} 句中寫對 {correct} 句。需要寫對的句數：{needed}。 |
-| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | 在畫面顯示句子時的書寫嘗試（有協助）：{presented} 次中有 {assisted} 次。 |
+| `report.line.writing.assisted` | Sentences written while the sentence was shown: {assisted} of {presented}. | 在句子顯示時寫出的句子：{presented} 句中有 {assisted} 句。 |
 | `report.review.reading` | Practice reading the sentences aloud. | 練習大聲讀出句子。 |
 | `report.review.writing` | Practice writing the sentences you hear. | 練習寫下您聽到的句子。 |
+| `civics.heard.closest` | Your phone or computer heard a few possible answers. We show the one closest to an official answer. | 您的手機或電腦聽到了幾個可能的回答。我們顯示最接近官方答案的那一個。 |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | 請以虛構人物的身分回答。不要輸入您真實的姓名、地址、日期或號碼。 |
 | `common.newTab` | (opens in a new tab) | （在新分頁開啟） |
 | `coach.kind.streetAddress` | a street address | 一個街道地址 |

@@ -77,7 +77,112 @@ were passes and are not listed.
 
 ## Changed strings
 
-Filled in by Step 6.
+Every English interface string that Steps 3 to 6 added, changed or removed, compared with `main`
+(26da2db). Legal keys keep their wording. The only legal change is `voice.consent.text`, where the
+quoted button name follows the new microphone button ("Say it" → "Tap to speak") in every locale.
+The new legal key `home.special.cta` is English only and reuses the eligibility wording. All other
+keys have new AI drafts in all 14 locales, and the review sheets (`docs/locale-review.md` and `docs/locale-review/`) were
+regenerated, so every changed key shows up there for the human reviewers.
+
+Plain-word rules used in Step 6: short sentences, everyday words, the button name in quotes when a
+text tells you to press it, and errors that say what happened and what to do next. Words removed:
+stage, session, booth, build, answer key, authoritative, assisted, unscored, "practice score", device.
+Content (civics questions, answers, reading and writing sentences, N-400 questions) is unchanged.
+
+| Key | What | Old | New |
+|---|---|---|---|
+| `app.stageNotBuilt` | changed | This stage of the practice isn’t built yet. | This part is not ready yet. Go back to Home and choose another part. |
+| `stepper.label` | changed | Interview stages | Your steps |
+| `stepper.count` | changed | Stage {current} of {total} | Step {current} of {total}: {name} |
+| `stage.intro.label` | changed | Welcome | Set up |
+| `stage.intro.short` | changed | Intro | Set up |
+| `stage.n400_interview.label` | changed | N-400 conversation | N-400 questions |
+| `stage.report.label` | changed | Practice report | Your report |
+| `badge.onTrack` | changed | Practice score reached | You reached the practice goal |
+| `badge.review` | changed | Worth reviewing | Practice this again |
+| `report.empty` | changed | Your practice report will appear here once the session is complete. | Your report will show here when you finish the practice. |
+| `report.take` | removed | TAKE | (none) |
+| `report.title.onTrack` | changed | Practice complete: each part reached the practice score | Well done. Each part reached the practice goal. |
+| `report.lead.onTrack` | changed | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. |
+| `report.lead.review` | changed | That’s what practice is for. The notes below show where to focus before you try again. | That is what practice is for. The notes below show what to practice next. |
+| `report.profile.label` | changed | Practice profile (fictional) | Practice person (made up) |
+| `report.generated` | changed | Report generated {datetime} | Report made {datetime} |
+| `voice.say` | changed | Say it | Tap to speak |
+| `voice.stop` | changed | Stop listening | Listening… tap when you finish |
+| `voice.denied` | changed | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | The microphone is blocked. Follow the steps below to allow it, or type your answer. |
+| `audio.play` | changed | Play aloud | Play the question |
+| `audio.deviceVoice` | changed | Device voice: the voice installed on your phone or computer. | Built-in voice: the voice of your phone or computer. |
+| `intro.profile.legend` | changed | Choose a practice profile | Choose a practice person |
+| `intro.profile.help` | changed | Every profile is invented. | Every person here is made up. |
+| `intro.startHint` | changed | Make your choice above to start. | Choose one answer in each group above. Then press “Start practice”. |
+| `home.locked.title` | changed | In this build you can practice | Right now you can practice |
+| `n400.lead` | changed | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. |
+| `coach.feedback.needs_practice` | changed | Worth practicing again | Practice this again |
+| `n400.failed` | changed | The next question could not be loaded. Start over to try again. | The next question did not load. Check your internet, then press “Start over”. |
+| `voice.consent.text` (legal) | changed | When you press “Say it”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. |
+| `voice.consent.continue` | changed | Continue and say it | Continue and speak |
+| `writing.show.help` | changed | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. |
+| `writing.shown` | changed | The sentence is shown. Your report marks this attempt as assisted. | The sentence is shown. Your report will say so. |
+| `civics.correct` | changed | Correct | This counts |
+| `civics.locked.title` | changed | Civics is switched off in this build | Civics is not available right now |
+| `voice.needText` | changed | Type or say your answer first, or choose Skip. | The box is empty. Type or say your answer, or press “Skip this one”. |
+| `audio.stop` | changed | Stop playing | Stop |
+| `home.title` | changed | Welcome to the booth | Welcome to Language Lab |
+| `home.lead` | changed | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. |
+| `home.how.1.text` | changed | Tap Play aloud to hear a question or a sentence. | Tap “Play the question” to hear it. |
+| `home.how.3.text` | changed | You see how your answer compares, and what to practice next. | You see if your answer counts, and what to practice next. |
+| `home.part.n400.text` | changed | Answer questions about an application. Not scored. | Answer questions about the N-400 form. No score. |
+| `home.part.civics.text` | changed | Answer civics questions. Checked against the answer key. | Answer questions about U.S. history and government. Checked with the official answers. |
+| `setup.lead` | changed | Choose what this practice needs. Nothing real is asked. | Choose one answer in each group. Nothing here asks about you. |
+| `partReport.unscored.text` | changed | These questions could not be scored, so they are not counted as right or wrong. | These questions get no score. They do not count as right or wrong. |
+| `partReport.unscored.missing` | changed | A question that is not in the answer key | A question we cannot check |
+| `help.button` | changed | How this works | Help |
+| `help.listen` | changed | Press “{play}” to hear it. Press the same button again to stop. | Press “{play}” to hear it. |
+| `help.sample` | removed | Read the sample answer, or play it. It belongs to the made-up person. It is only an example. | (none) |
+| `help.read` | changed | Read the sentence on the screen out loud. | Read the sentence out loud. |
+| `help.mic` | changed | Press “{say}” and speak. If your phone asks to use the microphone, press Allow. Press “{stop}” when you finish. | Press “{say}” and talk. Or type in the box. |
+| `help.type` | removed | You can always type instead. Tap the box and type. Typing always works. | (none) |
+| `help.typeOnly` | changed | Tap the box and type what you hear. | Type what you hear in the box. |
+| `help.send` | removed | Check the words in the box. You can change them. Then press “{send}”. | (none) |
+| `help.skip` | removed | Press “{skip}” if you do not know. It sends an empty answer and moves on. It counts as not yet. | (none) |
+| `help.notScored` | removed | Nothing in this part is scored. | (none) |
+| `help.result.reading` | removed | Then you see which words matched. | (none) |
+| `help.result.civics` | removed | Then you see Correct or Not yet, and the official answers. | (none) |
+| `header.settings` | changed | Settings | Text size |
+| `settings.title` | changed | Comfort settings | Text size and voice |
+| `settings.slow.label` | changed | Play recorded voices more slowly | Slower voice |
+| `header.homeConfirm.yes` | changed | Yes, go home | Leave |
+| `header.homeConfirm.no` | changed | Stay here | Keep practicing |
+| `partReport.badge.good` | changed | This part reached the practice score | You reached the practice goal |
+| `partReport.assisted` | changed | The sentence was shown on screen (assisted attempt). | The sentence was shown on the screen. |
+| `aiNotice.text` | changed | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | This translation was made by AI and may have mistakes. If something is unclear, the English version is correct. |
+| `aiNotice.legalEnglish` | changed | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Legal notices stay in English until a person checks the translation. |
+| `selfReview.unsupported` | changed | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | This browser cannot record your voice. You can still press “Tap to speak” or type. |
+| `selfReview.denied` | changed | The microphone is blocked. Allow microphone access in your browser settings. | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. |
+| `compare.honest.heard` | changed | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. |
+| `report.line.civics.unscored` | changed | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. |
+| `report.line.writing.assisted` | changed | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | Sentences written while the sentence was shown: {assisted} of {presented}. |
+| `civics.heard.closest` | changed | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | Your phone or computer heard a few possible answers. We show the one closest to an official answer. |
+| `home.start.label` | added | (none) | Start here |
+| `home.full.start` | added | (none) | Start practice |
+| `home.special.cta` (legal) | added | (none) | 65 or older, 20 years with a green card? Start the 65/20 practice. |
+| `home.textSizeHint` | added | (none) | Text too small? Tap Text size at the top. |
+| `audio.playing` | added | (none) | Playing… |
+| `audio.playSentence` | added | (none) | Play the sentence |
+| `voice.gotIt` | added | (none) | Got it. Tap to speak again |
+| `voice.orType` | added | (none) | Or type your answer |
+| `voice.micHelp.title` | added | (none) | How to allow the microphone |
+| `voice.micHelp.iphone` | added | (none) | iPhone (Safari): tap “aA” next to the web address, then Website Settings, then Microphone, and choose Allow. Then reload the page. |
+| `voice.micHelp.android` | added | (none) | Android (Chrome): tap the small icon to the left of the web address, then Permissions, and turn on Microphone. Then reload the page. |
+| `voice.micHelp.typing` | added | (none) | You can always type your answer in the box instead. |
+| `civics.why.correct` | added | (none) | Your answer matches an official answer. |
+| `civics.why.notYet` | added | (none) | Your answer does not match the official answers yet. |
+| `settings.slow.on` | added | (none) | On |
+| `settings.slow.off` | added | (none) | Off |
+| `help.done.n400` | added | (none) | Press “{send}” to go on. Nothing here gets a score. |
+| `help.done.english` | added | (none) | Press “{send}”. Then you see if it counts. |
+| `help.done.civics` | added | (none) | Press “{send}”. Then you see if it counts, and the official answers. |
+| `settings.textSize.sample` | added | (none) | Aa |
 
 ## Screens before and after
 

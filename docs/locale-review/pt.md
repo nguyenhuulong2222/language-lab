@@ -28,7 +28,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `lang.interviewEnglish` | The real interview is held in English unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so you can practice them. | A entrevista real é feita em inglês, a menos que o USCIS permita uma exceção para você. As perguntas e as frases destas telas continuam em inglês para que você possa praticá-las. | The real interview is done in English, unless USCIS allows an exception for you. The questions and sentences on these screens stay in English so that you can practice them. |
 | `partReport.scope` | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. | Este relatório é de uma parte só. Ele mostra como esta parte foi na prática, não como você se sairia no teste real, e não dá um resultado geral de prática. | This report is for one part only. It shows how this part went in practice, not how you would do on the real test, and it gives no overall practice result. |
 | `report.n400Note` | The N-400 interview is practice only and is not scored. | A entrevista sobre o N-400 é apenas prática e não é pontuada. | The N-400 interview is practice only and is not scored. |
-| `aiNotice.text` | This translation was made by AI and may contain mistakes. The English version is the authoritative one. | Esta tradução foi feita por IA e pode conter erros. A versão em inglês é a oficial. | This translation was made by AI and may contain errors. The English version is the official one. |
+| `aiNotice.text` | This translation was made by AI and may have mistakes. If something is unclear, the English version is correct. | Esta tradução foi feita por IA e pode ter erros. Se algo não estiver claro, a versão em inglês é a correta. | This translation was made by AI and may contain errors. The English version is the official one. |
 | `compare.setting` | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: every important word of the sentence must be there, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. | Um ajuste de prática do Language Lab baseado nas diretrizes de pontuação do USCIS, não uma regra do USCIS: todas as palavras importantes da frase devem estar presentes, em ordem. Palavras curtas como “the” podem faltar. Pausas e pronúncia não são pontuadas. | A Language Lab practice setting based on the USCIS scoring guidelines, not a USCIS rule: all the important words of the sentence must be present, in order. Short words such as “the” may be missing. Pauses and pronunciation are not scored. |
 | `intro.filed.help` | This decides whether you practice the 2008 or the 2025 civics test. It is only a practice choice. For your own case, check uscis.gov to see which test applies to you. | Isto decide se você pratica o teste de educação cívica de 2008 ou o de 2025. É só uma escolha para praticar. Para o seu próprio caso, veja em uscis.gov qual teste se aplica a você. | This decides whether you practice the 2008 civics test or the 2025 one. It is just a choice for practicing. For your own case, see at uscis.gov which test applies to you. |
 | `credits.lead` | The pictures in civics practice come from official U.S. federal sources. Each one is used only because its own record states its rights. This does not mean any agency endorses Language Lab. | As imagens da prática de educação cívica vêm de fontes oficiais do governo federal dos EUA. Cada uma é usada apenas porque o seu próprio registro informa os direitos. Isso não significa que nenhum órgão aprove o Language Lab. | The images of the civics practice come from official sources of the U.S. federal government. Each one is used only because its own record gives the rights. This does not mean that any agency approves Language Lab. |
@@ -36,10 +36,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.locked` | Civics, Study first and the full practice interview are switched off in this build until a person has reviewed the civics answer key. You can practice the N-400 interview, reading and writing. | Educação cívica, Estudar primeiro e a entrevista de prática completa estão desligadas nesta versão até que uma pessoa revise as respostas de educação cívica. Você pode praticar a entrevista do N-400, a leitura e a escrita. | Civics, Study first and the full practice interview are turned off in this version until a person reviews the civics answers. You can practice the N-400 interview, reading and writing. |
 | `civics.locked.text` | The civics answer key is still waiting for a person to review it, so this build does not score civics or make a report. | As respostas corretas de educação cívica ainda aguardam a revisão de uma pessoa, então esta versão não pontua essa parte nem gera um relatório. | The correct civics answers still await a person's review, so this version does not score that part or generate a report. |
 | `voice.consent.text` | When you press “Tap to speak”, your browser’s speech recognition may send your voice to the browser’s maker, such as Google or Apple, to turn it into words. Language Lab does not send or save your voice. You can type your answer instead. | Quando você toca em “Toque para falar”, o reconhecimento de voz do seu navegador pode enviar sua voz à empresa que fez o navegador, como Google ou Apple, para transformá-la em palavras. O Language Lab não envia nem guarda a sua voz. Você pode digitar a resposta no lugar. | When you tap “Speak”, your browser's voice recognition may send your voice to the company that made the browser, such as Google or Apple, to turn it into words. Language Lab does not send or store your voice. You can type the answer instead. |
-| `report.title.onTrack` | Practice complete: each part reached the practice score | Prática concluída: cada parte atingiu a pontuação de prática | Practice finished: each part reached the practice score |
+| `report.title.onTrack` | Well done. Each part reached the practice goal. | Muito bem. Cada parte alcançou a meta de prática. | Practice finished: each part reached the practice score |
 | `report.title.review` | A few things to review | Algumas coisas para revisar | Some things to review |
-| `report.lead.onTrack` | In this practice, reading, writing and civics each reached the score Language Lab uses. Use the notes below to keep practicing. | Nesta prática, leitura, escrita e educação cívica atingiram a pontuação que o Language Lab usa. Use as anotações abaixo para continuar praticando. | In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to keep practicing. |
-| `report.lead.review` | That’s what practice is for. The notes below show where to focus before you try again. | É para isso que serve a prática. As anotações abaixo mostram em que se concentrar antes de tentar de novo. | That is what practice is for. The notes below show what to focus on before trying again. |
+| `report.lead.onTrack` | Reading, writing and civics each reached the practice goal. Read the notes below and keep practicing. | Leitura, escrita e educação cívica alcançaram a meta de prática. Leia as notas abaixo e continue praticando. | In this practice, reading, writing and civics reached the score that Language Lab uses. Use the notes below to keep practicing. |
+| `report.lead.review` | That is what practice is for. The notes below show what to practice next. | É para isso que serve a prática. As notas abaixo mostram o que praticar agora. | That is what practice is for. The notes below show what to focus on before trying again. |
 | `compare.setting.writing` | Writing: USCIS says spelling, capital letters and punctuation do not fail the writing test unless the sentence can no longer be understood. Here, small spelling slips still count, and longer words may have more. Capital letters and punctuation are not checked. | Escrita: o USCIS diz que erros de ortografia, letras maiúsculas e pontuação não reprovam no teste de escrita, a menos que a frase não possa mais ser entendida. Aqui, pequenos erros de ortografia ainda contam, e palavras mais longas podem ter mais. Letras maiúsculas e pontuação não são verificadas. | Writing: USCIS says that spelling, capital letter and punctuation errors do not fail the writing test, unless the sentence can no longer be understood. Here, small spelling errors still count, and longer words can have more. Capital letters and punctuation are not checked. |
 | `coach.notice.text` | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-numbers or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks for some numbers, but it cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. | Quando o treinador de IA está ligado, as palavras de cada resposta que você digita ou fala nesta parte são enviadas como texto para a Anthropic, uma empresa de IA, por meio do servidor do Language Lab, para escrever comentários. O Language Lab e a Anthropic nunca recebem a sua voz, só as palavras. Responda como a pessoa fictícia. Não diga nomes reais, endereços, datas de nascimento, números A-number nem detalhes de processos. Na sua entrevista real, você deve responder com a verdade sobre a sua própria vida. O Language Lab verifica alguns números, mas não consegue detectar todos os dados pessoais. O Language Lab não guarda as suas respostas. A política de privacidade da Anthropic explica como a Anthropic as trata: anthropic.com/legal/privacy. O treinador de IA fica desligado de novo quando você começa uma nova prática. | When the AI coach is on, the words of each answer you type or say in this part are sent as text to Anthropic, an AI company, through Language Lab's server, to write feedback. Language Lab and Anthropic never receive your voice, only the words. Answer as the fictional person. Do not say real names, addresses, dates of birth, A-number or case details. In your real interview, you must answer truthfully about your own life. Language Lab checks some numbers but cannot catch every personal detail. Language Lab does not keep your answers. Anthropic's privacy policy says how Anthropic handles them: anthropic.com/legal/privacy. The AI coach is off again when you start a new practice. |
 | `coach.privacy` | AI coach: off unless you turn it on in the N-400 part. When it is on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are removed during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. | Treinador de IA: desligado, a menos que você o ligue na parte do N-400. Quando está ligado, o texto de cada resposta do N-400 é enviado para a Anthropic por meio do servidor do Language Lab para escrever comentários; nenhum áudio é enviado. Para limitar o uso, o servidor conta os pedidos com um código diário e com sal feito a partir do seu endereço de internet; as contagens antigas são apagadas em pedidos posteriores, normalmente em até dois dias. Política de privacidade da Anthropic: anthropic.com/legal/privacy. | AI coach: off unless you turn it on in the N-400 part. When on, the text of each N-400 answer is sent to Anthropic through Language Lab's server to write feedback; no audio is sent. To limit use, the server counts requests with a daily, salted code made from your internet address; old counts are deleted during later requests, normally within two days. Anthropic's privacy policy: anthropic.com/legal/privacy. |
@@ -50,8 +50,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `compare.vocab` | The sentences use only words from the official USCIS reading and writing vocabulary lists. | As frases usam apenas palavras das listas oficiais de vocabulário de leitura e escrita do USCIS. |
 | `civics.stopped.correct` | You reached the practice passing score, so the test stopped here. | Você alcançou a pontuação de aprovação da prática, então o teste parou aqui. |
-| `home.part.civics.text` | Answer civics questions. Checked against the answer key. | Responda a perguntas de educação cívica. Conferidas com as respostas corretas. |
-| `partReport.unscored.missing` | A question that is not in the answer key | Uma pergunta que não está nas respostas corretas |
 | `study.locked` | Study first is switched off in this build until a person has reviewed the answer key. | Estudar primeiro está desativado nesta versão até que uma pessoa revise as respostas corretas. |
 | `intro.special.help` | This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing. | Isto só muda a prática; nada é salvo nem enviado. A parte de educação cívica faz {asked} das {bank} perguntas marcadas com um asterisco (*) na lista oficial. Nesta prática, todas as {asked} são feitas. A pontuação de aprovação da prática é de {pass} respostas corretas. Para o seu próprio caso, consulte uscis.gov: a idade e os anos contam na data em que o pedido é apresentado. |
 | `special.englishExempt` | USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms. | USCIS: na data do pedido, se você tem 50 anos ou mais e 20 anos como residente permanente (50/20), ou 55 anos ou mais e 15 anos (55/15), está isento do requisito de inglês (ler, escrever, falar e entender inglês), mas ainda precisa fazer o teste de educação cívica. Pode fazê-lo no seu idioma nativo se trouxer um intérprete. Se você tem 65 anos ou mais e pelo menos 20 anos (65/20), também está isento do inglês, e o oficial usa formulários de teste de educação cívica especialmente designados. |
@@ -61,8 +59,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.line.civics.stoppedAtScore` | The practice test stopped once the practice passing score was reached. | O teste de prática parou quando a pontuação de aprovação da prática foi alcançada. |
 | `report.line.civics.stoppedIncorrect` | The practice test stopped after {incorrect} incorrect answers, before the practice passing score of {score} was reached. | O teste de prática parou depois de {incorrect} respostas incorretas, antes de a pontuação de aprovação da prática, {score}, ser alcançada. |
 | `report.line.civics.notReached` | The practice passing score is {score} correct answers, and it was not reached. | A pontuação de aprovação da prática é de {score} respostas corretas, e ela não foi alcançada. |
-| `report.line.civics.unscored` | Not scored, because the answer changes or is not in the answer key: {names}. These questions do not count as correct or incorrect. | Não avaliadas, porque a resposta muda ou não está no gabarito: {names}. Estas perguntas não contam como certas nem erradas. |
-| `civics.heard.closest` | Your device gave several guesses of what you said. The one closest to an answer in the answer key is shown. | O seu aparelho deu vários palpites do que você disse. Aparece o mais próximo de uma resposta do gabarito. |
 
 ## 3. All other lines
 
@@ -70,16 +66,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 |---|---|---|
 | `app.name` | Language Lab | Language Lab |
 | `app.skipToMain` | Skip to main content | Ir para o conteúdo principal |
-| `app.stageNotBuilt` | This stage of the practice isn’t built yet. | Esta etapa da prática ainda não está pronta. |
+| `app.stageNotBuilt` | This part is not ready yet. Go back to Home and choose another part. | Esta parte ainda não está pronta. Volte ao início e escolha outra parte. |
 | `header.about` | About & disclaimer | Sobre e aviso legal |
-| `stepper.label` | Interview stages | Etapas da entrevista |
+| `stepper.label` | Your steps | Seus passos |
 | `stepper.count` | Step {current} of {total}: {name} | Passo {current} de {total}: {name} |
 | `stepper.status.complete` | completed | concluída |
 | `stepper.status.current` | current step | etapa atual |
 | `stepper.status.upcoming` | upcoming | próxima |
-| `stage.intro.label` | Welcome | Boas-vindas |
-| `stage.intro.short` | Intro | Início |
-| `stage.n400_interview.label` | N-400 conversation | Conversa sobre o N-400 |
+| `stage.intro.label` | Set up | Preparar |
+| `stage.intro.short` | Set up | Preparar |
+| `stage.n400_interview.label` | N-400 questions | Perguntas do N-400 |
 | `stage.n400_interview.short` | N-400 | N-400 |
 | `stage.reading.label` | Reading | Leitura |
 | `stage.reading.short` | Reading | Leitura |
@@ -87,42 +83,42 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `stage.writing.short` | Writing | Escrita |
 | `stage.civics.label` | Civics | Educação cívica |
 | `stage.civics.short` | Civics | Civismo |
-| `stage.report.label` | Practice report | Relatório de prática |
+| `stage.report.label` | Your report | Seu relatório |
 | `stage.report.short` | Report | Relatório |
-| `badge.onTrack` | Practice score reached | Pontuação de prática atingida |
-| `badge.review` | Worth reviewing | Vale revisar |
-| `report.empty` | Your practice report will appear here once the session is complete. | O seu relatório de prática aparecerá aqui quando a sessão terminar. |
+| `badge.onTrack` | You reached the practice goal | Você alcançou a meta de prática |
+| `badge.review` | Practice this again | Pratique isto de novo |
+| `report.empty` | Your report will show here when you finish the practice. | Seu relatório vai aparecer aqui quando você terminar a prática. |
 | `report.overline` | Practice report | Relatório de prática |
-| `report.profile.label` | Practice profile (fictional) | Perfil de prática (fictício) |
+| `report.profile.label` | Practice person (made up) | Pessoa de prática (inventada) |
 | `report.profile.meta` | {version} civics test · filed {date} | Teste de educação cívica {version} · pedido apresentado em {date} |
 | `report.stages.heading` | How each part went | Como foi cada parte |
 | `report.review.heading` | Things to review | Coisas para revisar |
 | `report.review.intro` | Focus on these before your next practice. | Concentre-se nestas antes da sua próxima prática. |
-| `report.generated` | Report generated {datetime} | Relatório gerado em {datetime} |
+| `report.generated` | Report made {datetime} | Relatório feito em {datetime} |
 | `translation.english` | English | Inglês |
 | `voice.say` | Tap to speak | Toque para falar |
 | `voice.stop` | Listening… tap when you finish | Ouvindo… toque quando terminar |
 | `voice.listening` | Listening. Say your answer now. | Ouvindo. Diga a sua resposta agora. |
 | `voice.heard` | We heard you. Check the words, change them if you like, then send. | Ouvimos você. Confira as palavras, mude se quiser e depois envie. |
-| `voice.denied` | The microphone is blocked. Allow microphone access in your browser settings, or type your answer. | O microfone está bloqueado. Permita o acesso ao microfone nas configurações do navegador ou digite a sua resposta. |
+| `voice.denied` | The microphone is blocked. Follow the steps below to allow it, or type your answer. | O microfone está bloqueado. Siga os passos abaixo para permiti-lo, ou digite sua resposta. |
 | `voice.unsupported` | This browser cannot listen to your voice. Type your answer instead. | Este navegador não consegue ouvir a sua voz. Digite a sua resposta. |
 | `voice.nothingHeard` | We did not hear anything. Try again, or type your answer. | Não ouvimos nada. Tente de novo ou digite a sua resposta. |
 | `voice.noMicrophone` | No microphone was found. Type your answer instead. | Nenhum microfone foi encontrado. Digite a sua resposta. |
 | `voice.error` | Listening did not work this time. Try again, or type your answer. | A escuta não funcionou desta vez. Tente de novo ou digite a sua resposta. |
 | `voice.skip` | Skip this one | Pular esta |
 | `audio.play` | Play the question | Ouvir a pergunta |
-| `audio.deviceVoice` | Device voice: the voice installed on your phone or computer. | Voz do aparelho: a voz instalada no seu celular ou computador. |
+| `audio.deviceVoice` | Built-in voice: the voice of your phone or computer. | Voz integrada: a voz do seu celular ou computador. |
 | `audio.unavailable` | This browser cannot read aloud. Read the text on the screen. | Este navegador não consegue ler em voz alta. Leia o texto na tela. |
-| `intro.profile.legend` | Choose a practice profile | Escolha um perfil de prática |
-| `intro.profile.help` | Every profile is invented. | Todos os perfis são inventados. |
+| `intro.profile.legend` | Choose a practice person | Escolha uma pessoa de prática |
+| `intro.profile.help` | Every person here is made up. | Todas as pessoas aqui são inventadas. |
 | `intro.filed.legend` | Practice as if the N-400 was filed… | Pratique como se o N-400 tivesse sido apresentado… |
 | `intro.filed.before` | Before {date} | Antes de {date} |
 | `intro.filed.onOrAfter` | On or after {date} | Em {date} ou depois |
 | `intro.start` | Start practice | Começar a prática |
-| `intro.startHint` | Make your choice above to start. | Faça a sua escolha acima para começar. |
-| `home.locked.title` | In this build you can practice | Nesta versão você pode praticar |
+| `intro.startHint` | Choose one answer in each group above. Then press “Start practice”. | Escolha uma resposta em cada grupo acima. Depois toque em “Começar a prática”. |
+| `home.locked.title` | Right now you can practice | Por enquanto você pode praticar |
 | `n400.title` | N-400 interview | Entrevista sobre o N-400 |
-| `n400.lead` | A calm run through the kind of questions an officer asks about an application. Answer as {name}. Nothing in this step is scored. | Uma conversa tranquila com o tipo de pergunta que um oficial faz sobre um pedido. Responda como {name}. Nada nesta etapa é pontuado. |
+| `n400.lead` | An officer may ask questions like these about your form. Answer as {name}. This part gets no score. | Um oficial pode fazer perguntas como estas sobre o seu formulário. Responda como {name}. Esta parte não recebe nota. |
 | `n400.count` | Question {current} of {total} | Pergunta {current} de {total} |
 | `n400.sample.label` | Sample answer for {name} (fictional) | Resposta de exemplo para {name} (fictício) |
 | `n400.yourAnswer` | Your answer, as {name} | A sua resposta, como {name} |
@@ -143,7 +139,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.followUp.note` | Practice an answer out loud if you like. This question is not recorded. | Se quiser, pratique uma resposta em voz alta. Esta pergunta não é gravada. |
 | `coach.tip.label` | Tip about your English: | Dica sobre o seu inglês: |
 | `coach.feedback.understood` | Easy to understand | Fácil de entender |
-| `coach.feedback.needs_practice` | Worth practicing again | Vale praticar de novo |
+| `coach.feedback.needs_practice` | Practice this again | Pratique isto de novo |
 | `coach.feedback.unclear` | Hard to follow. Try again. | Difícil de acompanhar. Tente de novo. |
 | `coach.feedback.scope` | This checks how clear your English is. It does not say whether an answer is right or true. | Isto verifica só o quanto o seu inglês está claro. Não diz se uma resposta está certa ou é verdadeira. |
 | `coach.checking` | Getting AI feedback… | Obtendo comentários da IA… |
@@ -157,11 +153,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.dateOfBirth` | a full date, such as a date of birth | uma data completa, como uma data de nascimento |
 | `coach.next` | Continue | Continuar |
 | `n400.loading` | Getting the next question… | Buscando a próxima pergunta… |
-| `n400.failed` | The next question could not be loaded. Start over to try again. | Não foi possível carregar a próxima pergunta. Recomece para tentar de novo. |
+| `n400.failed` | The next question did not load. Check your internet, then press “Start over”. | A próxima pergunta não carregou. Verifique sua internet e depois toque em “Recomeçar”. |
 | `n400.done.title` | Your answers | As suas respostas |
 | `n400.done.lead` | These are the words you gave. They are not scored. | Estas são as palavras que você disse. Elas não são pontuadas. |
 | `n400.done.next` | Go to reading | Ir para a leitura |
-| `voice.consent.continue` | Continue and say it | Continuar e falar |
+| `voice.consent.continue` | Continue and speak | Continuar e falar |
 | `voice.consent.type` | Type instead | Digitar em vez disso |
 | `n400.number` | Question {current} | Pergunta {current} |
 | `common.fictional` | Fictional practice profile | Perfil de prática fictício |
@@ -193,8 +189,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `writing.fallback` | This browser cannot read aloud, so the sentence is shown here. Type it. | Este navegador não consegue ler em voz alta, então a frase aparece aqui. Digite-a. |
 | `writing.hidden` | The sentence stays hidden until you answer. | A frase fica oculta até você responder. |
 | `writing.show` | Show the sentence | Mostrar a frase |
-| `writing.show.help` | If you cannot hear the audio, show the sentence and type it. It is checked the same way. Your report marks this attempt as assisted. | Se você não consegue ouvir o áudio, mostre a frase e digite. Ela é verificada da mesma forma. O seu relatório marca esta tentativa como com ajuda. |
-| `writing.shown` | The sentence is shown. Your report marks this attempt as assisted. | A frase está à mostra. O seu relatório marca esta tentativa como com ajuda. |
+| `writing.show.help` | If you cannot hear the sound, show the sentence and type it. It is checked the same way. Your report will say the sentence was shown. | Se você não conseguir ouvir o som, mostre a frase e digite. Ela é conferida do mesmo jeito. Seu relatório vai dizer que a frase foi mostrada. |
+| `writing.shown` | The sentence is shown. Your report will say so. | A frase está à mostra. Seu relatório vai dizer isso. |
 | `civics.title` | Civics | Educação cívica |
 | `civics.lead` | Answer out loud or type. Short answers are fine, but say the whole answer. | Responda em voz alta ou digite. Respostas curtas servem, mas diga a resposta inteira. |
 | `civics.count` | Question {current} of {total} | Pergunta {current} de {total} |
@@ -210,22 +206,22 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `civics.stopped.incorrect` | The test stopped because too many answers need more practice. | O teste parou porque há respostas demais que precisam de mais prática. |
 | `civics.stopped.none` | You have answered every question for this practice test. | Você respondeu a todas as perguntas deste teste de prática. |
 | `civics.tally` | {correct} correct, {incorrect} not yet. | {correct} corretas, {incorrect} ainda não. |
-| `civics.locked.title` | Civics is switched off in this build | A educação cívica está desativada nesta versão |
+| `civics.locked.title` | Civics is not available right now | A educação cívica não está disponível agora |
 | `report.again` | Practice again | Praticar de novo |
 | `common.startOver` | Start over | Recomeçar |
-| `voice.needText` | Type or say your answer first, or choose Skip. | Primeiro digite ou diga a sua resposta, ou escolha Pular. |
+| `voice.needText` | The box is empty. Type or say your answer, or press “Skip this one”. | A caixa está vazia. Digite ou diga sua resposta, ou toque em “Pular esta”. |
 | `audio.stop` | Stop | Parar |
 | `audio.aiVoice` | AI-generated voice. The audio was made ahead of time. | Voz gerada por IA. O áudio foi preparado com antecedência. |
 | `audio.playSample` | Play sample answer | Ouvir a resposta de exemplo |
-| `home.title` | Welcome to the booth | Bem-vindo ao Language Lab |
-| `home.lead` | Practice for the naturalization interview in a quiet booth. You answer as a made-up person, so you don't need to share real details. | Pratique para a entrevista de naturalização em um espaço tranquilo. Você responde como uma pessoa inventada, então não precisa dar dados reais. |
+| `home.title` | Welcome to Language Lab | Bem-vindo ao Language Lab |
+| `home.lead` | Practice for your citizenship interview. You answer as a made-up person, so you never share anything about yourself. | Pratique para sua entrevista de cidadania. Você responde como uma pessoa inventada, então nunca compartilha nada sobre você. |
 | `home.how.title` | How it works | Como funciona |
 | `home.how.1.title` | Listen | Ouça |
-| `home.how.1.text` | Tap Play aloud to hear a question or a sentence. | Toque em Ouvir em voz alta para escutar uma pergunta ou uma frase. |
+| `home.how.1.text` | Tap “Play the question” to hear it. | Toque em “Ouvir a pergunta” para ouvir. |
 | `home.how.2.title` | Speak or type | Fale ou digite |
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | Diga a sua resposta ou digite-a. Digitar sempre funciona. |
 | `home.how.3.title` | See the result | Veja o resultado |
-| `home.how.3.text` | You see how your answer compares, and what to practice next. | Você vê como a sua resposta se compara e o que praticar em seguida. |
+| `home.how.3.text` | You see if your answer counts, and what to practice next. | Você vê se sua resposta conta e o que praticar depois. |
 | `home.choose` | What would you like to do? | O que você gostaria de fazer? |
 | `home.full.title` | Full practice interview | Entrevista de prática completa |
 | `home.full.text` | All four parts in order, then one report. | As quatro partes em ordem e um único relatório. |
@@ -234,15 +230,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.poweredBy` | Powered by Claude (Anthropic) | Com tecnologia Claude (Anthropic) |
 | `home.parts.title` | Practice one part | Praticar uma parte |
 | `home.part.n400.title` | N-400 interview | Entrevista sobre o N-400 |
-| `home.part.n400.text` | Answer questions about an application. Not scored. | Responda a perguntas sobre um pedido. Sem pontuação. |
+| `home.part.n400.text` | Answer questions about the N-400 form. No score. | Responda perguntas sobre o formulário N-400. Sem nota. |
 | `home.part.n400.badge` | AI | IA |
 | `home.part.reading.title` | Reading | Leitura |
 | `home.part.reading.text` | Read sentences out loud. | Leia frases em voz alta. |
 | `home.part.writing.title` | Writing | Escrita |
 | `home.part.writing.text` | Listen and type the sentence. | Ouça e digite a frase. |
 | `home.part.civics.title` | Civics | Educação cívica |
+| `home.part.civics.text` | Answer questions about U.S. history and government. Checked with the official answers. | Responda perguntas sobre a história e o governo dos EUA. Conferidas com as respostas oficiais. |
 | `setup.title` | Set up your practice | Prepare a sua prática |
-| `setup.lead` | Choose what this practice needs. Nothing real is asked. | Escolha o que esta prática precisa. Nada real é pedido. |
+| `setup.lead` | Choose one answer in each group. Nothing here asks about you. | Escolha uma resposta em cada grupo. Nada aqui pergunta sobre você. |
 | `report.home` | Back to home | Voltar ao início |
 | `partReport.title.n400_interview` | N-400 interview practice | Prática da entrevista sobre o N-400 |
 | `partReport.title.reading` | Reading practice | Prática de leitura |
@@ -259,7 +256,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.civics.needed` | Correct answers needed: {needed}. | Respostas corretas necessárias: {needed}. |
 | `partReport.review` | Questions to review | Perguntas para revisar |
 | `partReport.unscored.title` | Not scored | Sem pontuação |
-| `partReport.unscored.text` | These questions could not be scored, so they are not counted as right or wrong. | Estas perguntas não puderam ser pontuadas, então não contam como certas nem erradas. |
+| `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | Estas perguntas não recebem nota. Não contam como certas nem erradas. |
+| `partReport.unscored.missing` | A question we cannot check | Uma pergunta que não podemos conferir |
 | `report.see` | See my report | Ver o meu relatório |
 | `header.home` | Home | Início |
 | `help.button` | Help | Ajuda |
@@ -286,9 +284,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `header.homeConfirm.yes` | Leave | Sair |
 | `header.homeConfirm.no` | Keep practicing | Continuar praticando |
 | `common.retry` | Try again | Tentar de novo |
-| `partReport.badge.good` | This part reached the practice score | Esta parte atingiu a pontuação de prática |
-| `partReport.assisted` | The sentence was shown on screen (assisted attempt). | A frase foi mostrada na tela (tentativa com ajuda). |
-| `aiNotice.legalEnglish` | Disclaimers and legal text are shown in English only until a person has reviewed the translation. | Os avisos e o texto jurídico aparecem só em inglês até que uma pessoa revise a tradução. |
+| `partReport.badge.good` | You reached the practice goal | Você alcançou a meta de prática |
+| `partReport.assisted` | The sentence was shown on the screen. | A frase foi mostrada na tela. |
+| `aiNotice.legalEnglish` | Legal notices stay in English until a person checks the translation. | Os avisos legais ficam em inglês até que uma pessoa confira a tradução. |
 | `lang.menu.title` | Choose a language | Escolha um idioma |
 | `lang.menu.inReview` | More languages are in review. They will appear here after a person has checked them. | Há mais idiomas em revisão. Eles aparecerão aqui depois que uma pessoa os revisar. |
 | `home.study.title` | Study first | Estudar primeiro |
@@ -313,8 +311,8 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `selfReview.hearSample` | Hear the sample | Ouvir o exemplo |
 | `selfReview.tryAgain` | Try again | Tentar de novo |
 | `selfReview.privacy` | Your recording stays on this device. It is not sent anywhere or saved, and it is deleted when you go to the next sentence or leave this screen. | A sua gravação fica neste dispositivo. Ela não é enviada para lugar nenhum nem guardada, e é apagada quando você passa para a próxima frase ou sai desta tela. |
-| `selfReview.unsupported` | This browser cannot record your voice. You can still check your reading with “Say it” or by typing. | Este navegador não consegue gravar a sua voz. Você ainda pode conferir a sua leitura com “Falar” ou digitando. |
-| `selfReview.denied` | The microphone is blocked. Allow microphone access in your browser settings. | O microfone está bloqueado. Permita o acesso ao microfone nas configurações do seu navegador. |
+| `selfReview.unsupported` | This browser cannot record your voice. You can still press “Tap to speak” or type. | Este navegador não consegue gravar sua voz. Você ainda pode tocar em “Toque para falar” ou digitar. |
+| `selfReview.denied` | The microphone is blocked, so recording cannot start. Allow the microphone for this site in your browser settings, then try again. | O microfone está bloqueado, então a gravação não pode começar. Permita o microfone para este site nos ajustes do navegador e tente de novo. |
 | `selfReview.error` | Recording did not work this time. Try again. | A gravação não funcionou desta vez. Tente de novo. |
 | `compare.why.allWords` | Every important word of the sentence was there, in order. | Todas as palavras importantes da frase estavam lá, em ordem. |
 | `compare.note.variant.said` | You said “{said}”. The sentence says “{expected}”. This still counts. | Você disse “{said}”. A frase diz “{expected}”. Isto ainda conta. |
@@ -327,7 +325,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.extraStill` | You added “{said}”, which is not in the sentence. This still counts. | Você acrescentou “{said}”, que não está na frase. Isto ainda conta. |
 | `compare.note.shortLeft` | The short word “{expected}” was left out. This still counts. | A palavra curta “{expected}” ficou de fora. Isto ainda conta. |
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Você acrescentou a palavra curta “{said}”. Isto ainda conta. |
-| `compare.honest.heard` | This result is based on the words your device heard. If it heard you wrong, try again or type your answer. | Este resultado se baseia nas palavras que o seu dispositivo ouviu. Se ele ouviu errado, tente de novo ou digite a sua resposta. |
+| `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Este resultado usa as palavras que seu celular ou computador ouviu. Se ouviu errado, tente de novo ou digite sua resposta. |
 | `compare.honest.typed` | This result is based on the words you typed. | Este resultado se baseia nas palavras que você digitou. |
 | `home.special.title` | 65/20 civics practice | Prática de educação cívica 65/20 |
 | `home.special.text` | For people 65 or older who have been a permanent resident for 20 years or more. Practice the civics questions marked with a star (*). | Para pessoas com 65 anos ou mais que são residentes permanentes há 20 anos ou mais. Pratique as perguntas de educação cívica marcadas com um asterisco (*). |
@@ -335,15 +333,17 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Só as perguntas para 65/20 (marcadas com um asterisco) |
 | `report.line.civics.none` | No civics questions were scored. | Nenhuma pergunta de educação cívica foi avaliada. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Perguntas de educação cívica respondidas corretamente: {correct} de {scored}. |
+| `report.line.civics.unscored` | No score for these, because the answer changes over time or we cannot check it: {names}. They do not count as right or wrong. | Sem nota para estas, porque a resposta muda com o tempo ou não podemos conferi-la: {names}. Não contam como certas nem erradas. |
 | `report.line.reading.none` | No reading sentences were completed. | Nenhuma frase de leitura foi concluída. |
 | `report.line.reading.done` | Sentence {n} was read correctly. | A frase {n} foi lida corretamente. |
 | `report.line.reading.count` | Reading sentences read correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Frases de leitura lidas corretamente: {correct} de {presented}. Frases corretas necessárias: {needed}. |
 | `report.line.writing.none` | No writing sentences were completed. | Nenhuma frase de escrita foi concluída. |
 | `report.line.writing.done` | Sentence {n} was written correctly. | A frase {n} foi escrita corretamente. |
 | `report.line.writing.count` | Writing sentences written correctly: {correct} of {presented}. Correct sentences needed: {needed}. | Frases de escrita escritas corretamente: {correct} de {presented}. Frases corretas necessárias: {needed}. |
-| `report.line.writing.assisted` | Writing attempts made with the sentence shown on screen (assisted): {assisted} of {presented}. | Tentativas de escrita feitas com a frase na tela (com ajuda): {assisted} de {presented}. |
+| `report.line.writing.assisted` | Sentences written while the sentence was shown: {assisted} of {presented}. | Frases escritas com a frase à mostra: {assisted} de {presented}. |
 | `report.review.reading` | Practice reading the sentences aloud. | Pratique ler as frases em voz alta. |
 | `report.review.writing` | Practice writing the sentences you hear. | Pratique escrever as frases que você ouve. |
+| `civics.heard.closest` | Your phone or computer heard a few possible answers. We show the one closest to an official answer. | Seu celular ou computador ouviu algumas respostas possíveis. Mostramos a mais próxima de uma resposta oficial. |
 | `n400.box.reminder` | Answer as the fictional person. Do not type your real name, address, dates or numbers. | Responda como a pessoa fictícia. Não digite o seu nome, endereço, datas ou números reais. |
 | `common.newTab` | (opens in a new tab) | (abre em uma nova aba) |
 | `coach.kind.streetAddress` | a street address | um endereço |
