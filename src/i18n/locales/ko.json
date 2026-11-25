@@ -33,7 +33,6 @@
   "badge.onTrack": "연습 점수 도달",
   "badge.review": "다시 볼 만해요",
   "report.empty": "세션이 끝나면 연습 보고서가 여기에 나타납니다.",
-  "report.take": "TAKE",
   "report.overline": "연습 보고서",
   "report.title.onTrack": "연습 완료: 모든 부분이 연습 점수에 도달했어요",
   "report.title.review": "다시 살펴볼 것이 몇 가지 있어요",
@@ -338,5 +337,9 @@
   "common.newTab": "(새 탭에서 열림)",
   "coach.kind.streetAddress": "도로명 주소",
   "coach.kind.zipCode": "주 이름이 붙은 우편번호",
-  "coach.notice.limits": "이 확인은 주소와 우편번호도 찾지만 이름은 찾을 수 없습니다. 실제 사람의 이름을 말하거나 입력하지 마세요."
+  "coach.notice.limits": "이 확인은 주소와 우편번호도 찾지만 이름은 찾을 수 없습니다. 실제 사람의 이름을 말하거나 입력하지 마세요.",
+  "home.start.label": "여기서 시작하세요",
+  "home.full.start": "연습 시작",
+  "home.special.cta": "65세 이상이고 영주권을 20년 가지셨나요? 65/20 연습을 시작하세요.",
+  "home.textSizeHint": "글자가 너무 작나요? 위쪽의 글자 크기를 누르세요."
 }

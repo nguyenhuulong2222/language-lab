@@ -33,7 +33,6 @@
   "badge.onTrack": "Đã đạt điểm luyện tập",
   "badge.review": "Nên xem lại",
   "report.empty": "Báo cáo luyện tập của bạn sẽ hiện ở đây khi buổi luyện tập hoàn tất.",
-  "report.take": "TAKE",
   "report.overline": "Báo cáo luyện tập",
   "report.title.onTrack": "Đã luyện tập xong: mỗi phần đều đạt điểm luyện tập",
   "report.title.review": "Có vài điều cần xem lại",
@@ -338,5 +337,9 @@
   "common.newTab": "(mở trong thẻ mới)",
   "coach.kind.streetAddress": "một địa chỉ nhà",
   "coach.kind.zipCode": "một mã ZIP kèm tên tiểu bang",
-  "coach.notice.limits": "Phần kiểm tra cũng tìm địa chỉ nhà và mã ZIP, nhưng không thể tìm ra tên người. Đừng nói hay gõ tên của một người thật."
+  "coach.notice.limits": "Phần kiểm tra cũng tìm địa chỉ nhà và mã ZIP, nhưng không thể tìm ra tên người. Đừng nói hay gõ tên của một người thật.",
+  "home.start.label": "Bắt đầu ở đây",
+  "home.full.start": "Bắt đầu luyện tập",
+  "home.special.cta": "Từ 65 tuổi trở lên và có thẻ xanh 20 năm? Bắt đầu phần luyện tập 65/20.",
+  "home.textSizeHint": "Chữ quá nhỏ? Chạm vào Cỡ chữ ở trên cùng."
 }

@@ -92,7 +92,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `badge.onTrack` | Practice score reached | ถึงคะแนนฝึกแล้ว |
 | `badge.review` | Worth reviewing | ควรทบทวน |
 | `report.empty` | Your practice report will appear here once the session is complete. | รายงานการฝึกของคุณจะแสดงที่นี่เมื่อจบรอบการฝึก |
-| `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | รายงานการฝึก |
 | `report.profile.label` | Practice profile (fictional) | โปรไฟล์ฝึก (สมมติ) |
 | `report.profile.meta` | {version} civics test · filed {date} | แบบทดสอบความรู้พลเมืองปี {version} · ยื่นคำร้องเมื่อ {date} |
@@ -357,6 +356,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | ที่อยู่ตามถนน |
 | `coach.kind.zipCode` | a ZIP code with a state | รหัสไปรษณีย์พร้อมชื่อรัฐ |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | การตรวจนี้ยังมองหาที่อยู่และรหัสไปรษณีย์ด้วย แต่ไม่สามารถหาชื่อคนได้ อย่าพูดหรือพิมพ์ชื่อของคนจริง |
+| `home.start.label` | Start here | เริ่มที่นี่ |
+| `home.full.start` | Start practice | เริ่มฝึก |
+| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | อายุ 65 ปีขึ้นไปและถือกรีนการ์ดมา 20 ปี? เริ่มการฝึก 65/20 |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | ตัวอักษรเล็กเกินไปใช่ไหม แตะ ขนาดตัวอักษร ที่ด้านบน |
 
 ## Lines marked ⚠ (meaning differs a little)
 

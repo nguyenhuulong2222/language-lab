@@ -33,7 +33,6 @@
   "badge.onTrack": "Pontuação de prática atingida",
   "badge.review": "Vale revisar",
   "report.empty": "O seu relatório de prática aparecerá aqui quando a sessão terminar.",
-  "report.take": "TAKE",
   "report.overline": "Relatório de prática",
   "report.title.onTrack": "Prática concluída: cada parte atingiu a pontuação de prática",
   "report.title.review": "Algumas coisas para revisar",
@@ -338,5 +337,9 @@
   "common.newTab": "(abre em uma nova aba)",
   "coach.kind.streetAddress": "um endereço",
   "coach.kind.zipCode": "um CEP (ZIP) com um estado",
-  "coach.notice.limits": "A verificação também procura endereços e códigos ZIP, mas não consegue encontrar nomes. Não diga nem digite o nome de uma pessoa real."
+  "coach.notice.limits": "A verificação também procura endereços e códigos ZIP, mas não consegue encontrar nomes. Não diga nem digite o nome de uma pessoa real.",
+  "home.start.label": "Comece aqui",
+  "home.full.start": "Começar a prática",
+  "home.special.cta": "Tem 65 anos ou mais e 20 anos com o green card? Comece a prática 65/20.",
+  "home.textSizeHint": "O texto está pequeno? Toque em Tamanho do texto no alto."
 }

@@ -92,7 +92,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `badge.onTrack` | Practice score reached | Практический балл достигнут |
 | `badge.review` | Worth reviewing | Стоит повторить |
 | `report.empty` | Your practice report will appear here once the session is complete. | Ваш отчёт о практике появится здесь, когда сеанс закончится. |
-| `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Отчёт о практике |
 | `report.profile.label` | Practice profile (fictional) | Учебный профиль (вымышленный) |
 | `report.profile.meta` | {version} civics test · filed {date} | Тест по обществоведению {version} · заявление подано {date} |
@@ -357,6 +356,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | адрес |
 | `coach.kind.zipCode` | a ZIP code with a state | почтовый индекс (ZIP) со штатом |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Проверка также ищет адреса и почтовые индексы, но не может найти имена. Не называйте и не вводите имя реального человека. |
+| `home.start.label` | Start here | Начните здесь |
+| `home.full.start` | Start practice | Начать практику |
+| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Вам 65 лет или больше и у вас 20 лет грин-карта? Начните практику 65/20. |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | Текст слишком мелкий? Нажмите «Размер текста» вверху. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

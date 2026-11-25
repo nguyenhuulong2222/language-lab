@@ -92,7 +92,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `badge.onTrack` | Practice score reached | Pontuação de prática atingida |
 | `badge.review` | Worth reviewing | Vale revisar |
 | `report.empty` | Your practice report will appear here once the session is complete. | O seu relatório de prática aparecerá aqui quando a sessão terminar. |
-| `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Relatório de prática |
 | `report.profile.label` | Practice profile (fictional) | Perfil de prática (fictício) |
 | `report.profile.meta` | {version} civics test · filed {date} | Teste de educação cívica {version} · pedido apresentado em {date} |
@@ -357,6 +356,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | um endereço |
 | `coach.kind.zipCode` | a ZIP code with a state | um CEP (ZIP) com um estado |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | A verificação também procura endereços e códigos ZIP, mas não consegue encontrar nomes. Não diga nem digite o nome de uma pessoa real. |
+| `home.start.label` | Start here | Comece aqui |
+| `home.full.start` | Start practice | Começar a prática |
+| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Tem 65 anos ou mais e 20 anos com o green card? Comece a prática 65/20. |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | O texto está pequeno? Toque em Tamanho do texto no alto. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

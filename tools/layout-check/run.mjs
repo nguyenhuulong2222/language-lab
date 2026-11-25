@@ -34,6 +34,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import http from "node:http";
 import { LANGUAGES, IN_REVIEW_LANGUAGES } from "../../src/i18n/languages.ts";
+import { isLegalKey } from "../../src/i18n/legal-keys.ts";
+import { isReviewed } from "../../src/i18n/locale-checks.ts";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const APP_PORT = 5198;
@@ -236,8 +238,10 @@ window.__lab = (() => {
 // ---------------------------------------------------------------------------
 
 async function checkConfiguration(cdp, size, lang) {
+  // As the app: a legal key shows in English until the language has a named reviewer.
   const L = (key) => {
-    const text = locales[lang]?.[key] ?? locales.en[key];
+    const englishOnly = lang !== "en" && isLegalKey(key) && !isReviewed(locales[lang]?._meta);
+    const text = (englishOnly ? undefined : locales[lang]?.[key]) ?? locales.en[key];
     if (text === undefined) throw new Error(`No text for key ${key}`);
     return text;
   };
@@ -332,16 +336,16 @@ async function checkConfiguration(cdp, size, lang) {
   await record("credits");
   await click(L("credits.back"));
   // Production with reviewed keys: the home screen must offer every card.
-  if (PROD && (await cdp.evaluate(`window.__lab.has(${js(L("home.full.title"))})`))) {
+  if (PROD && (await cdp.evaluate(`window.__lab.has(${js(L("home.full.start"))})`))) {
     for (const key of ["home.study.title", "home.part.civics.title", "home.part.n400.title", "home.part.reading.title", "home.part.writing.title"]) {
       if (!(await cdp.evaluate(`window.__lab.has(${js(L(key))})`))) throw new Error(`the production home screen has no "${L(key)}" card`);
     }
   }
-  if (PROD && !(await cdp.evaluate(`window.__lab.has(${js(L("home.full.title"))})`))) {
+  if (PROD && !(await cdp.evaluate(`window.__lab.has(${js(L("home.full.start"))})`))) {
     return await productionParts(cdp, results, { L, lab, js, click, choose, type, record });
   }
   // Full interview
-  await click(L("home.full.title"));
+  await click(L("home.full.start"));
   await record("setup");
   // The first fictional profile (a name is not repeated here, so renaming a profile does not break the check).
   await cdp.evaluate(`document.querySelector('input[name="profile"]').click()`);
@@ -440,8 +444,8 @@ async function checkConfiguration(cdp, size, lang) {
  * ticked and the interpreter line, and the first civics question with the 65/20 note. Then Home.
  */
 async function specialPass({ cdp, lab, js, click, record, L }) {
-  if (!(await lab(`has(${js(L("home.special.title"))})`))) throw new Error("the home screen has no 65/20 card");
-  await click(L("home.special.title"));
+  if (!(await lab(`has(${js(L("home.special.cta"))})`))) throw new Error("the home screen has no 65/20 card");
+  await click(L("home.special.cta"));
   // The label is a legal key (English until reviewed), so wait for the checkbox itself.
   await waitFor(() => cdp.evaluate(`!!document.querySelector('input[name="special"]')`), "the 65/20 choice on setup");
   if (!(await cdp.evaluate(`document.querySelector('input[name="special"]').checked`))) throw new Error("the 65/20 card did not tick the choice");
@@ -452,7 +456,7 @@ async function specialPass({ cdp, lab, js, click, record, L }) {
   await record("civics-special");
   await click(L("header.home"));
   await click(L("header.homeConfirm.yes"));
-  await waitFor(() => lab(`has(${js(L("home.special.title"))})`), "home after the 65/20 practice");
+  await waitFor(() => lab(`has(${js(L("home.special.cta"))})`), "home after the 65/20 practice");
 }
 
 /**

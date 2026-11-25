@@ -33,7 +33,6 @@
   "badge.onTrack": "Tau txog qhab nia xyaum",
   "badge.review": "Yuav tsum rov saib",
   "report.empty": "Daim ntawv qhia txog kev xyaum ntawm koj yuav tshwm ntawm no thaum kev xyaum xaus.",
-  "report.take": "TAKE",
   "report.overline": "Daim ntawv qhia txog kev xyaum",
   "report.title.onTrack": "Xyaum tiav lawm: txhua ntu tau txog cov qhab nia xyaum",
   "report.title.review": "Muaj ob peb yam yuav tsum rov saib",
@@ -338,5 +337,9 @@
   "common.newTab": "(qhib rau hauv ib lub tab tshiab)",
   "coach.kind.streetAddress": "ib qho chaw nyob ntawm txoj kev",
   "coach.kind.zipCode": "ib tus ZIP code nrog lub xeev",
-  "coach.notice.limits": "Qhov kuaj no kuj nrhiav chaw nyob thiab ZIP code, tab sis nws nrhiav tsis tau npe. Tsis txhob hais los yog ntaus ib tus neeg tiag tiag lub npe."
+  "coach.notice.limits": "Qhov kuaj no kuj nrhiav chaw nyob thiab ZIP code, tab sis nws nrhiav tsis tau npe. Tsis txhob hais los yog ntaus ib tus neeg tiag tiag lub npe.",
+  "home.start.label": "Pib ntawm no",
+  "home.full.start": "Pib xyaum",
+  "home.special.cta": "Muaj 65 xyoo los yog laus dua, thiab muaj daim npav ntsuab 20 xyoo? Pib kev xyaum 65/20.",
+  "home.textSizeHint": "Cov ntawv me dhau? Kov Qhov loj ntawm cov ntawv nyob saum toj."
 }

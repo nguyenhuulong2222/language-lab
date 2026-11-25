@@ -33,7 +33,6 @@
   "badge.onTrack": "Naabot ang iskor sa pagsasanay",
   "badge.review": "Dapat balikan",
   "report.empty": "Lalabas dito ang ulat ng inyong pagsasanay kapag tapos na ang sesyon.",
-  "report.take": "TAKE",
   "report.overline": "Ulat ng pagsasanay",
   "report.title.onTrack": "Tapos na ang pagsasanay: naabot ng bawat bahagi ang iskor sa pagsasanay",
   "report.title.review": "May ilang bagay na dapat balikan",
@@ -338,5 +337,9 @@
   "common.newTab": "(magbubukas sa bagong tab)",
   "coach.kind.streetAddress": "isang address ng kalye",
   "coach.kind.zipCode": "isang ZIP code na may estado",
-  "coach.notice.limits": "Hinahanap din ng pagsusuri ang mga address at ZIP code, pero hindi nito mahahanap ang mga pangalan. Huwag sabihin o i-type ang pangalan ng totoong tao."
+  "coach.notice.limits": "Hinahanap din ng pagsusuri ang mga address at ZIP code, pero hindi nito mahahanap ang mga pangalan. Huwag sabihin o i-type ang pangalan ng totoong tao.",
+  "home.start.label": "Magsimula rito",
+  "home.full.start": "Simulan ang pagsasanay",
+  "home.special.cta": "65 pataas at 20 taon nang may green card? Simulan ang pagsasanay na 65/20.",
+  "home.textSizeHint": "Masyadong maliit ang teksto? I-tap ang Laki ng teksto sa itaas."
 }

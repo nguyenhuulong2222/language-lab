@@ -92,7 +92,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `badge.onTrack` | Practice score reached | 已達練習分數 |
 | `badge.review` | Worth reviewing | 值得複習 |
 | `report.empty` | Your practice report will appear here once the session is complete. | 練習結束後，您的練習報告會顯示在這裡。 |
-| `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | 練習報告 |
 | `report.profile.label` | Practice profile (fictional) | 練習檔案（虛構） |
 | `report.profile.meta` | {version} civics test · filed {date} | {version} 年公民常識測驗 · 申請於 {date} 提出 |
@@ -357,3 +356,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | 一個街道地址 |
 | `coach.kind.zipCode` | a ZIP code with a state | 一個附有州名的郵遞區號 |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | 這項檢查也會找街道地址和郵遞區號，但無法找出姓名。請不要說出或輸入真實人物的姓名。 |
+| `home.start.label` | Start here | 從這裡開始 |
+| `home.full.start` | Start practice | 開始練習 |
+| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | 65 歲或以上，持綠卡 20 年？開始 65/20 練習。 |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | 字太小嗎？請點選上方的「文字大小」。 |

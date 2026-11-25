@@ -92,7 +92,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `badge.onTrack` | Practice score reached | अभ्यास स्कोर पूरा |
 | `badge.review` | Worth reviewing | दोहराने लायक |
 | `report.empty` | Your practice report will appear here once the session is complete. | सत्र पूरा होने पर आपकी अभ्यास रिपोर्ट यहाँ दिखाई देगी। |
-| `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | अभ्यास रिपोर्ट |
 | `report.profile.label` | Practice profile (fictional) | अभ्यास प्रोफ़ाइल (काल्पनिक) |
 | `report.profile.meta` | {version} civics test · filed {date} | {version} का नागरिक शास्त्र टेस्ट · आवेदन की तारीख {date} |
@@ -357,3 +356,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | एक गली का पता |
 | `coach.kind.zipCode` | a ZIP code with a state | राज्य के साथ एक ZIP कोड |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | यह जाँच गली के पते और ZIP कोड भी खोजती है, लेकिन नाम नहीं खोज सकती। किसी असली व्यक्ति का नाम न बोलें और न टाइप करें। |
+| `home.start.label` | Start here | यहाँ से शुरू करें |
+| `home.full.start` | Start practice | अभ्यास शुरू करें |
+| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | 65 वर्ष या अधिक, और 20 वर्ष से ग्रीन कार्ड? 65/20 अभ्यास शुरू करें। |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | अक्षर बहुत छोटे हैं? ऊपर अक्षर का आकार पर टैप करें। |

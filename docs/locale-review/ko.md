@@ -92,7 +92,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `badge.onTrack` | Practice score reached | 연습 점수 도달 |
 | `badge.review` | Worth reviewing | 다시 볼 만해요 |
 | `report.empty` | Your practice report will appear here once the session is complete. | 세션이 끝나면 연습 보고서가 여기에 나타납니다. |
-| `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | 연습 보고서 |
 | `report.profile.label` | Practice profile (fictional) | 연습 프로필(가상) |
 | `report.profile.meta` | {version} civics test · filed {date} | {version}년 시민 상식 시험 · 신청 날짜 {date} |
@@ -357,6 +356,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | 도로명 주소 |
 | `coach.kind.zipCode` | a ZIP code with a state | 주 이름이 붙은 우편번호 |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | 이 확인은 주소와 우편번호도 찾지만 이름은 찾을 수 없습니다. 실제 사람의 이름을 말하거나 입력하지 마세요. |
+| `home.start.label` | Start here | 여기서 시작하세요 |
+| `home.full.start` | Start practice | 연습 시작 |
+| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | 65세 이상이고 영주권을 20년 가지셨나요? 65/20 연습을 시작하세요. |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | 글자가 너무 작나요? 위쪽의 글자 크기를 누르세요. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

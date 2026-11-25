@@ -33,7 +33,6 @@
   "badge.onTrack": "Nòt pratik la rive",
   "badge.review": "Mande revize",
   "report.empty": "Rapò pratik ou a ap parèt isit la lè sesyon an fini.",
-  "report.take": "TAKE",
   "report.overline": "Rapò pratik",
   "report.title.onTrack": "Pratik la fini: chak pati rive nan nòt pratik la",
   "report.title.review": "Kèk bagay pou revize",
@@ -338,5 +337,9 @@
   "common.newTab": "(ap louvri nan yon nouvo onglè)",
   "coach.kind.streetAddress": "yon adrès lari",
   "coach.kind.zipCode": "yon kòd ZIP ak yon eta",
-  "coach.notice.limits": "Verifikasyon an chèche adrès ak kòd ZIP tou, men li pa ka jwenn non. Pa di ni tape non yon vrè moun."
+  "coach.notice.limits": "Verifikasyon an chèche adrès ak kòd ZIP tou, men li pa ka jwenn non. Pa di ni tape non yon vrè moun.",
+  "home.start.label": "Kòmanse isit la",
+  "home.full.start": "Kòmanse pratik la",
+  "home.special.cta": "Ou gen 65 an oswa plis, epi 20 an ak yon kat vèt? Kòmanse pratik 65/20 la.",
+  "home.textSizeHint": "Tèks la twò piti? Tape Gwosè tèks anwo a."
 }

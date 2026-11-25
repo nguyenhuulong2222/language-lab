@@ -38,7 +38,6 @@ export const FIXED_TERMS: readonly string[] = ["Language Lab", "USCIS", "N-400",
  */
 export const IDENTICAL_ALLOWED: readonly string[] = [
   "app.name",
-  "report.take",
   "stage.n400_interview.short",
   "stage.civics.short",
   "settings.textSize.normal",

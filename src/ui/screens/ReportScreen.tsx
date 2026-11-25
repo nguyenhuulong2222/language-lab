@@ -35,20 +35,12 @@ export function ReportScreen({ session }: ReportScreenProps) {
 
   const passed = report.practiceResult === "practice_passed";
   const profileName = formatProfileName(session.fictionalProfileId);
-  const take = String(stageIndex(session.currentStage) + 1).padStart(2, "0");
+  
 
   return (
     <article className="report">
       <header className="report__header">
-        <p className="report__overline">
-          <span className="report__take" aria-hidden="true">
-            {t("report.take")} {take}
-          </span>
-          <span className="report__overline-sep" aria-hidden="true">
-            ·
-          </span>
-          <span className="report__overline-label">{t("report.overline")}</span>
-        </p>
+        <p className="report__overline">{t("report.overline")}</p>
         <h1 className="report__title" tabIndex={-1}>
           {passed ? t("report.title.onTrack") : t("report.title.review")}
         </h1>

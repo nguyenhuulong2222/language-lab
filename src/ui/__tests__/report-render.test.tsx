@@ -24,10 +24,9 @@ describe("Report screen (SSR against session.json)", () => {
     expect(html).not.toContain("built yet");
   });
 
-  it("renders the tape-counter overline above the headline", () => {
+  it("renders a plain overline above the headline, without the take counter (senior-friendly step 3)", () => {
     expect(html).toContain("report__overline");
-    expect(html).toContain(">TAKE");
-    expect(html).toContain("06</span>");
+    expect(html).not.toContain("TAKE");
     expect(html).toContain("Practice report");
   });
 

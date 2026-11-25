@@ -45,13 +45,13 @@ const screen = (e = engine, state = e.initial(), language: "en" | "vi" = "en") =
 
 describe("home card (REQ-S06)", () => {
   it("offered when the rules are verified; absent when the mode is off", () => {
-    expect(screen()).toContain("65/20 civics practice");
+    expect(screen()).toContain("Start the 65/20 practice.");
     const off = createPracticeEngine({ ...env, specialRules: () => null });
-    expect(screen(off)).not.toContain("65/20 civics practice");
+    expect(screen(off)).not.toContain("Start the 65/20 practice.");
   });
   it("not offered while civics is locked", () => {
     const html = renderToString(<HomeScreen civicsLocked onChoose={() => {}} onChooseSpecial={() => {}} />);
-    expect(html).not.toContain("65/20 civics practice");
+    expect(html).not.toContain("Start the 65/20 practice.");
   });
 });
 

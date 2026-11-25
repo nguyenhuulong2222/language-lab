@@ -143,10 +143,10 @@ describe("SpeakButton", () => {
 });
 
 describe("TakeHeader", () => {
-  it("shows the take counter with the stage name and the title as H1", () => {
+  it("shows the title as H1 and the lead, with no decorative take counter (senior-friendly step 3)", () => {
     const html = renderToString(<TakeHeader stage="reading" title="Reading" lead="Read it." />);
-    expect(html).toContain("TAKE");
-    expect(html).toContain("03");
+    expect(html).not.toContain("TAKE");
+    expect(html).not.toContain("take__overline");
     expect(html).toContain("<h1");
     expect(html).toContain("Read it.");
   });

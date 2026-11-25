@@ -33,7 +33,6 @@
   "badge.onTrack": "已達練習分數",
   "badge.review": "值得複習",
   "report.empty": "練習結束後，您的練習報告會顯示在這裡。",
-  "report.take": "TAKE",
   "report.overline": "練習報告",
   "report.title.onTrack": "練習完成：每個部分都達到練習分數",
   "report.title.review": "有幾件事可以複習",
@@ -338,5 +337,9 @@
   "common.newTab": "（在新分頁開啟）",
   "coach.kind.streetAddress": "一個街道地址",
   "coach.kind.zipCode": "一個附有州名的郵遞區號",
-  "coach.notice.limits": "這項檢查也會找街道地址和郵遞區號，但無法找出姓名。請不要說出或輸入真實人物的姓名。"
+  "coach.notice.limits": "這項檢查也會找街道地址和郵遞區號，但無法找出姓名。請不要說出或輸入真實人物的姓名。",
+  "home.start.label": "從這裡開始",
+  "home.full.start": "開始練習",
+  "home.special.cta": "65 歲或以上，持綠卡 20 年？開始 65/20 練習。",
+  "home.textSizeHint": "字太小嗎？請點選上方的「文字大小」。"
 }

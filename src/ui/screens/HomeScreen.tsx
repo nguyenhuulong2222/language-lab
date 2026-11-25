@@ -1,7 +1,8 @@
 /**
- * Home: how it works, the standing disclaimers, and the choice between the full practice
- * interview and one part. Nothing is asked here; the setup screen (only for the parts that
- * need it) comes next.
+ * Home (senior-friendly order): a short welcome and the text-size hint; "Start here" with the full
+ * practice interview and one primary "Start practice" button; the 65/20 card; the AI coach card;
+ * "Practice one part" as a simple list; "Study first"; then how it works, the English notice, the
+ * disclaimers and the privacy notes at the bottom. Nothing is asked here; setup comes next.
  */
 import { useId } from "react";
 import { LegalText } from "../components/LegalText";
@@ -28,6 +29,8 @@ interface HomeScreenProps {
   onChooseSpecial?: () => void;
   /** The home screen is shown again after "back to home": focus then moves to its heading. */
   focusOnFirstRender?: boolean;
+  /** Show the one-line text-size hint (the first visit of this page; nothing is stored). */
+  showTextSizeHint?: boolean;
 }
 
 const PARTS: ReadonlyArray<{ mode: Exclude<PracticeMode, "full">; title: MessageKey; text: MessageKey }> = [
@@ -37,36 +40,55 @@ const PARTS: ReadonlyArray<{ mode: Exclude<PracticeMode, "full">; title: Message
   { mode: "civics", title: "home.part.civics.title", text: "home.part.civics.text" },
 ];
 
-export function HomeScreen({ civicsLocked, onChoose, onStudy, onChooseCoach, onChooseSpecial, focusOnFirstRender = false }: HomeScreenProps) {
+export function HomeScreen({
+  civicsLocked,
+  onChoose,
+  onStudy,
+  onChooseCoach,
+  onChooseSpecial,
+  focusOnFirstRender = false,
+  showTextSizeHint = false,
+}: HomeScreenProps) {
   const t = useT();
   const coachTitleId = useId();
   const coachTextId = useId();
   const coachMetaId = useId();
+  const startTitleId = useId();
   return (
     <div className="screen">
       <TakeHeader stage="home" title={t("home.title")} lead={t("home.lead")} focusOnFirstRender={focusOnFirstRender} />
+      {showTextSizeHint && <p className="home__hint">{t("home.textSizeHint")}</p>}
 
-      <EnglishNotice always />
-
-      <HowItWorks />
-
-      <section className="screen__body" aria-labelledby="home-choose">
-        <h2 id="home-choose" className="choices__legend">
-          {t("home.choose")}
-        </h2>
+      <section className="screen__body" aria-label={t("home.choose")}>
         {/* While civics is locked, say first what this build can do, and offer only that. */}
         {civicsLocked && (
           <div className="panel" role="note">
-            <h3 className="panel__title">{t("home.locked.title")}</h3>
+            <h2 className="panel__title">{t("home.locked.title")}</h2>
             <p>
               <ReviewIcon className="icon-inline icon-inline--attention" /> <LegalText messageKey="intro.locked" />
             </p>
           </div>
         )}
         {!civicsLocked && (
-          <button type="button" className="option-card option-card--primary" onClick={() => onChoose("full")}>
-            <span className="option-card__title">{t("home.full.title")}</span>
-            <span className="option-card__text">{t("home.full.text")}</span>
+          <section className="panel start-here" aria-labelledby={startTitleId}>
+            <h2 id={startTitleId} className="start-here__label">
+              {t("home.start.label")}
+            </h2>
+            <p className="start-here__title">{t("home.full.title")}</p>
+            <p>{t("home.full.text")}</p>
+            <button type="button" className="btn btn--primary" onClick={() => onChoose("full")}>
+              {t("home.full.start")}
+            </button>
+          </section>
+        )}
+        {!civicsLocked && onChooseSpecial !== undefined && (
+          <button type="button" className="option-card option-card--special" onClick={onChooseSpecial}>
+            <span className="option-card__title">
+              <LegalText messageKey="home.special.cta" />
+            </span>
+            <span className="option-card__text">
+              <LegalText messageKey="home.special.text" />
+            </span>
           </button>
         )}
         {onChooseCoach !== undefined && (
@@ -89,40 +111,46 @@ export function HomeScreen({ civicsLocked, onChoose, onStudy, onChooseCoach, onC
             </span>
           </button>
         )}
-        {!civicsLocked && onStudy !== undefined && (
-          <button type="button" className="option-card" onClick={onStudy}>
-            <span className="option-card__title">{t("home.study.title")}</span>
-            <span className="option-card__text">{t("home.study.text")}</span>
-          </button>
-        )}
-        {!civicsLocked && onChooseSpecial !== undefined && (
-          <button type="button" className="option-card" onClick={onChooseSpecial}>
-            <span className="option-card__title">{t("home.special.title")}</span>
-            <span className="option-card__text">{t("home.special.text")}</span>
-          </button>
-        )}
-        {!civicsLocked && <h3 className="panel__title">{t("home.parts.title")}</h3>}
-        <div className="option-grid">
+
+        <h2 className="home__section">{t("home.parts.title")}</h2>
+        <ul className="row-list">
           {PARTS.filter((part) => !(civicsLocked && part.mode === "civics")).map((part) => (
-            <button key={part.mode} type="button" className="option-card" onClick={() => onChoose(part.mode)}>
-              <span className="option-card__title">
-                {t(part.title)}
-                {part.mode === "n400" && onChooseCoach !== undefined && (
-                  <>
-                    {" "}
-                    <span className="option-card__badge" aria-hidden="true">
-                      {t("home.part.n400.badge")}
-                    </span>
-                    <span className="ll-sr-only">{t("coach.switch.label")}</span>
-                  </>
-                )}
-              </span>
-              <span className="option-card__text">{t(part.text)}</span>
-            </button>
+            <li key={part.mode}>
+              <button type="button" className="row-button" onClick={() => onChoose(part.mode)}>
+                <span className="row-button__title">
+                  {t(part.title)}
+                  {part.mode === "n400" && onChooseCoach !== undefined && (
+                    <>
+                      {" "}
+                      <span className="option-card__badge" aria-hidden="true">
+                        {t("home.part.n400.badge")}
+                      </span>
+                      <span className="ll-sr-only">{t("coach.switch.label")}</span>
+                    </>
+                  )}
+                </span>
+                <span className="row-button__text">{t(part.text)}</span>
+              </button>
+            </li>
           ))}
-        </div>
+        </ul>
+
+        {!civicsLocked && onStudy !== undefined && (
+          <>
+            <ul className="row-list row-list--alone">
+              <li>
+                <button type="button" className="row-button" onClick={onStudy}>
+                  <span className="row-button__title">{t("home.study.title")}</span>
+                  <span className="row-button__text">{t("home.study.text")}</span>
+                </button>
+              </li>
+            </ul>
+          </>
+        )}
       </section>
 
+      <HowItWorks />
+      <EnglishNotice always />
       <Disclaimer variant="prominent" id="home-disclaimer" messageKey="disclaimer.full" />
       <ul className="notice-list">
         <li>

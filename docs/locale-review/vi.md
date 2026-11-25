@@ -92,7 +92,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `badge.onTrack` | Practice score reached | Đã đạt điểm luyện tập |
 | `badge.review` | Worth reviewing | Nên xem lại |
 | `report.empty` | Your practice report will appear here once the session is complete. | Báo cáo luyện tập của bạn sẽ hiện ở đây khi buổi luyện tập hoàn tất. |
-| `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Báo cáo luyện tập |
 | `report.profile.label` | Practice profile (fictional) | Hồ sơ luyện tập (giả định) |
 | `report.profile.meta` | {version} civics test · filed {date} | Bài kiểm tra civics {version} · nộp đơn ngày {date} |
@@ -357,6 +356,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | một địa chỉ nhà |
 | `coach.kind.zipCode` | a ZIP code with a state | một mã ZIP kèm tên tiểu bang |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Phần kiểm tra cũng tìm địa chỉ nhà và mã ZIP, nhưng không thể tìm ra tên người. Đừng nói hay gõ tên của một người thật. |
+| `home.start.label` | Start here | Bắt đầu ở đây |
+| `home.full.start` | Start practice | Bắt đầu luyện tập |
+| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Từ 65 tuổi trở lên và có thẻ xanh 20 năm? Bắt đầu phần luyện tập 65/20. |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | Chữ quá nhỏ? Chạm vào Cỡ chữ ở trên cùng. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -90,7 +90,7 @@ describe("the AI coach from the home card (REQ-C18, REQ-C19)", () => {
 describe("the full interview to the report (typed answers)", () => {
   it("N-400, reading, writing and civics, then the report with its disclaimer", async () => {
     app();
-    await startSetup(EN["home.full.title"], { profile: true, filed: "before" });
+    await startSetup(EN["home.full.start"], { profile: true, filed: "before" });
     fireEvent.click(button(EN["intro.start"]));
     fireEvent.click(await findButton(EN["coach.choice.no"]));
     // N-400: answer every question.
@@ -183,7 +183,7 @@ describe("Study first and 65/20", () => {
   });
   it("65/20 setup: the home card ticks the choice; the civics part asks 10 questions", async () => {
     app();
-    fireEvent.click(button(EN["home.special.title"]));
+    fireEvent.click(button(EN["home.special.cta"]));
     const box = screen.getByLabelText<HTMLInputElement>(EN["intro.special.label"]);
     expect(box.checked).toBe(true);
     expect(document.body.textContent).toContain("asks 10 of the 20 questions marked with a star (*)");
@@ -195,7 +195,7 @@ describe("Study first and 65/20", () => {
   });
   it("65/20 full interview: N-400, then civics (no reading or writing), and the report says why", async () => {
     app();
-    await startSetup(EN["home.full.title"], { profile: true, filed: "on_or_after" });
+    await startSetup(EN["home.full.start"], { profile: true, filed: "on_or_after" });
     fireEvent.click(screen.getByLabelText(EN["intro.special.label"]));
     fireEvent.click(button(EN["intro.start"]));
     fireEvent.click(await findButton(EN["coach.choice.no"]));
@@ -227,7 +227,7 @@ describe("Study first and 65/20", () => {
   }, 30000);
   it("65/20 can be unticked: then the normal 2025 test (20 questions) runs", async () => {
     app();
-    fireEvent.click(button(EN["home.special.title"]));
+    fireEvent.click(button(EN["home.special.cta"]));
     fireEvent.click(screen.getByLabelText(EN["intro.special.label"]));
     fireEvent.click(document.querySelector<HTMLInputElement>('input[name="filed"][value="on_or_after"]')!);
     fireEvent.click(button(EN["intro.start"]));
@@ -241,7 +241,8 @@ describe("header settings", () => {
     fireEvent.click(document.querySelector<HTMLButtonElement>(".header__lang")!);
     fireEvent.click(document.querySelector<HTMLButtonElement>('.language-menu__option[lang="vi"]')!);
     await waitFor(() => expect(document.documentElement.lang).toBe("vi"));
-    expect(document.body.textContent).toContain("Luyện kiến thức công dân 65/20");
+    // Senior-friendly step 3: Home starts with the "Start here" card.
+    expect(document.body.textContent).toContain("Bắt đầu ở đây");
     fireEvent.click(screen.getByRole("button", { name: (n) => n.startsWith("Đọc") }));
     await waitFor(() => expect(document.querySelector(".prompt")).not.toBeNull());
     expect(document.querySelector(".prompt")!.getAttribute("lang")).toBe("en");

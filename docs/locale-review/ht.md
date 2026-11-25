@@ -92,7 +92,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `badge.onTrack` | Practice score reached | Nòt pratik la rive |
 | `badge.review` | Worth reviewing | Mande revize |
 | `report.empty` | Your practice report will appear here once the session is complete. | Rapò pratik ou a ap parèt isit la lè sesyon an fini. |
-| `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Rapò pratik |
 | `report.profile.label` | Practice profile (fictional) | Pwofil pratik (fiktif) |
 | `report.profile.meta` | {version} civics test · filed {date} | Tès edikasyon sivik {version} · depoze nan dat {date} |
@@ -357,3 +356,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | yon adrès lari |
 | `coach.kind.zipCode` | a ZIP code with a state | yon kòd ZIP ak yon eta |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Verifikasyon an chèche adrès ak kòd ZIP tou, men li pa ka jwenn non. Pa di ni tape non yon vrè moun. |
+| `home.start.label` | Start here | Kòmanse isit la |
+| `home.full.start` | Start practice | Kòmanse pratik la |
+| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Ou gen 65 an oswa plis, epi 20 an ak yon kat vèt? Kòmanse pratik 65/20 la. |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | Tèks la twò piti? Tape Gwosè tèks anwo a. |

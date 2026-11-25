@@ -80,15 +80,15 @@ describe("the stepper shows only the steps of the session", () => {
     expect(renderShell("full", s)).toContain("Stage 1 of 6");
   });
 
-  it("the take counter counts within the session", () => {
+  it("no screen shows the decorative take counter (senior-friendly step 3); the stepper counts the steps", () => {
     const s = engine.reduce(engine.initial(), { type: "choose", mode: "reading", seed: 1, at: AT });
     const html = renderToString(
       <Shell steps={sessionSteps("reading")} currentStage="reading">
         {renderScreenElement(s)}
       </Shell>
     );
-    expect(html).toContain("<!-- -->01</span>");
-    expect(html).not.toContain("<!-- -->03</span>");
+    expect(html).not.toContain("TAKE");
+    expect(html).not.toContain("take__overline");
   });
 });
 

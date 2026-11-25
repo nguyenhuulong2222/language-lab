@@ -92,7 +92,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `badge.onTrack` | Practice score reached | ເຖິງຄະແນນຝຶກແລ້ວ |
 | `badge.review` | Worth reviewing | ຄວນທົບທວນ |
 | `report.empty` | Your practice report will appear here once the session is complete. | ບົດລາຍງານການຝຶກຂອງທ່ານຈະສະແດງຢູ່ນີ້ເມື່ອຈົບຮອບການຝຶກ. |
-| `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | ບົດລາຍງານການຝຶກ |
 | `report.profile.label` | Practice profile (fictional) | ໂປຣໄຟລ໌ຝຶກ (ສົມມຸດ) |
 | `report.profile.meta` | {version} civics test · filed {date} | ແບບທົດສອບວິຊາພົນລະເມືອງປີ {version} · ຍື່ນຄໍາຮ້ອງວັນທີ {date} |
@@ -357,6 +356,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | ທີ່ຢູ່ຖະໜົນ |
 | `coach.kind.zipCode` | a ZIP code with a state | ລະຫັດໄປສະນີ ZIP ພ້ອມຊື່ລັດ |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | ການກວດນີ້ຍັງຊອກຫາທີ່ຢູ່ ແລະ ລະຫັດ ZIP, ແຕ່ຊອກຫາຊື່ບໍ່ໄດ້. ຢ່າເວົ້າ ຫຼື ພິມຊື່ຂອງຄົນແທ້. |
+| `home.start.label` | Start here | ເລີ່ມທີ່ນີ້ |
+| `home.full.start` | Start practice | ເລີ່ມການຝຶກ |
+| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | ອາຍຸ 65 ປີຂຶ້ນໄປ ແລະ ມີບັດຂຽວ 20 ປີ? ເລີ່ມການຝຶກ 65/20. |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | ຕົວໜັງສືນ້ອຍເກີນໄປບໍ? ແຕະ ຂະໜາດຕົວໜັງສື ຢູ່ທາງເທິງ. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

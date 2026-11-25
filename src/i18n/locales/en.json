@@ -26,7 +26,6 @@
   "badge.onTrack": "Practice score reached",
   "badge.review": "Worth reviewing",
   "report.empty": "Your practice report will appear here once the session is complete.",
-  "report.take": "TAKE",
   "report.overline": "Practice report",
   "report.title.onTrack": "Practice complete: each part reached the practice score",
   "report.title.review": "A few things to review",
@@ -331,5 +330,9 @@
   "common.newTab": "(opens in a new tab)",
   "coach.kind.streetAddress": "a street address",
   "coach.kind.zipCode": "a ZIP code with a state",
-  "coach.notice.limits": "The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name."
+  "coach.notice.limits": "The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name.",
+  "home.start.label": "Start here",
+  "home.full.start": "Start practice",
+  "home.special.cta": "65 or older, 20 years with a green card? Start the 65/20 practice.",
+  "home.textSizeHint": "Text too small? Tap Text size at the top."
 }

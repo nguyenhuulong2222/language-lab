@@ -33,7 +33,6 @@
   "badge.onTrack": "Puntaje de práctica alcanzado",
   "badge.review": "Conviene repasar",
   "report.empty": "Su informe de práctica aparecerá aquí cuando termine la sesión.",
-  "report.take": "TAKE",
   "report.overline": "Informe de práctica",
   "report.title.onTrack": "Práctica terminada: cada parte alcanzó el puntaje de práctica",
   "report.title.review": "Algunas cosas para repasar",
@@ -338,5 +337,9 @@
   "common.newTab": "(se abre en una pestaña nueva)",
   "coach.kind.streetAddress": "una dirección",
   "coach.kind.zipCode": "un código postal con un estado",
-  "coach.notice.limits": "La revisión también busca direcciones y códigos postales, pero no puede encontrar nombres. No diga ni escriba el nombre de una persona real."
+  "coach.notice.limits": "La revisión también busca direcciones y códigos postales, pero no puede encontrar nombres. No diga ni escriba el nombre de una persona real.",
+  "home.start.label": "Empiece aquí",
+  "home.full.start": "Empezar la práctica",
+  "home.special.cta": "¿Tiene 65 años o más y 20 años con la tarjeta verde? Empiece la práctica 65/20.",
+  "home.textSizeHint": "¿La letra es muy pequeña? Toque Tamaño del texto arriba."
 }

@@ -92,7 +92,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `badge.onTrack` | Practice score reached | Tau txog qhab nia xyaum |
 | `badge.review` | Worth reviewing | Yuav tsum rov saib |
 | `report.empty` | Your practice report will appear here once the session is complete. | Daim ntawv qhia txog kev xyaum ntawm koj yuav tshwm ntawm no thaum kev xyaum xaus. |
-| `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Daim ntawv qhia txog kev xyaum |
 | `report.profile.label` | Practice profile (fictional) | Tus qauv xyaum (tsim los) |
 | `report.profile.meta` | {version} civics test · filed {date} | Kev xeem txog pej xeem xyoo {version} · xa daim ntawv thov rau hnub {date} |
@@ -357,6 +356,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | ib qho chaw nyob ntawm txoj kev |
 | `coach.kind.zipCode` | a ZIP code with a state | ib tus ZIP code nrog lub xeev |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Qhov kuaj no kuj nrhiav chaw nyob thiab ZIP code, tab sis nws nrhiav tsis tau npe. Tsis txhob hais los yog ntaus ib tus neeg tiag tiag lub npe. |
+| `home.start.label` | Start here | Pib ntawm no |
+| `home.full.start` | Start practice | Pib xyaum |
+| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | Muaj 65 xyoo los yog laus dua, thiab muaj daim npav ntsuab 20 xyoo? Pib kev xyaum 65/20. |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | Cov ntawv me dhau? Kov Qhov loj ntawm cov ntawv nyob saum toj. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

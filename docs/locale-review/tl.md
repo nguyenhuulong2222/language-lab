@@ -92,7 +92,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `badge.onTrack` | Practice score reached | Naabot ang iskor sa pagsasanay |
 | `badge.review` | Worth reviewing | Dapat balikan |
 | `report.empty` | Your practice report will appear here once the session is complete. | Lalabas dito ang ulat ng inyong pagsasanay kapag tapos na ang sesyon. |
-| `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | Ulat ng pagsasanay |
 | `report.profile.label` | Practice profile (fictional) | Profile sa pagsasanay (kathang-isip) |
 | `report.profile.meta` | {version} civics test · filed {date} | Civics test ng {version} · isinumite noong {date} |
@@ -357,6 +356,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | isang address ng kalye |
 | `coach.kind.zipCode` | a ZIP code with a state | isang ZIP code na may estado |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | Hinahanap din ng pagsusuri ang mga address at ZIP code, pero hindi nito mahahanap ang mga pangalan. Huwag sabihin o i-type ang pangalan ng totoong tao. |
+| `home.start.label` | Start here | Magsimula rito |
+| `home.full.start` | Start practice | Simulan ang pagsasanay |
+| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | 65 pataas at 20 taon nang may green card? Simulan ang pagsasanay na 65/20. |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | Masyadong maliit ang teksto? I-tap ang Laki ng teksto sa itaas. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -92,7 +92,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `badge.onTrack` | Practice score reached | လေ့ကျင့်ရေးအမှတ် ရောက်ပြီ |
 | `badge.review` | Worth reviewing | ပြန်လည်ကြည့်သင့်သည် |
 | `report.empty` | Your practice report will appear here once the session is complete. | စက်ရှင်ပြီးသောအခါ သင်၏ လေ့ကျင့်မှုအစီရင်ခံစာကို ဤနေရာတွင် မြင်ရပါမည်။ |
-| `report.take` | TAKE | TAKE |
 | `report.overline` | Practice report | လေ့ကျင့်မှုအစီရင်ခံစာ |
 | `report.profile.label` | Practice profile (fictional) | လေ့ကျင့်ရေးပရိုဖိုင် (စိတ်ကူးယဉ်) |
 | `report.profile.meta` | {version} civics test · filed {date} | {version} နိုင်ငံသားဗဟုသုတစာမေးပွဲ · လျှောက်လွှာတင်သည့်ရက် {date} |
@@ -357,6 +356,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.streetAddress` | a street address | လမ်းလိပ်စာ |
 | `coach.kind.zipCode` | a ZIP code with a state | ပြည်နယ်အမည်ပါသော ZIP ကုဒ် |
 | `coach.notice.limits` | The check also looks for street addresses and ZIP codes, but it cannot find names. Do not say or type a real person's name. | ဤစစ်ဆေးမှုသည် လမ်းလိပ်စာနှင့် ZIP ကုဒ်များကိုလည်း ရှာသော်လည်း အမည်များကို မရှာနိုင်ပါ။ လူအစစ်တစ်ဦး၏ အမည်ကို မပြော၊ မရိုက်ပါနှင့်။ |
+| `home.start.label` | Start here | ဤနေရာမှ စတင်ပါ |
+| `home.full.start` | Start practice | လေ့ကျင့်မှု စတင်ပါ |
+| `home.special.cta` | 65 or older, 20 years with a green card? Start the 65/20 practice. | အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး ဂရင်းကတ် 20 နှစ် ရှိပါသလား။ 65/20 လေ့ကျင့်မှုကို စတင်ပါ။ |
+| `home.textSizeHint` | Text too small? Tap Text size at the top. | စာလုံး အရမ်းသေးနေပါသလား။ အပေါ်ရှိ စာလုံးအရွယ်အစား ကို နှိပ်ပါ။ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

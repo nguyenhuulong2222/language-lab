@@ -18,8 +18,6 @@
   font-family: var(--font-body);
   font-size: var(--fs-meta);
   font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--ink-2);
 }
 .take__number {
@@ -184,4 +182,73 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+}
+
+/* ---- Home, senior-friendly (branch ui/senior-friendly) ---- */
+/* "Start here": the full interview, with the screen's one primary button. */
+.start-here {
+  border: 3px solid var(--teal);
+}
+.start-here__label {
+  font-size: var(--fs-h4);
+  color: var(--ink);
+}
+.start-here__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+}
+/* 65/20: a large card directly under "Start here". */
+.option-card--special {
+  border-width: 3px;
+  border-color: var(--ink-2);
+}
+/* "Practice one part" and "Study first": a plain list of full-width rows, not a grid of cards. */
+.home__section {
+  margin-top: var(--space-5);
+  font-size: var(--fs-h3);
+}
+.row-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.row-list--alone {
+  margin-top: var(--space-5);
+}
+.row-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--ink-2);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+.row-button__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+}
+.row-button__text {
+  font-size: var(--fs-meta);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+/* The one-line text-size hint under the welcome. */
+.home__hint {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--ink);
 }
