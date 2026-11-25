@@ -270,3 +270,32 @@ fieldset.choices {
 .btn-row--stack > .btn {
   width: 100%;
 }
+/* "← Back to Home" at the top of every screen except Home (Shell). */
+.back-home {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: var(--space-4) 0 var(--space-2);
+}
+.back-home__button {
+  align-self: flex-start;
+  gap: var(--space-2);
+}
+.back-home__icon {
+  width: 1.25em;
+  height: 1.25em;
+  flex: 0 0 auto;
+}
+.back-home__confirm[hidden] {
+  display: none;
+}
+/* Two buttons side by side that share the row (Previous / Next in Study), 56px each. */
+.btn-pair {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+}
+.btn-pair > .btn {
+  width: 100%;
+}

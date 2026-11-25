@@ -1,11 +1,10 @@
 /**
  * App header: the brand mark with a restrained reel glyph, and a button that opens the
- * language menu, going home (once a session has started), the
- * comfort settings, and "About & disclaimer". The panels open below the header, in the page
+ * language menu, Text size, and "About & disclaimer". Going home is the "Back to Home" button
+ * at the top of each screen (BackToHome), not a header button. The panels open below the header, in the page
  * flow, so they never run off a narrow screen.
  *
  * Keyboard: Escape closes the open panel and returns focus to the button that opened it.
- * "Home" asks first, because it discards the answers of this practice.
  */
 import { useEffect, useId, useRef, useState, type FocusEvent, type KeyboardEvent } from "react";
 import { Disclaimer } from "./Disclaimer";
@@ -18,17 +17,17 @@ import { useLanguage, useT } from "../../i18n/react";
 import { useSettings } from "../settings";
 import "./Header.css";
 
-type PanelName = "language" | "settings" | "about" | "home";
+type PanelName = "language" | "settings" | "about";
 
-export function Header({ onHome, onLanguage }: { onHome?: () => void; onLanguage?: () => boolean }) {
+export function Header({ onLanguage }: { onLanguage?: () => boolean }) {
   const t = useT();
   const language = useLanguage();
   const { setLanguage } = useSettings();
   const [panel, setPanel] = useState<PanelName | null>(null);
-  const ids = { language: useId(), settings: useId(), about: useId(), home: useId() };
-  const buttons = useRef<Record<PanelName, HTMLButtonElement | null>>({ language: null, settings: null, about: null, home: null });
+  const ids = { language: useId(), settings: useId(), about: useId() };
+  const buttons = useRef<Record<PanelName, HTMLButtonElement | null>>({ language: null, settings: null, about: null });
 
-  const panels = useRef<Record<PanelName, HTMLDivElement | null>>({ language: null, settings: null, about: null, home: null });
+  const panels = useRef<Record<PanelName, HTMLDivElement | null>>({ language: null, settings: null, about: null });
   // Opening a panel moves focus into it (the language menu focuses its own current choice).
   useEffect(() => {
     if (panel !== null && panel !== "language") panels.current[panel]?.focus();
@@ -84,18 +83,6 @@ export function Header({ onHome, onLanguage }: { onHome?: () => void; onLanguage
             <span className="ll-sr-only">{t("lang.label")}: </span>
             <span lang={languageInfo(language).htmlLang}>{languageInfo(language).endonym}</span>
           </button>
-          {onHome !== undefined && (
-            <button
-              type="button"
-              ref={bind("home")}
-              className="header__button"
-              aria-expanded={panel === "home"}
-              aria-controls={ids.home}
-              onClick={() => toggle("home")}
-            >
-              {t("header.home")}
-            </button>
-          )}
           <button
             type="button"
             ref={bind("settings")}
@@ -156,37 +143,6 @@ export function Header({ onHome, onLanguage }: { onHome?: () => void; onLanguage
           <LegalText messageKey="coach.privacy" />
         </p>
       </div>
-      {onHome !== undefined && (
-        <div
-          id={ids.home}
-          ref={(el) => {
-            panels.current.home = el;
-          }}
-          tabIndex={-1}
-          role="region"
-          aria-label={t("header.home")}
-          className="ll-container header__panel"
-          hidden={panel !== "home"}
-        >
-          <p>{t("header.homeConfirm")}</p>
-          {/* Staying is the main action: "Keep practicing" first and filled, "Leave" outlined, both full width. */}
-          <div className="btn-row btn-row--stack">
-            <button type="button" className="btn btn--primary" onClick={close}>
-              {t("header.homeConfirm.no")}
-            </button>
-            <button
-              type="button"
-              className="btn btn--secondary"
-              onClick={() => {
-                setPanel(null);
-                onHome();
-              }}
-            >
-              {t("header.homeConfirm.yes")}
-            </button>
-          </div>
-        </div>
-      )}
     </header>
   );
 }

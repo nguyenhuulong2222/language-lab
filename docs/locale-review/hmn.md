@@ -259,7 +259,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | Cov lus nug no tsis muaj qhab nia. Lawv tsis suav tias yog lossis tsis yog. |
 | `partReport.unscored.missing` | A question we cannot check | Ib lo lus nug uas peb kuaj tsis tau |
 | `report.see` | See my report | Saib kuv daim ntawv qhia |
-| `header.home` | Home | Tsev |
 | `help.button` | Help | Kev pab |
 | `help.setup.1` | Tap one choice in each group on this screen. | Kov ib qho kev xaiv hauv txhua pawg ntawm lub vijtsam no. |
 | `help.setup.3` | Press “{start}” when you are ready. | Nias “{start}” thaum koj npaj txhij. |

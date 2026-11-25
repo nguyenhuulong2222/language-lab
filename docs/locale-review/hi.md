@@ -259,7 +259,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | इन प्रश्नों के कोई अंक नहीं हैं। ये सही या गलत नहीं गिने जाते। |
 | `partReport.unscored.missing` | A question we cannot check | एक प्रश्न जिसे हम जाँच नहीं सकते |
 | `report.see` | See my report | मेरी रिपोर्ट देखें |
-| `header.home` | Home | होम |
 | `help.button` | Help | मदद |
 | `help.setup.1` | Tap one choice in each group on this screen. | इस स्क्रीन पर हर समूह में से एक विकल्प पर टैप करें। |
 | `help.setup.3` | Press “{start}” when you are ready. | तैयार होने पर “{start}” दबाएँ। |

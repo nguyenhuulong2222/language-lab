@@ -17,30 +17,14 @@ import type { PromptSpeaker } from "../voice/prompt-speaker";
 const cssFiles = import.meta.glob("../**/*.css", { query: "?raw", import: "default", eager: true }) as Record<string, string>;
 
 describe("the header", () => {
-  const html = renderToString(<Header onHome={() => {}} />);
-
-  it("has Home (in a session), Text size and About buttons that open panels", () => {
-    expect(html).toContain("Home");
+  const html = renderToString(<Header />);
+  it("has Language, Text size and About buttons that open panels, and no Home button (Back to Home is in the page)", () => {
     expect(html).toContain(">Text size<");
     expect(html).toContain("About &amp; disclaimer");
-    // Language, Home (with a session), Text size and About each open a panel.
-    expect((html.match(/aria-expanded="false"/g) ?? []).length).toBe(4);
-    expect((html.match(/aria-controls=/g) ?? []).length).toBe(4);
+    expect(html).not.toContain(">Home<");
+    expect((html.match(/aria-expanded="false"/g) ?? []).length).toBe(3);
+    expect((html.match(/aria-controls=/g) ?? []).length).toBe(3);
   });
-
-  it("has no Home button before a session", () => {
-    const before = renderToString(<Header />);
-    expect(before).not.toContain(">Home<");
-    expect((before.match(/aria-expanded=/g) ?? []).length).toBe(3);
-  });
-
-  it("asks before Home throws away the answers, in a closed panel", () => {
-    expect(html).toContain("Your answers in this practice will be lost.");
-    expect(html).toMatch(/btn--primary"[^>]*>Keep practicing</);
-    expect(html).toMatch(/btn--secondary"[^>]*>Leave</);
-    expect(html).toMatch(/header__panel"[^>]*hidden/);
-  });
-
   it("the settings panel has no heading, so the page heading stays first", () => {
     const settings = renderToString(<SettingsProvider><SettingsPanel onClose={() => {}} /></SettingsProvider>);
     expect(settings).not.toMatch(/<h[1-6]/);

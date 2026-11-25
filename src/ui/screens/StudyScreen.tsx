@@ -117,11 +117,6 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
             </button>
           ))}
         </fieldset>
-        <div className="btn-row">
-          <button type="button" className="btn btn--secondary" onClick={onHome}>
-            {t("report.home")}
-          </button>
-        </div>
       </div>
     );
   }
@@ -172,11 +167,13 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
             <p className="note"><LegalText messageKey="civics.officialNote" /></p>
           </section>
         )}
-        <div className="btn-row">
-          <button type="button" className="btn btn--secondary" disabled={index === 0} onClick={() => setIndex(index - 1)}>
-            {t("study.prev")}
-          </button>
-          {/* On the last question the main action is going home, so the primary button never sits disabled. */}
+        {/* Previous and Next side by side, 56px. After the last question: Back to Home (the next step). */}
+        <div className="btn-pair">
+          {index > 0 && (
+            <button type="button" className="btn btn--secondary" onClick={() => setIndex(index - 1)}>
+              {t("study.prev")}
+            </button>
+          )}
           {last ? (
             <button type="button" className="btn btn--primary" onClick={onHome}>
               {t("report.home")}
@@ -186,6 +183,8 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
               {t("civics.next")}
             </button>
           )}
+        </div>
+        <div className="btn-row">
           <button
             type="button"
             className="btn btn--secondary"
@@ -196,11 +195,6 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
           >
             {t("study.change")}
           </button>
-          {!last && (
-            <button type="button" className="btn btn--secondary" onClick={onHome}>
-              {t("report.home")}
-            </button>
-          )}
         </div>
       </div>
     </div>

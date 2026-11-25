@@ -105,6 +105,8 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
       {...(steps === undefined ? {} : { steps })}
       {...(state.phase === "home" ? {} : { currentStage: state.phase })}
       {...(state.phase === "home" ? {} : { onHome: restart })}
+      // A practice with answers asks before going home; setup and reports go straight home.
+      confirmHome={state.phase !== "home" && state.phase !== "intro" && state.phase !== "report"}
       languageOnPage={state.phase === "home"}
     >
       <Screen

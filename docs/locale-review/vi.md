@@ -259,7 +259,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | Những câu hỏi này không chấm điểm. Không tính là đúng hay sai. |
 | `partReport.unscored.missing` | A question we cannot check | Một câu hỏi chúng tôi không kiểm tra được |
 | `report.see` | See my report | Xem báo cáo của tôi |
-| `header.home` | Home | Trang chủ |
 | `help.button` | Help | Trợ giúp |
 | `help.setup.1` | Tap one choice in each group on this screen. | Chạm vào một lựa chọn trong mỗi nhóm trên màn hình này. |
 | `help.setup.3` | Press “{start}” when you are ready. | Bấm “{start}” khi bạn sẵn sàng. |

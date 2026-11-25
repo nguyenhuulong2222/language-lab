@@ -38,8 +38,10 @@ function app() {
   );
 }
 /** A button by its visible text (exact, or starting with it, as option cards have a second line). */
-const button = (text: string) => screen.getByRole("button", { name: (name) => name === text || name.startsWith(text) });
-const findButton = (text: string) => screen.findByRole("button", { name: (name) => name === text || name.startsWith(text) }, { timeout: 4000 });
+// The last match: "Back to home" is both the bar at the top and the report's own button; the page's is last.
+const button = (text: string) => screen.getAllByRole("button", { name: (name) => name === text || name.startsWith(text) }).at(-1)!;
+const findButton = async (text: string) =>
+  (await screen.findAllByRole("button", { name: (name) => name === text || name.startsWith(text) }, { timeout: 4000 })).at(-1)!;
 const has = (text: string) => screen.queryAllByRole("button", { name: (name) => name === text || name.startsWith(text) }).length > 0;
 const typeAnswer = (value: string) => fireEvent.change(screen.getByRole("textbox"), { target: { value } });
 const prompt = () => document.querySelector<HTMLElement>(".prompt")!.textContent!.trim();
@@ -345,5 +347,77 @@ describe("the whole interface follows the language (L3)", () => {
     await new Promise((resolve) => setTimeout(resolve, 50));
     expect(document.querySelector("main h1")!.textContent!.trim()).toBe(EN["home.title"]);
     expect(document.documentElement.lang).toBe("en");
+  });
+});
+describe("Back to Home and the browser Back button (Q1)", () => {
+  // history.back() is asynchronous: let the one from the previous test arrive first.
+  beforeEach(() => new Promise((resolve) => setTimeout(resolve, 60)));
+  const backBar = () => document.querySelector<HTMLButtonElement>("main .back-home__button");
+  const onHome = () => document.getElementById("home-language") !== null;
+  async function toReadingReport() {
+    fireEvent.click(button(EN["home.part.reading.title"]));
+    for (let guard = 0; guard < 6; guard++) {
+      await findButton(EN["reading.submit"]);
+      typeAnswer("wrong words here");
+      fireEvent.click(button(EN["reading.submit"]));
+      if (has(EN["report.see"])) break;
+      fireEvent.click(await findButton(EN["reading.next"]));
+    }
+    fireEvent.click(await findButton(EN["report.see"]));
+    await findButton(EN["report.home"]);
+  }
+  it("Home has none; setup, a practice, Study and a report each start with Back to Home", async () => {
+    app();
+    expect(backBar()).toBeNull();
+    fireEvent.click(button(EN["home.study.title"]));
+    expect(backBar()!.textContent).toContain(EN["report.home"]);
+    fireEvent.click(backBar()!);
+    await waitFor(() => expect(onHome()).toBe(true));
+    await startSetup(EN["home.full.start"]);
+    expect(backBar()).not.toBeNull();
+    fireEvent.click(backBar()!);
+    await waitFor(() => expect(onHome()).toBe(true));
+    await toReadingReport();
+    expect(backBar()).not.toBeNull();
+    expect(backBar()!.closest("main")!.firstElementChild!.contains(backBar())).toBe(true);
+  });
+  it("in a practice, Back to Home asks first: Keep practicing stays, Leave goes home", async () => {
+    app();
+    fireEvent.click(button(EN["home.part.reading.title"]));
+    await findButton(EN["reading.submit"]);
+    fireEvent.click(backBar()!);
+    expect(backBar()!.getAttribute("aria-expanded")).toBe("true");
+    expect(screen.getByText(EN["header.homeConfirm"])).toBeTruthy();
+    // The question is the only thing shown: one main button.
+    expect(document.querySelectorAll("main .btn--primary:not([hidden] *)").length).toBe(1);
+    fireEvent.click(button(EN["header.homeConfirm.no"]));
+    expect(await findButton(EN["reading.submit"])).toBeTruthy();
+    fireEvent.click(backBar()!);
+    fireEvent.click(button(EN["header.homeConfirm.yes"]));
+    await waitFor(() => expect(onHome()).toBe(true));
+  });
+  it("browser Back from Study goes home without a question", async () => {
+    app();
+    fireEvent.click(button(EN["home.study.title"]));
+    await waitFor(() => expect(window.history.state).toEqual({ languageLabSection: true }));
+    window.history.back();
+    await waitFor(() => expect(onHome()).toBe(true));
+  });
+  it("browser Back in a practice asks first and stays; Leave then goes home", async () => {
+    app();
+    fireEvent.click(button(EN["home.part.reading.title"]));
+    await findButton(EN["reading.submit"]);
+    window.history.back();
+    await waitFor(() => expect(screen.getByText(EN["header.homeConfirm"])).toBeTruthy());
+    expect(onHome()).toBe(false);
+    await waitFor(() => expect(window.history.state).toEqual({ languageLabSection: true }));
+    fireEvent.click(button(EN["header.homeConfirm.yes"]));
+    await waitFor(() => expect(onHome()).toBe(true));
+  });
+  it("browser Back from a report goes home", async () => {
+    app();
+    await toReadingReport();
+    window.history.back();
+    await waitFor(() => expect(onHome()).toBe(true));
   });
 });

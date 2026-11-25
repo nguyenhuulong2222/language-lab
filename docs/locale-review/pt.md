@@ -259,7 +259,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | Estas perguntas não recebem nota. Não contam como certas nem erradas. |
 | `partReport.unscored.missing` | A question we cannot check | Uma pergunta que não podemos conferir |
 | `report.see` | See my report | Ver o meu relatório |
-| `header.home` | Home | Início |
 | `help.button` | Help | Ajuda |
 | `help.setup.1` | Tap one choice in each group on this screen. | Toque em uma opção de cada grupo desta tela. |
 | `help.setup.3` | Press “{start}” when you are ready. | Toque em “{start}” quando estiver pronto. |

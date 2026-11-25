@@ -259,7 +259,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | Walang iskor ang mga tanong na ito. Hindi sila binibilang na tama o mali. |
 | `partReport.unscored.missing` | A question we cannot check | Isang tanong na hindi namin masuri |
 | `report.see` | See my report | Tingnan ang aking ulat |
-| `header.home` | Home | Simula |
 | `help.button` | Help | Tulong |
 | `help.setup.1` | Tap one choice in each group on this screen. | I-tap ang isang pagpipilian sa bawat grupo sa screen na ito. |
 | `help.setup.3` | Press “{start}” when you are ready. | Pindutin ang “{start}” kapag handa na kayo. |

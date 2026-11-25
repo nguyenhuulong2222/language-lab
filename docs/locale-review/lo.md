@@ -259,7 +259,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | ຄຳຖາມເຫຼົ່ານີ້ບໍ່ມີຄະແນນ. ບໍ່ນັບວ່າຖືກ ຫຼື ຜິດ. |
 | `partReport.unscored.missing` | A question we cannot check | ຄຳຖາມທີ່ພວກເຮົາກວດບໍ່ໄດ້ |
 | `report.see` | See my report | ເບິ່ງບົດລາຍງານຂອງຂ້ອຍ |
-| `header.home` | Home | ໜ້າຫຼັກ |
 | `help.button` | Help | ຊ່ວຍເຫຼືອ |
 | `help.setup.1` | Tap one choice in each group on this screen. | ແຕະໜຶ່ງຕົວເລືອກໃນແຕ່ລະກຸ່ມເທິງໜ້າຈໍນີ້. |
 | `help.setup.3` | Press “{start}” when you are ready. | ກົດ “{start}” ເມື່ອທ່ານພ້ອມ. |

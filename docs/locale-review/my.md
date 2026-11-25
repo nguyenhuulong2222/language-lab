@@ -259,7 +259,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | ဤမေးခွန်းများ အမှတ်မပေးပါ။ မှန် သို့မဟုတ် မှား ဟု မရေတွက်ပါ။ |
 | `partReport.unscored.missing` | A question we cannot check | ကျွန်ုပ်တို့ မစစ်ဆေးနိုင်သော မေးခွန်း |
 | `report.see` | See my report | ကျွန်ုပ်၏အစီရင်ခံစာကို ကြည့်ရန် |
-| `header.home` | Home | ပင်မ |
 | `help.button` | Help | အကူအညီ |
 | `help.setup.1` | Tap one choice in each group on this screen. | ဤစာမျက်နှာရှိ အုပ်စုတစ်ခုစီမှ ရွေးချယ်စရာတစ်ခုကို နှိပ်ပါ။ |
 | `help.setup.3` | Press “{start}” when you are ready. | အဆင်သင့်ဖြစ်သောအခါ “{start}” ကို နှိပ်ပါ။ |

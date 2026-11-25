@@ -259,7 +259,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | คำถามเหล่านี้ไม่มีคะแนน ไม่นับว่าถูกหรือผิด |
 | `partReport.unscored.missing` | A question we cannot check | คำถามที่เราตรวจไม่ได้ |
 | `report.see` | See my report | ดูรายงานของฉัน |
-| `header.home` | Home | หน้าแรก |
 | `help.button` | Help | วิธีใช้ |
 | `help.setup.1` | Tap one choice in each group on this screen. | แตะหนึ่งตัวเลือกในแต่ละกลุ่มบนหน้าจอนี้ |
 | `help.setup.3` | Press “{start}” when you are ready. | กด “{start}” เมื่อคุณพร้อม |

@@ -259,7 +259,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | 이 질문들은 점수를 매기지 않습니다. 맞거나 틀린 것으로 세지 않습니다. |
 | `partReport.unscored.missing` | A question we cannot check | 확인할 수 없는 질문 |
 | `report.see` | See my report | 내 보고서 보기 |
-| `header.home` | Home | 홈 |
 | `help.button` | Help | 도움말 |
 | `help.setup.1` | Tap one choice in each group on this screen. | 이 화면의 각 그룹에서 하나씩 선택하세요. |
 | `help.setup.3` | Press “{start}” when you are ready. | 준비되면 ‘{start}’를 누르세요. |

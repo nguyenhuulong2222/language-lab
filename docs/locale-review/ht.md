@@ -259,7 +259,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | Kesyon sa yo pa gen nòt. Yo pa konte ni bon ni move. |
 | `partReport.unscored.missing` | A question we cannot check | Yon kesyon nou pa ka tcheke |
 | `report.see` | See my report | Gade rapò mwen |
-| `header.home` | Home | Akèy |
 | `help.button` | Help | Èd |
 | `help.setup.1` | Tap one choice in each group on this screen. | Tape sou yon chwa nan chak gwoup sou ekran sa a. |
 | `help.setup.3` | Press “{start}” when you are ready. | Peze “{start}” lè ou pare. |

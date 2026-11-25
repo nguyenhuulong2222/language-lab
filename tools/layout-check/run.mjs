@@ -4,7 +4,8 @@
  *
  * Drives the real app in headless Google Chrome at a phone width (390px) and checks every screen
  * of the practice flow for: horizontal scroll, elements that run off the screen, clipped text,
- * touch targets smaller than 56px, rendered text below 16px, and exactly one filled primary button
+ * touch targets smaller than 56px, rendered text below 16px, a missing "Back to Home" in the first
+ * viewport on any screen but Home, and exactly one filled primary button
  * (.btn--primary) per screen state, at least 64px high. It clicks through the whole flow like a
  * user, so it also works as a smoke test.
  *
@@ -229,6 +230,14 @@ window.__lab = (() => {
     // option cards and has no filled button, so the screen does not push one answer.
     out.optionCards = [...document.body.querySelectorAll("main .option-card")].filter(visible).length;
     out.shortPrimary = primaries.filter((el) => el.getBoundingClientRect().height < 63.5).map((el) => describe(el) + " " + Math.round(el.getBoundingClientRect().height) + "px high");
+    // Q1: every screen except Home (and the picture credits, which have their own way back) shows
+    // "Back to Home" in the first viewport, measured from the top of the page.
+    const homeGrid = document.getElementById("home-language");
+    const onHome = homeGrid !== null && visible(homeGrid);
+    // The picture credits hide the practice column (the first one) and show their own.
+    const creditsOpen = document.querySelector("main > .ll-container")?.hidden === true;
+    const bar = [...document.querySelectorAll("main .back-home__button")].find(visible);
+    out.backHome = { needed: !onHome && !creditsOpen, top: bar ? Math.round(bar.getBoundingClientRect().top + window.scrollY) : null, viewport: window.innerHeight };
     out.horizontalScroll = out.scrollWidth > vw + 1;
     return out;
   };
@@ -498,7 +507,7 @@ async function specialPass({ cdp, lab, js, click, record, L }) {
   await click(L("intro.start"));
   await waitFor(() => lab(`has(${js(L("civics.submit"))})`), "the first 65/20 civics question");
   await record("civics-special");
-  await click(L("header.home"));
+  await cdp.evaluate("document.querySelector('main .back-home__button').click()");
   await click(L("header.homeConfirm.yes"));
   await waitFor(() => lab(`has(${js(L("home.special.cta"))})`), "home after the 65/20 practice");
 }
@@ -634,6 +643,7 @@ async function main() {
     for (const x of r.clipped) problems.push(`clipped: ${x}`);
     for (const x of r.smallTargets) problems.push(`small target: ${x}`);
     for (const x of r.smallText ?? []) problems.push(`text below 16px: ${x}`);
+    if (r.backHome?.needed && (r.backHome.top === null || r.backHome.top + 1 > r.backHome.viewport)) problems.push(r.backHome.top === null ? "no visible Back to Home" : `Back to Home is below the first viewport (top ${r.backHome.top}px)`);
     for (const x of r.shortPrimary ?? []) problems.push(`primary button below 64px: ${x}`);
     if (r.primaryCount !== undefined && r.primaryCount !== 1 && !(r.primaryCount === 0 && r.optionCards > 1)) problems.push(`${r.primaryCount} primary buttons (expected exactly one)${r.primaryCount > 1 ? ": " + r.primaryNames.join(" / ") : ""}`);
     for (const x of r.cspViolations ?? []) problems.push(`CSP violation: ${x}`);

@@ -259,7 +259,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `partReport.unscored.text` | These questions get no score. They do not count as right or wrong. | 這些問題不評分，不算對也不算錯。 |
 | `partReport.unscored.missing` | A question we cannot check | 一個我們無法核對的問題 |
 | `report.see` | See my report | 查看我的報告 |
-| `header.home` | Home | 首頁 |
 | `help.button` | Help | 說明 |
 | `help.setup.1` | Tap one choice in each group on this screen. | 在這個畫面的每一組中各點選一個選項。 |
 | `help.setup.3` | Press “{start}” when you are ready. | 準備好後，請按「{start}」。 |
