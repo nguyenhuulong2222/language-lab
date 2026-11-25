@@ -256,7 +256,7 @@
   "common.retry": "Tentar de novo",
   "partReport.badge.good": "Você alcançou a meta de prática",
   "partReport.assisted": "A frase foi mostrada na tela.",
-  "aiNotice.text": "Esta tradução foi feita por IA e pode ter erros. Se algo não estiver claro, a versão em inglês é a correta.",
+  "aiNotice.text": "Traduzido por IA. Pode ter erros. O inglês é o correto.",
   "aiNotice.legalEnglish": "Os avisos legais ficam em inglês até que uma pessoa confira a tradução.",
   "lang.menu.title": "Escolha um idioma",
   "lang.menu.inReview": "Há mais idiomas em revisão. Eles aparecerão aqui depois que uma pessoa os revisar.",
@@ -350,5 +350,6 @@
   "help.done.english": "Toque em “{send}”. Depois você vê se conta.",
   "help.done.civics": "Toque em “{send}”. Depois você vê se conta e as respostas oficiais.",
   "settings.textSize.sample": "Aa",
-  "lang.selected": "Selecionado"
+  "lang.selected": "Selecionado",
+  "aiNotice.more": "Mais"
 }

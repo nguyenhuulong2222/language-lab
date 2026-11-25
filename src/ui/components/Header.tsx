@@ -1,14 +1,12 @@
 /**
- * App header: the brand mark with a restrained reel glyph, and a button that opens the
- * language menu, Text size, and "About & disclaimer". Going home is the "Back to Home" button
- * at the top of each screen (BackToHome), not a header button. The panels open below the header, in the page
- * flow, so they never run off a narrow screen.
+ * App header, one row at a phone's normal text size: the brand mark (a small reel glyph), then
+ * "Text size" and the language button (globe and the language's own name). "About & disclaimer"
+ * is in the footer; going home is "Back to Home" at the top of each screen (BackToHome). The panels
+ * open below the header, in the page flow, so they never run off a narrow screen.
  *
  * Keyboard: Escape closes the open panel and returns focus to the button that opened it.
  */
 import { useEffect, useId, useRef, useState, type FocusEvent, type KeyboardEvent } from "react";
-import { Disclaimer } from "./Disclaimer";
-import { LegalText } from "./LegalText";
 import { LanguageMenu } from "./LanguageMenu";
 import { GlobeIcon } from "./icons";
 import { SettingsPanel } from "./SettingsPanel";
@@ -17,17 +15,17 @@ import { useLanguage, useT } from "../../i18n/react";
 import { useSettings } from "../settings";
 import "./Header.css";
 
-type PanelName = "language" | "settings" | "about";
+type PanelName = "language" | "settings";
 
 export function Header({ onLanguage }: { onLanguage?: () => boolean }) {
   const t = useT();
   const language = useLanguage();
   const { setLanguage } = useSettings();
   const [panel, setPanel] = useState<PanelName | null>(null);
-  const ids = { language: useId(), settings: useId(), about: useId() };
-  const buttons = useRef<Record<PanelName, HTMLButtonElement | null>>({ language: null, settings: null, about: null });
+  const ids = { language: useId(), settings: useId() };
+  const buttons = useRef<Record<PanelName, HTMLButtonElement | null>>({ language: null, settings: null });
 
-  const panels = useRef<Record<PanelName, HTMLDivElement | null>>({ language: null, settings: null, about: null });
+  const panels = useRef<Record<PanelName, HTMLDivElement | null>>({ language: null, settings: null });
   // Opening a panel moves focus into it (the language menu focuses its own current choice).
   useEffect(() => {
     if (panel !== null && panel !== "language") panels.current[panel]?.focus();
@@ -67,6 +65,16 @@ export function Header({ onLanguage }: { onLanguage?: () => boolean }) {
         <div className="header__actions">
           <button
             type="button"
+            ref={bind("settings")}
+            className="header__button"
+            aria-expanded={panel === "settings"}
+            aria-controls={ids.settings}
+            onClick={() => toggle("settings")}
+          >
+            {t("header.settings")}
+          </button>
+          <button
+            type="button"
             ref={bind("language")}
             className="header__button header__lang"
             // On Home the grid is on the page: the button goes there instead of opening a second copy.
@@ -82,26 +90,6 @@ export function Header({ onLanguage }: { onLanguage?: () => boolean }) {
             <GlobeIcon className="header__globe" />
             <span className="ll-sr-only">{t("lang.label")}: </span>
             <span lang={languageInfo(language).htmlLang}>{languageInfo(language).endonym}</span>
-          </button>
-          <button
-            type="button"
-            ref={bind("settings")}
-            className="header__button"
-            aria-expanded={panel === "settings"}
-            aria-controls={ids.settings}
-            onClick={() => toggle("settings")}
-          >
-            {t("header.settings")}
-          </button>
-          <button
-            type="button"
-            ref={bind("about")}
-            className="header__button"
-            aria-expanded={panel === "about"}
-            aria-controls={ids.about}
-            onClick={() => toggle("about")}
-          >
-            {t("header.about")}
           </button>
         </div>
       </div>
@@ -126,22 +114,6 @@ export function Header({ onLanguage }: { onLanguage?: () => boolean }) {
         hidden={panel !== "settings"}
       >
         <SettingsPanel onClose={close} />
-      </div>
-      <div
-        id={ids.about}
-        ref={(el) => {
-          panels.current.about = el;
-        }}
-        tabIndex={-1}
-        role="region"
-        aria-label={t("header.about")}
-        className="ll-container header__panel"
-        hidden={panel !== "about"}
-      >
-        <Disclaimer messageKey="disclaimer.full" />
-        <p className="note">
-          <LegalText messageKey="coach.privacy" />
-        </p>
       </div>
     </header>
   );

@@ -256,7 +256,7 @@
   "common.retry": "Subukang muli",
   "partReport.badge.good": "Naabot mo ang layunin ng pagsasanay",
   "partReport.assisted": "Ipinakita ang pangungusap sa screen.",
-  "aiNotice.text": "Ginawa ng AI ang salin na ito at maaaring may mali. Kung may hindi malinaw, ang bersyong Ingles ang tama.",
+  "aiNotice.text": "Isinalin ng AI. Maaaring may mali. Ang Ingles ang tama.",
   "aiNotice.legalEnglish": "Mananatili sa Ingles ang mga legal na paunawa hanggang may taong sumuri sa salin.",
   "lang.menu.title": "Pumili ng wika",
   "lang.menu.inReview": "May mga karagdagang wika na sinusuri. Lalabas ang mga ito rito pagkatapos itong suriin ng isang tao.",
@@ -350,5 +350,6 @@
   "help.done.english": "Pindutin ang “{send}”. Pagkatapos makikita mo kung bilang ito.",
   "help.done.civics": "Pindutin ang “{send}”. Pagkatapos makikita mo kung bilang ito, at ang mga opisyal na sagot.",
   "settings.textSize.sample": "Aa",
-  "lang.selected": "Napili"
+  "lang.selected": "Napili",
+  "aiNotice.more": "Higit pa"
 }

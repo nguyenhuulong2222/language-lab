@@ -256,7 +256,7 @@
   "common.retry": "Thử lại",
   "partReport.badge.good": "Bạn đã đạt mục tiêu luyện tập",
   "partReport.assisted": "Câu đã được hiện trên màn hình.",
-  "aiNotice.text": "Bản dịch này do AI tạo ra và có thể có lỗi. Nếu có gì chưa rõ, bản tiếng Anh là bản đúng.",
+  "aiNotice.text": "Dịch bằng AI. Có thể có lỗi. Bản tiếng Anh là bản đúng.",
   "aiNotice.legalEnglish": "Các thông báo pháp lý vẫn bằng tiếng Anh cho đến khi có người kiểm tra bản dịch.",
   "lang.menu.title": "Chọn ngôn ngữ",
   "lang.menu.inReview": "Còn thêm các ngôn ngữ đang được kiểm tra. Chúng sẽ xuất hiện ở đây sau khi có người xem lại.",
@@ -350,5 +350,6 @@
   "help.done.english": "Bấm “{send}”. Sau đó bạn sẽ thấy câu có được tính không.",
   "help.done.civics": "Bấm “{send}”. Sau đó bạn sẽ thấy câu trả lời có được tính không, và các đáp án chính thức.",
   "settings.textSize.sample": "Aa",
-  "lang.selected": "Đã chọn"
+  "lang.selected": "Đã chọn",
+  "aiNotice.more": "Xem thêm"
 }

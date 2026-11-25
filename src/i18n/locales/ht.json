@@ -256,7 +256,7 @@
   "common.retry": "Eseye ankò",
   "partReport.badge.good": "Ou rive nan objektif pratik la",
   "partReport.assisted": "Fraz la te parèt sou ekran an.",
-  "aiNotice.text": "Se AI ki fè tradiksyon sa a, e li ka gen erè. Si yon bagay pa klè, vèsyon angle a kòrèk.",
+  "aiNotice.text": "Se AI ki tradui sa a. Li ka gen erè. Angle a kòrèk.",
   "aiNotice.legalEnglish": "Avi legal yo rete an angle jiskaske yon moun tcheke tradiksyon an.",
   "lang.menu.title": "Chwazi yon lang",
   "lang.menu.inReview": "Gen plis lang k ap revize. Y ap parèt isit la apre yon moun fin tcheke yo.",
@@ -350,5 +350,6 @@
   "help.done.english": "Peze “{send}”. Apre sa w ap wè si sa konte.",
   "help.done.civics": "Peze “{send}”. Apre sa w ap wè si sa konte, ak repons ofisyèl yo.",
   "settings.textSize.sample": "Aa",
-  "lang.selected": "Chwazi"
+  "lang.selected": "Chwazi",
+  "aiNotice.more": "Plis"
 }

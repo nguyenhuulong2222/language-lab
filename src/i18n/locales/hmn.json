@@ -256,7 +256,7 @@
   "common.retry": "Sim dua",
   "partReport.badge.good": "Koj ua tau raws li lub hom phiaj xyaum",
   "partReport.assisted": "Kab lus tau tshwm rau ntawm lub vijtsam.",
-  "aiNotice.text": "AI txhais cov lus no thiab tej zaum yuav muaj qhov yuam kev. Yog muaj dab tsi tsis meej, siv cov lus Askiv.",
+  "aiNotice.text": "AI txhais. Tej zaum yuav muaj qhov yuam kev. Cov lus Askiv yog qhov tseeb.",
   "aiNotice.legalEnglish": "Cov lus ceeb toom raws cai yuav nyob ua lus Askiv mus txog thaum ib tug neeg kuaj cov lus txhais.",
   "lang.menu.title": "Xaiv ib hom lus",
   "lang.menu.inReview": "Tseem muaj lwm yam lus tab tom tshuaj xyuas. Lawv yuav tshwm ntawm no tom qab muaj neeg tshuaj xyuas lawm.",
@@ -350,5 +350,6 @@
   "help.done.english": "Nias “{send}”. Ces koj yuav pom tias puas suav.",
   "help.done.civics": "Nias “{send}”. Ces koj yuav pom tias puas suav, thiab cov lus teb raug cai.",
   "settings.textSize.sample": "Aa",
-  "lang.selected": "Xaiv lawm"
+  "lang.selected": "Xaiv lawm",
+  "aiNotice.more": "Ntxiv"
 }

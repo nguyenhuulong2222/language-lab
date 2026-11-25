@@ -256,7 +256,7 @@
   "common.retry": "再試一次",
   "partReport.badge.good": "您達到了練習目標",
   "partReport.assisted": "句子曾顯示在畫面上。",
-  "aiNotice.text": "這份翻譯由 AI 製作，可能有錯誤。如有不清楚的地方，以英文版為準。",
+  "aiNotice.text": "由 AI 翻譯，可能有錯誤。以英文為準。",
   "aiNotice.legalEnglish": "法律聲明在有人核對翻譯之前都以英文顯示。",
   "lang.menu.title": "選擇語言",
   "lang.menu.inReview": "还有更多语言正在审核中。有人检查后，它们会出现在这里。",
@@ -350,5 +350,6 @@
   "help.done.english": "按「{send}」。然後您會看到這次是否算數。",
   "help.done.civics": "按「{send}」。然後您會看到這次是否算數，以及官方答案。",
   "settings.textSize.sample": "Aa",
-  "lang.selected": "已選擇"
+  "lang.selected": "已選擇",
+  "aiNotice.more": "更多"
 }

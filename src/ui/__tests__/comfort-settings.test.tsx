@@ -9,6 +9,7 @@ import tokensCss from "../styles/tokens.css?raw";
 import { Header } from "../components/Header";
 import { SpeakButton } from "../components/SpeakButton";
 import { SettingsPanel } from "../components/SettingsPanel";
+import { Footer } from "../components/Footer";
 import { SettingsProvider, TEXT_SIZES } from "../settings";
 import { VoiceProvider } from "../voice/VoiceProvider";
 import { UNSUPPORTED_LISTENER } from "../voice/speech-listener";
@@ -18,12 +19,19 @@ const cssFiles = import.meta.glob("../**/*.css", { query: "?raw", import: "defau
 
 describe("the header", () => {
   const html = renderToString(<Header />);
-  it("has Language, Text size and About buttons that open panels, and no Home button (Back to Home is in the page)", () => {
+  it("has Text size, then the language button, both opening panels; no Home and no About (About is in the footer)", () => {
     expect(html).toContain(">Text size<");
-    expect(html).toContain("About &amp; disclaimer");
+    expect(html).not.toContain("About &amp; disclaimer");
     expect(html).not.toContain(">Home<");
-    expect((html.match(/aria-expanded="false"/g) ?? []).length).toBe(3);
-    expect((html.match(/aria-controls=/g) ?? []).length).toBe(3);
+    expect(html.indexOf(">Text size<")).toBeLessThan(html.indexOf("header__lang"));
+    expect((html.match(/aria-expanded="false"/g) ?? []).length).toBe(2);
+    expect((html.match(/aria-controls=/g) ?? []).length).toBe(2);
+  });
+  it("the footer has About & disclaimer as a big button over a closed panel with the full disclaimer", () => {
+    const footer = renderToString(<Footer />);
+    expect(footer).toMatch(/class="btn btn--secondary footer__about"[^>]*aria-expanded="false"/);
+    expect(footer).toContain("About &amp; disclaimer");
+    expect(footer).toMatch(/class="footer__panel"[^>]*hidden/);
   });
   it("the settings panel has no heading, so the page heading stays first", () => {
     const settings = renderToString(<SettingsProvider><SettingsPanel onClose={() => {}} /></SettingsProvider>);

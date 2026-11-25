@@ -256,7 +256,7 @@
   "common.retry": "다시 시도",
   "partReport.badge.good": "연습 목표에 도달했습니다",
   "partReport.assisted": "문장이 화면에 보였습니다.",
-  "aiNotice.text": "이 번역은 AI가 만들어 틀린 부분이 있을 수 있습니다. 분명하지 않으면 영어판이 맞습니다.",
+  "aiNotice.text": "AI 번역입니다. 틀린 부분이 있을 수 있습니다. 영어가 맞습니다.",
   "aiNotice.legalEnglish": "법적 안내는 사람이 번역을 확인할 때까지 영어로 표시됩니다.",
   "lang.menu.title": "언어를 선택하세요",
   "lang.menu.inReview": "더 많은 언어가 검토 중입니다. 사람이 확인한 뒤에 여기에 표시됩니다.",
@@ -350,5 +350,6 @@
   "help.done.english": "“{send}”을(를) 누르세요. 그러면 점수에 포함되는지 볼 수 있습니다.",
   "help.done.civics": "“{send}”을(를) 누르세요. 그러면 점수에 포함되는지와 공식 답을 볼 수 있습니다.",
   "settings.textSize.sample": "Aa",
-  "lang.selected": "선택됨"
+  "lang.selected": "선택됨",
+  "aiNotice.more": "더 보기"
 }

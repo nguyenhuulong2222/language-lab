@@ -238,6 +238,10 @@ window.__lab = (() => {
     const creditsOpen = document.querySelector("main > .ll-container")?.hidden === true;
     const bar = [...document.querySelectorAll("main .back-home__button")].find(visible);
     out.backHome = { needed: !onHome && !creditsOpen, top: bar ? Math.round(bar.getBoundingClientRect().top + window.scrollY) : null, viewport: window.innerHeight };
+    // Q2: the header rows (the logo and the buttons, grouped by their vertical centre).
+    const headerItems = [...document.querySelectorAll("header .header__brand, header .header__button")].filter(visible);
+    const centres = headerItems.map((el) => { const b = el.getBoundingClientRect(); return (b.top + b.bottom) / 2; }).sort((a, b) => a - b);
+    out.headerRows = centres.reduce((rows, c, i) => (i > 0 && c - centres[i - 1] < 20 ? rows : rows + 1), 0);
     out.horizontalScroll = out.scrollWidth > vw + 1;
     return out;
   };
@@ -643,6 +647,7 @@ async function main() {
     for (const x of r.clipped) problems.push(`clipped: ${x}`);
     for (const x of r.smallTargets) problems.push(`small target: ${x}`);
     for (const x of r.smallText ?? []) problems.push(`text below 16px: ${x}`);
+    if (r.size === "normal" && r.headerRows > 1) problems.push(`the header is ${r.headerRows} rows at normal size (expected one)`);
     if (r.backHome?.needed && (r.backHome.top === null || r.backHome.top + 1 > r.backHome.viewport)) problems.push(r.backHome.top === null ? "no visible Back to Home" : `Back to Home is below the first viewport (top ${r.backHome.top}px)`);
     for (const x of r.shortPrimary ?? []) problems.push(`primary button below 64px: ${x}`);
     if (r.primaryCount !== undefined && r.primaryCount !== 1 && !(r.primaryCount === 0 && r.optionCards > 1)) problems.push(`${r.primaryCount} primary buttons (expected exactly one)${r.primaryCount > 1 ? ": " + r.primaryNames.join(" / ") : ""}`);

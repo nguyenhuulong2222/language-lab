@@ -249,7 +249,7 @@
   "common.retry": "Try again",
   "partReport.badge.good": "You reached the practice goal",
   "partReport.assisted": "The sentence was shown on the screen.",
-  "aiNotice.text": "This translation was made by AI and may have mistakes. If something is unclear, the English version is correct.",
+  "aiNotice.text": "Translated by AI. It may have mistakes. The English is correct.",
   "aiNotice.legalEnglish": "Legal notices stay in English until a person checks the translation.",
   "lang.menu.title": "Choose a language",
   "lang.menu.inReview": "More languages are in review. They will appear here after a person has checked them.",
@@ -343,5 +343,6 @@
   "help.done.english": "Press “{send}”. Then you see if it counts.",
   "help.done.civics": "Press “{send}”. Then you see if it counts, and the official answers.",
   "settings.textSize.sample": "Aa",
-  "lang.selected": "Selected"
+  "lang.selected": "Selected",
+  "aiNotice.more": "More"
 }
