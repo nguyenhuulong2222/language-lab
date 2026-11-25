@@ -325,8 +325,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | သင်က စကားလုံးတို “{said}” ကို ထပ်ထည့်ခဲ့သည်။ ၎င်းကို ဆက်လက်ရေတွက်သည်။ |
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | ဤရလဒ်သည် သင့်ဖုန်း သို့မဟုတ် ကွန်ပျူတာ ကြားသော စကားလုံးများကို အသုံးပြုသည်။ မှားကြားလျှင် ထပ်စမ်းပါ သို့မဟုတ် အဖြေကို ရိုက်ထည့်ပါ။ |
 | `compare.honest.typed` | This result is based on the words you typed. | ဤရလဒ်သည် သင်ရိုက်ထည့်ခဲ့သော စကားလုံးများအပေါ် အခြေခံသည်။ |
-| `home.special.title` | 65/20 civics practice | 65/20 နိုင်ငံသားဗဟုသုတ လေ့ကျင့်ခန်း |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ကျွန်ုပ်သည် အသက် 65 နှစ်နှင့်အထက်ဖြစ်ပြီး အမြဲတမ်းနေထိုင်သူအဖြစ် 20 နှစ်နှင့်အထက် နေထိုင်ခဲ့ပါသည် |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | 65/20 အတွက် မေးခွန်းများသာ (ကြယ်ပွင့်ပါသည်) |
 | `report.line.civics.none` | No civics questions were scored. | အမှတ်ပေးခံရသော နိုင်ငံသားဗဟုသုတမေးခွန်း မရှိပါ။ |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | မှန်ကန်စွာ ဖြေခဲ့သော နိုင်ငံသားဗဟုသုတမေးခွန်း- {scored} ခုထဲမှ {correct} ခု။ |
@@ -380,6 +378,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | အင်္ဂလိပ်စာမေးပွဲ မရှိ။ နိုင်ငံသားပညာ ပုံမှန်အတိုင်း၊ စကားပြန် သုံးနိုင်သည်။ |
 | `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | သင့်အသက်နှင့် အမြဲတမ်းနေထိုင်သူ နှစ်များကို N-400 တင်သည့်နေ့တွင် ရေတွက်သည်။ |
 | `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | အင်တာဗျူးတွင် စကားပြန်ဖြင့် ကိုယ်ပိုင်ဘာသာစကားဖြင့် နိုင်ငံသားပညာကို ဖြေနိုင်သည်။ ဤအက်ပ်သည် အင်္ဂလိပ်မေးခွန်းများကို လေ့ကျင့်ပေးသည်။ |
+| `report.exception` | Practice as {exception} | {exception} အဖြစ် လေ့ကျင့်ခြင်း |
+| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | စကားပြန်ဖြင့် ကိုယ်ပိုင်ဘာသာစကားဖြင့် တကယ့် နိုင်ငံသားပညာ စာမေးပွဲကို ဖြေဆိုနိုင်သည်။ |
+| `intro.who.legend` | Who is practicing? | ဘယ်သူ လေ့ကျင့်နေသလဲ။ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

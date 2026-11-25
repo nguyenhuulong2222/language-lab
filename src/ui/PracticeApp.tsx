@@ -20,6 +20,8 @@ import {
   sessionSteps,
   specialConsiderationOffered,
   exceptionOffered,
+  englishExempt,
+  type AgeException,
   type PracticeAction,
   type PracticeEngine,
   type PracticeState,
@@ -207,16 +209,10 @@ export function Screen({
           profiles={env.content.profiles}
           boundaryDate={env.boundaryDate}
           needs={modeNeeds(state.mode ?? "full")}
-          {...(specialRules === null || !modeHasCivics(state.mode ?? "full")
-            ? {}
-            : { special: { rules: specialRules, initial: state.exceptionRequested === "65/20" } })}
+          {...(modeHasCivics(state.mode ?? "full") ? { exceptions: { initial: state.exceptionRequested, special: specialRules } } : {})}
           focusOnFirstRender
           onStart={(choice) => {
-            const { specialConsideration, ...rest } = choice;
-            // 65/20 from the setup box; 50/20 and 55/15 carried from Home.
-            const requested = state.exceptionRequested;
-            const exception = specialConsideration === true ? "65/20" : requested === "50/20" || requested === "55/15" ? requested : "none";
-            const go = () => dispatch({ type: "start", ...rest, ...(exception === "none" ? {} : { exception }), seed: seed(), at: now() });
+            const go = () => dispatch({ type: "start", ...choice, seed: seed(), at: now() });
             // The answer key and the official answers are fetched when a civics part starts.
             const needsCivics = modeParts(state.mode ?? "full").includes("civics") && choice.filedOn !== undefined;
             if (!needsCivics || env.prepareCivics === undefined) return go();
@@ -287,6 +283,7 @@ export function Screen({
           {...(state.setup?.exception === "65/20" && engine.civicsRulesFor(state) !== null
             ? { special: engine.civicsRulesFor(state)! }
             : {})}
+          exempt={state.setup !== null && englishExempt(state.setup.exception)}
         />
       );
 
@@ -294,7 +291,7 @@ export function Screen({
       if (state.partReport !== null) return <PartReportPage report={state.partReport} restart={restart} />;
       const session = engine.buildSession(state);
       if (session === null) return null;
-      return <ReportPage session={session} restart={restart} />;
+      return <ReportPage session={session} restart={restart} exception={state.setup?.exception ?? "none"} />;
     }
   }
 }
@@ -304,7 +301,7 @@ function PartReportPage({ report, restart }: { report: NonNullable<PracticeState
 }
 
 /** The full report with the N-400 note and a way back. Focus starts on the report heading. */
-function ReportPage({ session, restart }: { session: InterviewSession; restart: () => void }) {
+function ReportPage({ session, restart, exception }: { session: InterviewSession; restart: () => void; exception: AgeException }) {
   const t = useT();
   const container = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -313,11 +310,11 @@ function ReportPage({ session, restart }: { session: InterviewSession; restart: 
   return (
     <div className="screen" ref={container}>
       <ReportScreen session={session} />
+      {/* The choice made on Home or in setup, by name: "Practice as 55/15". */}
+      {exception !== "none" && <p className="progress-line report__exception">{t("report.exception", { exception })}</p>}
       <p className="note"><LegalText messageKey="report.n400Note" /></p>
-      {/* A 65/20 full interview has no reading and writing: say why, with the USCIS source. */}
-      {session.finalReport !== undefined && !session.finalReport.stageSummaries.some((s) => s.stage === "reading") && (
-        <SpecialLanguageLine />
-      )}
+      {/* 50/20, 55/15 and 65/20 have no reading and writing: say why, with the USCIS source. */}
+      {englishExempt(exception) && <SpecialLanguageLine />}
       <div className="btn-row">
         <button type="button" className="btn btn--primary" onClick={restart}>
           {t("report.again")}

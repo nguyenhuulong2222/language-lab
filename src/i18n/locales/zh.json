@@ -299,8 +299,6 @@
   "compare.note.shortAdded": "您多加了短字「{said}」。這樣仍然算數。",
   "compare.honest.heard": "這個結果用的是您的手機或電腦聽到的字。如果聽錯了，請再試一次或輸入您的回答。",
   "compare.honest.typed": "這個結果是根據您輸入的字詞。",
-  "home.special.title": "65/20 公民常識練習",
-  "intro.special.label": "我 65 歲或以上，並已是永久居民 20 年或以上",
   "intro.special.help": "這只會改變練習；不會儲存或傳送任何資料。公民常識部分會從官方清單中標有星號（*）的 {bank} 題中問 {asked} 題。在這個練習中，{asked} 題都會問完。練習及格分數是答對 {pass} 題。關於您自己的情況，請查看 uscis.gov：年齡和年數以提出申請的日期計算。",
   "special.englishExempt": "USCIS：在提出申請時，如果您 50 歲或以上並已是永久居民 20 年（50/20），或 55 歲或以上並已 15 年（55/15），您可免除英語要求（閱讀、書寫、口說和理解英語），但仍須參加公民常識考試。若您自備口譯員，可用母語參加。如果您 65 歲或以上並至少 20 年（65/20），您也可免除英語，官員會使用特別指定的公民常識考試表。",
   "special.language.link": "uscis.gov 上的例外與便利措施",
@@ -361,5 +359,8 @@
   "home.who.5515.title": "55 歲或以上，持綠卡 15 年或更久 (55/15)",
   "home.who.exempt.text": "不考英文。公民常識照常考；您可以使用口譯員。",
   "home.exceptions.timing": "您的年齡和永久居民年數，以遞交 N-400 當天計算。",
-  "study.exempt.note": "面試時，您可以透過口譯員用自己的語言回答公民常識問題。這個應用程式練習的是英文問題。"
+  "study.exempt.note": "面試時，您可以透過口譯員用自己的語言回答公民常識問題。這個應用程式練習的是英文問題。",
+  "report.exception": "以 {exception} 身分練習",
+  "civics.exempt.line": "您可以透過口譯員用自己的語言參加真正的公民常識考試。",
+  "intro.who.legend": "誰在練習？"
 }

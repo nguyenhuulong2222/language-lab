@@ -44,3 +44,20 @@ export function SpecialLanguageLine() {
     </div>
   );
 }
+
+/**
+ * One short legal line under the stepper on the civics screen for 50/20, 55/15 and 65/20: the real
+ * civics test may be taken in the learner's own language with an interpreter, linked to USCIS.
+ */
+export function ExemptCivicsLine() {
+  const t = useT();
+  return (
+    <p className="note exempt-line">
+      <LegalText messageKey="civics.exempt.line" />{" "}
+      <a className="special-note__link" href={EXCEPTIONS_URL} target="_blank" rel="noopener noreferrer">
+        {t("special.language.link")}
+        <span className="ll-sr-only"> {t("common.newTab")}</span>
+      </a>
+    </p>
+  );
+}

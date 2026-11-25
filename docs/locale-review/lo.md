@@ -325,8 +325,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | ທ່ານເພີ່ມຄໍາສັ້ນ “{said}”. ແບບນີ້ຍັງນັບໄດ້. |
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | ຜົນນີ້ໃຊ້ຄຳທີ່ໂທລະສັບ ຫຼື ຄອມພິວເຕີໄດ້ຍິນ. ຖ້າໄດ້ຍິນຜິດ ໃຫ້ລອງອີກ ຫຼື ພິມຄຳຕອບ. |
 | `compare.honest.typed` | This result is based on the words you typed. | ຜົນນີ້ອີງໃສ່ຄໍາທີ່ທ່ານພິມ. |
-| `home.special.title` | 65/20 civics practice | ຝຶກວິຊາພົນລະເມືອງ 65/20 |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ຂ້ອຍມີອາຍຸ 65 ປີຂຶ້ນໄປ ແລະ ເປັນຜູ້ມີຖິ່ນທີ່ຢູ່ຖາວອນມາ 20 ປີຂຶ້ນໄປ |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | ສະເພາະຄຳຖາມສຳລັບ 65/20 (ມີເຄື່ອງໝາຍດາວ) |
 | `report.line.civics.none` | No civics questions were scored. | ບໍ່ມີຄຳຖາມວິຊາພົນລະເມືອງໃດຖືກໃຫ້ຄະແນນ. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | ຄຳຖາມວິຊາພົນລະເມືອງທີ່ຕອບຖືກ: {correct} ຈາກ {scored}. |
@@ -380,6 +378,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | ບໍ່ຕ້ອງສອບພາສາອັງກິດ. ສອບຄວາມຮູ້ພົນລະເມືອງຕາມປົກກະຕິ; ໃຊ້ນາຍແປພາສາໄດ້. |
 | `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | ອາຍຸ ແລະ ຈຳນວນປີທີ່ເປັນຜູ້ຢູ່ອາໄສຖາວອນ ນັບໃນມື້ທີ່ທ່ານຍື່ນ N-400. |
 | `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | ໃນການສຳພາດ ທ່ານຕອບຄຳຖາມຄວາມຮູ້ພົນລະເມືອງເປັນພາສາຂອງທ່ານຜ່ານນາຍແປພາສາໄດ້. ແອັບນີ້ຝຶກຄຳຖາມພາສາອັງກິດ. |
+| `report.exception` | Practice as {exception} | ຝຶກໃນກໍລະນີ {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | ທ່ານສອບຄວາມຮູ້ພົນລະເມືອງແທ້ເປັນພາສາຂອງທ່ານຜ່ານນາຍແປພາສາໄດ້. |
+| `intro.who.legend` | Who is practicing? | ໃຜກຳລັງຝຶກ? |
 
 ## Lines marked ⚠ (meaning differs a little)
 

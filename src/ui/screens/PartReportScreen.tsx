@@ -84,7 +84,7 @@ function PartBody({ report }: { report: PartReport }) {
               ? t("partReport.none")
               : t("partReport.civics.summary", { correct: report.correct, scored })}
           </p>
-          {report.exception === "65/20" && <p className="progress-line">{t("home.special.title")}</p>}
+          {report.exception !== "none" && <p className="progress-line">{t("report.exception", { exception: report.exception })}</p>}
           <p>{t("partReport.civics.needed", { needed: report.passingScore })}</p>
           {report.exception !== "none" && <SpecialLanguageLine />}
           <p className="note">

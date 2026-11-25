@@ -508,8 +508,8 @@ async function specialPass({ cdp, lab, js, click, record, L }) {
   await record("home-special");
   await click(L("home.part.civics.title"));
   // The label is a legal key (English until reviewed), so wait for the checkbox itself.
-  await waitFor(() => cdp.evaluate(`!!document.querySelector('input[name="special"]')`), "the 65/20 choice on setup");
-  if (!(await cdp.evaluate(`document.querySelector('input[name="special"]').checked`))) throw new Error("the 65/20 card did not tick the choice");
+  await waitFor(() => cdp.evaluate(`!!document.querySelector('input[name="exception"][value="65/20"]')`), "the 65/20 choice on setup");
+  if (!(await cdp.evaluate(`document.querySelector('input[name="exception"][value="65/20"]').checked`))) throw new Error("the 65/20 card did not tick the choice");
   await record("setup-special");
   await cdp.evaluate(`document.querySelector('input[name="filed"][value="on_or_after"]').click()`);
   await click(L("intro.start"));

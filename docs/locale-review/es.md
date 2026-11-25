@@ -325,8 +325,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Usted agregó la palabra corta “{said}”. Esto sigue contando. |
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Este resultado usa las palabras que oyó su teléfono o computadora. Si le oyó mal, inténtelo otra vez o escriba su respuesta. |
 | `compare.honest.typed` | This result is based on the words you typed. | Este resultado se basa en las palabras que usted escribió. |
-| `home.special.title` | 65/20 civics practice | Práctica de educación cívica 65/20 |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Tengo 65 años o más y he sido residente permanente durante 20 años o más |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Solo las preguntas para 65/20 (marcadas con un asterisco) |
 | `report.line.civics.none` | No civics questions were scored. | No se calificó ninguna pregunta de educación cívica. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Preguntas de educación cívica contestadas correctamente: {correct} de {scored}. |
@@ -380,3 +378,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Sin examen de inglés. Educación cívica como siempre; puede usar un intérprete. |
 | `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Su edad y sus años como residente permanente cuentan el día en que presenta el N-400. |
 | `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | En su entrevista puede responder educación cívica en su propio idioma con un intérprete. Esta app practica las preguntas en inglés. |
+| `report.exception` | Practice as {exception} | Práctica como {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | Puede hacer el examen real de educación cívica en su propio idioma con un intérprete. |
+| `intro.who.legend` | Who is practicing? | ¿Quién practica? |

@@ -325,8 +325,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Ou ajoute mo kout “{said}”. Sa toujou konte. |
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Rezilta sa a sèvi ak mo telefòn oswa òdinatè w tande. Si li tande w mal, eseye ankò oswa tape repons ou. |
 | `compare.honest.typed` | This result is based on the words you typed. | Rezilta sa a baze sou mo ou tape yo. |
-| `home.special.title` | 65/20 civics practice | Pratik edikasyon sivik 65/20 |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Mwen gen 65 an oswa plis epi mwen rezidan pèmanan depi 20 an oswa plis |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Sèlman kesyon pou 65/20 yo (make ak yon zetwal) |
 | `report.line.civics.none` | No civics questions were scored. | Pa gen okenn kesyon edikasyon sivik ki te resevwa nòt. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Kesyon edikasyon sivik ou reponn kòrèkteman: {correct} sou {scored}. |
@@ -380,3 +378,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Pa gen egzamen angle. Sivik nòmal; ou ka sèvi ak yon entèprèt. |
 | `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Laj ou ak ane ou kòm rezidan pèmanan konte jou ou depoze N-400 la. |
 | `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Nan entèvyou a ou ka reponn kesyon sivik nan pwòp lang ou ak yon entèprèt. App sa a pratike kesyon an angle yo. |
+| `report.exception` | Practice as {exception} | Pratik kòm {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | Ou ka pase vrè egzamen sivik la nan pwòp lang ou ak yon entèprèt. |
+| `intro.who.legend` | Who is practicing? | Kiyès k ap pratike? |

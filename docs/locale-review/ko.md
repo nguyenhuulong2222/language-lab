@@ -325,8 +325,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | 짧은 단어 “{said}”을(를) 더하셨습니다. 그래도 인정됩니다. |
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | 이 결과는 휴대폰이나 컴퓨터가 들은 말을 기준으로 합니다. 잘못 들었다면 다시 해 보거나 답을 입력하세요. |
 | `compare.honest.typed` | This result is based on the words you typed. | 이 결과는 입력하신 단어를 바탕으로 합니다. |
-| `home.special.title` | 65/20 civics practice | 65/20 시민 상식 연습 |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | 저는 65세 이상이며 영주권자로 20년 이상 지냈습니다 |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | 65/20용 질문만 (별표 표시) |
 | `report.line.civics.none` | No civics questions were scored. | 채점된 시민 상식 질문이 없습니다. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | 맞게 답한 시민 상식 질문: {scored}개 중 {correct}개. |
@@ -380,6 +378,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | 영어 시험 없음. 시민 상식은 평소대로; 통역사를 쓸 수 있습니다. |
 | `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | 나이와 영주권자로 지낸 기간은 N-400을 제출하는 날을 기준으로 합니다. |
 | `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | 인터뷰에서는 통역사와 함께 모국어로 시민 상식에 답할 수 있습니다. 이 앱은 영어 질문을 연습합니다. |
+| `report.exception` | Practice as {exception} | {exception}(으)로 연습 |
+| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | 실제 시민 상식 시험은 통역사와 함께 모국어로 볼 수 있습니다. |
+| `intro.who.legend` | Who is practicing? | 누가 연습하나요? |
 
 ## Lines marked ⚠ (meaning differs a little)
 

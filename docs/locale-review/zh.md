@@ -325,8 +325,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | 您多加了短字「{said}」。這樣仍然算數。 |
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | 這個結果用的是您的手機或電腦聽到的字。如果聽錯了，請再試一次或輸入您的回答。 |
 | `compare.honest.typed` | This result is based on the words you typed. | 這個結果是根據您輸入的字詞。 |
-| `home.special.title` | 65/20 civics practice | 65/20 公民常識練習 |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | 我 65 歲或以上，並已是永久居民 20 年或以上 |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | 只看 65/20 的問題（標有星號） |
 | `report.line.civics.none` | No civics questions were scored. | 沒有任何公民常識問題被計分。 |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | 公民常識問題答對：{scored} 題中答對 {correct} 題。 |
@@ -380,3 +378,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | 不考英文。公民常識照常考；您可以使用口譯員。 |
 | `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | 您的年齡和永久居民年數，以遞交 N-400 當天計算。 |
 | `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | 面試時，您可以透過口譯員用自己的語言回答公民常識問題。這個應用程式練習的是英文問題。 |
+| `report.exception` | Practice as {exception} | 以 {exception} 身分練習 |
+| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | 您可以透過口譯員用自己的語言參加真正的公民常識考試。 |
+| `intro.who.legend` | Who is practicing? | 誰在練習？ |

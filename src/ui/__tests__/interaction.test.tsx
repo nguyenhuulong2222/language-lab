@@ -187,7 +187,7 @@ describe("Study first and 65/20", () => {
     app();
     fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="65/20"]')!);
     fireEvent.click(button(EN["home.part.civics.title"]));
-    const box = screen.getByLabelText<HTMLInputElement>(EN["intro.special.label"]);
+    const box = document.querySelector<HTMLInputElement>('input[name="exception"][value="65/20"]')!;
     expect(box.checked).toBe(true);
     expect(document.body.textContent).toContain("asks 10 of the 20 questions marked with a star (*)");
     const link = screen.getByRole("link", { name: (n) => n.startsWith(EN["special.language.link"]) && n.includes(EN["common.newTab"]) });
@@ -199,7 +199,7 @@ describe("Study first and 65/20", () => {
   it("65/20 full interview: N-400, then civics (no reading or writing), and the report says why", async () => {
     app();
     await startSetup(EN["home.full.title"], { profile: true, filed: "on_or_after" });
-    fireEvent.click(screen.getByLabelText(EN["intro.special.label"]));
+    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="exception"][value="65/20"]')!);
     fireEvent.click(button(EN["intro.start"]));
     fireEvent.click(await findButton(EN["coach.choice.no"]));
     // The stepper has no reading or writing step.
@@ -228,11 +228,11 @@ describe("Study first and 65/20", () => {
     expect(document.body.textContent).not.toContain("Reading sentences read correctly");
     expect(document.body.textContent).toContain("If you are 65 or older with at least 20 years (65/20), you are also exempt from English");
   }, 30000);
-  it("65/20 can be unticked: then the normal 2025 test (20 questions) runs", async () => {
+  it("65/20 can be changed in setup to Most people: then the normal 2025 test (20 questions) runs", async () => {
     app();
     fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="65/20"]')!);
     fireEvent.click(button(EN["home.part.civics.title"]));
-    fireEvent.click(screen.getByLabelText(EN["intro.special.label"]));
+    fireEvent.click(document.querySelector<HTMLInputElement>('input[name="exception"][value="none"]')!);
     fireEvent.click(document.querySelector<HTMLInputElement>('input[name="filed"][value="on_or_after"]')!);
     fireEvent.click(button(EN["intro.start"]));
     expect(await screen.findByText("Question 1 of 20")).toBeTruthy();
@@ -450,7 +450,7 @@ describe("the new Home: Who, then What (Q3)", () => {
     app();
     fireEvent.click(document.querySelector<HTMLInputElement>('input[name="who"][value="65/20"]')!);
     fireEvent.click(button(EN["home.full.title"]));
-    expect(screen.getByLabelText<HTMLInputElement>(EN["intro.special.label"]).checked).toBe(true);
+    expect(document.querySelector<HTMLInputElement>('input[name="exception"][value="65/20"]')!.checked).toBe(true);
   });
 });
 describe("Who is practicing: four choices (E2)", () => {

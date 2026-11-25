@@ -325,8 +325,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Bạn đã thêm từ ngắn “{said}”. Vẫn được tính. |
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Kết quả này dựa trên những từ điện thoại hoặc máy tính nghe được. Nếu nó nghe sai, hãy thử lại hoặc gõ câu trả lời. |
 | `compare.honest.typed` | This result is based on the words you typed. | Kết quả này dựa trên những từ bạn đã gõ. |
-| `home.special.title` | 65/20 civics practice | Luyện kiến thức công dân 65/20 |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Tôi từ 65 tuổi trở lên và đã là thường trú nhân từ 20 năm trở lên |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Chỉ các câu hỏi cho diện 65/20 (có đánh dấu sao) |
 | `report.line.civics.none` | No civics questions were scored. | Không có câu hỏi kiến thức công dân nào được chấm. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Số câu hỏi kiến thức công dân trả lời đúng: {correct} trên {scored}. |
@@ -380,6 +378,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Không thi tiếng Anh. Thi kiến thức công dân như thường; bạn có thể dùng thông dịch viên. |
 | `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Tuổi và số năm thường trú của bạn được tính vào ngày bạn nộp đơn N-400. |
 | `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Khi phỏng vấn, bạn có thể trả lời kiến thức công dân bằng tiếng mẹ đẻ với thông dịch viên. Ứng dụng này luyện câu hỏi tiếng Anh. |
+| `report.exception` | Practice as {exception} | Luyện tập theo diện {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | Bạn có thể thi kiến thức công dân thật bằng tiếng mẹ đẻ với thông dịch viên. |
+| `intro.who.legend` | Who is practicing? | Ai đang luyện tập? |
 
 ## Lines marked ⚠ (meaning differs a little)
 

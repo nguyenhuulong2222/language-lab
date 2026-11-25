@@ -299,8 +299,6 @@
   "compare.note.shortAdded": "Você acrescentou a palavra curta “{said}”. Isto ainda conta.",
   "compare.honest.heard": "Este resultado usa as palavras que seu celular ou computador ouviu. Se ouviu errado, tente de novo ou digite sua resposta.",
   "compare.honest.typed": "Este resultado se baseia nas palavras que você digitou.",
-  "home.special.title": "Prática de educação cívica 65/20",
-  "intro.special.label": "Tenho 65 anos ou mais e sou residente permanente há 20 anos ou mais",
   "intro.special.help": "Isto só muda a prática; nada é salvo nem enviado. A parte de educação cívica faz {asked} das {bank} perguntas marcadas com um asterisco (*) na lista oficial. Nesta prática, todas as {asked} são feitas. A pontuação de aprovação da prática é de {pass} respostas corretas. Para o seu próprio caso, consulte uscis.gov: a idade e os anos contam na data em que o pedido é apresentado.",
   "special.englishExempt": "USCIS: na data do pedido, se você tem 50 anos ou mais e 20 anos como residente permanente (50/20), ou 55 anos ou mais e 15 anos (55/15), está isento do requisito de inglês (ler, escrever, falar e entender inglês), mas ainda precisa fazer o teste de educação cívica. Pode fazê-lo no seu idioma nativo se trouxer um intérprete. Se você tem 65 anos ou mais e pelo menos 20 anos (65/20), também está isento do inglês, e o oficial usa formulários de teste de educação cívica especialmente designados.",
   "special.language.link": "Exceções e adaptações em uscis.gov",
@@ -361,5 +359,8 @@
   "home.who.5515.title": "55 anos ou mais, green card há 15 anos ou mais (55/15)",
   "home.who.exempt.text": "Sem teste de inglês. Educação cívica como de costume; você pode usar um intérprete.",
   "home.exceptions.timing": "Sua idade e seus anos como residente permanente contam no dia em que você envia o N-400.",
-  "study.exempt.note": "Na entrevista você pode responder educação cívica no seu idioma com um intérprete. Este app pratica as perguntas em inglês."
+  "study.exempt.note": "Na entrevista você pode responder educação cívica no seu idioma com um intérprete. Este app pratica as perguntas em inglês.",
+  "report.exception": "Prática como {exception}",
+  "civics.exempt.line": "Você pode fazer o teste real de educação cívica no seu idioma com um intérprete.",
+  "intro.who.legend": "Quem vai praticar?"
 }

@@ -325,8 +325,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Nagdagdag kayo ng maikling salitang “{said}”. Bilang pa rin ito. |
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Ginagamit ng resultang ito ang mga salitang narinig ng iyong phone o computer. Kung mali ang pagkarinig, subukan ulit o i-type ang iyong sagot. |
 | `compare.honest.typed` | This result is based on the words you typed. | Batay ang resultang ito sa mga salitang in-type ninyo. |
-| `home.special.title` | 65/20 civics practice | Pagsasanay sa sibika para sa 65/20 |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Ako ay 65 taong gulang pataas at permanent resident na nang 20 taon o higit pa |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Mga tanong lang para sa 65/20 (may tandang bituin) |
 | `report.line.civics.none` | No civics questions were scored. | Walang tanong sa sibika na naiskor. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Mga tanong sa sibika na tama ang sagot: {correct} sa {scored}. |
@@ -380,6 +378,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Walang pagsusulit sa Ingles. Karaniwang sibika; maaari kang gumamit ng interpreter. |
 | `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Ang iyong edad at mga taon bilang permanenteng residente ay binibilang sa araw na isinumite mo ang N-400. |
 | `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Sa iyong interview, maaari kang sumagot sa sibika sa sarili mong wika gamit ang interpreter. Ang app na ito ay nagsasanay sa mga tanong sa Ingles. |
+| `report.exception` | Practice as {exception} | Pagsasanay bilang {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | Maaari mong kunin ang totoong pagsusulit sa sibika sa sarili mong wika gamit ang interpreter. |
+| `intro.who.legend` | Who is practicing? | Sino ang nagsasanay? |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -299,8 +299,6 @@
   "compare.note.shortAdded": "Nagdagdag kayo ng maikling salitang “{said}”. Bilang pa rin ito.",
   "compare.honest.heard": "Ginagamit ng resultang ito ang mga salitang narinig ng iyong phone o computer. Kung mali ang pagkarinig, subukan ulit o i-type ang iyong sagot.",
   "compare.honest.typed": "Batay ang resultang ito sa mga salitang in-type ninyo.",
-  "home.special.title": "Pagsasanay sa sibika para sa 65/20",
-  "intro.special.label": "Ako ay 65 taong gulang pataas at permanent resident na nang 20 taon o higit pa",
   "intro.special.help": "Pagsasanay lang ang binabago nito; walang sine-save o ipinapadala. Itatanong ng bahagi ng sibika ang {asked} sa {bank} tanong na may tandang bituin (*) sa opisyal na listahan. Sa pagsasanay na ito, itatanong ang lahat ng {asked}. Ang practice passing score ay {pass} tamang sagot. Para sa sarili mong kaso, tingnan ang uscis.gov: binibilang ang edad at mga taon sa petsa ng pag-file.",
   "special.englishExempt": "USCIS: sa petsa ng pag-file, kung ikaw ay 50 taong gulang pataas at 20 taon nang permanent resident (50/20), o 55 pataas at 15 taon (55/15), exempted ka sa English requirement (pagbasa, pagsulat, pagsasalita at pag-unawa ng English), pero kailangan mo pa ring kumuha ng civics test. Maaari mo itong kunin sa sarili mong wika kung may dala kang interpreter. Kung ikaw ay 65 pataas at hindi bababa sa 20 taon (65/20), exempted ka rin sa English, at gagamit ang opisyal ng mga espesyal na itinakdang civics test form.",
   "special.language.link": "Mga exception at accommodation sa uscis.gov",
@@ -361,5 +359,8 @@
   "home.who.5515.title": "55 taong gulang pataas, may green card nang 15 taon o higit pa (55/15)",
   "home.who.exempt.text": "Walang pagsusulit sa Ingles. Karaniwang sibika; maaari kang gumamit ng interpreter.",
   "home.exceptions.timing": "Ang iyong edad at mga taon bilang permanenteng residente ay binibilang sa araw na isinumite mo ang N-400.",
-  "study.exempt.note": "Sa iyong interview, maaari kang sumagot sa sibika sa sarili mong wika gamit ang interpreter. Ang app na ito ay nagsasanay sa mga tanong sa Ingles."
+  "study.exempt.note": "Sa iyong interview, maaari kang sumagot sa sibika sa sarili mong wika gamit ang interpreter. Ang app na ito ay nagsasanay sa mga tanong sa Ingles.",
+  "report.exception": "Pagsasanay bilang {exception}",
+  "civics.exempt.line": "Maaari mong kunin ang totoong pagsusulit sa sibika sa sarili mong wika gamit ang interpreter.",
+  "intro.who.legend": "Sino ang nagsasanay?"
 }

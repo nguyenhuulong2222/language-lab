@@ -325,8 +325,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Вы добавили короткое слово «{said}». Это по-прежнему засчитывается. |
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Этот результат основан на словах, которые услышал телефон или компьютер. Если он услышал неверно, попробуйте снова или напечатайте ответ. |
 | `compare.honest.typed` | This result is based on the words you typed. | Этот результат основан на словах, которые вы ввели. |
-| `home.special.title` | 65/20 civics practice | Практика по обществоведению 65/20 |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Мне 65 лет или больше, и я постоянный житель 20 лет или больше |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Только вопросы для 65/20 (отмечены звёздочкой) |
 | `report.line.civics.none` | No civics questions were scored. | Ни один вопрос по обществоведению не был оценён. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Правильных ответов на вопросы по обществоведению: {correct} из {scored}. |
@@ -380,6 +378,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Без экзамена по английскому. Граждановедение как обычно; можно с переводчиком. |
 | `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Возраст и годы постоянного проживания считаются на день подачи N-400. |
 | `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | На собеседовании можно отвечать на вопросы по граждановедению на своём языке с переводчиком. В этом приложении — вопросы на английском. |
+| `report.exception` | Practice as {exception} | Практика как {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | Настоящий экзамен по граждановедению можно сдавать на своём языке с переводчиком. |
+| `intro.who.legend` | Who is practicing? | Кто тренируется? |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -325,8 +325,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | คุณเพิ่มคำสั้น “{said}” แบบนี้ยังนับได้ |
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | ผลนี้ใช้คำที่โทรศัพท์หรือคอมพิวเตอร์ได้ยิน ถ้าได้ยินผิด ให้ลองอีกครั้งหรือพิมพ์คำตอบ |
 | `compare.honest.typed` | This result is based on the words you typed. | ผลนี้อิงจากคำที่คุณพิมพ์ |
-| `home.special.title` | 65/20 civics practice | ฝึกความรู้พลเมืองสำหรับ 65/20 |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | ฉันอายุ 65 ปีขึ้นไปและเป็นผู้มีถิ่นที่อยู่ถาวรมา 20 ปีขึ้นไป |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | เฉพาะคำถามสำหรับ 65/20 (มีเครื่องหมายดอกจัน) |
 | `report.line.civics.none` | No civics questions were scored. | ไม่มีคำถามความรู้พลเมืองที่ได้รับคะแนน |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | คำถามความรู้พลเมืองที่ตอบถูก: {correct} จาก {scored} |
@@ -380,6 +378,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | ไม่ต้องสอบภาษาอังกฤษ สอบหน้าที่พลเมืองตามปกติ ใช้ล่ามได้ |
 | `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | อายุและจำนวนปีที่เป็นผู้มีถิ่นที่อยู่ถาวรนับ ณ วันที่ยื่น N-400 |
 | `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | ในการสัมภาษณ์ คุณตอบคำถามหน้าที่พลเมืองเป็นภาษาของคุณผ่านล่ามได้ แอปนี้ฝึกคำถามภาษาอังกฤษ |
+| `report.exception` | Practice as {exception} | ฝึกในกรณี {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | คุณสอบหน้าที่พลเมืองจริงเป็นภาษาของคุณผ่านล่ามได้ |
+| `intro.who.legend` | Who is practicing? | ใครกำลังฝึก? |
 
 ## Lines marked ⚠ (meaning differs a little)
 

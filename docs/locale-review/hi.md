@@ -325,8 +325,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | आपने छोटा शब्द “{said}” जोड़ा। यह फिर भी गिना जाएगा। |
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | यह नतीजा आपके फ़ोन या कंप्यूटर के सुने शब्दों पर आधारित है। अगर उसने गलत सुना, तो फिर कोशिश करें या अपना उत्तर टाइप करें। |
 | `compare.honest.typed` | This result is based on the words you typed. | यह नतीजा उन शब्दों पर आधारित है जो आपने टाइप किए। |
-| `home.special.title` | 65/20 civics practice | 65/20 नागरिक शास्त्र अभ्यास |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | मेरी उम्र 65 वर्ष या उससे अधिक है और मैं 20 वर्ष या उससे अधिक समय से स्थायी निवासी हूँ |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | केवल 65/20 के प्रश्न (तारे से चिह्नित) |
 | `report.line.civics.none` | No civics questions were scored. | नागरिक शास्त्र का कोई प्रश्न अंकित नहीं हुआ। |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | नागरिक शास्त्र के सही उत्तर वाले प्रश्न: {scored} में से {correct}। |
@@ -380,3 +378,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | अंग्रेज़ी की परीक्षा नहीं। नागरिक शास्त्र सामान्य रूप से; आप दुभाषिया ले सकते हैं। |
 | `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | आपकी उम्र और स्थायी निवासी के रूप में साल N-400 जमा करने के दिन गिने जाते हैं। |
 | `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | इंटरव्यू में आप दुभाषिए के साथ अपनी भाषा में नागरिक शास्त्र के उत्तर दे सकते हैं। यह ऐप अंग्रेज़ी प्रश्नों का अभ्यास कराता है। |
+| `report.exception` | Practice as {exception} | {exception} के रूप में अभ्यास |
+| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | आप असली नागरिक शास्त्र परीक्षा दुभाषिए के साथ अपनी भाषा में दे सकते हैं। |
+| `intro.who.legend` | Who is practicing? | कौन अभ्यास कर रहा है? |

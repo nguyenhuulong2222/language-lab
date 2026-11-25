@@ -5,7 +5,7 @@
  * build, answer key still waiting for review), the screen explains that instead of scoring.
  */
 import type { CivicsPracticeRules } from "../../engine/test-rules-loader";
-import { SpecialConsiderationNote } from "../components/SpecialConsiderationNote";
+import { ExemptCivicsLine, SpecialConsiderationNote } from "../components/SpecialConsiderationNote";
 import { LegalText } from "../components/LegalText";
 import { useEffect, useRef, useState } from "react";
 import type { CivicsProgress, InputMode } from "../../engine/practice-flow";
@@ -37,6 +37,8 @@ interface CivicsScreenProps {
   pictureFor?: (questionId: string) => PictureEntry | null;
   /** The 65/20 rules when this is the 65/20 practice (spec release-finish REQ-S04). */
   special?: CivicsPracticeRules;
+  /** 50/20, 55/15 or 65/20: the interpreter line under the stepper. */
+  exempt?: boolean;
 }
 export function CivicsScreen({
   progress,
@@ -47,6 +49,7 @@ export function CivicsScreen({
   showFeedbackInitially = false,
   pictureFor = pictureForQuestion,
   special,
+  exempt = false,
 }: CivicsScreenProps) {
   const t = useT();
   const tEnglish = useTWithEnglish();
@@ -155,6 +158,7 @@ export function CivicsScreen({
   const question = progress.current;
   return (
     <div className="screen">
+      {exempt && <ExemptCivicsLine />}
       <TakeHeader
         stage="civics"
         title={t("civics.title")}

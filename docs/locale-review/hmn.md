@@ -325,8 +325,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `compare.note.shortAdded` | You added the short word “{said}”. This still counts. | Koj ntxiv lo lus luv “{said}”. Qhov no tseem suav. |
 | `compare.honest.heard` | This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer. | Qhov tshwm sim no siv cov lus uas koj lub xov tooj lossis computer hnov. Yog nws hnov yuam kev, sim dua lossis ntaus koj cov lus teb. |
 | `compare.honest.typed` | This result is based on the words you typed. | Qhov txiaj ntsig no raws li cov lus uas koj ntaus. |
-| `home.special.title` | 65/20 civics practice | Xyaum kev kawm txog pej xeem 65/20 |
-| `intro.special.label` | I am 65 or older and have been a permanent resident for 20 years or more | Kuv muaj hnub nyoog 65 xyoo los yog laus dua thiab kuv tau ua neeg nyob mus ib txhis tau 20 xyoo los yog ntev dua |
 | `study.special.label` | Only the questions for 65/20 (marked with a star) | Tsuas yog cov lus nug rau 65/20 (muaj lub hnub qub) |
 | `report.line.civics.none` | No civics questions were scored. | Tsis muaj lo lus nug txog pej xeem twg tau qhab nia. |
 | `report.line.civics.correct` | Civics questions answered correctly: {correct} of {scored}. | Cov lus nug txog pej xeem uas teb raug: {correct} ntawm {scored}. |
@@ -380,6 +378,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.who.exempt.text` | No English test. Civics as usual; you may use an interpreter. | Tsis xeem lus Askiv. Xeem kev kawm txog teb chaws ib txwm; koj siv tau ib tug neeg txhais lus. |
 | `home.exceptions.timing` | Your age and your years as a permanent resident count on the day you file the N-400. | Koj lub hnub nyoog thiab cov xyoo ua neeg nyob mus ib txhis suav rau hnub koj xa daim N-400. |
 | `study.exempt.note` | At your interview you may answer civics in your own language with an interpreter. This app practices the English questions. | Thaum xam phaj koj teb tau cov lus nug txog teb chaws ua koj hom lus nrog ib tug neeg txhais lus. Lub app no xyaum cov lus nug ua lus Askiv. |
+| `report.exception` | Practice as {exception} | Xyaum ua {exception} |
+| `civics.exempt.line` | You may take the real civics test in your own language with an interpreter. | Koj xeem tau qhov kev xeem tiag txog teb chaws ua koj hom lus nrog ib tug neeg txhais lus. |
+| `intro.who.legend` | Who is practicing? | Leej twg xyaum? |
 
 ## Lines marked ⚠ (meaning differs a little)
 

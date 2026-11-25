@@ -6,7 +6,8 @@
  */
 import { LegalText } from "../components/LegalText";
 import { useState } from "react";
-import type { FiledChoice } from "../../engine/practice-flow";
+import type { AgeException, FiledChoice } from "../../engine/practice-flow";
+import type { MessageKey } from "../../i18n";
 import type { PracticeProfile } from "../../engine/practice-content";
 import { useLanguage, useT } from "../../i18n/react";
 import { ScreenHelp } from "../components/ScreenHelp";
@@ -22,24 +23,31 @@ interface IntroScreenProps {
   boundaryDate: string;
   /** What the chosen part needs the user to choose. */
   needs: { profile: boolean; filing: boolean };
-  onStart: (choice: { profileId?: string; filedOn?: FiledChoice; specialConsideration?: boolean }) => void;
+  onStart: (choice: { profileId?: string; filedOn?: FiledChoice; exception?: AgeException }) => void;
   /**
-   * The 65/20 choice (spec release-finish REQ-S05): shown with the filing choice when the build
-   * offers it. `initial` is true when the home 65/20 card was chosen.
+   * Who is practicing (decisions log Q): shown with the filing choice for parts with civics,
+   * pre-filled from Home. `special` is the 65/20 rules when the build offers 65/20 (its card and
+   * note are shown only then).
    */
-  special?: { rules: CivicsPracticeRules; initial: boolean };
+  exceptions?: { initial: AgeException; special: CivicsPracticeRules | null };
   /** True when the setup appears again after "start over": focus then moves to its heading. */
   focusOnFirstRender?: boolean;
 }
 
-export function IntroScreen({ profiles, boundaryDate, needs, onStart, special, focusOnFirstRender = true }: IntroScreenProps) {
+const WHO: ReadonlyArray<{ value: AgeException; title: MessageKey }> = [
+  { value: "none", title: "home.who.most.title" },
+  { value: "50/20", title: "home.who.5020.title" },
+  { value: "55/15", title: "home.who.5515.title" },
+  { value: "65/20", title: "home.who.special.title" },
+];
+export function IntroScreen({ profiles, boundaryDate, needs, onStart, exceptions, focusOnFirstRender = true }: IntroScreenProps) {
   const t = useT();
   const language = useLanguage();
   const [profileId, setProfileId] = useState<string | null>(null);
   const [presses, setPresses] = useState(0);
   const [filedOn, setFiledOn] = useState<FiledChoice | null>(null);
-  const [specialOn, setSpecialOn] = useState(special?.initial === true);
-  const showSpecial = needs.filing && special !== undefined;
+  const [exception, setException] = useState<AgeException>(exceptions?.initial ?? "none");
+  const showWho = needs.filing && exceptions !== undefined;
   const date = formatDate(boundaryDate, language);
   const ready = (!needs.profile || profileId !== null) && (!needs.filing || filedOn !== null);
 
@@ -48,7 +56,7 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, special, f
     onStart({
       ...(needs.profile && profileId !== null ? { profileId } : {}),
       ...(needs.filing && filedOn !== null ? { filedOn } : {}),
-      ...(showSpecial && specialOn ? { specialConsideration: true } : {}),
+      ...(showWho && exception !== "none" ? { exception } : {}),
     });
   };
 
@@ -107,21 +115,27 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, special, f
             ))}
           </fieldset>
         )}
-        {showSpecial && (
-          <div className="choices">
-            <label className="choice">
-              <input
-                className="choice__input"
-                type="checkbox"
-                name="special"
-                checked={specialOn}
-                aria-describedby="intro-special-help"
-                onChange={(event) => setSpecialOn(event.target.checked)}
-              />
-              <span className="choice__text">{t("intro.special.label")}</span>
-            </label>
-            <SpecialConsiderationNote rules={special.rules} id="intro-special-help" />
-          </div>
+        {showWho && (
+          <fieldset className="choices" aria-describedby="intro-who-help">
+            <legend className="choices__legend">{t("intro.who.legend")}</legend>
+            {WHO.filter((w) => w.value !== "65/20" || exceptions.special !== null).map((w) => (
+              <label key={w.value} className="choice">
+                <input
+                  className="choice__input"
+                  type="radio"
+                  name="exception"
+                  value={w.value}
+                  checked={exception === w.value}
+                  onChange={() => setException(w.value)}
+                />
+                <span className="choice__text">{t(w.title)}</span>
+              </label>
+            ))}
+            <p className="note" id="intro-who-help">
+              <LegalText messageKey="home.exceptions.timing" /> <LegalText messageKey="special.englishExempt" />
+            </p>
+            {exception === "65/20" && exceptions.special !== null && <SpecialConsiderationNote rules={exceptions.special} />}
+          </fieldset>
         )}
         <div className="btn-row">
           <button

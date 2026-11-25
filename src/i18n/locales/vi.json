@@ -299,8 +299,6 @@
   "compare.note.shortAdded": "Bạn đã thêm từ ngắn “{said}”. Vẫn được tính.",
   "compare.honest.heard": "Kết quả này dựa trên những từ điện thoại hoặc máy tính nghe được. Nếu nó nghe sai, hãy thử lại hoặc gõ câu trả lời.",
   "compare.honest.typed": "Kết quả này dựa trên những từ bạn đã gõ.",
-  "home.special.title": "Luyện kiến thức công dân 65/20",
-  "intro.special.label": "Tôi từ 65 tuổi trở lên và đã là thường trú nhân từ 20 năm trở lên",
   "intro.special.help": "Lựa chọn này chỉ thay đổi phần luyện tập; không có gì được lưu hay gửi đi. Phần kiến thức công dân sẽ hỏi {asked} trong số {bank} câu hỏi có đánh dấu sao (*) trong danh sách chính thức. Trong phần luyện tập này, cả {asked} câu đều được hỏi. Điểm đạt khi luyện tập là {pass} câu trả lời đúng. Với hồ sơ của chính bạn, hãy xem uscis.gov: tuổi và số năm được tính vào ngày nộp đơn.",
   "special.englishExempt": "USCIS: vào ngày nộp đơn, nếu bạn từ 50 tuổi trở lên và đã là thường trú nhân 20 năm (50/20), hoặc từ 55 tuổi trở lên và 15 năm (55/15), bạn được miễn yêu cầu tiếng Anh (đọc, viết, nói và hiểu tiếng Anh), nhưng vẫn phải thi kiến thức công dân. Bạn có thể thi bằng tiếng mẹ đẻ nếu mang theo thông dịch viên. Nếu bạn từ 65 tuổi trở lên và có ít nhất 20 năm (65/20), bạn cũng được miễn tiếng Anh, và viên chức dùng các mẫu đề thi kiến thức công dân được chỉ định riêng.",
   "special.language.link": "Ngoại lệ và hỗ trợ trên uscis.gov",
@@ -361,5 +359,8 @@
   "home.who.5515.title": "Từ 55 tuổi trở lên, có thẻ xanh từ 15 năm (55/15)",
   "home.who.exempt.text": "Không thi tiếng Anh. Thi kiến thức công dân như thường; bạn có thể dùng thông dịch viên.",
   "home.exceptions.timing": "Tuổi và số năm thường trú của bạn được tính vào ngày bạn nộp đơn N-400.",
-  "study.exempt.note": "Khi phỏng vấn, bạn có thể trả lời kiến thức công dân bằng tiếng mẹ đẻ với thông dịch viên. Ứng dụng này luyện câu hỏi tiếng Anh."
+  "study.exempt.note": "Khi phỏng vấn, bạn có thể trả lời kiến thức công dân bằng tiếng mẹ đẻ với thông dịch viên. Ứng dụng này luyện câu hỏi tiếng Anh.",
+  "report.exception": "Luyện tập theo diện {exception}",
+  "civics.exempt.line": "Bạn có thể thi kiến thức công dân thật bằng tiếng mẹ đẻ với thông dịch viên.",
+  "intro.who.legend": "Ai đang luyện tập?"
 }

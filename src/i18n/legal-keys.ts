@@ -21,7 +21,7 @@ export const LEGAL_KEYS: readonly string[] = [
   "intro.privacy",
   "intro.filed.help",
   "intro.special.help",
-  "intro.special.label",
+  "civics.exempt.line",
   "home.exceptions.timing",
   "study.exempt.note",
   "report.line.civics.allAsked",

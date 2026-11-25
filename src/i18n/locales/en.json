@@ -292,8 +292,6 @@
   "compare.note.shortAdded": "You added the short word “{said}”. This still counts.",
   "compare.honest.heard": "This result uses the words your phone or computer heard. If it heard you wrong, try again or type your answer.",
   "compare.honest.typed": "This result is based on the words you typed.",
-  "home.special.title": "65/20 civics practice",
-  "intro.special.label": "I am 65 or older and have been a permanent resident for 20 years or more",
   "intro.special.help": "This only changes the practice; nothing is saved or sent. The civics part then asks {asked} of the {bank} questions marked with a star (*) in the official list. In this practice, all {asked} are asked. The practice passing score is {pass} correct answers. For your own case, check uscis.gov: the age and the years count at the time of filing.",
   "special.englishExempt": "USCIS: at the time of filing, if you are 50 or older with 20 years as a permanent resident (50/20), or 55 or older with 15 years (55/15), you are exempt from the English requirement (reading, writing, speaking and understanding English), but you must still take the civics test. You may take it in your native language if you bring an interpreter. If you are 65 or older with at least 20 years (65/20), you are also exempt from English, and the officer uses specially designated civics test forms.",
   "special.language.link": "Exceptions and accommodations on uscis.gov",
@@ -354,5 +352,8 @@
   "home.who.5515.title": "55 or older, green card for 15 years or more (55/15)",
   "home.who.exempt.text": "No English test. Civics as usual; you may use an interpreter.",
   "home.exceptions.timing": "Your age and your years as a permanent resident count on the day you file the N-400.",
-  "study.exempt.note": "At your interview you may answer civics in your own language with an interpreter. This app practices the English questions."
+  "study.exempt.note": "At your interview you may answer civics in your own language with an interpreter. This app practices the English questions.",
+  "report.exception": "Practice as {exception}",
+  "civics.exempt.line": "You may take the real civics test in your own language with an interpreter.",
+  "intro.who.legend": "Who is practicing?"
 }
