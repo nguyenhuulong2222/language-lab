@@ -222,7 +222,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | Sabihin ang inyong sagot, o i-type ito. Laging gumagana ang pag-type. |
 | `home.how.3.title` | See the result | Tingnan ang resulta |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | Makikita mo kung bilang ang sagot mo, at kung ano ang susunod na sanayin. |
-| `home.choose` | What would you like to do? | Ano po ang gusto ninyong gawin? |
 | `home.full.title` | Practice test | Pagsusulit na pampraktis |
 | `home.full.text` | Answer out loud like the real interview. | Sumagot nang malakas tulad ng totoong interview. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Magsanay sa N-400 interview kasama ang AI coach |

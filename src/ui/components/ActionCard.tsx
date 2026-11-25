@@ -29,6 +29,7 @@ interface ActionCardProps {
 export function ActionCard({ title, text, meta, verb, onClick, primary = false, row = false, badge, className, ref }: ActionCardProps) {
   const titleId = useId();
   const textId = useId();
+  const verbId = useId();
   const classes = ["action-card", primary ? "action-card--primary btn--primary" : "", row ? "action-card--row" : "", className ?? ""]
     .filter((c) => c !== "")
     .join(" ");
@@ -37,7 +38,8 @@ export function ActionCard({ title, text, meta, verb, onClick, primary = false, 
       type="button"
       ref={ref}
       className={classes}
-      aria-labelledby={titleId}
+      // The name is the title and the visible verb ("Reading, Start"), so speech control finds it.
+      aria-labelledby={`${titleId} ${verbId}`}
       {...(text !== undefined || meta !== undefined ? { "aria-describedby": textId } : {})}
       onClick={onClick}
     >
@@ -53,8 +55,8 @@ export function ActionCard({ title, text, meta, verb, onClick, primary = false, 
           </span>
         )}
       </span>
-      <span className="action-card__go" aria-hidden="true">
-        <span>{verb}</span>
+      <span className="action-card__go">
+        <span id={verbId}>{verb}</span>
         <ArrowRightIcon className="action-card__arrow" />
       </span>
     </button>

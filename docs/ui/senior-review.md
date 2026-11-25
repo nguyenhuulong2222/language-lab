@@ -262,3 +262,23 @@ behind the header button.
   all back; `["vi-VN", "en-US"]` starts in Vietnamese and `["fr-FR"]` in English. The layout tool
   switches language in the grid, records a `home-language` screen, and `--browser-lang=vi` starts
   Chrome in Vietnamese and fails unless Home opens in Vietnamese.
+
+## QA follow-up (Q0 to Q5): Home, way back, header
+
+Owner feedback after the language steps (iPhone, Vietnamese): Home was messy, it was unclear where an
+older or a younger person taps, and there was no way back from a section. The two-persona walkthrough
+and its closure list are in `docs/ui/qa-walkthrough.md`. Screenshots, production build at 390px, kept
+in the system temp folder: before `ll-senior-qa-before` (the state after Step 7 and L1-L3) and
+`ll-walk-before-A`/`-B` (first viewports); after `ll-senior-qa-after` and `ll-walk-after-A`/`-B`.
+
+| Screen (en and vi) | Before | After |
+|---|---|---|
+| Every screen, header | Three rows on a phone: the logo alone, then the language and Text size, then About (and Home in a practice) | One row at normal size: a smaller logo, Text size, the language button; About & disclaimer is a big button in the footer |
+| Every screen, AI notice (vi) | Three paragraphs with a thick amber border; at extra-large the header and the notice filled the first viewport | One line with an info icon, the English line under it, "Xem thêm" (More) as a framed 56px control for the legal-English line; thin rules |
+| Home | Language grid with an uneven row; the welcome; a filled "Start here" panel; a 65/20 card titled in English; the AI coach card; part rows and Study first with no verb | Language grid with even rows; one-sentence welcome; "1. Who is practicing?" (two radio cards); "2. What do you want to do?" (Study, and the one filled "Practice test"); "Or practice one part"; the AI coach card. Every card shows a verb and an arrow |
+| Study | Back to Home at the bottom after the answers; Previous, Next, Change test and Home in one row | "← Back to Home" at the top; Previous and Next side by side; the 65/20 filter already ticked when 65/20 was chosen on Home |
+| A practice screen (reading) | Header Home button only; the stepper under the notice; Listen and compare between the sentence and the answer | "← Back to Home" first, then "Step 3 of 6: Reading", the sentence, the answer, the one primary button; Listen and compare after the answer |
+| A report | "Back to home" at the end only | "← Back to Home" at the top as well; browser Back returns to Home |
+
+Browser Back: before, it left the app from every screen. After, it returns to Home from Study,
+setup and reports, and asks "Keep practicing / Leave" in a practice; on Home it leaves the app.

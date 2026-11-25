@@ -222,7 +222,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | अपना उत्तर बोलें या टाइप करें। टाइप करना हमेशा काम करता है। |
 | `home.how.3.title` | See the result | नतीजा देखें |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | आप देखेंगे कि आपका उत्तर गिना गया या नहीं, और आगे किसका अभ्यास करें। |
-| `home.choose` | What would you like to do? | आप क्या करना चाहेंगे? |
 | `home.full.title` | Practice test | अभ्यास परीक्षा |
 | `home.full.text` | Answer out loud like the real interview. | असली इंटरव्यू की तरह ज़ोर से उत्तर दें। |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | AI कोच के साथ N-400 इंटरव्यू का अभ्यास करें |

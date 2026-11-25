@@ -222,7 +222,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | Hãy nói câu trả lời, hoặc gõ. Gõ luôn dùng được. |
 | `home.how.3.title` | See the result | Xem kết quả |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | Bạn sẽ thấy câu trả lời có được tính không, và nên luyện gì tiếp. |
-| `home.choose` | What would you like to do? | Bạn muốn làm gì? |
 | `home.full.title` | Practice test | Thi thử |
 | `home.full.text` | Answer out loud like the real interview. | Trả lời thành tiếng như buổi phỏng vấn thật. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Luyện phỏng vấn N-400 với huấn luyện viên AI |

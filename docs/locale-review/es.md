@@ -222,7 +222,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | Diga su respuesta o escríbala. Escribir siempre funciona. |
 | `home.how.3.title` | See the result | Vea el resultado |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | Verá si su respuesta cuenta y qué practicar después. |
-| `home.choose` | What would you like to do? | ¿Qué le gustaría hacer? |
 | `home.full.title` | Practice test | Examen de práctica |
 | `home.full.text` | Answer out loud like the real interview. | Responda en voz alta como en la entrevista real. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Practique la entrevista del N-400 con un entrenador de IA |

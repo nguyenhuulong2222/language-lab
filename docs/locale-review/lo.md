@@ -222,7 +222,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | ເວົ້າຄໍາຕອບຂອງທ່ານ ຫຼື ພິມກໍໄດ້. ການພິມໃຊ້ໄດ້ສະເໝີ. |
 | `home.how.3.title` | See the result | ເບິ່ງຜົນ |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | ທ່ານຈະເຫັນວ່າຄຳຕອບນັບໄດ້ບໍ່ ແລະ ຄວນຝຶກຫຍັງຕໍ່. |
-| `home.choose` | What would you like to do? | ທ່ານຢາກເຮັດຫຍັງ? |
 | `home.full.title` | Practice test | ສອບຈຳລອງ |
 | `home.full.text` | Answer out loud like the real interview. | ຕອບອອກສຽງຄືການສຳພາດແທ້. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | ຝຶກສຳພາດ N-400 ກັບໂຄ້ດ AI |

@@ -100,7 +100,7 @@ export function Shell({ steps, currentStage, onHome, confirmHome = false, langua
             <BackToHome onHome={goHome} confirm={confirmHome} confirmOpen={confirmOpen} setConfirmOpen={setConfirmOpen} />
           )}
           {/* Same order on every practice screen: Back to Home, the step line, then the screen. */}
-          {stepper}
+          {!(confirmHome && confirmOpen) && stepper}
           {/* While the leave question is open it is the only thing on the page (one main button). */}
           <div hidden={confirmHome && confirmOpen}>
             <PracticeHiddenContext.Provider value={practiceHidden}>{children}</PracticeHiddenContext.Provider>

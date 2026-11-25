@@ -222,7 +222,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | 說出您的答案，或把它輸入。輸入永遠可用。 |
 | `home.how.3.title` | See the result | 查看結果 |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | 您會看到回答是否算數，以及接下來要練習什麼。 |
-| `home.choose` | What would you like to do? | 您想做什麼？ |
 | `home.full.title` | Practice test | 模擬考試 |
 | `home.full.text` | Answer out loud like the real interview. | 像真正的面試一樣大聲回答。 |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | 和 AI 教練一起練習 N-400 面試 |

@@ -222,7 +222,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | သင်၏အဖြေကို ပြောပါ၊ သို့မဟုတ် ရိုက်ထည့်ပါ။ ရိုက်ထည့်ခြင်းသည် အမြဲအလုပ်လုပ်သည်။ |
 | `home.how.3.title` | See the result | ရလဒ်ကို ကြည့်ပါ |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | သင့်အဖြေ ရေတွက်မရေတွက်နှင့် နောက်ထပ် ဘာလေ့ကျင့်ရမည်ကို တွေ့ရပါမည်။ |
-| `home.choose` | What would you like to do? | သင် ဘာလုပ်ချင်ပါသလဲ။ |
 | `home.full.title` | Practice test | စမ်းသပ်စာမေးပွဲ |
 | `home.full.text` | Answer out loud like the real interview. | တကယ့်အင်တာဗျူးကဲ့သို့ အသံထွက်ဖြေပါ။ |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | AI နည်းပြနှင့်အတူ N-400 အင်တာဗျူးကို လေ့ကျင့်ပါ |

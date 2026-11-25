@@ -222,7 +222,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | Скажите ответ или введите его. Ввод с клавиатуры всегда работает. |
 | `home.how.3.title` | See the result | Смотрите результат |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | Вы увидите, засчитан ли ответ и что потренировать дальше. |
-| `home.choose` | What would you like to do? | Что вы хотите сделать? |
 | `home.full.title` | Practice test | Пробный экзамен |
 | `home.full.text` | Answer out loud like the real interview. | Отвечайте вслух, как на настоящем собеседовании. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Тренируйте собеседование по N-400 с ИИ-тренером |

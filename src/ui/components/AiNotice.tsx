@@ -7,7 +7,7 @@
  */
 import { ENGLISH_MESSAGES, isLocaleReviewed } from "../../i18n";
 import { useLanguage, useT } from "../../i18n/react";
-import { InfoIcon } from "./icons";
+import { ArrowRightIcon, InfoIcon } from "./icons";
 import "./AiNotice.css";
 export function AiNotice() {
   const t = useT();
@@ -23,7 +23,10 @@ export function AiNotice() {
             {ENGLISH_MESSAGES["aiNotice.text"]}
           </p>
           <details className="ai-notice__more">
-            <summary className="ai-notice__summary">{t("aiNotice.more")}</summary>
+            <summary className="ai-notice__summary">
+              <ArrowRightIcon className="ai-notice__chevron" />
+              <span>{t("aiNotice.more")}</span>
+            </summary>
             <p className="ai-notice__detail">{t("aiNotice.legalEnglish")}</p>
           </details>
         </div>

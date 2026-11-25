@@ -128,16 +128,8 @@
   gap: var(--space-2);
 }
 
-/* "Practice one part" and "Study first": a plain list of full-width rows, not a grid of cards. */
 .home__section {
-  margin-top: var(--space-5);
   font-size: var(--fs-h3);
-}
-/* The one-line text-size hint under the welcome. */
-.home__hint {
-  font-size: var(--fs-body);
-  font-weight: 600;
-  color: var(--ink);
 }
 /* Home steps: "1. Who", "2. What", "Or one part", the coach card; one gap between them. */
 .home__step {
@@ -165,7 +157,10 @@
   font-size: var(--fs-body);
   line-height: var(--lh-snug);
 }
+/* The one-line text-size hint under the welcome. */
 .home__hint {
   margin: 0;
-  font-size: var(--fs-meta);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--ink);
 }

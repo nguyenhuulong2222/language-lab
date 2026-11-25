@@ -222,7 +222,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | Hais koj cov lus teb, lossis ntaus nws. Kev ntaus ib txwm siv tau. |
 | `home.how.3.title` | See the result | Saib qhov tshwm sim |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | Koj yuav pom tias koj cov lus teb puas suav, thiab yuav xyaum dab tsi tom ntej. |
-| `home.choose` | What would you like to do? | Koj xav ua dab tsi? |
 | `home.full.title` | Practice test | Xeem xyaum |
 | `home.full.text` | Answer out loud like the real interview. | Teb kom nrov ib yam li qhov kev xam phaj tiag. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Xyaum kev xam phaj N-400 nrog AI tus kws qhia |

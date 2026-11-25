@@ -323,7 +323,7 @@ describe("the whole interface follows the language (L3)", () => {
     const body = document.body.textContent!;
     expect(body).toContain(VI["home.what.title"]);
     expect(body).toContain(VI["home.who.special.title"]);
-    expect(screen.getByRole("button", { name: VI["home.full.title"] })).toBeTruthy();
+    expect(screen.getByRole("button", { name: `${VI["home.full.title"]} ${VI["home.go.start"]}` })).toBeTruthy();
     expect(headerText()).toContain(VI["header.settings"]);
     expect(document.querySelector(".ai-notice")!.textContent).toContain(VI["aiNotice.text"]);
     // Legal lines stay English until a person reviews the translation.

@@ -222,7 +222,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | 답을 말하거나 입력하세요. 입력은 항상 가능합니다. |
 | `home.how.3.title` | See the result | 결과 보기 |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | 답이 점수에 포함되는지, 다음에 무엇을 연습할지 볼 수 있습니다. |
-| `home.choose` | What would you like to do? | 무엇을 하시겠어요? |
 | `home.full.title` | Practice test | 모의 시험 |
 | `home.full.text` | Answer out loud like the real interview. | 실제 인터뷰처럼 소리 내어 답하세요. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | AI 코치와 함께 N-400 면접 연습하기 |

@@ -21,26 +21,33 @@ nothing.
 ## The path (about 3 minutes)
 
 1. **Home (15 s)**: the app opens in your phone's language; English if it is not offered. At the
-   top is "Choose a language" with every language under its own name. Read the welcome. Note the
-   cards in order: "Start here" (the full interview),
-   65/20, the AI coach, "Practice one part" and "Study first". "How it works" and the disclaimer are
-   at the bottom.
+   top is "Choose a language" with every language under its own name. Then the welcome and two
+   steps: "1. Who is practicing?" (Most people, chosen by default, or 65 or older with a green card
+   for 20 years or more) and "2. What do you want to do?" (Study, or the filled "Practice test").
+   Below: "Or practice one part" and the AI coach card. Every card has a verb and an arrow. "How it
+   works" and the disclaimer are at the bottom; "About & disclaimer" is in the footer. Every other
+   screen starts with "← Back to Home", and the browser Back button goes to Home too (in a practice
+   it asks first: "Keep practicing" or "Leave").
 2. **AI coach (40 s)**: choose "Practice the N-400 interview with an AI coach". Pick a fictional
    profile and press "Start practice". The consent notice opens first, and nothing is sent until you
    press "Turn on the AI coach". Turn it on and type one answer: the coach gives a feedback label, one
    English tip and a practice follow-up question, each marked "AI-generated feedback". If the coach is
    switched off on the live site, the screen says "AI feedback is not available right now" and the
    practice goes on. Without AI: press "Cancel", then "No, practice without AI".
-3. **Full interview (60 s)**: go back to Home. Press "Start practice" in the "Start here" card, pick a profile, and
+3. **Full interview (60 s)**: press "← Back to Home". Under "2. What do you want to do?" press
+   "Practice test", pick a profile, and
    choose when the N-400 was filed (this picks the 2008 or 2025 civics test). Choose "No, practice
    without AI". Type short answers to the N-400 questions. In reading, type the sentence shown. In
    writing, press "Show the sentence" if you cannot listen, then type it. In civics, type answers. The
    practice test stops on the official stop rule.
 4. **Report (20 s)**: each part shows "You reached the practice goal" or "Practice this again" (never pass or
    fail), the items to practise, and the disclaimer.
-5. **Study first (15 s)**: from Home, choose "Study first" and a test version. Page through the
-   questions with the official answers and pictures. Nothing is scored.
-6. **65/20 (15 s)**: from Home, choose the card "65 or older, 20 years with a green card? Start the 65/20 practice.". The setup has the choice "I am 65 or
+5. **Study (15 s)**: from Home, under "2. What do you want to do?" choose "Study" and a test
+   version. Page through the questions with "Previous" and "Next", with the official answers and
+   pictures. Nothing is scored. "← Back to Home" is at the top.
+6. **65/20 (15 s)**: on Home, under "1. Who is practicing?" choose "65 or older, with a green card
+   for 20 years or more". "Study" now opens with only the starred questions, and Reading and Writing
+   say "Not required for 65/20". Choose "Civics" under "Or practice one part". The setup has the choice "I am 65 or
    older and have been a permanent resident for 20 years or more" already ticked. The civics part asks
    10 of the 20 questions marked with a star in the official list, and the practice score is 6 correct
    answers (USCIS Policy Manual, Vol. 12, Part E, Ch. 2). A line links the USCIS page that says a 65/20

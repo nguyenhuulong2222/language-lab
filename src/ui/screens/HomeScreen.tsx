@@ -93,7 +93,7 @@ export function HomeScreen({
       <HomeLanguage />
       <TakeHeader stage="home" title={t("home.title")} lead={t("home.lead")} focusOnFirstRender={focusOnFirstRender} />
       {showTextSizeHint && <p className="home__hint">{t("home.textSizeHint")}</p>}
-      <div className="screen__body" aria-label={t("home.choose")} role="group">
+      <div className="screen__body">
         {/* While civics is locked, say first what this build can do, and offer only that. */}
         {civicsLocked && (
           <div className="panel" role="note">
@@ -105,10 +105,10 @@ export function HomeScreen({
         )}
         {!civicsLocked && specialOffered && (
           <section className="home__step" aria-labelledby={whoTitleId}>
-            <h2 id={whoTitleId} className="home__section">
-              {t("home.who.title")}
-            </h2>
-            <fieldset className="who-cards" aria-labelledby={whoTitleId} aria-describedby={eligibilityId}>
+            <fieldset className="who-cards" aria-describedby={eligibilityId}>
+              <legend id={whoTitleId} className="who-cards__legend">
+                {t("home.who.title")}
+              </legend>
               <label className="who-card">
                 <input className="choice__input" type="radio" name="who" value="most" checked={who === "most"} onChange={() => onWho("most")} />
                 <PersonIcon className="who-card__icon" />

@@ -36,7 +36,7 @@ describe("which languages are offered", () => {
   });
 
   it("a locale that left a line in English is not offered", () => {
-    const catalogs: Catalogs = { en, vi: { ...full, "home.choose": en["home.choose"]! } } as Catalogs;
+    const catalogs: Catalogs = { en, vi: { ...full, "home.what.title": en["home.what.title"]! } } as Catalogs;
     expect(localePassesChecks("vi", catalogs, { vi: draft })).toBe(false);
   });
 

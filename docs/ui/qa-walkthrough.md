@@ -70,7 +70,74 @@ From the ui-reviewer (confirmed in the code, added to the list):
 | QA-29 | Study's version picker uses option cards; Home uses row buttons for the same kind of choice | Q4 |
 | QA-30 | Frames of 1px (header buttons, language buttons), 2px (buttons, cards) and 3px (Start here, special and coach cards, the selected language) for tappable things | Q4 |
 
-## Later steps
+## Q5 — Walkthrough again (after, at Q4 plus the review fixes)
 
-Each step below closes items from this list; Q5 repeats the walkthrough and marks every item
-closed or explained.
+Same method and driver, same two personas, on the new Home path. Screenshots in
+`$TMPDIR/ll-walk-after-A` and `-B`.
+
+**Persona A now taps** (Vietnamese, extra-large): "1. Ai đang luyện tập?" → "Từ 65 tuổi trở lên, có
+thẻ xanh từ 20 năm" → "Học, Mở" (Study opens with the 65/20 starred filter already ticked) → "Bài thi
+kiến thức công dân 2025" → "Câu hỏi tiếp theo" to the last question → the last screen's "Về trang chủ"
+or the browser Back (both return to Home; Back stayed in the app) → "Kiến thức công dân, Bắt đầu"
+under "Hoặc luyện từng phần" (setup has 65/20 ticked; she only picks the filing date) → "Bắt đầu luyện
+tập" → 10 questions → report → Back returns to Home.
+
+**Persona B now taps** (Spanish, normal): "2. ¿Qué quiere hacer?" → "Examen de práctica, Empezar"
+(the one filled card) → profile, filing date → "No, practicar sin IA" → N-400, reading, writing,
+civics (browser Back on a civics question asks "Seguir practicando / Salir" and stays) → report →
+"← Volver al inicio" → the AI coach card "…, Empezar" → profile → the notice → "Activar el
+entrenador de IA" → one answer → "← Volver al inicio" asks first → "Salir" → Home.
+
+Recorded on every non-Home screen of both walks: "Back to Home" visible in the first viewport (true
+on all 24 screens), exactly one filled button (on the leave question too), no English interface line
+outside lang="en", and browser Back stays in the app (history grows by one entry per section).
+
+### Every Q0 item
+
+| # | Status | How |
+|---|---|---|
+| QA-01 | Closed | `section-history.ts`: one history entry per section; Back from Study, a civics question and a report returned to Home in both walks; tests for popstate from Study, a practice and a report |
+| QA-02 | Closed | "← Back to Home" at the top of every non-Home screen (`BackToHome`), asks first in a practice; the layout check fails a screen without it in the first viewport |
+| QA-03 | Closed | One label, `report.home` ("Về trang chủ" / "Volver al inicio"); `header.home` removed |
+| QA-04 | Closed | Study has Back to Home at the top on every screen and as the primary after the last question; the version picker's bottom Home button is gone |
+| QA-05 | Closed | "Previous" and "Next" side by side, 56px (`btn-pair`); "Previous" shows from question 2. The counter reads "Câu hỏi 3/100" / "Question 3 of 100" |
+| QA-06 | Closed | While the leave question is open the screen (and the stepper) is hidden: one filled button |
+| QA-07 | Closed | Header one row at normal size in all 10 production languages (layout rule); the logo stays on the first row at large and extra large |
+| QA-08 | Closed | About & disclaimer moved to the footer as a full-width button |
+| QA-09 | Closed | Compact notice: one line in the chosen language, the English line under it at 16px, the rest behind "More"; Back to Home is in the first viewport at Vietnamese extra-large 320px |
+| QA-10 | Closed | Thin rules above and below, info icon, no amber |
+| QA-11 | Closed | Every button in a row the same height; the check sits in the corner beside the name; the same 2px frame on every button |
+| QA-12 | Closed | Every tappable card is an `ActionCard`: frame, visible verb, arrow, hover and pressed states; the verb is part of the button's name |
+| QA-13 | Closed | The 65/20 title and line are normal keys with drafts in 14 locales; `home.special.cta` removed (decisions-log) |
+| QA-14 | Closed | Study is under "2. What do you want to do?", next to "Practice test", apart from the single parts |
+| QA-15 | Closed | "1. Who is practicing?" comes first; the choice feeds Study, Practice test and Civics |
+| QA-16 | Closed | One card component for Home, Study's test choice and the coach choice; the old option-card, row-button and start-here styles are removed |
+| QA-17 | Explained | The N-400 row (with the "AI" badge: the coach is optional there) and the coach card both open the N-400 part; the coach card opens the consent notice at once. Kept as two entries, since the brief lists both |
+| QA-18 | Explained | `intro.special.label` stays a legal key: it states the USCIS eligibility rule. It shows in English until a person reviews Vietnamese; the Home choice the learner taps is translated |
+| QA-19 | Closed | New test renders 19 screens in Vietnamese and fails on any English non-legal interface line outside lang="en" |
+| QA-20 | Closed | Spacing uses only tokens; left: the 0.75em paragraph rule (a brief requirement in em), the visually-hidden `-1px`, and the stepper's geometry calc. Widths in `minmax()` are layout widths, not spacing |
+| QA-21 | Closed | Practice screens: Back to Home → step line → heading → question → Play → answer → one primary; Listen and compare moved after the answer |
+| QA-22 | Kept | The coach choice has two equal cards and no fill, by design |
+| QA-23 | Explained | No coach server locally: the coach reply was not exercised; the switch, the notice and the "not available" path were |
+| QA-24 | Closed | As QA-01 |
+| QA-25 | Closed | As QA-02 |
+| QA-26 | Closed | Back from Study, setup and reports goes home without the question |
+| QA-27 | Closed | The notice is compact (QA-09) and the stepper sits under Back to Home, so the heading is near the top |
+| QA-28 | Closed | The header is one row, so "Text size" is visible at the top |
+| QA-29 | Closed | As QA-16 |
+| QA-30 | Closed | Tappable cards and language buttons use 2px frames; the selected state adds an inner ring and a check |
+
+From the second ui-reviewer pass (all fixed unless explained): the "More" control now has a frame
+and an arrow that turns when open; the verb is in each card's name (label in name); duplicate
+`.who-card` and `.home__hint` rules merged (the hint is back at body size); the "Who" group uses a
+`<legend>`; the duplicate group label on Home is removed (`home.choose` deleted); the stepper is
+hidden while the leave question is open. Explained: the reviewer's concern that repeated Back
+presses on the leave question grow the history: each Back removes the entry and the app adds one,
+so the depth stays the same (the leave test checks the entry is back).
+
+**Not met as written.** "At 390×844 normal size the language grid, the welcome and both Who cards
+fit." Measured on the production build: in English the welcome title is at 559px and "1. Who is
+practicing?" starts at 797px, inside the first viewport, but the second card ends at 1162px. In
+Vietnamese (with the AI notice) "Who" starts at 1066px. The grid is ten 56px buttons in three columns
+plus its heading and the in-review line (about 410px); it cannot shrink further without going below
+the 56px target or dropping a required element.

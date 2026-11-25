@@ -268,9 +268,11 @@ describe("discoverable coach: home card (REQ-C18)", () => {
     const html = home();
     const at = html.indexOf("Practice the N-400 interview with an AI coach");
     const tag = html.slice(html.lastIndexOf("<button", at), html.indexOf(">", html.lastIndexOf("<button", at)));
-    const labelledby = /aria-labelledby="([^"]+)"/.exec(tag)![1]!;
+    // The name is the title and the visible verb.
+    const [titleId, verbId] = /aria-labelledby="([^"]+)"/.exec(tag)![1]!.split(" ");
     const describedby = /aria-describedby="([^"]+)"/.exec(tag)![1]!;
-    expect(html).toContain(`id="${labelledby}" class="action-card__title">Practice the N-400 interview with an AI coach<`);
+    expect(html).toContain(`id="${titleId}" class="action-card__title">Practice the N-400 interview with an AI coach<`);
+    expect(html).toContain(`id="${verbId}">Start<`);
     const desc = html.slice(html.indexOf(`id="${describedby}"`));
     expect(desc.slice(0, desc.indexOf("</span></span>") + 14)).toContain("Powered by Claude (Anthropic)");
   });
@@ -306,9 +308,10 @@ describe("discoverable coach: the choice before the first question (REQ-C19)", (
     const { html } = screen();
     const at = html.indexOf(">Use the AI coach<");
     const tag = html.slice(html.lastIndexOf("<button", at), html.indexOf(">", html.lastIndexOf("<button", at)) + 1);
-    const labelledby = /aria-labelledby="([^"]+)"/.exec(tag)![1]!;
+    const [titleId, verbId] = /aria-labelledby="([^"]+)"/.exec(tag)![1]!.split(" ");
     const describedby = /aria-describedby="([^"]+)"/.exec(tag)![1]!;
-    expect(html).toContain(`id="${labelledby}" class="action-card__title">Use the AI coach<`);
+    expect(html).toContain(`id="${titleId}" class="action-card__title">Use the AI coach<`);
+    expect(html).toContain(`id="${verbId}">Start<`);
     const desc = html.slice(html.indexOf(`id="${describedby}"`));
     expect(desc.slice(0, 200)).toContain("Powered by Claude (Anthropic)");
     // Two equal choices, neither filled.

@@ -222,7 +222,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | Di repons ou, oswa tape l. Tape toujou mache. |
 | `home.how.3.title` | See the result | Gade rezilta a |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | Ou wè si repons ou konte, ak sa pou w pratike apre. |
-| `home.choose` | What would you like to do? | Kisa ou ta renmen fè? |
 | `home.full.title` | Practice test | Egzamen pratik |
 | `home.full.text` | Answer out loud like the real interview. | Reponn byen fò tankou nan vrè entèvyou a. |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | Pratike antrevi N-400 a ak yon antrenè AI |

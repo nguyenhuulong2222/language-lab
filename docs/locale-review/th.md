@@ -222,7 +222,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `home.how.2.text` | Say your answer, or type it. Typing always works. | พูดคำตอบของคุณ หรือพิมพ์ก็ได้ การพิมพ์ใช้ได้เสมอ |
 | `home.how.3.title` | See the result | ดูผลลัพธ์ |
 | `home.how.3.text` | You see if your answer counts, and what to practice next. | คุณจะเห็นว่าคำตอบนับได้หรือไม่ และควรฝึกอะไรต่อ |
-| `home.choose` | What would you like to do? | คุณต้องการทำอะไร |
 | `home.full.title` | Practice test | สอบจำลอง |
 | `home.full.text` | Answer out loud like the real interview. | ตอบออกเสียงเหมือนการสัมภาษณ์จริง |
 | `home.coach.title` | Practice the N-400 interview with an AI coach | ฝึกสัมภาษณ์ N-400 กับโค้ช AI |
