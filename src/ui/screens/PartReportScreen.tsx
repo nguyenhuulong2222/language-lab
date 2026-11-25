@@ -34,7 +34,7 @@ export function PartReportScreen({ report, onHome }: { report: PartReport; onHom
         <Disclaimer variant="prominent" id="part-report-disclaimer" messageKey="disclaimer.report" />
         <p className="progress-line">{t("report.generated", { datetime: formatDateTime(report.generatedAt, language) })}</p>
         <div className="btn-row">
-          <button type="button" className="btn" onClick={onHome}>
+          <button type="button" className="btn btn--primary" onClick={onHome}>
             {t("report.home")}
           </button>
         </div>

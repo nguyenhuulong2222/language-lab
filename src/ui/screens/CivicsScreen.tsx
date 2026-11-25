@@ -66,7 +66,7 @@ export function CivicsScreen({
         <div className="screen__body">
           <p><LegalText messageKey="civics.locked.text" /></p>
           <div className="btn-row">
-            <button type="button" className="btn" onClick={onRestart}>
+            <button type="button" className="btn btn--primary" onClick={onRestart}>
               {t("common.startOver")}
             </button>
           </div>
@@ -136,7 +136,7 @@ export function CivicsScreen({
           <div className="btn-row">
             <button
               type="button"
-              className="btn"
+              className="btn btn--primary"
               onClick={() => {
                 setFeedback(false);
                 if (progress.done) onContinue();

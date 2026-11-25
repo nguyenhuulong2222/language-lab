@@ -165,7 +165,8 @@ describe("F-07: the prominent disclaimer under every result", () => {
       );
       const at = prominent(html, `${kind}-result-disclaimer`);
       expect(html.indexOf(ENGLISH_MESSAGES["compare.counts"]), kind).toBeLessThan(at);
-      expect(at, kind).toBeLessThan(html.lastIndexOf('class="btn"'));
+      // Senior-friendly step 2: the next button is now the primary one ("btn btn--primary").
+      expect(at, kind).toBeLessThan(html.lastIndexOf('class="btn btn--primary"'));
     }
   });
   it("civics feedback: the prominent disclaimer replaces the short line, under the result", () => {

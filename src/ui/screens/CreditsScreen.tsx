@@ -42,7 +42,7 @@ export function CreditsScreen({ onClose, manifest = PICTURE_MANIFEST }: { onClos
       </p>
       <Disclaimer messageKey="disclaimer.short" />
       <div className="btn-row">
-        <button type="button" className="btn" onClick={onClose}>
+        <button type="button" className="btn btn--primary" onClick={onClose}>
           {t("credits.back")}
         </button>
       </div>

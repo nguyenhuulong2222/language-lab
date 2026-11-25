@@ -4,7 +4,7 @@
  *
  * Drives the real app in headless Google Chrome at a phone width (390px) and checks every screen
  * of the practice flow for: horizontal scroll, elements that run off the screen, clipped text,
- * and touch targets smaller than 48px. It clicks through the whole flow like a user, so it also
+ * and touch targets smaller than 56px. It clicks through the whole flow like a user, so it also
  * works as a smoke test.
  *
  *   node tools/layout-check/run.mjs                       all configurations
@@ -40,7 +40,7 @@ const APP_PORT = 5198;
 const CDP_PORT = 9333;
 const CHROME = process.env.CHROME_PATH ?? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const SHOTS_DIR = path.join(os.tmpdir(), "language-lab-layout");
-const MIN_TARGET = 48;
+const MIN_TARGET = 56;
 const WIDTH = Number((process.argv.slice(2).find((a) => a.startsWith("--width=")) ?? "--width=390").slice(8));
 const PROD = process.argv.includes("--prod");
 const FILED_BEFORE = process.argv.includes("--filed=before");

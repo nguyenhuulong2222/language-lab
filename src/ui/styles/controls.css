@@ -2,21 +2,38 @@
  * Language Lab — shared controls: buttons, fields, choice cards, panels.
  * Tokens only. Every control is at least --tap-min tall. Status never relies on colour alone.
  */
+/* Every button is outlined (secondary) unless it is the one primary action of the screen. */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
   min-height: var(--tap-min);
+  min-width: var(--tap-min);
   padding: var(--space-2) var(--space-5);
-  border: 2px solid var(--teal);
+  /* A control's edge needs 3:1 against the page: ink-2. */
+  border: 2px solid var(--ink-2);
   border-radius: var(--radius-md);
-  background: var(--teal);
-  color: var(--on-accent);
+  background: var(--surface);
+  color: var(--ink);
   font-weight: 600;
   line-height: var(--lh-snug);
   text-align: center;
   cursor: pointer;
+}
+/* The one primary action per screen: filled, large bold text, 64px high, full width on a phone. */
+.btn--primary {
+  min-height: max(64px, 3.5556rem);
+  border-color: var(--teal);
+  background: var(--teal);
+  color: var(--on-accent);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+@media (max-width: 40rem) {
+  .btn--primary {
+    width: 100%;
+  }
 }
 .btn:disabled,
 .btn[aria-disabled="true"] {
@@ -25,21 +42,23 @@
   border-color: var(--border);
   color: var(--ink-2);
 }
+/* Kept for clarity in the markup: the same as the default .btn. */
 .btn--secondary {
   background: var(--surface);
   color: var(--ink);
-  /* A control's edge needs 3:1 against the page: use ink-2, not the decorative border. */
   border-color: var(--ink-2);
 }
 .btn--secondary:disabled,
 .btn--secondary[aria-disabled="true"] {
   background: var(--surface-2);
 }
-/* Amber is reserved for the active (listening) state */
+/* Amber is reserved for the active (listening, recording) state; its text is large and bold. */
 .btn--active {
   background: var(--amber);
   border-color: var(--amber);
   color: var(--on-accent);
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 .btn--block {
   width: 100%;
@@ -68,7 +87,8 @@
   color: var(--ink);
   font: inherit;
   line-height: var(--lh-body);
-  resize: vertical;
+  /* No drag handle: hard for shaky fingers. The box scrolls when the text is long. */
+  resize: none;
 }
 
 fieldset.choices {
@@ -87,13 +107,14 @@ fieldset.choices {
   font-size: var(--fs-h3);
   font-weight: 600;
 }
+/* The whole row is the target (a <label>), at least 56px high, with a 28px mark. */
 .choice {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-4);
   min-height: var(--tap-min);
   padding: var(--space-3) var(--space-4);
-  border: 2px solid var(--border);
+  border: 2px solid var(--ink-2);
   border-radius: var(--radius-md);
   background: var(--surface);
   cursor: pointer;
@@ -107,8 +128,8 @@ fieldset.choices {
   outline-offset: var(--focus-offset);
 }
 .choice__input {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: max(28px, 1.5556rem);
+  height: max(28px, 1.5556rem);
   margin: 0;
   flex: 0 0 auto;
   accent-color: var(--teal);

@@ -189,7 +189,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
           {/* Content-safety rule 5 (audit F-07): the prominent disclaimer directly under the answers. */}
           <Disclaimer variant="prominent" id="n400-done-disclaimer" messageKey="disclaimer.report" />
           <div className="btn-row">
-            <button type="button" className="btn" onClick={onFinish}>
+            <button type="button" className="btn btn--primary" onClick={onFinish}>
               {nextIsReport ? t("report.see") : nextIsCivics ? t("writing.toCivics") : t("n400.done.next")}
             </button>
           </div>
@@ -221,7 +221,7 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
             </p>
             {onRetry !== undefined && (
               <div className="btn-row">
-                <button type="button" className="btn" onClick={onRetry}>
+                <button type="button" className="btn btn--primary" onClick={onRetry}>
                   {t("common.retry")}
                 </button>
               </div>

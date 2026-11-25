@@ -172,7 +172,7 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
             <LegalText messageKey="voice.consent.text" />
           </p>
           <div className="btn-row">
-            <button type="button" ref={consentButton} className="btn" onClick={continueWithVoice}>
+            <button type="button" ref={consentButton} className="btn btn--secondary" onClick={continueWithVoice}>
               {t("voice.consent.continue")}
             </button>
             <button type="button" className="btn btn--secondary" onClick={typeInstead}>
@@ -192,7 +192,7 @@ export function AnswerInput({ label, submitLabel, voice, allowSkip = false, onSu
             {listening ? t("voice.stop") : t("voice.say")}
           </button>
         )}
-        <button type="button" className="btn" onClick={submit}>
+        <button type="button" className="btn btn--primary" onClick={submit}>
           {submitLabel}
         </button>
         {allowSkip && (

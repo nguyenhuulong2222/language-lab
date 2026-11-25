@@ -302,7 +302,7 @@ function ReportPage({ session, restart }: { session: InterviewSession; restart: 
         <SpecialLanguageLine />
       )}
       <div className="btn-row">
-        <button type="button" className="btn" onClick={restart}>
+        <button type="button" className="btn btn--primary" onClick={restart}>
           {t("report.again")}
         </button>
       </div>

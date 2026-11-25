@@ -8,7 +8,12 @@ import { useT } from "../../i18n/react";
 import { LegalText } from "./LegalText";
 import "./Coach.css";
 
-export function CoachNotice({ onConfirm, onCancel }: { onConfirm: () => void; onCancel: () => void }) {
+/**
+ * `primary`: the confirm button is the screen's primary action (the choice screen). Above a question
+ * (the switch) the question's own button is primary, so both buttons here are secondary, of equal
+ * weight, which also avoids nudging towards consent.
+ */
+export function CoachNotice({ onConfirm, onCancel, primary = true }: { onConfirm: () => void; onCancel: () => void; primary?: boolean }) {
   const t = useT();
   const noticeId = useId();
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -40,7 +45,7 @@ export function CoachNotice({ onConfirm, onCancel }: { onConfirm: () => void; on
       {/* Attribution as plain text: no Anthropic or Claude logo (spec REQ-C20). */}
       <p className="note">{t("coach.poweredBy")}</p>
       <div className="btn-row">
-        <button type="button" className="btn" onClick={onConfirm}>
+        <button type="button" className={primary ? "btn btn--primary" : "btn btn--secondary"} onClick={onConfirm}>
           {t("coach.notice.confirm")}
         </button>
         <button type="button" className="btn btn--secondary" onClick={onCancel}>

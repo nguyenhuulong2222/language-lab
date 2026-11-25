@@ -71,9 +71,9 @@
   --shadow-md: 0 2px 8px rgba(42, 33, 24, 0.08);
 
   /* ---- Interaction ---- */
-  --tap-min: 3rem; /* 54px at normal text size; grows with the text size (Step 2 sets 56px) */
+  --tap-min: max(56px, 3.1112rem); /* 56px at normal text size; grows with the text size */
   --focus-width: 3px;
-  --focus-offset: 2px;
+  --focus-offset: 3px;
 
   /* ---- Layout ---- */
   --shell-max: 44rem;

@@ -126,7 +126,7 @@ export function IntroScreen({ profiles, boundaryDate, needs, onStart, special, f
         <div className="btn-row">
           <button
             type="button"
-            className="btn"
+            className="btn btn--primary"
             aria-disabled={!ready}
             aria-describedby="intro-start-hint"
             onClick={() => {

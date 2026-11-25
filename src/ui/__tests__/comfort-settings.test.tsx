@@ -94,8 +94,9 @@ describe("text size styles", () => {
     expect(baseCss).toMatch(/html\[data-text-size="extra-large"\]\s*\{\s*font-size:\s*150%/);
   });
 
-  it("make the tap target 48px at normal size (3rem) and let it grow", () => {
-    expect(tokensCss).toMatch(/--tap-min:\s*3rem/);
+  it("make the tap target at least 56px at normal size and let it grow", () => {
+    // Senior-friendly step 2: 56px (was 48px).
+    expect(tokensCss).toMatch(/--tap-min:\s*max\(56px,\s*3\.1112rem\)/);
   });
 
   it("do not stop text from wrapping, except for screen-reader-only text and the skip link", () => {

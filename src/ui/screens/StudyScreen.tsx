@@ -71,7 +71,7 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
             <button type="button" className="btn btn--secondary" onClick={() => setVersion(null)}>
               {t("study.change")}
             </button>
-            <button type="button" className="btn" onClick={onHome}>
+            <button type="button" className="btn btn--primary" onClick={onHome}>
               {t("report.home")}
             </button>
           </div>
@@ -176,7 +176,7 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
           <button type="button" className="btn btn--secondary" disabled={index === 0} onClick={() => setIndex(index - 1)}>
             {t("study.prev")}
           </button>
-          <button type="button" className="btn" disabled={last} onClick={() => setIndex(index + 1)}>
+          <button type="button" className="btn btn--primary" disabled={last} onClick={() => setIndex(index + 1)}>
             {t("civics.next")}
           </button>
           <button

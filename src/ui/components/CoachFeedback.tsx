@@ -102,7 +102,7 @@ export function CoachFeedback({ step, onNext }: { step: CoachStep; onNext: () =>
       )}
       {step.status === "done" && (
         <div className="btn-row">
-          <button type="button" className="btn" onClick={onNext}>
+          <button type="button" className="btn btn--primary" onClick={onNext}>
             {t("coach.next")}
           </button>
         </div>

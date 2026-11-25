@@ -121,7 +121,7 @@ export function EnglishScreen({
           <div className="btn-row">
             <button
               type="button"
-              className="btn"
+              className="btn btn--primary"
               onClick={() => {
                 setFeedback(false);
                 if (progress.done) onContinue();

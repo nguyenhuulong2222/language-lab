@@ -166,7 +166,7 @@ export function Header({ onHome }: { onHome?: () => void }) {
           <div className="btn-row">
             <button
               type="button"
-              className="btn"
+              className="btn btn--primary"
               onClick={() => {
                 setPanel(null);
                 onHome();
