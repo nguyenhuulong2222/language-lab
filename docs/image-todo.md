@@ -4,6 +4,28 @@
 
 Pictures I wanted but could not use. No other source was substituted. Fetch these by hand, check the rights statement on the page, and add them to `data/images/picks.json`.
 
-| Wanted | Page | Why it was not saved |
-|---|---|---|
-| Photograph of Susan B. Anthony | <https://www.si.edu/object/npg_NPG.77.255> | download or conversion failed: HTTP 404 |
+## Picks that failed to build
+
+None.
+
+## Questions with no fitting picture yet
+
+Questions of a picture class (see `docs/image-plan.md`) for which no item from an allowed federal source fits. From `data/images/misses.json`.
+
+| Questions | Wanted | What was searched | Why nothing was used |
+|---|---|---|---|
+| 2008-058, 2025-073 | The colonists arriving in America | loc.gov photos: "landing of the pilgrims" (3 items with no known restrictions on publication) | Item 93509602, titled "Landing of the pilgrims", is a different engraving ("Massasoit and his warriors") and shows Native people, which the plan avoids. The other two were not checked by eye yet: 2009630827 and 2010646064. |
+| 2008-064, 2025-081 | A map of the 13 original states | loc.gov maps: "thirteen colonies map"; loc.gov photos: "thirteen original states" | Map records carry only the Geography and Map Division's general statement ("free to use and reuse unless a Rights Advisory statement is present"), not an item rights statement we accept. The photo hits were coats of arms (emblems) and a 1970s print of the Declaration. |
+| 2008-088, 2008-089, 2008-090, 2008-092, 2008-093 | A map of the United States (rivers, oceans, borders) | loc.gov maps: "map of the united states 1900"; loc.gov photos: "map united states" | Same map-rights problem. The photo hits are an 1846 map (old borders, would mislead), a 1914 outline map photographed for a child-labor report, and studio photos of people holding maps. |
+| 2008-091 | A map of the U.S. territories | covered by the map searches above | No item with an accepted rights statement. |
+| 2008-067, 2025-083 | A writer of the Federalist Papers (John Jay; Madison and Hamilton already have portraits for their own questions) | Smithsonian Open Access: "John Jay" (CC0 portraits found, e.g. the 1795 Tiebout engraving after Gilbert Stuart) | The Smithsonian API's public DEMO_KEY was rate-limited all day, so no record snapshot could be saved. Retry with tools/images (si-records.json snapshot) later. |
+| 2025-084 | The Federalist Papers (the 1788 book) | loc.gov photos: "the federalist hamilton madison jay", "federalist papers"; archives.gov Milestone Documents page | No item with an accepted rights statement; book records on loc.gov use the general collection wording. The National Archives does not hold the book. |
+| 2008-081, 2025-106 | World War II | National Archives naId 520748 (Iwo Jima flag raising), 195515 ("Into the Jaws of Death"); loc.gov photos: "omaha beach 1944", "office of war information soldiers 1942" | 520748 is Joe Rosenthal's Associated Press photo (credited outside the federal government). 195515 has only a small GIF. The loc.gov D-Day items say "publication may be restricted" or "rights status not evaluated". The Office of War Information search timed out. |
+| 2008-083, 2025-108, 2025-109 | The Cold War | none that fits without a person or a weapon | No clear, calm picture of an abstract rivalry; left for the owner. |
+| 2008-086, 2025-115 | The attacks of September 11, 2001 | not searched on purpose | Photos of the attacks can distress users; the owner may choose a memorial photo credited to a federal agency. |
+| 2025-103, 2025-104 | The Great Depression | loc.gov photos: "migrant mother" (93506674, 2017762891) | 93506674 is a scrapbook page with a table of publications, not the photo. 2017762891 (Dorothea Lange's negative) says "No known restrictions." without "on publication", which the rights rule does not accept as written. |
+| 2025-110 | The Korean War | loc.gov photos: "korean war soldiers" | Every hit says "publication may be restricted" (LOOK Magazine, New York World-Telegram) or uses wording we do not accept. |
+| 2025-111 | The Vietnam War | National Archives naId 530610 (UH-1D helicopters, 1966; Unrestricted) | Built, then dropped on review: an eagle unit insignia is painted on the helicopter's nose, and the rules exclude eagles. |
+| 2025-114, 2025-116 | The Persian Gulf War; conflicts after 2001 | not searched (no keyword search on the National Archives Catalog; Department of Defense sites are not on the allowed source list) | Left for the owner. |
+| 2008-097, 2025-122 | A 50-star U.S. flag | the existing flag picture (american-flag-1914) | That flag has 48 stars, so it would teach the wrong number. A 50-star flag photo from an allowed source is still needed. |
+| 2008-099, 2025-125 | Independence Day | loc.gov photos: "fourth of july celebration" | "Inaugurating the glorious Fourth" (89708527) shows boys firing a pistol next to newsprint about killing buffalo; dropped on review. "Puck July the fourth 1903" is a political cartoon. "Visitors arriving for July 4th celebration" (99614592) has extra rights wording the rule refuses. |

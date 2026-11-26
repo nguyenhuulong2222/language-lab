@@ -3,8 +3,10 @@
  * tools/images/build-images.mjs
  *
  * Builds the picture set from data/images/picks.json:
- *   - reads each loc.gov item record and refuses the picture unless its own rights statement is an
- *     accepted one (see acceptableRights in src/engine/question-images.ts);
+ *   - reads each item record (loc.gov, a Smithsonian Open Access snapshot, or the National Archives
+ *     Catalog by naId) and refuses the picture unless its own rights statement is an accepted one
+ *     (see acceptableRights in src/engine/question-images.ts; National Archives records need
+ *     use and access restriction "Unrestricted");
  *   - downloads the largest JPEG (or the master TIFF when no big JPEG exists) to a temp folder;
  *   - writes an optimised WebP (longest side 1200px, under about 150 kB) to public/images/civics/;
  *   - writes data/images/manifest.json (rights text copied word for word, SHA-256 of the download),
@@ -26,6 +28,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildCredits, buildReview, buildTodo } from "../../src/engine/image-docs.ts";
 import { acceptableRights } from "../../src/engine/question-images.ts";
+import { toWebp } from "./webp.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const UA = "LanguageLabResearch/1.0 (practice tool; public-domain pictures)";
@@ -67,9 +70,10 @@ function questionInfos() {
 }
 
 function writeDocs(manifest, mapping, todo) {
-  write("docs/image-credits.md", buildCredits(manifest, mapping));
-  write("docs/image-review.md", buildReview(manifest, mapping, questionInfos()));
-  write("docs/image-todo.md", buildTodo(todo));
+  const illustrations = read("data/images/illustrations-manifest.json", { images: [] });
+  write("docs/image-credits.md", buildCredits(manifest, mapping, illustrations));
+  write("docs/image-review.md", buildReview(manifest, mapping, questionInfos(), illustrations));
+  write("docs/image-todo.md", buildTodo(todo, read("data/images/misses.json", { misses: [] }).misses));
 }
 
 /** The files of an item record: the biggest JPEG, or the master TIFF when the JPEGs are small. */
@@ -79,17 +83,6 @@ function chooseFile(record) {
   const tiff = files.find((f) => f.mimetype === "image/tiff" && f.size < 60_000_000);
   if (jpegs[0] !== undefined && (jpegs[0].width >= 900 || tiff === undefined)) return jpegs[0];
   return tiff ?? jpegs[0];
-}
-
-function toWebp(input, output) {
-  // Fine engravings need a lower quality or a smaller size to stay under about 150 kB.
-  for (const side of [1200, 1050, 900, 780]) {
-    for (const quality of [82, 74, 66, 58, 50, 42]) {
-      execFileSync("magick", [input + "[0]", "-auto-orient", "-resize", `${side}x${side}>`, "-strip", "-quality", String(quality), "-define", "webp:method=6", output]);
-      if (fs.statSync(output).size <= 145_000) return quality;
-    }
-  }
-  return -1;
 }
 
 const picks = read("data/images/picks.json", { picks: [] }).picks;
@@ -103,22 +96,82 @@ if (!process.argv.includes("--docs")) {
   const siRecords = new Map(read("data/images/si-records.json", { records: [] }).records.map((r) => [r.recordId, r]));
   for (const pick of picks) {
     const isSi = pick.source === "si";
-    const pageUrl = isSi ? `https://www.si.edu/object/${pick.record}` : `https://www.loc.gov/item/${pick.locItem}/`;
+    const isNara = pick.source === "nara";
+    const pageUrl = isNara ? `https://catalog.archives.gov/id/${pick.naId}` : isSi ? `https://www.si.edu/object/${pick.record}` : `https://www.loc.gov/item/${pick.locItem}/`;
     const fail = (reason) => {
       console.log(`SKIP ${pick.id}: ${reason}`);
       todo.push({ wanted: pick.wanted ?? pick.id, pageUrl, reason });
     };
     const have = built.get(pick.id);
-    if (have !== undefined && have.sourcePageUrl === pageUrl && fs.existsSync(path.join(OUT, have.file)) && have.alt === pick.alt && (isSi ? have.rights === `${siRecords.get(pick.record)?.objectRights?.label}: ${siRecords.get(pick.record)?.objectRights?.content}` : true)) {
+    if (have !== undefined && have.sourcePageUrl === pageUrl && fs.existsSync(path.join(OUT, have.file)) && have.alt === pick.alt && have.caption === (pick.caption ?? have.title) && (pick.date === undefined || have.date === pick.date) && (have.edit !== undefined) === (pick.crop !== undefined) && (isSi ? have.rights === `${siRecords.get(pick.record)?.objectRights?.label}: ${siRecords.get(pick.record)?.objectRights?.content}` : true)) {
       images.push(have);
       console.log(`keep ${pick.id}`);
       continue;
     }
-    if (!isSi && blocked) {
+    if (!isSi && !isNara && blocked) {
       fail("loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again");
       continue;
     }
     try {
+      if (isNara) {
+        // National Archives Catalog: the record's own use and access restriction must both be "Unrestricted".
+        const found = await fetchRetry(`https://catalog.archives.gov/proxy/records/search?naId=${pick.naId}`);
+        const rec = found?.body?.hits?.hits?.[0]?._source?.record;
+        if (rec === undefined || String(rec.naId) !== String(pick.naId)) {
+          fail("the National Archives Catalog returned no record for this naId");
+          continue;
+        }
+        const use = rec.useRestriction?.status;
+        const access = rec.accessRestriction?.status;
+        const rights = `Use restriction: ${use}. Access restriction: ${access}.`;
+        if (use !== "Unrestricted" || access !== "Unrestricted" || rec.useRestriction?.specificUseRestrictions !== undefined || !acceptableRights(rights)) {
+          fail(`use or access restriction is not "Unrestricted": "${rights}"`);
+          continue;
+        }
+        const objects = (rec.digitalObjects ?? []).filter((o) => /^Image \((JPG|JPEG|TIFF)\)$/i.test(o.objectType ?? ""));
+        const object = pick.file !== undefined ? objects.find((o) => o.objectUrl === pick.file) : objects.find((o) => (o.objectFileSize ?? 0) > 1_000_000);
+        if (object === undefined) {
+          fail("the record lists no large JPEG or TIFF file (or not the one named in picks.json)");
+          continue;
+        }
+        const data = await fetchRetry(object.objectUrl, true);
+        const sha256 = crypto.createHash("sha256").update(data).digest("hex");
+        const original = path.join(TMP, `${pick.id}${path.extname(new URL(object.objectUrl).pathname).toLowerCase()}`);
+        fs.writeFileSync(original, data);
+        const target = path.join(OUT, `${pick.id}.webp`);
+        const quality = toWebp(original, target);
+        fs.rmSync(original, { force: true });
+        if (quality < 0) {
+          fs.rmSync(target, { force: true });
+          fail("could not get the WebP under 150 kB");
+          continue;
+        }
+        const [w, h] = execFileSync("magick", ["identify", "-format", "%w %h", target]).toString().split(" ").map(Number);
+        const people = (rec.contributors ?? []).map((c) => `${c.heading} (${c.contributorType})`);
+        const agency = (rec.ancestors ?? []).find((a) => a.levelOfDescription === "recordGroup")?.title;
+        const creator = [...people, agency].filter(Boolean).join("; ") || "Unknown";
+        const d = rec.productionDates?.[0] ?? rec.coverageStartDate ?? rec.inclusiveStartDate;
+        const date = pick.date ?? (d?.logicalDate ?? (d?.year !== undefined ? String(d.year) : ""));
+        images.push({
+          id: pick.id,
+          file: `${pick.id}.webp`,
+          title: String(rec.title).trim(),
+          creator,
+          date,
+          sourcePageUrl: pageUrl,
+          fileUrl: object.objectUrl,
+          rights,
+          downloadedOn: new Date().toISOString().slice(0, 10),
+          sha256,
+          alt: pick.alt,
+          caption: pick.caption ?? String(rec.title).trim(),
+          width: w,
+          height: h,
+          bytes: fs.statSync(target).size,
+        });
+        console.log(`ok   ${pick.id} ${w}x${h} ${fs.statSync(target).size} bytes (q${quality}) [National Archives]`);
+        continue;
+      }
       if (isSi) {
         // Smithsonian Open Access: the rights statement is the record's own usage access ("CC0").
         const rec = siRecords.get(pick.record);
@@ -157,7 +210,7 @@ if (!process.argv.includes("--docs")) {
           downloadedOn: new Date().toISOString().slice(0, 10),
           sha256,
           alt: pick.alt,
-          caption: rec.title,
+          caption: pick.caption ?? rec.title,
           width: w,
           height: h,
           bytes: fs.statSync(target).size,
@@ -181,6 +234,8 @@ if (!process.argv.includes("--docs")) {
       const sha256 = crypto.createHash("sha256").update(data).digest("hex");
       const original = path.join(TMP, `${pick.id}${path.extname(new URL(file.url).pathname)}`);
       fs.writeFileSync(original, data);
+      // A stereograph card holds two nearly identical photos side by side: keep only the left one.
+      if (pick.crop === "stereo-left") execFileSync("magick", [original + "[0]", "-gravity", "West", "-crop", "50%x100%+0+0", "+repage", original]);
       const target = path.join(OUT, `${pick.id}.webp`);
       const quality = toWebp(original, target);
       if (quality < 0) {
@@ -202,7 +257,8 @@ if (!process.argv.includes("--docs")) {
         downloadedOn: new Date().toISOString().slice(0, 10),
         sha256,
         alt: pick.alt,
-        caption: String(item.title).trim(),
+        caption: pick.caption ?? String(item.title).trim(),
+        ...(pick.crop === "stereo-left" ? { edit: "Cropped to the left photo of the stereograph card." } : {}),
         width: w,
         height: h,
         bytes: fs.statSync(target).size,
