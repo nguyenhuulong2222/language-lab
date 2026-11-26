@@ -355,5 +355,10 @@
   "study.exempt.note": "At your interview you may answer civics in your own language if you bring an interpreter. This app practices the English questions.",
   "report.exception": "Practice as {exception}",
   "civics.exempt.line": "You may take the real civics test in your own language if you bring an interpreter.",
-  "intro.who.legend": "Who is practicing?"
+  "intro.who.legend": "Who is practicing?",
+  "illustration.label": "AI-generated illustration",
+  "credits.ai.title": "AI-generated illustrations",
+  "credits.ai.lead": "These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown.",
+  "credits.ai.made": "Made with the AI model {model} on {date}.",
+  "credits.photos.title": "Photos, prints and documents"
 }

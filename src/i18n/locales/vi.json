@@ -362,5 +362,10 @@
   "study.exempt.note": "Khi phỏng vấn, bạn có thể trả lời kiến thức công dân bằng tiếng mẹ đẻ nếu bạn mang theo thông dịch viên. Ứng dụng này luyện câu hỏi tiếng Anh.",
   "report.exception": "Luyện tập theo diện {exception}",
   "civics.exempt.line": "Bạn có thể thi kiến thức công dân thật bằng tiếng mẹ đẻ nếu bạn mang theo thông dịch viên.",
-  "intro.who.legend": "Ai đang luyện tập?"
+  "intro.who.legend": "Ai đang luyện tập?",
+  "illustration.label": "Hình minh họa do AI tạo",
+  "credits.ai.title": "Hình minh họa do AI tạo",
+  "credits.ai.lead": "Các hình minh họa ý tưởng này do một mô hình hình ảnh AI tạo ra từ các yêu cầu viết cho Language Lab. Hình không cho thấy người, sự kiện hay tài liệu có thật. Chủ sở hữu đã xem từng hình trước khi hiển thị.",
+  "credits.ai.made": "Tạo bằng mô hình AI {model} ngày {date}.",
+  "credits.photos.title": "Ảnh, tranh in và tài liệu"
 }

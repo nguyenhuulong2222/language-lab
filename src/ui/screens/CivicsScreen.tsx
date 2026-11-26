@@ -10,6 +10,7 @@ import { LegalText } from "../components/LegalText";
 import { useEffect, useRef, useState } from "react";
 import type { CivicsProgress, InputMode } from "../../engine/practice-flow";
 import { civicsClipId } from "../../engine/audio-clips";
+import { illustrationForQuestion, type IllustrationEntry } from "../../engine/illustrations";
 import { pictureForQuestion, type PictureEntry } from "../../engine/question-images";
 import { officialAnswerLines } from "../../engine/official-answer-text";
 import type { CivicsTestVersion } from "../../engine/version-selector";
@@ -18,7 +19,7 @@ import { AnswerInput } from "../components/AnswerInput";
 import { Disclaimer } from "../components/Disclaimer";
 import { CheckIcon, ReviewIcon } from "../components/icons";
 import { EnglishNotice } from "../components/EnglishNotice";
-import { QuestionPicture } from "../components/QuestionPicture";
+import { QuestionIllustration, QuestionPicture } from "../components/QuestionPicture";
 import { ScreenHelp } from "../components/ScreenHelp";
 import { SpeakButton } from "../components/SpeakButton";
 import { TakeHeader } from "../components/TakeHeader";
@@ -35,6 +36,8 @@ interface CivicsScreenProps {
   showFeedbackInitially?: boolean;
   /** The picture of a question (tests replace it). Used only in the feedback view, after grading. */
   pictureFor?: (questionId: string) => PictureEntry | null;
+  /** The reviewed AI illustration of a CONCEPT question (tests replace it). Feedback view only, and only when there is no picture. */
+  illustrationFor?: (questionId: string) => IllustrationEntry | null;
   /** The 65/20 rules when this is the 65/20 practice (spec release-finish REQ-S04). */
   special?: CivicsPracticeRules;
   /** 50/20, 55/15 or 65/20: the interpreter line under the stepper. */
@@ -48,6 +51,7 @@ export function CivicsScreen({
   onRestart,
   showFeedbackInitially = false,
   pictureFor = pictureForQuestion,
+  illustrationFor = illustrationForQuestion,
   special,
   exempt = false,
 }: CivicsScreenProps) {
@@ -86,6 +90,7 @@ export function CivicsScreen({
     const stopped = progress.result.stopReason;
     // The picture comes only here, after the answer is graded: it could give the answer away.
     const picture = pictureFor(entry.id);
+    const illustration = picture === null ? illustrationFor(entry.id) : null;
     return (
       <div className="screen">
         <TakeHeader stage="civics" title={t("civics.title")} focusKey={null} />
@@ -121,7 +126,8 @@ export function CivicsScreen({
             {entry.requiredAnswerCount > 1 && (
               <p className="note">{t("civics.needs", { count: entry.requiredAnswerCount })}</p>
             )}
-            {picture !== null && <QuestionPicture picture={picture} />}
+            {picture !== null && <QuestionPicture key={picture.id} picture={picture} />}
+            {illustration !== null && <QuestionIllustration key={illustration.id} illustration={illustration} />}
           </section>
           {/* Content-safety rule 5 (audit F-07): the prominent disclaimer directly under the result. */}
           <Disclaimer variant="prominent" id="civics-result-disclaimer" messageKey="disclaimer.report" />

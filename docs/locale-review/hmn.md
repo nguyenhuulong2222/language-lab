@@ -381,6 +381,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.exception` | Practice as {exception} | Xyaum ua {exception} |
 | `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | Koj xeem tau qhov kev xeem tiag txog teb chaws ua koj hom lus yog koj coj ib tug neeg txhais lus tuaj. |
 | `intro.who.legend` | Who is practicing? | Leej twg xyaum? |
+| `illustration.label` | AI-generated illustration | Duab kos uas AI ua |
+| `credits.ai.title` | AI-generated illustrations | Cov duab kos uas AI ua |
+| `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | Cov duab kos lub tswv yim no yog ib tug qauv duab AI ua los ntawm cov lus qhia uas sau rau Language Lab. Lawv tsis qhia neeg, xwm txheej los yog ntaub ntawv tiag. Tus tswv tau saib txhua daim ua ntej muab tso tawm. |
+| `credits.ai.made` | Made with the AI model {model} on {date}. | Ua nrog tus qauv AI {model} rau {date}. |
+| `credits.photos.title` | Photos, prints and documents | Duab thaij, duab luam thiab ntaub ntawv |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -381,6 +381,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.exception` | Practice as {exception} | ຝຶກໃນກໍລະນີ {exception} |
 | `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | ທ່ານສອບຄວາມຮູ້ພົນລະເມືອງແທ້ເປັນພາສາຂອງທ່ານໄດ້ ຖ້າພານາຍແປພາສາມາເອງ. |
 | `intro.who.legend` | Who is practicing? | ໃຜກຳລັງຝຶກ? |
+| `illustration.label` | AI-generated illustration | ຮູບປະກອບທີ່ສ້າງໂດຍ AI |
+| `credits.ai.title` | AI-generated illustrations | ຮູບປະກອບທີ່ສ້າງໂດຍ AI |
+| `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | ຮູບປະກອບແນວຄິດເຫຼົ່ານີ້ສ້າງໂດຍແບບຈຳລອງຮູບພາບ AI ຈາກຄຳສັ່ງທີ່ຂຽນໄວ້ສຳລັບ Language Lab. ຮູບບໍ່ໄດ້ສະແດງຄົນ, ເຫດການ ຫຼື ເອກະສານຈິງ. ເຈົ້າຂອງໄດ້ເບິ່ງທຸກຮູບກ່ອນນຳມາສະແດງ. |
+| `credits.ai.made` | Made with the AI model {model} on {date}. | ສ້າງດ້ວຍແບບຈຳລອງ AI {model} ເມື່ອ {date}. |
+| `credits.photos.title` | Photos, prints and documents | ຮູບຖ່າຍ, ຮູບພິມ ແລະ ເອກະສານ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

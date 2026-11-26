@@ -6,10 +6,13 @@ import { describe, expect, it } from "vitest";
 import ANSWERS_2008 from "../../../data/civics-answers/2008.json";
 import ANSWERS_2025 from "../../../data/civics-answers/2025.json";
 import todo from "../../../data/images/todo.json";
+import MISSES from "../../../data/images/misses.json";
+import ILLUSTRATIONS_JSON from "../../../data/images/illustrations-manifest.json";
 import creditsDoc from "../../../docs/image-credits.md?raw";
 import reviewDoc from "../../../docs/image-review.md?raw";
 import todoDoc from "../../../docs/image-todo.md?raw";
 import { buildCredits, buildReview, buildTodo } from "../image-docs";
+import type { IllustrationManifest } from "../illustrations";
 import {
   acceptableRights,
   checkImageData,
@@ -119,6 +122,7 @@ describe("accepted rights statements", () => {
     "Public domain",
     "U.S. Government work",
     "CC0 1.0 Universal",
+    "Use restriction: Unrestricted. Access restriction: Unrestricted.",
   ])("accepts %s", (text) => expect(acceptableRights(text)).toBe(true));
   it.each([
     "",
@@ -127,6 +131,9 @@ describe("accepted rights statements", () => {
     "Copyright 1998 Jane Doe. All rights reserved.",
     "Courtesy of the estate. Used with permission.",
     "No known restrictions on publication, but credit line required: Photo by a Rights holder",
+    "Use restriction: Restricted - Possibly. Access restriction: Unrestricted.",
+    "Use restriction: Unrestricted. Access restriction: Restricted - Partly.",
+    "Unrestricted",
   ])("refuses %s", (text) => expect(acceptableRights(text)).toBe(false));
   it("refuses a non-string", () => {
     expect(acceptableRights(undefined)).toBe(false);
@@ -149,9 +156,10 @@ describe("federal hosts", () => {
 
 describe("generated docs", () => {
   it("image-credits, image-review and image-todo match the data", () => {
-    expect(creditsDoc).toBe(buildCredits(PICTURE_MANIFEST, QUESTION_IMAGES));
-    expect(reviewDoc).toBe(buildReview(PICTURE_MANIFEST, QUESTION_IMAGES, questions));
-    expect(todoDoc).toBe(buildTodo(todo));
+    const illustrations = ILLUSTRATIONS_JSON as unknown as IllustrationManifest;
+    expect(creditsDoc).toBe(buildCredits(PICTURE_MANIFEST, QUESTION_IMAGES, illustrations));
+    expect(reviewDoc).toBe(buildReview(PICTURE_MANIFEST, QUESTION_IMAGES, questions, illustrations));
+    expect(todoDoc).toBe(buildTodo(todo, MISSES.misses));
   });
   it("the credits list every picture with its rights statement", () => {
     for (const p of PICTURE_MANIFEST.images) {

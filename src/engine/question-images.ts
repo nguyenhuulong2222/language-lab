@@ -11,7 +11,7 @@
  *   data/images/manifest.json         every picture and where it came from
  *   data/images/question-images.json  question id -> picture id (needsHumanReview)
  */
-import { reviewFlagProblem } from "./review-flag.js";
+import { reviewFlagProblem } from "./review-flag.ts";
 import MANIFEST_JSON from "../../data/images/manifest.json" with { type: "json" };
 import MAPPING_JSON from "../../data/images/question-images.json" with { type: "json" };
 
@@ -30,8 +30,10 @@ export interface PictureEntry {
   /** SHA-256 of the original download (the original itself is not committed). */
   sha256: string;
   alt: string;
-  /** The source's own title or description. Not written by us. */
+  /** A short caption written by us (picks.json), or the source's own title when the pick has none. */
   caption: string;
+  /** What we changed in the file besides resizing (for example a crop), if anything. */
+  edit?: string;
   width: number;
   height: number;
   bytes: number;
@@ -80,7 +82,8 @@ export function isFederalUrl(url: string): boolean {
 
 /**
  * True for the rights statements we accept: "no known restrictions on publication", public
- * domain, U.S. Government work, CC0. A statement that names a rights holder, asks for permission,
+ * domain, U.S. Government work, CC0, and a National Archives Catalog record whose use and access
+ * restriction are both "Unrestricted". A statement that names a rights holder, asks for permission,
  * says the status was not evaluated, or warns that publication may be restricted is refused.
  */
 export function acceptableRights(text: unknown): boolean {
@@ -89,7 +92,7 @@ export function acceptableRights(text: unknown): boolean {
   if (/not evaluated|copyright|rights holder|permission|restrict(?:ed|ion)s? (?:may|apply)|may be restricted|all rights reserved|credit line|courtesy of/i.test(cleaned.replace(/no know?n? (?:copyright )?restrictions?/gi, ""))) {
     return false;
   }
-  return /no know?n? (?:copyright )?restrictions? on (?:publication|use or reproduction)|public domain|u\.s\. government (?:work|publication)|\bCC0\b/i.test(text);
+  return /no know?n? (?:copyright )?restrictions? on (?:publication|use or reproduction)|public domain|u\.s\. government (?:work|publication)|\bCC0\b|^Use restriction: Unrestricted\. Access restriction: Unrestricted\.$/i.test(text);
 }
 
 export interface ImageProblem {

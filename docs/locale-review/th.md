@@ -381,6 +381,11 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.exception` | Practice as {exception} | ฝึกในกรณี {exception} |
 | `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | คุณสอบหน้าที่พลเมืองจริงเป็นภาษาของคุณได้ ถ้าพาล่ามมาเอง |
 | `intro.who.legend` | Who is practicing? | ใครกำลังฝึก? |
+| `illustration.label` | AI-generated illustration | ภาพประกอบที่สร้างโดย AI |
+| `credits.ai.title` | AI-generated illustrations | ภาพประกอบที่สร้างโดย AI |
+| `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | ภาพประกอบแนวคิดเหล่านี้สร้างโดยโมเดลภาพ AI จากคำสั่งที่เขียนขึ้นสำหรับ Language Lab ภาพไม่ได้แสดงบุคคล เหตุการณ์ หรือเอกสารจริง เจ้าของได้ดูทุกภาพก่อนนำมาแสดง |
+| `credits.ai.made` | Made with the AI model {model} on {date}. | สร้างด้วยโมเดล AI {model} เมื่อ {date} |
+| `credits.photos.title` | Photos, prints and documents | ภาพถ่าย ภาพพิมพ์ และเอกสาร |
 
 ## Lines marked ⚠ (meaning differs a little)
 

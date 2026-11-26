@@ -13,11 +13,12 @@ import { civicsClipId } from "../../engine/audio-clips";
 import type { CivicsAnswerEntry } from "../../engine/civics-answer-key";
 import type { AnswerKeyResult } from "../../engine/practice-flow";
 import { officialAnswerLines } from "../../engine/official-answer-text";
+import { illustrationForQuestion, type IllustrationEntry } from "../../engine/illustrations";
 import { pictureForQuestion, type PictureEntry } from "../../engine/question-images";
 import type { CivicsTestVersion } from "../../engine/version-selector";
 import { useT } from "../../i18n/react";
 import { EnglishNotice } from "../components/EnglishNotice";
-import { QuestionPicture } from "../components/QuestionPicture";
+import { QuestionIllustration, QuestionPicture } from "../components/QuestionPicture";
 import { SpeakButton } from "../components/SpeakButton";
 import { ActionCard } from "../components/ActionCard";
 import { TakeHeader } from "../components/TakeHeader";
@@ -29,6 +30,8 @@ interface StudyScreenProps {
   onHome: () => void;
   /** The picture of a question (tests replace it). */
   pictureFor?: (questionId: string) => PictureEntry | null;
+  /** The reviewed AI illustration of a CONCEPT question (tests replace it), used when there is no picture. */
+  illustrationFor?: (questionId: string) => IllustrationEntry | null;
   /** Start on a version (tests). */
   initialVersion?: CivicsTestVersion;
   /** Fetch what a version needs (answer key, official answers) before it is shown. */
@@ -49,7 +52,7 @@ export function studyQuestions(key: ReadonlyMap<string, CivicsAnswerEntry>): Civ
   return [...key.values()].filter((e) => e.answerType === "static").sort((a, b) => a.id.localeCompare(b.id));
 }
 
-export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion, initialVersion, prepare, designated, initialSpecialOnly = false, interpreterNote = false }: StudyScreenProps) {
+export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion, illustrationFor = illustrationForQuestion, initialVersion, prepare, designated, initialSpecialOnly = false, interpreterNote = false }: StudyScreenProps) {
   const t = useT();
   const [specialOnly, setSpecialOnly] = useState(initialSpecialOnly && designated !== undefined);
   const [version, setVersion] = useState<CivicsTestVersion | null>(initialVersion ?? null);
@@ -136,6 +139,7 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
   if (entry === undefined) return null;
   const lines = officialAnswerLines(version, entry.id);
   const picture = pictureFor(entry.id);
+  const illustration = picture === null ? illustrationFor(entry.id) : null;
   const last = index >= questions.length - 1;
 
   return (
@@ -166,7 +170,8 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
           {entry.questionText}
         </p>
         <SpeakButton key={entry.id} text={entry.questionText} clipId={civicsClipId(entry.id)} />
-        {picture !== null && <QuestionPicture picture={picture} />}
+        {picture !== null && <QuestionPicture key={picture.id} picture={picture} />}
+        {illustration !== null && <QuestionIllustration key={illustration.id} illustration={illustration} />}
         {entry.requiredAnswerCount > 1 && <p className="note">{t("civics.needs", { count: entry.requiredAnswerCount })}</p>}
         {lines !== null && (
           <section className="panel">

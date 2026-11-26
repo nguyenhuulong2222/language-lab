@@ -23,3 +23,9 @@
 .question-picture__credit {
   color: var(--ink-2);
 }
+/* AI illustrations: the label is part of the caption, always visible, above the caption text. */
+.question-picture__label {
+  display: block;
+  font-weight: 600;
+  color: var(--ink);
+}
