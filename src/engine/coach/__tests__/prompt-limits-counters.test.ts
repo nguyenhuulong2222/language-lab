@@ -69,6 +69,19 @@ describe("limits (REQ-C10)", () => {
     expect(ok("http://abc.language-lab-ade.pages.dev")).toBe(false);
     expect(ok("https://language-lab-ade.pages.dev", "cross-site")).toBe(false);
   });
+  it("origins: the custom domain lab.formn400.org, and nothing else on formn400.org", () => {
+    const ok = (o: string) => originAllowed(o, "same-origin", config);
+    expect(ok("https://lab.formn400.org")).toBe(true);
+    for (const o of [
+      "https://formn400.org",
+      "https://www.formn400.org",
+      "https://evil.formn400.org",
+      "http://lab.formn400.org",
+      "https://lab.formn400.org.evil.com",
+    ]) {
+      expect(ok(o), o).toBe(false);
+    }
+  });
   it("UTC day and hour", () => {
     const now = new Date("2026-11-20T23:59:59.000Z");
     expect(utcDay(now)).toBe("2026-11-20");

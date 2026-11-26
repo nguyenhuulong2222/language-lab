@@ -1,7 +1,7 @@
 # Demo video — script and shot list
 
 Target length **2:40** (limit for this script 2:45; Devpost limit 3:00). The app is recorded on an
-iPhone in Safari at <https://language-lab-ade.pages.dev>. The last 30 seconds are a screen recording
+iPhone in Safari at <https://lab.formn400.org> (backup <https://language-lab-ade.pages.dev>). The last 30 seconds are a screen recording
 of the GitHub repository. Labels in quotes are the exact English text of the app.
 
 Every claim below was checked against the live app and the code on 2026-11-20. Where something depends
@@ -85,7 +85,8 @@ against USCIS sources, the safety rules and the design system.
   shots.
 - [ ] Focus: turn on **Do Not Disturb** (or a recording focus) so no notification appears; turn off
   "Show Previews".
-- [ ] Safari: open only <https://language-lab-ade.pages.dev>; close other tabs; turn off AutoFill for
+- [ ] Safari: open only <https://lab.formn400.org> (the address bar shows it in the video; if it is
+  down, use the backup <https://language-lab-ade.pages.dev>); close other tabs; turn off AutoFill for
   names and contacts (Settings > Apps > Safari > AutoFill) so no real data is suggested in a text box.
 - [ ] Keyboard: turn off predictive text if it suggests personal words.
 - [ ] Use only the fictional profiles: Aurora Thistlewood, Juniper Hale, Rowan Pike. Say and type only

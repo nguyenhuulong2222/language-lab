@@ -1,7 +1,7 @@
 # Language Lab — Devpost text
 
 **Category:** Resurrection. **Team:** Long Nguyen and Tiffanie.
-**App:** <https://language-lab-ade.pages.dev> (free, no login).
+**App:** <https://lab.formn400.org> (free, no login; backup <https://language-lab-ade.pages.dev>).
 **Code:** <https://github.com/nguyenhuulong2222/language-lab> (MIT).
 
 ## Inspiration
@@ -127,4 +127,7 @@ the Web Speech API, and public USCIS, Smithsonian and Library of Congress materi
   the two look alike at lab.formn400.org; the style was re-implemented here, and no code, text, data
   or images were copied. Earlier commits contained civics translations imported from the owner's
   separate N400 project; they were removed and are not part of the submission (`NOTICE` item 9).
+  lab.formn400.org is only a subdomain used to host this app; formN400.org is a separate, earlier
+  project of the same owner, shares no code, data or licence with Language Lab, and its privacy
+  policy does not cover Language Lab.
 - **Everything else** was written during the hackathon with Kiro, from 2026-11-01.

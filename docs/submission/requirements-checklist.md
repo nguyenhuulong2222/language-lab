@@ -44,7 +44,7 @@ Status key: **Done** (with evidence), **Owner** (yours to do on Devpost, YouTube
 | 4 | Public GitHub repository (not GitLab or Bitbucket) with all source, assets and instructions | Done | <https://github.com/nguyenhuulong2222/language-lab>: `visibility: public` (GitHub API, 2026-11-20); README "Local Development" |
 | 5 | Open-source licence file, detected and shown in the About section | Done | `LICENSE` (MIT); the GitHub API reports `license.spdx_id: "MIT"` |
 | 6 | `/.kiro` at the root, not in `.gitignore` | Done | `.kiro/` has agents, hooks, specs and steering; 25 tracked files; `git check-ignore .kiro` finds no rule |
-| 7 | URL to the working app, free and without login | Done | <https://language-lab-ade.pages.dev> answers 200 and serves the `main` build (bundle `index-Dm3G7v4D.js`, same as a local build of `main`); no login |
+| 7 | URL to the working app, free and without login | Done | <https://lab.formn400.org> (custom domain of the same Cloudflare Pages project; 200, CSP and HSTS present) and the backup <https://language-lab-ade.pages.dev>; the backup answers 200 and serves the `main` build (bundle `index-Dm3G7v4D.js`, same as a local build of `main`); no login |
 | 8 | Keep the app available until the Judging Period ends (Jan 29, 2027) | **Owner** | Cloudflare Pages free plan; keep the project and the D1 database. The AI coach's daily budget limits cost (`data/coach-config.json`) |
 | 9 | Text description of features and functionality | Drafted; **Owner** to paste | `docs/submission/devpost.md` |
 | 10 | Demo video under 3 minutes, on the intended device, public on YouTube, no third-party trademarks or copyrighted music | **Owner** to record and upload | Script and checklist: `docs/submission/video-script.md` (2:45, iPhone). Avoid music and logos |
@@ -70,6 +70,7 @@ Status key: **Done** (with evidence), **Owner** (yours to do on Devpost, YouTube
 ## Not required but checked
 
 - **Live coach**: `POST /api/coach` with an empty JSON body and `Origin: https://language-lab-ade.pages.dev`
+  (or `https://lab.formn400.org`)
   returns 400 `bad_request`; without that `Origin` header it returns 403 `forbidden`. That check runs
   after the kill switch, the API key, the salt and the D1 binding in `src/engine/coach/handler.ts`,
   so the coach is switched on and configured on the live site. Whether the key works was not tested

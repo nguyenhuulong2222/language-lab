@@ -5,8 +5,16 @@ from the same origin as the app. It stays switched off until every step below is
 without it: the N-400 part then uses the scripted coach only.
 
 Facts used here were read from the Cloudflare and Anthropic documentation on 2026-11-20. Replace
-`<project>` with the name of your Pages project (the site is `language-lab-ade.pages.dev`; the
-project name is shown in the dashboard under **Workers & Pages**).
+`<project>` with the name of your Pages project (the site is `lab.formn400.org`, a custom domain of the
+project, with `language-lab-ade.pages.dev` as the backup; the project name is shown in the dashboard
+under **Workers & Pages**).
+
+**Allowed origins** (`origins` in `data/coach-config.json`): the coach answers only requests whose
+`Origin` is exactly one of `https://language-lab-ade.pages.dev`, `https://lab.formn400.org`,
+`http://localhost:8788` or `http://127.0.0.1:8788`, or a preview `https://<id>.language-lab-ade.pages.dev`
+(`previewSuffix`). Every other origin is refused, including `https://formn400.org`, other
+subdomains of formn400.org and `http://lab.formn400.org`. A new custom domain must be added to
+`origins.exact`.
 
 ## What you must create
 

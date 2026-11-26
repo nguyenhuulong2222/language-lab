@@ -31,7 +31,7 @@
     "cleanupBatch": 50
   },
   "origins": {
-    "exact": ["https://language-lab-ade.pages.dev", "http://localhost:8788", "http://127.0.0.1:8788"],
+    "exact": ["https://language-lab-ade.pages.dev", "https://lab.formn400.org", "http://localhost:8788", "http://127.0.0.1:8788"],
     "previewSuffix": ".language-lab-ade.pages.dev"
   }
 }
