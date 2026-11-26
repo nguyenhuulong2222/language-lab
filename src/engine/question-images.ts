@@ -11,7 +11,7 @@
  *   data/images/manifest.json         every picture and where it came from
  *   data/images/question-images.json  question id -> picture id (needsHumanReview)
  */
-import { reviewFlagProblem } from "./review-flag.js";
+import { reviewFlagProblem } from "./review-flag.ts";
 import MANIFEST_JSON from "../../data/images/manifest.json" with { type: "json" };
 import MAPPING_JSON from "../../data/images/question-images.json" with { type: "json" };
 
