@@ -6,13 +6,15 @@
 }
 
 /* ---- Condensed (mobile) ---- */
-/* At least 18px (body size), wraps rather than shrinks */
+/* The step line as a small label: red, bold, uppercase, letter-spaced, 18px; wraps, never shrinks */
 .stepper__condensed {
   margin: 0 0 var(--space-2);
-  font-size: var(--fs-body);
-  font-weight: 600;
+  font-size: max(16px, var(--fs-meta));
+  font-weight: 700;
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
   line-height: var(--lh-snug);
-  color: var(--ink);
+  color: var(--red);
 }
 
 .stepper__bar {
@@ -24,7 +26,7 @@
 
 .stepper__bar-fill {
   height: 100%;
-  background: var(--status-positive);
+  background: var(--accent);
   border-radius: var(--radius-pill);
 }
 
@@ -53,7 +55,7 @@
 }
 
 /* Keep the end connectors as spacers (so every node centers in its equal-width
-   segment and all gaps are equal) but hide their line — the tape runs only
+   segment and all gaps are equal) but hide their line — the line runs only
    between the first and last circles. */
 .stepper__step:first-child .stepper__connector--lead,
 .stepper__step:last-child .stepper__connector--trail {
@@ -88,13 +90,13 @@
   color: var(--on-accent);
 }
 
-/* The current step: a teal fill with a thick ink ring, plus the "current step" word for screen
-   readers and the bold label, so it is not told by colour alone (amber means "review"). */
+/* The current step: white with a thick navy ring and a navy number, unlike the filled completed
+   steps; plus the "current step" word for screen readers and the bold label (not colour alone). */
 .stepper__step--current .stepper__marker {
-  background: var(--teal);
-  border-color: var(--ink);
+  background: var(--surface);
+  border-color: var(--accent);
   border-width: 3px;
-  color: var(--on-accent);
+  color: var(--accent);
 }
 
 .stepper__marker-icon {

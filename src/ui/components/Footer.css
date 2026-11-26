@@ -19,7 +19,7 @@
   border: 0;
   background: none;
   font-family: inherit;
-  color: var(--teal);
+  color: var(--accent);
   font-size: var(--fs-meta);
   text-decoration: underline;
   cursor: pointer;

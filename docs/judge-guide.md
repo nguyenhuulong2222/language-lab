@@ -3,7 +3,8 @@
 Live: <https://language-lab-ade.pages.dev> (the production build; features of a branch appear there
 only after that branch is merged and deployed)
 
-Language Lab is a free practice booth for the U.S. naturalization interview. Everyone practises as an
+Language Lab is a free practice tool for the U.S. naturalization interview, in the clean
+navy-and-white style of formN400.org (it is served at lab.formn400.org). Everyone practises as an
 invented person, so nobody types or says real details. It is an independent study aid. It is not
 affiliated with USCIS or any government agency, it is not legal advice, and practice results predict
 nothing.

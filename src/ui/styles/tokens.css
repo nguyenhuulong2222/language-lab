@@ -1,35 +1,43 @@
 /**
- * Language Lab — Design tokens
- * Source of truth: .kiro/steering/design-system.md
- * All color pairs verified against WCAG AA/AAA (see design-system.md).
+ * Language Lab — Design tokens (formN400 style, light only)
+ * Source of truth: .kiro/steering/design-system.md; token map and contrast table in
+ * docs/ui/formn400-style.md. The colours and fonts match formN400.org, the owner's separate site, so
+ * the two look alike at lab.formn400.org. Re-implemented here; nothing was copied.
+ * Contrast (src/ui/__tests__/contrast.test.ts): body and small text 7:1 or more; large text, icons
+ * and control edges as noted.
  */
-
 :root {
-  /* ---- Color: light mode (parchment booth) ---- */
-  --bg: #f4eee1;
-  --surface: #fbf7ee;
-  --surface-2: #efe7d6;
-  --ink: #2a2118;
-  --ink-2: #574635;
-  --teal: #235350; /* 7:1 or more on bg, surface and surface-2, and with --on-accent */
-  --amber: #98591a; /* 4.5:1 or more: large text, icons and borders only */
-  --border: #968255; /* 3:1 or more on every background: control edges */
-  /* Text on a teal button: 7:1 or more in both themes; on amber 4.5:1 or more (large bold text only) */
-  --on-accent: #fbf7ee;
-
-  /* Semantic status (reference primitives so theme overrides cascade) */
-  --status-positive: var(--teal);
-  --status-attention: var(--amber);
-
+  color-scheme: light;
+  /* ---- Colour ---- */
+  --bg: #f7f8fc; /* page */
+  --surface: #ffffff; /* cards, header, inputs */
+  --surface-2: #eef1f9; /* a light navy tint: selected cards, wells */
+  --ink: #0d1f3c; /* text: 15.5:1 on --bg */
+  --ink-2: #334166; /* secondary and small text: 9.5:1 on --bg; control edges */
+  --ink-3: #5d6b87; /* muted: 5.0:1 on --bg, so large text and icons only (4.5:1), never small text */
+  --accent: #0d2052; /* navy: headings, links, primary buttons, selected frames */
+  --accent-mid: #1a3478; /* navy, hover of the primary button */
+  --accent-light: #2a4a9e; /* the focus ring */
+  --red: #b22234; /* bold uppercase labels, icons and the recording button only (6.2:1 on --bg) */
+  --border: #dde2ef; /* hairlines and card frames (decorative; controls use --ink-2) */
+  --on-accent: #ffffff; /* text on navy (15.6:1) and on red (6.6:1, large bold only) */
+  /* Results: an icon and a word as well as the colour. Text inside stays --ink. */
+  --correct: #128040; /* 4.8:1 on --correct-bg: the large headline and the icon */
+  --correct-bg: #f0fdf4;
+  --correct-border: #bbf7d0;
+  --wrong: #ca1f1f; /* 5.4:1 on --wrong-bg: the large headline and the icon */
+  --wrong-bg: #fef2f2;
+  --wrong-border: #fecaca;
+  /* The AI-translation notice: a light amber bar. */
+  --notice-bg: #fdf6e3;
+  --notice-border: #e9d8a6;
+  /* Semantic status */
+  --status-positive: var(--correct);
+  --status-attention: var(--wrong);
   /* ---- Typography ---- */
-  /* Bitter: slab serif for headings (lab-manual character). One web font, two weights. */
-  --font-display: "Bitter", "Roboto Slab", "Rockwell", Georgia, serif;
-  /* System humanist sans for body — no download. */
-  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
-  /* System monospace for labels / tape readouts. */
-  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-
+  /* Playfair Display for headings, Source Serif 4 for body (self-hosted, fonts.css). */
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
   /* Type scale. Root 18px at normal text size (base.css): every rem below grows with it. */
   --fs-display: 2.25rem; /* 40.5px */
   --fs-h1: 1.875rem; /* 33.75px */
@@ -39,16 +47,15 @@
   --fs-lg: 1.25rem; /* 22.5px */
   --fs-body: 1.125rem; /* 20.25px at normal size */
   --fs-meta: 1rem; /* 18px at normal size; nothing is ever below 16px */
-
   --lh-tight: 1.2;
   --lh-snug: 1.5;
   --lh-large: 1.6;
   --lh-body: 1.6;
   --lh-loose: 1.8;
-
   --measure: 34em; /* readable line length */
   --measure-narrow: 28em;
-
+  /* Small uppercase labels ("Start here", step labels, badges): red, bold, letter-spaced. */
+  --label-tracking: 0.08em;
   /* ---- Spacing ---- */
   --space-1: 0.25rem; /* 4px */
   --space-2: 0.5rem; /* 8px */
@@ -59,51 +66,22 @@
   --space-7: 3rem; /* 48px */
   --space-8: 4rem; /* 64px */
   --space-9: 6rem; /* 96px */
-
   /* ---- Radius ---- */
-  --radius-sm: 4px;
-  --radius-md: 8px;
+  --radius-sm: 6px;
+  --radius-md: 14px; /* cards, buttons, inputs */
   --radius-lg: 14px;
   --radius-pill: 999px;
-
-  /* ---- Elevation (warm-tinted, restrained) ---- */
-  --shadow-sm: 0 1px 2px rgba(42, 33, 24, 0.06);
-  --shadow-md: 0 2px 8px rgba(42, 33, 24, 0.08);
-
+  /* ---- Elevation (navy-tinted, soft) ---- */
+  --shadow: 0 4px 24px rgba(13, 32, 82, 0.09);
+  --shadow-hover: 0 8px 32px rgba(13, 32, 82, 0.15);
+  --shadow-sm: var(--shadow);
+  --shadow-md: var(--shadow);
   /* ---- Interaction ---- */
   --tap-min: max(56px, 3.1112rem); /* 56px at normal text size; grows with the text size */
   --focus-width: 3px;
   --focus-offset: 3px;
-
+  --focus-color: var(--accent-light);
   /* ---- Layout ---- */
   --shell-max: 44rem;
   --gutter: clamp(1rem, 5vw, 2.5rem);
-}
-
-/* Dark mode (espresso booth): explicit choice wins */
-:root[data-theme="dark"] {
-  --bg: #1f1813;
-  --surface: #271f19;
-  --surface-2: #2e251e;
-  --ink: #f0e8d9;
-  --ink-2: #c4b49c;
-  --teal: #85bcb5;
-  --amber: #d98a36;
-  --border: #836c53;
-  --on-accent: #1f1813;
-}
-
-/* Dark mode: follow OS when no explicit theme is set */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #1f1813;
-    --surface: #271f19;
-    --surface-2: #2e251e;
-    --ink: #f0e8d9;
-    --ink-2: #c4b49c;
-    --teal: #85bcb5;
-    --amber: #d98a36;
-    --border: #836c53;
-    --on-accent: #1f1813;
-  }
 }

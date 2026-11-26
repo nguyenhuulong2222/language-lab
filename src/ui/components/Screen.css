@@ -14,24 +14,12 @@
   flex-direction: column;
   gap: var(--space-3);
 }
-.take__overline {
-  font-family: var(--font-body);
-  font-size: var(--fs-meta);
-  font-weight: 600;
-  color: var(--ink-2);
-}
-.take__number {
-  color: var(--ink-2);
-}
-.take__sep {
-  margin-inline: var(--space-2);
-  color: var(--border);
-}
 .take__title {
   font-size: var(--fs-h1);
   letter-spacing: -0.01em;
 }
-.take__title:focus {
+/* Programmatic focus after a screen change shows no ring; keyboard focus still does. */
+.take__title:focus:not(:focus-visible) {
   outline: none;
 }
 .take__lead {
@@ -40,7 +28,7 @@
   color: var(--ink-2);
   max-width: var(--measure);
 }
-/* The question or sentence: body font (Bitter is for headings only), large and semi-bold */
+/* The question or sentence: body font (Playfair Display is for headings only), large and semi-bold */
 .prompt {
   font-family: var(--font-body);
   font-size: var(--fs-h2);
@@ -60,10 +48,10 @@
   width: 1.1em;
   height: 1.1em;
   vertical-align: -0.15em;
-  color: var(--teal);
+  color: var(--accent);
 }
 .icon-inline--attention {
-  color: var(--amber);
+  color: var(--status-attention);
 }
 .notice-list {
   margin: 0;
@@ -104,7 +92,7 @@
   display: inline-flex;
   align-items: center;
   min-height: var(--tap-min);
-  color: var(--teal);
+  color: var(--accent);
 }
 
 .plain-lines {

@@ -7,8 +7,10 @@ inclusion: always
 ## What It Is
 
 Language Lab is a free, voice-first practice tool for the U.S. naturalization interview.
-It is styled as a 1970s language lab booth: individual study carrels, reel-to-reel warmth,
-focused repetition.
+It brings back the idea of the 1970s language-lab booth: listen to a prompt, speak, compare,
+and repeat, one learner at a time. What comes back is the method, not the look: the app has the
+clean navy-and-white style of formN400.org, the owner's separate site, and is served at
+lab.formn400.org.
 
 ## What It Is Not
 

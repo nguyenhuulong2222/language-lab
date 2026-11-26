@@ -63,7 +63,7 @@ describe("A11Y-06: English text is marked lang=en", () => {
 });
 describe("A11Y-07: mono lines in scripts without a monospace face", () => {
   it("use the body font of the script", () => {
-    expect(scriptsCss).toMatch(/\.take__overline, \.progress-line, \.stepper__condensed-count, \.report__overline\) \{\s*font-family: var\(--font-body\);/);
+    expect(scriptsCss).toMatch(/\.progress-line, \.stepper__condensed, \.report__overline\) \{\s*font-family: var\(--font-body\);/);
     for (const code of ["th", "lo", "my", "hi", "ko"]) expect(scriptsCss).toContain(`[lang="${code}"]`);
   });
 });

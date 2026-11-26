@@ -66,7 +66,7 @@ export function SentenceFeedback({ target, attempt, matchOptions, kind }: Senten
     : comparison.notes.filter((n) => n.kind === "missing-content" || n.kind === "different" || n.kind === "extra-content");
   const noteLines = shown.map((note) => lineFor(note, typed, attempt.isCorrect));
   return (
-    <section className="panel">
+    <section className={attempt.isCorrect ? "panel panel--correct" : "panel panel--wrong"}>
       {/* A big headline first ("This counts." / "Not yet."), then the reason lines, then the details. */}
       <h2 className="result-headline" ref={heading} tabIndex={-1}>
         <Icon className={attempt.isCorrect ? "icon-inline" : "icon-inline icon-inline--attention"} />{" "}

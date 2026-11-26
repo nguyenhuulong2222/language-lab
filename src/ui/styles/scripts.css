@@ -1,7 +1,7 @@
 /*
  * Fonts for the non-Latin scripts. No web fonts: each script uses the fonts that ship with
  * iOS, macOS, Android and Windows, listed in that order, so nothing large is downloaded.
- * The Latin heading font (Bitter) has no glyphs for these scripts, so headings use the same
+ * The Latin fonts (Playfair Display, Source Serif 4) have no glyphs for these scripts, so headings use the same
  * stack as the body text in these languages.
  */
 :root {
@@ -11,15 +11,18 @@
   --font-hi: "Kohinoor Devanagari", "Devanagari Sangam MN", "Noto Sans Devanagari", "Nirmala UI", system-ui, sans-serif;
   --font-zh: "PingFang TC", "Heiti TC", "Noto Sans CJK TC", "Microsoft JhengHei", system-ui, sans-serif;
   --font-ko: "Apple SD Gothic Neo", "Noto Sans CJK KR", "Malgun Gothic", system-ui, sans-serif;
+  /* Russian: no Cyrillic subset is served; Latin letters use the web fonts, Cyrillic a system serif. */
+  --font-ru: Georgia, "Times New Roman", "PT Serif", serif;
 }
 
 /* The whole page, when the interface is in that language. */
-html[lang="th"] { --font-body: var(--font-th); --font-display: var(--font-th); }
-html[lang="lo"] { --font-body: var(--font-lo); --font-display: var(--font-lo); }
-html[lang="my"] { --font-body: var(--font-my); --font-display: var(--font-my); }
-html[lang="hi"] { --font-body: var(--font-hi); --font-display: var(--font-hi); }
-html[lang|="zh"] { --font-body: var(--font-zh); --font-display: var(--font-zh); }
-html[lang="ko"] { --font-body: var(--font-ko); --font-display: var(--font-ko); }
+html[lang="th"] { --font-body: "Source Serif 4", var(--font-th); --font-display: "Playfair Display", var(--font-th); }
+html[lang="lo"] { --font-body: "Source Serif 4", var(--font-lo); --font-display: "Playfair Display", var(--font-lo); }
+html[lang="my"] { --font-body: "Source Serif 4", var(--font-my); --font-display: "Playfair Display", var(--font-my); }
+html[lang="hi"] { --font-body: "Source Serif 4", var(--font-hi); --font-display: "Playfair Display", var(--font-hi); }
+html[lang|="zh"] { --font-body: "Source Serif 4", var(--font-zh); --font-display: "Playfair Display", var(--font-zh); }
+html[lang="ko"] { --font-body: "Source Serif 4", var(--font-ko); --font-display: "Playfair Display", var(--font-ko); }
+html[lang="ru"] { --font-body: "Source Serif 4", var(--font-ru); --font-display: "Playfair Display", var(--font-ru); }
 
 /* A passage in that language inside another one (the language menu names each language in its own script). */
 [lang="th"] { font-family: var(--font-th); }
@@ -31,7 +34,7 @@ html[lang="ko"] { --font-body: var(--font-ko); --font-display: var(--font-ko); }
 
 /* English text inside another language (the AI notice, the English disclaimer lines) uses the Latin stack. */
 [lang="en"] { font-family: var(--font-latin); }
-:root { --font-latin: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+:root { --font-latin: "Source Serif 4", Georgia, "Times New Roman", serif; }
 
 /* Scripts with tall marks above and below the line need more line height and no letter spacing. */
 html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"]) {
@@ -44,8 +47,11 @@ html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"]) {
 html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"]) * {
   letter-spacing: normal;
 }
-/* The mono "tape counter" lines hold translated words. Those scripts have no monospace face, so the
-   platform would choose one: use the script's own body font there. */
-html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"], [lang|="zh"], [lang="ko"]) :is(.take__overline, .progress-line, .stepper__condensed-count, .report__overline) {
+/* Labels and counter lines hold translated words: the script's own body font there. */
+html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"], [lang|="zh"], [lang="ko"]) :is(.progress-line, .stepper__condensed, .report__overline) {
   font-family: var(--font-body);
+}
+/* Vietnamese stacks two marks on some letters (ấ, ổ): headings in Playfair need a little more line height. */
+html[lang="vi"] :is(h1, h2, h3, h4, .action-card__title) {
+  line-height: var(--lh-snug);
 }

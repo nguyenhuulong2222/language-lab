@@ -25,3 +25,11 @@
 .badge--attention .badge__icon {
   color: var(--status-attention);
 }
+.badge--positive {
+  background: var(--correct-bg);
+  border-color: var(--correct-border);
+}
+.badge--attention {
+  background: var(--wrong-bg);
+  border-color: var(--wrong-border);
+}

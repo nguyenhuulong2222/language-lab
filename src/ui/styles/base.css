@@ -42,15 +42,25 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Headings use the slab serif for lab-manual character */
+/* Headings: Playfair Display, navy */
 h1,
 h2,
 h3,
 h4 {
   margin: 0;
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 700;
   line-height: var(--lh-tight);
+  color: var(--accent);
+}
+/* A small uppercase label: red, bold, letter-spaced, never below 16px (step line, badges). */
+.label-caps {
+  font-family: var(--font-body);
+  font-size: max(16px, var(--fs-meta));
+  font-weight: 700;
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--red);
 }
 
 p {
@@ -62,7 +72,7 @@ p + p {
 }
 
 a {
-  color: var(--teal);
+  color: var(--accent);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
 }
@@ -74,7 +84,7 @@ button {
 
 /* Visible keyboard focus on every focusable element */
 :focus-visible {
-  outline: var(--focus-width) solid var(--teal);
+  outline: var(--focus-width) solid var(--focus-color);
   outline-offset: var(--focus-offset);
 }
 
@@ -85,7 +95,7 @@ button {
 }
 
 ::selection {
-  background: var(--amber);
+  background: var(--accent);
   color: var(--surface);
 }
 
@@ -117,7 +127,7 @@ button {
   border: 0;
 }
 
-/* Reduced motion: disable any reel/tape animation and transitions */
+/* Reduced motion: disable animation and transitions */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

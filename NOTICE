@@ -19,9 +19,11 @@ agency. Nothing here is legal advice.
    publication"). Each picture's creator, source page, file URL, SHA-256 and rights statement are
    in data/images/manifest.json and docs/image-credits.md. They are not covered by the MIT licence.
 
-4. Font. Bitter by Sol Matas (Huerta Tipográfica), SIL Open Font License 1.1. Served from this
-   site (public/fonts/, licence text in public/fonts/OFL.txt). Nothing is loaded from Google.
-
+4. Fonts. Playfair Display (headings) by Claus Eggers Sørensen and Source Serif 4 (text) by Frank
+   Grießhammer (Adobe), both SIL Open Font License 1.1, from the Fontsource releases of the Google
+   Fonts families. Served from this site (public/fonts/, licence texts in
+   public/fonts/OFL-PlayfairDisplay.txt and public/fonts/OFL-SourceSerif4.txt). Nothing is loaded
+   from Google.
 5. Generated audio (public/audio/). Spoken prompts made with OpenAI text-to-speech (model
    gpt-4o-mini-tts, voice "coral") from texts in this repository. The app labels them "AI-generated
    voice". They are provided as part of this project; the OpenAI terms of use apply to how the
@@ -46,8 +48,9 @@ agency. Nothing here is legal advice.
    materials it approves beforehand, and no public badge for developers was found. Claude and
    Anthropic are trademarks of Anthropic, PBC. Language Lab is not affiliated with, sponsored by or
    endorsed by Anthropic.
-9. formN400.org. This repository contains no text, translation, data or design from formN400.org
-   or the separate N400 project of the same owner, and nothing here grants any right to
-   formN400.org or its content. Earlier versions of this repository's history contained civics
+9. formN400.org. Its visual style (colours and fonts) was chosen to match formN400.org, the
+   owner's separate earlier site, so the two look alike at lab.formn400.org. The style was
+   re-implemented in this repository. No code, text, data or images were copied from formN400.org
+   or the N400 repository. Nothing here grants any right to formN400.org or its content. Earlier versions of this repository's history contained civics
    translations imported from that project; they were removed from the working tree and are not
    licensed by this repository's licence.

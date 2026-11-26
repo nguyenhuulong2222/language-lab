@@ -79,3 +79,14 @@ Use active voice as default. A CTA says exactly what happens when it is used: "S
 Treat failure and emptiness as moments for direction, not mood. Explain what went wrong and how to fix it, in the interface's voice rather than a person's. Errors don't apologize, and they are never vague about what happened. An empty screen is an invitation to act.
 
 Keep the tone conversational: plain verbs, sentence case, no filler, with tone matched to the brand and the audience. Let each written element do exactly one job.
+
+---
+
+## Language Lab notes (project-specific, not part of the Anthropic skill above)
+
+For this project the brief pins the visual direction: the formN400 look described in
+`design-system.md` (navy `#0d2052`, red `#b22234` for labels and icons, page `#f7f8fc`, white cards
+with a 14px radius and a soft navy shadow; Playfair Display headings and Source Serif 4 body). The
+brief's words win over the defaults above. The floor stays: AAA contrast for body and small text,
+56px targets, 64px primary buttons, exactly one filled primary per screen, nothing below 16px, no
+colour-only status, no retro decoration.

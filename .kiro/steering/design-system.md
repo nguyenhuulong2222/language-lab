@@ -1,232 +1,123 @@
 ---
 inclusion: always
 ---
-
 # Language Lab — Design System
 
 Records the chosen visual direction so all future UI work stays consistent. This is the
-source of truth for tokens; the implementation lives in `src/ui/styles/tokens.css`.
+source of truth for tokens; the implementation lives in `src/ui/styles/tokens.css`. The token
+map from the earlier palette and the contrast table are in `docs/ui/formn400-style.md`.
 
-## Chosen direction: Reel-to-Reel
+## Chosen direction: the formN400 look
 
-The 1970s language lab booth the product is already named for. Individual study carrels,
-reel-to-reel warmth, focused repetition. The feeling of pulling the curtain on a quiet
-booth and pressing a chunky button to begin.
+Language Lab is served at lab.formn400.org. Its colours and fonts match formN400.org, the owner's
+separate earlier site, so the two look alike: a calm navy and white study page with a red accent,
+serif type throughout. The style is re-implemented here from the token values and font names only;
+no code, text, data or images come from formN400.org or the N400 repository.
 
-The product brief pins this metaphor explicitly (`product.md`, `README.md`), so the warm
-parchment palette is a *choice the brief asked for*, not the generic cream default. To keep
-it from reading as a template, the palette is anchored by **muted teal (lab equipment)** as a
-co-equal with the warm tones, and the burnt-amber accent is reserved for active/record states
-rather than used as the decorative primary.
+The language-lab idea (listen, speak, compare, repeat) is what the product brings back, not the
+colours of a 1970s booth. There is no retro decoration: no tape counter, no reel glyph, no textures.
 
 ### Principles
 
-- **Restraint over gimmick.** Retro character stays in type, color, and one subtle reel
-  motif. No heavy paper textures, no skeuomorphic chrome, nothing that competes with text.
-- **Readability is the floor.** Users are ESL learners, often older and anxious. Body text
-  ≥ 18px, generous line-height, WCAG AA minimum (AAA for body text where feasible), in both
-  light and dark mode.
-- **Encouraging, never punitive.** The interview is high-stakes for users. Feedback never
-  says pass/fail and never uses harsh red. Status is conveyed by icon + label, never color
-  alone. Calm teal = on track; warm amber = review this.
-- **One memorable thing.** The reel/tape motif — the stage stepper's progress and the
-  tape-counter overline above each stage heading — is the characterful element;
-  everything around it is quiet and disciplined.
-- **Motion answers action.** Non-user-triggered motion is rare. Any reel/tape animation
-  respects `prefers-reduced-motion`.
+- **Readability is the floor.** Users are ESL learners, often 60 to 85. Body text 20px at normal
+  size, line height 1.6, AAA contrast for every piece of body and small text.
+- **One main action per screen.** Exactly one filled navy button (or the filled "Practice test"
+  card on Home); everything else is outlined or a white card.
+- **Tappable things look tappable.** A white card with a frame, an arrow and a visible verb, and a
+  stronger shadow on hover. Plain text never looks like a button.
+- **Never colour alone.** Status always has an icon and a word as well as its colour.
+- **Encouraging copy.** Results say "This counts" or "Not yet", never pass or fail.
+- **Independent, not official.** Navy and red are the owner's brand colours, not a government
+  look: no seals, no eagle, no "official" wording; the disclaimer stays on every screen.
 
-## Color
+## Color (light only)
 
-Light mode (parchment booth, lights on):
-
-| Token | Hex | Role | Verified contrast |
+| Token | Hex | Role | Contrast |
 |---|---|---|---|
-| `--bg` | `#F4EEE1` | Page background | — |
-| `--surface` | `#FBF7EE` | Cards / raised panels | ink 14.78:1 |
-| `--surface-2` | `#EFE7D6` | Recessed / wells | — |
-| `--ink` | `#2A2118` | Primary text | 13.67:1 (AAA) |
-| `--ink-2` | `#574635` | Secondary text | 7.79:1 (AAA) |
-| `--teal` | `#235350` | Accent, links, on-track status | 7.49:1 (AAA) |
-| `--amber` | `#98591A` | Active/record, review status (large text, icons, borders only) | 4.81:1 |
-| `--border` | `#968255` | Rules, dividers and control edges | 3.23:1 (3:1 for edges) |
-| `--status-positive` | `--teal` | Understood / correct / practice_passed | — |
-| `--status-attention` | `--amber` | Needs practice / incorrect / needs_more_practice | — |
+| `--bg` | `#f7f8fc` | Page background | — |
+| `--surface` | `#ffffff` | Cards, header, inputs | — |
+| `--surface-2` | `#eef1f9` | Light navy tint: selected cards, wells | — |
+| `--ink` | `#0d1f3c` | Body text | 15.5:1 on bg (AAA) |
+| `--ink-2` | `#334166` | Secondary and small text; control edges | 9.5:1 on bg (AAA) |
+| `--ink-3` | `#5d6b87` | Muted: large text and icons only | 5.0:1 on bg (4.5 floor) |
+| `--accent` | `#0d2052` | Navy: headings, links, primary buttons, selected frames | 14.7:1 on bg |
+| `--accent-mid` | `#1a3478` | Hover of the primary button | 10.9:1 on bg |
+| `--accent-light` | `#2a4a9e` | Focus ring | 7.7:1 on bg |
+| `--red` | `#b22234` | Bold uppercase labels, icons, the recording button | 6.2:1 on bg (large/bold only) |
+| `--border` | `#dde2ef` | Hairlines and card frames (decorative) | — |
+| `--on-accent` | `#ffffff` | Text on navy (15.6:1) and on red (6.6:1, large bold) | — |
+| `--correct` / `-bg` / `-border` | `#128040` / `#f0fdf4` / `#bbf7d0` | "This counts" headline, icon, panel | 4.8:1 (large text and icon) |
+| `--wrong` / `-bg` / `-border` | `#ca1f1f` / `#fef2f2` / `#fecaca` | "Not yet" headline, icon, panel | 5.4:1 (large text and icon) |
+| `--notice-bg` / `-border` | `#fdf6e3` / `#e9d8a6` | The AI-translation notice bar | ink 15.2:1 |
 
-Dark mode (espresso booth, amber glow):
-
-| Token | Hex | Role | Verified contrast |
-|---|---|---|---|
-| `--bg` | `#1F1813` | Page background | — |
-| `--surface` | `#271F19` | Cards / raised panels | ink 13.31:1 |
-| `--surface-2` | `#2E251E` | Recessed / wells | — |
-| `--ink` | `#F0E8D9` | Primary text | 14.39:1 (AAA) |
-| `--ink-2` | `#C4B49C` | Secondary text | 8.64:1 (AAA) |
-| `--teal` | `#85BCB5` | Accent, links, on-track status | 8.23:1 (AAA) |
-| `--amber` | `#D98A36` | Active/record, review status | 6.37:1 (AA) |
-| `--border` | `#836C53` | Rules, dividers and control edges | 3.53:1 (3:1 for edges) |
-| `--status-positive` | `--teal` | Understood / correct / practice_passed | — |
-| `--status-attention` | `--amber` | Needs practice / incorrect / needs_more_practice | — |
-
-`--on-accent` is the text colour on teal and amber buttons: `#FBF7EE` in light mode, `#1F1813` in dark mode.
-
-Button pairs: light `#FBF7EE` on teal `#235350` = 8.10:1, dark `#1F1813` on teal `#85BCB5` = 8.23:1. On amber (the listening state, large bold text only): light `#FBF7EE` on `#98591A` = 5.20:1; dark `#1F1813` on
-`#D98A36` = 6.37:1. Amber is never body text.
-
-Accent colours on each background (WCAG contrast, computed from the hex values above; audit A11Y-12):
-
-| Pair | `--bg` | `--surface` | `--surface-2` |
-|---|---|---|---|
-| Light teal `#235350` | 7.49:1 | 8.10:1 | 7.04:1 |
-| Light amber `#98591A` | 4.81:1 | 5.20:1 | 4.52:1 |
-| Dark teal `#85BCB5` | 8.23:1 | 7.60:1 | 7.04:1 |
-| Dark amber `#D98A36` | 6.37:1 | 5.89:1 | 5.46:1 |
-
-Light amber on `--surface-2` (4.43:1) is below 4.5:1, so it is for icons and other non-text marks
-only (3:1 applies). No text is set in amber on `--surface-2`.
-
-Color theme is switched via a `data-theme="dark"` attribute on `<html>` (or the user's
-`prefers-color-scheme: dark` when no explicit choice is set).
+No dark theme: `color-scheme: light` and `<meta name="color-scheme" content="light">`.
+Text inside a result panel stays `--ink`; only the large headline and the icon take the result
+colour. The contrast unit test (`src/ui/__tests__/contrast.test.ts`) reads `tokens.css` and checks
+text 7:1, large text and icons 4.5:1, control edges and focus 3:1.
 
 ## Typography
 
-Two families, clearly distinct; plus a system monospace accent.
-
 | Role | Family | Stack |
 |---|---|---|
-| Headings (slab, lab-manual character) | Bitter (web font, weights 400/600) | `"Bitter", "Roboto Slab", "Rockwell", Georgia, serif` |
-| Body (humanist sans) | system stack, no download | `system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif` |
-| Labels / tape readouts (mono accent) | system monospace | `"SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace` |
+| Headings, wordmark | Playfair Display 400 / 700 / 900 | `"Playfair Display", Georgia, "Times New Roman", serif` |
+| Body, labels, buttons | Source Serif 4 400 / 600 / 700, italic 400 | `"Source Serif 4", Georgia, "Times New Roman", serif` |
 
-Bitter is a slab serif designed for on-screen reading, so the retro heading character and
-ESL readability pull the same direction. Only one web font is loaded (two weights) to keep
-the bundle light; body and mono use system stacks with robust fallbacks. Load with
-`font-display: swap` so headings render in the serif fallback immediately.
+Both are self-hosted woff2 files in `public/fonts/` (latin, latin-ext, vietnamese subsets; SIL OFL
+1.1, licence texts beside them); the latin body font is preloaded. Nothing loads from Google.
+Chinese, Korean, Hindi, Thai and Russian use the system stacks in `scripts.css`.
+
+Small uppercase labels (the step line "STEP 3 OF 6: READING", the "AI" badge, the report label):
+red, bold, letter-spaced (`--label-tracking`), never below 16px.
 
 ### Type scale (root 18px at normal, 21px large, 24px extra large; `--fs-body` 1.125rem = 20px)
 
-| Token | Value | Use |
-|---|---|---|
-| `--fs-display` | 2.5rem (40px) | Report headline / page hero |
-| `--fs-h1` | 2rem (32px) | Page titles |
-| `--fs-h2` | 1.625rem (26px) | Section titles |
-| `--fs-h3` | 1.375rem (22px) | Subsection / card titles |
-| `--fs-h4` | 1.1875rem (21px) | Small headings (bold body) |
-| `--fs-lg` | 1.25rem (20px) | Lead / intro text |
-| `--fs-body` | 1.125rem (20px) | Body text |
-| `--fs-meta` | 1rem (18px) | Labels, meta, status; nothing below 16px at any setting |
-
-Line-height: `--lh-tight` 1.2 (headings), `--lh-snug` 1.35, `--lh-large` 1.4 (large text such
-as the lead), `--lh-body` 1.6 (body and every multi-line text), `--lh-loose` 1.8. Line length: `--measure` 34em for prose, `--measure-narrow` 28em for
-forms/inputs. No visible text falls below 16px.
+`--fs-display` 2.25rem, `--fs-h1` 1.875rem, `--fs-h2` 1.5rem, `--fs-h3` 1.3125rem, `--fs-h4`
+1.1875rem, `--fs-lg` 1.25rem, `--fs-body` 1.125rem, `--fs-meta` 1rem (18px; no visible text below
+16px). Line heights: `--lh-tight` 1.2, `--lh-snug` 1.5, `--lh-body` 1.6. Line length `--measure` 34em.
 
 ## Spacing, radius, elevation
 
-Spacing scale (`--space-*`): 0.25 / 0.5 / 0.75 / 1 / 1.5 / 2 / 3 / 4 / 6 rem
-(4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 px). Page gutters use a responsive clamp
-(`--gutter`). `--shell-max` 44rem is the single centered column shared by the header,
-stepper, main, and footer.
+Spacing `--space-1` to `--space-9`: 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 px. `--shell-max`
+44rem is the one centred column for the header, main and footer. Radius `--radius-md` 14px for cards,
+buttons and inputs; `--radius-pill` for chips. Shadows: `--shadow` `0 4px 24px rgba(13,32,82,.09)`
+on cards; `--shadow-hover` `0 8px 32px rgba(13,32,82,.15)` on tappable cards when hovered.
 
-Radius: `--radius-sm` 4px, `--radius-md` 8px, `--radius-lg` 14px, `--radius-pill` 999px.
-Cards use `--radius-md`; pill status chips use `--radius-pill`.
+## Components
 
-Elevation is restrained and warm-tinted (not the generic neutral grey shadow):
-`--shadow-sm` `0 1px 2px rgba(42,33,24,.06)`, `--shadow-md` `0 2px 8px rgba(42,33,24,.08)`.
-
-## App shell layout
-
-Header, stage stepper, main workspace, and footer all live inside one centered content
-column (`--shell-max` 44rem), so they share a single aligned width and the shell never
-stretches edge-to-edge on large screens. The active stage fills the column (≈75ch line
-length, under the 80ch readability limit); the page background fills the side margins.
-
-```
-Desktop
-┌───────────────────────────────────────────────────────┐
-│ ◐ Language Lab                  About & disclaimer › │  header
-├───────────────────────────────────────────────────────┤
-│ 1 Intro ─ 2 N-400 ─ 3 Reading ─ 4 Writing ─ 5 Civics ─ ● Report │  stage stepper
-├───────────────────────────────────────────────────────┤
-│                                                       │
-│                   main workspace                      │  active stage panel
-│                   (Report screen)                     │
-│                                                       │
-├───────────────────────────────────────────────────────┤
-│ Not affiliated with USCIS or any agency · Not legal advice │  footer disclaimer
-└───────────────────────────────────────────────────────┘
-```
-
-```
-Mobile
-┌─────────────────────────┐
-│ ◐ Language Lab    About │  header (disclaimer collapses to icon)
-│ Stage 5 of 6 · Civics   │  stepper condenses to current stage + progress bar
-├─────────────────────────┤
-│                         │
-│     main workspace      │
-│                         │
-├─────────────────────────┤
-│ Not affiliated · Not    │  footer
-│ legal advice            │
-└─────────────────────────┘
-```
-
-- **Header.** Brand mark with a small reel glyph; an accessible "About & disclaimer" control
-  that expands the standing disclaimer. The disclaimer is always reachable.
-- **Stage stepper.** The five stages plus report, in order. Each step shows a number, a
-  label, and a status icon (completed = check, current = filled marker). Status is never
-  color-only. Desktop: full horizontal stepper; mobile: current stage name + a thin progress
-  bar (the restrained "tape" motif).
-- **Main workspace.** The single active stage panel, driven by `InterviewSession` /
-  `mock/session.json`. Same shell, content swaps per stage. The fixture is in the report
-  stage, so the Report screen is the first to render real data.
-- **Tape counter.** Each stage screen opens with a mono, uppercase overline above its H1,
-  styled like a reel-to-reel take counter (e.g. `TAKE 06 · PRACTICE REPORT`), where the
-  number is the zero-padded stage position. The counter and separator are decorative
-  (`aria-hidden`); the page label is announced to screen readers. No texture or animation.
-- **Footer.** The standing disclaimer (not affiliated / not legal advice), always visible.
-
-## Home, help and settings
-
-- **Home.** The first screen offers "Full practice interview" (one filled teal option card) and
-  four single parts (outlined option cards), above the standing disclaimers. No eyebrow label
-  on home: the header already carries the brand.
-- **Header buttons.** Language (opens a menu of the 14 interface languages, each written in its own language, English first; the button shows the current one),
-  Home (only inside a session; it asks before discarding answers), Settings and About. Panels open
-  below the header in the page flow. Escape closes a panel and returns focus to its button.
-- **Stepper and take counter** show only the steps of the chosen session; "TAKE 01" is the
-  position within that session.
-- **"How this works"** sits after the question and before the answer box on question screens, so
-  the question stays near the top. It opens by itself the first time a screen is shown in a
-  session.
-
-## Status & feedback semantics
-
-The report uses `practice_passed` / `needs_more_practice` (never pass/fail). Outcomes and
-per-item status are shown with an icon + a plain-language label, never color alone:
-
-- **On track** (understood, correct, practice_passed) → check icon, teal accent.
-- **Review this** (needs_practice, incorrect, needs_more_practice) → a small "review" marker,
-  amber accent, with the specific item to revisit.
-
-No harsh red anywhere. Feedback copy is encouraging and specific ("Review the name of the
-current President" — not "Wrong").
+- **Header.** A white bar with a bottom rule: the navy Playfair wordmark "Language Lab", then "Text
+  size" and the language button (globe and the language's own name). One row at normal size.
+  "About & disclaimer" is a big button in the footer.
+- **Back to Home.** A 56px outlined button with an arrow at the top of every screen but Home; in a
+  practice it asks "Keep practicing / Leave" first.
+- **Step line.** Under Back to Home: "STEP 3 OF 6: READING" as a red uppercase label, with a thin
+  navy progress bar.
+- **Buttons.** Primary: navy, white text, 64px, full width on a phone. Secondary: white with a 2px
+  navy edge. Recording: red with white large bold text.
+- **Cards.** White, 1px hairline, 14px radius, the soft shadow; tappable cards add the hover shadow,
+  an arrow and a verb (`ActionCard`).
+- **Radio and choice cards.** A 2px frame; selected: 2px navy frame, light navy tint, and the radio
+  or check mark. The whole card is the target, 56px or more (72px on Home).
+- **Results.** The correct or wrong colour set on the result panel, a large headline with an icon
+  and a word ("This counts" / "Not yet"), then one short reason.
+- **AI notice.** A light amber bar: one line in the chosen language with an info icon, the English
+  line under it, and the legal-English sentence behind "More".
+- **Language grid.** White cells; the chosen one has a 2px navy frame, a tint, bold text and a
+  check. No flags.
+- **Disclaimer.** White with a red left rule ("Please read this").
 
 ## Accessibility floor
 
-- Body text 20px at normal size; line height 1.6; body and small text 7:1 or more (AAA) in both themes; teal and amber only for large text, icons and borders (4.5:1 or more).
-- Minimum tap target 48px (`--tap-min`, `3rem`, so it grows with the text size); all interactive controls meet it.
-- Comfort settings in the header: text size (normal 18px, large 21px, extra large 24px root; the default is already the comfortable size because settings are not stored) and slower playback of recorded voices. They live in memory for the session only.
-- Visible keyboard focus: a 3px teal focus ring with offset on every focusable element.
-- Full keyboard navigation; the stepper and report are operable without a pointer.
-- Status and progress never rely on color alone (icon + label always present).
-- `prefers-reduced-motion: reduce` disables any reel/tape animation and substitutes a
-  static, equally legible state.
-- Semantic HTML: landmarks (`header`, `nav`, `main`, `footer`), headings in order,
-  `aria-current` on the active stage, list semantics for stages and review items.
+- Body text 20px at normal size; line height 1.6; body and small text 7:1 or more; red, muted and
+  result colours only for large text and icons (4.5:1 or more).
+- Minimum tap target 56px (`--tap-min`, grows with the text size); primary buttons 64px.
+- Text size (normal 18px, large 21px, extra large 24px root) and slower voice live in memory only.
+- Visible keyboard focus: a 3px navy-light ring (`--focus-color`), offset 3px, on every focusable
+  element.
+- Status and progress never rely on colour alone (icon + word always present).
+- `prefers-reduced-motion: reduce` removes transitions.
+- Semantic HTML: landmarks, headings in order, `aria-current` on the active step and language.
 
 ## Motion policy
 
-Characterful motion is limited to the reel/tape progress motif and is subtle. Anything
-non-essential is removed under `prefers-reduced-motion`. Motion should answer an action
-(entering a stage, completing a turn), not decorate passively. No fade-and-slide on every
-section.
+Motion only answers an action (a hover shadow, the "More" arrow turning). No page-load animation,
+no fade-and-slide on sections.

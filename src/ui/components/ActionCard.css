@@ -7,9 +7,10 @@
   width: 100%;
   min-height: max(72px, 4rem);
   padding: var(--space-3) var(--space-4);
-  border: 2px solid var(--ink-2);
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background: var(--surface);
+  box-shadow: var(--shadow);
   color: var(--ink);
   font: inherit;
   text-align: left;
@@ -17,12 +18,12 @@
   overflow-wrap: anywhere;
 }
 .action-card:hover {
-  border-color: var(--teal);
-  background: var(--surface-2);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
 }
 .action-card:active {
   background: var(--surface-2);
-  box-shadow: inset 0 0 0 2px var(--teal);
+  box-shadow: inset 0 0 0 2px var(--accent);
 }
 .action-card__body {
   display: flex;
@@ -37,8 +38,9 @@
   gap: var(--space-2);
   font-family: var(--font-display);
   font-size: var(--fs-h3);
-  font-weight: 600;
+  font-weight: 700;
   line-height: var(--lh-tight);
+  color: var(--accent);
 }
 .action-card__texts {
   display: flex;
@@ -62,7 +64,7 @@
   gap: var(--space-1);
   font-size: var(--fs-body);
   font-weight: 700;
-  color: var(--teal);
+  color: var(--accent);
 }
 .action-card__arrow {
   width: 1.5rem;
@@ -78,20 +80,24 @@
 .action-card.action-card--primary {
   min-height: max(88px, 5rem);
   width: 100%;
-  border-color: var(--teal);
-  background: var(--teal);
+  border-color: var(--accent);
+  background: var(--accent);
   color: var(--on-accent);
   font-size: inherit;
   font-weight: inherit;
 }
-.action-card.action-card--primary:hover,
+.action-card.action-card--primary:hover {
+  border-color: var(--accent-mid);
+  background: var(--accent-mid);
+  box-shadow: var(--shadow-hover);
+}
 .action-card.action-card--primary:active {
-  border-color: var(--ink);
-  background: var(--teal);
+  background: var(--accent-mid);
   box-shadow: inset 0 0 0 2px var(--on-accent);
 }
 .action-card--primary .action-card__go,
-.action-card--primary .action-card__meta {
+.action-card--primary .action-card__meta,
+.action-card--primary .action-card__title {
   color: var(--on-accent);
 }
 /* A word, not a colour: "AI". */
@@ -101,8 +107,11 @@
   border: 2px solid currentColor;
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
-  font-size: var(--fs-meta);
-  font-weight: 600;
+  font-size: max(16px, var(--fs-meta));
+  font-weight: 700;
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--red);
 }
 /* Cards and rows stacked with one gap. */
 .action-list {
@@ -128,28 +137,28 @@
   gap: var(--space-3);
   min-height: max(72px, 4rem);
   padding: var(--space-2) var(--space-3);
-  border: 2px solid var(--ink-2);
+  border: 2px solid var(--border);
   border-radius: var(--radius-md);
   background: var(--surface);
+  box-shadow: var(--shadow);
   cursor: pointer;
 }
 .who-card:hover {
-  border-color: var(--teal);
+  box-shadow: var(--shadow-hover);
 }
 .who-card:has(input:checked) {
-  border-color: var(--teal);
+  border-color: var(--accent);
   background: var(--surface-2);
-  box-shadow: inset 0 0 0 2px var(--teal);
 }
 .who-card:has(input:focus-visible) {
-  outline: var(--focus-width) solid var(--teal);
+  outline: var(--focus-width) solid var(--focus-color);
   outline-offset: var(--focus-offset);
 }
 .who-card__icon {
   width: 2rem;
   height: 2rem;
   flex: 0 0 auto;
-  color: var(--teal);
+  color: var(--accent);
 }
 .who-card__body {
   display: flex;
