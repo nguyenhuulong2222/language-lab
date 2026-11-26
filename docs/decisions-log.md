@@ -565,3 +565,49 @@ keeps its own parts for every choice; the choice only applies to modes with civi
 where the build has the designated list and its rules. The app practises the English questions only:
 the interpreter rule is stated, never simulated. Wording comes from these saved pages only, not from
 formN400.org or the N400 repository.
+
+## R. A picture for every question where one helps (branch content/full-pictures)
+Goal: every PERSON, PLACE, DOCUMENT, EVENT, SYMBOL or CONCEPT question (167 of 228, see
+`docs/image-plan.md`) gets a picture; DYNAMIC and NONE questions (61) stay without one on purpose.
+Result: 166 of 167 have a picture prepared, 152 are shown today, and 14 appear once the owner
+reviews them (10 diagram pairings and the 4 questions of the 3 redone AI illustrations).
+- **Diagrams drawn by code (new kind "diagram"):** no federal map item carried an item-level rights
+  statement that `acceptableRights()` accepts (Library of Congress maps only have the Geography and
+  Map Division's general wording), and the rule was not loosened. Maps and the flag are drawn instead
+  by `tools/images/draw-diagrams.mjs` from U.S. Government works: the Census Bureau 1:20m states (2023),
+  the 1:500k file for the four small territories, USGS National Atlas 1:1M streams for the Missouri and
+  Mississippi, and for the 50-star flag 4 U.S.C. §§ 1-2 with the Executive Order 10834 proportions
+  (`tools/images/flag.mjs`; a test counts 50 stars and 13 stripes in the drawing output). Legal basis
+  "U.S. Government work, public domain (17 U.S.C. §105)". No text labels; one formN400 base style. The
+  13-state map uses today's borders and says so in its caption. Source archives are recorded with URL,
+  date and SHA-256 in `data/images/sources/sources.json`; only the 20m archive itself is kept, plus
+  GeoJSON extracts of the two larger ones. Diagrams are shown only when `reviewed: true`, through the
+  existing picture component with their credit line (the only UI change).
+- **Memorials instead of war and attack photos:** World War II, Korea, Vietnam and September 11 get
+  memorial photos (National WWII Memorial, Korean War Veterans Memorial, Vietnam Veterans Memorial,
+  Flight 93 National Memorial), and the Great Depression gets the breadline sculpture at the FDR
+  Memorial. No weapon in the foreground, no injured people, no attack photo. The Cold War gets the 1987
+  INF Treaty signing (Reagan Library, National Archives "Unrestricted"); the Persian Gulf War gets USS
+  Ranger coming home (National Archives "Unrestricted").
+- **NPS source added:** `build-images.mjs` reads an NPGallery asset page and accepts it only when the
+  page's own "Constraints Information" says "Public domain" and the photo credit is the National Park
+  Service; the constraint is recorded word for word. The site-wide NPGallery copyright notice is not an
+  item statement and is not recorded as one. The NPS Data API's public DEMO_KEY ran out after three
+  parks, so the WWII Memorial and the July 4th fireworks come from the Library of Congress (Carol M.
+  Highsmith, "No known restrictions on publication") instead of NPS; the NPGallery candidates for those
+  two had no NPS photo credit.
+- **Library of Congress rights given as a list:** some loc.gov records give `rights_advisory` as a
+  one-item list. The builder and `find-loc.mjs` now use that item's text; `acceptableRights()` itself is
+  unchanged.
+- **Crops recorded as edits:** the John Jay engraving is cropped to leave out its printed name, and the
+  Rothermel Pilgrims print to leave out the paper margin and its handwriting (rule: no text inside
+  pictures). The crop is written into the manifest and the credits.
+- **Documents are text by nature:** the Federalist page (2025-084), like the Constitution and the
+  Declaration, is a page of print; it is a DOCUMENT picture, not a photo with stray text.
+- **Still missing:** 2025-116 (a conflict after 2001): every National Archives candidate found breaks a
+  rule (a rifle in the foreground, an eagle rating badge, or small "USN" letters on a cap badge);
+  6645873 is the closest and is left for the owner to decide. The three redone AI prompts
+  (paying-taxes, judicial-branch, two-term-limit) were dry-run only; the owner generates and reviews them.
+- **Owner review:** `docs/image-review.md` lists every pairing (federal, diagram, AI) with an "Owner OK"
+  column that the builder now keeps across rebuilds, and `docs/review-sheets/` holds one contact sheet
+  per group.
