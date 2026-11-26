@@ -30,7 +30,8 @@ export function QuestionPicture({ picture }: { picture: PictureEntry }) {
         {picture.caption}
         <span className="question-picture__credit">
           {" "}
-          ({picture.creator}, {picture.date})
+          {/* A diagram's credit line is the whole credit ("Drawn from U.S. Census Bureau data"). */}
+          {picture.kind === "diagram" ? `(${picture.creator})` : `(${picture.creator}, ${picture.date})`}
         </span>
       </figcaption>
     </figure>

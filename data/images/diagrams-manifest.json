@@ -1,0 +1,245 @@
+{
+ "_note": "Diagrams drawn by tools/images/draw-diagrams.mjs from federal data and the U.S. flag code. Shown in the app only when reviewed is true. Do not edit by hand except the reviewed flag.",
+ "images": [
+  {
+   "id": "us-flag-50",
+   "kind": "diagram",
+   "file": "us-flag-50.webp",
+   "questions": [
+    "2008-097",
+    "2025-122"
+   ],
+   "title": "The 50-star flag of the United States",
+   "alt": "The U.S. flag: thirteen red and white stripes and a blue field with fifty white stars.",
+   "caption": "The U.S. flag, with fifty stars",
+   "creditLine": "Drawn from the U.S. flag code (4 U.S.C. §§ 1-2) and Executive Order 10834",
+   "legalBasis": "U.S. Government work, public domain (17 U.S.C. §105)",
+   "sources": [],
+   "drawnFrom": [
+    "4 U.S.C. § 1 and § 2 (https://www.govinfo.gov/content/pkg/USCODE-2023-title4/html/USCODE-2023-title4-chap1.htm)",
+    "Executive Order 10834 of August 21, 1959 (https://www.archives.gov/federal-register/codification/executive-order/10834.html)"
+   ],
+   "counts": {
+    "stars": 50,
+    "stripes": 13
+   },
+   "drawnOn": "2026-11-26",
+   "sha256": "f7760e2e99a652106c14e70a3b8e372041950cd71da5432560668a6c3e115161",
+   "width": 1140,
+   "height": 600,
+   "bytes": 17318,
+   "reviewed": false
+  },
+  {
+   "id": "thirteen-original-states",
+   "kind": "diagram",
+   "file": "thirteen-original-states.webp",
+   "questions": [
+    "2008-064",
+    "2025-081"
+   ],
+   "title": "The 13 original states, shown with today's state borders",
+   "alt": "A map of the eastern United States with the thirteen original states in red, from New Hampshire down to Georgia, drawn with today's state borders.",
+   "caption": "The 13 original states (today's state borders)",
+   "creditLine": "Drawn from U.S. Census Bureau data",
+   "legalBasis": "U.S. Government work, public domain (17 U.S.C. §105)",
+   "sources": [
+    {
+     "id": "census-cb-2023-states-20m",
+     "publisher": "U.S. Census Bureau",
+     "url": "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip",
+     "downloadedOn": "2026-11-26",
+     "sha256": "0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d"
+    }
+   ],
+   "drawnOn": "2026-11-26",
+   "sha256": "b73853e88c21db3c922cc8739c67092336a5a6add7bae296ab4a10dfac8ee9c4",
+   "width": 900,
+   "height": 1200,
+   "bytes": 32148,
+   "reviewed": false
+  },
+  {
+   "id": "longest-rivers",
+   "kind": "diagram",
+   "file": "longest-rivers.webp",
+   "questions": [
+    "2008-088"
+   ],
+   "title": "The Missouri and Mississippi rivers",
+   "alt": "A map of the United States with two long rivers drawn in red: one from Montana to Missouri, and one from Minnesota down to the Gulf of Mexico.",
+   "caption": "The two longest rivers",
+   "creditLine": "Drawn from USGS National Atlas and U.S. Census Bureau data",
+   "legalBasis": "U.S. Government work, public domain (17 U.S.C. §105)",
+   "sources": [
+    {
+     "id": "census-cb-2023-states-20m",
+     "publisher": "U.S. Census Bureau",
+     "url": "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip",
+     "downloadedOn": "2026-11-26",
+     "sha256": "0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d"
+    },
+    {
+     "id": "usgs-national-atlas-streaml010g",
+     "publisher": "U.S. Geological Survey, National Atlas of the United States",
+     "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Small-scale/data/Hydrography/streaml010g.shp_nt00885.tar.gz",
+     "downloadedOn": "2026-11-26",
+     "sha256": "437e423140c3880e8d40f1c15822e7f80022df848b782da2f78e5b96797dec31"
+    }
+   ],
+   "drawnOn": "2026-11-26",
+   "sha256": "19cb50053a5059500a1473c298471bf66acbfbe6d5c7d81b954171149f28969c",
+   "width": 1200,
+   "height": 760,
+   "bytes": 29846,
+   "reviewed": false
+  },
+  {
+   "id": "pacific-coast",
+   "kind": "diagram",
+   "file": "pacific-coast.webp",
+   "questions": [
+    "2008-089"
+   ],
+   "title": "The ocean on the West Coast",
+   "alt": "A map of the United States with the ocean along the West Coast shaded in dark blue.",
+   "caption": "The ocean on the West Coast",
+   "creditLine": "Drawn from U.S. Census Bureau data",
+   "legalBasis": "U.S. Government work, public domain (17 U.S.C. §105)",
+   "sources": [
+    {
+     "id": "census-cb-2023-states-20m",
+     "publisher": "U.S. Census Bureau",
+     "url": "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip",
+     "downloadedOn": "2026-11-26",
+     "sha256": "0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d"
+    }
+   ],
+   "drawnOn": "2026-11-26",
+   "sha256": "8d526d94eace9dbcea9da2683aa357423684b1a8b16077efec1bcf47cbef6980",
+   "width": 1200,
+   "height": 760,
+   "bytes": 25154,
+   "reviewed": false
+  },
+  {
+   "id": "atlantic-coast",
+   "kind": "diagram",
+   "file": "atlantic-coast.webp",
+   "questions": [
+    "2008-090"
+   ],
+   "title": "The ocean on the East Coast",
+   "alt": "A map of the United States with the ocean along the East Coast shaded in dark blue.",
+   "caption": "The ocean on the East Coast",
+   "creditLine": "Drawn from U.S. Census Bureau data",
+   "legalBasis": "U.S. Government work, public domain (17 U.S.C. §105)",
+   "sources": [
+    {
+     "id": "census-cb-2023-states-20m",
+     "publisher": "U.S. Census Bureau",
+     "url": "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip",
+     "downloadedOn": "2026-11-26",
+     "sha256": "0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d"
+    }
+   ],
+   "drawnOn": "2026-11-26",
+   "sha256": "64d7308609f3427f765408b38fdaa48dd08d99b09190b62fc6a4cdedda7064e1",
+   "width": 1200,
+   "height": 760,
+   "bytes": 26362,
+   "reviewed": false
+  },
+  {
+   "id": "us-territories",
+   "kind": "diagram",
+   "file": "us-territories.webp",
+   "questions": [
+    "2008-091"
+   ],
+   "title": "The U.S. territories",
+   "alt": "A wide map of the Pacific and the United States. Five small island territories are in red and circled: two in the Caribbean and three in the Pacific.",
+   "caption": "The five U.S. territories, circled",
+   "creditLine": "Drawn from U.S. Census Bureau data",
+   "legalBasis": "U.S. Government work, public domain (17 U.S.C. §105)",
+   "sources": [
+    {
+     "id": "census-cb-2023-states-20m",
+     "publisher": "U.S. Census Bureau",
+     "url": "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip",
+     "downloadedOn": "2026-11-26",
+     "sha256": "0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d"
+    },
+    {
+     "id": "census-cb-2023-states-500k",
+     "publisher": "U.S. Census Bureau",
+     "url": "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_500k.zip",
+     "downloadedOn": "2026-11-26",
+     "sha256": "4a9b4f5cf993cd23738ac49b58fbb556f1f097fcf5e404a9dc10348dd41f7432"
+    }
+   ],
+   "drawnOn": "2026-11-26",
+   "sha256": "2f447b1a4529205cc650749f2bda34acd6b8cfab09f2dfbdfe38916a7a2f4586",
+   "width": 1200,
+   "height": 640,
+   "bytes": 11746,
+   "reviewed": false
+  },
+  {
+   "id": "canada-border-states",
+   "kind": "diagram",
+   "file": "canada-border-states.webp",
+   "questions": [
+    "2008-092"
+   ],
+   "title": "The states that border Canada",
+   "alt": "A map of the United States including Alaska, with the thirteen states along the northern border in red.",
+   "caption": "States on the border with Canada",
+   "creditLine": "Drawn from U.S. Census Bureau data",
+   "legalBasis": "U.S. Government work, public domain (17 U.S.C. §105)",
+   "sources": [
+    {
+     "id": "census-cb-2023-states-20m",
+     "publisher": "U.S. Census Bureau",
+     "url": "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip",
+     "downloadedOn": "2026-11-26",
+     "sha256": "0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d"
+    }
+   ],
+   "drawnOn": "2026-11-26",
+   "sha256": "85275271941ee7fa0efabf12cd2948b3fc2f8cb2f1ab5b99aa720f1e30ebb61d",
+   "width": 1200,
+   "height": 860,
+   "bytes": 26806,
+   "reviewed": false
+  },
+  {
+   "id": "mexico-border-states",
+   "kind": "diagram",
+   "file": "mexico-border-states.webp",
+   "questions": [
+    "2008-093"
+   ],
+   "title": "The states that border Mexico",
+   "alt": "A map of the United States with the four states along the southern border in red, from California to Texas.",
+   "caption": "States on the border with Mexico",
+   "creditLine": "Drawn from U.S. Census Bureau data",
+   "legalBasis": "U.S. Government work, public domain (17 U.S.C. §105)",
+   "sources": [
+    {
+     "id": "census-cb-2023-states-20m",
+     "publisher": "U.S. Census Bureau",
+     "url": "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip",
+     "downloadedOn": "2026-11-26",
+     "sha256": "0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d"
+    }
+   ],
+   "drawnOn": "2026-11-26",
+   "sha256": "dcb3a9bf2928f6c18f1469411855f6d270fa3d4cd0d6dc76c77a0d7caa7cd716",
+   "width": 1200,
+   "height": 760,
+   "bytes": 26656,
+   "reviewed": false
+  }
+ ]
+}

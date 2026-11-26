@@ -1,0 +1,42 @@
+{
+ "_note": "Federal source data for tools/images/draw-diagrams.mjs. sha256 is of the archive as downloaded from url; keptSha256 is of the file kept in this folder. Written by the tool.",
+ "sources": [
+  {
+   "id": "census-cb-2023-states-20m",
+   "publisher": "U.S. Census Bureau",
+   "title": "Cartographic Boundary File, States, 1:20,000,000 (2023), shapefile",
+   "url": "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip",
+   "downloadedOn": "2026-11-26",
+   "sha256": "0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d",
+   "bytes": 186432,
+   "kept": "data/images/sources/cb_2023_us_state_20m.zip",
+   "keptNote": "the archive itself",
+   "keptSha256": "0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d"
+  },
+  {
+   "id": "census-cb-2023-states-500k",
+   "publisher": "U.S. Census Bureau",
+   "title": "Cartographic Boundary File, States, 1:500,000 (2023), shapefile",
+   "url": "https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_500k.zip",
+   "downloadedOn": "2026-11-26",
+   "sha256": "4a9b4f5cf993cd23738ac49b58fbb556f1f097fcf5e404a9dc10348dd41f7432",
+   "bytes": 3249332,
+   "kept": "data/images/sources/census-cb-2023-territories-500k.geojson",
+   "keptNote": "only American Samoa, Guam, the Northern Mariana Islands and the U.S. Virgin Islands (STUSPS AS, GU, MP, VI), coordinates rounded to 4 decimals",
+   "keptSha256": "2126f3b2826f75c8397f7f27f7d899a88b0eaaadb9c0b8abe93cb8eeadc470cd"
+  },
+  {
+   "id": "usgs-national-atlas-streaml010g",
+   "publisher": "U.S. Geological Survey, National Atlas of the United States",
+   "title": "1:1,000,000-Scale Streams of the United States, edition 2 (streaml010g), shapefile",
+   "url": "https://prd-tnm.s3.amazonaws.com/StagedProducts/Small-scale/data/Hydrography/streaml010g.shp_nt00885.tar.gz",
+   "downloadedOn": "2026-11-26",
+   "sha256": "437e423140c3880e8d40f1c15822e7f80022df848b782da2f78e5b96797dec31",
+   "bytes": 239953647,
+   "kept": "data/images/sources/usgs-streaml010g-missouri-mississippi.geojson",
+   "keptNote": "only the stream lines whose Name is \"Missouri River\" or \"Mississippi River\", coordinates rounded to 3 decimals",
+   "keptSha256": "6146db2f1efa5ce8a103403d1f419bbe8a7342c46d309fc9504cd1f695dd9354",
+   "useConstraints": "Access_Constraints: None. Use_Constraints: None. Acknowledgment of the National Atlas of the United States of America would be appreciated in products derived from these data."
+  }
+ ]
+}
