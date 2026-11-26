@@ -3,7 +3,7 @@
  *
  * Tone is encouraging, never punitive: the outcome uses "practice_passed" /
  * "needs_more_practice" (never pass/fail), and per-item status is shown with an
- * icon + a plain-language label, never color alone. No harsh red anywhere.
+ * icon + a plain-language label, never color alone. Results use the correct and wrong colour sets with an icon and a word anywhere.
  *
  * Content safety: the report always labels the profile as fictional and shows
  * the FinalReport.disclaimer prominently.

@@ -1,4 +1,4 @@
-/* AI coach switch and feedback step. Tokens only (design-system.md). On = teal, never colour alone:
+/* AI coach switch and feedback step. Tokens only (design-system.md). On = navy, never colour alone:
    the switch also says "On" or "Off" and has aria-checked. */
 .coach {
   display: flex;

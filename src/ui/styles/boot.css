@@ -1,14 +1,14 @@
 /*
  * The loading shell in index.html (audit F-01): something readable paints before the app's script
  * has run on a slow phone. React replaces it on mount. Colours and type follow tokens.css (which
- * loads with the app, so the values are repeated here: light only). No inline styles: the CSP has no
+ * loads with the app, so the values are repeated here as literals, spacing too: light only). No inline styles: the CSP has no
  * 'unsafe-inline'.
  */
 .boot {
   box-sizing: border-box;
   min-height: 100vh;
   margin: 0;
-  padding: var(--space-7) clamp(var(--space-4), 5vw, var(--space-6));
+  padding: 3rem clamp(1rem, 5vw, 2rem);
   background: #f7f8fc;
   color: #0d1f3c;
   font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
@@ -20,7 +20,7 @@
   margin: 0 auto;
 }
 .boot__name {
-  margin: 0 0 var(--space-4);
+  margin: 0 0 1rem;
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
   color: #0d2052;
   font-size: 2rem;
@@ -28,7 +28,7 @@
   line-height: 1.2;
 }
 .boot__line {
-  margin: 0 0 var(--space-5);
+  margin: 0 0 1.5rem;
   font-size: 1.25rem;
 }
 .boot__note {

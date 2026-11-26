@@ -61,7 +61,9 @@ Check the files you are given (or any recently changed UI files) against these c
 - Colors use the design system tokens, not arbitrary hex values.
 - No new palette colors introduced without a reason tied to the brief.
 - Motion answers user action; no passive decorative animation.
-- No ALL-CAPS labels, no tracked-out eyebrows, no '→' appended to button text
+- Uppercase only for the small labels the design system defines (red, bold, letter-spaced, 16px or
+  more: the step line, badges, the report label); no other tracked-out eyebrows; no '→' appended to
+  button text (cards use an arrow icon beside a visible verb)
   (generic AI-design tells listed in `frontend-design.md`).
 
 ## What to produce

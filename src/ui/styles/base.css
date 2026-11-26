@@ -127,7 +127,7 @@ button {
   border: 0;
 }
 
-/* Reduced motion: disable any reel/tape animation and transitions */
+/* Reduced motion: disable animation and transitions */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

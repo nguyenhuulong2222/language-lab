@@ -18,7 +18,8 @@
   font-size: var(--fs-h1);
   letter-spacing: -0.01em;
 }
-.take__title:focus {
+/* Programmatic focus after a screen change shows no ring; keyboard focus still does. */
+.take__title:focus:not(:focus-visible) {
   outline: none;
 }
 .take__lead {

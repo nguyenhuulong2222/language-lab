@@ -11,18 +11,18 @@
   --font-hi: "Kohinoor Devanagari", "Devanagari Sangam MN", "Noto Sans Devanagari", "Nirmala UI", system-ui, sans-serif;
   --font-zh: "PingFang TC", "Heiti TC", "Noto Sans CJK TC", "Microsoft JhengHei", system-ui, sans-serif;
   --font-ko: "Apple SD Gothic Neo", "Noto Sans CJK KR", "Malgun Gothic", system-ui, sans-serif;
-  /* Russian: no Cyrillic subset is served; a system serif with Cyrillic keeps the serif look. */
+  /* Russian: no Cyrillic subset is served; Latin letters use the web fonts, Cyrillic a system serif. */
   --font-ru: Georgia, "Times New Roman", "PT Serif", serif;
 }
 
 /* The whole page, when the interface is in that language. */
-html[lang="th"] { --font-body: var(--font-th); --font-display: var(--font-th); }
-html[lang="lo"] { --font-body: var(--font-lo); --font-display: var(--font-lo); }
-html[lang="my"] { --font-body: var(--font-my); --font-display: var(--font-my); }
-html[lang="hi"] { --font-body: var(--font-hi); --font-display: var(--font-hi); }
-html[lang|="zh"] { --font-body: var(--font-zh); --font-display: var(--font-zh); }
-html[lang="ko"] { --font-body: var(--font-ko); --font-display: var(--font-ko); }
-html[lang="ru"] { --font-body: var(--font-ru); --font-display: var(--font-ru); }
+html[lang="th"] { --font-body: "Source Serif 4", var(--font-th); --font-display: "Playfair Display", var(--font-th); }
+html[lang="lo"] { --font-body: "Source Serif 4", var(--font-lo); --font-display: "Playfair Display", var(--font-lo); }
+html[lang="my"] { --font-body: "Source Serif 4", var(--font-my); --font-display: "Playfair Display", var(--font-my); }
+html[lang="hi"] { --font-body: "Source Serif 4", var(--font-hi); --font-display: "Playfair Display", var(--font-hi); }
+html[lang|="zh"] { --font-body: "Source Serif 4", var(--font-zh); --font-display: "Playfair Display", var(--font-zh); }
+html[lang="ko"] { --font-body: "Source Serif 4", var(--font-ko); --font-display: "Playfair Display", var(--font-ko); }
+html[lang="ru"] { --font-body: "Source Serif 4", var(--font-ru); --font-display: "Playfair Display", var(--font-ru); }
 
 /* A passage in that language inside another one (the language menu names each language in its own script). */
 [lang="th"] { font-family: var(--font-th); }
@@ -50,4 +50,8 @@ html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"]) * {
 /* Labels and counter lines hold translated words: the script's own body font there. */
 html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"], [lang|="zh"], [lang="ko"]) :is(.progress-line, .stepper__condensed, .report__overline) {
   font-family: var(--font-body);
+}
+/* Vietnamese stacks two marks on some letters (ấ, ổ): headings in Playfair need a little more line height. */
+html[lang="vi"] :is(h1, h2, h3, h4, .action-card__title) {
+  line-height: var(--lh-snug);
 }

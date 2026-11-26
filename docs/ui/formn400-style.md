@@ -88,4 +88,40 @@ no unnamed font file is left, and that each family's licence is beside its files
 
 ## Screenshots
 
-Filled in by step S4.
+Production build at 390px, normal text size, taken by the layout tool (`--prod --shots`), kept in
+the system temp folder, not in the repository: before (from `main`, the Reel-to-Reel palette) in
+`$TMPDIR/ll-style-before`, after in `$TMPDIR/ll-style-after`, 54 images each (27 screens, en and vi).
+The ones compared, for both `en` and `vi`:
+
+| Screen | File |
+|---|---|
+| Home | `<lang>-normal-home.png`, `<lang>-normal-home-language.png`, `<lang>-normal-home-special.png` |
+| Study | `<lang>-normal-study-choose.png`, `<lang>-normal-study-question.png`, `<lang>-normal-study-picture.png` |
+| Civics question | `<lang>-normal-civics-question.png` |
+| Civics result | `<lang>-normal-civics-feedback.png` |
+| Report | `<lang>-normal-report.png`, `<lang>-normal-part-report.png` |
+
+Before → after: parchment and brown with teal and amber, Bitter headings and a sans body → page
+`#f7f8fc`, white cards with a hairline and a soft navy shadow, navy Playfair headings, a Source Serif
+4 body, red uppercase step labels, navy primary buttons, the result panels in the correct (green) or
+wrong (red) colour set with the icon and the word, a white header with the navy wordmark (no reel
+glyph), and a light amber AI-notice bar.
+
+## Checks (S4)
+
+- Layout check `--prod` (MIN_TARGET 56, every existing rule): 10 production languages at normal
+  390px; en and vi at large and extra large, 390px and 320px. 18 runs, 27 screens each, all pass, no
+  CSP violation.
+- Contrast unit test: light palette only, all pairs pass.
+- ui-reviewer on Home, Study, a practice screen, a result, a report, the coach notice and the
+  header. Fixed: the disabled Start button took the navy hover with grey text (hover now skips
+  disabled buttons); language cells had a near-invisible edge (now a 2px `--ink-3` edge, 5:1); the
+  script stacks dropped the Latin fonts (Source Serif 4 and Playfair Display now come first, so
+  English questions, "USCIS" and the wordmark keep them); the heading's focus ring was removed for
+  keyboard focus too (now only for programmatic focus); `LanguageMenu.css` collapsed to one block
+  per selector; the chosen text size shifted by 1px; the current step marker had an invisible ink
+  ring (now white with a navy ring, unlike the filled completed steps); stale teal, amber and tape
+  comments; `boot.css` used token variables; the reviewer agent banned the uppercase labels the
+  design system asks for. Added: more line height for Vietnamese headings (stacked marks).
+  Kept: the soft shadow on information panels, because the brief gives every card the shadow;
+  tappable cards add the hover shadow, a verb and an arrow, and choices show their radio mark.

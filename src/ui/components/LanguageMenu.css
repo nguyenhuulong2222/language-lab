@@ -1,3 +1,4 @@
+/* The language list (header panel) and the grid at the top of Home. One block per selector. */
 .language-menu__title {
   margin: 0 0 var(--space-3);
   font-size: var(--fs-h4);
@@ -11,6 +12,7 @@
   padding: 0;
   list-style: none;
 }
+/* White cells with a 2px muted edge (5:1, so a cell reads as a control) and the soft shadow. */
 .language-menu__option {
   display: flex;
   align-items: center;
@@ -19,18 +21,23 @@
   width: 100%;
   min-height: var(--tap-min);
   padding: var(--space-2) var(--space-3);
-  border: 1px solid var(--ink-2);
+  border: 2px solid var(--ink-3);
   border-radius: var(--radius-md);
-  background: var(--bg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
   color: var(--ink);
   font-size: var(--fs-body);
   text-align: left;
   cursor: pointer;
 }
+.language-menu__option:hover {
+  box-shadow: var(--shadow-hover);
+}
+/* The chosen language: a 2px navy frame, a light tint, bold text and the check (not colour alone). */
 .language-menu__option[aria-current="true"] {
   border-color: var(--accent);
-  box-shadow: inset 0 0 0 1px var(--accent);
-  font-weight: 600;
+  background: var(--surface-2);
+  font-weight: 700;
 }
 .language-menu__check {
   width: 1.1rem;
@@ -44,22 +51,23 @@
   font-size: var(--fs-meta);
   color: var(--ink-2);
 }
+
 /* ---- The grid at the top of Home ----
-   3 columns from 360px (so at 390px), 2 below 360px. At extra-large text 2 columns, so each name
-   keeps whole words. Names wrap inside their button instead of running out of it. */
-/* No frame around the grid: the full column width goes to the buttons, so names stay whole.
-   A rule under it separates it from the welcome. */
+   No frame around the grid, so the buttons get the full column width; a rule under it separates it
+   from the welcome. 3 columns from 360px, 2 below 360px and at extra-large text (whole words). */
 .home-language {
   margin: 0 0 var(--space-3);
   padding: var(--space-2) 0 var(--space-3);
   border-bottom: 2px solid var(--border);
 }
 .language-menu--home .language-menu__title {
-  font-size: var(--fs-h3);
+  margin-bottom: var(--space-2);
   font-family: var(--font-display);
+  font-size: var(--fs-h4);
 }
 .language-menu--home .language-menu__list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-1);
 }
 @media (min-width: 360px) {
   .language-menu--home .language-menu__list {
@@ -69,115 +77,44 @@
 :root[data-text-size="extra-large"] .language-menu--home .language-menu__list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-/* Every button the same height: the check sits beside the name, and the frame is the same width. */
+/* Every button fills its cell, so all buttons in a row are the same height. */
+.language-menu--home .language-menu__list > li {
+  display: flex;
+  min-width: 0;
+}
+/* The name centred; a small top band holds the corner check, so it never adds a line. */
 .language-menu--home .language-menu__option {
+  position: relative;
+  flex: 1 1 auto;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-1);
-  padding: var(--space-2) var(--space-1);
-  border-width: 2px;
-  background: var(--surface);
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: var(--space-3) var(--space-1) var(--space-2);
   text-align: center;
-  line-height: var(--lh-snug);
-}
-.language-menu--home .language-menu__option[aria-current="true"] {
-  border-color: var(--accent);
-  box-shadow: inset 0 0 0 2px var(--accent);
-  background: var(--surface-2);
-  font-weight: 700;
+  line-height: var(--lh-tight);
 }
 .language-menu--home .language-menu__name {
   min-width: 0;
   max-width: 100%;
   overflow-wrap: anywhere;
 }
-.language-menu--home .language-menu__check {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-/* Every button fills its cell, so the grid lines up and all buttons in a row are the same height. */
-.language-menu--home .language-menu__list > li {
-  display: flex;
-  min-width: 0;
-}
-.language-menu--home .language-menu__list > li > .language-menu__option {
-  flex: 1 1 auto;
-  width: 100%;
-  min-width: 0;
-}
 /* Chinese breaks only before the bracket ("中文" / "（繁體）"), not inside a word. */
 .language-menu--home .language-menu__name:lang(zh) {
   word-break: keep-all;
-}
-/* Q3: every row the same height (the tallest button), the check in the corner beside the name so
-   it never adds a line, and the same frame on every button. Compact, so the welcome is near. */
-.language-menu--home .language-menu__list {
-  gap: var(--space-2);
-}
-.language-menu--home .language-menu__title {
-  margin-bottom: var(--space-2);
-  font-size: var(--fs-h4);
-}
-.language-menu--home .language-menu__option {
-  position: relative;
-  height: 100%;
-  min-height: var(--tap-min);
-  padding: var(--space-1) var(--space-5);
-  line-height: var(--lh-tight);
 }
 .language-menu--home .language-menu__check {
   position: absolute;
   top: var(--space-1);
   right: var(--space-1);
-  width: 1.125rem;
-  height: 1.125rem;
-}
-.language-menu--home .language-menu__review {
-  margin-top: var(--space-2);
-}
-/* The check sits in a top band every button has, so names get the full width and rows stay even. */
-.language-menu--home .language-menu__list {
-  gap: var(--space-1);
-}
-.language-menu--home .language-menu__option {
-  padding: var(--space-4) var(--space-1) var(--space-2);
-}
-.language-menu--home .language-menu__check {
-  top: var(--space-1);
-  right: 50%;
-  transform: translateX(50%);
   width: 1rem;
   height: 1rem;
 }
-.language-menu--home .language-menu__check {
-  right: var(--space-1);
-  transform: none;
-}
-/* Compact rows: 56px buttons; a small top band holds the corner check. */
-.language-menu--home .language-menu__option {
-  padding: var(--space-3) var(--space-1) var(--space-2);
-}
 .language-menu--home .language-menu__review {
+  margin-top: var(--space-2);
   font-size: var(--fs-meta);
   line-height: var(--lh-snug);
-}
-/* formN400 look: white cells with a hairline frame and the soft shadow; the chosen one has a 2px
-   navy frame, a light tint, bold text and the check (never colour alone). No flags. */
-.language-menu__option {
-  border: 2px solid var(--border);
-  background: var(--surface);
-  box-shadow: var(--shadow);
-}
-.language-menu__option:hover {
-  box-shadow: var(--shadow-hover);
-}
-.language-menu__option[aria-current="true"],
-.language-menu--home .language-menu__option[aria-current="true"] {
-  border-color: var(--accent);
-  box-shadow: var(--shadow);
-  background: var(--surface-2);
-}
-.language-menu__check {
-  color: var(--accent);
 }
