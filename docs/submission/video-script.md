@@ -29,7 +29,8 @@ it does not happen.
 questions. What they need is practice out loud: hear a question, answer it, and know if the answer
 counts.
 
-**0:15** Language Lab brings back the 1970s language lab booth, on a phone. It is free and needs no
+**0:15** Language Lab brings back the language-lab method, listen, speak and compare, on a phone,
+in the clean style of formN400.org. It is free and needs no
 account. The interface comes in ten languages, each marked as an AI translation. The questions stay in
 English, as in the real interview.
 

@@ -29,7 +29,8 @@ works by typing. The AI coach is off by default and sends nothing until you conf
 
 **Free, voice-first practice for the U.S. naturalization interview.**
 
-Styled as a 1970s language lab booth — individual study, focused repetition, no pressure.
+The language-lab method (listen, speak, compare, repeat), in the clean navy-and-white style of
+formN400.org, the owner's separate site. Served at lab.formn400.org.
 
 Live: <https://language-lab-ade.pages.dev> (the production build; it shows this branch's work only after a
 deploy).
@@ -245,7 +246,7 @@ The MIT licence covers **this repository's code and its own text only**. Other m
 | Code, English interface text, practice sentences, fixtures, documentation | MIT (`LICENSE`) |
 | USCIS documents in `data/sources/`, and the answer keys and English display files derived from them | U.S. government publications; the text remains USCIS's. No endorsement is implied |
 | Pictures in `public/images/civics/` | Public domain / CC0 / "no known restrictions" per source record; listed in `docs/image-credits.md`. Not MIT |
-| The Bitter font | SIL Open Font License 1.1 (Bitter by Sol Matas, Huerta Tipográfica). Served from this site (`public/fonts/`, licence in `public/fonts/OFL.txt`); nothing is loaded from Google |
+| The Playfair Display and Source Serif 4 fonts | SIL Open Font License 1.1 (Playfair Display by Claus Eggers Sørensen; Source Serif 4 by Frank Grießhammer, Adobe). Served from this site (`public/fonts/`, licences in `public/fonts/OFL-PlayfairDisplay.txt` and `public/fonts/OFL-SourceSerif4.txt`); nothing is loaded from Google |
 | Generated audio in `public/audio/` | Made with OpenAI text-to-speech and labelled "AI-generated voice" in the app. Not MIT-licensed recordings of a person |
 | AI-translated interface text (`src/i18n/locales/` except English) | AI drafts, not reviewed by native speakers unless a locale file names a reviewer. Provided as is |
 | Dependencies | Their own licences (runtime: React, React DOM, Scheduler, all MIT) |

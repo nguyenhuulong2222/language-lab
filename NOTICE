@@ -48,8 +48,9 @@ agency. Nothing here is legal advice.
    materials it approves beforehand, and no public badge for developers was found. Claude and
    Anthropic are trademarks of Anthropic, PBC. Language Lab is not affiliated with, sponsored by or
    endorsed by Anthropic.
-9. formN400.org. This repository contains no text, translation, data or design from formN400.org
-   or the separate N400 project of the same owner, and nothing here grants any right to
-   formN400.org or its content. Earlier versions of this repository's history contained civics
+9. formN400.org. Its visual style (colours and fonts) was chosen to match formN400.org, the
+   owner's separate earlier site, so the two look alike at lab.formn400.org. The style was
+   re-implemented in this repository. No code, text, data or images were copied from formN400.org
+   or the N400 repository. Nothing here grants any right to formN400.org or its content. Earlier versions of this repository's history contained civics
    translations imported from that project; they were removed from the working tree and are not
    licensed by this repository's licence.

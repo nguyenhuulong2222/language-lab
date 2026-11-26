@@ -10,7 +10,7 @@ Many older immigrants prepare for the naturalization interview alone, from a pri
 questions. What they lack is repetition out loud: hear a question, answer it, and learn right away
 whether the answer counts. In the 1970s, schools did this in the language lab: rows of booths with
 headphones and a tape deck, where a student listened, spoke and played the tape again. We brought that
-booth back as a web app for a phone.
+booth's method back as a web app for a phone, in the clean navy-and-white style of formN400.org.
 
 ## What it does
 
@@ -56,7 +56,7 @@ life.
 
 **Kiro first.** Six steering files set the rules before code. The content-safety rules (fictional
 profiles, no machine-translated legal text, civics scored only by the answer key) shaped the
-architecture, and a design-system file set the "Reel-to-Reel" tokens.
+architecture, and a design-system file set the tokens (now the clean navy-and-white formN400 style).
 
 Four specs (grading, booth screens, interview coach, release finish) gave numbered requirements, a
 design and one commit per task. Requirements analysis caught defects before code:
@@ -116,12 +116,15 @@ the Web Speech API, and public USCIS, Smithsonian and Library of Congress materi
   agent guidance only.
 - **Pictures**: public-domain or CC0 works from the Smithsonian and the Library of Congress, credited
   in `docs/image-credits.md` and in the app.
-- **Font**: Bitter by Sol Matas (Huerta Tipográfica), SIL Open Font License 1.1.
+- **Fonts**: Playfair Display (Claus Eggers Sørensen) and Source Serif 4 (Frank Grießhammer, Adobe),
+  SIL Open Font License 1.1, self-hosted.
 - **Audio**: prompts generated in advance with OpenAI `gpt-4o-mini-tts`.
 - **Translations**: AI drafts, not reviewed by native speakers, labelled on screen.
 - **AI coach**: Anthropic's Claude API (`claude-haiku-5-5`). Claude and Anthropic are trademarks of
   Anthropic, PBC. Language Lab is not affiliated with Anthropic or with USCIS.
 - **Libraries**: React and React DOM (MIT).
-- **formN400.org**: earlier commits contained civics translations imported from the owner's separate
-  N400 project. They were removed and are not part of the submission (`NOTICE` item 9).
+- **formN400.org**: the colours and fonts match formN400.org, the owner's separate earlier site, so
+  the two look alike at lab.formn400.org; the style was re-implemented here, and no code, text, data
+  or images were copied. Earlier commits contained civics translations imported from the owner's
+  separate N400 project; they were removed and are not part of the submission (`NOTICE` item 9).
 - **Everything else** was written during the hackathon with Kiro, from 2026-11-01.

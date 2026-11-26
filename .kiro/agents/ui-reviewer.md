@@ -29,31 +29,32 @@ Check the files you are given (or any recently changed UI files) against these c
 - Maximum content column width is `--shell-max` (44rem). Content must not stretch
   edge-to-edge on large screens.
 - On mobile: header collapses, stage stepper condenses to current stage + progress bar.
-- Touch targets meet `--tap-min` (44px minimum).
+- Touch targets meet `--tap-min` (56px minimum); primary buttons 64px.
 - No horizontal overflow.
 
 ### Typography
 - Body text is at or above `--fs-body` (18px / 1.125rem). No visible text below 16px.
-- Headings use the Bitter slab serif stack. Body uses the system-ui sans stack.
-- Tape counter / mono labels use the system monospace stack.
+- Headings use Playfair Display (navy). Body uses Source Serif 4. Small uppercase labels are red,
+  bold, letter-spaced and at least 16px.
 - Line length stays within `--measure` (68ch for prose) and `--measure-narrow` (42ch
   for forms). No lines exceed 80 characters of visible text.
 
 ### Color and contrast
 - Body text: WCAG AAA (7:1) where feasible; AA (4.5:1) minimum.
 - Interactive controls: AA minimum (3:1 for large text / UI components).
-- Amber (`--amber`) is used only as an accent, never for body text.
+- Red (`--red`), muted (`--ink-3`) and the result colours are used only for large text, labels and
+  icons, never for body text. Light theme only.
 - Status is never conveyed by color alone — icon + label always present.
-- No harsh red used for errors or feedback.
+- Results use the correct/wrong colour sets with an icon and a word ("This counts" / "Not yet").
 - No government seals or colors that imply official status (content-safety rule 6).
 
 ### Accessibility
 - Semantic HTML: `<header>`, `<nav>`, `<main>`, `<footer>`, headings in order.
 - `aria-current` on the active stage step.
-- Visible keyboard focus ring (3px teal, offset).
+- Visible keyboard focus ring (3px `--focus-color` navy-light, offset 3px).
 - All interactive elements reachable and operable without a pointer.
 - `prefers-reduced-motion` respected — any animation has a static fallback.
-- `aria-hidden` on decorative elements (tape counter, reel motif).
+- `aria-hidden` on decorative icons (arrows, checks).
 - Disclaimer always reachable from every screen (content-safety rule 5).
 
 ### Design system compliance
