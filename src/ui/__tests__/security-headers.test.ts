@@ -43,12 +43,17 @@ describe("public/_headers", () => {
 describe("fonts are self-hosted", () => {
   it("index.html loads nothing from another origin", () => {
     expect(indexHtml).not.toMatch(/(src|href)="https?:/);
-    expect(indexHtml).toContain('<link rel="preload" href="/fonts/bitter-latin.woff2" as="font"');
+    expect(indexHtml).toContain('<link rel="preload" href="/fonts/source-serif-4-latin-400-normal.woff2" as="font"');
   });
   it("every font file named in fonts.css exists, with the licence beside them", () => {
     const css = fontsCss;
     expect(css).not.toMatch(/https?:/);
-    for (const m of css.matchAll(/url\("\/fonts\/([^"]+)"\)/g)) expect(fontFiles, m[1]).toContain(m[1]);
-    expect(fontFiles).toContain("OFL.txt");
+    const named = [...css.matchAll(/url\("\/fonts\/([^"]+)"\)/g)].map((m) => m[1]!);
+    expect(named.length).toBe(21);
+    for (const file of named) expect(fontFiles, file).toContain(file);
+    // Each family's licence beside its files; no file left that fonts.css does not name.
+    if (named.some((f) => f.startsWith("playfair-display-"))) expect(fontFiles).toContain("OFL-PlayfairDisplay.txt");
+    if (named.some((f) => f.startsWith("source-serif-4-"))) expect(fontFiles).toContain("OFL-SourceSerif4.txt");
+    for (const file of fontFiles.filter((f): f is string => f !== undefined && f.endsWith(".woff2"))) expect(named, file).toContain(file);
   });
 });

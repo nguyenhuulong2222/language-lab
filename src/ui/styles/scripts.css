@@ -1,7 +1,7 @@
 /*
  * Fonts for the non-Latin scripts. No web fonts: each script uses the fonts that ship with
  * iOS, macOS, Android and Windows, listed in that order, so nothing large is downloaded.
- * The Latin heading font (Bitter) has no glyphs for these scripts, so headings use the same
+ * The Latin fonts (Playfair Display, Source Serif 4) have no glyphs for these scripts, so headings use the same
  * stack as the body text in these languages.
  */
 :root {
@@ -11,6 +11,8 @@
   --font-hi: "Kohinoor Devanagari", "Devanagari Sangam MN", "Noto Sans Devanagari", "Nirmala UI", system-ui, sans-serif;
   --font-zh: "PingFang TC", "Heiti TC", "Noto Sans CJK TC", "Microsoft JhengHei", system-ui, sans-serif;
   --font-ko: "Apple SD Gothic Neo", "Noto Sans CJK KR", "Malgun Gothic", system-ui, sans-serif;
+  /* Russian: no Cyrillic subset is served; a system serif with Cyrillic keeps the serif look. */
+  --font-ru: Georgia, "Times New Roman", "PT Serif", serif;
 }
 
 /* The whole page, when the interface is in that language. */
@@ -20,6 +22,7 @@ html[lang="my"] { --font-body: var(--font-my); --font-display: var(--font-my); }
 html[lang="hi"] { --font-body: var(--font-hi); --font-display: var(--font-hi); }
 html[lang|="zh"] { --font-body: var(--font-zh); --font-display: var(--font-zh); }
 html[lang="ko"] { --font-body: var(--font-ko); --font-display: var(--font-ko); }
+html[lang="ru"] { --font-body: var(--font-ru); --font-display: var(--font-ru); }
 
 /* A passage in that language inside another one (the language menu names each language in its own script). */
 [lang="th"] { font-family: var(--font-th); }

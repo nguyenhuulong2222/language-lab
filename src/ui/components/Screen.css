@@ -40,7 +40,7 @@
   color: var(--ink-2);
   max-width: var(--measure);
 }
-/* The question or sentence: body font (Bitter is for headings only), large and semi-bold */
+/* The question or sentence: body font (Playfair Display is for headings only), large and semi-bold */
 .prompt {
   font-family: var(--font-body);
   font-size: var(--fs-h2);
@@ -60,10 +60,10 @@
   width: 1.1em;
   height: 1.1em;
   vertical-align: -0.15em;
-  color: var(--teal);
+  color: var(--accent);
 }
 .icon-inline--attention {
-  color: var(--amber);
+  color: var(--status-attention);
 }
 .notice-list {
   margin: 0;
@@ -104,7 +104,7 @@
   display: inline-flex;
   align-items: center;
   min-height: var(--tap-min);
-  color: var(--teal);
+  color: var(--accent);
 }
 
 .plain-lines {

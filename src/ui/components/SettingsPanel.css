@@ -28,11 +28,11 @@
 }
 /* The chosen tile: a thicker teal frame and a filled radio mark (not colour alone). */
 .size-choice:has(input:checked) {
-  border: 3px solid var(--teal);
+  border: 3px solid var(--accent);
   background: var(--surface-2);
 }
 .size-choice:has(input:focus-visible) {
-  outline: var(--focus-width) solid var(--teal);
+  outline: var(--focus-width) solid var(--focus-color);
   outline-offset: var(--focus-offset);
 }
 /* The sample letters are fixed sizes, so the three tiles always show the difference. */

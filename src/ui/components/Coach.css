@@ -55,11 +55,11 @@
   background: var(--ink-2);
 }
 .coach__switch--on {
-  border-color: var(--teal);
+  border-color: var(--accent);
 }
 .coach__switch--on .coach__track {
-  border-color: var(--teal);
-  background: var(--teal);
+  border-color: var(--accent);
+  background: var(--accent);
 }
 .coach__switch--on .coach__thumb {
   left: auto;
@@ -85,7 +85,7 @@
   outline: none;
 }
 .coach__region:focus-visible {
-  outline: 3px solid var(--teal);
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 .coach__disclaimer {

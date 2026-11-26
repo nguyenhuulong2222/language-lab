@@ -24,8 +24,8 @@
 /* The one primary action per screen: filled, large bold text, 64px high, full width on a phone. */
 .btn--primary {
   min-height: max(64px, 3.5556rem);
-  border-color: var(--teal);
-  background: var(--teal);
+  border-color: var(--accent);
+  background: var(--accent);
   color: var(--on-accent);
   font-size: 1.25rem;
   font-weight: 700;
@@ -54,8 +54,8 @@
 }
 /* Amber is reserved for the active (listening, recording) state; its text is large and bold. */
 .btn--active {
-  background: var(--amber);
-  border-color: var(--amber);
+  background: var(--red);
+  border-color: var(--red);
   color: var(--on-accent);
   font-size: 1.25rem;
   font-weight: 700;
@@ -120,11 +120,11 @@ fieldset.choices {
   cursor: pointer;
 }
 .choice:has(input:checked) {
-  border-color: var(--teal);
+  border-color: var(--accent);
   background: var(--surface-2);
 }
 .choice:has(input:focus-visible) {
-  outline: var(--focus-width) solid var(--teal);
+  outline: var(--focus-width) solid var(--focus-color);
   outline-offset: var(--focus-offset);
 }
 .choice__input {
@@ -132,7 +132,7 @@ fieldset.choices {
   height: max(28px, 1.5556rem);
   margin: 0;
   flex: 0 0 auto;
-  accent-color: var(--teal);
+  accent-color: var(--accent);
 }
 .choice__text {
   display: flex;
@@ -175,7 +175,7 @@ fieldset.choices {
 }
 .status--attention {
   color: var(--ink);
-  border-left: 3px solid var(--amber);
+  border-left: 3px solid var(--status-attention);
   padding-left: var(--space-3);
 }
 

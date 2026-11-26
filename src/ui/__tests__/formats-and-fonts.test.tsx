@@ -70,7 +70,7 @@ describe("fonts for non-Latin scripts", () => {
   });
   it("ends every stack in a generic family", () => {
     for (const line of scriptsCss.split("\n").filter((l) => l.trim().startsWith("--font-") && l.includes('"'))) {
-      expect(line).toMatch(/sans-serif;/);
+      expect(line).toMatch(/(sans-serif|serif);$/);
     }
   });
 });

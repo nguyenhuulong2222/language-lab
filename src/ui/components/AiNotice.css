@@ -22,7 +22,7 @@
 .ai-notice__icon {
   width: 1.5rem;
   height: 1.5rem;
-  color: var(--teal);
+  color: var(--accent);
   flex: 0 0 auto;
 }
 .ai-notice__english {
@@ -55,7 +55,7 @@
 .ai-notice__chevron {
   width: 1.125rem;
   height: 1.125rem;
-  color: var(--teal);
+  color: var(--accent);
   transition: transform 0.15s ease;
 }
 .ai-notice__more[open] .ai-notice__chevron {

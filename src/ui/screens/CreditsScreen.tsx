@@ -11,6 +11,9 @@ import "../components/Screen.css";
 
 /** Proper names, shown in English whatever the interface language. */
 const OFL_NAME = "SIL Open Font License 1.1";
+// Font and licence names, the same in every language (the paragraph is lang="en").
+const PLAYFAIR_LICENCE = "Playfair Display licence";
+const SOURCE_SERIF_LICENCE = "Source Serif 4 licence";
 export function CreditsScreen({ onClose, manifest = PICTURE_MANIFEST }: { onClose: () => void; manifest?: PictureManifest }) {
   const t = useT();
   return (
@@ -34,11 +37,16 @@ export function CreditsScreen({ onClose, manifest = PICTURE_MANIFEST }: { onClos
         ))}
       </ul>
       <p className="note credit-font" lang="en">
-        Headings use the Bitter font by Sol Matas (Huerta Tipográfica), under the{" "}
-        <a href="/fonts/OFL.txt" target="_blank" rel="noopener noreferrer">
-          {OFL_NAME}
+        Headings use Playfair Display by Claus Eggers Sørensen, and the text uses Source Serif 4 by
+        Frank Grießhammer (Adobe), both under the {OFL_NAME} (
+        <a href="/fonts/OFL-PlayfairDisplay.txt" target="_blank" rel="noopener noreferrer">
+          {PLAYFAIR_LICENCE}
         </a>
-        .
+        ,{" "}
+        <a href="/fonts/OFL-SourceSerif4.txt" target="_blank" rel="noopener noreferrer">
+          {SOURCE_SERIF_LICENCE}
+        </a>
+        ).
       </p>
       <Disclaimer messageKey="disclaimer.short" />
       <div className="btn-row">

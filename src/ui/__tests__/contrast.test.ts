@@ -1,13 +1,17 @@
 /**
- * Colour contrast of the design tokens (senior-friendly step 7), read from tokens.css itself so the
- * test follows any change to the palette. Light and dark mode:
- * - text pairs (body and small text, links, button text on teal): 7:1 or more (WCAG AAA);
- * - large text and icon pairs (amber, the text on an amber button): 4.5:1 or more;
- * - control borders: 3:1 or more against every background.
+ * Colour contrast of the design tokens (formN400 style, light only), read from tokens.css itself so
+ * the test follows any change to the palette:
+ * - text pairs (body and small text, links, button text on navy): 7:1 or more (WCAG AAA);
+ * - large text and icon pairs (red labels, muted large text, the result colours, white on the red
+ *   recording button): 4.5:1 or more;
+ * - control edges (--ink-2) and the focus ring: 3:1 or more against every background.
  */
 import { describe, expect, it } from "vitest";
 import CSS from "../styles/tokens.css?raw";
-const NAMES = ["bg", "surface", "surface-2", "ink", "ink-2", "teal", "amber", "border", "on-accent"] as const;
+const NAMES = [
+  "bg", "surface", "surface-2", "ink", "ink-2", "ink-3", "accent", "accent-mid", "accent-light", "red", "on-accent",
+  "correct", "correct-bg", "wrong", "wrong-bg", "notice-bg",
+] as const;
 type Name = (typeof NAMES)[number];
 type Palette = Record<Name, string>;
 
@@ -39,33 +43,42 @@ function contrast(a: string, b: string): number {
 }
 
 const LIGHT = palette(block(":root {"));
-const DARK = palette(block(':root[data-theme="dark"]'));
-const DARK_SYSTEM = palette(block(':root:not([data-theme="light"])'));
-const BACKGROUNDS: Name[] = ["bg", "surface", "surface-2"];
+const BACKGROUNDS: Name[] = ["bg", "surface", "surface-2", "notice-bg", "correct-bg", "wrong-bg"];
 const TEXT: Array<[Name, Name]> = [
-  ...BACKGROUNDS.flatMap((bg): Array<[Name, Name]> => [["ink", bg], ["ink-2", bg], ["teal", bg]]),
-  ["on-accent", "teal"],
+  ...BACKGROUNDS.flatMap((bg): Array<[Name, Name]> => [["ink", bg], ["ink-2", bg], ["accent", bg], ["accent-mid", bg]]),
+  ["on-accent", "accent"],
+  ["on-accent", "accent-mid"],
 ];
-const LARGE: Array<[Name, Name]> = [...BACKGROUNDS.map((bg): [Name, Name] => ["amber", bg]), ["on-accent", "amber"]];
-const BORDERS: Array<[Name, Name]> = BACKGROUNDS.map((bg): [Name, Name] => ["border", bg]);
-
+const LARGE: Array<[Name, Name]> = [
+  ...BACKGROUNDS.flatMap((bg): Array<[Name, Name]> => [["red", bg], ["ink-3", bg]]),
+  ["correct", "correct-bg"],
+  ["correct", "surface"],
+  ["wrong", "wrong-bg"],
+  ["wrong", "surface"],
+  ["on-accent", "red"],
+];
+const EDGES: Array<[Name, Name]> = BACKGROUNDS.flatMap((bg): Array<[Name, Name]> => [["ink-2", bg], ["accent-light", bg]]);
 describe("contrast of the design tokens", () => {
   it("checks the formula against known values", () => {
     expect(contrast("#000000", "#ffffff")).toBeCloseTo(21, 5);
     expect(contrast("#777777", "#ffffff")).toBeCloseTo(4.48, 2);
   });
-  it("dark mode is the same whether chosen or taken from the system setting", () => {
-    expect(DARK_SYSTEM).toEqual(DARK);
+  it("light only: no dark theme block, and the page asks for the light scheme", () => {
+    expect(CSS).not.toContain('data-theme="dark"');
+    expect(CSS).not.toContain("prefers-color-scheme");
+    expect(CSS).toContain("color-scheme: light");
   });
-  for (const [mode, p] of [["light", LIGHT], ["dark", DARK]] as const) {
-    it(`${mode}: every text pair is 7:1 or more`, () => {
-      for (const [fg, bg] of TEXT) expect(contrast(p[fg], p[bg]), `${fg} on ${bg}`).toBeGreaterThanOrEqual(7);
-    });
-    it(`${mode}: every large-text and icon pair is 4.5:1 or more`, () => {
-      for (const [fg, bg] of LARGE) expect(contrast(p[fg], p[bg]), `${fg} on ${bg}`).toBeGreaterThanOrEqual(4.5);
-    });
-    it(`${mode}: control borders are 3:1 or more on every background`, () => {
-      for (const [fg, bg] of BORDERS) expect(contrast(p[fg], p[bg]), `${fg} on ${bg}`).toBeGreaterThanOrEqual(3);
-    });
-  }
+  const p = LIGHT;
+  it("every text pair is 7:1 or more", () => {
+    for (const [fg, bg] of TEXT) expect(contrast(p[fg], p[bg]), `${fg} on ${bg}`).toBeGreaterThanOrEqual(7);
+  });
+  it("every large-text and icon pair is 4.5:1 or more", () => {
+    for (const [fg, bg] of LARGE) expect(contrast(p[fg], p[bg]), `${fg} on ${bg}`).toBeGreaterThanOrEqual(4.5);
+  });
+  it("control edges and the focus ring are 3:1 or more on every background", () => {
+    for (const [fg, bg] of EDGES) expect(contrast(p[fg], p[bg]), `${fg} on ${bg}`).toBeGreaterThanOrEqual(3);
+  });
+  it("the formN400 values are used as given (no value had to change for contrast)", () => {
+    expect(p).toMatchObject({ bg: "#f7f8fc", surface: "#ffffff", ink: "#0d1f3c", "ink-2": "#334166", "ink-3": "#5d6b87", accent: "#0d2052", red: "#b22234", correct: "#128040", wrong: "#ca1f1f" });
+  });
 });

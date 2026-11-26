@@ -62,7 +62,7 @@ p + p {
 }
 
 a {
-  color: var(--teal);
+  color: var(--accent);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
 }
@@ -74,7 +74,7 @@ button {
 
 /* Visible keyboard focus on every focusable element */
 :focus-visible {
-  outline: var(--focus-width) solid var(--teal);
+  outline: var(--focus-width) solid var(--focus-color);
   outline-offset: var(--focus-offset);
 }
 
@@ -85,7 +85,7 @@ button {
 }
 
 ::selection {
-  background: var(--amber);
+  background: var(--accent);
   color: var(--surface);
 }
 

@@ -31,7 +31,7 @@
 .header__reel {
   width: 1.25rem;
   height: 1.25rem;
-  color: var(--teal);
+  color: var(--accent);
   flex: 0 0 auto;
 }
 
@@ -76,7 +76,7 @@
   font-size: var(--fs-meta);
 }
 .header__button[aria-expanded="true"] {
-  border-color: var(--teal);
+  border-color: var(--accent);
   background: var(--surface-2);
 }
 .header__lang {

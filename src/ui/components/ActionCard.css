@@ -17,12 +17,12 @@
   overflow-wrap: anywhere;
 }
 .action-card:hover {
-  border-color: var(--teal);
+  border-color: var(--accent);
   background: var(--surface-2);
 }
 .action-card:active {
   background: var(--surface-2);
-  box-shadow: inset 0 0 0 2px var(--teal);
+  box-shadow: inset 0 0 0 2px var(--accent);
 }
 .action-card__body {
   display: flex;
@@ -62,7 +62,7 @@
   gap: var(--space-1);
   font-size: var(--fs-body);
   font-weight: 700;
-  color: var(--teal);
+  color: var(--accent);
 }
 .action-card__arrow {
   width: 1.5rem;
@@ -78,8 +78,8 @@
 .action-card.action-card--primary {
   min-height: max(88px, 5rem);
   width: 100%;
-  border-color: var(--teal);
-  background: var(--teal);
+  border-color: var(--accent);
+  background: var(--accent);
   color: var(--on-accent);
   font-size: inherit;
   font-weight: inherit;
@@ -87,7 +87,7 @@
 .action-card.action-card--primary:hover,
 .action-card.action-card--primary:active {
   border-color: var(--ink);
-  background: var(--teal);
+  background: var(--accent);
   box-shadow: inset 0 0 0 2px var(--on-accent);
 }
 .action-card--primary .action-card__go,
@@ -134,22 +134,22 @@
   cursor: pointer;
 }
 .who-card:hover {
-  border-color: var(--teal);
+  border-color: var(--accent);
 }
 .who-card:has(input:checked) {
-  border-color: var(--teal);
+  border-color: var(--accent);
   background: var(--surface-2);
-  box-shadow: inset 0 0 0 2px var(--teal);
+  box-shadow: inset 0 0 0 2px var(--accent);
 }
 .who-card:has(input:focus-visible) {
-  outline: var(--focus-width) solid var(--teal);
+  outline: var(--focus-width) solid var(--focus-color);
   outline-offset: var(--focus-offset);
 }
 .who-card__icon {
   width: 2rem;
   height: 2rem;
   flex: 0 0 auto;
-  color: var(--teal);
+  color: var(--accent);
 }
 .who-card__body {
   display: flex;
