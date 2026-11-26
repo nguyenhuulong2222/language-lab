@@ -381,6 +381,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.exception` | Practice as {exception} | Практика как {exception} |
 | `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | Настоящий экзамен по граждановедению можно сдавать на своём языке, если вы приведёте переводчика. |
 | `intro.who.legend` | Who is practicing? | Кто тренируется? |
+| `illustration.label` | AI-generated illustration | Иллюстрация, созданная ИИ |
+| `credits.ai.title` | AI-generated illustrations | Иллюстрации, созданные ИИ |
+| `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | Эти иллюстрации идей созданы моделью ИИ для изображений по запросам, написанным для Language Lab. На них нет реальных людей, событий или документов. Владелец проверил каждую до того, как её показали. |
+| `credits.ai.made` | Made with the AI model {model} on {date}. | Создано моделью ИИ {model} {date}. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

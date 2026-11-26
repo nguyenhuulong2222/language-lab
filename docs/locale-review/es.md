@@ -381,3 +381,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.exception` | Practice as {exception} | Práctica como {exception} |
 | `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | Puede hacer el examen real de educación cívica en su propio idioma si trae un intérprete. |
 | `intro.who.legend` | Who is practicing? | ¿Quién practica? |
+| `illustration.label` | AI-generated illustration | Ilustración generada por IA |
+| `credits.ai.title` | AI-generated illustrations | Ilustraciones generadas por IA |
+| `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | Estas ilustraciones de ideas fueron hechas por un modelo de imágenes de IA a partir de instrucciones escritas para Language Lab. No muestran personas, hechos ni documentos reales. El responsable revisó cada una antes de mostrarla. |
+| `credits.ai.made` | Made with the AI model {model} on {date}. | Hecha con el modelo de IA {model} el {date}. |

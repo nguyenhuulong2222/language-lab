@@ -114,8 +114,12 @@ the Web Speech API, and public USCIS, Smithsonian and Library of Congress materi
   URL and SHA-256.
 - **Design guidance**: `.kiro/steering/frontend-design.md` is Anthropic's "frontend-design" skill (MIT),
   agent guidance only.
-- **Pictures**: public-domain or CC0 works from the Smithsonian and the Library of Congress, credited
-  in `docs/image-credits.md` and in the app.
+- **Pictures**: public-domain or CC0 works from the Smithsonian, the Library of Congress and the
+  National Archives, credited in `docs/image-credits.md` and in the app.
+- **Illustrations**: some illustrations of abstract ideas (CONCEPT questions only) are AI-generated
+  with the OpenAI image model `gpt-image-2.6-flare` from prompts in this repository
+  (`data/images/illustration-prompts.json`). They are labelled "AI-generated illustration" on screen
+  and are reviewed by the owner before they are shown.
 - **Fonts**: Playfair Display (Claus Eggers Sørensen) and Source Serif 4 (Frank Grießhammer, Adobe),
   SIL Open Font License 1.1, self-hosted.
 - **Audio**: prompts generated in advance with OpenAI `gpt-4o-mini-tts`.

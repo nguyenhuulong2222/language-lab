@@ -16,8 +16,15 @@ agency. Nothing here is legal advice.
 
 3. Pictures (public/images/civics/). Public-domain or openly licensed works from U.S. federal
    sources (Smithsonian Open Access, CC0; Library of Congress, "No known restrictions on
-   publication"). Each picture's creator, source page, file URL, SHA-256 and rights statement are
-   in data/images/manifest.json and docs/image-credits.md. They are not covered by the MIT licence.
+   publication"; National Archives Catalog, use and access restriction "Unrestricted"). Each
+   picture's creator, source page, file URL, SHA-256 and rights statement are in
+   data/images/manifest.json and docs/image-credits.md. They are not covered by the MIT licence.
+   Some illustrations of abstract ideas (public/images/illustrations/, CONCEPT questions only) are
+   AI-generated with the OpenAI image model gpt-image-2.6-flare from prompts in this repository
+   (data/images/illustration-prompts.json). They are labelled "AI-generated illustration" on
+   screen, are shown only after the owner has reviewed each one, and never show a real person,
+   event or document. Each one's model, prompt, date and SHA-256 are in
+   data/images/illustrations-manifest.json; the OpenAI terms of use apply to how they were made.
 
 4. Fonts. Playfair Display (headings) by Claus Eggers Sørensen and Source Serif 4 (text) by Frank
    Grießhammer (Adobe), both SIL Open Font License 1.1, from the Fontsource releases of the Google

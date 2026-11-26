@@ -12,6 +12,10 @@
  */
 export const LEGAL_KEYS: readonly string[] = [
   "disclaimer.title",
+  "illustration.label",
+  "credits.ai.title",
+  "credits.ai.lead",
+  "credits.ai.made",
   "disclaimer.short",
   "disclaimer.full",
   "disclaimer.report",

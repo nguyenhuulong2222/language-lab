@@ -381,6 +381,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.exception` | Practice as {exception} | {exception}(으)로 연습 |
 | `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | 통역사를 데려오면 실제 시민 상식 시험을 모국어로 볼 수 있습니다. |
 | `intro.who.legend` | Who is practicing? | 누가 연습하나요? |
+| `illustration.label` | AI-generated illustration | AI가 만든 그림 |
+| `credits.ai.title` | AI-generated illustrations | AI가 만든 그림 |
+| `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | 이 아이디어 그림들은 Language Lab을 위해 작성한 요청문으로 AI 이미지 모델이 만들었습니다. 실제 사람, 사건, 문서를 보여 주지 않습니다. 운영자가 보여 주기 전에 하나하나 확인했습니다. |
+| `credits.ai.made` | Made with the AI model {model} on {date}. | {date}에 AI 모델 {model}(으)로 만들었습니다. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

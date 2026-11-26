@@ -362,5 +362,9 @@
   "study.exempt.note": "Na entrevista você pode responder educação cívica no seu idioma se levar um intérprete. Este app pratica as perguntas em inglês.",
   "report.exception": "Prática como {exception}",
   "civics.exempt.line": "Você pode fazer o teste real de educação cívica no seu idioma se levar um intérprete.",
-  "intro.who.legend": "Quem vai praticar?"
+  "intro.who.legend": "Quem vai praticar?",
+  "illustration.label": "Ilustração gerada por IA",
+  "credits.ai.title": "Ilustrações geradas por IA",
+  "credits.ai.lead": "Estas ilustrações de ideias foram feitas por um modelo de imagens de IA a partir de instruções escritas para o Language Lab. Elas não mostram pessoas, fatos nem documentos reais. O responsável conferiu cada uma antes de ser exibida.",
+  "credits.ai.made": "Feita com o modelo de IA {model} em {date}."
 }

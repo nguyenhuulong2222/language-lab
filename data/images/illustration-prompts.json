@@ -1,0 +1,338 @@
+{
+ "_note": "Prompts for AI illustrations of CONCEPT civics questions only (see docs/image-plan.md). Written by hand for Language Lab. tools/images/generate-illustrations.mjs joins style + scene + rules into the prompt it sends and records that full prompt in data/images/illustrations-manifest.json. An illustration is shown only after the owner sets reviewed: true in that manifest.",
+ "needsHumanReview": true,
+ "model": "gpt-image-2.6-flare",
+ "size": "1024x1024",
+ "quality": "medium",
+ "estimate": {
+  "usdPerImage": 0.055,
+  "basis": "Read on 2026-11-26 from https://developers.openai.com/api/docs/guides/image-generation and https://developers.openai.com/api/docs/pricing: gpt-image-2.6-flare costs $30 per 1M image output tokens and $5 per 1M text input tokens. The docs give no fixed per-image price for GPT-Image-2.6 (only an interactive calculator); the per-image table for gpt-image-2, at the same $30 output rate, lists $0.053 for medium quality at 1024x1024. Estimate: $0.053 output + about $0.002 for the prompt text = about $0.055 per image. Token use can differ by model, so the real cost may differ."
+ },
+ "style": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures.",
+ "rules": "Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+ "prompts": [
+  {
+   "id": "amendment-change",
+   "questions": [
+    "2008-004",
+    "2025-005"
+   ],
+   "scene": "A long plain blank sheet of paper lies on a wooden table, and a hand adds one new blank sheet to its end, joined neatly with a small clip, to show a change being added.",
+   "alt": "A hand adds a new blank page to the end of a long sheet of paper.",
+   "caption": "A new page added to a long sheet"
+  },
+  {
+   "id": "first-amendment-freedoms",
+   "questions": [
+    "2008-006"
+   ],
+   "scene": "A calm public square: one adult speaks from a low step while others listen, a few people read folded newspapers with blank pages, and a small group stands together peacefully.",
+   "alt": "In a town square, one person speaks, others listen, and some read blank newspapers.",
+   "caption": "A morning in the town square"
+  },
+  {
+   "id": "freedom-of-religion",
+   "questions": [
+    "2008-010"
+   ],
+   "scene": "A quiet street with several simple buildings of different shapes and roof styles, with no religious symbols. People walk freely toward different buildings, and one person walks past them all toward a park.",
+   "alt": "People walk to different buildings on a quiet street, and one walks on to a park.",
+   "caption": "Different paths on one street"
+  },
+  {
+   "id": "economic-system",
+   "questions": [
+    "2008-011",
+    "2025-012"
+   ],
+   "scene": "An open-air market street with small shops and stalls of fruit, bread and tools. Shoppers choose goods and sellers hand them over; plain coins change hands.",
+   "alt": "Shoppers and sellers trade at small shops and market stalls.",
+   "caption": "A busy market street"
+  },
+  {
+   "id": "rule-of-law",
+   "questions": [
+    "2008-012",
+    "2025-013"
+   ],
+   "scene": "A large balanced scale hangs above a row of adults standing side by side at the same level; one wears a formal suit, others wear work clothes, all equal under the scale.",
+   "alt": "A balanced scale above a row of people, all standing at the same level.",
+   "caption": "A scale above a row of people"
+  },
+  {
+   "id": "three-branches",
+   "questions": [
+    "2008-013",
+    "2025-016"
+   ],
+   "scene": "Three equal, plain columns hold up one simple roof together; if any one were missing the roof would tip.",
+   "alt": "Three equal columns hold up one roof.",
+   "caption": "Three columns, one roof"
+  },
+  {
+   "id": "checks-and-balances",
+   "questions": [
+    "2008-014",
+    "2025-015"
+   ],
+   "scene": "A hanging mobile with three equal weights in balance, each joined to the other two by thin rods, so none can rise above the others.",
+   "alt": "A mobile with three linked weights hanging in balance.",
+   "caption": "Three weights in balance"
+  },
+  {
+   "id": "senator-represents-state",
+   "questions": [
+    "2008-024",
+    "2025-031"
+   ],
+   "scene": "A large simple rounded shape, not a real map, filled with many small people figures of a whole community; one figure stands at its edge facing them and listening.",
+   "alt": "One person stands at the edge of a crowd that fills a large shape, listening to them.",
+   "caption": "One listener and a large community"
+  },
+  {
+   "id": "seats-by-population",
+   "questions": [
+    "2008-025",
+    "2025-035"
+   ],
+   "scene": "Two groups of people: a large crowd on the left and a small group on the right. In front of the large crowd stand many empty chairs, and in front of the small group only a few.",
+   "alt": "A large crowd has many chairs in front of it, a small group has only a few.",
+   "caption": "A large crowd and a small group"
+  },
+  {
+   "id": "election-month",
+   "questions": [
+    "2008-027"
+   ],
+   "scene": "A calm autumn morning: adults in light coats wait in a short line outside a simple public building, with orange and red leaves falling from the trees.",
+   "alt": "People in coats wait in line outside a building on an autumn day.",
+   "caption": "A line outside on an autumn day"
+  },
+  {
+   "id": "citizens-elect",
+   "questions": [
+    "2025-032",
+    "2025-034"
+   ],
+   "scene": "Adults of different ages take turns placing folded blank paper ballots into a simple box with a slot.",
+   "alt": "People take turns putting folded ballots into a box.",
+   "caption": "Ballots going into a box"
+  },
+  {
+   "id": "house-member-district",
+   "questions": [
+    "2025-033"
+   ],
+   "scene": "A neighbourhood of small houses seen from above, with a soft outline around it; one figure walks along its street, stopping to listen to the people at their doors.",
+   "alt": "A person walks through a small neighbourhood, listening to the people who live there.",
+   "caption": "A walk through the neighbourhood"
+  },
+  {
+   "id": "shorter-terms",
+   "questions": [
+    "2025-026"
+   ],
+   "scene": "A small hourglass and a tall hourglass stand side by side. In front of the small hourglass, a few people talk with one listener who leans in to hear them.",
+   "alt": "A small and a tall hourglass; people talk to a listener in front of the small one.",
+   "caption": "A small hourglass and a tall one"
+  },
+  {
+   "id": "two-senators-each",
+   "questions": [
+    "2025-028"
+   ],
+   "scene": "A big block and a small block stand on the ground; on top of each sit exactly two identical chairs.",
+   "alt": "A big block and a small block, each with two identical chairs on top.",
+   "caption": "Two chairs on each block"
+  },
+  {
+   "id": "two-term-limit",
+   "questions": [
+    "2025-037"
+   ],
+   "scene": "A path leads through two identical open doorways one after the other; after the second doorway the path turns into a quiet park where one figure, seen from behind, walks away.",
+   "alt": "A path runs through two doorways and then into a park, where a person walks away.",
+   "caption": "Two doorways and a park"
+  },
+  {
+   "id": "cabinet-advises",
+   "questions": [
+    "2008-035",
+    "2025-047"
+   ],
+   "scene": "A round table seen from slightly above; several advisers lean in and offer folded blank papers to one listener seen from behind.",
+   "alt": "Advisers at a round table hand blank papers to one listener.",
+   "caption": "A meeting at a round table"
+  },
+  {
+   "id": "judicial-branch",
+   "questions": [
+    "2008-037",
+    "2025-051"
+   ],
+   "scene": "Two people sit on opposite sides of a long table with a plain open blank book between them; a third person at the head of the table, seen from behind, listens to both.",
+   "alt": "Two people at a table speak in turn while a third listens to both.",
+   "caption": "Two sides of a table"
+  },
+  {
+   "id": "judges-serve-for-life",
+   "questions": [
+    "2025-056"
+   ],
+   "scene": "One sturdy old tree stands calm and upright on a hill while a strong wind blows leaves and loose papers past it from both sides.",
+   "alt": "A sturdy tree stands still while the wind blows leaves past it from both sides.",
+   "caption": "A tree standing firm in the wind"
+  },
+  {
+   "id": "electoral-college",
+   "questions": [
+    "2025-049"
+   ],
+   "scene": "Many small groups of people, each in its own soft circle, each send one plain sealed envelope along a path toward a single box in the centre.",
+   "alt": "Small groups each send one envelope toward a box in the centre.",
+   "caption": "Envelopes on their way to one box"
+  },
+  {
+   "id": "federal-powers",
+   "questions": [
+    "2008-041",
+    "2025-058"
+   ],
+   "scene": "Neat stacks of plain coins and plain blank paper notes with no pictures or markings on a large table, beside a simple national building with columns.",
+   "alt": "Stacks of plain coins and blank notes next to a building with columns.",
+   "caption": "Coins and notes beside a columned building"
+  },
+  {
+   "id": "state-powers",
+   "questions": [
+    "2008-042",
+    "2025-059"
+   ],
+   "scene": "A small town street with a school with children's bicycles outside, a fire station, and a road crew mending the road.",
+   "alt": "A town street with a school, a fire station and a road being repaired.",
+   "caption": "A school, a fire station and a road crew"
+  },
+  {
+   "id": "tenth-amendment",
+   "questions": [
+    "2025-060"
+   ],
+   "scene": "A large circle holds a few keys; the rest of a big ring of keys is handed out to several smaller circles and to a crowd of people.",
+   "alt": "A large circle keeps a few keys and hands the rest to smaller circles and to people.",
+   "caption": "Keys handed out"
+  },
+  {
+   "id": "voting-amendments",
+   "questions": [
+    "2008-048",
+    "2025-063"
+   ],
+   "scene": "A line of adults of many backgrounds and ages, from a young adult to an older adult, wait together to vote, holding folded blank ballots.",
+   "alt": "Adults of many ages and backgrounds wait in line with ballots.",
+   "caption": "A long line of voters"
+  },
+  {
+   "id": "citizen-responsibilities",
+   "questions": [
+    "2008-049"
+   ],
+   "scene": "A wooden jury box with twelve chairs, a few filled by adults seen from behind, next to a simple ballot box.",
+   "alt": "A jury box with some adults seated, next to a ballot box.",
+   "caption": "A jury box and a ballot box"
+  },
+  {
+   "id": "citizen-rights",
+   "questions": [
+    "2008-050",
+    "2025-064"
+   ],
+   "scene": "A simple ballot box in front of an empty podium, with a small crowd of adults seen from behind waiting to take part.",
+   "alt": "A ballot box and an empty podium, with people waiting.",
+   "caption": "A ballot box and an empty podium"
+  },
+  {
+   "id": "rights-of-everyone",
+   "questions": [
+    "2008-051",
+    "2025-065"
+   ],
+   "scene": "A park where different adults do different things freely: one speaks to a few listeners, a small group gathers, one writes in a blank notebook, one walks to a simple building.",
+   "alt": "People in a park speak, gather, write and walk where they choose.",
+   "caption": "An afternoon in the park"
+  },
+  {
+   "id": "oath-promises",
+   "questions": [
+    "2008-053",
+    "2025-067"
+   ],
+   "scene": "A room of adults seen from behind, standing and raising their right hands together; one plain U.S. flag hangs far in the background.",
+   "alt": "Adults seen from behind raise their right hands together.",
+   "caption": "Right hands raised together"
+  },
+  {
+   "id": "becoming-citizens",
+   "questions": [
+    "2025-068"
+   ],
+   "scene": "A bright hall with rows of chairs; adults of mixed ages, seen from behind, stand and turn to hug family members; one plain U.S. flag in the background.",
+   "alt": "In a hall, people seen from behind stand and hug their families.",
+   "caption": "Families in a bright hall"
+  },
+  {
+   "id": "civic-participation",
+   "questions": [
+    "2008-055",
+    "2025-069"
+   ],
+   "scene": "A town meeting in a community hall: one person at a simple stand talks, others raise hands, and two volunteers hand out blank flyers.",
+   "alt": "A town meeting where people raise hands and volunteers hand out flyers.",
+   "caption": "A town meeting"
+  },
+  {
+   "id": "serving-the-country",
+   "questions": [
+    "2025-070"
+   ],
+   "scene": "Volunteers of different ages plant trees, carry boxes of food and help an older adult cross a street.",
+   "alt": "Volunteers plant trees, carry food and help an older person.",
+   "caption": "Volunteers at work"
+  },
+  {
+   "id": "paying-taxes",
+   "questions": [
+    "2025-071"
+   ],
+   "scene": "Small plain coins from many hands flow along a curved path into a bridge, a school and a road that are being built.",
+   "alt": "Coins from many hands flow into a bridge, a school and a road.",
+   "caption": "Coins building a bridge, a school and a road"
+  },
+  {
+   "id": "form-of-government",
+   "questions": [
+    "2025-001"
+   ],
+   "scene": "A crowd of citizens on one side drops folded ballots into a box; on the other side a small group sits at a long table facing them and listening.",
+   "alt": "Citizens vote on one side; a small group at a table faces them and listens.",
+   "caption": "Voters and a table of listeners"
+  },
+  {
+   "id": "founding-ideas",
+   "questions": [
+    "2025-010"
+   ],
+   "scene": "Adults of different ages and backgrounds stand side by side at the same height on a hill under an open sky, as birds fly freely overhead.",
+   "alt": "People stand side by side on a hill as birds fly overhead.",
+   "caption": "People on a hill under an open sky"
+  },
+  {
+   "id": "out-of-many-one",
+   "questions": [
+    "2025-124"
+   ],
+   "scene": "Many thin threads of navy, red, white and light navy come in from all sides and twist together into one strong rope at the centre.",
+   "alt": "Many coloured threads twist together into one rope.",
+   "caption": "Threads twisting into a rope"
+  }
+ ]
+}

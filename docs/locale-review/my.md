@@ -381,6 +381,10 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `report.exception` | Practice as {exception} | {exception} အဖြစ် လေ့ကျင့်ခြင်း |
 | `civics.exempt.line` | You may take the real civics test in your own language if you bring an interpreter. | စကားပြန် ကိုယ်တိုင်ခေါ်လာလျှင် တကယ့် နိုင်ငံသားပညာ စာမေးပွဲကို ကိုယ့်ဘာသာဖြင့် ဖြေဆိုနိုင်သည်။ |
 | `intro.who.legend` | Who is practicing? | ဘယ်သူ လေ့ကျင့်နေသလဲ။ |
+| `illustration.label` | AI-generated illustration | AI ဖြင့် ပြုလုပ်ထားသော ပုံ |
+| `credits.ai.title` | AI-generated illustrations | AI ဖြင့် ပြုလုပ်ထားသော ပုံများ |
+| `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | ဤအတွေးအခေါ်ပုံများကို Language Lab အတွက် ရေးထားသော ညွှန်ကြားချက်များမှ AI ပုံဆွဲမော်ဒယ်က ပြုလုပ်ထားသည်။ ပုံများတွင် တကယ့်လူ၊ ဖြစ်ရပ် သို့မဟုတ် စာရွက်စာတမ်းများ မပါပါ။ ပိုင်ရှင်သည် ပုံတစ်ပုံချင်းကို မပြမီ ကြည့်ရှုစစ်ဆေးခဲ့သည်။ |
+| `credits.ai.made` | Made with the AI model {model} on {date}. | {date} တွင် AI မော်ဒယ် {model} ဖြင့် ပြုလုပ်ထားသည်။ |
 
 ## Lines marked ⚠ (meaning differs a little)
 
