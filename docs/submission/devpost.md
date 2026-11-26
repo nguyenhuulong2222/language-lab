@@ -46,8 +46,7 @@ life.
   for the practice score (USCIS Policy Manual, Vol. 12, Part E, Ch. 2). A linked line quotes the
   USCIS rules, including taking civics in their own language with an interpreter.
 - **Study first**: the civics questions with official answers and pictures, not scored. A picture
-  helps on 167 of the 228 questions; 166 of those 167 have one prepared (152 shown today, 14 more
-  once the owner reviews them), and 61 are left without one on purpose (answers that change, or a
+  helps on 167 of the 228 questions; 166 of those 167 have one, all reviewed by the owner, and 61 are left without one on purpose (answers that change, or a
   picture would mislead).
 - **Interface languages as labelled AI drafts**: 10 of 14 languages are shown in production. Each says
   it was translated by AI. Disclaimers, legal lines and civics questions stay in English.

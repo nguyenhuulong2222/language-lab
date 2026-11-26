@@ -22,9 +22,9 @@ would be a made-up likeness or a made-up record.
 A picture can help on **167 of the 228 questions** (all classes except DYNAMIC and NONE). The other 61 are left without one on purpose.
 
 - **Federal pictures** (LOC, National Archives, Smithsonian, NPS): 105 questions.
-- **Diagrams drawn from federal data** (Census Bureau, USGS, the flag code): 10 questions, all `reviewed: false` until the owner checks them.
-- **AI illustrations** (CONCEPT only): 47 questions reviewed by the owner; 4 more wait for new illustrations (prompts redone, not generated yet).
-- **Total with a picture prepared:** 166 of 167. Shown in the app today: 152 of 167 (diagrams and the 4 redone illustrations appear once reviewed).
+- **Diagrams drawn from federal data** (Census Bureau, USGS, the flag code): 10 questions, reviewed by the owner.
+- **AI illustrations** (CONCEPT only): 51 questions, all reviewed by the owner (4 of them from 3 redone illustrations).
+- **Total with a picture prepared:** 166 of 167. Shown in the app: 166 of 167, all reviewed by the owner.
 - **Still missing:** 1 (2025-116); see `docs/image-todo.md`.
 
 Each question counts once per answer key. Before this work (step P0) 49 questions had a picture.

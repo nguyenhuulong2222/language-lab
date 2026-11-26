@@ -482,7 +482,7 @@ Maps and the 50-star flag drawn by `tools/images/draw-diagrams.mjs` from U.S. Ce
 - **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
 - **Drawn from:** 4 U.S.C. § 1 and § 2 (https://www.govinfo.gov/content/pkg/USCODE-2023-title4/html/USCODE-2023-title4-chap1.htm)
 - **Drawn from:** Executive Order 10834 of August 21, 1959 (https://www.archives.gov/federal-register/codification/executive-order/10834.html)
-- **Reviewed by the owner:** not yet (not shown)
+- **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2008-097, 2025-122
 
 ## The 13 original states, shown with today's state borders
@@ -491,7 +491,7 @@ Maps and the 50-star flag drawn by `tools/images/draw-diagrams.mjs` from U.S. Ce
 - **Credit line:** Drawn from U.S. Census Bureau data
 - **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
 - **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
-- **Reviewed by the owner:** not yet (not shown)
+- **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2008-064, 2025-081
 
 ## The Missouri and Mississippi rivers
@@ -501,7 +501,7 @@ Maps and the 50-star flag drawn by `tools/images/draw-diagrams.mjs` from U.S. Ce
 - **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
 - **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
 - **Data:** U.S. Geological Survey, National Atlas of the United States, <https://prd-tnm.s3.amazonaws.com/StagedProducts/Small-scale/data/Hydrography/streaml010g.shp_nt00885.tar.gz>, downloaded 2026-11-26 (SHA-256 `437e423140c3880e8d40f1c15822e7f80022df848b782da2f78e5b96797dec31`)
-- **Reviewed by the owner:** not yet (not shown)
+- **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2008-088
 
 ## The ocean on the West Coast
@@ -510,7 +510,7 @@ Maps and the 50-star flag drawn by `tools/images/draw-diagrams.mjs` from U.S. Ce
 - **Credit line:** Drawn from U.S. Census Bureau data
 - **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
 - **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
-- **Reviewed by the owner:** not yet (not shown)
+- **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2008-089
 
 ## The ocean on the East Coast
@@ -519,7 +519,7 @@ Maps and the 50-star flag drawn by `tools/images/draw-diagrams.mjs` from U.S. Ce
 - **Credit line:** Drawn from U.S. Census Bureau data
 - **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
 - **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
-- **Reviewed by the owner:** not yet (not shown)
+- **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2008-090
 
 ## The U.S. territories
@@ -529,7 +529,7 @@ Maps and the 50-star flag drawn by `tools/images/draw-diagrams.mjs` from U.S. Ce
 - **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
 - **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
 - **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_500k.zip>, downloaded 2026-11-26 (SHA-256 `4a9b4f5cf993cd23738ac49b58fbb556f1f097fcf5e404a9dc10348dd41f7432`)
-- **Reviewed by the owner:** not yet (not shown)
+- **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2008-091
 
 ## The states that border Canada
@@ -538,7 +538,7 @@ Maps and the 50-star flag drawn by `tools/images/draw-diagrams.mjs` from U.S. Ce
 - **Credit line:** Drawn from U.S. Census Bureau data
 - **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
 - **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
-- **Reviewed by the owner:** not yet (not shown)
+- **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2008-092
 
 ## The states that border Mexico
@@ -547,7 +547,7 @@ Maps and the 50-star flag drawn by `tools/images/draw-diagrams.mjs` from U.S. Ce
 - **Credit line:** Drawn from U.S. Census Bureau data
 - **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
 - **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
-- **Reviewed by the owner:** not yet (not shown)
+- **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2008-093
 
 # AI-generated illustrations
@@ -652,11 +652,11 @@ Some ideas (CONCEPT questions only, such as the rule of law) may have an illustr
 - **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2025-028
 
-## Two doorways and a park
+## Two full calendars, then a handover
 
 - **Illustration id:** `two-term-limit` (file `two-term-limit.webp`)
-- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `f00ec6e6f48f21e5b09e1378948ae789dfc4245a6ec776aba6b7ffb25c83cfc3`)
-- **Reviewed by the owner:** not yet (not shown)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `64287b5fe32baa543c9e51ec363030743c9a5efb2ae0b4083735e2771b8510e6`)
+- **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2025-037
 
 ## A meeting at a round table
@@ -666,11 +666,11 @@ Some ideas (CONCEPT questions only, such as the rule of law) may have an illustr
 - **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2008-035, 2025-047
 
-## Two sides of a table
+## A courtroom, seen from the back
 
 - **Illustration id:** `judicial-branch` (file `judicial-branch.webp`)
-- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `530ad0f62752352f6324b8f518c20fa77f1519c879de77e3973886493a139184`)
-- **Reviewed by the owner:** not yet (not shown)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `cdb89b2723b476f4e7ea13cd87dc9c3a38ecfdd5ce1a7ccb88061748a2e4a16f`)
+- **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2008-037, 2025-051
 
 ## A tree standing firm in the wind
@@ -764,11 +764,11 @@ Some ideas (CONCEPT questions only, such as the rule of law) may have an illustr
 - **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2025-070
 
-## Coins building a bridge, a school and a road
+## Coins in one bowl, and a town being built
 
 - **Illustration id:** `paying-taxes` (file `paying-taxes.webp`)
-- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `97b0dcd5ed0ace3e491cb0346495e141abb7acf1c09d1777389c6447faf54c9a`)
-- **Reviewed by the owner:** not yet (not shown)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `eab8b4788fe1a1a64349f2c8f46fd916cff078cdbc00fe390185b525b598ce79`)
+- **Reviewed by the owner:** yes (shown in the app)
 - **Used for questions:** 2025-071
 
 ## Voters and a table of listeners

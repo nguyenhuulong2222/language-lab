@@ -28,7 +28,7 @@
    "width": 1140,
    "height": 600,
    "bytes": 17318,
-   "reviewed": false
+   "reviewed": true
   },
   {
    "id": "thirteen-original-states",
@@ -57,7 +57,7 @@
    "width": 900,
    "height": 1200,
    "bytes": 32148,
-   "reviewed": false
+   "reviewed": true
   },
   {
    "id": "longest-rivers",
@@ -92,7 +92,7 @@
    "width": 1200,
    "height": 760,
    "bytes": 29846,
-   "reviewed": false
+   "reviewed": true
   },
   {
    "id": "pacific-coast",
@@ -120,7 +120,7 @@
    "width": 1200,
    "height": 760,
    "bytes": 25154,
-   "reviewed": false
+   "reviewed": true
   },
   {
    "id": "atlantic-coast",
@@ -148,7 +148,7 @@
    "width": 1200,
    "height": 760,
    "bytes": 26362,
-   "reviewed": false
+   "reviewed": true
   },
   {
    "id": "us-territories",
@@ -183,7 +183,7 @@
    "width": 1200,
    "height": 640,
    "bytes": 11746,
-   "reviewed": false
+   "reviewed": true
   },
   {
    "id": "canada-border-states",
@@ -211,7 +211,7 @@
    "width": 1200,
    "height": 860,
    "bytes": 26806,
-   "reviewed": false
+   "reviewed": true
   },
   {
    "id": "mexico-border-states",
@@ -239,7 +239,7 @@
    "width": 1200,
    "height": 760,
    "bytes": 26656,
-   "reviewed": false
+   "reviewed": true
   }
  ]
 }

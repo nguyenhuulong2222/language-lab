@@ -268,16 +268,16 @@
         "2025-037"
       ],
       "model": "gpt-image-2.6-flare",
-      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A path leads through two identical open doorways one after the other; after the second doorway the path turns into a quiet park where one figure, seen from behind, walks away. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Two large wall-calendar-like panels hang side by side on a light wall. Each panel is a plain grid of small blank squares with no numbers or letters, and each grid is fully shaded in light navy to show a full term. Below the two panels, a single figure seen from behind hands a plain blank folder to a second figure, also seen from behind. To the right of the two panels the wall is empty, with no third panel. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
       "date": "2026-11-26",
-      "sha256": "f00ec6e6f48f21e5b09e1378948ae789dfc4245a6ec776aba6b7ffb25c83cfc3",
-      "alt": "A path runs through two doorways and then into a park, where a person walks away.",
-      "caption": "Two doorways and a park",
+      "sha256": "64287b5fe32baa543c9e51ec363030743c9a5efb2ae0b4083735e2771b8510e6",
+      "alt": "Two full calendar-like panels hang on a wall; below them one person hands a folder to another.",
+      "caption": "Two full calendars, then a handover",
       "source": "ai",
-      "reviewed": false,
+      "reviewed": true,
       "width": 1024,
       "height": 1024,
-      "bytes": 19170
+      "bytes": 30926
     },
     {
       "id": "cabinet-advises",
@@ -306,16 +306,16 @@
         "2025-051"
       ],
       "model": "gpt-image-2.6-flare",
-      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Two people sit on opposite sides of a long table with a plain open blank book between them; a third person at the head of the table, seen from behind, listens to both. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Inside a calm, bright courtroom seen from the back of the room: a tall raised wooden judge's bench at the far end, with three judges in plain dark navy robes sitting behind it, seen from far away as small simple shapes with no faces. In front of the bench, two separate small tables face it, one on the left and one on the right, each with one person seated, seen from behind. Rows of empty wooden benches in the foreground. One plain U.S. flag stands at the side of the bench, far in the background. No gavel close up, no papers with writing, no seal or emblem on the wall. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
       "date": "2026-11-26",
-      "sha256": "530ad0f62752352f6324b8f518c20fa77f1519c879de77e3973886493a139184",
-      "alt": "Two people at a table speak in turn while a third listens to both.",
-      "caption": "Two sides of a table",
+      "sha256": "cdb89b2723b476f4e7ea13cd87dc9c3a38ecfdd5ce1a7ccb88061748a2e4a16f",
+      "alt": "A courtroom seen from the back: judges in robes sit at a raised bench, facing two tables with one person at each.",
+      "caption": "A courtroom, seen from the back",
       "source": "ai",
-      "reviewed": false,
+      "reviewed": true,
       "width": 1024,
       "height": 1024,
-      "bytes": 28458
+      "bytes": 23384
     },
     {
       "id": "judges-serve-for-life",
@@ -565,16 +565,16 @@
         "2025-071"
       ],
       "model": "gpt-image-2.6-flare",
-      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Small plain coins from many hands flow along a curved path into a bridge, a school and a road that are being built. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Seen from a gentle height: a small town square. On the left, many open hands each drop one plain round coin into a single wide, smooth wooden bowl. On the right, the same town is being improved: a rounded stone footbridge over a stream, a low school building with children's bicycles outside, and a freshly paved curving road with a simple red work truck. Everything is made of soft rounded shapes; no barriers, no fences, no traffic cones, no posts, no signs, no triangles or crossed shapes, and nothing shaped like a letter or a number. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
       "date": "2026-11-26",
-      "sha256": "97b0dcd5ed0ace3e491cb0346495e141abb7acf1c09d1777389c6447faf54c9a",
-      "alt": "Coins from many hands flow into a bridge, a school and a road.",
-      "caption": "Coins building a bridge, a school and a road",
+      "sha256": "eab8b4788fe1a1a64349f2c8f46fd916cff078cdbc00fe390185b525b598ce79",
+      "alt": "Hands drop coins into one bowl beside a town where a footbridge, a school and a new road are built.",
+      "caption": "Coins in one bowl, and a town being built",
       "source": "ai",
-      "reviewed": false,
+      "reviewed": true,
       "width": 1024,
       "height": 1024,
-      "bytes": 52018
+      "bytes": 52198
     },
     {
       "id": "form-of-government",
