@@ -363,4 +363,240 @@ Using these pictures does not mean the Library of Congress, any other agency or 
 
 Some ideas (CONCEPT questions only, such as the rule of law) may have an illustration made by an OpenAI image model from prompts in `data/images/illustration-prompts.json`. Each one is labelled "AI-generated illustration" on screen and is shown only after the owner has reviewed it. They never show a real person, event or document.
 
-None made yet.
+## A new page added to a long sheet
+
+- **Illustration id:** `amendment-change` (file `amendment-change.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `5be9bf94ecf51202da62e2132a92a599f5eff48a1221184d30c1905b7bb6f3d6`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-004, 2025-005
+
+## A morning in the town square
+
+- **Illustration id:** `first-amendment-freedoms` (file `first-amendment-freedoms.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `57abd61363ca88ad25c825bddabbe3cfbbadfd21038e00c4738c804acfbe6354`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-006
+
+## Different paths on one street
+
+- **Illustration id:** `freedom-of-religion` (file `freedom-of-religion.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `2ecbc797ac9c9a0640f484fe4a7435c6bb6ebaf90e33d4e93e0e3c9e0aef0e0d`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-010
+
+## A busy market street
+
+- **Illustration id:** `economic-system` (file `economic-system.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `7fa475ffb7a3456383f31c2d33cd9841db58d2df263db135ed0bfe3dd98ccf87`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-011, 2025-012
+
+## A scale above a row of people
+
+- **Illustration id:** `rule-of-law` (file `rule-of-law.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `a8adc9c55fea7c8b620ac9de458bd453bf061d71561524a2f453d9ec28e4fc0c`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-012, 2025-013
+
+## Three columns, one roof
+
+- **Illustration id:** `three-branches` (file `three-branches.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `23db93528d477ab6fd4478d18895b3517e012b3be2089d0b749ff369f39df68c`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-013, 2025-016
+
+## Three weights in balance
+
+- **Illustration id:** `checks-and-balances` (file `checks-and-balances.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `4817f023f9f8158b8bb88fa6b9b83ea6ea57d9adbe4bf59fffeb577b84b9edff`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-014, 2025-015
+
+## One listener and a large community
+
+- **Illustration id:** `senator-represents-state` (file `senator-represents-state.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `845efd28f932bffabe6920e8f3000fc19e52a2687dfb948cdd2ace0bce418bb2`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-024, 2025-031
+
+## A large crowd and a small group
+
+- **Illustration id:** `seats-by-population` (file `seats-by-population.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `8c3a0ca0a2d4fbbcc1400a2c561ff0d5ee468e9055c8985c867abd4f6d651a46`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-025, 2025-035
+
+## A line outside on an autumn day
+
+- **Illustration id:** `election-month` (file `election-month.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `c5a15e53ca6d58848ec317eddf131bc38cc7410bfc043a50d9164e0b88a274da`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-027
+
+## Ballots going into a box
+
+- **Illustration id:** `citizens-elect` (file `citizens-elect.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `58d2a0b3f09e22319bf0b21ec5df0224e9b806d0e9224fb7e5ffa0389e5df3dc`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2025-032, 2025-034
+
+## A walk through the neighbourhood
+
+- **Illustration id:** `house-member-district` (file `house-member-district.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `59f0ab3d0fcbc586c1145f12da95da2289672a49de9153072214bb2947bcf286`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2025-033
+
+## A small hourglass and a tall one
+
+- **Illustration id:** `shorter-terms` (file `shorter-terms.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `c7000e249a6ff73fbaf759a8d541a8f40811649d32d36c0f3b8b3d127432af35`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2025-026
+
+## Two chairs on each block
+
+- **Illustration id:** `two-senators-each` (file `two-senators-each.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `e806ed4b2c38f48313fa88ce87aaff30edeea08161463faed5e396b17330d268`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2025-028
+
+## Two doorways and a park
+
+- **Illustration id:** `two-term-limit` (file `two-term-limit.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `f00ec6e6f48f21e5b09e1378948ae789dfc4245a6ec776aba6b7ffb25c83cfc3`)
+- **Reviewed by the owner:** not yet (not shown)
+- **Used for questions:** 2025-037
+
+## A meeting at a round table
+
+- **Illustration id:** `cabinet-advises` (file `cabinet-advises.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `0034699ff707a9a9ddcb760ee0573666c720d3387bdb1048c32eb01aff2c2ba0`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-035, 2025-047
+
+## Two sides of a table
+
+- **Illustration id:** `judicial-branch` (file `judicial-branch.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `530ad0f62752352f6324b8f518c20fa77f1519c879de77e3973886493a139184`)
+- **Reviewed by the owner:** not yet (not shown)
+- **Used for questions:** 2008-037, 2025-051
+
+## A tree standing firm in the wind
+
+- **Illustration id:** `judges-serve-for-life` (file `judges-serve-for-life.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `c060902b3442bc94574636891e310d0edc02b38bcd11f6b1d8dc2e6ecb75f5db`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2025-056
+
+## Envelopes on their way to one box
+
+- **Illustration id:** `electoral-college` (file `electoral-college.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `313a575e8523b947015915bb963b89e189a309a65a56fbcdd1a742c1de315dca`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2025-049
+
+## Coins and notes beside a columned building
+
+- **Illustration id:** `federal-powers` (file `federal-powers.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `8bf561a6e581e4f50ccd30b665c45fea4deb0d699aa092de295a4bd23f05e5ac`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-041, 2025-058
+
+## A school, a fire station and a road crew
+
+- **Illustration id:** `state-powers` (file `state-powers.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `e1c3a963d5c8b5ab6ed983f70fd4dff70245a00ac259a732cf20f7339a2120fb`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-042, 2025-059
+
+## Keys handed out
+
+- **Illustration id:** `tenth-amendment` (file `tenth-amendment.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `234b9a7ab2f2bb6ce83284a8fb7c9167b16778495b667febdb9b078ec6cba6f1`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2025-060
+
+## A long line of voters
+
+- **Illustration id:** `voting-amendments` (file `voting-amendments.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `84391edc5318005b44655aeec93d7dee04d2f03dcaaee52e1cc08bc6cb59cf96`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-048, 2025-063
+
+## A jury box and a ballot box
+
+- **Illustration id:** `citizen-responsibilities` (file `citizen-responsibilities.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `3052e28bbbf56122d5ba0b6a1689cd12a99d33273f9684271afd3f9940cc57b5`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-049
+
+## A ballot box and an empty podium
+
+- **Illustration id:** `citizen-rights` (file `citizen-rights.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `004f9805ea0b7b21464ddfd4eaabcd5d2907639f26a91e4b086cc6f35061c4bc`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-050, 2025-064
+
+## An afternoon in the park
+
+- **Illustration id:** `rights-of-everyone` (file `rights-of-everyone.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `d8831b7781318b674463cc6af0802d3a8e3426451c4836f4e3c9186155710e68`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-051, 2025-065
+
+## Right hands raised together
+
+- **Illustration id:** `oath-promises` (file `oath-promises.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `ccd4ae28bd48425367cf2d239e57936aaebe6321b58ce4cd7f48036040c829df`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-053, 2025-067
+
+## Families in a bright hall
+
+- **Illustration id:** `becoming-citizens` (file `becoming-citizens.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `0b1a95d6c769c5a2d12a0cac89758dd400e1122663d8b7803d7ee563f908a719`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2025-068
+
+## A town meeting
+
+- **Illustration id:** `civic-participation` (file `civic-participation.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `7f7c8d59bdc568771ed2e9aac9829e853933d4bfcba5d71f065437e42e5d82c5`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2008-055, 2025-069
+
+## Volunteers at work
+
+- **Illustration id:** `serving-the-country` (file `serving-the-country.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `4ee7d0e9aa21532620b5909b74987d822517c249ae270d9520d1b0d71a3bf377`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2025-070
+
+## Coins building a bridge, a school and a road
+
+- **Illustration id:** `paying-taxes` (file `paying-taxes.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `97b0dcd5ed0ace3e491cb0346495e141abb7acf1c09d1777389c6447faf54c9a`)
+- **Reviewed by the owner:** not yet (not shown)
+- **Used for questions:** 2025-071
+
+## Voters and a table of listeners
+
+- **Illustration id:** `form-of-government` (file `form-of-government.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `84a9537340b75ac36a13dbced518acc85d3ef9b8d990be507dcd0a95d8bf4569`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2025-001
+
+## People on a hill under an open sky
+
+- **Illustration id:** `founding-ideas` (file `founding-ideas.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `1f2093ca1302ed31b2b191decfcbc536dd4daa20231cde4687077ccccb913dab`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2025-010
+
+## Threads twisting into a rope
+
+- **Illustration id:** `out-of-many-one` (file `out-of-many-one.webp`)
+- **Model:** gpt-image-2.6-flare, made on 2026-11-26 (SHA-256: `6bfe4fe49a923d173af76550cde325aa1bea3221cb13a86902903d1db3fb2c45`)
+- **Reviewed by the owner:** yes (shown in the app)
+- **Used for questions:** 2025-124

@@ -1,4 +1,634 @@
 {
- "_note": "AI illustrations made by tools/images/generate-illustrations.mjs from data/images/illustration-prompts.json. An entry is shown in the app only after the owner sets reviewed to true. Do not edit by hand except the reviewed flag.",
- "images": []
+  "_note": "AI illustrations made by tools/images/generate-illustrations.mjs from data/images/illustration-prompts.json. An entry is shown in the app only after the owner sets reviewed to true. Do not edit by hand except the reviewed flag.",
+  "images": [
+    {
+      "id": "amendment-change",
+      "file": "amendment-change.webp",
+      "questions": [
+        "2008-004",
+        "2025-005"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A long plain blank sheet of paper lies on a wooden table, and a hand adds one new blank sheet to its end, joined neatly with a small clip, to show a change being added. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "5be9bf94ecf51202da62e2132a92a599f5eff48a1221184d30c1905b7bb6f3d6",
+      "alt": "A hand adds a new blank page to the end of a long sheet of paper.",
+      "caption": "A new page added to a long sheet",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 21928
+    },
+    {
+      "id": "first-amendment-freedoms",
+      "file": "first-amendment-freedoms.webp",
+      "questions": [
+        "2008-006"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A calm public square: one adult speaks from a low step while others listen, a few people read folded newspapers with blank pages, and a small group stands together peacefully. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "57abd61363ca88ad25c825bddabbe3cfbbadfd21038e00c4738c804acfbe6354",
+      "alt": "In a town square, one person speaks, others listen, and some read blank newspapers.",
+      "caption": "A morning in the town square",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 43946
+    },
+    {
+      "id": "freedom-of-religion",
+      "file": "freedom-of-religion.webp",
+      "questions": [
+        "2008-010"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A quiet street with several simple buildings of different shapes and roof styles, with no religious symbols. People walk freely toward different buildings, and one person walks past them all toward a park. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "2ecbc797ac9c9a0640f484fe4a7435c6bb6ebaf90e33d4e93e0e3c9e0aef0e0d",
+      "alt": "People walk to different buildings on a quiet street, and one walks on to a park.",
+      "caption": "Different paths on one street",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 42900
+    },
+    {
+      "id": "economic-system",
+      "file": "economic-system.webp",
+      "questions": [
+        "2008-011",
+        "2025-012"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. An open-air market street with small shops and stalls of fruit, bread and tools. Shoppers choose goods and sellers hand them over; plain coins change hands. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "7fa475ffb7a3456383f31c2d33cd9841db58d2df263db135ed0bfe3dd98ccf87",
+      "alt": "Shoppers and sellers trade at small shops and market stalls.",
+      "caption": "A busy market street",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 69670
+    },
+    {
+      "id": "rule-of-law",
+      "file": "rule-of-law.webp",
+      "questions": [
+        "2008-012",
+        "2025-013"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A large balanced scale hangs above a row of adults standing side by side at the same level; one wears a formal suit, others wear work clothes, all equal under the scale. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "a8adc9c55fea7c8b620ac9de458bd453bf061d71561524a2f453d9ec28e4fc0c",
+      "alt": "A balanced scale above a row of people, all standing at the same level.",
+      "caption": "A scale above a row of people",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 40582
+    },
+    {
+      "id": "three-branches",
+      "file": "three-branches.webp",
+      "questions": [
+        "2008-013",
+        "2025-016"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Three equal, plain columns hold up one simple roof together; if any one were missing the roof would tip. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "23db93528d477ab6fd4478d18895b3517e012b3be2089d0b749ff369f39df68c",
+      "alt": "Three equal columns hold up one roof.",
+      "caption": "Three columns, one roof",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 31112
+    },
+    {
+      "id": "checks-and-balances",
+      "file": "checks-and-balances.webp",
+      "questions": [
+        "2008-014",
+        "2025-015"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A hanging mobile with three equal weights in balance, each joined to the other two by thin rods, so none can rise above the others. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "4817f023f9f8158b8bb88fa6b9b83ea6ea57d9adbe4bf59fffeb577b84b9edff",
+      "alt": "A mobile with three linked weights hanging in balance.",
+      "caption": "Three weights in balance",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 33222
+    },
+    {
+      "id": "senator-represents-state",
+      "file": "senator-represents-state.webp",
+      "questions": [
+        "2008-024",
+        "2025-031"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A large simple rounded shape, not a real map, filled with many small people figures of a whole community; one figure stands at its edge facing them and listening. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "845efd28f932bffabe6920e8f3000fc19e52a2687dfb948cdd2ace0bce418bb2",
+      "alt": "One person stands at the edge of a crowd that fills a large shape, listening to them.",
+      "caption": "One listener and a large community",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 40488
+    },
+    {
+      "id": "seats-by-population",
+      "file": "seats-by-population.webp",
+      "questions": [
+        "2008-025",
+        "2025-035"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Two groups of people: a large crowd on the left and a small group on the right. In front of the large crowd stand many empty chairs, and in front of the small group only a few. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "8c3a0ca0a2d4fbbcc1400a2c561ff0d5ee468e9055c8985c867abd4f6d651a46",
+      "alt": "A large crowd has many chairs in front of it, a small group has only a few.",
+      "caption": "A large crowd and a small group",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 40940
+    },
+    {
+      "id": "election-month",
+      "file": "election-month.webp",
+      "questions": [
+        "2008-027"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A calm autumn morning: adults in light coats wait in a short line outside a simple public building, with orange and red leaves falling from the trees. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "c5a15e53ca6d58848ec317eddf131bc38cc7410bfc043a50d9164e0b88a274da",
+      "alt": "People in coats wait in line outside a building on an autumn day.",
+      "caption": "A line outside on an autumn day",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 51794
+    },
+    {
+      "id": "citizens-elect",
+      "file": "citizens-elect.webp",
+      "questions": [
+        "2025-032",
+        "2025-034"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Adults of different ages take turns placing folded blank paper ballots into a simple box with a slot. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "58d2a0b3f09e22319bf0b21ec5df0224e9b806d0e9224fb7e5ffa0389e5df3dc",
+      "alt": "People take turns putting folded ballots into a box.",
+      "caption": "Ballots going into a box",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 28390
+    },
+    {
+      "id": "house-member-district",
+      "file": "house-member-district.webp",
+      "questions": [
+        "2025-033"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A neighbourhood of small houses seen from above, with a soft outline around it; one figure walks along its street, stopping to listen to the people at their doors. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "59f0ab3d0fcbc586c1145f12da95da2289672a49de9153072214bb2947bcf286",
+      "alt": "A person walks through a small neighbourhood, listening to the people who live there.",
+      "caption": "A walk through the neighbourhood",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 54506
+    },
+    {
+      "id": "shorter-terms",
+      "file": "shorter-terms.webp",
+      "questions": [
+        "2025-026"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A small hourglass and a tall hourglass stand side by side. In front of the small hourglass, a few people talk with one listener who leans in to hear them. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "c7000e249a6ff73fbaf759a8d541a8f40811649d32d36c0f3b8b3d127432af35",
+      "alt": "A small and a tall hourglass; people talk to a listener in front of the small one.",
+      "caption": "A small hourglass and a tall one",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 33802
+    },
+    {
+      "id": "two-senators-each",
+      "file": "two-senators-each.webp",
+      "questions": [
+        "2025-028"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A big block and a small block stand on the ground; on top of each sit exactly two identical chairs. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "e806ed4b2c38f48313fa88ce87aaff30edeea08161463faed5e396b17330d268",
+      "alt": "A big block and a small block, each with two identical chairs on top.",
+      "caption": "Two chairs on each block",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 27772
+    },
+    {
+      "id": "two-term-limit",
+      "file": "two-term-limit.webp",
+      "questions": [
+        "2025-037"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A path leads through two identical open doorways one after the other; after the second doorway the path turns into a quiet park where one figure, seen from behind, walks away. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "f00ec6e6f48f21e5b09e1378948ae789dfc4245a6ec776aba6b7ffb25c83cfc3",
+      "alt": "A path runs through two doorways and then into a park, where a person walks away.",
+      "caption": "Two doorways and a park",
+      "source": "ai",
+      "reviewed": false,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 19170
+    },
+    {
+      "id": "cabinet-advises",
+      "file": "cabinet-advises.webp",
+      "questions": [
+        "2008-035",
+        "2025-047"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A round table seen from slightly above; several advisers lean in and offer folded blank papers to one listener seen from behind. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "0034699ff707a9a9ddcb760ee0573666c720d3387bdb1048c32eb01aff2c2ba0",
+      "alt": "Advisers at a round table hand blank papers to one listener.",
+      "caption": "A meeting at a round table",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 41100
+    },
+    {
+      "id": "judicial-branch",
+      "file": "judicial-branch.webp",
+      "questions": [
+        "2008-037",
+        "2025-051"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Two people sit on opposite sides of a long table with a plain open blank book between them; a third person at the head of the table, seen from behind, listens to both. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "530ad0f62752352f6324b8f518c20fa77f1519c879de77e3973886493a139184",
+      "alt": "Two people at a table speak in turn while a third listens to both.",
+      "caption": "Two sides of a table",
+      "source": "ai",
+      "reviewed": false,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 28458
+    },
+    {
+      "id": "judges-serve-for-life",
+      "file": "judges-serve-for-life.webp",
+      "questions": [
+        "2025-056"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. One sturdy old tree stands calm and upright on a hill while a strong wind blows leaves and loose papers past it from both sides. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "c060902b3442bc94574636891e310d0edc02b38bcd11f6b1d8dc2e6ecb75f5db",
+      "alt": "A sturdy tree stands still while the wind blows leaves past it from both sides.",
+      "caption": "A tree standing firm in the wind",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 66678
+    },
+    {
+      "id": "electoral-college",
+      "file": "electoral-college.webp",
+      "questions": [
+        "2025-049"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Many small groups of people, each in its own soft circle, each send one plain sealed envelope along a path toward a single box in the centre. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "313a575e8523b947015915bb963b89e189a309a65a56fbcdd1a742c1de315dca",
+      "alt": "Small groups each send one envelope toward a box in the centre.",
+      "caption": "Envelopes on their way to one box",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 39214
+    },
+    {
+      "id": "federal-powers",
+      "file": "federal-powers.webp",
+      "questions": [
+        "2008-041",
+        "2025-058"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Neat stacks of plain coins and plain blank paper notes with no pictures or markings on a large table, beside a simple national building with columns. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "8bf561a6e581e4f50ccd30b665c45fea4deb0d699aa092de295a4bd23f05e5ac",
+      "alt": "Stacks of plain coins and blank notes next to a building with columns.",
+      "caption": "Coins and notes beside a columned building",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 36864
+    },
+    {
+      "id": "state-powers",
+      "file": "state-powers.webp",
+      "questions": [
+        "2008-042",
+        "2025-059"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A small town street with a school with children's bicycles outside, a fire station, and a road crew mending the road. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "e1c3a963d5c8b5ab6ed983f70fd4dff70245a00ac259a732cf20f7339a2120fb",
+      "alt": "A town street with a school, a fire station and a road being repaired.",
+      "caption": "A school, a fire station and a road crew",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 57724
+    },
+    {
+      "id": "tenth-amendment",
+      "file": "tenth-amendment.webp",
+      "questions": [
+        "2025-060"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A large circle holds a few keys; the rest of a big ring of keys is handed out to several smaller circles and to a crowd of people. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "234b9a7ab2f2bb6ce83284a8fb7c9167b16778495b667febdb9b078ec6cba6f1",
+      "alt": "A large circle keeps a few keys and hands the rest to smaller circles and to people.",
+      "caption": "Keys handed out",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 53090
+    },
+    {
+      "id": "voting-amendments",
+      "file": "voting-amendments.webp",
+      "questions": [
+        "2008-048",
+        "2025-063"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A line of adults of many backgrounds and ages, from a young adult to an older adult, wait together to vote, holding folded blank ballots. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "84391edc5318005b44655aeec93d7dee04d2f03dcaaee52e1cc08bc6cb59cf96",
+      "alt": "Adults of many ages and backgrounds wait in line with ballots.",
+      "caption": "A long line of voters",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 33774
+    },
+    {
+      "id": "citizen-responsibilities",
+      "file": "citizen-responsibilities.webp",
+      "questions": [
+        "2008-049"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A wooden jury box with twelve chairs, a few filled by adults seen from behind, next to a simple ballot box. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "3052e28bbbf56122d5ba0b6a1689cd12a99d33273f9684271afd3f9940cc57b5",
+      "alt": "A jury box with some adults seated, next to a ballot box.",
+      "caption": "A jury box and a ballot box",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 24374
+    },
+    {
+      "id": "citizen-rights",
+      "file": "citizen-rights.webp",
+      "questions": [
+        "2008-050",
+        "2025-064"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A simple ballot box in front of an empty podium, with a small crowd of adults seen from behind waiting to take part. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "004f9805ea0b7b21464ddfd4eaabcd5d2907639f26a91e4b086cc6f35061c4bc",
+      "alt": "A ballot box and an empty podium, with people waiting.",
+      "caption": "A ballot box and an empty podium",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 25730
+    },
+    {
+      "id": "rights-of-everyone",
+      "file": "rights-of-everyone.webp",
+      "questions": [
+        "2008-051",
+        "2025-065"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A park where different adults do different things freely: one speaks to a few listeners, a small group gathers, one writes in a blank notebook, one walks to a simple building. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "d8831b7781318b674463cc6af0802d3a8e3426451c4836f4e3c9186155710e68",
+      "alt": "People in a park speak, gather, write and walk where they choose.",
+      "caption": "An afternoon in the park",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 44256
+    },
+    {
+      "id": "oath-promises",
+      "file": "oath-promises.webp",
+      "questions": [
+        "2008-053",
+        "2025-067"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A room of adults seen from behind, standing and raising their right hands together; one plain U.S. flag hangs far in the background. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "ccd4ae28bd48425367cf2d239e57936aaebe6321b58ce4cd7f48036040c829df",
+      "alt": "Adults seen from behind raise their right hands together.",
+      "caption": "Right hands raised together",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 34268
+    },
+    {
+      "id": "becoming-citizens",
+      "file": "becoming-citizens.webp",
+      "questions": [
+        "2025-068"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A bright hall with rows of chairs; adults of mixed ages, seen from behind, stand and turn to hug family members; one plain U.S. flag in the background. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "0b1a95d6c769c5a2d12a0cac89758dd400e1122663d8b7803d7ee563f908a719",
+      "alt": "In a hall, people seen from behind stand and hug their families.",
+      "caption": "Families in a bright hall",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 40268
+    },
+    {
+      "id": "civic-participation",
+      "file": "civic-participation.webp",
+      "questions": [
+        "2008-055",
+        "2025-069"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A town meeting in a community hall: one person at a simple stand talks, others raise hands, and two volunteers hand out blank flyers. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "7f7c8d59bdc568771ed2e9aac9829e853933d4bfcba5d71f065437e42e5d82c5",
+      "alt": "A town meeting where people raise hands and volunteers hand out flyers.",
+      "caption": "A town meeting",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 41322
+    },
+    {
+      "id": "serving-the-country",
+      "file": "serving-the-country.webp",
+      "questions": [
+        "2025-070"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Volunteers of different ages plant trees, carry boxes of food and help an older adult cross a street. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "4ee7d0e9aa21532620b5909b74987d822517c249ae270d9520d1b0d71a3bf377",
+      "alt": "Volunteers plant trees, carry food and help an older person.",
+      "caption": "Volunteers at work",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 43330
+    },
+    {
+      "id": "paying-taxes",
+      "file": "paying-taxes.webp",
+      "questions": [
+        "2025-071"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Small plain coins from many hands flow along a curved path into a bridge, a school and a road that are being built. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "97b0dcd5ed0ace3e491cb0346495e141abb7acf1c09d1777389c6447faf54c9a",
+      "alt": "Coins from many hands flow into a bridge, a school and a road.",
+      "caption": "Coins building a bridge, a school and a road",
+      "source": "ai",
+      "reviewed": false,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 52018
+    },
+    {
+      "id": "form-of-government",
+      "file": "form-of-government.webp",
+      "questions": [
+        "2025-001"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. A crowd of citizens on one side drops folded ballots into a box; on the other side a small group sits at a long table facing them and listening. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "84a9537340b75ac36a13dbced518acc85d3ef9b8d990be507dcd0a95d8bf4569",
+      "alt": "Citizens vote on one side; a small group at a table faces them and listens.",
+      "caption": "Voters and a table of listeners",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 32258
+    },
+    {
+      "id": "founding-ideas",
+      "file": "founding-ideas.webp",
+      "questions": [
+        "2025-010"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Adults of different ages and backgrounds stand side by side at the same height on a hill under an open sky, as birds fly freely overhead. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "1f2093ca1302ed31b2b191decfcbc536dd4daa20231cde4687077ccccb913dab",
+      "alt": "People stand side by side on a hill as birds fly overhead.",
+      "caption": "People on a hill under an open sky",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 33482
+    },
+    {
+      "id": "out-of-many-one",
+      "file": "out-of-many-one.webp",
+      "questions": [
+        "2025-124"
+      ],
+      "model": "gpt-image-2.6-flare",
+      "prompt": "Flat, simple editorial illustration with clean shapes and soft, even light. Warm and calm mood. Limited palette: deep navy #0d2052, red #b22234, white, and a light navy tint; small touches of warm off-white. Plenty of empty space, centred composition, no gradients or textures. Many thin threads of navy, red, white and light navy come in from all sides and twist together into one strong rope at the centre. Rules: no text, letters, numbers or writing of any kind, including on signs, papers, screens or books; no real or historical person and no likeness of anyone; no recreation of a historical event or of a historical document; no seals, eagles, badges, emblems or government logos; no flag except, at most, one plain U.S. flag in the background; any people are generic, diverse adults of mixed ages, shown from behind or as simple shapes without detailed faces.",
+      "date": "2026-11-26",
+      "sha256": "6bfe4fe49a923d173af76550cde325aa1bea3221cb13a86902903d1db3fb2c45",
+      "alt": "Many coloured threads twist together into one rope.",
+      "caption": "Threads twisting into a rope",
+      "source": "ai",
+      "reviewed": true,
+      "width": 1024,
+      "height": 1024,
+      "bytes": 91488
+    }
+  ]
 }
