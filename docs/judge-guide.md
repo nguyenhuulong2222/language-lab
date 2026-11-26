@@ -1,6 +1,6 @@
 # Judge guide: Language Lab in 3 minutes
 
-Live: <https://language-lab-ade.pages.dev> (the production build; features of a branch appear there
+Live: <https://lab.formn400.org> (backup: <https://language-lab-ade.pages.dev>; the production build; features of a branch appear there
 only after that branch is merged and deployed)
 
 Language Lab is a free practice tool for the U.S. naturalization interview, in the clean

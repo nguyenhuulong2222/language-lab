@@ -21,6 +21,7 @@ describe("coach config (data/coach-config.json)", () => {
       dailyRequestBudget: 600, dailySpendCapUsd: 0.5, upstreamTimeoutMs: 8000, clientTimeoutMs: 12000,
     });
     expect(c.origins.exact).toContain("https://language-lab-ade.pages.dev");
+    expect(c.origins.exact).toContain("https://lab.formn400.org");
     expect(c.origins.previewSuffix).toBe(".language-lab-ade.pages.dev");
   });
   it("temperature must be null: API version 2026-10-21 rejects it", () => {

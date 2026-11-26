@@ -2,8 +2,8 @@
 
 ## For judges
 
-Live: <https://language-lab-ade.pages.dev> (features of a branch appear there after it is merged and
-deployed). The full guide is [`docs/judge-guide.md`](docs/judge-guide.md).
+Live: <https://lab.formn400.org> (backup: <https://language-lab-ade.pages.dev>, the same Cloudflare
+Pages project; features of a branch appear there after it is merged and deployed). The full guide is [`docs/judge-guide.md`](docs/judge-guide.md).
 
 A 3-minute path:
 
@@ -32,8 +32,8 @@ works by typing. The AI coach is off by default and sends nothing until you conf
 The language-lab method (listen, speak, compare, repeat), in the clean navy-and-white style of
 formN400.org, the owner's separate site. Served at lab.formn400.org.
 
-Live: <https://language-lab-ade.pages.dev> (the production build; it shows this branch's work only after a
-deploy).
+Live: <https://lab.formn400.org> (backup: <https://language-lab-ade.pages.dev>; the production build, it
+shows this branch's work only after a deploy).
 
 > **This is an independent practice tool. It is not affiliated with, endorsed by, or
 > connected to USCIS, DHS, or any U.S. government agency. Practice results do not predict
