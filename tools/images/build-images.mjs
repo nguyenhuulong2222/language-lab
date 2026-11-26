@@ -3,10 +3,11 @@
  * tools/images/build-images.mjs
  *
  * Builds the picture set from data/images/picks.json:
- *   - reads each item record (loc.gov, a Smithsonian Open Access snapshot, or the National Archives
- *     Catalog by naId) and refuses the picture unless its own rights statement is an accepted one
+ *   - reads each item record (loc.gov, a Smithsonian Open Access snapshot, the National Archives
+ *     Catalog by naId, or an NPGallery asset page of the National Park Service) and refuses the picture unless its own rights statement is an accepted one
  *     (see acceptableRights in src/engine/question-images.ts; National Archives records need
- *     use and access restriction "Unrestricted");
+ *     use and access restriction "Unrestricted"; NPGallery assets need the constraint "Public domain"
+ *     and an NPS photo credit);
  *   - downloads the largest JPEG (or the master TIFF when no big JPEG exists) to a temp folder;
  *   - writes an optimised WebP (longest side 1200px, under about 150 kB) to public/images/civics/;
  *   - writes data/images/manifest.json (rights text copied word for word, SHA-256 of the download),
@@ -26,7 +27,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildCredits, buildReview, buildTodo } from "../../src/engine/image-docs.ts";
+import { buildCredits, buildReview, buildTodo, parseOwnerOk } from "../../src/engine/image-docs.ts";
 import { acceptableRights } from "../../src/engine/question-images.ts";
 import { toWebp } from "./webp.mjs";
 
@@ -61,6 +62,33 @@ async function fetchRetry(url, asBuffer) {
   }
 }
 
+/** What a pick's crop does, in words for the credits, or undefined when the file is only resized. */
+function editText(pick) {
+  if (pick.crop === undefined) return undefined;
+  if (pick.crop === "stereo-left") return "Cropped to the left photo of the stereograph card.";
+  return `Cropped to ${pick.crop.why}.`;
+}
+/** Applies a pick's crop to the downloaded file in place: "stereo-left", or { x, y, w, h, why } as fractions of the width and height. */
+function applyCrop(original, pick) {
+  if (pick.crop === undefined) return;
+  if (pick.crop === "stereo-left") {
+    execFileSync("magick", [original + "[0]", "-gravity", "West", "-crop", "50%x100%+0+0", "+repage", original]);
+    return;
+  }
+  const [W, H] = execFileSync("magick", ["identify", "-format", "%w %h", original + "[0]"]).toString().split(" ").map(Number);
+  const { x, y, w, h } = pick.crop;
+  const geometry = `${Math.round(w * W)}x${Math.round(h * H)}+${Math.round(x * W)}+${Math.round(y * H)}`;
+  execFileSync("magick", [original + "[0]", "-crop", geometry, "+repage", original]);
+}
+/** The labelled fields of an NPGallery asset page ("Title:", "PhotoCredit:", "Constraints Information:", ...). */
+function npsFields(html) {
+  const decode = (t) => t.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+  const fields = {};
+  for (const m of html.matchAll(/<label[^>]*>\s*([^<]+?)\s*<\/label>\s*<div[^>]*>([\s\S]*?)<\/div>/g)) {
+    fields[m[1].replace(/\s+/g, " ").trim()] = decode(m[2].replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+  }
+  return fields;
+}
 function questionInfos() {
   const out = [];
   for (const v of ["2008", "2025"]) {
@@ -71,8 +99,11 @@ function questionInfos() {
 
 function writeDocs(manifest, mapping, todo) {
   const illustrations = read("data/images/illustrations-manifest.json", { images: [] });
-  write("docs/image-credits.md", buildCredits(manifest, mapping, illustrations));
-  write("docs/image-review.md", buildReview(manifest, mapping, questionInfos(), illustrations));
+  const diagrams = read("data/images/diagrams-manifest.json", { images: [] });
+  const reviewPath = path.join(ROOT, "docs/image-review.md");
+  const ownerOk = fs.existsSync(reviewPath) ? parseOwnerOk(fs.readFileSync(reviewPath, "utf8")) : {};
+  write("docs/image-credits.md", buildCredits(manifest, mapping, illustrations, diagrams));
+  write("docs/image-review.md", buildReview(manifest, mapping, questionInfos(), illustrations, diagrams, ownerOk));
   write("docs/image-todo.md", buildTodo(todo, read("data/images/misses.json", { misses: [] }).misses));
 }
 
@@ -97,22 +128,80 @@ if (!process.argv.includes("--docs")) {
   for (const pick of picks) {
     const isSi = pick.source === "si";
     const isNara = pick.source === "nara";
-    const pageUrl = isNara ? `https://catalog.archives.gov/id/${pick.naId}` : isSi ? `https://www.si.edu/object/${pick.record}` : `https://www.loc.gov/item/${pick.locItem}/`;
+    const isNps = pick.source === "nps";
+    const pageUrl = isNps ? `https://npgallery.nps.gov/AssetDetail/${pick.npsId}` : isNara ? `https://catalog.archives.gov/id/${pick.naId}` : isSi ? `https://www.si.edu/object/${pick.record}` : `https://www.loc.gov/item/${pick.locItem}/`;
     const fail = (reason) => {
       console.log(`SKIP ${pick.id}: ${reason}`);
       todo.push({ wanted: pick.wanted ?? pick.id, pageUrl, reason });
     };
     const have = built.get(pick.id);
-    if (have !== undefined && have.sourcePageUrl === pageUrl && fs.existsSync(path.join(OUT, have.file)) && have.alt === pick.alt && have.caption === (pick.caption ?? have.title) && (pick.date === undefined || have.date === pick.date) && (have.edit !== undefined) === (pick.crop !== undefined) && (isSi ? have.rights === `${siRecords.get(pick.record)?.objectRights?.label}: ${siRecords.get(pick.record)?.objectRights?.content}` : true)) {
+    if (have !== undefined && have.sourcePageUrl === pageUrl && fs.existsSync(path.join(OUT, have.file)) && have.alt === pick.alt && have.caption === (pick.caption ?? have.title) && (pick.date === undefined || have.date === pick.date) && have.edit === editText(pick) && (isSi ? have.rights === `${siRecords.get(pick.record)?.objectRights?.label}: ${siRecords.get(pick.record)?.objectRights?.content}` : true)) {
       images.push(have);
       console.log(`keep ${pick.id}`);
       continue;
     }
-    if (!isSi && !isNara && blocked) {
+    if (!isSi && !isNara && !isNps && blocked) {
       fail("loc.gov blocked this computer (HTTP 429) earlier in this run; not asked again");
       continue;
     }
     try {
+      if (isNps) {
+        // NPGallery (National Park Service): the asset page's own "Constraints Information" must say
+        // Public domain, and the photo credit must be the National Park Service ("NPS", "NPS Photo", "NPS/...").
+        const page = (await fetchRetry(pageUrl, true)).toString("utf8");
+        const f = npsFields(page);
+        const constraint = f["Constraints Information:"] ?? "";
+        const credit = f["PhotoCredit:"] ?? "";
+        const rights = `Constraints Information: ${constraint}`;
+        if (!/^Public domain\b/.test(constraint) || !acceptableRights(rights)) {
+          fail(`the NPGallery constraint is not "Public domain": "${constraint}"`);
+          continue;
+        }
+        if (!/^NPS\b/i.test(credit)) {
+          fail(`the photo credit is not the National Park Service: "${credit}"`);
+          continue;
+        }
+        if (String(f["Asset ID:"] ?? "").toLowerCase() !== String(pick.npsId).toLowerCase()) {
+          fail("the NPGallery page is not the asset named in picks.json");
+          continue;
+        }
+        const fileUrl = `https://npgallery.nps.gov/GetAsset/${pick.npsId}`;
+        const data = await fetchRetry(fileUrl, true);
+        const sha256 = crypto.createHash("sha256").update(data).digest("hex");
+        const original = path.join(TMP, `${pick.id}.jpg`);
+        fs.writeFileSync(original, data);
+        applyCrop(original, pick);
+        const target = path.join(OUT, `${pick.id}.webp`);
+        const quality = toWebp(original, target);
+        fs.rmSync(original, { force: true });
+        if (quality < 0) {
+          fs.rmSync(target, { force: true });
+          fail("could not get the WebP under 150 kB");
+          continue;
+        }
+        const [w, h] = execFileSync("magick", ["identify", "-format", "%w %h", target]).toString().split(" ").map(Number);
+        const title = f["Title:"] ?? pick.id;
+        images.push({
+          id: pick.id,
+          file: `${pick.id}.webp`,
+          title,
+          creator: `${credit} (National Park Service)`,
+          date: pick.date ?? f["Create Date:"] ?? "",
+          sourcePageUrl: pageUrl,
+          fileUrl,
+          rights,
+          downloadedOn: new Date().toISOString().slice(0, 10),
+          sha256,
+          alt: pick.alt,
+          caption: pick.caption ?? title,
+          ...(editText(pick) !== undefined ? { edit: editText(pick) } : {}),
+          width: w,
+          height: h,
+          bytes: fs.statSync(target).size,
+        });
+        console.log(`ok   ${pick.id} ${w}x${h} ${fs.statSync(target).size} bytes (q${quality}) [NPS]`);
+        continue;
+      }
       if (isNara) {
         // National Archives Catalog: the record's own use and access restriction must both be "Unrestricted".
         const found = await fetchRetry(`https://catalog.archives.gov/proxy/records/search?naId=${pick.naId}`);
@@ -220,7 +309,9 @@ if (!process.argv.includes("--docs")) {
       }
       const record = await fetchRetry(`${pageUrl}?fo=json`);
       const item = record.item;
-      const rights = item.rights_advisory ?? item.rights_information ?? "";
+      // Some records give the statement as a one-item list: use its text as it is.
+      const rawRights = item.rights_advisory ?? item.rights_information ?? "";
+      const rights = Array.isArray(rawRights) ? rawRights.join(" ") : rawRights;
       if (!acceptableRights(rights)) {
         fail(`rights statement is not an accepted one: "${String(rights).replace(/\s+/g, " ").slice(0, 160)}"`);
         continue;
@@ -234,8 +325,8 @@ if (!process.argv.includes("--docs")) {
       const sha256 = crypto.createHash("sha256").update(data).digest("hex");
       const original = path.join(TMP, `${pick.id}${path.extname(new URL(file.url).pathname)}`);
       fs.writeFileSync(original, data);
-      // A stereograph card holds two nearly identical photos side by side: keep only the left one.
-      if (pick.crop === "stereo-left") execFileSync("magick", [original + "[0]", "-gravity", "West", "-crop", "50%x100%+0+0", "+repage", original]);
+      // A stereograph card holds two nearly identical photos side by side; a print can carry a printed caption: crop as the pick says.
+      applyCrop(original, pick);
       const target = path.join(OUT, `${pick.id}.webp`);
       const quality = toWebp(original, target);
       if (quality < 0) {
@@ -258,7 +349,7 @@ if (!process.argv.includes("--docs")) {
         sha256,
         alt: pick.alt,
         caption: pick.caption ?? String(item.title).trim(),
-        ...(pick.crop === "stereo-left" ? { edit: "Cropped to the left photo of the stereograph card." } : {}),
+        ...(editText(pick) !== undefined ? { edit: editText(pick) } : {}),
         width: w,
         height: h,
         bytes: fs.statSync(target).size,

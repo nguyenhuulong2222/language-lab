@@ -16,7 +16,8 @@ agency. Nothing here is legal advice.
 
 3. Pictures (public/images/civics/). Public-domain or openly licensed works from U.S. federal
    sources (Smithsonian Open Access, CC0; Library of Congress, "No known restrictions on
-   publication"; National Archives Catalog, use and access restriction "Unrestricted"). Each
+   publication"; National Archives Catalog, use and access restriction "Unrestricted"; National
+   Park Service NPGallery, constraint "Public domain" with an NPS photo credit). Each
    picture's creator, source page, file URL, SHA-256 and rights statement are in
    data/images/manifest.json and docs/image-credits.md. They are not covered by the MIT licence.
    Some illustrations of abstract ideas (public/images/illustrations/, CONCEPT questions only) are
@@ -25,6 +26,12 @@ agency. Nothing here is legal advice.
    screen, are shown only after the owner has reviewed each one, and never show a real person,
    event or document. Each one's model, prompt, date and SHA-256 are in
    data/images/illustrations-manifest.json; the OpenAI terms of use apply to how they were made.
+   Diagrams (public/images/diagrams/): maps drawn by tools/images/draw-diagrams.mjs from U.S. Census
+   Bureau cartographic boundary files and USGS National Atlas streams, and the 50-star flag drawn
+   from 4 U.S.C. §§ 1-2 and Executive Order 10834. The data are U.S. Government works in the public
+   domain (17 U.S.C. §105); the source URLs, download dates and SHA-256 sums are in
+   data/images/sources/sources.json and data/images/diagrams-manifest.json. They are shown only
+   after the owner has reviewed each one.
 
 4. Fonts. Playfair Display (headings) by Claus Eggers Sørensen and Source Serif 4 (text) by Frank
    Grießhammer (Adobe), both SIL Open Font License 1.1, from the Fontsource releases of the Google

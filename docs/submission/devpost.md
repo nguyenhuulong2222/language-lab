@@ -45,11 +45,15 @@ life.
   55/15 take the usual civics test, and 65/20 takes 10 of the 20 starred questions, with 6 correct
   for the practice score (USCIS Policy Manual, Vol. 12, Part E, Ch. 2). A linked line quotes the
   USCIS rules, including taking civics in their own language with an interpreter.
-- **Study first**: the civics questions with official answers and pictures, not scored.
+- **Study first**: the civics questions with official answers and pictures, not scored. A picture
+  helps on 167 of the 228 questions; 166 of those 167 have one, all reviewed by the owner, and 61 are left without one on purpose (answers that change, or a
+  picture would mislead).
 - **Interface languages as labelled AI drafts**: 10 of 14 languages are shown in production. Each says
   it was translated by AI. Disclaimers, legal lines and civics questions stay in English.
-- **Federal public-domain pictures**: 18 pictures from the Smithsonian (CC0) and the Library of
-  Congress, shown after an answer is graded, each credited with its rights line.
+- **Pictures, shown after an answer is graded**: 46 federal public-domain pictures (Library of
+  Congress, National Archives, Smithsonian CC0, National Park Service), 8 maps and flag diagrams
+  drawn by code from Census Bureau and USGS data and the flag code, and 34 AI illustrations for
+  abstract ideas only, each labelled on screen. Every picture is credited with its rights line.
 - **Comfort**: text up to 125%, slower voices and 48-pixel targets.
 
 ## How we built it
@@ -114,8 +118,12 @@ the Web Speech API, and public USCIS, Smithsonian and Library of Congress materi
   URL and SHA-256.
 - **Design guidance**: `.kiro/steering/frontend-design.md` is Anthropic's "frontend-design" skill (MIT),
   agent guidance only.
-- **Pictures**: public-domain or CC0 works from the Smithsonian, the Library of Congress and the
-  National Archives, credited in `docs/image-credits.md` and in the app.
+- **Pictures**: public-domain or CC0 works from the Smithsonian, the Library of Congress, the
+  National Archives and the National Park Service, credited in `docs/image-credits.md` and in the app.
+- **Diagrams**: maps drawn by `tools/images/draw-diagrams.mjs` from U.S. Census Bureau and USGS data,
+  and the 50-star flag drawn from 4 U.S.C. §§ 1-2 and Executive Order 10834 (U.S. Government works,
+  public domain, 17 U.S.C. §105). Rendering libraries: d3-geo (ISC), shapefile (BSD-3-Clause) and
+  @resvg/resvg-js (MPL-2.0), build tools only.
 - **Illustrations**: some illustrations of abstract ideas (CONCEPT questions only) are AI-generated
   with the OpenAI image model `gpt-image-2.6-flare` from prompts in this repository
   (`data/images/illustration-prompts.json`). They are labelled "AI-generated illustration" on screen

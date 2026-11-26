@@ -11,12 +11,15 @@
  *   data/images/manifest.json         every picture and where it came from
  *   data/images/question-images.json  question id -> picture id (needsHumanReview)
  */
+import { diagramAsPicture, diagramForQuestion } from "./diagrams.ts";
 import { reviewFlagProblem } from "./review-flag.ts";
 import MANIFEST_JSON from "../../data/images/manifest.json" with { type: "json" };
 import MAPPING_JSON from "../../data/images/question-images.json" with { type: "json" };
 
 export interface PictureEntry {
   id: string;
+  /** "diagram" for a map or flag drawn from federal data (src/engine/diagrams.ts); absent for a federal picture. */
+  kind?: "diagram";
   /** File name inside public/images/civics/. */
   file: string;
   title: string;
@@ -174,10 +177,13 @@ const byId = new Map(PICTURE_MANIFEST.images.map((p) => [p.id, p]));
 /** The picture of a question, or null when it has none. */
 export function pictureForQuestion(questionId: string, mapping: QuestionImageMapping = QUESTION_IMAGES): PictureEntry | null {
   const pictureId = mapping.questions[questionId];
-  return pictureId === undefined ? null : (byId.get(pictureId) ?? null);
+  if (pictureId !== undefined) return byId.get(pictureId) ?? null;
+  // No federal picture: a reviewed diagram, if there is one (never an unreviewed one).
+  const diagram = diagramForQuestion(questionId);
+  return diagram === null ? null : diagramAsPicture(diagram);
 }
 
 /** URL of a picture file, relative to the site root. */
 export function pictureUrl(picture: PictureEntry): string {
-  return `/images/civics/${picture.file}`;
+  return picture.kind === "diagram" ? `/images/diagrams/${picture.file}` : `/images/civics/${picture.file}`;
 }

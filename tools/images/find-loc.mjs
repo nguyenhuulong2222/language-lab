@@ -56,7 +56,8 @@ if (query !== undefined && import.meta.url === `file://${process.argv[1]}`) {
       console.log(`?  ${id} ${e.message}`);
       continue;
     }
-    const rights = item.rights_advisory ?? item.rights_information ?? "";
+    const rawRights = item.rights_advisory ?? item.rights_information ?? "";
+    const rights = Array.isArray(rawRights) ? rawRights.join(" ") : rawRights;
     const ok = acceptableRights(rights);
     console.log(`${ok ? "OK" : "--"} ${id} | ${String(item.title).slice(0, 70)} | ${item.created_published_date ?? item.date ?? ""} | ${String(rights).replace(/\s+/g, " ").slice(0, 110)}`);
   }

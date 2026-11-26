@@ -409,6 +409,143 @@
     "2025-128"
    ],
    "wanted": "Veterans Day"
+  },
+  {
+   "id": "john-jay-stuart",
+   "locItem": "2003665069",
+   "crop": {
+    "x": 0.16,
+    "y": 0.15,
+    "w": 0.68,
+    "h": 0.63,
+    "why": "the engraved portrait, leaving out the printed name below it"
+   },
+   "alt": "An engraved portrait of John Jay in judge's robes, seated, one hand on a book.",
+   "caption": "John Jay, one of the writers of the Federalist Papers",
+   "questions": [
+    "2008-067",
+    "2025-083"
+   ],
+   "wanted": "A writer of the Federalist Papers (John Jay)"
+  },
+  {
+   "id": "federalist-1788-page",
+   "locItem": "2004665672",
+   "alt": "A printed page from the 1788 book The Federalist.",
+   "caption": "A page of The Federalist, 1788",
+   "questions": [
+    "2025-084"
+   ],
+   "wanted": "The Federalist Papers"
+  },
+  {
+   "id": "landing-of-the-pilgrims-rothermel",
+   "locItem": "2010646064",
+   "crop": {
+    "x": 0.0977,
+    "y": 0.1046,
+    "w": 0.7715,
+    "h": 0.7347,
+    "why": "the engraved picture, leaving out the paper margin and its handwriting"
+   },
+   "alt": "An old engraving of the Pilgrims stepping from a small boat onto a rocky shore in rough water, with their ship far behind.",
+   "caption": "The Pilgrims land at Plymouth, 1620",
+   "questions": [
+    "2008-058",
+    "2025-073"
+   ],
+   "wanted": "The colonists arriving in America"
+  },
+  {
+   "id": "depression-breadline-sculpture",
+   "locItem": "2011633289",
+   "alt": "Bronze statues of men in long coats and hats standing in a line, waiting for food.",
+   "caption": "A Great Depression breadline, as shown at the Franklin Delano Roosevelt Memorial",
+   "questions": [
+    "2025-103",
+    "2025-104"
+   ],
+   "wanted": "The Great Depression"
+  },
+  {
+   "id": "world-war-ii-memorial-aerial",
+   "locItem": "2010630451",
+   "alt": "The National World War II Memorial in Washington, D.C., seen from the air: an oval plaza with a pool, ringed by stone pillars.",
+   "caption": "The National World War II Memorial, Washington, D.C.",
+   "questions": [
+    "2008-081",
+    "2025-106"
+   ],
+   "wanted": "World War II (a memorial)"
+  },
+  {
+   "id": "fourth-of-july-fireworks",
+   "locItem": "2010630678",
+   "alt": "Red and white fireworks in the night sky over Washington, D.C., with the Washington Monument and the Capitol below.",
+   "caption": "Fourth of July fireworks over Washington, D.C.",
+   "questions": [
+    "2008-099",
+    "2025-125"
+   ],
+   "wanted": "Independence Day"
+  },
+  {
+   "id": "korean-war-veterans-memorial",
+   "source": "nps",
+   "npsId": "82120C02-9820-4C7B-A63B-D378FCCF5263",
+   "alt": "A walkway at the Korean War Veterans Memorial, with statues of soldiers in a field in the distance and a row of flags.",
+   "caption": "The Korean War Veterans Memorial, Washington, D.C.",
+   "questions": [
+    "2025-110"
+   ],
+   "wanted": "The Korean War (a memorial)"
+  },
+  {
+   "id": "vietnam-veterans-memorial-snow",
+   "source": "nps",
+   "npsId": "C96DC1AB-D3C8-49D5-9512-4C1329571052",
+   "alt": "The long black wall of the Vietnam Veterans Memorial on a snowy day, with the Washington Monument far away.",
+   "caption": "The Vietnam Veterans Memorial in the snow, Washington, D.C.",
+   "questions": [
+    "2025-111"
+   ],
+   "wanted": "The Vietnam War (a memorial)"
+  },
+  {
+   "id": "flight-93-national-memorial",
+   "source": "nps",
+   "npsId": "D207E39E-4640-43F3-8F64-39AF27109D70",
+   "alt": "The white stone Wall of Names and the wooden Ceremonial Gate at the Flight 93 National Memorial in Pennsylvania.",
+   "caption": "The Flight 93 National Memorial, Pennsylvania",
+   "questions": [
+    "2008-086",
+    "2025-115"
+   ],
+   "wanted": "September 11, 2001 (a memorial)"
+  },
+  {
+   "id": "inf-treaty-signing-1987",
+   "source": "nara",
+   "naId": "75855865",
+   "alt": "President Ronald Reagan and Soviet leader Mikhail Gorbachev sign a treaty at a table in the White House, 1987.",
+   "caption": "Reagan and Gorbachev sign the INF Treaty, 1987",
+   "questions": [
+    "2008-083",
+    "2025-108",
+    "2025-109"
+   ],
+   "wanted": "The Cold War"
+  },
+  {
+   "id": "uss-ranger-returns-1991",
+   "source": "nara",
+   "naId": "6483698",
+   "alt": "The aircraft carrier USS Ranger comes into Pearl Harbor with sailors lining its deck, after the Persian Gulf War.",
+   "caption": "USS Ranger on its way home from the Persian Gulf War",
+   "questions": [
+    "2025-114"
+   ],
+   "wanted": "The Persian Gulf War (returning home)"
   }
  ]
 }

@@ -24,15 +24,18 @@
   },
   "devDependencies": {
     "@fast-check/vitest": "0.5.0",
+    "@resvg/resvg-js": "^2.6.2",
     "@testing-library/dom": "10.4.2",
     "@testing-library/react": "16.3.3",
     "@types/dom-speech-recognition": "0.0.12",
     "@types/react": "19.1.6",
     "@types/react-dom": "19.1.6",
     "@vitejs/plugin-react": "6.3.0",
+    "d3-geo": "^3.1.2",
     "esbuild": "0.28.2",
     "fast-check": "4.11.0",
     "jsdom": "31.0.1",
+    "shapefile": "^0.6.6",
     "typescript": "7.0.2",
     "vite": "8.3.8",
     "vitest": "5.1.1"

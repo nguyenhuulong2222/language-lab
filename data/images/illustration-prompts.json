@@ -150,9 +150,9 @@
    "questions": [
     "2025-037"
    ],
-   "scene": "A path leads through two identical open doorways one after the other; after the second doorway the path turns into a quiet park where one figure, seen from behind, walks away.",
-   "alt": "A path runs through two doorways and then into a park, where a person walks away.",
-   "caption": "Two doorways and a park"
+   "scene": "Two large wall-calendar-like panels hang side by side on a light wall. Each panel is a plain grid of small blank squares with no numbers or letters, and each grid is fully shaded in light navy to show a full term. Below the two panels, a single figure seen from behind hands a plain blank folder to a second figure, also seen from behind. To the right of the two panels the wall is empty, with no third panel.",
+   "alt": "Two full calendar-like panels hang on a wall; below them one person hands a folder to another.",
+   "caption": "Two full calendars, then a handover"
   },
   {
    "id": "cabinet-advises",
@@ -170,9 +170,9 @@
     "2008-037",
     "2025-051"
    ],
-   "scene": "Two people sit on opposite sides of a long table with a plain open blank book between them; a third person at the head of the table, seen from behind, listens to both.",
-   "alt": "Two people at a table speak in turn while a third listens to both.",
-   "caption": "Two sides of a table"
+   "scene": "Inside a calm, bright courtroom seen from the back of the room: a tall raised wooden judge's bench at the far end, with three judges in plain dark navy robes sitting behind it, seen from far away as small simple shapes with no faces. In front of the bench, two separate small tables face it, one on the left and one on the right, each with one person seated, seen from behind. Rows of empty wooden benches in the foreground. One plain U.S. flag stands at the side of the bench, far in the background. No gavel close up, no papers with writing, no seal or emblem on the wall.",
+   "alt": "A courtroom seen from the back: judges in robes sit at a raised bench, facing two tables with one person at each.",
+   "caption": "A courtroom, seen from the back"
   },
   {
    "id": "judges-serve-for-life",
@@ -303,9 +303,9 @@
    "questions": [
     "2025-071"
    ],
-   "scene": "Small plain coins from many hands flow along a curved path into a bridge, a school and a road that are being built.",
-   "alt": "Coins from many hands flow into a bridge, a school and a road.",
-   "caption": "Coins building a bridge, a school and a road"
+   "scene": "Seen from a gentle height: a small town square. On the left, many open hands each drop one plain round coin into a single wide, smooth wooden bowl. On the right, the same town is being improved: a rounded stone footbridge over a stream, a low school building with children's bicycles outside, and a freshly paved curving road with a simple red work truck. Everything is made of soft rounded shapes; no barriers, no fences, no traffic cones, no posts, no signs, no triangles or crossed shapes, and nothing shaped like a letter or a number.",
+   "alt": "Hands drop coins into one bowl beside a town where a footbridge, a school and a new road are built.",
+   "caption": "Coins in one bowl, and a town being built"
   },
   {
    "id": "form-of-government",
