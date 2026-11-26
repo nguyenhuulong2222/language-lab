@@ -32,10 +32,11 @@ export function CreditsScreen({
     <div className="screen">
       <TakeHeader stage="home" title={t("credits.title")} lead={<LegalText messageKey="credits.lead" />} />
       <p className="note">{t("credits.newTab")}</p>
+      <h2 className="panel__title">{t("credits.photos.title")}</h2>
       <ul className="credit-list" lang="en">
         {manifest.images.map((p) => (
           <li key={p.id} className="credit-list__item">
-            <h2 className="panel__title">{p.title}</h2>
+            <h3 className="panel__title">{p.title}</h3>
             <p className="note">
               {p.creator}, {p.date}
             </p>

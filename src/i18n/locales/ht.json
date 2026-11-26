@@ -366,5 +366,6 @@
   "illustration.label": "Ilistrasyon AI fè",
   "credits.ai.title": "Ilistrasyon AI fè",
   "credits.ai.lead": "Yon modèl imaj AI fè ilistrasyon lide sa yo apati enstriksyon yo ekri pou Language Lab. Yo pa montre vrè moun, vrè evènman ni vrè dokiman. Pwopriyetè a gade chak youn anvan yo te montre l.",
-  "credits.ai.made": "Fèt ak modèl AI {model} nan dat {date}."
+  "credits.ai.made": "Fèt ak modèl AI {model} nan dat {date}.",
+  "credits.photos.title": "Foto, gravi ak dokiman"
 }

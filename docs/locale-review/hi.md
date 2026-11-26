@@ -385,3 +385,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.title` | AI-generated illustrations | AI से बनाए गए चित्र |
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | विचारों के ये चित्र Language Lab के लिए लिखे गए निर्देशों से एक AI इमेज मॉडल ने बनाए हैं। इनमें असली लोग, घटनाएँ या दस्तावेज़ नहीं दिखाए गए हैं। दिखाने से पहले मालिक ने हर चित्र देखा। |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | {date} को AI मॉडल {model} से बनाया गया। |
+| `credits.photos.title` | Photos, prints and documents | फ़ोटो, छापे और दस्तावेज़ |

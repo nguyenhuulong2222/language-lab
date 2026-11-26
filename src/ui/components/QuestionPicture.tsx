@@ -30,7 +30,7 @@ export function QuestionPicture({ picture }: { picture: PictureEntry }) {
         {picture.caption}
         <span className="question-picture__credit">
           {" "}
-          {picture.creator}, {picture.date}
+          ({picture.creator}, {picture.date})
         </span>
       </figcaption>
     </figure>
@@ -54,6 +54,7 @@ export function QuestionIllustration({ illustration }: { illustration: Illustrat
       <figcaption className="question-picture__caption">
         <span className="question-picture__label">
           <LegalText messageKey="illustration.label" />
+          <span className="ll-sr-only">: </span>
         </span>
         <span lang="en">{illustration.caption}</span>
       </figcaption>

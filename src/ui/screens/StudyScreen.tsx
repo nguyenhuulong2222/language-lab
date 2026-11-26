@@ -170,8 +170,8 @@ export function StudyScreen({ answerKey, onHome, pictureFor = pictureForQuestion
           {entry.questionText}
         </p>
         <SpeakButton key={entry.id} text={entry.questionText} clipId={civicsClipId(entry.id)} />
-        {picture !== null && <QuestionPicture picture={picture} />}
-        {illustration !== null && <QuestionIllustration illustration={illustration} />}
+        {picture !== null && <QuestionPicture key={picture.id} picture={picture} />}
+        {illustration !== null && <QuestionIllustration key={illustration.id} illustration={illustration} />}
         {entry.requiredAnswerCount > 1 && <p className="note">{t("civics.needs", { count: entry.requiredAnswerCount })}</p>}
         {lines !== null && (
           <section className="panel">

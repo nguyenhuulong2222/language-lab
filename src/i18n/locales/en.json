@@ -359,5 +359,6 @@
   "illustration.label": "AI-generated illustration",
   "credits.ai.title": "AI-generated illustrations",
   "credits.ai.lead": "These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown.",
-  "credits.ai.made": "Made with the AI model {model} on {date}."
+  "credits.ai.made": "Made with the AI model {model} on {date}.",
+  "credits.photos.title": "Photos, prints and documents"
 }

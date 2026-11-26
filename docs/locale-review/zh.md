@@ -385,3 +385,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.title` | AI-generated illustrations | AI 生成的插圖 |
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | 這些表達概念的插圖，是 AI 圖像模型根據為 Language Lab 撰寫的提示所製作。圖中沒有真實的人物、事件或文件。負責人在每張插圖顯示前都看過。 |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | 於 {date} 由 AI 模型 {model} 製作。 |
+| `credits.photos.title` | Photos, prints and documents | 照片、版畫與文件 |

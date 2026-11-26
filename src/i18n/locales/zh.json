@@ -366,5 +366,6 @@
   "illustration.label": "AI 生成的插圖",
   "credits.ai.title": "AI 生成的插圖",
   "credits.ai.lead": "這些表達概念的插圖，是 AI 圖像模型根據為 Language Lab 撰寫的提示所製作。圖中沒有真實的人物、事件或文件。負責人在每張插圖顯示前都看過。",
-  "credits.ai.made": "於 {date} 由 AI 模型 {model} 製作。"
+  "credits.ai.made": "於 {date} 由 AI 模型 {model} 製作。",
+  "credits.photos.title": "照片、版畫與文件"
 }

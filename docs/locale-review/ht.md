@@ -385,3 +385,4 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.title` | AI-generated illustrations | Ilistrasyon AI fè |
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | Yon modèl imaj AI fè ilistrasyon lide sa yo apati enstriksyon yo ekri pou Language Lab. Yo pa montre vrè moun, vrè evènman ni vrè dokiman. Pwopriyetè a gade chak youn anvan yo te montre l. |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | Fèt ak modèl AI {model} nan dat {date}. |
+| `credits.photos.title` | Photos, prints and documents | Foto, gravi ak dokiman |

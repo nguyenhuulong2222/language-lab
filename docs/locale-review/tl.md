@@ -385,6 +385,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.title` | AI-generated illustrations | Mga larawang gawa ng AI |
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | Ang mga larawang ito ng mga ideya ay ginawa ng isang AI image model mula sa mga prompt na isinulat para sa Language Lab. Hindi sila nagpapakita ng totoong tao, pangyayari o dokumento. Tiningnan ng may-ari ang bawat isa bago ito ipinakita. |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | Ginawa gamit ang AI model na {model} noong {date}. |
+| `credits.photos.title` | Photos, prints and documents | Mga larawan, limbag at dokumento |
 
 ## Lines marked ⚠ (meaning differs a little)
 

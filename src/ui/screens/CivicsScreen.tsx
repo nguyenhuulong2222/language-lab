@@ -126,8 +126,8 @@ export function CivicsScreen({
             {entry.requiredAnswerCount > 1 && (
               <p className="note">{t("civics.needs", { count: entry.requiredAnswerCount })}</p>
             )}
-            {picture !== null && <QuestionPicture picture={picture} />}
-            {illustration !== null && <QuestionIllustration illustration={illustration} />}
+            {picture !== null && <QuestionPicture key={picture.id} picture={picture} />}
+            {illustration !== null && <QuestionIllustration key={illustration.id} illustration={illustration} />}
           </section>
           {/* Content-safety rule 5 (audit F-07): the prominent disclaimer directly under the result. */}
           <Disclaimer variant="prominent" id="civics-result-disclaimer" messageKey="disclaimer.report" />

@@ -385,6 +385,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.title` | AI-generated illustrations | AI ဖြင့် ပြုလုပ်ထားသော ပုံများ |
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | ဤအတွေးအခေါ်ပုံများကို Language Lab အတွက် ရေးထားသော ညွှန်ကြားချက်များမှ AI ပုံဆွဲမော်ဒယ်က ပြုလုပ်ထားသည်။ ပုံများတွင် တကယ့်လူ၊ ဖြစ်ရပ် သို့မဟုတ် စာရွက်စာတမ်းများ မပါပါ။ ပိုင်ရှင်သည် ပုံတစ်ပုံချင်းကို မပြမီ ကြည့်ရှုစစ်ဆေးခဲ့သည်။ |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | {date} တွင် AI မော်ဒယ် {model} ဖြင့် ပြုလုပ်ထားသည်။ |
+| `credits.photos.title` | Photos, prints and documents | ဓာတ်ပုံများ၊ ပုံနှိပ်များနှင့် စာရွက်စာတမ်းများ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

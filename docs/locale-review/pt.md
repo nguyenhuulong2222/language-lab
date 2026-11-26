@@ -385,6 +385,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.title` | AI-generated illustrations | Ilustrações geradas por IA |
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | Estas ilustrações de ideias foram feitas por um modelo de imagens de IA a partir de instruções escritas para o Language Lab. Elas não mostram pessoas, fatos nem documentos reais. O responsável conferiu cada uma antes de ser exibida. |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | Feita com o modelo de IA {model} em {date}. |
+| `credits.photos.title` | Photos, prints and documents | Fotos, gravuras e documentos |
 
 ## Lines marked ⚠ (meaning differs a little)
 

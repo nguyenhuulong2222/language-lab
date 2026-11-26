@@ -366,5 +366,6 @@
   "illustration.label": "Duab kos uas AI ua",
   "credits.ai.title": "Cov duab kos uas AI ua",
   "credits.ai.lead": "Cov duab kos lub tswv yim no yog ib tug qauv duab AI ua los ntawm cov lus qhia uas sau rau Language Lab. Lawv tsis qhia neeg, xwm txheej los yog ntaub ntawv tiag. Tus tswv tau saib txhua daim ua ntej muab tso tawm.",
-  "credits.ai.made": "Ua nrog tus qauv AI {model} rau {date}."
+  "credits.ai.made": "Ua nrog tus qauv AI {model} rau {date}.",
+  "credits.photos.title": "Duab thaij, duab luam thiab ntaub ntawv"
 }

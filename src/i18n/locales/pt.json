@@ -366,5 +366,6 @@
   "illustration.label": "Ilustração gerada por IA",
   "credits.ai.title": "Ilustrações geradas por IA",
   "credits.ai.lead": "Estas ilustrações de ideias foram feitas por um modelo de imagens de IA a partir de instruções escritas para o Language Lab. Elas não mostram pessoas, fatos nem documentos reais. O responsável conferiu cada uma antes de ser exibida.",
-  "credits.ai.made": "Feita com o modelo de IA {model} em {date}."
+  "credits.ai.made": "Feita com o modelo de IA {model} em {date}.",
+  "credits.photos.title": "Fotos, gravuras e documentos"
 }

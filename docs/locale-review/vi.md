@@ -385,6 +385,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.title` | AI-generated illustrations | Hình minh họa do AI tạo |
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | Các hình minh họa ý tưởng này do một mô hình hình ảnh AI tạo ra từ các yêu cầu viết cho Language Lab. Hình không cho thấy người, sự kiện hay tài liệu có thật. Chủ sở hữu đã xem từng hình trước khi hiển thị. |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | Tạo bằng mô hình AI {model} ngày {date}. |
+| `credits.photos.title` | Photos, prints and documents | Ảnh, tranh in và tài liệu |
 
 ## Lines marked ⚠ (meaning differs a little)
 
