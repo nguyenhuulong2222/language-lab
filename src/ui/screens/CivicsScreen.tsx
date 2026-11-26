@@ -93,7 +93,7 @@ export function CivicsScreen({
           <p className="prompt" lang="en">
             {entry.questionText}
           </p>
-          <section className="panel">
+          <section className={correct ? "panel panel--correct" : "panel panel--wrong"}>
             {/* A big headline first, then one short reason, then the details. */}
             <h2 className="result-headline" ref={resultHeading} tabIndex={-1}>
               <Icon className={correct ? "icon-inline" : "icon-inline icon-inline--attention"} />{" "}

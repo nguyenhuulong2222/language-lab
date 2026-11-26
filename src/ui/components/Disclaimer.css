@@ -6,9 +6,10 @@
 }
 
 .disclaimer--prominent {
-  background: var(--surface-2);
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--status-attention);
+  border-left: 4px solid var(--red);
+  box-shadow: var(--shadow);
   border-radius: var(--radius-md);
   padding: var(--space-5);
 }

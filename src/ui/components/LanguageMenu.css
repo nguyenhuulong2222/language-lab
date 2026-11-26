@@ -162,3 +162,22 @@
   font-size: var(--fs-meta);
   line-height: var(--lh-snug);
 }
+/* formN400 look: white cells with a hairline frame and the soft shadow; the chosen one has a 2px
+   navy frame, a light tint, bold text and the check (never colour alone). No flags. */
+.language-menu__option {
+  border: 2px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+.language-menu__option:hover {
+  box-shadow: var(--shadow-hover);
+}
+.language-menu__option[aria-current="true"],
+.language-menu--home .language-menu__option[aria-current="true"] {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+  background: var(--surface-2);
+}
+.language-menu__check {
+  color: var(--accent);
+}

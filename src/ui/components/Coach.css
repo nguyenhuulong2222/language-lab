@@ -85,7 +85,7 @@
   outline: none;
 }
 .coach__region:focus-visible {
-  outline: 3px solid var(--accent);
+  outline: var(--focus-width) solid var(--focus-color);
   outline-offset: 3px;
 }
 .coach__disclaimer {

@@ -1,5 +1,5 @@
 /**
- * App header, one row at a phone's normal text size: the brand mark (a small reel glyph), then
+ * App header, one row at a phone's normal text size: the navy wordmark "Language Lab", then
  * "Text size" and the language button (globe and the language's own name). "About & disclaimer"
  * is in the footer; going home is "Back to Home" at the top of each screen (BackToHome). The panels
  * open below the header, in the page flow, so they never run off a narrow screen.
@@ -56,10 +56,6 @@ export function Header({ onLanguage }: { onLanguage?: () => boolean }) {
     <header className="header" onKeyDown={onKeyDown} onBlur={onBlur}>
       <div className="ll-container header__inner">
         <div className="header__brand">
-          <svg className="header__reel" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.4" />
-            <circle cx="12" cy="12" r="3.4" fill="currentColor" />
-          </svg>
           <span className="header__brand-name">{t("app.name")}</span>
         </div>
         <div className="header__actions">

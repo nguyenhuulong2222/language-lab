@@ -6,13 +6,15 @@
 }
 
 /* ---- Condensed (mobile) ---- */
-/* At least 18px (body size), wraps rather than shrinks */
+/* The step line as a small label: red, bold, uppercase, letter-spaced, 18px; wraps, never shrinks */
 .stepper__condensed {
   margin: 0 0 var(--space-2);
-  font-size: var(--fs-body);
-  font-weight: 600;
+  font-size: max(16px, var(--fs-meta));
+  font-weight: 700;
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
   line-height: var(--lh-snug);
-  color: var(--ink);
+  color: var(--red);
 }
 
 .stepper__bar {
@@ -24,7 +26,7 @@
 
 .stepper__bar-fill {
   height: 100%;
-  background: var(--status-positive);
+  background: var(--accent);
   border-radius: var(--radius-pill);
 }
 

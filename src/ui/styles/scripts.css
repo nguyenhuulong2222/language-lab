@@ -34,7 +34,7 @@ html[lang="ru"] { --font-body: var(--font-ru); --font-display: var(--font-ru); }
 
 /* English text inside another language (the AI notice, the English disclaimer lines) uses the Latin stack. */
 [lang="en"] { font-family: var(--font-latin); }
-:root { --font-latin: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+:root { --font-latin: "Source Serif 4", Georgia, "Times New Roman", serif; }
 
 /* Scripts with tall marks above and below the line need more line height and no letter spacing. */
 html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"]) {
@@ -47,8 +47,7 @@ html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"]) {
 html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"]) * {
   letter-spacing: normal;
 }
-/* The mono "tape counter" lines hold translated words. Those scripts have no monospace face, so the
-   platform would choose one: use the script's own body font there. */
-html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"], [lang|="zh"], [lang="ko"]) :is(.take__overline, .progress-line, .stepper__condensed-count, .report__overline) {
+/* Labels and counter lines hold translated words: the script's own body font there. */
+html:is([lang="th"], [lang="lo"], [lang="my"], [lang="hi"], [lang|="zh"], [lang="ko"]) :is(.progress-line, .stepper__condensed, .report__overline) {
   font-family: var(--font-body);
 }

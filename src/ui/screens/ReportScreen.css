@@ -8,25 +8,19 @@
   color: var(--ink-2);
 }
 
-/* Tape-counter overline: mono, uppercase reel-to-reel take label above the H1.
-   The take counter and separator are decorative; the page label is announced. */
+
+
+
+/* The small label above the report heading: red, bold, uppercase, letter-spaced (16px or more). */
 .report__overline {
   font-family: var(--font-body);
-  font-size: var(--fs-meta);
-  font-weight: 600;
-  color: var(--ink-2);
+  font-size: max(16px, var(--fs-meta));
+  font-weight: 700;
+  letter-spacing: var(--label-tracking);
+  text-transform: uppercase;
+  color: var(--red);
   margin-bottom: var(--space-3);
 }
-
-.report__take {
-  color: var(--accent);
-}
-
-.report__overline-sep {
-  margin-inline: var(--space-2);
-  color: var(--border);
-}
-
 .report__title {
   font-size: var(--fs-display);
   letter-spacing: -0.01em;

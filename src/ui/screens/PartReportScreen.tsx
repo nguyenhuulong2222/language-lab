@@ -77,7 +77,7 @@ function PartBody({ report }: { report: PartReport }) {
     const scored = report.correct + report.incorrect;
     return (
       <>
-        <section className="panel">
+        <section className={report.passed ? "panel panel--correct" : "panel panel--wrong"}>
           <ResultHeadline passed={report.passed} />
           <p className="result-reason">
             {scored === 0
@@ -123,7 +123,7 @@ function PartBody({ report }: { report: PartReport }) {
   // Reading and writing
   return (
     <>
-      <section className="panel">
+      <section className={report.passed ? "panel panel--correct" : "panel panel--wrong"}>
         <ResultHeadline passed={report.passed} />
         <p className="result-reason">
           {report.attempts === 0
