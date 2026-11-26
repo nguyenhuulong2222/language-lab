@@ -11,7 +11,9 @@ import ILLUSTRATIONS_JSON from "../../../data/images/illustrations-manifest.json
 import creditsDoc from "../../../docs/image-credits.md?raw";
 import reviewDoc from "../../../docs/image-review.md?raw";
 import todoDoc from "../../../docs/image-todo.md?raw";
-import { buildCredits, buildReview, buildTodo } from "../image-docs";
+import { buildCredits, buildReview, buildTodo, parseOwnerOk } from "../image-docs";
+import type { DiagramManifest } from "../diagrams";
+import DIAGRAMS_JSON from "../../../data/images/diagrams-manifest.json";
 import type { IllustrationManifest } from "../illustrations";
 import {
   acceptableRights,
@@ -157,8 +159,9 @@ describe("federal hosts", () => {
 describe("generated docs", () => {
   it("image-credits, image-review and image-todo match the data", () => {
     const illustrations = ILLUSTRATIONS_JSON as unknown as IllustrationManifest;
-    expect(creditsDoc).toBe(buildCredits(PICTURE_MANIFEST, QUESTION_IMAGES, illustrations));
-    expect(reviewDoc).toBe(buildReview(PICTURE_MANIFEST, QUESTION_IMAGES, questions, illustrations));
+    const diagrams = DIAGRAMS_JSON as unknown as DiagramManifest;
+    expect(creditsDoc).toBe(buildCredits(PICTURE_MANIFEST, QUESTION_IMAGES, illustrations, diagrams));
+    expect(reviewDoc).toBe(buildReview(PICTURE_MANIFEST, QUESTION_IMAGES, questions, illustrations, diagrams, parseOwnerOk(reviewDoc)));
     expect(todoDoc).toBe(buildTodo(todo, MISSES.misses));
   });
   it("the credits list every picture with its rights statement", () => {
@@ -166,5 +169,12 @@ describe("generated docs", () => {
       expect(creditsDoc).toContain(p.rights);
       expect(creditsDoc).toContain(p.sourcePageUrl);
     }
+  });
+});
+describe("the review sheet keeps the owner's marks", () => {
+  it("reads an Owner OK cell back by question and file", () => {
+    const line = "| 2008-001 | What is the supreme law of the land? | ![a](../public/images/civics/x.webp) `public/images/civics/x.webp` | c | <https://www.loc.gov/item/1/> | r | OK |";
+    expect(parseOwnerOk(`${line}\n`)).toEqual({ "2008-001|x.webp": "OK" });
+    expect(parseOwnerOk(line.replace("| OK |", "|  |"))).toEqual({});
   });
 });

@@ -6,7 +6,7 @@ The pictures in civics practice are works from official U.S. federal sources. Ea
 
 Using these pictures does not mean the Library of Congress, any other agency or any person in them endorses Language Lab. Language Lab is not affiliated with USCIS or any government agency.
 
-35 pictures.
+46 pictures.
 
 ## George Washington
 
@@ -358,6 +358,197 @@ Using these pictures does not mean the Library of Congress, any other agency or 
 - **File downloaded from:** <https://tile.loc.gov/storage-services/master/pnp/cph/3b30000/3b32000/3b32200/3b32232u.tif> on 2026-11-26 (SHA-256 of the download: `e8a20455ea4005d16a5950c3208208f70a12667274be677f0011157486cbe180`)
 - **Rights statement (copied from the source record):** "No known restrictions on publication."
 - **Used for questions:** 2025-128
+
+## John Jay, Esq.
+
+- **Picture id:** `john-jay-stuart` (file `john-jay-stuart.webp`)
+- **Creator:** Unknown
+- **Date:** [no date recorded on shelflist card]
+- **Source page:** <https://www.loc.gov/item/2003665069/>
+- **File downloaded from:** <https://tile.loc.gov/storage-services/master/pnp/pga/13800/13813u.tif> on 2026-11-26 (SHA-256 of the download: `b2f5fe896fa01fb3f85da398de5f5fefde531f9329614ff07436c6dfb95ad2ba`)
+- **Edit:** Cropped to the engraved portrait, leaving out the printed name below it.
+- **Rights statement (copied from the source record):** "No known restrictions on publication."
+- **Used for questions:** 2008-067, 2025-083
+
+## Page 217 from Thomas Jefferson's copy of The Federalist (1788)
+
+- **Picture id:** `federalist-1788-page` (file `federalist-1788-page.webp`)
+- **Creator:** Unknown
+- **Date:** 1788.
+- **Source page:** <https://www.loc.gov/item/2004665672/>
+- **File downloaded from:** <https://tile.loc.gov/storage-services/master/pnp/cph/3b10000/3b15000/3b15000/3b15058u.tif> on 2026-11-26 (SHA-256 of the download: `41754f19f6a06ed8c03225d548bf926263a4eee5c92afecb0bc6184c3a0d9a33`)
+- **Rights statement (copied from the source record):** "No known restrictions on publication."
+- **Used for questions:** 2025-084
+
+## [Landing of the Pilgrims on Plymouth Rock, 1620] / P.F. Rothermel paintr. ; J. Andrews engravr.
+
+- **Picture id:** `landing-of-the-pilgrims-rothermel` (file `landing-of-the-pilgrims-rothermel.webp`)
+- **Creator:** Andrews, Joseph, 1806-1873, engraver; Rothermel, Peter Frederick, 1812-1895, artist
+- **Date:** c1869.
+- **Source page:** <https://www.loc.gov/item/2010646064/>
+- **File downloaded from:** <https://tile.loc.gov/storage-services/service/pnp/pga/00000/00035v.jpg> on 2026-11-26 (SHA-256 of the download: `ce67c0a81738f090a3c95a32533f61a2bdd68141b4c44ece87d05061e5138c19`)
+- **Edit:** Cropped to the engraved picture, leaving out the paper margin and its handwriting.
+- **Rights statement (copied from the source record):** "No known restrictions on publication."
+- **Used for questions:** 2008-058, 2025-073
+
+## Sculpture depicting a Great Depression breadline at the Franklin Delano Roosevelt Memorial, Washington, D.C.
+
+- **Picture id:** `depression-breadline-sculpture` (file `depression-breadline-sculpture.webp`)
+- **Creator:** Highsmith, Carol M., 1946-, photographer
+- **Date:** [between 1980 and 2006]
+- **Source page:** <https://www.loc.gov/item/2011633289/>
+- **File downloaded from:** <https://tile.loc.gov/image-services/iiif/service:pnp:highsm:15000:15096/full/pct:25/0/default.jpg> on 2026-11-26 (SHA-256 of the download: `a915ec0f2091c2f7053f00d1725e7d16d5156f2360fce004acbb1c35f60435f2`)
+- **Rights statement (copied from the source record):** "No known restrictions on publication."
+- **Used for questions:** 2025-103, 2025-104
+
+## Aerial view of the World War II memorial, Washington, D.C.
+
+- **Picture id:** `world-war-ii-memorial-aerial` (file `world-war-ii-memorial-aerial.webp`)
+- **Creator:** Highsmith, Carol M., 1946-, photographer
+- **Date:** 2006 September 20.
+- **Source page:** <https://www.loc.gov/item/2010630451/>
+- **File downloaded from:** <https://tile.loc.gov/image-services/iiif/service:pnp:highsm:04400:04465/full/pct:50/0/default.jpg> on 2026-11-26 (SHA-256 of the download: `0ea38042c793209ee682b02033910a148a33fe56c6baeca437cb6b943276dc7d`)
+- **Rights statement (copied from the source record):** "No known restrictions on publication."
+- **Used for questions:** 2008-081, 2025-106
+
+## July 4th fireworks, Washington, D.C.
+
+- **Picture id:** `fourth-of-july-fireworks` (file `fourth-of-july-fireworks.webp`)
+- **Creator:** Highsmith, Carol M., 1946-, photographer
+- **Date:** 2008 July 4.
+- **Source page:** <https://www.loc.gov/item/2010630678/>
+- **File downloaded from:** <https://tile.loc.gov/image-services/iiif/service:pnp:highsm:04600:04694/full/pct:50/0/default.jpg> on 2026-11-26 (SHA-256 of the download: `c383cc47a09598fc55a8a77e395679d8d6fb75fe02bb5275608b381209bee275`)
+- **Rights statement (copied from the source record):** "No known restrictions on publication."
+- **Used for questions:** 2008-099, 2025-125
+
+## Memorial view of Servicemen Statues and Mural Wall
+
+- **Picture id:** `korean-war-veterans-memorial` (file `korean-war-veterans-memorial.webp`)
+- **Creator:** NPS Photo (National Park Service)
+- **Date:** 07/27/2022
+- **Source page:** <https://npgallery.nps.gov/AssetDetail/82120C02-9820-4C7B-A63B-D378FCCF5263>
+- **File downloaded from:** <https://npgallery.nps.gov/GetAsset/82120C02-9820-4C7B-A63B-D378FCCF5263> on 2026-11-26 (SHA-256 of the download: `047efa436a08ef054fb39ce11e237ae1b04b8c1f31218b0b2c5d2705a96dfe9e`)
+- **Rights statement (copied from the source record):** "Constraints Information: Public domain:Full Granting Rights"
+- **Used for questions:** 2025-110
+
+## Vietnam Veterans Memorial
+
+- **Picture id:** `vietnam-veterans-memorial-snow` (file `vietnam-veterans-memorial-snow.webp`)
+- **Creator:** NPS / Victoria Stauffenberg (National Park Service)
+- **Date:** 01/01/2000
+- **Source page:** <https://npgallery.nps.gov/AssetDetail/C96DC1AB-D3C8-49D5-9512-4C1329571052>
+- **File downloaded from:** <https://npgallery.nps.gov/GetAsset/C96DC1AB-D3C8-49D5-9512-4C1329571052> on 2026-11-26 (SHA-256 of the download: `691acd7360044386fd83412a2a7f066b1441a0a6ee39b70c99924541860cadeb`)
+- **Rights statement (copied from the source record):** "Constraints Information: Public domain:Full Granting Rights"
+- **Used for questions:** 2025-111
+
+## Ceremonial Gate at Wall of Names
+
+- **Picture id:** `flight-93-national-memorial` (file `flight-93-national-memorial.webp`)
+- **Creator:** NPS Photo/C.Claycomb (National Park Service)
+- **Date:** 10/07/2021
+- **Source page:** <https://npgallery.nps.gov/AssetDetail/D207E39E-4640-43F3-8F64-39AF27109D70>
+- **File downloaded from:** <https://npgallery.nps.gov/GetAsset/D207E39E-4640-43F3-8F64-39AF27109D70> on 2026-11-26 (SHA-256 of the download: `282ae958c53dbf06b745570712a1cf71f75963f8c03763be34d2f64465486cdb`)
+- **Rights statement (copied from the source record):** "Constraints Information: Public domain:Full Granting Rights"
+- **Used for questions:** 2008-086, 2025-115
+
+## President Ronald Reagan and Soviet General Secretary Gorbachev Signing The Inf Treaty in The East Room
+
+- **Picture id:** `inf-treaty-signing-1987` (file `inf-treaty-signing-1987.webp`)
+- **Creator:** Unknown
+- **Date:** 1987-12-08
+- **Source page:** <https://catalog.archives.gov/id/75855865>
+- **File downloaded from:** <https://catalog.archives.gov/medialz/presidential-libraries/reagan/198505/C44067-5.jpg> on 2026-11-26 (SHA-256 of the download: `e6f7a13fe322db5669bac8c2324ee344886c5ba4cbce528f650fbb5be867b7da`)
+- **Rights statement (copied from the source record):** "Use restriction: Unrestricted. Access restriction: Unrestricted."
+- **Used for questions:** 2008-083, 2025-108, 2025-109
+
+## Sailors man the rails aboard the aircraft carrier USS RANGER (CV-61) as the large harbor tugs TUSKEGEE (YTB-806) and WAXAHATCHIE (YTB-814) escort the vessel in preparation for assisting it in docking. The RANGER is stopping off at Pearl Harbor while en route to its home port after returning from deployment in the Persian Gulf during Operation Desert Storm
+
+- **Picture id:** `uss-ranger-returns-1991` (file `uss-ranger-returns-1991.webp`)
+- **Creator:** Records of the Office of the Secretary of Defense
+- **Date:** 1991-06-01
+- **Source page:** <https://catalog.archives.gov/id/6483698>
+- **File downloaded from:** <https://catalog.archives.gov/medialz/stillpix/330-cfd/DN-SC-93-04712.jpeg> on 2026-11-26 (SHA-256 of the download: `a912a527ea363ed556a226008a29df95902cb539f7e250d5273684bce73fe77b`)
+- **Rights statement (copied from the source record):** "Use restriction: Unrestricted. Access restriction: Unrestricted."
+- **Used for questions:** 2025-114
+
+# Diagrams drawn from federal data
+
+Maps and the 50-star flag drawn by `tools/images/draw-diagrams.mjs` from U.S. Census Bureau and USGS data and from the U.S. flag code. The source data and the drawings are U.S. Government works in the public domain (17 U.S.C. §105). A diagram is shown only after the owner has reviewed it.
+
+## The 50-star flag of the United States
+
+- **Diagram id:** `us-flag-50` (file `us-flag-50.webp`, drawn on 2026-11-26, SHA-256 `f7760e2e99a652106c14e70a3b8e372041950cd71da5432560668a6c3e115161`)
+- **Credit line:** Drawn from the U.S. flag code (4 U.S.C. §§ 1-2) and Executive Order 10834
+- **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
+- **Drawn from:** 4 U.S.C. § 1 and § 2 (https://www.govinfo.gov/content/pkg/USCODE-2023-title4/html/USCODE-2023-title4-chap1.htm)
+- **Drawn from:** Executive Order 10834 of August 21, 1959 (https://www.archives.gov/federal-register/codification/executive-order/10834.html)
+- **Reviewed by the owner:** not yet (not shown)
+- **Used for questions:** 2008-097, 2025-122
+
+## The 13 original states, shown with today's state borders
+
+- **Diagram id:** `thirteen-original-states` (file `thirteen-original-states.webp`, drawn on 2026-11-26, SHA-256 `b73853e88c21db3c922cc8739c67092336a5a6add7bae296ab4a10dfac8ee9c4`)
+- **Credit line:** Drawn from U.S. Census Bureau data
+- **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
+- **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
+- **Reviewed by the owner:** not yet (not shown)
+- **Used for questions:** 2008-064, 2025-081
+
+## The Missouri and Mississippi rivers
+
+- **Diagram id:** `longest-rivers` (file `longest-rivers.webp`, drawn on 2026-11-26, SHA-256 `19cb50053a5059500a1473c298471bf66acbfbe6d5c7d81b954171149f28969c`)
+- **Credit line:** Drawn from USGS National Atlas and U.S. Census Bureau data
+- **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
+- **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
+- **Data:** U.S. Geological Survey, National Atlas of the United States, <https://prd-tnm.s3.amazonaws.com/StagedProducts/Small-scale/data/Hydrography/streaml010g.shp_nt00885.tar.gz>, downloaded 2026-11-26 (SHA-256 `437e423140c3880e8d40f1c15822e7f80022df848b782da2f78e5b96797dec31`)
+- **Reviewed by the owner:** not yet (not shown)
+- **Used for questions:** 2008-088
+
+## The ocean on the West Coast
+
+- **Diagram id:** `pacific-coast` (file `pacific-coast.webp`, drawn on 2026-11-26, SHA-256 `8d526d94eace9dbcea9da2683aa357423684b1a8b16077efec1bcf47cbef6980`)
+- **Credit line:** Drawn from U.S. Census Bureau data
+- **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
+- **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
+- **Reviewed by the owner:** not yet (not shown)
+- **Used for questions:** 2008-089
+
+## The ocean on the East Coast
+
+- **Diagram id:** `atlantic-coast` (file `atlantic-coast.webp`, drawn on 2026-11-26, SHA-256 `64d7308609f3427f765408b38fdaa48dd08d99b09190b62fc6a4cdedda7064e1`)
+- **Credit line:** Drawn from U.S. Census Bureau data
+- **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
+- **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
+- **Reviewed by the owner:** not yet (not shown)
+- **Used for questions:** 2008-090
+
+## The U.S. territories
+
+- **Diagram id:** `us-territories` (file `us-territories.webp`, drawn on 2026-11-26, SHA-256 `2f447b1a4529205cc650749f2bda34acd6b8cfab09f2dfbdfe38916a7a2f4586`)
+- **Credit line:** Drawn from U.S. Census Bureau data
+- **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
+- **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
+- **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_500k.zip>, downloaded 2026-11-26 (SHA-256 `4a9b4f5cf993cd23738ac49b58fbb556f1f097fcf5e404a9dc10348dd41f7432`)
+- **Reviewed by the owner:** not yet (not shown)
+- **Used for questions:** 2008-091
+
+## The states that border Canada
+
+- **Diagram id:** `canada-border-states` (file `canada-border-states.webp`, drawn on 2026-11-26, SHA-256 `85275271941ee7fa0efabf12cd2948b3fc2f8cb2f1ab5b99aa720f1e30ebb61d`)
+- **Credit line:** Drawn from U.S. Census Bureau data
+- **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
+- **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
+- **Reviewed by the owner:** not yet (not shown)
+- **Used for questions:** 2008-092
+
+## The states that border Mexico
+
+- **Diagram id:** `mexico-border-states` (file `mexico-border-states.webp`, drawn on 2026-11-26, SHA-256 `dcb3a9bf2928f6c18f1469411855f6d270fa3d4cd0d6dc76c77a0d7caa7cd716`)
+- **Credit line:** Drawn from U.S. Census Bureau data
+- **Legal basis:** U.S. Government work, public domain (17 U.S.C. §105)
+- **Data:** U.S. Census Bureau, <https://www2.census.gov/geo/tiger/GENZ2023/shp/cb_2023_us_state_20m.zip>, downloaded 2026-11-26 (SHA-256 `0fd2d6562708ff8182c00d5d25b5556d049ecf2794d97b89ed2dac4d5e9e2c8d`)
+- **Reviewed by the owner:** not yet (not shown)
+- **Used for questions:** 2008-093
 
 # AI-generated illustrations
 
