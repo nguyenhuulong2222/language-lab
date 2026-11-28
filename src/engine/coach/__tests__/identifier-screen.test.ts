@@ -125,7 +125,7 @@ describe("street addresses and ZIP codes (audit F-08)", () => {
     for (const q of content.n400Questions) for (const answer of Object.values(q.sampleAnswers)) expect(screenIdentifiers(answer), answer).toBeNull();
   });
   const streetWords = ["Street", "St", "Avenue", "Ave", "Road", "Rd", "Blvd", "Drive", "Dr", "Lane", "Ln", "Way", "Ct", "Hwy"];
-  const nameWord = fc.stringMatching(/^[A-Z][a-z]{2,9}$/).filter((w) => !/^(?:The|And|For|Our|New|Old|Same|This|That|Years?|Days?|Kids|Miles?)$/i.test(w));
+  const nameWord = fc.stringMatching(/^[A-Z][a-z]{2,9}$/).filter((w) => !/^(?:The|And|For|Our|His|Her|Their|Your|New|Old|Same|This|That|Years?|Months?|Weeks?|Days?|Hours?|Times?|Kids|Children|People|Blocks?|Miles?|Minutes?)$/i.test(w));
   it("property: any house number, one to three name words and a street word flags", () => {
     fc.assert(
       fc.property(fc.integer({ min: 1, max: 99999 }), fc.array(nameWord, { minLength: 1, maxLength: 3 }), fc.constantFrom(...streetWords), (n, words, street) => {
