@@ -385,5 +385,8 @@
   "n400.box.reminder.own": "Sèvi ak non ou sèlman lè kesyon an mande l. Pa tape vrè adrès ou, dat oswa nimewo.",
   "n400.idNumbers.reminder": "Pa di yon vrè A-number, nimewo Sekirite Sosyal oswa nimewo kat vèt lè w ap pratike.",
   "coach.kind.ownName": "non ou",
-  "coach.screened.ownName": "Repons sa a pa t voye bay antrenè AI a, pou non ou rete sou aparèy sa a."
+  "coach.screened.ownName": "Repons sa a pa t voye bay antrenè AI a, pou non ou rete sou aparèy sa a.",
+  "settings.officer.legend": "Vwa ofisye a",
+  "settings.officer.rotate": "Yon lòt ofisye nan chak pratik",
+  "settings.officer.same": "Toujou menm vwa a"
 }

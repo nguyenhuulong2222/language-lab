@@ -404,3 +404,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | अभ्यास करते समय असली A-number, सोशल सिक्योरिटी नंबर या ग्रीन कार्ड नंबर न बताएँ। |
 | `coach.kind.ownName` | your name | आपका नाम |
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | यह जवाब AI कोच को नहीं भेजा गया, ताकि आपका नाम इसी डिवाइस पर रहे। |
+| `settings.officer.legend` | Officer voice | अधिकारी की आवाज़ |
+| `settings.officer.rotate` | A different officer each practice | हर अभ्यास में अलग अधिकारी |
+| `settings.officer.same` | Always the same voice | हमेशा एक ही आवाज़ |

@@ -385,5 +385,8 @@
   "n400.box.reminder.own": "질문에서 이름을 물을 때만 이름을 말하세요. 실제 주소, 날짜, 번호는 입력하지 마세요.",
   "n400.idNumbers.reminder": "연습할 때 실제 A-number, 사회보장번호, 영주권 번호를 말하지 마세요.",
   "coach.kind.ownName": "내 이름",
-  "coach.screened.ownName": "이름이 이 기기에만 남도록 이 답변은 AI 코치에게 보내지 않았습니다."
+  "coach.screened.ownName": "이름이 이 기기에만 남도록 이 답변은 AI 코치에게 보내지 않았습니다.",
+  "settings.officer.legend": "심사관 음성",
+  "settings.officer.rotate": "연습할 때마다 다른 심사관",
+  "settings.officer.same": "항상 같은 음성"
 }

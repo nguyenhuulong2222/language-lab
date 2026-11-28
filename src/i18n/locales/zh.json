@@ -385,5 +385,8 @@
   "n400.box.reminder.own": "只有在問題問到名字時才說您的名字。不要輸入您真實的地址、日期或號碼。",
   "n400.idNumbers.reminder": "練習時不要說出真實的 A-number、社會安全號碼或綠卡號碼。",
   "coach.kind.ownName": "您的名字",
-  "coach.screened.ownName": "這個回答沒有傳送給 AI 教練，讓您的名字只留在這部裝置上。"
+  "coach.screened.ownName": "這個回答沒有傳送給 AI 教練，讓您的名字只留在這部裝置上。",
+  "settings.officer.legend": "官員的語音",
+  "settings.officer.rotate": "每次練習換一位官員",
+  "settings.officer.same": "一直用同一個語音"
 }

@@ -385,5 +385,8 @@
   "n400.box.reminder.own": "अपना नाम तभी बताएँ जब सवाल में पूछा जाए। अपना असली पता, तारीखें या नंबर न लिखें।",
   "n400.idNumbers.reminder": "अभ्यास करते समय असली A-number, सोशल सिक्योरिटी नंबर या ग्रीन कार्ड नंबर न बताएँ।",
   "coach.kind.ownName": "आपका नाम",
-  "coach.screened.ownName": "यह जवाब AI कोच को नहीं भेजा गया, ताकि आपका नाम इसी डिवाइस पर रहे।"
+  "coach.screened.ownName": "यह जवाब AI कोच को नहीं भेजा गया, ताकि आपका नाम इसी डिवाइस पर रहे।",
+  "settings.officer.legend": "अधिकारी की आवाज़",
+  "settings.officer.rotate": "हर अभ्यास में अलग अधिकारी",
+  "settings.officer.same": "हमेशा एक ही आवाज़"
 }

@@ -647,3 +647,44 @@ profile Aurora Thistlewood, shown with the label "Sample profile".
 - **Languages:** every new string goes through i18n in all 14 languages. The new privacy, reminder and
   sample-profile lines are in `LEGAL_KEYS`, so they stay English until a named reviewer checks them.
   `intro.filed.help` also stays English (owner choice (a)); it is not translated.
+
+## T. Three officer voices, one per practice (2026-11-27, branch feature/officer-voices)
+Goal: a real interview has one officer, and learners meet different officers. Each practice now
+uses one of three AI voices for the officer, chosen at random once and kept to the end.
+- **Voices** (`TTS_SETTINGS` in `src/engine/audio-clips.ts`, now a list):
+  - officer-a: `gpt-4o-mini-tts`, voice `coral`, the original instruction. Its files stay in
+    `public/audio/<group>/` and its manifest entries are unchanged; nothing was regenerated.
+  - officer-b: voice `cedar`. officer-c: voice `marin`. Same model, same instruction ("Speak clear
+    American English slowly and naturally, like a patient interviewer."), default speed (no `speed`
+    parameter), so the three differ only in the voice.
+  - Why these two: the text-to-speech guide lists 13 built-in voices for `gpt-4o-mini-tts` and
+    recommends `marin` and `cedar` for best quality. `cedar` sounds male and `marin` sounds female
+    with a different tone from `coral`. The docs do not describe how the voices sound; this is a
+    listening judgement and the owner should confirm it on openai.fm before the real run.
+  - Sources, read 2026-11-27: https://developers.openai.com/api/docs/guides/text-to-speech (voice list,
+    recommendation) and https://developers.openai.com/api/docs/models/gpt-4o-mini-tts (model page, prices:
+    text input US$0.60 and audio output US$12.00 per 1M tokens, also on
+    https://developers.openai.com/api/docs/pricing).
+  - **Deprecation:** both pages say `gpt-4o-mini-tts` is deprecated and shuts down on 2027-01-06
+    (successor `gpt-realtime-2.1-mini`, Realtime API only, not `/v1/audio/speech`). The committed MP3
+    files keep working after that date because the app only plays static files, but no clip can be
+    made or remade with this model after it. Generate officer-b and officer-c before then.
+- **Clips:** officer-b and officer-c speak only the officer's lines: civics questions (both keys),
+  N-400 questions, reading and writing sentences. Sample answers stay with officer-a. Files go to
+  `public/audio/officer-b/...` and `public/audio/officer-c/...` with the same relative paths.
+- **Manifest:** backward compatible. The top-level `tts` and `clips` are officer-a, as before. An
+  optional `voices` object holds `officer-b` and `officer-c`, each with its own `tts` and `clips`,
+  keyed by the same clip ids, and each entry names its `voice`. `parseManifest` refuses a sample
+  answer, a file outside the voice's folder, or another voice's name in those sections.
+- **Generator:** `--voice=officer-b|officer-c` (default officer-a). `--dry-run` prints the clip count,
+  the character total and an estimated cost. The estimate takes the speech length from officer-a's
+  MP3 of the same text (128 kbit/s) and assumes 20 audio tokens per second (1 token per 50 ms, from
+  the Realtime cost guide; the TTS pages do not state it). Kiro ran it with `--dry-run` only; the
+  owner runs the real generation.
+- **App:** the officer is picked from the practice's seed when the practice starts
+  (`pickOfficerVoice`, deterministic for tests) and kept in `PracticeApp` memory until Home or
+  restart. Study first picks once per visit. The player tries the chosen voice's clip, then
+  officer-a's clip, then the device voice. The "AI-generated voice" label is unchanged.
+- **Setting:** "Officer voice" in the comfort settings: "A different officer each practice"
+  (default) or "Always the same voice" (officer-a). In memory only, like the other comfort settings.
+  These are interface keys, not legal keys.

@@ -404,3 +404,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | No diga un A-number, número de Seguro Social ni número de tarjeta verde reales cuando practique. |
 | `coach.kind.ownName` | your name | su nombre |
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Esta respuesta no se envió al entrenador de IA, para que su nombre se quede en este dispositivo. |
+| `settings.officer.legend` | Officer voice | Voz del oficial |
+| `settings.officer.rotate` | A different officer each practice | Un oficial diferente en cada práctica |
+| `settings.officer.same` | Always the same voice | Siempre la misma voz |

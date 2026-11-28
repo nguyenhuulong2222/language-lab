@@ -404,6 +404,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | เมื่อฝึก อย่าพูด A-number หมายเลขประกันสังคม หรือหมายเลขกรีนการ์ดจริง |
 | `coach.kind.ownName` | your name | ชื่อของคุณ |
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | คำตอบนี้ไม่ได้ส่งไปยังโค้ช AI เพื่อให้ชื่อของคุณอยู่บนอุปกรณ์นี้เท่านั้น |
+| `settings.officer.legend` | Officer voice | เสียงของเจ้าหน้าที่ |
+| `settings.officer.rotate` | A different officer each practice | เจ้าหน้าที่คนใหม่ในการฝึกแต่ละครั้ง |
+| `settings.officer.same` | Always the same voice | ใช้เสียงเดิมเสมอ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

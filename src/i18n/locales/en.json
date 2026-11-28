@@ -378,5 +378,8 @@
   "n400.box.reminder.own": "Use your name only where the question asks for it. Do not type your real address, dates or numbers.",
   "n400.idNumbers.reminder": "Do not say a real A-number, Social Security number or green card number when you practice.",
   "coach.kind.ownName": "your name",
-  "coach.screened.ownName": "This answer was not sent to the AI coach, so that your name stays on this device."
+  "coach.screened.ownName": "This answer was not sent to the AI coach, so that your name stays on this device.",
+  "settings.officer.legend": "Officer voice",
+  "settings.officer.rotate": "A different officer each practice",
+  "settings.officer.same": "Always the same voice"
 }

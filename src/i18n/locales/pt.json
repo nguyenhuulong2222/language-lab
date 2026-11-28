@@ -385,5 +385,8 @@
   "n400.box.reminder.own": "Use seu nome só quando a pergunta pedir. Não digite seu endereço, datas ou números reais.",
   "n400.idNumbers.reminder": "Não diga um A-number, número do Seguro Social ou número de green card verdadeiro quando praticar.",
   "coach.kind.ownName": "seu nome",
-  "coach.screened.ownName": "Esta resposta não foi enviada ao treinador de IA, para que seu nome fique neste aparelho."
+  "coach.screened.ownName": "Esta resposta não foi enviada ao treinador de IA, para que seu nome fique neste aparelho.",
+  "settings.officer.legend": "Voz do oficial",
+  "settings.officer.rotate": "Um oficial diferente em cada prática",
+  "settings.officer.same": "Sempre a mesma voz"
 }

@@ -1,6 +1,6 @@
 /**
- * Comfort settings for the session: text size, slower playback of the recorded voice, and the
- * interface language.
+ * Comfort settings for the session: text size, slower playback of the recorded voice, the officer
+ * voice (a different officer each practice, or always the same), and the interface language.
  * They live in React state only: nothing is saved in the browser, and they reset when the
  * page is reloaded. The language starts as the device's language when this build offers it
  * (detectLanguage), English otherwise; that runs again on every load.
@@ -27,10 +27,14 @@ export function startupLanguage(): LanguageCode {
 export type TextSize = "normal" | "large" | "extra-large";
 
 export const TEXT_SIZES: readonly TextSize[] = ["normal", "large", "extra-large"];
+/** "rotate": a different officer voice each practice (default). "same": always officer-a. */
+export type OfficerVoiceChoice = "rotate" | "same";
+export const OFFICER_VOICE_CHOICES: readonly OfficerVoiceChoice[] = ["rotate", "same"];
 
 export interface Settings {
   textSize: TextSize;
   slowPlayback: boolean;
+  officerVoice: OfficerVoiceChoice;
   /** The interface language. The device's language (when offered) or English at the start of every load. */
   language: LanguageCode;
 }
@@ -38,22 +42,25 @@ export interface Settings {
 export interface SettingsValue extends Settings {
   setTextSize: (size: TextSize) => void;
   setSlowPlayback: (slow: boolean) => void;
+  setOfficerVoice: (choice: OfficerVoiceChoice) => void;
   /** Switch the interface language. A language that is not offered (it fails the checks) is ignored. */
   setLanguage: (language: LanguageCode) => void;
 }
 
-const DEFAULTS: Settings = { textSize: "normal", slowPlayback: false, language: "en" };
+const DEFAULTS: Settings = { textSize: "normal", slowPlayback: false, officerVoice: "rotate", language: "en" };
 
 const SettingsContext = createContext<SettingsValue>({
   ...DEFAULTS,
   setTextSize: () => {},
   setSlowPlayback: () => {},
+  setOfficerVoice: () => {},
   setLanguage: () => {},
 });
 
 export function SettingsProvider({ children, initialLanguage }: { children: ReactNode; initialLanguage?: LanguageCode }) {
   const [textSize, setTextSize] = useState<TextSize>(DEFAULTS.textSize);
   const [slowPlayback, setSlowPlayback] = useState(DEFAULTS.slowPlayback);
+  const [officerVoice, setOfficerVoice] = useState<OfficerVoiceChoice>(DEFAULTS.officerVoice);
   // Worked out once. main.tsx loads its locale before the first paint; if it is not loaded yet
   // (tests, a slow file), English shows until it arrives.
   const [start] = useState<LanguageCode>(() => initialLanguage ?? startupLanguage());
@@ -82,8 +89,8 @@ export function SettingsProvider({ children, initialLanguage }: { children: Reac
   }, [textSize]);
 
   const value = useMemo<SettingsValue>(
-    () => ({ textSize, slowPlayback, language, setTextSize, setSlowPlayback, setLanguage }),
-    [textSize, slowPlayback, language]
+    () => ({ textSize, slowPlayback, officerVoice, language, setTextSize, setSlowPlayback, setOfficerVoice, setLanguage }),
+    [textSize, slowPlayback, officerVoice, language]
   );
   return <SettingsContext.Provider value={value}>{children}</SettingsContext.Provider>;
 }

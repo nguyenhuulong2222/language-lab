@@ -2,12 +2,13 @@
  * Text size and voice: opens from the "Text size" button in the header, on every screen.
  * Text size is three big "Aa" choices (a whole tile is the tap target, with a radio mark and a
  * word, so the choice is never shown by colour alone). Slower voice is a large On/Off switch
- * that says "On" or "Off" in words. Nothing is stored: the choices last for this page only.
+ * that says "On" or "Off" in words. Officer voice is two radio choices: a different officer each
+ * practice, or always the same voice. Nothing is stored: the choices last for this page only.
  */
 import { useId } from "react";
 import type { MessageKey } from "../../i18n";
 import { useT } from "../../i18n/react";
-import { TEXT_SIZES, useSettings, type TextSize } from "../settings";
+import { OFFICER_VOICE_CHOICES, TEXT_SIZES, useSettings, type OfficerVoiceChoice, type TextSize } from "../settings";
 import "./Coach.css";
 import "./SettingsPanel.css";
 const SIZE_LABEL: Record<TextSize, MessageKey> = {
@@ -15,9 +16,13 @@ const SIZE_LABEL: Record<TextSize, MessageKey> = {
   large: "settings.textSize.large",
   "extra-large": "settings.textSize.extraLarge",
 };
+const OFFICER_LABEL: Record<OfficerVoiceChoice, MessageKey> = {
+  rotate: "settings.officer.rotate",
+  same: "settings.officer.same",
+};
 export function SettingsPanel({ onClose }: { onClose: () => void }) {
   const t = useT();
-  const { textSize, setTextSize, slowPlayback, setSlowPlayback } = useSettings();
+  const { textSize, setTextSize, slowPlayback, setSlowPlayback, officerVoice, setOfficerVoice } = useSettings();
   const sizeId = useId();
   const slowId = useId();
   const slowHelpId = useId();
@@ -71,6 +76,22 @@ export function SettingsPanel({ onClose }: { onClose: () => void }) {
       <p id={slowHelpId} className="note">
         {t("settings.slow.help")}
       </p>
+      <fieldset className="choices">
+        <legend className="choices__legend settings__legend">{t("settings.officer.legend")}</legend>
+        {OFFICER_VOICE_CHOICES.map((choice) => (
+          <label key={choice} className="choice">
+            <input
+              className="choice__input"
+              type="radio"
+              name="officer-voice"
+              value={choice}
+              checked={officerVoice === choice}
+              onChange={() => setOfficerVoice(choice)}
+            />
+            <span className="choice__text">{t(OFFICER_LABEL[choice])}</span>
+          </label>
+        ))}
+      </fieldset>
       <p className="note">{t("settings.memory")}</p>
       <div className="btn-row">
         <button type="button" className="btn btn--secondary" onClick={onClose}>

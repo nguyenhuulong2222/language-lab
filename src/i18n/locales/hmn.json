@@ -385,5 +385,8 @@
   "n400.box.reminder.own": "Tsuas siv koj lub npe thaum lo lus nug nug txog nws xwb. Tsis txhob ntaus koj qhov chaw nyob, hnub tim lossis tus lej tiag.",
   "n400.idNumbers.reminder": "Thaum xyaum, tsis txhob hais koj tus A-number, tus lej Social Security lossis tus lej green card tiag.",
   "coach.kind.ownName": "koj lub npe",
-  "coach.screened.ownName": "Lo lus teb no tsis tau xa mus rau tus kws qhia AI, kom koj lub npe nyob ntawm lub cuab yeej no xwb."
+  "coach.screened.ownName": "Lo lus teb no tsis tau xa mus rau tus kws qhia AI, kom koj lub npe nyob ntawm lub cuab yeej no xwb.",
+  "settings.officer.legend": "Lub suab ntawm tus neeg ua haujlwm",
+  "settings.officer.rotate": "Txhua zaus xyaum yog ib tug neeg ua haujlwm txawv",
+  "settings.officer.same": "Ib txwm yog tib lub suab"
 }

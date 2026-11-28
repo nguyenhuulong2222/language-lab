@@ -14,18 +14,26 @@
  *   reading                    every reading sentence: the sample of listen-and-compare. The screen
  *                              never plays it before the first attempt.
  *
+ * Officer voices (decisions log T): officer-a is the original voice and makes every group above.
+ * officer-b and officer-c make the officer's clips only (civics, n400, writing, reading), not the
+ * sample answers.
+ *
  * Output:
- *   public/audio/<group folder>/<id>.mp3
- *   public/audio/manifest.json   id -> { file, hash of the spoken text, group, bytes }
+ *   public/audio/<group folder>/<id>.mp3            officer-a
+ *   public/audio/<voice>/<group folder>/<id>.mp3    officer-b, officer-c
+ *   public/audio/manifest.json   id -> { file, hash of the spoken text, group, bytes }; officer-a at the
+ *                                top (unchanged), the other voices under "voices" with "voice" per clip
  *
  * Usage (run from the repository root):
  *   node --no-warnings tools/audio/generate-audio.mjs --dry-run
  *   node --no-warnings tools/audio/generate-audio.mjs
  *   node --no-warnings tools/audio/generate-audio.mjs --only=writing,n400
+ *   node --no-warnings tools/audio/generate-audio.mjs --voice=officer-b --dry-run
  *
  * Options:
- *   --dry-run         list what would be generated and the character total. No API call, and
- *                     the key file is not even read.
+ *   --voice=<id>      officer-a (default), officer-b or officer-c.
+ *   --dry-run         list what would be generated, the character total and an estimated cost.
+ *                     No API call, and the key file is not even read.
  *   --only=<groups>   comma-separated: civics (both keys), civics-2008, civics-2025, n400,
  *                     n400-samples, writing, reading.
  *   --skip-dynamic    leave out civics questions whose answers change (the app never asks
@@ -39,7 +47,7 @@
  * tools/speech-test/generate-audio.mjs uses). It is sent only in the request header and is
  * never printed, logged or copied.
  *
- * Model gpt-4o-mini-tts, voice coral, instruction: see TTS_SETTINGS in src/engine/audio-clips.ts.
+ * Model, voice and instruction of each officer voice: see TTS_SETTINGS in src/engine/audio-clips.ts.
  * Needs Node 22.18 or newer (it imports the TypeScript module directly).
  */
 import fs from "node:fs";
@@ -50,9 +58,14 @@ import {
   CLIP_GROUPS,
   emptyManifest,
   hashText,
-  manifestMatchesSettings,
+  isOfficerGroup,
+  isOfficerVoice,
+  officerClipList,
   parseManifest,
-  TTS_SETTINGS,
+  ttsSettingsFor,
+  voiceMatchesSettings,
+  voiceSection,
+  withVoiceSection,
 } from "../../src/engine/audio-clips.ts";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
@@ -64,6 +77,24 @@ const KEY_FILE = path.join(ROOT, "tools/speech-test", "." + "env");
 const PAUSE_MS = 500;
 const MAX_ATTEMPTS = 5;
 
+// Prices for the cost estimate of --dry-run, as read on the date below. Check them before a real run.
+const PRICING = {
+  read: "2026-11-27",
+  pricingUrl: "https://developers.openai.com/api/docs/pricing",
+  modelUrl: "https://developers.openai.com/api/docs/models/gpt-4o-mini-tts",
+  model: "gpt-4o-mini-tts",
+  textInputPerMillion: 0.6,
+  audioOutputPerMillion: 12.0,
+};
+// Neither page says how many audio tokens a second of speech is. The Realtime cost guide
+// (https://developers.openai.com/api/docs/guides/realtime-costs) gives 1 output audio token per
+// 50 ms; the estimate assumes the same. About 4 characters make one text token.
+const AUDIO_TOKENS_PER_SECOND = 20;
+const CHARS_PER_TEXT_TOKEN = 4;
+// Length of speech: taken from officer-a's MP3 of the same text (128 kbit/s), else 15 characters a second.
+const MP3_BYTES_PER_SECOND = 128000 / 8;
+const CHARS_PER_SECOND = 15;
+
 // ---------------------------------------------------------------------------
 // Arguments
 // ---------------------------------------------------------------------------
@@ -73,13 +104,20 @@ const dryRun = args.includes("--dry-run");
 const skipDynamic = args.includes("--skip-dynamic");
 const prune = args.includes("--prune");
 const onlyArg = args.find((a) => a.startsWith("--only="));
+const voiceArg = args.find((a) => a.startsWith("--voice="));
 const known = new Set(["--dry-run", "--skip-dynamic", "--prune"]);
 for (const arg of args) {
-  if (!known.has(arg) && !arg.startsWith("--only=")) {
+  if (!known.has(arg) && !arg.startsWith("--only=") && !arg.startsWith("--voice=")) {
     console.error(`Unknown option: ${arg}`);
     process.exit(1);
   }
 }
+const VOICE = voiceArg ? voiceArg.slice("--voice=".length) : "officer-a";
+if (!isOfficerVoice(VOICE)) {
+  console.error(`Unknown voice "${VOICE}". Voices: officer-a, officer-b, officer-c.`);
+  process.exit(1);
+}
+const SETTING = ttsSettingsFor(VOICE);
 
 let onlyGroups = null;
 if (onlyArg) {
@@ -89,6 +127,10 @@ if (onlyArg) {
       onlyGroups.add("civics-2008");
       onlyGroups.add("civics-2025");
     } else if (CLIP_GROUPS.includes(name)) {
+      if (VOICE !== "officer-a" && !isOfficerGroup(name)) {
+        console.error(`${VOICE} speaks the officer's lines only; "${name}" stays with officer-a.`);
+        process.exit(1);
+      }
       onlyGroups.add(name);
     } else {
       console.error(`Unknown group "${name}". Groups: civics, ${CLIP_GROUPS.join(", ")}.`);
@@ -111,12 +153,14 @@ const civics2008 = readJson("data/civics-answers/2008.json").entries;
 const civics2025 = readJson("data/civics-answers/2025.json").entries;
 const keep = (entries) => (skipDynamic ? entries.filter((e) => e.answerType === "static") : entries);
 
-const allClips = buildClipList({
+const baseClips = buildClipList({
   civics: { 2008: keep(civics2008), 2025: keep(civics2025) },
   n400: readJson("data/practice/n400-questions.json").questions,
   writing: readJson("data/practice/writing-sentences.json").sentences,
   reading: readJson("data/practice/reading-sentences.json").sentences,
 });
+// officer-a: every clip, as before. officer-b and officer-c: the officer's clips, in their own folder.
+const allClips = officerClipList(baseClips, VOICE);
 const clips = onlyGroups ? allClips.filter((clip) => onlyGroups.has(clip.group)) : allClips;
 
 // ---------------------------------------------------------------------------
@@ -125,14 +169,16 @@ const clips = onlyGroups ? allClips.filter((clip) => onlyGroups.has(clip.group))
 
 let manifest = emptyManifest();
 if (fs.existsSync(MANIFEST_FILE)) manifest = parseManifest(JSON.parse(fs.readFileSync(MANIFEST_FILE, "utf8")));
-const sameSettings = manifestMatchesSettings(manifest);
-if (!sameSettings && onlyGroups && Object.keys(manifest.clips).length > 0) {
+// The section of the chosen voice. The other sections are written back unchanged.
+let section = voiceSection(manifest, VOICE);
+const sameSettings = voiceMatchesSettings(manifest, VOICE);
+if (!sameSettings && onlyGroups && Object.keys(section.clips).length > 0) {
   console.error("The voice settings changed since the clips were made. Run without --only so every clip is regenerated.");
   process.exit(1);
 }
 
 function isCurrent(clip) {
-  const entry = manifest.clips[clip.id];
+  const entry = section.clips[clip.id];
   return (
     sameSettings &&
     entry !== undefined &&
@@ -147,11 +193,36 @@ const upToDate = clips.length - toGenerate.length;
 const chars = (list) => list.reduce((sum, clip) => sum + clip.text.length, 0);
 
 const knownIds = new Set(allClips.map((c) => c.id));
-const orphans = Object.keys(manifest.clips).filter((id) => !knownIds.has(id));
+const orphans = Object.keys(section.clips).filter((id) => !knownIds.has(id));
+
+/** Estimated seconds of speech for a clip: officer-a's MP3 of the same text when there is one. */
+function secondsOf(clip) {
+  const original = manifest.clips[clip.id];
+  if (original && original.hash === hashText(clip.text) && typeof original.bytes === "number") return original.bytes / MP3_BYTES_PER_SECOND;
+  return clip.text.length / CHARS_PER_SECOND;
+}
+
+function estimate(list) {
+  const textTokens = list.reduce((sum, c) => sum + Math.ceil((c.text.length + SETTING.instruction.length) / CHARS_PER_TEXT_TOKEN), 0);
+  const seconds = list.reduce((sum, c) => sum + secondsOf(c), 0);
+  const audioTokens = Math.round(seconds * AUDIO_TOKENS_PER_SECOND);
+  const cost = (textTokens * PRICING.textInputPerMillion + audioTokens * PRICING.audioOutputPerMillion) / 1e6;
+  return { textTokens, seconds, audioTokens, cost };
+}
+
+function reportCost() {
+  const e = estimate(toGenerate);
+  console.log("");
+  console.log(`Estimated cost: US$${e.cost.toFixed(2)} for ${toGenerate.length} clips`);
+  console.log(`  text input   ~${e.textTokens} tokens (text and instruction) x US$${PRICING.textInputPerMillion.toFixed(2)} per 1M`);
+  console.log(`  audio output ~${e.audioTokens} tokens (~${(e.seconds / 60).toFixed(1)} minutes of speech) x US$${PRICING.audioOutputPerMillion.toFixed(2)} per 1M`);
+  console.log(`  Prices for ${PRICING.model} from ${PRICING.pricingUrl} and ${PRICING.modelUrl}, read ${PRICING.read}.`);
+  console.log(`  Assumes ${AUDIO_TOKENS_PER_SECOND} audio tokens per second (not stated for this model) and the speech length of officer-a's clips.`);
+}
 
 function report() {
   console.log("Language Lab: spoken prompt generator");
-  console.log(`Model ${TTS_SETTINGS.model}, voice ${TTS_SETTINGS.voice}`);
+  console.log(`Voice ${VOICE}: model ${SETTING.model}, voice ${SETTING.voice}`);
   console.log(`Output ${path.relative(ROOT, AUDIO_DIR)}/`);
   if (!sameSettings) console.log("Voice settings differ from the manifest: every clip counts as out of date.");
   console.log("");
@@ -181,6 +252,7 @@ function report() {
 
 if (dryRun) {
   report();
+  reportCost();
   if (toGenerate.length > 0) {
     console.log("\nWould generate:");
     for (const clip of toGenerate) console.log(`  ${clip.file}  (${clip.text.length} characters)`);
@@ -224,10 +296,10 @@ async function generateSpeech(key, text) {
       method: "POST",
       headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: TTS_SETTINGS.model,
-        voice: TTS_SETTINGS.voice,
+        model: SETTING.model,
+        voice: SETTING.voice,
         input: text,
-        instructions: TTS_SETTINGS.instruction,
+        instructions: SETTING.instruction,
         response_format: "mp3",
       }),
     });
@@ -242,9 +314,12 @@ async function generateSpeech(key, text) {
 }
 
 function writeManifest() {
-  const ordered = Object.fromEntries(Object.entries(manifest.clips).sort(([a], [b]) => a.localeCompare(b)));
+  const ordered = Object.fromEntries(Object.entries(section.clips).sort(([a], [b]) => a.localeCompare(b)));
+  manifest = withVoiceSection(manifest, VOICE, { tts: section.tts, clips: ordered });
+  const { voices, ...rest } = manifest;
+  const out = voices === undefined ? rest : { ...rest, voices: Object.fromEntries(Object.entries(voices).sort(([a], [b]) => a.localeCompare(b))) };
   fs.mkdirSync(AUDIO_DIR, { recursive: true });
-  fs.writeFileSync(MANIFEST_FILE, JSON.stringify({ ...manifest, clips: ordered }, null, 2) + "\n");
+  fs.writeFileSync(MANIFEST_FILE, JSON.stringify(out, null, 2) + "\n");
 }
 
 // ---------------------------------------------------------------------------
@@ -256,15 +331,15 @@ async function main() {
 
   if (prune) {
     for (const id of orphans) {
-      const file = path.join(AUDIO_DIR, manifest.clips[id].file);
+      const file = path.join(AUDIO_DIR, section.clips[id].file);
       if (fs.existsSync(file)) fs.rmSync(file);
-      delete manifest.clips[id];
+      delete section.clips[id];
     }
   }
 
   if (!sameSettings) {
-    // New voice settings: the old clips were made with other settings, so start the manifest again.
-    manifest = emptyManifest();
+    // New voice settings: this voice's old clips were made with other settings, so start its section again.
+    section = { tts: { model: SETTING.model, voice: SETTING.voice, instruction: SETTING.instruction }, clips: {} };
   }
 
   if (toGenerate.length === 0) {
@@ -285,7 +360,13 @@ async function main() {
       fs.mkdirSync(path.dirname(target), { recursive: true });
       fs.writeFileSync(target + ".tmp", data);
       fs.renameSync(target + ".tmp", target);
-      manifest.clips[clip.id] = { file: clip.file, hash: hashText(clip.text), group: clip.group, bytes: data.length };
+      section.clips[clip.id] = {
+        file: clip.file,
+        hash: hashText(clip.text),
+        group: clip.group,
+        bytes: data.length,
+        ...(VOICE === "officer-a" ? {} : { voice: VOICE }),
+      };
       writeManifest(); // after every clip, so an interrupted run loses nothing
       console.log(`done (${Math.round(data.length / 1024)} kB)`);
       generated++;

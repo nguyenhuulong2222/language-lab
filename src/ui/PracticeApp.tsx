@@ -4,10 +4,14 @@
  * full interview, a report for that part only for a single part). The whole session lives in
  * one in-memory reducer (src/engine/practice-flow.ts). Nothing is stored, and nothing is sent
  * anywhere. Reloading the page starts again.
+ *
+ * The officer voice (decisions log T) is picked from the seed of the practice when it starts, and
+ * from a fresh seed once per Study first visit. It stays until Home or restart.
  */
 import { LegalText } from "./components/LegalText";
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import type { InterviewSession } from "../contracts";
+import { pickOfficerVoice, type OfficerVoiceId } from "../engine/audio-clips";
 import { createScriptedN400Coach } from "../engine/n400-coach";
 import { createOwnNameCoach, OWN_NAME_SCRIPT } from "../engine/own-name";
 import {
@@ -29,6 +33,8 @@ import {
 } from "../engine/practice-flow";
 import { useT } from "../i18n/react";
 import { HelpSessionProvider } from "./help-session";
+import { useSettings } from "./settings";
+import { OfficerVoiceProvider } from "./voice/officer-voice";
 import type { CoachTransport } from "./coach/ai-coach-client";
 import type { CoachEntry } from "./screens/N400Screen";
 import { Shell } from "./components/Shell";
@@ -81,16 +87,23 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
   // "Use my name" (decisions log S): the learner's own name, in this component's memory only. It is
   // never put in the engine state, storage, a cookie, the URL or a log, and is gone after a reload.
   const [ownName, setOwnName] = useState<string | undefined>(undefined);
+  // The officer of this practice: one voice from start to end, as in a real interview.
+  const [officer, setOfficer] = useState<OfficerVoiceId>("officer-a");
+  const { officerVoice } = useSettings();
+  const voice: OfficerVoiceId = officerVoice === "same" ? "officer-a" : officer;
+  const officerFromSeed = useCallback((s: number) => setOfficer(pickOfficerVoice(s)), []);
   const restart = useCallback(() => {
     setRestarts((n) => n + 1);
     setCoachEntry("choice");
     setOwnName(undefined);
+    setOfficer("officer-a");
     dispatch({ type: "restart" });
   }, []);
 
   // Leaving Study first lands on the home heading (focus), as after a restart.
   const exitStudy = () => {
     setStudying(false);
+    setOfficer("officer-a");
     setRestarts((n) => n + 1);
   };
   const steps = state.mode === null ? undefined : sessionSteps(state.mode, state.setup?.exception ?? "none");
@@ -98,6 +111,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
   if (studying && state.phase === "home") {
     return (
       <HelpSessionProvider>
+        <OfficerVoiceProvider voice={voice}>
         <Shell onHome={exitStudy}>
           <StudyScreen
             answerKey={(v) => engine.env.answerKey(v)}
@@ -108,11 +122,13 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
             onHome={exitStudy}
           />
         </Shell>
+        </OfficerVoiceProvider>
       </HelpSessionProvider>
     );
   }
   return (
     <HelpSessionProvider>
+    <OfficerVoiceProvider voice={voice}>
     <Shell
       {...(steps === undefined ? {} : { steps })}
       {...(state.phase === "home" ? {} : { currentStage: state.phase })}
@@ -128,7 +144,12 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
         coach={coach}
         civicsLockedInBuild={civicsLockedInBuild}
         afterRestart={restarts > 0}
-        onStudy={() => setStudying(true)}
+        onStudy={() => {
+          // Study first: one officer for the whole visit.
+          officerFromSeed(seed());
+          setStudying(true);
+        }}
+        onPracticeSeed={officerFromSeed}
         who={who}
         onWho={setWho}
         coachEntry={coachEntry}
@@ -140,6 +161,7 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
         restart={restart}
       />
     </Shell>
+    </OfficerVoiceProvider>
     </HelpSessionProvider>
   );
 }
@@ -162,6 +184,8 @@ interface ScreenProps {
   /** "Use my name": the learner's own name, held by PracticeApp in memory. */
   ownName?: string | undefined;
   onOwnName?: (name: string | undefined) => void;
+  /** Called with the seed of a practice as it starts: it picks the officer voice. */
+  onPracticeSeed?: (seed: number) => void;
   now: () => string;
   seed: () => number;
   restart: () => void;
@@ -182,6 +206,7 @@ export function Screen({
   onCoachEntry = () => {},
   ownName,
   onOwnName = () => {},
+  onPracticeSeed = () => {},
   now,
   seed,
   restart,
@@ -209,11 +234,15 @@ export function Screen({
             onCoachEntry("choice");
             // The exception chosen on Home: setup starts with it chosen (it applies to parts with civics).
             const exception = exceptionOffered(env, who) ? who : "none";
-            dispatch({ type: "choose", mode, seed: seed(), at: now(), ...(exception === "none" ? {} : { exception }) });
+            const s = seed();
+            onPracticeSeed(s);
+            dispatch({ type: "choose", mode, seed: s, at: now(), ...(exception === "none" ? {} : { exception }) });
           }}
           onChooseCoach={() => {
             onCoachEntry("notice");
-            dispatch({ type: "choose", mode: "n400", seed: seed(), at: now() });
+            const s = seed();
+            onPracticeSeed(s);
+            dispatch({ type: "choose", mode: "n400", seed: s, at: now() });
           }}
         />
       );
@@ -230,7 +259,11 @@ export function Screen({
           onStart={({ ownName: name, ...choice }) => {
             // The name stays here, in memory: the engine only gets the sample profile's id.
             onOwnName(name);
-            const go = () => dispatch({ type: "start", ...choice, seed: seed(), at: now() });
+            const go = () => {
+              const s = seed();
+              onPracticeSeed(s);
+              dispatch({ type: "start", ...choice, seed: s, at: now() });
+            };
             // The answer key and the official answers are fetched when a civics part starts.
             const needsCivics = modeParts(state.mode ?? "full").includes("civics") && choice.filedOn !== undefined;
             if (!needsCivics || env.prepareCivics === undefined) return go();
