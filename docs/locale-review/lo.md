@@ -404,6 +404,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | ເມື່ອຝຶກ ຢ່າເວົ້າ A-number, ເລກປະກັນສັງຄົມ ຫຼື ເລກບັດຂຽວແທ້. |
 | `coach.kind.ownName` | your name | ຊື່ຂອງທ່ານ |
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | ຄຳຕອບນີ້ບໍ່ໄດ້ສົ່ງໃຫ້ຄູຝຶກ AI ເພື່ອໃຫ້ຊື່ຂອງທ່ານຢູ່ໃນອຸປະກອນນີ້ເທົ່ານັ້ນ. |
+| `settings.officer.legend` | Officer voice | ສຽງຂອງເຈົ້າໜ້າທີ່ |
+| `settings.officer.rotate` | A different officer each practice | ເຈົ້າໜ້າທີ່ຄົນໃໝ່ໃນການຝຶກແຕ່ລະຄັ້ງ |
+| `settings.officer.same` | Always the same voice | ໃຊ້ສຽງດຽວກັນສະເໝີ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

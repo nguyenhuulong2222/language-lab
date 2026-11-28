@@ -404,3 +404,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | 練習時不要說出真實的 A-number、社會安全號碼或綠卡號碼。 |
 | `coach.kind.ownName` | your name | 您的名字 |
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | 這個回答沒有傳送給 AI 教練，讓您的名字只留在這部裝置上。 |
+| `settings.officer.legend` | Officer voice | 官員的語音 |
+| `settings.officer.rotate` | A different officer each practice | 每次練習換一位官員 |
+| `settings.officer.same` | Always the same voice | 一直用同一個語音 |

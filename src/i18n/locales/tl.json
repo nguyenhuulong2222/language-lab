@@ -385,5 +385,8 @@
   "n400.box.reminder.own": "Gamitin lang ang pangalan mo kapag hinihingi ito ng tanong. Huwag i-type ang tunay mong address, petsa o numero.",
   "n400.idNumbers.reminder": "Huwag sabihin ang tunay na A-number, Social Security number o green card number kapag nagsasanay.",
   "coach.kind.ownName": "ang pangalan mo",
-  "coach.screened.ownName": "Hindi ipinadala ang sagot na ito sa AI coach, para manatili ang pangalan mo sa device na ito."
+  "coach.screened.ownName": "Hindi ipinadala ang sagot na ito sa AI coach, para manatili ang pangalan mo sa device na ito.",
+  "settings.officer.legend": "Boses ng opisyal",
+  "settings.officer.rotate": "Ibang opisyal sa bawat pagsasanay",
+  "settings.officer.same": "Laging parehong boses"
 }

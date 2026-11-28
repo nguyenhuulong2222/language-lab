@@ -15,7 +15,10 @@ import {
   emptyManifest,
   findStaleClips,
   hashText,
+  EXTRA_OFFICER_VOICES,
+  manifestFiles,
   manifestMatchesSettings,
+  voiceMatchesSettings,
   parseManifest,
   sampleAnswerClipId,
   writingClipId,
@@ -128,16 +131,17 @@ describe("the manifest that ships (public/audio/manifest.json)", () => {
 
   it("was made with the current voice settings (when it has clips)", () => {
     if (Object.keys(manifest.clips).length > 0) expect(manifestMatchesSettings(manifest)).toBe(true);
-  });
-
-  it("every entry has its MP3 file in public/audio", () => {
-    for (const [id, entry] of Object.entries(manifest.clips)) {
-      expect(files, `${id}: ${entry.file}`).toContain(entry.file);
+    for (const voice of EXTRA_OFFICER_VOICES) {
+      if (Object.keys(manifest.voices?.[voice]?.clips ?? {}).length > 0) expect(voiceMatchesSettings(manifest, voice), voice).toBe(true);
     }
   });
 
+  it("every entry has its MP3 file in public/audio, in every officer voice", () => {
+    for (const file of manifestFiles(manifest)) expect(files, file).toContain(file);
+  });
+
   it("every MP3 file in public/audio is listed in the manifest", () => {
-    const listed = new Set(Object.values(manifest.clips).map((e) => e.file));
+    const listed = new Set(manifestFiles(manifest));
     for (const file of files) expect(listed.has(file), file).toBe(true);
   });
 

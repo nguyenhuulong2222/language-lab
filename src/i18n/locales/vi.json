@@ -385,5 +385,8 @@
   "n400.box.reminder.own": "Chỉ nói tên của bạn khi câu hỏi hỏi đến tên. Đừng gõ địa chỉ, ngày tháng hay các con số thật.",
   "n400.idNumbers.reminder": "Đừng nói số A (A-number), số an sinh xã hội hay số thẻ xanh thật khi luyện tập.",
   "coach.kind.ownName": "tên của bạn",
-  "coach.screened.ownName": "Câu trả lời này không được gửi đến huấn luyện viên AI, để tên của bạn chỉ ở trên máy này."
+  "coach.screened.ownName": "Câu trả lời này không được gửi đến huấn luyện viên AI, để tên của bạn chỉ ở trên máy này.",
+  "settings.officer.legend": "Giọng viên chức",
+  "settings.officer.rotate": "Mỗi lần luyện một viên chức khác",
+  "settings.officer.same": "Luôn cùng một giọng"
 }

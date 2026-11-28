@@ -404,6 +404,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | Huwag sabihin ang tunay na A-number, Social Security number o green card number kapag nagsasanay. |
 | `coach.kind.ownName` | your name | ang pangalan mo |
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Hindi ipinadala ang sagot na ito sa AI coach, para manatili ang pangalan mo sa device na ito. |
+| `settings.officer.legend` | Officer voice | Boses ng opisyal |
+| `settings.officer.rotate` | A different officer each practice | Ibang opisyal sa bawat pagsasanay |
+| `settings.officer.same` | Always the same voice | Laging parehong boses |
 
 ## Lines marked ⚠ (meaning differs a little)
 

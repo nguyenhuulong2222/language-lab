@@ -404,3 +404,6 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | Pa di yon vrè A-number, nimewo Sekirite Sosyal oswa nimewo kat vèt lè w ap pratike. |
 | `coach.kind.ownName` | your name | non ou |
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Repons sa a pa t voye bay antrenè AI a, pou non ou rete sou aparèy sa a. |
+| `settings.officer.legend` | Officer voice | Vwa ofisye a |
+| `settings.officer.rotate` | A different officer each practice | Yon lòt ofisye nan chak pratik |
+| `settings.officer.same` | Always the same voice | Toujou menm vwa a |

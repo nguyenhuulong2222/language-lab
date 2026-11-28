@@ -404,6 +404,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | 연습할 때 실제 A-number, 사회보장번호, 영주권 번호를 말하지 마세요. |
 | `coach.kind.ownName` | your name | 내 이름 |
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | 이름이 이 기기에만 남도록 이 답변은 AI 코치에게 보내지 않았습니다. |
+| `settings.officer.legend` | Officer voice | 심사관 음성 |
+| `settings.officer.rotate` | A different officer each practice | 연습할 때마다 다른 심사관 |
+| `settings.officer.same` | Always the same voice | 항상 같은 음성 |
 
 ## Lines marked ⚠ (meaning differs a little)
 

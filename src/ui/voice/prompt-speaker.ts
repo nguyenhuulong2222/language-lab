@@ -4,14 +4,15 @@
  * - `createMp3PromptSpeaker` plays a pre-generated MP3 clip (OpenAI text to speech, made ahead
  *   of time by tools/audio/generate-audio.mjs and served as a static file). The app never calls
  *   a TTS service. A clip is used only when the manifest lists it and the text it was made from
- *   is the text about to be spoken.
+ *   is the text about to be spoken. The officer of the practice (`officer`) picks the voice:
+ *   that voice's clip first, then officer-a's clip, then the device voice.
  * - `createDeviceVoiceSpeaker` uses the browser's own speech synthesis. It is the fallback when
  *   a clip is missing or fails to load.
  *
  * iPhone Safari only starts audio from a tap. `speak` therefore starts playback synchronously:
  * it must be called straight from the click handler, and it reuses one audio element.
  */
-import { clipFileFor, type AudioManifest } from "../../engine/audio-clips";
+import { officerClipFiles, type AudioManifest, type OfficerVoiceId } from "../../engine/audio-clips";
 
 export type VoiceKind = "recording" | "device-voice";
 
@@ -20,6 +21,11 @@ export interface SpokenPrompt {
   text: string;
   /** Id of the pre-generated clip for this text, when there is one. */
   clipId?: string;
+  /**
+   * The officer voice of this practice (default officer-a). Used for the officer's lines only; a
+   * sample answer always keeps officer-a's clip.
+   */
+  officer?: OfficerVoiceId;
   /**
    * The text holds the learner's own name ("Use my name"): speak it only with a voice that runs on
    * this device (SpeechSynthesisVoice.localService). Some browsers' default voices are online
@@ -147,9 +153,10 @@ export function createMp3PromptSpeaker(options: Mp3SpeakerOptions): PromptSpeake
   let audio: AudioLike | null = null;
   let stopCurrent: (() => void) | null = null;
 
-  const clipFor = (prompt: SpokenPrompt): string | null =>
-    canPlayAudio && prompt.localOnly !== true ? clipFileFor(manifest, prompt.clipId, prompt.text) : null;
-
+  // The files that can say a prompt, best first: the practice's officer voice, then officer-a.
+  const clipsFor = (prompt: SpokenPrompt): string[] =>
+    canPlayAudio && prompt.localOnly !== true ? officerClipFiles(manifest, prompt.officer ?? "officer-a", prompt.clipId, prompt.text) : [];
+  const clipFor = (prompt: SpokenPrompt): string | null => clipsFor(prompt)[0] ?? null;
   const speaker: PromptSpeaker = {
     get available() {
       return canPlayAudio || fallback.available;
@@ -162,14 +169,12 @@ export function createMp3PromptSpeaker(options: Mp3SpeakerOptions): PromptSpeake
     speak(prompt, handlers) {
       // A second tap, or another prompt, always stops what is playing first.
       speaker.cancel();
-
-      const file = clipFor(prompt);
-      if (file === null) return fallback.speak(prompt, handlers);
-
+      const files = clipsFor(prompt);
+      if (files.length === 0) return fallback.speak(prompt, handlers);
       audio ??= createAudio();
       const element = audio;
       if (element === null) return fallback.speak(prompt, handlers);
-
+      let next = 0;
       return new Promise<void>((resolve) => {
         let settled = false;
         const cleanup = () => {
@@ -185,6 +190,11 @@ export function createMp3PromptSpeaker(options: Mp3SpeakerOptions): PromptSpeake
         };
         const onError = () => {
           if (settled) return;
+          // A clip that does not load: try officer-a's clip, then the device voice.
+          if (next < files.length) {
+            playNext();
+            return;
+          }
           settled = true;
           cleanup();
           handlers?.onFallback?.();
@@ -200,13 +210,23 @@ export function createMp3PromptSpeaker(options: Mp3SpeakerOptions): PromptSpeake
 
         element.addEventListener("ended", onEnded);
         element.addEventListener("error", onError);
+        const playNext = () => {
+          const file = files[next++]!;
+          element.src = baseUrl + file;
+          element.currentTime = 0;
+          element.playbackRate = handlers?.slow ? SLOW_PLAYBACK_RATE : 1;
+          element.preservesPitch = true;
+          const started = element.play();
+          if (started !== undefined && typeof started.catch === "function") {
+            const attempt = next;
+            // Only the attempt that is still current may move on.
+            started.catch(() => {
+              if (attempt === next) onError();
+            });
+          }
+        };
         // Start now, inside the tap: Safari refuses to start audio later.
-        element.src = baseUrl + file;
-        element.currentTime = 0;
-        element.playbackRate = handlers?.slow ? SLOW_PLAYBACK_RATE : 1;
-        element.preservesPitch = true;
-        const started = element.play();
-        if (started !== undefined && typeof started.catch === "function") started.catch(onError);
+        playNext();
       });
     },
 

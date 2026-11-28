@@ -3,7 +3,8 @@
  * clip plays, "Built-in voice" only when the browser's own voice is used instead. Large by default
  * ("Play the question", 64px). While it plays, the line under it says "Playing…" and the button
  * says "Stop". "Play again" is always next to it and starts from the beginning. Nothing plays by
- * itself. The comfort setting "slower voice" changes the speed of the same recording.
+ * itself. The comfort setting "slower voice" changes the speed of the same recording. The voice is
+ * the officer of this practice (useOfficerVoice); a sample answer always keeps officer-a's clip.
  *
  * Playback starts inside the click handler (iPhone Safari needs a tap).
  */
@@ -11,6 +12,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { MessageKey } from "../../i18n";
 import { useT } from "../../i18n/react";
 import { useSettings } from "../settings";
+import { useOfficerVoice } from "../voice/officer-voice";
 import { useSpeaker } from "../voice/VoiceProvider";
 import { ReviewIcon } from "./icons";
 
@@ -32,9 +34,15 @@ export function SpeakButton({ text, clipId, labelKey = "audio.play", onFailed, l
   const t = useT();
   const speaker = useSpeaker();
   const { slowPlayback } = useSettings();
+  const officer = useOfficerVoice();
   const prompt = useMemo(
-    () => ({ text, ...(clipId === undefined ? {} : { clipId }), ...(localOnly ? { localOnly: true } : {}) }),
-    [text, clipId, localOnly]
+    () => ({
+      text,
+      ...(clipId === undefined ? {} : { clipId }),
+      ...(localOnly ? { localOnly: true } : {}),
+      ...(officer === "officer-a" ? {} : { officer }),
+    }),
+    [text, clipId, localOnly, officer]
   );
   const [playing, setPlaying] = useState(false);
   const [fellBack, setFellBack] = useState(false);

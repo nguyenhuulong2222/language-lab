@@ -404,6 +404,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | Thaum xyaum, tsis txhob hais koj tus A-number, tus lej Social Security lossis tus lej green card tiag. |
 | `coach.kind.ownName` | your name | koj lub npe |
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Lo lus teb no tsis tau xa mus rau tus kws qhia AI, kom koj lub npe nyob ntawm lub cuab yeej no xwb. |
+| `settings.officer.legend` | Officer voice | Lub suab ntawm tus neeg ua haujlwm |
+| `settings.officer.rotate` | A different officer each practice | Txhua zaus xyaum yog ib tug neeg ua haujlwm txawv |
+| `settings.officer.same` | Always the same voice | Ib txwm yog tib lub suab |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -404,6 +404,9 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | လေ့ကျင့်သည့်အခါ တကယ့် A-number၊ လူမှုဖူလုံရေးနံပါတ် သို့မဟုတ် အစိမ်းကတ်နံပါတ်ကို မပြောပါနှင့်။ |
 | `coach.kind.ownName` | your name | သင်၏အမည် |
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | သင်၏အမည် ဤစက်ပေါ်တွင်သာ ရှိနေစေရန် ဤအဖြေကို AI နည်းပြထံ မပို့ပါ။ |
+| `settings.officer.legend` | Officer voice | အရာရှိ၏ အသံ |
+| `settings.officer.rotate` | A different officer each practice | လေ့ကျင့်တိုင်း အရာရှိ တစ်ယောက်စီ ကွဲပြားသည် |
+| `settings.officer.same` | Always the same voice | အမြဲ အသံ တစ်မျိုးတည်း |
 
 ## Lines marked ⚠ (meaning differs a little)
 
