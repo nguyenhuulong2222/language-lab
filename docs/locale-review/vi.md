@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | Đọc to câu này. |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | Bấm “{say}” rồi nói. Hoặc gõ vào ô. |
 | `help.typeOnly` | Type what you hear in the box. | Gõ những gì bạn nghe vào ô. |
-| `header.settings` | Text size and voice | Cỡ chữ và giọng |
+| `header.settings` | Text size and voice | Chữ và giọng |
 | `settings.title` | Text size and voice | Cỡ chữ và giọng đọc |
 | `settings.textSize.legend` | Text size | Cỡ chữ |
 | `settings.textSize.normal` | Normal | Bình thường |

@@ -235,7 +235,7 @@
   "help.read": "Đọc to câu này.",
   "help.mic": "Bấm “{say}” rồi nói. Hoặc gõ vào ô.",
   "help.typeOnly": "Gõ những gì bạn nghe vào ô.",
-  "header.settings": "Cỡ chữ và giọng",
+  "header.settings": "Chữ và giọng",
   "settings.title": "Cỡ chữ và giọng đọc",
   "settings.textSize.legend": "Cỡ chữ",
   "settings.textSize.normal": "Bình thường",
