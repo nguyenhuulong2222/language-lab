@@ -320,7 +320,7 @@ describe("the whole interface follows the language (L3)", () => {
     expect(h1()).toBe(EN["home.title"]);
     fireEvent.click(grid.querySelector<HTMLButtonElement>('.language-menu__option[lang="vi"]')!);
     await waitFor(() => expect(h1()).toBe(VI["home.title"]));
-    expect(document.documentElement.lang).toBe("vi");
+    await waitFor(() => expect(document.documentElement.lang).toBe("vi"));
     const body = document.body.textContent!;
     expect(body).toContain(VI["home.what.title"]);
     expect(body).toContain(VI["home.who.special.title"]);
@@ -332,7 +332,7 @@ describe("the whole interface follows the language (L3)", () => {
     expect(body).toContain(EN["home.exceptions.timing"]);
     fireEvent.click(grid.querySelector<HTMLButtonElement>('.language-menu__option[lang="en"]')!);
     await waitFor(() => expect(h1()).toBe(EN["home.title"]));
-    expect(document.documentElement.lang).toBe("en");
+    await waitFor(() => expect(document.documentElement.lang).toBe("en"));
     expect(document.body.textContent).toContain(EN["home.what.title"]);
     expect(headerText()).toContain(EN["header.settings"]);
     expect(document.querySelector(".ai-notice")).toBeNull();
@@ -342,7 +342,7 @@ describe("the whole interface follows the language (L3)", () => {
     vi.spyOn(navigator, "languages", "get").mockReturnValue(["vi-VN", "en-US"]);
     app();
     await waitFor(() => expect(document.querySelector("main h1")!.textContent!.trim()).toBe(VI["home.title"]));
-    expect(document.documentElement.lang).toBe("vi");
+    await waitFor(() => expect(document.documentElement.lang).toBe("vi"));
     expect(document.getElementById("home-language")!.querySelector('[aria-current="true"]')!.getAttribute("lang")).toBe("vi");
   });
   it("starts in English on a phone set to a language that is not offered (fr-FR)", async () => {
@@ -350,7 +350,7 @@ describe("the whole interface follows the language (L3)", () => {
     app();
     await new Promise((resolve) => setTimeout(resolve, 50));
     expect(document.querySelector("main h1")!.textContent!.trim()).toBe(EN["home.title"]);
-    expect(document.documentElement.lang).toBe("en");
+    await waitFor(() => expect(document.documentElement.lang).toBe("en"));
   });
 });
 describe("Back to Home and the browser Back button (Q1)", () => {
