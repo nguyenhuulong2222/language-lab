@@ -397,5 +397,17 @@
   "audio.aiVoice.officer3": "ສຽງທີ່ສ້າງໂດຍ AI · ເຈົ້າໜ້າທີ່ 3 (ສຽງຜູ້ຍິງ)",
   "picture.zoom.hint": "ແຕະທີ່ຮູບເພື່ອເບິ່ງໃຫຍ່ຂຶ້ນ",
   "picture.zoom.label": "ເບິ່ງຮູບໃຫຍ່ຂຶ້ນ",
-  "picture.zoom.close": "ປິດ"
+  "picture.zoom.close": "ປິດ",
+  "study.mode.legend": "ທ່ານຢາກຮຽນແບບໃດ?",
+  "study.mode.see": "ເບິ່ງຄຳຕອບ",
+  "study.mode.test": "ທົດສອບຕົນເອງ",
+  "study.check": "ກວດ",
+  "study.tryAgain": "ລອງອີກຄັ້ງ",
+  "study.list.open": "ລາຍການຄຳຖາມ",
+  "study.list.search": "ຊອກຫາຄຳຖາມ",
+  "study.list.none": "ບໍ່ມີຄຳຖາມທີ່ກົງກັນ",
+  "study.list.close": "ປິດ",
+  "study.go.label": "ໄປທີ່ຄຳຖາມຂໍ້",
+  "study.go.submit": "ໄປ",
+  "study.go.invalid": "ພິມຕົວເລກຕັ້ງແຕ່ 1 ຫາ {total}."
 }

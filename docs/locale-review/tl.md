@@ -416,6 +416,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `picture.zoom.hint` | Tap the picture to see it larger | I-tap ang larawan para makita ito nang mas malaki |
 | `picture.zoom.label` | See the picture larger | Tingnan nang mas malaki ang larawan |
 | `picture.zoom.close` | Close | Isara |
+| `study.mode.legend` | How do you want to study? | Paano mo gustong mag-aral? |
+| `study.mode.see` | See the answers | Tingnan ang mga sagot |
+| `study.mode.test` | Test myself | Subukan ang sarili ko |
+| `study.check` | Check | Suriin |
+| `study.tryAgain` | Try again | Subukan ulit |
+| `study.list.open` | Question list | Listahan ng mga tanong |
+| `study.list.search` | Find a question | Maghanap ng tanong |
+| `study.list.none` | No question matches | Walang tanong na tumutugma |
+| `study.list.close` | Close | Isara |
+| `study.go.label` | Go to question number | Pumunta sa tanong bilang |
+| `study.go.submit` | Go | Pumunta |
+| `study.go.invalid` | Type a number from 1 to {total}. | Mag-type ng numero mula 1 hanggang {total}. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

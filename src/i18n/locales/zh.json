@@ -397,5 +397,17 @@
   "audio.aiVoice.officer3": "AI 生成的語音 · 官員 3（女聲）",
   "picture.zoom.hint": "點一下圖片可以放大查看",
   "picture.zoom.label": "放大查看圖片",
-  "picture.zoom.close": "關閉"
+  "picture.zoom.close": "關閉",
+  "study.mode.legend": "您想怎麼學習？",
+  "study.mode.see": "看答案",
+  "study.mode.test": "自我測驗",
+  "study.check": "檢查",
+  "study.tryAgain": "再試一次",
+  "study.list.open": "問題清單",
+  "study.list.search": "尋找問題",
+  "study.list.none": "沒有符合的問題",
+  "study.list.close": "關閉",
+  "study.go.label": "前往第幾題",
+  "study.go.submit": "前往",
+  "study.go.invalid": "請輸入 1 到 {total} 之間的數字。"
 }

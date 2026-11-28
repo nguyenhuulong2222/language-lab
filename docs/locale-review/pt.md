@@ -416,6 +416,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `picture.zoom.hint` | Tap the picture to see it larger | Toque na imagem para vê-la maior |
 | `picture.zoom.label` | See the picture larger | Ver a imagem maior |
 | `picture.zoom.close` | Close | Fechar |
+| `study.mode.legend` | How do you want to study? | Como você quer estudar? |
+| `study.mode.see` | See the answers | Ver as respostas |
+| `study.mode.test` | Test myself | Testar a mim mesmo |
+| `study.check` | Check | Verificar |
+| `study.tryAgain` | Try again | Tentar de novo |
+| `study.list.open` | Question list | Lista de perguntas |
+| `study.list.search` | Find a question | Encontrar uma pergunta |
+| `study.list.none` | No question matches | Nenhuma pergunta corresponde |
+| `study.list.close` | Close | Fechar |
+| `study.go.label` | Go to question number | Ir para a pergunta número |
+| `study.go.submit` | Go | Ir |
+| `study.go.invalid` | Type a number from 1 to {total}. | Digite um número de 1 a {total}. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

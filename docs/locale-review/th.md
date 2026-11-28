@@ -416,6 +416,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `picture.zoom.hint` | Tap the picture to see it larger | แตะที่ภาพเพื่อดูภาพใหญ่ขึ้น |
 | `picture.zoom.label` | See the picture larger | ดูภาพใหญ่ขึ้น |
 | `picture.zoom.close` | Close | ปิด |
+| `study.mode.legend` | How do you want to study? | คุณอยากเรียนแบบไหน |
+| `study.mode.see` | See the answers | ดูคำตอบ |
+| `study.mode.test` | Test myself | ทดสอบตัวเอง |
+| `study.check` | Check | ตรวจคำตอบ |
+| `study.tryAgain` | Try again | ลองอีกครั้ง |
+| `study.list.open` | Question list | รายการคำถาม |
+| `study.list.search` | Find a question | ค้นหาคำถาม |
+| `study.list.none` | No question matches | ไม่มีคำถามที่ตรงกัน |
+| `study.list.close` | Close | ปิด |
+| `study.go.label` | Go to question number | ไปที่คำถามข้อ |
+| `study.go.submit` | Go | ไป |
+| `study.go.invalid` | Type a number from 1 to {total}. | พิมพ์ตัวเลขตั้งแต่ 1 ถึง {total} |
 
 ## Lines marked ⚠ (meaning differs a little)
 

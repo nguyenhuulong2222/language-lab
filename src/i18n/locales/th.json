@@ -397,5 +397,17 @@
   "audio.aiVoice.officer3": "เสียงที่สร้างโดย AI · เจ้าหน้าที่ 3 (เสียงผู้หญิง)",
   "picture.zoom.hint": "แตะที่ภาพเพื่อดูภาพใหญ่ขึ้น",
   "picture.zoom.label": "ดูภาพใหญ่ขึ้น",
-  "picture.zoom.close": "ปิด"
+  "picture.zoom.close": "ปิด",
+  "study.mode.legend": "คุณอยากเรียนแบบไหน",
+  "study.mode.see": "ดูคำตอบ",
+  "study.mode.test": "ทดสอบตัวเอง",
+  "study.check": "ตรวจคำตอบ",
+  "study.tryAgain": "ลองอีกครั้ง",
+  "study.list.open": "รายการคำถาม",
+  "study.list.search": "ค้นหาคำถาม",
+  "study.list.none": "ไม่มีคำถามที่ตรงกัน",
+  "study.list.close": "ปิด",
+  "study.go.label": "ไปที่คำถามข้อ",
+  "study.go.submit": "ไป",
+  "study.go.invalid": "พิมพ์ตัวเลขตั้งแต่ 1 ถึง {total}"
 }

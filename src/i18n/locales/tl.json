@@ -397,5 +397,17 @@
   "audio.aiVoice.officer3": "Boses na gawa ng AI · Opisyal 3 (boses ng babae)",
   "picture.zoom.hint": "I-tap ang larawan para makita ito nang mas malaki",
   "picture.zoom.label": "Tingnan nang mas malaki ang larawan",
-  "picture.zoom.close": "Isara"
+  "picture.zoom.close": "Isara",
+  "study.mode.legend": "Paano mo gustong mag-aral?",
+  "study.mode.see": "Tingnan ang mga sagot",
+  "study.mode.test": "Subukan ang sarili ko",
+  "study.check": "Suriin",
+  "study.tryAgain": "Subukan ulit",
+  "study.list.open": "Listahan ng mga tanong",
+  "study.list.search": "Maghanap ng tanong",
+  "study.list.none": "Walang tanong na tumutugma",
+  "study.list.close": "Isara",
+  "study.go.label": "Pumunta sa tanong bilang",
+  "study.go.submit": "Pumunta",
+  "study.go.invalid": "Mag-type ng numero mula 1 hanggang {total}."
 }

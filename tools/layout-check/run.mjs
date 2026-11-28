@@ -416,6 +416,24 @@ async function checkConfiguration(cdp, size, lang) {
     // The answer key is fetched first: make sure a question is really on screen.
     await waitFor(() => lab(`has(${js(L("civics.next"))})`), "a Study first question");
     await record("study-question");
+    // The question list (a modal: Close is its one primary button), then a jump from it.
+    await click(L("study.list.open"));
+    await waitFor(() => cdp.evaluate(`!!document.querySelector("dialog.study-list[open]")`), "the question list");
+    await sleep(150);
+    await record("study-list");
+    await cdp.evaluate(`document.querySelectorAll("dialog.study-list[open] .study-list__row")[1].click()`);
+    await waitFor(async () => !(await cdp.evaluate(`!!document.querySelector("dialog.study-list[open]")`)), "the question list to close after a jump");
+    await sleep(150);
+    // Test myself: before Check (Check is the one primary), and a checked answer (Next is).
+    await choose(L("study.mode.test"));
+    await record("study-test");
+    await type("the Constitution");
+    await click(L("study.check"));
+    await waitFor(() => cdp.evaluate(`!!document.querySelector("main .result-headline")`), "a checked answer in Test myself");
+    await sleep(150);
+    await record("study-checked");
+    await choose(L("study.mode.see"));
+    await click(L("study.prev"));
     // Study first must show pictures: step through the questions until one is on screen and has loaded.
     let picture = false;
     for (let step = 0; step < 40 && !picture; step++) {

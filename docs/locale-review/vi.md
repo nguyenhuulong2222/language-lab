@@ -416,6 +416,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `picture.zoom.hint` | Tap the picture to see it larger | Bấm vào hình để xem lớn |
 | `picture.zoom.label` | See the picture larger | Xem hình lớn |
 | `picture.zoom.close` | Close | Đóng |
+| `study.mode.legend` | How do you want to study? | Bạn muốn học thế nào? |
+| `study.mode.see` | See the answers | Xem đáp án |
+| `study.mode.test` | Test myself | Tự kiểm tra |
+| `study.check` | Check | Kiểm tra |
+| `study.tryAgain` | Try again | Thử lại |
+| `study.list.open` | Question list | Danh sách câu hỏi |
+| `study.list.search` | Find a question | Tìm câu hỏi |
+| `study.list.none` | No question matches | Không có câu hỏi nào khớp |
+| `study.list.close` | Close | Đóng |
+| `study.go.label` | Go to question number | Đến câu số |
+| `study.go.submit` | Go | Đến |
+| `study.go.invalid` | Type a number from 1 to {total}. | Hãy nhập một số từ 1 đến {total}. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

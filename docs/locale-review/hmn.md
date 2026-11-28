@@ -416,6 +416,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `picture.zoom.hint` | Tap the picture to see it larger | Nias daim duab kom pom loj dua |
 | `picture.zoom.label` | See the picture larger | Saib daim duab loj dua |
 | `picture.zoom.close` | Close | Kaw |
+| `study.mode.legend` | How do you want to study? | Koj xav kawm li cas? |
+| `study.mode.see` | See the answers | Saib cov lus teb |
+| `study.mode.test` | Test myself | Sim kuv tus kheej |
+| `study.check` | Check | Kuaj xyuas |
+| `study.tryAgain` | Try again | Sim dua |
+| `study.list.open` | Question list | Cov lus nug |
+| `study.list.search` | Find a question | Nrhiav ib lo lus nug |
+| `study.list.none` | No question matches | Tsis muaj lo lus nug twg zoo li ntawd |
+| `study.list.close` | Close | Kaw |
+| `study.go.label` | Go to question number | Mus rau lo lus nug zaj |
+| `study.go.submit` | Go | Mus |
+| `study.go.invalid` | Type a number from 1 to {total}. | Ntaus ib tus lej txij 1 txog {total}. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

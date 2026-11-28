@@ -416,6 +416,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `picture.zoom.hint` | Tap the picture to see it larger | Нажмите на картинку, чтобы увеличить её |
 | `picture.zoom.label` | See the picture larger | Посмотреть картинку крупнее |
 | `picture.zoom.close` | Close | Закрыть |
+| `study.mode.legend` | How do you want to study? | Как вы хотите заниматься? |
+| `study.mode.see` | See the answers | Смотреть ответы |
+| `study.mode.test` | Test myself | Проверить себя |
+| `study.check` | Check | Проверить |
+| `study.tryAgain` | Try again | Попробовать снова |
+| `study.list.open` | Question list | Список вопросов |
+| `study.list.search` | Find a question | Найти вопрос |
+| `study.list.none` | No question matches | Нет подходящих вопросов |
+| `study.list.close` | Close | Закрыть |
+| `study.go.label` | Go to question number | Перейти к вопросу номер |
+| `study.go.submit` | Go | Перейти |
+| `study.go.invalid` | Type a number from 1 to {total}. | Введите число от 1 до {total}. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

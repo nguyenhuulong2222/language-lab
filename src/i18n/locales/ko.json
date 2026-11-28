@@ -397,5 +397,17 @@
   "audio.aiVoice.officer3": "AI가 만든 음성 · 심사관 3(여성 음성)",
   "picture.zoom.hint": "그림을 누르면 크게 볼 수 있습니다",
   "picture.zoom.label": "그림 크게 보기",
-  "picture.zoom.close": "닫기"
+  "picture.zoom.close": "닫기",
+  "study.mode.legend": "어떻게 공부하시겠어요?",
+  "study.mode.see": "정답 보기",
+  "study.mode.test": "스스로 확인하기",
+  "study.check": "확인",
+  "study.tryAgain": "다시 해 보기",
+  "study.list.open": "질문 목록",
+  "study.list.search": "질문 찾기",
+  "study.list.none": "맞는 질문이 없습니다",
+  "study.list.close": "닫기",
+  "study.go.label": "질문 번호로 이동",
+  "study.go.submit": "이동",
+  "study.go.invalid": "1부터 {total}까지의 숫자를 입력하세요."
 }

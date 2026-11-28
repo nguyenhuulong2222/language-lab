@@ -397,5 +397,17 @@
   "audio.aiVoice.officer3": "Vwa AI fè · Ofisye 3 (vwa fanm)",
   "picture.zoom.hint": "Tape sou foto a pou w wè l pi gwo",
   "picture.zoom.label": "Wè foto a pi gwo",
-  "picture.zoom.close": "Fèmen"
+  "picture.zoom.close": "Fèmen",
+  "study.mode.legend": "Kijan ou vle etidye?",
+  "study.mode.see": "Gade repons yo",
+  "study.mode.test": "Teste tèt mwen",
+  "study.check": "Verifye",
+  "study.tryAgain": "Eseye ankò",
+  "study.list.open": "Lis kesyon yo",
+  "study.list.search": "Chèche yon kesyon",
+  "study.list.none": "Okenn kesyon pa koresponn",
+  "study.list.close": "Fèmen",
+  "study.go.label": "Ale nan kesyon nimewo",
+  "study.go.submit": "Ale",
+  "study.go.invalid": "Tape yon nimewo ant 1 ak {total}."
 }

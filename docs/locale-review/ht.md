@@ -416,3 +416,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `picture.zoom.hint` | Tap the picture to see it larger | Tape sou foto a pou w wè l pi gwo |
 | `picture.zoom.label` | See the picture larger | Wè foto a pi gwo |
 | `picture.zoom.close` | Close | Fèmen |
+| `study.mode.legend` | How do you want to study? | Kijan ou vle etidye? |
+| `study.mode.see` | See the answers | Gade repons yo |
+| `study.mode.test` | Test myself | Teste tèt mwen |
+| `study.check` | Check | Verifye |
+| `study.tryAgain` | Try again | Eseye ankò |
+| `study.list.open` | Question list | Lis kesyon yo |
+| `study.list.search` | Find a question | Chèche yon kesyon |
+| `study.list.none` | No question matches | Okenn kesyon pa koresponn |
+| `study.list.close` | Close | Fèmen |
+| `study.go.label` | Go to question number | Ale nan kesyon nimewo |
+| `study.go.submit` | Go | Ale |
+| `study.go.invalid` | Type a number from 1 to {total}. | Tape yon nimewo ant 1 ak {total}. |

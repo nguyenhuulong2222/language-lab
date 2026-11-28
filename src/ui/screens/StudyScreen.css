@@ -1,0 +1,104 @@
+/* Study: the way to study, picking a question, and the question list. */
+.study-mode .choice {
+  min-height: max(56px, 3.1111rem);
+}
+.study-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.study-nav__go {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.study-nav__label {
+  font-weight: 600;
+}
+.study-nav__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: stretch;
+}
+/* One line, wide enough for three digits at any text size. */
+.study-nav__number {
+  flex: 0 1 8rem;
+  width: 8rem;
+  min-height: max(56px, 3.1111rem);
+}
+.study-list__search {
+  min-height: max(56px, 3.1111rem);
+}
+
+/* The question list: a full-height sheet on a phone, the shell's width on a larger screen. */
+.study-list {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: min(100vw, var(--shell-max));
+  height: 100dvh;
+  max-height: 100dvh;
+  margin: 0 auto;
+  padding: var(--space-3) var(--gutter) var(--space-6);
+  border: 0;
+  background: var(--bg);
+  color: var(--ink);
+  overflow-y: auto;
+}
+.study-list[open] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.study-list::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+.study-list__bar {
+  display: flex;
+  justify-content: flex-end;
+}
+.study-list__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-tight);
+}
+.study-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* A row: the number and the question, left aligned, wrapping, at least 56px high. */
+.study-list__row {
+  display: block;
+  width: 100%;
+  min-height: max(56px, 3.1111rem);
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  line-height: var(--lh-snug);
+  text-align: left;
+  cursor: pointer;
+}
+.study-list__row:hover {
+  border-color: var(--accent);
+}
+.study-list__row:focus-visible {
+  outline: var(--focus-width) solid var(--focus-color);
+  outline-offset: var(--focus-offset);
+}
+/* The question shown now: a frame and the word-free marker of aria-current (not colour alone: the frame is thicker). */
+.study-list__row[aria-current="true"] {
+  border-color: var(--accent);
+  border-width: 3px;
+  background: var(--surface-2);
+}
+.study-list__number {
+  font-weight: 700;
+}
