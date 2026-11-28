@@ -416,6 +416,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `picture.zoom.hint` | Tap the picture to see it larger | 그림을 누르면 크게 볼 수 있습니다 |
 | `picture.zoom.label` | See the picture larger | 그림 크게 보기 |
 | `picture.zoom.close` | Close | 닫기 |
+| `study.mode.legend` | How do you want to study? | 어떻게 공부하시겠어요? |
+| `study.mode.see` | See the answers | 정답 보기 |
+| `study.mode.test` | Test myself | 스스로 확인하기 |
+| `study.check` | Check | 확인 |
+| `study.tryAgain` | Try again | 다시 해 보기 |
+| `study.list.open` | Question list | 질문 목록 |
+| `study.list.search` | Find a question | 질문 찾기 |
+| `study.list.none` | No question matches | 맞는 질문이 없습니다 |
+| `study.list.close` | Close | 닫기 |
+| `study.go.label` | Go to question number | 질문 번호로 이동 |
+| `study.go.submit` | Go | 이동 |
+| `study.go.invalid` | Type a number from 1 to {total}. | 1부터 {total}까지의 숫자를 입력하세요. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

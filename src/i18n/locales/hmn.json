@@ -397,5 +397,17 @@
   "audio.aiVoice.officer3": "Lub suab AI tsim · Tus neeg ua haujlwm 3 (poj niam lub suab)",
   "picture.zoom.hint": "Nias daim duab kom pom loj dua",
   "picture.zoom.label": "Saib daim duab loj dua",
-  "picture.zoom.close": "Kaw"
+  "picture.zoom.close": "Kaw",
+  "study.mode.legend": "Koj xav kawm li cas?",
+  "study.mode.see": "Saib cov lus teb",
+  "study.mode.test": "Sim kuv tus kheej",
+  "study.check": "Kuaj xyuas",
+  "study.tryAgain": "Sim dua",
+  "study.list.open": "Cov lus nug",
+  "study.list.search": "Nrhiav ib lo lus nug",
+  "study.list.none": "Tsis muaj lo lus nug twg zoo li ntawd",
+  "study.list.close": "Kaw",
+  "study.go.label": "Mus rau lo lus nug zaj",
+  "study.go.submit": "Mus",
+  "study.go.invalid": "Ntaus ib tus lej txij 1 txog {total}."
 }

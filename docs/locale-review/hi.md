@@ -416,3 +416,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `picture.zoom.hint` | Tap the picture to see it larger | बड़ा देखने के लिए चित्र पर टैप करें |
 | `picture.zoom.label` | See the picture larger | चित्र बड़ा देखें |
 | `picture.zoom.close` | Close | बंद करें |
+| `study.mode.legend` | How do you want to study? | आप कैसे पढ़ना चाहते हैं? |
+| `study.mode.see` | See the answers | उत्तर देखें |
+| `study.mode.test` | Test myself | खुद को परखें |
+| `study.check` | Check | जाँचें |
+| `study.tryAgain` | Try again | फिर से कोशिश करें |
+| `study.list.open` | Question list | प्रश्नों की सूची |
+| `study.list.search` | Find a question | प्रश्न खोजें |
+| `study.list.none` | No question matches | कोई प्रश्न मेल नहीं खाता |
+| `study.list.close` | Close | बंद करें |
+| `study.go.label` | Go to question number | प्रश्न संख्या पर जाएँ |
+| `study.go.submit` | Go | जाएँ |
+| `study.go.invalid` | Type a number from 1 to {total}. | 1 से {total} तक की कोई संख्या लिखें। |

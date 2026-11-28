@@ -397,5 +397,17 @@
   "audio.aiVoice.officer3": "Giọng do AI tạo · Viên chức 3 (giọng nữ)",
   "picture.zoom.hint": "Bấm vào hình để xem lớn",
   "picture.zoom.label": "Xem hình lớn",
-  "picture.zoom.close": "Đóng"
+  "picture.zoom.close": "Đóng",
+  "study.mode.legend": "Bạn muốn học thế nào?",
+  "study.mode.see": "Xem đáp án",
+  "study.mode.test": "Tự kiểm tra",
+  "study.check": "Kiểm tra",
+  "study.tryAgain": "Thử lại",
+  "study.list.open": "Danh sách câu hỏi",
+  "study.list.search": "Tìm câu hỏi",
+  "study.list.none": "Không có câu hỏi nào khớp",
+  "study.list.close": "Đóng",
+  "study.go.label": "Đến câu số",
+  "study.go.submit": "Đến",
+  "study.go.invalid": "Hãy nhập một số từ 1 đến {total}."
 }

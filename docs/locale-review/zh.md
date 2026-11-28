@@ -416,3 +416,15 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `picture.zoom.hint` | Tap the picture to see it larger | 點一下圖片可以放大查看 |
 | `picture.zoom.label` | See the picture larger | 放大查看圖片 |
 | `picture.zoom.close` | Close | 關閉 |
+| `study.mode.legend` | How do you want to study? | 您想怎麼學習？ |
+| `study.mode.see` | See the answers | 看答案 |
+| `study.mode.test` | Test myself | 自我測驗 |
+| `study.check` | Check | 檢查 |
+| `study.tryAgain` | Try again | 再試一次 |
+| `study.list.open` | Question list | 問題清單 |
+| `study.list.search` | Find a question | 尋找問題 |
+| `study.list.none` | No question matches | 沒有符合的問題 |
+| `study.list.close` | Close | 關閉 |
+| `study.go.label` | Go to question number | 前往第幾題 |
+| `study.go.submit` | Go | 前往 |
+| `study.go.invalid` | Type a number from 1 to {total}. | 請輸入 1 到 {total} 之間的數字。 |

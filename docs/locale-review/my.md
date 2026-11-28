@@ -416,6 +416,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `picture.zoom.hint` | Tap the picture to see it larger | ပုံကို ပိုကြီးကြီး ကြည့်ရန် နှိပ်ပါ |
 | `picture.zoom.label` | See the picture larger | ပုံကို ပိုကြီးကြီး ကြည့်ရန် |
 | `picture.zoom.close` | Close | ပိတ်ရန် |
+| `study.mode.legend` | How do you want to study? | ဘယ်လို လေ့လာချင်ပါသလဲ။ |
+| `study.mode.see` | See the answers | အဖြေများကို ကြည့်ရန် |
+| `study.mode.test` | Test myself | ကိုယ့်ကိုယ်ကို စစ်ဆေးရန် |
+| `study.check` | Check | စစ်ဆေးရန် |
+| `study.tryAgain` | Try again | ထပ်စမ်းကြည့်ရန် |
+| `study.list.open` | Question list | မေးခွန်းစာရင်း |
+| `study.list.search` | Find a question | မေးခွန်း ရှာရန် |
+| `study.list.none` | No question matches | ကိုက်ညီသော မေးခွန်း မရှိပါ |
+| `study.list.close` | Close | ပိတ်ရန် |
+| `study.go.label` | Go to question number | မေးခွန်း နံပါတ်သို့ သွားရန် |
+| `study.go.submit` | Go | သွားရန် |
+| `study.go.invalid` | Type a number from 1 to {total}. | 1 မှ {total} အထိ နံပါတ်တစ်ခု ရိုက်ထည့်ပါ။ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

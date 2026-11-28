@@ -397,5 +397,17 @@
   "audio.aiVoice.officer3": "AI से बनी आवाज़ · अधिकारी 3 (महिला की आवाज़)",
   "picture.zoom.hint": "बड़ा देखने के लिए चित्र पर टैप करें",
   "picture.zoom.label": "चित्र बड़ा देखें",
-  "picture.zoom.close": "बंद करें"
+  "picture.zoom.close": "बंद करें",
+  "study.mode.legend": "आप कैसे पढ़ना चाहते हैं?",
+  "study.mode.see": "उत्तर देखें",
+  "study.mode.test": "खुद को परखें",
+  "study.check": "जाँचें",
+  "study.tryAgain": "फिर से कोशिश करें",
+  "study.list.open": "प्रश्नों की सूची",
+  "study.list.search": "प्रश्न खोजें",
+  "study.list.none": "कोई प्रश्न मेल नहीं खाता",
+  "study.list.close": "बंद करें",
+  "study.go.label": "प्रश्न संख्या पर जाएँ",
+  "study.go.submit": "जाएँ",
+  "study.go.invalid": "1 से {total} तक की कोई संख्या लिखें।"
 }

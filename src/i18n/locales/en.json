@@ -390,5 +390,17 @@
   "audio.aiVoice.officer3": "AI-generated voice · Officer 3 (female voice)",
   "picture.zoom.hint": "Tap the picture to see it larger",
   "picture.zoom.label": "See the picture larger",
-  "picture.zoom.close": "Close"
+  "picture.zoom.close": "Close",
+  "study.mode.legend": "How do you want to study?",
+  "study.mode.see": "See the answers",
+  "study.mode.test": "Test myself",
+  "study.check": "Check",
+  "study.tryAgain": "Try again",
+  "study.list.open": "Question list",
+  "study.list.search": "Find a question",
+  "study.list.none": "No question matches",
+  "study.list.close": "Close",
+  "study.go.label": "Go to question number",
+  "study.go.submit": "Go",
+  "study.go.invalid": "Type a number from 1 to {total}."
 }

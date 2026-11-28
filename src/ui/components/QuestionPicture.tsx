@@ -16,22 +16,17 @@
  * adds one history entry when it opens and takes it away again when it closes, so the section's
  * own Back handling (src/ui/section-history.ts) is not disturbed. Pinch-zoom is never blocked.
  */
-import { useCallback, useEffect, useId, useRef, type ReactNode } from "react";
+import { useId, type ReactNode } from "react";
 import { illustrationUrl, type IllustrationEntry } from "../../engine/illustrations";
 import { pictureUrl, type PictureEntry } from "../../engine/question-images";
 import { useT } from "../../i18n/react";
 import { MagnifierIcon } from "./icons";
 import { LegalText } from "./LegalText";
+import { useModalDialog } from "./use-modal-dialog";
 import "./QuestionPicture.css";
 
-/**
- * The history entry of an open picture. It also carries the section flag, so a reload while the
- * picture is open is cleaned up like any section entry, and section-history ignores the Back that
- * leaves it (that Back lands on the section entry).
- */
+/** The history entry of an open picture (with the section flag: see use-modal-dialog.ts). */
 const PICTURE_STATE = { languageLabSection: true, languageLabPicture: true } as const;
-/** On <html> while a picture is open: the page behind does not scroll. */
-const OPEN_CLASS = "ll-picture-open";
 
 interface ZoomablePictureProps {
   src: string;
@@ -48,81 +43,19 @@ interface ZoomablePictureProps {
 
 function ZoomablePicture({ src, alt, width, height, altLang, figureClass, caption }: ZoomablePictureProps) {
   const t = useT();
-  const dialogRef = useRef<HTMLDialogElement>(null);
-  const openerRef = useRef<HTMLButtonElement>(null);
-  const closeRef = useRef<HTMLButtonElement>(null);
-  /** True while this picture's history entry is in the history. */
-  const entry = useRef(false);
+  const { dialogRef, closeRef, open, close, onDialogClick } = useModalDialog(PICTURE_STATE);
   const captionId = useId();
   const dialogCaptionId = useId();
-
-  const onPop = useCallback(() => {
-    // Back: the browser has already taken the entry away.
-    entry.current = false;
-    dialogRef.current?.close();
-  }, []);
-
-  /** Runs on every way out (Close, Esc, the backdrop, Back): one place undoes everything open() did. */
-  const onClosed = useCallback(() => {
-    window.removeEventListener("popstate", onPop);
-    document.documentElement.classList.remove(OPEN_CLASS);
-    if (entry.current) {
-      entry.current = false;
-      // The popstate this causes lands on the section entry, which section-history ignores.
-      window.history.back();
-    }
-    openerRef.current?.focus();
-  }, [onPop]);
-
-  useEffect(() => {
-    const dialog = dialogRef.current;
-    if (dialog === null) return;
-    dialog.addEventListener("close", onClosed);
-    return () => {
-      dialog.removeEventListener("close", onClosed);
-      // Unmounted while open (the screen changed): leave no entry and no lock behind.
-      window.removeEventListener("popstate", onPop);
-      document.documentElement.classList.remove(OPEN_CLASS);
-      if (entry.current) {
-        entry.current = false;
-        window.history.back();
-      }
-    };
-  }, [onClosed, onPop]);
-
-  const open = () => {
-    const dialog = dialogRef.current;
-    if (dialog === null || dialog.open) return;
-    if (typeof dialog.showModal === "function") dialog.showModal();
-    else dialog.setAttribute("open", "");
-    document.documentElement.classList.add(OPEN_CLASS);
-    window.history.pushState(PICTURE_STATE, "");
-    entry.current = true;
-    window.addEventListener("popstate", onPop);
-    closeRef.current?.focus();
-  };
-
-  const close = () => {
-    const dialog = dialogRef.current;
-    if (dialog === null) return;
-    if (typeof dialog.close === "function" && typeof dialog.showModal === "function") dialog.close();
-    else {
-      // Browsers without <dialog> support: close by hand and run the same clean-up.
-      dialog.removeAttribute("open");
-      onClosed();
-    }
-  };
 
   return (
     <figure className={figureClass === undefined ? "question-picture" : `question-picture ${figureClass}`}>
       <button
-        ref={openerRef}
         type="button"
         className="question-picture__button"
         aria-label={t("picture.zoom.label")}
         aria-describedby={captionId}
         aria-haspopup="dialog"
-        onClick={open}
+        onClick={(event) => open(event.currentTarget)}
       >
         <img
           className="question-picture__image"
@@ -149,12 +82,10 @@ function ZoomablePicture({ src, alt, width, height, altLang, figureClass, captio
         className="picture-dialog"
         aria-labelledby={dialogCaptionId}
         // A tap outside the picture and its caption (the dark backdrop) closes it.
-        onClick={(event) => {
-          if (event.target === event.currentTarget) close();
-        }}
+        onClick={onDialogClick}
       >
         <div className="picture-dialog__bar">
-          <button ref={closeRef} type="button" className="btn btn--primary picture-dialog__close" onClick={close}>
+          <button ref={closeRef} type="button" className="btn btn--primary picture-dialog__close" onClick={() => close()}>
             {t("picture.zoom.close")}
           </button>
         </div>

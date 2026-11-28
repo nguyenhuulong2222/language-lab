@@ -397,5 +397,17 @@
   "audio.aiVoice.officer3": "Голос создан ИИ · Сотрудник 3 (женский голос)",
   "picture.zoom.hint": "Нажмите на картинку, чтобы увеличить её",
   "picture.zoom.label": "Посмотреть картинку крупнее",
-  "picture.zoom.close": "Закрыть"
+  "picture.zoom.close": "Закрыть",
+  "study.mode.legend": "Как вы хотите заниматься?",
+  "study.mode.see": "Смотреть ответы",
+  "study.mode.test": "Проверить себя",
+  "study.check": "Проверить",
+  "study.tryAgain": "Попробовать снова",
+  "study.list.open": "Список вопросов",
+  "study.list.search": "Найти вопрос",
+  "study.list.none": "Нет подходящих вопросов",
+  "study.list.close": "Закрыть",
+  "study.go.label": "Перейти к вопросу номер",
+  "study.go.submit": "Перейти",
+  "study.go.invalid": "Введите число от 1 до {total}."
 }

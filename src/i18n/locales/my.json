@@ -397,5 +397,17 @@
   "audio.aiVoice.officer3": "AI ဖန်တီးသောအသံ · အရာရှိ 3 (အမျိုးသမီးအသံ)",
   "picture.zoom.hint": "ပုံကို ပိုကြီးကြီး ကြည့်ရန် နှိပ်ပါ",
   "picture.zoom.label": "ပုံကို ပိုကြီးကြီး ကြည့်ရန်",
-  "picture.zoom.close": "ပိတ်ရန်"
+  "picture.zoom.close": "ပိတ်ရန်",
+  "study.mode.legend": "ဘယ်လို လေ့လာချင်ပါသလဲ။",
+  "study.mode.see": "အဖြေများကို ကြည့်ရန်",
+  "study.mode.test": "ကိုယ့်ကိုယ်ကို စစ်ဆေးရန်",
+  "study.check": "စစ်ဆေးရန်",
+  "study.tryAgain": "ထပ်စမ်းကြည့်ရန်",
+  "study.list.open": "မေးခွန်းစာရင်း",
+  "study.list.search": "မေးခွန်း ရှာရန်",
+  "study.list.none": "ကိုက်ညီသော မေးခွန်း မရှိပါ",
+  "study.list.close": "ပိတ်ရန်",
+  "study.go.label": "မေးခွန်း နံပါတ်သို့ သွားရန်",
+  "study.go.submit": "သွားရန်",
+  "study.go.invalid": "1 မှ {total} အထိ နံပါတ်တစ်ခု ရိုက်ထည့်ပါ။"
 }

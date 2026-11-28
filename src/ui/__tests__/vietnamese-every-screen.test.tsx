@@ -27,6 +27,15 @@ beforeAll(async () => {
   );
 });
 beforeEach(() => {
+  // jsdom has no modal dialogs (the Study question list, the full-screen picture).
+  HTMLDialogElement.prototype.showModal = function (this: HTMLDialogElement) {
+    this.setAttribute("open", "");
+  };
+  HTMLDialogElement.prototype.close = function (this: HTMLDialogElement) {
+    if (!this.hasAttribute("open")) return;
+    this.removeAttribute("open");
+    this.dispatchEvent(new Event("close"));
+  };
   vi.stubGlobal("fetch", vi.fn(async () => new Response("{}", { status: 500 })));
   vi.stubGlobal("speechSynthesis", { cancel() {}, speak() {}, pause() {}, resume() {}, getVoices: () => [], addEventListener() {}, removeEventListener() {} });
   vi.stubGlobal("SpeechSynthesisUtterance", class { constructor(public text: string) {} });
@@ -101,6 +110,23 @@ describe("every screen in Vietnamese has no English interface line (Q4)", () => 
     fireEvent.click(await find(VI["study.version.2025"]));
     await find(VI["civics.next"]);
     expectVietnamese("study question");
+    // The question list (open, then filtered to nothing), "Go to question number" with a wrong number.
+    fireEvent.click(button(VI["study.list.open"]));
+    expectVietnamese("study question list");
+    fireEvent.change(screen.getByLabelText(VI["study.list.search"]), { target: { value: "zzzz" } });
+    expectVietnamese("study question list, no match");
+    fireEvent.click(document.querySelector<HTMLButtonElement>("dialog.study-list .study-list__close")!);
+    fireEvent.change(screen.getByLabelText(VI["study.go.label"]), { target: { value: "0" } });
+    fireEvent.click(button(VI["study.go.submit"]));
+    expectVietnamese("study go to a wrong number");
+    // Test myself: before and after Check.
+    fireEvent.click(screen.getByLabelText(VI["study.mode.test"]));
+    expectVietnamese("study test myself");
+    fireEvent.change(document.querySelector("textarea")!, { target: { value: "wrong words here" } });
+    fireEvent.click(button(VI["study.check"]));
+    await screen.findByRole("heading", { name: VI["civics.notYet"] });
+    expectVietnamese("study test myself, checked");
+    fireEvent.click(screen.getByLabelText(VI["study.mode.see"]));
     await leave();
 
     // Practice test: setup, the coach choice and notice, an N-400 question and the summary
@@ -153,6 +179,6 @@ describe("every screen in Vietnamese has no English interface line (Q4)", () => 
     expectVietnamese("civics result");
     await leave();
 
-    expect(checked.length).toBe(19);
+    expect(checked.length).toBe(24);
   }, 60000);
 });

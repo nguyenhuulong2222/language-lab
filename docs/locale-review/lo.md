@@ -416,6 +416,18 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `picture.zoom.hint` | Tap the picture to see it larger | ແຕະທີ່ຮູບເພື່ອເບິ່ງໃຫຍ່ຂຶ້ນ |
 | `picture.zoom.label` | See the picture larger | ເບິ່ງຮູບໃຫຍ່ຂຶ້ນ |
 | `picture.zoom.close` | Close | ປິດ |
+| `study.mode.legend` | How do you want to study? | ທ່ານຢາກຮຽນແບບໃດ? |
+| `study.mode.see` | See the answers | ເບິ່ງຄຳຕອບ |
+| `study.mode.test` | Test myself | ທົດສອບຕົນເອງ |
+| `study.check` | Check | ກວດ |
+| `study.tryAgain` | Try again | ລອງອີກຄັ້ງ |
+| `study.list.open` | Question list | ລາຍການຄຳຖາມ |
+| `study.list.search` | Find a question | ຊອກຫາຄຳຖາມ |
+| `study.list.none` | No question matches | ບໍ່ມີຄຳຖາມທີ່ກົງກັນ |
+| `study.list.close` | Close | ປິດ |
+| `study.go.label` | Go to question number | ໄປທີ່ຄຳຖາມຂໍ້ |
+| `study.go.submit` | Go | ໄປ |
+| `study.go.invalid` | Type a number from 1 to {total}. | ພິມຕົວເລກຕັ້ງແຕ່ 1 ຫາ {total}. |
 
 ## Lines marked ⚠ (meaning differs a little)
 
