@@ -386,6 +386,24 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | Cov duab kos lub tswv yim no yog ib tug qauv duab AI ua los ntawm cov lus qhia uas sau rau Language Lab. Lawv tsis qhia neeg, xwm txheej los yog ntaub ntawv tiag. Tus tswv tau saib txhua daim ua ntej muab tso tawm. |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | Ua nrog tus qauv AI {model} rau {date}. |
 | `credits.photos.title` | Photos, prints and documents | Duab thaij, duab luam thiab ntaub ntawv |
+| `intro.profile.own.title` | Use my name | Siv kuv lub npe |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | Xyaum hais thiab sau koj lub npe tiag |
+| `intro.ownName.label` | Full name | Npe tag nrho |
+| `intro.ownName.error.empty` | Type your full name to continue. | Ntaus koj lub npe tag nrho kom mus ntxiv. |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | Siv tsis pub tshaj {max} tus ntawv. |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | Siv cov tsiaj ntawv, qhov chaw, kab nruab nrab (-) thiab (') xwb. |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. Reloading the page clears it. | Koj lub npe tsuas siv rau ntawm lub cuab yeej no xwb, rau qhov kev xyaum no. Tsis muab khaws cia, thiab Language Lab tsis xa mus qhov twg li. Thaum koj rov qhib nplooj ntawv no, nws yuav ploj lawm. |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | Tus neeg ua haujlwm yuav nug cov lus nug zoo li no txog koj daim ntawv. Siv koj tus kheej lub npe. Rau lwm cov lus nug, teb raws li tus qauv. Feem no tsis muaj qhab nia. |
+| `n400.sample.labelOwn` | Sample answer with your name | Lus teb qauv nrog koj lub npe |
+| `n400.spell.label` | How each part of your name is spelled | Yuav sau txhua feem ntawm koj lub npe li cas |
+| `n400.sampleProfile.badge` | Sample profile | Tus qauv |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | Lus teb qauv rau {name} |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | Ntawm no tsuas yog lub npe xwb thiaj yog koj li. Lo lus teb no thiab lwm yam yog los ntawm tus qauv, tsis yog koj lub neej tiag. Thaum xam phaj tiag, koj yuav tsum teb qhov tseeb txog koj lub neej. |
+| `n400.yourAnswer.own` | Your answer | Koj lo lus teb |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | Tsuas siv koj lub npe thaum lo lus nug nug txog nws xwb. Tsis txhob ntaus koj qhov chaw nyob, hnub tim lossis tus lej tiag. |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | Thaum xyaum, tsis txhob hais koj tus A-number, tus lej Social Security lossis tus lej green card tiag. |
+| `coach.kind.ownName` | your name | koj lub npe |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Lo lus teb no tsis tau xa mus rau tus kws qhia AI, kom koj lub npe nyob ntawm lub cuab yeej no xwb. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

@@ -23,6 +23,7 @@ const KIND_KEY: Record<IdentifierKind, MessageKey> = {
   "date-of-birth": "coach.kind.dateOfBirth",
   "street-address": "coach.kind.streetAddress",
   "zip-code": "coach.kind.zipCode",
+  "own-name": "coach.kind.ownName",
 };
 const FEEDBACK_KEY = {
   understood: "coach.feedback.understood",
@@ -70,6 +71,12 @@ export function CoachFeedback({ step, onNext }: { step: CoachStep; onNext: () =>
           </p>
           <p className="note">{t("coach.poweredBy")}</p>
         </>
+      );
+    } else if (r.kind === "screened" && r.found === "own-name") {
+      body = (
+        <p className="status status--attention">
+          <ReviewIcon className="icon-inline icon-inline--attention" /> <LegalText messageKey="coach.screened.ownName" />
+        </p>
       );
     } else if (r.kind === "screened") {
       // The kind is put into a legal line: in English when that line is English only.

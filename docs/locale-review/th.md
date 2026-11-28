@@ -386,6 +386,24 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | ภาพประกอบแนวคิดเหล่านี้สร้างโดยโมเดลภาพ AI จากคำสั่งที่เขียนขึ้นสำหรับ Language Lab ภาพไม่ได้แสดงบุคคล เหตุการณ์ หรือเอกสารจริง เจ้าของได้ดูทุกภาพก่อนนำมาแสดง |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | สร้างด้วยโมเดล AI {model} เมื่อ {date} |
 | `credits.photos.title` | Photos, prints and documents | ภาพถ่าย ภาพพิมพ์ และเอกสาร |
+| `intro.profile.own.title` | Use my name | ใช้ชื่อของฉัน |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | ฝึกพูดและสะกดชื่อจริงของคุณ |
+| `intro.ownName.label` | Full name | ชื่อ-นามสกุล |
+| `intro.ownName.error.empty` | Type your full name to continue. | พิมพ์ชื่อ-นามสกุลของคุณเพื่อดำเนินการต่อ |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | ไม่เกิน {max} ตัวอักษร |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | ใช้ได้เฉพาะตัวอักษร ช่องว่าง ขีดกลาง (-) และอะพอสทรอฟี (') |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. Reloading the page clears it. | ชื่อของคุณใช้เฉพาะบนอุปกรณ์นี้สำหรับการฝึกครั้งนี้ ไม่มีการบันทึก และ Language Lab ไม่ส่งชื่อไปที่ใดเลย เมื่อโหลดหน้าใหม่ชื่อจะหายไป |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | เจ้าหน้าที่อาจถามคำถามแบบนี้เกี่ยวกับแบบฟอร์มของคุณ ใช้ชื่อของคุณเอง สำหรับคำถามอื่น ให้ตอบตามโปรไฟล์ตัวอย่าง ส่วนนี้ไม่มีคะแนน |
+| `n400.sample.labelOwn` | Sample answer with your name | คำตอบตัวอย่างที่มีชื่อของคุณ |
+| `n400.spell.label` | How each part of your name is spelled | การสะกดแต่ละส่วนของชื่อคุณ |
+| `n400.sampleProfile.badge` | Sample profile | โปรไฟล์ตัวอย่าง |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | คำตอบตัวอย่างของ {name} |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | ที่นี่มีเพียงชื่อที่เป็นของคุณ คำตอบนี้และรายละเอียดอื่นมาจากโปรไฟล์ตัวอย่าง ไม่ใช่ชีวิตจริงของคุณ ในการสัมภาษณ์จริง คุณต้องตอบตามความจริงเกี่ยวกับชีวิตของคุณเอง |
+| `n400.yourAnswer.own` | Your answer | คำตอบของคุณ |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | ใช้ชื่อของคุณเฉพาะเมื่อคำถามถามถึงชื่อ อย่าพิมพ์ที่อยู่ วันที่ หรือหมายเลขจริงของคุณ |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | เมื่อฝึก อย่าพูด A-number หมายเลขประกันสังคม หรือหมายเลขกรีนการ์ดจริง |
+| `coach.kind.ownName` | your name | ชื่อของคุณ |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | คำตอบนี้ไม่ได้ส่งไปยังโค้ช AI เพื่อให้ชื่อของคุณอยู่บนอุปกรณ์นี้เท่านั้น |
 
 ## Lines marked ⚠ (meaning differs a little)
 

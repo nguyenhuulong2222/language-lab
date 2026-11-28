@@ -386,3 +386,21 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | 這些表達概念的插圖，是 AI 圖像模型根據為 Language Lab 撰寫的提示所製作。圖中沒有真實的人物、事件或文件。負責人在每張插圖顯示前都看過。 |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | 於 {date} 由 AI 模型 {model} 製作。 |
 | `credits.photos.title` | Photos, prints and documents | 照片、版畫與文件 |
+| `intro.profile.own.title` | Use my name | 使用我的名字 |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | 練習說出並拼出您的真實姓名 |
+| `intro.ownName.label` | Full name | 全名 |
+| `intro.ownName.error.empty` | Type your full name to continue. | 請輸入您的全名以繼續。 |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | 最多 {max} 個字元。 |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | 只能使用字母、空格、連字號 (-) 和撇號 (')。 |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. Reloading the page clears it. | 您的名字只在這部裝置上用於這次練習。它不會被儲存，Language Lab 也不會把它傳送到任何地方。重新載入頁面後就會清除。 |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | 官員可能會就您的表格問類似的問題。請用您自己的名字。其他問題請以範例資料的身分回答。這部分不計分。 |
+| `n400.sample.labelOwn` | Sample answer with your name | 含您名字的範例回答 |
+| `n400.spell.label` | How each part of your name is spelled | 您名字每個部分的拼法 |
+| `n400.sampleProfile.badge` | Sample profile | 範例資料 |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | {name} 的範例回答 |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | 這裡只有名字是您的。這個回答和其他細節都來自範例資料，不是您的真實生活。在真正的面談中，您必須如實回答關於自己生活的問題。 |
+| `n400.yourAnswer.own` | Your answer | 您的回答 |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | 只有在問題問到名字時才說您的名字。不要輸入您真實的地址、日期或號碼。 |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | 練習時不要說出真實的 A-number、社會安全號碼或綠卡號碼。 |
+| `coach.kind.ownName` | your name | 您的名字 |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | 這個回答沒有傳送給 AI 教練，讓您的名字只留在這部裝置上。 |

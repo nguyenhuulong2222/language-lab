@@ -386,6 +386,24 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | Ang mga larawang ito ng mga ideya ay ginawa ng isang AI image model mula sa mga prompt na isinulat para sa Language Lab. Hindi sila nagpapakita ng totoong tao, pangyayari o dokumento. Tiningnan ng may-ari ang bawat isa bago ito ipinakita. |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | Ginawa gamit ang AI model na {model} noong {date}. |
 | `credits.photos.title` | Photos, prints and documents | Mga larawan, limbag at dokumento |
+| `intro.profile.own.title` | Use my name | Gamitin ang pangalan ko |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | Magsanay sa pagsabi at pagbaybay ng tunay mong pangalan |
+| `intro.ownName.label` | Full name | Buong pangalan |
+| `intro.ownName.error.empty` | Type your full name to continue. | I-type ang buong pangalan mo para magpatuloy. |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | Gumamit ng {max} na character o mas kaunti. |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | Gumamit lang ng mga titik, espasyo, gitling (-) at kudlit ('). |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. Reloading the page clears it. | Sa device na ito lang at sa pagsasanay na ito lang ginagamit ang pangalan mo. Hindi ito sine-save, at hindi ito ipinapadala ng Language Lab kahit saan. Mabubura ito kapag ni-reload ang page. |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | Maaaring magtanong ang opisyal ng ganitong mga tanong tungkol sa form mo. Gamitin ang sarili mong pangalan. Sa ibang tanong, sumagot bilang ang halimbawang profile. Walang marka ang bahaging ito. |
+| `n400.sample.labelOwn` | Sample answer with your name | Halimbawang sagot gamit ang pangalan mo |
+| `n400.spell.label` | How each part of your name is spelled | Paano binabaybay ang bawat bahagi ng pangalan mo |
+| `n400.sampleProfile.badge` | Sample profile | Halimbawang profile |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | Halimbawang sagot para kay {name} |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | Ang pangalan lang dito ang sa iyo. Ang sagot na ito at ang ibang detalye ay mula sa halimbawang profile, hindi sa tunay mong buhay. Sa tunay mong interview, kailangan mong sumagot nang totoo tungkol sa sarili mong buhay. |
+| `n400.yourAnswer.own` | Your answer | Ang sagot mo |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | Gamitin lang ang pangalan mo kapag hinihingi ito ng tanong. Huwag i-type ang tunay mong address, petsa o numero. |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | Huwag sabihin ang tunay na A-number, Social Security number o green card number kapag nagsasanay. |
+| `coach.kind.ownName` | your name | ang pangalan mo |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Hindi ipinadala ang sagot na ito sa AI coach, para manatili ang pangalan mo sa device na ito. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

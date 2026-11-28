@@ -386,3 +386,21 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | विचारों के ये चित्र Language Lab के लिए लिखे गए निर्देशों से एक AI इमेज मॉडल ने बनाए हैं। इनमें असली लोग, घटनाएँ या दस्तावेज़ नहीं दिखाए गए हैं। दिखाने से पहले मालिक ने हर चित्र देखा। |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | {date} को AI मॉडल {model} से बनाया गया। |
 | `credits.photos.title` | Photos, prints and documents | फ़ोटो, छापे और दस्तावेज़ |
+| `intro.profile.own.title` | Use my name | मेरा नाम इस्तेमाल करें |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | अपना असली नाम बोलने और उसकी स्पेलिंग बताने का अभ्यास करें |
+| `intro.ownName.label` | Full name | पूरा नाम |
+| `intro.ownName.error.empty` | Type your full name to continue. | आगे बढ़ने के लिए अपना पूरा नाम लिखें। |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | {max} या उससे कम अक्षर इस्तेमाल करें। |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | केवल अक्षर, स्पेस, हाइफ़न (-) और एपॉस्ट्रॉफ़ी (') इस्तेमाल करें। |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. Reloading the page clears it. | आपका नाम सिर्फ़ इसी डिवाइस पर, इसी अभ्यास के लिए इस्तेमाल होता है। इसे सहेजा नहीं जाता, और Language Lab इसे कहीं नहीं भेजता। पेज दोबारा लोड करने पर यह मिट जाता है। |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | अधिकारी आपके फ़ॉर्म के बारे में ऐसे सवाल पूछ सकते हैं। अपना नाम इस्तेमाल करें। बाकी सवालों के जवाब नमूना प्रोफ़ाइल की तरह दें। इस भाग में कोई अंक नहीं मिलते। |
+| `n400.sample.labelOwn` | Sample answer with your name | आपके नाम के साथ नमूना जवाब |
+| `n400.spell.label` | How each part of your name is spelled | आपके नाम के हर हिस्से की स्पेलिंग |
+| `n400.sampleProfile.badge` | Sample profile | नमूना प्रोफ़ाइल |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | {name} का नमूना जवाब |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | यहाँ सिर्फ़ नाम आपका है। यह जवाब और बाकी जानकारी नमूना प्रोफ़ाइल से है, आपकी असली ज़िंदगी से नहीं। असली इंटरव्यू में आपको अपनी ज़िंदगी के बारे में सच-सच जवाब देना होगा। |
+| `n400.yourAnswer.own` | Your answer | आपका जवाब |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | अपना नाम तभी बताएँ जब सवाल में पूछा जाए। अपना असली पता, तारीखें या नंबर न लिखें। |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | अभ्यास करते समय असली A-number, सोशल सिक्योरिटी नंबर या ग्रीन कार्ड नंबर न बताएँ। |
+| `coach.kind.ownName` | your name | आपका नाम |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | यह जवाब AI कोच को नहीं भेजा गया, ताकि आपका नाम इसी डिवाइस पर रहे। |

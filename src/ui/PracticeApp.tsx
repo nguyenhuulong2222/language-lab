@@ -9,6 +9,7 @@ import { LegalText } from "./components/LegalText";
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import type { InterviewSession } from "../contracts";
 import { createScriptedN400Coach } from "../engine/n400-coach";
+import { createOwnNameCoach, OWN_NAME_SCRIPT } from "../engine/own-name";
 import {
   civicsVersionFor,
   createDefaultPracticeEnv,
@@ -77,9 +78,13 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
   const [studying, setStudying] = useState(false);
   // "Who is practicing?" on Home: in memory only, used by every card after it.
   const [who, setWho] = useState<Who>("none");
+  // "Use my name" (decisions log S): the learner's own name, in this component's memory only. It is
+  // never put in the engine state, storage, a cookie, the URL or a log, and is gone after a reload.
+  const [ownName, setOwnName] = useState<string | undefined>(undefined);
   const restart = useCallback(() => {
     setRestarts((n) => n + 1);
     setCoachEntry("choice");
+    setOwnName(undefined);
     dispatch({ type: "restart" });
   }, []);
 
@@ -128,6 +133,8 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
         onWho={setWho}
         coachEntry={coachEntry}
         onCoachEntry={setCoachEntry}
+        ownName={ownName}
+        onOwnName={setOwnName}
         now={now}
         seed={seed}
         restart={restart}
@@ -152,6 +159,9 @@ interface ScreenProps {
   /** Default "choice": ask before the first N-400 question. */
   coachEntry?: CoachEntry;
   onCoachEntry?: (entry: CoachEntry) => void;
+  /** "Use my name": the learner's own name, held by PracticeApp in memory. */
+  ownName?: string | undefined;
+  onOwnName?: (name: string | undefined) => void;
   now: () => string;
   seed: () => number;
   restart: () => void;
@@ -170,11 +180,16 @@ export function Screen({
   onWho = () => {},
   coachEntry = "choice",
   onCoachEntry = () => {},
+  ownName,
+  onOwnName = () => {},
   now,
   seed,
   restart,
 }: ScreenProps) {
   const { env } = engine;
+  // With "Use my name", the questions come from the same script with the name put in on this device.
+  const n400Coach = useMemo(() => (ownName === undefined ? coach : createOwnNameCoach(coach, ownName)), [coach, ownName]);
+  const ownNameOffered = env.content.profiles.some((p) => p.id === OWN_NAME_SCRIPT.baseProfileId);
   // The 65/20 practice, when this build offers it (verified rules and the designated list).
   const specialRules = specialConsiderationOffered(env) ? env.specialRules!() : null;
 
@@ -211,7 +226,10 @@ export function Screen({
           needs={modeNeeds(state.mode ?? "full")}
           {...(modeHasCivics(state.mode ?? "full") ? { exceptions: { initial: state.exceptionRequested, special: specialRules } } : {})}
           focusOnFirstRender
-          onStart={(choice) => {
+          {...(ownNameOffered ? { ownNameBaseProfileId: OWN_NAME_SCRIPT.baseProfileId } : {})}
+          onStart={({ ownName: name, ...choice }) => {
+            // The name stays here, in memory: the engine only gets the sample profile's id.
+            onOwnName(name);
             const go = () => dispatch({ type: "start", ...choice, seed: seed(), at: now() });
             // The answer key and the official answers are fetched when a civics part starts.
             const needsCivics = modeParts(state.mode ?? "full").includes("civics") && choice.filedOn !== undefined;
@@ -229,12 +247,13 @@ export function Screen({
       if (profile === undefined) return null;
       return (
         <N400Screen
-          coach={coach}
+          coach={n400Coach}
           coachTransport={coachTransport}
           coachEntry={coachEntry}
           profile={profile}
           answers={state.n400Answers}
-          total={env.content.n400Questions.length}
+          total={env.content.n400Questions.length + (ownName === undefined ? 0 : 1)}
+          {...(ownName === undefined ? {} : { ownName })}
           onAnswer={(prompt, transcript) =>
             dispatch({ type: "answerN400", questionId: prompt.id, questionText: prompt.text, transcript, at: now() })
           }

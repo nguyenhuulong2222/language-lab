@@ -1,0 +1,12 @@
+{
+  "needsHumanReview": true,
+  "note": "The \"Use my name\" choice (decisions log S, content-safety rule 1 exception). The learner types only their name; it stays in memory on the device and is never sent. Every other answer comes from the sample profile below. {name} is filled in on the device.",
+  "baseProfileId": "fictional-profile-aurora-thistlewood",
+  "greeting": "Hello, {name}. Thank you for coming in today. Please have a seat.",
+  "nameQuestionId": "n400-001",
+  "nameSampleAnswer": "My name is {name}.",
+  "spelling": {
+    "id": "own-name-spell",
+    "text": "Can you spell your last name, please?"
+  }
+}

@@ -386,6 +386,24 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | Các hình minh họa ý tưởng này do một mô hình hình ảnh AI tạo ra từ các yêu cầu viết cho Language Lab. Hình không cho thấy người, sự kiện hay tài liệu có thật. Chủ sở hữu đã xem từng hình trước khi hiển thị. |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | Tạo bằng mô hình AI {model} ngày {date}. |
 | `credits.photos.title` | Photos, prints and documents | Ảnh, tranh in và tài liệu |
+| `intro.profile.own.title` | Use my name | Dùng tên của tôi |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | Luyện nói và đánh vần tên thật của bạn |
+| `intro.ownName.label` | Full name | Họ và tên |
+| `intro.ownName.error.empty` | Type your full name to continue. | Hãy nhập họ và tên để tiếp tục. |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | Tối đa {max} ký tự. |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | Chỉ dùng chữ cái, khoảng trắng, dấu gạch nối (-) và dấu nháy ('). |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. Reloading the page clears it. | Tên chỉ dùng trên máy này cho buổi luyện này và không được lưu lại. Language Lab không gửi tên đi đâu cả. Tải lại trang thì tên sẽ mất. |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | Viên chức có thể hỏi những câu như thế này về đơn của bạn. Hãy dùng tên của chính bạn. Với các câu hỏi khác, hãy trả lời theo hồ sơ mẫu. Phần này không chấm điểm. |
+| `n400.sample.labelOwn` | Sample answer with your name | Câu trả lời mẫu với tên của bạn |
+| `n400.spell.label` | How each part of your name is spelled | Cách đánh vần từng phần tên của bạn |
+| `n400.sampleProfile.badge` | Sample profile | Hồ sơ mẫu |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | Câu trả lời mẫu của {name} |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | Ở đây chỉ có tên là của bạn. Câu trả lời này và các chi tiết khác lấy từ hồ sơ mẫu, không phải thông tin thật của bạn. Trong buổi phỏng vấn thật, bạn phải trả lời trung thực về cuộc sống của chính mình. |
+| `n400.yourAnswer.own` | Your answer | Câu trả lời của bạn |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | Chỉ nói tên của bạn khi câu hỏi hỏi đến tên. Đừng gõ địa chỉ, ngày tháng hay các con số thật. |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | Đừng nói số A (A-number), số an sinh xã hội hay số thẻ xanh thật khi luyện tập. |
+| `coach.kind.ownName` | your name | tên của bạn |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Câu trả lời này không được gửi đến huấn luyện viên AI, để tên của bạn chỉ ở trên máy này. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

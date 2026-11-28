@@ -386,6 +386,24 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | 이 아이디어 그림들은 Language Lab을 위해 작성한 요청문으로 AI 이미지 모델이 만들었습니다. 실제 사람, 사건, 문서를 보여 주지 않습니다. 운영자가 보여 주기 전에 하나하나 확인했습니다. |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | {date}에 AI 모델 {model}(으)로 만들었습니다. |
 | `credits.photos.title` | Photos, prints and documents | 사진, 판화, 문서 |
+| `intro.profile.own.title` | Use my name | 내 이름 사용 |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | 실제 이름을 말하고 철자를 말하는 연습 |
+| `intro.ownName.label` | Full name | 성명 |
+| `intro.ownName.error.empty` | Type your full name to continue. | 계속하려면 성명을 입력하세요. |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | {max}자 이하로 입력하세요. |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | 글자, 띄어쓰기, 하이픈(-), 아포스트로피(')만 사용하세요. |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. Reloading the page clears it. | 이름은 이 기기에서 이번 연습에만 사용됩니다. 저장되지 않으며 Language Lab은 이름을 어디에도 보내지 않습니다. 페이지를 새로 고치면 지워집니다. |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | 심사관은 신청서에 대해 이런 질문을 할 수 있습니다. 본인의 이름을 사용하세요. 다른 질문에는 예시 프로필로 답하세요. 이 부분은 채점하지 않습니다. |
+| `n400.sample.labelOwn` | Sample answer with your name | 내 이름을 넣은 예시 답변 |
+| `n400.spell.label` | How each part of your name is spelled | 이름의 각 부분 철자 |
+| `n400.sampleProfile.badge` | Sample profile | 예시 프로필 |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | {name}의 예시 답변 |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | 여기서는 이름만 본인의 것입니다. 이 답변과 다른 내용은 예시 프로필에서 가져온 것이며 실제 생활이 아닙니다. 실제 면접에서는 본인의 삶에 대해 사실대로 답해야 합니다. |
+| `n400.yourAnswer.own` | Your answer | 내 답변 |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | 질문에서 이름을 물을 때만 이름을 말하세요. 실제 주소, 날짜, 번호는 입력하지 마세요. |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | 연습할 때 실제 A-number, 사회보장번호, 영주권 번호를 말하지 마세요. |
+| `coach.kind.ownName` | your name | 내 이름 |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | 이름이 이 기기에만 남도록 이 답변은 AI 코치에게 보내지 않았습니다. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

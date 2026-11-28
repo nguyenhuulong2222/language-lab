@@ -14,6 +14,13 @@ Never ask users to enter real N-400 data (name, date of birth, address, immigrat
 or any personally identifiable information). No fake government ID numbers (A-numbers or
 otherwise) appear anywhere in mock data or types.
 
+**One narrow exception: the learner's own name.** The user may type their own name to practise
+saying and spelling it ("Use my name"). The name is used only on the device and is never sent
+out: it lives in memory for the session only (no storage, cookie, URL or log), it is spoken only
+by a local device voice, and every request to the AI coach uses the sample profile's name instead.
+Every other detail still comes from a fictional sample profile, and no other real data is asked for.
+See `docs/decisions-log.md` section S.
+
 ## 2. Never Suggest What to Claim
 
 Practice must teach users to answer truthfully from their own real circumstances.

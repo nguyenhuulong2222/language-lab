@@ -24,13 +24,18 @@ interface SpeakButtonProps {
   onFailed?: () => void;
   /** The large 64px player for the main prompt. Default true; false for sample answers. */
   large?: boolean;
+  /** The text holds the learner's own name: only a voice on this device may speak it (see SpokenPrompt.localOnly). */
+  localOnly?: boolean;
 }
 
-export function SpeakButton({ text, clipId, labelKey = "audio.play", onFailed, large = true }: SpeakButtonProps) {
+export function SpeakButton({ text, clipId, labelKey = "audio.play", onFailed, large = true, localOnly = false }: SpeakButtonProps) {
   const t = useT();
   const speaker = useSpeaker();
   const { slowPlayback } = useSettings();
-  const prompt = useMemo(() => (clipId === undefined ? { text } : { text, clipId }), [text, clipId]);
+  const prompt = useMemo(
+    () => ({ text, ...(clipId === undefined ? {} : { clipId }), ...(localOnly ? { localOnly: true } : {}) }),
+    [text, clipId, localOnly]
+  );
   const [playing, setPlaying] = useState(false);
   const [fellBack, setFellBack] = useState(false);
   const [failed, setFailed] = useState(false);

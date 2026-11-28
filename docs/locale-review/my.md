@@ -386,6 +386,24 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | ဤအတွေးအခေါ်ပုံများကို Language Lab အတွက် ရေးထားသော ညွှန်ကြားချက်များမှ AI ပုံဆွဲမော်ဒယ်က ပြုလုပ်ထားသည်။ ပုံများတွင် တကယ့်လူ၊ ဖြစ်ရပ် သို့မဟုတ် စာရွက်စာတမ်းများ မပါပါ။ ပိုင်ရှင်သည် ပုံတစ်ပုံချင်းကို မပြမီ ကြည့်ရှုစစ်ဆေးခဲ့သည်။ |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | {date} တွင် AI မော်ဒယ် {model} ဖြင့် ပြုလုပ်ထားသည်။ |
 | `credits.photos.title` | Photos, prints and documents | ဓာတ်ပုံများ၊ ပုံနှိပ်များနှင့် စာရွက်စာတမ်းများ |
+| `intro.profile.own.title` | Use my name | ကျွန်ုပ်၏အမည်ကို သုံးမည် |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | သင်၏ အမည်ရင်းကို ပြောခြင်းနှင့် စာလုံးပေါင်းခြင်းကို လေ့ကျင့်ပါ |
+| `intro.ownName.label` | Full name | အမည်အပြည့်အစုံ |
+| `intro.ownName.error.empty` | Type your full name to continue. | ဆက်လုပ်ရန် သင်၏ အမည်အပြည့်အစုံကို ရိုက်ထည့်ပါ။ |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | စာလုံး {max} လုံး သို့မဟုတ် ထို့ထက်နည်းအောင် သုံးပါ။ |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | စာလုံး၊ နေရာလွတ်၊ တုံးတို (-) နှင့် (') တို့ကိုသာ သုံးပါ။ |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. Reloading the page clears it. | သင်၏အမည်ကို ဤစက်ပေါ်တွင် ဤလေ့ကျင့်မှုအတွက်သာ သုံးသည်။ သိမ်းဆည်းမထားပါ၊ Language Lab က မည်သည့်နေရာသို့မျှ မပို့ပါ။ စာမျက်နှာကို ပြန်ဖွင့်လျှင် ပျက်သွားမည်။ |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | အရာရှိက သင်၏ပုံစံနှင့်ပတ်သက်၍ ဤကဲ့သို့ မေးခွန်းများ မေးနိုင်သည်။ သင့်ကိုယ်ပိုင်အမည်ကို သုံးပါ။ အခြားမေးခွန်းများကို နမူနာပရိုဖိုင်အတိုင်း ဖြေပါ။ ဤအပိုင်းတွင် အမှတ်မပေးပါ။ |
+| `n400.sample.labelOwn` | Sample answer with your name | သင်၏အမည်ပါသော နမူနာအဖြေ |
+| `n400.spell.label` | How each part of your name is spelled | သင့်အမည်၏ အပိုင်းတစ်ခုစီကို စာလုံးပေါင်းပုံ |
+| `n400.sampleProfile.badge` | Sample profile | နမူနာပရိုဖိုင် |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | {name} အတွက် နမူနာအဖြေ |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | ဤနေရာတွင် အမည်သာ သင့်ဟာ ဖြစ်သည်။ ဤအဖြေနှင့် အခြားအသေးစိတ်များမှာ နမူနာပရိုဖိုင်မှ ဖြစ်ပြီး သင်၏ တကယ့်ဘဝမဟုတ်ပါ။ တကယ့်အင်တာဗျူးတွင် သင့်ဘဝအကြောင်းကို အမှန်အတိုင်း ဖြေရမည်။ |
+| `n400.yourAnswer.own` | Your answer | သင်၏အဖြေ |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | မေးခွန်းက အမည်မေးမှသာ သင်၏အမည်ကို သုံးပါ။ သင်၏ တကယ့်လိပ်စာ၊ ရက်စွဲ သို့မဟုတ် နံပါတ်များကို မရိုက်ပါနှင့်။ |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | လေ့ကျင့်သည့်အခါ တကယ့် A-number၊ လူမှုဖူလုံရေးနံပါတ် သို့မဟုတ် အစိမ်းကတ်နံပါတ်ကို မပြောပါနှင့်။ |
+| `coach.kind.ownName` | your name | သင်၏အမည် |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | သင်၏အမည် ဤစက်ပေါ်တွင်သာ ရှိနေစေရန် ဤအဖြေကို AI နည်းပြထံ မပို့ပါ။ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

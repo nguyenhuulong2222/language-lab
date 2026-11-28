@@ -386,6 +386,24 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | Estas ilustrações de ideias foram feitas por um modelo de imagens de IA a partir de instruções escritas para o Language Lab. Elas não mostram pessoas, fatos nem documentos reais. O responsável conferiu cada uma antes de ser exibida. |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | Feita com o modelo de IA {model} em {date}. |
 | `credits.photos.title` | Photos, prints and documents | Fotos, gravuras e documentos |
+| `intro.profile.own.title` | Use my name | Usar meu nome |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | Pratique dizer e soletrar seu nome verdadeiro |
+| `intro.ownName.label` | Full name | Nome completo |
+| `intro.ownName.error.empty` | Type your full name to continue. | Digite seu nome completo para continuar. |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | Use até {max} caracteres. |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | Use apenas letras, espaços, hifens (-) e apóstrofos ('). |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. Reloading the page clears it. | Seu nome é usado só neste aparelho, nesta prática. Ele não é salvo e o Language Lab não o envia para lugar nenhum. Ao recarregar a página, ele é apagado. |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | Um oficial pode fazer perguntas como estas sobre o seu formulário. Use seu próprio nome. Nas outras perguntas, responda como o perfil de exemplo. Esta parte não tem nota. |
+| `n400.sample.labelOwn` | Sample answer with your name | Resposta de exemplo com seu nome |
+| `n400.spell.label` | How each part of your name is spelled | Como se soletra cada parte do seu nome |
+| `n400.sampleProfile.badge` | Sample profile | Perfil de exemplo |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | Resposta de exemplo de {name} |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | Aqui só o nome é seu. Esta resposta e os outros dados vêm de um perfil de exemplo, não da sua vida real. Na sua entrevista real, você deve responder com a verdade sobre a sua própria vida. |
+| `n400.yourAnswer.own` | Your answer | Sua resposta |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | Use seu nome só quando a pergunta pedir. Não digite seu endereço, datas ou números reais. |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | Não diga um A-number, número do Seguro Social ou número de green card verdadeiro quando praticar. |
+| `coach.kind.ownName` | your name | seu nome |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Esta resposta não foi enviada ao treinador de IA, para que seu nome fique neste aparelho. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

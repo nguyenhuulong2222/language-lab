@@ -386,3 +386,21 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | Yon modèl imaj AI fè ilistrasyon lide sa yo apati enstriksyon yo ekri pou Language Lab. Yo pa montre vrè moun, vrè evènman ni vrè dokiman. Pwopriyetè a gade chak youn anvan yo te montre l. |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | Fèt ak modèl AI {model} nan dat {date}. |
 | `credits.photos.title` | Photos, prints and documents | Foto, gravi ak dokiman |
+| `intro.profile.own.title` | Use my name | Sèvi ak non pa m |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | Pratike di epi eple vrè non ou |
+| `intro.ownName.label` | Full name | Non konplè |
+| `intro.ownName.error.empty` | Type your full name to continue. | Tape non konplè ou pou w kontinye. |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | Pa depase {max} karaktè. |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | Sèvi sèlman ak lèt, espas, tirè (-) ak apostwòf ('). |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. Reloading the page clears it. | Non ou sèvi sèlman sou aparèy sa a, pou pratik sa a. Yo pa sove l, epi Language Lab pa voye l okenn kote. Si ou rechaje paj la, li efase. |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | Yon ofisye ka poze kesyon tankou sa yo sou fòm ou. Sèvi ak pwòp non ou. Pou lòt kesyon yo, reponn tankou pwofil egzanp lan. Pati sa a pa gen nòt. |
+| `n400.sample.labelOwn` | Sample answer with your name | Repons egzanp ak non ou |
+| `n400.spell.label` | How each part of your name is spelled | Kijan pou eple chak pati nan non ou |
+| `n400.sampleProfile.badge` | Sample profile | Pwofil egzanp |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | Repons egzanp pou {name} |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | Isit la, se sèlman non an ki pou ou. Repons sa a ak lòt detay yo soti nan yon pwofil egzanp, pa nan vrè lavi ou. Nan vrè entèvyou ou, ou dwe reponn verite sou pwòp lavi ou. |
+| `n400.yourAnswer.own` | Your answer | Repons ou |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | Sèvi ak non ou sèlman lè kesyon an mande l. Pa tape vrè adrès ou, dat oswa nimewo. |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | Pa di yon vrè A-number, nimewo Sekirite Sosyal oswa nimewo kat vèt lè w ap pratike. |
+| `coach.kind.ownName` | your name | non ou |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Repons sa a pa t voye bay antrenè AI a, pou non ou rete sou aparèy sa a. |

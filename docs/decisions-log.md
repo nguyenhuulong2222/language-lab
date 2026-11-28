@@ -611,3 +611,39 @@ reviews them (10 diagram pairings and the 4 questions of the 3 redone AI illustr
 - **Owner review:** `docs/image-review.md` lists every pairing (federal, diagram, AI) with an "Owner OK"
   column that the builder now keeps across rebuilds, and `docs/review-sheets/` holds one contact sheet
   per group.
+
+## S. "Use my name": the learner's own name, on the device only (2026-11-27, branch feature/own-name)
+Goal: a fourth card on the "Choose a practice character" screen lets the learner practise saying and
+spelling their real name, the first thing the officer asks. Every other detail comes from the sample
+profile Aurora Thistlewood, shown with the label "Sample profile".
+- **Why the rule changed:** content-safety section 1 forbade asking for any real N-400 data, the name
+  included. Saying and spelling one's own name is the most common opening of the interview and cannot be
+  practised with an invented name. The owner chose option B: a narrow exception for the name alone, used
+  only on the device and never sent out. Rejected: option A (send the real name to the AI coach, which
+  would put real personal data with a third party) and option C (do not build the feature).
+- **Why the privacy notice and NOTICE are unchanged:** no real data leaves the device, so what the
+  privacy notice says about requests to the AI coach stays true.
+- **How the name is kept on the device:**
+  - It lives only in `PracticeApp` React state. It is never written to local or session storage, a
+    cookie, the URL, history or the console, and it is cleared on restart and lost on reload.
+  - The engine receives only the base profile id. `createOwnNameCoach` fills the name into the greeting
+    and the sample answer to "What is your full name?" for display only.
+  - Text that contains the name is spoken only by a local English device voice
+    (`SpeechSynthesisVoice.localService`); recorded clips are skipped, and if no local voice exists the
+    text is not spoken, because a network voice would send the name to a speech service.
+  - The spelling question ("Can you spell your last name, please?") is local-only and never sent to the
+    coach.
+  - Before any answer goes to the coach, `protectNameForCoach` replaces the name with the sample name.
+    When the name may still be there (letters spelled apart, or part of the name left over), the answer
+    is not sent and the screen explains why.
+  - The name field sits outside any form, with autocomplete, spellcheck and autocorrect off and the
+    password-manager ignore attributes, because browser enhanced spellcheck can send typed text out.
+- **Reminder on the practice screen:** "Do not say a real A-number, Social Security number or green card
+  number when you practise."
+- **Tests:** `src/ui/__tests__/own-name.test.tsx` checks that no request to `/api/coach` contains the
+  typed name (both requests carry "Aurora Thistlewood"), that nothing is written to storage, cookie, URL,
+  history or console, and that the name is gone after a reload. `src/engine/__tests__/own-name.test.ts`
+  covers the name check and the coach protection, including property tests.
+- **Languages:** every new string goes through i18n in all 14 languages. The new privacy, reminder and
+  sample-profile lines are in `LEGAL_KEYS`, so they stay English until a named reviewer checks them.
+  `intro.filed.help` also stays English (owner choice (a)); it is not translated.

@@ -386,6 +386,24 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | ຮູບປະກອບແນວຄິດເຫຼົ່ານີ້ສ້າງໂດຍແບບຈຳລອງຮູບພາບ AI ຈາກຄຳສັ່ງທີ່ຂຽນໄວ້ສຳລັບ Language Lab. ຮູບບໍ່ໄດ້ສະແດງຄົນ, ເຫດການ ຫຼື ເອກະສານຈິງ. ເຈົ້າຂອງໄດ້ເບິ່ງທຸກຮູບກ່ອນນຳມາສະແດງ. |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | ສ້າງດ້ວຍແບບຈຳລອງ AI {model} ເມື່ອ {date}. |
 | `credits.photos.title` | Photos, prints and documents | ຮູບຖ່າຍ, ຮູບພິມ ແລະ ເອກະສານ |
+| `intro.profile.own.title` | Use my name | ໃຊ້ຊື່ຂອງຂ້ອຍ |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | ຝຶກເວົ້າ ແລະ ສະກົດຊື່ແທ້ຂອງທ່ານ |
+| `intro.ownName.label` | Full name | ຊື່ ແລະ ນາມສະກຸນ |
+| `intro.ownName.error.empty` | Type your full name to continue. | ພິມຊື່ ແລະ ນາມສະກຸນຂອງທ່ານເພື່ອດຳເນີນຕໍ່. |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | ບໍ່ເກີນ {max} ຕົວອັກສອນ. |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | ໃຊ້ໄດ້ແຕ່ຕົວອັກສອນ, ຍະຫວ່າງ, ຂີດກາງ (-) ແລະ ເຄື່ອງໝາຍ ('). |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. Reloading the page clears it. | ຊື່ຂອງທ່ານໃຊ້ສະເພາະໃນອຸປະກອນນີ້ສຳລັບການຝຶກຄັ້ງນີ້. ບໍ່ມີການບັນທຶກ ແລະ Language Lab ບໍ່ສົ່ງຊື່ໄປໃສເລີຍ. ເມື່ອໂຫຼດໜ້າໃໝ່ ຊື່ຈະຫາຍໄປ. |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | ເຈົ້າໜ້າທີ່ອາດຖາມຄຳຖາມແບບນີ້ກ່ຽວກັບແບບຟອມຂອງທ່ານ. ໃຊ້ຊື່ຂອງທ່ານເອງ. ສຳລັບຄຳຖາມອື່ນ ໃຫ້ຕອບຕາມໂປຣໄຟລ໌ຕົວຢ່າງ. ພາກນີ້ບໍ່ມີຄະແນນ. |
+| `n400.sample.labelOwn` | Sample answer with your name | ຄຳຕອບຕົວຢ່າງທີ່ມີຊື່ຂອງທ່ານ |
+| `n400.spell.label` | How each part of your name is spelled | ການສະກົດແຕ່ລະສ່ວນຂອງຊື່ທ່ານ |
+| `n400.sampleProfile.badge` | Sample profile | ໂປຣໄຟລ໌ຕົວຢ່າງ |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | ຄຳຕອບຕົວຢ່າງຂອງ {name} |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | ຢູ່ນີ້ມີແຕ່ຊື່ທີ່ເປັນຂອງທ່ານ. ຄຳຕອບນີ້ ແລະ ລາຍລະອຽດອື່ນມາຈາກໂປຣໄຟລ໌ຕົວຢ່າງ ບໍ່ແມ່ນຊີວິດຈິງຂອງທ່ານ. ໃນການສໍາພາດຈິງ ທ່ານຕ້ອງຕອບຕາມຄວາມຈິງກ່ຽວກັບຊີວິດຂອງທ່ານເອງ. |
+| `n400.yourAnswer.own` | Your answer | ຄຳຕອບຂອງທ່ານ |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | ໃຊ້ຊື່ຂອງທ່ານສະເພາະເມື່ອຄຳຖາມຖາມເຖິງຊື່. ຢ່າພິມທີ່ຢູ່, ວັນທີ ຫຼື ໝາຍເລກແທ້ຂອງທ່ານ. |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | ເມື່ອຝຶກ ຢ່າເວົ້າ A-number, ເລກປະກັນສັງຄົມ ຫຼື ເລກບັດຂຽວແທ້. |
+| `coach.kind.ownName` | your name | ຊື່ຂອງທ່ານ |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | ຄຳຕອບນີ້ບໍ່ໄດ້ສົ່ງໃຫ້ຄູຝຶກ AI ເພື່ອໃຫ້ຊື່ຂອງທ່ານຢູ່ໃນອຸປະກອນນີ້ເທົ່ານັ້ນ. |
 
 ## Lines marked ⚠ (meaning differs a little)
 
