@@ -1,16 +1,19 @@
 // @vitest-environment jsdom
 /**
  * Officer voices (decisions log T) in the app: one officer for a whole practice, picked from the
- * practice's seed; a new practice or Study first visit picks again; "Always the same voice" uses
- * officer-a; the player's fallback order; sample answers keep officer-a's clip.
+ * practice's seed; a new practice or Study first visit picks again; a chosen officer is used for
+ * every practice; "Listen" in the settings; the voice line names the officer; the player's fallback
+ * order; sample answers keep officer-a's clip.
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import type { ReactNode } from "react";
 import { emptyManifest, hashText, pickOfficerVoice, type AudioManifest, type OfficerVoiceId } from "../../engine/audio-clips";
 import { ENGLISH_MESSAGES as EN } from "../../i18n";
 import { I18nProvider } from "../../i18n/react";
 import { SettingsPanel } from "../components/SettingsPanel";
+import { SpeakButton } from "../components/SpeakButton";
+import { OfficerVoiceProvider } from "../voice/officer-voice";
 import { PracticeApp } from "../PracticeApp";
 import { SettingsProvider, useSettings } from "../settings";
 import { createMp3PromptSpeaker, type AudioLike, type PromptSpeaker, type SpokenPrompt } from "../voice/prompt-speaker";
@@ -50,13 +53,17 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
-/** A settings control outside the practice, as the header's panel is. */
-function SameVoiceSwitch() {
+/** Settings controls outside the practice, as the header's panel is. */
+function OfficerSwitch() {
   const { setOfficerVoice } = useSettings();
   return (
-    <button type="button" onClick={() => setOfficerVoice("same")}>
-      test: always the same voice
-    </button>
+    <>
+      {(["rotate", "officer-a", "officer-b", "officer-c"] as const).map((choice) => (
+        <button key={choice} type="button" onClick={() => setOfficerVoice(choice)}>
+          {`test: choose ${choice}`}
+        </button>
+      ))}
+    </>
   );
 }
 
@@ -78,7 +85,7 @@ function app(seeds: number[]) {
   const seed = vi.fn(() => queue.shift() ?? 1);
   render(
     <Providers speaker={speaker}>
-      <SameVoiceSwitch />
+      <OfficerSwitch />
       <PracticeApp now={() => AT} seed={seed} />
     </Providers>
   );
@@ -147,19 +154,24 @@ describe("one officer for a whole practice", () => {
     expect(seed).toHaveBeenCalledTimes(1);
   });
 
-  it("\"Always the same voice\" uses officer-a, also in the middle of a practice", async () => {
+  it("a chosen officer is used for every prompt of every practice, whatever the seed", async () => {
     const b = seedFor("officer-b");
     const { speaker } = app([b, b]);
+    fireEvent.click(button("test: choose officer-c"));
     fireEvent.click(button(EN["home.part.writing.title"]));
-    expect(await playAgain(speaker)).toBe("officer-b");
-    fireEvent.click(button("test: always the same voice"));
+    expect(await playAgain(speaker)).toBe("officer-c");
+    expect(await playAgain(speaker)).toBe("officer-c");
+    fireEvent.click(button("test: choose officer-a"));
     expect(await playAgain(speaker)).toBe("officer-a");
     expect(speaker.spoken.at(-1)).not.toHaveProperty("officer");
+    // Back to "a different officer each practice": this practice's own officer again.
+    fireEvent.click(button("test: choose rotate"));
+    expect(await playAgain(speaker)).toBe("officer-b");
   });
 });
 
 describe("the officer voice setting", () => {
-  it("offers the two choices as radio buttons, a different officer each practice first and chosen", () => {
+  it("offers four radio choices, a different officer each practice first and chosen", () => {
     const speaker = new SpySpeaker();
     render(
       <Providers speaker={speaker}>
@@ -167,14 +179,41 @@ describe("the officer voice setting", () => {
       </Providers>
     );
     expect(screen.getByRole("group", { name: EN["settings.title"] }).textContent).toContain(EN["settings.officer.legend"]);
+    const radios = [...document.querySelectorAll<HTMLInputElement>('input[name="officer-voice"]')];
+    expect(radios.map((r) => r.value)).toEqual(["rotate", "officer-a", "officer-b", "officer-c"]);
     const rotate = screen.getByLabelText(EN["settings.officer.rotate"]) as HTMLInputElement;
-    const same = screen.getByLabelText(EN["settings.officer.same"]) as HTMLInputElement;
+    const two = screen.getByLabelText(EN["settings.officer.b"]) as HTMLInputElement;
     expect(rotate.checked).toBe(true);
-    expect(same.checked).toBe(false);
-    fireEvent.click(same);
-    expect(same.checked).toBe(true);
+    fireEvent.click(two);
+    expect(two.checked).toBe(true);
     expect(rotate.checked).toBe(false);
     expect(localStorage.length + sessionStorage.length).toBe(0);
+  });
+
+  it("each officer has a Listen button that plays that officer asking for the full name, whatever is chosen", () => {
+    const speaker = new SpySpeaker();
+    render(
+      <Providers speaker={speaker}>
+        <SettingsPanel onClose={() => {}} />
+      </Providers>
+    );
+    const listens = screen.getAllByRole("button", { name: EN["settings.officer.listen"] });
+    expect(listens).toHaveLength(3);
+    expect(listens.map((b) => document.getElementById(b.getAttribute("aria-describedby")!)!.textContent)).toEqual([
+      EN["settings.officer.a"],
+      EN["settings.officer.b"],
+      EN["settings.officer.c"],
+    ]);
+    fireEvent.click(listens[1]!);
+    fireEvent.click(listens[2]!);
+    fireEvent.click(listens[0]!);
+    expect(speaker.spoken.map((p) => [p.clipId, p.officer, p.text])).toEqual([
+      ["n400-001", "officer-b", "Can you tell me your full name?"],
+      ["n400-001", "officer-c", "Can you tell me your full name?"],
+      ["n400-001", "officer-a", "Can you tell me your full name?"],
+    ]);
+    // Listening does not change the choice.
+    expect((screen.getByLabelText(EN["settings.officer.rotate"]) as HTMLInputElement).checked).toBe(true);
   });
 });
 
@@ -280,5 +319,80 @@ describe("the player's fallback order", () => {
       void speaker.speak({ text: SAMPLE, clipId: "n400-001-sample-aurora-thistlewood", officer });
       expect(audio.plays, officer).toEqual(["/audio/n400/n400-001-sample-aurora-thistlewood.mp3"]);
     }
+  });
+});
+
+describe("Listen and the voice line, with the real MP3 player", () => {
+  const LISTEN = "Can you tell me your full name?";
+  function listenManifest(): AudioManifest {
+    const base = playerManifest();
+    return {
+      ...base,
+      clips: { ...base.clips, "n400-001": { file: "n400/n400-001.mp3", hash: hashText(LISTEN), group: "n400" } },
+      voices: {
+        "officer-b": {
+          ...base.voices!["officer-b"]!,
+          clips: { ...base.voices!["officer-b"]!.clips, "n400-001": { file: "officer-b/n400/n400-001.mp3", hash: hashText(LISTEN), group: "n400", voice: "officer-b" } },
+        },
+      },
+    };
+  }
+  function mp3(manifest: AudioManifest) {
+    const audio = new FakeAudio();
+    const fallback: PromptSpeaker = { available: true, voiceFor: () => "device-voice", speak: () => Promise.resolve(), cancel: () => {} };
+    return { audio, speaker: createMp3PromptSpeaker({ manifest, fallback, createAudio: () => audio }) };
+  }
+
+  it("Listen plays the officer's file, or officer-a's when that officer has none, one at a time", () => {
+    const { audio, speaker } = mp3(listenManifest());
+    render(
+      <Providers speaker={speaker}>
+        <SettingsPanel onClose={() => {}} />
+      </Providers>
+    );
+    const listens = screen.getAllByRole("button", { name: EN["settings.officer.listen"] });
+    fireEvent.click(listens[1]!);
+    fireEvent.click(listens[2]!);
+    fireEvent.click(listens[0]!);
+    expect(audio.plays).toEqual(["/audio/officer-b/n400/n400-001.mp3", "/audio/n400/n400-001.mp3", "/audio/n400/n400-001.mp3"]);
+  });
+
+  it("the voice line names the officer whose recording plays; the device-voice line is unchanged", () => {
+    const { speaker } = mp3(listenManifest());
+    const line = (officer: OfficerVoiceId, text: string, clipId: string) => {
+      cleanup();
+      render(
+        <Providers speaker={speaker}>
+          <OfficerVoiceProvider voice={officer}>
+            <SpeakButton text={text} clipId={clipId} />
+          </OfficerVoiceProvider>
+        </Providers>
+      );
+      return document.querySelector(".speak .note")!.textContent;
+    };
+    expect(line("officer-b", QUESTION, "civics-2008-001")).toBe(EN["audio.aiVoice.officer2"]);
+    expect(EN["audio.aiVoice.officer2"]).toBe("AI-generated voice · Officer 2 (male voice)");
+    // officer-c has no clip here: officer-a's clip plays, and the line says so.
+    expect(line("officer-c", QUESTION, "civics-2008-001")).toBe(EN["audio.aiVoice.officer1"]);
+    expect(line("officer-a", QUESTION, "civics-2008-001")).toBe(EN["audio.aiVoice.officer1"]);
+    // A sample answer is always officer-a's recording: "Officer 1".
+    expect(line("officer-b", SAMPLE, "n400-001-sample-aurora-thistlewood")).toBe(EN["audio.aiVoice.officer1"]);
+    // No recording: the device-voice line, as before.
+    expect(line("officer-b", "Not recorded?", "civics-2008-999")).toBe(EN["audio.deviceVoice"]);
+  });
+
+  it("the line switches to Officer 1 when officer-b's clip does not load and officer-a's takes over", async () => {
+    const { audio, speaker } = mp3(listenManifest());
+    render(
+      <Providers speaker={speaker}>
+        <OfficerVoiceProvider voice="officer-b">
+          <SpeakButton text={QUESTION} clipId="civics-2008-001" />
+        </OfficerVoiceProvider>
+      </Providers>
+    );
+    expect(document.querySelector(".speak .note")!.textContent).toBe(EN["audio.aiVoice.officer2"]);
+    fireEvent.click(screen.getByRole("button", { name: EN["audio.again"] }));
+    act(() => audio.fire("error"));
+    expect(document.querySelector(".speak .note")!.textContent).toBe(EN["audio.aiVoice.officer1"]);
   });
 });

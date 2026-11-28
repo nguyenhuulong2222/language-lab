@@ -684,7 +684,23 @@ uses one of three AI voices for the officer, chosen at random once and kept to t
 - **App:** the officer is picked from the practice's seed when the practice starts
   (`pickOfficerVoice`, deterministic for tests) and kept in `PracticeApp` memory until Home or
   restart. Study first picks once per visit. The player tries the chosen voice's clip, then
-  officer-a's clip, then the device voice. The "AI-generated voice" label is unchanged.
+  officer-a's clip, then the device voice.
 - **Setting:** "Officer voice" in the comfort settings: "A different officer each practice"
   (default) or "Always the same voice" (officer-a). In memory only, like the other comfort settings.
   These are interface keys, not legal keys.
+- **Update (branch ui/picture-zoom): the choice names the voice and can be heard first.**
+  - Four radio choices replace the two: "A different officer each practice" (default, one officer per
+    practice as above), "Officer 1, female voice" (officer-a, coral), "Officer 2, male voice"
+    (officer-b, cedar), "Officer 3, female voice" (officer-c, marin). A chosen officer is used for
+    every practice until the choice changes; "Always the same voice" is gone. In memory only.
+  - Each officer has a "Listen" button that plays that officer's clip of n400-001 ("Can you tell me
+    your full name?") with the same MP3 player, started inside the tap, whatever is chosen. A missing
+    clip falls back as usual (officer-a, then the device voice). The player stops what is playing
+    first, so only one plays.
+  - The voice line under every play button names the officer whose recording plays, for example
+    "AI-generated voice · Officer 2 (male voice)". It follows the clip that actually plays: when
+    officer-b has no clip, or its clip does not load and officer-a's takes over, it says Officer 1.
+    Sample answers are always officer-a's clips, so they say Officer 1. The device-voice line is
+    unchanged.
+  - The header button is now "Text size and voice" (it was "Text size"), so the voice settings can be
+    found.

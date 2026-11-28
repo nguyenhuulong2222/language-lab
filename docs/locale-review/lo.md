@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | ອ່ານປະໂຫຍກອອກສຽງ. |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | ກົດ “{say}” ແລ້ວເວົ້າ. ຫຼື ພິມໃນຫ້ອງ. |
 | `help.typeOnly` | Type what you hear in the box. | ພິມສິ່ງທີ່ທ່ານໄດ້ຍິນໃສ່ຫ້ອງ. |
-| `header.settings` | Text size | ຂະໜາດຕົວອັກສອນ |
+| `header.settings` | Text size and voice | ຂະໜາດຕົວອັກສອນ ແລະ ສຽງ |
 | `settings.title` | Text size and voice | ຂະໜາດຕົວອັກສອນ ແລະ ສຽງ |
 | `settings.textSize.legend` | Text size | ຂະໜາດຕົວອັກສອນ |
 | `settings.textSize.normal` | Normal | ປົກກະຕິ |
@@ -406,7 +406,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | ຄຳຕອບນີ້ບໍ່ໄດ້ສົ່ງໃຫ້ຄູຝຶກ AI ເພື່ອໃຫ້ຊື່ຂອງທ່ານຢູ່ໃນອຸປະກອນນີ້ເທົ່ານັ້ນ. |
 | `settings.officer.legend` | Officer voice | ສຽງຂອງເຈົ້າໜ້າທີ່ |
 | `settings.officer.rotate` | A different officer each practice | ເຈົ້າໜ້າທີ່ຄົນໃໝ່ໃນການຝຶກແຕ່ລະຄັ້ງ |
-| `settings.officer.same` | Always the same voice | ໃຊ້ສຽງດຽວກັນສະເໝີ |
+| `settings.officer.a` | Officer 1, female voice | ເຈົ້າໜ້າທີ່ 1, ສຽງຜູ້ຍິງ |
+| `settings.officer.b` | Officer 2, male voice | ເຈົ້າໜ້າທີ່ 2, ສຽງຜູ້ຊາຍ |
+| `settings.officer.c` | Officer 3, female voice | ເຈົ້າໜ້າທີ່ 3, ສຽງຜູ້ຍິງ |
+| `settings.officer.listen` | Listen | ຟັງເບິ່ງ |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | ສຽງທີ່ສ້າງໂດຍ AI · ເຈົ້າໜ້າທີ່ 1 (ສຽງຜູ້ຍິງ) |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | ສຽງທີ່ສ້າງໂດຍ AI · ເຈົ້າໜ້າທີ່ 2 (ສຽງຜູ້ຊາຍ) |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | ສຽງທີ່ສ້າງໂດຍ AI · ເຈົ້າໜ້າທີ່ 3 (ສຽງຜູ້ຍິງ) |
+| `picture.zoom.hint` | Tap the picture to see it larger | ແຕະທີ່ຮູບເພື່ອເບິ່ງໃຫຍ່ຂຶ້ນ |
+| `picture.zoom.label` | See the picture larger | ເບິ່ງຮູບໃຫຍ່ຂຶ້ນ |
+| `picture.zoom.close` | Close | ປິດ |
 
 ## Lines marked ⚠ (meaning differs a little)
 

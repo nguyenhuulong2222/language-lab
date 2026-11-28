@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | 大聲讀出這個句子。 |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | 按「{say}」然後說話。或在方框中輸入。 |
 | `help.typeOnly` | Type what you hear in the box. | 在方框中輸入您聽到的內容。 |
-| `header.settings` | Text size | 文字大小 |
+| `header.settings` | Text size and voice | 文字大小和語音 |
 | `settings.title` | Text size and voice | 文字大小和語音 |
 | `settings.textSize.legend` | Text size | 文字大小 |
 | `settings.textSize.normal` | Normal | 標準 |
@@ -406,4 +406,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | 這個回答沒有傳送給 AI 教練，讓您的名字只留在這部裝置上。 |
 | `settings.officer.legend` | Officer voice | 官員的語音 |
 | `settings.officer.rotate` | A different officer each practice | 每次練習換一位官員 |
-| `settings.officer.same` | Always the same voice | 一直用同一個語音 |
+| `settings.officer.a` | Officer 1, female voice | 官員 1，女聲 |
+| `settings.officer.b` | Officer 2, male voice | 官員 2，男聲 |
+| `settings.officer.c` | Officer 3, female voice | 官員 3，女聲 |
+| `settings.officer.listen` | Listen | 試聽 |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | AI 生成的語音 · 官員 1（女聲） |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | AI 生成的語音 · 官員 2（男聲） |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | AI 生成的語音 · 官員 3（女聲） |
+| `picture.zoom.hint` | Tap the picture to see it larger | 點一下圖片可以放大查看 |
+| `picture.zoom.label` | See the picture larger | 放大查看圖片 |
+| `picture.zoom.close` | Close | 關閉 |

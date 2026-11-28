@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | Leia a frase em voz alta. |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | Toque em “{say}” e fale. Ou digite na caixa. |
 | `help.typeOnly` | Type what you hear in the box. | Digite na caixa o que você ouvir. |
-| `header.settings` | Text size | Tamanho do texto |
+| `header.settings` | Text size and voice | Tamanho do texto e voz |
 | `settings.title` | Text size and voice | Tamanho do texto e voz |
 | `settings.textSize.legend` | Text size | Tamanho do texto |
 | `settings.textSize.normal` | Normal | Normal |
@@ -406,7 +406,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Esta resposta não foi enviada ao treinador de IA, para que seu nome fique neste aparelho. |
 | `settings.officer.legend` | Officer voice | Voz do oficial |
 | `settings.officer.rotate` | A different officer each practice | Um oficial diferente em cada prática |
-| `settings.officer.same` | Always the same voice | Sempre a mesma voz |
+| `settings.officer.a` | Officer 1, female voice | Oficial 1, voz feminina |
+| `settings.officer.b` | Officer 2, male voice | Oficial 2, voz masculina |
+| `settings.officer.c` | Officer 3, female voice | Oficial 3, voz feminina |
+| `settings.officer.listen` | Listen | Ouvir |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | Voz gerada por IA · Oficial 1 (voz feminina) |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | Voz gerada por IA · Oficial 2 (voz masculina) |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | Voz gerada por IA · Oficial 3 (voz feminina) |
+| `picture.zoom.hint` | Tap the picture to see it larger | Toque na imagem para vê-la maior |
+| `picture.zoom.label` | See the picture larger | Ver a imagem maior |
+| `picture.zoom.close` | Close | Fechar |
 
 ## Lines marked ⚠ (meaning differs a little)
 

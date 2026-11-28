@@ -235,7 +235,7 @@
   "help.read": "Li fraz la byen fò.",
   "help.mic": "Peze “{say}” epi pale. Oswa tape nan bwat la.",
   "help.typeOnly": "Tape sa w tande a nan bwat la.",
-  "header.settings": "Gwosè tèks",
+  "header.settings": "Gwosè tèks ak vwa",
   "settings.title": "Gwosè tèks ak vwa",
   "settings.textSize.legend": "Gwosè tèks",
   "settings.textSize.normal": "Nòmal",
@@ -388,5 +388,14 @@
   "coach.screened.ownName": "Repons sa a pa t voye bay antrenè AI a, pou non ou rete sou aparèy sa a.",
   "settings.officer.legend": "Vwa ofisye a",
   "settings.officer.rotate": "Yon lòt ofisye nan chak pratik",
-  "settings.officer.same": "Toujou menm vwa a"
+  "settings.officer.a": "Ofisye 1, vwa fanm",
+  "settings.officer.b": "Ofisye 2, vwa gason",
+  "settings.officer.c": "Ofisye 3, vwa fanm",
+  "settings.officer.listen": "Koute",
+  "audio.aiVoice.officer1": "Vwa AI fè · Ofisye 1 (vwa fanm)",
+  "audio.aiVoice.officer2": "Vwa AI fè · Ofisye 2 (vwa gason)",
+  "audio.aiVoice.officer3": "Vwa AI fè · Ofisye 3 (vwa fanm)",
+  "picture.zoom.hint": "Tape sou foto a pou w wè l pi gwo",
+  "picture.zoom.label": "Wè foto a pi gwo",
+  "picture.zoom.close": "Fèmen"
 }

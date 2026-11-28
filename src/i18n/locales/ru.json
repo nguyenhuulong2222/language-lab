@@ -235,7 +235,7 @@
   "help.read": "Прочитайте предложение вслух.",
   "help.mic": "Нажмите «{say}» и говорите. Или напечатайте в поле.",
   "help.typeOnly": "Напечатайте в поле то, что услышите.",
-  "header.settings": "Размер текста",
+  "header.settings": "Размер текста и голос",
   "settings.title": "Размер текста и голос",
   "settings.textSize.legend": "Размер текста",
   "settings.textSize.normal": "Обычный",
@@ -388,5 +388,14 @@
   "coach.screened.ownName": "Этот ответ не отправлен ИИ-тренеру, чтобы ваше имя осталось на этом устройстве.",
   "settings.officer.legend": "Голос сотрудника",
   "settings.officer.rotate": "Другой сотрудник в каждой тренировке",
-  "settings.officer.same": "Всегда один и тот же голос"
+  "settings.officer.a": "Сотрудник 1, женский голос",
+  "settings.officer.b": "Сотрудник 2, мужской голос",
+  "settings.officer.c": "Сотрудник 3, женский голос",
+  "settings.officer.listen": "Послушать",
+  "audio.aiVoice.officer1": "Голос создан ИИ · Сотрудник 1 (женский голос)",
+  "audio.aiVoice.officer2": "Голос создан ИИ · Сотрудник 2 (мужской голос)",
+  "audio.aiVoice.officer3": "Голос создан ИИ · Сотрудник 3 (женский голос)",
+  "picture.zoom.hint": "Нажмите на картинку, чтобы увеличить её",
+  "picture.zoom.label": "Посмотреть картинку крупнее",
+  "picture.zoom.close": "Закрыть"
 }

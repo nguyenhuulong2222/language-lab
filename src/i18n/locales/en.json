@@ -228,7 +228,7 @@
   "help.read": "Read the sentence out loud.",
   "help.mic": "Press “{say}” and talk. Or type in the box.",
   "help.typeOnly": "Type what you hear in the box.",
-  "header.settings": "Text size",
+  "header.settings": "Text size and voice",
   "settings.title": "Text size and voice",
   "settings.textSize.legend": "Text size",
   "settings.textSize.normal": "Normal",
@@ -381,5 +381,14 @@
   "coach.screened.ownName": "This answer was not sent to the AI coach, so that your name stays on this device.",
   "settings.officer.legend": "Officer voice",
   "settings.officer.rotate": "A different officer each practice",
-  "settings.officer.same": "Always the same voice"
+  "settings.officer.a": "Officer 1, female voice",
+  "settings.officer.b": "Officer 2, male voice",
+  "settings.officer.c": "Officer 3, female voice",
+  "settings.officer.listen": "Listen",
+  "audio.aiVoice.officer1": "AI-generated voice · Officer 1 (female voice)",
+  "audio.aiVoice.officer2": "AI-generated voice · Officer 2 (male voice)",
+  "audio.aiVoice.officer3": "AI-generated voice · Officer 3 (female voice)",
+  "picture.zoom.hint": "Tap the picture to see it larger",
+  "picture.zoom.label": "See the picture larger",
+  "picture.zoom.close": "Close"
 }

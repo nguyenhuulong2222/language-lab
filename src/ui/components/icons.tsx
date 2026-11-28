@@ -114,3 +114,21 @@ export function CalendarIcon({ className }: IconProps) {
     </svg>
   );
 }
+
+/** A magnifier with a plus: "see the picture larger". Decorative; the button has its own name. */
+export function MagnifierIcon({ className }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <circle cx="10.5" cy="10.5" r="6.5" />
+      <path d="M15.5 15.5L21 21M10.5 7.5v6M7.5 10.5h6" strokeLinecap="round" />
+    </svg>
+  );
+}

@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | Lea la oración en voz alta. |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | Presione “{say}” y hable. O escriba en el cuadro. |
 | `help.typeOnly` | Type what you hear in the box. | Escriba en el cuadro lo que oiga. |
-| `header.settings` | Text size | Tamaño del texto |
+| `header.settings` | Text size and voice | Tamaño del texto y voz |
 | `settings.title` | Text size and voice | Tamaño del texto y voz |
 | `settings.textSize.legend` | Text size | Tamaño del texto |
 | `settings.textSize.normal` | Normal | Normal |
@@ -406,4 +406,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Esta respuesta no se envió al entrenador de IA, para que su nombre se quede en este dispositivo. |
 | `settings.officer.legend` | Officer voice | Voz del oficial |
 | `settings.officer.rotate` | A different officer each practice | Un oficial diferente en cada práctica |
-| `settings.officer.same` | Always the same voice | Siempre la misma voz |
+| `settings.officer.a` | Officer 1, female voice | Oficial 1, voz femenina |
+| `settings.officer.b` | Officer 2, male voice | Oficial 2, voz masculina |
+| `settings.officer.c` | Officer 3, female voice | Oficial 3, voz femenina |
+| `settings.officer.listen` | Listen | Escuchar |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | Voz generada por IA · Oficial 1 (voz femenina) |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | Voz generada por IA · Oficial 2 (voz masculina) |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | Voz generada por IA · Oficial 3 (voz femenina) |
+| `picture.zoom.hint` | Tap the picture to see it larger | Toque la imagen para verla más grande |
+| `picture.zoom.label` | See the picture larger | Ver la imagen más grande |
+| `picture.zoom.close` | Close | Cerrar |

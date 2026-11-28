@@ -12,7 +12,7 @@
  * iPhone Safari only starts audio from a tap. `speak` therefore starts playback synchronously:
  * it must be called straight from the click handler, and it reuses one audio element.
  */
-import { officerClipFiles, type AudioManifest, type OfficerVoiceId } from "../../engine/audio-clips";
+import { officerClipFiles, officerOfFile, type AudioManifest, type OfficerVoiceId } from "../../engine/audio-clips";
 
 export type VoiceKind = "recording" | "device-voice";
 
@@ -47,6 +47,8 @@ export interface SpeakHandlers {
   slow?: boolean;
   /** Called when nothing could be played: no clip, and no device voice, or the device voice failed. */
   onFailed?: () => void;
+  /** Called when a clip of another officer voice takes over (the chosen voice's clip did not load). */
+  onOfficer?: (voice: OfficerVoiceId) => void;
 }
 
 export interface PromptSpeaker {
@@ -54,6 +56,8 @@ export interface PromptSpeaker {
   readonly available: boolean;
   /** Which voice `speak` will use now, or null when nothing can speak this prompt. */
   voiceFor(prompt: SpokenPrompt): VoiceKind | null;
+  /** The officer voice of the recording `speak` will play, or null when no recording plays. */
+  officerFor?(prompt: SpokenPrompt): OfficerVoiceId | null;
   /** Speak the prompt. Resolves when it ends, is cancelled, or fails. Call it from a tap. */
   speak(prompt: SpokenPrompt, handlers?: SpeakHandlers): Promise<void>;
   cancel(): void;
@@ -165,6 +169,10 @@ export function createMp3PromptSpeaker(options: Mp3SpeakerOptions): PromptSpeake
     voiceFor(prompt) {
       return clipFor(prompt) !== null ? "recording" : fallback.voiceFor(prompt);
     },
+    officerFor(prompt) {
+      const file = clipFor(prompt);
+      return file === null ? null : officerOfFile(file);
+    },
 
     speak(prompt, handlers) {
       // A second tap, or another prompt, always stops what is playing first.
@@ -192,6 +200,7 @@ export function createMp3PromptSpeaker(options: Mp3SpeakerOptions): PromptSpeake
           if (settled) return;
           // A clip that does not load: try officer-a's clip, then the device voice.
           if (next < files.length) {
+            handlers?.onOfficer?.(officerOfFile(files[next]!));
             playNext();
             return;
           }

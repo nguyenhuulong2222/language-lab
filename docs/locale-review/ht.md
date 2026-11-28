@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | Li fraz la byen fò. |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | Peze “{say}” epi pale. Oswa tape nan bwat la. |
 | `help.typeOnly` | Type what you hear in the box. | Tape sa w tande a nan bwat la. |
-| `header.settings` | Text size | Gwosè tèks |
+| `header.settings` | Text size and voice | Gwosè tèks ak vwa |
 | `settings.title` | Text size and voice | Gwosè tèks ak vwa |
 | `settings.textSize.legend` | Text size | Gwosè tèks |
 | `settings.textSize.normal` | Normal | Nòmal |
@@ -406,4 +406,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Repons sa a pa t voye bay antrenè AI a, pou non ou rete sou aparèy sa a. |
 | `settings.officer.legend` | Officer voice | Vwa ofisye a |
 | `settings.officer.rotate` | A different officer each practice | Yon lòt ofisye nan chak pratik |
-| `settings.officer.same` | Always the same voice | Toujou menm vwa a |
+| `settings.officer.a` | Officer 1, female voice | Ofisye 1, vwa fanm |
+| `settings.officer.b` | Officer 2, male voice | Ofisye 2, vwa gason |
+| `settings.officer.c` | Officer 3, female voice | Ofisye 3, vwa fanm |
+| `settings.officer.listen` | Listen | Koute |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | Vwa AI fè · Ofisye 1 (vwa fanm) |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | Vwa AI fè · Ofisye 2 (vwa gason) |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | Vwa AI fè · Ofisye 3 (vwa fanm) |
+| `picture.zoom.hint` | Tap the picture to see it larger | Tape sou foto a pou w wè l pi gwo |
+| `picture.zoom.label` | See the picture larger | Wè foto a pi gwo |
+| `picture.zoom.close` | Close | Fèmen |

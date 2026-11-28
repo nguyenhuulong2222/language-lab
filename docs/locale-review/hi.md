@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | वाक्य को ज़ोर से पढ़ें। |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | “{say}” दबाएँ और बोलें। या बॉक्स में टाइप करें। |
 | `help.typeOnly` | Type what you hear in the box. | जो सुनें, उसे बॉक्स में टाइप करें। |
-| `header.settings` | Text size | अक्षर का आकार |
+| `header.settings` | Text size and voice | अक्षरों का आकार और आवाज़ |
 | `settings.title` | Text size and voice | अक्षरों का आकार और आवाज़ |
 | `settings.textSize.legend` | Text size | अक्षर का आकार |
 | `settings.textSize.normal` | Normal | सामान्य |
@@ -406,4 +406,13 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | यह जवाब AI कोच को नहीं भेजा गया, ताकि आपका नाम इसी डिवाइस पर रहे। |
 | `settings.officer.legend` | Officer voice | अधिकारी की आवाज़ |
 | `settings.officer.rotate` | A different officer each practice | हर अभ्यास में अलग अधिकारी |
-| `settings.officer.same` | Always the same voice | हमेशा एक ही आवाज़ |
+| `settings.officer.a` | Officer 1, female voice | अधिकारी 1, महिला की आवाज़ |
+| `settings.officer.b` | Officer 2, male voice | अधिकारी 2, पुरुष की आवाज़ |
+| `settings.officer.c` | Officer 3, female voice | अधिकारी 3, महिला की आवाज़ |
+| `settings.officer.listen` | Listen | सुनें |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | AI से बनी आवाज़ · अधिकारी 1 (महिला की आवाज़) |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | AI से बनी आवाज़ · अधिकारी 2 (पुरुष की आवाज़) |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | AI से बनी आवाज़ · अधिकारी 3 (महिला की आवाज़) |
+| `picture.zoom.hint` | Tap the picture to see it larger | बड़ा देखने के लिए चित्र पर टैप करें |
+| `picture.zoom.label` | See the picture larger | चित्र बड़ा देखें |
+| `picture.zoom.close` | Close | बंद करें |

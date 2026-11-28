@@ -222,8 +222,10 @@ window.__lab = (() => {
       const px = parseFloat(getComputedStyle(el).fontSize);
       if (px < 15.95) out.smallText.push(describe(el) + " " + px + "px");
     }
-    // Exactly one filled primary button per screen state, at least 64px high on a phone.
-    const primaries = [...document.body.querySelectorAll(".btn--primary")].filter((el) => visible(el) && !skip(el));
+    // Exactly one filled primary button per screen state, at least 64px high on a phone. With a
+    // modal dialog open (the full-screen picture), the state is the dialog: the page behind is inert.
+    const modal = document.querySelector("dialog[open]");
+    const primaries = [...(modal ?? document.body).querySelectorAll(".btn--primary")].filter((el) => visible(el) && !skip(el));
     out.primaryCount = primaries.length;
     out.primaryNames = primaries.map((el) => textOf(el).slice(0, 40));
     // A choice between equal options (the AI coach yes/no, the 2008/2025 study test) is made with
@@ -237,7 +239,7 @@ window.__lab = (() => {
     // The picture credits hide the practice column (the first one) and show their own.
     const creditsOpen = document.querySelector("main > .ll-container")?.hidden === true;
     const bar = [...document.querySelectorAll("main .back-home__button")].find(visible);
-    out.backHome = { needed: !onHome && !creditsOpen, top: bar ? Math.round(bar.getBoundingClientRect().top + window.scrollY) : null, viewport: window.innerHeight };
+    out.backHome = { needed: !onHome && !creditsOpen && modal === null, top: bar ? Math.round(bar.getBoundingClientRect().top + window.scrollY) : null, viewport: window.innerHeight };
     // Q2: the header rows (the logo and the buttons, grouped by their vertical centre).
     const headerItems = [...document.querySelectorAll("header .header__brand, header .header__button")].filter(visible);
     const centres = headerItems.map((el) => { const b = el.getBoundingClientRect(); return (b.top + b.bottom) / 2; }).sort((a, b) => a - b);
@@ -304,6 +306,42 @@ async function checkConfiguration(cdp, size, lang) {
     await lab(`type(${js(value)})`);
     await sleep(60);
   };
+  // The full-screen picture: it opens from the picture, has one primary button (Close), and closes
+  // with Close, Esc and Back. Focus comes back to the picture, Study stays open, and no extra
+  // history entry is left (the section entry stays the current one).
+  const checkPictureDialog = async () => {
+    const isOpen = () => cdp.evaluate(`!!document.querySelector("dialog.picture-dialog[open]")`);
+    const open = async () => {
+      await cdp.evaluate(`document.querySelector(".question-picture__button").click()`);
+      await waitFor(isOpen, "the picture dialog");
+      await waitFor(() => cdp.evaluate(`(() => { const i = document.querySelector("dialog[open] img"); return !!i && i.complete && i.naturalWidth > 0; })()`), "the picture in the dialog");
+    };
+    const closed = async (how) => {
+      await waitFor(async () => !(await isOpen()), `the picture dialog to close with ${how}`);
+      await sleep(150);
+      const state = await cdp.evaluate(`({ focus: !!(document.activeElement && document.activeElement.matches(".question-picture__button")), picture: !!(history.state && history.state.languageLabPicture), section: !!(history.state && history.state.languageLabSection), study: !!document.querySelector(".question-picture__button"), locked: document.documentElement.classList.contains("ll-picture-open") })`);
+      if (!state.focus) throw new Error(`${how}: focus did not go back to the picture`);
+      if (state.picture || !state.section) throw new Error(`${how}: the history is not back on the section entry`);
+      if (!state.study) throw new Error(`${how}: Study first did not stay open`);
+      if (state.locked) throw new Error(`${how}: the page is still locked`);
+    };
+    const historyBefore = await cdp.evaluate("history.length");
+    await open();
+    if (!(await cdp.evaluate(`document.activeElement && document.activeElement.matches("dialog[open] .picture-dialog__close")`))) throw new Error("the picture dialog did not focus Close");
+    await sleep(200);
+    await record("picture-dialog");
+    await cdp.evaluate(`document.querySelector("dialog[open] .picture-dialog__close").click()`);
+    await closed("Close");
+    await open();
+    await cdp.send("Input.dispatchKeyEvent", { type: "keyDown", key: "Escape", code: "Escape", windowsVirtualKeyCode: 27 });
+    await cdp.send("Input.dispatchKeyEvent", { type: "keyUp", key: "Escape", code: "Escape", windowsVirtualKeyCode: 27 });
+    await closed("Esc");
+    await open();
+    await cdp.evaluate("history.back()");
+    await closed("Back");
+    const historyAfter = await cdp.evaluate("history.length");
+    if (historyAfter > historyBefore + 1) throw new Error(`the picture left ${historyAfter - historyBefore} history entries (at most one, reused)`);
+  };
   const record = async (name) => {
     const m = await lab("measure(" + MIN_TARGET + ")");
     m.cspViolations = await cdp.evaluate("window.__csp || []");
@@ -322,7 +360,9 @@ async function checkConfiguration(cdp, size, lang) {
     results.push({ name, size, lang, ...m });
     if (wantShots) {
       fs.mkdirSync(SHOTS_DIR, { recursive: true });
-      const shot = await cdp.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: true });
+      // A modal dialog covers the viewport only: capture what the phone shows, not a stretched page.
+      const modalOpen = await cdp.evaluate(`!!document.querySelector("dialog[open]")`);
+      const shot = await cdp.send("Page.captureScreenshot", { format: "png", captureBeyondViewport: !modalOpen });
       fs.writeFileSync(path.join(SHOTS_DIR, `${lang}-${size}-${name}.png`), Buffer.from(shot.data, "base64"));
     }
   };
@@ -387,6 +427,7 @@ async function checkConfiguration(cdp, size, lang) {
     }
     if (!picture) throw new Error("Study first showed no loaded picture in the first 40 questions");
     await record("study-picture");
+    await checkPictureDialog();
     await click(L("report.home"));
   }
   await click(L("footer.credits"));

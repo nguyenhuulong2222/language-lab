@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | Прочитайте предложение вслух. |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | Нажмите «{say}» и говорите. Или напечатайте в поле. |
 | `help.typeOnly` | Type what you hear in the box. | Напечатайте в поле то, что услышите. |
-| `header.settings` | Text size | Размер текста |
+| `header.settings` | Text size and voice | Размер текста и голос |
 | `settings.title` | Text size and voice | Размер текста и голос |
 | `settings.textSize.legend` | Text size | Размер текста |
 | `settings.textSize.normal` | Normal | Обычный |
@@ -406,7 +406,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Этот ответ не отправлен ИИ-тренеру, чтобы ваше имя осталось на этом устройстве. |
 | `settings.officer.legend` | Officer voice | Голос сотрудника |
 | `settings.officer.rotate` | A different officer each practice | Другой сотрудник в каждой тренировке |
-| `settings.officer.same` | Always the same voice | Всегда один и тот же голос |
+| `settings.officer.a` | Officer 1, female voice | Сотрудник 1, женский голос |
+| `settings.officer.b` | Officer 2, male voice | Сотрудник 2, мужской голос |
+| `settings.officer.c` | Officer 3, female voice | Сотрудник 3, женский голос |
+| `settings.officer.listen` | Listen | Послушать |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | Голос создан ИИ · Сотрудник 1 (женский голос) |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | Голос создан ИИ · Сотрудник 2 (мужской голос) |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | Голос создан ИИ · Сотрудник 3 (женский голос) |
+| `picture.zoom.hint` | Tap the picture to see it larger | Нажмите на картинку, чтобы увеличить её |
+| `picture.zoom.label` | See the picture larger | Посмотреть картинку крупнее |
+| `picture.zoom.close` | Close | Закрыть |
 
 ## Lines marked ⚠ (meaning differs a little)
 

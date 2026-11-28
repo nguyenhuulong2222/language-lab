@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | Đọc to câu này. |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | Bấm “{say}” rồi nói. Hoặc gõ vào ô. |
 | `help.typeOnly` | Type what you hear in the box. | Gõ những gì bạn nghe vào ô. |
-| `header.settings` | Text size | Cỡ chữ |
+| `header.settings` | Text size and voice | Cỡ chữ và giọng |
 | `settings.title` | Text size and voice | Cỡ chữ và giọng đọc |
 | `settings.textSize.legend` | Text size | Cỡ chữ |
 | `settings.textSize.normal` | Normal | Bình thường |
@@ -405,8 +405,17 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.kind.ownName` | your name | tên của bạn |
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Câu trả lời này không được gửi đến huấn luyện viên AI, để tên của bạn chỉ ở trên máy này. |
 | `settings.officer.legend` | Officer voice | Giọng viên chức |
-| `settings.officer.rotate` | A different officer each practice | Mỗi lần luyện một viên chức khác |
-| `settings.officer.same` | Always the same voice | Luôn cùng một giọng |
+| `settings.officer.rotate` | A different officer each practice | Mỗi lần luyện một người khác (ngẫu nhiên) |
+| `settings.officer.a` | Officer 1, female voice | Viên chức 1, giọng nữ |
+| `settings.officer.b` | Officer 2, male voice | Viên chức 2, giọng nam |
+| `settings.officer.c` | Officer 3, female voice | Viên chức 3, giọng nữ |
+| `settings.officer.listen` | Listen | Nghe thử |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | Giọng do AI tạo · Viên chức 1 (giọng nữ) |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | Giọng do AI tạo · Viên chức 2 (giọng nam) |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | Giọng do AI tạo · Viên chức 3 (giọng nữ) |
+| `picture.zoom.hint` | Tap the picture to see it larger | Bấm vào hình để xem lớn |
+| `picture.zoom.label` | See the picture larger | Xem hình lớn |
+| `picture.zoom.close` | Close | Đóng |
 
 ## Lines marked ⚠ (meaning differs a little)
 

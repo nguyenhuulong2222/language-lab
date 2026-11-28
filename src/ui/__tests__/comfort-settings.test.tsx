@@ -19,11 +19,11 @@ const cssFiles = import.meta.glob("../**/*.css", { query: "?raw", import: "defau
 
 describe("the header", () => {
   const html = renderToString(<Header />);
-  it("has Text size, then the language button, both opening panels; no Home and no About (About is in the footer)", () => {
-    expect(html).toContain(">Text size<");
+  it("has Text size and voice, then the language button, both opening panels; no Home and no About (About is in the footer)", () => {
+    expect(html).toContain(">Text size and voice<");
     expect(html).not.toContain("About &amp; disclaimer");
     expect(html).not.toContain(">Home<");
-    expect(html.indexOf(">Text size<")).toBeLessThan(html.indexOf("header__lang"));
+    expect(html.indexOf(">Text size and voice<")).toBeLessThan(html.indexOf("header__lang"));
     expect((html.match(/aria-expanded="false"/g) ?? []).length).toBe(2);
     expect((html.match(/aria-controls=/g) ?? []).length).toBe(2);
   });

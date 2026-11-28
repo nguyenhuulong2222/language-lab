@@ -235,7 +235,7 @@
   "help.read": "อ่านประโยคออกเสียง",
   "help.mic": "กด “{say}” แล้วพูด หรือพิมพ์ในช่อง",
   "help.typeOnly": "พิมพ์สิ่งที่ได้ยินลงในช่อง",
-  "header.settings": "ขนาดตัวอักษร",
+  "header.settings": "ขนาดตัวอักษรและเสียง",
   "settings.title": "ขนาดตัวอักษรและเสียง",
   "settings.textSize.legend": "ขนาดตัวอักษร",
   "settings.textSize.normal": "ปกติ",
@@ -388,5 +388,14 @@
   "coach.screened.ownName": "คำตอบนี้ไม่ได้ส่งไปยังโค้ช AI เพื่อให้ชื่อของคุณอยู่บนอุปกรณ์นี้เท่านั้น",
   "settings.officer.legend": "เสียงของเจ้าหน้าที่",
   "settings.officer.rotate": "เจ้าหน้าที่คนใหม่ในการฝึกแต่ละครั้ง",
-  "settings.officer.same": "ใช้เสียงเดิมเสมอ"
+  "settings.officer.a": "เจ้าหน้าที่ 1 เสียงผู้หญิง",
+  "settings.officer.b": "เจ้าหน้าที่ 2 เสียงผู้ชาย",
+  "settings.officer.c": "เจ้าหน้าที่ 3 เสียงผู้หญิง",
+  "settings.officer.listen": "ฟังตัวอย่าง",
+  "audio.aiVoice.officer1": "เสียงที่สร้างโดย AI · เจ้าหน้าที่ 1 (เสียงผู้หญิง)",
+  "audio.aiVoice.officer2": "เสียงที่สร้างโดย AI · เจ้าหน้าที่ 2 (เสียงผู้ชาย)",
+  "audio.aiVoice.officer3": "เสียงที่สร้างโดย AI · เจ้าหน้าที่ 3 (เสียงผู้หญิง)",
+  "picture.zoom.hint": "แตะที่ภาพเพื่อดูภาพใหญ่ขึ้น",
+  "picture.zoom.label": "ดูภาพใหญ่ขึ้น",
+  "picture.zoom.close": "ปิด"
 }

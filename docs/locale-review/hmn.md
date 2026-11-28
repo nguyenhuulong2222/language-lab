@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | Nyeem kab lus kom nrov. |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | Nias “{say}” thiab hais lus. Los yog ntaus rau hauv lub npov. |
 | `help.typeOnly` | Type what you hear in the box. | Ntaus qhov koj hnov rau hauv lub npov. |
-| `header.settings` | Text size | Qhov loj ntawm ntawv |
+| `header.settings` | Text size and voice | Qhov loj ntawm cov ntawv thiab lub suab |
 | `settings.title` | Text size and voice | Qhov loj ntawm cov ntawv thiab lub suab |
 | `settings.textSize.legend` | Text size | Qhov loj ntawm ntawv |
 | `settings.textSize.normal` | Normal | Li qub |
@@ -406,7 +406,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Lo lus teb no tsis tau xa mus rau tus kws qhia AI, kom koj lub npe nyob ntawm lub cuab yeej no xwb. |
 | `settings.officer.legend` | Officer voice | Lub suab ntawm tus neeg ua haujlwm |
 | `settings.officer.rotate` | A different officer each practice | Txhua zaus xyaum yog ib tug neeg ua haujlwm txawv |
-| `settings.officer.same` | Always the same voice | Ib txwm yog tib lub suab |
+| `settings.officer.a` | Officer 1, female voice | Tus neeg ua haujlwm 1, poj niam lub suab |
+| `settings.officer.b` | Officer 2, male voice | Tus neeg ua haujlwm 2, txiv neej lub suab |
+| `settings.officer.c` | Officer 3, female voice | Tus neeg ua haujlwm 3, poj niam lub suab |
+| `settings.officer.listen` | Listen | Mloog |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | Lub suab AI tsim · Tus neeg ua haujlwm 1 (poj niam lub suab) |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | Lub suab AI tsim · Tus neeg ua haujlwm 2 (txiv neej lub suab) |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | Lub suab AI tsim · Tus neeg ua haujlwm 3 (poj niam lub suab) |
+| `picture.zoom.hint` | Tap the picture to see it larger | Nias daim duab kom pom loj dua |
+| `picture.zoom.label` | See the picture larger | Saib daim duab loj dua |
+| `picture.zoom.close` | Close | Kaw |
 
 ## Lines marked ⚠ (meaning differs a little)
 

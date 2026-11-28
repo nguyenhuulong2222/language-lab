@@ -235,7 +235,7 @@
   "help.read": "Lea la oración en voz alta.",
   "help.mic": "Presione “{say}” y hable. O escriba en el cuadro.",
   "help.typeOnly": "Escriba en el cuadro lo que oiga.",
-  "header.settings": "Tamaño del texto",
+  "header.settings": "Tamaño del texto y voz",
   "settings.title": "Tamaño del texto y voz",
   "settings.textSize.legend": "Tamaño del texto",
   "settings.textSize.normal": "Normal",
@@ -388,5 +388,14 @@
   "coach.screened.ownName": "Esta respuesta no se envió al entrenador de IA, para que su nombre se quede en este dispositivo.",
   "settings.officer.legend": "Voz del oficial",
   "settings.officer.rotate": "Un oficial diferente en cada práctica",
-  "settings.officer.same": "Siempre la misma voz"
+  "settings.officer.a": "Oficial 1, voz femenina",
+  "settings.officer.b": "Oficial 2, voz masculina",
+  "settings.officer.c": "Oficial 3, voz femenina",
+  "settings.officer.listen": "Escuchar",
+  "audio.aiVoice.officer1": "Voz generada por IA · Oficial 1 (voz femenina)",
+  "audio.aiVoice.officer2": "Voz generada por IA · Oficial 2 (voz masculina)",
+  "audio.aiVoice.officer3": "Voz generada por IA · Oficial 3 (voz femenina)",
+  "picture.zoom.hint": "Toque la imagen para verla más grande",
+  "picture.zoom.label": "Ver la imagen más grande",
+  "picture.zoom.close": "Cerrar"
 }
