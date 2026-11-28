@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | Basahin nang malakas ang pangungusap. |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | Pindutin ang “{say}” at magsalita. O mag-type sa kahon. |
 | `help.typeOnly` | Type what you hear in the box. | I-type sa kahon ang naririnig mo. |
-| `header.settings` | Text size | Laki ng teksto |
+| `header.settings` | Text size and voice | Laki ng teksto at boses |
 | `settings.title` | Text size and voice | Laki ng teksto at boses |
 | `settings.textSize.legend` | Text size | Laki ng teksto |
 | `settings.textSize.normal` | Normal | Karaniwan |
@@ -406,7 +406,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | Hindi ipinadala ang sagot na ito sa AI coach, para manatili ang pangalan mo sa device na ito. |
 | `settings.officer.legend` | Officer voice | Boses ng opisyal |
 | `settings.officer.rotate` | A different officer each practice | Ibang opisyal sa bawat pagsasanay |
-| `settings.officer.same` | Always the same voice | Laging parehong boses |
+| `settings.officer.a` | Officer 1, female voice | Opisyal 1, boses ng babae |
+| `settings.officer.b` | Officer 2, male voice | Opisyal 2, boses ng lalaki |
+| `settings.officer.c` | Officer 3, female voice | Opisyal 3, boses ng babae |
+| `settings.officer.listen` | Listen | Pakinggan |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | Boses na gawa ng AI · Opisyal 1 (boses ng babae) |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | Boses na gawa ng AI · Opisyal 2 (boses ng lalaki) |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | Boses na gawa ng AI · Opisyal 3 (boses ng babae) |
+| `picture.zoom.hint` | Tap the picture to see it larger | I-tap ang larawan para makita ito nang mas malaki |
+| `picture.zoom.label` | See the picture larger | Tingnan nang mas malaki ang larawan |
+| `picture.zoom.close` | Close | Isara |
 
 ## Lines marked ⚠ (meaning differs a little)
 

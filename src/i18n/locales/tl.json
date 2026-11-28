@@ -235,7 +235,7 @@
   "help.read": "Basahin nang malakas ang pangungusap.",
   "help.mic": "Pindutin ang “{say}” at magsalita. O mag-type sa kahon.",
   "help.typeOnly": "I-type sa kahon ang naririnig mo.",
-  "header.settings": "Laki ng teksto",
+  "header.settings": "Laki ng teksto at boses",
   "settings.title": "Laki ng teksto at boses",
   "settings.textSize.legend": "Laki ng teksto",
   "settings.textSize.normal": "Karaniwan",
@@ -388,5 +388,14 @@
   "coach.screened.ownName": "Hindi ipinadala ang sagot na ito sa AI coach, para manatili ang pangalan mo sa device na ito.",
   "settings.officer.legend": "Boses ng opisyal",
   "settings.officer.rotate": "Ibang opisyal sa bawat pagsasanay",
-  "settings.officer.same": "Laging parehong boses"
+  "settings.officer.a": "Opisyal 1, boses ng babae",
+  "settings.officer.b": "Opisyal 2, boses ng lalaki",
+  "settings.officer.c": "Opisyal 3, boses ng babae",
+  "settings.officer.listen": "Pakinggan",
+  "audio.aiVoice.officer1": "Boses na gawa ng AI · Opisyal 1 (boses ng babae)",
+  "audio.aiVoice.officer2": "Boses na gawa ng AI · Opisyal 2 (boses ng lalaki)",
+  "audio.aiVoice.officer3": "Boses na gawa ng AI · Opisyal 3 (boses ng babae)",
+  "picture.zoom.hint": "I-tap ang larawan para makita ito nang mas malaki",
+  "picture.zoom.label": "Tingnan nang mas malaki ang larawan",
+  "picture.zoom.close": "Isara"
 }

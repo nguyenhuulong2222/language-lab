@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | 문장을 소리 내어 읽으세요. |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | “{say}”을(를) 누르고 말하세요. 또는 상자에 입력하세요. |
 | `help.typeOnly` | Type what you hear in the box. | 들은 내용을 상자에 입력하세요. |
-| `header.settings` | Text size | 글자 크기 |
+| `header.settings` | Text size and voice | 글자 크기와 음성 |
 | `settings.title` | Text size and voice | 글자 크기와 음성 |
 | `settings.textSize.legend` | Text size | 글자 크기 |
 | `settings.textSize.normal` | Normal | 보통 |
@@ -406,7 +406,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | 이름이 이 기기에만 남도록 이 답변은 AI 코치에게 보내지 않았습니다. |
 | `settings.officer.legend` | Officer voice | 심사관 음성 |
 | `settings.officer.rotate` | A different officer each practice | 연습할 때마다 다른 심사관 |
-| `settings.officer.same` | Always the same voice | 항상 같은 음성 |
+| `settings.officer.a` | Officer 1, female voice | 심사관 1, 여성 음성 |
+| `settings.officer.b` | Officer 2, male voice | 심사관 2, 남성 음성 |
+| `settings.officer.c` | Officer 3, female voice | 심사관 3, 여성 음성 |
+| `settings.officer.listen` | Listen | 들어 보기 |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | AI가 만든 음성 · 심사관 1(여성 음성) |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | AI가 만든 음성 · 심사관 2(남성 음성) |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | AI가 만든 음성 · 심사관 3(여성 음성) |
+| `picture.zoom.hint` | Tap the picture to see it larger | 그림을 누르면 크게 볼 수 있습니다 |
+| `picture.zoom.label` | See the picture larger | 그림 크게 보기 |
+| `picture.zoom.close` | Close | 닫기 |
 
 ## Lines marked ⚠ (meaning differs a little)
 

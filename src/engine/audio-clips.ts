@@ -385,6 +385,12 @@ export function officerClipFiles(manifest: AudioManifest, voice: OfficerVoiceId,
   return files;
 }
 
+/** The officer voice of a clip file: its folder for officer-b and officer-c, officer-a otherwise. */
+export function officerOfFile(file: string): OfficerVoiceId {
+  for (const voice of EXTRA_OFFICER_VOICES) if (file.startsWith(`${voice}/`)) return voice;
+  return "officer-a";
+}
+
 /** True when one voice's section was made with that voice's current settings. */
 export function voiceMatchesSettings(manifest: AudioManifest, voice: OfficerVoiceId): boolean {
   const setting = ttsSettingsFor(voice);

@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | ဝါကျကို အသံထွက်ဖတ်ပါ။ |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | “{say}” ကို နှိပ်ပြီး ပြောပါ။ သို့မဟုတ် အကွက်ထဲတွင် ရိုက်ထည့်ပါ။ |
 | `help.typeOnly` | Type what you hear in the box. | ကြားသည့်အတိုင်း အကွက်ထဲတွင် ရိုက်ထည့်ပါ။ |
-| `header.settings` | Text size | စာလုံးအရွယ်အစား |
+| `header.settings` | Text size and voice | စာလုံးအရွယ်အစားနှင့် အသံ |
 | `settings.title` | Text size and voice | စာလုံးအရွယ်အစားနှင့် အသံ |
 | `settings.textSize.legend` | Text size | စာလုံးအရွယ်အစား |
 | `settings.textSize.normal` | Normal | ပုံမှန် |
@@ -406,7 +406,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | သင်၏အမည် ဤစက်ပေါ်တွင်သာ ရှိနေစေရန် ဤအဖြေကို AI နည်းပြထံ မပို့ပါ။ |
 | `settings.officer.legend` | Officer voice | အရာရှိ၏ အသံ |
 | `settings.officer.rotate` | A different officer each practice | လေ့ကျင့်တိုင်း အရာရှိ တစ်ယောက်စီ ကွဲပြားသည် |
-| `settings.officer.same` | Always the same voice | အမြဲ အသံ တစ်မျိုးတည်း |
+| `settings.officer.a` | Officer 1, female voice | အရာရှိ 1၊ အမျိုးသမီးအသံ |
+| `settings.officer.b` | Officer 2, male voice | အရာရှိ 2၊ အမျိုးသားအသံ |
+| `settings.officer.c` | Officer 3, female voice | အရာရှိ 3၊ အမျိုးသမီးအသံ |
+| `settings.officer.listen` | Listen | နားထောင်ကြည့်ရန် |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | AI ဖန်တီးသောအသံ · အရာရှိ 1 (အမျိုးသမီးအသံ) |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | AI ဖန်တီးသောအသံ · အရာရှိ 2 (အမျိုးသားအသံ) |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | AI ဖန်တီးသောအသံ · အရာရှိ 3 (အမျိုးသမီးအသံ) |
+| `picture.zoom.hint` | Tap the picture to see it larger | ပုံကို ပိုကြီးကြီး ကြည့်ရန် နှိပ်ပါ |
+| `picture.zoom.label` | See the picture larger | ပုံကို ပိုကြီးကြီး ကြည့်ရန် |
+| `picture.zoom.close` | Close | ပိတ်ရန် |
 
 ## Lines marked ⚠ (meaning differs a little)
 

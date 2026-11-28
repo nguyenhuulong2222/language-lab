@@ -235,7 +235,7 @@
   "help.read": "Nyeem kab lus kom nrov.",
   "help.mic": "Nias “{say}” thiab hais lus. Los yog ntaus rau hauv lub npov.",
   "help.typeOnly": "Ntaus qhov koj hnov rau hauv lub npov.",
-  "header.settings": "Qhov loj ntawm ntawv",
+  "header.settings": "Qhov loj ntawm cov ntawv thiab lub suab",
   "settings.title": "Qhov loj ntawm cov ntawv thiab lub suab",
   "settings.textSize.legend": "Qhov loj ntawm ntawv",
   "settings.textSize.normal": "Li qub",
@@ -388,5 +388,14 @@
   "coach.screened.ownName": "Lo lus teb no tsis tau xa mus rau tus kws qhia AI, kom koj lub npe nyob ntawm lub cuab yeej no xwb.",
   "settings.officer.legend": "Lub suab ntawm tus neeg ua haujlwm",
   "settings.officer.rotate": "Txhua zaus xyaum yog ib tug neeg ua haujlwm txawv",
-  "settings.officer.same": "Ib txwm yog tib lub suab"
+  "settings.officer.a": "Tus neeg ua haujlwm 1, poj niam lub suab",
+  "settings.officer.b": "Tus neeg ua haujlwm 2, txiv neej lub suab",
+  "settings.officer.c": "Tus neeg ua haujlwm 3, poj niam lub suab",
+  "settings.officer.listen": "Mloog",
+  "audio.aiVoice.officer1": "Lub suab AI tsim · Tus neeg ua haujlwm 1 (poj niam lub suab)",
+  "audio.aiVoice.officer2": "Lub suab AI tsim · Tus neeg ua haujlwm 2 (txiv neej lub suab)",
+  "audio.aiVoice.officer3": "Lub suab AI tsim · Tus neeg ua haujlwm 3 (poj niam lub suab)",
+  "picture.zoom.hint": "Nias daim duab kom pom loj dua",
+  "picture.zoom.label": "Saib daim duab loj dua",
+  "picture.zoom.close": "Kaw"
 }

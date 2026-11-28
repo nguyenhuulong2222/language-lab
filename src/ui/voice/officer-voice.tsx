@@ -1,7 +1,7 @@
 /**
  * The officer voice of the current practice (decisions log T). PracticeApp picks it from the
  * practice's seed when the practice starts (or once per Study first visit) and keeps it until
- * Home or restart; the comfort setting "Always the same voice" keeps officer-a. Speak buttons read
+ * Home or restart; a chosen officer in the comfort settings is used for every practice. Speak buttons read
  * it here. In memory only, like the other comfort settings.
  */
 import { createContext, useContext, type ReactNode } from "react";

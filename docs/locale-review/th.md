@@ -266,7 +266,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `help.read` | Read the sentence out loud. | อ่านประโยคออกเสียง |
 | `help.mic` | Press “{say}” and talk. Or type in the box. | กด “{say}” แล้วพูด หรือพิมพ์ในช่อง |
 | `help.typeOnly` | Type what you hear in the box. | พิมพ์สิ่งที่ได้ยินลงในช่อง |
-| `header.settings` | Text size | ขนาดตัวอักษร |
+| `header.settings` | Text size and voice | ขนาดตัวอักษรและเสียง |
 | `settings.title` | Text size and voice | ขนาดตัวอักษรและเสียง |
 | `settings.textSize.legend` | Text size | ขนาดตัวอักษร |
 | `settings.textSize.normal` | Normal | ปกติ |
@@ -406,7 +406,16 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | คำตอบนี้ไม่ได้ส่งไปยังโค้ช AI เพื่อให้ชื่อของคุณอยู่บนอุปกรณ์นี้เท่านั้น |
 | `settings.officer.legend` | Officer voice | เสียงของเจ้าหน้าที่ |
 | `settings.officer.rotate` | A different officer each practice | เจ้าหน้าที่คนใหม่ในการฝึกแต่ละครั้ง |
-| `settings.officer.same` | Always the same voice | ใช้เสียงเดิมเสมอ |
+| `settings.officer.a` | Officer 1, female voice | เจ้าหน้าที่ 1 เสียงผู้หญิง |
+| `settings.officer.b` | Officer 2, male voice | เจ้าหน้าที่ 2 เสียงผู้ชาย |
+| `settings.officer.c` | Officer 3, female voice | เจ้าหน้าที่ 3 เสียงผู้หญิง |
+| `settings.officer.listen` | Listen | ฟังตัวอย่าง |
+| `audio.aiVoice.officer1` | AI-generated voice · Officer 1 (female voice) | เสียงที่สร้างโดย AI · เจ้าหน้าที่ 1 (เสียงผู้หญิง) |
+| `audio.aiVoice.officer2` | AI-generated voice · Officer 2 (male voice) | เสียงที่สร้างโดย AI · เจ้าหน้าที่ 2 (เสียงผู้ชาย) |
+| `audio.aiVoice.officer3` | AI-generated voice · Officer 3 (female voice) | เสียงที่สร้างโดย AI · เจ้าหน้าที่ 3 (เสียงผู้หญิง) |
+| `picture.zoom.hint` | Tap the picture to see it larger | แตะที่ภาพเพื่อดูภาพใหญ่ขึ้น |
+| `picture.zoom.label` | See the picture larger | ดูภาพใหญ่ขึ้น |
+| `picture.zoom.close` | Close | ปิด |
 
 ## Lines marked ⚠ (meaning differs a little)
 

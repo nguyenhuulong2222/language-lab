@@ -90,7 +90,8 @@ export function PracticeApp({ engine: given, now = defaultNow, seed = defaultSee
   // The officer of this practice: one voice from start to end, as in a real interview.
   const [officer, setOfficer] = useState<OfficerVoiceId>("officer-a");
   const { officerVoice } = useSettings();
-  const voice: OfficerVoiceId = officerVoice === "same" ? "officer-a" : officer;
+  // A chosen officer is used for every practice; "rotate" uses the officer of this practice.
+  const voice: OfficerVoiceId = officerVoice === "rotate" ? officer : officerVoice;
   const officerFromSeed = useCallback((s: number) => setOfficer(pickOfficerVoice(s)), []);
   const restart = useCallback(() => {
     setRestarts((n) => n + 1);

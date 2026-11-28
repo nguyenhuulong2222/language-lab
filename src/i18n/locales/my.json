@@ -235,7 +235,7 @@
   "help.read": "ဝါကျကို အသံထွက်ဖတ်ပါ။",
   "help.mic": "“{say}” ကို နှိပ်ပြီး ပြောပါ။ သို့မဟုတ် အကွက်ထဲတွင် ရိုက်ထည့်ပါ။",
   "help.typeOnly": "ကြားသည့်အတိုင်း အကွက်ထဲတွင် ရိုက်ထည့်ပါ။",
-  "header.settings": "စာလုံးအရွယ်အစား",
+  "header.settings": "စာလုံးအရွယ်အစားနှင့် အသံ",
   "settings.title": "စာလုံးအရွယ်အစားနှင့် အသံ",
   "settings.textSize.legend": "စာလုံးအရွယ်အစား",
   "settings.textSize.normal": "ပုံမှန်",
@@ -388,5 +388,14 @@
   "coach.screened.ownName": "သင်၏အမည် ဤစက်ပေါ်တွင်သာ ရှိနေစေရန် ဤအဖြေကို AI နည်းပြထံ မပို့ပါ။",
   "settings.officer.legend": "အရာရှိ၏ အသံ",
   "settings.officer.rotate": "လေ့ကျင့်တိုင်း အရာရှိ တစ်ယောက်စီ ကွဲပြားသည်",
-  "settings.officer.same": "အမြဲ အသံ တစ်မျိုးတည်း"
+  "settings.officer.a": "အရာရှိ 1၊ အမျိုးသမီးအသံ",
+  "settings.officer.b": "အရာရှိ 2၊ အမျိုးသားအသံ",
+  "settings.officer.c": "အရာရှိ 3၊ အမျိုးသမီးအသံ",
+  "settings.officer.listen": "နားထောင်ကြည့်ရန်",
+  "audio.aiVoice.officer1": "AI ဖန်တီးသောအသံ · အရာရှိ 1 (အမျိုးသမီးအသံ)",
+  "audio.aiVoice.officer2": "AI ဖန်တီးသောအသံ · အရာရှိ 2 (အမျိုးသားအသံ)",
+  "audio.aiVoice.officer3": "AI ဖန်တီးသောအသံ · အရာရှိ 3 (အမျိုးသမီးအသံ)",
+  "picture.zoom.hint": "ပုံကို ပိုကြီးကြီး ကြည့်ရန် နှိပ်ပါ",
+  "picture.zoom.label": "ပုံကို ပိုကြီးကြီး ကြည့်ရန်",
+  "picture.zoom.close": "ပိတ်ရန်"
 }

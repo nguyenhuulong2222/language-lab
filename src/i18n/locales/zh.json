@@ -235,7 +235,7 @@
   "help.read": "大聲讀出這個句子。",
   "help.mic": "按「{say}」然後說話。或在方框中輸入。",
   "help.typeOnly": "在方框中輸入您聽到的內容。",
-  "header.settings": "文字大小",
+  "header.settings": "文字大小和語音",
   "settings.title": "文字大小和語音",
   "settings.textSize.legend": "文字大小",
   "settings.textSize.normal": "標準",
@@ -388,5 +388,14 @@
   "coach.screened.ownName": "這個回答沒有傳送給 AI 教練，讓您的名字只留在這部裝置上。",
   "settings.officer.legend": "官員的語音",
   "settings.officer.rotate": "每次練習換一位官員",
-  "settings.officer.same": "一直用同一個語音"
+  "settings.officer.a": "官員 1，女聲",
+  "settings.officer.b": "官員 2，男聲",
+  "settings.officer.c": "官員 3，女聲",
+  "settings.officer.listen": "試聽",
+  "audio.aiVoice.officer1": "AI 生成的語音 · 官員 1（女聲）",
+  "audio.aiVoice.officer2": "AI 生成的語音 · 官員 2（男聲）",
+  "audio.aiVoice.officer3": "AI 生成的語音 · 官員 3（女聲）",
+  "picture.zoom.hint": "點一下圖片可以放大查看",
+  "picture.zoom.label": "放大查看圖片",
+  "picture.zoom.close": "關閉"
 }

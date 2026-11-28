@@ -1,11 +1,12 @@
 /**
  * Comfort settings for the session: text size, slower playback of the recorded voice, the officer
- * voice (a different officer each practice, or always the same), and the interface language.
+ * voice (a different officer each practice, or one chosen officer), and the interface language.
  * They live in React state only: nothing is saved in the browser, and they reset when the
  * page is reloaded. The language starts as the device's language when this build offers it
  * (detectLanguage), English otherwise; that runs again on every load.
  */
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { OFFICER_VOICES, type OfficerVoiceId } from "../engine/audio-clips";
 import { AVAILABLE_UI_LANGUAGES, DEFAULT_LANGUAGE, detectLanguage, isLocaleLoaded, loadLocale, type LanguageCode } from "../i18n";
 
 /** The device's preferred languages, most preferred first (navigator.languages, then navigator.language). */
@@ -27,9 +28,9 @@ export function startupLanguage(): LanguageCode {
 export type TextSize = "normal" | "large" | "extra-large";
 
 export const TEXT_SIZES: readonly TextSize[] = ["normal", "large", "extra-large"];
-/** "rotate": a different officer voice each practice (default). "same": always officer-a. */
-export type OfficerVoiceChoice = "rotate" | "same";
-export const OFFICER_VOICE_CHOICES: readonly OfficerVoiceChoice[] = ["rotate", "same"];
+/** "rotate": a different officer voice each practice (default). An officer id: that officer for every practice. */
+export type OfficerVoiceChoice = "rotate" | OfficerVoiceId;
+export const OFFICER_VOICE_CHOICES: readonly OfficerVoiceChoice[] = ["rotate", ...OFFICER_VOICES];
 
 export interface Settings {
   textSize: TextSize;

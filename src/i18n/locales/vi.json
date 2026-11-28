@@ -235,7 +235,7 @@
   "help.read": "Đọc to câu này.",
   "help.mic": "Bấm “{say}” rồi nói. Hoặc gõ vào ô.",
   "help.typeOnly": "Gõ những gì bạn nghe vào ô.",
-  "header.settings": "Cỡ chữ",
+  "header.settings": "Chữ và giọng",
   "settings.title": "Cỡ chữ và giọng đọc",
   "settings.textSize.legend": "Cỡ chữ",
   "settings.textSize.normal": "Bình thường",
@@ -387,6 +387,15 @@
   "coach.kind.ownName": "tên của bạn",
   "coach.screened.ownName": "Câu trả lời này không được gửi đến huấn luyện viên AI, để tên của bạn chỉ ở trên máy này.",
   "settings.officer.legend": "Giọng viên chức",
-  "settings.officer.rotate": "Mỗi lần luyện một viên chức khác",
-  "settings.officer.same": "Luôn cùng một giọng"
+  "settings.officer.rotate": "Mỗi lần luyện một người khác (ngẫu nhiên)",
+  "settings.officer.a": "Viên chức 1, giọng nữ",
+  "settings.officer.b": "Viên chức 2, giọng nam",
+  "settings.officer.c": "Viên chức 3, giọng nữ",
+  "settings.officer.listen": "Nghe thử",
+  "audio.aiVoice.officer1": "Giọng do AI tạo · Viên chức 1 (giọng nữ)",
+  "audio.aiVoice.officer2": "Giọng do AI tạo · Viên chức 2 (giọng nam)",
+  "audio.aiVoice.officer3": "Giọng do AI tạo · Viên chức 3 (giọng nữ)",
+  "picture.zoom.hint": "Bấm vào hình để xem lớn",
+  "picture.zoom.label": "Xem hình lớn",
+  "picture.zoom.close": "Đóng"
 }

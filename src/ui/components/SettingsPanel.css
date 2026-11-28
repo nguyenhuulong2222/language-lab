@@ -68,3 +68,25 @@
   font-size: 1.25rem;
   font-weight: 700;
 }
+/* An officer choice and its "Listen" button side by side; the button goes under the choice when narrow. */
+.officer-choice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--space-2);
+}
+.officer-choice > .choice {
+  flex: 1 1 9rem;
+}
+/* Under its own choice, at the right, when the row is too narrow for both. */
+.officer-choice__listen {
+  flex: 0 0 auto;
+  align-self: center;
+  min-height: max(56px, 3.1111rem);
+  margin-left: auto;
+  padding-inline: var(--space-4);
+}
+/* More space between officers than between a choice and its button, so each pair reads as one. */
+.officer-choice + .officer-choice {
+  margin-top: var(--space-2);
+}

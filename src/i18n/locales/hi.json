@@ -235,7 +235,7 @@
   "help.read": "वाक्य को ज़ोर से पढ़ें।",
   "help.mic": "“{say}” दबाएँ और बोलें। या बॉक्स में टाइप करें।",
   "help.typeOnly": "जो सुनें, उसे बॉक्स में टाइप करें।",
-  "header.settings": "अक्षर का आकार",
+  "header.settings": "अक्षरों का आकार और आवाज़",
   "settings.title": "अक्षरों का आकार और आवाज़",
   "settings.textSize.legend": "अक्षर का आकार",
   "settings.textSize.normal": "सामान्य",
@@ -388,5 +388,14 @@
   "coach.screened.ownName": "यह जवाब AI कोच को नहीं भेजा गया, ताकि आपका नाम इसी डिवाइस पर रहे।",
   "settings.officer.legend": "अधिकारी की आवाज़",
   "settings.officer.rotate": "हर अभ्यास में अलग अधिकारी",
-  "settings.officer.same": "हमेशा एक ही आवाज़"
+  "settings.officer.a": "अधिकारी 1, महिला की आवाज़",
+  "settings.officer.b": "अधिकारी 2, पुरुष की आवाज़",
+  "settings.officer.c": "अधिकारी 3, महिला की आवाज़",
+  "settings.officer.listen": "सुनें",
+  "audio.aiVoice.officer1": "AI से बनी आवाज़ · अधिकारी 1 (महिला की आवाज़)",
+  "audio.aiVoice.officer2": "AI से बनी आवाज़ · अधिकारी 2 (पुरुष की आवाज़)",
+  "audio.aiVoice.officer3": "AI से बनी आवाज़ · अधिकारी 3 (महिला की आवाज़)",
+  "picture.zoom.hint": "बड़ा देखने के लिए चित्र पर टैप करें",
+  "picture.zoom.label": "चित्र बड़ा देखें",
+  "picture.zoom.close": "बंद करें"
 }
