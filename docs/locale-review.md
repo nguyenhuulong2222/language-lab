@@ -82,7 +82,7 @@ I translated the disclaimer, privacy and legal lines (16 keys, 13 languages) bac
 ### Still differs a little
 
 - hmn `aiNotice.text`: "authoritative" is rendered as "official" (raug cai): close, slightly weaker.
-- hmn `intro.privacy`: "fictional profile" is rendered as "made-up model" (tus qauv tsim los). The word qauv (pattern, model) may not be the natural word for a profile. Needs a Hmong reader.
+- hmn `intro.privacy`: "sample profile" is rendered as "example model" (tus qauv piv txwv). The word qauv (pattern, model) may not be the natural word for a profile. Needs a Hmong reader.
 - hmn `n400.sample.note`: Same word (qauv) for the made-up profile.
 - hmn `help.setup.2`: Same word (qauv) for the profiles.
 - hmn `intro.profile.legend`: Same word (qauv) for "profile".

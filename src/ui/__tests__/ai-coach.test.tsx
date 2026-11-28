@@ -434,7 +434,7 @@ describe("fictional practice, truthful real interview (REQ-C21)", () => {
   const KEYS = ["intro.privacy", "n400.sample.note", "coach.notice.text"] as const;
   it.each(KEYS)("%s says both halves in English", (key) => {
     const text = ENGLISH_MESSAGES[key];
-    expect(text, key).toMatch(/fictional (profile|person)/);
+    expect(text, key).toMatch(/(fictional|sample) (profile|person)/);
     expect(text, key).toContain("In your real interview, you must answer truthfully about your own life.");
   });
   it("the three lines stay legal keys (English until a person reviews them)", async () => {

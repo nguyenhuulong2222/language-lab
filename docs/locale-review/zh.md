@@ -21,7 +21,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.notice.practice` | This is a practice tool only. | 這只是一個練習工具。 | This is only a practice tool. |
 | `intro.notice.legal` | It is not legal advice. | 這不是法律建議。 | This is not legal advice. |
 | `intro.notice.government` | It is not a government service and is not affiliated with USCIS. | 這不是政府服務，也與 USCIS 沒有隸屬關係。 | This is not a government service, and has no affiliation with USCIS either. |
-| `intro.privacy` | Do not say your real name, address, date of birth or A-number. Practice as the fictional profile you choose. In your real interview, you must answer truthfully about your own life. | 請不要說出您的真實姓名、地址、出生日期或 A 字號（A-number）。請以您選擇的虛構檔案身分來練習。在您真正的面談中，您必須如實回答自己的實際情況。 | Please do not say your real name, address, date of birth or A-number (A-number). Please practice as the fictional profile you choose. In your real interview, you must answer truthfully about your own life. |
+| `intro.privacy` | Do not say your real address, date of birth or A-number. Practice as the sample profile you choose. If you choose “Use my name”, say only your name. In your real interview, you must answer truthfully about your own life. | 請不要說出您的真實地址、出生日期或 A 字號（A-number）。請以您選擇的範例檔案身分來練習。如果您選擇「使用我的名字」，只說出您的名字。在您真正的面談中，您必須如實回答自己的實際情況。 | Please do not say your real address, date of birth or A-number (A-number). Please practice as the example profile you choose. If you choose “Use my name”, say only your name. In your real interview, you must answer truthfully about your own life. |
 | `voice.privacy` | Voice uses your browser’s speech recognition. Depending on your browser, your voice may be processed by the browser’s maker. Language Lab does not send or save your voice. If you use “Record and compare”, the recording stays on this device, in memory, and is deleted when you go to the next sentence or close this page. | 語音功能使用您瀏覽器的語音辨識。視瀏覽器而定，您的聲音可能由瀏覽器的製造商處理。Language Lab 不會傳送或儲存您的聲音。如果您使用「錄音並比較」，錄音只會留在這部裝置的記憶體中，換到下一個句子或關閉本頁時就會刪除。 | The voice feature uses your browser's speech recognition. Depending on the browser, your voice may be processed by the browser's maker. Language Lab does not send or store your voice. If you use "Record and compare", the recording stays only in this device's memory, and is deleted when you move to the next sentence or close this page. |
 | `n400.sample.note` | This is only the made-up profile’s answer. Practice uses the fictional profile, so you never need to share real personal details here. In your real interview, you must answer truthfully about your own life. | 這只是虛構檔案的答案。練習使用虛構檔案，所以您在這裡永遠不需要提供真實的個人資料。在您真正的面談中，您必須如實回答自己的實際情況。 | This is only the fictional profile's answer. Practice uses the fictional profile, so you never need to share real personal details here. In your real interview, you must answer truthfully about your own life. |
 | `help.setup.2` | Profiles are made up. Do not type your real name or any details about you. | 檔案都是虛構的。請不要輸入您的真實姓名或任何關於您的資料。 | The profiles are all fictional. Please do not enter your real name or any information about you. |
@@ -386,3 +386,21 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | 這些表達概念的插圖，是 AI 圖像模型根據為 Language Lab 撰寫的提示所製作。圖中沒有真實的人物、事件或文件。負責人在每張插圖顯示前都看過。 |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | 於 {date} 由 AI 模型 {model} 製作。 |
 | `credits.photos.title` | Photos, prints and documents | 照片、版畫與文件 |
+| `intro.profile.own.title` | Use my name | 使用我的名字 |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | 練習說出並拼出您的真實姓名 |
+| `intro.ownName.label` | Full name | 全名 |
+| `intro.ownName.error.empty` | Type your full name to continue. | 請輸入您的全名以繼續。 |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | 最多 {max} 個字元。 |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | 只能使用字母、空格、連字號 (-) 和撇號 (')。 |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. If you answer by voice, your browser’s speech recognition hears what you say (see the note about voice). Reloading the page clears your name. | 您的名字只在這部裝置上用於這次練習。它不會被儲存，Language Lab 也不會把它傳送到任何地方。如果您用語音回答，您瀏覽器的語音辨識會聽到您說的話（請見關於語音的說明）。重新載入頁面後，您的名字就會清除。 |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | 官員可能會就您的表格問類似的問題。請用您自己的名字。其他問題請以範例資料的身分回答。這部分不計分。 |
+| `n400.sample.labelOwn` | Sample answer with your name | 含您名字的範例回答 |
+| `n400.spell.label` | How each part of your name is spelled | 您名字每個部分的拼法 |
+| `n400.sampleProfile.badge` | Sample profile | 範例資料 |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | {name} 的範例回答 |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | 這裡只有名字是您的。這個回答和其他細節都來自範例資料，不是您的真實生活。在真正的面談中，您必須如實回答關於自己生活的問題。 |
+| `n400.yourAnswer.own` | Your answer | 您的回答 |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | 只有在問題問到名字時才說您的名字。不要輸入您真實的地址、日期或號碼。 |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | 練習時不要說出真實的 A-number、社會安全號碼或綠卡號碼。 |
+| `coach.kind.ownName` | your name | 您的名字 |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | 這個回答沒有傳送給 AI 教練，讓您的名字只留在這部裝置上。 |

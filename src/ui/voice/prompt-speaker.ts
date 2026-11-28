@@ -20,6 +20,12 @@ export interface SpokenPrompt {
   text: string;
   /** Id of the pre-generated clip for this text, when there is one. */
   clipId?: string;
+  /**
+   * The text holds the learner's own name ("Use my name"): speak it only with a voice that runs on
+   * this device (SpeechSynthesisVoice.localService). Some browsers' default voices are online
+   * services, so the text would leave the device. With no local English voice, it is not spoken.
+   */
+  localOnly?: boolean;
 }
 
 /** How fast a recorded clip plays when "slower playback" is on. The same recording, no new audio. */
@@ -62,18 +68,30 @@ export const SILENT_SPEAKER: PromptSpeaker = {
 // Device voice
 // ---------------------------------------------------------------------------
 
+/** An English voice that runs on this device (not an online service), US English first; null when there is none. */
+export function localEnglishVoice(synthesis: Pick<SpeechSynthesis, "getVoices">): SpeechSynthesisVoice | null {
+  const voices = (typeof synthesis.getVoices === "function" ? synthesis.getVoices() : []).filter((v) => v.localService === true && /^en\b/i.test(v.lang));
+  return voices.find((v) => /^en[-_]US$/i.test(v.lang)) ?? voices[0] ?? null;
+}
+
 export function createDeviceVoiceSpeaker(
   synthesis: SpeechSynthesis | undefined = typeof window === "undefined" ? undefined : window.speechSynthesis
 ): PromptSpeaker {
   if (synthesis === undefined || typeof SpeechSynthesisUtterance === "undefined") return SILENT_SPEAKER;
   return {
     available: true,
-    voiceFor: () => "device-voice",
-    speak({ text }, handlers) {
+    voiceFor: (prompt) => (prompt.localOnly === true && localEnglishVoice(synthesis) === null ? null : "device-voice"),
+    speak({ text, localOnly }, handlers) {
+      const local = localOnly === true ? localEnglishVoice(synthesis) : null;
+      if (localOnly === true && local === null) {
+        handlers?.onFailed?.();
+        return Promise.resolve();
+      }
       return new Promise<void>((resolve) => {
         synthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = "en-US";
+        if (local !== null) utterance.voice = local;
         utterance.rate = handlers?.slow ? DEVICE_RATE_SLOW : DEVICE_RATE;
         utterance.onend = () => resolve();
         utterance.onerror = (event) => {
@@ -130,7 +148,7 @@ export function createMp3PromptSpeaker(options: Mp3SpeakerOptions): PromptSpeake
   let stopCurrent: (() => void) | null = null;
 
   const clipFor = (prompt: SpokenPrompt): string | null =>
-    canPlayAudio ? clipFileFor(manifest, prompt.clipId, prompt.text) : null;
+    canPlayAudio && prompt.localOnly !== true ? clipFileFor(manifest, prompt.clipId, prompt.text) : null;
 
   const speaker: PromptSpeaker = {
     get available() {

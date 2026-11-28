@@ -4,6 +4,12 @@
  * coach (data/practice/n400-questions.json) is the default. With a `coachTransport`, the screen
  * offers the optional AI coach (spec .kiro/specs/interview-coach): off by default, a notice before
  * it turns on, and a feedback step after each answer while it is on. Nothing is sent while it is off.
+ *
+ * "Use my name" (`ownName`, decisions log S): the officer greets the learner by name and the
+ * full-name question's sample answer uses it; both are spoken only by a voice on this device. Every
+ * other sample answer is the sample profile's, labelled so. Before an answer goes to the AI coach the
+ * name is replaced by the sample profile's (`protectNameForCoach`); an answer that may still hold it,
+ * and the spelling question, are not sent.
  */
 import { Disclaimer } from "../components/Disclaimer";
 import { LegalText } from "../components/LegalText";
@@ -19,6 +25,7 @@ import { CoachChoice } from "../components/CoachChoice";
 import { initialCoachEntry, nextCoachEntry, type CoachEntry, type CoachEntryEvent, type CoachEntryState } from "../coach/coach-entry";
 import type { CoachTurnResult } from "../../engine/coach/types";
 import type { PracticeProfile } from "../../engine/practice-content";
+import { fillName, isLocalOnlyQuestion, OWN_NAME_SCRIPT, protectNameForCoach } from "../../engine/own-name";
 import { useT } from "../../i18n/react";
 import { AnswerInput } from "../components/AnswerInput";
 import { EnglishNotice } from "../components/EnglishNotice";
@@ -46,12 +53,14 @@ interface N400ScreenProps {
   coachTransport?: CoachTransport;
   /** How the stage starts with the coach: ask first ("choice"), or open the notice at once ("notice"). */
   coachEntry?: CoachEntry;
+  /** "Use my name": the learner's own name, from memory. `profile` is then the sample profile. */
+  ownName?: string;
 }
 export type { CoachEntry };
 
 type PromptState = { status: "loading" } | { status: "failed" } | { status: "done" } | { status: "ready"; prompt: N400Prompt };
 
-export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish, nextIsReport, nextIsCivics, coachTransport, coachEntry = "choice" }: N400ScreenProps) {
+export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish, nextIsReport, nextIsCivics, coachTransport, coachEntry = "choice", ownName }: N400ScreenProps) {
   const [state, setState] = useState<PromptState>({ status: "loading" });
   const [attempt, setAttempt] = useState(0);
   // The AI coach lives as long as this screen: a new practice starts with it off.
@@ -79,8 +88,15 @@ export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish,
 
   const submitAnswer = (prompt: N400Prompt, transcript: string) => {
     if (!aiCoach || !session || !coachOn || !session.consent) return onAnswer(prompt, transcript);
+    // "Use my name": the spelling question is never sent, and the name never leaves the device.
+    if (ownName !== undefined && isLocalOnlyQuestion(prompt.id)) return onAnswer(prompt, transcript);
+    const sendable = ownName === undefined ? transcript : protectNameForCoach(transcript, ownName, profile.displayName);
+    if (sendable === null) {
+      setStep({ prompt, transcript, view: { status: "done", result: { kind: "screened", found: "own-name" } } });
+      return;
+    }
     setStep({ prompt, transcript, view: { status: "checking" } });
-    const answer: N400Answer = { questionId: prompt.id, questionText: prompt.text, transcript };
+    const answer: N400Answer = { questionId: prompt.id, questionText: prompt.text, transcript: sendable };
     void aiCoach
       .turnFeedback({ profile, answered: [] }, answer)
       .catch((): CoachTurnResult => ({ kind: "fallback", reason: "error", disable: false }))
@@ -153,6 +169,7 @@ export function N400Screen({ coach, profile, answers, total, onAnswer, onFinish,
         : {})}
       {...(nextIsReport === undefined ? {} : { nextIsReport })}
       {...(nextIsCivics === undefined ? {} : { nextIsCivics })}
+      {...(ownName === undefined ? {} : { ownName })}
     />
   );
 }
@@ -168,9 +185,10 @@ interface N400ViewProps extends Omit<N400ScreenProps, "coach" | "coachTransport"
 }
 
 /** The screen without its data loading, so every state can be rendered and tested. */
-export function N400View({ state, profile, answers, total, onAnswer, onFinish, nextIsReport = false, nextIsCivics = false, onRetry, onSubmitAnswer, coachControls, coachStep }: N400ViewProps) {
+export function N400View({ state, profile, answers, total, onAnswer, onFinish, nextIsReport = false, nextIsCivics = false, onRetry, onSubmitAnswer, coachControls, coachStep, ownName }: N400ViewProps) {
   const t = useT();
   const name = profile.displayName;
+  const own = ownName !== undefined;
 
   if (state.status === "done") {
     return (
@@ -204,13 +222,16 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
       <TakeHeader
         stage="n400_interview"
         title={t("n400.title")}
-        lead={t("n400.lead", { name })}
+        lead={own ? t("n400.lead.own") : t("n400.lead", { name })}
         focusKey={`question-${answers.length}`}
       />
       <EnglishNotice />
       <div className="screen__body">
         <p className="progress-line">
           {total === undefined ? t("n400.number", { current }) : t("n400.count", { current, total })}
+        </p>
+        <p className="note">
+          <LegalText messageKey="n400.idNumbers.reminder" />
         </p>
         {coachControls}
         {state.status === "loading" && <p role="status">{t("n400.loading")}</p>}
@@ -230,36 +251,77 @@ export function N400View({ state, profile, answers, total, onAnswer, onFinish, n
         )}
         {state.status === "ready" && (
           <div key={state.prompt.id} className="screen__body">
+            {own && state.prompt.id === OWN_NAME_SCRIPT.nameQuestionId && (
+              <>
+                {/* The officer greets the learner by name: built and spoken on this device only. */}
+                <p className="prompt" lang="en">
+                  {fillName(OWN_NAME_SCRIPT.greeting, ownName)}
+                </p>
+                <SpeakButton text={fillName(OWN_NAME_SCRIPT.greeting, ownName)} localOnly />
+              </>
+            )}
             <p className="prompt" lang="en">
               {state.prompt.text}
             </p>
             <SpeakButton text={state.prompt.text} clipId={n400QuestionClipId(state.prompt.id)} />
             {state.prompt.sampleAnswer !== null && (
-              <section className="panel panel--well">
-                <h2 className="panel__title">{t("n400.sample.label", { name })}</h2>
-                <p lang="en">{state.prompt.sampleAnswer}</p>
-                <SpeakButton
-                  text={state.prompt.sampleAnswer}
-                  clipId={sampleAnswerClipId(state.prompt.id, profile.id)}
-                  labelKey="audio.playSample"
-                  large={false}
-                />
-                <p className="note"><LegalText messageKey="n400.sample.note" /></p>
-              </section>
+              <OwnOrSampleAnswer prompt={state.prompt} profile={profile} ownName={ownName} />
             )}
             <ScreenHelp screen="n400" />
             {coachStep ?? (
               <AnswerInput
-                label={t("n400.yourAnswer", { name })}
+                label={own ? t("n400.yourAnswer.own") : t("n400.yourAnswer", { name })}
                 submitLabel={t("n400.save")}
                 voice
                 onSubmit={(text) => (onSubmitAnswer ?? onAnswer)(state.prompt, text)}
-                hint={<LegalText messageKey="n400.box.reminder" />}
+                hint={<LegalText messageKey={own ? "n400.box.reminder.own" : "n400.box.reminder"} />}
               />
             )}
           </div>
         )}
       </div>
     </div>
+  );
+}
+
+/**
+ * The sample answer panel. With "Use my name", the full-name and spelling questions show the
+ * learner's own name (spoken only by a voice on this device); every other answer is the sample
+ * profile's and says so ("Sample profile").
+ */
+function OwnOrSampleAnswer({ prompt, profile, ownName }: { prompt: N400Prompt; profile: PracticeProfile; ownName: string | undefined }) {
+  const t = useT();
+  const name = profile.displayName;
+  const sample = prompt.sampleAnswer ?? "";
+  if (ownName === undefined) {
+    return (
+      <section className="panel panel--well">
+        <h2 className="panel__title">{t("n400.sample.label", { name })}</h2>
+        <p lang="en">{sample}</p>
+        <SpeakButton text={sample} clipId={sampleAnswerClipId(prompt.id, profile.id)} labelKey="audio.playSample" large={false} />
+        <p className="note"><LegalText messageKey="n400.sample.note" /></p>
+      </section>
+    );
+  }
+  const withName = prompt.id === OWN_NAME_SCRIPT.nameQuestionId || isLocalOnlyQuestion(prompt.id);
+  if (withName) {
+    return (
+      <section className="panel panel--well">
+        <h2 className="panel__title">{isLocalOnlyQuestion(prompt.id) ? t("n400.spell.label") : t("n400.sample.labelOwn")}</h2>
+        <p lang="en">{sample}</p>
+        <SpeakButton text={sample} labelKey="audio.playSample" large={false} localOnly />
+      </section>
+    );
+  }
+  return (
+    <section className="panel panel--well">
+      <p className="note">
+        <strong>{t("n400.sampleProfile.badge")}</strong>
+      </p>
+      <h2 className="panel__title">{t("n400.sample.labelSampleProfile", { name })}</h2>
+      <p lang="en">{sample}</p>
+      <SpeakButton text={sample} clipId={sampleAnswerClipId(prompt.id, profile.id)} labelKey="audio.playSample" large={false} />
+      <p className="note"><LegalText messageKey="n400.sampleProfile.note" /></p>
+    </section>
   );
 }

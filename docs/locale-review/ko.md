@@ -21,7 +21,7 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `intro.notice.practice` | This is a practice tool only. | 이것은 연습 도구일 뿐입니다. | This is only a practice tool. |
 | `intro.notice.legal` | It is not legal advice. | 법률 자문이 아닙니다. | It is not legal advice. |
 | `intro.notice.government` | It is not a government service and is not affiliated with USCIS. | 정부 서비스가 아니며 USCIS와 관련이 없습니다. | It is not a government service and is not related to USCIS. |
-| `intro.privacy` | Do not say your real name, address, date of birth or A-number. Practice as the fictional profile you choose. In your real interview, you must answer truthfully about your own life. | 실제 이름, 주소, 생년월일, A 번호(A-number)를 말하지 마세요. 선택한 가상 프로필로 연습하세요. 실제 인터뷰에서는 본인의 삶에 대해 반드시 사실대로 답해야 합니다. | Do not say your real name, address, date of birth or A number (A-number). Practice with the virtual profile you chose. In your real interview, you must answer truthfully about your own life. |
+| `intro.privacy` | Do not say your real address, date of birth or A-number. Practice as the sample profile you choose. If you choose “Use my name”, say only your name. In your real interview, you must answer truthfully about your own life. | 실제 주소, 생년월일, A 번호(A-number)를 말하지 마세요. 선택한 샘플 프로필로 연습하세요. “내 이름 사용”을 선택했다면 이름만 말하세요. 실제 인터뷰에서는 본인의 삶에 대해 반드시 사실대로 답해야 합니다. | Do not say your real address, date of birth or A number (A-number). Practice with the sample profile you chose. If you chose “Use my name”, say only your name. In your real interview, you must answer truthfully about your own life. |
 | `voice.privacy` | Voice uses your browser’s speech recognition. Depending on your browser, your voice may be processed by the browser’s maker. Language Lab does not send or save your voice. If you use “Record and compare”, the recording stays on this device, in memory, and is deleted when you go to the next sentence or close this page. | 음성은 브라우저의 음성 인식을 사용합니다. 브라우저에 따라 음성이 브라우저 제작사에서 처리될 수 있습니다. Language Lab은 음성을 전송하거나 저장하지 않습니다. “녹음하고 비교하기”를 사용하면 녹음은 이 기기의 메모리에만 남고, 다음 문장으로 넘어가거나 이 페이지를 닫으면 삭제됩니다. | Voice uses the browser's speech recognition. Depending on the browser, your voice may be processed by the browser's maker. Language Lab does not transmit or save your voice. If you use "Record and compare", the recording stays only in this device's memory, and is deleted when you move to the next sentence or close this page. |
 | `n400.sample.note` | This is only the made-up profile’s answer. Practice uses the fictional profile, so you never need to share real personal details here. In your real interview, you must answer truthfully about your own life. | 이것은 지어낸 프로필의 답일 뿐입니다. 연습에서는 가상 프로필을 사용하므로 여기에서 실제 개인 정보를 말할 필요가 전혀 없습니다. 실제 인터뷰에서는 본인의 삶에 대해 반드시 사실대로 답해야 합니다. | This is only the made-up profile's answer. Practice uses the fictional profile, so you never need to share real personal details here. In your real interview, you must answer truthfully about your own life. |
 | `help.setup.2` | Profiles are made up. Do not type your real name or any details about you. | 프로필은 지어낸 것입니다. 실제 이름이나 본인에 대한 정보를 입력하지 마세요. | Profiles are made up. Do not enter your real name or information about yourself. |
@@ -386,6 +386,24 @@ To record a review, fill `reviewedBy` and `reviewedOn` in `_meta` of `src/i18n/l
 | `credits.ai.lead` | These illustrations of ideas were made by an AI image model from prompts written for Language Lab. They do not show real people, events or documents. The owner looked at each one before it was shown. | 이 아이디어 그림들은 Language Lab을 위해 작성한 요청문으로 AI 이미지 모델이 만들었습니다. 실제 사람, 사건, 문서를 보여 주지 않습니다. 운영자가 보여 주기 전에 하나하나 확인했습니다. |
 | `credits.ai.made` | Made with the AI model {model} on {date}. | {date}에 AI 모델 {model}(으)로 만들었습니다. |
 | `credits.photos.title` | Photos, prints and documents | 사진, 판화, 문서 |
+| `intro.profile.own.title` | Use my name | 내 이름 사용 |
+| `intro.profile.own.sub` | Practice saying and spelling your real name | 실제 이름을 말하고 철자를 말하는 연습 |
+| `intro.ownName.label` | Full name | 성명 |
+| `intro.ownName.error.empty` | Type your full name to continue. | 계속하려면 성명을 입력하세요. |
+| `intro.ownName.error.tooLong` | Use {max} characters or fewer. | {max}자 이하로 입력하세요. |
+| `intro.ownName.error.characters` | Use only letters, spaces, hyphens (-) and apostrophes ('). | 글자, 띄어쓰기, 하이픈(-), 아포스트로피(')만 사용하세요. |
+| `intro.ownName.privacy` | Your name is used only on this device, for this practice. It is not saved, and Language Lab does not send it anywhere. If you answer by voice, your browser’s speech recognition hears what you say (see the note about voice). Reloading the page clears your name. | 이름은 이 기기에서 이번 연습에만 사용됩니다. 저장되지 않으며 Language Lab은 이름을 어디에도 보내지 않습니다. 음성으로 답하면 브라우저의 음성 인식이 말하는 내용을 듣습니다(음성 안내 참고). 페이지를 새로 고치면 이름이 지워집니다. |
+| `n400.lead.own` | An officer may ask questions like these about your form. Use your own name. For the other questions, answer as the sample profile. This part gets no score. | 심사관은 신청서에 대해 이런 질문을 할 수 있습니다. 본인의 이름을 사용하세요. 다른 질문에는 예시 프로필로 답하세요. 이 부분은 채점하지 않습니다. |
+| `n400.sample.labelOwn` | Sample answer with your name | 내 이름을 넣은 예시 답변 |
+| `n400.spell.label` | How each part of your name is spelled | 이름의 각 부분 철자 |
+| `n400.sampleProfile.badge` | Sample profile | 예시 프로필 |
+| `n400.sample.labelSampleProfile` | Sample answer for {name} | {name}의 예시 답변 |
+| `n400.sampleProfile.note` | Only your name is yours here. This answer and the other details come from a sample profile, not from your real life. In your real interview, you must answer truthfully about your own life. | 여기서는 이름만 본인의 것입니다. 이 답변과 다른 내용은 예시 프로필에서 가져온 것이며 실제 생활이 아닙니다. 실제 면접에서는 본인의 삶에 대해 사실대로 답해야 합니다. |
+| `n400.yourAnswer.own` | Your answer | 내 답변 |
+| `n400.box.reminder.own` | Use your name only where the question asks for it. Do not type your real address, dates or numbers. | 질문에서 이름을 물을 때만 이름을 말하세요. 실제 주소, 날짜, 번호는 입력하지 마세요. |
+| `n400.idNumbers.reminder` | Do not say a real A-number, Social Security number or green card number when you practice. | 연습할 때 실제 A-number, 사회보장번호, 영주권 번호를 말하지 마세요. |
+| `coach.kind.ownName` | your name | 내 이름 |
+| `coach.screened.ownName` | This answer was not sent to the AI coach, so that your name stays on this device. | 이름이 이 기기에만 남도록 이 답변은 AI 코치에게 보내지 않았습니다. |
 
 ## Lines marked ⚠ (meaning differs a little)
 

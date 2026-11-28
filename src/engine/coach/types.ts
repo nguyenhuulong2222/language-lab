@@ -31,7 +31,11 @@ export interface CoachReply {
 }
 
 /** Kinds of personal identifiers the screen refuses to send. */
-export type IdentifierKind = "a-number" | "ssn" | "phone" | "email" | "date-of-birth" | "street-address" | "zip-code";
+/**
+ * "own-name" is client-only: the browser keeps an answer back when the learner's own name ("Use my
+ * name") might still be in it. `screenIdentifiers` never returns it and the server never sees it.
+ */
+export type IdentifierKind = "a-number" | "ssn" | "phone" | "email" | "date-of-birth" | "street-address" | "zip-code" | "own-name";
 
 /** Why the client fell back to the scripted coach. */
 export type CoachFallbackReason =
