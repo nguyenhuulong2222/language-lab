@@ -80,7 +80,8 @@ describe("IntroScreen (setup)", () => {
     const html = render({ profile: true, filing: false });
     expect(html).toContain("Choose a practice person");
     expect(html).not.toContain("Practice as if the N-400 was filed");
-    expect(html).toContain("Do not say your real name, address, date of birth or A-number");
+    expect(html).toContain("Do not say your real address, date of birth or A-number");
+    expect(html).toContain("If you choose “Use my name”, say only your name.");
   });
 
   it("the civics part asks only for the filing choice", () => {

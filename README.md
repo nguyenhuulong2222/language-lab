@@ -44,8 +44,10 @@ shows this branch's work only after a deploy).
 
 ## What It Does
 
-Language Lab lets you rehearse the naturalization interview using entirely fictional practice
-profiles. You work through:
+Language Lab lets you rehearse the naturalization interview using fictional sample profiles. One
+option is the exception: "Use my name" lets you practice saying and spelling your own name, which
+stays in memory on your device, is never sent to the AI coach and is cleared when you reload the
+page. No other real personal data is asked for. You work through:
 
 - **N-400 conversation practice** — biographical questions as in the interview. Not scored; the real
   interview is held in English
@@ -192,7 +194,9 @@ See [`docs/kiro-log.md`](docs/kiro-log.md) for architecture decisions.
 
 ## Content Safety
 
-- All practice uses **fictional profiles**. No real personal data is collected or required.
+- All practice uses **fictional sample profiles**, with one optional exception: "Use my name" lets
+  the learner practice saying and spelling their own name. The name stays in memory on the device,
+  is never sent to the AI coach and is cleared on reload. No other real personal data is asked for.
 - Civics answers are scored from the answer key only. AI never decides civics scores.
 - Civics questions, answers and practice sentences are English only and are never machine-translated. The interface can be switched to other languages; those translations are AI-generated unless marked as reviewed (see the disclosure section).
 - Voice: the words you say are recognised by your browser (the browser maker may process the audio). Language Lab never sends or saves your voice. "Record and compare" keeps a recording in memory on your device for the current sentence only and deletes it when you move on.
